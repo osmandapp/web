@@ -9,7 +9,7 @@ const config = {
   title: 'OsmAnd',
   tagline: 'Offline Maps and Navigation',
   url: 'https://osmand.net',
-  baseUrl: '/',
+  baseUrl: '/v2/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -24,13 +24,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/osmandapp',
+          editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/osmandapp/web',
+          editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
