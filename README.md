@@ -1,0 +1,2 @@
+# web
+OsmAnd Web project
