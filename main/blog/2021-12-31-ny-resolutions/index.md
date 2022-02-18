@@ -2,12 +2,14 @@
 slug: ny-resolutions-2022
 title: 2022 New Year resolutions
 authors: eugene
-tags: [ny-2022, OsmAnd]
+tags: [resolutions, OsmAnd]
 ---
 
 Happy New 2022 Year!
 
 At the end of each year, we sum up the results of the passing year and write our plans for the next one. This tradition started 5 years ago and we continue doing it each year. Sometimes our ambitions are not nearly completed, sometimes we overshoot the plan.
+
+<!--truncate-->
 
 <p>2021 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our <a href="https://osmand.net/blog/2021-ny-resolutions">2021 New Year resolutions</a> we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.</p>
 
