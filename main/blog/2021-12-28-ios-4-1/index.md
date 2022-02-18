@@ -13,19 +13,19 @@ Great news for iOS OsmAnd users! We're glad to announce the new [OsmAnd version 
 
 <!--truncate-->
 
+
 <p>This is a short list of many changes happened in 4.1 release:</p>
 
-<ul class="innerlist">
-    <li>Completely redesigned interaction with tracks</li>
-    <li>New screen for searching by coordinates in different formats</li>
-    <li>Improved coordinate search in OLC format</li>
-    <li>New user-friendly menu for choosing languages to display Wikipedia articles on the map</li>
-    <li>Added ability to easily load maps of all regions of the country with a couple of clicks</li>
-    <li>Added contour lines in feet (You need to re-download files)</li>
-    <li>Downloading maps by clicking to the map</li>
-    <li>New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping</li>
-    <li>Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings</li>
-</ul>
+
+- Completely redesigned interaction with tracks
+- New screen for searching by coordinates in different formats
+- Improved coordinate search in OLC format
+- New user-friendly menu for choosing languages to display Wikipedia articles on the map
+- Added ability to easily load maps of all regions of the country with a couple of clicks
+- Added contour lines in feet (You need to re-download files)
+- Downloading maps by clicking to the map
+- New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
+- Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
 
 
 ## Completely redesigned interaction with tracks
@@ -37,56 +37,56 @@ Great news for iOS OsmAnd users! We're glad to announce the new [OsmAnd version 
 ![OsmAnd iOs 4.1](./tracks.png) ![OsmAnd iOs 4.1](./tracks_1.png) ![OsmAnd iOs 4.1](./tracks_2.png) 
 
 
-<h3>New screen for searching by coordinates in different formats</h3>
+## New screen for searching by coordinates in different formats
 
 <p>We will add the new screen for <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">coordinates search menu</a>.</p>
 
 ![OsmAnd iOs 4.1](./coordinates.png)
 
 
-<h3>Improved coordinate search in OLC format</h3>
+## Improved coordinate search in OLC format
 
 <p>Upgraded coordinates search in <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">OLC format</a>.</p>
 
 ![OsmAnd iOs 4.1](./olc.png)
 
 
-<h3>New user-friendly menu for choosing languages to display Wikipedia articles on the map</h3>
+## New user-friendly menu for choosing languages to display Wikipedia articles on the map
 
 <p>Changed the Configure map menu for choosing languages for <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/wikipedia">wiki articles</a>.</p>
 
 ![OsmAnd iOs 4.1](./wiki.png)
 
 
-<h3>Added ability to easily load maps of all regions of the country with a couple of clicks</h3>
+## Added ability to easily load maps of all regions of the country with a couple of clicks
 
 <p>Now, you can download region maps of any country <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps">by the bundle</a>.</p>
 
 ![OsmAnd iOs 4.1](./download.png)
 
 
-<h3>Added contour lines in feet (You need to re-download files)</h3>
+## Added contour lines in feet (You need to re-download files)
 
 <p>We added <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines">contour lines maps</a> in feet.</p>
 
 ![OsmAnd iOs 4.1](./srtm.png)
 
 
-<h3>Downloading maps by clicking to the map</h3>
+## Downloading maps by clicking to the map
 
 <p>Added ability <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps#download--manage---world-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.</p>
 
 ![OsmAnd iOs 4.1](./map.png) ![OsmAnd iOs 4.1](./map_1.png)
 
 
-<h3>New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping</h3>
+## New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
 
 <p><a href="https://docs.osmand.net/en/main@latest/osmand/map/interact-with-map">New buttons and new gestures</a> on the general screen.</p>
 
 ![OsmAnd iOs 4.1](./buttons.png)
 
 
-<h3>Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings</h3>
+## Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
 
 <p><a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#routes">New routes menu</a> in Configure map menu.</p>
 
