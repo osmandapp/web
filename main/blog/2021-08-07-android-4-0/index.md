@@ -13,6 +13,7 @@ We're happy to announce the new 4.0 OsmAnd release for Android devices. At this 
 
 <!--truncate-->
 
+<!--
 - New type of subscriptions
 - Cloud backup and restore
 - Moved 'OsmAnd Live' updates menu
@@ -163,4 +164,4 @@ You can set needed parameters for recording and start record of your trip with o
 - Fixed issue with units of measurement
 - Fixed issue with sharing more than one hundred favorite points
 - Fixed crashes with Public transport navigation
-- Improved search algorithm
+- Improved search algorithm -->
