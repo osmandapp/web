@@ -14,6 +14,7 @@ We're happy to announce the new 4.0 OsmAnd release for Android devices. At this 
 <!--truncate-->
 
 <!--
+This is a short list of many changes happened in 4.0 release:
 - New type of subscriptions
 - Cloud backup and restore
 - Moved 'OsmAnd Live' updates menu
@@ -37,8 +38,7 @@ At this release we made two purchase plans for OsmAnd:
 - **'Maps+'** plan has one-time payment and annual subscription. It's light paid version with all needed features: monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
 - **'OsmAnd Pro'** plan has monthly and annual subscriptions. It's a full version with all paid features: OsmAnd Cloud, Pro features, hourly map updates, monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
 
-<p>Full information you can find <a href="https://docs.osmand.net/en/main@latest/osmand/purchases">here</a>.<p>
-
+Full information you can find [here](https://docs.osmand.net/en/main@latest/osmand/purchases).
 
 ![OsmAnd Androie 4.0](./purchases_plan.png)
 
@@ -55,7 +55,7 @@ Go to **Menu → Settings → Backup & Restore**. Select the data to be exported
 
 ## Moved 'OsmAnd Live' updates menu
 
-<p>'OsmAnd Live' updates (function of hourly map updates) moved to <b>"Menu → Downloads maps → Updates"</b>.</p>
+'OsmAnd Live' updates (function of hourly map updates) moved to **"Menu → Downloads maps → Updates"**.
 
 ![OsmAnd Androie 4.0](./live_1.png) ![OsmAnd Androie 4.0](./live_2.png)
 
@@ -88,8 +88,9 @@ You can set needed parameters for recording and start record of your trip with o
 
 ## Tracks can now be colored by altitude, speed, or slope
 
-<p>Now, any track can be colored by altitude, speed, or slope.</p>
-<p>Choose track on the map or in <b>'My places → Tracks'</b>, tap to 'Appearance' button.</p>
+Now, any track can be colored by altitude, speed, or slope.
+
+Choose track on the map or in 'My places → Tracks', tap to 'Appearance' button.
 
 ![OsmAnd Androie 4.0](./speed.png) ![OsmAnd Androie 4.0](./altitude.png)
 
@@ -164,4 +165,5 @@ You can set needed parameters for recording and start record of your trip with o
 - Fixed issue with units of measurement
 - Fixed issue with sharing more than one hundred favorite points
 - Fixed crashes with Public transport navigation
-- Improved search algorithm -->
+- Improved search algorithm 
+-->
