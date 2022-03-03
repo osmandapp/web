@@ -274,6 +274,7 @@ export const AppContextProvider = (props) => {
     const [loginUser, setLoginUser] = useState(null);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, setGpxFiles] = useState({});
+    const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [appText, setAppText] = useState('');
@@ -348,7 +349,8 @@ export const AppContextProvider = (props) => {
         routeData, setRouteData,
         routeMode, setRouteMode,
         weatherPoint, setWeatherPoint,
-        routeTrackFile, setRouteTrackFile
+        routeTrackFile, setRouteTrackFile,
+        searchCtx, setSearchCtx
 
     }}>
         {props.children}

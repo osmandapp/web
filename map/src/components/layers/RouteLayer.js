@@ -194,6 +194,8 @@ const RouteLayer = () => {
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
+        {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
+            pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
         {ctx.startPoint && //<CircleMarker center={ctx.startPoint} radius={5} pathOptions={{ color: 'green' }} opacity={1}
             <Marker position={ctx.startPoint} icon={MarkerIcon({ bg: 'blue' })}
                 ref={startPointRef} draggable={true} eventHandlers={startEventHandlers} />}
