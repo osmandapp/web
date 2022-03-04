@@ -53,7 +53,7 @@ const OsmAndMapFrame = () => {
                 return;
             }
             let arr = hash.split('/');
-            if (parseInt(arr[0].substring(1)) < 10) {
+            if (parseInt(arr[0].substring(1)) < 7) {
                 alert("Please zoom in closer");
                 return;
             }
