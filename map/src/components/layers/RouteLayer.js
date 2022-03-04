@@ -188,14 +188,35 @@ const RouteLayer = () => {
         return moveableMarker(ctx, map, L.circleMarker(latlng, opts));
     };
 
+    const pointToLayerGeoData = (feature, latlng) => {
+        let opts = Object.assign({}, geojsonMarkerOptions);
+        return L.circleMarker(latlng, opts);
+    };
+
+    const pointToLayerSearch = (feature, latlng) => {
+        let opts = Object.assign({}, geojsonMarkerOptions);
+        if (feature.properties && feature.properties.index) {
+            opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
+            let clrs = ['#6DD6DA','#95D9DA', '#A2ABB5', '#AE8CA3','#817F82'];
+            let indx = [3, 10, 30, 100, 1000];
+            for(var i = 0; i < indx.length; i++) {
+                if (feature.properties.index > indx[i]) {
+                    opts.fillColor = clrs[i];
+                }
+            }
+        }
+        
+        return L.circleMarker(latlng, opts);
+    };
+
 
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
-            pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
+            pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature} />}
         {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
-            pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
+            pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature} />}
         {ctx.startPoint && //<CircleMarker center={ctx.startPoint} radius={5} pathOptions={{ color: 'green' }} opacity={1}
             <Marker position={ctx.startPoint} icon={MarkerIcon({ bg: 'blue' })}
                 ref={startPointRef} draggable={true} eventHandlers={startEventHandlers} />}
