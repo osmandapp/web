@@ -115,3 +115,6 @@ We fixed many bugs in our search algorithms. Now you can find places, points and
 And remember that only together we can achieve the best results!
 New features are coming SOON!
 
+<a href="https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257">
+    <img src="http://osmand.net/images/app-store-badge.png" alt="Image"/>
+</a>

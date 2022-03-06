@@ -86,12 +86,16 @@ const config = {
                 href: 'https://github.com/osmandapp/OsmAnd/discussions',
               },
               {
-                label: 'Facebook',
-                href: 'https://facebook.com/osmandapp/',
-              },
-              {
                 label: 'Twitter',
                 href: 'https://twitter.com/osmandapp',
+              },
+              {
+                label: 'Reddit',
+                href: 'https://www.reddit.com/r/OsmAnd/',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://facebook.com/osmandapp/',
               },
             ],
           },
