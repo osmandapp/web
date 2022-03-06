@@ -42,9 +42,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'OsmAnd',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'OsmAnd Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -52,7 +52,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -87,7 +87,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/osmandapp',
               },
             ],
           },
