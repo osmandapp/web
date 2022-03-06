@@ -30,10 +30,13 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+
       }),
     ],
   ],
