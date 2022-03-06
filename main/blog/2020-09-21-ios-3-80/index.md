@@ -1,0 +1,117 @@
+---
+slug: osmand-ios-3-80-released
+title: OsmAnd 3.80 (iOS)
+authors: eugene
+tags: [release, OsmAnd, ios]
+---
+
+Hi!
+We are glad to announce that iOS app version development does not stand still.
+The new improved version is already available to install on you devices!
+Every day we work to make the iOS version more filled and its functionality would be equal to the Android version. Inevitably, we face  bugs and mistakes on our way, that we try to fix immediately.
+Thank you for your support and feedback.
+
+![OsmAnd iOS 3.80](./iOS3-8.png)
+
+<!--truncate-->
+
+
+## Introduced “Application Profiles" with independent settings
+
+At this release, we added Application Profiles. Now you can create your own profile with independent settings.
+Go to 'Menu -> Settings -> New profile'. Here you can change order in profile list, switch on/off profiles.
+
+<table>
+  <tr>
+    <th><img src={require('./1.jpg').default} alt="Image"/></th>
+    <th><img src={require('./2.jpg').default} alt="Example banner"/></th>
+  </tr>
+</table> 
+
+
+
+## New arrangement of settings by profiles and types: navigation, general, map and screen
+
+Now each profile has its own settings. Go to menu -> Settings -> сhoose profile.
+Each profile has General settings, Navigation settings, Configure map, Configure screen, and Profile appearance menu.
+Of course, you can set Plugins for the selected profile.
+
+<table>
+  <tr>
+    <th><img src={require('./3.jpg').default} alt="Image"/></th>
+    <th><img src={require('./4.jpg').default} alt="Example banner"/></th>
+  </tr>
+</table> 
+
+
+## Ability to import or export profile settings
+
+You can export your profile or import other profiles.
+To import a profile, tap on the needed file (*.osf) in any application and select "Copy to OsmAnd Maps".
+
+<table>
+  <tr>
+    <th><img src={require('./5.jpg').default} alt="Image"/></th>
+    <th><img src={require('./6.jpg').default} alt="Image"/></th>
+    <th><img src={require('./7.jpg').default} alt="Image"/></th>
+    <th><img src={require('./9.jpg').default} alt="Image"/></th>
+  </tr>
+</table> 
+
+:::tip Export a profile
+
+To export a profile, go to Menu -> Settings -> Choose profile -> Export profile.
+
+:::
+
+
+<table>
+  <tr>
+    <th><img src={require('./10.png').default} width="200px" height="auto" alt="Image"/></th>
+  </tr>
+</table>
+
+
+## Added data sources for Online photos
+We added more data sources for Online photos except mapillary-photos: wikidata, wikimedia commons. When you click to POI or polygon you find more pictures in Online photos.
+
+<table>
+  <tr>
+    <th><img src={require('./17.jpg').default} width="200px" height="auto" alt="Image"/></th>
+  </tr>
+</table> 
+
+
+## Added ability to download online maps to cache
+Now you can download online maps to cash.
+At first, you should change online maps in 'Map type' menu. Next, long click to the map -> Actions -> Download map. Here, you can choose map area, map type, max/min zoom, you see the number of tiles and download size. When you set all parameters for downloading to click 'Download'.
+
+<table>
+  <tr>
+    <th><img src={require('./13.jpg').default} alt="Image"/></th>
+    <th><img src={require('./14.jpg').default} alt="Image"/></th>
+    <th><img src={require('./15.jpg').default} alt="Image"/></th>
+    <th><img src={require('./16.jpg').default} alt="Image"/></th>
+  </tr>
+</table> 
+
+
+## Improved "Search" algorithms
+We fixed many bugs in our search algorithms. Now you can find places, points and etc. without any problems.
+
+<table>
+  <tr>
+    <th><img src={require('./11.jpg').default} alt="Image"/></th>
+    <th><img src={require('./12.jpg').default} alt="Image"/></th>
+  </tr>
+</table> 
+
+
+## What else is in this release?
+* Fixed crash while starting navigation
+* Fixed bug with OpenStreetMap Editing Plugin
+* Fixed an issue with "Nautical maps" always stuck in update state
+
+And remember that only together we can achieve the best results!
+New features are coming SOON!
+
