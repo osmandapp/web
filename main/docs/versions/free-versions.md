@@ -22,8 +22,7 @@ Release date: 12/2021
 * Improved SRTM height marker rendering
 * Fixed Arabic map captions
 
-#### [:book: Read more](https://osmand.net/blog/osmand-android-4-1)
-#### [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.1.11-421.apk)
+#### [:book: Read more](https://osmand.net/blog/osmand-android-4-1) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.1.11-421.apk)
 
 
 -------
@@ -49,8 +48,7 @@ Release date: 12/2021
 * Fixed crashes with Public transport 
 * Search algorithms improving
 
-#### [:book: Read more](blog/osmand-android-4-0-released)
-#### [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.0.8-408.apk)
+#### [:book: Read more](blog/osmand-android-4-0-released) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.0.8-408.apk)
 
 
 
@@ -62,8 +60,7 @@ Release date: 12/2021
 * Added OAuth authentication method for OpenStreetMap, improved UI of OSM dialogs.
 * Support custom colors for favorites and track waypoints.
 
-#### [:book: Read more](https://osmand.net/blog/osmand-3-9)
-#### [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-3.9.9-399.apk)
+#### [:book: Read more](https://osmand.net/blog/osmand-3-9) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-3.9.9-399.apk)
 
 
 -------
