@@ -72,22 +72,59 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Versions',
+                to: '/docs/versions/free-versions',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'GitHub Discussions',
+                href: 'https://github.com/osmandapp/OsmAnd/discussions',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Facebook',
+                href: 'https://facebook.com/osmandapp/',
               },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/osmandapp',
+              },
+            ],
+          },
+          {
+            title: 'Telegram chat',
+            items: [
+              {
+                label: 'English',
+                href: 'https://t.me/OsmAndMaps',
+              },
+              {
+                label: 'French',
+                href: 'https://t.me/frosmand',
+              },
+              {
+                label: 'German',
+                href: 'https://t.me/deosmand',
+              },
+              {
+                label: 'Italian',
+                href: 'https://t.me/itosmand',
+              },
+              {
+                label: 'Ukrainian',
+                href: 'https://t.me/uaosmand',
+              },
+              {
+                label: 'Polish',
+                href: 'https://t.me/osmand_pl',
+              },
+              {
+                label: 'Russian',
+                href: 'https://t.me/ruosmand',
               },
             ],
           },
