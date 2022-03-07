@@ -1,6 +1,6 @@
 ---
 slug: osmand-android-4-0-released
-title: Release OsmAnd 4.0 (Android)
+title: OsmAnd 4.0 (Android)
 authors: eugene
 tags: [release, OsmAnd]
 ---

@@ -1,6 +1,6 @@
 ---
 slug: osmand-ios-4-1-released
-title: Release OsmAnd 4.1 (iOS)
+title: OsmAnd 4.1 (iOS)
 authors: eugene
 tags: [release, OsmAnd]
 ---

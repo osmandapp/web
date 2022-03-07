@@ -1,6 +1,6 @@
 ---
 slug: osmand-ios-3-12-released
-title: Release OsmAnd 3.12 (iOS)
+title: OsmAnd 3.12 (iOS)
 authors: eugene
 tags: [release, ios]
 ---
