@@ -30,10 +30,13 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+
       }),
     ],
   ],
@@ -42,9 +45,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'OsmAnd',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'OsmAnd Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -52,7 +55,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -72,22 +75,63 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Versions',
+                to: '/docs/versions/free-versions',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'GitHub Discussions',
+                href: 'https://github.com/osmandapp/OsmAnd/discussions',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/osmandapp',
+              },
+              {
+                label: 'Reddit',
+                href: 'https://www.reddit.com/r/OsmAnd/',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://facebook.com/osmandapp/',
+              },
+            ],
+          },
+          {
+            title: 'Telegram chat',
+            items: [
+              {
+                label: 'English',
+                href: 'https://t.me/OsmAndMaps',
+              },
+              {
+                label: 'French',
+                href: 'https://t.me/frosmand',
+              },
+              {
+                label: 'German',
+                href: 'https://t.me/deosmand',
+              },
+              {
+                label: 'Italian',
+                href: 'https://t.me/itosmand',
+              },
+              {
+                label: 'Ukrainian',
+                href: 'https://t.me/uaosmand',
+              },
+              {
+                label: 'Polish',
+                href: 'https://t.me/osmand_pl',
+              },
+              {
+                label: 'Russian',
+                href: 'https://t.me/ruosmand',
               },
             ],
           },

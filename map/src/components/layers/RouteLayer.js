@@ -55,10 +55,12 @@ function moveableMarker(ctx, map, marker) {
     return marker
 }
 
+
 const RouteLayer = () => {
     const map = useMap();
     const ctx = useContext(AppContext);
-    
+
+    const [geocodingData, setGeocodingData] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams({});
     useEffect(() => {
         let obj = {};
@@ -129,6 +131,22 @@ const RouteLayer = () => {
         }
     }, [ctx.setInterPoints, ctx.interPoints]);
 
+    const whereAmI = async (e) => {
+        setGeocodingData(null);
+        const params = `lat=${e.latlng.lat.toFixed(6)}&lon=${e.latlng.lng.toFixed(6)}`;
+        const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/geocoding?${params}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+            let data = await response.json();
+            let props = {};
+            if (data.features.length > 0) {
+                props = data.features[0]?.properties;
+            }
+            setGeocodingData({ geojson: data, id: new Date().getTime(), props: props });
+        }
+    };
 
     useEffect(() => {
         if (map) {
@@ -141,6 +159,10 @@ const RouteLayer = () => {
             map.contextmenu.addItem({
                 text: 'Set as end',
                 callback: (e) => ctx.setEndPoint(e.latlng)
+            });
+            map.contextmenu.addItem({
+                text: 'Where am I',
+                callback: whereAmI
             });
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, map, ctx.setRouteData]);
@@ -166,10 +188,35 @@ const RouteLayer = () => {
         return moveableMarker(ctx, map, L.circleMarker(latlng, opts));
     };
 
+    const pointToLayerGeoData = (feature, latlng) => {
+        let opts = Object.assign({}, geojsonMarkerOptions);
+        return L.circleMarker(latlng, opts);
+    };
+
+    const pointToLayerSearch = (feature, latlng) => {
+        let opts = Object.assign({}, geojsonMarkerOptions);
+        if (feature.properties && feature.properties.index) {
+            opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
+            let clrs = ['#6DD6DA','#95D9DA', '#A2ABB5', '#AE8CA3','#817F82'];
+            let indx = [3, 10, 30, 100, 1000];
+            for(var i = 0; i < indx.length; i++) {
+                if (feature.properties.index > indx[i]) {
+                    opts.fillColor = clrs[i];
+                }
+            }
+        }
+        
+        return L.circleMarker(latlng, opts);
+    };
+
 
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
+        {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
+            pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature} />}
+        {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
+            pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature} />}
         {ctx.startPoint && //<CircleMarker center={ctx.startPoint} radius={5} pathOptions={{ color: 'green' }} opacity={1}
             <Marker position={ctx.startPoint} icon={MarkerIcon({ bg: 'blue' })}
                 ref={startPointRef} draggable={true} eventHandlers={startEventHandlers} />}
