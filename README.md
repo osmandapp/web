@@ -1,3 +1,3 @@
-OsmAnd Web project (website)
+OsmAnd website
 
 Consists of **main** static website and **map** part.
