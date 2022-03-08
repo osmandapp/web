@@ -30,6 +30,6 @@ ____________________________
  <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-<a href="https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257">
-    <img src="http://osmand.net/images/app-store-badge.png" alt="Image" />
-</a>
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+
+<AppleStore/>

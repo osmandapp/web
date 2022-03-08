@@ -16,6 +16,6 @@ We're glad to announce the new OsmAnd version for iOS.
 * Bug fixes and minor improvements
 
 
-<a href="https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257">
-    <img src="http://osmand.net/images/app-store-badge.png" alt="Image" />
-</a>
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+
+<AppleStore/>
