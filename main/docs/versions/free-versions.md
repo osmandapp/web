@@ -2,11 +2,16 @@
 sidebar_position: 1
 ---
 
-# Free Releases
-OsmAnd **Android** free version releases.
+# Free Releases — Android
 
+You can get the latest version of OsmAnd free from listed app stores.
+* Google Play — <a href="https://play.google.com/store/apps/details?id=net.osmand">**Get**</a>
+* Amazon AppStore — <a href="https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8">**Get**</a>
+* Huawei AppGallery — <a href="https://appgallery.huawei.com/#/app/C101486545">**Get**</a>
 
 ------ 
+
+Direct links to free OsmAnd versions.
 ## Version 4 
 
 ### Version 4.1 

@@ -7,10 +7,16 @@ OsmAnd produces every day multiple Ready-To-Use builds which allows keep track o
 
 ## Android
 ### Google Play Beta builds
+You can participate in testing OsmAnd beta build thru Google Play. 
 #### [OsmAnd+](https://play.google.com/apps/testing/net.osmand.plus)
 #### [OsmAnd](https://play.google.com/apps/testing/net.osmand)
 
 ### Nightly Builds
+#### OpenGL Build
+
+#### Free version
+OsmAnd-default.apk — nightly version of OsmAnd free. 
+[:arrow_down: Download](https://download.osmand.net/latest-night-build/OsmAnd-default.apk)
 
 ## iOS
 ### TestFlight
