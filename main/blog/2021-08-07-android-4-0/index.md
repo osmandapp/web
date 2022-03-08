@@ -44,7 +44,7 @@ Full information you can find [here](https://docs.osmand.net/en/main@latest/osma
 
 ## Cloud backup and restore
 
-<p>New paid function for <a href="https://osmand.net/blog/osmand-android-4-0-released#monetization">'OsmAnd Pro'</a> subscription.</p>
+New paid function for <a href="https://osmand.net/blog/osmand-android-4-0-released#monetization">'OsmAnd Pro'</a> subscription.
 
 This function allows to make backup and restore all your OsmAnd data: settings, my places, resources. The size of storage is 3 - 50 - 1000 Gb.
 
@@ -62,14 +62,14 @@ Go to **Menu → Settings → Backup & Restore**. Select the data to be exported
 
 ## Added night mode for Topo / Offroad rendering styles
 
-<p>We added <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#map-mode">night mode</a> for <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#topo">Topo</a> and <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#offroad">Offroad</a> rendering styles.</p>
+We added <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#map-mode">night mode</a> for <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#topo">Topo</a> and <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#offroad">Offroad</a> rendering styles.
 
 ![OsmAnd Androie 4.0](./topo.png)
 
 
 ## Added option to download Contour lines in feet
 
-<p>Now, there is an opportunity to download <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.</p>
+Now, there is an opportunity to download <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
 
 
 ![OsmAnd Androie 4.0](./feet_cl_1.png) ![OsmAnd Androie 4.0](./feet_cl_2.png)
@@ -97,66 +97,66 @@ Choose track on the map or in 'My places → Tracks', tap to 'Appearance' button
 
 ## Added option to change the route line appearance
 
-<p>Users can choose an appearance for route line:</p>
+Users can choose an appearance for route line:
 
-<p><b>Menu → Configure profile (choose app profile) → Profile appearance → Customize route line</b></p>
+**Menu → Configure profile (choose app profile) → Profile appearance → Customize route line**
 
 ![OsmAnd Androie 4.0](./route_line.png)
 
 ## Added online routing for navigation type
 
-<p>Users can choose online routing engines for navigation type:</p>
-<p><b>Menu → Configure profile (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button</b>
-</p>
-<p>Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteService, or GPX online routing.</p>
+Users can choose online routing engines for navigation type:
+**Menu → Configure profile (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button**
+
+Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteService, or GPX online routing.
 
 ![OsmAnd Androie 4.0](./online_routing.png)
 
 
 ## 'Distance by tap' moved from 'Radius ruler' into a separate option
 
-<p>We separated 'Distance by tap' option from 'Radius ruler' tool.</p>
-<p>Now, you can find it in <b>Menu → Configure screen → Remaining elements → Distance by tap</b>.</p>
+We separated 'Distance by tap' option from 'Radius ruler' tool.
+Now, you can find it in **Menu → Configure screen → Remaining elements → Distance by tap**.
 
 ![OsmAnd Androie 4.0](./distance_by_tap_1.png) ![OsmAnd Androie 4.0](./distance_by_tap_2.png)
 
 
 ## 'Plan Route' improvements
 
-<p>At this release, we continued to improve our <a href="https://osmand.net/features/plan-route#pr-android">'Plan Route'</a> tool.</p>
-<p>Now, you can see a landscape of your trip planning by switching between points and graphs (Overview, Altitude, Slope, Road type, Surface, Steepness) tabs.</p>
+At this release, we continued to improve our <a href="https://osmand.net/features/plan-route#pr-android">'Plan Route'</a> tool.
+Now, you can see a landscape of your trip planning by switching between points and graphs (Overview, Altitude, Slope, Road type, Surface, Steepness) tabs.
 
 ![OsmAnd Androie 4.0](./plan_route_1.png) ![OsmAnd Androie 4.0](./plan_route_2.png)
 
 
-<p>We added the ability to change navigation options, accessing configure map and search without leaving 'Plan route' tool. Just, you need to click buttons on the screen.</p>
+We added the ability to change navigation options, accessing configure map and search without leaving 'Plan route' tool. Just, you need to click buttons on the screen.
 
 ![OsmAnd Androie 4.0](./plan_route_3.png) ![OsmAnd Androie 4.0](./plan_route_4.png)
 
 
 ## New Purchases screen
 
-<p>Now, there is a new 'Purchases' screen with detailed information about purchasing and 'Restore purchases' button.</p>
+Now, there is a new 'Purchases' screen with detailed information about purchasing and 'Restore purchases' button.
 
 ![OsmAnd Androie 4.0](./purchases_menu.png) 
 
 
 ## New Language dialogue for Voice prompts
 
-<p>Redesigned dialog for selecting the language for navigation instructions. Now it's easier to choose and download the needed language and type of voice guidance:
-<b>Menu → Configure profile → Navigation settings → Voice prompts → Language</b>.</p>
+Redesigned dialog for selecting the language for navigation instructions. Now it's easier to choose and download the needed language and type of voice guidance:
+**Menu → Configure profile → Navigation settings → Voice prompts → Language**.
 
 ![OsmAnd Androie 4.0](./voice_prompts_1.png) ![OsmAnd Androie 4.0](./voice_prompts_2.png) 
 
 
 ## New POI types
 
-<p>Added new POI types: clubs, music, social, scout, freemasonry.</p>
+Added new POI types: clubs, music, social, scout, freemasonry.
 
 
 ## My places: last opened tab is now remembered and will be open next time
 
-<p>Your last opened tab in 'My places' menu is remembered. And this tab will be open next time.</p>
+Your last opened tab in 'My places' menu is remembered. And this tab will be open next time.
 
 
 ## What else is in this release?

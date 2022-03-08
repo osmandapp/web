@@ -43,7 +43,7 @@ Video about public transport navigation in OsmAnd:
 ## New offline slope maps
 
 Added Slope maps, now you can control Slope and HillShade in new Terrain menu.
-You can estimate slopes in your route. We changed menu <i>Hillshade (Overlay/Underlay)</i> to <i>Terrain (Overlay/Underlay)</i> in <i>Map</i> menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the <i>Contour line plugin</i> at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin#How_to_use_it_I">Contour lines plugin here</a>. <b>Remember</b> that you can download slope and hillshade maps for your region.
+You can estimate slopes in your route. We changed menu <i>Hillshade (Overlay/Underlay)</i> to <i>Terrain (Overlay/Underlay)</i> in <i>Map</i> menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the <i>Contour line plugin</i> at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin#How_to_use_it_I">Contour lines plugin here</a>. **Remember** that you can download slope and hillshade maps for your region.
 
 <table>
   <tr>
@@ -100,10 +100,9 @@ Now you can minimize <a href="https://osmand.net/features/favourites#Using_favor
 And remember that only together we can achieve the best results!
 New features are coming SOON!
 
-____________________________ 
 
-<p>OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!</p>
- <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
+
+
 
 
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';

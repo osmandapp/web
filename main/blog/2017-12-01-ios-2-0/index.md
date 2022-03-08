@@ -20,7 +20,7 @@ The first feature is also probably the most requested one since the introduction
     </tr>
 </table> 
 
-If you press the gear button in the navigation context menu, you'll also see a list of settings helping you to <b>adjust the route</b>. You can select to avoid border crossing,  motorways, ice roads, fords, etc. It's also possible to pick a fuel-efficient way or follow a GPX track.
+If you press the gear button in the navigation context menu, you'll also see a list of settings helping you to **adjust the route**. You can select to avoid border crossing,  motorways, ice roads, fords, etc. It's also possible to pick a fuel-efficient way or follow a GPX track.
 
 <table>
   <tr>
@@ -30,9 +30,9 @@ If you press the gear button in the navigation context menu, you'll also see a l
 </table> 
 
 You'll see the 'Navigation settings' bar at the very bottom of this list. There, you can select to take the fastest route, set the weight and height limits for your vehicle, select which announcements you'd like to hear during navigation and which alerts to view on screen, etc.
-Users can set <b>'Map orientation threshold'</b>. You choose a speed setting, below which map orientation switches from 'To direction of movement' to 'To compass'.
-Moreover, you can adjust the speed limit announcements in the <b>'Speed limit tolerance'</b> menu. For example, if it is set to 10 km/h and the limit at a current road is 60 km/h, you'll get notified as soon as you reach 70 km/h.
-If your GPS signal is unstable, you can try the <b>'Snap to road'</b> function that is enabled by default. It 'sticks' your GPS location to the route during navigation.
+Users can set **'Map orientation threshold'**. You choose a speed setting, below which map orientation switches from 'To direction of movement' to 'To compass'.
+Moreover, you can adjust the speed limit announcements in the **'Speed limit tolerance'** menu. For example, if it is set to 10 km/h and the limit at a current road is 60 km/h, you'll get notified as soon as you reach 70 km/h.
+If your GPS signal is unstable, you can try the **'Snap to road'** function that is enabled by default. It 'sticks' your GPS location to the route during navigation.
 
 <table>
   <tr>
@@ -43,7 +43,7 @@ If your GPS signal is unstable, you can try the <b>'Snap to road'</b> function t
 
 ## New interface
 
-OsmAnd now has a <b>new interface style</b> with a minimalistic white and grey palette for your utmost comfort. The  Settings menu now has 2 submenus allowing you to adjust general and navigation settings.
+OsmAnd now has a **new interface style** with a minimalistic white and grey palette for your utmost comfort. The  Settings menu now has 2 submenus allowing you to adjust general and navigation settings.
 
 <table>
   <tr>
@@ -68,7 +68,7 @@ You can change the widgets anytime. Also, you can make the widgets transparent o
 
 ## Day and night map modes
 
-We also added a new feature created to support eye comfort: the <b>'day' and 'night' modes</b> of the map. The night mode has lower contrast and a darker theme to prevent eye strain. You can switch between the modes manually in Map > Application mode. The modes also switch automatically at the times of sunrise and sunset in your time zone.
+We also added a new feature created to support eye comfort: the **'day' and 'night' modes** of the map. The night mode has lower contrast and a darker theme to prevent eye strain. You can switch between the modes manually in Map > Application mode. The modes also switch automatically at the times of sunrise and sunset in your time zone.
 
 <table>
   <tr>
@@ -81,10 +81,9 @@ We also added a new feature created to support eye comfort: the <b>'day' and 'ni
 And remember that only together we can achieve the best results!
 New features are coming SOON!
 
-____________________________ 
 
-<p>OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!</p>
- <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
+
+
 
 
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
