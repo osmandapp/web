@@ -190,6 +190,16 @@ const RouteLayer = () => {
 
     const pointToLayerGeoData = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
+        if (feature.properties && feature.properties.index) {
+            opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
+            let clrs = ['#6DD6DA', '#95D9DA', '#A2ABB5', '#AE8CA3', '#817F82'];
+            let indx = [2, 5, 7, 10, 20];
+            for (var i = 0; i < indx.length; i++) {
+                if (feature.properties.index > indx[i]) {
+                    opts.fillColor = clrs[i];
+                }
+            }
+        }
         return L.circleMarker(latlng, opts);
     };
 
