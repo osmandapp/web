@@ -79,6 +79,10 @@ const config = {
                 label: 'Versions',
                 to: '/docs/versions/free-versions',
               },
+              {
+                label: 'Build it',
+                to: '/docs/build-it/buid-it',
+              },
             ],
           },
           {
