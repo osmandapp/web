@@ -4,6 +4,10 @@ title: OsmAnd 4.1 (Android)
 authors: eugene
 tags: [release, OsmAnd]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
+Here is an example of translated string *shared_string_used*: **<Translate android="yes" id="shared_string_used" />**
 
 Great news for Android users! OsmAnd 4.1 is here! Here are some of the most important updates. [Update your OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), check out all the new features and let us know if you like everything!
 
@@ -121,10 +125,5 @@ Tapping to the action icon allows starting this action immediately.
 
 
 _________________________________________________
-
-
-
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>
