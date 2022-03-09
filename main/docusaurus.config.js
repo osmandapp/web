@@ -84,6 +84,10 @@ const config = {
                 label: 'Build it',
                 to: '/docs/build-it',
               },
+              {
+                label: 'Map legend',
+                to: '/docs/map-legend/osmand',
+              },
             ],
           },
           {
