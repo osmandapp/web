@@ -15,7 +15,7 @@ Our first interview will be with a mature traveler, who has lots of stories to t
 
 Not only can one use our app in the deep forests and high mountains, but they can also navigate through it in urban areas. The majority of popular places are  visible on the maps, which means that there will be no difficulty with finding your way to the best restaurant or any other place in any town. The places that You like the most can be specially marked - just save them in <a href="https://osmand.net/features/favourites">Favorites</a>!   <a href="https://osmand.net/features/osm-editing-plugin#How_to_use_it">Creating POI</a> will undoubtedly make your choice richer and easier.
 
-![Story 1](./history-1-15.jpg)
+![Story 1](./history-15.jpg)
 
 Ilya is not just an active user of application, he is a developer, because he uses OsmAnd in practice. So, we wanted to know how long he had been using the app and whether he had tried any other program before. It was not an easy question to answer, but Ilya managed to come up with a great answer. _‘A nice one, I mean the question. I do not even remember the precise date. Years ago, I started using the app, at that time it was free. It was either alpha or beta version, the ones that were the first to arrive at the Playmarket. Had I tried any other app before I switched to OsmAnd? I have to admit that for 5 - 10 years I used, so-called, “iron” navigators. Of course, they were made of plastic, but the name comes from a device that used to be attached to the system and the program. These were the Garmin devices._
 
