@@ -5,6 +5,10 @@ authors: tat
 tags: [story, OsmAnd]
 ---
 
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+
+
 ## Ilya: Chapter 1.
 
 Our first interview will be with a mature traveler, who has lots of stories to tell! His name is Ilya and he will share his thoughts and adventures with You! For starters, we decided to ask him about his favorite types of traveling. _“We have recently started exploring the North of Caucasus, being more specific, Kabardino-Balkar Republic and Karachay-Cherkessia. And, afterwards, we spend the rest of our vacation on the seaside near Anapa. It is definitely the best way to enjoy the last days of the trip and have some relax after climbing and exploring. The temperature can be low in the mountains and the whole experience can be just a bit tiresome, so, some family members like to sunbathe for a few days on the beach. Time passes and our tastes change with it. The places we visit, our ways of living and traveling never stay the same for long. 15 - 20 years ago we would just go to the forest on foot and look for some mushrooms, while today we set to far and unexplored places.”_
