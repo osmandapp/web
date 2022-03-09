@@ -17,9 +17,9 @@ The map marker menu has been completely reworked with a whole list of new featur
 Quick reminder: map markers are points on the map you need short-term. A shop you've planned to visit today, an event location you'll only need once, etc. While favorites are the points you'll need in a long run, map markers are created and removed on the go.
 To start using them, just make a long tap on the map and select the flag icon in the context menu. Done. Now, this point is your map marker. All of them are stored in the 'Map markers' menu in OsmAnd.  You can manage them in many ways. Press 'Options' menu to try the following:
 
-- 'Sort by'. Sort your markers by name, by distance or by date added. Also, creating a route from map markers has become even easier. Just press 'Plan route' and check the markers you need. You can also use the 'Sort' button in this submenu to list them in a particular way.
-- Export all your markers at once as a GPX track. Simply select 'Save as new GPX track'. 
-- When you do not need the markers anymore, press 'Move all to history' to discard them all at once.
+* 'Sort by'. Sort your markers by name, by distance or by date added. Also, creating a route from map markers has become even easier. Just press 'Plan route' and check the markers you need. You can also use the 'Sort' button in this submenu to list them in a particular way.
+* Export all your markers at once as a GPX track. Simply select 'Save as new GPX track'. 
+* When you do not need the markers anymore, press 'Move all to history' to discard them all at once.
 
 <table>
   <tr>
@@ -34,8 +34,8 @@ To start using them, just make a long tap on the map and select the flag icon in
 Now you can plan the route using your markers. Open Map markers > Options > Plan route. Select the markers that you need. You can also start a route from your current location. Drag markers up or down the list to change their order. Here you can also choose the route mode: map overview, car profile, cycling or pedestrian mode.
 Then press 'Options' again. Here you'll have several alternatives:
 
-- **Make round trip**. Use this option if you'd like to return to your initial location.
-- **Sort by**. Here you can pick where you'd like to create the most optimal route using 'Sort door-to-door' option or 'Reverse order' if you'd like to reverse the order of waypoints on your list.
+* **Make round trip**. Use this option if you'd like to return to your initial location.
+* **Sort by**. Here you can pick where you'd like to create the most optimal route using 'Sort door-to-door' option or 'Reverse order' if you'd like to reverse the order of waypoints on your list.
 
 Now you're ready to press 'Navigate'.
 

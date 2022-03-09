@@ -61,8 +61,8 @@ We added custom color for favorites and track waypoints.
 
 ## What else is in this release?
 
-- Introduced subscription on-hold/pause. Read more about it <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en">here</a>.
-- Added large "Dismiss" button for Navigation.
+* Introduced subscription on-hold/pause. Read more about it <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en">here</a>.
+* Added large "Dismiss" button for Navigation.
 
 <table>
   <tr>
@@ -70,10 +70,10 @@ We added custom color for favorites and track waypoints.
       </tr>
 </table> 
 
-- Fixed description pole of OSM editing.
-- Fixed different distance: Plan Route vs GPX Overview.
-- Fixed crash when taping on A/V notes widget.
-- Added "Snowmobile" map style. Menu → Configure map → Map style. You can see snowmobile trails on the map.
+* Fixed description pole of OSM editing.
+* Fixed different distance: Plan Route vs GPX Overview.
+* Fixed crash when taping on A/V notes widget.
+* Added "Snowmobile" map style. Menu → Configure map → Map style. You can see snowmobile trails on the map.
 
 <table>
   <tr>
@@ -82,7 +82,7 @@ We added custom color for favorites and track waypoints.
       </tr>
 </table> 
 
-- Added <a href="https://en.wikipedia.org/wiki/Ski_touring">Skitour trails</a> for "Winter and ski" map style. Menu → Configure map → Map style.
+* Added <a href="https://en.wikipedia.org/wiki/Ski_touring">Skitour trails</a> for "Winter and ski" map style. Menu → Configure map → Map style.
 
 <table>
   <tr>

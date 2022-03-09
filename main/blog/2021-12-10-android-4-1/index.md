@@ -22,16 +22,16 @@ This release of OsmAnd 4.1 is **not available** for Android below 6.0.
 This is a short list of many changes happened in 4.1 release:
 
 
-- Added initial support for Android Auto
-- Elevation widget
-- GPS filter
-- User interface update for UTM coordinate search
-- Favorites: added ability to view recently used icons
-- Route planning: will use the selected profile after launch
-- Fixed Mapillary layer, the plugin is now disabled by default
-- Added screen to manage all the history in the app
-- App shortcuts
-- What else is in this release?
+* Added initial support for Android Auto
+* Elevation widget
+* GPS filter
+* User interface update for UTM coordinate search
+* Favorites: added ability to view recently used icons
+* Route planning: will use the selected profile after launch
+* Fixed Mapillary layer, the plugin is now disabled by default
+* Added screen to manage all the history in the app
+* App shortcuts
+* What else is in this release?
 
 
 
@@ -46,7 +46,7 @@ OsmAnd is available for <a href="https://www.android.com/auto/">Android Auto</a>
 
 ## Added Elevation widget for trip
 
-At this release, you find the new Pro Feature for your active trips - "Elevation widget". Now, you see the elevation profile of your trip on the bottom side of the screen. You can see downhills and uphills on your trip. Just switch on "Elevation widget" for your profile, start navigation mode, and see current elevation info on your screen:
+At this release, you find the new Pro Feature for your active trips * "Elevation widget". Now, you see the elevation profile of your trip on the bottom side of the screen. You can see downhills and uphills on your trip. Just switch on "Elevation widget" for your profile, start navigation mode, and see current elevation info on your screen:
 
 Menu → choose your profile → Configure screen → Elevation profile
 
@@ -58,7 +58,7 @@ Menu → choose your profile → Configure screen → Elevation profile
 
 ## GPS filter
 
-We added new <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu#options">Options</a> for GPX tracks - "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
+We added new <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu#options">Options</a> for GPX tracks * "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
 
 Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
 
@@ -84,7 +84,7 @@ Adding <a href="https://docs.osmand.net/en/main@latest/osmand/personal/favorites
 
 ## Route planning: will use the selected profile after launch
 
-Improving of <a href="https://docs.osmand.net/en/main@latest/osmand/plan-route/create-route">Plan route tool</a>. Now, you can start planning your route with <a href="https://docs.osmand.net/en/main@latest/osmand/widgets/map-buttons#configure-map">the current app profile</a> (for Browse map profile  -  navigation type "Straight line").
+Improving of <a href="https://docs.osmand.net/en/main@latest/osmand/plan-route/create-route">Plan route tool</a>. Now, you can start planning your route with <a href="https://docs.osmand.net/en/main@latest/osmand/widgets/map-buttons#configure-map">the current app profile</a> (for Browse map profile  *  navigation type "Straight line").
 
 ![OsmAnd Androie 4.1](./planroute.png)
 
@@ -119,11 +119,11 @@ Tapping to the action icon allows starting this action immediately.
 
 ## What else is in this release?
 
-- Now, this release OsmAnd 4.1 is not available for Android below 6.0
-- Improved SRTM height marker rendering
-- Fixed Arabic display on the map
-- Fixed different routing issues
-- Map orientation is not reset after restarting the app
+* Now, this release OsmAnd 4.1 is not available for Android below 6.0
+* Improved SRTM height marker rendering
+* Fixed Arabic display on the map
+* Fixed different routing issues
+* Map orientation is not reset after restarting the app
 
 
 _________________________________________________

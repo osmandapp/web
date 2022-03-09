@@ -12,12 +12,12 @@ We are glad to announce that iOS version of OsmAnd is becoming better over time.
 
 <!--truncate-->
 
-- We significantly improved the responsiveness of the map interaction.
-- OsmAnd Maps now is also available for iPad.
-- We added translations to Russian, German, Danish, French, Spanish and other languages (thanks to our great community). 
-- Parking Position and Trip Recording addons were added to the application. Please feel free to use them without charge.
-- In the new version you will be able to search a location by simply put the url or enter the coordinantes in the search text box.
-- And lots of other minor and useful improvements.
+* We significantly improved the responsiveness of the map interaction.
+* OsmAnd Maps now is also available for iPad.
+* We added translations to Russian, German, Danish, French, Spanish and other languages (thanks to our great community). 
+* Parking Position and Trip Recording addons were added to the application. Please feel free to use them without charge.
+* In the new version you will be able to search a location by simply put the url or enter the coordinantes in the search text box.
+* And lots of other minor and useful improvements.
 
 <table>
   <tr>

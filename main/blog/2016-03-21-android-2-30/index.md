@@ -31,7 +31,7 @@ See how donations work below (clickable).
 
 ## New map markers interface
 
-Map markers are points you can add to the route or leave for future trips. What if you'll need this location just once but not on the current trip? Maybe you liked this shop and decided to visit it after work? No need to add it as a favorite and remove it again. Just leave a map marker - a point you'll use in future or add to your current route. Map markers is a a handy interface to manage map points.
+Map markers are points you can add to the route or leave for future trips. What if you'll need this location just once but not on the current trip? Maybe you liked this shop and decided to visit it after work? No need to add it as a favorite and remove it again. Just leave a map marker * a point you'll use in future or add to your current route. Map markers is a a handy interface to manage map points.
 
 <table>
   <tr>
@@ -75,7 +75,7 @@ Now OsmAnd has the reverse geocoding function, which means that you automaticall
 
 ## Transport stops information
 
-OsmAnd has obtained better transport information together with new icons. To see the additional info, just go to Configure map - Transport - Transport stops. If you tap on a transport stop marked by a specific icon, you'll be able to see the information concerning the routes available at this stop.
+OsmAnd has obtained better transport information together with new icons. To see the additional info, just go to Configure map * Transport * Transport stops. If you tap on a transport stop marked by a specific icon, you'll be able to see the information concerning the routes available at this stop.
 
 <table>
   <tr>

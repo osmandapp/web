@@ -25,7 +25,7 @@ One of the key features of 2.5 introduces clickable icons on the map, displaying
 ## Very detailed POI search
 
 Another major improvement is an upgrade in the POI search function. Now, your search can be much more detailed. For example, you can search for an Italian restaurant that's open at the moment or a Spanish one that accepts Visa cards.
-To specify your search, please go to Search - Categories. Then select a category, for example, Cafe and restaurant. Press the Settings button in the left upper corner and you'll see a wide range of filters, from opening hours to specific diets (gluten free, vegetarian, etc.) to outdoor seating, takeaway options, wheelchair accessibility and even internet access type. After you set all the features you need, press 'Apply filters' button below. We've also improved the Quick search feature to let you find the places you need even more conveniently.
+To specify your search, please go to Search * Categories. Then select a category, for example, Cafe and restaurant. Press the Settings button in the left upper corner and you'll see a wide range of filters, from opening hours to specific diets (gluten free, vegetarian, etc.) to outdoor seating, takeaway options, wheelchair accessibility and even internet access type. After you set all the features you need, press 'Apply filters' button below. We've also improved the Quick search feature to let you find the places you need even more conveniently.
 
 <table>
   <tr>

@@ -53,7 +53,7 @@ This feature has been long requested, especially by hikers, bikers, and trekking
 
 In this release, we worked on the the interface and functionality of managing and analyzing GPX tracks. We introduced a completely new GPX analysis screen showing more details of your GPX track, like elevation, slope, and speed graphs. The graphs are interactive and by tapping on them you can correlate points and terrain data with their map representation. Numerical data is still represented on the different tabs Overview, Altitude and Speed.
 On the same screen, you'll have the option allowing you to view both track info and the GPX itself on the map. To try that, press 'Analyze on map'.
-To explore a track, just go to My places - My tracks and select the one you need. You can also view as many tracks on the map as you want. Simply go to My places - My tracks menu, tap the map icon and select any number of tracks.
+To explore a track, just go to My places * My tracks and select the one you need. You can also view as many tracks on the map as you want. Simply go to My places * My tracks menu, tap the map icon and select any number of tracks.
 
 <table>
   <tr>
@@ -65,7 +65,7 @@ To explore a track, just go to My places - My tracks and select the one you need
 
 ## Nautical Depth Contour lines
 
-If you enter the Download maps menu, you'll notice the file named 'Nautical depth contours ' next to the 'World seamarks' map. This feature gives you access to information about the sea floor, just like the contour lines plugin does with the land terrain. To use the feature, you need to enable the Nautical map view in the Plugins menu. Then go to Configure map - Details and enable the 'Nautical depth contours' option.
+If you enter the Download maps menu, you'll notice the file named 'Nautical depth contours ' next to the 'World seamarks' map. This feature gives you access to information about the sea floor, just like the contour lines plugin does with the land terrain. To use the feature, you need to enable the Nautical map view in the Plugins menu. Then go to Configure map * Details and enable the 'Nautical depth contours' option.
 
 <table>
   <tr>
@@ -101,12 +101,12 @@ OsmAnd now has a completely re-worked default map style. We enhanced the visibil
 
 ## New Map Fonts Covering More Locales
 
-We also added new fonts to the 2.6 version covering more locales. Specifically, we replaced the default ones with Noto Font, which will eliminate display issues for many languages. In addition, users can now download additional character sets, available for simplified Chinese, traditional Chinese, Japanese, and Korean languages. As always, you can select your map language in Configure map - Map language menu.
+We also added new fonts to the 2.6 version covering more locales. Specifically, we replaced the default ones with Noto Font, which will eliminate display issues for many languages. In addition, users can now download additional character sets, available for simplified Chinese, traditional Chinese, Japanese, and Korean languages. As always, you can select your map language in Configure map * Map language menu.
 
 ## Support for Open Location Code (OLC)
 
 OsmAnd now also supports the Open Location Code (OLC) way of representing coordinates. OLC coordinates are a combination of letters and numbers, and is considered to be handled easier than the traditional latitude and longitude coordinates. Please read more about OLC <a href="http://openlocationcode.com/">here</a>.
-You can now also search locations via this code in the Search menu - Address - Coordinates Search, there select 'OLC' under Coordinate format. Also, the context menus of any location selected now displays OLC in addition to Latitude and longitude.
+You can now also search locations via this code in the Search menu * Address * Coordinates Search, there select 'OLC' under Coordinate format. Also, the context menus of any location selected now displays OLC in addition to Latitude and longitude.
 
 <table>
   <tr>

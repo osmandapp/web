@@ -31,7 +31,7 @@ A quick search was probably one of the most requested features we've received. A
 
 ## Car Audio System Integration
 
-Now OsmAnd navigation can be integrated into your car audio system. Connect an Android device running OsmAnd via Bluetooth to a car stereo system which provides speakerphone functionality. If in OsmAnd you select Settings - General Settings - Voice guidance output - Phone call audio, OsmAnd will interrupt any music to play its navigation prompts.
+Now OsmAnd navigation can be integrated into your car audio system. Connect an Android device running OsmAnd via Bluetooth to a car stereo system which provides speakerphone functionality. If in OsmAnd you select Settings * General Settings * Voice guidance output * Phone call audio, OsmAnd will interrupt any music to play its navigation prompts.
 
 <table>
   <tr>
@@ -41,7 +41,7 @@ Now OsmAnd navigation can be integrated into your car audio system. Connect an A
 
 ## Better Public Transport Information
 
-In the previous OsmAnd release, we introduced transport stops information. In 2.4, this has been improved. Now, you can turn them on in Configure map - Transport - Transport stops, then tap on one and see all the routes on that stop. More to come, you can tap a route to view it on the map from start to end.
+In the previous OsmAnd release, we introduced transport stops information. In 2.4, this has been improved. Now, you can turn them on in Configure map * Transport * Transport stops, then tap on one and see all the routes on that stop. More to come, you can tap a route to view it on the map from start to end.
 
 <table>
   <tr>
@@ -54,7 +54,7 @@ Please remember to update your offline maps, as only the latest versions contain
 
 ## Other Improvements
 
-We reworked route guidance, voice prompting, and added new turn lane indication. The release also includes numerous fixes like improved storage management, etc. Besides that, some local languages like Sorbian have been added to the new release. Also, you can now enjoy support of such language options as Spanish (American) and English (United Kingdom). They will be of best help as map languages in the regions to show you the geographical names in regional language. To set your chosen language as map language, please go to Configure map - Map language.
+We reworked route guidance, voice prompting, and added new turn lane indication. The release also includes numerous fixes like improved storage management, etc. Besides that, some local languages like Sorbian have been added to the new release. Also, you can now enjoy support of such language options as Spanish (American) and English (United Kingdom). They will be of best help as map languages in the regions to show you the geographical names in regional language. To set your chosen language as map language, please go to Configure map * Map language.
 
 
 And remember that only together we can achieve the best results!

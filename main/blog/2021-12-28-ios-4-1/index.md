@@ -19,15 +19,15 @@ Great news for iOS OsmAnd users! We're glad to announce the new [OsmAnd version 
 This is a short list of many changes happened in 4.1 release:
 
 
-- Completely redesigned interaction with tracks
-- New screen for searching by coordinates in different formats
-- Improved coordinate search in OLC format
-- New user-friendly menu for choosing languages to display Wikipedia articles on the map
-- Added ability to easily load maps of all regions of the country with a couple of clicks
-- Added contour lines in feet (You need to re-download files)
-- Downloading maps by clicking to the map
-- New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
-- Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
+* Completely redesigned interaction with tracks
+* New screen for searching by coordinates in different formats
+* Improved coordinate search in OLC format
+* New user-friendly menu for choosing languages to display Wikipedia articles on the map
+* Added ability to easily load maps of all regions of the country with a couple of clicks
+* Added contour lines in feet (You need to re-download files)
+* Downloading maps by clicking to the map
+* New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
+* Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
 
 
 ## Completely redesigned interaction with tracks

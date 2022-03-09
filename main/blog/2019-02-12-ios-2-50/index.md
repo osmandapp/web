@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## OsmAnd Live
 
-In a nutshell - you can access OsmAnd Live from an IPhone now. Do you remember our <a href="https://osmand.net/blog/2019-ny-resolutions">New Year’s resolutions</a>? We have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there. This update is just the beginning, so we will continue gradually adjusting the features of the app. OsmAnd Live gives you a unique chance to collaborate with other active app users to create a verified detailed map. Once you have inserted a correction in OpenStreetMap, it takes an hour for the online map to adjust. And, finally, there are no limits on downloading maps and contour lines.
+In a nutshell * you can access OsmAnd Live from an IPhone now. Do you remember our <a href="https://osmand.net/blog/2019-ny-resolutions">New Year’s resolutions</a>? We have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there. This update is just the beginning, so we will continue gradually adjusting the features of the app. OsmAnd Live gives you a unique chance to collaborate with other active app users to create a verified detailed map. Once you have inserted a correction in OpenStreetMap, it takes an hour for the online map to adjust. And, finally, there are no limits on downloading maps and contour lines.
 
 ## Subscription options
 

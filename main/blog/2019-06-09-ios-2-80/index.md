@@ -53,9 +53,9 @@ Zoom in closer to view the images even more conveniently in a Mapillary window o
 
 ## What's more in the latest version of 2.80?
 
-- Fixed city and postal code search.
-- Improved performance of Hillshade and Contour Lines map rendering.
-- Added Turkish TTS.
+* Fixed city and postal code search.
+* Improved performance of Hillshade and Contour Lines map rendering.
+* Added Turkish TTS.
 
 
 

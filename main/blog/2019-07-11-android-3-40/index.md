@@ -81,11 +81,11 @@ Proximity sensor is a very useful feature during a long trip. You should wave yo
 
 ## What is more?
 
-- Fix background track logging.
-- Improved map downloads in the background.
-- Fixed Wikipedia language selection.
-- Fixed compass button behavior during navigation.
-- Bug fixes.
+* Fix background track logging.
+* Improved map downloads in the background.
+* Fixed Wikipedia language selection.
+* Fixed compass button behavior during navigation.
+* Bug fixes.
 
 And remember that only together we can achieve the best results!
 New features are coming SOON!

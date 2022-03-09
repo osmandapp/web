@@ -88,9 +88,9 @@ All of these online maps you can choose in *General menu-> Map-> Map type-> Onli
 
 ### What else is in this release?
 
-- Fixed a map rendering issue that caused freezes on the latest devices
-- Fixed the algorithm for moving time calculation in the recorded Trips screen
-- Fixed the crash with automatic track recording during navigation
+* Fixed a map rendering issue that caused freezes on the latest devices
+* Fixed the algorithm for moving time calculation in the recorded Trips screen
+* Fixed the crash with automatic track recording during navigation
 
 
 

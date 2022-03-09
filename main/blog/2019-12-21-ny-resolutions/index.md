@@ -25,7 +25,7 @@ First of all, we would like to congratulate our CEO <b>Victor Shcherb</b> who re
 
 OsmAnd Android got 3 major releases this year (<a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, <a href="https://osmand.net/blog/osmand-3-4-released">3.4</a>, <a href="https://osmand.net/blog/osmand-3-5-released">3.5</a>) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Among all these features we’ve selected 3 major features which were in the Resolutions list for 2019.
 
-- **Public transport**
+* **Public transport**
 
 <table>
   <tr>
@@ -42,7 +42,7 @@ It was an important step to introduce Public Transport worldwide without limits.
 
 We know that many users are waiting for the schedule support or at least [opening_hours] + [interval]. And we have plans to implement it in 2020.
 
-- **Application profiles**
+* **Application profiles**
 
 <a href="https://osmand.net/blog/osmand-3-5-released">New application profiles</a> is our long term goal and we’ve started working on it this year. There is a lot of work left for 2020, though we try to bring something new each release to give an impression of the end goal and get necessary feedback from our users. So far, all settings are profile-dependent, so you can customize the application for multiple purposes.
 
@@ -55,7 +55,7 @@ We know that many users are waiting for the schedule support or at least [openin
 
 The most important update was the ability to create custom profiles and import and export settings associated with this profile. You can choose a specific icon and color to have a unique look and feel for each profile. Next year we are planning to include associated Quick Actions, Maps, custom Poi Categories, Plugins etc.
 
-- **Powerful Route details**
+* **Powerful Route details**
 
 <table>
   <tr>
@@ -73,7 +73,7 @@ As of <a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, route detai
       </tr>
 </table> 
 
-- **What else?**
+* **What else?**
 
 We’ve redesigned <b>Directions screens</b>, improved <b>Quick action</b>, added a <b>Widget with Current Coordinates</b> and <b>the Compass</b> to the Radius ruler, added <b>Ski Routing</b>, updated <b>Basemap</b>, <b>Desert style</b> for map and lot’s of else.
 
@@ -90,11 +90,11 @@ We’ve redesigned <b>Directions screens</b>, improved <b>Quick action</b>, adde
 
 We’ve managed to release <b>7 new versions</b> of OsmAnd for iOS this year (<a href="https://osmand.net/blog/osmand-ios-2-5-released">2.5</a>, <a href="https://osmand.net/blog/osmand-ios-2-7-released">2.7</a>, <a href="https://osmand.net/blog/osmand-ios-2-8-released">2.8</a>, <a href="https://osmand.net/blog/osmand-ios-2-9-released">2.9</a>, <a href="https://osmand.net/blog/osmand-ios-3-0-released">3.0</a>, <a href="https://osmand.net/blog/osmand-ios-3-10-released">3.10</a>, <a href="https://osmand.net/blog/osmand-ios-3-11-released">3.11</a>)! All this was possible due to the commitment and hard work of our iOS team to catch up with Android. We hope 2020 to be a year in which almost all features present in OsmAnd will be equal for both Android and iOS version. Here the list of main features released this year for the iPhones and iPads.
 
-- **OsmAnd Live**
+* **OsmAnd Live**
 
 <a href="https://osmand.net/features/subscription">OsmAnd Live</a> is a subscription that provides you numerous benefits, including unlimited map downloads, access to all paid features and hourly map updates.
 
-- **OpenStreetMap (OSM) Editing**
+* **OpenStreetMap (OSM) Editing**
 
 OSM Editing allows you to make contributions to <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, a global community aimed at creating a comprehensive map of the world and providing up-to-date open-source data to every user.
 
@@ -105,7 +105,7 @@ OSM Editing allows you to make contributions to <a href="https://www.openstreetm
       </tr>
 </table> 
 
-- **Mapillary for iOS**
+* **Mapillary for iOS**
 
 We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapillary</a> available on iOS as well. Now you can view the street-level imagery in your location or anywhere in the world using the Mapillary.
 
@@ -116,7 +116,7 @@ We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapi
       </tr>
 </table> 
 
-- **Quick Action menu**
+* **Quick Action menu**
 
 <a href="https://osmand.net/features/quick-action">This feature</a> was requested many times this year and we were proud to deliver it in 2019. It allows you to have instant access to various actions with 2 clicks from the main screen, e.g. to change a map style, to show specific POI, to switch between raster maps or disable some layers.
 
@@ -127,11 +127,11 @@ We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapi
       </tr>
 </table> 
 
-- **Support of Online SQL maps**
+* **Support of Online SQL maps**
 
 We’ve implemented the support of the same map sources as we have on Android including *.sqlite with dynamic online loading. Moreover, we’ve added even more map sources to "Online maps".
 
-- **New Navigation Screen and Graphs**
+* **New Navigation Screen and Graphs**
 
 You can now add a "Home", "Work" point as a destination. The short way to the Navigation settings menu. When your trip is ready, you can see the altitude/slope graph.
 
@@ -162,27 +162,27 @@ Our list is growing every year and, as of today, we have around 1500 requests wa
 
 ### GENERAL
 
-- <b>New slopes / hillshade maps</b>
+* <b>New slopes / hillshade maps</b>
  In 2019 we’ve released updated contour lines worldwide and started working on new raster hillshade and slope maps. We want to provide more detailed raster maps and also add a new type of maps to better visualize slopes.
-- <b>Profiles on Android + iOS</b>
+* <b>Profiles on Android + iOS</b>
  This is considered to be the most important feature of 2020. The implementation has already started in 2019 and now Android users can create / import and export custom profiles with user-defined settings. We’re going to continue profile’s customization, so every profile could look and feel as a separate geo-specialized application. We also want to make it easy to share  the profiles with others.
 
 ### Android
 
-- <b>OpenGL-rendering + 2.5D</b>
+* <b>OpenGL-rendering + 2.5D</b>
  This is a long running feature for several years and we have a prototype build, we’ve already added some features to our roadmap to be implemented. Though we are not planning to make it mainstream unless it will be very successful. You can always check out the version we have at <a href="https://download.osmand.net/latest-night-build/OsmAnd-qt-arm-nightly.apk">our build server</a>.
-- <b>Travel + Wikivoyage improvements</b>
+* <b>Travel + Wikivoyage improvements</b>
  This year we didn’t manage to implement many features related to Wikivoyage, though it is always in our focus. We plan to make a second version inspired by our new plugin architecture.
-- <b>Local GPX-access</b>
+* <b>Local GPX-access</b>
  Every year we develop many tiny and useful features related to GPX and this year was not an exception. We’ve closed more than 50 GPX-related issues. In 2020 we plan to add new features, that will change the way of ineraction with the GPX tracks on the map, browsing and searching among large list of GPX files and add new ways of visualizing GPX-activities.
 
 ### iOS
 
-- <b>Public Transport</b>
+* <b>Public Transport</b>
  This feature was completed for Android in 2019 and we plan to migrate all the implemented solutions to the iOS version in 2020. So OSM-ers with iPhones will get a new motivation to map public transport in OSM (<a href="https://osmand.net/blog/guideline-pt">check out our guideline</a>).
-- <b>Measure Distance</b>
+* <b>Measure Distance</b>
  We’ve got a lot of requests for <a href="https://osmand.net/features/measure-distance">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
-- <b>GPX</b>
+* <b>GPX</b>
  While the Android version has more advanced GPX-related features, the iOS version still lacks some base route graphs and stats. Of course it is very important for us not to miss those next year.
 
 

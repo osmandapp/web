@@ -33,7 +33,7 @@ We will start with the list for 2022 and below you can double-check how a simila
 
 **Note:** our vision is that after 1-2 years OsmAnd Pro features that don’t require cost per user will become available for Lifetime payment.
 
-## OpenGL / 3D - Fast Maps
+## OpenGL / 3D * Fast Maps
 
 ![OpenGL](./3dmaps.png) 
 
@@ -96,11 +96,11 @@ In 2021 we’ve implemented the possibility to use custom Online Routing and swi
 
 ## 2021 Achievements
 
-Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases - <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
+Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases * <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
 
 <a href="https://osmand.net/blog/2021-ny-resolutions">Resolutions 2021:</a>
 
-* 🚧 Travel and Track Collections (Android & iOS) - available with custom Travel.obf files.
+* 🚧 Travel and Track Collections (Android & iOS) * available with custom Travel.obf files.
 * ✔️ Full export / import (Android / iOS)
 * ✔️ Online Backup (Android) [🚧 iOS]
 * ✔️ Improve Tracks UI & Navigation with Altitude Graph (Android & iOS)
@@ -114,7 +114,7 @@ Let’s first take a look at what was in the original 2021 resolutions list whic
 
 OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osmandapp/OsmAnd-iOS/milestones?state=closed">200 public features and issues</a> closed on Github.
 
-<a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a> - January 30, 2021
+<a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a> * January 30, 2021
 
 ![3-9-ios](./3-9-ios.png) 
 
@@ -125,7 +125,7 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 * <a href="https://osmand.net/blog/osmand-ios-3-90-released#type_snow">Snowmobile map type</a>
 
 
-<a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a> - July 19, 2021
+<a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a> * July 19, 2021
 
 
 ![4-0-ios](./4-0-ios.png)  
@@ -140,7 +140,7 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 * <a href="https://osmand.net/blog/osmand-ios-4-0-released#routing_rendering">Custom routing & rendering files</a>
 
 
-<a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> - December 28, 2021
+<a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> * December 28, 2021
 
 
 ![4-1-ios](./4-1-ios.png)         
@@ -151,21 +151,21 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 * <a href="https://osmand.net/blog/osmand-ios-4-1-released#olc">Improved Coordinates search</a>
 * <a href="https://osmand.net/blog/osmand-ios-4-1-released#route">Improved OSM Routes visibility</a>
 * <a href="https://osmand.net/blog/osmand-ios-4-1-released#download">Download maps by clicking on the map</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Wikipedia by language - layer control</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Wikipedia by language * layer control</a>
 
 
 ## Android
 
 OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">800 public features and issues</a> closed on Github.
         
-* <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> - February 4, 2021
+* <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> * February 4, 2021
        
 ![3-9-android](./3-9-android.png)          
       
 * <a href="https://osmand.net/blog/osmand-3-9-released#export_import">Export / Import all data</a>
 * <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">Plan route with graphs</a>
 * <a href="https://osmand.net/blog/osmand-3-9-released#custom_color">Custom colors for favourites and waypoints</a>
-<a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a> - August 7, 2021
+<a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a> * August 7, 2021
         
 ![4-0-android](./4-0-android.png)
           
@@ -178,7 +178,7 @@ OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="http
 * <a href="https://osmand.net/blog/osmand-android-4-0-released#dialog">Trip recording dialog with graphs and extra information</a>
 
 
-* <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> - December 10, 2021
+* <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> * December 10, 2021
       
 ![4-1-android](./4-1-android.png)
        

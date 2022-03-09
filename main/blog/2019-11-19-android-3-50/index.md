@@ -162,10 +162,10 @@ We added "Prefer unpaved roads" to Driving style for bicycle profile. Now you ca
 
 ## What else in this release?
 
-- Night theme fixes
-- Fixed a few routing issues around the world
-- Fixed flooded areas around the world
-- Bugs fixed
+* Night theme fixes
+* Fixed a few routing issues around the world
+* Fixed flooded areas around the world
+* Bugs fixed
 
 And remember that only together we can achieve the best results!
 New features are coming SOON!

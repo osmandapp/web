@@ -83,7 +83,7 @@ In other words, if the angle is higher than the one set by the user, OsmAnd calc
 
 ## More about the release
 
-- Support of custom icons for GPX + Home / Work icons for favorites
+* Support of custom icons for GPX + Home / Work icons for favorites
 
 Now we added Home / Work icons for favorites, it's very easy to find Home/Work on the map.
 
@@ -94,7 +94,7 @@ Now we added Home / Work icons for favorites, it's very easy to find Home/Work o
       </tr>
 </table> 
 
-- Now Sunset / Sunrise is visible in Configure Map
+* Now Sunset / Sunrise is visible in Configure Map
 
 You can find <a href="https://osmand.net/features/map-viewing#Customize_map_Android">*Map mode*</a> within *Configure map* and choose your setting for it.
 Now you see information about *Sunset* or *Sunrise* in the second line of *Map mode*.
@@ -106,7 +106,7 @@ Now you see information about *Sunset* or *Sunrise* in the second line of *Map m
       </tr>
 </table> 
 
-- Antarctica map
+* Antarctica map
 
 The map of Antarctica is available now in our application. You can find the Map of Antarctica and Wikipedia files in *Download maps*.
 
@@ -117,7 +117,7 @@ The map of Antarctica is available now in our application. You can find the Map 
       </tr>
 </table> 
 
-- Customize order and appearance of POI categories in Search
+* Customize order and appearance of POI categories in Search
 
 In this release you can modify the order of the POI list. For this, you can go to *Search* within the menu or click the Search button, choose *Categories*. At the bottom of the list, you can click to *Rearrange Categories*.
 
@@ -131,9 +131,9 @@ In this release you can modify the order of the POI list. For this, you can go t
 
 ## What else is in this release?
 
-- Completely reworked Settings screen for quick access to all profiles
-- Align with cm-precision POI icons and display text to fit the borders on the map
-- Embed correct transliteration into the map of Japan
+* Completely reworked Settings screen for quick access to all profiles
+* Align with cm-precision POI icons and display text to fit the borders on the map
+* Embed correct transliteration into the map of Japan
 
 
 And remember that only together we can achieve the best results!

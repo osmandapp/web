@@ -66,7 +66,7 @@ Added hints for tags and values to the advanced editing screen for better experi
 
 ## Improved the trip recording widget UI
 
-Fixed the UI of the track recording widget, now it is clearly visible - when recording is enabled, and when disabled.<
+Fixed the UI of the track recording widget, now it is clearly visible * when recording is enabled, and when disabled.<
 
 <table>
   <tr>

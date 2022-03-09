@@ -29,7 +29,7 @@ You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain*
 
 
 
-## Full customization of Favorites and GPX Waypoints - custom colors, icons, shapes
+## Full customization of Favorites and GPX Waypoints * custom colors, icons, shapes
 
 You can customize Favorites and GPX Waypoints. When you edit or create a new point you can choose colors, icons, and shapes for it. Now your points will be more interesting on the map. Read more about favorites <a href="https://osmand.net/features/favourites">here</a>.
 
@@ -127,8 +127,8 @@ We think it will be very easy to send the necessary setting, maps, rendering fil
 
 ## What else is in this release?
 
-- Fix UI sizes on tablets
-- Fix bugs with RTL
+* Fix UI sizes on tablets
+* Fix bugs with RTL
 
 And remember that only together we can achieve the best results!
 New features are coming SOON!

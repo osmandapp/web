@@ -19,12 +19,12 @@ We promise to continue improving the OsmAnd app and make it even more useful for
 
 <!--truncate-->
 
-- Beta of Public transport navigation
-- New offline slope maps
-- Update UI for Contour lines
-- Update UI for Overlay/Underlay screens
-- Update Map markers
-- Update Favorites menu
+* Beta of Public transport navigation
+* New offline slope maps
+* Update UI for Contour lines
+* Update UI for Overlay/Underlay screens
+* Update Map markers
+* Update Favorites menu
 
 
 ## Beta of Public transport navigation

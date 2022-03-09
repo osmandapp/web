@@ -14,7 +14,7 @@ The new OsmAnd release has a list of new features that are waiting to be tried o
 
 ## POI on the map
 
-One of the significant steps forward is the ability to view POI on the map. From now on, you'll be able to view any points of interest as you enter the Search. From healthcare to parking to tourist attractions - search for the point you need through all the categories or choose one type of POI to see what's around your location.
+One of the significant steps forward is the ability to view POI on the map. From now on, you'll be able to view any points of interest as you enter the Search. From healthcare to parking to tourist attractions * search for the point you need through all the categories or choose one type of POI to see what's around your location.
 
 <table>
   <tr>
@@ -25,7 +25,7 @@ One of the significant steps forward is the ability to view POI on the map. From
 
 ## Hillshade maps
 
-The OsmAnd iOS version now has the hillshade maps. Those are map layers visualizing the details of the terrain. The hillshade maps are available by country. To use the hillshade, don't forget to go to the map settings, turn on the hillshade and choose it as either under- or overlay.
+The OsmAnd iOS version now has the hillshade maps. Those are map layers visualizing the details of the terrain. The hillshade maps are available by country. To use the hillshade, don't forget to go to the map settings, turn on the hillshade and choose it as either under* or overlay.
 
 <table>
   <tr>

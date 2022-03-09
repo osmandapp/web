@@ -17,12 +17,12 @@ Thank you for your support and feedback.
 
 Furthermore in the article, there is a final list of extensions and fixes:
 
-- Introduced “Plan a route" tool
-- Added import all data types
-- Added text labels for favorites, gpx waypoints, markers
-- Compass for the "Radius Ruler" tool
-- Added Snowmobile map type
-- What else is in this release?
+* Introduced “Plan a route" tool
+* Added import all data types
+* Added text labels for favorites, gpx waypoints, markers
+* Compass for the "Radius Ruler" tool
+* Added Snowmobile map type
+* What else is in this release?
 
 ## Introduced “Plan a route" tool
 
@@ -76,7 +76,7 @@ Added option to enable сompass over <a href="https://osmand.net/features/ruler#
 
 ## Added Snowmobile map type
 
-Added new map type for snowmobile - "Snowmobile". Increased thickness and contrast, added colors for snowmobile trails.
+Added new map type for snowmobile * "Snowmobile". Increased thickness and contrast, added colors for snowmobile trails.
 
 <table>
   <tr>
@@ -87,10 +87,10 @@ Added new map type for snowmobile - "Snowmobile". Increased thickness and contra
 
 ## What else is in this release?
 
-- Fixed issues with missing Wikipedia search category.
-- Import: fixed bugs, added support for all data available in OsmAnd.
-- Added new Quick actions, for control visibility of contour lines and terrain on the map, changing application profile, delete the nearest intermediate point.
-- OpenStreetMap editing, fixed time picker.
+* Fixed issues with missing Wikipedia search category.
+* Import: fixed bugs, added support for all data available in OsmAnd.
+* Added new Quick actions, for control visibility of contour lines and terrain on the map, changing application profile, delete the nearest intermediate point.
+* OpenStreetMap editing, fixed time picker.
 
 
 And remember that only together we can achieve the best results!

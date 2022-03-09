@@ -40,11 +40,11 @@ When we plan our trips, we do not always need a detailed route right away. Somet
 
 To use it, just go to the Configure screen menu and enable 'Two point ruler'. After you enable it, you'll see the circles showing distance on the map. You will also be able to check the distance from your current location to the map center on the widget above.
 To check the distance from your location to a point on the map, just touch a spot on the map. You'll see the measurement and the line connecting the two points. The line will stay on screen as long as you are touching it.
-To check the distance between two random points, touch them simultaneously and see the information in the same widget. The line will fade by itself after 2 seconds. You can customize your ruler. Press the widget to select one of three modes - the black scale, the gray one and no scale (only ruler). You can also adjust this setting and the way the widget looks in Configure screen - 'Two point ruler' menu.
+To check the distance between two random points, touch them simultaneously and see the information in the same widget. The line will fade by itself after 2 seconds. You can customize your ruler. Press the widget to select one of three modes * the black scale, the gray one and no scale (only ruler). You can also adjust this setting and the way the widget looks in Configure screen * 'Two point ruler' menu.
 
 ## GPX split interval
 
-Split your GPX tracks into intervals by distance (20 m - 10 km) or by time ( 15 seconds - 60 minutes) to view the details of each interval. View ascent and descent of each section of your track, minimum, maximum and average height, and time.
+Split your GPX tracks into intervals by distance (20 m * 10 km) or by time ( 15 seconds * 60 minutes) to view the details of each interval. View ascent and descent of each section of your track, minimum, maximum and average height, and time.
 
 <table>
   <tr>

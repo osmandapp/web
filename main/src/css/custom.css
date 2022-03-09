@@ -52,3 +52,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .pagination-nav__item--next .pagination-nav__label::after {
   content: ' →';
 }
+
+time {
+  color: #727272;
+}

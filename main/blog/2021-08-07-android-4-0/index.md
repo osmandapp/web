@@ -2,7 +2,7 @@
 slug: osmand-android-4-0-released
 title: OsmAnd 4.0 (Android)
 authors: eugene
-tags: [release, OsmAnd]
+tags: [release, OsmAnd, cloud, srtm, track appearance, android]
 ---
 
 Great news for Android users!
@@ -14,28 +14,28 @@ We're happy to announce the new 4.0 OsmAnd release for Android devices. At this 
 <!--truncate-->
 
 This is a short list of many changes happened in 4.0 release:
-- New type of subscriptions
-- Cloud backup and restore
-- Moved 'OsmAnd Live' updates menu
-- Added night mode for Topo\Offroad rendering styles
-- Added option to download Contour lines in feet
-- Updated 'Trip recording' dialog
-- Tracks can now be colored by altitude, speed, or slope
-- Added option to change the route line appearance
-- Added online routing for navigation type
-- 'Distance by tap' moved from 'Radius ruler' tool into a separate option
-- 'Plan Route' improvements
-- New Purchases screen
-- New Language dialogue for Voice prompts
-- New POI types
-- My places: last opened tab is now remembered and will be open next time
-- What else is in this release?
+* New type of subscriptions
+* Cloud backup and restore
+* Moved 'OsmAnd Live' updates menu
+* Added night mode for Topo\Offroad rendering styles
+* Added option to download Contour lines in feet
+* Updated 'Trip recording' dialog
+* Tracks can now be colored by altitude, speed, or slope
+* Added option to change the route line appearance
+* Added online routing for navigation type
+* 'Distance by tap' moved from 'Radius ruler' tool into a separate option
+* 'Plan Route' improvements
+* New Purchases screen
+* New Language dialogue for Voice prompts
+* New POI types
+* My places: last opened tab is now remembered and will be open next time
+* What else is in this release?
 
 ## New type of subscriptions
 
 At this release we made two purchase plans for OsmAnd:
-- **'Maps+'** plan has one-time payment and annual subscription. It's light paid version with all needed features: monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
-- **'OsmAnd Pro'** plan has monthly and annual subscriptions. It's a full version with all paid features: OsmAnd Cloud, Pro features, hourly map updates, monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
+* **'Maps+'** plan has one-time payment and annual subscription. It's light paid version with all needed features: monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
+* **'OsmAnd Pro'** plan has monthly and annual subscriptions. It's a full version with all paid features: OsmAnd Cloud, Pro features, hourly map updates, monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
 
 Full information you can find [here](https://docs.osmand.net/en/main@latest/osmand/purchases).
 
@@ -45,16 +45,16 @@ Full information you can find [here](https://docs.osmand.net/en/main@latest/osma
 
 New paid function for <a href="https://osmand.net/blog/osmand-android-4-0-released#monetization">'OsmAnd Pro'</a> subscription.
 
-This function allows to make backup and restore all your OsmAnd data: settings, my places, resources. The size of storage is 3 - 50 - 1000 Gb.
+This function allows to make backup and restore all your OsmAnd data: settings, my places, resources. The size of storage is 3 * 50 * 1000 Gb.
 
-Go to **Menu → Settings → Backup & Restore**. Select the data to be exported to backup storage.
+Go to **<Translate android="yes" id="shared_string_menu" /> → Settings → Backup & Restore**. Select the data to be exported to backup storage.
 
 ![OsmAnd Androie 4.0](./backup_1.png) ![OsmAnd Androie 4.0](./backup_2.png)
 
 
 ## Moved 'OsmAnd Live' updates menu
 
-'OsmAnd Live' updates (function of hourly map updates) moved to **"Menu → Downloads maps → Updates"**.
+'OsmAnd Live' updates (function of hourly map updates) moved to **"<Translate android="yes" id="shared_string_menu" /> → Downloads maps → Updates"**.
 
 ![OsmAnd Androie 4.0](./live_1.png) ![OsmAnd Androie 4.0](./live_2.png)
 
@@ -98,14 +98,14 @@ Choose track on the map or in 'My places → Tracks', tap to 'Appearance' button
 
 Users can choose an appearance for route line:
 
-**Menu → <Translate android="yes" id="configure_profile" /> (choose app profile) → Profile appearance → Customize route line**
+**<Translate android="yes" id="shared_string_menu" /> → <Translate android="yes" id="configure_profile" /> (choose app profile) → Profile appearance → Customize route line**
 
 ![OsmAnd Androie 4.0](./route_line.png)
 
 ## Added online routing for navigation type
 
 Users can choose online routing engines for navigation type:
-**Menu → <Translate android="yes" id="configure_profile" /> (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button**
+**<Translate android="yes" id="shared_string_menu" /> → <Translate android="yes" id="configure_profile" /> (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button**
 
 Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteService, or GPX online routing.
 
@@ -115,7 +115,7 @@ Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteServic
 ## 'Distance by tap' moved from 'Radius ruler' into a separate option
 
 We separated 'Distance by tap' option from 'Radius ruler' tool.
-Now, you can find it in **Menu → Configure screen → Remaining elements → Distance by tap**.
+Now, you can find it in **<Translate android="yes" id="shared_string_menu" /> → Configure screen → Remaining elements → Distance by tap**.
 
 ![OsmAnd Androie 4.0](./distance_by_tap_1.png) ![OsmAnd Androie 4.0](./distance_by_tap_2.png)
 
@@ -137,13 +137,13 @@ We added the ability to change navigation options, accessing configure map and s
 
 Now, there is a new 'Purchases' screen with detailed information about purchasing and 'Restore purchases' button.
 
-![OsmAnd Androie 4.0](./purchases_menu.png) 
+![OsmAnd Android 4.0](./purchases_menu.png) 
 
 
 ## New Language dialogue for Voice prompts
 
 Redesigned dialog for selecting the language for navigation instructions. Now it's easier to choose and download the needed language and type of voice guidance:
-**Menu → <Translate android="yes" id="configure_profile" /> → Navigation settings → Voice prompts → Language**.
+**<Translate android="yes" id="shared_string_menu" /> → <Translate android="yes" id="configure_profile" /> → <Translate android="yes" id="routing_settings_2" /> → <Translate android="yes" id="voice_announces" /> → <Translate android="yes" id="shared_string_language" />**.
 
 ![OsmAnd Androie 4.0](./voice_prompts_1.png) ![OsmAnd Androie 4.0](./voice_prompts_2.png) 
 
@@ -160,11 +160,11 @@ Your last opened tab in 'My places' menu is remembered. And this tab will be ope
 
 ## What else is in this release?
 
-- Various fixes for RTL
-- Fixed issue with units of measurement
-- Fixed issue with sharing more than one hundred favorite points
-- Fixed crashes with Public transport navigation
-- Improved search algorithm 
+* Various fixes for RTL
+* Fixed issue with units of measurement
+* Fixed issue with sharing more than one hundred favorite points
+* Fixed crashes with Public transport navigation
+* Improved search algorithm 
 
 And remember that only together we can achieve the best results!
 New features are coming SOON!

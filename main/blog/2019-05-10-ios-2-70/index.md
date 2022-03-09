@@ -54,7 +54,7 @@ Combined "Favorites", "Trips" and "OSM Edits" screens into a new 'My Places' scr
 
 ## What's new in the latest version of 2.70?
 
-- Added options to control the size of map elements: use “Text Size” option to control the size of the text and icons on the map and “Map Magnifier” to control the overall size of map elements.
+* Added options to control the size of map elements: use “Text Size” option to control the size of the text and icons on the map and “Map Magnifier” to control the overall size of map elements.
 
 <table>
   <tr>
@@ -63,10 +63,10 @@ Combined "Favorites", "Trips" and "OSM Edits" screens into a new 'My Places' scr
   </tr>
 </table> 
 
-- Opening a search result on the map will now zoom in on the selected point.
-- Fixed icon sizes on map.
-- Optimized multiple menus for iPhone X screen.
-- Added Hungarian and Hungarian (formal) TTS, added alphabetical sorting to the TTS language list.
+* Opening a search result on the map will now zoom in on the selected point.
+* Fixed icon sizes on map.
+* Optimized multiple menus for iPhone X screen.
+* Added Hungarian and Hungarian (formal) TTS, added alphabetical sorting to the TTS language list.
 	
 
 
