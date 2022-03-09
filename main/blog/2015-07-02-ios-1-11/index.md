@@ -2,8 +2,11 @@
 slug: osmand-ios-1-11-released
 title: OsmAnd 1.11 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 A new OsmAnd version for iOS is here! The update includes a convenient plugin, more improvements in the POI area and a nicer UI. But let&amp;s discuss every feature in detail.
 
@@ -63,7 +66,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

@@ -4,6 +4,8 @@ title: OsmAnd 1.8 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 ## OsMo Plugin
 
@@ -93,7 +95,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

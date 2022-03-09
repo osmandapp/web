@@ -46,7 +46,7 @@ OsmAnd is available for <a href="https://www.android.com/auto/">Android Auto</a>
 
 At this release, you find the new Pro Feature for your active trips - "Elevation widget". Now, you see the elevation profile of your trip on the bottom side of the screen. You can see downhills and uphills on your trip. Just switch on "Elevation widget" for your profile, start navigation mode, and see current elevation info on your screen:
 
-Menu -> choose your profile -> Configure screen -> Elevation profile
+Menu → choose your profile → Configure screen → Elevation profile
 
 **Note:**Pro feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 
@@ -58,7 +58,7 @@ Menu -> choose your profile -> Configure screen -> Elevation profile
 
 We added new <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu#options">Options</a> for GPX tracks - "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
 
-Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">Tracks Context menu</a> -> Options -> GPS filter
+Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
 
 ![OsmAnd Androie 4.1](./gps_filter.png)
 
@@ -67,7 +67,7 @@ Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-me
 
 Adding <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM format</a> for Adding <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates searching function</a>.
 
-Search menu -> Address -> <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates search</a> 
+Search menu → Address → <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates search</a> 
 
 ![OsmAnd Androie 4.1](./UTM.png)
 
@@ -91,7 +91,7 @@ Improving of <a href="https://docs.osmand.net/en/main@latest/osmand/plan-route/c
 
 In this release we fixed Mapillary layer, the plugin is now disabled by default. Enable / Disable the plugin:
 
-Menu -> Plugins -> Mapillary
+Menu → Plugins → Mapillary
 
 Read more about Mapillary plugin <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/mapillary">here</a>.
 
@@ -100,7 +100,7 @@ Read more about Mapillary plugin <a href="https://docs.osmand.net/en/main@latest
 
 Now, you can disable history logging individually for each history type. One more option, you can export history into a file (Back up as file).
 
-Menu -> Settings -> OsmAnd settings -> Privacy and security: History
+Menu → Settings → OsmAnd settings → Privacy and security: History
 
 ![OsmAnd Androie 4.1](./history.png)
 

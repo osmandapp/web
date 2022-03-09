@@ -2,8 +2,11 @@
 slug: osmand-ios-1-00-released
 title: OsmAnd 1.0 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 We are glad to announce that iOS version of OsmAnd is becoming better over time. We put significant efforts and managed to finish lots of useful features in a short period of time. Here is the short list of achievements.
 
@@ -33,7 +36,5 @@ ____________________________
  <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

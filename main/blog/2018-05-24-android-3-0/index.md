@@ -4,6 +4,8 @@ title: OsmAnd 3.0 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 OsmAnd has reached the 3.0 milestone! The version with a completely new 'Travel' menu, updates to GPX import and a new way of starting subscriptions is now available.
 
@@ -104,7 +106,5 @@ ____________________________
  <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

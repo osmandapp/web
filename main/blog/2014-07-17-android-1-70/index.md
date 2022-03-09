@@ -4,6 +4,8 @@ title: OsmAnd 1.7 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 OsmAnd 1.7 is coming. The biggest breakthrough of this release is a new route planning mode, after any Directions action, which is designed to quickly change start and destination point, tweak parameters and see immediate route recalculation.
 
@@ -26,7 +28,5 @@ ____________________________
  <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

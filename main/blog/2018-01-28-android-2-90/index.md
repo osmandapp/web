@@ -4,6 +4,8 @@ title: OsmAnd 2.9 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 OsmAnd 2.9 is here! Here are some of the most important updates.
 
@@ -97,7 +99,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

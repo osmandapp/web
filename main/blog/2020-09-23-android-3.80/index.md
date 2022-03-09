@@ -4,6 +4,8 @@ title: OsmAnd 3.8 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 For our team a release day, it's like a progress report to the users.
 Every day we are working on app improvements to make OsmAnd more user friendly. We fix mistakes, that can also occur due to massive changes that have turned basic maps into a universal tool for travellers for over 10 years.
@@ -17,7 +19,7 @@ But still, it is not perfect yet. We are not only grateful for all the positive 
 
 We renamed the "Measure distance" tool to "Plan a route". The updated "Plan a route" mode allows using different navigation types for each segment and attaches any track to the roads. What does it mean?
 E.g. you want to have a route for your Enduro trip. The first part of your trip is a road from your home to the offroad part, the second part is an unpaved road, and the third part is a road returning home.
-Go to General menu -> Plan a route. Choose "Create new route", next click the Profile icon and choose Road Profile for the first part of our trip. After that, we add starting and ending points. The first segment is built.
+Go to General menu → Plan a route. Choose "Create new route", next click the Profile icon and choose Road Profile for the first part of our trip. After that, we add starting and ending points. The first segment is built.
 
 <table>
   <tr>
@@ -86,7 +88,7 @@ In general, you can build a route between points. Click on this button on the sc
 
 
 Next, snap your track to the nearest allowed road with one of your navigation profiles to use this option. Here we choose Enduro navigation profile and threshold distance for calculating our route.
-When a route is built we click the "Apply" button and "Done" to save a new track or "Options" -> "Directions" for starting our trip.
+When a route is built we click the "Apply" button and "Done" to save a new track or "Options" → "Directions" for starting our trip.
 
 <table>
   <tr>
@@ -101,7 +103,7 @@ Here you see we can modify any track for a trip. Of course, you can delete or ad
 
 ## Improved bicycle nodes visibility
 
-Good news for our users with bicycle trips! We improved bicycle nodes' visibility. First, to enable viewing nodes, go to menu -> Configure profile (Cycling, for example) -> Configure map -> Routes. Then, in "Routes", choose "Show node network cycle routes".
+Good news for our users with bicycle trips! We improved bicycle nodes' visibility. First, to enable viewing nodes, go to menu → <Translate android="yes" id="configure_profile" /> (Cycling, for example) → Configure map → Routes. Then, in "Routes", choose "Show node network cycle routes".
 
 <table>
   <tr>
@@ -176,7 +178,7 @@ We fixed many bugs in our search algorithms. Now you can find places, points, et
 
 ## Improved "Follow track" options in Navigation
 
-Click Navigation button in General screen -> Option -> Follow track. Here you can choose a track to follow or to import from your device.
+Click Navigation button in General screen → Option → Follow track. Here you can choose a track to follow or to import from your device.
 
 <table>
   <tr>
@@ -202,7 +204,5 @@ ____________________________
 <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

@@ -4,6 +4,8 @@ title: OsmAnd 1.9 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 We are glad to announce the release of version 1.9! We proudly present some major improvements and new features, and hope you will enjoy them:
 
@@ -59,7 +61,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

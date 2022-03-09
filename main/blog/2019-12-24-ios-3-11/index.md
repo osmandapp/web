@@ -16,6 +16,4 @@ We're glad to announce the new OsmAnd version for iOS.
 * Bug fixes and minor improvements
 
 
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
-
 <AppleStore/>

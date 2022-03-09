@@ -2,8 +2,11 @@
 slug: osmand-ios-1-22-released
 title: OsmAnd 1.22 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 The new OsmAnd release has a list of new features that are waiting to be tried out. You can now use shading on the map to see the relief, plan trips and search for points of interest in a handy way. Let's get to details.
 
@@ -81,7 +84,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

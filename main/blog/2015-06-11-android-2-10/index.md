@@ -4,6 +4,8 @@ title: OsmAnd 2.1 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 OsmAnd 2.1 release is out! This time, we focused on improving POI search and making your trips even more interactive through new Wikipedia data sorted by country. Besides that, the favorites get a backup. If an app corrupts for some reason, all your favorite places will be safe.
 
@@ -53,7 +55,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

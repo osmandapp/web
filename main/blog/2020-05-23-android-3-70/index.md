@@ -4,6 +4,8 @@ title: OsmAnd 3.7 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 
 Great news for Android users!
@@ -40,7 +42,7 @@ You can customize Favorites and GPX Waypoints. When you edit or create a new poi
 
 ## Customize items order in Context Menu, Configure Map, Drawer
 
-In the new OsmAnd update you can customize quantity and order of items in Drawer, configure map and context menu. Go to <i>general menu (Drawer)-> Configure profile(Choose profile)-> UI Customization</i>.
+In the new OsmAnd update you can customize quantity and order of items in Drawer, configure map and context menu. Go to <i>general menu (Drawer)-> <Translate android="yes" id="configure_profile" />(Choose profile)-> UI Customization</i>.
 
 <table>
   <tr>
@@ -96,7 +98,7 @@ When you use your own <i>Custom Search</i>, you can add more details of searchin
 
 ## Add options to restore settings for custom profiles
 
-If you change the base profile settings you can reset them to default. To do this, go to the <i>general menu-> Configure profile (choose the Base profile)-> Actions (Reset to default)</i>.
+If you change the base profile settings you can reset them to default. To do this, go to the <i>general menu-> <Translate android="yes" id="configure_profile" /> (choose the Base profile)-> Actions (Reset to default)</i>.
 
 ## Full GPX routes from Navigation support traffic lanes and complete turn instructions
 
@@ -136,7 +138,5 @@ ____________________________
 <p>OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!</p>
 <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

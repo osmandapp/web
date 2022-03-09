@@ -98,6 +98,4 @@ And remember that only together we can achieve the best results!
 New features are coming SOON!
 
 
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
-
 <AppleStore/>

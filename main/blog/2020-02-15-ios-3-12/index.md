@@ -4,7 +4,8 @@ title: OsmAnd 3.12 (iOS)
 authors: eugene
 tags: [release, ios]
 ---
-
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 Great news for iOS OsmAnd users!
 We're glad to announce the new <a href="https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257">OsmAnd version for iOS</a>.
@@ -100,7 +101,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

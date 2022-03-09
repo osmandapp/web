@@ -2,8 +2,11 @@
 slug: osmand-ios-3-00-released
 title: OsmAnd 3.0 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 
 As we said, we are working on improving the ios version of the application. The proof is this release. <a href="https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257">We're glad to announce the new OsmAnd version for iOS.</a>
@@ -85,7 +88,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

@@ -2,9 +2,10 @@
 slug: osmand-ios-3-90-released
 title: OsmAnd 3.90 (iOS)
 authors: eugene
-tags: [release, OsmAnd]
+tags: [release, OsmAnd, ios]
 ---
-
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 Hi!
 As we said, we are working on improving the ios version of the application. The proof is this release. <a href="https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257">We're glad to announce the new OsmAnd version for iOS.</a>
@@ -25,7 +26,7 @@ Furthermore in the article, there is a final list of extensions and fixes:
 
 ## Introduced “Plan a route" tool
 
-At this release, we added a new tool named <a href="https://osmand.net/features/plan-route#pr-ios">"Plan a route"</a>: menu -> Plan a route. Now, you can create your trip by using one or more navigation profiles, saved it like GPX-file.
+At this release, we added a new tool named <a href="https://osmand.net/features/plan-route#pr-ios">"Plan a route"</a>: menu → Plan a route. Now, you can create your trip by using one or more navigation profiles, saved it like GPX-file.
 
 
 <table>
@@ -52,7 +53,7 @@ When you <a href="https://osmand.net/features/navigation-profiles#import_prof_io
 
 ## Added text labels for favorites, gpx waypoints, markers
 
-In order to switch text labels go to menu -> Map -> POI overlay labels.
+In order to switch text labels go to menu → Map → POI overlay labels.
 
 <table>
   <tr>
@@ -99,7 +100,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

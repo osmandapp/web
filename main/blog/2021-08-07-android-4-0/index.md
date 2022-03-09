@@ -98,14 +98,14 @@ Choose track on the map or in 'My places → Tracks', tap to 'Appearance' button
 
 Users can choose an appearance for route line:
 
-**Menu → Configure profile (choose app profile) → Profile appearance → Customize route line**
+**Menu → <Translate android="yes" id="configure_profile" /> (choose app profile) → Profile appearance → Customize route line**
 
 ![OsmAnd Androie 4.0](./route_line.png)
 
 ## Added online routing for navigation type
 
 Users can choose online routing engines for navigation type:
-**Menu → Configure profile (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button**
+**Menu → <Translate android="yes" id="configure_profile" /> (choose app profile) → Navigation settings → Navigation type → 'Offline/Online' button**
 
 Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteService, or GPX online routing.
 
@@ -143,7 +143,7 @@ Now, there is a new 'Purchases' screen with detailed information about purchasin
 ## New Language dialogue for Voice prompts
 
 Redesigned dialog for selecting the language for navigation instructions. Now it's easier to choose and download the needed language and type of voice guidance:
-**Menu → Configure profile → Navigation settings → Voice prompts → Language**.
+**Menu → <Translate android="yes" id="configure_profile" /> → Navigation settings → Voice prompts → Language**.
 
 ![OsmAnd Androie 4.0](./voice_prompts_1.png) ![OsmAnd Androie 4.0](./voice_prompts_2.png) 
 
@@ -175,7 +175,5 @@ ____________________________
 <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

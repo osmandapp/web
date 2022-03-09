@@ -2,8 +2,11 @@
 slug: osmand-ios-1-30-released
 title: OsmAnd 1.30 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 We're glad to announce the new OsmAnd version for iOS. We completely reworked the style of the map, upgraded the search and added a new system of POI filters. Download now to try!
 
@@ -66,7 +69,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

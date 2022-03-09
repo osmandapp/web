@@ -4,6 +4,8 @@ title: OsmAnd 2.4 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 An OsmAnd update is here. We've introduced a new search interface and many fixes. Read on to find out all the details.
 
@@ -65,7 +67,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

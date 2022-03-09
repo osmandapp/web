@@ -4,7 +4,8 @@ title: OsmAnd 3.5 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
-
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 
 After a long pause, we are happy to announce the new 3.5 OsmAnd release for Android devices. You already can update the application in Google Play and check out the following long-awaited improvements in the new app version.
@@ -25,7 +26,7 @@ We modified the general menu. Now you can choose and set any parameters for the 
       </tr>
 </table> 
 
-Now you can create your own navigation profiles based on default profiles but with your parameters. To do this you should choose in the general menu Settings -> Manage application profiles. In the new window, please click "+Add".
+Now you can create your own navigation profiles based on default profiles but with your parameters. To do this you should choose in the general menu Settings → Manage application profiles. In the new window, please click "+Add".
 
 <table>
   <tr>
@@ -80,7 +81,7 @@ Now we have our "Offroad" navigation profile in the Navigation panel. We can swi
 
 ## Export/Import navigation profiles
 
-Now you can export or import navigation profiles. You should choose to Configure profile-> Actions (for export), for profile import you should select its file on the device and open it with OsmAnd.
+Now you can export or import navigation profiles. You should choose to '<Translate android="yes" id="configure_profile" /> → <Translate android="yes" id="shared_string_actions" />' (for export), for profile import you should select its file on the device and open it with OsmAnd.
 
 <table>
   <tr>
@@ -174,8 +175,5 @@ ____________________________
 <p>OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!</p>
 <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
-
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

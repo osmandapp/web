@@ -2,8 +2,11 @@
 slug: osmand-ios-2-00-released
 title: OsmAnd 2.0 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 New OsmAnd for the iOS platform has been released! We're glad to present a bundle of new features, so let's begin.
 
@@ -85,7 +88,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

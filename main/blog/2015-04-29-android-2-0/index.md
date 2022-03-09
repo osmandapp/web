@@ -4,6 +4,8 @@ title: OsmAnd 2.0 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 We are glad to announce that OsmAnd 2.0 is coming to devices. We expect to finish the rollout on this week. This has been a while we had to admit that OsmAnd didn't follow the guidelines and had an inconsistent UI. This major release we fully focused to put the most trending UI, Material Design, in place. Meanwhile we considered dozens interactive patterns to improve the usability of various features in OsmAnd and came up with a Dashboard screen, which provides a balanced solution between Search &amp; Map display. Please help us by giving your feedback to make the product better.
 
@@ -72,7 +74,5 @@ ____________________________
 
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>

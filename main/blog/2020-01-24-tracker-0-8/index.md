@@ -76,7 +76,7 @@ In OsmAnd, you can see that the Widget has a green smile. It's mean that everyth
 This button appears in "My location" screen, when the sharing location starts. Now only one click is enough to return to OsmAnd.
 
 ## Buffer Settings
-Now you can choose time to keep saved points in the buffer. To do so, go to Settings -> Position -> Buffer expiration time.
+Now you can choose time to keep saved points in the buffer. To do so, go to Settings → Position → Buffer expiration time.
 
 <table>
   <tr>
@@ -85,7 +85,7 @@ Now you can choose time to keep saved points in the buffer. To do so, go to Sett
 </table>
 
 ## Units and formats Settings
-We added settings for units and formats. Now you can choose your comfortable values for Telegram messages during sharing location. For changing its values, go to Settings -> Units & formats.
+We added settings for units and formats. Now you can choose your comfortable values for Telegram messages during sharing location. For changing its values, go to Settings → Units & formats.
 
 <table>
   <tr>

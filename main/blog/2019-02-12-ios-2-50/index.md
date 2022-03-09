@@ -2,8 +2,11 @@
 slug: osmand-ios-2-50-released
 title: OsmAnd 2.50 (iOS)
 authors: eugene
-tags: [release, OsmAnd, iOS]
+tags: [release, OsmAnd, android]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 
 <a href="https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257">OsmAnd 2.5 is now available!</a>
 
@@ -28,7 +31,5 @@ New features are coming SOON!
 
 
 
-
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 <AppleStore/>

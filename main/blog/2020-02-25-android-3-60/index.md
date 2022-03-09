@@ -4,6 +4,8 @@ title: OsmAnd 3.6 (Android)
 authors: eugene
 tags: [release, OsmAnd, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 
 Great news for Android users!
@@ -54,7 +56,7 @@ Now Earth is considered to be a sphere for direct-distance and calculates arcs e
 ## New navigation type: Direct-to-point
 
 We added a new type of navigation: <b>Direct-to-point</b>. Direct-to-point navigation is a critical and frequently used feature for marine users.
-It is possible to specify the recalculation distance (by default it is OFF for this routing profile): <i>Configure profile-> Navigation settings-> Route parameters->Minimal distance to recalculate the route.</i>
+It is possible to specify the recalculation distance (by default it is OFF for this routing profile): <i><Translate android="yes" id="configure_profile" />-> Navigation settings-> Route parameters->Minimal distance to recalculate the route.</i>
 Also, you can see a point projection that represents the distance to the end point on the line. The point on the line is a virtual point to show the distance (it is not a projection on the line) but a point that has the same distance as current location to the finish point.
 So it is easy to measure the progress and it is possible to use measurements tool to get correct distance.
 
@@ -68,7 +70,7 @@ So it is easy to measure the progress and it is possible to use measurements too
 ## Improved version of Straight-Line navigation
 
 We also refactored how Straight-Line navigation works.
-There is also a new setting to specify at which distance of user's location from route to start recalculation: Configure profile-> Navigation settings-> Route parameters->Minimal distance to recalculate the route..
+There is also a new setting to specify at which distance of user's location from route to start recalculation: <Translate android="yes" id="configure_profile" />-> Navigation settings-> Route parameters->Minimal distance to recalculate the route..
 We have also implemented a new setting. In case if you deviate from the route during the navigation, this setting builds the shortest path from your current position to the calculated route with the maximum angle.
 In other words, if the angle is higher than the one set by the user, OsmAnd calculates the next point of the route to build an additional route segment, so the angle will be valid.
 
@@ -144,7 +146,5 @@ ____________________________
 <p>Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.</p>
 
 
-
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 
 <AndroidStore/>
