@@ -4,6 +4,8 @@ title: OsmAnd 3.11 (iOS)
 authors: eugene
 tags: [release, ios, rtl, gpx]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 Hi!
 We're glad to announce the new OsmAnd version for iOS.

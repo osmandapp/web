@@ -7,11 +7,13 @@ tags: [release, OsmAnd]
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-Here is an example of translated string *shared_string_used*: **<Translate android="yes" id="shared_string_used" />**
-
 Great news for Android users! OsmAnd 4.1 is here! Here are some of the most important updates. [Update your OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), check out all the new features and let us know if you like everything!
 
-**Note**: this release of OsmAnd 4.1 is not available for Android below 6.0.
+:::tip Note
+
+This release of OsmAnd 4.1 is **not available** for Android below 6.0.
+
+:::
 
 ![OsmAnd Androie 4.1](./banner.png)
 

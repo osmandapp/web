@@ -56,7 +56,7 @@ Now Earth is considered to be a sphere for direct-distance and calculates arcs e
 ## New navigation type: Direct-to-point
 
 We added a new type of navigation: <b>Direct-to-point</b>. Direct-to-point navigation is a critical and frequently used feature for marine users.
-It is possible to specify the recalculation distance (by default it is OFF for this routing profile): <i><Translate android="yes" id="configure_profile" />-> Navigation settings-> Route parameters->Minimal distance to recalculate the route.</i>
+It is possible to specify the recalculation distance (by default it is OFF for this routing profile): *<Translate android="yes" id="configure_profile" />-> Navigation settings-> Route parameters->Minimal distance to recalculate the route.*
 Also, you can see a point projection that represents the distance to the end point on the line. The point on the line is a virtual point to show the distance (it is not a projection on the line) but a point that has the same distance as current location to the finish point.
 So it is easy to measure the progress and it is possible to use measurements tool to get correct distance.
 
@@ -96,8 +96,8 @@ Now we added Home / Work icons for favorites, it's very easy to find Home/Work o
 
 - Now Sunset / Sunrise is visible in Configure Map
 
-You can find <a href="https://osmand.net/features/map-viewing#Customize_map_Android"><i>Map mode</i></a> within <i>Configure map</i> and choose your setting for it.
-Now you see information about <i>Sunset</i> or <i>Sunrise</i> in the second line of <i>Map mode</i>.
+You can find <a href="https://osmand.net/features/map-viewing#Customize_map_Android">*Map mode*</a> within *Configure map* and choose your setting for it.
+Now you see information about *Sunset* or *Sunrise* in the second line of *Map mode*.
 
 <table>
   <tr>
@@ -108,7 +108,7 @@ Now you see information about <i>Sunset</i> or <i>Sunrise</i> in the second line
 
 - Antarctica map
 
-The map of Antarctica is available now in our application. You can find the Map of Antarctica and Wikipedia files in <i>Download maps</i>.
+The map of Antarctica is available now in our application. You can find the Map of Antarctica and Wikipedia files in *Download maps*.
 
 <table>
   <tr>
@@ -119,7 +119,7 @@ The map of Antarctica is available now in our application. You can find the Map 
 
 - Customize order and appearance of POI categories in Search
 
-In this release you can modify the order of the POI list. For this, you can go to <i>Search</i> within the menu or click the Search button, choose <i>Categories</i>. At the bottom of the list, you can click to <i>Rearrange Categories</i>.
+In this release you can modify the order of the POI list. For this, you can go to *Search* within the menu or click the Search button, choose *Categories*. At the bottom of the list, you can click to *Rearrange Categories*.
 
 <table>
   <tr>

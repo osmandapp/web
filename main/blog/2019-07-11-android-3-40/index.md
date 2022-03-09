@@ -15,7 +15,7 @@ We are glad to announce the release of version 3.4! We proudly present some majo
 
 ## Application profiles
 
-Now you can create your own profile for your needs, with a custom icon and color. Go to <i>General menu-> Settings-> Application settings</i>. Here you can select <i>Base profiles</i> to display in the navigation.
+Now you can create your own profile for your needs, with a custom icon and color. Go to *General menu-> Settings-> Application settings*. Here you can select *Base profiles* to display in the navigation.
 After clicking to "+Add" you can build your own profile with your own parametres: icon, avoid, elevation, configure map, screen, navigation settings...
 You can add own modified version of <b>routing.xml</b> to osmand folder: ...osmand/routing.
 
@@ -30,7 +30,7 @@ You can add own modified version of <b>routing.xml</b> to osmand folder: ...osma
 
 ## Settings and min/max speed for profiles
 
-We add settings for default and min/max speed for profiles. You can improve base profiles for your own conditions. Go to <i>General menu-> Settings-> Application settings</i>. Here you can set special settings for <i>Base profiles</i>: <i>Routing preferences, Navigation preferences, Voice</i>. Please, click <i>Navigation settings</i> for setting up your own speed: min/max speed.
+We add settings for default and min/max speed for profiles. You can improve base profiles for your own conditions. Go to *General menu-> Settings-> Application settings*. Here you can set special settings for *Base profiles*: *Routing preferences, Navigation preferences, Voice*. Please, click *Navigation settings* for setting up your own speed: min/max speed.
 
 <table>
   <tr>
@@ -43,8 +43,8 @@ We add settings for default and min/max speed for profiles. You can improve base
 
 ## Add a widget with current coordinates
 
-For switch on this widget, please go to <i>General menu-> Configure screen (Remaining elements)</i>. After you can see your own coordinates on top of the screen.
-You can change coordinate format  <i>General menu-> Settings-> General settings-> Coordinate format</i>.
+For switch on this widget, please go to *General menu-> Configure screen (Remaining elements)*. After you can see your own coordinates on top of the screen.
+You can change coordinate format  *General menu-> Settings-> General settings-> Coordinate format*.
 
 <table>
   <tr>
@@ -55,7 +55,7 @@ You can change coordinate format  <i>General menu-> Settings-> General settings-
 
 ## The compass at the Radius ruler
 
-We add the option to show the compass on the map with the Radius ruler. Go to settings of the Radius Ruler (menu Configure screen) and choose <i>"Show compass ruler"</i>. Now you can see the compass at the Radius ruler (if you don't see it, please to click at the widget of Radius ruler).
+We add the option to show the compass on the map with the Radius ruler. Go to settings of the Radius Ruler (menu Configure screen) and choose *"Show compass ruler"*. Now you can see the compass at the Radius ruler (if you don't see it, please to click at the widget of Radius ruler).
 
 <table>
   <tr>
@@ -68,7 +68,7 @@ We add the option to show the compass on the map with the Radius ruler. Go to se
 
 ## 'Turn Screen On' option
 
-At this release, we returned 'Turn Screen On' option. Now, this feature doesn't ask any permissions for correctly working. You can use it to save phone energy consumption. You should go to <i>General menu-> Settings-> Navigation settings</i>, choose a profile for setting the time for which the screen will turn on and use proximity sensor.
+At this release, we returned 'Turn Screen On' option. Now, this feature doesn't ask any permissions for correctly working. You can use it to save phone energy consumption. You should go to *General menu-> Settings-> Navigation settings*, choose a profile for setting the time for which the screen will turn on and use proximity sensor.
 Proximity sensor is a very useful feature during a long trip. You should wave your hand over the top of the screen to turn on the screen while navigating.
 
 

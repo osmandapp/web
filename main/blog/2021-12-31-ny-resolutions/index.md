@@ -26,7 +26,7 @@ We will start with the list for 2022 and below you can double-check how a simila
 ![OsmAnd Pro](./1.png)
 
 
-* Introduce OsmAnd Pro features to **<i>iOS</i>** and make unified multi-platform synchronization, make the synchronization work automagically.
+* Introduce OsmAnd Pro features to ***iOS*** and make unified multi-platform synchronization, make the synchronization work automagically.
 * Develop richer variety of valuable features.
 * Promote OsmAnd Pro features to Paid and later to Free version.
 
@@ -194,7 +194,7 @@ OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="http
 
 ## Summary
 
-We are starting the new 2022 year with 12 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build **<i>the most powerful open source cartographic tool for Travels</i>** <i>(Offline & Online)</i>.
+We are starting the new 2022 year with 12 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
 
 Thank you (our lovely users) for being with us during these difficult years for travels, we feel your support and we hope to meet your expectations. We wish all the best in 2022!
 

@@ -17,7 +17,7 @@ Now it is possible to transfer a file to the application for setting up navigati
 
 **Share link now directly launch OsmAnd on a shared place.**
 
-The ability to open a link <i>(https://osmand.net/go?lat=11.11&lon=11.11&z=14)</i> to the coordinates through the application.
+The ability to open a link *(https://osmand.net/go?lat=11.11&lon=11.11&z=14)* to the coordinates through the application.
 
 **Added back swipe gestures to all screens.**
 The ability to quickly navigate the screens of the application.

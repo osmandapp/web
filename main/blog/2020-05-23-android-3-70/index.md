@@ -18,7 +18,7 @@ We're happy to announce the new 3.7 OsmAnd release for Android devices.
 
 ## New offline slope maps, see slopes  directly on the maps
 
-You can estimate slopes in your route. We changed menu <i>Hillshades</i> to <i>Terrain</i> in <i>Configure map</i> menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the <i>Contour line plugin</i> at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
+You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
 
 
 <table>
@@ -42,7 +42,7 @@ You can customize Favorites and GPX Waypoints. When you edit or create a new poi
 
 ## Customize items order in Context Menu, Configure Map, Drawer
 
-In the new OsmAnd update you can customize quantity and order of items in Drawer, configure map and context menu. Go to <i>general menu (Drawer)-> <Translate android="yes" id="configure_profile" />(Choose profile)-> UI Customization</i>.
+In the new OsmAnd update you can customize quantity and order of items in Drawer, configure map and context menu. Go to *general menu (Drawer)-> <Translate android="yes" id="configure_profile" />(Choose profile)-> UI Customization*.
 
 <table>
   <tr>
@@ -60,7 +60,7 @@ You can copy settings of UI Customization from another profile or reset to defau
 
 ## Wikipedia as separate layer in Configure map, select only needed languages
 
-During travel, you need to know about interesting places near you. Now you can set viewing Wikipedia articles on the map with needed languages in a special menu. For this go to <i>Configure map-> Wikipedia</i>, choose the required languages for articles. After that, POI of Wikipedia will appear on the map. Read more about Wikipedia articles in OsmAnd <a href="https://osmand.net/features/travel#Wikipedia_A">here</a>.
+During travel, you need to know about interesting places near you. Now you can set viewing Wikipedia articles on the map with needed languages in a special menu. For this go to *Configure map-> Wikipedia*, choose the required languages for articles. After that, POI of Wikipedia will appear on the map. Read more about Wikipedia articles in OsmAnd <a href="https://osmand.net/features/travel#Wikipedia_A">here</a>.
 
 <table>
   <tr>
@@ -74,7 +74,7 @@ During travel, you need to know about interesting places near you. Now you can s
 
 ## Create your own POI filter / maps with total flexibility
 
-You can create your custom search of POI, and show its on the map. To do it, go to <i>Search menu-> Categories-> Custom Search</i>. After that, choose the necessary categories, select your items and click <i>Show</i>. For viewing POI on the map you can click to <i>Show custom filter on the map</i>. Now you can see your custom search of POI on the map.
+You can create your custom search of POI, and show its on the map. To do it, go to *Search menu-> Categories-> Custom Search*. After that, choose the necessary categories, select your items and click *Show*. For viewing POI on the map you can click to *Show custom filter on the map*. Now you can see your custom search of POI on the map.
 
 <table>
   <tr>
@@ -85,7 +85,7 @@ You can create your custom search of POI, and show its on the map. To do it, go 
       </tr>
 </table> 
 
-When you use your own <i>Custom Search</i>, you can add more details of searching. For this, click the <i>Filters</i> button and choose additional settings for your searching. You can save your <i>Custom search</i> by clicking to <i>Save button</i> on the screen. Now you can find the required POI by clicking to own category in the searching list.
+When you use your own *Custom Search*, you can add more details of searching. For this, click the *Filters* button and choose additional settings for your searching. You can save your *Custom search* by clicking to *Save button* on the screen. Now you can find the required POI by clicking to own category in the searching list.
 
 <table>
   <tr>
@@ -98,7 +98,7 @@ When you use your own <i>Custom Search</i>, you can add more details of searchin
 
 ## Add options to restore settings for custom profiles
 
-If you change the base profile settings you can reset them to default. To do this, go to the <i>general menu-> <Translate android="yes" id="configure_profile" /> (choose the Base profile)-> Actions (Reset to default)</i>.
+If you change the base profile settings you can reset them to default. To do this, go to the *general menu-> <Translate android="yes" id="configure_profile" /> (choose the Base profile)-> Actions (Reset to default)*.
 
 ## Full GPX routes from Navigation support traffic lanes and complete turn instructions
 

@@ -4,6 +4,8 @@ title: OsmAnd 3.10 (iOS)
 authors: eugene
 tags: [release, ios, quick action, srtm, sql]
 ---
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 Hi!
 We are pleased to announce that the iOS version of OsmAnd has become even more convenient!
