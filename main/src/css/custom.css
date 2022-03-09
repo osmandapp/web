@@ -44,3 +44,11 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-footer-link-color: var(--ifm-color-secondary);
   --ifm-footer-title-color: var(--ifm-color-white);
 }
+
+.pagination-nav__item:first-child .pagination-nav__label::before {
+  content: '← ';
+}
+
+.pagination-nav__item--next .pagination-nav__label::after {
+  content: ' →';
+}
