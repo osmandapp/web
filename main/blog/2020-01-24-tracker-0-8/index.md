@@ -100,6 +100,6 @@ We added settings for units and formats. Now you can choose your comfortable val
 Further instructions and helpful advice can be found <a href="https://osmand.net/features/tracker">here</a>.
 
 
-<a href="https://play.google.com/store/apps/details?id=net.osmand.telegram">
-    <img src="http://osmand.net/images/en-play-badge.png" alt="Get it on Google Play"/>
-</a>
+import TrackerGooglePlay from '@site/src/components/_buttonTrackerGooglePlay.mdx';
+
+<TrackerGooglePlay/>
