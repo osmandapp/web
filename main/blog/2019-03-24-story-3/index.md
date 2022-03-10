@@ -16,6 +16,9 @@ Today, Leonid will tell his story.
 
 ![Story 3](./story-3-8.jpg)
 
+<!--truncate-->
+
+
 He answered our questions in a fast and precise manner - less words, more action! Leonid prefers bike tourism, enjoys canoeing and goes on walking trips. Leonid has been traveling by bike for 6 years. He has taken on canoeing and walking relatively recently. In no time did he recollect his first trip to The Crimea.
 
 _‘I slept in a rented apartment in Sevastopol. Got round by bike in daytime. It took the longest amount of time to get to Mishor. Then, we traveled to Ai Petri using ropeway. We went back through Ternovka.’_

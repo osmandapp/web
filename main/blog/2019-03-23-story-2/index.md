@@ -15,6 +15,9 @@ Here comes our new interview! Surprisingly, we did not have to do much, because 
 
 ![Story 2](./story-2-6.jpg)
 
+<!--truncate-->
+
+
 We asked Pavel about his travel preferences and experience. He said that since 2016, when he had graduated from <a href="http://www.rctc.ru/">“Russian Club of Cycling Trips”</a>, he had taken lots of biking tours. He added that OsmAnd was his first application for traveling and that before he had been using fitness trackers, such as Strava and Endomondo. The only similarity between these two apps and OsmAnd is <a href="https://osmand.net/features/trip-recording-plugin">the function that records one’s track</a>. Through Pavel’s <a href="https://play.google.com/store/apps/details?id=net.osmand">Google Pay account</a>, as he has mentioned, it is easy to track his payment for the full access to OsmAnd. It was in 2016 that he got it, right after having completed his final cycling trip at school. Three years have past, but Pavel is sure that he started using the app then.
 
 _‘It was a fairly baffling time for using maps - I still was not sure which tool to use for traveling permanently. Before the trip, I had been assigned to be a navigator and had been given some GPX-files with our track. I was puzzled and did not know what to do with them. So, I had printed out the paper atlas of that region the night before the trip, using <a href="https://inkatlas.com/">inkatlas.com</a>. Not the best website, though. The first days of the trip were hard, I mean, I had to flick through a pile of papers every time I wanted to check our location. And every time our trip instructor would look at his navigator with a smirk.’_

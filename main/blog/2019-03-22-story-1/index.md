@@ -16,6 +16,7 @@ Our first interview will be with a mature traveler, who has lots of stories to t
 
 ![Story 1](./history-1-1.jpg)
 
+<!--truncate-->
 
 Not only can one use our app in the deep forests and high mountains, but they can also navigate through it in urban areas. The majority of popular places are  visible on the maps, which means that there will be no difficulty with finding your way to the best restaurant or any other place in any town. The places that You like the most can be specially marked * just save them in <a href="https://osmand.net/features/favourites">Favorites</a>!   <a href="https://osmand.net/features/osm-editing-plugin#How_to_use_it">Creating POI</a> will undoubtedly make your choice richer and easier.
 
