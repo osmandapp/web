@@ -43,7 +43,12 @@ OsmAnd has a vast <a href="https://osmand.net/features">variety of functions</a>
 
 _'<a href="https://osmand.net/features/trip-planning">GPX-files with tracks</a> allow us to navigate through the tracks that we have prepared beforehand. It is also very convenient to share our location using Telegram, WhatsApp, and Viber. Even Bluetooth suits for that matter! In OsmAnd one can turn <a href="https://osmand.net/features/trip-recording-plugin">their tracks off and on, or add a special coloring</a>. Users can also track their routes, so as to be able to go back at any point. Another unique function of OsmAnd is <a href="https://osmand.net/features/online-maps-plugin">Underlay maps</a>, using which a user can add details to the OSM vector map over a satellite raster one. I have added a link <a href="https://osmand.net/blog/osmand-2-6-released">Quick Action</a> on my tablet: ‘no background’- BING - YANDEX - GOOGLE. Off course, satellite raster maps should be added to OsmAnd in advance._
 
-![Story 5](./story-5-8.jpg) ![Story 5](./story-5-10.jpg)
+<table>
+  <tr>
+    <th><img src={require('./story-5-8.jpg').default} alt="Image"/></th>
+    <th><img src={require('./story-5-10.jpg').default} alt="Image"/></th>
+    </tr>
+</table> 
 
 _As a result, the tracks are mapped I’ve satellite pics on display. The standard layout used in OsmAnd is perfect for cities. For off roads, though, there is a special one called <a href="https://osmand.net/features/map-viewing">'Offroad'</a>. This mode highlights routes and tracks more, even when it comes to some satellite pics._
 
@@ -51,7 +56,12 @@ _As a result, the tracks are mapped I’ve satellite pics on display. The standa
 
 _OsmAnd has recently introduced a sub-program Online tracker (<a href="https://osmand.net/features/tracker">OsmAnd online GPS tracker</a>), which works with Telegram. This one allows users to exchange GPX-coordinates in live mode. However, one has to have GSM-connection to do that. In case there is no connection, the tracker will save Your coordinates and send them when the connection appears again. One can exchange the data individually or in any Telegram group. Once engaged in this process, the people will see each other on the OsmAnd map. By the way, in the full version of the app, there is a function called Timeline, which is awesome. It shows the track of the members in GPX-format. It helps, for instance, when it comes to finding a particular member of a team or a group of people.'_
 
-![Story 5](./story-5-7.jpg) ![Story 5](./story-5-9.jpg)
+<table>
+  <tr>
+    <th><img src={require('./story-5-7.jpg').default} alt="Image"/></th>
+    <th><img src={require('./story-5-9.jpg').default} alt="Image"/></th>
+    </tr>
+</table> 
 
 OsmAnd has been extremely helpful to Yurik "RZR" on quite a few occasions. When he, for example, meets a dead-end, he can easily return to the set point using his track in OsmAnd.
 
