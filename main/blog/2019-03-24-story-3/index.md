@@ -2,7 +2,7 @@
 slug: story-3
 title: Story 3 - Leonid travels
 authors: tat
-tags: [story, OsmAnd]
+tags: [story]
 ---
 
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';

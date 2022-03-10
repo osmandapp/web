@@ -2,7 +2,7 @@
 slug: osmand-ios-2-90-released
 title: OsmAnd 2.90 (iOS)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import Translate from '@site/src/components/Translate.js';

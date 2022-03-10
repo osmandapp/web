@@ -2,7 +2,7 @@
 slug: osmand-ios-3-14-released
 title: OsmAnd 3.14 (iOS)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import Translate from '@site/src/components/Translate.js';

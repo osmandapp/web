@@ -2,7 +2,7 @@
 slug: osmand-ios-1-00-released
 title: OsmAnd 1.0 (iOS)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import Translate from '@site/src/components/Translate.js';

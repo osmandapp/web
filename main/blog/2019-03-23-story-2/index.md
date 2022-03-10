@@ -2,7 +2,7 @@
 slug: story-2
 title: Story 2 - Paul and cycling
 authors: tat
-tags: [story, OsmAnd]
+tags: [story]
 ---
 
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';

@@ -2,7 +2,7 @@
 slug: osmand-android-1-6-released
 title: OsmAnd 1.6 (Android)
 authors: eugene
-tags: [release, OsmAnd, android, srtm, underlay, map magnifier, online tiles]
+tags: [release, android, srtm, underlay, map magnifier, online tiles]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import Translate from '@site/src/components/Translate.js';

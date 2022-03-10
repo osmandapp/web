@@ -2,7 +2,7 @@
 slug: ny-resolutions-2020
 title: 2020 New Year resolutions
 authors: eugene
-tags: [resolutions, OsmAnd]
+tags: [resolutions]
 ---
 
 

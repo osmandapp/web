@@ -2,7 +2,7 @@
 slug: osmand-android-1-5-released
 title: OsmAnd 1.5 (Android)
 authors: eugene
-tags: [release, OsmAnd, androi, voice prompts]
+tags: [release, androi, voice prompts]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import Translate from '@site/src/components/Translate.js';

@@ -2,7 +2,7 @@
 slug: osmand-android-3-6-released
 title: OsmAnd 3.6 (Android)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import Translate from '@site/src/components/Translate.js';

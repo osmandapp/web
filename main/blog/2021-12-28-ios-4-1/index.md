@@ -2,7 +2,7 @@
 slug: osmand-ios-4-1-released
 title: OsmAnd 4.1 (iOS)
 authors: eugene
-tags: [release, OsmAnd]
+tags: [release]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import Translate from '@site/src/components/Translate.js';

@@ -2,7 +2,7 @@
 slug: story-1
 title: Story 1 - Ilya offroad
 authors: tat
-tags: [story, OsmAnd]
+tags: [story]
 ---
 
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';

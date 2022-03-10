@@ -2,7 +2,7 @@
 slug: osmand-android-4-0-released
 title: OsmAnd 4.0 (Android)
 authors: eugene
-tags: [release, OsmAnd, cloud, srtm, track appearance, android]
+tags: [release, cloud, srtm, track appearance, android]
 ---
 
 Great news for Android users!
