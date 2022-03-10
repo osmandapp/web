@@ -41,7 +41,7 @@ _‘Once, during a trip, we we canoeing down a river. Suddenly, we started movin
 
 ![Story 3](./story-3-3.jpg)
 
-_During another trip, I got caught in quite a storm! It was on <a href="https://en.wikipedia.org/wiki/Valley_of_Ghosts_(Crimea)">The North Demerdzhi (1359 meters)</a>, when I got right into a thundercloud. I saw only as near as 10 meters. It was so dark that it felt like night. It was raining hard with an accompaniment of strong wind. The lightning were striking at the proximity of 300 meters! I was trapped, so I used OsmAnd to find a safe place to wait for the storm to calm down. I found it. Went into a nearby forest, sit down and waited.’_
+_During another trip, I got caught in quite a storm! It was on [The North Demerdzhi (1359 meters)](https://en.wikipedia.org/wiki/Valley_of_Ghosts_(Crimea)), when I got right into a thundercloud. I saw only as near as 10 meters. It was so dark that it felt like night. It was raining hard with an accompaniment of strong wind. The lightning were striking at the proximity of 300 meters! I was trapped, so I used OsmAnd to find a safe place to wait for the storm to calm down. I found it. Went into a nearby forest, sit down and waited.’_
 
 ![Story 3](./story-3-4.jpg)
 
