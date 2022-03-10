@@ -9,6 +9,7 @@ import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
 Hello!
+test stroke
 
 It feels like summer is finally here and it means that the sun and warmth will be with us for at least three months. What are You going to do? What do You want to see?
 
