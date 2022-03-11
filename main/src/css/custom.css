@@ -56,3 +56,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 time {
   color: #727272;
 }
+
+blockquote.story {
+  color: #212121;
+  font-family:'Times New Roman', Times, serif;
+}

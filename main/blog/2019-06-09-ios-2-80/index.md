@@ -5,6 +5,7 @@ authors: eugene
 tags: [release, OsmAnd, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
@@ -66,4 +67,5 @@ New features are coming SOON!
 
 
 
+<LinksTelegram/>
 <AppleStore/>

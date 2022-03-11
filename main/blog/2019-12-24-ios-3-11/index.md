@@ -5,6 +5,7 @@ authors: eugene
 tags: [release, ios, rtl, gpx]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 Hi!
@@ -18,4 +19,5 @@ We're glad to announce the new OsmAnd version for iOS.
 * Bug fixes and minor improvements
 
 
+<LinksTelegram/>
 <AppleStore/>

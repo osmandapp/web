@@ -5,6 +5,7 @@ authors: eugene
 tags: [release, OsmAnd, androi, voice prompts]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 What's new in this version:
@@ -22,4 +23,5 @@ New features are coming SOON!
 
 ____________________________ 
 
+<LinksTelegram/>
 <AndroidStore/>

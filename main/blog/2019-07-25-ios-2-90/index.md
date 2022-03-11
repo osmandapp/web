@@ -5,6 +5,7 @@ authors: eugene
 tags: [release, OsmAnd, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 <a href="https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257">We're glad to announce the new OsmAnd version for iOS.</a>
@@ -50,4 +51,5 @@ New features are coming SOON!
 
 
 
+<LinksTelegram/>
 <AppleStore/>
