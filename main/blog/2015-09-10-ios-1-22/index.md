@@ -2,7 +2,7 @@
 slug: osmand-ios-1-22-released
 title: OsmAnd 1.22 (iOS)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';

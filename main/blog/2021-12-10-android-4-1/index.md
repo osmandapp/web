@@ -2,7 +2,7 @@
 slug: osmand-android-4-1-released
 title: OsmAnd 4.1 (Android)
 authors: eugene
-tags: [release, OsmAnd]
+tags: [release]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';

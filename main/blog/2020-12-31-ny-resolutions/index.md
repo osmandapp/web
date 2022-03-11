@@ -2,7 +2,7 @@
 slug: ny-resolutions-2021
 title: 2021 New Year resolutions
 authors: eugene
-tags: [resolutions, OsmAnd]
+tags: [resolutions]
 ---
 
 Happy New 2021 Year!

@@ -2,7 +2,7 @@
 slug: osmand-android-1-9-released
 title: OsmAnd 1.9 (Android)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';

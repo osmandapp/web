@@ -2,7 +2,7 @@
 slug: osmand-ios-2-10-released
 title: OsmAnd 2.10 (iOS)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';

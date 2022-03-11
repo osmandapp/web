@@ -2,7 +2,7 @@
 slug: ny-resolutions-2019
 title: 2019 New Year resolutions
 authors: eugene
-tags: [resolutions, OsmAnd]
+tags: [resolutions]
 ---
 
 Happy New 2019 Year!

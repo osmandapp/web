@@ -2,7 +2,7 @@
 slug: story-1
 title: Story 1 - Ilya offroad
 authors: tat
-tags: [story, OsmAnd]
+tags: [story]
 ---
 
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
@@ -16,6 +16,7 @@ Our first interview will be with a mature traveler, who has lots of stories to t
 
 ![Story 1](./history-1-1.jpg)
 
+<!--truncate-->
 
 Not only can one use our app in the deep forests and high mountains, but they can also navigate through it in urban areas. The majority of popular places are  visible on the maps, which means that there- ill be no difficulty with finding your way to the best restaurant or any other place in any town. The places that You like the most can be specially marked * just save them in <a href="https://osmand.net/features/favourites">Favorites</a>!   <a href="https://osmand.net/features/osm-editing-plugin#How_to_use_it">Creating POI</a> will undoubtedly make your choice richer and easier.
 
@@ -95,3 +96,12 @@ We tend to get accustomed to the good things in our life fast. So, beware, OsmAn
 
 ![Story 1](./history-1-13.jpg)
 _________________________________________________
+<<<<<<< HEAD
+=======
+
+<AndroidStore/>  <AppleStore/>
+
+
+OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+ Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>, <a href="https://t.me/osmand_es">(ES)</a>, <a href="https://t.me/osmand_pl">(PL)</a>.
+>>>>>>> 2b19e7caf1b7e383306b3864ad298fd42452e508

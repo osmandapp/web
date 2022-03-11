@@ -2,7 +2,7 @@
 slug: osmand-android-3-3-released
 title: OsmAnd 3.3 (Android)
 authors: eugene
-tags: [release, OsmAnd, android]
+tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
