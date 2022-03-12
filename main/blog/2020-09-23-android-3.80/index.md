@@ -22,7 +22,7 @@ We renamed the "Measure distance" tool to "Plan a route". The updated "Plan a ro
 E.g. you want to have a route for your Enduro trip. The first part of your trip is a road from your home to the offroad part, the second part is an unpaved road, and the third part is a road returning home.
 Go to General menu → Plan a route. Choose "Create new route", next click the Profile icon and choose Road Profile for the first part of our trip. After that, we add starting and ending points. The first segment is built.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -34,7 +34,7 @@ Go to General menu → Plan a route. Choose "Create new route", next click the P
 
 For the second part of our trip, we click the Profile icon and choose our <a href="https://osmand.net/features/navigation-profiles">Enduro navigation profile</a> (Prefer unpaved roads) and "Next segment" (Only the next segment will be recalculated using a chosen profile). After that we choose points for our offroad trip.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
@@ -44,7 +44,7 @@ For the second part of our trip, we click the Profile icon and choose our <a hre
 
 For the last part (going back home) we choose Road profile and add the end point of our trip. Click the "Done" button and save (and rename) our GPX file with the journey trip.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
@@ -55,7 +55,7 @@ For the last part (going back home) we choose Road profile and add the end point
 
 Now, we click on our track, then change Appearance of the track. Click the "Directions" button, and start our trip using the GPX track which we built in the "Plan a route" tool.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
@@ -68,7 +68,7 @@ Now, we click on our track, then change Appearance of the track. Click the "Dire
 Next, you can open an existing track, import track, or open the last edited track.
 When you click on "Open existing track" you can select a track file to open.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./31.jpg').default} alt="Image"/></th>
     <th><img src={require('./32.jpg').default} alt="Image"/></th>
@@ -79,7 +79,7 @@ When you click on "Open existing track" you can select a track file to open.
 Now your chosen track is in plan route mode, where you can modify it for your trip. You can click the "Options" button and choose any parameters for it.
 In general, you can build a route between points. Click on this button on the screen or Options menu.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./33.jpg').default} alt="Image"/></th>
     <th><img src={require('./39.jpg').default} alt="Image"/></th>
@@ -91,7 +91,7 @@ In general, you can build a route between points. Click on this button on the sc
 Next, snap your track to the nearest allowed road with one of your navigation profiles to use this option. Here we choose Enduro navigation profile and threshold distance for calculating our route.
 When a route is built we click the "Apply" button and "Done" to save a new track or "Options" → "Directions" for starting our trip.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./35.jpg').default} alt="Image"/></th>
     <th><img src={require('./36.jpg').default} alt="Image"/></th>
@@ -106,7 +106,7 @@ Here you see we can modify any track for a trip. Of course, you can delete or ad
 
 Good news for our users with bicycle trips! We improved bicycle nodes' visibility. First, to enable viewing nodes, go to menu → <Translate android="yes" id="configure_profile" /> (Cycling, for example) → Configure map → Routes. Then, in "Routes", choose "Show node network cycle routes".
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
     <th><img src={require('./16.jpg').default} alt="Image"/></th>
@@ -121,7 +121,7 @@ Good news for our users with bicycle trips! We improved bicycle nodes' visibilit
 In this release we improved the context menu for tracks and added an opportunity to display the menu by tapping on a track directly on the map.
 When you tap on the track you can see all infromation about it: points, overwiew, altitude, speed.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./19.jpg').default} alt="Image"/></th>
       </tr>
@@ -130,7 +130,7 @@ When you tap on the track you can see all infromation about it: points, overwiew
 
 When you click the "Open Track" button, the track menu opens where you can change apperance of the track, turn on/off the track' display on the map, see graphs (overview, altitude, speed), join segments, split interval and analyse it on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./20.jpg').default} alt="Image"/></th>
     <th><img src={require('./21.jpg').default} alt="Image"/></th>
@@ -142,7 +142,7 @@ When you click the "Analyse on map" button, you can see all the necessary inform
 
 When you click the "Open Track" button, you can see the track menu where you can change the appearance of the track, turn on/off the track' display on the map, see graphs (overview, altitude, speed), join segments, split interval and analyse it on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./22.jpg').default} alt="Image"/></th>
     <th><img src={require('./23.jpg').default} alt="Image"/></th>
@@ -156,7 +156,7 @@ When you click the "Open Track" button, you can see the track menu where you can
 
 We added more data sources for Online photos, in addition to the existing Mapillary photos: Wikidata, Wikimedia Commons. When you click a POI or polygon you can find more pictures in Online photos.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./29.jpg').default} alt="Image"/></th>
     <th><img src={require('./30.jpg').default} alt="Image"/></th>
@@ -169,7 +169,7 @@ We added more data sources for Online photos, in addition to the existing Mapill
 
 We fixed many bugs in our search algorithms. Now you can find places, points, etc. without any problems.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./26.jpg').default} alt="Image"/></th>
     <th><img src={require('./27.jpg').default} alt="Image"/></th>
@@ -181,7 +181,7 @@ We fixed many bugs in our search algorithms. Now you can find places, points, et
 
 Click Navigation button in General screen → Option → Follow track. Here you can choose a track to follow or to import from your device.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./28.jpg').default} alt="Image"/></th>
       </tr>

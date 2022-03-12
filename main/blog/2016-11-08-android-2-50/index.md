@@ -16,7 +16,7 @@ OsmAnd 2.5 is now available! This time, we decided to focus on polishing the fea
 
 One of the key features of 2.5 introduces clickable icons on the map, displaying POI information promptly without the necessity to enable POI Layer first. This also allows watching public transport information without any interactions with the Configure Map menu. Simply click on any icon and the information will be displayed.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./map_icons_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./map_icons_2.jpg').default} alt="Image"/></th>
@@ -28,7 +28,7 @@ One of the key features of 2.5 introduces clickable icons on the map, displaying
 Another major improvement is an upgrade in the POI search function. Now, your search can be much more detailed. For example, you can search for an Italian restaurant that's open at the moment or a Spanish one that accepts Visa cards.
 To specify your search, please go to Search * Categories. Then select a category, for example, Cafe and restaurant. Press the Settings button in the left upper corner and you'll see a wide range of filters, from opening hours to specific diets (gluten free, vegetarian, etc.) to outdoor seating, takeaway options, wheelchair accessibility and even internet access type. After you set all the features you need, press 'Apply filters' button below. We've also improved the Quick search feature to let you find the places you need even more conveniently.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./search_menu_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./search_menu_2.jpg').default} alt="Image"/></th>
@@ -39,7 +39,7 @@ To specify your search, please go to Search * Categories. Then select a category
 
 We decided to hide the compass icon from the map screen, if the map is turned to the north, for a cleaner look. If you rotate the map, you'll notice that the icon is back. However, if you need the Compass icon to stay on screen, just edit this setting in the 'Configure screen' menu.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./compass_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./compass_2.jpg').default} alt="Image"/></th>
@@ -55,7 +55,7 @@ OsmAnd has become way friendlier towards the Android Wear. Now you can get a ful
 
 As you may have already noticed, we added a whole new map style especially helpful for cyclists and hikers. Please read the  <a href="http://osmand.net/blog?id=topo_style">detailed guide</a> to it.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./topo_map_5.jpg').default} alt="Image"/></th>
     <th><img src={require('./topo_map_7.jpg').default} alt="Image"/></th>

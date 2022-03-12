@@ -18,7 +18,7 @@ In this release, we add Suggested list of contacts. What is it? It's your last f
 Sharing time is your last chosen sharing time for the contact.
 When you start sharing, you can see in the "My location" screen your Suggested list and a "Back to OsmAnd" button.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
@@ -30,7 +30,7 @@ We added Online Tracker Widget to OsmAnd. For viewing the Widget you should turn
 
 To switch it off, you can go to the General menu-> Configure screen (OsmAnd version 3.6).
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
@@ -43,7 +43,7 @@ The green smile "OK" means that your location is being shared now.
  It's mean that everything is ok. The sharing does not have any issues.
 The orange smile "OK" means that your location cannot be sent. There are issues with the Internet connection or with GPS reception.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
     <th><img src={require('./13.jpg').default} alt="Image"/></th>
@@ -53,7 +53,7 @@ The orange smile "OK" means that your location cannot be sent. There are issues 
 
 If you don't have an internet connection for a long time, your buffer in OsmAnd Tracker saves points of your location. The Widget in OsmAnd changes its appearance. It starts to show the time of the buffer filling how long the buffer is keeping points of your location.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
     <th><img src={require('./16.jpg').default} alt="Image"/></th>
@@ -62,7 +62,7 @@ If you don't have an internet connection for a long time, your buffer in OsmAnd 
 
 
 As soon as your internet connection is restored, points from the buffer are sent. The Widget in OsmAnd changes its appearance and minutes in the Widget are reduced. When all points from the buffer are sent to Telegram, the Widget is displayed as a green smile.
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./18.jpg').default} alt="Image"/></th>
     <th><img src={require('./23.jpg').default} alt="Image"/></th>
@@ -78,7 +78,7 @@ This button appears in "My location" screen, when the sharing location starts. N
 ## Buffer Settings
 Now you can choose time to keep saved points in the buffer. To do so, go to Settings → Position → Buffer expiration time.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./17.jpg').default} alt="Image" width="200px"/></th>
   </tr>
@@ -87,7 +87,7 @@ Now you can choose time to keep saved points in the buffer. To do so, go to Sett
 ## Units and formats Settings
 We added settings for units and formats. Now you can choose your comfortable values for Telegram messages during sharing location. For changing its values, go to Settings → Units & formats.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./22.jpg').default} alt="Image"/></th>
     <th><img src={require('./20.jpg').default} alt="Image"/></th>

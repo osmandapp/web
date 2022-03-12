@@ -24,7 +24,7 @@ The feature lets you create new objects, so-called <a href="https://wiki.openstr
 So how to do it? Tap on the map where the new POI has to be placed → 'Actions' and press 'Create POI' or 'Open OSM Note' add its name and other details like working hours, website, etc. You'll also have to register at <a href="https://www.openstreetmap.org">OpenStreetMap</a> and then provide your OSM credentials to introduce changes.
 
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios-2-7-1.png').default} alt="Image"/></th>
     <th><img src={require('./ios-2-7-2.png').default} alt="Image"/></th>
@@ -35,7 +35,7 @@ So how to do it? Tap on the map where the new POI has to be placed → 'Actions'
 
 There are all your "Edits" and "Notes" at general menu → 'My Places' → 'OSM Edits'. From this menu, you can delete or upload all your edits and notes.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios-2-7-4.png').default} alt="Image"/></th>
   </tr>
@@ -45,7 +45,7 @@ There are all your "Edits" and "Notes" at general menu → 'My Places' → 'OSM 
 
 Combined "Favorites", "Trips" and "OSM Edits" screens into a new 'My Places' screen.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios-2-7-5.png').default} alt="Image"/></th>
     <th><img src={require('./ios-2-7-6.png').default} alt="Image"/></th>
@@ -57,7 +57,7 @@ Combined "Favorites", "Trips" and "OSM Edits" screens into a new 'My Places' scr
 
 * Added options to control the size of map elements: use “Text Size” option to control the size of the text and icons on the map and “Map Magnifier” to control the overall size of map elements.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios-2-7-8.png').default} alt="Image"/></th>
     <th><img src={require('./ios-2-7-9.png').default} alt="Image"/></th>

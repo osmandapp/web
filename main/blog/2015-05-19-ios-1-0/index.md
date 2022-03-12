@@ -20,7 +20,7 @@ We are glad to announce that iOS version of OsmAnd is becoming better over time.
 * In the new version you will be able to search a location by simply put the url or enter the coordinantes in the search text box.
 * And lots of other minor and useful improvements.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./New_Plugins.png').default} alt="Image"/></th>
     <th><img src={require('./Add_Parking.png').default} alt="Image"/></th>

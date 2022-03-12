@@ -73,3 +73,30 @@ div.question {
   size: 16pt;
   padding-bottom: 6pt;
 }
+
+table.blogimage {
+  width: 100%;
+  background-color: #fafafa;
+  border-radius: 10px;
+  border-style: none;
+  border: 1px solid #F2F2F2;
+}
+
+table.blogimage tr {
+  border-style: none;
+  display: table-cell;
+}
+table.blogimage td {
+  border-style: none;
+}
+
+table.blogimage th {
+  border-style: none;
+}
+
+table.blogimage img {
+  max-height: 600px;
+  border-width: 1px;
+  border-color: #1E1F20;
+}
+

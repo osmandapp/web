@@ -22,7 +22,7 @@ To start using them, just make a long tap on the map and select the flag icon in
 * Export all your markers at once as a GPX track. Simply select 'Save as new GPX track'. 
 * When you do not need the markers anymore, press 'Move all to history' to discard them all at once.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./marker_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./marker_2.jpg').default} alt="Image"/></th>
@@ -40,7 +40,7 @@ Then press 'Options' again. Here you'll have several alternatives:
 
 Now you're ready to press 'Navigate'.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./plan_route_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./plan_route_2.jpg').default} alt="Image"/></th>
@@ -51,7 +51,7 @@ Now you're ready to press 'Navigate'.
 
 Create markers from your groups of favorites easily! Simply go to My places > Favorites > choose your group > press the 'flag' button > select which points to add and press 'flag' again.  Your favorites have been added as map markers. You can also add GPX waypoints as markers. Just go to My places > My tracks > choose a track > Points > press the '⋮' button > Add to map markers.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./markers-f-1.jpg').default} alt="Image"/></th>
     <th><img src={require('./markers-f-2.jpg').default} alt="Image"/></th>
@@ -65,7 +65,7 @@ To manage these options, please go to Map markers > Options > Distance indicatio
 You can also pick how you'd like to view the information: as a top bar on the map screen or a compact widgets in the upper-right corner. If you do not need this info, you can disable it by choosing 'None'.
 To change the order of your map markers, you can drag them using the '≡' button.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./indic_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./indic_2.jpg').default} alt="Image"/></th>
@@ -77,7 +77,7 @@ To change the order of your map markers, you can drag them using the '≡' butto
 
 Measuring distances on the map has never been easier. Now you can add several points and view the distance between them. To use this feature, simply go to 'Measure distance' menu, place a point on the map and keep adding them one by one. You'll see the overall distance in the menu below. It is also possible to undo and redo every step or open the menu with details using the arrow icon. Press on a point on the map or on the list to move or delete it, add points before or after.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./dist_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./dist_2.jpg').default} alt="Image"/></th>
@@ -89,7 +89,7 @@ Measuring distances on the map has never been easier. Now you can add several po
 
 The feature offering you frequent (up to once an hour) map updates has finally come out of the beta-testing phase and is fully ready for use. Extra improvement: now the map updates on the server will occur every 30 minutes. They'll be available for download once an hour, as usual.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./osm_live_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./osm_live_2.jpg').default} alt="Image"/></th>

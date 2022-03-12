@@ -16,7 +16,7 @@ OsmAnd 2.7 is now available! This time, we worked on creating a new level of use
 
 We're proud to have collaborated with Mapillary for the new release. Now you can view the street-level imagery in your location or anywhere in the world using the Mapillary plugin in OsmAnd.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./mapillary_1_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./mapillary_2.jpg').default} alt="Image"/></th>
@@ -31,7 +31,7 @@ Zoom in closer to view the images even more conveniently in a Mapillary window o
 
 When we plan our trips, we do not always need a detailed route right away. Sometimes we just need to measure the direct distances on the map. What is the distance between two cities? How far are we from the center? Now you can use a simple ruler to answer such questions.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ruler_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./ruler_2.jpg').default} alt="Image"/></th>
@@ -47,7 +47,7 @@ To check the distance between two random points, touch them simultaneously and s
 
 Split your GPX tracks into intervals by distance (20 m * 10 km) or by time ( 15 seconds * 60 minutes) to view the details of each interval. View ascent and descent of each section of your track, minimum, maximum and average height, and time.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./gpx_spl_1.jpg').default} alt="Image"/></th>
     <th><img src={require('./gpx_spl_5.jpg').default} alt="Image"/></th>

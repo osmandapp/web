@@ -27,7 +27,7 @@ OsmAnd Android got 3 major releases this year (<a href="https://osmand.net/blog/
 
 * **Public transport**
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./pt_2_blog.png').default} alt="Image"/></th>
     <th><img src={require('./pt_3_blog.png').default} alt="Image"/></th>
@@ -46,7 +46,7 @@ We know that many users are waiting for the schedule support or at least [openin
 
 <a href="https://osmand.net/blog/osmand-3-5-released">New application profiles</a> is our long term goal and we’ve started working on it this year. There is a lot of work left for 2020, though we try to bring something new each release to give an impression of the end goal and get necessary feedback from our users. So far, all settings are profile-dependent, so you can customize the application for multiple purposes.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
@@ -57,7 +57,7 @@ The most important update was the ability to create custom profiles and import a
 
 * **Powerful Route details**
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./pt_8_blog.png').default} alt="Image"/></th>
     <th><img src={require('./pt_9_blog.png').default} alt="Image"/></th>
@@ -66,7 +66,7 @@ The most important update was the ability to create custom profiles and import a
 
 As of <a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, route details screen has important information about road types, surface conditions, steepness displayed in a nice visual way. It is our top priority to migrate that functionality to iOS. This mechanism is quite advanced and everybody can contribute and create their own metrics by simply modifying the rendering style on the device. In this regard, we want to thank <a href="https://www.reddit.com/r/OsmAnd/comments/dndhsg/pieter_with_osmand_from_2011/">Peter</a>, who contributed road information for Ski Pistes this way.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./31.jpg').default} alt="Image"/></th>
     <th><img src={require('./32.jpg').default} alt="Image"/></th>
@@ -77,7 +77,7 @@ As of <a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, route detai
 
 We’ve redesigned <b>Directions screens</b>, improved <b>Quick action</b>, added a <b>Widget with Current Coordinates</b> and <b>the Compass</b> to the Radius ruler, added <b>Ski Routing</b>, updated <b>Basemap</b>, <b>Desert style</b> for map and lot’s of else.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./141.jpg').default} alt="Image"/></th>
@@ -98,7 +98,7 @@ We’ve managed to release <b>7 new versions</b> of OsmAnd for iOS this year (<a
 
 OSM Editing allows you to make contributions to <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, a global community aimed at creating a comprehensive map of the world and providing up-to-date open-source data to every user.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios-2-7-1.png').default} alt="Image"/></th>
     <th><img src={require('./ios-2-7-3.png').default} alt="Image"/></th>
@@ -109,7 +109,7 @@ OSM Editing allows you to make contributions to <a href="https://www.openstreetm
 
 We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapillary</a> available on iOS as well. Now you can view the street-level imagery in your location or anywhere in the world using the Mapillary.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./4.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
@@ -120,7 +120,7 @@ We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapi
 
 <a href="https://osmand.net/features/quick-action">This feature</a> was requested many times this year and we were proud to deliver it in 2019. It allows you to have instant access to various actions with 2 clicks from the main screen, e.g. to change a map style, to show specific POI, to switch between raster maps or disable some layers.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./61.jpg').default} alt="Image"/></th>
@@ -135,7 +135,7 @@ We’ve implemented the support of the same map sources as we have on Android in
 
 You can now add a "Home", "Work" point as a destination. The short way to the Navigation settings menu. When your trip is ready, you can see the altitude/slope graph.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
@@ -146,7 +146,7 @@ You can now add a "Home", "Work" point as a destination. The short way to the Na
 
 During this year we made 3 releases of <a href="https://osmand.net/features/tracker">our Tracker</a> (<a href="https://osmand.net/blog/osmand-tracker-0-4-released">0.4</a>, <a href="https://osmand.net/blog/osmand-tracker-0-5-released">0.5</a>, <a href="https://osmand.net/blog/osmand-tracker-0-7-released">0.7</a>).
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./62.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>

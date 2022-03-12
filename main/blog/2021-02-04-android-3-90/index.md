@@ -18,7 +18,7 @@ We are glad to announce the release of version 3.9! We proudly present some majo
 We added the option to export and import all data including settings, resources, my places. It's a big step to the backup feature, which we will plan to add in the next release.
 Go to menu → <Translate android="yes" id="configure_profile" /> → Actions (Export profile). Select the data to be exported to the obf-file. Next, click to "Continue" button and send it.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -29,7 +29,7 @@ Go to menu → <Translate android="yes" id="configure_profile" /> → Actions (E
 
 Our Android team added graphs for segments with the route, added the ability to create and edit multiply segment tracks in the <a href="https://osmand.net/features/plan-route">"Plan a route"</a> feature.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
@@ -40,7 +40,7 @@ Our Android team added graphs for segments with the route, added the ability to 
 
 You can log in using the safe OAuth method for <a href="https://osmand.net/features/osm-editing-plugin">OpenStreetMap editing plugin</a>. Menu → Plugins → OpenStreetMap editing → Settings.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
@@ -53,7 +53,7 @@ You can log in using the safe OAuth method for <a href="https://osmand.net/featu
 
 We added custom color for favorites and track waypoints.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
@@ -65,7 +65,7 @@ We added custom color for favorites and track waypoints.
 * Introduced subscription on-hold/pause. Read more about it <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en">here</a>.
 * Added large "Dismiss" button for Navigation.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
       </tr>
@@ -76,7 +76,7 @@ We added custom color for favorites and track waypoints.
 * Fixed crash when taping on A/V notes widget.
 * Added "Snowmobile" map style. Menu → Configure map → Map style. You can see snowmobile trails on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
     <th><img src={require('./13.jpg').default} alt="Image"/></th>
@@ -85,7 +85,7 @@ We added custom color for favorites and track waypoints.
 
 * Added <a href="https://en.wikipedia.org/wiki/Ski_touring">Skitour trails</a> for "Winter and ski" map style. Menu → Configure map → Map style.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>

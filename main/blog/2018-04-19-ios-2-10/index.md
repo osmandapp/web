@@ -17,7 +17,7 @@ OsmAnd 2.1 is now available! The release includes many highly-requested features
 
 The context menu of a point has been updated to a new convenient design. Also, it now shows Wikipedia articles about the nearby objects. A great feature for travelers.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./context-menu_1.png').default} alt="Image"/></th>
     <th><img src={require('./context-menu_2.png').default} alt="Image"/></th>
@@ -29,7 +29,7 @@ The context menu of a point has been updated to a new convenient design. Also, i
 Navigation routes became the number one feature of the last release. This time, we're adding the ability to add intermediate waypoints along the route. Now you can plan your entire route for the day at once instead of making a new one after every stop.
 To try it, build a route, then make a long tap on the map and choose 'Route'. There, you'll be able to add the waypoint, replace your destination, etc. You can also rearrange the order of the points by pressing the flag button in the context menu and dragging the point with the '≡' button. Swipe points to the left to remove them.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./waypoints_ios_1.png').default} alt="Image"/></th>
     <th><img src={require('./waypoints_ios_2.png').default} alt="Image"/></th>
@@ -38,7 +38,7 @@ To try it, build a route, then make a long tap on the map and choose 'Route'. Th
 
 There are several other improvements: now it is possible to view POI along your route. Press the flag button in the navigation context menu and enable 'POI'. Set the radius of search (for example, 50m close to your route) and pick POI type. The same way, you can enable traffic warnings and view your favorites.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./waypoints_ios_3.png').default} alt="Image"/></th>
     </tr>
@@ -51,7 +51,7 @@ All points can be arranged to create an optimal route. To do it, please press th
 
 As a complementary enhancement to the previous feature, we made sure the routes are calculated faster. So even if you're planning a long trip, your route engine will keep up.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./route.png').default} alt="Image"/></th>
     <th><img src={require('./route2.png').default} alt="Image"/></th>
@@ -62,7 +62,7 @@ As a complementary enhancement to the previous feature, we made sure the routes 
 
 We added several updates related to navigation. First, OsmAnd now offers the widget that shows you an optimal lane for your current position on the route. The app also shows you important alarms: speed limit. etc., in the lower-left corner of the map screen.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./lanes_1.png').default} alt="Image"/></th>
     <th><img src={require('./alarms_1.png').default} alt="Image"/></th>
@@ -76,7 +76,7 @@ Also, the new version of OsmAnd helps you avoid certain roads during navigation.
 
 A great feature for developers or anyone who wants to test their future route: you can now simulate your position and view the navigation as if you're in a certain location, even though your actual location can be quite different. To try the feature, please calculate a route, then go to its settings in the context menu and select Navigation Settings > 'Simulate your position'. Then press 'Go' to start navigation as usual.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./siml_rt.png').default} alt="Image"/></th>
     </tr>
@@ -87,7 +87,7 @@ A great feature for developers or anyone who wants to test their future route: y
 
 Using contour lines for hiking or just to get information about the area? Select the color that is convenient to you in Map > Contour lines color scheme.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./contour_lines_1.png').default} alt="Image"/></th>
     <th><img src={require('./contour_lines_2.png').default} alt="Image"/></th>

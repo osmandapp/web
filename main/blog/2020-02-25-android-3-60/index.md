@@ -25,7 +25,7 @@ Now you can change the order, set each one's icon for the map, change all settin
 We improved settings for navigation profiles. Now you have more opportunities for transforming your navigation profiles and base profiles too. You can read <a href="https://osmand.net/features/navigation-profiles">the article "Navigation profiles"</a>.
 
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./prof2a.jpg').default} alt="Image"/></th>
     <th><img src={require('./prof10.jpg').default} alt="Image"/></th>
@@ -37,7 +37,7 @@ We improved settings for navigation profiles. Now you have more opportunities fo
 
 For your comfortable navigation during riding, we show exit numbers at the top of the screen.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
@@ -48,7 +48,7 @@ For your comfortable navigation during riding, we show exit numbers at the top o
 
 Now Earth is considered to be a sphere for direct-distance and calculates arcs every 10 km if it matters much for boat-navigation and flight-navigation.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
       </tr>
@@ -61,7 +61,7 @@ It is possible to specify the recalculation distance (by default it is OFF for t
 Also, you can see a point projection that represents the distance to the end point on the line. The point on the line is a virtual point to show the distance (it is not a projection on the line) but a point that has the same distance as current location to the finish point.
 So it is easy to measure the progress and it is possible to use measurements tool to get correct distance.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
     <th><img src={require('./13.png').default} alt="Image"/></th>
@@ -75,7 +75,7 @@ There is also a new setting to specify at which distance of user's location from
 We have also implemented a new setting. In case if you deviate from the route during the navigation, this setting builds the shortest path from your current position to the calculated route with the maximum angle.
 In other words, if the angle is higher than the one set by the user, OsmAnd calculates the next point of the route to build an additional route segment, so the angle will be valid.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./16.jpg').default} alt="Image"/></th>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
@@ -88,7 +88,7 @@ In other words, if the angle is higher than the one set by the user, OsmAnd calc
 
 Now we added Home / Work icons for favorites, it's very easy to find Home/Work on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./4.jpg').default} alt="Image"/></th>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
@@ -100,7 +100,7 @@ Now we added Home / Work icons for favorites, it's very easy to find Home/Work o
 You can find <a href="https://osmand.net/features/map-viewing#Customize_map_Android">*Map mode*</a> within *Configure map* and choose your setting for it.
 Now you see information about *Sunset* or *Sunrise* in the second line of *Map mode*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
@@ -111,7 +111,7 @@ Now you see information about *Sunset* or *Sunrise* in the second line of *Map m
 
 The map of Antarctica is available now in our application. You can find the Map of Antarctica and Wikipedia files in *Download maps*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
@@ -122,7 +122,7 @@ The map of Antarctica is available now in our application. You can find the Map 
 
 In this release you can modify the order of the POI list. For this, you can go to *Search* within the menu or click the Search button, choose *Categories*. At the bottom of the list, you can click to *Rearrange Categories*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>

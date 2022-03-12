@@ -48,7 +48,7 @@ OSM Advanced Live Monitoring plugin provides variety of features. It could be co
 * Detailed stats for GPX track altitude difference/speed
 ![OsmAnd Android 1.80](./tracks-1.8.png)
 * Split GPX route by km or by minute and check all stats
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./track-split-1.8.png').default} alt="Image"/></th>
     <th><img src={require('./track-split-map-1.8.png').default} alt="Image"/></th>

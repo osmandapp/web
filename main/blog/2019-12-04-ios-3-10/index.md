@@ -19,7 +19,7 @@ Great thanks to all iOS users for choosing OsmAnd for your adventures! You can r
 ##  New Redesigned Navigation preparation screen
 We improved the Navigation preparation screen. Now you can add "Home", "Work" point of destination. The short way to Options menu.
 When your trip is ready, you can see the altitude/slope graph, which you can scale for all your trip.
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -33,7 +33,7 @@ We added more maps to "Online maps" (General menu-> Map-> Map type-> online maps
 The next you can add your Online SQL maps for Overlay/Underlay. Click to file with SQL-format and "Copy to OsmAnd Maps". Now you can choose it in Overlay/Underlay menu.
 You can switch on "Seekbar" on screen for showing transparency of your Overlay/Underlay on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
@@ -47,7 +47,7 @@ You can switch on "Seekbar" on screen for showing transparency of your Overlay/U
 You can control settings of Contour lines  in the new screen. Go to General menu-> Map-> Map style-> Contour lines.
 We added more color schemes for Contour lines.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
     <th><img src={require('./13.jpg').default} alt="Image"/></th>
@@ -60,7 +60,7 @@ We added more color schemes for Contour lines.
 ## Added two more Quick Actions to quickly turn on/off Contour lines and Hillshades
 In this release we added new actions for Quick action: Show/Hide for Contour lines and Hillshades.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
     <th><img src={require('./16.jpg').default} alt="Image"/></th>
@@ -71,7 +71,7 @@ In this release we added new actions for Quick action: Show/Hide for Contour lin
 ## Updated basemap
 Now the World overview map has a more detailed road network and is smaller in size.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
@@ -82,7 +82,7 @@ Now the World overview map has a more detailed road network and is smaller in si
 ## Fixed issue with ruler numbers disappear
 As you know, there is the tool named "Radius ruler" in OsmAnd (General menu-> Configure screen-> Right Panel-> Radiuis ruler). There was a bug with a number of circles for Radius ruler tool. Now you can see all circles without this mistake.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./17.jpg').default} alt="Image"/></th>
     <th><img src={require('./18.jpg').default} alt="Image"/></th>

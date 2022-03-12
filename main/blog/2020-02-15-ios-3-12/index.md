@@ -43,7 +43,7 @@ Now you can see all of the information for each point of your route. For this, y
 
 After you calculate a route, you can save or share it like a GPX-track. To do this, first click on the *Details* button, then click on *Export* in the top-right corner.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
@@ -56,7 +56,7 @@ After you calculate a route, you can save or share it like a GPX-track. To do th
 
 In this release, we added a full list of Nautical maps like in the Android version. You should go to <a href="https://osmand.net/features/nautical-charts#How_to_use_it_I">*menu-> Maps & Resources-> Nautical maps*</a> for downloading maps. Within this list, you can find Nautical depth contours for many regions of the world. For viewing depth contours on the map you should go to *App menu-> Map-> Map style (Details)->Depth contours*. Note: you must buy <a href="https://osmand.net/features/osmand_purchases#ios_extended_features">a special in-app</a> or subscribe to <a href="https://osmand.net/features/subscription#osm_live_ios">OsmAnd Live</a> to use this feature.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
@@ -67,7 +67,7 @@ In this release, we added a full list of Nautical maps like in the Android versi
 
 The map of Antarctica is available now in our application. You can find the Map of Antarctica and Wikipedia files in *Maps & Resources*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
@@ -80,7 +80,7 @@ You can clean the cache of tiles, edit or delete online maps. To do this, you ca
 Now online maps can be added with a special link. After that, you can go to *General menu-> Maps & Resources-> Installed-> Online maps* to clean the cache of tiles, edit or delete the online maps.
 All of these online maps you can choose in *General menu-> Map-> Map type-> Online maps*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
     <th><img src={require('./13.jpg').default} alt="Image"/></th>

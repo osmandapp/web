@@ -22,7 +22,7 @@ We're happy to announce the new 3.7 OsmAnd release for Android devices.
 You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
 
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
       </tr>
@@ -34,7 +34,7 @@ You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain*
 
 You can customize Favorites and GPX Waypoints. When you edit or create a new point you can choose colors, icons, and shapes for it. Now your points will be more interesting on the map. Read more about favorites <a href="https://osmand.net/features/favourites">here</a>.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
@@ -45,7 +45,7 @@ You can customize Favorites and GPX Waypoints. When you edit or create a new poi
 
 In the new OsmAnd update you can customize quantity and order of items in Drawer, configure map and context menu. Go to *general menu (Drawer)-> <Translate android="yes" id="configure_profile" />(Choose profile)-> UI Customization*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./4.jpg').default} alt="Image"/></th>
       </tr>
@@ -53,7 +53,7 @@ In the new OsmAnd update you can customize quantity and order of items in Drawer
 
 You can copy settings of UI Customization from another profile or reset to default. Of course, you can hide items and change their order.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
       </tr>
@@ -63,7 +63,7 @@ You can copy settings of UI Customization from another profile or reset to defau
 
 During travel, you need to know about interesting places near you. Now you can set viewing Wikipedia articles on the map with needed languages in a special menu. For this go to *Configure map-> Wikipedia*, choose the required languages for articles. After that, POI of Wikipedia will appear on the map. Read more about Wikipedia articles in OsmAnd <a href="https://osmand.net/features/travel#Wikipedia_A">here</a>.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
@@ -77,7 +77,7 @@ During travel, you need to know about interesting places near you. Now you can s
 
 You can create your custom search of POI, and show its on the map. To do it, go to *Search menu-> Categories-> Custom Search*. After that, choose the necessary categories, select your items and click *Show*. For viewing POI on the map you can click to *Show custom filter on the map*. Now you can see your custom search of POI on the map.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
@@ -88,7 +88,7 @@ You can create your custom search of POI, and show its on the map. To do it, go 
 
 When you use your own *Custom Search*, you can add more details of searching. For this, click the *Filters* button and choose additional settings for your searching. You can save your *Custom search* by clicking to *Save button* on the screen. Now you can find the required POI by clicking to own category in the searching list.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
@@ -105,7 +105,7 @@ If you change the base profile settings you can reset them to default. To do thi
 
 If you save <a href="https://osmand.net/features/navigation#Save_navigation_route_GPX_file">navigation route as a GPX file</a> or with a <a href="https://osmand.net/features/measure-distance">measure distance</a> tool, this GPX file will keep all the information about traffic lanes and complete turn instructions.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./18.jpg').default} alt="Image"/></th>
     <th><img src={require('./19.jpg').default} alt="Image"/></th>
@@ -119,7 +119,7 @@ If you save <a href="https://osmand.net/features/navigation#Save_navigation_rout
 Now, you can <a href="https://osmand.net/blog/custom-package">create your own plugin with custom settings</a> and all your parameters for OsmAnd. It is not easy and soon we will add a tutorial to our website on how to do it.
 We think it will be very easy to send the necessary setting, maps, rendering files, navigation profiles, etc. to your friends and other OsmAnd users. You can create your own assembly for OsmAnd.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./22.jpg').default} alt="Image"/></th>
     <th><img src={require('./23.jpg').default} alt="Image"/></th>

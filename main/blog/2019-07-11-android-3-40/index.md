@@ -20,7 +20,7 @@ Now you can create your own profile for your needs, with a custom icon and color
 After clicking to "+Add" you can build your own profile with your own parametres: icon, avoid, elevation, configure map, screen, navigation settings...
 You can add own modified version of <b>routing.xml</b> to osmand folder: ...osmand/routing.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -33,7 +33,7 @@ You can add own modified version of <b>routing.xml</b> to osmand folder: ...osma
 
 We add settings for default and min/max speed for profiles. You can improve base profiles for your own conditions. Go to *General menu-> Settings-> Application settings*. Here you can set special settings for *Base profiles*: *Routing preferences, Navigation preferences, Voice*. Please, click *Navigation settings* for setting up your own speed: min/max speed.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
@@ -47,7 +47,7 @@ We add settings for default and min/max speed for profiles. You can improve base
 For switch on this widget, please go to *General menu-> Configure screen (Remaining elements)*. After you can see your own coordinates on top of the screen.
 You can change coordinate format  *General menu-> Settings-> General settings-> Coordinate format*.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
@@ -58,7 +58,7 @@ You can change coordinate format  *General menu-> Settings-> General settings-> 
 
 We add the option to show the compass on the map with the Radius ruler. Go to settings of the Radius Ruler (menu Configure screen) and choose *"Show compass ruler"*. Now you can see the compass at the Radius ruler (if you don't see it, please to click at the widget of Radius ruler).
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
@@ -73,7 +73,7 @@ At this release, we returned 'Turn Screen On' option. Now, this feature doesn't 
 Proximity sensor is a very useful feature during a long trip. You should wave your hand over the top of the screen to turn on the screen while navigating.
 
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./15.jpg').default} alt="Image"/></th>
     <th><img src={require('./16.jpg').default} alt="Image"/></th>

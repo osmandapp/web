@@ -23,7 +23,7 @@ The ability to open a link *(https://osmand.net/go?lat=11.11&lon=11.11&z=14)* to
 **Added back swipe gestures to all screens.**
 The ability to quickly navigate the screens of the application.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
     </tr>
@@ -31,7 +31,7 @@ The ability to quickly navigate the screens of the application.
 
 **Added support for display and view coordinates with more formats.**
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     </tr>

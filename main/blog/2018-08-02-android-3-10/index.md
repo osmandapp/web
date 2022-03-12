@@ -18,7 +18,7 @@ We have significantly improved the Parsing algorithms of Wikipedia articles, fix
 The mistakes in the articles content processing in Wikivoyage have also been eliminated. 
 The updated Wikipedia and Wikivoyage files are already available.
     
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./img-1-1.jpg').default} alt="Image"/></th>
     <th><img src={require('./img-1-2.jpg').default} alt="Image"/></th>
@@ -33,7 +33,7 @@ We have added synchronization of OSM Edit to Google App Backup, so now in the ca
 We have corrected the error in the map notes. If the author of the note was anonymous, OsmAnd did not display the names of all the commentators.
 The most important innovation for contributors: we have added the ability to edit tags for non-point objects and ways.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./img-2-1.jpg').default} alt="Image"/></th>
     <th><img src={require('./img-2-2.jpg').default} alt="Image"/></th>
@@ -44,7 +44,7 @@ The most important innovation for contributors: we have added the ability to edi
 
 As requested by many users, we have added the possibility to hide the layer with markers from the map. To do this, open OsmAnd > Menu > Configure Map > Markers > Turn off. The layer will turn on as soon as you add a new marker. Also, the problems with turning off the groups of markers have been fixed.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./img-3-1.jpg').default} alt="Image"/></th>
       </tr>
@@ -55,7 +55,7 @@ As requested by many users, we have added the possibility to hide the layer with
 The tables with the numbers of public transport routes in the night mode are now fixed, the numbers became readable regardless of the background color. 
 Furthermore, the problems with the size of Additional options on screens with a resolution of less than 360dp are eliminated.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./img-4-1.jpg').default} alt="Image"/></th>
     <th><img src={require('./img-4-2.jpg').default} alt="Image"/></th>
@@ -67,7 +67,7 @@ Furthermore, the problems with the size of Additional options on screens with a 
 We have included support for waterway fairway as well as added navigation by polygons in the test mode.
     Boat mode for navigation can be enabled together with the <a href="http://osmand.net/features?id=nautical-charts"> Nautical plugin.</a>
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./img-5-1.jpg').default} alt="Image"/></th>
     <th><img src={require('./img-5-2.jpg').default} alt="Image"/></th>

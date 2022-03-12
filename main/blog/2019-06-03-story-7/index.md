@@ -19,7 +19,7 @@ It feels like summer is finally here and it means that the sun and warmth will b
 
 Let us start this summer with a new inspiring interview. Recently, we have got in touch with <a href="https://www.kaiser-geotrekking.de/"><b>Andreas P. Kaiser</b></a> (https://www.kaiser-geotrekking.de). Not only is he a traveller himself, but he also wrote <a href="https://www.kaiser-geotrekking.de/publikationen">a whole book guide featuring OsmAnd review among others</a>!
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>

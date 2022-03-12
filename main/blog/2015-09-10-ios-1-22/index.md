@@ -17,7 +17,7 @@ The new OsmAnd release has a list of new features that are waiting to be tried o
 
 One of the significant steps forward is the ability to view POI on the map. From now on, you'll be able to view any points of interest as you enter the Search. From healthcare to parking to tourist attractions * search for the point you need through all the categories or choose one type of POI to see what's around your location.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios_2_1_1_3.jpg').default} alt="Image"/></th>
     <th><img src={require('./ios_2_1_1_11.jpg').default} alt="Image"/></th>
@@ -28,7 +28,7 @@ One of the significant steps forward is the ability to view POI on the map. From
 
 The OsmAnd iOS version now has the hillshade maps. Those are map layers visualizing the details of the terrain. The hillshade maps are available by country. To use the hillshade, don't forget to go to the map settings, turn on the hillshade and choose it as either under* or overlay.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios_2_1_1_17.jpg').default} alt="Image"/></th>
     <th><img src={require('./ios_2_1_1_18.jpg').default} alt="Image"/></th>
@@ -40,7 +40,7 @@ The OsmAnd iOS version now has the hillshade maps. Those are map layers visualiz
 
 You can now just enter the My trips menu, choose Create new trip and then add waypoints by making long taps. At this moment, you can also add details to the waypoint, such as its name, color indicating this waypoint, its group (you can create a group of waypoints: work locations, favorite spots on town, etc.) and a description. Then hit Save.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios_2_1_1_7.jpg').default} alt="Image"/></th>
     <th><img src={require('./ios_2_1_1_8.jpg').default} alt="Image"/></th>
@@ -52,7 +52,7 @@ You can now just enter the My trips menu, choose Create new trip and then add wa
 
 You can choose to sort your waypoints using the route management menu. Just tap the blue toolbar, then swipe the waypoint you'd like to move higher on the list and tap the arrow icon. Activate or deativate waypoints to customize your route in this menu. Also, now you can add an endless number of waypoints.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios_2_1_1_13.jpg').default} alt="Image"/></th>
     <th><img src={require('./ios_2_1_1_14.jpg').default} alt="Image"/></th>
@@ -64,7 +64,7 @@ You can choose to sort your waypoints using the route management menu. Just tap 
 
 As you add waypoints, you'll see them in a toolbar on the top of the screen. Now you can view waypoints or delete them by tapping on the upper toolbar and swiping to the left. Tap the arrow to unfold the full list and choose the point you need to get to in order to see the distance to it and view the location on map. Please note that the points are connected by straight lines and are meant to help you create a general understanding of the directions for your trip.  Hit the arrow button to start following the directions. To mark it as visited, select the checkbox sign. Same checkboxes will be available as soon as you approach the waypoints.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./ios_2_1_1_13.jpg').default} alt="Image"/></th>
     <th><img src={require('./ios_2_1_1_11.jpg').default} alt="Image"/></th>

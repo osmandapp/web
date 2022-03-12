@@ -20,7 +20,7 @@ After a long pause, we are happy to announce the new 3.5 OsmAnd release for Andr
 We think that it is not very convenient to use default profiles for a very specific use-case. We give the opportunity to our users to make your profile with all settings, icons and etc.
 We modified the general menu. Now you can choose and set any parameters for the navigation profile and switch on special plugins for each profile.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -29,7 +29,7 @@ We modified the general menu. Now you can choose and set any parameters for the 
 
 Now you can create your own navigation profiles based on default profiles but with your parameters. To do this you should choose in the general menu Settings → Manage application profiles. In the new window, please click "+Add".
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./3.jpg').default} alt="Image"/></th>
     <th><img src={require('./4.jpg').default} alt="Image"/></th>
@@ -39,7 +39,7 @@ Now you can create your own navigation profiles based on default profiles but wi
 We show an example of how to make your own profile. We choose Offroad type for driving a car when we use passes in forests, mountains, etc.
 At first, it is necessary to choose a base profile. The most common is "Driving", but in this case, you can choose "Cycling", too. Next, we name our profile — "Offroad" — and select a Navigation type. In this case, it is "Bicycle".
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>
@@ -48,7 +48,7 @@ At first, it is necessary to choose a base profile. The most common is "Driving"
 
 After that, we select an icon and color for our Navigation profile. As you can see, we prepared many icons for your future choices.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
@@ -59,7 +59,7 @@ We click the "SAVE" button to save our "Offroad" navigation profile.
 
 After that, we go to the general menu, choose our "Offroad" navigation profile. We set all of its own parameters for the screen, map, navigation, and general settings. Of course, here we can switch on the desired plugins.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
@@ -71,7 +71,7 @@ After that, we go to the general menu, choose our "Offroad" navigation profile. 
 
 Now we have our "Offroad" navigation profile in the Navigation panel. We can switch to and from our profile in the "Application profiles" menu.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
@@ -84,7 +84,7 @@ Now we have our "Offroad" navigation profile in the Navigation panel. We can swi
 
 Now you can export or import navigation profiles. You should choose to '<Translate android="yes" id="configure_profile" /> → <Translate android="yes" id="shared_string_actions" />' (for export), for profile import you should select its file on the device and open it with OsmAnd.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./28.jpg').default} alt="Image"/></th>
     <th><img src={require('./29.jpg').default} alt="Image"/></th>
@@ -96,7 +96,7 @@ Now you can export or import navigation profiles. You should choose to '<Transla
 
 Now when you want a map for a certain area you can tap directly on the World map and OsmAnd suggests downloading a map for the chosen area.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./17.jpg').default} alt="Image"/></th>
     </tr>
@@ -106,7 +106,7 @@ Now when you want a map for a certain area you can tap directly on the World map
 
 Now the World overview map has a more detailed road network and is smaller in size.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./20.jpg').default} alt="Image"/></th>
     <th><img src={require('./21.jpg').default} alt="Image"/></th>
@@ -119,7 +119,7 @@ Now the World overview map has a more detailed road network and is smaller in si
 
 Now you can use ski routing. At first, you need to change the Map style in the Configure map menu to "Winter and ski". After that, you can use ski profile. We added height profile and route complexity to the route details.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./18.jpg').default} alt="Image"/></th>
     <th><img src={require('./19.jpg').default} alt="Image"/></th>
@@ -132,7 +132,7 @@ Now you can use ski routing. At first, you need to change the Map style in the C
 
 Now when you hide "Overground objects" (General menu-> Configure map-> Map rendering->Hide), the overground objects will become translucent, it is useful for the orientation of your underground objects.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./24.jpg').default} alt="Image"/></th>
     <th><img src={require('./25.jpg').default} alt="Image"/></th>
@@ -143,7 +143,7 @@ Now when you hide "Overground objects" (General menu-> Configure map-> Map rende
 
 Now you can see Contour lines on dark overlays.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./33.jpg').default} alt="Image"/></th>
     <th><img src={require('./34.jpg').default} alt="Image"/></th>
@@ -154,7 +154,7 @@ Now you can see Contour lines on dark overlays.
 
 We added "Prefer unpaved roads" to Driving style for bicycle profile. Now you can choose unpaved roads for your trips.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./27.jpg').default} alt="Image"/></th>
     <th><img src={require('./26.jpg').default} alt="Image"/></th>

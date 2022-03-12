@@ -21,7 +21,7 @@ We continue to follow our <a href="https://osmand.net/blog/2019-ny-resolutions">
 
 We're proud to have collaborated with Mapillary for the new release. Now you can view the street-level imagery in your location or anywhere in the world using the Mapillary in OsmAnd for iOS.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -32,7 +32,7 @@ We're proud to have collaborated with Mapillary for the new release. Now you can
 
 Using the widget on the map, you'll be able to view images or videos and even add your own. To view the images and videos, you'll have to go to 'Configure screen' menu and enable the 'Mapillary' layer.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
@@ -45,7 +45,7 @@ Now you have access to an extensive database created by volunteers. To view medi
 
 Zoom in closer to view the images even more conveniently in a Mapillary window over your map. You can also press the white arrows to 'move' along the streets. To contribute to Mapillary, just press on the widget and take a picture.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./5.jpg').default} alt="Image"/></th>
     <th><img src={require('./6.jpg').default} alt="Image"/></th>

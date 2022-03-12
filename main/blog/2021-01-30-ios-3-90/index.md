@@ -30,7 +30,7 @@ Furthermore in the article, there is a final list of extensions and fixes:
 At this release, we added a new tool named <a href="https://osmand.net/features/plan-route#pr-ios">"Plan a route"</a>: menu → Plan a route. Now, you can create your trip by using one or more navigation profiles, saved it like GPX-file.
 
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./1.jpg').default} alt="Image"/></th>
     <th><img src={require('./2.jpg').default} alt="Image"/></th>
@@ -45,7 +45,7 @@ At this release, we added a new tool named <a href="https://osmand.net/features/
 
 When you <a href="https://osmand.net/features/navigation-profiles#import_prof_ios">import osf-file (Application profile)</a> you can select data to be imported: rendering styles, quick actions, routing, trips, maps, favorites and etc.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./8.jpg').default} alt="Image"/></th>
     <th><img src={require('./7.jpg').default} alt="Image"/></th>
@@ -56,7 +56,7 @@ When you <a href="https://osmand.net/features/navigation-profiles#import_prof_io
 
 In order to switch text labels go to menu → Map → POI overlay labels.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./9.jpg').default} alt="Image"/></th>
     <th><img src={require('./10.jpg').default} alt="Image"/></th>
@@ -68,7 +68,7 @@ In order to switch text labels go to menu → Map → POI overlay labels.
 
 Added option to enable сompass over <a href="https://osmand.net/features/ruler#Ruler_iOS">the "Radius Ruler" tool</a>.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./13.jpg').default} alt="Image"/></th>
     <th><img src={require('./14.jpg').default} alt="Image"/></th>
@@ -79,7 +79,7 @@ Added option to enable сompass over <a href="https://osmand.net/features/ruler#
 
 Added new map type for snowmobile * "Snowmobile". Increased thickness and contrast, added colors for snowmobile trails.
 
-<table>
+<table class="blogimage">
   <tr>
     <th><img src={require('./11.jpg').default} alt="Image"/></th>
     <th><img src={require('./12.jpg').default} alt="Image"/></th>
