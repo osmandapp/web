@@ -1,17 +1,21 @@
 ---
 slug: story-1
-title: Story 1 - Ilya offroad
+title: Story - Ilya offroad
 authors: tat
 tags: [story]
 ---
 
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+## Chapter 1
 
+<div class="question">
+Our first interview will be with a mature traveler, who has lots of stories to tell! His name is Ilya and he will share his thoughts and adventures with You! For starters, we decided to ask him about his favorite types of traveling. 
+</div>
 
-## Ilya: Chapter 1.
+“We have recently started exploring the North of Caucasus, being more specific, Kabardino-Balkar Republic and Karachay-Cherkessia. And, afterwards, we spend the rest of our vacation on the seaside near Anapa. 
 
-Our first interview will be with a mature traveler, who has lots of stories to tell! His name is Ilya and he will share his thoughts and adventures with You! For starters, we decided to ask him about his favorite types of traveling. _“We have recently started exploring the North of Caucasus, being more specific, Kabardino-Balkar Republic and Karachay-Cherkessia. And, afterwards, we spend the rest of our vacation on the seaside near Anapa. It is definitely the best way to enjoy the last days of the trip and have some relax after climbing and exploring. The temperature can be low in the mountains and the whole experience can be just a bit tiresome, so, some family members like to sunbathe f-  a few days on the beach. Time passes and our tastes change with it. The places we visit, our ways of living and traveling never stay the same for long. 15 * 20 years ago we would just go to the forest on foot and look for some mushrooms, while today we set to far and unexplored places.”_
+It is definitely the best way to enjoy the last days of the trip and have some relax after climbing and exploring. The temperature can be low in the mountains and the whole experience can be just a bit tiresome, so, some family members like to sunbathe f-  a few days on the beach. 
+
+Time passes and our tastes change with it. The places we visit, our ways of living and traveling never stay the same for long. 15 * 20 years ago we would just go to the forest on foot and look for some mushrooms, while today we set to far and unexplored places.”
 
 
 ![Story 1](./history-1-1.jpg)
@@ -21,8 +25,11 @@ Our first interview will be with a mature traveler, who has lots of stories to t
 Not only can one use our app in the deep forests and high mountains, but they can also navigate through it in urban areas. The majority of popular places are  visible on the maps, which means that there- ill be no difficulty with finding your way to the best restaurant or any other place in any town. The places that You like the most can be specially marked * just save them in <a href="https://osmand.net/features/favourites">Favorites</a>!   <a href="https://osmand.net/features/osm-editing-plugin#How_to_use_it">Creating POI</a> will undoubtedly make your choice richer and easier.
 
 ![Story 1](./history-15.jpg)
+<div class="question">
+Ilya is not just an active user of application, he is a developer, because he uses OsmAnd in practice. So, we wanted to know how long he had been using the app and whether he had tried any other program before. It was not an easy question to answer, but Ilya managed to come up with a great answer. 
+</div>
 
-Ilya is not just an active user of application, he is a developer, because he uses OsmAnd in practice. So, we wanted to know how long he had been using the app and whether he had tried any other program before. It was not an easy question to answer, but Ilya managed to come up with a great answer. _‘A nice one, I mean the question. I do not even remember the precise date. Years ago, I started using the app, at that time it was free. It was either alpha- r beta version, the ones that were the first to arrive at the Playmarket. Had I tried any other app before I switched to OsmAnd? I have to admit that for 5 * 10 years I used, so-called, “iron” navigators. Of course, they were made of plastic, but the name comes from a device that used to be attached to the system and the program. These were the Garmin devices._
+‘A nice one, I mean the question. I do not even remember the precise date. Years ago, I started using the app, at that time it was free. It was either alpha- r beta version, the ones that were the first to arrive at the Playmarket. Had I tried any other app before I switched to OsmAnd? I have to admit that for 5 * 10 years I used, so-called, “iron” navigators. Of course, they were made of plastic, but the name comes from a device that used to be attached to the system and the program. These were the Garmin devices.
 
 ![Story 1](./history-1-2.jpg)
 
@@ -40,14 +47,17 @@ _We have flicked through dozens of applications and programs, comparing them all
 
 You can download OsmAnd from Play Market and App Store for free. The version You get does - t have all the functions. To get the access to all the functions <a href="https://osmand.net/features/osmand_purchases">just pay a small fee</a>, and -voila- You have the full membership! Help yourself to all the materials and functions. Every member can and is encouraged to develop <a href="https://www.openstreetmap.org">the maps</a> by editing. What is the best about OsmAnd? Its mobility! As long as you have your phone, You will have the maps. All maps <a href="https://osmand.net/features/start#Ways_to_download_maps">can be downloaded</a> in advance in case there is no internet connection. What else? Everything is synchronized and saved automatically by using other specialised programs! Your data is safe with us!
 
-## Ilya: Chapter 2.
+## Chapter 2
 
 
 Ilya is has so much to say that we have decided to split the interview on two. Many people struggle when it comes to describing their experiences, but Ilya is definitely not one of them.
 
 ![Story 1](./history-1-20.jpg)
 
- Whatever we ask, he seems to be ready to answer. So, a reasonable question appeared, whether his preparation to every expedition is on the same level. _“Yes, it is tempting not to, but I still work on the maps beforehand. I call it the overall process of preparation. The majority of maps today is highly detailed and reliable, though, they are still far from being ideal. In fact, we are constantly developing them. As recent as 15-20 years ago, the situation was entirely different. Actually, I rarely do more than a simple check._
+<div class="question">
+ Whatever we ask, he seems to be ready to answer. So, a reasonable question appeared, whether his preparation to every expedition is on the same level.
+</div>
+ _“Yes, it is tempting not to, but I still work on the maps beforehand. I call it the overall process of preparation. The majority of maps today is highly detailed and reliable, though, they are still far from being ideal. In fact, we are constantly developing them. As recent as 15-20 years ago, the situation was entirely different. Actually, I rarely do more than a simple check._
 
 ![Story 1](./history-1-6.jpg)
 
@@ -59,7 +69,8 @@ _Some roads, however, are not marked in OsmAnd, even though they exist. For exam
 
 ![Story 1](./history-1-18.jpg)
 
-Have You noticed that Ilya mostly uses the pronoun **“we”**? He does it on purpose! Because he works on the maps with his friends. And, by doing so, not only does he improve the maps for himself, he also helps other members of the OsmAnd community. Detalising <a href="https://www.openstreetmap.org">maps</a> is a great way to help others and enrich their experience. 
+Have You noticed that Ilya mostly uses the pronoun **“we”**? He does it on purpose! Because he works on the maps with his friends. And, by doing so, not only does he improve the maps for himself, he also helps other members of the OsmAnd community. Detalising <a href="https://www.openstreetmap.org">maps</a> is a great way to help others and enrich their experience.
+
 Do You know the difference between a traveler and a tourist? Being a traveler means searching for something new - exploring. In OsmAnd we are all travelers - we want to go for more than just a luxurious all inclusive hotel. The sky is the limit! Everyone gets their shot at being a “Columbus” - open your small piece of America and share the knowledge with the community.
 
 ![Story 1](./history-1-7.jpg)
@@ -70,7 +81,9 @@ _“Of course, the most important feature for every navigating system is to show
 
 ![Story 1](./history-1-19.jpg)
 
-_Sometimes a road can be marked as a “walking path”, which means that one can use it. You cannot include this into automatically made calculations, though. Back to Google. It has been specializing in urban areas since the beginning, and, therefore, does not cover mountain regions. <a href="https://osmand.net/features/trip-planning">OsmAnd does</a>. So many mountain roads that are correctly tagged! That makes it possible to work out a track smoothly and at the first attempt. And if it is not working, do it manually - estimate the distance and create a virtual simulator of your track. So, the first essential function is mapping a track and the second one is creating a virtual version of it. I prefer doing this a month or two before the actual expedition. The program should also be capable of marking the starting and the final points of the trip. For instance, let’s call them A and B and these dots do not need to be directly connected. OsmAnd allows both creating a track and, furthermore, changing its <a href="https://osmand.net/features/navigation#Save_navigation_route_GPX_file">format to GPX-file</a>, which imitates a complete track. And if You name the points accordingly, for instance, from Kanjol Plateau to Dzhily-Su, in future You will be able to use already checked maps that will spare Your time and nerves. The best tracks are the ones that you have sorted out in advance.”_
+_Sometimes a road can be marked as a “walking path”, which means that one can use it. You cannot include this into automatically made calculations, though. Back to Google. It has been specializing in urban areas since the beginning, and, therefore, does not cover mountain regions. <a href="https://osmand.net/features/trip-planning">OsmAnd does</a>. 
+
+So many mountain roads that are correctly tagged! That makes it possible to work out a track smoothly and at the first attempt. And if it is not working, do it manually - estimate the distance and create a virtual simulator of your track. So, the first essential function is mapping a track and the second one is creating a virtual version of it. I prefer doing this a month or two before the actual expedition. The program should also be capable of marking the starting and the final points of the trip. For instance, let’s call them A and B and these dots do not need to be directly connected. OsmAnd allows both creating a track and, furthermore, changing its <a href="https://osmand.net/features/navigation#Save_navigation_route_GPX_file">format to GPX-file</a>, which imitates a complete track. And if You name the points accordingly, for instance, from Kanjol Plateau to Dzhily-Su, in future You will be able to use already checked maps that will spare Your time and nerves. The best tracks are the ones that you have sorted out in advance.”_
 
 ![Story 1](./history-1-16.jpg)
 
@@ -96,12 +109,3 @@ We tend to get accustomed to the good things in our life fast. So, beware, OsmAn
 
 ![Story 1](./history-1-13.jpg)
 _________________________________________________
-<<<<<<< HEAD
-=======
-
-<AndroidStore/>  <AppleStore/>
-
-
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
- Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>, <a href="https://t.me/osmand_es">(ES)</a>, <a href="https://t.me/osmand_pl">(PL)</a>.
->>>>>>> 2b19e7caf1b7e383306b3864ad298fd42452e508

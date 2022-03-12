@@ -57,7 +57,19 @@ time {
   color: #727272;
 }
 
+blockquote.question {
+border-left: 2px solid #ff8800;
+color: #212121;
+}
+
 blockquote.story {
   color: #212121;
   font-family:'Times New Roman', Times, serif;
+}
+
+div.question {
+  color: #212121;
+  font-weight: bold;
+  size: 16pt;
+  padding-bottom: 6pt;
 }
