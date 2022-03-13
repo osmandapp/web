@@ -98,9 +98,5 @@ And remember that only together we can achieve the best results!
 New features are coming SOON!
 
 
-
-
-
-
 <LinksTelegram/>
 <AppleStore/>

@@ -37,63 +37,102 @@ Completely redesigned interaction with tracks: a new menu with charts, statistic
 
 Just click on chosen track on the map or open it by <a href="https://docs.osmand.net/en/main@latest/osmand/personal/myplaces">"My Places"</a> menu to enable<a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">"Track context menu"</a>.
 
-![OsmAnd iOs 4.1](./tracks.png) ![OsmAnd iOs 4.1](./tracks_1.png) ![OsmAnd iOs 4.1](./tracks_2.png) 
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./tracks.png').default} alt="Image"/></td>
+    <td><img src={require('./tracks_1.png').default} alt="Image"/></td>
+    <td><img src={require('./tracks_2.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## New screen for searching by coordinates in different formats
 
 We will add the new screen for <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">coordinates search menu</a>.
 
-![OsmAnd iOs 4.1](./coordinates.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./coordinates.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## Improved coordinate search in OLC format
 
 Upgraded coordinates search in <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">OLC format</a>.
 
-![OsmAnd iOs 4.1](./olc.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./olc.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## New user-friendly menu for choosing languages to display Wikipedia articles on the map
 
 Changed the Configure map menu for choosing languages for <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/wikipedia">wiki articles</a>.
-
-![OsmAnd iOs 4.1](./wiki.png)
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./wiki.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 ## Added ability to easily load maps of all regions of the country with a couple of clicks
 
 Now, you can download region maps of any country <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps">by the bundle</a>.
 
-![OsmAnd iOs 4.1](./download.png)
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./download.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 ## Added contour lines in feet (You need to re-download files)
 
 We added <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines">contour lines maps</a> in feet.
 
-![OsmAnd iOs 4.1](./srtm.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./srtm.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## Downloading maps by clicking to the map
 
 Added ability <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps#download--manage---world-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.
 
-![OsmAnd iOs 4.1](./map.png) ![OsmAnd iOs 4.1](./map_1.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map.png').default} alt="Image"/></td>
+    <td><img src={require('./map_1.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
 
 <a href="https://docs.osmand.net/en/main@latest/osmand/map/interact-with-map">New buttons and new gestures</a> on the general screen.
 
-![OsmAnd iOs 4.1](./buttons.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./buttons.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
 
 <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#routes">New routes menu</a> in Configure map menu.
 
-![OsmAnd iOs 4.1](./routes.png)
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./routes.png').default} alt="Image"/></td>
+  </tr>
+</table>
+
 
 And remember that only together we can achieve the best results! 
 New features are coming SOON!

@@ -42,8 +42,11 @@ OsmAnd is available for <a href="https://www.android.com/auto/">Android Auto</a>
 
 **Note:**Paid feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Paid users (Maps+ and subscribers)</a>.
 
-
-![OsmAnd Androie 4.1](./osmand_android_auto.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./osmand_android_auto.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 ## Added Elevation widget for trip
 
@@ -51,9 +54,17 @@ At this release, you find the new Pro Feature for your active trips * "Elevation
 
 Menu → choose your profile → Configure screen → Elevation profile
 
-**Note:**Pro feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+:::note
 
-![OsmAnd Androie 4.1](./elevation_widget.png)
+Pro feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+
+:::
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./elevation_widget.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 
@@ -63,31 +74,48 @@ We added new <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-co
 
 Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
 
-![OsmAnd Androie 4.1](./gps_filter.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./gps_filter.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
-<div class="subtitle" id="utm"><h3>User interface update for UTM coordinate search</h3></div>
+
+## User interface update for UTM coordinate search
 
 Adding <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM format</a> for Adding <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates searching function</a>.
 
 Search menu → Address → <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates search</a> 
 
-![OsmAnd Androie 4.1](./UTM.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./UTM.png').default} alt="Image"/></td>
+  </tr>
+</table>
+
 
 
 ## Favorites: added ability to view recently used icons
 
 Adding <a href="https://docs.osmand.net/en/main@latest/osmand/personal/favorites#create">recently used category</a> for Favorite icon.
 
-
-![OsmAnd Androie 4.1](./favorite.png)
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./favorite.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 ## Route planning: will use the selected profile after launch
 
 Improving of <a href="https://docs.osmand.net/en/main@latest/osmand/plan-route/create-route">Plan route tool</a>. Now, you can start planning your route with <a href="https://docs.osmand.net/en/main@latest/osmand/widgets/map-buttons#configure-map">the current app profile</a> (for Browse map profile  *  navigation type "Straight line").
 
-![OsmAnd Androie 4.1](./planroute.png)
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./planroute.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## Fixed Mapillary layer, the plugin is now disabled by default
@@ -105,7 +133,11 @@ Now, you can disable history logging individually for each history type. One mor
 
 Menu → Settings → OsmAnd settings → Privacy and security: History
 
-![OsmAnd Androie 4.1](./history.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./history.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## App shortcuts
@@ -116,7 +148,12 @@ Here, you can click short tap for choosing next actions: Navigate to Home, Navig
 
 Tapping to the action icon allows starting this action immediately.
 
-![OsmAnd Androie 4.1](./shortcuts1.png) ![OsmAnd Androie 4.1](./shortcuts2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./shortcuts1.png').default} alt="Image"/></td>
+    <td><img src={require('./shortcuts2.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 ## What else is in this release?
 

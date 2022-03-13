@@ -4,6 +4,8 @@ title: 2021 New Year resolutions
 authors: eugene
 tags: [resolutions]
 ---
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 Happy New 2021 Year!
 
@@ -95,4 +97,5 @@ We’re also looking forward to many improvements in our search, routing & rende
 ______________________________
 
 OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
-Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.
+
+<LinksTelegram/>

@@ -4,6 +4,9 @@ title: OsmAnd 4.0 (Android)
 authors: eugene
 tags: [release, cloud, srtm, track appearance, android]
 ---
+import AndroidStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import Translate from '@site/src/components/Translate.js'
 
 Great news for Android users!
 
@@ -39,7 +42,11 @@ At this release we made two purchase plans for OsmAnd:
 
 Full information you can find [here](https://docs.osmand.net/en/main@latest/osmand/purchases).
 
-![OsmAnd Androie 4.0](./purchases_plan.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./purchases_plan.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 ## Cloud backup and restore
 
@@ -49,50 +56,73 @@ This function allows to make backup and restore all your OsmAnd data: settings, 
 
 Go to **<Translate android="yes" id="shared_string_menu" /> → Settings → Backup & Restore**. Select the data to be exported to backup storage.
 
-![OsmAnd Androie 4.0](./backup_1.png) ![OsmAnd Androie 4.0](./backup_2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./backup_1.png').default} alt="Image"/></td>
+    <td><img src={require('./backup_2.png').default} alt="Image"/></td>
+  </tr>
+</table> 
 
 
 ## Moved 'OsmAnd Live' updates menu
 
 'OsmAnd Live' updates (function of hourly map updates) moved to **"<Translate android="yes" id="shared_string_menu" /> → Downloads maps → Updates"**.
 
-![OsmAnd Androie 4.0](./live_1.png) ![OsmAnd Androie 4.0](./live_2.png)
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./live_1.png').default} alt="Image"/></td>
+    <td><img src={require('./live_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 ## Added night mode for Topo / Offroad rendering styles
 
 We added <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#map-mode">night mode</a> for <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#topo">Topo</a> and <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#offroad">Offroad</a> rendering styles.
 
-![OsmAnd Androie 4.0](./topo.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./topo.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## Added option to download Contour lines in feet
 
 Now, there is an opportunity to download <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
 
-
-![OsmAnd Androie 4.0](./feet_cl_1.png) ![OsmAnd Androie 4.0](./feet_cl_2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./feet_cl_1.png').default} alt="Image"/></td>
+    <td><img src={require('./feet_cl_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## Updated "Trip recording" dialog
 
 We improved and updated "Trip recording" dialog.
-
 Now you can see more detailed information and graphs (Overview, Altitude, Speed) of your trip.
-
 You can set needed parameters for recording and start record of your trip with one tap.
 
-![OsmAnd Androie 4.0](./record_1.png) ![OsmAnd Androie 4.0](./record_2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./record_1.png').default} alt="Image"/></td>
+    <td><img src={require('./record_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## Tracks can now be colored by altitude, speed, or slope
 
 Now, any track can be colored by altitude, speed, or slope.
-
 Choose track on the map or in 'My places → Tracks', tap to 'Appearance' button.
 
-![OsmAnd Androie 4.0](./speed.png) ![OsmAnd Androie 4.0](./altitude.png)
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./speed.png').default} alt="Image"/></td>
+    <td><img src={require('./altitude.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 ## Added option to change the route line appearance
 
@@ -100,7 +130,12 @@ Users can choose an appearance for route line:
 
 **<Translate android="yes" id="shared_string_menu" /> → <Translate android="yes" id="configure_profile" /> (choose app profile) → Profile appearance → Customize route line**
 
-![OsmAnd Androie 4.0](./route_line.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./route_line.png').default} alt="Image"/></td>
+  </tr>
+</table>
+
 
 ## Added online routing for navigation type
 
@@ -109,7 +144,11 @@ Users can choose online routing engines for navigation type:
 
 Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteService, or GPX online routing.
 
-![OsmAnd Androie 4.0](./online_routing.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./online_routing.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## 'Distance by tap' moved from 'Radius ruler' into a separate option
@@ -117,7 +156,12 @@ Here you can use predefined templates, or add OSRM, GraphHopper, OpenRouteServic
 We separated 'Distance by tap' option from 'Radius ruler' tool.
 Now, you can find it in **<Translate android="yes" id="shared_string_menu" /> → Configure screen → Remaining elements → Distance by tap**.
 
-![OsmAnd Androie 4.0](./distance_by_tap_1.png) ![OsmAnd Androie 4.0](./distance_by_tap_2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./distance_by_tap_1.png').default} alt="Image"/></td>
+    <td><img src={require('./distance_by_tap_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## 'Plan Route' improvements
@@ -125,19 +169,34 @@ Now, you can find it in **<Translate android="yes" id="shared_string_menu" /> �
 At this release, we continued to improve our <a href="https://osmand.net/features/plan-route#pr-android">'Plan Route'</a> tool.
 Now, you can see a landscape of your trip planning by switching between points and graphs (Overview, Altitude, Slope, Road type, Surface, Steepness) tabs.
 
-![OsmAnd Androie 4.0](./plan_route_1.png) ![OsmAnd Androie 4.0](./plan_route_2.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./plan_route_1.png').default} alt="Image"/></td>
+    <td><img src={require('.//plan_route_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
+
 
 
 We added the ability to change navigation options, accessing configure map and search without leaving 'Plan route' tool. Just, you need to click buttons on the screen.
 
-![OsmAnd Androie 4.0](./plan_route_3.png) ![OsmAnd Androie 4.0](./plan_route_4.png)
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./plan_route_3.png').default} alt="Image"/></td>
+    <td><img src={require('./plan_route_4.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## New Purchases screen
 
 Now, there is a new 'Purchases' screen with detailed information about purchasing and 'Restore purchases' button.
 
-![OsmAnd Android 4.0](./purchases_menu.png) 
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./purchases_menu.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## New Language dialogue for Voice prompts
@@ -145,7 +204,12 @@ Now, there is a new 'Purchases' screen with detailed information about purchasin
 Redesigned dialog for selecting the language for navigation instructions. Now it's easier to choose and download the needed language and type of voice guidance:
 **<Translate android="yes" id="shared_string_menu" /> → <Translate android="yes" id="configure_profile" /> → <Translate android="yes" id="routing_settings_2" /> → <Translate android="yes" id="voice_announces" /> → <Translate android="yes" id="shared_string_language" />**.
 
-![OsmAnd Androie 4.0](./voice_prompts_1.png) ![OsmAnd Androie 4.0](./voice_prompts_2.png) 
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./voice_prompts_1.png').default} alt="Image"/></td>
+    <td><img src={require('./voice_prompts_2.png').default} alt="Image"/></td>
+  </tr>
+</table>
 
 
 ## New POI types
@@ -170,11 +234,6 @@ And remember that only together we can achieve the best results!
 New features are coming SOON!
 
 ____________________________ 
-
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
-Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.
-
-
 
 <LinksTelegram/>
 <AndroidStore/>
