@@ -58,7 +58,7 @@ const config = {
             label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/build-it/', label: 'Build it', position: 'left'},
+          {to: '/docs/build-it/', label: 'Build it', position: 'right'},
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',

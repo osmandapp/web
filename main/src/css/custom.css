@@ -81,6 +81,13 @@ table.blogimage {
   border-style: none;
   border: 1px solid #F2F2F2;
 }
+[data-theme='dark'] table.blogimage {
+  width: 100%;
+  background-color: #252628;
+  border-radius: 10px;
+  border-style: none;
+  border: 1px solid #343434;
+}
 
 table.blogimage tr {
   border-style: none;
