@@ -1,7 +1,9 @@
 ---
-title: Navigation Voice Prompts
-versions: '*'
+sidebar_position: 4
 ---
+
+# Navigation Voice Prompts
+
 
 ## 1. Some Basics
 * OsmAnd supports both Text-to-Speech (TTS) synthesized prompts and pre-recorded voices.

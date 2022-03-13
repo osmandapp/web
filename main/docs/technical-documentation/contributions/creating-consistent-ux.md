@@ -1,7 +1,8 @@
 ---
-title: Creating a Consistent User Experience
-versions: '*'
+sidebar_position: 2
 ---
+
+# Creating a Consistent User Experience
 
 Usability of our complex features is decisively enhanced by wording and good translations, and as much consistency as possible. It is worth thinking about many expressions or sentences for a little while. :)
 

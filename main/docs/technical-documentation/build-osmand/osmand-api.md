@@ -1,8 +1,9 @@
 ---
-title: OsmAnd API, SDK - Samples
-intro: "In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android."
-versions: '*'
+sidebar_position: 3
 ---
+
+# OsmAnd API, SDK - Samples
+In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
  
 There are 3 main ways how to reuse OsmAnd power in your app:
 - Android OsmAnd AIDL API

@@ -1,7 +1,9 @@
 ---
-title: How to Compile the Android Version
-versions: '*'
+sidebar_position: 5
 ---
+
+# How to Compile the Android Version
+
 
 **Android SDK**:
 Min sdk version: [21](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L38)

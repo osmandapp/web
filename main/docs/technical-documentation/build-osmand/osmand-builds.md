@@ -1,8 +1,9 @@
 ---
-title: OsmAnd Builds
-intro: "OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process)."
-versions: '*'
+sidebar_position: 2
 ---
+
+# OsmAnd Builds
+OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
 ## Google Play Beta builds (monthly)
 The Google Play Store offers to test beta versions of

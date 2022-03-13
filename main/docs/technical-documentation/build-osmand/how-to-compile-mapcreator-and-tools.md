@@ -1,7 +1,9 @@
 ---
-title: How to Compile OsmAndMapCreator and tools
-versions: '*'
+sidebar_position: 7
 ---
+
+# How to Compile OsmAndMapCreator and tools
+
 
 ## Compile OsmAndMapCreator
 1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
