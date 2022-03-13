@@ -20,7 +20,7 @@ Steps to create vector map via OsmAndMapCreator UI:
 1. OSM File
     - Download it from [Geofabrik](https://www.geofabrik.de/data/download.html) or small export from [OpenStreetMap](https://www.openstreetmap.org/export#map=19/48.80672/2.13187)
     - Convert [Shapefile to OSM](https://wiki.openstreetmap.org/wiki/OGR) 
-    - Generate [OSM XML](https://wiki.openstreetmap.org/wiki/OSM_XML) it yourself using any programming utilities, you can proceed by converting it to [OBF Format](/development/osmand-file-formats/osmand-obf) which OsmAnd can undertand
+    - Generate [OSM XML](https://wiki.openstreetmap.org/wiki/OSM_XML) it yourself using any programming utilities, you can proceed by converting it to [OBF Format](../osmand-file-formats/osmand-obf.md) which OsmAnd can undertand
 2. Select checkboxes whether you want to produce Maps including Address / Routing / Transport / Map data
 3. Select in **File** → **Create .obf from file**.
 4. Once process is completed you will have `.obf` file in the working directory. 
@@ -107,7 +107,7 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 - Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts: 1) combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`), 2) sort values and keep the highest value (good for rendering routes local vs international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`), 3) generates unique tags for each relation (not used for now but stores information without loss - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **More information** you can find in [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).
 
 
-**Read more**: usually custom vector maps combined with [custom rendering style](/development/osmand-file-formats/osmand-rendering-style).
+**Read more**: usually custom vector maps combined with [custom rendering style](../osmand-file-formats/osmand-rendering-style.md).
 
 ## Raster maps (advanced)
 
