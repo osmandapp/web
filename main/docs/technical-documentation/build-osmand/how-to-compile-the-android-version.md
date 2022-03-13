@@ -113,4 +113,4 @@ Compile script:
 - [OsmAnd-map-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample) - [a sample application](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk) has fully integrated OsmAnd inside it as SDK. Allows to use all internall APIs.
 - [OsmAnd-opengl-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-qt-core-sample) - [a sample application](https://download.osmand.net/latest-night-build/OsmAnd-qt-core-sample.apk) that has only core element such as Map  & routing integrated inside. Maps needs to be installed separately into Shared OsmAnd storage (OsmAnd itself is not used).
 
-**[Read more](/development/build-osmand/osmand-api)**.
+**[Read more](osmand-api.md)**.

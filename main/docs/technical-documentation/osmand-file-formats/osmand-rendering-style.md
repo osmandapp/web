@@ -7,7 +7,7 @@ sidebar_position: 6
 
 In case you want to modify a default rendering style, take a look at [Github definition](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml). [Here](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles) you can also find all different styles, so in case you want to create your own style, you can find the easiest example.
 
-In case you consider creating your own rendering style, you might need to create [your own maps](/development/map-creation/create-offline-maps-yourself#custom-vector-map-tags) to add custom features display.
+In case you consider creating your own rendering style, you might need to create [your own maps](../map-creation/create-offline-maps-yourself.md#custom-vector-map-tags) to add custom features display.
 
 ## Map style sections 
 

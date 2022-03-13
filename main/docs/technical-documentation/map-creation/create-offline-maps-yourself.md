@@ -92,7 +92,7 @@ Example: for a 250MB *.osm.pbf* a \~4.5GB *nodes.tmp.odb* file will be generated
 
 ### Custom vector map (tags)
 
-OsmAnd rendering and POI search relies on information written to [OBF](/development/osmand-file-formats/osmand-obf). It has different structure than other OSM formats and optimized for mobile usage. You can inspect the contents using [Binary Inspector](/development/map-creation/how-to-inspect-an-obf). 3 Most important parts of OBF file are
+OsmAnd rendering and POI search relies on information written to [OBF](../osmand-file-formats/osmand-obf.md). It has different structure than other OSM formats and optimized for mobile usage. You can inspect the contents using [Binary Inspector](../map-creation/how-to-inspect-an-obf.md). 3 Most important parts of OBF file are
 
 - **Map section** used for Map Rendering defined by [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml)
 - **POI section** used for POI search and Object information defined by [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml)
