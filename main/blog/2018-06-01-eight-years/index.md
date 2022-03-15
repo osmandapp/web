@@ -7,11 +7,11 @@ tags: [event]
 
 Happy 8 Year Anniversary!
 
-<p>Thank you for being with us, for supporting the project and helping us grow. We're happy to share this journey with you.</p>
+Thank you for being with us, for supporting the project and helping us grow. We're happy to share this journey with you.  
 
 <!--truncate-->
 
-<p>But how did it all begin? Let's take a walk down the memory lane to remember the main OsmAnd milestones.</p>
+But how did it all begin? Let's take a walk down the memory lane to remember the main OsmAnd milestones.  
 
 [The link](https://www.sutori.com/story/9598-3211/embed)
 

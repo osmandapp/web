@@ -4,7 +4,7 @@ title: Story 2 - Paul and cycling
 authors: tat
 tags: [story]
 ---
-
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
@@ -76,4 +76,4 @@ _________________________________________________
 <AndroidStore/>  <AppleStore/>
 
 OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
- Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>, <a href="https://t.me/osmand_es">(ES)</a>, <a href="https://t.me/osmand_pl">(PL)</a>.
+ <LinksTelegram/>, <a href="https://t.me/osmand_es">(ES)</a>, <a href="https://t.me/osmand_pl">(PL)</a>.

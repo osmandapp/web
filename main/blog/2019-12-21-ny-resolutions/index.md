@@ -4,7 +4,7 @@ title: 2020 New Year resolutions
 authors: eugene
 tags: [resolutions]
 ---
-
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 
 Happy New 2020 Year!
 
@@ -191,4 +191,4 @@ Happy 2020 and let’s welcome 2020 OsmAnd!!!
 _____________________________
 
 OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
-Join us at our groups of Telegram <a href="https://t.me/OsmAndMaps">(EN)</a>, <a href="https://t.me/itosmand">(IT)</a>,  <a href="https://t.me/frosmand">(FR)</a>, <a href="https://t.me/deosmand">(DE)</a>, <a href="https://t.me/ruosmand">(RU)</a>, <a href="https://t.me/uaosmand">(UA)</a>.
+<LinksTelegram/>
