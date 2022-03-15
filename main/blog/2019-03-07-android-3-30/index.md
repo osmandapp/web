@@ -39,7 +39,7 @@ We have made a more detailed Directions menu to help you navigate to your Home a
 
 ## Improve Quick action
 
-As requested by many users, we have <b>added Show/Hide tracks, Day/Night mode switches in Quick action</b>. Quick action is a flexible menu of shortcuts providing direct access to whatever features you need to access most frequently: just select and add them to this 'toolbar'. In this way, the next time you need to add a new favorite, add a navigation destination, enable or disable voice guidance, etc, you can do it in one click using Quick action. The Quick action button can be added via the Configure screen menu. To add actions to the menu, please press 'Add action' right on its menu bar. To remove an action, go to Configure screen and tap the 'Quick action' menu, then remove any shortcuts not needed.
+As requested by many users, we have **added Show/Hide tracks, Day/Night mode switches in Quick action**. Quick action is a flexible menu of shortcuts providing direct access to whatever features you need to access most frequently: just select and add them to this 'toolbar'. In this way, the next time you need to add a new favorite, add a navigation destination, enable or disable voice guidance, etc, you can do it in one click using Quick action. The Quick action button can be added via the Configure screen menu. To add actions to the menu, please press 'Add action' right on its menu bar. To remove an action, go to Configure screen and tap the 'Quick action' menu, then remove any shortcuts not needed.
 
 <table class="blogimage">
   <tr>
@@ -49,7 +49,7 @@ As requested by many users, we have <b>added Show/Hide tracks, Day/Night mode sw
 
 ## Additional info in the Route details.
 
-While building a route,  you can view information about the road itself like <b>road types, surface, steepness and smoothness</b> which will help you in understanding the road conditions of your route.
+While building a route,  you can view information about the road itself like **road types, surface, steepness and smoothness** which will help you in understanding the road conditions of your route.
 
 <table class="blogimage">
   <tr>

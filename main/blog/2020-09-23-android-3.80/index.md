@@ -194,7 +194,7 @@ We fixed issues with importing/exporting of profile settings for <a href="https:
 
 ## What else is in this release?
 
-<b>• Fix bugs with RTL</b>
+**• Fix bugs with RTL**
 
 And remember that only together we can achieve the best results!
 New features are coming SOON!

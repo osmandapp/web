@@ -56,15 +56,15 @@ OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/
 ![OsmAnd Pro](./route_planning.png)
 
 Route Creation tool:
-* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route"><i>Multiprofile and multisegment tracks</i></a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#plan_route"><i>Graphs</i></a>
-* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route"><i>Recorded track approximation</i></a>
-* New navigation type: <a href="https://osmand.net/blog/osmand-3-6-released#36_dtp"><b>Direct-to-point</b></a>
-* Navigation UI: <a href="https://osmand.net/blog/osmand-3-6-released#36_exit_number"><b>Exit number & Road shields</b></a>
+* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route">*Multiprofile and multisegment tracks*</a>
+* <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">*Graphs*</a>
+* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route">*Recorded track approximation*</a>
+* New navigation type: <a href="https://osmand.net/blog/osmand-3-6-released#36_dtp">**Direct-to-point**</a>
+* Navigation UI: <a href="https://osmand.net/blog/osmand-3-6-released#36_exit_number">**Exit number & Road shields**</a>
 
 ## iOS
 
-We’ve managed to release <b>4 new versions</b> of OsmAnd for iOS this year: <a href="https://osmand.net/blog/osmand-ios-3-12-released">3.12</a>, <a href="https://osmand.net/blog/osmand-ios-3-14-released">3.14</a>, <a href="https://osmand.net/blog/osmand-ios-3-80-released">3.80</a>, <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.90 (already available for Beta Test)</a>! All this was possible due to the commitment and hard work of our iOS team to catch up with Android.
+We’ve managed to release **4 new versions** of OsmAnd for iOS this year: <a href="https://osmand.net/blog/osmand-ios-3-12-released">3.12</a>, <a href="https://osmand.net/blog/osmand-ios-3-14-released">3.14</a>, <a href="https://osmand.net/blog/osmand-ios-3-80-released">3.80</a>, <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.90 (already available for Beta Test)</a>! All this was possible due to the commitment and hard work of our iOS team to catch up with Android.
 
 ![OsmAnd Pro](./ios-2020.png)
 
@@ -92,7 +92,7 @@ Our list is growing every year and, as of today, we have around 1700 requests wa
 * Quick Action Panel (Android)		
 
 We’re also looking forward to many improvements in our search, routing & rendering. We hope to surprise you with new useful features and hope that in 2021 OsmAnd will be more useful for your trips than in 2020.
-<b>Happy 2021 and let’s welcome 2021 OsmAnd Users and OsmAnd Team!</b>
+**Happy 2021 and let’s welcome 2021 OsmAnd Users and OsmAnd Team!**
 
 ______________________________
 

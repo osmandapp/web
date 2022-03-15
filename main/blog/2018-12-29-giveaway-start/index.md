@@ -22,7 +22,7 @@ During this Christmas weekend we started our first giveaway and we sent a specia
 
 ![Giviaway](./giveaway_sub_1.png)
 
-At first time we gave away <b>75</b> promocodes for OsmAnd+. At the last round there were <b>322</b> participants, so <b>25%</b> were winners.
+At first time we gave away **75** promocodes for OsmAnd+. At the last round there were **322** participants, so **25%** were winners.
 
 ![Giviaway](./giveaway_win_1.png)
 

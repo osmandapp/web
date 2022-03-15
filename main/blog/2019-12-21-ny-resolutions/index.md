@@ -16,7 +16,7 @@ Every year we follow tradition to write New Year Resolutions. First of all we wo
 
 ![OsmAnd Pro](./2019-NY-1.png)
 
-First of all, we would like to congratulate our CEO <b>Victor Shcherb</b> who received the Ulf Möller Memorial Award during <a href="http://weeklyosm.eu/archives/12408">SotM-2019</a> in Heilderberg, Germany for creating OsmAnd application and supporting it over the years, keeping it the only major OSM-based app with no corporate influence, and constantly imagining ways to expand the access to the open data for regular users.
+First of all, we would like to congratulate our CEO **Victor Shcherb** who received the Ulf Möller Memorial Award during <a href="http://weeklyosm.eu/archives/12408">SotM-2019</a> in Heilderberg, Germany for creating OsmAnd application and supporting it over the years, keeping it the only major OSM-based app with no corporate influence, and constantly imagining ways to expand the access to the open data for regular users.
 
 ![OsmAnd Pro](./2019-NY-2.jpg)
 
@@ -75,7 +75,7 @@ As of <a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, route detai
 
 * **What else?**
 
-We’ve redesigned <b>Directions screens</b>, improved <b>Quick action</b>, added a <b>Widget with Current Coordinates</b> and <b>the Compass</b> to the Radius ruler, added <b>Ski Routing</b>, updated <b>Basemap</b>, <b>Desert style</b> for map and lot’s of else.
+We’ve redesigned **Directions screens**, improved **Quick action**, added a **Widget with Current Coordinates** and **the Compass** to the Radius ruler, added **Ski Routing**, updated **Basemap**, **Desert style** for map and lot’s of else.
 
 <table class="blogimage">
   <tr>
@@ -88,7 +88,7 @@ We’ve redesigned <b>Directions screens</b>, improved <b>Quick action</b>, adde
 
 ### iOS
 
-We’ve managed to release <b>7 new versions</b> of OsmAnd for iOS this year (<a href="https://osmand.net/blog/osmand-ios-2-5-released">2.5</a>, <a href="https://osmand.net/blog/osmand-ios-2-7-released">2.7</a>, <a href="https://osmand.net/blog/osmand-ios-2-8-released">2.8</a>, <a href="https://osmand.net/blog/osmand-ios-2-9-released">2.9</a>, <a href="https://osmand.net/blog/osmand-ios-3-0-released">3.0</a>, <a href="https://osmand.net/blog/osmand-ios-3-10-released">3.10</a>, <a href="https://osmand.net/blog/osmand-ios-3-11-released">3.11</a>)! All this was possible due to the commitment and hard work of our iOS team to catch up with Android. We hope 2020 to be a year in which almost all features present in OsmAnd will be equal for both Android and iOS version. Here the list of main features released this year for the iPhones and iPads.
+We’ve managed to release **7 new versions** of OsmAnd for iOS this year (<a href="https://osmand.net/blog/osmand-ios-2-5-released">2.5</a>, <a href="https://osmand.net/blog/osmand-ios-2-7-released">2.7</a>, <a href="https://osmand.net/blog/osmand-ios-2-8-released">2.8</a>, <a href="https://osmand.net/blog/osmand-ios-2-9-released">2.9</a>, <a href="https://osmand.net/blog/osmand-ios-3-0-released">3.0</a>, <a href="https://osmand.net/blog/osmand-ios-3-10-released">3.10</a>, <a href="https://osmand.net/blog/osmand-ios-3-11-released">3.11</a>)! All this was possible due to the commitment and hard work of our iOS team to catch up with Android. We hope 2020 to be a year in which almost all features present in OsmAnd will be equal for both Android and iOS version. Here the list of main features released this year for the iPhones and iPads.
 
 * **OsmAnd Live**
 
@@ -162,27 +162,27 @@ Our list is growing every year and, as of today, we have around 1500 requests wa
 
 ### GENERAL
 
-* <b>New slopes / hillshade maps</b>
+* **New slopes / hillshade maps**
  In 2019 we’ve released updated contour lines worldwide and started working on new raster hillshade and slope maps. We want to provide more detailed raster maps and also add a new type of maps to better visualize slopes.
-* <b>Profiles on Android + iOS</b>
+* **Profiles on Android + iOS**
  This is considered to be the most important feature of 2020. The implementation has already started in 2019 and now Android users can create / import and export custom profiles with user-defined settings. We’re going to continue profile’s customization, so every profile could look and feel as a separate geo-specialized application. We also want to make it easy to share  the profiles with others.
 
 ### Android
 
-* <b>OpenGL-rendering + 2.5D</b>
+* **OpenGL-rendering + 2.5D**
  This is a long running feature for several years and we have a prototype build, we’ve already added some features to our roadmap to be implemented. Though we are not planning to make it mainstream unless it will be very successful. You can always check out the version we have at <a href="https://download.osmand.net/latest-night-build/OsmAnd-qt-arm-nightly.apk">our build server</a>.
-* <b>Travel + Wikivoyage improvements</b>
+* **Travel + Wikivoyage improvements**
  This year we didn’t manage to implement many features related to Wikivoyage, though it is always in our focus. We plan to make a second version inspired by our new plugin architecture.
-* <b>Local GPX-access</b>
+* **Local GPX-access**
  Every year we develop many tiny and useful features related to GPX and this year was not an exception. We’ve closed more than 50 GPX-related issues. In 2020 we plan to add new features, that will change the way of ineraction with the GPX tracks on the map, browsing and searching among large list of GPX files and add new ways of visualizing GPX-activities.
 
 ### iOS
 
-* <b>Public Transport</b>
+* **Public Transport**
  This feature was completed for Android in 2019 and we plan to migrate all the implemented solutions to the iOS version in 2020. So OSM-ers with iPhones will get a new motivation to map public transport in OSM (<a href="https://osmand.net/blog/guideline-pt">check out our guideline</a>).
-* <b>Measure Distance</b>
+* **Measure Distance**
  We’ve got a lot of requests for <a href="https://osmand.net/features/measure-distance">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
-* <b>GPX</b>
+* **GPX**
  While the Android version has more advanced GPX-related features, the iOS version still lacks some base route graphs and stats. Of course it is very important for us not to miss those next year.
 
 

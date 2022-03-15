@@ -18,7 +18,7 @@ We are glad to announce the release of version 3.4! We proudly present some majo
 
 Now you can create your own profile for your needs, with a custom icon and color. Go to *General menu-> Settings-> Application settings*. Here you can select *Base profiles* to display in the navigation.
 After clicking to "+Add" you can build your own profile with your own parametres: icon, avoid, elevation, configure map, screen, navigation settings...
-You can add own modified version of <b>routing.xml</b> to osmand folder: ...osmand/routing.
+You can add own modified version of **routing.xml** to osmand folder: ...osmand/routing.
 
 <table class="blogimage">
   <tr>
