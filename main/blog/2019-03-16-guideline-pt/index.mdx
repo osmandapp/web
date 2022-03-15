@@ -19,153 +19,153 @@ And guess what? It allows our users to work out their routes using public transp
 
 ## Guidelines on how to build or correct public transport routes
 
-<p>So, let us go through the process of mapping out a route together using <a href="https://wiki.openstreetmap.org/wiki/JOSM">JOSM</a>. We have chosen to create a bus route. For starters, let’s mark our stops. There are two options in the settings, so one can either mark it as a regular bus stop (<a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Stop_Position">public_transport=stop_position</a>), or as a place where the passengers will be waiting for the arrival of their bus (<a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Platform">public_transport=platform</a>). These stops should be included directly into your route. Then, you should attach some tags, such as <i>public_transport=stop_position</i>, <i>name</i>, etc. You also can use presets: find them in Presets - Transport - Public transport.</p>
+So, let us go through the process of mapping out a route together using <a href="https://wiki.openstreetmap.org/wiki/JOSM">JOSM</a>. We have chosen to create a bus route. For starters, let’s mark our stops. There are two options in the settings, so one can either mark it as a regular bus stop (<a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Stop_Position">public_transport=stop_position</a>), or as a place where the passengers will be waiting for the arrival of their bus (<a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Platform">public_transport=platform</a>). These stops should be included directly into your route. Then, you should attach some tags, such as `public_transport=stop_position`, `name`, etc. You also can use presets: find them in Presets - Transport - Public transport.  
 
 ![Public transport Guideline](./image_1.png)
 
-<p>As a general rule, the platform for waiting passengers is located in front of a bus stop. It can be a node, a line or even a polygon. We will set two tags, one is <i>public_transport=platform</i>, and the other - <i>highway=bus_stop</i> (to meet the requirements of PT v1). We also encourage you to give it a name.</p>
+As a general rule, the platform for waiting passengers is located in front of a bus stop. It can be a node, a line or even a polygon. We will set two tags, one is `public_transport=platform`, and the other - `highway=bus_stop` (to meet the requirements of PT v1). We also encourage you to give it a name.  
 
 ![Public transport Guideline](./image_2.png)
 
-<p>You need to match the first stop with the starting point of your route. Logically, the last stop has to be near the finish. If, however, you have to put it in the middle, you will need to split the segment there.</p>
+You need to match the first stop with the starting point of your route. Logically, the last stop has to be near the finish. If, however, you have to put it in the middle, you will need to split the segment there.  
 
-<p>After checking whether we have tagged all the stops correctly, we will go on mapping out the route. We will need to search a panel on the right side of the screen for “Relations”. If you cannot find it, go directly to Windows -> “Relations”. Found it? Click on “Create a new relation”.</p> 
+After checking whether we have tagged all the stops correctly, we will go on mapping out the route. We will need to search a panel on the right side of the screen for “Relations”. If you cannot find it, go directly to Windows -> “Relations”. Found it? Click on “Create a new relation”.   
 
 ![Public transport Guideline](./image_3.png)
 
-<p>A window will pop up. Here, we will create the relations. One can find the description of any tag they may need <a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Route">here</a>.</p>
+A window will pop up. Here, we will create the relations. One can find the description of any tag they may need <a href="https://wiki.openstreetmap.org/w/index.php?title=Proposed_features/Public_Transport&oldid=625726#Route">here</a>.  
 
-<p>Let’s go ahead and add some tags:</p>
+Let’s go ahead and add some tags:  
 
-<p><i>type=route</i></p>
-<p><i>route=bus</i></p>
-<p><i>from=Bus stop 1</i></p>
-<p><i>to=Bus stop 3</i></p>
-<p><i>name=Bus 5: Bus stop 1 => Bus stop 3</i></p>
-<p><i>ref=5</i></p>
+`type=route`  
+`route=bus`  
+`from=Bus stop 1`  
+`to=Bus stop 3`
+`name=Bus 5: Bus stop 1 => Bus stop 3`  
+`ref=5`  
 
-<p>Our next task is to add other elements of our route. Go to the main window, do not close the window where you have been creating the relation, though. Successively select all the segments of the route, using the CTRL button for multiple marking. These segments will appear in the tab Selection in the window where we have been creating the relation.</p>
+Our next task is to add other elements of our route. Go to the main window, do not close the window where you have been creating the relation, though. Successively select all the segments of the route, using the CTRL button for multiple marking. These segments will appear in the tab Selection in the window where we have been creating the relation.  
 
-<p>Using the buttons circled in red, we will add them to the “Members” tab.</p>
+Using the buttons circled in red, we will add them to the “Members” tab.  
 
 ![Public transport Guideline](./image_4.png)
 
 ![Public transport Guideline](./image_5.png)
 
-<p>Our next move is to add nodes <i>public_transport=stop_position</i> and <i>public_transport=platform</i>. Select them on the map and, then, add to the relation (higher than ways). Enumerate them to avoid further difficulties. For example, <i>stop_position 1, platform 1, stop position 2, platform 2</i> and etc. As a result, our relation editing window looks like this:</p>
+Our next move is to add nodes `public_transport=stop_position` and `public_transport=platform`. Select them on the map and, then, add to the relation (higher than ways). Enumerate them to avoid further difficulties. For example, `stop_position 1, platform 1, stop position 2, platform 2` and etc. As a result, our relation editing window looks like this:  
 
 ![Public transport Guideline](./image_6.png)
 
-<p>The roles for stops and platforms, however, will be automatically filled out. For instance, in the column called “Role” stop_position has an assigned “stop” role, while platform has “platform” role. We will change it just a bit here. In particular, we will change the first and the last platform and stop_position roles. Add “_entry_only” to the objects related to the first stop (<i>stop_entry_only, platform_entry_only</i>), it means that this stop has just one purpose - entrance. The last stop, accordingly, should be marked “_exit_only” (<i>stop_exit_only, platform_exit_only</i>). Sometimes the roles are not assigned automatically, then you will need to fill them in manually.</p>
+The roles for stops and platforms, however, will be automatically filled out. For instance, in the column called “Role” stop_position has an assigned “stop” role, while platform has “platform” role. We will change it just a bit here. In particular, we will change the first and the last platform and stop_position roles. Add “_entry_only” to the objects related to the first stop (`stop_entry_only, platform_entry_only`), it means that this stop has just one purpose - entrance. The last stop, accordingly, should be marked “_exit_only” (`stop_exit_only, platform_exit_only`). Sometimes the roles are not assigned automatically, then you will need to fill them in manually.  
 
 ![Public transport Guideline](./image_7.png)
 
-<p>We have marked the buttons for moving and sorting the relation members as 1 and 2 (in red).</p>
+We have marked the buttons for moving and sorting the relation members as 1 and 2 (in red).  
 
-<p><b>If the order of stops is incorrect, OsmAnd will NOT be able to plan a proper route for you!</b></p>
+**If the order of stops is incorrect, OsmAnd will NOT be able to plan a proper route for you!** 
 
-<p>To check whether the route has any gaps, use small arrows located on the right side of the way. They also will help you to determine the direction of the route.</p>
-<p>Now, as you can see, we have a complete route, which starts at <i>Bus stop 1</i> (on Fedinskaya street) and ends at <i>Bus stop 3</i> (A-108).</p>
-<p>As a rule, buses go both ways. So, why not to create a backtrack? Just start from copying the relations by pressing “Relations - Create copy of this relation”. You can also access the button in the redactor. In order not to get confused, we can delete all <i>stop_position</i> and <i>platform</i> from the relation copy and leave only the ways. By clicking on a button called “Reverse the order of the relation members” in the redactor window, we will reverse the direction of the route and, furthermore, will be able to check whether they are correct. Now, let us add stops and platforms, adding tags in the process.</p>
-<p>All the directions, variants of route, and details attached to the route should be united relation type "route_master" which is required by the scheme PTv2. Our task now is to create a new relation and fill in the tags: </p>
+To check whether the route has any gaps, use small arrows located on the right side of the way. They also will help you to determine the direction of the route.  
+Now, as you can see, we have a complete route, which starts at `Bus stop 1` (on Fedinskaya street) and ends at `Bus stop 3` (A-108).  
+As a rule, buses go both ways. So, why not to create a backtrack? Just start from copying the relations by pressing “Relations - Create copy of this relation”. You can also access the button in the redactor. In order not to get confused, we can delete all `stop_position` and `platform` from the relation copy and leave only the ways. By clicking on a button called “Reverse the order of the relation members” in the redactor window, we will reverse the direction of the route and, furthermore, will be able to check whether they are correct. Now, let us add stops and platforms, adding tags in the process.  
+All the directions, variants of route, and details attached to the route should be united relation type "route_master" which is required by the scheme PTv2. Our task now is to create a new relation and fill in the tags:   
 
-<p><i>type=route_master</i></p>
-<p><i>route_master=bus</i></p>
-<p><i>ref=5</i></p>
+`type=route_master`  
+`route_master=bus`  
+`ref=5`  
 
-<p>The tag “ref” is reserved for the number of the route.</p>
-<p>Not closing the redactor, let’s find the previously created route and choose “Select relation” from the context menu. If you did alright, which we are sure of, you will see your route change color. It will become purple, and the tags will appear on the panel “Tags / Membership”.</p>
+The tag “ref” is reserved for the number of the route.  
+Not closing the redactor, let’s find the previously created route and choose “Select relation” from the context menu. If you did alright, which we are sure of, you will see your route change color. It will become purple, and the tags will appear on the panel “Tags / Membership”.  
 
 ![Public transport Guideline](./image_8.png)
 
-<p>We will add it to “Members” using the corresponding buttons and save the relation.</p>
+We will add it to “Members” using the corresponding buttons and save the relation.  
 
 ![Public transport Guideline](./image_9.png)
 
-<p>
-To indicate a bus station, mark it with a dot or a polygon, and add tags amenity=bus_station + public_transport=station. <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity=bus_station">More info about tags.</a> You can include the station in relation to the route or create a separate bus stop and add it.
-</p>
+
+To indicate a bus station, mark it with a dot or a polygon, and add tags `amenity=bus_station + public_transport=station`. <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity=bus_station">More info about tags.</a> You can include the station in relation to the route or create a separate bus stop and add it.
+  
 
 ## The most common mistakes
 
 ### "OSM Inspector" final check (Data validator)
 
-<p><a href="http://tools.geofabrik.de/osmi/?view=pubtrans_routes&lon=13.39599&lat=52.49897&zoom=12&overlays=ptv2_routes_invalid,ptv2_error_,ptv2_error_ways,ptv2_error_nodes">OSM Inspector</a> can help you to check whether routes are correct. <a href="https://blog.geofabrik.de/?p=436">Use it</a>, it does a pretty nice work!</p>
+<a href="http://tools.geofabrik.de/osmi/?view=pubtrans_routes&lon=13.39599&lat=52.49897&zoom=12&overlays=ptv2_routes_invalid,ptv2_error_,ptv2_error_ways,ptv2_error_nodes">OSM Inspector</a> can help you to check whether routes are correct. <a href="https://blog.geofabrik.de/?p=436">Use it</a>, it does a pretty nice work!  
 
-<p>In case there is a mistake, click on it in the tab “Selection” and detailed info will appear. A vertical scroll bar will show up automatically if there are multiple mistakes on different levels. Each mistake has a letter J next to it. Click on it, and the mechanism of <a href="https://josm.openstreetmap.de/wiki/Help/Preferences/RemoteControl">the remote control</a> will open the corresponding area in JOSM.</p>
+In case there is a mistake, click on it in the tab “Selection” and detailed info will appear. A vertical scroll bar will show up automatically if there are multiple mistakes on different levels. Each mistake has a letter J next to it. Click on it, and the mechanism of <a href="https://josm.openstreetmap.de/wiki/Help/Preferences/RemoteControl">the remote control</a> will open the corresponding area in JOSM.  
 
 ![Public transport Guideline](./image_10.png)
 
-<p>Should the message “The OSM server ‘api.openstreetmap.org’ reported a bad request. The area you tried is too big or your request was too large. Either request a smaller area or use an export file provided by the OSM community” appear on the screen, the easiest way to resolve it would be to download this area through JOSM -> File -> Download data -> Download from Overpass API. Using <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> allows you to get more data from the server in one request as well as to download only the required type of data.</p>
+Should the message “The OSM server ‘api.openstreetmap.org’ reported a bad request. The area you tried is too big or your request was too large. Either request a smaller area or use an export file provided by the OSM community” appear on the screen, the easiest way to resolve it would be to download this area through JOSM -> File -> Download data -> Download from Overpass API. Using <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a> allows you to get more data from the server in one request as well as to download only the required type of data.  
 
-<p><i>Gap / Gap or unordered before this way</i></p>
+*Gap / Gap or unordered before this way*  
 
-<p>Any unintentional split of your track will result in this mistake. Search for the relation with this mistake in the editing panel.</p>
+Any unintentional split of your track will result in this mistake. Search for the relation with this mistake in the editing panel.  
 
 ![Public transport Guideline](./image_11.png)
 
-<p>On this screenshot, we can see that the line which shows our route indeed has some gaps. To get to the root of the problem, click on the route segment near the split in the Members list. This way will be marked with red coloring in the main window of the program.</p>
+On this screenshot, we can see that the line which shows our route indeed has some gaps. To get to the root of the problem, click on the route segment near the split in the Members list. This way will be marked with red coloring in the main window of the program.  
 
 ![Public transport Guideline](./image_12.png)
 
-<p>To move across the segments of a relation you can also use the keyboard. By going through the track manually, it is easier to spot the segment that was placed incorrectly. And when we already know what has caused the mistake, we can just drag it to its right place. You can also use buttons on your left, if you wish.</p>
-<p>The neighboring segments may have an inverted order, which is a fairly common mistake. To correct it, we can select the disorganized tracks in the list of Members and click the button  on the left, which is “Reverse the order of relation members”.</p>
-<p>The image of a bus has been placed on the button in the latest versions of JOSM to automatically correct simple mistakes. And, finally, when we understand how to make corrections manually, we can run the program, fully controlling the process!</p>
+To move across the segments of a relation you can also use the keyboard. By going through the track manually, it is easier to spot the segment that was placed incorrectly. And when we already know what has caused the mistake, we can just drag it to its right place. You can also use buttons on your left, if you wish.  
+The neighboring segments may have an inverted order, which is a fairly common mistake. To correct it, we can select the disorganized tracks in the list of Members and click the button  on the left, which is “Reverse the order of relation members”.  
+The image of a bus has been placed on the button in the latest versions of JOSM to automatically correct simple mistakes. And, finally, when we understand how to make corrections manually, we can run the program, fully controlling the process!  
 
 ![Public transport Guideline](./image_13.png)
 
-<p><i>Empty role for non-way object</i></p>
-<p>In most cases, it means that we have left out one stop_position or platform role. We will need to fill in the empty role.</p> 
+*Empty role for non-way object* 
+In most cases, it means that we have left out one stop_position or platform role. We will need to fill in the empty role.   
 
-<p><i>Road vehicle route over non-road</i></p>
+*Road vehicle route over non-road*  
 
-<p>This message will appear when the road is closed or does not allow a certain type of transport to pass through it. Just check the track and place some corrections.</p>  
+This message will appear when the road is closed or does not allow a certain type of transport to pass through it. Just check the track and place some corrections.    
 
-<p><i>Stop without proper tags</i></p>
-<p>At the place of stop, there are no tags indicating the type of transport (bus=yes, train=yes and etc.).</p>
+*Stop without proper tags*  
+At the place of stop, there are no tags indicating the type of transport (bus=yes, train=yes and etc.).  
 
-<p><i>Route has only stops/platforms</i></p>
-<p>There are no ways in the route. Just add them.</p> 
-<p><i>Trolley bus without trolley wire</i></p> 
-<p>Tag trolley ways with trolley_wire=yes to mark contact electrical network.</p>
+*Route has only stops/platforms*  
+There are no ways in the route. Just add them.   
+*Trolley bus without trolley wire*   
+Tag trolley ways with trolley_wire=yes to mark contact electrical network.  
 
-<p><i>Unknown route type</i></p> 
-<p>This type of the route is unknown. Add some details.</p> 
+`Unknown route type`   
+This type of the route is unknown. Add some details.   
 
-<p><i>Unknown role</i></p> 
-<p>The type of the role should be specified.</p>
+`Unknown role`   
+The type of the role should be specified.  
 
-<p><i>Stop is not node</i></p> 
-<p>The place of a stop (stop_position) is not a node.</p>  
+`Stop is not node`   
+The place of a stop (stop_position) is not a node.    
 
-<p><i>Stop not on way</i></p> 
-<p>A stop is not implemented in your route, it should be put directly in it.</p>
+`Stop not on way`   
+A stop is not implemented in your route, it should be put directly in it.  
 
 ### "JOSM validator" final check (Data validator)
 
-<p>JOSM has an inbuilt validator which checks data. It will open automatically should you try to send the data to the server, it can also be handled manually. In order to do this, search for the tab “Validation Results” on the right of the main window.   Still cannot see it? Let’s turn it on through Windows -> Validation results. Click “Check” button and the whole area (if none selected) validation should start. Should you try sending data to the server, this check will work out only recently changed info.</p>  
+JOSM has an inbuilt validator which checks data. It will open automatically should you try to send the data to the server, it can also be handled manually. In order to do this, search for the tab “Validation Results” on the right of the main window.   Still cannot see it? Let’s turn it on through Windows -> Validation results. Click “Check” button and the whole area (if none selected) validation should start. Should you try sending data to the server, this check will work out only recently changed info.    
 
 ![Public transport Guideline](./image_14.png)
 
-<p>Let us go through the results related to public transport:</p> 
+Let us go through the results related to public transport:   
 
-<p>- <i>Route relation contains a ‘forward/backward/alternate’ role</i></p>
-<p>The PTv1 scheme implies additional role assignment to a route, but it goes against PTv2 schema. Delete all the roles and, if necessary, create your route again from scratch.</p>  
+Route relation contains a ‘forward/backward/alternate’ role  
+The PTv1 scheme implies additional role assignment to a route, but it goes against PTv2 schema. Delete all the roles and, if necessary, create your route again from scratch.    
 
-<p>- <i>Route relation contains a gap</i></p>
-<p>The same as <i>Gap / Gap or unordered before this way</i> in OSM Inspector.</p>
+Route relation contains a gap 
+The same as `Gap / Gap or unordered before this way` in OSM Inspector.  
 
-<p>- <i>Route scheme is unspecified. Add public_transport:version</i></p>
-<p>If a route matches with the PTv2 scheme (as mentioned above), add the tag <i>public_transport:version=2</i> to the relation.</p> 
+Route scheme is unspecified. Add public_transport:version
+If a route matches with the PTv2 scheme (as mentioned above), add the tag `public_transport:version=2` to the relation.   
 
-<p>- <i>Stop position is not part of the route</i></p>
-<p>Look up <i>Stop not on way</i> in OSM Inspector, because they are identical.</p>
+Stop position is not part of the route
+Look up `Stop not on way` in OSM Inspector, because they are identical.  
 
-<p>____________</p> 
+____________   
 
 As you already know, a public transport function has been added in [the newest release](/blog/osmand-android-3-3-released) of our app.  We have received some valuable feedback from our users who had already tried this function out. Unfortunately, not all the data in OSM is reliable, which causes a few problems. We sincerely hope that, with the help of these guidelines, it will be much easier for you to create and check the public transport routes.
 
-<p>P.S. We will do our best to upgrade these and other functional aspects of the app in the future. And remember that each user makes all the difference. Let’s create OSM together!</p>  
+P.S. We will do our best to upgrade these and other functional aspects of the app in the future. And remember that each user makes all the difference. Let’s create OSM together!    
 
 _________________________________________________
 

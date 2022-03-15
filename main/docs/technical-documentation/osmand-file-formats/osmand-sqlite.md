@@ -12,7 +12,7 @@ sidebar_position: 9
       </a>
     </li>
     <li class="breadcrumbs__item breadcrumbs__item--active">
-      <a class="breadcrumbs__link" href="./docs/technical-documentation/osmand-file-formats">
+      <a class="breadcrumbs__link" href="@site/docs/technical-documentation/">
         OsmAnd File Formats
       </a>
     </li>
