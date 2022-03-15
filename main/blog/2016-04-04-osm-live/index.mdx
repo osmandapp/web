@@ -1,0 +1,65 @@
+---
+slug: osm-live
+title: OSM Live
+authors: eugene
+tags: [ios, android]
+---
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import Translate from '@site/src/components/Translate.js';
+
+Hi All,
+
+It&#39;s been about a week since we delivered OsmAnd 2.3 to more than half of our users. This release was mostly dedicated to OSM Live and we are very happy that today we have around 100 supporters and 100 mappers. Let's briefly iterate how it works.
+
+![OsmAnd Live](./osm_live_1.png)
+
+<!--truncate-->
+
+
+OsmAnd users pay in order to get hourly map updates. This money is split into 2 parts and one goes to OsmAnd developers while the other goes to mappers around the world. Today we've already processed three monthly payments started January 2016. We still add some funds to the mappers part, so the payouts look reasonable.
+
+From the beginning, we wanted to make the system as transparent as possible. So please find everything on the page <a data-gatag="osm_live" href="https://osmand.net/osm_live">http://osmand.net/osm_live</a>. Essentially, we are trying to build a crowdfunding (donation) for OSM and we want to use all modern technologies to make the process as much visible as possible. One of that technology is Bitcoin. Bitcoin lets us show how collected money is sent to mappers, for example, <a href="https://blockchain.info/tx-index/138988481">https://blockchain.info/tx-index/138988481</a>.
+
+After we launched OSM Live, many people supported the initiative, but they had some concerns and questions. This is why we decided to respond to them publicly so that everybody could find the answers.
+
+### Financials
+
+- Supporters can buy in-app only in 2 applications: OsmAnd Free and OsmAnd+ and only on Google Play platform.
+- We plan to support direct donations to bitcoin address and different platforms, but we focused first on the platform that has > 90 % of all our users, i.e. Google Play.
+- The price for OsmAnd+ is 1.49 EUR (monthly), 2.99 EUR (every three months), 5.99 EUR (annually) and for OsmAnd Free is 1.99 EUR (monthly), 3.99 EUR (every three months), 7.99 EUR (annually). The prices are different because in OsmAnd Free all downloads will be enabled automatically for the subscription period, so in that case, there is no immediate need to buy OsmAnd+.
+- Please keep in mind there are transactions costs between Supporter and Recipient. Google takes <b>30%</b> of every payment, Bitcoin processing fees are very small and about 0.5%. OsmAnd takes 30% but it is part of the contribution itself and enables hourly updates features.
+- We understand that OSM Live is not just a feature but a crowdfunding platform and one price doesn't fit all cases. So we plan to enable more in-app subscriptions and purchases in later releases.
+- We've been also receiving questions on how to donate to OsmAnd team directly, and we also plan to add a way to do that soon.
+
+### Mappers
+
+
+- Important: OsmAnd doesn't store any OSM passwords on the website! You can double check the code <a href="https://github.com/osmandapp/osmandapp.github.io/blob/master/website/osm_live.php">here</a>. We are searching for a more convenient method and would like to switch to OAuth or just sending a private confirmation link/message to OSM user. There were discussions with contributors about it and we hope to get a pull-request with that code.
+- In order to get a minimal payout, the mapper should make at least 3 changes (changesets) a month. That's not much and we think to increase that number to 5-6. You can see the according statistics on the first page <a data-gatag="osm_live" href="http://osmand.net/osm_live">OSM Live</a> that gives a threshold of 50% monthly contributors.
+- All mappers are divided into 20 groups (worldwide) and 7 groups (each region). Based on the group, each mapper ends with a rank assigned. The 1st ranking is assigned to the group of people who did the most changes. We intentionally divided the users into groups so people from the first group wouldn't compete for the top 1 place and feel reasonable with assigned ranking.
+- Each ranking is transformed into weight by simple formula Weight = Groups (20 or 7) + 1 - Rank. The total amount is divided equally with weight multiplier.
+- We came up with the idea to have regional preferences and regional payouts for changes made in a specific region. So far it is pretty much equally distributed everywhere and doesn't give any reasonable effect in payout.
+- There is a valid concern that some people could start making fake changesets in order to get higher in ranking. We think to start solving that issue when it becomes visible, today payouts are quite small (1-2 glasses of beer) and they are pretty much equal between registered contributors.
+
+
+### OSM Live updates
+
+OsmAnd hourly updates are still in Beta. Address incremental update is not supported and last minute we had to disable OSM Live for Routing. Mostly the issues are related to maps themselves and users don't need to update OsmAnd 2.3 but they require new maps.
+
+
+- Please be aware of a serious possible issue with map rendering. It might become extremely slow or have diagonal lines (<a href="https://github.com/osmandapp/Osmand/issues/2398">1</a>, <a href="https://github.com/osmandapp/Osmand/issues/1843">2</a>). It is still not fixed and we plan to provide a fix with April OSM maps. Maps should be redownloaded.
+- Today we have around 4-5 hours delay after a change in OSM until the map will be available for downloads in OsmAnd. We plan to reduce to 15-20 minutes soon.
+- The delta maps are designed to work in a reasonable way for 5-6 months, so sometimes it is good to clean OSM Live and redownload the base map. In case of any unexpected rendering issues, please try to disable OSM Live first. The technology is still in Beta and will need some time to mature.
+
+### Only together we can make OSM better.
+
+Best Regards,
+OsmAnd CEO
+Victor Shcherb
+_________________________________________________
+
+<LinksTelegram/>
+<AppleStore/>
+<AndroidStore/>
