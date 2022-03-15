@@ -85,10 +85,5 @@ We also added a new feature created to support eye comfort: the **'day' and 'nig
 And remember that only together we can achieve the best results!
 New features are coming SOON!
 
-
-
-
-
-
 <LinksTelegram/>
 <AppleStore/>
