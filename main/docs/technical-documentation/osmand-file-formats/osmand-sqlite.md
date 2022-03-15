@@ -4,21 +4,6 @@ sidebar_position: 9
 
 # Tiles SQLite Format - .sqlite
 
-<nav aria-label="breadcrumbs">
-  <ul class="breadcrumbs breadcrumbs--sm">
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="#url">
-        Technical documentation
-      </a>
-    </li>
-    <li class="breadcrumbs__item breadcrumbs__item--active">
-      <a class="breadcrumbs__link" href="@site/docs/technical-documentation/">
-        OsmAnd File Formats
-      </a>
-    </li>
-  </ul>
-</nav>
-
 
 
 The SQLIte format used in OsmAnd is based on the "BigPlanet" SQLite as supported by MOBAC. In OsmAnd we add a number of tables extending the format:
