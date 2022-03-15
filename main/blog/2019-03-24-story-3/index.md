@@ -5,6 +5,7 @@ authors: tat
 tags: [story]
 ---
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 
@@ -69,5 +70,5 @@ _________________________________________________
 
 <AndroidStore/> <AppleStore/>
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
  <LinksTelegram/>, <a href="https://t.me/osmand_es">(ES)</a>, <a href="https://t.me/osmand_pl">(PL)</a>.

@@ -6,6 +6,7 @@ tags: [release, android]
 ---
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
@@ -33,7 +34,7 @@ New features are coming SOON!
 
 ____________________________ 
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 
 

@@ -6,6 +6,7 @@ tags: [release, cloud, srtm, track appearance, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js'
 
 Great news for Android users!
@@ -234,6 +235,6 @@ And remember that only together we can achieve the best results!
 New features are coming SOON!
 
 ____________________________ 
-
+<LinksSocial/>
 <LinksTelegram/>
 <AndroidStore/>

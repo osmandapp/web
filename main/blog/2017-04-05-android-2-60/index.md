@@ -6,6 +6,7 @@ tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 We are glad to announce the release of version 2.6! We proudly present some major improvements and new features, and hope you will enjoy them:
@@ -123,7 +124,7 @@ New features are coming SOON!
 
 ____________________________ 
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 
 

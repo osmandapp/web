@@ -5,6 +5,7 @@ authors: eugene
 tags: [resolutions]
 ---
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 Happy New 2021 Year!
@@ -96,6 +97,6 @@ We’re also looking forward to many improvements in our search, routing & rende
 
 ______________________________
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 <LinksTelegram/>

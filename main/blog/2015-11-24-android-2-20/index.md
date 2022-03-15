@@ -6,6 +6,7 @@ tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 New OsmAnd release is ready an will be launched soon. Fuller POI information, restructured downloads and a brand-new UI are some of the main things to see. Get the update now!
@@ -84,7 +85,7 @@ New features are coming SOON!
 
 ____________________________ 
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 
 

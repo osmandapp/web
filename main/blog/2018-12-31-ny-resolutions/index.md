@@ -5,6 +5,7 @@ authors: eugene
 tags: [resolutions]
 ---
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 
 
 Happy New 2019 Year!
@@ -56,5 +57,5 @@ Happy New 2019 Year!
 
 _____________________________
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 <LinksTelegram/>

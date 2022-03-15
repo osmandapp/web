@@ -6,6 +6,7 @@ tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 We are glad to announce that OsmAnd 2.0 is coming to devices. We expect to finish the rollout on this week. This has been a while we had to admit that OsmAnd didn't follow the guidelines and had an inconsistent UI. 
@@ -85,7 +86,7 @@ New features are coming SOON!
 
 ____________________________ 
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 
 

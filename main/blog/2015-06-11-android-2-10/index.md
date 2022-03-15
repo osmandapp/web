@@ -6,6 +6,7 @@ tags: [release, android]
 ---
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 OsmAnd 2.1 release is out! This time, we focused on improving POI search and making your trips even more interactive through new Wikipedia data sorted by country. Besides that, the favorites get a backup. If an app corrupts for some reason, all your favorite places will be safe.
@@ -51,7 +52,7 @@ New features are coming SOON!
 
 ____________________________ 
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 
 
 

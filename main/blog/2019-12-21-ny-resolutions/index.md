@@ -5,6 +5,7 @@ authors: eugene
 tags: [resolutions]
 ---
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 
 Happy New 2020 Year!
 
@@ -190,5 +191,5 @@ Sure, hundreds of small features didn’t get to this list though they’re goin
 Happy 2020 and let’s welcome 2020 OsmAnd!!!
 _____________________________
 
-OsmAnd at <a href="https://www.facebook.com/osmandapp/">Facebook</a>, <a href="https://www.twitter.com/osmandapp/">Twitter</a>, and <a href="https://www.reddit.com/r/OsmAnd/">Reddit</a>!
+<LinksSocial/>
 <LinksTelegram/>
