@@ -41,13 +41,12 @@ __________________________________
 
 **items.json**
 
-<details>
-  <summary>Click here to see **items.json** example</summary>
-  
 
- "version":1,
+```
+{
+   "version":1,
    "items":[
-       
+
       {
          "type":"PLUGIN",
          "pluginId":"test.plugin",
@@ -261,9 +260,12 @@ __________________________________
             "tileSize": 512,
             "bitDensity": 8,
             "avgSize": 18000
+        }]
+      }
+   ]
+}
 
-
-</details>
+```
 
 There are many import types for OsmAnd *items.JSON*. You can find all of types <a href="https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133">here</a>. We will describe some of import types (*"type"*) in this article.
 
