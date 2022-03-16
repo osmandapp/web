@@ -1,13 +1,33 @@
 import React from 'react';
-import ios from '../translations/ios-values.json';
-import and from '../translations/android-values.json';
+import iosres from '../translations/ios-values.json';
+import andres from '../translations/android-values.json';
 
-export default function Translate({ id, android }) {
-    // console.log(and);
-    if (and[id] && android && android !== 'no' && android !== 'false') {
-        return and[id];
-    } else if (ios[id] && (!android || android === 'false' || android === 'no')) {
-         return ios[id];
+function getRes(id, and) {
+    if (andres[id] && and) {
+        return andres[id];
+    } else if (iosres[id] && !and) {
+        return iosres[id];
     }
     return <span>{'MISSING ' + (android ? "Android" : "iOS") + ' resource: ' + id + '!'}</span>
+}
+
+export default function Translate({ id, android, ids, delimeter = ' → ' }) {
+    // console.log(and);
+    let and = android && android !== 'no' && android !== 'false';
+    if (id) {
+        return getRes(id, and);
+    }
+    if (ids) {
+        let res = '';
+        let arr = ids.split(',');
+        for (var i = 0; i < arr.length; i++) {
+            if (i > 0) {
+                res += delimeter;
+            }
+            res += getRes(arr[i], and);
+        }
+        return res;
+    }
+    return 'UNKNOWN <Translate> args!';
+
 }
