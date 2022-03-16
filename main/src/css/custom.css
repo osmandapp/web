@@ -107,3 +107,10 @@ table.blogimage img {
   border-color: #1E1F20;
 }
 
+.center {
+  display: block;
+  margin-left: 100px;
+  margin-right: auto;
+  width: auto;
+}
+
