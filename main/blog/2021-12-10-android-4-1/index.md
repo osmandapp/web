@@ -9,6 +9,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+Here is an example of translated string *shared_string_used*: **<Translate android="yes" ids="shared_string_used,shared_string_used" />**
+
 Great news for Android users! OsmAnd 4.1 is here! Here are some of the most important updates. [Update your OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), check out all the new features and let us know if you like everything!
 
 :::tip Note
