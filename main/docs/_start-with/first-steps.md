@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
 import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
