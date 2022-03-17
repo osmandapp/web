@@ -14,6 +14,6 @@ tags: [docs]
 
 
 ## Map style parameters
-Map style parameters are dependent on the main map style be displayed on the map. You can read more about it in [Map Styles article](/osmand/map/configure-map-menu).
+Map style parameters are dependent on the main map style be displayed on the map. You can read more about it in [Map Styles article](/docs/osmand/map/configure-map-menu).
    - [Map magnifier](/docs/osmand/map/interact-with-map) - more or less detailed map display.
    
