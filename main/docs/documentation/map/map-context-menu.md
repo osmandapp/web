@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
 title: "Map Context menu"
-intro: "'Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place."
 ---
 
+Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
 
 ## Context menu 
 In order to open Context menu you should tap on the object on the Map. There are two types of map contet menu: selecting an object - by short tap, selecting any precise point on the map - by long tap.
