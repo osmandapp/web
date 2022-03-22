@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
 title:  Parking position
-intro: "Setting a point on the map of where your car is left in the street, and a calendar notice of when the parking time started to count down, will comfort your efforts in keeping track of the time and the car location."
 ---
+
+Setting a point on the map of where your car is left in the street, and a calendar notice of when the parking time started to count down, will comfort your efforts in keeping track of the time and the car location.
 
 ## Overview 
 
