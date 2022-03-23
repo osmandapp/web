@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title:  First steps
 ---
 
 import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';

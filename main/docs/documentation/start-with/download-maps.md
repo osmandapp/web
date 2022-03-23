@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+title:  Download maps
 ---
 
 import Translate from '@site/src/components/Translate.js';
