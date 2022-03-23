@@ -5,7 +5,7 @@ title:  Main menu
 
 # Main menu
 Main menu' is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
-
+<!--
 The [Main menu](/osmand/widgets/map-buttons#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap on the map. 
 
 ![Main menu Android](/img/menu/main_menu_android.png) 
@@ -52,5 +52,5 @@ Spin up or down the *line on the right* will give an opportunity to move the ite
 
 The items that was moved to the bin would be moved to the section 'Hidden' below. They and can be restored by clicking the green button on the left.
 
-![Drawer menu hidden items ](/img/settings/drawer_menu_hidden_items.png)
+![Drawer menu hidden items ](/img/settings/drawer_menu_hidden_items.png) -->
 

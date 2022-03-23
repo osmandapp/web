@@ -30,6 +30,7 @@ Welcome to OsmAnd! Explore how to download maps, how to configure the applicatio
 
 {% endios %} -->
 
+<!--
 ## Install OsmAnd
 OsmAnd is a mobile application for Maps and Navigation available for **Android** and **iOS**. You can download it on most popular Markets.
 
@@ -398,5 +399,5 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 
 ## Troubleshooting
 
-If you have a specific question, please check [Troubleshooting](/osmand/troubleshooting) to have it answered.
+If you have a specific question, please check [Troubleshooting](/osmand/troubleshooting) to have it answered. -->
 
