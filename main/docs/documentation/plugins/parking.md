@@ -12,8 +12,10 @@ Setting a point on the map of where your car is left in the street, and a calend
 
 A Parking point on the map and a notice in the calendar are provided by the Parking plugin. It is free, and works well with the downloaded OsmAnd Maps and Navigation. A Parking point will help you remember the exact location of where the car is left as well as to stay aware of how far it is already from your parking spot, and if needed, to return on time, avoid additional unnecessary costs, share the location with your loved ones. It is easy to set a Parking point, with or without time-tracking, and to remove it after successful use. 
 
-<!--
 
+<Tabs groupId="operating-systems">
+
+<!--
 <Tabs
     defaultValue="Default"
     values={[
@@ -21,22 +23,23 @@ A Parking point on the map and a notice in the calendar are provided by the Park
         {label: 'Android', value: 'android'},
         {label: 'iOS', value: 'ios'},        
     ]}>
+-->
 
-<TabItem value="def">
+<TabItem value="def" label="Default" default>
 
-![Parking widget iOS](main/static/img/plugins/parking/parking_widget_ios.png) ![Parking widget Android](main/static/img/plugins/parking/parking_widget_android.png) 
-
-</TabItem>
-
-<TabItem value="ios">
-
-![Parking widget iOS](main/static/img/plugins/parking/parking_widget_ios.png)
+![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png) ![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png)  
 
 </TabItem>
 
-<TabItem value="android">
+<TabItem value="ios" label="iOS">
 
-![Parking widget Android](main/static/img/plugins/parking/parking_widget_android.png) 
+![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+
+</TabItem>
+
+<TabItem value="android" label="Android">
+
+![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png) 
 
 </TabItem>
 
@@ -51,5 +54,5 @@ For using a Parking point on the map, the following setup is required:
 
 1. Enable the plugin.
 
-2. Make certain the Parking widget is added to the screen. -->
+2. Make certain the Parking widget is added to the screen. 
 
