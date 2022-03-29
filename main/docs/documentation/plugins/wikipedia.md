@@ -6,6 +6,8 @@ title:  Wikipedia
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Translate from '@site/src/components/Translate.js';
+
 
 Having Wikipedia with you on a trip helps to learn more about the places you are visiting. It is available offline, and shows the Wikipedia articles in relation to the points of interest directly on the map.
 
@@ -50,7 +52,7 @@ With the purchase done, Wikipedia Offline can be enabled in the Plugins section 
 
 <TabItem value="ios" label="iOS">
 
-The **iOS** version provides the Wikipedia plugin by default. To enable the plugin, turn on the **Wikipedia** option in the following menu of the app: {% data variables.ios-values.menu %} → {% data variables.ios-values.plugins %} → {% data variables.ios-values.product_title_wiki %}
+The **iOS** version provides the Wikipedia plugin by default. To enable the plugin, turn on the **Wikipedia** option in the following menu of the app: <Translate ios="true" ids="menu,plugins,product_title_wiki"/>
 
 ![Wikipedia plugin in iOS](@site/static/img/plugins/wikipedia/Wikipedia_plugin_ios2.png)
 
