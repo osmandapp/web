@@ -183,7 +183,7 @@ Map is a core element of OsmAnd and it's important to know [how to use it](/docs
 
 </Tabs>
 
-[Read more](osmand/map/configure-map-menu) about map configuration.
+[Read more](/docs/documentation/map/configure-map-menu) about map configuration.
 
 ### How to сonfigure screen
 

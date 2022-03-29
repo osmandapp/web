@@ -73,7 +73,7 @@ It is possible to download a map of a certain area just by zooming in on the Wor
 
 ## Download - Own map (Advanced)
 
-There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](/development/map-creation/create-offline-maps-yourself)
+There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](/docs/technical-documentation/map-creation/create-offline-maps-yourself)
 
 ## Type of maps
 
