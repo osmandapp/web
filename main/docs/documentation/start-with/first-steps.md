@@ -150,9 +150,13 @@ You could manage application settings as [Global settings](/docs/documentation/p
 
 Enable / disable plugins:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugin_settings %} →  &#65049; → Enable
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.plugins %} → &#10003; .
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
+
+<p> </p>
 
 [Read more](/docs/documentation/plugins) about OsmAnd plugins.
 

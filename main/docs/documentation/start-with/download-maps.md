@@ -28,15 +28,11 @@ When the app is launched for the first time, it suggests to download the map bas
 
 You can download new maps and manage already downloaded maps via Main menu:
 
-Android: 
-<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.welmode_download_maps %}
+<p> </p>
 
-iOS: 
-<Translate ios="true" ids="menu,res_mapsres"/>
-
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.res_mapsres %}
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
 
 This screen has certain features:
 - Refresh button - check available map updates on the OsmAnd servers.
@@ -69,7 +65,7 @@ It is possible to download a map of a certain area just by zooming in on the Wor
 
 ![Zoom in to download map Android](@site/static/img/settings/zoom_in_download_map_android.png)
 
-**Note**: This dialog can be turned off  in {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_settings %} → {% data variables.android-values.osmand_settings %} → {% data variables.android-values.dialogs_and_notifications_title %}
+**Note**: This dialog can be turned off  in <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,dialogs_and_notifications_title"/>
 
 ## Download - Own map (Advanced)
 
