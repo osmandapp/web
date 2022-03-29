@@ -1,14 +1,17 @@
 import React from 'react';
 import iosres from '../translations/ios-values.json';
 import andres from '../translations/android-values.json';
+import othres from '../translations/other-values.json';
 
 function getRes(id, and) {
-    if (andres[id] && and) {
+    if (othres[id]) {
+        return othres[id];
+    } else if (andres[id] && and) {
         return andres[id];
     } else if (iosres[id] && !and) {
         return iosres[id];
     }
-    return <span>{'MISSING ' + (android ? "Android" : "iOS") + ' resource: ' + id + '!'}</span>
+    return <span>{'MISSING ' + (and ? "Android" : "iOS") + ' resource: ' + id + '!'}</span>
 }
 
 export default function Translate({ id, android, ids, delimeter = ' → ' }) {
