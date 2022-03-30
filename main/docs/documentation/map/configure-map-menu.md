@@ -30,7 +30,7 @@ import Translate from '@site/src/components/Translate.js';
 ## Map Layers
    - [Vector Map Layer](//docs/documentation/map/vector-maps) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
    - [Map Raster sources](/docs/documentation/map/raster-maps#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
-   - [Terrain](/docs/documentation/map/raster-maps#hillshade--slope) - display raster slope or hillshade information.
+   - [Terrain](/docs/documentation/map/raster-maps#hillshade--slopeg) - display raster slope or hillshade information.
 
 ## Map Data Layers
    - [Favorites](/docs/documentation/map/point-layers-on-map) - display favorites points.
