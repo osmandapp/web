@@ -24,7 +24,7 @@ import Translate from '@site/src/components/Translate.js';
 
 
 **Notes:** 
-- In order to change screen information (widgets, icons) you can set parametres in [{% data variables.android-values.layer_map_appearance %}](/docs/documentation/widgets/general)
+- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](/docs/documentation/widgets/index)
 - Configure map settings are [profile dependent](/docs/documentation/personal/profiles)
 
 ## Map Layers
@@ -39,7 +39,7 @@ import Translate from '@site/src/components/Translate.js';
    - [Overlay labels](/docs/documentation/map/point-layers-on-map) - show names of points, favorites on the map.
    - [Transport](/docs/documentation/map/vector-maps#transport) - show public transport stops.
    - [Tracks](/docs/documentation/map/tracks-on-map) - display imported, planned or recorded tracks over the map.
-   - [Street level imagery](/docs/documentation/map/street-level-imagery) - display points with available street-level imagery.
+   - [Street level imagery](/docs/documentation/plugins/mapillary#viewing-images) - display points with available street-level imagery.
    - [Travel guides](/docs/documentation/plan-route/travel-guides) - display travel guides on the map.
    - [Wikipedia](/docs/documentation/plugins/wikipedia) - highlight wikipedia articles linked to the map.
    - [Other plugin layers](/docs/documentation/plugins) - many plugins add own layers with extra information.
