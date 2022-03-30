@@ -142,7 +142,7 @@ Enable / disable wikipedia articles on the map and filter by language:
 
 {% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.poi_overlay %} → {% data variables.ios-values.res_wiki %} 
 
-[Read more](osmand/plugins/wikipedia) how to download and use the Wikipedia feature in OsmAnd.
+[Read more](/docs/documentation/plugins/wikipedia) how to download and use the Wikipedia feature in OsmAnd.
 
 ## * Audio / Video points (Android)
 
