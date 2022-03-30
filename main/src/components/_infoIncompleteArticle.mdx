@@ -1,4 +1,5 @@
 import Admonition from '@theme/Admonition';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 <Admonition type="caution" icon="🚧&nbsp;" title="This article is incomplete">
   <p>
@@ -6,9 +7,11 @@ import Admonition from '@theme/Admonition';
   </p>
   <div>
     <form>
-      <button formaction={"https://github.com/osmandapp/web/edit/main/main/" + 
+       <BrowserOnly>{() => 
+          <button formAction={"https://github.com/osmandapp/web/edit/main/main/" + 
             window.location.pathname.substring(window.location.pathname.indexOf('docs')) + ".mdx"  }
-       class="button button--primary">Make a contribution</button>
+            className="button button--primary">Make a contribution</button>
+       }</BrowserOnly>
     </form>
   </div>
 </Admonition>  
