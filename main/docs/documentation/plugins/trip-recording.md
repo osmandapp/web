@@ -5,6 +5,11 @@ title:  Trip recording
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
 
 To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, added with waypoints, provided for navigation, shared with friends, etc.
 
