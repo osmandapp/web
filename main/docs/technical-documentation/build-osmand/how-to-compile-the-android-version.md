@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # How to Compile the Android Version
 
@@ -98,7 +99,7 @@ Opengl library is needed for targtes like assembleNightlyFree**Opengl**FatDebug 
 To be completed: how to set up android ndk debug.
 
 ## Compile API samples
-{% data reusables.general.article-not-complete %}
+<IncompleteArticle/>
 
 There are 3 types of samples apps provided by OsmAnd, they are all represented in [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) Github repo and compiled regularly at [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
 

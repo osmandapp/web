@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
 ---
+import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Routing Configuration - .routing.xml
 
-{% data reusables.general.article-not-complete %}
+<IncompleteArticle/>
 
 Routing.xml is a configuration file that stores multiple routing profiles. Each profile is independent and has only base OsmAnd profile as a reference that's why it's not possible to create a hierarchy of profiles and you will need to copy all rule sections.
 
