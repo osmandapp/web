@@ -2,11 +2,13 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="caution" icon="🚧&nbsp;" title="This article is incomplete">
   <p>
-    This article is incomplete & needs to be reviewed. You can help by creating a pull request.
+    This article is incomplete &amp; needs to be reviewed. You can help by creating a pull request.
   </p>
   <div>
     <form>
-    <button formaction="https://github.com/osmandapp/web/tree/main/main/docs" class="button button--primary">Make a contribution</button>
+      <button formaction={"https://github.com/osmandapp/web/edit/main/main/" + 
+            window.location.pathname.substring(window.location.pathname.indexOf('docs')) + ".mdx"  }
+       class="button button--primary">Make a contribution</button>
     </form>
   </div>
-</Admonition>
+</Admonition>  
