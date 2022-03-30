@@ -9,7 +9,8 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
     <form>
        <BrowserOnly>{() => 
           <button formAction={"https://github.com/osmandapp/web/edit/main/main/" + 
-            window.location.pathname.substring(window.location.pathname.indexOf('docs')) + ".mdx"  }
+            window.location.pathname.slice(window.location.pathname.indexOf('docs'), window.location.pathname.slice(-1) === "/" ? -1 : undefined ) 
+              + ".mdx"  }
             className="button button--primary">Make a contribution</button>
        }</BrowserOnly>
     </form>
