@@ -18,13 +18,13 @@ import Translate from '@site/src/components/Translate.js';
 | :---: | :---: |
 | ![Configure map_android](@site/static/img/map/configure-map-android.png) | ![Configure map_ios](@site/static/img/map/configure-map-ios.png) |
 
-**{% data variables.android-values.configure_map %}** menu divides into 2 categories:
-- [Map style parameters](#map-style-parameters) - **{% data variables.android-values.map_widget_map_rendering %}** or **{% data variables.ios-values.map_settings_style %}** groups all parameters that allow to change how the main map is displayed.
+**<Translate android="true" ids="configure_map"/>** menu divides into 2 categories:
+- [Map style parameters](#map-style-parameters) - **<Translate android="true" ids="map_widget_map_rendering"/>** or **<Translate android="true" ids="map_settings_style"/>** groups all parameters that allow to change how the main map is displayed.
 - [Map layers](#map-layers). These layers allow to put information on top (or under) of the main map layer but it doesn't change the display of the map itself.
 
 
 **Notes:** 
-- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](/docs/documentation/widgets/index)
+- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](/docs/documentation/widgets)
 - Configure map settings are [profile dependent](/docs/documentation/personal/profiles)
 
 ## Map Layers
