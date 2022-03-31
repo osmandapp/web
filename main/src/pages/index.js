@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import AllStores from '../components/_buttonAllStores.mdx';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -18,6 +19,9 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro">Features — 🗺️ 🧭 ⛰️
           </Link>
+        </div>
+        <div className={styles.storeButtons}>
+          <AllStores />
         </div>
       </div>
     </header>

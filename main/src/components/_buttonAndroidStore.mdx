@@ -1,17 +1,15 @@
+import GPlay from './_buttonGPlay.mdx';
+import Huawei from './_buttonHuawei.mdx';
+import Amazon from './_buttonAmazon.mdx';
+
 <div className="row">
   <div className="col col--4">
-    <a href="https://play.google.com/store/apps/details?id=net.osmand">
-      <img src={require('@site/static/img/bt_google_play.png').default} alt="Google Play" />
-    </a>
+    <GPlay />
   </div>
   <div className="col col--4">
-    <a href="https://appgallery.huawei.com/#/app/C101486545">
-      <img src={require('@site/static/img/bt_huawei.png').default} alt="Huawei AppGallery" />
-    </a>
+    <Huawei />
   </div>
   <div className="col col--4">
-    <a href="https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8">
-      <img src={require('@site/static/img/bt_amazon.png').default} alt="Amazon AppStore" />
-    </a>
+    <Amazon />
   </div>
 </div>

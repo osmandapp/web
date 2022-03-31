@@ -20,6 +20,12 @@
   }
 }
 
+.storeButtons {
+  margin-top: 100px;
+  height: 45px;
+  
+}
+
 .buttons {
   display: flex;
   align-items: center;
