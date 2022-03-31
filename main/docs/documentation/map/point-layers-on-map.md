@@ -21,25 +21,29 @@ On map you could display points such as Favorites, POI, Markers, Wikipedia, Sear
  
 Enable / disable favorites on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.favorites_item %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,favorites_item"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.favorites %}
+<p> </p>
 
-**Note** (Android): you could disable certain groups of favorites to be displayed on the map and during search - {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_my_places %}  →  {% data variables.android-values.shared_string_favorites %} → Select folder and press '{% data variables.android-values.shared_string_show_on_map %}'.
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,favorites"/>
 
+<p> </p>
+
+**Note** (Android): you could disable certain groups of favorites to be displayed on the map and during search - <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/> → Select folder and press '<Translate android="true" ids="shared_string_show_on_map"/>'.
 
 ## Favorite / POI names
 
-By default favorites and point of interests are displayed without name to not clutter map with text. You can enable names in {% data variables.android-values.shared_string_configure_map %}  settings.
+By default favorites and point of interests are displayed without name to not clutter map with text. You can enable names in <Translate android="true" ids="configure_map"/> settings.
 
 ![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png) 
 
 Enable / disable POI overlay labels on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.layer_amenity_label %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.layer_amenity_label %}
+<p> </p>
 
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,layer_amenity_label"/>
 
 ## Points of interest (POI)
 
@@ -49,9 +53,11 @@ Enable / disable POI overlay labels on the map:
 
 Enable / disable points of interest of **selected** type on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.layer_poi %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.poi_overlay %}
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,poi_overlay"/>
 
 ### POI Types
 
@@ -69,23 +75,31 @@ Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](/
 
 Hide POIs from map style:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.map_widget_map_rendering %} → {% data variables.android-values.shared_string_hide %} 
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.map_settings_map %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.rendering_category_hide %}
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,rendering_category_hide"/>
+
+<p> </p>
 
 [Read more](/docs/documentation/map/vector-maps#hide).
 
 ## Markers
 
-[Map markers](/docs/documentation/personal/markers) are special points marked as flags on the map. You can customize their look & feel with **arrows** ({% data variables.android-values.show_arrows_on_the_map %}) and **distance indication** ({% data variables.android-values.show_direction %}). 
+[Map markers](/docs/documentation/personal/markers) are special points marked as flags on the map. You can customize their look & feel with **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>). 
 
 ![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)
 
 Enable / disable markers on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.map_markers_item %} 
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_markers_item"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.map_markers %}
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,map_markers"/>
+
+<p> </p>
 
 [Read more](/docs/documentation/widgets/markers#configure-marker-widgets-and-marker-appearance) about marker appearance.
 
@@ -100,7 +114,7 @@ Track points (waypoints) are points that are part of Track (GPX) files. These po
 
 ## Search results (POI)
 
-Search results could be displayed on the map as a special POI layer. During search click on a special row (**{% data variables.android-values.shared_string_show_on_map %}**) to display POIs on the map.
+Search results could be displayed on the map as a special POI layer. During search click on a special row (**<Translate android="true" ids="shared_string_show_on_map"/>**) to display POIs on the map.
 
 ![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
 
@@ -116,9 +130,13 @@ Read more about [search](/docs/documentation/search).
 
 Enable / disable Street-level imagery on the map: 
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.street_level_imagery %} 
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.street_level_imagery %}
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,street_level_imagery"/>
+
+<p> </p>
 
 Requires [Mapillary plugin](/docs/documentation/plugins/mapillary).
 
@@ -132,15 +150,19 @@ Requires [Parking position plugin](/docs/documentation/plugins/parking).
 
 ## * Wikipedia
 
-OsmAnd has special Point of Interests indicated with 'W' logo and Wikipedia articles attacheted to it. These points could be displayed exactly as any other POI type via Search or {% data variables.android-values.configure_map %} → {% data variables.android-values.layer_poi %}, though there is a special way to filter Wikipedia articles by **available languages**.
+OsmAnd has special Point of Interests indicated with 'W' logo and Wikipedia articles attacheted to it. These points could be displayed exactly as any other POI type via Search or <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>, though there is a special way to filter Wikipedia articles by **available languages**.
 
 ![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png) ![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
 
 Enable / disable wikipedia articles on the map and filter by language:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.shared_string_wikipedia %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_wikipedia "/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.poi_overlay %} → {% data variables.ios-values.res_wiki %} 
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,poi_overlay,res_wiki"/>
+
+<p> </p>
 
 [Read more](/docs/documentation/plugins/wikipedia) how to download and use the Wikipedia feature in OsmAnd.
 
@@ -152,7 +174,9 @@ Audio / Video notes are user's made points with audio/photo/video data on the ma
 
 Enable / disable recording points on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.layer_recordings %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_recordings "/>
+
+<p> </p>
 
 Requires [Audio / Video note plugin](/docs/documentation/plugins/audio-video-notes).
 
@@ -164,9 +188,13 @@ OSM edit points are user's made POIs for adding its for [OpenStreetMap project](
 
 Enable / disable OSM edits on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.osm_edits %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,osm_edits "/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.osm_edits_title %} 
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,osm_edits_title"/>
+
+<p> </p>
 
 Requires [OSM Editing plugin](/docs/documentation/plugins/osm-editing).
 
@@ -178,9 +206,13 @@ OSM note points are user's made POIs for reporting issue about map data in [Open
 
 Enable / disable OSM notes on the map:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.layer_osm_bugs %}
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs "/>
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.osm_notes_online_layer %} 
+<p> </p>
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,osm_notes_online_layer"/>
+
+<p> </p>
 
 Requires [OSM Editing plugin](/docs/documentation/plugins/osm-editing#how-to-report-a-mistake).
 
