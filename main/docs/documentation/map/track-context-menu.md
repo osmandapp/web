@@ -136,16 +136,28 @@ Next track info:
 - Info panel of data trip:
 
  <Translate ios="true" ids="shared_string_distance"/> - showing track distance.
+ 
+<p>  </p>
 
- <Translate ios="true" ids="gpx_ascent"/> / <Translate ios="true" ids=""/>gpx_descent - sums of ascents and descents of a trip.
+ <Translate ios="true" ids="gpx_ascent"/> / <Translate ios="true" ids="gpx_descent"/> - sums of ascents and descents of a trip.
+
+<p>  </p>
 
  <Translate ios="true" ids="gpx_alt_range"/> - showing min and max altitude of a trip.
 
+<p>  </p>
+
  <Translate ios="true" ids="gpx_average_speed"/> - average speed of a trip.
+
+<p>  </p>
 
  <Translate ios="true" ids="gpx_max_speed"/> - max speed of a trip.
 
+<p>  </p>
+
  <Translate ios="true" ids="total_time"/> - recorded time of a trip.
+
+<p>  </p>
 
  <Translate ios="true" ids="moving_time"/> - sum of time during motion of a trip.
 
@@ -426,12 +438,12 @@ Manipulation with waypoints folder: change name and color, delete..
 ![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) 
 
 Actions:
-- <Translate android="true" ids="shared_string_show_on_map"/> - allows to show or not group waypoints on the map.
-- <Translate android="true" ids="shared_string_rename"/> - allows to change Group name.
-- <Translate android="true" ids="change_color"/> - allows to change color for group waypoints.
-- <Translate android="true" ids="copy_to_map_markers"/> - allows to move group waypoints to [Map markers](/docs/documentation/personal/markers).
-- <Translate android="true" ids="copy_to_map_favorites"/> - allows to move group waypoints to [Favorites](/docs/documentation/personal/favorites).
-- <Translate android="true" ids="shared_string_delete"/> - allows to delete group waypoints.
+- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/> - allows to show or not group waypoints on the map.
+- &nbsp;<Translate android="true" ids="shared_string_rename"/> - allows to change Group name.
+- &nbsp;<Translate android="true" ids="change_color"/> - allows to change color for group waypoints.
+- &nbsp;<Translate android="true" ids="copy_to_map_markers"/> - allows to move group waypoints to [Map markers](/docs/documentation/personal/markers).
+- &nbsp;<Translate android="true" ids="copy_to_map_favorites"/> - allows to move group waypoints to [Favorites](/docs/documentation/personal/favorites).
+- &nbsp;<Translate android="true" ids="shared_string_delete"/> - allows to delete group waypoints.
 
 </TabItem>
 
@@ -467,19 +479,19 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
-- <Translate android="true" ids="shared_string_show_on_map"/> - shows or not the track on the map.
-- <Translate android="true" ids="shared_string_appearance"/> - opens [Appearance menu](/docs/documentation/map/tracks-on-map#track-appearance-android) for the track.
-- <Translate android="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](/docs/documentation/navigation/gpx-navigation).
-- <Translate android="true" ids="gpx_join_gaps"/> - allows to join gaps of the track.
-- <Translate android="true" ids="analyze_on_map"/> - opens [Analyze on map function](/docs/documentation/map/tracks-on-map#analyze-track-on-map-android).
-- <Translate android="true" ids="analyze_by_intervals"/> - [analyze the track by time or distance intervals](/docs/documentation/map/track-context-menu#split-interval).
-- <Translate android="true" ids="shared_string_share"/> - export the chosen track.
-- <Translate android="true" ids="upload_to_openstreetmap"/> - [upload the chose track to OpenStreetMap](/docs/documentation/plugins/osm-editing#how-to-upload-gpx-track).
-- <Translate android="true" ids="edit_track"/> - open the chosen track in [Plan route tool](/docs/documentation/plan-route/create-route).
-- <Translate android="true" ids="rename_track"/> - change track name.
-- <Translate android="true" ids="change_folder"/> - select folder and add new one for the chosen track.
-- <Translate android="true" ids="shared_string_gps_filter"/> - allows [to filter points of the track](/docs/documentation/map/track-context-menu#gps-filter). 
-- <Translate android="true" ids="shared_string_delete"/> - delete the track.
+- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/> - shows or not the track on the map.
+- &nbsp;<Translate android="true" ids="shared_string_appearance"/> - opens [Appearance menu](/docs/documentation/map/tracks-on-map#track-appearance-android) for the track.
+- &nbsp;<Translate android="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](/docs/documentation/navigation/gpx-navigation).
+- &nbsp;<Translate android="true" ids="gpx_join_gaps"/> - allows to join gaps of the track.
+- &nbsp;<Translate android="true" ids="analyze_on_map"/> - opens [Analyze on map function](/docs/documentation/map/tracks-on-map#analyze-track-on-map-android).
+- &nbsp;<Translate android="true" ids="analyze_by_intervals"/> - [analyze the track by time or distance intervals](/docs/documentation/map/track-context-menu#split-interval).
+- &nbsp;<Translate android="true" ids="shared_string_share"/> - export the chosen track.
+- &nbsp;<Translate android="true" ids="upload_to_openstreetmap"/> - [upload the chose track to OpenStreetMap](/docs/documentation/plugins/osm-editing#how-to-upload-gpx-track).
+- &nbsp;<Translate android="true" ids="edit_track"/> - open the chosen track in [Plan route tool](/docs/documentation/plan-route/create-route).
+- &nbsp;<Translate android="true" ids="rename_track"/> - change track name.
+- &nbsp;<Translate android="true" ids="change_folder"/> - select folder and add new one for the chosen track.
+- &nbsp;<Translate android="true" ids="shared_string_gps_filter"/> - allows [to filter points of the track](/docs/documentation/map/track-context-menu#gps-filter). 
+- &nbsp;<Translate android="true" ids="shared_string_delete"/> - delete the track.
 
 </TabItem>
 
@@ -487,16 +499,16 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
  ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
-- <Translate ios="true" ids="map_settings_show"/> - shows or not the track on the map.
-- <Translate ios="true" ids="map_settings_appearance"/> - opens [Appearance menu](/docs/documentation/map/tracks-on-map#track-appearance-android) for the track.
-- <Translate ios="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](/docs/documentation/navigation/gpx-navigation).
-- <Translate ios="true" ids="analyze_on_map"/> - opens [Analyze on map function](/docs/documentation/map/tracks-on-map#analyze-track-on-map-android).
-- <Translate ios="true" ids="shared_string_export"/> - export the chosen track.
-- <Translate ios="true" ids="edit_track"/> - open the chosen track in [Plan route tool](/docs/documentation/plan-route/create-route).
-- Dublicate track - allows to make and save a copy of the track.
-- <Translate ios="true" ids="gpx_rename_q"/> - change track name.
-- <Translate ios="true" ids="plan_route_change_folder"/> - select folder and add new one for the chosen track.
-- <Translate ios="true" ids="shared_string_delete"/> - delete the track.
+- &nbsp;<Translate ios="true" ids="map_settings_show"/> - shows or not the track on the map.
+- &nbsp;<Translate ios="true" ids="map_settings_appearance"/> - opens [Appearance menu](/docs/documentation/map/tracks-on-map#track-appearance-android) for the track.
+- &nbsp;<Translate ios="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](/docs/documentation/navigation/gpx-navigation).
+- &nbsp;<Translate ios="true" ids="analyze_on_map"/> - opens [Analyze on map function](/docs/documentation/map/tracks-on-map#analyze-track-on-map-android).
+- &nbsp;<Translate ios="true" ids="shared_string_export"/> - export the chosen track.
+- &nbsp;<Translate ios="true" ids="edit_track"/> - open the chosen track in [Plan route tool](/docs/documentation/plan-route/create-route).
+- &nbsp;Dublicate track - allows to make and save a copy of the track.
+- &nbsp;<Translate ios="true" ids="gpx_rename_q"/> - change track name.
+- &nbsp;<Translate ios="true" ids="plan_route_change_folder"/> - select folder and add new one for the chosen track.
+- &nbsp;<Translate ios="true" ids="shared_string_delete"/> - delete the track.
 
 
 </TabItem>
