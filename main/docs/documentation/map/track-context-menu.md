@@ -108,11 +108,19 @@ Next track info:
 
  <Translate android="true" ids="altitude_range"/> - showing min and max altitude of a trip.
 
+<p>  </p>
+
  <Translate android="true" ids="average_speed"/> - average speed of a trip.
+
+<p>  </p>
 
  <Translate android="true" ids="max_speed"/> - max speed of a trip.
 
+<p>  </p>
+
  <Translate android="true" ids="shared_string_time_span"/> - recorded time of a trip.
+
+<p>  </p>
 
  <Translate android="true" ids="shared_string_time_moving"/> - sum of time during motion of a trip.
 
