@@ -29,6 +29,6 @@ Specification of OsmAnd's Metainfo Format
 ### [Tiles SQLite Format - .sqlite](./osmand-sqlite.md)
 Specification of OsmAnd's SQLite Format
 
-### [Voice packages](./osmand-voice-package.md)
+### [Voice packages](./osmand-voice-package.mdx)
 The recorded and TTS-synthesized voice packages producing the navigation voice prompts
 
