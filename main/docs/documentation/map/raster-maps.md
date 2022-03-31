@@ -53,6 +53,8 @@ In order to use raster maps  in Android OsmAnd you need to enable [Online maps p
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>
 
+<p> </p>
+
 For **iOS** OsmAnd this feature works by default.
 
 ### Select map as Main / Underlay / Overlay layer
