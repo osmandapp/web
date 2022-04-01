@@ -83,7 +83,7 @@ Button [Analyse on map](/docs/documentation/navigation/route-navigation#details)
 ## Navigation types
 
 In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
-[Boat navigation type](/docs/documentation/navigation/boat-navigation#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](/navigation/boat-navigation#direct-to-point) and [Straight-line](/docs/documentation/navigation/boat-navigation#straight-line).
+[Boat navigation type](/docs/documentation/navigation/boat-navigation#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](/docs/documentation/navigation/boat-navigation#direct-to-point) and [Straight-line](/docs/documentation/navigation/boat-navigation#straight-line).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>
 
