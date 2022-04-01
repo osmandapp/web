@@ -88,10 +88,7 @@ Here is detailed information about all in apps with prices for US / Europe regio
 
 Use the same Apple ID to restore your purchases.
 
-{% note %}
-User can control all purchases and subscription from Apple account.
-{% endnote %}
-
+>User can control all purchases and subscription from Apple account.
 
 ## Giftcards
 
