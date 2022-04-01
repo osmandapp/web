@@ -64,11 +64,11 @@ There are two options to display [Tracks](/docs/documentation/personal/tracks) o
 
 ### Display via <Translate android="true" ids="shared_string_my_places"/> menu
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="hared_string_show_on_map"/> or ["Map" button](/docs/documentation/personal/tracks#my-places-android) for choosing multiple tracks.
+&nbsp;<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="hared_string_show_on_map"/> or ["Map" button](/docs/documentation/personal/tracks#my-places-android) for choosing multiple tracks.
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](/docs/documentation/personal/tracks#my-places-ios) for choosing multiple tracks.
+&nbsp;<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](/docs/documentation/personal/tracks#my-places-ios) for choosing multiple tracks.
 
 <Tabs groupId="operating-systems">
 
