@@ -23,6 +23,11 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro">Features — 🗺️ 🧭 ⛰️
           </Link>
+          <p>  &nbsp; &nbsp; &nbsp; </p>
+           <Link
+            className="button button--secondary button--lg"
+            to="https://maptile.osmand.net/map">OsmAnd World Map
+          </Link>
         </div>
         <div className={styles.storeButtons}>
           <AllStores />
