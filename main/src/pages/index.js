@@ -4,8 +4,12 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+
 import AllStores from '../components/_buttonAllStores.mdx';
+import Features from '../components/home/Features';
+import Poll from '../components/home/Poll';
+import Layout2Blocks from '../components/home/Layout2Blocks';
+import Twitter from '../components/home/Twitter';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -36,7 +40,11 @@ export default function Home() {
       description="Offline Mobile Maps &amp; Navigation">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <Features />
+        <Layout2Blocks>
+          <Twitter />
+          <Poll />
+        </Layout2Blocks>
       </main>
     </Layout>
   );

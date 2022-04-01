@@ -1,0 +1,6 @@
+.box {
+  max-width:320px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 14px;
+}
