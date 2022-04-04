@@ -58,6 +58,7 @@ If you select a TTS voice, you need to have a respective [text-to-speech engine]
 
 Please test ('Listen to an example' or similar test button provided) if your Android TTS is working ok. Then you may also test if your OsmAnd voice prompts have been selected properly by going to Settings-> Plugins-> OsmAnd development-> Test voice prompts. (OsmAnd development plugin must be activated to see the setting). To disable voice prompts, please go to "Configure profile"-> "Navigation Settings"-> "Voice prompts"-> "Voice guidance" and select 'Do not use' option.
 
+
 ## How to use
 
 
