@@ -15,10 +15,7 @@ Favorites are special points marked by user and by default displayed as yellow s
 
 ![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png) ![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
 
-
 ## Favorite Point
-
-
 
 ### View on the map
 
@@ -82,7 +79,6 @@ After that, you need to click ['Edit favorite' button on 'Map Context menu'](/do
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
 
-
 ### Search 
 
 - Favorite points can be seacrhed by [Search function](/docs/documentation/search) of OsmAnd. The first points will be from 'My favorites'.
@@ -144,7 +140,6 @@ Searching function opens a points list of Favorites sorted by distance from map 
 Click to 'Magnifier' buttons opens seaching menu for Favorites, where user can start to find needed points from Favorites. Clicking to a chosen point opens [Context menu](/docs/documentation/map/map-context-menu#select-an-object-short-tap) of this point.
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_2_android.png)
-
 
 ### Actions
 
