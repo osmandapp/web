@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import boxStyles from './Box.module.css';
 
 
-export default function Poll() {
+export default function Poll({id}) {
     let pollHost = "https://osmand.net";
     const [title, setTitle] = useState('OsmAnd Poll');
     const [pollId, setPollId] = useState('');
@@ -51,13 +51,16 @@ export default function Poll() {
 
     useEffect(() => {
         const loadPoll = async (e) => {
-            const res = await fetch(`${pollHost}/api/latest-poll`, { 
+            const idReq = id ? `pollId=${id}` : '';
+            const res = await fetch(`${pollHost}/api/latest-poll?${idReq}`, { 
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             }).then(res => res.json());
-            setTitle(res.title);
-            setPollId(res.id);
-            setAnswers(res.answers);
+            if (res.id) {
+                setTitle(res.title);
+                setPollId(res.id);
+                setAnswers(res.answers);
+            }
         }
         loadPoll();
     }, []);
