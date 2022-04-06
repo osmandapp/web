@@ -46,7 +46,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <Features />
-        <Layout2Blocks>
+        <Layout2Blocks names={['Twitter', 'Poll']}>
           <Twitter />
           <Poll />
         </Layout2Blocks>

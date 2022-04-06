@@ -9,6 +9,13 @@
   display: none
 }
 
+.index-title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+
 :root {
   --ifm-color-primary: #237BFF;
   --ifm-color-primary-dark: #D28521;
