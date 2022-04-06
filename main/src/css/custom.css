@@ -5,6 +5,10 @@
  */
 
 /* You can override the default Infima variables here. */
+.d-none {
+  display: none
+}
+
 :root {
   --ifm-color-primary: #237BFF;
   --ifm-color-primary-dark: #D28521;
