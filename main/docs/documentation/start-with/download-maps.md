@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Download maps is a necessarily action for further using map and navigation in offline mode. Maps can be downloaded both by browsing through the regions list from the main menu and by clicking on the needed territory on the map
 
-Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](/docs/documentation/map/vector-maps) and  [Raster maps](/docs/documentation/map/raster-maps), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](/docs/documentation/search), [Navigation](//docs/documentation/navigation),  [Context menu](/docs/documentation/map/map-context-menu). 
+Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](/docs/documentation/map/vector-maps) and  [Raster maps](/docs/documentation/map/raster-maps), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](/docs/documentation/search), [Navigation](/docs/documentation/navigation),  [Context menu](/docs/documentation/map/map-context-menu). 
 
 ## Download - First Screen
 
