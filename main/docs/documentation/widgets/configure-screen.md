@@ -3,6 +3,14 @@ sidebar_position: 1
 title:  Configure Screen
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+
 Configure screen is a menu that allows to configure what widgets will be displayed over the map. It allows you to enable and configure Quick action, Informational & Navigational widgets and other elements.
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_menu.png)
