@@ -42,7 +42,7 @@ My location & zoom buttons control the map display. You can read more in [Intera
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-[Main menu](/docs/documentation/start-with/main-menu) button allows to access to [all features](/docs/documentation/main-menu) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
+[Main menu](/docs/documentation/start-with/main-menu) button allows to access to [all features](/docs/documentation/start-with/main-menu) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
 
 ## Search
 
