@@ -129,3 +129,8 @@ table.blogimage img {
   width: auto;
 }
 
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
