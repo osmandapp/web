@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 
-import AllStores from '../components/_buttonAllStores.mdx';
+import AllStores from '../components/buttons/AllStores.mdx';
 import Features from '../components/home/Features';
 import Poll from '../components/home/Poll';
 import Layout2Blocks from '../components/home/Layout2Blocks';
