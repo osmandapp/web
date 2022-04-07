@@ -9,6 +9,11 @@
   display: none
 }
 
+
+.flex-1 {
+  flex: 1
+}
+
 .index-title {
   font-size: 3em;
   font-weight: 400;

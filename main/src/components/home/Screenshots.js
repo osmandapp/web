@@ -62,10 +62,10 @@ export default function Screenshots() {
           <div className='col col--4' />
           <div className='col col--4' >
             <ul className="tabs tabs--block">
-              <li className={clsx({ "tabs__item": true, "tabs__item--active": android })} 
-                  onChange={() => setAndroid(true)}>Android</li>
-              <li className={clsx({ "tabs__item": true, "tabs__item--active": !android })} 
-                  onChange={() => setAndroid(false)}>iOS</li>
+              <li className={clsx({"tabs__item": true, "flex-1": true, "tabs__item--active": android })} 
+                  onClick={() => setAndroid(true)}>Android</li>
+              <li className={clsx({ "tabs__item": true, "flex-1": true, "tabs__item--active": !android })} 
+                  onClick={() => setAndroid(false)}>iOS</li>
             </ul>
           </div>
         </div>
