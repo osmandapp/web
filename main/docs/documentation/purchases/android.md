@@ -34,9 +34,7 @@ For Android devices you can download the free and paid application on the follow
 
 ## Difference between purchases
 
-{% note %}
-OsmAnd+ and OsmAnd Maps+ are fully equal by set of features.
-{% endnote %}
+>OsmAnd+ and OsmAnd Maps+ are fully equal by set of features.
 
 **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
 
