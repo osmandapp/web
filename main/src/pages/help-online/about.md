@@ -1,16 +1,15 @@
 # About
-Data is powered by OpenStreetMap ODbL, &#169; [**https://www.openstreetmap.org/copyright**](https://www.openstreetmap.org/copyright)
-
+Data is powered by OpenStreetMap ODbL, &#169; [**https://www.openstreetmap.org/copyright**](https://www.openstreetmap.org/copyright).
 All rights belong to OsmAnd app, Copyright &#169; 2010-2022 OsmAnd BV.
 
 ### Credits to all Developers and major Contributors
-[**Victor Shcherb**](https://github.com/vshcherb) - Founder and CEO, Product Lead.
-Alexey Kulish - Technical Lead (CTO), Android/iOS developer.  
+[**Victor Shcherb**](https://github.com/vshcherb) - Founder and CEO, Product Lead.  
+**Alexey Kulish** - Technical Lead (CTO), Android/iOS developer.  
 [**Eugene Kizevich**](http://github.com/EugeneZmeuk) - Marketing Lead (CMO) and Front-end developer.  
 [**Dmytro Prodchenko**](https://github.com/dmpr0) - Product Lead, UI/UX designer.  
 [**Dr. Hardy Mueller**](https://github.com/sonora)- Map appearance concept and base renderers, international consistency and testing, usability, app scoping, concepts, documentation, wiki, market research.  
 [**Alexey Pelykh**](https://github.com/alexey-pelykh) - C++ developer, created native library and made application much snappier.  
-Max (Zahnstocher) - Java contributor, active forum participant.  
+**Max (Zahnstocher)** - Java contributor, active forum participant.  
 [**Leonid Barsukov**](https://github.com/xmd5a2) - Software engineer, co-author of main OsmAnd rendering, author of UniRS, LightRS styles.  
 [**Pavlo Stetsenko**](https://github.com/PaulStets) - Senior iOS Developer, iOS Team lead.  
 [**Vitalii Holinko**](https://github.com/Chumva) - Android Team Lead.  
