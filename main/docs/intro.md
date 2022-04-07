@@ -11,22 +11,24 @@ import TabItem from '@theme/TabItem';
 
 ### [User guide](/docs/documentation/)
 
-Adding a text.
+User guide about OsmAnd application describing main features & settings.
 
 ### [Map legend](/docs/map-legend/)
 
-Adding a text.
+Key map elements used in OsmAnd Map.
 
 ### [Technical Documentation](/docs/technical-documentation/)
 
-Adding a text.
+Technical documentation related 
+
+### [Releases](/docs/versions/)
+
+Release notes and links to previous OsmAnd Releases.
 
 ### [Build it](/docs/build-it/)
 
-Adding a text.
+Build and create your own version of OsmAnd, also links to License questions.
 
-### [Versions](/docs/versions/)
 
-Adding a text.
 
 
