@@ -23,12 +23,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
@@ -58,6 +56,7 @@ const config = {
             label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {to: '/docs/build-it/', label: 'Build it', position: 'right'},
           {
             href: 'https://github.com/osmandapp/',
