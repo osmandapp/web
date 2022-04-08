@@ -65,7 +65,7 @@ Here is detailed information about all in apps with prices for US / Europe regio
 | <Translate ios="true" ids="product_title_australia"/> | <Translate ios="true" ids="product_desc_australia"/> | 5.49€ / 4.99$  |
 | <Translate ios="true" ids="product_title_europe"/> | <Translate ios="true" ids="product_desc_europe"/> | 14.99€ / 14.99$ |
 | <Translate ios="true" ids="product_title_centralamerica"/> | <Translate ios="true" ids="product_desc_centralamerica"/> | 2.99€ / 2.99$  |
-| <Translate ios="true" ids="product_title_northamerica"/> | <Translate ios="true" ids="product_desc_northamerica"/> | 6.99€  / 5.99$ |
+| <Translate ios="true" ids="product_title_northamerica"/> | <Translate ios="true" ids="product_desc_northamerica"/> | 14.99€  / 14.99$ |
 | <Translate ios="true" ids="product_title_southamerica"/> | <Translate ios="true" ids="product_desc_southamerica"/> | 3.99€ / 3.99$ |
 
 *_Prices can be differents for world regions._
