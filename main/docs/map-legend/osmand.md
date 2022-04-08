@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
 ---
+import Translate from '@site/src/components/Translate.js';
+
 
 # OsmAnd map style
+<Translate android="yes" id="default_render_descr" />
+
 
 ## Highways
 <img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" />

@@ -4,10 +4,6 @@ label: Introduction
 title: Menu
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-![LOGO OsmAnd](@site/static/img/site/logo_osmand.png)
 
 ### [User guide](/docs/documentation/)
 
