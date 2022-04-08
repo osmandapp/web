@@ -9,7 +9,7 @@ You can get the latest version of OsmAnd free from listed app stores.
 * Amazon AppStore — <a href="https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8">**Get**</a>
 * Huawei AppGallery — <a href="https://appgallery.huawei.com/#/app/C101486545">**Get**</a>
 
------- 
+<hr></hr>
 
 Direct links to free OsmAnd versions.
 ## Version 4 
@@ -29,8 +29,10 @@ Release date: 12/2021
 * Improved SRTM height marker rendering
 * Fixed Arabic map captions
 
-#### [:book: Read more](https://osmand.net/blog/osmand-android-4-1) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.1.11-421.apk)
-
+<div class="button-row">
+  <a class="button button--active" href="https://osmand.net/blog/osmand-android-4-1"><span class="emoji">&#x1F4D6;</span>Read more</a>
+  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-4.1.11-421.apk"><span class="emoji">&#x2B07;</span>Download</a>
+</div>
 
 ### Version 4.0 
 Release date: 08/2021    
@@ -55,10 +57,14 @@ Release date: 08/2021
 * Fixed crashes with Public transport 
 * Search algorithms improving
 
-#### [:book: Read more](blog/osmand-android-4-0-released) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-4.0.8-408.apk)
+<div class="button-row">
+  <a class="button button--active" href="blog/osmand-android-4-0-released"><span class="emoji">&#x1F4D6;</span>Read more</a>
+  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-4.0.8-408.apk"><span class="emoji">&#x2B07;</span>Download</a>
+</div>
 
 
 
+<hr></hr>
 
 ## Version 3
 ### Version 3.9 
@@ -69,8 +75,10 @@ Release date: 02/2021
 * Added OAuth authentication method for OpenStreetMap, improved UI of OSM dialogs.
 * Support custom colors for favorites and track waypoints.
 
-#### [:book: Read more](https://osmand.net/blog/osmand-3-9) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-3.9.9-399.apk)
-
+<div class="button-row">
+  <a class="button button--active" href="https://osmand.net/blog/osmand-3-9"><span class="emoji">&#x1F4D6;</span>Read more</a>
+  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-3.9.9-399.apk"><span class="emoji">&#x2B07;</span>Download</a>
+</div>
 
 
 ### Version 3.8 
@@ -84,8 +92,10 @@ Release date: 09/2020
 * Improved "Follow track" options in Navigation
 * Fixed issues with import/export of profile settings
 
-#### [:book: Read more](https://osmand.net/blog/osmand-3-8) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-3.8.3-383.apk)
-
+<div class="button-row">
+  <a class="button button--active" href="https://osmand.net/blog/osmand-3-8"><span class="emoji">&#x1F4D6;</span>Read more</a>
+  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-3.8.3-383.apk"><span class="emoji">&#x2B07;</span>Download</a>
+</div>
 
 
 ### Version 3.7 
@@ -213,7 +223,7 @@ Release date: 05/2018
 #### [:book: Read more](https://osmand.net/blog?id=osmand-3-0) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-3.0.4-304.apk)
 
 
-
+<hr></hr>
 
 ## Version 2
 
@@ -353,7 +363,7 @@ Release date: 04/2015
 
 #### [:book: Read more](https://osmand.net/blog?id=osmand-2-0) | [:arrow_down: Download](https://download.osmand.net/releases/net.osmand-2.0.4-207.apk)
 
-
+<hr></hr>
 
 ## Version 1
 
