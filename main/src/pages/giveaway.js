@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import GiveawayContent from '../components/content/Giveaway.mdx';
 import Table from '../components/Table';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 ///1.  TODO Message
         // !!! if (data.message == "") {
@@ -29,6 +30,8 @@ function ordinal_suffix_of(i) {
     return i + "th";
 }
 
+var  locationSearch = null;
+
 export default function Giveaway() {
     const host = 'https://osmand.net'
     const { siteConfig } = useDocusaurusContext();
@@ -36,6 +39,7 @@ export default function Giveaway() {
     const [series, setSeries] = useState([]);
     const [selectedSeries, setSelectedSeries] = useState(null);
     const [selectedRnd, setSelectedRnd] = useState(null);
+    // const [locationSearch, setLocationSearch] = useState(null);
 
     const [readMore, setReadMore] = useState(false);
     const tableColumns = [
@@ -87,8 +91,8 @@ export default function Giveaway() {
         }).then(res => res.json());
         setSeries(series.seriesList);
         var args = null;
-        if (window.location.search != '') {
-            args = window.location.search;
+        if (locationSearch && locationSearch != '') {
+            args = locationSearch;
         } else if (series.seriesList?.length > 0) {
             args = "?series=" + series.seriesList[0].name;
         }
@@ -104,6 +108,11 @@ export default function Giveaway() {
         title='OsmAnd Giveaway'
         description={siteConfig.tagline}>
         <main>
+            <BrowserOnly>{() => {
+                locationSearch = window.location.search;
+                return <></>
+            }}
+            </BrowserOnly>
             <div className='container padding-vert--md'>
                 <h1 className='hero__title'>OsmAnd Giveaways</h1>
                 <p className="hero__subtitle">Participate and win free promocode for OsmAnd on Google Play &amp; App Store.</p>
