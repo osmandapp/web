@@ -4,7 +4,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import GiveawayContent from '../components/content/Giveaway.mdx';
 import Table from '../components/Table';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
+// TODO window.location.search
 ///1.  TODO Message
         // !!! if (data.message == "") {
         //     $("#general-info-participate").hide();
@@ -15,6 +17,8 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 // 2. TODO tooltip
 // 3. TODO Subscribe
 // 4. CSS
+
+
 function ordinal_suffix_of(i) {
     var j = i % 10,
         k = i % 100;
@@ -109,7 +113,7 @@ export default function Giveaway() {
         description={siteConfig.tagline}>
         <main>
             <BrowserOnly>{() => {
-                locationSearch = window.location.search;
+                // locationSearch = useIsBrowser() ? window.location.search : 'fetching location...';
                 return <></>
             }}
             </BrowserOnly>
