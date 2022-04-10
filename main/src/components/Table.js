@@ -10,10 +10,10 @@ function applyStyle() {
     $('.paginate_button.current').parent('span').addClass('pagination__item--active');
 }
 
-export default function Table({tableColumns, tableData}) {
+export default function Table({ tableColumns, tableData }) {
     const el = useRef(null);
     const [dt, setDT] = useState(null);
-    const [showOnPage, setShowOnPage ] = useState(50);
+    const [showOnPage, setShowOnPage] = useState(50);
     const [filter, setFilter] = useState('');
     const showOnPageList = [10, 25, 50, 100];
     useEffect(() => {
@@ -35,39 +35,32 @@ export default function Table({tableColumns, tableData}) {
         setDT(tbl);
     }, [tableColumns, tableData]);
     if (dt) {
-        if (filter) {
+        //if (filter) {
             dt.search(filter).draw();
-        }
+        //}
         dt.page.len(showOnPage).draw();
     }
     return <>
-        <div className={styles.table}>
-            <nav className="navbar">
-                    <div className="navbar__items">
-                        <div className="navbar__item dropdown dropdown--hoverable">
-                            <a className="navbar__link">{'Show ' + showOnPage}</a>
-                            <ul className="dropdown__menu">
-                                { showOnPageList.map( e => {
-                                    return <li className="dropdown__link" 
-                                        key={e} onClick={() => setShowOnPage(e)}>{e}</li>
-                                })
-                                }
-                            </ul>
-                        </div>
+        <div className={styles.tablediv}>
+            <div className="row margin-vert--md">
+                    <div className="navbar__search col col--3" >
+                        <input className="navbar__search-input" placeholder="Search"
+                            onChange={e => setFilter(e.target.value)} align='left'/>
                     </div>
-                    <div className="navbar__items navbar__items--right">
-                        <form>
-                            <div className="navbar__search">
-                                <input className="navbar__search-input" placeholder="Search" 
-                                    onChange={e => setFilter(e.target.value)}/>
-                            </div>
-                        </form>
+                    <div className="dropdown dropdown--hoverable col col--offset-6 col--3">
+                        <a className={'navbar__link ' + styles.showmore} align='right'>{'Show ' + showOnPage}</a>
+                        <ul className={'dropdown__menu ' + styles.showmore} >
+                            {showOnPageList.map(e => {
+                                return <li className="dropdown__link"
+                                    key={e} onClick={() => setShowOnPage(e)}>{e}</li>
+                            })
+                            }
+                        </ul>
                     </div>
-                
-            </nav>
-            <table ref={el} cellSpacing="0" className="" width="100%">
+                </div>
+            <table ref={el} cellSpacing="0" className="margin-vert--md" width="100%">
             </table>
         </div>
-        
+
     </>;
 }

@@ -2,6 +2,12 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-.table {
+.tablediv {
   width: 100%;
 }
+
+.showmore {
+  margin-left: auto
+}
+
+
