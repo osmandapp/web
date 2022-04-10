@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
 import $ from 'jquery';
-import 'datatables.net';
+
 import styles from './Table.module.css';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 function applyStyle() {
     $('.dataTables_paginate').addClass('pagination');
@@ -39,6 +40,9 @@ export default function Table({ tableColumns, tableData }) {
             dt.search(filter).draw();
         //}
         dt.page.len(showOnPage).draw();
+    }
+    if (ExecutionEnvironment.canUseDOM) {
+        require('datatables.net');
     }
     return <>
         <div className={styles.tablediv}>
