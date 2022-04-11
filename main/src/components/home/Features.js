@@ -5,7 +5,7 @@ import styles from './Features.module.css';
 const FeatureList = [
   {
     title: 'Map',
-    Svg: require('../../../static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('../../../static/img/map.svg').default,
     description: (
       <ul>
         <li>Carry highly detailed, fully offline maps of any region world wide on your device!</li>
@@ -21,7 +21,7 @@ const FeatureList = [
   },
   {
     title: 'Navigation',
-    Svg: require('../../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../../static/img/navigation.svg').default,
     description: (
       <ul>
         <li>Works totally offline (no roaming charges when you are abroad)</li>
@@ -38,7 +38,7 @@ const FeatureList = [
 
   {
     title: 'Bicycle and pedestrian routes',
-    Svg: require('../../../static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('../../../static/img/pedestrian_routes.svg').default,
     description: (
       <ul>
         <li>The offline maps include foot, hiking, and bike paths, great for outdoor activities</li>
@@ -52,7 +52,7 @@ const FeatureList = [
   },
   {
     title: 'Open Source',
-    Svg: require('../../../static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('../../../static/img/open_source.svg').default,
     description: (
       <ul>
         <li>High quality information from the 2 best collaborative projects of the world</li>
