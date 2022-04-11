@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
+
 # Free Releases — Android
 
 You can get the latest version of OsmAnd free from listed app stores.
@@ -29,10 +31,7 @@ Release date: 12/2021
 * Improved SRTM height marker rendering
 * Fixed Arabic map captions
 
-<div class="button-row">
-  <a class="button button--active" href="https://osmand.net/blog/osmand-android-4-1"><span class="emoji">&#x1F4D6;</span>Read more</a>
-  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-4.1.11-421.apk"><span class="emoji">&#x2B07;</span>Download</a>
-</div>
+<DownloadRelease blog="osmand-android-4-1" release="net.osmand-4.1.11.apk" />
 
 ### Version 4.0 
 Release date: 08/2021    
@@ -57,11 +56,7 @@ Release date: 08/2021
 * Fixed crashes with Public transport 
 * Search algorithms improving
 
-<div class="button-row">
-  <a class="button button--active" href="blog/osmand-android-4-0-released"><span class="emoji">&#x1F4D6;</span>Read more</a>
-  <a class="button button--active" href="https://download.osmand.net/releases/net.osmand-4.0.8-408.apk"><span class="emoji">&#x2B07;</span>Download</a>
-</div>
-
+<DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
 
 <hr></hr>
