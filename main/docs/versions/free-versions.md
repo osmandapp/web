@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
 ---
-import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
-import Download from '@site/src/components/buttons/Download.js';
-
 
 # Free Releases — Android
+
+import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
+import Download from '@site/src/components/buttons/Download.js';
 
 You can get the latest version of OsmAnd free from listed app stores.
 * Google Play — <a href="https://play.google.com/store/apps/details?id=net.osmand">**Get**</a>

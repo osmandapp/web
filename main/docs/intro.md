@@ -17,13 +17,19 @@ Key map elements used in OsmAnd Map.
 
 Technical documentation related 
 
-### [Releases](/docs/versions/)
-
-Release notes and links to previous OsmAnd Releases.
-
 ### [Build it](/docs/build-it/)
 
 Build and create your own version of OsmAnd, also links to License questions.
+
+### [Versions](/docs/versions/)
+
+Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmAnd MapCreator.
+
+### [Legal](/docs/legal/)
+
+License. Privacy Policy. Terms of Use.
+
+
 
 
 
