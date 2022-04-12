@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
+import Download from '@site/src/components/buttons/Download.js';
+
 
 # Free Releases — Android
 
@@ -447,7 +449,7 @@ Release date: 10/2013
 * Faster search address input
 * Bug fixes with routing and rendering
 
-<DownloadRelease blog="" release="net.osmand-1.6.5%20beta-167.apk" />
+<Download link="net.osmand-1.6.5%20beta-167.apk" />
 
 ### Version 1.5
 Release date: 07/2013
@@ -458,7 +460,7 @@ Release date: 07/2013
 * High density map icons
 * Bugfixes in distance display, GPX analyzer, waypoint handling, planning widget, OSM uploading, https 
 
-<DownloadRelease blog="" release="net.osmand-1.5.2%20beta-154.apk" />
+<Download link="net.osmand-1.5.2%20beta-154.apk" />
 
 
 
@@ -474,7 +476,7 @@ Release date: 05/2013
 * Delete SRTM files
 * Support OSM Notes 
 
-<DownloadRelease blog="" release="net.osmand-1.4%20beta-142.apk" />
+<Download link="net.osmand-1.4%20beta-142.apk" />
 
 
 
@@ -487,7 +489,7 @@ Release date: 03/2013
 * Additional settings for stabilizing compass
 * Top left button on the map screen replaces Menu button
 
-<DownloadRelease blog="" release="net.osmand-1.3%20beta-137.apk" />
+<Download link="net.osmand-1.3%20beta-137.apk" />
 
 
 ### Version 1.2
@@ -501,7 +503,7 @@ Release date: 02/2013
 * Multi-window support for recent Samsung devices
 * Kalman filter for compass
 
-<DownloadRelease blog="" release="net.osmand-1.2.1%20beta-133.apk" />
+<Download link="net.osmand-1.2.1%20beta-133.apk" />
 
 
 ### Version 1.1
@@ -518,7 +520,7 @@ Release date: 12/2012
 * 'Touring view' map style option with more map details, new road styles, more contrast, and Alpine hiking (SAC scale) option
 * EGM96 geoid offset correction for GPS altitude readings
 
-<DownloadRelease blog="" release="net.osmand-1.1.4%20beta-120.apk" />
+<Download link="net.osmand-1.1.4%20beta-120.apk" />
 
 
 
@@ -529,7 +531,7 @@ Release date: 09/2012
 * Introduced roads-only maps
 * Enable keep GPS on service during navigation
 
-<DownloadRelease blog="" release="net.osmand-1.0.0%20beta-101.apk" />
+<Download link="net.osmand-1.0.0%20beta-101.apk" />
 
 
 ## Version 0.8
@@ -548,7 +550,7 @@ Release date: 07/2012
 * Information about speed limits, speed cams, and speed bumps 
 * Enable/disable logging widget
 
-<DownloadRelease blog="" release="net.osmand-0.8.3%20beta-81.apk" />
+<Download link="net.osmand-0.8.3%20beta-81.apk" />
 
 
 ## Version 0.7
@@ -561,7 +563,7 @@ Release date: 04/2012
 * Optical indication of an imminent turn within 100m by diretion arrow changing color
 * Offline wikipedia data with articles
 
-<DownloadRelease blog="" release="net.osmand-0.7.3%20beta-56.apk" />
+<Download link="net.osmand-0.7.3%20beta-56.apk" />
 
 
 ## Version 0.6
