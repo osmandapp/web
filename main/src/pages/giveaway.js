@@ -111,7 +111,7 @@ export default function Giveaway() {
             <div className='container padding-vert--md'>
                 <h1 className='hero__title'>OsmAnd Giveaways</h1>
                 <p className="hero__subtitle">Participate and win free promocode for OsmAnd on Google Play &amp; App Store.</p>
-                {selectedSeries?.message && <h2>{selectedSeries?.message}</h2>}
+                {selectedSeries?.message && <h2>{'⚠️' + selectedSeries.message}</h2>}
                 <div className='margin-vert--md'>
                     <button className="button button--primary button--outline button--lg margin-right--md margin-top--md">
                         Subscribe
