@@ -30,6 +30,16 @@ h1, h2 {
 
 
 /***************go page ****************************/
+
+#map
+{
+  position:absolute;
+  top:65px;
+  bottom:50px;
+  width:100%;
+}
+  
+
 .gocontainer
 {
   height:100%;
