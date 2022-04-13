@@ -32,6 +32,35 @@ import Translate from '@site/src/components/Translate.js';
 ## Access
 <img src={require('@site/static/img/map-legend/osmand-access.png').default} alt="OsmAnd Map style" />
 
+
+![Access Private](/img/legend/osmand/access/access_PrivateColor_day.svg)
+![Access Private](/img/legend/osmand/access/access_PrivateColor_night.svg)
+
+![Access Destination](/img/legend/osmand/access/access_DestinationColor_day.svg)
+![Access Destination](/img/legend/osmand/access/access_DestinationColor_night.svg)
+
+![Access Permissive](/img/legend/osmand/access/access_PermissiveColor_day.svg)
+![Access Permissive](/img/legend/osmand/access/access_PermissiveColor_night.svg)
+
+![Access Customers](/img/legend/osmand/access/access_CustomersColor_day.svg)
+![Access Customers](/img/legend/osmand/access/access_CustomersColor_night.svg)
+
+![Access Delivery](/img/legend/osmand/access/access_DeliveryColor_day.svg)
+![Access Delivery](/img/legend/osmand/access/access_DeliveryColor_night.svg)
+
+![Access Delivery](/img/legend/osmand/access/access_DeliveryColor_day.svg)
+![Access Delivery](/img/legend/osmand/access/access_DeliveryColor_night.svg)
+
+![Access Agricultural](/img/legend/osmand/access/access_AgriculturalColor_day.svg)
+![Access Agricultural](/img/legend/osmand/access/access_AgriculturalColor_night.svg)
+
+![Access Emergency](/img/legend/osmand/access/access_EmergencyColor_day.svg)
+![Access Emergency](/img/legend/osmand/access/access_EmergencyColor_night.svg)
+
+![Access Toll](/img/legend/osmand/access/access_tollColor_day.svg)
+![Access Toll](/img/legend/osmand/access/access_tollColor_night.svg)
+
+
 ## Waterways
 <img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="OsmAnd Map style" />
 

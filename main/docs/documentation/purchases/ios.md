@@ -79,7 +79,7 @@ Here is detailed information about all in apps with prices for US / Europe regio
 | :------------- | :------------- |
 | 1 month | 1.99€  / 1.99$ |
 | 3 months | 3.99€ / 3.99$  |
-| 1 year |  7.99€ / 7.49$ |
+| 1 year |  9.99€ / 8.99$ |
 
 
 ## Restore purchases

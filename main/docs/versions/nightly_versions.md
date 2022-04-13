@@ -2,7 +2,8 @@
 sidebar_position: 2
 ---
 
-# Beta & Nighty builds
+# Beta & Nightly builds
+
 OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
 ## Android
