@@ -69,11 +69,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'OsmAnd',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Map legend',
+                to: '/docs/map-legend/osmand',
               },
               {
                 label: 'Versions',
@@ -83,9 +87,14 @@ const config = {
                 label: 'Build it',
                 to: '/docs/build-it',
               },
+              
               {
-                label: 'Map legend',
-                to: '/docs/map-legend/osmand',
+                label: 'Giveaway',
+                to: '/giveaway',
+              },
+              {
+                label: 'About',
+                to: '/help-online/about',
               },
             ],
           },

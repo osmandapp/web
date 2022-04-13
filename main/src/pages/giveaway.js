@@ -1,12 +1,10 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import GiveawayContent from '../components/content/Giveaway.mdx';
 import Table from '../components/Table';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import useIsBrowser from '@docusaurus/useIsBrowser';
 
-// - TODO Table very slow
 // - TODO CSS
 
 function ordinal_suffix_of(i) {
@@ -30,8 +28,8 @@ function isValidEmail(email) {
 var locationSearch = null;
 
 export default function Giveaway() {
-    // const host = 'https://osmand.net' 
-    const host = 'http://localhost:8080' 
+    const host = 'https://osmand.net' 
+    //const host = 'http://localhost:8080' 
     const { siteConfig } = useDocusaurusContext();
     const [tableData, setTableData] = useState([]);
     const [series, setSeries] = useState([]);
@@ -117,6 +115,10 @@ export default function Giveaway() {
     useEffect(() => {
         loadSeries();
     }, []);
+    // const TableComponent = React.memo((tableColumns, tableData) => <Table tableColumns={tableColumns} tableData={tableData} />, 
+    //     [tableColumns, tableData]);
+    const TableComponent = React.memo(Table,[tableColumns, tableData]);
+    // Table tableColumns={tableColumns} tableData={tableData} />
     return <Layout
         title='OsmAnd Giveaway'
         description={siteConfig.tagline}>
@@ -231,7 +233,7 @@ export default function Giveaway() {
                     }
                 </div>
                 {
-                    //<Table tableColumns={tableColumns} tableData={tableData}/>
+                    <TableComponent tableColumns={tableColumns} tableData={tableData} />
                 }
             </div>
         </main>
