@@ -19,12 +19,3 @@
     padding: 2rem;
   }
 }
-
-.storeButtons {
-  margin-top: 100px; 
-}
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
