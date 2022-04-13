@@ -6,10 +6,8 @@ import Table from '../components/Table';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
-// - TODO Tooltip
-// - TODO Subscribe
+// - TODO Table very slow
 // - TODO CSS
-
 
 function ordinal_suffix_of(i) {
     var j = i % 10,
@@ -25,18 +23,27 @@ function ordinal_suffix_of(i) {
     }
     return i + "th";
 }
+function isValidEmail(email) {
+    return /^\S+@\S+\.\S+$/.test(email);
+}
 
 var locationSearch = null;
 
 export default function Giveaway() {
-    const host = 'https://osmand.net'
+    // const host = 'https://osmand.net' 
+    const host = 'http://localhost:8080' 
     const { siteConfig } = useDocusaurusContext();
     const [tableData, setTableData] = useState([]);
     const [series, setSeries] = useState([]);
     const [selectedSeries, setSelectedSeries] = useState(null);
     const [selectedRnd, setSelectedRnd] = useState(null);
+    const [subscribeFlag, setSubscribeFlag] = useState(false);
+    const [userMessage, setUserMessage] = useState(null);
 
+    const [email, setEmail] = useState(false);
+    const [android, setAndroid] = useState(true);
     const [readMore, setReadMore] = useState(false);
+
     const tableColumns = [
         {
             "data": "hashcode", "title": "Position",
@@ -64,7 +71,15 @@ export default function Giveaway() {
         }
         setTableData(tableData);
     }
- 
+    const participateWithEmail = async () => {
+        const res = await fetch(host + '/api/giveaway-subscribe?email=' + email +
+            '&os=' + (android ? 'android' : 'ios'), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        }).then(res => res.json());
+        setUserMessage(res.message);
+        setSubscribeFlag(false);
+    };
 
     const loadSerie = async (args) => {
         if (args) {
@@ -73,6 +88,9 @@ export default function Giveaway() {
                 headers: { 'Content-Type': 'application/json' }
             }).then(res => res.json());
             setSelectedSeries(serie);
+            if (serie?.message) {
+                setUserMessage(serie.message);
+            }
             setTableData(serie.users);
         }
         setSelectedRnd(null);
@@ -104,22 +122,41 @@ export default function Giveaway() {
         description={siteConfig.tagline}>
         <main>
             <BrowserOnly>{() => {
-                locationSearch = useIsBrowser() ? window.location.search : 'fetching location...';
+                locationSearch = window.location.search;
                 return <></>
             }}
             </BrowserOnly>
             <div className='container padding-vert--md'>
                 <h1 className='hero__title'>OsmAnd Giveaways</h1>
                 <p className="hero__subtitle">Participate and win free promocode for OsmAnd on Google Play &amp; App Store.</p>
-                {selectedSeries?.message && <h2>{'⚠️' + selectedSeries.message}</h2>}
-                <div className='margin-vert--md'>
-                    <button className="button button--primary button--outline button--lg margin-right--md margin-top--md">
-                        Subscribe
+                {userMessage && <h2>{'⚠️' + userMessage}</h2>}
+                {!subscribeFlag && <div className='margin-vert--md'>                    
+                    <button className="button button--primary button--outline button--lg margin-right--md margin-top--md" onClick={() => setSubscribeFlag(true)}>
+                        Participate
                     </button>
                     <button className="button button--secondary button--outline button--lg margin-top--md" onClick={() => setReadMore(!readMore)}>
                         {!readMore ? 'Read more' : 'Hide'}
                     </button>
                 </div>
+                }
+                {subscribeFlag && <div className='margin-vert--md'>
+                    <input className="button button--lg margin-right--md margin-top--md" placeholder='Enter your email' type="email" name="email" required 
+                        style={{ color: 'var(--ifm-font-color-base)'}} onChange={e => setEmail(e.target.value) }>
+                    </input>
+                    <div className="dropdown dropdown--hoverable margin-right--md margin-top--md">
+                        <button className="button button--lg button--link">{android ? 'Android' : 'iOS'}</button>
+                        <ul className="dropdown__menu">
+                            <li><a className="dropdown__link" onClick={() => setAndroid(true)}>Android</a></li>
+                            <li><a className="dropdown__link" onClick={() => setAndroid(false)}>iOS</a></li>
+                        </ul>
+                    </div>
+                    <button className={
+                        "button button--primary button--outline button--lg margin-right--md margin-top--md" + (isValidEmail(email) ? "" : " disabled") }  
+                                onClick={() => participateWithEmail() }>
+                        Subscribe
+                    </button>
+                </div>
+                }
                 {readMore && <GiveawayContent />}
                 <h3>Giveaway series</h3>
                 {selectedSeries &&
@@ -131,33 +168,36 @@ export default function Giveaway() {
                         <div className="row">
                             <div className="col col--3">
                                 <p>{selectedRnd ? selectedRnd.winnersCount : selectedSeries.winners}</p>
-                                <span>winners</span>
+                                <span>Winners</span>
                             </div>
                             <div className="col col--3">
-                                <p>{selectedRnd ? selectedRnd.roundParticipants.length : selectedSeries.participants}</p><span>participants</span>
+                                <p>{selectedRnd ? selectedRnd.roundParticipants.length : selectedSeries.participants}</p><span>Participants</span>
                             </div>
                             {!selectedRnd && <div className="col col--6">
                                 <p>
                                     {selectedSeries.rounds.length + ' / ' + selectedSeries.totalRounds}
                                 </p>
-                                <span>rounds</span>
+                                <span>Rounds</span>
                             </div>
                             }
                             {selectedRnd && <div className="col col--6">
-                                <p>
+                                <div>
+                                    <div className="dropdown dropdown--hoverable">
                                     <a
-                                        href={"https://www.blockchain.com/btc/block/" + selectedRnd.seed}
-                                        data-toggle="tooltip" target="_blank"
-                                        title={"Bitcoin hash block " + selectedRnd.seed + "  16-radix"}>{
+                                        href={"https://www.blockchain.com/btc/block/" + selectedRnd.seed} target="_blank">{
                                             "...." + selectedRnd.seed.substring(52)}</a>
+                                    <ul className="dropdown__menu">
+                                        <li className="dropdown__link">{"Bitcoin hash block " + selectedRnd.seed + "  16-radix"}</li>
+                                    </ul>
+                                    </div>
                                     {"\u00A0→\u00A0" + selectedRnd.roundParticipants.length + " = "}
                                     <a target="_blank" href={"https://www.wolframalpha.com/input/?i=(0x0" + selectedRnd.seed +
                                         + " mod " + selectedRnd.roundParticipants.length +
                                         +")+%2B+1+%3D"}>
                                         {ordinal_suffix_of(selectedRnd.selection + 1) + " is Winner"}
                                     </a>
-                                </p>
-                                <span>random seed (bitcoin block)</span>
+                                </div>
+                                <span>Random seed by Bitcoin block hash</span>
                             </div>
                             }
                         </div>
@@ -190,7 +230,9 @@ export default function Giveaway() {
                         </div>
                     }
                 </div>
-                <Table tableColumns={tableColumns} tableData={tableData}/>
+                {
+                    //<Table tableColumns={tableColumns} tableData={tableData}/>
+                }
             </div>
         </main>
     </Layout>;
