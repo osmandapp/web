@@ -7,13 +7,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 // TODO window.location.search
-///1.  TODO Message
-        // !!! if (data.message == "") {
-        //     $("#general-info-participate").hide();
-        // } else {
-        //     $("#general-info-participate").show();
-        //     $("#general-info-participate").text(data.message);
-        // }
+
 // 2. TODO tooltip
 // 3. TODO Subscribe
 // 4. CSS
@@ -34,7 +28,7 @@ function ordinal_suffix_of(i) {
     return i + "th";
 }
 
-var  locationSearch = null;
+var locationSearch = null;
 
 export default function Giveaway() {
     const host = 'https://osmand.net'
@@ -43,7 +37,7 @@ export default function Giveaway() {
     const [series, setSeries] = useState([]);
     const [selectedSeries, setSelectedSeries] = useState(null);
     const [selectedRnd, setSelectedRnd] = useState(null);
-    // const [locationSearch, setLocationSearch] = useState(null);
+    const [userMessage, setUserMessage] = useState(null);
 
     const [readMore, setReadMore] = useState(false);
     const tableColumns = [
@@ -93,6 +87,9 @@ export default function Giveaway() {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => res.json());
+        if (series?.message) {
+            setUserMessage(series.message);
+        }
         setSeries(series.seriesList);
         var args = null;
         if (locationSearch && locationSearch != '') {
@@ -113,13 +110,14 @@ export default function Giveaway() {
         description={siteConfig.tagline}>
         <main>
             <BrowserOnly>{() => {
-                // locationSearch = useIsBrowser() ? window.location.search : 'fetching location...';
+                locationSearch = useIsBrowser() ? window.location.search : 'fetching location...';
                 return <></>
             }}
             </BrowserOnly>
             <div className='container padding-vert--md'>
                 <h1 className='hero__title'>OsmAnd Giveaways</h1>
                 <p className="hero__subtitle">Participate and win free promocode for OsmAnd on Google Play &amp; App Store.</p>
+                {userMessage && <h2>{userMessage}</h2>}
                 <div className='margin-vert--md'>
                     <button className="button button--primary button--outline button--lg margin-right--md margin-top--md">
                         Subscribe
