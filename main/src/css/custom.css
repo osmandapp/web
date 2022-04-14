@@ -158,3 +158,11 @@ ul.no-bullets {
 .emoji {
   padding-right: 12px;
 }
+
+.map-legend-day {
+  background-color: #ebe7e4;
+}
+
+.map-legend-night {
+  background-color: #121926;
+}
