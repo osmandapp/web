@@ -42,7 +42,7 @@ export default function LegendItem({itemsMap, columns = 3}) {
                 {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
                 {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
                 </tr>
-                <tr key={ind * 2 + 1}>
+                <tr key={ind * 2 + 1} className={styles.legendDay}>
                   {itemArray.length > 0 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_day.svg')} 
                     alt={itemArray[0][0] + " Day"} /></td>}
                   {itemArray.length > 1 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_day.svg')}
@@ -71,7 +71,7 @@ export default function LegendItem({itemsMap, columns = 3}) {
                   {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
                   {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
                 </tr>
-                <tr key={ind * 2 + 1}>
+                <tr key={ind * 2 + 1} className={styles.legendNight}>
                   {itemArray.length > 0 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_night.svg')}
                     alt={itemArray[0][0] + " Night"} /></td>}
                   {itemArray.length > 1 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_night.svg')}
