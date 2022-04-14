@@ -66,7 +66,7 @@ The [Parking widget](/docs/documentation/widgets/info-widgets#-parking-widget) b
 
 In the **iOS** version, to enable the Parking plugin, open the list of plugins, find the Parking one, check it and confirm with the **Ok** button in the next dialog. 
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.plugins %} → {% data variables.ios-values.product_title_parking %}
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_parking"/>
 
 ![Plugin confirmation in iOS](@site/static/img/plugins/parking/ios_add_parking_plugin.png)
 
@@ -74,9 +74,9 @@ In the **iOS** version, to enable the Parking plugin, open the list of plugins, 
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, to enable the Parking plugin, tap the triple dots at the right side of the {% data variables.android-values.osmand_parking_plugin_name %} option, then tap **Enable**, and confirm with the **OK** button in the next dialog.
+In the **Android** version, to enable the Parking plugin, tap the triple dots at the right side of the <Translate android="true" ids="osmand_parking_plugin_name"/>  option, then tap **Enable**, and confirm with the **OK** button in the next dialog.
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group %} → {% data variables.android-values.osmand_parking_plugin_name %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,osmand_parking_plugin_name"/> 
 
 ![Plugin confirmation in Android](@site/static/img/plugins/parking/and_add_parking_plugin.png)
 
@@ -102,9 +102,10 @@ The [Parking widget](/docs/documentation/widgets/info-widgets#-parking-widget) i
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, toggle on the {% data variables.ios-values.product_title_parking %} widget in: 
+In the **iOS** version, toggle on the <Translate ios="true" ids="product_title_parking"/> widget in: 
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.layer_map_appearance %} → {% data variables.ios-values.product_title_parking %}
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,layer_map_appearance,product_title_parking"/>
+
 
 ![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget.png)
 
@@ -112,9 +113,9 @@ In the **iOS** version, toggle on the {% data variables.ios-values.product_title
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, toggle on the {% data variables.android-values.map_widget_parking %} widget in: 
+In the **Android** version, toggle on the <Translate android="true" ids="map_widget_parking"/> widget in: 
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.layer_map_appearance %} → {% data variables.android-values.map_widget_parking %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_parking"/> 
 
 ![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget.png)
 
@@ -151,8 +152,8 @@ To set a Parking point on the map, zoom in to the required level, then long-tap 
 
 In the **iOS** version, to set a Parking point, long-tap a spot on the map and in the opened [Context menu](/docs/documentation/map/map-context-menu), do the following:
 
-1. Tap **{% data variables.ios-values.actions %}**, and then tap **{% data variables.ios-values.add_parking_short %}**.
-2. Consider time limits in the opened {% data variables.ios-values.parking_marker %} dialog. If a time limit is needed, enable the **{% data variables.ios-values.time_limited %}** option, and establish the following:
+1. Tap **<Translate ios="true" ids="actions"/>**, and then tap **<Translate ios="true" ids="add_parking_short"/>**.
+2. Consider time limits in the opened <Translate ios="true" ids="parking_marker"/> dialog. If a time limit is needed, enable the **<Translate ios="true" ids="time_limited"/>** option, and establish the following:
 
     - time when to end parking;
     - reminder for the Calendar app.
@@ -167,12 +168,12 @@ In the **iOS** version, to set a Parking point, long-tap a spot on the map and i
 
 In the **Android** version, to set a Parking point, long-tap a spot on the map and in the opened [Context menu](/docs/documentation/map/map-context-menu), do the following:
 
-1. Tap **{% data variables.android-values.shared_string_actions %}**, and then tap **{% data variables.android-values.context_menu_item_add_parking_point %}**.
-2. Consider time limits in the opened {% data variables.android-values.parking_options %} dialog: 
+1. Tap **<Translate android="true" ids="shared_string_actions"/>**, and then tap **<Translate android="true" ids="context_menu_item_add_parking_point"/>**.
+2. Consider time limits in the opened <Translate android="true" ids="parking_options"/> dialog: 
 
-    - If there is no time limit, select the **{% data variables.android-values.osmand_parking_no_lim_text %}** option, and the point without time constraints will be set on the map. 
+    - If there is no time limit, select the **<Translate android="true" ids="osmand_parking_no_lim_text"/>** option, and the point without time constraints will be set on the map. 
 
-    - If a time limit is required, select the **{% data variables.android-values.osmand_parking_time_limit %}** option, and then: 
+    - If a time limit is required, select the **<Translate android="true" ids="osmand_parking_time_limit"/>** option, and then: 
         - select time when to end parking;
         - add reminder for the Calendar app;
         - tap **OK**, and the point with the established time limit will be set on the map. .
@@ -233,16 +234,16 @@ Also, the widget shows the distance from your current location, or the center of
 
 ![Parking widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
 
-**Start Time** is always visible in the details of the Parking point. To see the details, tap the Parking point, and the opened {% data variables.ios-values.parking_marker %} context menu will show you when Parking started. 
+**Start Time** is always visible in the details of the Parking point. To see the details, tap the Parking point, and the opened <Translate ios="true" ids="parking_marker"/> context menu will show you when Parking started. 
 
 ![Parking info in iOS](@site/static/img/plugins/parking/ios_parking_info.png) 
 
 
-**Time Left** or **Time Overdue** in the details of a time-limited Parking point, opened with the {% data variables.ios-values.parking_marker %} context menu, will show the overall amount of time: either left up to the expected end of the parking, or overdue since then. 
+**Time Left** or **Time Overdue** in the details of a time-limited Parking point, opened with the <Translate ios="true" ids="parking_marker"/> context menu, will show the overall amount of time: either left up to the expected end of the parking, or overdue since then. 
 
 ![Time left in iOS](@site/static/img/plugins/parking/ios_parking_info_left.png)
 
-**{% data variables.ios-values.add_notification_calendar %}** is the option that if enabled during setting a time-limited Parking point, creates a reminder about the end of Parking time in the default Calendar app on your device. 
+**<Translate ios="true" ids="add_notification_calendar"/>** is the option that if enabled during setting a time-limited Parking point, creates a reminder about the end of Parking time in the default Calendar app on your device. 
 
 ![Parking reminder in Calendar](@site/static/img/plugins/parking/ios_parking_in_calendar.png) 
 
@@ -256,15 +257,15 @@ Also, the widget shows the distance from your current location, or the center of
 
 ![Parking widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
 
-**Start Time** is always visible in the details of the Parking point. To see the details, tap the Parking point, and the opened {% data variables.android-values.parking_place %} context menu will show you when Parking started. 
+**Start Time** is always visible in the details of the Parking point. To see the details, tap the Parking point, and the opened <Translate android="true" ids="parking_place"/> context menu will show you when Parking started. 
 
 ![Parking info in Android](@site/static/img/plugins/parking/and_parking_info.png) 
 
-**Time Left** or **Time Overdue** in the details of a time-limited Parking point, opened with the {% data variables.android-values.pick_up_till %} context menu, will show the overall amount of time: either left up to the expected end of the parking, or overdue since then. 
+**Time Left** or **Time Overdue** in the details of a time-limited Parking point, opened with the <Translate android="true" ids="pick_up_till"/> context menu, will show the overall amount of time: either left up to the expected end of the parking, or overdue since then. 
 
 ![Time left in Android](@site/static/img/plugins/parking/and_parking_info_left.png) 
 
-**{% data variables.android-values.osmand_parking_add_event %}** option, if checked in the **{% data variables.android-values.osmand_parking_time_limit_title %}** popup during setting a time-limited Parking point, creates a reminder about the end of Parking time in the default Calendar app on your device. 
+**<Translate android="true" ids="osmand_parking_add_event"/>** option, if checked in the **<Translate android="true" ids="osmand_parking_time_limit_title"/>** popup during setting a time-limited Parking point, creates a reminder about the end of Parking time in the default Calendar app on your device. 
 
 </TabItem>
 
@@ -292,7 +293,7 @@ A Parking point can be used for navigation, if the geolocation is unknown, and/o
 
 <TabItem value="ios" label="iOS">
 
-To show the route from your current position to the Parking point, tap the navigation icon on the map, select the profile (i.e. on foot, public transport, etc.), and then tap the **To** field and among the available options look for **{% data variables.ios-values.parking %}**.
+To show the route from your current position to the Parking point, tap the navigation icon on the map, select the profile (i.e. on foot, public transport, etc.), and then tap the **To** field and among the available options look for **<Translate ios="true" ids="parking"/>**.
 
 ![Heading to Parking point in iOS](@site/static/img/plugins/parking/ios_going_to_parking.png)
 
@@ -300,7 +301,7 @@ To show the route from your current position to the Parking point, tap the navig
 
 <TabItem value="android" label="Android">
 
-To show the route from your current position to the Parking point, tap the navigation icon on the map, select the profile (i.e. on foot, public transport, etc.), and then tap the **To** field and among the available options look for **{% data variables.android-values.osmand_parking_position_name %}**.
+To show the route from your current position to the Parking point, tap the navigation icon on the map, select the profile (i.e. on foot, public transport, etc.), and then tap the **To** field and among the available options look for **<Translate android="true" ids="osmand_parking_position_name"/>**.
 
 ![Heading to Parking point in Android](@site/static/img/plugins/parking/and_navigating_to_parking.png)
 
@@ -325,7 +326,7 @@ Once the Parking point is not needed anymore, remove it by long-tapping the poin
 
 <TabItem value="ios" label="iOS">
 
-To remove the Parking point from the map, long-tap it and select **{% data variables.ios-values.shared_string_dismiss %}** in the opened [context menu](/docs/documentation/map/map-context-menu#-add--delete-parking-point). If any reminder, it will be deleted in the Calendar app too. 
+To remove the Parking point from the map, long-tap it and select **<Translate ios="true" ids="shared_string_dismiss"/>** in the opened [context menu](/docs/documentation/map/map-context-menu#-add--delete-parking-point). If any reminder, it will be deleted in the Calendar app too. 
 
 ![Action Delete Parking in iOS](@site/static/img/map/context_menu_limited_parking_ios.png) 
 
@@ -333,7 +334,7 @@ To remove the Parking point from the map, long-tap it and select **{% data varia
 
 <TabItem value="android" label="Android">
 
-To remove the Parking point from the map, long-tap it and select **{% data variables.android-values.poi_action_delete %}** in the opened [context menu](/docs/documentation/map/map-context-menu#-add--delete-parking-point). If any reminder, it will be deleted in the Calendar app too. 
+To remove the Parking point from the map, long-tap it and select **<Translate android="true" ids="poi_action_delete"/>** in the opened [context menu](/docs/documentation/map/map-context-menu#-add--delete-parking-point). If any reminder, it will be deleted in the Calendar app too. 
 
 ![Action Delete Parking in Android](@site/static/img/map/context_menu_limited_parking.png)
 
