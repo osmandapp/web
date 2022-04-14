@@ -11,6 +11,7 @@ import Poll from '../components/home/Poll';
 import Layout2Blocks from '../components/home/Layout2Blocks';
 import Twitter from '../components/home/Twitter';
 import Screenshots from '../components/home/Screenshots';
+import Impressions from '../components/home/Impressions';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -42,9 +43,10 @@ export default function Home() {
       description="Offline Mobile Maps &amp; Navigation">
       <HomepageHeader />
       <main>
-        <Screenshots />
+        <Screenshots altSectionClass='sectionAlt'/>
         <Features />
-        <Layout2Blocks names={['Twitter', 'Poll']}>
+        <Impressions altSectionClass='sectionAlt'/>
+        <Layout2Blocks names={['Twitter', 'Poll']} >
           <Twitter />
           <Poll />
         </Layout2Blocks>

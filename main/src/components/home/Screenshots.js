@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-export default function Screenshots() {
+export default function Screenshots({ altSectionClass }) {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -55,8 +55,8 @@ export default function Screenshots() {
   const [android, setAndroid] = useState(true);
 
   return (
-    <section>
-      <div className='container padding-vert--md'>
+    <section className={clsx('section', altSectionClass)}>
+      <div className='container'>
         <div className='row'>
           <h1 className='index-title padding-horiz--md text--left col col--4'>Screenshots</h1>
           <div className='col col--4' />

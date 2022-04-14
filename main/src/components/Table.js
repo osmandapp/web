@@ -27,17 +27,20 @@ export default function Table({ tableColumns, tableData }) {
             iDisplayLength: showOnPage,
             info: false,
             searching: true,
+            autoWidth: false,
             drawCallback: function (settings) {
                 applyStyle();
             },
             "dom": "tp"
         });
-        // tbl.columns.adjust().draw();
+        tbl.columns.adjust().draw();
         setDT(tbl);
     }, [tableColumns, tableData]);
     if (dt) {
         //if (filter) {
-            dt.search(filter).draw();
+        dt.search(filter).draw();
+        dt.columns.adjust().draw();
+
         //}
         dt.page.len(showOnPage).draw();
     }
@@ -47,21 +50,21 @@ export default function Table({ tableColumns, tableData }) {
     return <>
         <div className={styles.tablediv}>
             <div className="row margin-vert--md">
-                    <div className="navbar__search col col--3" >
-                        <input className="navbar__search-input" placeholder="Search"
-                            onChange={e => setFilter(e.target.value)} align='left'/>
-                    </div>
-                    <div className="dropdown dropdown--hoverable col col--offset-6 col--3">
-                        <a className={'navbar__link ' + styles.showmore} align='right'>{'Show ' + showOnPage}</a>
-                        <ul className={'dropdown__menu ' + styles.showmore} >
-                            {showOnPageList.map(e => {
-                                return <li className="dropdown__link"
-                                    key={e} onClick={() => setShowOnPage(e)}>{e}</li>
-                            })
-                            }
-                        </ul>
-                    </div>
+                <div className="navbar__search margin-horiz--md" >
+                    <input className="navbar__search-input" placeholder="Search"
+                        onChange={e => setFilter(e.target.value)} align='left' />
                 </div>
+                <div className={"dropdown dropdown--hoverable " + styles.showmore}>
+                    <a className={'navbar__link ' + styles.showmore}>{'Show ' + showOnPage}</a>
+                    <ul className={'dropdown__menu ' + styles.showmore} >
+                        {showOnPageList.map(e => {
+                            return <li className="dropdown__link"
+                                key={e} onClick={() => setShowOnPage(e)}>{e}</li>
+                        })
+                        }
+                    </ul>
+                </div>
+            </div>
             <table ref={el} cellSpacing="0" className="margin-vert--md" width="100%">
             </table>
         </div>

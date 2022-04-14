@@ -81,9 +81,9 @@ function Feature({Svg, title, description}) {
   );
 }
 
-export default function Features() {
+export default function Features({ altSectionClass }) {
   return (
-    <section className={styles.features}>
+    <section className={clsx(styles.features, 'section', altSectionClass)}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
