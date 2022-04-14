@@ -56,7 +56,7 @@ const config = {
             label: '📄 Docs',
           },
           {to: '/blog', label: '📝 Blog', position: 'left'},
-          {href: '/map', label: '🌍 Map', position: 'left' },
+          { to: '/map', label: '🌍 Map', position: 'left', target: '_blank'  },
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',
