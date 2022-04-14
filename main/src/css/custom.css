@@ -9,6 +9,14 @@
   display: none
 }
 
+.section {
+  padding: 16px 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
 
 .flex-1 {
   flex: 1
@@ -19,7 +27,7 @@
   font-weight: 400;
 }
 
-
+/**  DEFAULT DOCUSAURUS VALUES */
 :root {
   --ifm-color-primary: #237BFF;
   --ifm-color-primary-dark: #D28521;
