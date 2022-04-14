@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 import Translate from '@site/src/components/Translate.js';
+import LegendItem from '@site/src/components/docs/LegendItem.js';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,62 +37,17 @@ import TabItem from '@theme/TabItem';
 <img src={require('@site/static/img/map-legend/osmand-access.png').default} alt="OsmAnd Map style" />
 
 
-
-
-<Tabs groupId="map-legend">
-
-<TabItem value="dayMode" label="Day mode" class="map-legend-day">
-<table>
-    <tr>
-        <td>Access Private</td>
-    </tr>
-    <tr>
-        <td class="map-legend-day"><img src={useBaseUrl('img/legend/osmand/access/access_PrivateColor_day.svg')} alt="Access Private day"/></td>
-    </tr>
-</table>
-</TabItem>
-
-<TabItem value="nightMode" label="Night mode">
-<table width="100%">
-    <tr>
-        <td>Access Private</td>
-    </tr>
-    <tr>
-        <td class="map-legend-night"><img src={useBaseUrl('img/legend/osmand/access/access_PrivateColor_night.svg')} alt="Access Private night"/></td>
-    </tr>
-        <tr>
-        <td>Access Destination</td>
-    </tr>
-    <tr>
-        <td  class="map-legend-night"><img src={useBaseUrl('img/legend/osmand/access/access_DestinationColor_night.svg')} alt="Access Destination night"/></td>
-    </tr>
-</table>
-</TabItem>
-
-</Tabs>
-
-
-<img src={useBaseUrl('img/legend/osmand/access/access_DestinationColor_day.svg')} alt="Access Destination day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_DestinationColor_night.svg')} alt="Access Destination night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_PermissiveColor_day.svg')} alt="Access Permissive day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_PermissiveColor_night.svg')} alt="Access Permissive night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_CustomersColor_day.svg')} alt="Access Customers day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_CustomersColor_night.svg')} alt="Access Customers night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_DeliveryColor_day.svg')} alt="Access Delivery day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_DeliveryColor_night.svg')} alt="Access Delivery night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_AgriculturalColor_day.svg')} alt="Access Agricultural day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_AgriculturalColor_night.svg')} alt="Access Agricultural night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_EmergencyColor_day.svg')} alt="Access Emergency day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_EmergencyColor_night.svg')} alt="Access Emergency night"/>
-
-<img src={useBaseUrl('img/legend/osmand/access/access_tollColor_day.svg')} alt="Access Toll day"/>
-<img src={useBaseUrl('img/legend/osmand/access/access_tollColor_night.svg')} alt="Access Toll night"/>
-
+<LegendItem itemsMap={{
+        'Access Private' : 'access/access_PrivateColor',
+        'Access Destination' : 'access/access_DestinationColor',
+        'Access Permissive' : 'access/access_PermissiveColor',
+        'Access Customers' : 'access/access_CustomersColor',
+        'Access Delivery' : 'access/access_DeliveryColor',
+        'Access Agricultural' : 'access/access_AgriculturalColor',
+        'Access Emergency' : 'access/access_EmergencyColor',
+        'Access Toll' : 'access/access_tollColor'
+        }}>
+</LegendItem>
 
 
 ## Waterways
