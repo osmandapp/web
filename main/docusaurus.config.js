@@ -9,7 +9,7 @@ const config = {
   title: 'OsmAnd',
   tagline: 'Offline Maps and Navigation',
   url: 'https://osmand.net',
-  baseUrl: '/v2/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
