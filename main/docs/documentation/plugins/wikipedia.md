@@ -92,13 +92,13 @@ To download the Wikipedia data for a region, go to the [available packages for d
 
 In the **iOS** version, the Wikipedia data to download per region can be opened, as follows: 
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.res_mapsres %} → {% data variables.ios-values.res_worldwide %} 
+1. Go to: <Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>
 
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages. 
 
 To view what data is already downloaded, go to: 
 
-{% data variables.ios-values.menu %} → {% data variables.ios-values.res_mapsres %} → {% data variables.ios-values.download_tab_local %}
+<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>
 
 ![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png) 
 
@@ -108,13 +108,13 @@ To view what data is already downloaded, go to:
 
 In the **Android** version, the Wikipedia data to download per region can be opened, as follows: 
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.welmode_download_maps %} → {% data variables.android-values.regions %}
+1. Go to: <Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>
 
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages. 
  
 To view what data is already downloaded, go to: 
  
-{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.download_tab_local %} → {% data variables.android-values.download_wikipedia_maps %}
+<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>
 
 ![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -141,11 +141,11 @@ To show, or hide the Wikipedia POI, select the profile first, and then toggle th
 
 In the **iOS** version, to show/hide the Wikipedia POI, do the following:
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %}
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>
 
-2. Select a Profile, and look for the **{% data variables.ios-values.map_settings_show %}** section in the menu.
+2. Select a Profile, and look for the **<Translate ios="true" ids="map_settings_show"/>** section in the menu.
 
-3. Toggle **{% data variables.ios-values.res_wiki %}** on.  
+3. Toggle **<Translate ios="true" ids="res_wiki"/>** on.  
 
 ![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png) 
 
@@ -155,11 +155,11 @@ In the **iOS** version, to show/hide the Wikipedia POI, do the following:
 
 In the **Android** version, to show/hide the Wikipedia POI, do the following: 
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %}
+1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>
 
-2. Select a Profile, and look for the **{% data variables.android-values.shared_string_show %}** section of settings in the menu.
+2. Select a Profile, and look for the **<Translate android="true" ids="shared_string_show"/>** section of settings in the menu.
 
-3. Toggle **{% data variables.android-values.shared_string_wikipedia %}** on. 
+3. Toggle **<Translate android="true" ids="shared_string_wikipedia"/>** on. 
 
 ![Wikipedia POI on Android](@site/static/img/map/map-wikipedia-on-map.png)
 
@@ -191,7 +191,7 @@ In the **iOS** version, to open [Search](/docs/documentation/search), tap the Se
 
 To search by the Wikipedia [category](/docs/documentation/search/search-poi#poi-search), select: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.ios-values.shared_string_search %} → {% data variables.ios-values.categories %} → {% data variables.ios-values.res_wiki %}
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate ios="true" ids="shared_string_search,categories,res_wiki"/>
 
 ![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
@@ -210,7 +210,7 @@ In the **Android** version, you can open [Search](/docs/documentation/search) by
 
 To search by the Wikipedia [category](/docs/documentation/search/search-poi#poi-search), select: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.android-values.map_widget_search %} → {% data variables.android-values.search_categories %} → {% data variables.android-values.shared_string_wikipedia %}
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>
 
 ![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png) 
 
@@ -266,11 +266,11 @@ To set the preferred language, so that to view the Wikipedia data in, go to the 
 
 In the **iOS** version, to set the preferred language for the Wikipedia data, do the following:
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %}
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>
 
-2. Select a profile and find the **{% data variables.ios-values.map_settings_show %}** section of settings.
+2. Select a profile and find the **<Translate ios="true" ids="map_settings_show"/>** section of settings.
 
-3. Tap **{% data variables.ios-values.res_wiki %}**, if needed, toggle **{% data variables.ios-values.shared_string_enabled %}** on, and then tap **{% data variables.ios-values.language %}**. 
+3. Tap **<Translate ios="true" ids="res_wiki"/>**, if needed, toggle **<Translate ios="true" ids="shared_string_enabled"/>** on, and then tap **<Translate ios="true" ids="language"/>**. 
 
 4. Check the preferred language(-s) in the opened list. 
 
@@ -283,11 +283,11 @@ In the **iOS** version, to set the preferred language for the Wikipedia data, do
 
 In the **Android** version, to set the preferred language for the Wikipedia data, do the following:
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %}
+1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>
 
-2. Select a profile and find the **{% data variables.android-values.shared_string_show %}** section of settings.
+2. Select a profile and find the **<Translate android="true" ids="shared_string_show"/>** section of settings.
 
-3. Tap **{% data variables.android-values.shared_string_wikipedia %}**, toggle it enabled, and then tap **{% data variables.android-values.shared_string_language %}**. 
+3. Tap **<Translate android="true" ids="shared_string_wikipedia"/>**, toggle it enabled, and then tap **<Translate android="true" ids="shared_string_language"/>**. 
 
 4. Check the preferred language(-s) in the opened list. 
 
