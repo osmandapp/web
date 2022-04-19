@@ -20,6 +20,7 @@
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "datatables.net-dt": "^1.11.5",
+    "docusaurus-lunr-search": "^2.1.15",
     "jquery": "^3.6.0",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
