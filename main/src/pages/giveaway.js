@@ -169,17 +169,13 @@ export default function Giveaway() {
                         </p>
                         <div className="row">
                             <div className="col col--3">
-                                <p>{selectedRnd ? selectedRnd.winnersCount : selectedSeries.winners}</p>
-                                <span>Winners</span>
+                                <b>{selectedRnd ? selectedRnd.winnersCount : selectedSeries.winners}</b> Winners
                             </div>
                             <div className="col col--3">
-                                <p>{selectedRnd ? selectedRnd.roundParticipants.length : selectedSeries.participants}</p><span>Participants</span>
+                                <b>{selectedRnd ? selectedRnd.roundParticipants.length : selectedSeries.participants}</b> Participants
                             </div>
                             {!selectedRnd && <div className="col col--6">
-                                <p>
-                                    {selectedSeries.rounds.length + ' / ' + selectedSeries.totalRounds}
-                                </p>
-                                <span>Rounds</span>
+                                <b>{selectedSeries.rounds.length + ' / ' + selectedSeries.totalRounds}</b> Rounds
                             </div>
                             }
                             {selectedRnd && <div className="col col--6">
