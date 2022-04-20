@@ -34,6 +34,20 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
     showOnHomepage: true,
   },
   {
+    url: 'https://www.bestapp.com/best-navigation-apps/',
+    handle2: 'https://www.bestapp.com/',
+    name: 'bestapp.com',
+    date: 'April 20, 2022',
+    avatar:
+      'https://i.imgur.com/jv3iLWy.png',
+    content: (
+      <>
+       If you’re concerned about online privacy, then you’ll want to be especially careful when choosing a navigation app. After all, for these apps to function you’ll need to at least share your location, and you may find yourself sharing other personal details as well. This open-source navigation app has particularly strong privacy policies — they don’t collect user data, and they let you decide exactly what the app has access to.
+      </>
+    ),
+    showOnHomepage: true,
+  },
+  {
     url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
     handle: 'example',
     name: 'James Avery',
@@ -47,6 +61,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
     ),
     showOnHomepage: true,  
   }
+  
 ];
 
 
@@ -80,9 +95,16 @@ export default function Impressions({ altSectionClass}) {
                       <div className={clsx('avatar__intro', styles.impressionMeta)}>
                         <strong className="avatar__name">{i.name}</strong>
                         <span>@{i.handle}</span>
+          
+                        <div className={clsx('avatar__intro', styles.impressionMeta)}>
+                        <span>@{i.handle2}</span>
+          
+
+                      </div>
                       </div>
                     </div>
                   </div>
+
 
                   <div className={clsx('card__body', styles.impression)}>{i.content}</div>
 
