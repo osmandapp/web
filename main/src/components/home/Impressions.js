@@ -5,36 +5,47 @@ import styles from './Impressions.module.css';
 
 const ImpressionsList = [
   {
-    url: 'https://twitter.com/acemarke/status/1452725153998245891',
-    handle: 'acemarke',
+    url: 'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
+    handle: 'example',
     name: 'Mark Erikson',
-    date: 'Oct 26, 2021',
+    date: 'Feb 28, 2020',
     avatar:
-      'https://pbs.twimg.com/profile_images/842582724737163264/tFKLiJI5_400x400.jpg',
+      'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
     content: (
       <>
-        We&apos;ve been using Docusaurus for all the Redux org docs sites for
-        the last couple years, and it&apos;s great! We&apos;ve been able to
-        focus on content, customize some presentation and features, and It Just
-        Works.
+        These are open source maps, so not every business is listed, but you can save and organize locations. When I find a place that I want to remember, but isn't listed in the app, I mark it as a favorite. I love the fact that it offers navigation for walking, biking, and public transport. Great for English language Android users in Beijing.
       </>
     ),
     showOnHomepage: true,
   },
   {
-    url: 'https://twitter.com/arcanis/status/1351620354561732608',
-    handle: 'arcanis',
-    name: 'Maël',
-    date: 'Jan 20, 2021',
+    url: 'https://apps.apple.com/pl/app/osmand-maps-travel-navigate/id934850257?l',
+    handle: 'example',
+    name: 'Jan Iłowski',
+    date: 'Jule 15, 2021',
     avatar:
       'https://pbs.twimg.com/profile_images/1497225853931040769/5mXZAHFR_400x400.jpg',
     content: (
       <>
-        I&apos;ve used Docusaurus for two websites this year, and I&apos;ve been
-        very happy about the v2. Looks good, and simple to setup.
+        Best maps application for privacy, however the UI could use some work
+The idea of computing all the routes on my device locally is absolutely wonderful. The app has great functions overall, however it has a steep learning curve. I could see many people used to Google/Apple Maps struggle to make the switch because of convenience, even if OSM offers superior functionality and more precise information.
       </>
     ),
     showOnHomepage: true,
+  },
+  {
+    url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
+    handle: 'example',
+    name: 'James Avery',
+    date: 'June 1, 2021',
+    avatar:
+      'https://play-lh.googleusercontent.com/a-/AOh14Ghvd2bMMvRXnxTZKouBfCkqzCQwEn1mDLJvYuWaiPs=w48-h48-n-rw',
+    content: (
+      <>
+        Much better than Google Maps for navigating by foot or by bike. User submissions makes all the little paths available, and makes sure that they are actually usable (or they wouldn't have been submitted). Offline maps work really well, too, even in back country. I always make sure to download the region if I plan to go hiking. Only downside compared to Google Maps is the user interface for navigation, which could still use some work. Wonderful project!
+       </>
+    ),
+    showOnHomepage: true,  
   }
 ];
 
