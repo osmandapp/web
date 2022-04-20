@@ -18,12 +18,12 @@ Makes the device's accessibility features directly available in OsmAnd. It facil
 
 ## Enable / Disable plugin
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.shared_string_accessibility %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility"/>
 
 
 ### Plugin settings
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.shared_string_accessibility %} → {% data variables.android-values.shared_string_settings %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility,shared_string_settings"/>
 
 
 ## How to use

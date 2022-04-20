@@ -156,7 +156,7 @@ In the **iOS** version, to open [settings](/docs/documentation/start-with/first-
 
 2. Select a [profile](/docs/documentation/personal/profiles). 
 
-3. Tap **<Translate ios="true" ids="track_recordin"/>**.
+3. Tap **<Translate ios="true" ids="track_recording"/>**.
 
 ![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/ios_profile_trip_rec2.png) 
 

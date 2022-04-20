@@ -76,7 +76,7 @@ In the **iOS** version, to enable the Parking plugin, open the list of plugins, 
 
 In the **Android** version, to enable the Parking plugin, tap the triple dots at the right side of the <Translate android="true" ids="osmand_parking_plugin_name"/>  option, then tap **Enable**, and confirm with the **OK** button in the next dialog.
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,osmand_parking_plugin_name"/> 
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osmand_parking_plugin_name"/> 
 
 ![Plugin confirmation in Android](@site/static/img/plugins/parking/and_add_parking_plugin.png)
 
