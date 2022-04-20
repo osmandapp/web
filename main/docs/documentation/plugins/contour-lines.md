@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.
 

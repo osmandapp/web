@@ -45,7 +45,21 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
         Much better than Google Maps for navigating by foot or by bike. User submissions makes all the little paths available, and makes sure that they are actually usable (or they wouldn't have been submitted). Offline maps work really well, too, even in back country. I always make sure to download the region if I plan to go hiking. Only downside compared to Google Maps is the user interface for navigation, which could still use some work. Wonderful project!
        </>
     ),
-    showOnHomepage: true,  
+    showOnHomepage: true,
+  },
+  {
+    url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
+    handle: 'example',
+    name: 'Matias Lavik',
+    date: 'April 18, 2022',
+    avatar:
+      'https://play-lh.googleusercontent.com/a-/AOh14GgQEjZsYdJgNCKw8bOrnnYDuD7bd0gRYsSKqLdVjw=w48-h48-n-rw',
+    content: (
+      <>
+        If you're a little bit technical then this could really be the best map app for walking around in cities. It has *a lot* of details, such as benches, playgrounds, parks, wheelchair accessibility and various info about stores and restaurants, such as WiFi access. The map rendering looks great, and it's easy to see where you can find grass and parks, etc.
+       </>
+    ),
+    showOnHomepage: true,    
   }
 ];
 

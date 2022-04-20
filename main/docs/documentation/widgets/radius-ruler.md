@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 All ruler tools help to understand [scale of the map](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. Radius-ruler tool helps to determine the radius around the selected point on the map via displaying distance-circles on the map. Distance by tap tool helps to calculate the distance between selected points or to find the distance to a specific point.
 

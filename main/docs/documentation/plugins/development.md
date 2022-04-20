@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.
 

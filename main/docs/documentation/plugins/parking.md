@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Setting a point on the map of where your car is left in the street, and a calendar notice of when the parking time started to count down, will comfort your efforts in keeping track of the time and the car location.
 
