@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Favorites are special points marked by user and by default displayed as yellow star. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6. Any user can add places on the map to Favorites, to save it location and description. Favorites are like user notes on the map.
 

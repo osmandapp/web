@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Boat mode for navigation can be enabled together with [the Nautical plugin](/docs/documentation/plugins/nautical-charts). You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here](/docs/documentation/personal/profiles).
 

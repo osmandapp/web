@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 My Places' is a core place within OsmAnd application that allows you to manage all your personally owned information i.e. [Favorite points](/docs/documentation/personal/favorites), [Tracks](/docs/documentation/personal/tracks) (imported, recorded and created GPX files), [OpenStreetMap Edits](/docs/documentation/plugins/osm-editing), [Audio / Video Notes (Android)](/docs/documentation/plugins/audio-video-notes)
 
