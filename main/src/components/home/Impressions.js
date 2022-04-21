@@ -6,7 +6,7 @@ import styles from './Impressions.module.css';
 const ImpressionsList = [
   {
     url: 'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
-    sources: '@google-play',
+    source: '@google-play',
     name: 'Mark Erikson',
     date: 'Feb 28, 2020',
     avatar:
@@ -20,7 +20,7 @@ const ImpressionsList = [
   },
   {
     url: 'https://apps.apple.com/pl/app/osmand-maps-travel-navigate/id934850257?l',
-    sources: '@app-store',
+    source: '@app-store',
     name: 'Jan Iłowski',
     date: 'Jule 15, 2021',
     avatar:
