@@ -6,7 +6,7 @@ import styles from './Impressions.module.css';
 const ImpressionsList = [
   {
     url: 'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
-    handle: 'example',
+    sources: '@google-play',
     name: 'Mark Erikson',
     date: 'Feb 28, 2020',
     avatar:
@@ -20,7 +20,7 @@ const ImpressionsList = [
   },
   {
     url: 'https://apps.apple.com/pl/app/osmand-maps-travel-navigate/id934850257?l',
-    handle: 'example',
+    sources: '@app-store',
     name: 'Jan Iłowski',
     date: 'Jule 15, 2021',
     avatar:
@@ -35,7 +35,8 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
   },
   {
     url: 'https://www.bestapp.com/best-navigation-apps/',
-    handle2: 'https://www.bestapp.com/',
+    source: 'www.bestapp.com',
+    sourceurl: 'https://www.bestapp.com/',
     name: 'bestapp.com',
     date: 'April 20, 2022',
     avatar:
@@ -49,7 +50,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
   },
   {
     url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
-    handle: 'example',
+    source: '@google-play',
     name: 'James Avery',
     date: 'June 1, 2021',
     avatar:
@@ -63,7 +64,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
   },
   {
     url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
-    handle: 'example',
+    source: '@google-play',
     name: 'Matias Lavik',
     date: 'April 18, 2022',
     avatar:
@@ -108,11 +109,7 @@ export default function Impressions({ altSectionClass}) {
                       />
                       <div className={clsx('avatar__intro', styles.impressionMeta)}>
                         <strong className="avatar__name">{i.name}</strong>
-                        <span>@{i.handle}</span>
-          
-                        <div className={clsx('avatar__intro', styles.impressionMeta)}>
-                        <span>@{i.handle2}</span>
-          
+                        <span><a href={i.sourceurl? i.sourceurl : i.url}>{i.source}</a></span>
 
                       </div>
                       </div>
