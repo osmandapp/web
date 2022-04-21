@@ -110,8 +110,6 @@ export default function Impressions({ altSectionClass}) {
                       <div className={clsx('avatar__intro', styles.impressionMeta)}>
                         <strong className="avatar__name">{i.name}</strong>
                         <span><a href={i.sourceurl? i.sourceurl : i.url}>{i.source}</a></span>
-
-                      </div>
                       </div>
                     </div>
                   </div>
