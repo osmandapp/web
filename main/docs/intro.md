@@ -4,29 +4,33 @@ label: Introduction
 title: Menu
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-![LOGO OsmAnd](@site/static/img/site/logo_osmand.png)
+### 🎓 [User guide](/docs/documentation/)
 
-### [User guide](/docs/documentation/)
+User guide about OsmAnd application describing main features & settings.
 
-Adding a text.
+### 🗺️ [Map legend](/docs/map-legend/)
 
-### [Map legend](/docs/map-legend/)
+Key map elements used in OsmAnd Map.
 
-Adding a text.
+### 📚 [Technical Documentation](/docs/technical-documentation/)
 
-### [Technical Documentation](/docs/technical-documentation/)
+Technical documentation related 
 
-Adding a text.
+### 🛠 [Build it](/docs/build-it/)
 
-### [Build it](/docs/build-it/)
+Build and create your own version of OsmAnd, also links to License questions.
 
-Adding a text.
+### ⏪ [Versions](/docs/versions/)
 
-### [Versions](/docs/versions/)
+Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmAnd MapCreator.
 
-Adding a text.
+### ⚖ [Legal](/docs/legal/)
+
+License. Privacy Policy. Terms of Use.
+
+
+
+
 
 

@@ -5,11 +5,14 @@ title:  Nautical map view
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Nautical map provides detailed graphical representation of oceans, seas, coastal areas and rivers to help you navigate on the water, and be aware of popular traffic routes, obstacles in your waterway, the nearest harbors, anchorages, and other essential reference. 
 
@@ -70,7 +73,7 @@ For a Nautical Chart purchase on **iOS**, refer to [in-app purchases, or a subsc
 
 It is also possible to view the already made purchases, by opening the following section in settings: 
 
-{% data variables.ios-values.menu %} → {% data variables.ios-values.sett_settings %} → {% data variables.ios-values.purchases %} 
+<Translate ios="true" ids="menu,sett_settings,purchases"/> 
 
 </TabItem>
 
@@ -80,7 +83,7 @@ For a Nautical Chart purchase on **Android**, refer to [in-app purchases, a subs
 
 It is also possible to view the already made purchases, by opening the following section in settings: 
 
-{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_settings %} → {% data variables.android-values.purchases %}
+<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>
 
 </TabItem>
 
@@ -108,7 +111,8 @@ After the purchase of Nautical service, the Nautical plugin can be enabled. The 
 
 With the purchase of Nautical service made in the **iOS** version, to start using Nautical Charts, the Nautical plugin should be enabled, as follows: 
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.plugins %} → {% data variables.ios-values.product_title_nautical %}
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_nautical"/>
+
 
 After enabling the Nautical plugin, you can download Nautical maps, select the Nautical map type per profile, guide yourself with more nautical details during navigation.
 
@@ -120,7 +124,7 @@ After enabling the Nautical plugin, you can download Nautical maps, select the N
 
 With the purchase of Nautical service made in the **Android** version, to start using Nautical Charts, the Nautical plugin should be enabled, as follows:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.plugin_nautical_name %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_nautical_name"/> 
 
 After enabling the Nautical plugin, you can download Nautical maps, select the Nautical map style per profile, guide yourself with more nautical details during navigation.
 
@@ -160,7 +164,7 @@ Marks and symbols provide all nautical navigation signs, for inland as well as f
 
 In the **iOS** version, all nautical packages are available for [download](/docs/documentation/start-with/download-maps) in the following area:
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.res_mapsres %} → {% data variables.ios-values.region_nautical %}
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,res_mapsres,region_nautical"/> 
 
 ![Nautical plugin maps view iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -170,7 +174,7 @@ In the **iOS** version, all nautical packages are available for [download](/docs
 
 In the **Android** version, all nautical maps are available for [download](/docs/documentation/start-with/download-maps) in the following area:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.welmode_download_maps %} → {% data variables.android-values.nautical_maps %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,welmode_download_maps,nautical_maps"/> 
 
 ![Nautical plugin maps view Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
@@ -201,7 +205,7 @@ By establishing the Nautical map style, it is possible to achieve the best repre
 
 In the **iOS** version, to change the map type to [**Nautical**](/docs/documentation/map/vector-maps#nautical) and thus, reveal more nautical-specific colors and visualization on the map, go to:
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.map_settings_type %}
+&nbsp;&nbsp;&nbsp;&nbsp;**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,map_settings_type"/>
 
 ![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -212,7 +216,7 @@ In the **iOS** version, to change the map type to [**Nautical**](/docs/documenta
 
 In the **Android** version, to change the map style to **Nautical** and thus, reveal more nautical-specific colors and visualization on the map, go to: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.map_widget_map_rendering %} → {% data variables.android-values.map_widget_renderer %}
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>
 
 ![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -252,7 +256,7 @@ With the Nautical map on the screen, you can adjust what you see by:
 
 In the **iOS** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](/docs/documentation/map/configure-map-menu) menu: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.map_settings_style %} → {% data variables.ios-values.res_details %}  
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>  
         
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours.png)
 
@@ -262,7 +266,7 @@ In the **iOS** version, with the Nautical plugin set up, you can show, or hide t
 
 In the **Android** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](/docs/documentation/map/configure-map-menu) menu: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.shared_string_show %} → {% data variables.android-values.rendering_attr_depthContours_name %}
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours.png)
 
@@ -277,7 +281,7 @@ In the **Android** version, with the Nautical plugin set up, you can show, or hi
 
 Seabed details provide information about the vegetation and general material the surface is composed of, such as: rocky, shells, gravel, coral, mud, etc. Due to the international classification of the seabed data, there are options of how to display such details on the map: *simple*, *category*, *all*, or *omit*. To select one of the seabed details options, go to:
 
-&nbsp;&nbsp;&nbsp;&nbsp;{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.map_widget_map_rendering %} → {% data variables.android-values.rendering_attr_seabedDetail_name %}
+&nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_seabedDetail_name"/> 
 
 ![Seabed details in Android](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 

@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:1.1em;
+  line-height:1.5em;
+  margin:0;
+  padding:0;
+}
+ul li {
+  margin:0;
+  padding:0;
+}
+h1, h2 {
+  -webkit-margin-before:0;
+  -webkit-margin-after:0;
+  margin-top:0;
+  margin-bottom:0;
+  font-weight:400;
+  font-size:3em;
+  letter-spacing:.06em;
+  padding-top:25px;
+  padding-bottom:25px;
+  line-height:1em;
+}
+
+
+/***************go page ****************************/
+
+#map
+{
+  position:absolute;
+  top:65px;
+  bottom:50px;
+  width:100%;
+}
+  
+
+.gocontainer
+{
+  height:100%;
+}
+
+.gocontainer .goheader
+{
+  border-bottom:1px solid #ccc;
+  width:100%;
+  -webkit-box-shadow:2px 2px 5px #CAC8C3;
+  -moz-box-shadow:2px 2px 5px #CAC8C3;
+  box-shadow:2px 2px 5px #CAC8C3;
+  position:absolute;
+  top:0;
+  height:63px;
+}
+
+.gocontainer .goheader img
+{
+  height:100%;
+  padding:3px 7px 5px 12px;
+}
+
+.gocontainer .coordinatescontainer
+{  
+  width:auto;
+  float:right;
+  padding-top:6px;
+  padding-right:12px;
+}
+
+.gocontainer .coordinatescontainer div
+{
+  position:relative;
+
+}
+
+.gocontainer .coordinatescontainer .title
+{
+  font-size:13px;
+  color:#9A9A9A;
+  position:absolute;
+  bottom:-1px;
+  left:-28px;
+} 
+
+.gocontainer .coordinatescontainer .coordinate
+{
+  font-weight: 600;
+  color:#000;
+  padding-left:5px;
+  font-size:15px;
+  line-height:25px;
+}
+
+.gocontainer .gofooter
+{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background-color:#43464D;
+  -webkit-box-shadow:2px -2px 5px #CAC8C3;
+  -moz-box-shadow:2px -2px 5px #CAC8C3;
+  box-shadow:2px -2px 5px #CAC8C3;
+  height:50px;
+  overflow:hidden;
+}
+
+.gocontainer .gobadges
+{  
+  width:100%;
+  max-width: 360px;
+  margin: 0 auto;
+  margin-top:4px;
+}
+
+.gocontainer .badgecontainer
+{
+  float:left;
+  width:35%;
+  height:50px;
+}
+
+.gocontainer .gobadges .badgecontainer img
+{
+  max-height:100%;
+  max-width:100%;
+  padding:6px; 
+}
+
+.gocontainer .gobadges .google img
+{
+  padding:0;
+  height:44.58px;
+}
+
+.gocontainer .gobadges .apple img
+{
+  height:41.51px;
+  margin-top:1px;
+}
+
+.gocontainer .gobadges .amazon
+{
+  width:30%;
+}
+
+.gocontainer .gobadges .amazon img
+{
+  height:42.58px;
+}
+
+.gocontainer .overlay
+{
+	width:100%;
+	height:100%;
+	background-color:rgba(200, 200, 200, 0.7);
+	z-index:1000;
+	position:absolute;
+}
+
+.gocontainer .popup
+{
+	z-index:1001;
+	background-color:#fff;
+	position:absolute;
+	width:80%;	
+	top:10%;
+	overflow:hidden;
+	text-align:center;
+	padding:7%;
+	border-radius: 15px;
+	left:10%;
+	max-height:90%;
+}
+
+.gocontainer .popup .logo
+{
+	height:50px;
+	background:url("/images/logo-grey.png") no-repeat;
+	background-size:contain;
+	background-position:center;
+	margin-bottom:5%;
+
+}
+.gocontainer .popup h1
+{
+	font-size:21px;
+	letter-spacing:0.07em;
+	font-family:verdana;
+	text-transform:uppercase;
+	border-top:1px solid #ccc;
+	font-weight:bold;
+	padding-bottom:5px;
+	padding-top:40px;
+}
+
+.gocontainer .popup p
+{
+	font-size:18px;
+	color:#9A9A9A;
+	font-style:italic;
+}
+
+.gocontainer .popup .button
+{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	overflow:hidden;
+	color:#fff;	
+	display:inline-block;
+	margin-bottom:7px;
+	border-radius: 5px;
+	text-decoration:none;	
+}
+
+              /* The Modal (background) */
+              .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                -webkit-animation-name: fadeIn; /* Fade in the background */
+                -webkit-animation-duration: 0.4s;
+                animation-name: fadeIn;
+                animation-duration: 0.4s
+              }
+
+              /* Modal Content */
+              .modal-content {
+                position: fixed;
+                bottom: 0;
+                background-color: #fefefe;
+                width: 100%;
+                -webkit-animation-name: slideIn;
+                -webkit-animation-duration: 0.4s;
+                animation-name: slideIn;
+                animation-duration: 0.4s
+              }
+
+              /* The Close Button */
+              .close-params {
+                margin-top: 25px;
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-family: 'Roboto Bold';
+              }
+
+              .close-params:hover,
+              .close-params:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+              }
+
+              .modal-header {
+                padding: 2px 16px;
+                background-color: #ff8f00;
+                color: white;
+              }
+
+              .modal-body {padding: 2px 16px;}
+
+              /* Add Animation */
+              @-webkit-keyframes slideIn {
+                from {bottom: -300px; opacity: 0} 
+                to {bottom: 0; opacity: 1}
+              }
+
+              @keyframes slideIn {
+                from {bottom: -300px; opacity: 0}
+                to {bottom: 0; opacity: 1}
+              }
+
+              @-webkit-keyframes fadeIn {
+                from {opacity: 0} 
+                to {opacity: 1}
+              }
+
+              @keyframes fadeIn {
+                from {opacity: 0} 
+                to {opacity: 1}
+              }
+.gocontainer .popup .yes
+{
+	background-color:rgb(255, 143, 0);
+}
+
+.gocontainer .popup .no
+{
+	background-color:rgb(123, 161, 50);
+}
+
+.gocontainer .popup .cancel
+{
+	border:1px solid #ccc;
+	background-color:#fff;
+	color:#000;
+	margin-bottom:0;
+}
+@media (orientation:landscape)
+{
+	.gocontainer .popup
+	{
+		padding:4%;
+	}	
+	.gocontainer .popup .logo
+	{
+		display:none;
+	}
+	.gocontainer .popup h1
+	{
+		padding-top:0;
+		border-top:none;
+	}
+}
+
+
+/*.gocontainer .popup .buttons
+{
+	width:80%;
+	position:absolute;
+	bottom:5%;
+	left:10%;
+}*/
+
+/*
+ * See our GitHub repository at https://github.com/osmandapp/osmandapp.github.io
+ * If you edit this file, also increment the "go.css?v=" parameters throughout the project
+ */

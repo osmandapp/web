@@ -5,11 +5,14 @@ title:  Accessibility
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Accessibility plugin makes the device's accessibility features directly available in OsmAnd.
 
@@ -18,12 +21,12 @@ Makes the device's accessibility features directly available in OsmAnd. It facil
 
 ## Enable / Disable plugin
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.shared_string_accessibility %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility"/>
 
 
 ### Plugin settings
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.shared_string_accessibility %} → {% data variables.android-values.shared_string_settings %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility,shared_string_settings"/>
 
 
 ## How to use

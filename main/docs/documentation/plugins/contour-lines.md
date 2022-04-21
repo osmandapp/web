@@ -5,11 +5,14 @@ title:  Contour lines and Terrain
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.
 
@@ -64,9 +67,9 @@ Having purchased Contour lines, the plugin can be enabled, as displayed on the f
 
 <TabItem value="ios" label="iOS">
 
-For purchases on **iOS**, refer to [in-app purchases, or a subscription](/docs/documentation/purchases/ios#in-app-purchases). To view the already made purchases, go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.sett_settings %} → {% data variables.ios-values.purchases %} 
+For purchases on **iOS**, refer to [in-app purchases, or a subscription](/docs/documentation/purchases/ios#in-app-purchases). To view the already made purchases, go to: <Translate ios="true" ids="menu,sett_settings,purchases"/>
 
-In the **iOS** version, to enable the plugin, check **Contour lines** in: {% data variables.ios-values.menu %} → {% data variables.ios-values.plugins %} → {% data variables.ios-values.product_title_srtm %} 
+In the **iOS** version, to enable the plugin, check **Contour lines** in: <Translate ios="true" ids="menu,plugins,product_title_srtm"/>
 
 ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_ios.png) 
 
@@ -74,9 +77,9 @@ In the **iOS** version, to enable the plugin, check **Contour lines** in: {% dat
 
 <TabItem value="android" label="Android">
 
-For purchases on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](/docs/documentation/purchases/android#free-and-paid-features). To view the already made purchases, go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_settings %} → {% data variables.android-values.purchases %}
+For purchases on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](/docs/documentation/purchases/android#free-and-paid-features). To view the already made purchases, go to: <Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/> 
 
-In the **Android** version, to enable the plugin, tap Enable for **Contour lines** in: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugin_settings %} → {% data variables.android-values.srtm_plugin_name %} 
+In the **Android** version, to enable the plugin, tap Enable for **Contour lines** in:  <Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>
 
 ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) 
 
@@ -222,13 +225,13 @@ To download Contour lines, Hillshade, and/or Slope for a specific area, do the f
 
 In the **iOS** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.res_mapsres %} → {% data variables.ios-values.res_worldwide %} 
+1. Go to: <Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>
 
 2. Select a country, and observe any of the following sections:
 
-    2.1. The **{% data variables.ios-values.res_region_map %}** section provides available packages with maps for the entire country. If needed, download ones. 
+    2.1. The **<Translate ios="true" ids="res_region_map"/>** section provides available packages with maps for the entire country. If needed, download ones. 
 
-    2.2.  The **{% data variables.ios-values.res_mapsres %}** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region. 
+    2.2.  The **<Translate ios="true" ids="res_mapsres"/>** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region. 
 
 ![Contour lines download iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_ios.png)
 
@@ -238,13 +241,13 @@ In the **iOS** version, to download any of the available packages of Contour lin
 
 In the **Android** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.welmode_download_maps %} → {% data variables.android-values.regions %}
+1. Go to: <Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/> 
 
 2. Select a country, and observe any of the following sections:
 
-    2.1. The **{% data variables.android-values.region_maps %}** section provides available packages with maps for the entire country. If needed, download ones.
+    2.1. The **<Translate android="true" ids="region_maps"/>** section provides available packages with maps for the entire country. If needed, download ones.
 
-    2.2. The **{% data variables.android-values.regions %}** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.
+    2.2. The **<Translate android="true" ids="regions"/>** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_android.png)
 
@@ -280,9 +283,9 @@ For the **Terrain** option, it is possible to enable only one map at a time: eit
 
 In the **iOS** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %}.
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
 
-2. Scroll down up to **{% data variables.ios-values.map_settings_style %}**, and toggle on the **Contour lines** option. 
+2. Scroll down up to **<Translate ios="true" ids="map_settings_style"/>**, and toggle on the **Contour lines** option. 
 
 ![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
@@ -290,9 +293,9 @@ In the **iOS** version, to show the **Contour lines** map for the selected profi
 
 In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
 
-1. Go to: {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %}.
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
 
-2. Scroll down up to **{% data variables.ios-values.map_settings_overunder %}**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
+2. Scroll down up to **<Translate ios="true" ids="map_settings_overunder"/>**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
 
 3. Select one of the options: either **Hillshade**, or **Slope**. 
 
@@ -307,11 +310,11 @@ In the **iOS** version, to show one of the **Terrain** maps for the selected pro
 
 In the **Android** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %}
+1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>.
 
-2. Select a Profile, and look for the **{% data variables.android-values.shared_string_show %}** section of settings in the menu.
+2. Select a Profile, and look for the **<Translate android="true" ids="shared_string_show"/>** section of settings in the menu.
 
-3. Within the section, scroll down up to **{% data variables.android-values.index_srtm_ele %}**, and toggle on the **Contour lines** option. 
+3. Within the section, scroll down up to **<Translate android="true" ids="index_srtm_ele"/>**, and toggle on the **Contour lines** option. 
 
 ![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png)
 
@@ -320,11 +323,11 @@ In the **Android** version, to show the **Contour lines** map for the selected p
 
 In the **Android** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %}
+1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>.
 
-2. Select a Profile, and look for the **{% data variables.android-values.shared_string_show %}** section in the menu.
+2. Select a Profile, and look for the **<Translate android="true" ids="shared_string_show"/>** section in the menu.
 
-3. Within the section, scroll down up to **{% data variables.android-values.shared_string_terrain %}**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
+3. Within the section, scroll down up to **<Translate android="true" ids="shared_string_terrain"/>**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
 
 4. Select one of the options: either **Hillshade**, or **Slope**. 
 
@@ -361,13 +364,13 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 
 <TabItem value="ios" label="iOS">
 
-- **{% data variables.ios-values.shared_string_enabled %}** - a toggle to show, or hide the terrain data on/from the map;
-- **{%  data variables.ios-values.map_settings_hillshade %}** / **{% data variables.ios-values.gpx_slope %}** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **{% data variables.ios-values.map_settings_layer_transparency %}** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
-- **{% data variables.ios-values.res_zoom_levels %}** - the minimum and maximum options to tap, to select:
+- **<Translate ios="true" ids="shared_string_enabled"/>** - a toggle to show, or hide the terrain data on/from the map;
+- **<Translate ios="true" ids="map_settings_hillshade"/>** / **<Translate ios="true" ids="gpx_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate ios="true" ids="map_settings_layer_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
+- **<Translate ios="true" ids="res_zoom_levels"/>** - the minimum and maximum options to tap, to select:
     - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Hillshade is expected to be viewable on the map; and 
     - the maximum zoom level at which it is expected to disappear;
-- **{% data variables.ios-values.osmand_live_available_maps %}** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen. 
+- **<Translate ios="true" ids="osmand_live_available_maps"/>** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen. 
 
 ![Terrain menu iOS](@site/static/img/plugins/contour-lines/terrain_menu_ios.png) 
 
@@ -375,13 +378,13 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 
 <TabItem value="android" label="Android">
 
-- **{% data variables.android-values.shared_string_terrain %}** -  a toggle to show, or hide the terrain data on/from the map;
-- **{% data variables.android-values.shared_string_hillshade %}** / **{% data variables.android-values.shared_string_slope %}** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **{% data variables.android-values.shared_string_transparency %}** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
-- **{% data variables.android-values.shared_string_zoom_levels %}** - two slider options to move to the left, or right, to determine:
+- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
+- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
+- **<Translate android="true" ids="shared_string_zoom_levels"/>** - two slider options to move to the left, or right, to determine:
     - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Hillshade is expected to be viewable on the map; and 
     - the maximum zoom level at which it is expected to disappear;
-- **{% data variables.android-values.welmode_download_maps %}** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen.
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen.
 
 ![Terrain menu Android](@site/static/img/plugins/contour-lines/terrain_menu_android.png) 
 
@@ -407,14 +410,14 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 <TabItem value="ios" label="iOS">
 
-- **{% data variables.ios-values.shared_string_enabled %}** - a toggle to show, or hide the terrain data on/from the map;
-- **{%  data variables.ios-values.map_settings_hillshade %}** / **{% data variables.ios-values.gpx_slope %}** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **{% data variables.ios-values.map_settings_layer_transparency %}** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
-- **{% data variables.ios-values.res_zoom_levels %}** - the minimum and maximum options to tap, to select:
+- **<Translate ios="true" ids="shared_string_enabled"/>** - a toggle to show, or hide the terrain data on/from the map;
+- **<Translate ios="true" ids="map_settings_hillshade"/>** / **<Translate ios="true" ids="gpx_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate ios="true" ids="map_settings_layer_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
+- **<Translate ios="true" ids="res_zoom_levels"/>** - the minimum and maximum options to tap, to select:
     - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Slope angle colors are expected to be viewable on the map; and 
     - the maximum zoom level at which the colors are expected to disappear;
-- **{% data variables.ios-values.map_settings_legend %}** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
-- **{% data variables.ios-values.osmand_live_available_maps %}** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen. 
+- **<Translate ios="true" ids="map_settings_legend"/>** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
+- **<Translate ios="true" ids="osmand_live_available_maps"/>** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen. 
 
 ![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/terrain_menu_slopes_ios.png) 
 
@@ -422,14 +425,14 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 <TabItem value="android" label="Android">
 
-- **{% data variables.android-values.shared_string_terrain %}** -  a toggle to show, or hide the terrain data on/from the map;
-- **{% data variables.android-values.shared_string_hillshade %}** / **{% data variables.android-values.shared_string_slope %}** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **{% data variables.android-values.shared_string_transparency %}** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
-- **{% data variables.android-values.shared_string_zoom_levels %}** - the minimum and maximum options to tap, to select:
+- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
+- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
+- **<Translate android="true" ids="shared_string_zoom_levels"/>** - the minimum and maximum options to tap, to select:
     - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Slope angle colors are expected to be viewable on the map; and 
     - the maximum zoom level at which the colors are expected to disappear;
-- **{% data variables.android-values.shared_string_legend %}** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
-- **{% data variables.android-values.welmode_download_maps %}** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen.
+- **<Translate android="true" ids="shared_string_legend"/>** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen.
 
 ![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/terrain_menu_slopes_android.png)
 
@@ -457,12 +460,12 @@ The **Contour lines** settings are available in the context menu of the **Contou
 
 <TabItem value="ios" label="iOS">
 
-- **{% data variables.ios-values.shared_string_enabled %}** - a toggle to show, or hide the Contour lines on/from the map;
-- **{% data variables.ios-values.display_starting_at_zoom_level %}** - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Contour lines is expected to be viewable on the map;
-- **{%  data variables.ios-values.map_settings_color_scheme %}** - a choice of color options in which to view the Contour lines on the map;
-- **{%  data variables.ios-values.map_settings_line_width %}** - the width of the Contour lines displayed on the map;
-- **{%  data variables.ios-values.map_settings_line_density %}** - the density of the Contour lines displayed on the map. The higher the density, the slower the map might be rendered;
-- **{% data variables.ios-values.osmand_live_available_maps %}** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
+- **<Translate ios="true" ids="shared_string_enabled"/>** - a toggle to show, or hide the Contour lines on/from the map;
+- **<Translate ios="true" ids="display_starting_at_zoom_level"/>** - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Contour lines is expected to be viewable on the map;
+- **<Translate ios="true" ids="map_settings_color_scheme"/>** - a choice of color options in which to view the Contour lines on the map;
+- **<Translate ios="true" ids="map_settings_line_width"/>** - the width of the Contour lines displayed on the map;
+- **<Translate ios="true" ids="map_settings_line_density"/>** - the density of the Contour lines displayed on the map. The higher the density, the slower the map might be rendered;
+- **<Translate ios="true" ids="osmand_live_available_maps"/>** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/contour_lines_menu_ios.png) 
 
@@ -470,12 +473,12 @@ The **Contour lines** settings are available in the context menu of the **Contou
 
 <TabItem value="android" label="Android">
 
-- **{% data variables.android-values.shared_string_on %}** -  a toggle to show, or hide the Contour lines on/from the map;
-- **{% data variables.android-values.show_from_zoom_level%}** - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Contour lines is expected to be viewable on the map;
-- **{% data variables.android-values.srtm_color_scheme %}** - a choice of color options in which to view the Contour lines on the map; 
-- **{% data variables.android-values.rendering_attr_contourWidth_name %}** - a choice of the width options to establish for the Contour lines; 
-- **{% data variables.android-values.rendering_attr_contourDensity_name %}** - a choice of the density options to establish for the Contour lines. The higher the density, the slower the map might be rendered;
-- **{% data variables.android-values.welmode_download_maps %}** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
+- **<Translate android="true" ids="shared_string_on"/>** -  a toggle to show, or hide the Contour lines on/from the map;
+- **<Translate android="true" ids="show_from_zoom_level"/>** - the minimum [zoom level](/docs/documentation/map/interact-with-map#my-location--zoom) at which Contour lines is expected to be viewable on the map;
+- **<Translate android="true" ids="srtm_color_scheme"/>** - a choice of color options in which to view the Contour lines on the map; 
+- **<Translate android="true" ids="rendering_attr_contourWidth_name"/>** - a choice of the width options to establish for the Contour lines; 
+- **<Translate android="true" ids="rendering_attr_contourDensity_name"/>** - a choice of the density options to establish for the Contour lines. The higher the density, the slower the map might be rendered;
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 

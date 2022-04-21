@@ -14,17 +14,12 @@
 .pollAnswerProgressBg {
   background-color: #fff; 
   border: 1px solid #ddd;
-  display: none;
 }
 
 .pollAnswerProgressFg {
   background-color: #3377ee; 
   height: 18px; 
-  width: 33%
-}
-
-.pollSingleButton {
-  flex:0 0 auto;
+  width: 33%;
 }
 
 .pollButtons {

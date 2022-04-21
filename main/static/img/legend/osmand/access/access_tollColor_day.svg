@@ -1,0 +1,15 @@
+<svg width="300" height="24" viewBox="0 0 300 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 18.6274 5.37258 24 12 24H288C294.627 24 300 18.6274 300 12C300 5.37258 294.627 0 288 0H12C5.37258 0 0 5.37258 0 12Z" fill="#908079" fill-opacity="0.18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 17.5228 6.47715 22 12 22H288C293.523 22 298 17.5228 298 12C298 6.47715 293.523 2 288 2H12C6.47715 2 2 6.47715 2 12Z" fill="#F5E85B"/>
+<circle cx="15" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="42" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="69" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="96" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="123" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="150" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="177" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="204" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="231" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="258" cy="12" r="8" fill="#9E2D74"/>
+<circle cx="285" cy="12" r="8" fill="#9E2D74"/>
+</svg>

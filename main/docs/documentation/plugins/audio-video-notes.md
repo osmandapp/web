@@ -5,11 +5,14 @@ title:  Audio/video notes
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation.  **For Android only**.
 
@@ -42,9 +45,10 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 
 The Audio/video notes plugin is required for working with the audio/video notes: from creating the notes to viewing them in My Places, and showing on the map. All audio/video notes will be hidden from the map and from My Places, if the plugin becomes disabled. 
 
-To enable the plugin, tap the triple dots beside the enabled **{% data variables.android-values.audionotes_plugin_name %}** option in the list of [plugins](/docs/documentation/start-with/first-steps#how-to-configure-plugins) and select **Enable**.  
+To enable the plugin, tap the triple dots beside the enabled **<Translate android="true" ids="audionotes_plugin_name"/>** option in the list of [plugins](/docs/documentation/start-with/first-steps#how-to-configure-plugins) and select **Enable**.  
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group %} → {% data variables.android-values.audionotes_plugin_name %}
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name"/>
 
 ![Audio video plugin Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_android.png)
 
@@ -53,29 +57,29 @@ To enable the plugin, tap the triple dots beside the enabled **{% data variables
 
 ### Add/Configure widget
 
-The {% data variables.android-values.map_widget_av_notes %} widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
+The <Translate android="true" ids="map_widget_av_notes"/> widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
 
 ![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
 
 Adding the widget to the screen is needed when you would rather skip looking for a geolocation on the map and by default link the notes to your current position. To add, and/or configure the widget, do the following:
 
-1. Open {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.map_widget_config %}
+1. Open <Translate android="true" ids="shared_string_menu,map_widget_config"/>
 
-2. Scroll down the **{% data variables.android-values.map_widget_right %}**.
+2. Scroll down the **<Translate android="true" ids="map_widget_right"/>**.
 
-3. Tap **{% data variables.android-values.map_widget_av_notes %}** and the context menu of the widget opens. 
+3. Tap **<Translate android="true" ids="map_widget_av_notes"/>** and the context menu of the widget opens. 
 
 4. Select an option you prefer to do by default by tapping the widget:
 
-    - **{% data variables.android-values.av_def_action_choose %}** - to open a choice of options;
+    - **<Translate android="true" ids="av_def_action_choose"/>** - to open a choice of options;
 
-    - **{% data variables.android-values.av_def_action_audio %}** - to immediately start to record an audio message;
+    - **<Translate android="true" ids="av_def_action_audio"/>** - to immediately start to record an audio message;
 
-    - **{% data variables.android-values.av_def_action_video %}** - to immediately start to record a video;
+    - **<Translate android="true" ids="av_def_action_video"/>** - to immediately start to record a video;
 
-    - **{% data variables.android-values.av_def_action_picture %}** - to immediately start taking a photo. 
+    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo. 
 
-5. Make certain {% data variables.android-values.shared_string_show %} or {% data variables.android-values.shared_string_collapse%} is selected, so that the widget to be displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
+5. Make certain <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget to be displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
 
 
 ![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)
@@ -85,7 +89,7 @@ Adding the widget to the screen is needed when you would rather skip looking for
 
 ### Open settings
 
-For every profile, it is possible to configure the recording settings. There are two options of how to open the {% data variables.android-values.audionotes_plugin_name %} settings: 
+For every profile, it is possible to configure the recording settings. There are two options of how to open the <Translate android="true" ids="audionotes_plugin_name"/> settings: 
 
 - from the plugin, so that to configure recording only for the default profile; 
 
@@ -93,17 +97,17 @@ For every profile, it is possible to configure the recording settings. There are
 
 From the [plugin](/docs/documentation/start-with/first-steps#how-to-configure-plugins), the Audio/video recording settings are opened by selecting **Settings** from the triple dots list of the plugin in: 
 
-{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group %} → {% data variables.android-values.audionotes_plugin_name %} → {% data variables.android-values.shared_string_settings %}
+<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
 
 ![Plugin settings](@site/static/img/plugins/audio-video-notes/settings_from_plugin.png)
 
 From the [settings](/docs/documentation/start-with/first-steps#how-to-manage-your-settings) of the entire app, the Audio/video recording settings can be opened as follows:
 
-1. Go to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_settings %}.
+1. Go to: <Translate android="true" ids="shared_string_menu,shared_string_settings"/>.
 
 2. Select a profile.
 
-3. Tap the **{% data variables.android-values.audionotes_plugin_name %}** option. 
+3. Tap the **<Translate android="true" ids="audionotes_plugin_name"/>** option. 
 
 ![Opening Audio video plugin settings](@site/static/img/plugins/audio-video-notes/settings_avplugin_per_profile2.png) 
 
@@ -120,20 +124,20 @@ The way the Audio/video recording will work can be determined with the settings 
 
 | Parameter | Description |
 | --- | --- |
-| **{% data variables.android-values.multimedia_use_system_camera %}** in {% data variables.android-values.photo_notes %} | If enabled, OsmAnd uses the system application to create photos.|
-| **{% data variables.android-values.av_camera_pic_size %}** | This establishes a size for photos to take in. The number of available options is determined with the capabilities of the device camera. If no option is selected, the app uses the size that is established in the system settings for the device camera. |
-| **{% data variables.android-values.av_camera_focus %}** | This establishes the method of how focus is set by the camera. The number of available options is determined with the capabilities of the device camera. Basically, there are the following three options: *{% data variables.android-values.av_camera_focus_auto %}*; *{% data variables.android-values.av_camera_focus_continuous %}*; and *{% data variables.android-values.av_camera_focus_infinity %}*, where **autofocus** is the most popular one and establishes the automatic mode for the camera to focus by rotating the lens focus ring; **continuous** one makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep everything extraordinarily wide in focus no matter how far it is. |
-| **{% data variables.android-values.multimedia_photo_play_sound %}** | If enabled, a sound is produced on closing the camera.| 
-| **{% data variables.android-values.av_audio_format %}** | This provides a choice of formats for an audio file to be created in. The number of options available as well as which one is used as default are determined with the parameters of a specific device. |
-| **{% data variables.android-values.av_audio_bitrate %}** | This provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
-| **{% data variables.android-values.multimedia_use_system_camera %}** in {% data variables.android-values.video_notes %} | If enabled, OsmAnd uses the system application to record video. |
-| **{% data variables.android-values.av_video_quality %}** | This provides a choice of options that determine the format of the output image. The number of options available is determined with the parameters of a specific device. The default option is the *Highest quality* option.  |
-| **{% data variables.android-values.multimedia_rec_split_title %}** | If enabled, old video recordings will be automatically re-written and replaced with new video recordings if the storage size reaches the established size limit.  |
-| **{% data variables.android-values.rec_split_clip_length %}** | This determines the upper time limit for recorded video clips. There are options with the range from 1 minute to 30 minutes.|
-| **{% data variables.android-values.rec_split_storage_size %}** | This establishes the size of the storage intended for recorded video. There are options with the range from 1024 MB to 62 GB. A specific range of options, as well as the default option are determined with the parameters of a specific device. A system message will remind on the storage size reaching the established limit. |
-| **{% data variables.android-values.notes %}** | This re-directs you directly to the [Audio/video notes in My Places](/docs/documentation/personal/myplaces). This is the central storage of all Audio/video notes ever made in the app. |
-| **{% data variables.android-values.reset_plugin_to_default %}** | This establishes the default values for all of the above settings.  |
-| **{% data variables.android-values.copy_from_other_profile %}** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
+| **<Translate android="true" ids="multimedia_use_system_camera"/>** in <Translate android="true" ids="photo_notes"/> | If enabled, OsmAnd uses the system application to create photos.|
+| **<Translate android="true" ids="av_camera_pic_size"/>** | This establishes a size for photos to take in. The number of available options is determined with the capabilities of the device camera. If no option is selected, the app uses the size that is established in the system settings for the device camera. |
+| **<Translate android="true" ids="av_camera_focus"/>** | This establishes the method of how focus is set by the camera. The number of available options is determined with the capabilities of the device camera. Basically, there are the following three options: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; and *<Translate android="true" ids="av_camera_focus_infinity"/>*, where **autofocus** is the most popular one and establishes the automatic mode for the camera to focus by rotating the lens focus ring; **continuous** one makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep everything extraordinarily wide in focus no matter how far it is. |
+| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced on closing the camera.| 
+| **<Translate android="true" ids="av_audio_format"/>** | This provides a choice of formats for an audio file to be created in. The number of options available as well as which one is used as default are determined with the parameters of a specific device. |
+| **<Translate android="true" ids="av_audio_bitrate"/>** | This provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
+| **<Translate android="true" ids="multimedia_use_system_camera"/>** in <Translate android="true" ids="video_notes"/> | If enabled, OsmAnd uses the system application to record video. |
+| **<Translate android="true" ids="av_video_quality"/>** | This provides a choice of options that determine the format of the output image. The number of options available is determined with the parameters of a specific device. The default option is the *Highest quality* option.  |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | If enabled, old video recordings will be automatically re-written and replaced with new video recordings if the storage size reaches the established size limit.  |
+| **<Translate android="true" ids="rec_split_clip_length"/>** | This determines the upper time limit for recorded video clips. There are options with the range from 1 minute to 30 minutes.|
+| **<Translate android="true" ids="rec_split_storage_size"/>** | This establishes the size of the storage intended for recorded video. There are options with the range from 1024 MB to 62 GB. A specific range of options, as well as the default option are determined with the parameters of a specific device. A system message will remind on the storage size reaching the established limit. |
+| **<Translate android="true" ids="notes"/>** | This re-directs you directly to the [Audio/video notes in My Places](/docs/documentation/personal/myplaces). This is the central storage of all Audio/video notes ever made in the app. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | This establishes the default values for all of the above settings.  |
+| **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
 
 
 
@@ -168,9 +172,9 @@ You can create a photo, video, and/or audio note in any of the following ways:
 
 #### CREATE AND TIE TO YOUR CURRENT POSITION
 
-To create a note tied to your current position, and thus, avoiding any search of a suitable point on the map to tie the note to, the {% data variables.android-values.map_widget_av_notes %} widget is used: tap the widget, and make the note. 
+To create a note tied to your current position, and thus, avoiding any search of a suitable point on the map to tie the note to, the <Translate android="true" ids="map_widget_av_notes"/> widget is used: tap the widget, and make the note. 
 
-The functions provided by the {% data variables.android-values.map_widget_av_notes %} widget depend on how it is configured in the [Configure screen](/docs/documentation/widgets/info-widgets#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
+The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](/docs/documentation/widgets/info-widgets#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
 
 ![Audio video plugin widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
@@ -182,9 +186,9 @@ To create a note tied to a selected point on the map, the [Context menu](/docs/d
 1. Long-tap a point on the map, and the [Context menu](/docs/documentation/map/map-context-menu) opens.
 2. Tap **Actions**, and select one of the available options from the list: 
 
-    - **{% data variables.android-values.recording_context_menu_arecord %}** - to make an audio note and tie it to the selected point on the map;
-    - **{% data variables.android-values.recording_context_menu_vrecord%}** - to make a video note and tie it to the selected point on the map;
-    - **{% data variables.android-values.recording_context_menu_precord %}** - to make a photo note and tie it to the selected point on the map.
+    - **<Translate android="true" ids="recording_context_menu_arecord"/>** - to make an audio note and tie it to the selected point on the map;
+    - **<Translate android="true" ids="recording_context_menu_vrecord"/>** - to make a video note and tie it to the selected point on the map;
+    - **<Translate android="true" ids="recording_context_menu_precord"/>** - to make a photo note and tie it to the selected point on the map.
 
 3. Depending on the selected format of the note, the respective recorder dialog opens. 
 
@@ -200,13 +204,13 @@ For _an audio / video note_, respectively the audio, or video recorder shows up.
 - see the length of the record,
 - hide/show the video screen.
 
-> **NOTE**: Also, it is possible to stop the recording with a tap on the {% data variables.android-values.map_widget_av_notes %} widget, regardless of whether the Context menu, or the widget started the recording. 
+> **NOTE**: Also, it is possible to stop the recording with a tap on the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu, or the widget started the recording. 
 
 ![Video note recorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png) 
 
 For _a photo note_, the camera functionality shows up, and you can take a photo, view the result, and accept and save it, or take a new photo.
 
-> **NOTE**: Automatically, all photo, audio, and video records are saved to: {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_my_places %} → {% data variables.android-values.notes %} tab. 
+> **NOTE**: Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab. 
 
 
 
@@ -216,7 +220,7 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 
 [My Places](/docs/documentation/personal/myplaces) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
 
-{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.shared_string_my_places %} → {% data variables.android-values.notes %}
+<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>
 
 ![Audio video plugin My places menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
@@ -233,11 +237,11 @@ To show a specific note on the map, use the list of notes in My Places, find the
 
 To manage a note in My Places, tap the vertical triple points of the note in the list, and the available options show up, as follows: 
 
-- **{% data variables.android-values.watch %}** / **{% data variables.android-values.recording_context_menu_play %}** - to play/show the note,
-- **{% data variables.android-values.shared_string_share %}** - to share the note, 
-- **{% data variables.android-values.shared_string_show_on_map %}** - to show the linked place on the map and the [Context menu](/docs/documentation/plugins/audio-video-notes#actions-in-map-context-menu),
-- **{% data variables.android-values.shared_string_rename %}** - to rename the note,
-- **{% data variables.android-values.shared_string_delete %}** - to delete the note.
+- **<Translate android="true" ids="watch"/>** / **<Translate android="true" ids="recording_context_menu_play"/>** - to play/show the note,
+- **<Translate android="true" ids="shared_string_share"/>** - to share the note, 
+- **<Translate android="true" ids="shared_string_show_on_map"/>** - to show the linked place on the map and the [Context menu](/docs/documentation/plugins/audio-video-notes#actions-in-map-context-menu),
+- **<Translate android="true" ids="shared_string_rename"/>** - to rename the note,
+- **<Translate android="true" ids="shared_string_delete"/>** - to delete the note.
 
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
@@ -248,9 +252,9 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 The options on the bottom bar can be used to manage the list of notes in My Places, as follows:
 
-- **{% data variables.android-values.shared_string_sort %}** - opens a choice of how to sort: by type, or date, and on selection an option, sorts the list respectively. 
-- **{% data variables.android-values.shared_string_share %}** - shows a check list of all notes, including those added as waypoints to GPX files. First, required notes are checked, then the Share icon on tap at the right-hand top corner of the screen provides the available sharing options, and finally, the checked notes are shared, according to the selected option. 
-- **{% data variables.android-values.shared_string_delete %}** - shows a check list of audio, photo and video notes only. First, required notes are checked, then the Delete icon at the right-hand top corner of the screen is clicked, and after confirmation, deletes the selected notes. 
+- **<Translate android="true" ids="shared_string_sort"/>** - opens a choice of how to sort: by type, or date, and on selection an option, sorts the list respectively. 
+- **<Translate android="true" ids="shared_string_share"/>** - shows a check list of all notes, including those added as waypoints to GPX files. First, required notes are checked, then the Share icon on tap at the right-hand top corner of the screen provides the available sharing options, and finally, the checked notes are shared, according to the selected option. 
+- **<Translate android="true" ids="shared_string_delete"/>** - shows a check list of audio, photo and video notes only. First, required notes are checked, then the Delete icon at the right-hand top corner of the screen is clicked, and after confirmation, deletes the selected notes. 
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
@@ -269,7 +273,7 @@ To show/hide all notes altogether, use the [Recording layer](/docs/documentation
 
 The [Recording layer](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) can be reached out, as follows:
 
-{% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map   %} → {% data variables.android-values.layer_recordings %}
+<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
@@ -314,7 +318,7 @@ All waypoints added automatically get an automatically assigned name. The name i
 1. Select the required audio/video/photo note on the map;
 2. Tap **Actions**, and then tap **Add track**.
 3. Select the track that the waypoint is intended to be added to. 
-4. The *{% data variables.android-values.quick_action_add_gpx %}* dialog opens, and allows the user to set some properties, like: the name to the waypoint, an icon, color, etc. Once done, tap **Save**.
+4. The *<Translate android="true" ids="quick_action_add_gpx"/>* dialog opens, and allows the user to set some properties, like: the name to the waypoint, an icon, color, etc. Once done, tap **Save**.
 
 >**NOTE**: The name of a manually created waypoint can be established by the user. 
 
@@ -354,7 +358,7 @@ If to view the GPX file of the track added with a waypoint from an audio/video/p
 
 ## File name details
 
-The {% data variables.android-values.audionotes_plugin_name %} plugin generates audio/video/photo files in the following format:
+The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
 
     {SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}
 

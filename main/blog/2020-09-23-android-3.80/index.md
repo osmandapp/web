@@ -4,7 +4,7 @@ title: OsmAnd 3.8 (Android)
 authors: eugene
 tags: [release, android]
 ---
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';

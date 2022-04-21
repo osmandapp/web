@@ -1,8 +1,16 @@
 ---
 sidebar_position: 1
 ---
+import Translate from '@site/src/components/Translate.js';
+import LegendItem from '@site/src/components/docs/LegendItem.js';
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # OsmAnd map style
+<Translate android="yes" id="default_render_descr" />
+
 
 ## Highways
 <img src={require('@site/static/img/map-legend/osmand-highways.png').default} alt="OsmAnd Map style" />
@@ -27,6 +35,20 @@ sidebar_position: 1
 
 ## Access
 <img src={require('@site/static/img/map-legend/osmand-access.png').default} alt="OsmAnd Map style" />
+
+
+<LegendItem itemsMap={{
+        'Access Private' : 'access/access_PrivateColor',
+        'Access Destination' : 'access/access_DestinationColor',
+        'Access Permissive' : 'access/access_PermissiveColor',
+        'Access Customers' : 'access/access_CustomersColor',
+        'Access Delivery' : 'access/access_DeliveryColor',
+        'Access Agricultural' : 'access/access_AgriculturalColor',
+        'Access Emergency' : 'access/access_EmergencyColor',
+        'Access Toll' : 'access/access_tollColor'
+        }}>
+</LegendItem>
+
 
 ## Waterways
 <img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="OsmAnd Map style" />

@@ -3,7 +3,16 @@ sidebar_position: 1
 title:  Setup
 ---
 
-Most typical issues encountered during application setup
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 ## Initial setup 
 
@@ -44,6 +53,13 @@ If you already used 7 possibilities for free downloads, you can get 3 extra down
 
 ### I have a GPX file, how do I get it into OsmAnd?
 
-### Contour lines or hillshades do not show up
+- &nbsp;Android
+    - &nbsp;You can [download and open it](/docs/documentation/navigation/gpx-navigation) via File Browser or Dropbox and select OsmAnd as a target application
+    - &nbsp;You can put it in OsmAnd home folder: osmand/tracks/(optional\_sub-folder)/your\_file.gpx
+    
+- &nbsp;iOS
+    - &nbsp;To open [a GPX file in OsmAnd](/docs/documentation/navigation/gpx-navigation), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
 
+
+### Contour lines or hillshades do not show up
 It should be linked to plugins

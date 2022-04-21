@@ -5,20 +5,23 @@ title:  Mapillary
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 [The Mapillary layer](https://www.mapillary.com/) brings street-level views straight into the OsmAnd app. This means you can easily check out the surroundings at any place of interest or along the route you have planned with OsmAnd. Where imagery is missing, you can just add it yourself so that others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
 
 
 ## Enable / Disable plugin
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.plugins_menu_group: %} → {% data variables.android-values.mapillary %}
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,mapillary"/>
 
-{% data variables.product.ios_button_seq %}  by default.
+**<Translate ios="true" ids="ios_button_seq"/>:**  by default.
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_plugin_android.png) 
 
@@ -33,9 +36,9 @@ Street-level imagery (Mapillary) are green points on the map. Street-view photos
 
 Enable / disable Street-level imagery on the map: 
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.street_level_imagery %} 
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> 
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.street_level_imagery %}
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/>
 
 ![Mapillary plugin points on the map Android](@site/static/img/plugins/mapillary/mapillary_plugin_points_android.png) ![Mapillary plugin points on the map iOS](@site/static/img/plugins/mapillary/mapillary_plugin_points_ios.png)
 
@@ -54,21 +57,21 @@ There are info about username and year in bottom corner.
 
 The filter images menu:
 
-{% data variables.product.android_button_seq %} {% data variables.android-values.shared_string_menu %} → {% data variables.android-values.configure_map %} → {% data variables.android-values.street_level_imagery %} → &#8230;
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> → &#8230;
 
-{% data variables.product.ios_button_seq %} {% data variables.ios-values.menu %} → {% data variables.ios-values.configure_map %} → {% data variables.ios-values.street_level_imagery %} → &#8230;
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/> → &#8230;
 
 
 ![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png) ![Mapillary plugin filter iOS](@site/static/img/plugins/mapillary/mapillary_plugin_filter_ios.png)
 
 Actions:
-- {% data variables.android-values.shared_string_on %} / {% data variables.android-values.shared_string_off %} - enable or disable mapillary map layer.
-- {% data variables.android-values.mapillary_menu_title_tile_cache %} - reload tiles to see up to date data
+- <Translate android="true" ids="shared_string_on"/> / <Translate android="true" ids="shared_string_off"/> - enable or disable mapillary map layer.
+- <Translate android="true" ids="mapillary_menu_title_tile_cache"/> - reload tiles to see up to date data
 
 Filter images by sumbitter, by date or by type. Only active in closeup zoom (17):
-- {% data variables.android-values.mapillary_menu_title_username %} - filter images by user. View only images by selected username.
-- {% data variables.android-values.mapillary_menu_title_dates %} - filter images by date. Start date to End date.
-- {% data variables.android-values.mapillary_menu_title_pano %} - allows to showing only 360 &#176; images.
+- <Translate android="true" ids="mapillary_menu_title_username"/> - filter images by user. View only images by selected username.
+- <Translate android="true" ids="mapillary_menu_title_dates"/> - filter images by date. Start date to End date.
+- <Translate android="true" ids="mapillary_menu_title_pano"/> - allows to showing only 360 &#176; images.
 
 
 ### Images in Map Context menu

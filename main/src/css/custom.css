@@ -5,6 +5,29 @@
  */
 
 /* You can override the default Infima variables here. */
+.d-none {
+  display: none
+}
+
+.section {
+  padding: 16px 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+
+.flex-1 {
+  flex: 1
+}
+
+.index-title {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+/**  DEFAULT DOCUSAURUS VALUES */
 :root {
   --ifm-color-primary: #237BFF;
   --ifm-color-primary-dark: #D28521;
@@ -102,7 +125,7 @@ table.blogimage th {
 }
 
 table.blogimage img {
-  max-height: 600px;
+  max-height: 660px;
   border-width: 1px;
   border-color: #1E1F20;
 }
@@ -114,3 +137,32 @@ table.blogimage img {
   width: auto;
 }
 
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button-row {
+  display: flex;
+  column-gap: 20px;
+  justify-content: flex-start;
+}
+
+.button--active {
+  background-color: rgba(35, 123, 255, 0.2);
+  border-style: none;
+  color: #237BFF;
+  padding: 6px 12px 6px 12px;
+}
+
+.button--active:hover {
+  background-color: rgba(35, 123, 255);
+  border-style: none;
+  color: #ffffff;
+  padding: 6px 12px 6px 12px;
+}
+
+.emoji {
+  padding-right: 12px;
+}

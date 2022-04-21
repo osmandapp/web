@@ -5,8 +5,8 @@ title:  iOS purchases
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
@@ -65,7 +65,7 @@ Here is detailed information about all in apps with prices for US / Europe regio
 | <Translate ios="true" ids="product_title_australia"/> | <Translate ios="true" ids="product_desc_australia"/> | 5.49€ / 4.99$  |
 | <Translate ios="true" ids="product_title_europe"/> | <Translate ios="true" ids="product_desc_europe"/> | 14.99€ / 14.99$ |
 | <Translate ios="true" ids="product_title_centralamerica"/> | <Translate ios="true" ids="product_desc_centralamerica"/> | 2.99€ / 2.99$  |
-| <Translate ios="true" ids="product_title_northamerica"/> | <Translate ios="true" ids="product_desc_northamerica"/> | 6.99€  / 5.99$ |
+| <Translate ios="true" ids="product_title_northamerica"/> | <Translate ios="true" ids="product_desc_northamerica"/> | 14.99€  / 14.99$ |
 | <Translate ios="true" ids="product_title_southamerica"/> | <Translate ios="true" ids="product_desc_southamerica"/> | 3.99€ / 3.99$ |
 
 *_Prices can be differents for world regions._
@@ -79,7 +79,7 @@ Here is detailed information about all in apps with prices for US / Europe regio
 | :------------- | :------------- |
 | 1 month | 1.99€  / 1.99$ |
 | 3 months | 3.99€ / 3.99$  |
-| 1 year |  7.99€ / 7.49$ |
+| 1 year |  9.99€ / 8.99$ |
 
 
 ## Restore purchases

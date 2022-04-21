@@ -9,7 +9,7 @@ const config = {
   title: 'OsmAnd',
   tagline: 'Offline Maps and Navigation',
   url: 'https://osmand.net',
-  baseUrl: '/v2/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -23,12 +23,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
@@ -40,6 +38,7 @@ const config = {
       }),
     ],
   ],
+  plugins: [require.resolve('docusaurus-lunr-search')],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -57,8 +56,8 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/build-it/', label: 'Build it', position: 'right'},
+          { to: '/blog', label: 'Blog', position: 'left'},
+          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',
@@ -70,11 +69,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'OsmAnd',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Map legend',
+                to: '/docs/map-legend/osmand',
               },
               {
                 label: 'Versions',
@@ -84,9 +87,14 @@ const config = {
                 label: 'Build it',
                 to: '/docs/build-it',
               },
+              
               {
-                label: 'Map legend',
-                to: '/docs/map-legend/osmand',
+                label: 'Giveaway',
+                to: '/giveaway',
+              },
+              {
+                label: 'About',
+                to: '/help-online/about',
               },
             ],
           },

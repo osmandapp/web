@@ -1,9 +1,11 @@
 ---
 sidebar_position: 3
 ---
+import Translate from '@site/src/components/Translate.js';
 
 # Nautical map style
 Default OsmAnd map style, part of Nautical plugin.
+<Translate android="yes" id="nautical_render_descr" />
 
 ## Anchorage and berth
 <img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="Anchorage and berth" />

@@ -5,16 +5,19 @@ title:  Download maps
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import AndroidStore from '@site/src/components/_buttonAndroidStore.mdx';
-import AppleStore from '@site/src/components/_buttonAppleStore.mdx';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
+<InfoIncompleteArticle/>
 
 
 Download maps is a necessarily action for further using map and navigation in offline mode. Maps can be downloaded both by browsing through the regions list from the main menu and by clicking on the needed territory on the map
 
-Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](/docs/documentation/map/vector-maps) and  [Raster maps](/docs/documentation/map/raster-maps), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](/docs/documentation/search), [Navigation](//docs/documentation/navigation),  [Context menu](/docs/documentation/map/map-context-menu). 
+Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](/docs/documentation/map/vector-maps) and  [Raster maps](/docs/documentation/map/raster-maps), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](/docs/documentation/search), [Navigation](/docs/documentation/navigation),  [Context menu](/docs/documentation/map/map-context-menu). 
 
 ## Download - First Screen
 

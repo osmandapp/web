@@ -8,7 +8,7 @@ sidebar_position: 6
 
 You can get the latest version of OsmAnd free from listed app stores.
 
-### [Beta & Nighty builds](/docs/versions/nightly_versions)
+### [Beta & Nightly builds](/docs/versions/nightly_versions)
 
 OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
