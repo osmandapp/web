@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
 label: Introduction
-title: Menu
+title: Intro
 ---
 
 
-### 🎓 [User guide](/docs/documentation/)
+### 🎓 [User guide](/docs/user/)
 
 User guide about OsmAnd application describing main features & settings.
 
@@ -13,7 +13,7 @@ User guide about OsmAnd application describing main features & settings.
 
 Key map elements used in OsmAnd Map.
 
-### 📚 [Technical Documentation](/docs/technical-documentation/)
+### 📚 [Technical Documentation](/docs/technical/)
 
 Technical documentation related 
 
