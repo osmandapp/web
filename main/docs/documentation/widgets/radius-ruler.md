@@ -10,9 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 All ruler tools help to understand [scale of the map](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. Radius-ruler tool helps to determine the radius around the selected point on the map via displaying distance-circles on the map. Distance by tap tool helps to calculate the distance between selected points or to find the distance to a specific point.
 
@@ -40,9 +38,9 @@ Radius-ruler widget shows distance between your location and center point of the
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,radius_ruler_item"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_ruler_control"/> |
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,radius_ruler_item"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_ruler_control"/> |
 | Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  |
+| Units Format | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  |
 
 ## Compass ruler for Radius-ruler widget
 
@@ -56,8 +54,8 @@ In addition to that, you could see **blue triangle** as a Compass direction. Thi
 
 | | |
 |------------|------------|
-| Enable |<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,radius_ruler_item,hide_compass_ruler"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_ruler_control,shared_string_ellipsis,show_compass_ruler"/> / <Translate ios="true" ids="hide_compass_ruler"/> |
-| Units Format | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>|
+| Enable |<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,radius_ruler_item,hide_compass_ruler"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_ruler_control,shared_string_ellipsis,show_compass_ruler"/> / <Translate ios="true" ids="hide_compass_ruler"/> |
+| Units Format | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>|
 
 
 ### Center / Bottom position
@@ -78,11 +76,11 @@ In order to expand the visible range of the ruler radius for **iOS** you need to
 
 ### Video Guides
 Video guide how to use Radius ruler for **Android**
-[![Video guide how to use Radius ruler for {% data variables.product.android %}](@site/static/img/widgets/radius_ruler_video_android.png)](https://www.youtube.com/watch?v=MWT20dVtkDc)
+[![Video guide how to use Radius ruler for Android](@site/static/img/widgets/radius_ruler_video_android.png)](https://www.youtube.com/watch?v=MWT20dVtkDc)
 
 
 Video guide how to use Radius ruler for **iOS**
-[![Video guide how to use Radius ruler for {% data variables.product.ios %}](@site/static/img/widgets/radius_ruler_video_ios.png)](https://www.youtube.com/watch?v=C9QLQ52ndiA&t=10s)
+[![Video guide how to use Radius ruler for iOS](@site/static/img/widgets/radius_ruler_video_ios.png)](https://www.youtube.com/watch?v=C9QLQ52ndiA&t=10s)
 
 ## 'Distance by tap' tool
 
@@ -94,5 +92,5 @@ Video guide how to use Radius ruler for **iOS**
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> |
-| Units Format |<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> • <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> |
+| Units Format |<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>|

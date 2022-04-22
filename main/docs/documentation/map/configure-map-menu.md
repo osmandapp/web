@@ -10,9 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 'Configure map' menu is a central place where you could configure map display for your needs, i.e. highlight Favorite points, Navigation markers or special Points of Interests on the map; display specific routes or 3rd party GPX files; overlay the map with relief information, satellite imagery or any other available raster map; display public transport information and change the map style.
 
