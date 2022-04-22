@@ -163,6 +163,14 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/osmandapp',
               },
+              {
+                label: 'OsmAnd CZ Manuals',
+                href: 'https://osmand.cz/',
+              },
+              {
+                label: 'Get OsmAnd Merchandise',
+                href: 'https://www.redbubble.com/people/osmand/works/26426633-osmand',
+              },
             ],
           },
         ],
