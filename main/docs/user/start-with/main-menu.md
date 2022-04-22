@@ -24,7 +24,7 @@ The [Main menu](../widgets/map-buttons#main-menu) icon '&#8801;' is located on t
 
 ### Features
 * [Map markers](../personal/markers) is a tool that allows to mark place on the map.
-* [My places](/../personal/myplaces) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes) and [OSM edits](../plugins/osm-editing) (if such plugins are turned on). 
+* [My places](../personal/myplaces) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes) and [OSM edits](../plugins/osm-editing) (if such plugins are turned on). 
 * [Search](../search) (Android) is a tool that allows you to find the place or object that exist on the map.
 * [Directions](../widgets/map-buttons#directions) button allows to create a route and start navigation.
 * [Configure map](../map/configure-map-menu) is a menu that allows configuring map view.

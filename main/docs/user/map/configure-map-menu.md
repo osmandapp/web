@@ -29,7 +29,7 @@ import Translate from '@site/src/components/Translate.js';
 - Configure map settings are [profile dependent](../personal/profiles)
 
 ## Map Layers
-   - [Vector Map Layer](/../map/vector-maps) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
+   - [Vector Map Layer](../map/vector-maps) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
    - [Map Raster sources](../map/raster-maps#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
    - [Terrain](../map/raster-maps#hillshade--slopeg) - display raster slope or hillshade information.
 
