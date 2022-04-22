@@ -9,7 +9,7 @@ title: Intro
 
 User guide about OsmAnd application describing main features & settings.
 
-### 🗺️ [Map legend](/docs/map-legend/)
+### 🗺️ [Map legend](/docs/user/map-legend/)
 
 Key map elements used in OsmAnd Map.
 

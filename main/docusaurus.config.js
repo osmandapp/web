@@ -77,7 +77,7 @@ const config = {
               },
               {
                 label: 'Map legend',
-                to: '/docs/map-legend/osmand',
+                to: '/docs/user/map-legend/osmand',
               },
               {
                 label: 'Versions',
