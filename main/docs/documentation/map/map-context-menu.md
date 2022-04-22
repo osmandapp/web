@@ -74,7 +74,7 @@ In the Context menu you can find geographical coordinates of an object. If you e
 
 |Coordinates format||
 |:------|:------|
-|• DDD.DDDDD (Plain Decimal Degress)   • DDD.DDDDD (N/S, E/W comma)   • DDD MM.MMM   • DDD MM SS.S   • [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    • [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   • [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   • [OsmAnd Web Link](https://osmand.net/go.html) |![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png)|
+|DDD.DDDDD (Plain Decimal Degress)   <br /> DDD.DDDDD (N/S, E/W comma)   <br /> DDD MM.MMM   <br /> DDD MM SS.S   <br /> [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    <br /> [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   <br /> [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   <br /> [OsmAnd Web Link](https://osmand.net/go.html) |![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png)|
 
 With OsmAnd Web Link you can send location to any device and it will be automatically recognized by OsmAnd (for example: https://osmand.net/go?lat=-49.306051764139475&lon=69.13371469678623&z=10).
 
@@ -274,9 +274,9 @@ Requires [Trip recording plugin](/docs/documentation/plugins/trip-recording).
 
 With OSM Editing plugin, you can create and modify most of the POIs present on [OpenStreetMap](https://www.openstreetmap.org/).
 
-<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](/docs/documentation/plugins/osm-editing#how-to-add-poi) at selected location.
+&nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](/docs/documentation/plugins/osm-editing#how-to-add-poi) at selected location.
 
-<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](/docs/documentation/plugins/osm-editing#how-to-modify-poi).
+&nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](/docs/documentation/plugins/osm-editing#how-to-modify-poi).
 
 Requires [OSM Editing plugin](/docs/documentation/plugins/osm-editing).
 
@@ -313,9 +313,9 @@ Requires [OSM Editing plugin](/docs/documentation/plugins/osm-editing).
 
 Records or takes a media note at selected point on the map.
 
-- <Translate android="true" ids="recording_context_menu_arecord"/> - makes a [audio note](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on selected point (creates new point on the overlay with audio icon).
-- <Translate android="true" ids="recording_context_menu_vrecord"/> - makes a [video note](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on selected point (creates new point on the overlay with video icon).
-- <Translate android="true" ids="recording_context_menu_precord"/> - makes a [photo point](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on the map.
+- &nbsp;<Translate android="true" ids="recording_context_menu_arecord"/> - makes a [audio note](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on selected point (creates new point on the overlay with audio icon).
+- &nbsp;<Translate android="true" ids="recording_context_menu_vrecord"/> - makes a [video note](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on selected point (creates new point on the overlay with video icon).
+- &nbsp;<Translate android="true" ids="recording_context_menu_precord"/> - makes a [photo point](/docs/documentation/map/point-layers-on-map#-audio--video-points-android) on the map.
 
 Requires [Audio / Video note plugin](/docs/documentation/plugins/audio-video-notes).
 
