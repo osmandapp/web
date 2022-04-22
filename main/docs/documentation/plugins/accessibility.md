@@ -21,12 +21,12 @@ Makes the device's accessibility features directly available in OsmAnd. It facil
 
 ## Enable / Disable plugin
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility"/>
 
 
 ### Plugin settings
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,shared_string_accessibility,shared_string_settings"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>
 
 
 ## How to use

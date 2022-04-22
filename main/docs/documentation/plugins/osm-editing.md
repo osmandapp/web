@@ -26,7 +26,7 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 ## Enable / Disable plugin
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,osm_settings"/> 
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> 
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>
 
@@ -34,7 +34,7 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 ### Plugin settings
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group:,osm_settings,shared_string_settings"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android.png)
 

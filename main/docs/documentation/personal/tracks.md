@@ -154,7 +154,7 @@ Sort menu:
 - &nbsp;<Translate ios="true" ids="shared_string_remove"/> - allows to delete the chosen track.
 - &nbsp;<Translate ios="true" ids="shared_string_export"/> - allows to delete the chosen track.
 - &nbsp;<Translate ios="true" ids="gpx_edit_mode"/> - allows [to edit / create track](/docs/documentation/personal/tracks#edit-mode-ios).
-- &nbsp;<Translate ios="true" ids="product_title_trip_planning"/> - to be deleted.
+- &nbsp;Trip planning - to be deleted.
 - &nbsp;<Translate ios="true" ids="plan_route_change_folder"/> - allows to change a folder for the chosen track.
 
 

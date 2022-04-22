@@ -98,7 +98,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## * Parking widget
 
->Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](/docs/documentation/plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate android="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
+>Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](/docs/documentation/plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
 
 
 This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](/docs/documentation/plugins/parking) widget that shows distance from you or screen center to the parking place.

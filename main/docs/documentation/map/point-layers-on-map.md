@@ -157,7 +157,7 @@ OsmAnd has special Point of Interests indicated with 'W' logo and Wikipedia arti
 
 Enable / disable wikipedia articles on the map and filter by language:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_wikipedia "/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,local_indexes_cat_wiki"/>
 
 <p> </p>
 
@@ -175,7 +175,7 @@ Audio / Video notes are user's made points with audio/photo/video data on the ma
 
 Enable / disable recording points on the map:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_recordings "/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>
 
 <p> </p>
 
@@ -189,7 +189,7 @@ OSM edit points are user's made POIs for adding its for [OpenStreetMap project](
 
 Enable / disable OSM edits on the map:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,osm_edits "/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>
 
 <p> </p>
 
@@ -207,7 +207,7 @@ OSM note points are user's made POIs for reporting issue about map data in [Open
 
 Enable / disable OSM notes on the map:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs "/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>
 
 <p> </p>
 

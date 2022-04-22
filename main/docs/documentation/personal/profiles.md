@@ -188,7 +188,7 @@ In this section you can set parameters of units & formats for chosen application
 |**<Translate ios="true" ids="coords_format"/>**| <Translate ios="true" ids="navigate_point_format_D"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate ios="true" ids="navigate_point_format_DM"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate ios="true" ids="navigate_point_format_DMS"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
-|          | <Translate ios="true" ids="navigate_point_format_UTM"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate ios="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
+|          | <Translate ios="true" ids="navigate_point_format_UTM"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate ios="true" ids="utm_description"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate ios="true" ids="navigate_point_format_OLC"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
 |**<Translate ios="true" ids="angular_units"/>**| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
@@ -318,7 +318,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    |  
 | "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
 | "<Translate android="true" ids="recalculate_route"/>" | allows to recalculate the route by the next cases:    |    |
-|   | "<Translate android="true" ids="route_recalculation_dist_title "/>%}"    |  <Translate android="true" ids="recalculate_route_in_deviation"/>. <Translate android="true" ids="select_distance_route_will_recalc"/>  |
+|   | "<Translate android="true" ids="route_recalculation_dist_title"/>"    |  <Translate android="true" ids="recalculate_route_in_deviation"/>. <Translate android="true" ids="select_distance_route_will_recalc"/>  |
 |   | "<Translate android="true" ids="in_case_of_reverse_direction"/>"   |  The route will be recalculated if the direction is changed to reverse. |
 | "<Translate android="true" ids="development"/>" | using live updates and the initial part for calculation the route    |    |
 |   | "<Translate android="true" ids="use_live_routing"/>"    |  Enable navigation for [OsmAnd Live changes](/docs/documentation/personal/maps#osmand-live).  |
@@ -705,7 +705,8 @@ This menu opens [the OpenStreetMap editing plugin settings](/docs/documentation/
 
 <TabItem value="ios" label="iOS">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,product_title_osm_editing"/>
+Check!
+<Translate ios="true" ids="ios_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,product_title_osm_editing"/>
 <p> </p>
 
 </TabItem>

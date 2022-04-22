@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 | ![Configure map_android](@site/static/img/map/configure-map-android.png) | ![Configure map_ios](@site/static/img/map/configure-map-ios.png) |
 
 **<Translate android="true" ids="configure_map"/>** menu divides into 2 categories:
-- [Map style parameters](#map-style-parameters) - **<Translate android="true" ids="map_widget_map_rendering"/>** or **<Translate android="true" ids="map_settings_style"/>** groups all parameters that allow to change how the main map is displayed.
+- [Map style parameters](#map-style-parameters) - **<Translate android="true" ids="map_widget_map_rendering"/>** or **<Translate ios="true" ids="map_settings_style"/>** groups all parameters that allow to change how the main map is displayed.
 - [Map layers](#map-layers). These layers allow to put information on top (or under) of the main map layer but it doesn't change the display of the map itself.
 
 

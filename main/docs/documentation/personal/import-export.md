@@ -73,9 +73,9 @@ In order **to export** online map sources, you can select them in the export fil
 
 In order **to import** online map sources, you can click to osf-file of application profile in your storage, messenger, mail and etc, that choose OsmAnd app for opening, select the data to be imported.
 
-Android
+**Android**
 
-A. <Translate android="true" ids="shared_string_import,select_data_to_import,android-values.quick_action_map_source_title,shared_string_import_complete,shared_string_continue,shared_string_close"/>
+A. <Translate android="true" ids="shared_string_import,select_data_to_import,quick_action_map_source_title,shared_string_import_complete,shared_string_continue,shared_string_close"/>
 
 <p> </p>
 
@@ -85,7 +85,7 @@ B. You can click the SQLiteDb-file on your email, cloud, or messenger, download 
 
 ![Import online source Android](@site/static/img/plugins/online-maps/import-online-source-android.png)
 
-iOS
+**iOS**
 
 A. <Translate ios="true" ids="shared_string_import,quick_action_map_source_title,shared_string_continue,shared_string_import_complete,gpx_finish"/>
 <p> </p>

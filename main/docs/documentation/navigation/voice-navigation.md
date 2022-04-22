@@ -53,7 +53,7 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 For OsmAnd (Android version) you can download voice prompts files:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_map,other_location,index_name_tts_voice,index_name_voice"/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice,index_name_voice"/>
 
 ## TTS (text-to-speech)
 

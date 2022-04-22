@@ -63,9 +63,9 @@ There are two options to display [Tracks](/docs/documentation/personal/tracks) o
 
 </Tabs>
 
-### Display via <Translate android="true" ids="shared_string_my_places"/> menu
+### Display via My Places menu
 
-&nbsp;<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="hared_string_show_on_map"/> or ["Map" button](/docs/documentation/personal/tracks#my-places-android) for choosing multiple tracks.
+&nbsp;<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/> or ["Map" button](/docs/documentation/personal/tracks#my-places-android) for choosing multiple tracks.
 
 <p> </p>
 
