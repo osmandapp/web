@@ -2,7 +2,7 @@
 slug: osmand-ios-4-2-released
 title: OsmAnd 4.2 (iOS)
 authors: eugene
-tags: [release, ios, routes, preferred terrain]
+tags: [release, ios, routes, preferred terrain, route appearance, files]
 ---
 
 import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
@@ -19,52 +19,58 @@ Thank you for your support and feedback.
 <!--truncate-->
 
 ## Route line appearance
+
 Added ability to set width and color
 <table class="blogimage">
   <tr>
-    <th><img src={require('./customise_route_line-1.png').default} alt="Files app"/></th>
-    <th><img src={require('./customise_route_line-2.png').default} alt="Files app with OsmAnd folder"/></th>
+    <th><img src={require('./customise_route_line-1.png').default} alt="Customise route line settings"/></th>
+    <th><img src={require('./customise_route_line-2.png').default} alt="Customized route line on the map"/></th>
     </tr>
 </table> 
 
 ## Tracks
-Added option for deleting several tracks at once. Track context menu: added scroll bar with waypoint groups
+
+* Track context menu: added scroll bar with waypoint groups allows to select needed group quicker
+* <Translate android="false" ids="my_places,tracks"/>: added option for deleting several tracks at once. 
+
 
 <table class="blogimage">
   <tr>
-    <th><img src={require('./track-waypoints.png').default} alt="Files app"/></th>
-    <th><img src={require('./tracks-edit.png').default} alt="Files app with OsmAnd folder"/></th>
+    <th><img src={require('./track-waypoints.png').default} alt="Track context menu: waypoints tab"/></th>
+    <th><img src={require('./tracks-edit.png').default} alt="My places - Tracks - Edit"/></th>
     </tr>
 </table> 
 
+A new parameter has also been added to the <Translate android="false" id="track_recording"/> plugin: "Include heading".
 
-#### "Include heading" for track recording
-New option "Include heading" for track recording
 
 ## Routes
 Transport routes. Fitness and running routes.
 
 <table class="blogimage">
   <tr>
-    <th><img src={require('./transport-routes.png').default} alt="Files app"/></th>
-    <th><img src={require('./fitness-trails.png').default} alt="Files app with OsmAnd folder"/></th>
+    <th><img src={require('./transport-routes.png').default} alt="Transport routes"/></th>
+    <th><img src={require('./fitness-trails.png').default} alt="Fitness trails"/></th>
     </tr>
 </table> 
 
 
 ## Horseback riding
+
 Added new navigation type and app profile.
 <table class="blogimage">
-  <tr>
-    <th><img src={require('./horseback-riding_profile.png').default} alt="Files app"/></th>
-    <th><img src={require('./horseback-riding_navtype.png').default} alt="Files app with OsmAnd folder"/></th>
-    <th><img src={require('./difficuly_of_horse_trails.png').default} alt="Files app with OsmAnd folder"/></th>
+    <tr>
+        <th><img src={require('./horseback-riding_profile.png').default} alt="Horseback riding profile"/></th>
+        <th><img src={require('./horseback-riding_navtype.png').default} alt="Horseback riding navigation type"/></th>
+        <th><img src={require('./difficuly_of_horse_trails.png').default} alt="Difficuly of horse trails"/></th>
     </tr>
 </table> 
 
 
 
-## OsmAnd files are now visible in the "Files" application
+## Files app
+
+OsmAnd files are now visible in the "Files" application
 <table class="blogimage">
   <tr>
     <th><img src={require('./files-1.png').default} alt="Files app"/></th>
@@ -73,17 +79,19 @@ Added new navigation type and app profile.
 </table> 	
 
 ## Preferred terrain
+
 UX of options "Use elevation data" and "Select elevation fluctuation"  was improved, they were combined and renamed to "Preferred terrain", currently available for "Bicycle" and "Pedestrian" profiles.
 
 <table class="blogimage">
   <tr>
-    <th><img src={require('./preferred_terrain-1.png').default} alt="Files app"/></th>
-    <th><img src={require('./preferred_terrain-2.png').default} alt="Files app with OsmAnd folder"/></th>
+    <th><img src={require('./preferred_terrain-1.png').default} alt="Navigation options with highlighted Preferred terrain option"/></th>
+    <th><img src={require('./preferred_terrain-2.png').default} alt="Preferred terrain"/></th>
     </tr>
 </table> 
 
 
 ## Street name widget
+
 * now show road shield and exit number during navigation
 * visible in all profiles
 
