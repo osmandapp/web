@@ -25,7 +25,7 @@ There have on and off been user reports about this. We made lots of measurements
 
 On newer devices, typical power consumption for OsmAnd should be in this neighborhood:  
 
-Device Function | Battery Consumption • per Hour
+Device Function | Battery Consumption <br /> per Hour
 --- | ---
 **Typical value for device asleep** with only standard apps active | 0.5 %
 **Screen on** may typically account for | 6 %
@@ -36,7 +36,7 @@ Device Function | Battery Consumption • per Hour
 The overall power consumption should result by adding these components as applicable, depending
 how you use OsnAmd. Please report if you see huge deviations:
 
-OsmAnd Function | Battery Consumption • per Hour
+OsmAnd Function | Battery Consumption <br /> per Hour
 --- | ---
 **Track recording** with screen off | 6 %
 **Navigation**  with screen on | 12 %

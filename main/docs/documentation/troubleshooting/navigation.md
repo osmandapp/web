@@ -42,7 +42,7 @@ We suggest that recorded voices should only be a fallback if you **really** like
 Read more about Voice prompts:
 - [Voice guidance](/docs/documentation/navigation/voice-navigation)
 - [Adjusting voice prompts](/docs/documentation/navigation/voice-navigation)
-- {% link /osmand/troubleshooting/tts-does-not-function-properly %}
+- [TTS does not function properly](/docs/documentation/troubleshooting/navigation#tts-does-not-function-properly)
 
 ### TTS does not function properly
 
