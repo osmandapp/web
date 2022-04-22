@@ -166,3 +166,8 @@ ul.no-bullets {
 .emoji {
   padding-right: 12px;
 }
+
+.inlist {
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+}

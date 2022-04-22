@@ -2,7 +2,7 @@
 slug: osmand-android-4-2-released
 title: OsmAnd 4.2 (Android)
 authors: dmytro
-tags: [release, android]
+tags: [release, android, widgets, UTM, SwissGrid, OSM-Carto]
 ---
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
@@ -59,8 +59,14 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 ### New parameters
 
 * Add option to display or hide turns arrow in the Route line settings
+<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+
 * The switch for GP services
+<img class="inlist" src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
+
 * Pedestrian navigation: add "Use elevation data" parameters
+<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+
 
 ## Quick action
 
@@ -80,11 +86,17 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 
 ## OpenStreetMap Editing
 
-* Combine all all OpenStreetMap-related items in Configure Map into one group
-* [Feature Request] Split Detail > OSM Mapper assistant into 3 options
-* Incorrect link to the osm object 
-* OSM Edit difference in tag autocomplete between Android and iOS
-* OSM Editing plugin doesn't show 'wikipedia' as tag
+* All OpenStreetMap-related items in Configure Map was combined into one group.  "OSM Mapper assistant" option was spited into separate options: <Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>.
+
+<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="Track context menu: waypoints tab"/>
+
+
+* Fixed tag autocomplete in "Modify POI" mode
+
+<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+
+* Fixed incorrect link to the OpenStreetMap object in context menu. 
+
 
 ## Fixed
 
