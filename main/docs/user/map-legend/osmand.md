@@ -53,8 +53,29 @@ import TabItem from '@theme/TabItem';
 ## Waterways
 <img src={require('@site/static/img/map-legend/osmand-waterways.png').default} alt="OsmAnd Map style" />
 
-## Buildings transportation
-<img src={require('@site/static/img/map-legend/osmand-buildings-transportation.png').default} alt="OsmAnd Map style" />
+## Buildings, transportation
+
+<LegendItem itemsMap={{
+        'Regular Building' : 'buildigns/building_RegularColor',
+        'Industrianl, garagaes etc.' : 'buildigns/building_IndustrialColor',
+        'Residential' : 'buildigns/building_ResidentialColor',
+        'Hospital, civic, educational' : 'buildigns/building_HospitalColor',
+        'Commercial, retail' : 'buildigns/building_CommercialColor',
+        'Place of worship, historic tower' : 'buildigns/building_churchColor',
+        'Abandoned, damaged, collapsed' : 'buildigns/building_AbandonedColor',
+        'Construction' : 'buildigns/building_ConstructionColor',
+        'Proposed' : 'buildigns/building_ProposedColor',
+        'Military: barraks' : 'buildigns/building_MilitaryColor',
+        'Bunker' : 'buildigns/building_bunker',
+        'Railway station' : 'buildigns/building_railway_station',
+        'Aerialway station' : 'buildigns/building_aerialway_station',
+        'Public transport platform' : 'buildigns/building_public_transport_platform',
+        'Aerodrome' : 'buildigns/building_aerodromeColor',
+        'Aeroway terminal' : 'buildigns/building_aerowayTerminalColor',
+        'Apron' : 'buildigns/building_apronColor',
+        'Helipad' : 'buildigns/building_aeroway_helipad',
+        }}>
+</LegendItem>
 
 ## Sport, leisure
 <img src={require('@site/static/img/map-legend/osmand-sport-leisure.png').default} alt="OsmAnd Map style" />
