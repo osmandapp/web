@@ -4,14 +4,14 @@ sidebar_position: 1
 
 # Legal
 
-### [License](./license/)
+### [License](./license)
 
 OsmAnd License.
 
-### [Privacy Policy](./privacy-policy/)
+### [Privacy Policy](./privacy-policy)
 
 OsmAnd Privacy Policy.
 
-### [Terms of Use](./terms-of-use/)
+### [Terms of Use](./terms-of-use)
 
 OsmAnd Terms of Use.
