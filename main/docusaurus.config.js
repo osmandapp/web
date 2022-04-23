@@ -26,7 +26,7 @@ const config = {
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         blog: {
-          showReadingTime: fue,
+          showReadingTime: true,
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
