@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
-
+  trailingSlash: false,
   presets: [
     [
       'classic',
@@ -26,7 +26,7 @@ const config = {
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: fue,
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
