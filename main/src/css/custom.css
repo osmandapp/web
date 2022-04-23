@@ -114,7 +114,7 @@ table.blogimage {
 
 table.blogimage tr {
   border-style: none;
-  display: table-cell;
+  /* display: table-cell; */
 }
 table.blogimage td {
   border-style: none;

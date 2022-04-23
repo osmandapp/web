@@ -48,7 +48,16 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 
 ### Coordinates
 
-* Added support for SwissGrid CH1903 / CH1903+
+* Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks for that to our contributor [koenigle](https://github.com/koenigle).  
+Coordinate format for profile can be changed in <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./coordinates-format_swiss-grid.png').default} alt="Transport routes"/></td>
+    <td><img src={require('./context-menu_coordinate_swiss-grid.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
 * Display UTM Zone coordinates as 31T instead of 31N
 
 
@@ -59,12 +68,15 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 ### New parameters
 
 * Add option to display or hide turns arrow in the Route line settings
+
 <img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
 
 * The switch for GP services
+
 <img class="inlist" src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
 * Pedestrian navigation: add "Use elevation data" parameters
+
 <img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
 
 
@@ -76,7 +88,23 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 
 ## Maps
 
-* OSM-like rendering style
+* OSM-like rendering style. You can get Mapnik from our site []
+
+<table class="blogimage">
+    <tr>
+        <th>Mapnik</th>
+        <th>OSM-Carto</th>
+    </tr>
+    <tr>
+        <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z14.png').default} alt="Fitness trails"/></td>
+    </tr>
+    <tr>
+        <td><img src={require('./map_mapnik_z17.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
 
 
 ## New POI
@@ -102,6 +130,9 @@ Overview tab, show size, date, folder. Show country/region/address for track and
 
 * Fixed: automatica update of online tile maps
 * Hebrew wikipedia - no images wikipedia
+
+<img class="inlist" src={require('./wiki_krakow_hebrew.png').default} alt="Wikipedia article on Hebrew"/>
+
 
 _________________________________________________
 
