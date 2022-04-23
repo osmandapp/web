@@ -28,15 +28,15 @@ Postcode – for finding your location by a zipcode.
 
 Coordinate search – offers different coordinate formats.
 
-### [Search Address](./search-address/)
+### [Search Address](./search-address.md)
 The search address helps you to find your needed address from OpenStreetMap data.
 
-### [Search POI](./search-poi/)
+### [Search POI](./search-poi.md)
 
-### [Search History](./search-history/)
+### [Search History](./search-history.md)
 
 Search History
 
-### [Custom POI Search](./custom-poi-search/)
+### [Custom POI Search](./custom-poi-search.md)
 
 Configure custom poi search

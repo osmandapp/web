@@ -6,15 +6,15 @@ sidebar_position: 9
 
 OsmAnd app is available for Android and iOS systems. There is a great variety of features that OsmAnd offers. Most of them are available in a free version of the application. The paid OsmAnd services provide extended functionality.
 
-### [Android purchases](./android/)
+### [Android purchases](./android.md)
 
 Detailed information about purchases on Android: markets to install, subscriptions vs in app, prices, paid features.
 
-### [iOS purchases](./ios/)
+### [iOS purchases](./ios.md)
 
 Detailed information about purchases on iOS: subscriptions vs in app, prices, paid features.
 
-### [Giveaway](./giveaway/)
+### [Giveaway](./giveaway.md)
 
 You can get OsmAnd for free by one of our regular giveaways. Read more how to register and participate.
 

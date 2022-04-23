@@ -17,14 +17,14 @@ OsmAnd allows you to create your own routes and to use other user routes for tri
 OsmAnd allows you to build various routes as tracks, add a route to existing tracks, snap a track to roads.
 Using offline Travel guides is an important source of information while traveling.
 
-### [Plan a route](./create-route/)
+### [Plan a route](./create-route.md)
 
 Plan future routes and trips
 
-### [Travel Guides](./travel-guides/)
+### [Travel Guides](./travel-guides.md)
 
 Travel Guides (Android): enjoy offline guides for basically any destination.
 
-### [Coordinate input](./coordinate-input/)
+### [Coordinate input](./coordinate-input.md)
 
 A simple and fast tool for creating points by specifying geographic coordinates.

@@ -14,23 +14,23 @@ import Translate from '@site/src/components/Translate.js';
 
 Solutions and hints for frequently encountered issues.
 
-### [Setup](./setup)
+### [Setup](./setup.md)
 
 Most typical issues encountered during application setup
 
-### [Maps & Data](./maps-data)
+### [Maps & Data](./maps-data.md)
 
 Issues related to maps, search and other data.
 
-### [Navigation](./navigation)
+### [Navigation](./navigation.md)
 
 Most typical issues encountered in navigation mode.
 
-### [Track recording](./track-recording-issues)
+### [Track recording](./track-recording-issues.md)
 
 Common issues with track recording: interruptions while recording the track, wrong recorded data, etc.
 
-### [General](./general)
+### [General](./general.md)
 
 General issues related to various OsmAnd's features.
 
