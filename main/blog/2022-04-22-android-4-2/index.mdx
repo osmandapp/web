@@ -20,6 +20,9 @@ Copy this file into created folder and rename file into 'index.md'.
 
 ## Widgtes
 Changes in Widgtes
+* Pages
+* Widgets duplicates
+* Left/Right side same widgets
 
 ## Default appearance for favorite groups
 
@@ -36,7 +39,16 @@ Changes in Widgtes
 ## Tracks
 
 ### Context menu
-Overview tab, show size, date, folder. Show country/region/address for track and track waypoints.
+Track context menu now shows country or region for the track and track waypoints. Overview tab now has an "Info" card with details about track location and size.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./ctx-menu_track_location.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./ctx-menu_track_overview_info.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
+
 
 ### Import
 * Split multitrack file into separate tracks during import and-gpx-track
@@ -65,11 +77,19 @@ Coordinate format for profile can be changed in <Translate android="true" ids="s
 * Analyze on map: show data from two axes and-ui
 * Align graph lines
 
+<img class="inlist" src={require('./analyze-on-map_altitude-slope_distance.png').default} alt="Analyze on map: Altitude/slope–Distance"/>
+
+
 ### New parameters
 
 * Add option to display or hide turns arrow in the Route line settings
 
-<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./route-line_turn-arrows_visible.png').default} alt="Transport routes"/></td>
+    <td><img src={require('./route-line_turn-arrows_hidden.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
 
 * The switch for GP services
 
