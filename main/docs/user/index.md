@@ -30,14 +30,14 @@ OsmAnd allows to store and manage different map data like maps, points, tracks; 
 
 OsmAnd allows you to create your own routes and to use other user routes for trips.
 
-### [Plugins](./plugins/)
+### [Plugins](./plugins/index.md)
 
 Plugins activate advanced settings and additional functionality for OsmAnd like trip recording, showing terrain data on the map, street views by Mapillary, offline Wikipedia articles on the map and etc.
 
-### [Purchases](./purchases/)
+### [Purchases](./purchases/index.md)
 
 OsmAnd app is available for Android and iOS systems. There is a great variety of features that OsmAnd offers. Most of them are available in a free version of the application. The paid OsmAnd services provide extended functionality.
 
-### [Troubleshooting](./troubleshooting/)
+### [Troubleshooting](./troubleshooting/index.m)
 
 Solutions and hints for frequently encountered issues.
