@@ -47,19 +47,19 @@ Make contributions to OpenStreetMap.
 
 Mapillary
 
-### [OpenPlaceReviews](./openplacereviews/)
+### [OpenPlaceReviews](./openplacereviews.md)
 
 OpenPlaceReviews
 
-### [OsmAnd Tracker](./osmand-tracker/)
+### [OsmAnd Tracker](./osmand-tracker.md)
 
 OsmAnd Tracker
 
-### [OsmAnd development](./development/)
+### [OsmAnd development](./development.md)
 
 OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.
 
-### [Accessibility](./accessibility/)
+### [Accessibility](./accessibility.md)
 
 Accessibility plugin makes the device's accessibility features directly available in OsmAnd.
 

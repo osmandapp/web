@@ -22,22 +22,22 @@ Short information about tracks and how to use them
 
 Markers interface is a convenient tool that helps you save points on the map for your short-term needs.
 
-### [Maps](./maps/)
+### [Maps](./maps.md)
 
 Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
 
-### [Profiles (Settings)](./profiles/)
+### [Profiles (Settings)](./profiles.md)
 
 Each profile is available for full customization. In fact, each profile can become a separate application for the needs of the user.
 
-### [Global settings](./global-settings/)
+### [Global settings](./global-settings.md)
 
 Common settings to all application profiles.
 
-### [Import / Export](./import-export/)
+### [Import / Export](./import-export.md)
 
 Import / Export
 
-### [Storage](./storage/)
+### [Storage](./storage.md)
 
 How to configure, access and change data storage for maps, tracks and other personal data
