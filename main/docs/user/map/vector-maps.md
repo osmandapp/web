@@ -64,7 +64,7 @@ LightRS style: <Translate android="true" ids="light_rs_render_descr"/>
 
 <Translate android="true" ids="ski_map_render_descr"/>
 
-Winter and ski style is designed to help you navigate winter sports locations: you'll be able to see ski pistes and other details such as the complexity of skiing tracks and ski lift markers. Key features: renders pistes, aerial ways, and other ski features in a convenient way. Less distracting secondary map objects. Read more about [Ski maps](../plugins/ski-maps).
+Winter and ski style is designed to help you navigate winter sports locations: you'll be able to see ski pistes and other details such as the complexity of skiing tracks and ski lift markers. Key features: renders pistes, aerial ways, and other ski features in a convenient way. Less distracting secondary map objects. Read more about [Ski maps](../plugins/ski-maps.md).
 
 ![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
 
@@ -101,7 +101,7 @@ For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads a
 ## Map Legend
 
 Map legend is a visual explanation of the symbols used on the map. It typically includes a sample of each symbol (point, line, or area), and a short description of what the symbol means. For example, a short segment of a blue sinuous line may be labeled 'rivers'.
-Map legend of OsmAnd maps you can find [here](/docs/user/map-legend/).
+Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
 
 ## Map Fonts (Android)
 
@@ -117,9 +117,9 @@ Download map fonts for simplified / traditional Chinese, Japanese, Korean maps:
 
 ## Contour Lines
 
-Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases).
+Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines#contour-lines-settings).
+Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-settings).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,index_srtm_ele"/>
 
@@ -132,7 +132,7 @@ Contour lines are available for all map styles and modes and could be configured
 ![Contour lines map style](@site/static/img/map/contour_lines.png)
 
 
-More information about [Contour lines](../plugins/contour-lines). 
+More information about [Contour lines](../plugins/contour-lines.md). 
 
 ## Configure Map Style
 
@@ -175,17 +175,17 @@ In <Translate android="true" ids="rendering_category_details"/> menu you can sho
 |------------|
 |**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>: Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
 |![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>: Showing type of surface of roads. Color of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](/docs/user/map-legend/).|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>: Showing type of surface of roads. Color of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](../map-legend/index.md).|
 |![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>: Showing smoothness (grade) of the road. What smoothness is of your roads: good, bad or maybe horrible and etc: good, bad or maybe horrible and etc. Look at [Map legend](/docs/user/map-legend/) to find your road smoothness.|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>: Showing smoothness (grade) of the road. What smoothness is of your roads: good, bad or maybe horrible and etc: good, bad or maybe horrible and etc. Look at [Map legend](../map-legend/index.md) to find your road smoothness.|
 |![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>:  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](/docs/user/map-legend/) to find your road access. |
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>:  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](../map-legend/index.md) to find your road access. |
 |![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)|
 |**<Translate ios="true" ids="rendering_attr_showLez_name"/>: Showing green board and labels "LEZ" for [Low Emission Zones](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) in cities. A [Low-Emission Zone (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) is a geographically defined area which seeks to restrict or deter access by certain polluting vehicles with the aim of improving the air quality. It will help you not receive penalties in the green city center.|
 |![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>: Coloring buildings and places have special colors for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](/docs/user/map-legend/) to find your color for the building. |
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>: Coloring buildings and places have special colors for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](../map-legend/index.md) to find your color for the building. |
 |![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>: Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](/docs/user/map-legend/).|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>: Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](../map-legend/index.md).|
 |![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
 |**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>:Special setting for mappers. Showed refs, remarks, comments on the map from other mappers. |
 |![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
@@ -211,11 +211,11 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 |Parameter and Description|   
 |------------|
 |**_<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>_**|
-|<Translate android="true" ids="layer_route"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](/docs/user/map-legend/).|
+|<Translate android="true" ids="layer_route"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](../map-legend/index.md).|
 |![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)|
 |<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>.|
 |![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**: Showing colored MTB trails. Look at [Map legend](/docs/user/map-legend/).|
+|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**: Showing colored MTB trails. Look at [Map legend](../map-legend/index.md).|
 |![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)|
 |**_<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>_**|
 |<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>: [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
@@ -294,7 +294,7 @@ Special settings for roads. When we change colors according to road Atlas or add
 
 |Parameter and Description|   
 |------------|
-|**<Translate android="true" ids="rendering_value_default_name"/>**: Default style for highways. Look at [Map legend](/docs/user/map-legend/).|
+|**<Translate android="true" ids="rendering_value_default_name"/>**: Default style for highways. Look at [Map legend](../map-legend/index.md).|
 |![Map road style default](@site/static/img/map/map-road-style-default.png)|
 |**<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**: Style of German road atlas.|
 |![Map road style german](@site/static/img/map/map-road-style-german.png)|
@@ -363,9 +363,9 @@ This setting allows using of any language for names on the map. If names don't h
 |![Map language russian](@site/static/img/map/map-language-russian.png)|
 
 ## Custom Map style (own map style)
-If you have your own or 3rd party custom map style created according to [Specification](/docs/technical/osmand-file-formats/osmand-rendering-style), you can install it on a device in the following ways.
+If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.
 - Copy *.render.xml file on devices & Open with OsmAnd. 
-- Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
-- If you have access directly to the External Storage of OsmAnd (Android), you can simply copy it to the **rendering-styles** folder. Read more about it in [Storage specification](../personal/storage).
+- Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export.md). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
+- If you have access directly to the External Storage of OsmAnd (Android), you can simply copy it to the **rendering-styles** folder. Read more about it in [Storage specification](../personal/storage.md).
 
 After that, you could select your own map style in the menu.
