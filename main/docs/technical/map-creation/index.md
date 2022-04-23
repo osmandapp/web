@@ -4,6 +4,6 @@ sidebar_position: 1
 
 # Map Creation
 
-{% link_with_intro /create-offline-maps-yourself %}
-{% link_with_intro /creating-a-country-polygon %}
-{% link_with_intro /how-to-inspect-an-obf %}
+* [How to inspect an obf](./how-to-inspect-an-obf.md)
+* [Creating offline maps yourself](./create-offline-maps-yourself.md) - With OsmAndMapCreator there are many ways how to create and customize Raster & Vector maps for your needs.
+* [Creating a country polygon](./creating-a-country-polygon.md)

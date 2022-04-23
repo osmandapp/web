@@ -6,27 +6,27 @@ sidebar_position: 1
 
 OsmAnd provides global offline map browsing and offline navigation with many special tools for Android and iOS.
 
-### [MAP](./map/)
+### [MAP](./map/index.md)
 
 The map is a core element of OsmAnd. This section explains how to interact with map, how to configure additional POI layers, how to customize map for trekking, cycling or navigating offroad, how to add terrain information, how to enable street level imagery etc.
 
-### [Map Widgets](./widgets/)
+### [Map Widgets](./widgets/index.md)
 
 Widgets are User Interface elements that are displayed over the map screen & not attached to the map location. They provide additional information about the current route, speed, altitude, recorded track, etc. & also allow to quickly interact with the application.
 
-### [Navigation](./plugins/)
+### [Navigation](./plugins/index.md)
 
 The navigation functionality guides you to your destinations, by displaying routes, offering turn-by-turn instructions, and optional voice guidance.
 
-### [Search](./search/)
+### [Search](./search/index.md)
 
 The tool provides the searching features for any use-cases: address search, POi search, custom search, history search, coordinate search.
 
-### [My data](./personal/)
+### [My data](./personal/index.md)
 
 OsmAnd allows to store and manage different map data like maps, points, tracks; personal data like settings of the application profile.
 
-### [Plan a route](./plan-route/)
+### [Plan a route](./plan-route/index.md)
 
 OsmAnd allows you to create your own routes and to use other user routes for trips.
 
