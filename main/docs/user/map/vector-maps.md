@@ -101,7 +101,7 @@ For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads a
 ## Map Legend
 
 Map legend is a visual explanation of the symbols used on the map. It typically includes a sample of each symbol (point, line, or area), and a short description of what the symbol means. For example, a short segment of a blue sinuous line may be labeled 'rivers'.
-Map legend of OsmAnd maps you can find [here](https://osmand.net/help-online/map-legend/).
+Map legend of OsmAnd maps you can find [here](/docs/user/map-legend/).
 
 ## Map Fonts (Android)
 
@@ -175,17 +175,17 @@ In <Translate android="true" ids="rendering_category_details"/> menu you can sho
 |------------|
 |**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>: Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
 |![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>: Showing type of surface of roads. Color of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](https://osmand.net/help-online/map-legend/).|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>: Showing type of surface of roads. Color of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](/docs/user/map-legend/).|
 |![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>: Showing smoothness (grade) of the road. What smoothness is of your roads: good, bad or maybe horrible and etc: good, bad or maybe horrible and etc. Look at [Map legend](https://osmand.net/help-online/map-legend/) to find your road smoothness.|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>: Showing smoothness (grade) of the road. What smoothness is of your roads: good, bad or maybe horrible and etc: good, bad or maybe horrible and etc. Look at [Map legend](/docs/user/map-legend/) to find your road smoothness.|
 |![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>:  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](https://osmand.net/help-online/map-legend/) to find your road access. |
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>:  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](/docs/user/map-legend/) to find your road access. |
 |![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)|
 |**<Translate ios="true" ids="rendering_attr_showLez_name"/>: Showing green board and labels "LEZ" for [Low Emission Zones](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) in cities. A [Low-Emission Zone (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) is a geographically defined area which seeks to restrict or deter access by certain polluting vehicles with the aim of improving the air quality. It will help you not receive penalties in the green city center.|
 |![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>: Coloring buildings and places have special colors for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](https://osmand.net/help-online/map-legend/) to find your color for the building. |
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>: Coloring buildings and places have special colors for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](/docs/user/map-legend/) to find your color for the building. |
 |![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>: Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](https://osmand.net/help-online/map-legend/).|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>: Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](/docs/user/map-legend/).|
 |![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
 |**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>:Special setting for mappers. Showed refs, remarks, comments on the map from other mappers. |
 |![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
@@ -211,11 +211,11 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 |Parameter and Description|   
 |------------|
 |**_<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>_**|
-|<Translate android="true" ids="layer_route"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](https://osmand.net/help-online/map-legend/).|
+|<Translate android="true" ids="layer_route"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](/docs/user/map-legend/).|
 |![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)|
 |<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>.|
 |![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**: Showing colored MTB trails. Look at [Map legend](https://osmand.net/help-online/map-legend/).|
+|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**: Showing colored MTB trails. Look at [Map legend](/docs/user/map-legend/).|
 |![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)|
 |**_<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>_**|
 |<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>: [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
@@ -294,7 +294,7 @@ Special settings for roads. When we change colors according to road Atlas or add
 
 |Parameter and Description|   
 |------------|
-|**<Translate android="true" ids="rendering_value_default_name"/>**: Default style for highways. Look at [Map legend](https://osmand.net/help-online/map-legend/).|
+|**<Translate android="true" ids="rendering_value_default_name"/>**: Default style for highways. Look at [Map legend](/docs/user/map-legend/).|
 |![Map road style default](@site/static/img/map/map-road-style-default.png)|
 |**<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**: Style of German road atlas.|
 |![Map road style german](@site/static/img/map/map-road-style-german.png)|
