@@ -25,7 +25,7 @@ import Translate from '@site/src/components/Translate.js';
 
 
 **Notes:** 
-- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](../widgets)
+- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](../widgets.md)
 - Configure map settings are [profile dependent](../personal/profiles)
 
 ## Map Layers
