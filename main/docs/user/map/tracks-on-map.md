@@ -230,7 +230,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 [Tracks on the map](../map/tracks-on-map.md)
 
-[Plan route](../plan-route.md)
+[Plan route](../plan-route/index.md)
 
 [Trip Recording](../plugins/trip-recording.md)
 

@@ -196,7 +196,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 ![quick actions for track iOS](@site/static/img/personal/tracks/quick_actions_track_ios.png)
 
 - "Show / hide"  - allows to show or not a track on the map.
-- "Appearance" - opens [Appearance](../map/tracks-on-map#track-appearance.md) menu of the track.
+- "Appearance" - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
 - "Export" - allows to export a track.
 - "Directions" - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
 
