@@ -50,7 +50,7 @@ Comparison to default vector maps.
 
 ## How to use Raster maps 
 ### Enable plugin
-In order to use raster maps  in Android OsmAnd you need to enable [Online maps plugin](../plugins):
+In order to use raster maps  in Android OsmAnd you need to enable [Online maps plugin](../plugins/index.md):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>
 
@@ -96,7 +96,7 @@ Hillshade / Slope are raster offline maps that are displayed as a special map la
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-To download and install Hillshade / Slope Maps, you need to [purchase](../purchases) / enable [Contour lines plugin](../plugins/contour-lines). 
+To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md). 
 
 Configure display options:
 
@@ -111,12 +111,12 @@ Configure display options:
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
 ## Prepare / copy raster maps to device
-There are multiple ways how to add new raster map, copy it from another device, prepare it on PC and predownloaded tiles to be used offline. For example, you can create your own map package on PC by using special software as [MOBAC, OsmAndMapCreator and etc](/docs/technical/map-creation). Typically raster maps are distributed as files with *.sqlitedb* extension. 
+There are multiple ways how to add new raster map, copy it from another device, prepare it on PC and predownloaded tiles to be used offline. For example, you can create your own map package on PC by using special software as [MOBAC, OsmAndMapCreator and etc](../../technical/map-creation/index.md). Typically raster maps are distributed as files with *.sqlitedb* extension. 
 
 Here are the main methods how to add new raster map source which is not defined in OsmAnd yet:
-- Copy a raster map to a **tiles** subfolder of [base osmand storage](../personal/storage) (Android).
+- Copy a raster map to a **tiles** subfolder of [base osmand storage](../personal/storage.md) (Android).
 - Open ready to use *.sqlitedb* file with OsmAnd.
-- Import package with prepared online maps from another OsmAnd application as a special **osf package** via [Import / export functionality](../personal/import-export).
+- Import package with prepared online maps from another OsmAnd application as a special **osf package** via [Import / export functionality](../personal/import-export.md).
 - Create new online map source on a mobile device itself.
 - Prepare a magic URL with online map source parameters and open it with OsmAnd.
 
@@ -166,8 +166,8 @@ You find added Online map in the list of [Main / Underlay / Overlay layer](#sele
 
 ## Manage raster maps
 Raster maps can take a significant amount of disk space, so you might need to regularly check it. For large datasets, it's recommended to use 'SQLite raster source' cause it will store all tiles in 1 large file (sqlite database). 
-- [**SQ Lite format**](/docs/technical/osmand-file-formats/osmand-sqlite)
-- [**Metainfo format**](/docs/technical/osmand-file-formats/osmand-metainfo)
+- [**SQ Lite format**](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [**Metainfo format**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 In order to change tile format you can choose <Translate android="true" ids="storage_format"/> in the edit menu of online maps:
 
@@ -222,7 +222,7 @@ At this screen you can select the needed area, choose zoom levels. When you set 
 ![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
 
 ### Change raster map parameters
-Raster maps can be used as is if tiles are already packaged inside the maps. In case raster maps are provided online, there is always a base url to be configured. There are some other basic parameters that can be modified for raster maps - [see here](#add-new-online-raster-map-source). More sophisticated parameters are encoded in the internals of [SQ Lite format](/docs/technical/osmand-file-formats/osmand-sqlite).
+Raster maps can be used as is if tiles are already packaged inside the maps. In case raster maps are provided online, there is always a base url to be configured. There are some other basic parameters that can be modified for raster maps - [see here](#add-new-online-raster-map-source). More sophisticated parameters are encoded in the internals of [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 You can change some raster map parameters inside OsmAnd itself.
 

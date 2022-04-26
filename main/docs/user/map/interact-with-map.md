@@ -58,7 +58,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 
 ## Map magnifier
-Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps#map-magnifier).
+Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
 ## Map orientation & Compass
 
@@ -79,9 +79,9 @@ Compass widget indicates how map is oriented on the device screen and top arrow 
 ### Map orientation modes
 - **<Translate android="true" ids="rotate_map_none_opt"/>** - map is not being rotated by any external movements, and it could be rotated only by *2 pointer gesture* (2 double tap & rotate).
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - map is being rotated by bearing, i.e. direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
-- **<Translate android="true" ids="rotate_map_compass_opt"/>** - map is being synchronized with the device compass orientation. So, [Compass widget](../widgets/map-buttons/#compass) will point to actual Earth North if device is held flat. In case compass sensor is not present on device, map orientation won't change.
+- **<Translate android="true" ids="rotate_map_compass_opt"/>** - map is being synchronized with the device compass orientation. So, [Compass widget](../widgets/map-buttons.md/#compass) will point to actual Earth North if device is held flat. In case compass sensor is not present on device, map orientation won't change.
 
-Map orientation could be changed in [Profile settings](../personal/profiles#appearance):
+Map orientation could be changed in [Profile settings](../personal/profiles.md#appearance):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,rotate_map_to_bearing"/>
 
@@ -123,18 +123,18 @@ Note: the keyboard works with the setting disabled too.
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
-|**C**| Keyboard   |"[My location](../map/interact-with-map#my-location--zoom)" |
-|**D**| Keyboard   |"[Map orientation](../map/interact-with-map#map-orientation-modes)"  |
+|**C**| Keyboard   |"[My location](../map/interact-with-map.md#my-location--zoom)" |
+|**D**| Keyboard   |"[Map orientation](../map/interact-with-map.md#map-orientation-modes)"  |
 |**&#8593; **| Keyboard   | Move up  |
 |**&#8595; **| Keyboard   | Move down  |
 |**&#8592; **| Keyboard   | Move left  |
 |**&#8594; **| Keyboard   | Move right  |
-|**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map#my-location--zoom) |
-|**&#8722; **| Keyboard  |[Zoom out](../map/interact-with-map#my-location--zoom) |
-|**Menu** (legacy Android) | Keyboard  |[Drawer](../start-with/main-menu#main-menu-drawer) |
-|**Joystick click** (legacy Android) | Keyboard  | "[My location](../map/interact-with-map#my-location--zoom)" |
-|**Media button**| Keyboard  |[AV notes](../plugins/audio-video-notes#add-note-on-the-map) |
-|**&#8592; **| Parrot  |[Zoom out](../map/interact-with-map#my-location--zoom) |
-|**&#8594; **| Parrot  |[Zoom in](../map/interact-with-map#my-location--zoom) |
-|**&#8595; **| Wunderlinq  |[Zoom out](../map/interact-with-map#my-location--zoom) |
-|**&#8593; **| Wunderlinq  |[Zoom in](../map/interact-with-map#my-location--zoom) |
+|**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722; **| Keyboard  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**Menu** (legacy Android) | Keyboard  |[Drawer](../start-with/main-menu.md#main-menu-drawer) |
+|**Joystick click** (legacy Android) | Keyboard  | "[My location](../map/interact-with-map.md#my-location--zoom)" |
+|**Media button**| Keyboard  |[AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
+|**&#8592; **| Parrot  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8594; **| Parrot  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8595; **| Wunderlinq  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8593; **| Wunderlinq  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |

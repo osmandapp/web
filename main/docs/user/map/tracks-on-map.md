@@ -22,14 +22,14 @@ OsmAnd can display several different type of routes:
     - Track as a line - file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude and other attributes. These tracks are displayed on the map as solid lines.
     - Track as a route -  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines. 
     - Waypoints - file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You could click on them to get additional information.
-2. [Navigation Route](#navigation-route) - a route line displayed during [navigation](../navigation/route-navigation). By default this is a solid transparent blue line, though default appearance depends on [vector map style](../map/vector-maps#default-map-styles), [day & night mode](../map/vector-maps#map-mode). It's also possible to fully customize it on Android.
-3. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
+2. [Navigation Route](#navigation-route) - a route line displayed during [navigation](../navigation/route-navigation.md). By default this is a solid transparent blue line, though default appearance depends on [vector map style](../map/vector-maps.md#default-map-styles), [day & night mode](../map/vector-maps.md#map-mode). It's also possible to fully customize it on Android.
+3. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps.md#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
 
-Read more about [GPX Tracks](../personal/tracks#track).
+Read more about [GPX Tracks](../personal/tracks.md#track).
 
 ## Tracks 
 
-There are two options to display [Tracks](../personal/tracks) on the map: via [<Translate android="true" ids="configure_map"/>](../map/tracks-on-map#display-via-configure-map-menu) menu or [<Translate android="true" ids="shared_string_my_places"/>](../map/tracks-on-map#display-via-my-places-menu) menu
+There are two options to display [Tracks](../personal/tracks.md) on the map: via [<Translate android="true" ids="configure_map"/>](../map/tracks-on-map.md#display-via-configure-map-menu) menu or [<Translate android="true" ids="shared_string_my_places"/>](../map/tracks-on-map.md#display-via-my-places-menu) menu
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
@@ -65,11 +65,11 @@ There are two options to display [Tracks](../personal/tracks) on the map: via [<
 
 ### Display via My Places menu
 
-&nbsp;<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/> or ["Map" button](../personal/tracks#my-places-android) for choosing multiple tracks.
+&nbsp;<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/> or ["Map" button](../personal/tracks.md#my-places-android) for choosing multiple tracks.
 
 <p> </p>
 
-&nbsp;<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](../personal/tracks#my-places-ios) for choosing multiple tracks.
+&nbsp;<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.
 
 <Tabs groupId="operating-systems">
 
@@ -97,7 +97,7 @@ There are two options to display [Tracks](../personal/tracks) on the map: via [<
 
 In OsmAnd you can change the color, the thickness of the track, display arrows and icons of the starting and ending points.
 
-To get to the track Appearance menu, you need to display track on the map, then in the [Track Context menu](https://docs.osmand.net/en/main@latest../map/track-context-menu#overview) in the <Translate android="true" ids="shared_string_overview"/> section, [shortcut](../map/map-context-menu#select-route-short-tap-for-android) is to click on the "palette" icon. 
+To get to the track Appearance menu, you need to display track on the map, then in the [Track Context menu](../map/track-context-menu#overview) in the <Translate android="true" ids="shared_string_overview"/> section, [shortcut](../map/map-context-menu.md#select-route-short-tap-for-android) is to click on the "palette" icon. 
 
  <Tabs groupId="operating-systems">
 
@@ -136,15 +136,15 @@ To get to the track Appearance menu, you need to display track on the map, then 
 
 ### Analyze Track on Map (Android)
 
-This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu#options) → <Translate android="true" ids="analyze_on_map"/>
+This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/track_analyze_on_map_android.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png) 
 
 - **Graph data**: Altitude / Slope / Speed (if data is available in the track).
 - **Graph dimension**: Distance / Time.
 - **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
-- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map#gestures). 
-- **Follow My location**: click button [My Location](../map/interact-with-map#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.
+- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
+- **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.
 
 
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
@@ -159,13 +159,13 @@ This option allows you to interactively review track information using graphs an
 
 ## Navigation Route
 
-Navigation route is a solid line prepared by [Route Preparation process](../navigation/route-navigation). It is displayed during Navigation or during Route preparation step.
+Navigation route is a solid line prepared by [Route Preparation process](../navigation/route-navigation.md). It is displayed during Navigation or during Route preparation step.
 
  ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)
 
 ### Route Appearance (Android)
 
-You can customize the route line's appearance for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps#map-mode).
+You can customize the route line's appearance for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps.md#map-mode).
 
 <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,customize_route_line"/>
 
@@ -177,7 +177,7 @@ You can customize the route line's appearance for any navigation profile differe
 
  
 
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a Track on top of the routes using [Plan Route](../plan-route/create-route) functionality.
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a Track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
 
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>
@@ -188,7 +188,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 <p> </p>
 
-**Read more** about Map Routes at [Vector map style](../map/vector-maps#routes).
+**Read more** about Map Routes at [Vector map style](../map/vector-maps.md#routes).
 
  <Tabs groupId="operating-systems">
 
@@ -220,19 +220,19 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 
 
-[Track Context menu](../map/track-context-menu)
+[Track Context menu](../map/track-context-menu.md)
 
-[Configure map](../map/configure-map-menu)
+[Configure map](../map/configure-map-menu.md)
 
-[Navigation by track](../navigation/gpx-navigation)
+[Navigation by track](../navigation/gpx-navigation.md)
 
-[GPX tracks](../personal/tracks)
+[GPX tracks](../personal/tracks.md)
 
-[Tracks on the map](../map/tracks-on-map)
+[Tracks on the map](../map/tracks-on-map.md)
 
-[Plan route](../plan-route)
+[Plan route](../plan-route.md)
 
-[Trip Recording](../plugins/trip-recording)
+[Trip Recording](../plugins/trip-recording.md)
 
-[Analyze on Map](../map/tracks-on-map)
+[Analyze on Map](../map/tracks-on-map.md)
 

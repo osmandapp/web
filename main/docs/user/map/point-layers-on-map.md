@@ -16,7 +16,7 @@ On map you could display points such as Favorites, POI, Markers, Wikipedia, Sear
 
 ## Favorites
 
-[Favorites](../personal/favorites) are special points marked by user and by default displayed as yellow star. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6.
+[Favorites](../personal/favorites.md) are special points marked by user and by default displayed as yellow star. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6.
 
 ![Favotires layer Android](@site/static/img/map/favorites_layer.png) ![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
  
@@ -48,7 +48,7 @@ Enable / disable POI overlay labels on the map:
 
 ## Points of interest (POI)
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu) that appears on a [short tap](../map/map-context-menu#select-an-object-short-tap) on the point.
+[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
@@ -62,7 +62,7 @@ Enable / disable points of interest of **selected** type on the map:
 
 ### POI Types
 
-You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/custom-poi-search) and select it to display POI on the map.
+You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/custom-poi-search.md) and select it to display POI on the map.
 
 ![Single POI Selection](@site/static/img/map/single_selection_android.png) ![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png)
 
@@ -70,7 +70,7 @@ You can select one or many from standard OsmAnd POI types or make your own [POI 
 
 ### Map style POI
 
-Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../map/vector-maps#details) and design could be different in some [map styles](../map/vector-maps#default-map-styles).
+Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).
 
 ![POI on map style](@site/static/img/map/poi_layer.png) ![POI on topo style](@site/static/img/map/poi_layer_topo_style.png)
 
@@ -84,11 +84,11 @@ Hide POIs from map style:
 
 <p> </p>
 
-[Read more](../map/vector-maps#hide).
+[Read more](../map/vector-maps.md#hide).
 
 ## Markers
 
-[Map markers](../personal/markers) are special points marked as flags on the map. You can customize their look & feel with **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>). 
+[Map markers](../personal/markers.md) are special points marked as flags on the map. You can customize their look & feel with **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>). 
 
 ![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)
 
@@ -102,7 +102,7 @@ Enable / disable markers on the map:
 
 <p> </p>
 
-[Read more](../widgets/markers#configure-marker-widgets-and-marker-appearance) about marker appearance.
+[Read more](../widgets/markers.md#configure-marker-widgets-and-marker-appearance) about marker appearance.
 
 ## Track points
 
@@ -110,7 +110,7 @@ Track points (waypoints) are points that are part of Track (GPX) files. These po
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)
 
-[Read more](../map/tracks-on-map) about tracks on the map.
+[Read more](../map/tracks-on-map.md) about tracks on the map.
 
 
 ## Search results (POI)
@@ -121,7 +121,7 @@ Search results could be displayed on the map as a special POI layer. During sear
 
 To switch off POIs, hit "X" on the top right corner.
 
-Read more about [search](../search).
+Read more about [search](../search/index.md).
 
 ## * Street-level imagery
 
@@ -139,15 +139,15 @@ Enable / disable Street-level imagery on the map:
 
 <p> </p>
 
-Requires [Mapillary plugin](../plugins/mapillary).
+Requires [Mapillary plugin](../plugins/mapillary.md).
 
 ## * Parking point
 
-[Parking point](../plugins/parking) is a point marked by user on the map for keeps information about the exact location of the car. Parking points could be marked as place that allowed for unlimited parking and limited parking.
+[Parking point](../plugins/parking.md) is a point marked by user on the map for keeps information about the exact location of the car. Parking points could be marked as place that allowed for unlimited parking and limited parking.
 
 ![Limited parking](@site/static/img/map/context_menu_limited_parking.png) ![Unlimited parking](@site/static/img/map/context_menu_unlimited_parking.png)
 
-Requires [Parking position plugin](../plugins/parking).
+Requires [Parking position plugin](../plugins/parking.md).
 
 ## * Wikipedia
 
@@ -165,7 +165,7 @@ Enable / disable wikipedia articles on the map and filter by language:
 
 <p> </p>
 
-[Read more](../plugins/wikipedia) how to download and use the Wikipedia feature in OsmAnd.
+[Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
 ## * Audio / Video points (Android)
 
@@ -179,7 +179,7 @@ Enable / disable recording points on the map:
 
 <p> </p>
 
-Requires [Audio / Video note plugin](../plugins/audio-video-notes).
+Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 ## * OSM edit points 
 
@@ -197,7 +197,7 @@ Enable / disable OSM edits on the map:
 
 <p> </p>
 
-Requires [OSM Editing plugin](../plugins/osm-editing).
+Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 ## * OSM notes 
 
@@ -215,7 +215,7 @@ Enable / disable OSM notes on the map:
 
 <p> </p>
 
-Requires [OSM Editing plugin](../plugins/osm-editing#how-to-report-a-mistake).
+Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
 
 ## Read more
-  [Configure map menu](../map/configure-map-menu).
+  [Configure map menu](../map/configure-map-menu.md).

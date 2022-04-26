@@ -34,7 +34,7 @@ Choose between 1 or more transport categories for displaying:
 - <Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>
 - <Translate android="true" ids="rendering_attr_subwayMode_name"/>
 
-[Read more](../map/vector-maps#transport) about how transport is displayed on the map.
+[Read more](../map/vector-maps.md#transport) about how transport is displayed on the map.
 
 ## Transport Routes (Context menu)
 
@@ -49,13 +49,13 @@ To open Transport menu, you can click on the the transport icon. It displays:
 
 ![Public transport Route menu details Android](@site/static/img/map/pt_routemenu_details_android.png) ![Public transport Route menu iOS](@site/static/img/map/pt_routemenu_details_ios.png)
 
-Public transport stop provides extra details comparing to standard OpenStreetMap object [menu](../map/map-context-menu#details):
+Public transport stop provides extra details comparing to standard OpenStreetMap object [menu](../map/map-context-menu.md#details):
 - Bench presence
 - Cover presence
 - Wheelchair accessibility
 - Operator name
 
-**Note**: you can filter stops by certain criteria. For example, expand & click on "Bench" / "Yes" and you can see the list of stops with benches. Also they could be [shown on the map](../map/point-layers-on-map#search-results-poi-on-the-map).
+**Note**: you can filter stops by certain criteria. For example, expand & click on "Bench" / "Yes" and you can see the list of stops with benches. Also they could be [shown on the map](../map/point-layers-on-map.md#search-results-poi-on-the-map).
 
 
 ### Routes 
@@ -83,6 +83,6 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 
 ## Read more
 
-- [Vector maps](../map/vector-maps) 
-- [Public transport navigation](../navigation/public-transport-navigation)
+- [Vector maps](../map/vector-maps.md) 
+- [Public transport navigation](../navigation/public-transport-navigation.md)
   
