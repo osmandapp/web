@@ -171,3 +171,7 @@ ul.no-bullets {
   padding-left: 2rem;
   padding-bottom: 2rem;
 }
+
+.blogPostTitle {
+  font-size: 2px;
+}

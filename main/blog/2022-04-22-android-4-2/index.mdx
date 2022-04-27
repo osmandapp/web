@@ -3,23 +3,27 @@ slug: osmand-android-4-2-released
 title: OsmAnd 4.2 (Android)
 authors: dmytro
 draft: true
+image: ./banner_4-2.png
 tags: [release, android, widgets, UTM, SwissGrid, OSM-Carto]
 ---
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Preview text.
-Create folder in /blog/ with date and short article title.
-Create folder in "/blog/" with date and short article title, example '2021-12-10-android-4-1'.
-Copy this file into created folder and rename file into 'index.md'.
+<img src={require('./banner_4-2.png').default} alt="Download online map"/>
+
+* Widgets redesign: new Look &  Feel, group by Pages, change order and combine as you  want.
+* Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
+* Favorite groups: set default appearance for new points in the group
+* Fixes: online tile-maps auto-update
 
 <!--truncate-->
 
-<Translate android="yes" id="configure_profile" />
-
 ## Widgtes
+
 Changes in Widgtes
 * Pages
 * Widgets duplicates
@@ -27,13 +31,27 @@ Changes in Widgtes
 
 ## Default appearance for favorite groups
 
+Favorite groups: set default appearance for new points in the group.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./favorites_add-new-category.png').default} alt="Download online map"/></td>
+        <td><img src={require('./my-places_favorites_group-menu.png').default} alt="Download online map"/></td>
+    </tr>
+</table> 
 
 ## Routes
+
 ### Hiking
+
+Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
 
 ### Other
 
-* New Fitness and running routes on the map
+* Added display of Fitness trails and running routes to the map. Can be enabled in <Translate android="yes" ids="configure_map,rendering_category_routes" />.
+
+<img class="inlist" src={require('./configure-map_routes.png').default} alt="Configure Map: Routes"/>
+
 * Add horse_scale=*
 * Fix piste:grooming option in skimap style #1073
 
@@ -92,13 +110,13 @@ Coordinate format for profile can be changed in <Translate android="true" ids="s
     </tr>
 </table> 
 
-* The switch for GP services
+* Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />.
 
 <img class="inlist" src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
-* Pedestrian navigation: add "Use elevation data" parameters
+* Walking navigation: three parameters were added to **<Translate android="true" id="routing_attr_height_obstacles_name" />** option to adjust preferred terrain on the route: flat, less hilly, and hilly. Previously it was available only for Bicycle navigation.
 
-<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+<img class="inlist" src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
 
 
 ## Quick action
@@ -109,27 +127,39 @@ Coordinate format for profile can be changed in <Translate android="true" ids="s
 
 ## Maps
 
-* OSM-like rendering style. You can get Mapnik from our site []
+"Mapnik" map style was replaced with the new "OSM-Carto" style. It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
+
+If you use "Mapnik" it will be available after the update but as a custom map style. After fresh or new installation you will need to manually import it to use. You can do it by downloading it from GitHub.
+
+<Tabs groupId="map-style">
+<TabItem value="mapnik" label="Mapnik">
 
 <table class="blogimage">
     <tr>
-        <th>Mapnik</th>
-        <th>OSM-Carto</th>
-    </tr>
-    <tr>
         <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
-        <td><img src={require('./map_osm-carto_z14.png').default} alt="Fitness trails"/></td>
+        <td><img src={require('./map_mapnik_z17.png').default} alt="Fitness trails"/></td>
     </tr>
+</table>
+
+</TabItem>
+
+<TabItem value="android" label="OSM-Carto">
+
+<table class="blogimage">
     <tr>
-        <td><img src={require('./map_mapnik_z17.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z14.png').default} alt="Transport routes"/></td>
         <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
     </tr>
-</table> 
+</table>
 
+</TabItem>
+</Tabs>
 
 
 ## New POI
-Will be availabe with maps from May 1.
+
+New POI and objects was added to offline maps, note they will be availabe with maps from May 1.
+
 * Added: Add carriage=*, Add natural=anthill , Add shop=wool, Add shop=motorcycle_parts , Add shop=rice, Add shop=water_sports , Add shop=printer_ink, Add shop=fuel , Add shop=hairdresser_supply ,, Add shop=tiles, Add shop=collector 
 * Add landuse=greenery, Add natural=blowhole
 * Add support "flow_rate" tag 
@@ -150,6 +180,13 @@ Will be availabe with maps from May 1.
 ## Online maps
 * Fixed: automatica update of online tile maps
 * Updated UI for dowloading online tile maps
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./download-online-map.png').default} alt="Download online map"/></td>
+        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map"/></td>
+    </tr>
+</table> 
 
 
 ## Fixed
