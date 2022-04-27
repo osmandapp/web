@@ -179,12 +179,12 @@ Not exist for iOS version
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
-- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers#appearance-on-the-map).
-- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers#list-android).
-- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks#coordinate-input-android)
-- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation).
+- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers.md#list-android).
+- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
+- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
 - &nbsp;<Translate android="true" ids="marker_save_as_track"/>  (Android) - save active markers like file GPX.
-- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers#history).
+- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers.md#history).
 
 
 <Tabs groupId="operating-systems">
@@ -199,12 +199,12 @@ Not exist for iOS version
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
-- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers#appearance-on-the-map).
-- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers#list-android).
-- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks#coordinate-input-android)
-- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation).
+- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers.md#list-android).
+- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
+- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
 - &nbsp;<Translate android="true" ids="marker_save_as_track"/>  (Android) - save active markers like file GPX.
-- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers#history).
+- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers.md#history).
 
 </TabItem>
 
@@ -218,27 +218,27 @@ Not exist for iOS version
 
 ## Add Marker on the map
 
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu#add--edit-marker).
+Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
 
 ### Actions in Map Context menu
 
-[Link to the article](../map/map-context-menu#add--edit-marker)
+[Link to the article](../map/map-context-menu.md#add--edit-marker)
 
 ## Appearance on the map
 
-[Link to description](../widgets/markers#configure-marker-widgets-and-marker-appearance)
+[Link to description](../widgets/markers.md#configure-marker-widgets-and-marker-appearance)
 
 ![Map markers Appearance Android](@site/static/img/personal/markers/map_markers_appearance_android.png) ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png)
 
 ## Map markers widgets
 
-[Link to description Top Bar](../widgets/markers#top-bar-widget-markers)
+[Link to description Top Bar](../widgets/markers.md#top-bar-widget-markers)
 
-[Link to description Widget panel](../widgets/markers#panel-widgets-markers)
+[Link to description Widget panel](../widgets/markers.md#panel-widgets-markers)
 
 ## Plan route for Markers (Android)
 
-[Link to description](../navigation/markers-navigation)
+[Link to description](../navigation/markers-navigation.md)
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>
 
@@ -258,13 +258,13 @@ Next 'Options' button (top corner):
 
 <Translate android="true" ids="shared_string_options"/>:
 
-- &nbsp;<Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation)).
+- &nbsp;<Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation/index.md)).
 - &nbsp;<Translate android="true" ids="make_round_trip"/> - <Translate android="true" ids="make_round_trip_descr"/> Round trip or not. 
 
 <Translate android="true" ids="sort_by"/> :
 
-- &nbsp;<Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers#list-android).
-- &nbsp;<Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers#list-android).
+- &nbsp;<Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers.md#list-android).
+- &nbsp;<Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers.md#list-android).
 
 Next, building a route.
 
@@ -278,6 +278,6 @@ Next, building a route.
 
 ## Add/Remove Markers from Favorites/Waypoints (Android)
 
-[Favorites to Map Markers link](../personal/favorites#add-to-map-markers-android)
+[Favorites to Map Markers link](../personal/favorites.md#add-to-map-markers-android)
 
-[Waypoints to Map Markers link](../personal/tracks#group-menu)
+[Waypoints to Map Markers link](../personal/tracks.md#group-menu)

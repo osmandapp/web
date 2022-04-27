@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
 
-OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps) and  [Raster maps](../map/raster-maps). All maps are stored in one place of the [Storage](../personal/storage) and it is accessible with external tools. 
+OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Storage](../personal/storage.md) and it is accessible with external tools. 
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>
 
@@ -50,16 +50,16 @@ OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps) and  [Raster
 There are several map types available to download and manage:
 - Standard - a fully packaged OsmAnd map based on [OpenStreetMap](https://www.openstreetmap.org/) source, they provide map, routing, address, POI, public transport information, . 
 - Roads-only (Android) - a smaller by size map comparing to Standard due to removed map details such as buildings & points on the map.
-- [Coutour lines](../map/vector-maps#contour-lines) - a map that contains the elevation contour lines.
-- [Hillshades](../map/raster-maps#hillshade--slope) - a raster map with hillshade information.
-- [Slopes](../map/raster-maps#hillshade--slope) - a raster map with slopes information. 
-- [Online and cached tile maps](../map/raster-maps) - a custom map source for online maps, could be installed as 3rd party map or as OsmAnd Tiles. 
-- [Wikipedia](../plugins/wikipedia) - a vector map that provides Geo located Articles as POIs from [Wikipedia](https://wikipedia.org/).
-- [Travel guides / Wikivoyage](../plan-route/travel-guides) - a vector map that has a collection of Articles (Text as HTML + GPX file) for example [Wikivoyage](https://www.wikivoyage.org/).
-- [Nautical maps](../plugins/nautical-charts) - a vector map that provide sea depth elevation as points or as lines.
-- [Voice packages](../navigation/voice-navigation) - a voice package that provides sounds and configuration how to guide you in the navigation mode.
-- [Map fonts (Android)](../map/vector-maps#map-fonts-android) - additional fonts files used to render text on the map.
-- [Altitude correction (Android)](../widgets/info-widgets#altitude) - a special map file that provides correction for geoid on Android devices (optional).
+- [Coutour lines](../map/vector-maps.md#contour-lines) - a map that contains the elevation contour lines.
+- [Hillshades](../map/raster-maps.md#hillshade--slope) - a raster map with hillshade information.
+- [Slopes](../map/raster-maps.md#hillshade--slope) - a raster map with slopes information. 
+- [Online and cached tile maps](../map/raster-maps.md) - a custom map source for online maps, could be installed as 3rd party map or as OsmAnd Tiles. 
+- [Wikipedia](../plugins/wikipedia.md) - a vector map that provides Geo located Articles as POIs from [Wikipedia](https://wikipedia.org/).
+- [Travel guides / Wikivoyage](../plan-route/travel-guides.md) - a vector map that has a collection of Articles (Text as HTML + GPX file) for example [Wikivoyage](https://www.wikivoyage.org/).
+- [Nautical maps](../plugins/nautical-charts.md) - a vector map that provide sea depth elevation as points or as lines.
+- [Voice packages](../navigation/voice-navigation.md) - a voice package that provides sounds and configuration how to guide you in the navigation mode.
+- [Map fonts (Android)](../map/vector-maps.md#map-fonts-android) - additional fonts files used to render text on the map.
+- [Altitude correction (Android)](../widgets/info-widgets.md#altitude) - a special map file that provides correction for geoid on Android devices (optional).
 - Other maps - maps that couldn't be attached to current maps hierarchy, typically represents deprecated and not supported maps or maps that will be available next release.
 
 **Note**: For regions like Germany consisted of many maps, you can use bulk map downloads, it is depicted as double download arrows next to the map type.
@@ -203,7 +203,7 @@ Every month you will be able to update OsmAnd Maps on Updates screen. Here it's 
 
 ## OsmAnd Live
 
-OsmAnd Live is a special ([available by subscription](../purchases)) feature that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
+OsmAnd Live is a special ([available by subscription](../purchases/index.md)) feature that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
 Each map has independent collection  of tiny map updates, please be aware if you have overlapping map regions. In case you want to revert to initial state you can switch off updates and 'Clear cache'.
 

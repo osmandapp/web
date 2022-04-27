@@ -102,11 +102,11 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
 
-- &nbsp;<Translate android="true" ids="choose_osmand_theme"/> - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps#map-mode) parameter.
-- &nbsp;<Translate android="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map#map-orientation-modes).
-- &nbsp;<Translate android="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- &nbsp;<Translate android="true" ids="choose_osmand_theme"/> - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
+- &nbsp;<Translate android="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;<Translate android="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 - &nbsp;<Translate android="true" ids="map_screen_orientation"/> - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
-- &nbsp;<Translate android="true" ids="screen_control"/> - opens [the screen control menu](../navigation/route-navigation#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
+- &nbsp;<Translate android="true" ids="screen_control"/> - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
 
 </TabItem>
 
@@ -114,9 +114,9 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;<Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map#map-orientation-modes).
-- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - enables/disables 2.5D view of the map view. Use ["Gesture"](../map/interact-with-map#gestures) or ["My Location button"](../map/interact-with-map#my-location--zoom) for 3D view
-- &nbsp;<Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- &nbsp;<Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - enables/disables 2.5D view of the map view. Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D view
+- &nbsp;<Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 
 </TabItem>
 
@@ -217,12 +217,12 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 ![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
 
-- &nbsp;<Translate android="true" ids="use_volume_buttons_as_zoom"/> - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map#my-location--zoom).
-- &nbsp;[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- &nbsp;[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map#extra-compass-settings) - &nbsp;allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- &nbsp;<Translate android="true" ids="use_volume_buttons_as_zoom"/> - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
+- &nbsp;[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- &nbsp;[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) - &nbsp;allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - &nbsp;<Translate android="true" ids="tap_on_map_to_hide_interface"/> - use or not fullscreen mode of OsmAnd app on the device.
-- &nbsp;[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map#disable-all-animations) - allows to switch on/off animation for navigation mode. 
-- &nbsp;[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
+- &nbsp;[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode. 
+- &nbsp;[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
 
 </TabItem>
 
@@ -230,7 +230,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 You can enable/disable buttons and input devices for OsmAnd.
 
-- &nbsp;[<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
+- &nbsp;[<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
 
 </TabItem>
 
@@ -269,7 +269,7 @@ In this part, there are all settings for navigation mode of a profile.
 
 #### **Navigation**
 
-In this section you can set [routing and navigation parameters of your profile, map during navigation and vehicle parameters](../navigation).
+In this section you can set [routing and navigation parameters of your profile, map during navigation and vehicle parameters](../navigation/index.md).
 
 <Tabs groupId="operating-systems">
 
@@ -277,12 +277,12 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 &nbsp;<Translate android="true" ids="nav_type_hint"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
 
-&nbsp;<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation#navigation-options). Below list of parameters:
+&nbsp;<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 |**<Translate android="true" ids="nav_type_hint"/>:**| <Translate android="true" ids="select_nav_profile_dialog_message"/> |     |
-| <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation).            |
+| <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md).            |
 | <Translate android="true" ids="shared_string_online"/> |  Online routing builds the route servers' resources online by the Internet connection. |   List of online routing providers. Here you can add an online routing engine: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org/), GPX.   |
 | **<Translate android="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
@@ -321,18 +321,18 @@ In this section you can set [routing and navigation parameters of your profile, 
 |   | "<Translate android="true" ids="route_recalculation_dist_title"/>"    |  <Translate android="true" ids="recalculate_route_in_deviation"/>. <Translate android="true" ids="select_distance_route_will_recalc"/>  |
 |   | "<Translate android="true" ids="in_case_of_reverse_direction"/>"   |  The route will be recalculated if the direction is changed to reverse. |
 | "<Translate android="true" ids="development"/>" | using live updates and the initial part for calculation the route    |    |
-|   | "<Translate android="true" ids="use_live_routing"/>"    |  Enable navigation for [OsmAnd Live changes](../personal/maps#osmand-live).  |
+|   | "<Translate android="true" ids="use_live_routing"/>"    |  Enable navigation for [OsmAnd Live changes](../personal/maps.md#osmand-live).  |
 |   | "<Translate android="true" ids="use_fast_recalculation"/>"   |  <Translate android="true" ids="use_fast_recalculation_desc"/> |
 |   | "<Translate android="true" ids=""use_two_phase_routing/>"   |  <Translate android="true" ids="complex_routing_descr"/> |
-| **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets#alert-widget)   |
-| **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
+| **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+| **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
 | **<Translate android="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
 |     | <Translate android="true" ids="default_speed_setting_title"/>  | <Translate android="true" ids="default_speed_setting_descr"/>.  |
 |     | <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
-| **<Translate android="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation).   | [Pro feature](../purchases/android#free-and-paid-features)  |
+| **<Translate android="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
 |     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
 
@@ -342,11 +342,11 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 &nbsp;<Translate ios="true" ids="nav_type_title"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
 
-&nbsp;<Translate ios="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation#navigation-options). Below list of parameters:
+&nbsp;<Translate ios="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|**<Translate ios="true" ids="nav_type_title"/>**| choose your Navigation type which controls how routes are calcualted.  | Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate ios="true" ids="app_mode_boat"/>](../navigation/boat-navigation#boat), [<Translate ios="true" ids="m_style_bicycle"/>](../navigation/route-navigation), [<Translate ios="true" ids="nav_type_direct_to"/>](../navigation/boat-navigation#direct-to-point), [<Translate ios="true" ids="m_style_car"/>](../navigation/route-navigation), [<Translate ios="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation), [<Translate ios="true" ids="m_style_pulic_transport"/>](../map/public-transport), [<Translate ios="true" ids="nav_type_ski"/>](../plugins/ski-maps), [<Translate ios="true" ids="nav_type_straight_line"/>](../navigation/boat-navigation#straight-line). |
+|**<Translate ios="true" ids="nav_type_title"/>**| choose your Navigation type which controls how routes are calcualted.  | Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate ios="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate ios="true" ids="m_style_bicycle"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="nav_type_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate ios="true" ids="m_style_car"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="m_style_pulic_transport"/>](../map/public-transport.md), [<Translate ios="true" ids="nav_type_ski"/>](../plugins/ski-maps.md), [<Translate ios="true" ids="nav_type_straight_line"/>](../navigation/boat-navigation.md#straight-line). |
 | **<Translate ios="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate ios="true" ids="recalculate_route"/>" |  <Translate ios="true" ids="route_recalculation_descr"/>    |              |
 | "<Translate ios="true" ids="recalculate_wrong_dir"/>"  |  the route will be recalculated if you are moving to the start point.   |              |
@@ -378,8 +378,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 | "<Translate ios="true" ids="routing_attr_allow_private_name"/>" |  ignore the Private Access restriction for routing  |    |
 | "<Translate ios="true" ids="consider_limitations_param"/>" |  using temporaty limitations for routing from OpenStreetMap data  |    |
 | "<Translate ios="true" ids="road_speeds"/>" |  setting the minimum and the maximum travel speed for all roads in the route.  |    |
-| **<Translate ios="true" ids="voice_announces"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation) during navigation.    |  <Translate ios="true" ids="speak_descr"/>  |
-| **<Translate ios="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget.  | [Types of alert widgets](../widgets/nav-widgets#alert-widget)   |
+| **<Translate ios="true" ids="voice_announces"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  <Translate ios="true" ids="speak_descr"/>  |
+| **<Translate ios="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget.  | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 | **<Translate ios="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
 |     | <Translate ios="true" ids="default_speed"/>  | <Translate ios="true" ids="default_speed_dialog_msg"/>   |
 |     | <Translate ios="true" ids="routing_attr_weight_name"/>   | <Translate ios="true" ids="weight_limit_description"/>   |
@@ -404,7 +404,7 @@ Parameters for "Map during navigation" and others:
 | **<Translate android="true" ids="map_during_navigation"/>:** |  Change map behavior during navigation.   |              |
 | "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids=choose_auto_follow_route_descr""/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate android="true" ids="auto_zoom_none"/>, <Translate android="true" ids="auto_zoom_farthest"/>, <Translate android="true" ids="auto_zoom_far"/>, <Translate android="true" ids="auto_zoom_close"/>. |
-| "<Translate android="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate android="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
+| "<Translate android="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate android="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map.md#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
 | "<Translate android="true" ids="snap_to_road"/>"  |  <Translate android="true" ids="snap_to_road_descr"/>.   |    |
 | **<Translate android="true" ids="animate_my_location"/>** |  <Translate android="true" ids="animate_my_location_desc"/>   |              |
 
@@ -417,7 +417,7 @@ Parameters for "Map during navigation" and others:
 | **Map during navigation:** |  Change map behavior during navigation.   |              |
 | "<Translate ios="true" ids="choose_auto_follow_route"/>" |  <Translate ios="true" ids="choose_auto_center_map_view_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate ios="true" ids="auto_zoom_map"/>"  |  <Translate ios="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate ios="true" ids="auto_zoom_none"/>, <Translate ios="true" ids="auto_zoom_farthest"/>, <Translate ios="true" ids="auto_zoom_far"/>, <Translate ios="true" ids="auto_zoom_close"/>. |
-| "<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
+| "<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map.md#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
 | "<Translate ios="true" ids="snap_to_road"/>"  |  <Translate ios="true" ids="snap_to_road_descr"/>.   |    |
 
 </TabItem>
@@ -427,9 +427,9 @@ Parameters for "Map during navigation" and others:
 
 ### Configure map
 
-Here you can set parameters for [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu) of chosen profile
+Here you can set parameters for [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) of chosen profile
 
-[<Translate android="true" ids="configure_map"/>](../map/configure-map-menu) menu is a central place where you could configure map display for your profile needs, i.e. highlight [Favorite points](../personal/favorites), [Navigation markers](../personal/markers) or special [Points of Interests](../map/point-layers-on-map#points-of-interest-poi) on the map; display specific routes or 3rd party GPX files; [overlay the map with relief information](../plugins/contour-lines), [satellite imagery or any other available raster map](../map/raster-maps); display [public transport information](../map/public-transport) and [change the map style](../map/vector-maps#default-map-styles).
+[<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menu is a central place where you could configure map display for your profile needs, i.e. highlight [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md) or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-poi) on the map; display specific routes or 3rd party GPX files; [overlay the map with relief information](../plugins/contour-lines.md), [satellite imagery or any other available raster map](../map/raster-maps.md); display [public transport information](../map/public-transport.md) and [change the map style](../map/vector-maps.md#default-map-styles).
 
 <Tabs groupId="operating-systems">
 
@@ -438,7 +438,7 @@ Here you can set parameters for [<Translate android="true" ids="configure_map"/>
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>
 <p> </p>
 
-Set parameters for [Configure map](../map/configure-map-menu) menu for chosen profile.
+Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
 ![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_settings_android.png)
 
@@ -450,7 +450,7 @@ Set parameters for [Configure map](../map/configure-map-menu) menu for chosen pr
 
 <p> </p>
 
-Set parameters for [Configure map](../map/configure-map-menu) menu for chosen profile.
+Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
 ![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_settings_ios.png)
 
@@ -461,9 +461,9 @@ Set parameters for [Configure map](../map/configure-map-menu) menu for chosen pr
 
 ### Configure screen
 
-Here you can set parameters for [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen) of chosen profile.
+Here you can set parameters for [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) of chosen profile.
 
-[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen) is a menu that allows to configure what widgets will be displayed over the map. It allows you to enable and configure [Quick action](../widgets/quick-action), [Informational](../widgets/info-widgets) & [Navigational](../widgets/nav-widgets) widgets and other elements.
+[<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) is a menu that allows to configure what widgets will be displayed over the map. It allows you to enable and configure [Quick action](../widgets/quick-action.md), [Informational](../widgets/info-widgets.md) & [Navigational](../widgets/nav-widgets.md) widgets and other elements.
 
 <Tabs groupId="operating-systems">
 
@@ -472,7 +472,7 @@ Here you can set parameters for [<Translate android="true" ids="map_widget_confi
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,layer_map_appearance"/>
 <p> </p>
 
-Set parameters for [Configure screen](../widgets/configure-screen) menu for chosen profile.
+Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
 ![Profiles Configure screen Settings Android](@site/static/img/personal/profiles/profile_configure_screen_settings_android.png)
 
@@ -484,7 +484,7 @@ Set parameters for [Configure screen](../widgets/configure-screen) menu for chos
 
 <p> </p>
 
-Set parameters for [Configure screen](../widgets/configure-screen) menu for chosen profile.
+Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
 ![Profiles Configure screen Settings iOS](@site/static/img/personal/profiles/profile_configure_screen_settings_ios.png)
 
@@ -543,7 +543,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 ### UI Customization
 
-Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu).
+Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu.md#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu.md) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu.md).
 
 
 > `Turn off unused [plugins](../plugins) for hide all their controls.`
@@ -563,7 +563,7 @@ Under each menu there is the info about items quantity / active items.
 
 **Drawer**
 
-In this part of the menu you reorder or hide items from the [Drawer](../start-with/main-menu#main-menu-drawer).
+In this part of the menu you reorder or hide items from the [Drawer](../start-with/main-menu.md#main-menu-drawer).
 
 | Actions | Note |
 |:---------------|:---------------|
@@ -578,7 +578,7 @@ In this part of the menu you reorder or hide items from the [Drawer](../start-wi
 
 **Configure map**
 
-In this part of the menu you reorder or hide items from the [Configure map](../map/configure-map-menu) menu.
+In this part of the menu you reorder or hide items from the [Configure map](../map/configure-map-menu.md) menu.
 
 | Actions | Note |
 |:---------------|:---------------|
@@ -594,7 +594,7 @@ In this part of the menu you reorder or hide items from the [Configure map](../m
 
 **Context menu actions**
 
-In this part of the menu you reorder or hide items from the [Context menu actions](../map/map-context-menu) menu.
+In this part of the menu you reorder or hide items from the [Context menu actions](../map/map-context-menu.md) menu.
 
 | Actions | Note |
 |:---------------|:---------------|
@@ -614,10 +614,10 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 ## Plugin settings
 
-[Plugins](https://docs.osmand.net/en/main@latest../plugins) are a collection of settings that can be enabled with one click. Plugins also unlock additional functions of the application, they can be either [paid or free](../purchases). Some plugins have their own settings. Among other things, you can enable or disable plugins for each profile separately.
+[Plugins](https://docs.osmand.net/en/main@latest../plugins) are a collection of settings that can be enabled with one click. Plugins also unlock additional functions of the application, they can be either [paid or free](../purchases/index.md). Some plugins have their own settings. Among other things, you can enable or disable plugins for each profile separately.
 
 
-> Plugins must be enabled in [the Plugin list](../plugins) for activating it in the setting list for the profile.
+> Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating it in the setting list for the profile.
 
 
 <Tabs groupId="operating-systems">
@@ -645,7 +645,7 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 ### Trip recording
 
-This menu opens [the trip recording settings](../plugins/trip-recording#trip-recording-plugin-settings) for the selected profile. Where you can choose any parameters for recording your trip.
+This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-recording-plugin-settings) for the selected profile. Where you can choose any parameters for recording your trip.
 
 <Tabs groupId="operating-systems">
 
@@ -668,7 +668,7 @@ This menu opens [the trip recording settings](../plugins/trip-recording#trip-rec
 
 ### Audio / Video notes
 
-This menu opens [audio-video plugin settings](../plugins/audio-video-notes#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.
+This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.
 
 <Tabs groupId="operating-systems">
 
@@ -692,7 +692,7 @@ This menu opens [audio-video plugin settings](../plugins/audio-video-notes#plugi
 
 ### OpenStreetMap editing
 
-This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editing#plugin-settings) for the selected profile. Where you can input your data for starting OSM edit.
+This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editing.md#plugin-settings) for the selected profile. Where you can input your data for starting OSM edit.
 
 <Tabs groupId="operating-systems">
 
@@ -715,7 +715,7 @@ Check!
 
 ### OpenPlaceReviews
 
-This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.
+This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.
 
 <Tabs groupId="operating-systems">
 
@@ -738,7 +738,7 @@ This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacerevie
 
 ### Accesibility
 
-This menu opens [Accessibility plugin settings](../plugins/accessibility) for the selected profile. Where you can choose any parameters for your needed.
+This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for the selected profile. Where you can choose any parameters for your needed.
 
 <Tabs groupId="operating-systems">
 
@@ -761,7 +761,7 @@ This menu opens [Accessibility plugin settings](../plugins/accessibility) for th
 
 ### OsmAnd development
 
-This menu opens [Development plugin settings](../plugins/accessibility) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.
+This menu opens [Development plugin settings](../plugins/accessibility.md) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.
 
 <Tabs groupId="operating-systems">
 

@@ -20,7 +20,7 @@ The navigation by track (GPX) allows you to follow by chosen making or recorded 
 
 ## How to use
 
-To start the navigation, you need to use [the navigation button](../widgets/map-buttons#directions) on the map screen. Or choose navigation option in the main menu:
+To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,follow_track"/>
 
@@ -30,7 +30,7 @@ To start the navigation, you need to use [the navigation button](../widgets/map-
 
 <p> </p>
 
-or by choosing [displayed track](../navigation/route-navigation#displayed-tracks) in Navigation menu.
+or by choosing [displayed track](../navigation/route-navigation.md#displayed-tracks) in Navigation menu.
 
 Follow track menu:
 
@@ -40,14 +40,14 @@ Follow track menu:
 - &nbsp;<Translate android="true" ids="select_another_track"/> -
 - &nbsp;<Translate android="true" ids="gpx_option_reverse_route"/> -
 - &nbsp;<Translate android="true" ids="pass_whole_track_descr"/> - <Translate android="true" ids="start_of_the_track"/> or <Translate android="true" ids="nearest_point"/> of the track.
-- &nbsp;<Translate android="true" ids="nav_type_hint"/> - <Translate android="true" ids="routing_profile_straightline"/> or chosen [navigation profile](../personal/profiles#navigation-settings).
+- &nbsp;<Translate android="true" ids="nav_type_hint"/> - <Translate android="true" ids="routing_profile_straightline"/> or chosen [navigation profile](../personal/profiles.md#navigation-settings).
 
 
 ### Navigation options
 
-[link](../navigation/route-navigation#navigation-options)
+[link](../navigation/route-navigation.md#navigation-options)
 
 ## Plan route tool
 
-Read about ["Plan route" tool](../plan-route/create-route).
+Read about ["Plan route" tool](../plan-route/create-route.md).
 

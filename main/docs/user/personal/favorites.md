@@ -24,23 +24,23 @@ Favorites are special points marked by user and by default displayed as yellow s
 
 Favorites are one of the vector layers on the map. User can show or not Favorites and their names on the map:
 
-[Switch on/off favorites on the map](../map/point-layers-on-map#favorites)  - 'Configure map' menu
+[Switch on/off favorites on the map](../map/point-layers-on-map.md#favorites)  - 'Configure map' menu
 
-[Switch on/off favorite names](../map/point-layers-on-map#favorite--poi-names)  - 'Configure map' menu
+[Switch on/off favorite names](../map/point-layers-on-map.md#favorite--poi-names)  - 'Configure map' menu
 
 ![Favotires layer Android](@site/static/img/map/favorites_layer.png) ![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
 
 ### Favorite Context menu
 
-Click to favorite point on "My Favorites" menu or on favorite point on the map opens [Map Context menu](../map/map-context-menu#favorites--track-points-from-the-group). Where user can find needed information about point or [add/edit favorite point](../map/map-context-menu#add--edit-favorite).
+Click to favorite point on "My Favorites" menu or on favorite point on the map opens [Map Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group). Where user can find needed information about point or [add/edit favorite point](../map/map-context-menu.md#add--edit-favorite).
 
 ### Create
 
-For creating new Favorite an user needs [to tap on the map](../map/map-context-menu#select-any-point-long-tap) at the place where he wants to add Favorite. 
+For creating new Favorite an user needs [to tap on the map](../map/map-context-menu.md#select-any-point-long-tap) at the place where he wants to add Favorite. 
 
-When an user clicks at chosen place appeares ['Map Context menu'](../map/map-context-menu) with ['Action menu'](../map/map-context-menu#add--edit-favorite). 
+When an user clicks at chosen place appeares ['Map Context menu'](../map/map-context-menu.md) with ['Action menu'](../map/map-context-menu.md#add--edit-favorite). 
 
-Click to [**Add**](../map/map-context-menu#add--edit-favorite) for opening 'Add favorite' menu.
+Click to [**Add**](../map/map-context-menu.md#add--edit-favorite) for opening 'Add favorite' menu.
 
 ![Favorite add menu Android](@site/static/img/personal/favorite_add_android.png) ![Favorite add menu iOS](@site/static/img/personal/favorite_add_ios.png)
 
@@ -72,11 +72,11 @@ After creation, you can click 'Save' button for saving new Favorite point or 'Ca
 
 ### Edit
 
-For editing a Favorite point an user need [to short tap](../map/map-context-menu#select-an-object-short-tap) on chosen a Favorite point.
+For editing a Favorite point an user need [to short tap](../map/map-context-menu.md#select-an-object-short-tap) on chosen a Favorite point.
 
-After that, you need to click ['Edit favorite' button on 'Map Context menu'](../map/map-context-menu#add--edit-favorite). 
+After that, you need to click ['Edit favorite' button on 'Map Context menu'](../map/map-context-menu.md#add--edit-favorite). 
 
-'Edit favorite' menu opens. It's look like ['Add favorite' menu](../personal/favorites#create). But in Action part there is one more action - 'Delete' button. For Android, there is additional 'Delete' button in up corner of 'Edit favorite' menu. 
+'Edit favorite' menu opens. It's look like ['Add favorite' menu](../personal/favorites.md#create). But in Action part there is one more action - 'Delete' button. For Android, there is additional 'Delete' button in up corner of 'Edit favorite' menu. 
 
 ![Favorite edit Android](@site/static/img/personal/favorite_edit_android.png) ![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
 
@@ -84,11 +84,11 @@ You can change name, description, address for chosen favorite, change or create 
 
 ### Search 
 
-- Favorite points can be seacrhed by [Search function](../search) of OsmAnd. The first points will be from 'My favorites'.
+- Favorite points can be seacrhed by [Search function](../search/index.md) of OsmAnd. The first points will be from 'My favorites'.
 
 ![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png) ![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
 
-- Using [Search in 'My Favorites' menu (only for Android)](../personal/favorites#search-android).
+- Using [Search in 'My Favorites' menu (only for Android)](../personal/favorites.md#search-android).
 
 
 ## Manage Favorites
@@ -120,7 +120,7 @@ Favorites list in 'My Places' menu is not only a list, but function buttons and 
 
 ### Order / Sorting
 
-An order in the Favorites list for Favorites folders is by alfabet. [Personal folder](../personal/favorites#special-favorites-personal) is the first of the list.
+An order in the Favorites list for Favorites folders is by alfabet. [Personal folder](../personal/favorites.md#special-favorites-personal) is the first of the list.
 
 ![Favorites folders android](@site/static/img/personal/favorites_folders_android.png) ![Favorites folders ios](@site/static/img/personal/favorites_folders_ios.png)
 
@@ -132,7 +132,7 @@ For iOS version, switching between Folders <-> Points list, you need to use swit
 
 ![Favorites folders list iOS](@site/static/img/personal/favorites_folders_list_ios.png) ![Favorites points list iOS](@site/static/img/personal/favorites_points_list_ios.png) 
 
-An order for [searching list (Android)](../personal/favorites#search-android) is by distance from the map center on the device screen.
+An order for [searching list (Android)](../personal/favorites.md#search-android) is by distance from the map center on the device screen.
 
 ### Search (Android)
 
@@ -140,7 +140,7 @@ Searching function opens a points list of Favorites sorted by distance from map 
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_android.png)
 
-Click to 'Magnifier' buttons opens seaching menu for Favorites, where user can start to find needed points from Favorites. Clicking to a chosen point opens [Context menu](../map/map-context-menu#select-an-object-short-tap) of this point.
+Click to 'Magnifier' buttons opens seaching menu for Favorites, where user can start to find needed points from Favorites. Clicking to a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_2_android.png)
 
@@ -152,7 +152,7 @@ User can expand and collapse list of Favorite points for one group by clicking t
 
 ![Favorites folders expand android](@site/static/img/personal/favorites_folders_expand_android.png) ![Favorites folders expand ios](@site/static/img/personal/favorites_folders_expand_ios.png)
 
-Click to any point from Favorite list opens [Map Context menu](../map/map-context-menu#select-an-object-short-tap) for chosen point.
+Click to any point from Favorite list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
 
 ![Favorites context menu android](@site/static/img/personal/favorites_context_menu_android.png) ![Favorites context menu ios](@site/static/img/personal/favorites_context_menu_ios.png)
 
@@ -164,7 +164,7 @@ Functions for Favorite folder:
 - &nbsp;<Translate android="true" ids="edit_name"/>  - changing folder name.
 - &nbsp;<Translate android="true" ids="change_color"/>  - changing folder color.
 - &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - showing or not Favorite points from the folder on the map.
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers).
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 - &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (like Favorites.gpx file).
 - &nbsp;Button '<Translate android="true" ids="shared_string_cancel"/> ' - close this menu.
 
@@ -176,7 +176,7 @@ At the bottom of the screen are four Actions buttons.
 Actions:
 - '&#43;' - allows to import Favorites points (favorite.gpx) from device storage.
 - '&#60;' - allows to export (share) all Favorites points like "favorite.gpx" file.
-- '&#128681;' - allows to add or to remove chosen Favorites points (folders) in [Map markers](../personal/markers) list.
+- '&#128681;' - allows to add or to remove chosen Favorites points (folders) in [Map markers](../personal/markers.md) list.
 - '&#x1F5D1;' - allows to delete chosen Favorites points (folders).
 
 Click to 'Pencil' button (**iOS**) opens special functions for a chosen Favorite folder. You need to choose folder or points for actions.
@@ -214,7 +214,7 @@ Functions for Favorite folder:
 - &nbsp;<Translate android="true" ids="edit_name"/>  - changing folder name.
 - &nbsp;<Translate android="true" ids="change_color"/>  - changing folder color.
 - &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - showing or not Favorite points from the folder on the map.
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers).
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 - &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (like Favorites.gpx file).
 - &nbsp;Button '<Translate android="true" ids="shared_string_cancel"/> ' - close this menu.
 
@@ -263,18 +263,18 @@ Delete action:
 
 ### Add to Map Markers (Android)
 
-You can add or remove your favorites in/from [Map markers list](../personal/markers).
+You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
 
 Click to '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
 Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers).
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 
 ## Special Favorites (Personal) 
 
-"Personal" folder is a special folder for '<Translate android="true" ids="favorite_home_category"/> ' and '<Translate android="true" ids="work_button"/> ' points of [Navigation Context menu](../navigation). This folder doesn't have '&#8942;' button, because you can not change the parameters for this folder. 
+"Personal" folder is a special folder for '<Translate android="true" ids="favorite_home_category"/> ' and '<Translate android="true" ids="work_button"/> ' points of [Navigation Context menu](../navigation/index.md). This folder doesn't have '&#8942;' button, because you can not change the parameters for this folder. 
 
 ![Favorites personal android](@site/static/img/personal/favorites_personal_android.png)
 

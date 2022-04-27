@@ -109,7 +109,7 @@ Here you can change storage folder (Android) and know memorу usage by OsmAnd da
 
 <p> </p>
 
-More info about data storage settings read [here](../personal/storage#data-storage-folder-android).
+More info about data storage settings read [here](../personal/storage.md#data-storage-folder-android).
 
 </TabItem>
 
@@ -142,13 +142,13 @@ Here you can set parameters of your privacy and security
 
 **Dialogs and notifications**
 
-&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
 
 **History**
 
-&nbsp;<Translate android="true" ids="shared_string_history"/> - allows disabling history logging individually for each history type: [search history](../search/search-history), [navigation history](../navigation/route-navigation#history), [map markers history](../personal/markers#history). Here you can export history info a file, you can clear all history or for each categories ([search history](../search/search-history), [navigation history](../navigation/route-navigation#history), [map markers history](../personal/markers#history)).
+&nbsp;<Translate android="true" ids="shared_string_history"/> - allows disabling history logging individually for each history type: [search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history). Here you can export history info a file, you can clear all history or for each categories ([search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history)).
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
 
@@ -161,7 +161,7 @@ Here you can set parameters of your privacy and security
 
 **Legal**
 
-&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
+&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
 Select "Keep active" and you will receive alerts and warnings about speed cameras.
 Select "Uninstall". All data related to speed cameras: alerts, notifications, POIs will be deleted until OsmAnd is completely reinstalled.
 
@@ -173,7 +173,7 @@ Select "Uninstall". All data related to speed cameras: alerts, notifications, PO
 
 - &nbsp;<Translate ios="true" ids="carplay_profile"/> - profile that will be used while connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
 
-- &nbsp;<Translate ios="true" ids="do_not_show_discount"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+- &nbsp;<Translate ios="true" ids="do_not_show_discount"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
 
 ![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_ios.png)
 
