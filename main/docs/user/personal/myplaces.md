@@ -14,10 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-My Places' is a core place within OsmAnd application that allows you to manage all your personally owned information i.e. [Favorite points](../personal/favorites), [Tracks](../personal/tracks) (imported, recorded and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing), [Audio / Video Notes (Android)](../plugins/audio-video-notes)
+My Places' is a core place within OsmAnd application that allows you to manage all your personally owned information i.e. [Favorite points](../personal/favorites.md), [Tracks](../personal/tracks.md) (imported, recorded and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing.md), [Audio / Video Notes (Android)](../plugins/audio-video-notes.md)
 
 
-In order to manage saved information, you need to go to the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces)
+In order to manage saved information, you need to go to the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md)
 
 <Tabs groupId="operating-systems">
 
@@ -43,7 +43,7 @@ In order to manage saved information, you need to go to the [<Translate android=
 
 
  ## 'My Places' section includes:
-- [Favorites](../personal/favorites)
-- [GPX tracks](../personal/tracks)
-- [OpenStreetMap editing](../plugins/osm-editing)
-- [Audio/video notes](../plugins/audio-video-notes)
+- [Favorites](../personal/favorites.md)
+- [GPX tracks](../personal/tracks.md)
+- [OpenStreetMap editing](../plugins/osm-editing.md)
+- [Audio/video notes](../plugins/audio-video-notes.md)

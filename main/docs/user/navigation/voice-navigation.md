@@ -18,7 +18,7 @@ Receiving voice prompts during navigation: turn-by-turn insctructions, allerts, 
 
 ## Settings of voice prompts
 
-User can receive voice prompts during navigation. To enable voice prompts for app profiles, turn on or turn off voice prompts (You can also turn on or turn off voice prompts on [the icon of sound on the navigation screen](../navigation/route-navigation#navigation-options)):
+User can receive voice prompts during navigation. To enable voice prompts for app profiles, turn on or turn off voice prompts (You can also turn on or turn off voice prompts on [the icon of sound on the navigation screen](../navigation/route-navigation.md#navigation-options)):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>
 
@@ -32,12 +32,12 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 - &nbsp;<Translate android="true" ids="shared_string_on"/>/<Translate android="true" ids="shared_string_off"/> - allows to configure to announce street names, traffic warnings, speed camera warnings, speed limits.
 - &nbsp;<Translate android="true" ids="shared_string_language"/> - select preferred language and type of voice (for Android: TTS or recorded).
-- &nbsp;<Translate android="true" ids="accessibility_announce"/> - allows to sound next types: <Translate android="true" ids="speak_street_names"/>, <Translate android="true" ids="exit_number"/>, <Translate android="true" ids="way_alarms"/>, <Translate android="true" ids="speak_pedestrian"/>, <Translate android="true" ids="speak_cameras"/>(<Translate android="true" ids="speed_cameras_alert"/>), <Translate android="true" ids="show_tunnels"/>, <Translate android="true" ids="shared_string_gpx_waypoints"/>, <Translate android="true" ids="speak_favorites"/>,  <Translate android="true" ids="speak_favorites"/>, <Translate android="true" ids="speak_favorites"/>. You can enable [Alert widget](../widgets/nav-widgets#alert-widget) for this categories.
+- &nbsp;<Translate android="true" ids="accessibility_announce"/> - allows to sound next types: <Translate android="true" ids="speak_street_names"/>, <Translate android="true" ids="exit_number"/>, <Translate android="true" ids="way_alarms"/>, <Translate android="true" ids="speak_pedestrian"/>, <Translate android="true" ids="speak_cameras"/>(<Translate android="true" ids="speed_cameras_alert"/>), <Translate android="true" ids="show_tunnels"/>, <Translate android="true" ids="shared_string_gpx_waypoints"/>, <Translate android="true" ids="speak_favorites"/>,  <Translate android="true" ids="speak_favorites"/>, <Translate android="true" ids="speak_favorites"/>. You can enable [Alert widget](../widgets/nav-widgets.md#alert-widget) for this categories.
 - &nbsp;<Translate android="true" ids="speak_speed_limit"/> - allows to announce when exceeded <Translate android="true" ids="speed_limit_exceed"/>. Choose speed limit tolerance margin, above which you will receive a voice warning.
 
 - &nbsp;<Translate android="true" ids="shared_string_options"/>: 
 
-&nbsp;<Translate android="true" ids="keep_informing"/> - allows to re-announce navigation instructions at regular intervals or Only manually [(tap arrow)](../widgets/nav-widgets#next-turns).
+&nbsp;<Translate android="true" ids="keep_informing"/> - allows to re-announce navigation instructions at regular intervals or Only manually [(tap arrow)](../widgets/nav-widgets.md#next-turns).
 
 &nbsp;<Translate android="true" ids="announcement_time_title"/> - the announcement timing of different voice prompts depends on prompt type, current navigation speed, and default navigation speed.
 
@@ -73,6 +73,6 @@ Please test ('Listen to an example' or similar test button provided) if your And
 
 ## Testing of voice prompts (Android)
 
-[OsmAnd development plugin](../plugins/development)
+[OsmAnd development plugin](../plugins/development.md)
 
-[Testing your voice prompts](../plugins/development#plugin-settings)
+[Testing your voice prompts](../plugins/development.md#plugin-settings)

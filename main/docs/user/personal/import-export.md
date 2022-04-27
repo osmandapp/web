@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Export
 
-[Link](../personal/profiles#actions)
+[Link](../personal/profiles.md#actions)
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,shared_string_actions,export_profile"/>
 
@@ -61,7 +61,7 @@ On most systems the following procedure can be used to reset or uninstall/reinst
 
 
 ## Online sources
-In order **to export** online map sources, you can select them in the export file list of your [application profile](../personal/profiles):
+In order **to export** online map sources, you can select them in the export file list of your [application profile](../personal/profiles.md):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,shared_string_actions,export_profile,select_data_to_export,shared_string_resources,quick_action_map_source_title"/>
 

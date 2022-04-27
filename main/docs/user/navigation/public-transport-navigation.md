@@ -22,7 +22,7 @@ Data of Public route lines is from [OpenStreetMap project](http://openstreetmap.
 
 ## How to use
 
-To start the navigation in your city by public transport, you need to use [the navigation button](../widgets/map-buttons#directions) on the map screen. Or choose navigation option in the main menu:
+To start the navigation in your city by public transport, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>
 
@@ -53,9 +53,9 @@ Here you can open all stops list by clicking to "" button.
 
 ## Data for public transport
 
-OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](/blog/guideline-pt).
+OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](../../../blog/2019-03-16-guideline-pt/index).
 
 ## Read more
 
-- [Guideline for public transport](/blog/guideline-pt).
+- [Guideline for public transport](../../../blog/2019-03-16-guideline-pt/index.mdx).
 - [Presentation in SotM-2019](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).

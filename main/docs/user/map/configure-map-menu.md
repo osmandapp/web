@@ -25,36 +25,36 @@ import Translate from '@site/src/components/Translate.js';
 
 
 **Notes:** 
-- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](../widgets)
-- Configure map settings are [profile dependent](../personal/profiles)
+- In order to change screen information (widgets, icons) you can set parametres in [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md)
+- Configure map settings are [profile dependent](../personal/profiles.md)
 
 ## Map Layers
-   - [Vector Map Layer](../map/vector-maps) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
-   - [Map Raster sources](../map/raster-maps#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
-   - [Terrain](../map/raster-maps#hillshade--slopeg) - display raster slope or hillshade information.
+   - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
+   - [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
+   - [Terrain](../map/raster-maps.md#hillshade--slopeg) - display raster slope or hillshade information.
 
 ## Map Data Layers
-   - [Favorites](../map/point-layers-on-map) - display favorites points.
-   - [POI](../map/point-layers-on-map) - display points of interests of selected categories.
-   - [Map markers](../map/point-layers-on-map) - display map markers.
-   - [Overlay labels](../map/point-layers-on-map) - show names of points, favorites on the map.
-   - [Transport](../map/vector-maps#transport) - show public transport stops.
-   - [Tracks](../map/tracks-on-map) - display imported, planned or recorded tracks over the map.
-   - [Street level imagery](../plugins/mapillary#viewing-images) - display points with available street-level imagery.
-   - [Travel guides](../plan-route/travel-guides) - display travel guides on the map.
-   - [Wikipedia](../plugins/wikipedia) - highlight wikipedia articles linked to the map.
-   - [Other plugin layers](../plugins) - many plugins add own layers with extra information.
+   - [Favorites](../map/point-layers-on-map.md) - display favorites points.
+   - [POI](../map/point-layers-on-map.md) - display points of interests of selected categories.
+   - [Map markers](../map/point-layers-on-map.md) - display map markers.
+   - [Overlay labels](../map/point-layers-on-map.md) - show names of points, favorites on the map.
+   - [Transport](../map/vector-maps.md#transport) - show public transport stops.
+   - [Tracks](../map/tracks-on-map.md) - display imported, planned or recorded tracks over the map.
+   - [Street level imagery](../plugins/mapillary.md#viewing-images) - display points with available street-level imagery.
+   - [Travel guides](../plan-route/travel-guides.md) - display travel guides on the map.
+   - [Wikipedia](../plugins/wikipedia.md) - highlight wikipedia articles linked to the map.
+   - [Other plugin layers](../plugins/index.md) - many plugins add own layers with extra information.
 
 ## Map style parameters
 Map style parameters are dependent on the main map style be displayed on the map. You can read more about it in [Map Styles article](../map/vector-maps).
-   - [Map style](../map/vector-maps#default-map-styles) - OsmAnd (City), Topo, Nautical and others.
-   - [Map mode](../map/vector-maps#map-mode) - select to browse map or to run a navigation.
-   - [Map magnifier](../map/vector-maps#map-magnifier) - more or less detailed map display.
-   - [Text size](../map/vector-maps#text-size) - increase or decrease text size on the map.
-   - [Map language](../map/vector-maps#map-language) - select preferred language displayed on the map.
-   - [Details](../map/vector-maps#details) - highlight specific objects.
-   - [Hide](../map/vector-maps#hide) - hide specific objects.
-   - [Routes](../map/vector-maps#routes) - highlight specific routes and their symbols.
+   - [Map style](../map/vector-maps.md#default-map-styles) - OsmAnd (City), Topo, Nautical and others.
+   - [Map mode](../map/vector-maps.md#map-mode) - select to browse map or to run a navigation.
+   - [Map magnifier](../map/vector-maps.md#map-magnifier) - more or less detailed map display.
+   - [Text size](../map/vector-maps.md#text-size) - increase or decrease text size on the map.
+   - [Map language](../map/vector-maps.md#map-language) - select preferred language displayed on the map.
+   - [Details](../map/vector-maps.md#details) - highlight specific objects.
+   - [Hide](../map/vector-maps.md#hide) - hide specific objects.
+   - [Routes](../map/vector-maps.md#routes) - highlight specific routes and their symbols.
    
 ## UI Customization (Android)
    

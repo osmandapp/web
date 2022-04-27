@@ -18,7 +18,7 @@ How to configure, access and change data storage for maps, tracks and other pers
 
 ## Storage info in Download maps menu
 
-There is toolbar about storage information in [Download maps menu](../personal/maps#download-maps-maps). Here you see Device memory and free space in device storage. 
+There is toolbar about storage information in [Download maps menu](../personal/maps.md#download-maps-maps). Here you see Device memory and free space in device storage. 
 For **iOS**, you can estimate how much memory spacing of OsmAnd data is in the device storage (orange color).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>
@@ -39,7 +39,7 @@ ___________________________
 
 ## Data storage folder (Android)
 
-For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings#data-storage-folder-android).
+For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>
 

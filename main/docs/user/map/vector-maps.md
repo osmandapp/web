@@ -56,7 +56,7 @@ LightRS style: <Translate android="true" ids="light_rs_render_descr"/>
 
 ### Nautical 
 
-&nbsp;<Translate android="true" ids="nautical_render_descr"/> Read more about [Nautical maps](../plugins/nautical-charts).
+&nbsp;<Translate android="true" ids="nautical_render_descr"/> Read more about [Nautical maps](../plugins/nautical-charts.md).
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
@@ -226,7 +226,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 |![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
 |**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**: Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by color.|
 |![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
-|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**: Showing colored routes of ski slopes. This setting is supported by [map style "Winter and ski"](../map/vector-maps#winter-and-ski).|
+|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**: Showing colored routes of ski slopes. This setting is supported by [map style "Winter and ski"](../map/vector-maps.md#winter-and-ski).|
 |![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
 |**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**: Showing colored routes and symbols for riding horses.|
 |![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)|
@@ -263,7 +263,7 @@ In OsmAnd  we can choose special rendering for these needed:
 
 ### Hide
 
-Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps#select-map-as-main--underlay--overlay-layer).
+Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).
 In order to hide some objects on the map you can choose them in this menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>
@@ -278,7 +278,7 @@ In order to hide some objects on the map you can choose them in this menu:
 |:------------|:---------------|
 |<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>| Hide regional boundaries inside of countries, but state boundaries are visible. |
 |<Translate android="true" ids="rendering_attr_natureReserves_name"/>| Hide nature boundaries (national parks etc.) |
-|<Translate android="true" ids="rendering_attr_noPolygons_name"/>|Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps#change-layer-parameters-transparency).  |
+|<Translate android="true" ids="rendering_attr_noPolygons_name"/>|Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#change-layer-parameters-transparency).  |
 |<Translate android="true" ids="rendering_attr_hideBuildings_name"/>|Hide all polygons of buildings. |
 |<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>|Hide all polygons of water (seas, lakes, reservoirs etc.)  |
 |<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>|Hide house numbers on the map.  |
