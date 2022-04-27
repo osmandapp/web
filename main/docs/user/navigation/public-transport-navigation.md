@@ -57,5 +57,5 @@ Here you can open all stops list by clicking to "" button.
 
 ## Read more
 
-- [Guideline for public transport](../../../blog/2019-03-16-guideline-pt/index.mdx).
+<!-- - [Guideline for public transport](../../../blog/2019-03-16-guideline-pt/index.mdx). -->
 - [Presentation in SotM-2019](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
