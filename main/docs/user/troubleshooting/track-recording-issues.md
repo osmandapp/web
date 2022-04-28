@@ -29,7 +29,7 @@ Typically there are 2 sort of issues that leads of creating messy track.
 - Bad GPS signal and switching to network signal
 
 Obviously it's better not to record track in bad conditions and use "Pause", also it's possible to edit messy track later and remove "noisy" points. 
-**Proper solution**: use [Track settings](../plugins/trip-recording) to filter "noisy" points based on your **experience** and **recording device**. You can filter out points by various criteria: 
+**Proper solution**: use [Track settings](../plugins/trip-recording.md) to filter "noisy" points based on your **experience** and **recording device**. You can filter out points by various criteria: 
 - Points without speed
 - Points with bad precision (GPS hdoop)
 - Points closer than a threshold in meters

@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Download maps is a necessarily action for further using map and navigation in offline mode. Maps can be downloaded both by browsing through the regions list from the main menu and by clicking on the needed territory on the map
 
-Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](../map/vector-maps) and  [Raster maps](../map/raster-maps), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](../search), [Navigation](../navigation),  [Context menu](../map/map-context-menu). 
+Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
 
 ## Download - First Screen
 
@@ -38,7 +38,7 @@ You can download new maps and manage already downloaded maps via Main menu:
 This screen has certain features:
 - Refresh button - check available map updates on the OsmAnd servers.
 - Search button - search the region by names or large cities inside it.
-- Map counter (Free version) - display how many [Free map downloads](../purchases/android#free-and-paid-features) left.
+- Map counter (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
 - Device memory - show available memory to be used on the device.
 - All downloads / Worldwide - browse and download maps split by continents / countries / regions.
 - Local / Installed - manage already downloaded maps.
@@ -49,7 +49,7 @@ This screen has certain features:
 
 ## Download - Map Context menu
 
-One of the option to download map is via World map and [Map Context menu](../map/map-context-menu). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
+One of the option to download map is via World map and [Map Context menu](../map/map-context-menu.md). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
 
 ![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region.png)
 
@@ -70,12 +70,12 @@ It is possible to download a map of a certain area just by zooming in on the Wor
 
 ## Download - Own map (Advanced)
 
-There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](/docs/technical/map-creation/create-offline-maps-yourself)
+There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
 
 ## Type of maps
 
-You can download several types of maps: Standard, Roads-only (lightweight maps without details i.e. buildings, Android), [Coutour lines](../map/vector-maps#contour-lines), [Hillshades](../map/raster-maps#hillshade--slope), [Slopes](../map/raster-maps#hillshade--slope), [Wikipedia](../plugins/wikipedia), [Travel guides (Wikivoyage)](../plan-route/travel-guides), [Nautical maps](../plugins/nautical-charts), [Voice packages](../navigation/voice-navigation), [Map fonts](../map/vector-maps#map-fonts-android), [Altitude correction (Android)](../widgets/info-widgets#altitude).
+You can download several types of maps: Standard, Roads-only (lightweight maps without details i.e. buildings, Android), [Coutour lines](../map/vector-maps.md#contour-lines), [Hillshades](../map/raster-maps.md#hillshade--slope), [Slopes](../map/raster-maps.md#hillshade--slope), [Wikipedia](../plugins/wikipedia.md), [Travel guides (Wikivoyage)](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Voice packages](../navigation/voice-navigation.md), [Map fonts](../map/vector-maps.md#map-fonts-android), [Altitude correction (Android)](../widgets/info-widgets.md#altitude).
 
-**[Read more](../personal/maps#type-of-maps)**.
+**[Read more](../personal/maps.md#type-of-maps)**.
 
 ![Download map menu Android](@site/static/img/settings/download_map_menu_android.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu.png)

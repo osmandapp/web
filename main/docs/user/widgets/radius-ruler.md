@@ -46,7 +46,7 @@ Radius-ruler widget shows distance between your location and center point of the
 
 ![Compass ruler](@site/static/img/widgets/compass_ruler.png)
 
-By default [Map orientation](../map/interact-with-map#map-orientation--compass) information is displayed on radius-ruler circles. It displays how the Map North is oriented to the Head of device. 
+By default [Map orientation](../map/interact-with-map.md#map-orientation--compass) information is displayed on radius-ruler circles. It displays how the Map North is oriented to the Head of device. 
 
 In addition to that, you could see **blue triangle** as a Compass direction. This option requires to have **GPS-compass** present & enabled on your device. Keep your device flat, so you could see where head of device is pointing out. 
 

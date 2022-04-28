@@ -20,13 +20,13 @@ Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Me
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-My location & zoom buttons control the map display. You can read more in [Interact with map](../map/interact-with-map#my-location--zoom) article.
+My location & zoom buttons control the map display. You can read more in [Interact with map](../map/interact-with-map.md#my-location--zoom) article.
 
 ## Directions
 
 ![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
 
-**Directions** button allows to [build a route](../navigation) and [start navigation](../navigation). In navigation mode this button is not visible by default and it appears after a short tap on the map.
+**Directions** button allows to [build a route](../navigation/index.md) and [start navigation](../navigation/index.md). In navigation mode this button is not visible by default and it appears after a short tap on the map.
 
 **Directions** button has 3 different indicative states:
 - Default grey icon - the route has not been built yet. A dialog to build a new route will appear by click.
@@ -37,25 +37,25 @@ My location & zoom buttons control the map display. You can read more in [Intera
 
 ![Configure Map](@site/static/img/widgets/configure_map.png)
 
-**Configure Map** button allows to access to [Configure Map menu](../map/configure-map-menu). Icon on it indicates [Current app profile](../personal/profiles).
+**Configure Map** button allows to access to [Configure Map menu](../map/configure-map-menu.md). Icon on it indicates [Current app profile](../personal/profiles.md).
 
 ## Main menu
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-[Main menu](../start-with/main-menu) button allows to access to [all features](../start-with/main-menu) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
+[Main menu](../start-with/main-menu.md) button allows to access to [all features](../start-with/main-menu.md) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
 
 ## Search
 
 ![Search button](@site/static/img/widgets/search_button.png)
 
-Search button buttons provides quick access from the map to [search capabilities](../search/).
+Search button buttons provides quick access from the map to [search capabilities](../search/index.md).
 
 ## Compass
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
 
-Compass widget indicates how map is oriented on the device screen and top arrow / red arrow points where the north of map is located. It also shows the current **[Map orientation mode](../map/interact-with-map#map-orientation--compass)**. Clicking on the compass will cycle through all Map orientation modes.
+Compass widget indicates how map is oriented on the device screen and top arrow / red arrow points where the north of map is located. It also shows the current **[Map orientation mode](../map/interact-with-map.md#map-orientation--compass)**. Clicking on the compass will cycle through all Map orientation modes.
 
 **Configure visibility**
 
