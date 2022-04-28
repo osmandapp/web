@@ -39,14 +39,14 @@ Next settings:
 
 ## How to use
 
-The plugin lets you add new photos for restaurants, cafe [points of interest or POI](../map/point-layers-on-map#points-of-interest-poi) on the map.
+The plugin lets you add new photos for restaurants, cafe [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi) on the map.
 
 ### How to add
 
-Tap on the map where the POI of Restaurants (Cafe) has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu#actions), then press [<Translate android="true" ids="shared_string_add_photo"/>](../map/map-context-menu#online-photos) button and add choose photo from device storage.
+Tap on the map where the POI of Restaurants (Cafe) has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then press [<Translate android="true" ids="shared_string_add_photo"/>](../map/map-context-menu.md#online-photos) button and add choose photo from device storage.
 
 ![OpenPlaceReview add photo Android](@site/static/img/plugins/openplacereviews/openplacereviews_add_photo_android.png)
 
-Photos from OpenPlaceReviews project are in [Online Photos of Map Context menu](../map/map-context-menu#online-photos): 
+Photos from OpenPlaceReviews project are in [Online Photos of Map Context menu](../map/map-context-menu.md#online-photos): 
 
 ![OpenPlaceReview photo Android](@site/static/img/plugins/openplacereviews/openplacereviews_photo_android.png)

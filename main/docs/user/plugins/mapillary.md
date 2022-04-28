@@ -32,7 +32,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Viewing images
 
-Street-level imagery (Mapillary) are green points on the map. Street-view photos attached to these points. You can create [a filter](../plugins/mapillary#filtering-the-data) and select what photos you would like to display on the map. In order to open street-view photo you need to press on the green point.
+Street-level imagery (Mapillary) are green points on the map. Street-view photos attached to these points. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map. In order to open street-view photo you need to press on the green point.
 
 Enable / disable Street-level imagery on the map: 
 
@@ -76,20 +76,20 @@ Filter images by sumbitter, by date or by type. Only active in closeup zoom (17)
 
 ### Images in Map Context menu
 
-In the [Details](../map/map-context-menu#details) of selected point on the map of [Map Context menu you can find Mapillary images](../map/map-context-menu#online-photos) if there are near selected point.
+In the [Details](../map/map-context-menu.md#details) of selected point on the map of [Map Context menu you can find Mapillary images](../map/map-context-menu.md#online-photos) if there are near selected point.
 
 
 ![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png) ![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png)
 
-Click to the images opens [viewing images doublescreen](../plugins/mapillary#viewing-images):
+Click to the images opens [viewing images doublescreen](../plugins/mapillary.md#viewing-images):
 
 ![Mapillary plugin dialogue Android](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_android.png) ![Mapillary plugin  dialogue  iOS](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_ios.png)
 
 
 ### Adding images
 
-1. By clicking to [Mapillary widget](../widgets/info-widgets#-mapillary-widget) opens [Mapillary application](https://www.mapillary.com/mobile-apps).
+1. By clicking to [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) opens [Mapillary application](https://www.mapillary.com/mobile-apps).
 
-2. If there aren't photos near selected point on the map user can see next dialogue on [Online photos of Map Context menu](../map/map-context-menu#online-photos):  Add photos. By clicking "Add photos" button opens Mapillary application.
+2. If there aren't photos near selected point on the map user can see next dialogue on [Online photos of Map Context menu](../map/map-context-menu.md#online-photos):  Add photos. By clicking "Add photos" button opens Mapillary application.
 
 

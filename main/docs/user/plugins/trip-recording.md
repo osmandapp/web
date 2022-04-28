@@ -29,11 +29,11 @@ There are three base capabilities in regard to Trip recording: creating new trac
 
 To start making new records, the following setup is required: 
 
-1. [Enable the plugin](../start-with/first-steps#how-to-configure-plugins). 
+1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 
-2. Configure Trip recording for the required [profile](../personal/profiles).
+2. Configure Trip recording for the required [profile](../personal/profiles.md).
 
-3. If needed, add the [REC widget](../widgets/info-widgets#-trip-recording-widget) to the screen. 
+3. If needed, add the [REC widget](../widgets/info-widgets.md#-trip-recording-widget) to the screen. 
 
 Once the setup is completed, it is possible to make new records, as well as to display tracks on the map, and manage them by changing the appearance, editing the route, adding waypoints, etc. 
 
@@ -67,7 +67,7 @@ Once the setup is completed, it is possible to make new records, as well as to d
 
 <TabItem value="def" label="Default" default>
 
-The Trip recording plugin is needed for recording new tracks. It is possible to do with the [REC widget](../widgets/info-widgets#-trip-recording-widget), added to the app by the Trip recording plugin. To enable the Trip recording plugin, open the [Plugins](../start-with/first-steps#how-to-configure-plugins) list and toggle the respective option. 
+The Trip recording plugin is needed for recording new tracks. It is possible to do with the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by the Trip recording plugin. To enable the Trip recording plugin, open the [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
 
 ![Enable / Disable Plugin iOS](@site/static/img/plugins/enable_disable_plugin_ios.png) ![Enable / Disable Plugin Android](@site/static/img/plugins/enable_disable_plugin_android.png) 
 
@@ -105,7 +105,7 @@ In the **Android** version, to enable the Trip recording plugin, tap the triple 
 
 <TabItem value="def" label="Default" default>
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, open the Configure screen menu and toggle on the Trip recording widget. 
+The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, open the Configure screen menu and toggle on the Trip recording widget. 
 
 ![Adding REC widget in iOS](@site/static/img/plugins/trip-recording/ios_configure_screen_TrRec_widget.png) ![Adding REC widget in Android](@site/static/img/plugins/trip-recording/and_configure_screen_TrRec_widget.png)
 
@@ -113,7 +113,7 @@ The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to ma
 
 <TabItem value="ios" label="iOS">
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, select a profile and toggle on <Translate ios="true" ids="track_recording"/>** in the following [Configure screen](../widgets/configure-screen) menu:
+The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, select a profile and toggle on <Translate ios="true" ids="track_recording"/>** in the following [Configure screen](../widgets/configure-screen.md) menu:
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>
 
@@ -123,7 +123,7 @@ The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to ma
 
 <TabItem value="android" label="Android">
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, select a profile and toggle on **<Translate android="true" ids="shared_string_trip_recording"/>** in the following [Configure screen](../widgets/configure-screen) menu:
+The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, select a profile and toggle on **<Translate android="true" ids="shared_string_trip_recording"/>** in the following [Configure screen](../widgets/configure-screen.md) menu:
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,shared_string_trip_recording"/>
 
@@ -145,7 +145,7 @@ The [REC widget](../widgets/info-widgets#-trip-recording-widget) is needed to ma
 
 <TabItem value="def" label="Default" default>
 
-For each specific profile, Trip recording can be configured individually, as the parameters could differ depending on the character of the movement, for example, whether it is the location of a car driver, a cyclist, or a nordic walker that is detected. All [profiles](../personal/profiles) are configured in the general [settings](../start-with/first-steps#how-to-manage-your-settings) of the entire app. First, it is needed to select the required profile, and then among other settings of the profile, to find the section dedicated to Trip recording. 
+For each specific profile, Trip recording can be configured individually, as the parameters could differ depending on the character of the movement, for example, whether it is the location of a car driver, a cyclist, or a nordic walker that is detected. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, it is needed to select the required profile, and then among other settings of the profile, to find the section dedicated to Trip recording. 
 
 ![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/ios_profile_trip_rec2.png) ![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/and_profile_trip_rec2.png)
 
@@ -153,11 +153,11 @@ For each specific profile, Trip recording can be configured individually, as the
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, to open [settings](../start-with/first-steps#how-to-manage-your-settings) for configuring Trip recording, do the following:
+In the **iOS** version, to open [settings](../start-with/first-steps.md#how-to-manage-your-settings) for configuring Trip recording, do the following:
 
 1. Open <Translate ios="true" ids="menu,sett_settings"/>.
 
-2. Select a [profile](../personal/profiles). 
+2. Select a [profile](../personal/profiles.md). 
 
 3. Tap **<Translate ios="true" ids="track_recording"/>**.
 
@@ -167,15 +167,15 @@ In the **iOS** version, to open [settings](../start-with/first-steps#how-to-mana
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, to open [settings](../start-with/first-steps#how-to-manage-your-settings) for configuring Trip recording, it is possible to use any of the two options: app [settings](../start-with/first-steps#how-to-manage-your-settings), or [plugin](../start-with/first-steps#how-to-configure-plugins) settings. 
+In the **Android** version, to open [settings](../start-with/first-steps.md#how-to-manage-your-settings) for configuring Trip recording, it is possible to use any of the two options: app [settings](../start-with/first-steps.md#how-to-manage-your-settings), or [plugin](../start-with/first-steps.md#how-to-configure-plugins) settings. 
 
 #### APP SETTINGS 
 
-The [settings](../start-with/first-steps#how-to-manage-your-settings) of the app allow you to establish the Trip recording settings individually for a specific profile, and can be reached out, as follows:
+The [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the app allow you to establish the Trip recording settings individually for a specific profile, and can be reached out, as follows:
 
 1. Open <Translate android="true" ids="shared_string_menu,shared_string_settings"/>.
 
-2. Select a [profile](../personal/profiles).
+2. Select a [profile](../personal/profiles.md).
 
 3. Tap **<Translate android="true" ids="record_plugin_name"/>**.
 
@@ -186,7 +186,7 @@ The [settings](../start-with/first-steps#how-to-manage-your-settings) of the app
 
 #### PLUGIN SETTINGS
 
-The settings opened from the [plugin](../start-with/first-steps#how-to-configure-plugins) allow you to establish the Trip recording settings only for one default profile, and can be reached out, as follows: 
+The settings opened from the [plugin](../start-with/first-steps.md#how-to-configure-plugins) allow you to establish the Trip recording settings only for one default profile, and can be reached out, as follows: 
 
 1. Open <Translate android="true" ids="shared_string_menu,plugins_menu_group"/>.
 
@@ -282,15 +282,15 @@ In the **Android** version, the available parameters are specified below. Establ
 
 <TabItem value="def" label="Default" default>
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widget) is used to create new records.  
+The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is used to create new records.  
 
-- To start recording, tap the [REC widget](../widgets/info-widgets#-trip-recording-widget), and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically. 
+- To start recording, tap the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically. 
 
-- When in progress, the [REC widget](../widgets/info-widgets#-trip-recording-widget) is colored in red.
+- When in progress, the [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is colored in red.
 
-- When in progress and with enabled online recording, the [REC widget](../widgets/info-widgets#-trip-recording-widget) is colored in green.
+- When in progress and with enabled online recording, the [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is colored in green.
 
-- To finish recording, tap the [REC widget](../widgets/info-widgets#-trip-recording-widget) again, and confirm in the Trip recording dialog with the respective option. Additionally, there are a few other options that can be used. All options are detailed for the iOS and Android versions.
+- To finish recording, tap the [REC widget](../widgets/info-widgets.md#-trip-recording-widget) again, and confirm in the Trip recording dialog with the respective option. Additionally, there are a few other options that can be used. All options are detailed for the iOS and Android versions.
 
 ![REC widget in iOS](@site/static/img/plugins/trip-recording/ios_REC_widget.png) ![REC widget in Android](@site/static/img/plugins/trip-recording/and_REC_widget.png)
 
@@ -302,8 +302,8 @@ The [REC widget](../widgets/info-widgets#-trip-recording-widget) is used to crea
 
 In the **iOS** version, there are two options to start recording:
 
-- using the [REC widget](../widgets/info-widgets#-trip-recording-widget),
-- using the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces): 
+- using the [REC widget](../widgets/info-widgets.md#-trip-recording-widget),
+- using the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces.md): 
     <Translate ios="true" ids="menu,menu_my_places,tracks"/> tab
 
 In any case, the Start dialog opens, unless the **<Translate ios="true" ids="track_interval_remember"/>** option is toggled on, and provides the following recording settings to adjust before confirming the start of the recording by tapping **OK**:
@@ -321,15 +321,15 @@ In any case, the Start dialog opens, unless the **<Translate ios="true" ids="tra
 
 #### STOP RECORDING
 
-In the **iOS** version, to stop recording, or to do any of the following options, tap the [REC widget](../widgets/info-widgets#-trip-recording-widget) again, and in the opened Track recording dialog, select:
+In the **iOS** version, to stop recording, or to do any of the following options, tap the [REC widget](../widgets/info-widgets.md#-trip-recording-widget) again, and in the opened Track recording dialog, select:
 
 - **Stop recording** - to stop the recording. The track will automatically be put for storing in: 
 
     <Translate ios="true" ids="menu,menu_my_places,tracks"/> tab. 
 
-- **Show Info** - opens the *Current recording track* [context menu](../map/track-context-menu) with options for managing the track and changing the [appearance of the track](../map/tracks-on-map#track-appearance), i.e. the manner it looks like on the map. 
+- **Show Info** - opens the *Current recording track* [context menu](../map/track-context-menu.md) with options for managing the track and changing the [appearance of the track](../map/tracks-on-map.md#track-appearance), i.e. the manner it looks like on the map. 
 
-- **Start new segment** - starts a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu).
+- **Start new segment** - starts a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu.md).
 
 - **Save current track** - saves the track for storing and asks if to continue to record, or stop. 
 
@@ -342,9 +342,9 @@ In the **iOS** version, to stop recording, or to do any of the following options
 
 In the **Android** version, there are four options to start recording: 
 
-- using the [REC widget](../widgets/info-widgets#-trip-recording-widget), 
+- using the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), 
 - with the Trip recording option in the menu,
-- with the RECORD option in [My Places](../personal/myplaces):
+- with the RECORD option in [My Places](../personal/myplaces.md):
     <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab;
 - with the Start Recording icon on the screen of the device, as the examples on the figures below show. 
 
@@ -362,7 +362,7 @@ In the opened Start dialog, it is possible adjust the following recording settin
 
 - **Show on map** - if enabled, shows the detected points on the map;
 
-- **Appearance** - the *Line* icon - opens the [Track Appearance options](../map/tracks-on-map#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map;
+- **Appearance** - the *Line* icon - opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map;
 
 - **Logging interval** - to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track;
 
@@ -377,11 +377,11 @@ In the opened Start dialog, it is possible adjust the following recording settin
 
 #### STOP RECORDING 
 
-In the **Android** version, tap the [REC widget](../widgets/info-widgets#-trip-recording-widget), or the Trip recording option in the menu again, to stop recording, and/or to do any of the following extra options in the Trip recording dialog:
+In the **Android** version, tap the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), or the Trip recording option in the menu again, to stop recording, and/or to do any of the following extra options in the Trip recording dialog:
 
 - **Show on map** - if enabled, to show the detected points on the map;
 
-- **Appearance** - the *Line* icon - to open and work with the [Track Appearance options](../map/tracks-on-map#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map;
+- **Appearance** - the *Line* icon - to open and work with the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map;
 
 - **Start time** / **End Time** - the timestamps of the first detected point and the last detected point;
 
@@ -403,7 +403,7 @@ In the **Android** version, tap the [REC widget](../widgets/info-widgets#-trip-r
     
     - **Save and continue** - to save the track for storing and continue recording further; 
     
-    - **Start new segment** - to start a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu).
+    - **Start new segment** - to start a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu.md).
 
 
 </TabItem>
@@ -422,11 +422,11 @@ In the **Android** version, tap the [REC widget](../widgets/info-widgets#-trip-r
 
 Once recorded and saved, tracks can be managed, as follows:
 
-- in [**My Places**](../personal/myplaces), so that to view all ever recorded pieces of data as a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format); 
+- in [**My Places**](../personal/myplaces.md), so that to view all ever recorded pieces of data as a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format); 
 
-- in [**Configure map**](../map/configure-map-menu), so that to select a specific track and display it on the map;
+- in [**Configure map**](../map/configure-map-menu.md), so that to select a specific track and display it on the map;
 
-- with the [**Context menu**](../map/track-context-menu) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+- with the [**Context menu**](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
 
 
 
@@ -437,9 +437,9 @@ Once recorded and saved, tracks can be managed, as follows:
 
 <TabItem value="def" label="Default" default>
 
-All tracks ever recorded automatically show up in the [**My Places**](../personal/myplaces). It is the central storage of all user-generated information organized into tabs by the essence criterion of the saved data. There are favourites, notes, and also tracks. Look at the [**Tracks**](../personal/tracks) tab for any trip recordings. 
+All tracks ever recorded automatically show up in the [**My Places**](../personal/myplaces.md). It is the central storage of all user-generated information organized into tabs by the essence criterion of the saved data. There are favourites, notes, and also tracks. Look at the [**Tracks**](../personal/tracks.md) tab for any trip recordings. 
 
-For any details about [My Places](../personal/myplaces), and/or [Tracks](../personal/tracks) stored there, refer to the respective sections of the current documentation. However, here it makes sense to underscore, that:
+For any details about [My Places](../personal/myplaces.md), and/or [Tracks](../personal/tracks.md) stored there, refer to the respective sections of the current documentation. However, here it makes sense to underscore, that:
 
 - the internal organization of the Tracks tab in My Places can be managed with the Trip recording plugin settings described above;
 
@@ -487,7 +487,7 @@ In the **Android** version, to view all ever-recorded tracks, and/or manage them
 
 <TabItem value="def" label="Default" default>
 
-Tracks make up an individual data layer that can be shown, or hidden with the respective option in the [**Configure map**](../map/configure-map-menu#map-data-layers) menu. Moreover, by tapping Tracks, the dialog with a choice of tracks shows up, and allows you to select what track, or some tracks to display on the map.
+Tracks make up an individual data layer that can be shown, or hidden with the respective option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu. Moreover, by tapping Tracks, the dialog with a choice of tracks shows up, and allows you to select what track, or some tracks to display on the map.
 
 ![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/ios_show_tracks2.png) ![Show tracks on the map in Android](@site/static/img/plugins/trip-recording/and_show_tracks2.png)
 
@@ -496,7 +496,7 @@ Tracks make up an individual data layer that can be shown, or hidden with the re
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, for a specific profile, to display a track on the map, open [**Configure map**](../map/configure-map-menu) and tap [**Tracks**](../map/tracks-on-map#display-via-configure-map-menu). Then from the opened dialog, check the needed track. To hide a track, uncheck it from the list of Tracks in the **Configure map** menu:
+In the **iOS** version, for a specific profile, to display a track on the map, open [**Configure map**](../map/configure-map-menu.md) and tap [**Tracks**](../map/tracks-on-map.md#display-via-configure-map-menu). Then from the opened dialog, check the needed track. To hide a track, uncheck it from the list of Tracks in the **Configure map** menu:
 
 <Translate ios="true" ids="menu,configure_map,tracks"/>
 
@@ -506,7 +506,7 @@ In the **iOS** version, for a specific profile, to display a track on the map, o
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, for a specific profile, to display a track on the map, open [**Configure map**](../map/configure-map-menu) and tap [**Tracks**](../map/tracks-on-map#display-via-configure-map-menu). Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the [**Configure map**](../map/configure-map-menu) menu: 
+In the **Android** version, for a specific profile, to display a track on the map, open [**Configure map**](../map/configure-map-menu.md) and tap [**Tracks**](../map/tracks-on-map.md#display-via-configure-map-menu). Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the [**Configure map**](../map/configure-map-menu.md) menu: 
 
 <Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/>
 
@@ -528,7 +528,7 @@ In the **Android** version, for a specific profile, to display a track on the ma
 
 <TabItem value="def" label="Default" default>
 
-When a track is displayed on the map, on tapping it, the [context menu of the track](../map/track-context-menu) shows up. For the details of every available option, refer to the respective section of the current documentation. Here is an overview of options:
+When a track is displayed on the map, on tapping it, the [context menu of the track](../map/track-context-menu.md) shows up. For the details of every available option, refer to the respective section of the current documentation. Here is an overview of options:
 
 - basic info to show the distance, ascending and descending areas, description and quick action buttons, such as whether to show the track on the map, its appearance, points and if to place the track for navigation;
 
@@ -536,7 +536,7 @@ When a track is displayed on the map, on tapping it, the [context menu of the tr
 
 - a tab for any overview, and/or updates of points and waypoints;
 
-- and other [options](../map/track-context-menu#options): appearance, analysis of split intervals, sharing, editing, renaming, etc.  
+- and other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc.  
 
 ![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/ios_tracks_context_menu1.png)  ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/and_tracks_context_menu1.png)
 
@@ -545,7 +545,7 @@ When a track is displayed on the map, on tapping it, the [context menu of the tr
 
 <TabItem value="ios" label="iOS">
 
-By tapping a track directly on the map in the **iOS** version, the [context menu of the track](../map/track-context-menu) shows up and provides a quick [basic overview about the track](../map/track-context-menu#overview) as well as more [analytical data](../map/track-context-menu#altitude--speed-graphs) to investigate the route and make any corrections of [points and waypoints](../map/track-context-menu#points--waypoints), if needed. For more details, refer to [Track Context Menu](../map/track-context-menu).
+By tapping a track directly on the map in the **iOS** version, the [context menu of the track](../map/track-context-menu.md) shows up and provides a quick [basic overview about the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) to investigate the route and make any corrections of [points and waypoints](../map/track-context-menu.md#points--waypoints), if needed. For more details, refer to [Track Context Menu](../map/track-context-menu.md).
 
 ![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/ios_tracks_context_menu1.png)
 
@@ -553,7 +553,7 @@ By tapping a track directly on the map in the **iOS** version, the [context menu
 
 <TabItem value="android" label="Android">
 
-By tapping a track directly on the map in the **iOS** version, the [context menu of the track](../map/track-context-menu) shows up and provides a quick [basic overview about the track](../map/track-context-menu#overview) as well as more [analytical data](../map/track-context-menu#altitude--speed-graphs) to investigate the route and make any corrections of [points and waypoints](../map/track-context-menu#points--waypoints), if needed. For more details, refer to [Track Context Menu](../map/track-context-menu).
+By tapping a track directly on the map in the **iOS** version, the [context menu of the track](../map/track-context-menu.md) shows up and provides a quick [basic overview about the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) to investigate the route and make any corrections of [points and waypoints](../map/track-context-menu.md#points--waypoints), if needed. For more details, refer to [Track Context Menu](../map/track-context-menu.md).
 
 ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/and_tracks_context_menu1.png)
 
@@ -573,9 +573,9 @@ By tapping a track directly on the map in the **iOS** version, the [context menu
 
 <TabItem value="def" label="Default" default>
 
-All recorded tracks are stored [**My Places**](../personal/myplaces). It is the only storage for tracks. Even if moved, tracks are moved between folders in My Places. However, as soon as a new track is created, it is automatically saved to the default folder in My Places. The default folder is one and the same for all new tracks. After showing up in the default folder, tracks can be moved to any other preferred folder, as follows:
+All recorded tracks are stored [**My Places**](../personal/myplaces.md). It is the only storage for tracks. Even if moved, tracks are moved between folders in My Places. However, as soon as a new track is created, it is automatically saved to the default folder in My Places. The default folder is one and the same for all new tracks. After showing up in the default folder, tracks can be moved to any other preferred folder, as follows:
 
-1. Select more options from the [Context menu](../map/track-context-menu) of a track on the map. 
+1. Select more options from the [Context menu](../map/track-context-menu.md) of a track on the map. 
 2. Tap **Change folder** and select another folder in My Places to store the track in. 
 
 ![More options in iOS](@site/static/img/plugins/trip-recording/ios_context_menu_options1.png) ![More options in Android](@site/static/img/plugins/trip-recording/and_context_menu_options1.png)
@@ -595,7 +595,7 @@ Later on, it is possible to move the track to any other preferable folder within
 
 To move a track from the default folder to another folder within My Places, do the following:
 
-1. Open the [Context menu](../map/track-context-menu) of a track on the map in one of the following ways:
+1. Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
 
     - by tapping a track in My Places, the map shows up with the context menu opened for the track;
     - by tapping a track directly on the map. 
@@ -612,7 +612,7 @@ To move a track from the default folder to another folder within My Places, do t
 
 To export a GPX file to an external storage, do the following: 
 
-1. Open the [Context menu](../map/track-context-menu) of a track on the map in one of the following ways:
+1. Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
 
     - by tapping a track in My Places, the map shows up with the context menu opened for the track;
     - by tapping a track directly on the map. 
@@ -632,21 +632,21 @@ All new tracks are automatically saved to the default folder in My Places:
 
 <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab
 
-For the **Android** version of the app, the default folder can be established in [Trip recording settings](../plugins/trip-recording#establish-options) as one of the following options:
+For the **Android** version of the app, the default folder can be established in [Trip recording settings](../plugins/trip-recording.md#establish-options) as one of the following options:
 
 - the `Rec` folder, which is one folder for all tracks; or as 
 - the `Rec/yyyy-mm` folder, which is created individually anew for every month and contain tracks recorded during the given month.
 
 Later on, it is possible to move the track to any other preferable folder within My Places by using:
 
-- the [Context menu of a track on the map](../map/track-context-menu);
-- the [Context menu of a track in My Places](../personal/tracks#manage-tracks).
+- the [Context menu of a track on the map](../map/track-context-menu.md);
+- the [Context menu of a track in My Places](../personal/tracks.md#manage-tracks).
 
 #### CONTEXT MENU ON THE MAP
 
-To move a track to another folder within My Places, it is possible to use [Context menu of a track on the map](../map/track-context-menu), as follows: 
+To move a track to another folder within My Places, it is possible to use [Context menu of a track on the map](../map/track-context-menu.md), as follows: 
 
-1. Open the [Context menu](../map/track-context-menu) of a track on the map in one of the following ways:
+1. Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
 
     - by tapping a track in My Places, the map shows up with the context menu opened for the track;
     - by tapping a track directly on the map. 
@@ -660,7 +660,7 @@ To move a track to another folder within My Places, it is possible to use [Conte
 
 #### CONTEXT MENU IN MY PLACES
 
-To move a track to another folder within My Places, it is possible to use the [Context menu of a track in My Places](../personal/tracks#manage-tracks), as follows: 
+To move a track to another folder within My Places, it is possible to use the [Context menu of a track in My Places](../personal/tracks.md#manage-tracks), as follows: 
 
 1. Open <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab.
 2. Tap the triple points on the right of the required track.

@@ -24,7 +24,7 @@ To illustrate skiing location and amenities, most resorts and parks provide thei
 
 The Piste Maps of [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) is the source of data for OsmAnd Ski Map. Combined with the default vector maps, the Ski Map of OsmAnd preserves its accuracy and benefits from a variety of contributors, like: ski resorts, lift operators, instructors, eager mountaineers, winter sports enthusiasts, etc.
 
-OsmAnd Ski Map is delivered as part of the default vector maps, and does not require any extra downloading. However, it is disabled by default. The plugin allows you quickly to enable OsmAnd Ski Map and start to use it. OsmAnd Ski Map is one of the [Map Styles](../map/vector-maps) that provide extra capabilities by highlighting some objects, while making other less viable. 
+OsmAnd Ski Map is delivered as part of the default vector maps, and does not require any extra downloading. However, it is disabled by default. The plugin allows you quickly to enable OsmAnd Ski Map and start to use it. OsmAnd Ski Map is one of the [Map Styles](../map/vector-maps.md) that provide extra capabilities by highlighting some objects, while making other less viable. 
 
 With the profiles configured individually, it is possible to prepare a Skiing profile specifically for skiing. It will highlight an assorted amount of winter and ski related information on the map. Below are two profiles: the left-hand one is for skiing, the other one is for driving. And the profile for skiing highlights pistes, aerial ways, winter colors, etc. - the map objects useful when navigating through the ski area.
 
@@ -73,7 +73,7 @@ The following setup makes OsmAnd Ski Map show up on the screen:
 
 <TabItem value="def" label="Default" default>
 
-Enabling the Ski map plugin is a quick way to setup OsmAnd Ski Map. The plugin can add the default profile for skiing. If it has not been used yet, the default Skiing profile has the Ski navigation and the [Winter and ski map style](../map/vector-maps#winter-and-ski) already established for it. Otherwise, the profile would remember the settings of the latest use. 
+Enabling the Ski map plugin is a quick way to setup OsmAnd Ski Map. The plugin can add the default profile for skiing. If it has not been used yet, the default Skiing profile has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already established for it. Otherwise, the profile would remember the settings of the latest use. 
 
 To enable the Ski Map plugin, do the following:
 
@@ -89,7 +89,7 @@ To enable the Ski Map plugin, do the following:
 
 <TabItem value="ios" label="iOS">
 
-The **<Translate ios="true" ids="product_title_skimap"/>** plugin can  be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps#winter-and-ski) established for it. 
+The **<Translate ios="true" ids="product_title_skimap"/>** plugin can  be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
 
 To enable the **<Translate ios="true" ids="product_title_skimap"/>** plugin, tap it in the list of plugins opened, as follows: 
 
@@ -105,7 +105,7 @@ If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leav
 
 <TabItem value="android" label="Android">
 
-The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps#winter-and-ski) established for it. 
+The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
 
 To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, tap it in the list of plugins opened, as follows:
 
@@ -132,11 +132,11 @@ If the **<Translate android="true" ids="app_mode_skiing"/>** profile is needed, 
 
 The **Winter and Ski** style highlights pistes, ski touring trails, sled paths, etc. - the winter and ski related information. Whenever needed, just enable it for the required profile, as follows: 
 
-1. Select the required [profile](../personal/profiles). 
+1. Select the required [profile](../personal/profiles.md). 
 
-2. Open [Configure map](../map/configure-map-menu).
+2. Open [Configure map](../map/configure-map-menu.md).
 
-3. Scroll down up to [Map style](../map/vector-maps), open it and check the Winter and Ski style. 
+3. Scroll down up to [Map style](../map/vector-maps.md), open it and check the Winter and Ski style. 
 
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png)
@@ -172,7 +172,7 @@ To verify what style is currently established for the profile, and\or to establi
 
 ### Combine maps
 
-The default [vector map](../map/vector-maps) with the enabled [Winter and Ski map style](../map/vector-maps#winter-and-ski) can be added with the [Contour lines](../plugins/contour-lines#show-contour-linesterrain) and\or [Hillshade](../plugins/contour-lines#hillshade-map) maps. Below are two examples. The left-hand figure shows pistes on the default vector map, while the one on the right shows pistes on the default vector map combined with the contour lines and the hillshade raster map. In the second case, the map unveils more geolocation insights and elevation data to help making an assessment of the complexity, risks, distance, etc. 
+The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) can be added with the [Contour lines](../plugins/contour-lines.md#show-contour-linesterrain) and\or [Hillshade](../plugins/contour-lines.md#hillshade-map) maps. Below are two examples. The left-hand figure shows pistes on the default vector map, while the one on the right shows pistes on the default vector map combined with the contour lines and the hillshade raster map. In the second case, the map unveils more geolocation insights and elevation data to help making an assessment of the complexity, risks, distance, etc. 
 
 <Tabs groupId="operating-systems">
 
@@ -203,7 +203,7 @@ The default [vector map](../map/vector-maps) with the enabled [Winter and Ski ma
 
 While reading the map, it is possible to get other accompanying details, like: the complexity of a specific piste, the type of the trail, if any grooming is conducted, if the path is lit up at night, or other characteristics that might be helpful to skiing and snowboarding enthusiasts. 
 
-> **NOTE**: The options covered herein, are worth considering also when using the [Ski navigation](../navigation/route-navigation). As a rule, it is available within the [Ski profile](../personal/profiles). The default navigation for the Ski profile is the **Ski navigation**, unless it is established otherwise. The Ski navigation is supplied with individual route parameters applicable only to skiing, and builds the route along pistes. 
+> **NOTE**: The options covered herein, are worth considering also when using the [Ski navigation](../navigation/route-navigation.md). As a rule, it is available within the [Ski profile](../personal/profiles.md). The default navigation for the Ski profile is the **Ski navigation**, unless it is established otherwise. The Ski navigation is supplied with individual route parameters applicable only to skiing, and builds the route along pistes. 
 
 
 ### Piste difficulty
@@ -320,7 +320,7 @@ Grooming is performed by special vehicles and ensure the piste is ready for the 
 
 <TabItem value="def" label="Default" default>
 
-To check out the map on whether a piste is subject to grooming, it is needed to enable the respective option in the **Details** list opened from the [Configure map](../map/configure-map-menu) menu. And the map will show groomed pistes, as exemplified on the figures below. The left-hand one shows no grooming, while the right-hand one differentiates pistes by grooming conditions. 
+To check out the map on whether a piste is subject to grooming, it is needed to enable the respective option in the **Details** list opened from the [Configure map](../map/configure-map-menu.md) menu. And the map will show groomed pistes, as exemplified on the figures below. The left-hand one shows no grooming, while the right-hand one differentiates pistes by grooming conditions. 
 
 ![No grooming in iOS](@site/static/img/plugins/ski-maps/ios_no_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
 
@@ -354,13 +354,13 @@ To check out the map on whether a piste is subject to grooming, use the **<Trans
 
 ### Ski slope routes
 
-With the Skiing profile, the Ski navigation and the [Winter and ski map style](../map/vector-maps#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such Ski slopes routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.
+With the Skiing profile, the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps.md#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such Ski slopes routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="def" label="Default" default>
 
-The **Routes** panel in the [Configure map](../map/configure-map-menu) menu, opened for a specific profile, shows the **Ski slopes** routes among other available options in the app. To view the Ski slopes routes, enable the respective option. 
+The **Routes** panel in the [Configure map](../map/configure-map-menu.md) menu, opened for a specific profile, shows the **Ski slopes** routes among other available options in the app. To view the Ski slopes routes, enable the respective option. 
 
 ![Enabling routes in iOS](@site/static/img/plugins/ski-maps/ios_enable_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
 
@@ -399,9 +399,9 @@ To view what piste outside the ski resort is possible to navigate along, enable 
 
 <TabItem value="def" label="Default" default>
 
-The **Winter and ski** style can be used with the [**Night**](../map/vector-maps#map-mode) mode. It is an obvious choice for someone who prefers dark colors, and/or it is getting dark at night, as well as for those who does some night skiing. Together with the Night mode, OsmAnd Ski Maps can show which pistes has [lighting](../map/vector-maps#details). 
+The **Winter and ski** style can be used with the [**Night**](../map/vector-maps.md#map-mode) mode. It is an obvious choice for someone who prefers dark colors, and/or it is getting dark at night, as well as for those who does some night skiing. Together with the Night mode, OsmAnd Ski Maps can show which pistes has [lighting](../map/vector-maps.md#details). 
 
-Both options are provided with the [Configure map](../map/configure-map-menu) menu. To enable the Night mode, look for the respective option within the **Map mode** section of settings. To make the map show which pistes are lit up at night, enable the respective option in the **Details** section of settings. 
+Both options are provided with the [Configure map](../map/configure-map-menu.md) menu. To enable the Night mode, look for the respective option within the **Map mode** section of settings. To make the map show which pistes are lit up at night, enable the respective option in the **Details** section of settings. 
 
 ![No lighting in iOS](@site/static/img/plugins/ski-maps/ios_no_lighting.png) ![Night and lighting in Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
 
@@ -409,7 +409,7 @@ Both options are provided with the [Configure map](../map/configure-map-menu) me
 
 <TabItem value="ios" label="iOS">
 
-The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu) menu opened for the needed profile.  
+The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu.md) menu opened for the needed profile.  
 
 To enable the **Night** mode, select the respective option from the following list:
 
@@ -425,7 +425,7 @@ To enable the **Street lighting**, toggle the following option:
 
 <TabItem value="android" label="Android">
 
-The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu) menu opened for the needed profile.  
+The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu.md) menu opened for the needed profile.  
 
 To enable the **Night** mode, select the respective option from the following list: 
 
@@ -447,14 +447,14 @@ To enable the **Street lighting**, toggle the following option:
 
 ### Map legend
 
-For any reference, use the [Ski map legend](https://osmand.net/help-online/map-legend#ski). It helps to be certain of the types of piste displayed on the map, as well as the types of aerial ways and other characteristics that can be read from the map.  
+For any reference, use the [Ski map legend](../../user/map-legend/ski-map.md). It helps to be certain of the types of piste displayed on the map, as well as the types of aerial ways and other characteristics that can be read from the map.  
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Map data details
 
-OsmAnd Ski Map is built as one of the rendering styles that determine what objects to show on the map and the objects' appearance. All rendering styles are described within an XML file. For the rules that govern the internal structure of the XML file, refer to the [Rendering documentation](/docs/technical/osmand-file-formats/osmand-rendering-style).
+OsmAnd Ski Map is built as one of the rendering styles that determine what objects to show on the map and the objects' appearance. All rendering styles are described within an XML file. For the rules that govern the internal structure of the XML file, refer to the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
 
 For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file.
 
@@ -469,9 +469,9 @@ For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](
 
 Whenever removing pistes and winter colors from the map is preferable, and/or the ski season is over, do any of the following: 
 
-- uncheck the [Winter and ski style](../map/vector-maps) for the needed profile, and/or
+- uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile, and/or
 
-- disable the Skiing [profile](../personal/profiles). 
+- disable the Skiing [profile](../personal/profiles.md). 
 
 </TabItem>
 

@@ -63,15 +63,15 @@ At the main screen of the tool there are the next elements:
 
 ![Plan route android-screen](@site/static/img/plan-route/plan-route-android-screen.png)  ![Plan route ios-screen](@site/static/img/plan-route/plan-route-ios-screen.png) 
 
-**1.** ['<Translate android="true" ids="shared_string_options"/>'](../plan-route/create-route#options-menu) menu.
+**1.** ['<Translate android="true" ids="shared_string_options"/>'](../plan-route/create-route.md#options-menu) menu.
 
 **2.** '<Translate android="true" ids="shared_string_add"/>' button for shaping points.
 
 **3.** Back/forward - move along planning process steps.
 
-**4.** [Points list and Graph (Android) list](../plan-route/create-route#points-list-and-graph).
+**4.** [Points list and Graph (Android) list](../plan-route/create-route.md#points-list-and-graph).
 
-**5.** 'Profile' button for choosing [application profile](../personal/profiles).
+**5.** 'Profile' button for choosing [application profile](../personal/profiles.md).
 
 **6.** 'Done' button - finish and save GPX route.
 
@@ -80,17 +80,17 @@ At the main screen of the tool there are the next elements:
 **8.** 'Close' button - exit from the tool with saving GPX route or no saving.
 
 **9.** Widgets (Android) - [Configure map
-](../widgets/map-buttons#configure-map), [Search](../widgets/map-buttons#search), [Compass](../widgets/map-buttons#compass).
+](../widgets/map-buttons.md#configure-map), [Search](../widgets/map-buttons.md#search), [Compass](../widgets/map-buttons.md#compass).
 
 **10.** Widgets (Android) - [Informational widgets
-](../widgets/info-widgets), [Navigational widgets
-](../widgets/nav-widgets).
+](../widgets/info-widgets.md), [Navigational widgets
+](../widgets/nav-widgets.md).
 
-**11.** Widgets - [My Location & Zoom](../widgets/map-buttons#my-location--zoom).
+**11.** Widgets - [My Location & Zoom](../widgets/map-buttons.md#my-location--zoom).
 
 ### Route line
 
-The Route line shows an [automatically-generated road or straight route](../plan-route/create-route#creating-a-route) which you can save like a GPX track.
+The Route line shows an [automatically-generated road or straight route](../plan-route/create-route.md#creating-a-route) which you can save like a GPX track.
 
 
 ![Plan route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png) ![Plan route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
@@ -114,17 +114,17 @@ For opening 'Points' list and Graph:
 
 ![Plan route android-pointslist](@site/static/img/plan-route/plan-route-pointslist-android.png)  ![Plan route ios-pointslist](@site/static/img/plan-route/plan-route-pointslist-ios.png) 
 
-Description:  Each point has information about distance and azimuth for a new making route, and additional altitude, and the speed information for recorded GPX track. In ['Points' list](../plan-route/create-route#main-screen) we can delete points (click to 'Delete' button near chosen point) or change the order of it (move a line of chosen point to up or below). Clicking to a point opens ['Point' menu](../plan-route/create-route#actions-of-point-menu). 
+Description:  Each point has information about distance and azimuth for a new making route, and additional altitude, and the speed information for recorded GPX track. In ['Points' list](../plan-route/create-route.md#main-screen) we can delete points (click to 'Delete' button near chosen point) or change the order of it (move a line of chosen point to up or below). Clicking to a point opens ['Point' menu](../plan-route/create-route.md#actions-of-point-menu). 
 
 **2.Click to "Graph" button.** (Android)
 
 ![Plan route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
 
-Description: [Click to graph](../plan-route/create-route#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.
+Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.
 
 ## Creating a route
 
-[Start creating a route](../plan-route/create-route#main-menu):
+[Start creating a route](../plan-route/create-route.md#main-menu):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_create_new_route"/>
 
@@ -143,20 +143,20 @@ The straight line is useful for simple distance measurement, azimuth info or for
 
 - Click to 'Add' button for adding shaping points or just click on the screen.
 
-**Note**: Overview data available only on roads, calculate a route using ["Route between points”](../plan-route/create-route#drawing-a-route) to see graphs.
+**Note**: Overview data available only on roads, calculate a route using ["Route between points”](../plan-route/create-route.md#drawing-a-route) to see graphs.
 
 ### Drawing a route
 
-- Click on ['Profile' button](../plan-route/create-route#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
-- Click to ['Add' button](../plan-route/create-route#main-screen) for adding shaping points or just click on the screen.
+- Click on ['Profile' button](../plan-route/create-route.md#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
+- Click to ['Add' button](../plan-route/create-route.md#main-screen) for adding shaping points or just click on the screen.
 
 ![Plan route app_button](@site/static/img/plan-route/plan-route-app-button.png)
 
-For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on ['Profile' button](../plan-route/create-route#main-screen):
+For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on ['Profile' button](../plan-route/create-route.md#main-screen):
 
 ![app-settings](@site/static/img/plan-route/plan-route-app-set.png)
 
-- Choose two or more application profiles for creating a route. Click to ['Profile' button](../plan-route/create-route#main-screen):
+- Choose two or more application profiles for creating a route. Click to ['Profile' button](../plan-route/create-route.md#main-screen):
 
  ![Plan route app_choosing](@site/static/img/plan-route/plan-route-app-choosing.png) 
 
@@ -168,13 +168,13 @@ Choose how to connect the points, by a straight line, or calculate a route betwe
 
  - When you use two or more application profiles for your route:
 
-for Android each segment has [a profile icon and color](../plan-route/create-route#route-line) of the application profile which using for calculated route between shaping points;
+for Android each segment has [a profile icon and color](../plan-route/create-route.md#route-line) of the application profile which using for calculated route between shaping points;
 
-for iOS all segments have [color of last using application profile](../plan-route/create-route#route-line) for calculated route.
+for iOS all segments have [color of last using application profile](../plan-route/create-route.md#route-line) for calculated route.
 
 ### Actions of 'Point' menu
 
-Actions in 'Point' menu (by clicking to a point in ['Points' list](../plan-route/create-route#points-list-and-graph)):
+Actions in 'Point' menu (by clicking to a point in ['Points' list](../plan-route/create-route.md#points-list-and-graph)):
 
 | | |
 |------------|------------|
@@ -194,7 +194,7 @@ Actions in 'Point' menu (by clicking to a point in ['Points' list](../plan-route
 
 ### Saving a route
 
-Click to ['Done' button](../plan-route/create-route#main-screen) to save your route like the GPX file.
+Click to ['Done' button](../plan-route/create-route.md#main-screen) to save your route like the GPX file.
 
 ![Plan route android-save](@site/static/img/plan-route/plan-route-animation.gif)
 
@@ -210,7 +210,7 @@ In 'Options' menu you can make the next actions with your route:
 
 |Action   |Description
 |:------------|:------------|
-|1. <Translate android="true" ids="route_between_points"/> | Showing chosen application profile (The straight line by default). Click to this action is equal ['Profile' button](../plan-route/create-route#main-screen)  with opening [application profile menu](../plan-route/create-route#drawing-a-route). |
+|1. <Translate android="true" ids="route_between_points"/> | Showing chosen application profile (The straight line by default). Click to this action is equal ['Profile' button](../plan-route/create-route.md#main-screen)  with opening [application profile menu](../plan-route/create-route.md#drawing-a-route). |
 |2. <Translate android="true" ids="plan_route_add_new_segment"/> or <Translate ios="true" ids="track_new_segment"/> | Drawing new segments of the route which not connect with the previous segment. |
 |3. <Translate android="true" ids="shared_string_save_changes"/> | Save your route like GPX track and continue to create the next segment. |
 |4. <Translate android="true" ids="save_as_new_track"/> | Save your route like GPX track.|
@@ -226,7 +226,7 @@ In 'Options' menu you can make the next actions with your route:
 
 'Plan route' tool allows modifying existing GPX track. You can make any actions with your tracks.
 
-[Open any GPX track](../plan-route/create-route#modify-gpx-track) for modifying it:
+[Open any GPX track](../plan-route/create-route.md#modify-gpx-track) for modifying it:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track,plan_route_import_track"/>
 
@@ -236,16 +236,16 @@ In 'Options' menu you can make the next actions with your route:
 
 <p> </p>
 
-In ['Points' list](../plan-route/create-route#points-list-and-graph), there is information about the number  of points and a track distance.
+In ['Points' list](../plan-route/create-route.md#points-list-and-graph), there is information about the number  of points and a track distance.
 
 
 ![Plan route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png) ![Plan route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
-You can make all actions with points in ['Points' list](../plan-route/create-route#points-list-and-graph) and ['Point' menu](../plan-route/create-route#actions-of-point-menu): delete, change order, move and etc.
+You can make all actions with points in ['Points' list](../plan-route/create-route.md#points-list-and-graph) and ['Point' menu](../plan-route/create-route.md#actions-of-point-menu): delete, change order, move and etc.
 
-For [Graph (Android)](../plan-route/create-route#points-list-and-graph) you can see the actual information for a GPX track: Altitude, Slope, Speed.
+For [Graph (Android)](../plan-route/create-route.md#points-list-and-graph) you can see the actual information for a GPX track: Altitude, Slope, Speed.
 
-In ['Options' menu](../plan-route/create-route#options-menu) is available all actions for GPX track too: add a new segment, reverse route, directions, etc.
+In ['Options' menu](../plan-route/create-route.md#options-menu) is available all actions for GPX track too: add a new segment, reverse route, directions, etc.
 
 
 ### Snap to roads
@@ -262,14 +262,14 @@ For using this option you need to open your track by 'Plan route' tool:
 
 <p> </p>
 
-Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click ['Profile' button](../plan-route/create-route#main-screen) or choose in ['Options' menu](../plan-route/create-route#options-menu) → <translate android="true" ids="route_between_points"/>. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
+Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click ['Profile' button](../plan-route/create-route.md#main-screen) or choose in ['Options' menu](../plan-route/create-route.md#options-menu) → <translate android="true" ids="route_between_points"/>. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
 
-After calculating the new route you click ['Done' button](../plan-route/create-route#main-screen) for saving the new GPX track which snapping to roads.
+After calculating the new route you click ['Done' button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
 
 
 ![Plan route snap-road-android](@site/static/img/plan-route/plan-route-snap-android.gif) ![Plan route snap-road-ios](@site/static/img/plan-route/plan-route-snap-ios.gif)
 
 ## Useful links
 
-[Travel guides](../plan-route/travel-guides)
+[Travel guides](../plan-route/travel-guides.md)
 

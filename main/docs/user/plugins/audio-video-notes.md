@@ -45,7 +45,7 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 
 The Audio/video notes plugin is required for working with the audio/video notes: from creating the notes to viewing them in My Places, and showing on the map. All audio/video notes will be hidden from the map and from My Places, if the plugin becomes disabled. 
 
-To enable the plugin, tap the triple dots beside the enabled **<Translate android="true" ids="audionotes_plugin_name"/>** option in the list of [plugins](../start-with/first-steps#how-to-configure-plugins) and select **Enable**.  
+To enable the plugin, tap the triple dots beside the enabled **<Translate android="true" ids="audionotes_plugin_name"/>** option in the list of [plugins](../start-with/first-steps.md#how-to-configure-plugins) and select **Enable**.  
 
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name"/>
@@ -95,13 +95,13 @@ For every profile, it is possible to configure the recording settings. There are
 
 - from the app settings, so that to configure recording for any of the profiles. 
 
-From the [plugin](../start-with/first-steps#how-to-configure-plugins), the Audio/video recording settings are opened by selecting **Settings** from the triple dots list of the plugin in: 
+From the [plugin](../start-with/first-steps.md#how-to-configure-plugins), the Audio/video recording settings are opened by selecting **Settings** from the triple dots list of the plugin in: 
 
 <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
 
 ![Plugin settings](@site/static/img/plugins/audio-video-notes/settings_from_plugin.png)
 
-From the [settings](../start-with/first-steps#how-to-manage-your-settings) of the entire app, the Audio/video recording settings can be opened as follows:
+From the [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app, the Audio/video recording settings can be opened as follows:
 
 1. Go to: <Translate android="true" ids="shared_string_menu,shared_string_settings"/>.
 
@@ -135,7 +135,7 @@ The way the Audio/video recording will work can be determined with the settings 
 | **<Translate android="true" ids="multimedia_rec_split_title"/>** | If enabled, old video recordings will be automatically re-written and replaced with new video recordings if the storage size reaches the established size limit.  |
 | **<Translate android="true" ids="rec_split_clip_length"/>** | This determines the upper time limit for recorded video clips. There are options with the range from 1 minute to 30 minutes.|
 | **<Translate android="true" ids="rec_split_storage_size"/>** | This establishes the size of the storage intended for recorded video. There are options with the range from 1024 MB to 62 GB. A specific range of options, as well as the default option are determined with the parameters of a specific device. A system message will remind on the storage size reaching the established limit. |
-| **<Translate android="true" ids="notes"/>** | This re-directs you directly to the [Audio/video notes in My Places](../personal/myplaces). This is the central storage of all Audio/video notes ever made in the app. |
+| **<Translate android="true" ids="notes"/>** | This re-directs you directly to the [Audio/video notes in My Places](../personal/myplaces.md). This is the central storage of all Audio/video notes ever made in the app. |
 | **<Translate android="true" ids="reset_plugin_to_default"/>** | This establishes the default values for all of the above settings.  |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
 
@@ -153,12 +153,12 @@ The way the Audio/video recording will work can be determined with the settings 
 You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
 
 - create a note;
-- view all notes as a list in [My Places](../personal/myplaces);
+- view all notes as a list in [My Places](../personal/myplaces.md);
 - show the specific note on the map;
 - rename a note in My Places;
-- show all notes [on the map](../map/configure-map-menu#map-data-layers);
+- show all notes [on the map](../map/configure-map-menu.md#map-data-layers);
 - play the note;
-- create waypoints in a [track](../plugins/trip-recording#gpx-file-details);
+- create waypoints in a [track](../plugins/trip-recording.md#gpx-file-details);
 - export to [JOSM](https://josm.openstreetmap.de/);
 
 
@@ -166,24 +166,24 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 ### Create a note
 
 You can create a photo, video, and/or audio note in any of the following ways:
-- with the [Widget](../widgets/info-widgets#-audio-video-notes-widget-android) - if the note should be tied to your current geographical position;
-- with the [Context menu](../map/map-context-menu#-record-av-note-android) of a point on the map - if the note should be tied to the selected point on the map.
+- with the [Widget](../widgets/info-widgets.md#-audio-video-notes-widget-android) - if the note should be tied to your current geographical position;
+- with the [Context menu](../map/map-context-menu.md#-record-av-note-android) of a point on the map - if the note should be tied to the selected point on the map.
 
 
 #### CREATE AND TIE TO YOUR CURRENT POSITION
 
 To create a note tied to your current position, and thus, avoiding any search of a suitable point on the map to tie the note to, the <Translate android="true" ids="map_widget_av_notes"/> widget is used: tap the widget, and make the note. 
 
-The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
+The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
 
 ![Audio video plugin widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 
 #### CREATE AND TIE TO SELECTED GEOLOCATION 
 
-To create a note tied to a selected point on the map, the [Context menu](../map/map-context-menu#-record-av-note-android) of the point is used, as follows:
+To create a note tied to a selected point on the map, the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point is used, as follows:
 
-1. Long-tap a point on the map, and the [Context menu](../map/map-context-menu) opens.
+1. Long-tap a point on the map, and the [Context menu](../map/map-context-menu.md) opens.
 2. Tap **Actions**, and select one of the available options from the list: 
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - to make an audio note and tie it to the selected point on the map;
@@ -218,7 +218,7 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 
 ###  View in My Places
 
-[My Places](../personal/myplaces) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
+[My Places](../personal/myplaces.md) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
 
 <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>
 
@@ -227,7 +227,7 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 
 ### Show a note on the map
 
-To show a specific note on the map, use the list of notes in My Places, find the needed one and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu). It is possible to work with the note by selecting the options in the context menu.
+To show a specific note on the map, use the list of notes in My Places, find the needed one and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#actions-in-map-context-menu). It is possible to work with the note by selecting the options in the context menu.
 
 ![Audio video plugin My places menu Context](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 

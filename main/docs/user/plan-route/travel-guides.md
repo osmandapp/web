@@ -24,13 +24,13 @@ Travel guides help you in your trips, you can see interesting places on the map 
 
 The guides are based on [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer writers create articles with real and up-to-date information. Such information includes the main facts about a place, transport, landmarks, shopping spots, etc. Going to London, Shanghai or planning a visit to the Grand Canyon? Your guide is there to help you.
 
-Wikivoyage data has GPX format in OsmAnd and keep in [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks) → <Translate android="true" ids="icon_group_travel"/> after [downloading](../plan-route/travel-guides#download) it. Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map#track-points) only.
+Wikivoyage data has GPX format in OsmAnd and keep in [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md) → <Translate android="true" ids="icon_group_travel"/> after [downloading](../plan-route/travel-guides.md#download) it. Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map.md#track-points) only.
 
 ![Travel guides folder General](@site/static/img/guides/travel_guides_folder_android.png)
 
 GPX-files (Travel guides) have info about points number of Travel guide file. 
 
-About actions of this GPX-files (Travel guides) read [here](../personal/tracks#my-places-android).
+About actions of this GPX-files (Travel guides) read [here](../personal/tracks.md#my-places-android).
 
 Orange color - visible on the map. Or <Translate android="true" ids="shared_string_visible"/> folder.
 
@@ -40,11 +40,11 @@ To start using the feature, please go to:
 
 <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/>
  
-Make sure [to download the travel guide file](../plan-route/travel-guides#download) to be able to use the feature.
+Make sure [to download the travel guide file](../plan-route/travel-guides.md#download) to be able to use the feature.
   
 Now all your guides are saved on device and you can look up any information, even if you're abroad or out of a mobile network area.
 
-As soon as the file is downloaded, you can start using the guides. Just go to [Travel guides list](../plan-route/travel-guides#search-field-and-travel-guides-list): <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/>, and enter the name of the city into [the search field](../plan-route/travel-guides#search-field-and-travel-guides-list). 
+As soon as the file is downloaded, you can start using the guides. Just go to [Travel guides list](../plan-route/travel-guides.md#search-field-and-travel-guides-list): <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/>, and enter the name of the city into [the search field](../plan-route/travel-guides.md#search-field-and-travel-guides-list). 
 
 **Note:** 
 
@@ -75,16 +75,16 @@ In the top of <Translate android="true" ids="shared_string_travel_guides"/> menu
 In Result field:
 - &nbsp;Travel guides with info about article languages.
 
-Clicking to chosen Travel guide name opens [Travel guide article menu](../plan-route/travel-guides#travel-guide-article).
+Clicking to chosen Travel guide name opens [Travel guide article menu](../plan-route/travel-guides.md#travel-guide-article).
 
-**Note:** for deleting search history you need to use [<Translate android="true" ids="shared_string_options"/> button](../plan-route/travel-guides#options)
+**Note:** for deleting search history you need to use [<Translate android="true" ids="shared_string_options"/> button](../plan-route/travel-guides.md#options)
 
 Below the seacrh field there is Travel guides list - <Translate android="true" ids="popular_destinations"/>. It shows the first 30 nearest travel guides article on the area of your screen device (not location) or <Translate android="true" ids="saved_articles"/>. For open <Translate android="true" ids="saved_articles"/> or <Translate android="true" ids="popular_destinations"/> you need to use <Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/> buttons below.
 
 ![Travel guides explore menu](@site/static/img/guides/travel_guides_explore_android.png) ![Travel guides bookmarked](@site/static/img/guides/travel_guides_bookmarked_android.png)
 
 Article buttons:
-- &nbsp;<Translate android="true" ids="shared_string_read"/> - opens [Travel guide article](../plan-route/travel-guides#travel-guide-article).
+- &nbsp;<Translate android="true" ids="shared_string_read"/> - opens [Travel guide article](../plan-route/travel-guides.md#travel-guide-article).
 - &nbsp;<Translate android="true" ids="shared_string_bookmark"/> - moves chosen article to <Translate android="true" ids="saved_articles"/>.
 - &nbsp;<Translate android="true" ids="shared_string_bookmark"/> - removes chosen article from <Translate android="true" ids="saved_articles"/>.
 
@@ -96,11 +96,11 @@ You can also choose if you'd like to download the images or not, clear image cac
 
 - &nbsp;<Translate android="true" ids="wikivoyage_download_pics"/> - article images can be downloaded for offline use. 
 - &nbsp;<Translate android="true" ids="images_cache"/> - allows to clear image cache.
-- &nbsp;<Translate android="true" ids="delete_search_history"/> - allows to clear [search history](../plan-route/travel-guides#search-field-and-travel-guides-list).
+- &nbsp;<Translate android="true" ids="delete_search_history"/> - allows to clear [search history](../plan-route/travel-guides.md#search-field-and-travel-guides-list).
 
 ### Travel guide article
 
-Clicking to <Translate android="true" ids="shared_string_read"/> button in [travel guides list](../plan-route/travel-guides#search-field-and-travel-guides-list) or <Translate android="true" ids="context_menu_read_full"/> button in [Description menu](../map/track-context-menu#description) opens Travel guide article.
+Clicking to <Translate android="true" ids="shared_string_read"/> button in [travel guides list](../plan-route/travel-guides.md#search-field-and-travel-guides-list) or <Translate android="true" ids="context_menu_read_full"/> button in [Description menu](../map/track-context-menu.md#description) opens Travel guide article.
 
 ![Travel guides article menu](@site/static/img/guides/travel_guides_article_android.png) 
 
@@ -121,7 +121,7 @@ Each article in [Wikivoyage](https://en.wikipedia.org/wiki/Wikivoyage) has the s
 
 For opening a chapter you need to use "&#8744;" button.
 
-In Wikivoyage articles there are info about prices, contacts info, web links and etc. Almost each part has next buttons: button "Wikipedia" allows to open [Wikipedia POI (online or offline)](../plugins/wikipedia), button "Open on map" allows to show [the Point of the object on the map](../plan-route/travel-guides#points).
+In Wikivoyage articles there are info about prices, contacts info, web links and etc. Almost each part has next buttons: button "Wikipedia" allows to open [Wikipedia POI (online or offline)](../plugins/wikipedia.md), button "Open on map" allows to show [the Point of the object on the map](../plan-route/travel-guides.md#points).
 
 ![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full_android.png) ![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full1_android.png) 
 
@@ -130,7 +130,7 @@ Below the screen next buttons:
 
 ![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
-- &nbsp;"Points" - allows to add on the map article [Points](../plan-route/travel-guides#points) and to open [Track Context menu](../map/track-context-menu) of chosen article.
+- &nbsp;"Points" - allows to add on the map article [Points](../plan-route/travel-guides.md#points) and to open [Track Context menu](../map/track-context-menu.md) of chosen article.
 
 ![Travel guides points menu](@site/static/img/guides/travel_guides_points_android.png)
 
@@ -141,30 +141,30 @@ Articles often contain points grouped by topic. They are available in the 'Point
 
 ![Travel guides points on the map  menu](@site/static/img/guides/travel_guides_track_points_map_android.png)
 
-Wikivoyage guide file is [GPX-file with waypoints](../map/point-layers-on-map#track-points). Waypoints are Points (places) from Wikivoyage article on the map. 
+Wikivoyage guide file is [GPX-file with waypoints](../map/point-layers-on-map.md#track-points). Waypoints are Points (places) from Wikivoyage article on the map. 
 
-When you click to "Points" button on the [Travel guide article](../plan-route/travel-guides#travel-guide-article) or you show your [GPX-file of Wikivoyage on the map](../personal/tracks#my-places-android).
+When you click to "Points" button on the [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) or you show your [GPX-file of Wikivoyage on the map](../personal/tracks.md#my-places-android).
 
-When you open [Track Context menu](../map/track-context-menu) of GPX-file (Travel guide article), you find next general info of Travel guide article:
-- &nbsp;In ["Overview"](../map/track-context-menu#overview), you can read short description or open [Travel guide article](../plan-route/travel-guides#travel-guide-article) by clicking "Read full" button. Button "Edit"allows you to correct article.
+When you open [Track Context menu](../map/track-context-menu.md) of GPX-file (Travel guide article), you find next general info of Travel guide article:
+- &nbsp;In ["Overview"](../map/track-context-menu.md#overview), you can read short description or open [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) by clicking "Read full" button. Button "Edit"allows you to correct article.
 
 ![Travel guides points overview menu](@site/static/img/guides/travel_guides_points_overview_android.png)
 
-- &nbsp;In ["Track"](../map/track-context-menu#altitude--speed-graphs) there is not any info (Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map#track-points) only).
+- &nbsp;In ["Track"](../map/track-context-menu.md#altitude--speed-graphs) there is not any info (Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map.md#track-points) only).
 
-- &nbsp;In ["Points"](../map/track-context-menu#points--waypoints), you see folders with points by named [Contents (Buy, Do, Drink...)](../plan-route/travel-guides#travel-guide-article). Each category of Contents has own color and icon.
+- &nbsp;In ["Points"](../map/track-context-menu.md#points--waypoints), you see folders with points by named [Contents (Buy, Do, Drink...)](../plan-route/travel-guides.md#travel-guide-article). Each category of Contents has own color and icon.
 
 Here you find short description of points (places), number of points on each folder.
 
-You can make any [actions with points](../map/track-context-menu#points--waypoints).
+You can make any [actions with points](../map/track-context-menu.md#points--waypoints).
 
 ![Travel guides track points  menu](@site/static/img/guides/travel_guides_track_points_android.png)
 
-Clicking to chosen point opens this point on the map with and [Map Context menu](../map/map-context-menu).
+Clicking to chosen point opens this point on the map with and [Map Context menu](../map/map-context-menu.md).
 
 ![Travel guides map context menu  menu](@site/static/img/guides/travel_guides_context_menu_android.png)
 
-- &nbsp;In ["Options"](../map/track-context-menu#options), you can make any actions with your Travel guide file (GPX-track).
+- &nbsp;In ["Options"](../map/track-context-menu.md#options), you can make any actions with your Travel guide file (GPX-track).
 
 
 ## Other guides
@@ -223,4 +223,4 @@ After you start the app, please go to 'Travel' menu. Press Options > 'Travel boo
 
 ## Useful links
 
-[Wikipedia plugin](../plugins/wikipedia)
+[Wikipedia plugin](../plugins/wikipedia.md)
