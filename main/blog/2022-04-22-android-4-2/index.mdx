@@ -3,7 +3,6 @@ slug: osmand-android-4-2-released
 title: OsmAnd 4.2 (Android)
 authors: dmytro
 draft: true
-image: ./banner_4-2.png
 tags: [release, android, widgets, UTM, SwissGrid, OSM-Carto]
 ---
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +12,7 @@ import Translate from '@site/src/components/Translate.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={require('./banner_4-2.png').default} alt="Download online map"/>
+<img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
 
 * Widgets redesign: new Look &  Feel, group by Pages, change order and combine as you  want.
 * Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
@@ -25,13 +24,17 @@ import TabItem from '@theme/TabItem';
 ## Widgtes
 
 Changes in Widgtes
-* Pages
-* Widgets duplicates
-* Left/Right side same widgets
+### Pages
+Widgets in <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped in pages.
 
-## Default appearance for favorite groups
+### Duplicates
 
-Favorite groups: set default appearance for new points in the group.
+
+## Default appearance for favorites
+
+It is now possible to set a default appearance for new points in a favourites group or to change the existing appearance for all favourites at once.
+
+The appearance can be set when creating a new group or changed for an existing one in <Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item" />.
 
 <table class="blogimage">
     <tr>
@@ -79,7 +82,7 @@ Track context menu now shows country or region for the track and track waypoints
 
 ### Coordinates
 
-* Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks for that to our contributor [koenigle](https://github.com/koenigle).  
+Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks for that to our contributor [koenigle](https://github.com/koenigle).  
 Coordinate format for profile can be changed in <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />
 
 <table class="blogimage">
@@ -101,7 +104,7 @@ Coordinate format for profile can be changed in <Translate android="true" ids="s
 
 ### New parameters
 
-* Add option to display or hide turns arrow in the Route line settings
+Add option to display or hide turns arrow in the Route line settings
 
 <table class="blogimage">
   <tr>
@@ -110,13 +113,17 @@ Coordinate format for profile can be changed in <Translate android="true" ids="s
     </tr>
 </table> 
 
-* Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />.
+#### Location source
 
-<img class="inlist" src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
+Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />.
 
-* Walking navigation: three parameters were added to **<Translate android="true" id="routing_attr_height_obstacles_name" />** option to adjust preferred terrain on the route: flat, less hilly, and hilly. Previously it was available only for Bicycle navigation.
+<img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
-<img class="inlist" src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
+#### Use elevation data
+
+Three parameters were added to **<Translate android="true" id="routing_attr_height_obstacles_name" />** option to adjust preferred terrain on the route: flat, less hilly, and hilly. Previously it was available only for Bicycle navigation.
+
+<img src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
 
 
 ## Quick action
