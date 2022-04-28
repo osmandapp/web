@@ -29,7 +29,7 @@ Nautical Charts are important for professional sailors as well as amateurs easil
 
 ### What is the Nautical plugin?
 
-The Nautical plugin of OsmAnd extends the map styles of the vector layer with the Nautical map style. It makes the map data displayed according to the rules of the Nautical Chart, such as: yellow areas for land and sandbars, light blue areas for shallow water, etc. For more details, refer to: the [Map legend](https:/...net/help-online/map-legend#nautical). 
+The Nautical plugin of OsmAnd extends the map styles of the vector layer with the Nautical map style. It makes the map data displayed according to the rules of the Nautical Chart, such as: yellow areas for land and sandbars, light blue areas for shallow water, etc. For more details, refer to: the [Map legend](../../user/map-legend/nautical-map.md). 
 
 In addition to the Nautical style, the plugin provides the Nautical map packages for download. These are extra data to enrich the representation of marine information on the map. It cannot replace the official nautical chart. However, based on [OpenSeaMap](http://www.openseamap.org/), the Nautical map packages provide vital details on the inland waterways, wildwater, infrastructure of ports and onshore facilities, etc. which are helpful during navigating on the water.
 
@@ -63,13 +63,13 @@ The following setup makes the Nautical map show up on the screen:
 
 <TabItem value="def" label="Default" default>
 
-Nautical Chart is a paid service. Depending on the app version whether it is an iOS app, or an Android one, there are different options of obtaining the map. For more details, visit [Purchases](../purchases). 
+Nautical Chart is a paid service. Depending on the app version whether it is an iOS app, or an Android one, there are different options of obtaining the map. For more details, visit [Purchases](../purchases/index.md). 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-For a Nautical Chart purchase on **iOS**, refer to [in-app purchases, or a subscription](../purchases/ios#in-app-purchases). 
+For a Nautical Chart purchase on **iOS**, refer to [in-app purchases, or a subscription](../purchases/ios.md#in-app-purchases). 
 
 It is also possible to view the already made purchases, by opening the following section in settings: 
 
@@ -79,7 +79,7 @@ It is also possible to view the already made purchases, by opening the following
 
 <TabItem value="android" label="Android">
 
-For a Nautical Chart purchase on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](../purchases/android#free-and-paid-features). 
+For a Nautical Chart purchase on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](../purchases/android.md#free-and-paid-features). 
 
 It is also possible to view the already made purchases, by opening the following section in settings: 
 
@@ -144,7 +144,7 @@ After enabling the Nautical plugin, you can download Nautical maps, select the N
 
 <TabItem value="def" label="Default" default>
 
-With the [download](../start-with/download-maps) of a nautical map, more details specific to the Boat navigation show up on the map. There are some types of a [nautical map](../start-with/download-maps#type-of-maps) providing such details as:
+With the [download](../start-with/download-maps.md) of a nautical map, more details specific to the Boat navigation show up on the map. There are some types of a [nautical map](../start-with/download-maps.md#type-of-maps) providing such details as:
 
 - sea marks and symbols,
 - depth points,
@@ -162,7 +162,7 @@ Marks and symbols provide all nautical navigation signs, for inland as well as f
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, all nautical packages are available for [download](../start-with/download-maps) in the following area:
+In the **iOS** version, all nautical packages are available for [download](../start-with/download-maps.md) in the following area:
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,res_mapsres,region_nautical"/> 
 
@@ -172,7 +172,7 @@ In the **iOS** version, all nautical packages are available for [download](../st
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, all nautical maps are available for [download](../start-with/download-maps) in the following area:
+In the **Android** version, all nautical maps are available for [download](../start-with/download-maps.md) in the following area:
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,welmode_download_maps,nautical_maps"/> 
 
@@ -195,7 +195,7 @@ For an optimal representation, it is possible to select maps up to your current 
 
 <TabItem value="def" label="Default" default>
 
-By establishing the Nautical map style, it is possible to achieve the best representation of the downloaded and rendered Nautical data.  To change the current map style to Nautical, use the [Configure map](../map/configure-map-menu) menu, scroll down to the Map Style, and select Nautical. 
+By establishing the Nautical map style, it is possible to achieve the best representation of the downloaded and rendered Nautical data.  To change the current map style to Nautical, use the [Configure map](../map/configure-map-menu.md) menu, scroll down to the Map Style, and select Nautical. 
 
 ![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png) ![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -203,7 +203,7 @@ By establishing the Nautical map style, it is possible to achieve the best repre
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, to change the map type to [**Nautical**](../map/vector-maps#nautical) and thus, reveal more nautical-specific colors and visualization on the map, go to:
+In the **iOS** version, to change the map type to [**Nautical**](../map/vector-maps.md#nautical) and thus, reveal more nautical-specific colors and visualization on the map, go to:
 
 &nbsp;&nbsp;&nbsp;&nbsp;**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,map_settings_type"/>
 
@@ -233,7 +233,7 @@ In the **Android** version, to change the map style to **Nautical** and thus, re
 
 ## Nautical options
 
-The Nautical map can be enabled for any profile. However, the most value it makes to use it within the [Boat profile](../personal/profiles) and especially with the [Boat navigation](../navigation/boat-navigation). 
+The Nautical map can be enabled for any profile. However, the most value it makes to use it within the [Boat profile](../personal/profiles.md) and especially with the [Boat navigation](../navigation/boat-navigation.md). 
 
 ![Boat profile in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile1.png) ![Boat navigation in iOS](@site/static/img/plugins/nautical-charts/ios_boat_navigation2.png) 
 
@@ -254,7 +254,7 @@ With the Nautical map on the screen, you can adjust what you see by:
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](../map/configure-map-menu) menu: 
+In the **iOS** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](../map/configure-map-menu.md) menu: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>  
         
@@ -264,7 +264,7 @@ In the **iOS** version, with the Nautical plugin set up, you can show, or hide t
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](../map/configure-map-menu) menu: 
+In the **Android** version, with the Nautical plugin set up, you can show, or hide the depth contours with the respective option in the [Configure map](../map/configure-map-menu.md) menu: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>
 
@@ -301,7 +301,7 @@ Seabed details provide information about the vegetation and general material the
 
 ### Map legend
 
-Use the Map Legend for any reference on what is displayed on the Nautical map. [Map legend](https://osmand.net/help-online/map-legend#nautical) helps everybody who wants to read the map. It provides explanation of symbolic elements on the Nautical map, and serves as a reference to guide yourself with in case of doubts. The Map Legend shows the following visual elements you can find on the map:
+Use the Map Legend for any reference on what is displayed on the Nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps everybody who wants to read the map. It provides explanation of symbolic elements on the Nautical map, and serves as a reference to guide yourself with in case of doubts. The Map Legend shows the following visual elements you can find on the map:
 
 - Anchorage and berth,
 - Navigation lines and areas,

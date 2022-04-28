@@ -101,7 +101,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 >Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
 
 
-This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking) widget that shows distance from you or screen center to the parking place.
+This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking.md) widget that shows distance from you or screen center to the parking place.
 
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)
@@ -132,9 +132,9 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 
 ## * Trip recording widget
 
->Enable **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording)**:  <Translate android="true" ids="shared_string_menu,plugins_screen"/>/<Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="record_plugin_name"/>.
+>Enable **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**:  <Translate android="true" ids="shared_string_menu,plugins_screen"/>/<Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="record_plugin_name"/>.
 
-This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.
+This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.
 
 ![Trip recording (REC) widget](@site/static/img/plugins/trip-recording/trip_recording_widget.png)
 
@@ -145,10 +145,10 @@ This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugi
  
 ## * Audio-video notes widget (Android)
 
->Enable **[<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes)**: <Translate android="true" ids="shared_string_menu,plugins_screen,audionotes_plugin_name"/>.
+>Enable **[<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,audionotes_plugin_name"/>.
 
 
-This is a [<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes) widget that provides quick access to start / stop taking a recording (audio / video or photo).
+This is a [<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md) widget that provides quick access to start / stop taking a recording (audio / video or photo).
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
 
@@ -171,9 +171,9 @@ Configure what default action should be taken (<Translate android="true" ids="sh
 
 >Install **[OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram)** from Google Play or other source.
 
->Enable **[OsmAnd Tracker plugin](../plugins/osmand-tracker)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> →  OsmAnd Online GPS Tracker.
+>Enable **[OsmAnd Tracker plugin](../plugins/osmand-tracker.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> →  OsmAnd Online GPS Tracker.
 
-This is [OsmAnd Tracker plugin](../plugins/osmand-tracker) widget is used to get quick access to OsmAnd Tracker app and share your location with other people. It shows whether connection is online or offline and if sharing location is enabled, then the time since last successful sending is dispalyed.
+This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to get quick access to OsmAnd Tracker app and share your location with other people. It shows whether connection is online or offline and if sharing location is enabled, then the time since last successful sending is dispalyed.
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
@@ -184,10 +184,10 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker) widget is used to get
 
 ## * FPS-info (Android)
 
->Enable **[Developer plugin](../plugins/development)**: <Translate android="true" ids="shared_string_menu,plugins_screen,debugging_and_development"/>.
+>Enable **[Developer plugin](../plugins/development.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,debugging_and_development"/>.
 
 
-This is a [Developer plugin](../plugins/development) widget to investigate how fast map & map elements are showed & refreshed. It displays:
+This is a [Developer plugin](../plugins/development.md) widget to investigate how fast map & map elements are showed & refreshed. It displays:
 - UI interaction FPS - panning & dragging map (higher number).
 - Map refresh FPS - refreshing points, routes on the map (smaller number).
 
@@ -202,4 +202,4 @@ This is a [Developer plugin](../plugins/development) widget to investigate how f
 
 ## Read next
 
-[Map buttons](../widgets/map-buttons)
+[Map buttons](../widgets/map-buttons.md)

@@ -21,9 +21,9 @@ Having Wikipedia with you on a trip helps to learn more about the places you are
 
 ## Overview 
 
-The Wikipedia plugin is an autonomous functionality that can be enabled/disabled as needed. Once enabled, it allows the Wikipedia data to be [downloaded](../personal/maps#download-maps-maps) per geographical region. There are two views to display the downloaded Wikipedia knowledge on the map: a short summary, and a full article. 
+The Wikipedia plugin is an autonomous functionality that can be enabled/disabled as needed. Once enabled, it allows the Wikipedia data to be [downloaded](../personal/maps.md#download-maps-maps) per geographical region. There are two views to display the downloaded Wikipedia knowledge on the map: a short summary, and a full article. 
 
-The short summary is provided via the Wikipedia POI (abbrev. from '[point of interest](../map/point-layers-on-map)'). If the Wikipedia option is toggled on in the menu, the Wikipedia POI shows up on the map. On tap, the POI expands and provides a summary of the available Wikipedia information and the option to open the full article. The Wikipedia POI as well as the associated articles are available offline. It is possible to read them whenever needed, switch languages, and search for other Wikipedia information. 
+The short summary is provided via the Wikipedia POI (abbrev. from '[point of interest](../map/point-layers-on-map.md)'). If the Wikipedia option is toggled on in the menu, the Wikipedia POI shows up on the map. On tap, the POI expands and provides a summary of the available Wikipedia information and the option to open the full article. The Wikipedia POI as well as the associated articles are available offline. It is possible to read them whenever needed, switch languages, and search for other Wikipedia information. 
 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) is a free, multilingual open-collaborative online encyclopedia created and maintained by a community of volunteer editors using a wiki-based editing system. ![Wikipedia](@site/static/img/map/map-wikipedia.png)
@@ -45,7 +45,7 @@ For the Wikipedia data to show up on the map, the following setup is needed:
 
 ### Purchase and enable plugin  
 
-Depending on the mobile application you are using, whether it is the Android version, or the iOS version, a [paid subscription](../purchases) might be required, to allow the Wikipedia plugin to be enabled among other plugins. 
+Depending on the mobile application you are using, whether it is the Android version, or the iOS version, a [paid subscription](../purchases/index.md) might be required, to allow the Wikipedia plugin to be enabled among other plugins. 
 
 <Tabs groupId="operating-systems">
 
@@ -67,7 +67,7 @@ The **iOS** version provides the Wikipedia plugin by default. To enable the plug
 
 <TabItem value="android" label="Android">
 
-The **Android** version requires one of the [paid services](../purchases/android#free-and-paid-features): in-app purchases, or a subscription. Having made a purchase, to enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section of the main menu.
+The **Android** version requires one of the [paid services](../purchases/android.md#free-and-paid-features): in-app purchases, or a subscription. Having made a purchase, to enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section of the main menu.
 
 ![Wikipedia plugin in Android](@site/static/img/plugins/wikipedia/Wikipedia_plugin_android2.png)
 
@@ -85,7 +85,7 @@ The Wikipedia data is available per geographical region. If it is downloaded for
 
 <TabItem value="def" label="Default" default>
 
-To download the Wikipedia data for a region, go to the [available packages for download in the main menu](../start-with/download-maps#download---main-menu), find the needed region and open it. The Wikipedia data will be among other packages.
+To download the Wikipedia data for a region, go to the [available packages for download in the main menu](../start-with/download-maps.md#download---main-menu), find the needed region and open it. The Wikipedia data will be among other packages.
 
 ![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png) ![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -128,7 +128,7 @@ To view what data is already downloaded, go to:
 
 ### Display Wikipedia on the map
 
-With the Wikipedia data downloaded for the required regions, it is possible to manage the visibility of this data on the map. The visibility is managed via the [Wikipedia POI](../map/point-layers-on-map#-wikipedia), which can be shown, or hidden for all downloaded regions per specific [profile](../personal/profiles), such as: a profile for driving a car, a profile for cycling, another one to show the Public Transport, etc. 
+With the Wikipedia data downloaded for the required regions, it is possible to manage the visibility of this data on the map. The visibility is managed via the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia), which can be shown, or hidden for all downloaded regions per specific [profile](../personal/profiles.md), such as: a profile for driving a car, a profile for cycling, another one to show the Public Transport, etc. 
 
 <Tabs groupId="operating-systems">
 
@@ -173,14 +173,14 @@ In the **Android** version, to show/hide the Wikipedia POI, do the following:
 
 ## Search Wikipedia
 
-With the Wikipedia data downloaded, regardless of the visibility mode of the [Wikipedia POI](../map/point-layers-on-map#-wikipedia) on the map, it is possible to [search](../search/search-poi) for any Wikipedia information.
+With the Wikipedia data downloaded, regardless of the visibility mode of the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) on the map, it is possible to [search](../search/search-poi.md) for any Wikipedia information.
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="def" label="Default" default>
 
-By tapping Search, an extra pane pops up and allows you to [search](../search) everything, and/or by the specific category. In the first case, the search results will show the Wikipedia POI with associated Wikipedia articles among other types of the information. In case of the [search by the Wikipedia category](../search/search-poi#poi-search), the search results will show only the Wikipedia information sorted by the nearest location in relation to the area of the map currently viewable on the screen. 
+By tapping Search, an extra pane pops up and allows you to [search](../search/index.md) everything, and/or by the specific category. In the first case, the search results will show the Wikipedia POI with associated Wikipedia articles among other types of the information. In case of the [search by the Wikipedia category](../search/search-poi.md#poi-search), the search results will show only the Wikipedia information sorted by the nearest location in relation to the area of the map currently viewable on the screen. 
 
 ![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png) ![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png) 
 
@@ -188,11 +188,11 @@ By tapping Search, an extra pane pops up and allows you to [search](../search) e
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, to open [Search](../search), tap the Search icon in the left-hand top corner of the screen. 
+In the **iOS** version, to open [Search](../search/index.md), tap the Search icon in the left-hand top corner of the screen. 
 
 ![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
 
-To search by the Wikipedia [category](../search/search-poi#poi-search), select: 
+To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<Translate ios="true" ids="shared_string_search,categories,res_wiki"/>
 
@@ -204,14 +204,14 @@ If needed, tap the **Show Wikipedia on the map** option at the top of the search
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, you can open [Search](../search) by:
+In the **Android** version, you can open [Search](../search/index.md) by:
 
 - tapping the Search icon in the left-hand top corner of the screen, and/or
 - tapping the Search option in the menu.
 
 ![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png) 
 
-To search by the Wikipedia [category](../search/search-poi#poi-search), select: 
+To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>
 
@@ -229,7 +229,7 @@ If needed, tap the **Show Wikipedia on the map** option at the top of the search
 
 <TabItem value="def" label="Default" default>
 
-In case when there is a choice of languages to display the Wikipedia data in, you can set the language you prefer to read the text in. The figure below shows an example of the [Wikipedia POI](../map/point-layers-on-map#-wikipedia) and the article, which are written in French by default, and displayed in English, thanks to the availability of other translations for this Wikipedia data and the English language established for the Wikipedia in the [Profile settings](../personal/profiles). 
+In case when there is a choice of languages to display the Wikipedia data in, you can set the language you prefer to read the text in. The figure below shows an example of the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) and the article, which are written in French by default, and displayed in English, thanks to the availability of other translations for this Wikipedia data and the English language established for the Wikipedia in the [Profile settings](../personal/profiles.md). 
 
 ![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png) ![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png) 
 
@@ -314,7 +314,7 @@ In case if some translation options are available, it is possible to switch the 
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu) upwards till viewing an abstract of the Wikipedia article:
+In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu.md) upwards till viewing an abstract of the Wikipedia article:
 
 - tap the article, 
 - tap the current language icon in the header at the right-hand top corner of the screen, and the list of available language options opens,
@@ -326,7 +326,7 @@ In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map#-wik
 
 <TabItem value="android" label="Android">
 
-In the **Android** version, with the [Wikipedia POI](../map/point-layers-on-map#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu) upwards till viewing an abstract of the Wikipedia article:
+In the **Android** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu.md) upwards till viewing an abstract of the Wikipedia article:
 
 - tap the article, 
 - tap the current language icon in the header at the right-hand top corner of the screen, and the list of available language options opens,

@@ -110,13 +110,13 @@ There are several ways how to access Quick Action to edit or delete it:
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="quick_action_add_favorite"/>](../map/configure-map-menu#map-layers) | Adds favorite to a selected (center) map location. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
-| [<Translate android="true" ids="quick_action_add_gpx"/>](../map/configure-map-menu#map-layers) | Adds new Track waypoint to currently recording track. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
-| [<Translate android="true" ids="quick_action_add_marker"/>](../map/configure-map-menu#map-layers) | Adds marker to a selected (center) map location. |
-| <Translate android="true" ids="quick_action_add_parking"/> <br /> [Plugin](../plugins/parking) | Adds parking to a selected (center) map location. Old parking position is deleted. |
-| <Translate android="true" ids="quick_action_add_poi"/> <br /> [Plugin](../plugins/osm-editing) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **POI type** (optional): preselect OSM type <br /> - **Tag/Value** (multiple): add [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
-| <Translate android="true" ids="quick_action_add_osm_bug"/> <br /> [Plugin](../plugins/osm-editing) | Adds [OSM Note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Message**: adds default message to the note |
-| Add media note <br /> [Android Plugin](../plugins/audio-video-notes) | Starts audio / photo / video note recording  for a selected (center) map location. |
+| [<Translate android="true" ids="quick_action_add_favorite"/>](../map/configure-map-menu.md#map-layers) | Adds favorite to a selected (center) map location. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
+| [<Translate android="true" ids="quick_action_add_gpx"/>](../map/configure-map-menu.md#map-layers) | Adds new Track waypoint to currently recording track. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
+| [<Translate android="true" ids="quick_action_add_marker"/>](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
+| <Translate android="true" ids="quick_action_add_parking"/> <br /> [Plugin](../plugins/parking.md) | Adds parking to a selected (center) map location. Old parking position is deleted. |
+| <Translate android="true" ids="quick_action_add_poi"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **POI type** (optional): preselect OSM type <br /> - **Tag/Value** (multiple): add [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
+| <Translate android="true" ids="quick_action_add_osm_bug"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds [OSM Note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Message**: adds default message to the note |
+| Add media note <br /> [Android Plugin](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording  for a selected (center) map location. |
 
 ### Configure map
 
@@ -125,21 +125,21 @@ There are several ways how to access Quick Action to edit or delete it:
 | <Translate ios="true" ids="toggle_fav"/> | Show or hide the favourite points on the map. |
 | <Translate ios="true" ids="show_hide_gpx"/> | Show or hide the last visible tracks on the map. |
 | <Translate ios="true" ids="toggle_poi"/> | Enable or disable POI layer with selected categories. <br /> - **POI Categories**: allows to select multiple categories <br /> Note: Action will replace previously selected categories, if POI layer was active before.   |
-| [<Translate ios="true" ids="toggle_public_transport"/>](../map/vector-maps#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first click): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
-| [<Translate ios="true" ids="change_map_source"/>](../map/raster-maps) | Create a list of map sources and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with maps list <br /> - **Do not show an interim dialog**: map sources will be changed by defined  order. <br /> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br /> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br /> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
-| [<Translate ios="true" ids="change_map_overlay"/>](../map/raster-maps) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
-| [<Translate ios="true" ids="change_map_underlay"/>](../map/raster-maps) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above)  |
-| [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
-| <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary) | Display or hide Mapillary layer on the map |
-| <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines) | Display or hide contour lines on the map |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines) | Display and hide terrain layer on the map |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing) | Allows to display on the map all OSM notes |
+| [<Translate ios="true" ids="toggle_public_transport"/>](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first click): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
+| [<Translate ios="true" ids="change_map_source"/>](../map/raster-maps.md) | Create a list of map sources and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with maps list <br /> - **Do not show an interim dialog**: map sources will be changed by defined  order. <br /> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br /> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br /> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
+| [<Translate ios="true" ids="change_map_overlay"/>](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
+| [<Translate ios="true" ids="change_map_underlay"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above)  |
+| [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
+| <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary.md) | Display or hide Mapillary layer on the map |
+| <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide contour lines on the map |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide terrain layer on the map |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing.md) | Allows to display on the map all OSM notes |
 
 ### Navigation
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="quick_action_day_night_switch_mode"/>](../map/vector-maps#map-mode) | Switche between day and night map modes |
+| [<Translate android="true" ids="quick_action_day_night_switch_mode"/>](../map/vector-maps.md#map-mode) | Switche between day and night map modes |
 | <Translate android="true" ids="quick_action_navigation_voice"/> | Mute or unmute voice guidance during navigation |
 | <Translate android="true" ids="context_menu_item_directions_from"/> | Mark a selected (center) map location as a point of departure |
 | <Translate android="true" ids="quick_action_add_destination"/> | Add a selected (center) map location as a destination. Previous destination becomes last intermediate point.  |
@@ -156,4 +156,4 @@ There are several ways how to access Quick Action to edit or delete it:
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="coordinates_widget"/>](../widgets/info-widgets#coordinates-widget) | Show and hide coordinates widget |
+| [<Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="coordinates_widget"/>](../widgets/info-widgets.md#coordinates-widget) | Show and hide coordinates widget |

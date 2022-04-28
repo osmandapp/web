@@ -21,7 +21,7 @@ Point of interesting (POI) seaching is one the general function of OsmAnd. [POI]
 
 ## How to use
 
-For starting search points you need to click to [Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="search_categories"/>
+For starting search points you need to click to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/>
 
 Categories screen is list of POI categories and additional actions buttons below of the list:
 
@@ -29,10 +29,10 @@ Categories screen is list of POI categories and additional actions buttons below
 
 Actions button:
 
-- &nbsp;<Translate android="true" ids="search_online_address"/> (Android) - allows to use [online POI search](../search/search-poi#online-search-android).
-- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/custom-poi-search).
-- &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export).
-- &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/custom-poi-search).
+- &nbsp;<Translate android="true" ids="search_online_address"/> (Android) - allows to use [online POI search](../search/search-poi.md#online-search-android).
+- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/custom-poi-search.md).
+- &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export.md).
+- &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/custom-poi-search.md).
 
 
 ### POI search
@@ -41,11 +41,11 @@ In Categories menu user can start searching by typping line.
 
 OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info (full name, categorie name, direction and distance to POI, work time). Pressing to needed categorie opens POI list of this categorie. 
 
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu#select-an-object-short-tap) of POI.
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
 
 ![Search POI Android](@site/static/img/search/poi_search_android.png) ![Search POI iOS](@site/static/img/search/poi_search_ios.png)
 
-Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
+Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map.md#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
 
 Enable / disable POI layer on the map:
 
@@ -62,7 +62,7 @@ Enable / disable POI layer on the map:
 
 ### Favorite/Waypoint search
 
-In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map#favorites) and [Waypoints](../map/point-layers-on-map#track-points) by searching. 
+In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map.md#favorites) and [Waypoints](../map/point-layers-on-map.md#track-points) by searching. 
 
 Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
 
@@ -70,7 +70,7 @@ Just you need to enter your favorite/waypoint name, first results will be your f
 
 ### Online search (Android)
 
-In [Categories menu](../search/search-poi#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
+In [Categories menu](../search/search-poi.md#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
 
 ![Online search Android](@site/static/img/search/online_search_android.png)
 

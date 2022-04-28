@@ -28,14 +28,14 @@ Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/in
 
 <TabItem value="def" label="Default" default>
 
-Clicking to [Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="shared_string_address"/>
+Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="shared_string_address"/>
 
 ![Search Street Android](@site/static/img/search/street_search_android.png) ![Search Street iOS](@site/static/img/search/street_search_ios.png)
 
-- [<Translate android="true" ids="search_street"/>](../search/search-address#search-street)
-- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address#search-citytownlocality)
-- [<Translate android="true" ids="select_postcode"/>](../search/search-address#postcode-search)
-- [<Translate android="true" ids="coords_search"/>](../search/search-address#coordinates-search)
+- [<Translate android="true" ids="search_street"/>](../search/search-address.md#search-street)
+- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address.md#search-citytownlocality)
+- [<Translate android="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
+- [<Translate android="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
 - <Translate android="true" ids="nearest_cities"/>
 
 
@@ -44,29 +44,29 @@ Clicking to [Search button on the screen](../widgets/map-buttons#search) -> <Tra
 <TabItem value="android" label="Android">
 
 
-Clicking to [Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="shared_string_address"/>
+Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="shared_string_address"/>
 
 ![Search Street Android](@site/static/img/search/street_search_android.png) 
 
-- [<Translate android="true" ids="search_street"/>](../search/search-address#search-street)
-- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address#search-citytownlocality)
-- [<Translate android="true" ids="select_postcode"/>](../search/search-address#postcode-search)
-- [<Translate android="true" ids="coords_search"/>](../search/search-address#coordinates-search)
+- [<Translate android="true" ids="search_street"/>](../search/search-address.md#search-street)
+- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address.md#search-citytownlocality)
+- [<Translate android="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
+- [<Translate android="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
 - <Translate android="true" ids="nearest_cities"/>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Clicking to [Search button on the screen](../widgets/map-buttons#search) -> {% data variables.ios-values.shared_string_address
+Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate ios="true" ids="shared_string_address"/>
 
 ![Search Street iOS](@site/static/img/search/street_search_ios.png)
 
-- [{% data variables.ios-values.select_street](../search/search-address#search-street)
-- [{% data variables.ios-values.select_city](../search/search-address#search-citytownlocality)
-- [{% data variables.ios-values.select_postcode](../search/search-address#postcode-search)
-- [{% data variables.ios-values.coords_search](../search/search-address#coordinates-search)
-- {% data variables.ios-values.nearest_cities
+- [<Translate ios="true" ids="select_street"/>](../search/search-address.md#search-street)
+- [<Translate ios="true" ids="select_city"/>](../search/search-address.md#search-citytownlocality)
+- [<Translate ios="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
+- [<Translate ios="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
+- <Translate ios="true" ids="nearest_cities"/>
 
 </TabItem>
 
@@ -80,7 +80,7 @@ Clicking to chosen variant opens building list and crossroads.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to chosen address in the list opens [Map Context menu](../map/map-context-menu#select-an-object-short-tap) of the object.
+Tap to chosen address in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
 
 <Tabs groupId="operating-systems">
 
@@ -114,7 +114,7 @@ Clicking to chosen variant opens building list and crossroads.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu#select-an-object-short-tap) of the object.
+Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
 
 
 <Tabs groupId="operating-systems">
@@ -148,7 +148,7 @@ Clicking to chosen postcode opens objects list which have this postcode in tags.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
+Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
 
 **Note:** [United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases).
 
@@ -181,7 +181,7 @@ Coordinates Searching by [Geographical coordingates](https://en.wikipedia.org/wi
 
 Search result shows direction, distance to a point on the map.
 
-Tap to the result opens [Map Context menu](../map/map-context-menu#select-any-point-long-tap) of a point on the map with additional info.
+Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.
 
 <Tabs groupId="operating-systems">
 

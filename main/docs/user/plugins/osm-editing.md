@@ -42,26 +42,26 @@ Next settings:
 - &nbsp;<Translate android="true" ids="login_account"/> - [<Translate android="true" ids="open_street_map_login_mode"/>](https://www.openstreetmap.org/login) 
 - &nbsp;<Translate android="true" ids="offline_edition"/> - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
 - &nbsp;<Translate android="true" ids="use_dev_url"/> - enable or disable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to testing uploading OSM Note / POI / GPX.
-- &nbsp;<Translate android="true" ids="map_updates_for_mappers"/> - allows [OsmAnd live](../personal/maps#osmand-live) updating for mappers.
+- &nbsp;<Translate android="true" ids="map_updates_for_mappers"/> - allows [OsmAnd live](../personal/maps.md#osmand-live) updating for mappers.
 
 ![OpenStretMap editing plugin Settings OsmAnd live Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_live_android.png)
 
-- &nbsp;<Translate android="true" ids="layer_osm_edits"/> - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces)  
+- &nbsp;<Translate android="true" ids="layer_osm_edits"/> - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)  
 
 
 ## How to use
 
-The plugin lets you create new objects, so-called  [points of interest or POI](../map/point-layers-on-map#points-of-interest-poi)  on the map. New shop opened next to you? Add it to the map! Your favorite monument is missing on the map? Put it there in seconds. Also, if you're the owner of a newly-opened business, adding it to the map is a great way to let people find you.
+The plugin lets you create new objects, so-called  [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi)  on the map. New shop opened next to you? Add it to the map! Your favorite monument is missing on the map? Put it there in seconds. Also, if you're the owner of a newly-opened business, adding it to the map is a great way to let people find you.
 
 ### How to add / modify POI
 
-Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
+Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
 
-[Actions in Map Context menu](../map/map-context-menu#actions) - [Create / Modify POI](../map/map-context-menu#-create--modify-poi)
+[Actions in Map Context menu](../map/map-context-menu.md#actions) - [Create / Modify POI](../map/map-context-menu.md#-create--modify-poi)
 
-**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps#osmand-live).
+**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
 
-To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu#-upload-poi--osm-note):
+To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>
 
@@ -70,7 +70,7 @@ To view OSM edits layer on the map for tapping to this edits for [openning Map C
 
 ### How to upload GPX track (Android)
 
-You can add the tracks you've made to [OpenStreetMap](http://openstreetmap.org/). To do that, turn the [Trip recording plugin](../plugins/trip-recording) on, record a track, and then click to [Options button](../map/track-context-menu#options) of [Track Context menu](../map/track-context-menu) and choose <Translate android="true" ids="upload_to_openstreetmap"/>. 
+You can add the tracks you've made to [OpenStreetMap](http://openstreetmap.org/). To do that, turn the [Trip recording plugin](../plugins/trip-recording.md) on, record a track, and then click to [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose <Translate android="true" ids="upload_to_openstreetmap"/>. 
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
 
@@ -98,9 +98,9 @@ You can participate in the work on the global map. Just share the tracks you've 
 
 ### How to report a mistake
 
-You can also report about the mistakes on the map. All you have to do is tap on the location, choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu#-open-osm-note) in [Map Context menu](../map/map-context-menu) and then add the info about it. OSM editors would consider your comments.
+You can also report about the mistakes on the map. All you have to do is tap on the location, choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu.md#-open-osm-note) in [Map Context menu](../map/map-context-menu.md) and then add the info about it. OSM editors would consider your comments.
 
-To view the OSM editing layer, you can switch on  [online layer - OSM notes](../map/configure-map-menu#map-layers) on the map:
+To view the OSM editing layer, you can switch on  [online layer - OSM notes](../map/configure-map-menu.md#map-layers) on the map:
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/> 
 
@@ -108,6 +108,6 @@ To view the OSM editing layer, you can switch on  [online layer - OSM notes](../
 
 You'll see all the notes in the specific area.
 
-Short tap to a note opens [Map Context menu](../map/map-context-menu#-comment--close-osm-note) with action buttons. You can click to OSM note and choose your comment or delete it.
+Short tap to a note opens [Map Context menu](../map/map-context-menu.md#-comment--close-osm-note) with action buttons. You can click to OSM note and choose your comment or delete it.
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png) ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)

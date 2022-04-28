@@ -18,9 +18,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Openning list of your history searching. Write needed word for seaching:
 
-[Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="search_categories"/> -> <Translate android="true" ids="shared_string_history"/>
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate android="true" ids="shared_string_history"/>
 
-[Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="search_categories"/> -> <Translate ios="true" ids="history"/>
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate ios="true" ids="history"/>
 
 ![History search Android](@site/static/img/search/history_search_android.png) ![History search iOS](@site/static/img/search/history_search_ios.png)
 

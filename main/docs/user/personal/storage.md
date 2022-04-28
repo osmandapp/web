@@ -115,7 +115,7 @@ errors (e.g. if the SD card is too full).
 
 ### Backup and Restore for OsmAnd Pro
 
-You need to subscribe to [OsmAnd Pro](../purchases/android#free-and-paid-features).
+You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore"/>
 
@@ -131,7 +131,7 @@ Two screens:
 
 - &nbsp;"Restore" button - restore data on your device, using online backups.
 
-- &nbsp;"Local backup" - read [here](../personal/storage#local-backup).
+- &nbsp;"Local backup" - read [here](../personal/storage.md#local-backup).
 
 **<Translate android="true" ids="shared_string_settings"/>**
 
@@ -173,7 +173,7 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 ## Copy raster map package created on PC 
 
-Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps#sqlite-vs-metainfo-sources).
+Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps.md#sqlite-vs-metainfo-sources).
 Next, you need to move your map package file(s) to OsmAnd-tiles directory:
 
 For **Android** OsmAnd - you need to access storage to copy file(s) from PC to the device folder BASE_OSMAND_STORAGE/tiles_ or you can click the file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.

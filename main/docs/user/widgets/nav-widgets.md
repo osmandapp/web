@@ -116,9 +116,9 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 | Distance |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 
-| Close by | [Turn now](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior) | Green | 5 seconds | 
-| Approaching| [Turn in X m](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior) | Yellow | 20 seconds |
-| Distant | [Prepare to turn](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior) | Grey | > 100 seconds | 
+| Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
+| Approaching| [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
+| Distant | [Prepare to turn](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds | 
 
 
 
@@ -138,8 +138,8 @@ Display time, color is related to the voice navigation prompts and related to th
 
 |  Name |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 
-| Close by | [Turn now](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior) | Green | 5 seconds | 
-| Approaching | [Turn in X m](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior) | Yellow | 20 seconds |
+| Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
+| Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
 
 
 ## Alert widget
@@ -150,7 +150,7 @@ Alert widget combines multiple type of alerts that are displayed in the lower le
 
 There are options to turn on and off specific alerts such as: <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>, <Translate android="true" ids="show_tunnels"/>. Other alerts are active by default, if alert widget is enabled. For speed limit alert, you could configure *<Translate android="true" ids="speed_limit_exceed"/>* within voice prompts to relate vehicle speed with GPS-speed more precisely.
 
-Most of alerts are displayed and announced within 15 seconds, same as [Passing waypoint / favorite / POI](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior).
+Most of alerts are displayed and announced within 15 seconds, same as [Passing waypoint / favorite / POI](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior).
 
 | | |
 |------------|------------|
@@ -168,7 +168,7 @@ Alert types have different visuals that depends on **<Translate android="true" i
 |<Translate android="true" ids="show_pedestrian_warnings"/>| [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of uncontrolled pedestrian crossing.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
 |<Translate android="true" ids="traffic_warning_speed_limit"/>| In most countries the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) are used to set the legal maximum, middle or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
 |<Translate android="true" ids="show_tunnels"/>| A tunnel is an underground passageway, esp cars that pass under a mountain, river, or a congested urban area. In OsmAnd the alert "Tunnels" has information about tunnel length. If you are in a tunnel it shows distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-|<Translate android="true" ids="show_cameras"/>| [A traffic enforcement camera](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed camera](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) are cameras to detect motoring offenses, including speeding, going through a red traffic light and others. <br />**NOTE:** <Translate android="true" ids="speed_cameras_alert"/> To uninstal speed cameras from OsmAnd (Android only): [<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="osmand_settings"/> → <Translate android="true" ids="uninstall_speed_cameras"/>](../personal/global-settings)   | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
+|<Translate android="true" ids="show_cameras"/>| [A traffic enforcement camera](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed camera](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) are cameras to detect motoring offenses, including speeding, going through a red traffic light and others. <br />**NOTE:** <Translate android="true" ids="speed_cameras_alert"/> To uninstal speed cameras from OsmAnd (Android only): [<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="osmand_settings"/> → <Translate android="true" ids="uninstall_speed_cameras"/>](../personal/global-settings.md)   | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
 |<Translate android="true" ids="traffic_warning_stop"/>| [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
 |<Translate android="true" ids="show_railway_warnings"/>|This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
 |<Translate android="true" ids="traffic_warning_border_control"/>|This warning indicates that border control is ahead.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
@@ -178,7 +178,7 @@ Alert types have different visuals that depends on **<Translate android="true" i
 
 ## Street name
 
-Street name widget shows **current street name** with straight location arrow or **next street name** with the maneuver has to be completed. Street name typically consists of highway shield, [name](https://wiki.openstreetmap.org/wiki/Key:name), [ref](https://wiki.openstreetmap.org/wiki/Key:ref), [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switch between the current street name and the next street name happens when you approach the maneuver location (~20 seconds), same as '[Turn in X m](/docs/technical/algorithms/voice-prompt-triggering#trigger-behavior)' voice prompt.
+Street name widget shows **current street name** with straight location arrow or **next street name** with the maneuver has to be completed. Street name typically consists of highway shield, [name](https://wiki.openstreetmap.org/wiki/Key:name), [ref](https://wiki.openstreetmap.org/wiki/Key:ref), [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switch between the current street name and the next street name happens when you approach the maneuver location (~20 seconds), same as '[Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior)' voice prompt.
 
 When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
@@ -211,4 +211,4 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 
 ## Read Next
 
-[Map markers widget](../widgets/markers)
+[Map markers widget](../widgets/markers.md)

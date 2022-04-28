@@ -40,9 +40,9 @@ properly".
 We suggest that recorded voices should only be a fallback if you **really** like a particular voice, or if you cannot find a TTS engine supporting your language. Many 'recorded' voices have significant shortcomings like gaps and unnatural intonation, and some phrases may be missing entirely, where for a maintenance like adding new commands we could not get access to the original speakers any more.
 
 Read more about Voice prompts:
-- [Voice guidance](../navigation/voice-navigation)
-- [Adjusting voice prompts](../navigation/voice-navigation)
-- [TTS does not function properly](../troubleshooting/navigation#tts-does-not-function-properly)
+- [Voice guidance](../navigation/voice-navigation.md)
+- [Adjusting voice prompts](../navigation/voice-navigation.md)
+- [TTS does not function properly](../troubleshooting/navigation.md#tts-does-not-function-properly)
 
 ### TTS does not function properly
 

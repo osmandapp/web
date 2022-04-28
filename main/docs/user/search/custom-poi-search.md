@@ -20,9 +20,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd allows you to create your Custom POI filters where you can collect needed POI from one/other categories.
 
-[Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="search_categories"/> -> <Translate android="true" ids="custom_search"/>
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate android="true" ids="custom_search"/>
 
-[Search button on the screen](../widgets/map-buttons#search) -> <Translate android="true" ids="search_categories"/> -> <Translate ios="true" ids="add_custom_category"/>
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate ios="true" ids="add_custom_category"/>
 
 Combine POI types from different categories. Tap switch to select all, tap left side to category selection. 
 

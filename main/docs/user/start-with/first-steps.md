@@ -47,26 +47,26 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 
 [![iOS](@site/static/img/steps/app-store-badge.png)](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
 
-[Read more](../purchases) about OsmAnd versions and Purchases.  
+[Read more](../purchases/index.md) about OsmAnd versions and Purchases.  
 
 ## Welcome to OsmAnd!
 
 Our goal is to create a fully functional map-oriented application that could be used offline & online for various purposes. The application is full of features, so you don't need to switch between different apps and you will have everything at your fingertips:
-- Browse Worldwide Map with lots of details displayed with [many map styles](../map/vector-maps).
-- Display,  [search](../search/search-poi) and save various [Points of interest](../map/point-layers-on-map).
-- [Plan a route](../plan-route/create-route) by car, bicycle, foot and combine into multi modal routes.
-- Start [voice guided navigation](../navigation/route-navigation) with screen on and off.
-- Make your tourist trip rich with offline [Wikipedia](../plugins/wikipedia) and [Wikivoyage](../plan-route/travel-guides).
-- Fully customize how [the map is displayed](../map/configure-map-menu) and what [widgets](../widgets) are displayed on it.
-- Navigate [by boat](../navigation/boat-navigation), [by a given track](../navigation/gpx-navigation), [by public transport](../navigation/public-transport-navigation) and [offroad](../navigation/markers-navigation).
+- Browse Worldwide Map with lots of details displayed with [many map styles](../map/vector-maps.md).
+- Display,  [search](../search/search-poi.md) and save various [Points of interest](../map/point-layers-on-map).
+- [Plan a route](../plan-route/create-route.md) by car, bicycle, foot and combine into multi modal routes.
+- Start [voice guided navigation](../navigation/route-navigation.md) with screen on and off.
+- Make your tourist trip rich with offline [Wikipedia](../plugins/wikipedia.md) and [Wikivoyage](../plan-route/travel-guides.md).
+- Fully customize how [the map is displayed](../map/configure-map-menu.md) and what [widgets](../widgets/index.md) are displayed on it.
+- Navigate [by boat](../navigation/boat-navigation.md), [by a given track](../navigation/gpx-navigation.md), [by public transport](../navigation/public-transport-navigation.md) and [offroad](../navigation/markers-navigation.md).
 - Everything works in **Offline Mode**!
-- And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing).
+- And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing.md).
 
 ## Actions Guide
 
 ### How to download maps
 
-OsmAnd is an offline map application, so after the '{% data variables.android-values.get_started %}' screen, you will be prompted to a [download map](../start-with/download-maps#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
+OsmAnd is an offline map application, so after the '{% data variables.android-values.get_started %}' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
 
 <Tabs groupId="operating-systems">
 
@@ -90,13 +90,13 @@ OsmAnd is an offline map application, so after the '{% data variables.android-va
 
 </Tabs>
 
-**Note**: Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps) and  [Raster maps](../map/raster-maps), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search), [Navigation](../navigation),  [Context menu](../map/map-context-menu). 
+**Note**: Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
 
-[Read more](../start-with/download-maps) about download map options.
+[Read more](../start-with/download-maps.md) about download map options.
 
 ### How to manage your settings
 
-You could manage application settings as [Global settings](../personal/global-settings) or as [Profile configuration](../personal/profiles) via [Main menu](../start-with/main-menu). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
+You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
 
 <Tabs groupId="operating-systems">
 
@@ -120,12 +120,12 @@ You could manage application settings as [Global settings](../personal/global-se
 
 </Tabs>
 
-[Read more](../personal/global-settings) about Global settings.
-[Read more](../personal/profiles) about Profile settings.
+[Read more](../personal/global-settings.md) about Global settings.
+[Read more](../personal/profiles.md) about Profile settings.
 
 ### How to configure plugins
 
-[Plugins](../plugins) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](/docs/technical/build-osmand/osmand-api) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu), [Map Layers](../map/configure-map-menu), [Map Downloads](../start-with/download-maps) and Settings.
+[Plugins](../plugins/index.md) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](../../technical/build-osmand/osmand-api.md) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu.md) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
 
 <Tabs groupId="operating-systems">
 
@@ -159,12 +159,12 @@ Enable / disable plugins:
 
 <p> </p>
 
-[Read more](../plugins) about OsmAnd plugins.
+[Read more](../plugins/index.md) about OsmAnd plugins.
 
 
 ### How to use map
 
-Map is a core element of OsmAnd and it's important to know [how to use it](../map/interact-with-map) (gestures, buttons, etc). You could [configure map](../map/configure-map-menu) to your needs: [change map style](../map/configure-map-menu#map-style-parameters), configure different [map layers](../map/configure-map-menu#map-layers) such as favorites, poi, public transport, tracks, contour lines, hillshade and others.
+Map is a core element of OsmAnd and it's important to know [how to use it](../map/interact-with-map.md) (gestures, buttons, etc). You could [configure map](../map/configure-map-menu.md) to your needs: [change map style](../map/configure-map-menu.md#map-style-parameters), configure different [map layers](../map/configure-map-menu.md#map-layers) such as favorites, poi, public transport, tracks, contour lines, hillshade and others.
 
 <Tabs groupId="operating-systems">
 
@@ -188,11 +188,11 @@ Map is a core element of OsmAnd and it's important to know [how to use it](../ma
 
 </Tabs>
 
-[Read more](../map/configure-map-menu) about map configuration.
+[Read more](../map/configure-map-menu.md) about map configuration.
 
 ### How to сonfigure screen
 
-[Configure screen](../widgets/configure-screen) allows you to enable [Informational](../widgets/info-widgets) (altitude, speed, current time, etc.) & [Navigational](../widgets/nav-widgets) (destination, bearing, arrival time, etc.) widgets, [Quick action](../widgets/quick-action) and other elements that will be displayed over Map.
+[Configure screen](../widgets/configure-screen.md) allows you to enable [Informational](../widgets/info-widgets.md) (altitude, speed, current time, etc.) & [Navigational](../widgets/nav-widgets.md) (destination, bearing, arrival time, etc.) widgets, [Quick action](../widgets/quick-action.md) and other elements that will be displayed over Map.
 
 <Tabs groupId="operating-systems">
 
@@ -216,11 +216,11 @@ Map is a core element of OsmAnd and it's important to know [how to use it](../ma
 
 </Tabs>
 
-[Read more](../widgets/configure-screen) about Screen configuration.
+[Read more](../widgets/configure-screen.md) about Screen configuration.
 
 ### How to add personal data to maps
 
-OsmAnd allows you to make various marks on the Map for your personal needs. For example, [Favorite points](../personal/favorites) - personal points with name & icon & category, [Markers](../personal/markers) - quickly added points as target, [Audio/Video notes](../plugins/audio-video-notes) - media notes recorded at specific point, [Tracks](../personal/tracks) - recorded and imported tracks & tours.
+OsmAnd allows you to make various marks on the Map for your personal needs. For example, [Favorite points](../personal/favorites.md) - personal points with name & icon & category, [Markers](../personal/markers.md) - quickly added points as target, [Audio/Video notes](../plugins/audio-video-notes.md) - media notes recorded at specific point, [Tracks](../personal/tracks.md) - recorded and imported tracks & tours.
 
 <Tabs groupId="operating-systems">
 
@@ -244,11 +244,11 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 </Tabs>
 
-[Read more](../map/point-layers-on-map) about points on the map.
+[Read more](../map/point-layers-on-map.md) about points on the map.
 
 ### How to browse & find point of interest
 
-[Points of interest (POI)](../map/point-layers-on-map#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and distributed as part of [Vector Maps](../map/vector-maps). You can use them to [display on the map](../map/point-layers-on-map#points-of-interest-poi), [navigate](../navigation) and [search](../search/search-poi) the points of interest on the Map.
+[Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-poi), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
 
 <Tabs groupId="operating-systems">
 
@@ -272,11 +272,11 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 </Tabs>
 
-[Read more](../search/search-poi) about POI search.
+[Read more](../search/search-poi.md) about POI search.
 
 ### How to plan a route
 
-[Plan route](../plan-route/create-route) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks), [edited](../map/tracks-on-map) or [used by navigation](../navigation/gpx-navigation) later.
+[Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks.md), [edited](../map/tracks-on-map.md) or [used by navigation](../navigation/gpx-navigation.md) later.
 
 <Tabs groupId="operating-systems">
 
@@ -300,11 +300,11 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 </Tabs>
 
-[Read more](../plan-route/create-route) about plan route feature.
+[Read more](../plan-route/create-route.md) about plan route feature.
 
 ### How to search by address
 
-OsmAnd provides many search capabilities including address search. By default it uses [OpenStreetMap data](https://nominatim.openstreetmap.org/ui/search.html) and should be able to find all addresses using Quick Search input. Also you can [search](../search/search-address) by city, street, postcode and coordinates. 
+OsmAnd provides many search capabilities including address search. By default it uses [OpenStreetMap data](https://nominatim.openstreetmap.org/ui/search.html) and should be able to find all addresses using Quick Search input. Also you can [search](../search/search-address.md) by city, street, postcode and coordinates. 
 
 <Tabs groupId="operating-systems">
 
@@ -330,11 +330,11 @@ OsmAnd provides many search capabilities including address search. By default it
 
 **Note:** You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
 
-[Read more](../search/search-address) about address search.
+[Read more](../search/search-address.md) about address search.
 
 ### How to start navigation
 
-[Navigation](../navigation) provides you step by step guidance to your destination by displaying the route, offering turn-by-turn instructions, extra road information about surface, smoothness, etc and optional voice guidance.
+[Navigation](../navigation/index.md) provides you step by step guidance to your destination by displaying the route, offering turn-by-turn instructions, extra road information about surface, smoothness, etc and optional voice guidance.
 
 <Tabs groupId="operating-systems">
 
@@ -358,11 +358,11 @@ OsmAnd provides many search capabilities including address search. By default it
 
 </Tabs>
 
-[Read more](../navigation) about navigation.
+[Read more](../navigation/index.md) about navigation.
 
 ### How to record you trip
 
-[Trip recording](../plugins/trip-recording) is a special tool packaged as OsmAnd plugin that allows to record all movements into track using the device's GPS.
+[Trip recording](../plugins/trip-recording.md) is a special tool packaged as OsmAnd plugin that allows to record all movements into track using the device's GPS.
 
 <Tabs groupId="operating-systems">
 
@@ -386,7 +386,7 @@ OsmAnd provides many search capabilities including address search. By default it
 
 </Tabs>
 
-[Read more](../plugins/trip-recording) about trip recording.
+[Read more](../plugins/trip-recording.md) about trip recording.
 
 ### How to edit maps
 
@@ -414,7 +414,7 @@ OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps
 
 </Tabs>
 
-[Read more](../plugins/osm-editing) about OSM editing. 
+[Read more](../plugins/osm-editing.md) about OSM editing. 
 
 ## Privacy
 
@@ -425,12 +425,12 @@ It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-
 OsmAnd doesn't have any required permissions on iOS / Android version. 
 
 **Essential**:
-- **Internet** - initial download / update offline maps. Also could be needed to access online features such as [Street Level Imagery](../map/point-layers-on-map#-street-level-imagery), [Online photos](../map/map-context-menu#online-photos) or [Online maps](../map/raster-maps).
-- **GPS** / **GSM Network** - determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons#my-location--zoom) or when you [start navigation](../navigation/route-navigation).
+- **Internet** - initial download / update offline maps. Also could be needed to access online features such as [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online photos](../map/map-context-menu.md#online-photos) or [Online maps](../map/raster-maps.md).
+- **GPS** / **GSM Network** - determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location--zoom) or when you [start navigation](../navigation/route-navigation.md).
 
 **Optional**:
-- **Camera/voice recording** (Android) - only used by [the Audio/Video notes](../plugins/audio-video-notes). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
+- **Camera/voice recording** (Android) - only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
 
 ## Troubleshooting
 
-If you have a specific question, please check [Troubleshooting](../troubleshooting) to have it answered.
+If you have a specific question, please check [Troubleshooting](../troubleshooting/index.md) to have it answered.

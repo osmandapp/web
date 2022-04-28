@@ -46,7 +46,7 @@ Settings and info
 - <Translate android="true" ids="trace_rendering"/> - <Translate android="true" ids="trace_rendering_descr"/> 
 - <Translate android="true" ids="simulate_initial_startup"/> - <Translate android="true" ids="simulate_initial_startup_descr"/>
 - <Translate android="true" ids="show_free_version_banner"/> - <Translate android="true" ids="show_free_version_banner_description"/>
--&nbsp;<Translate android="true" ids="test_voice_prompts"/> - [<Translate android="true" ids="play_commands_of_currently_selected_voice"/>](../navigation/voice-navigation#testing-of-voice-prompts-android) 
+-&nbsp;<Translate android="true" ids="test_voice_prompts"/> - [<Translate android="true" ids="play_commands_of_currently_selected_voice"/>](../navigation/voice-navigation.md#testing-of-voice-prompts-android) 
 - <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>
 
 **Info**:
