@@ -54,11 +54,11 @@ If you already used 7 possibilities for free downloads, you can get 3 extra down
 ### I have a GPX file, how do I get it into OsmAnd?
 
 - &nbsp;Android
-    - &nbsp;You can [download and open it](../navigation/gpx-navigation) via File Browser or Dropbox and select OsmAnd as a target application
+    - &nbsp;You can [download and open it](../navigation/gpx-navigation.md) via File Browser or Dropbox and select OsmAnd as a target application
     - &nbsp;You can put it in OsmAnd home folder: osmand/tracks/(optional\_sub-folder)/your\_file.gpx
     
 - &nbsp;iOS
-    - &nbsp;To open [a GPX file in OsmAnd](../navigation/gpx-navigation), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
+    - &nbsp;To open [a GPX file in OsmAnd](../navigation/gpx-navigation.md), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
 
 
 ### Contour lines or hillshades do not show up

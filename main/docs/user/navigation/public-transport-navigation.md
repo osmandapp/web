@@ -53,9 +53,9 @@ Here you can open all stops list by clicking to "" button.
 
 ## Data for public transport
 
-<!-- OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](../../../blog/2019-03-16-guideline-pt/index.mdx). -->
+<!-- OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](https://test.osmand.net/blog/guideline-pt). -->
 
 ## Read more
 
-<!-- - [Guideline for public transport](../../../blog/2019-03-16-guideline-pt/index.mdx). -->
+<!-- - [Guideline for public transport](https://test.osmand.net/blog/guideline-pt). -->
 - [Presentation in SotM-2019](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
