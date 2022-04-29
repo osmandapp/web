@@ -44,8 +44,8 @@ To show a bearing requires to have a **target point** selected. In case you have
 | Format | Supports different angular units: <br /> <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>|
 | On Click | Changes between  Relative bearing or Magnetic bearing (with "M") |
 
-
-## Destination
+## Navigation points
+### Destination
 
 Destination widget shows the distance left to the last destination point by following the calculated route. 
 
@@ -56,7 +56,7 @@ Destination widget shows the distance left to the last destination point by foll
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,route_descr_destination"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_distance"/>|
 | On Click | Moves the map to a destination point. |    
 
-## Intermediate destination
+### Intermediate destination
 
 Intermediate Destination widget shows the distance left to the first intermediate point by following the calculated route. Once intermediate points is passed, the distance will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
 
@@ -67,7 +67,7 @@ Intermediate Destination widget shows the distance left to the first intermediat
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_intermediate_distance"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_intermediate_distance"/>|
 | On Click | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
 
-## Arrival time or Time to go
+### Arrival time or Time to go
 
 The widget shows <Translate android="true" ids="access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
 
@@ -78,7 +78,7 @@ The widget shows <Translate android="true" ids="access_arrival_time"/> or <Trans
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
 | On Click | Changes between "Arrival time" to "Time to go" and vice versa. |  
 
-## Intermediate arrival time
+### Intermediate arrival time
 
 Intermediate arrival time or Intermediate time widget shows <Translate android="true" ids="access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> of navigation to the first intermediate point. Once intermediate points is passed, the time will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
 
