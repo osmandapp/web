@@ -80,6 +80,29 @@ import TabItem from '@theme/TabItem';
 ## Sport, leisure
 <img src={require('@site/static/img/map-legend/osmand-sport-leisure.png').default} alt="OsmAnd Map style" />
 
+<LegendItem itemsMap={{
+        'Stadium' : 'sport_leisure/sport_Stadium',
+        'Sports Centre' : 'sport_leisure/sport_sportsCentreColor',
+        'Track (leisure)' : 'sport_leisure/sport_track',
+        'Golf Course' : 'sport_leisure/leisure_golfCourseColor',
+        'Park' : 'sport_leisure/leisure_Park',
+        'Recreation ground' : 'sport_leisure/leisure_recreationGroundColor',
+        'Pitch' : 'sport_leisure/leisure_pitchColor',
+        'Horse riding' : 'sport_leisure/leisure_horse_riding',
+        'Playground' : 'sport_leisure/leisure_playgroundColor',
+        'Common (leisure)' : 'sport_leisure/leisure_leisureCommonColor',
+        'Camp site' : 'sport_leisure/leisure_camp_site',
+        'Outdoor seating' : 'sport_leisure/leisure_outdoor_seating',
+        'Caravan site' : 'sport_leisure/leisure_caravan_site',
+        'Picnic site' : 'sport_leisure/leisure_picnic_site',
+        'Rest area' : 'sport_leisure/leisure_rest_area',
+        'Beach resort' : 'sport_leisure/leisure_beach_resort',
+        'Bleachers' : 'sport_leisure/leisure_bleachers',
+        }}>
+</LegendItem>
+
+
+
 ## Built-up areas
 <img src={require('@site/static/img/map-legend/osmand-built-up_areas.png').default} alt="OsmAnd Map style" />
 
