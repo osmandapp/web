@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 label: Introduction
-title: Intro
+title: Docs
 ---
 
 

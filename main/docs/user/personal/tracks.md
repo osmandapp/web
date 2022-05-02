@@ -23,7 +23,7 @@ You can add tracks to OsmAnd in these ways:
 - &nbsp;Create in the application using [Plan route](../plan-route/index.md) tool.
 - &nbsp;Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
-All tracks in the application are stored in the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md).
+All tracks in the application are stored in the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md).
 
 Abilities to manage tracks in OsmAnd:
 - &nbsp;Enable and disable tracks on the map.
@@ -34,8 +34,22 @@ OsmAnd has no limit on the number of tracks to store and display.
 
 There are two options to display [Tracks](../personal/tracks.md) on the map: via [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu or [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu
 
+<Tabs groupId="operating-systems">
 
-![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png) ![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+<TabItem value="android" label="Android">
+
+
+![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+
+</TabItem>
+ 
+</Tabs>
 
 
 - &nbsp;Formats: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.
@@ -43,19 +57,61 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 ## Create / Edit Track
 
-### Coordinate input (Android)
+### Coordinate input
 
-- &nbsp;[By Coordinate input](../plan-route/coordinate-input.md) 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+- Read how to add points by coordinates: &nbsp;[By Coordinate input](../plan-route/coordinate-input.md) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+> ```Coordinate input for **iOS** is not supported while.```
+
+</TabItem>
+ 
+</Tabs>
 
 ### Record track
 
-- &nbsp;[Link to Recording Plugin](../plugins/trip-recording.md)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+- Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
+
+</TabItem>
+ 
+</Tabs>
 
 ### Add waypoint
 
-- &nbsp;[Context menu](../map/map-context-menu.md#-add--edit--track-waypoint)
+<Tabs groupId="operating-systems">
 
-### Edit mode (iOS)
+<TabItem value="android" label="Android">
+
+- How to add a waypoint to a track here: &nbsp;[Map Context menu - Add/Edit Track waypoint](../map/map-context-menu.md#-add--edit--track-waypoint).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- How to add a waypoint to a track here: &nbsp;[Map Context menu- Add/Edit Track waypoint](../map/map-context-menu.md#-add--edit--track-waypoint).
+
+</TabItem>
+ 
+</Tabs>
+
+<!-- ### Edit mode (iOS)
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks,create_new_trip"/>
 
@@ -73,12 +129,27 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 - Change order - long tap to "&#9776;" button and change the order of chosen point by moving up or down.
 
-![Edit mode moving point ios](@site/static/img/personal/tracks/edit_mode_moving_point_ios.png) 
+![Edit mode moving point ios](@site/static/img/personal/tracks/edit_mode_moving_point_ios.png)  -->
 
 
 ### Edit via Plan Route
 
-- [Edit track](../plan-route/create-route.md) via Plan route tool.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+- &nbsp;[Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- &nbsp;[Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).
+
+</TabItem>
+ 
+</Tabs>
+
 
 ## Manage Tracks 
 
@@ -105,25 +176,7 @@ At the bottom of the screen are four Actions buttons.
 
 </TabItem>
 
-</Tabs>
-
-### Search / Sort
-
-Clicking to "&#x1F50D;" button on the top of the device screen opens the searching function of the tracks list.
-
-![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_seaching_android.png) 
-
-Clicking to "sort" button on the top of the device screen opens choosing sort menu for tracks on the list.
-
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_android.png) ![My places tracks sort 1 function Android](@site/static/img/personal/tracks/my_places_tracks_sort_1_android.png) 
-
-Sort menu: 
-
-- <Translate android="true" ids="sort_last_modified"/> - sorting tracks in the list by last modified.
-- <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
-- <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
-
-### My Places (iOS)
+<TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/>
 
@@ -131,8 +184,6 @@ Sort menu:
 
 ![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png)
 
-
-### Actions
 
 **Actions on Folder list**
 
@@ -158,10 +209,46 @@ Sort menu:
 - &nbsp;<Translate ios="true" ids="plan_route_change_folder"/> - allows to change a folder for the chosen track.
 
 
+</TabItem>
+ 
+</Tabs>
+
+### Search / Sort
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Clicking to "&#x1F50D;" button on the top of the device screen opens the searching function of the tracks list.
+
+![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_seaching_android.png) 
+
+Clicking to "sort" button on the top of the device screen opens choosing sort menu for tracks on the list.
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_android.png) ![My places tracks sort 1 function Android](@site/static/img/personal/tracks/my_places_tracks_sort_1_android.png) 
+
+Sort menu: 
+
+- <Translate android="true" ids="sort_last_modified"/> - sorting tracks in the list by last modified.
+- <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
+- <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+
+
+</TabItem>
+ 
+</Tabs>
+
 ## Import/Export track
 
-- Link to Import / Export functionality
-- Storage
+How to import and export Tracks and how to find it on your device storage:
+
+- [Import / Export functionality](../personal/profiles.md#actions)
+- [Storage](../personal/storage.md)
 
 ## Read more
 
