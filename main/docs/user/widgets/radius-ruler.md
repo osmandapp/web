@@ -76,11 +76,12 @@ In order to expand the visible range of the ruler radius for **iOS** you need to
 
 ### Video Guides
 Video guide how to use Radius ruler for **Android**
-[![Video guide how to use Radius ruler for Android](@site/static/img/widgets/radius_ruler_video_android.png)](https://www.youtube.com/watch?v=MWT20dVtkDc)
 
+<iframe  width="900" height="506" src="https://www.youtube.com/embed/MWT20dVtkDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Video guide how to use Radius ruler for **iOS**
-[![Video guide how to use Radius ruler for iOS](@site/static/img/widgets/radius_ruler_video_ios.png)](https://www.youtube.com/watch?v=C9QLQ52ndiA&t=10s)
+
+<iframe  width="900" height="506" src="https://www.youtube.com/embed/C9QLQ52ndiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 'Distance by tap' tool
 
