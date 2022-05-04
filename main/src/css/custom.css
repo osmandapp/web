@@ -175,3 +175,7 @@ ul.no-bullets {
 .blogPostTitle {
   font-size: 2px;
 }
+
+.navbar__search { 
+  padding-left: 16px;
+}
