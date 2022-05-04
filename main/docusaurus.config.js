@@ -153,6 +153,10 @@ const config = {
                 label: 'Spanish',
                 href: 'https://t.me/osmand_es',
               },
+              {
+                label: 'Arabic',
+                href: 'https://t.me/joinchat/8f5o0TtZAaM0MGJk',
+              },              
             ],
           },
           {
