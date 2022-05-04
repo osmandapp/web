@@ -43,7 +43,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
       'https://i.imgur.com/jv3iLWy.png',
     content: (
       <>
-       If you’re concerned about online privacy, then you’ll want to be especially careful when choosing a navigation app. After all, for these apps to function you’ll need to at least share your location, and you may find yourself sharing other personal details as well. This open-source navigation app has particularly strong privacy policies — they don’t collect user data, and they let you decide exactly what the app has access to.
+       If you’re concerned about online privacy, then you’ll want to be especially careful when choosing a navigation app. After all, for these apps to function you’ll need to at least share your location, and you may find yourself sharing other personal details as well. OsmAnd is open-source navigation app and has particularly strong privacy policies — it doesn’t collect user data, and let you decide exactly what the app has access to.
       </>
     ),
     showOnHomepage: true,
@@ -58,6 +58,20 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
     content: (
       <>
         Much better than Google Maps for navigating by foot or by bike. User submissions makes all the little paths available, and makes sure that they are actually usable (or they wouldn't have been submitted). Offline maps work really well, too, even in back country. I always make sure to download the region if I plan to go hiking. Only downside compared to Google Maps is the user interface for navigation, which could still use some work. Wonderful project!
+       </>
+    ),
+    showOnHomepage: true,
+  },
+  {
+    url: 'https://www.partireper.it/',
+    source: 'partireper.it',
+    name: 'Gionata Nencini',
+    date: 'May 4, 2022',
+    avatar:
+      'https://i.imgur.com/KgfFveg.jpg',
+    content: (
+      <>
+        Osmand+ opened to me and to my community/customers the freedom of discovery and scouting we had never experienced before on a motorcycle. I adore and support Osmand+ and talk about it during rides I lead, events I organize, books I write, tutorial I executes and workshops I run at Motoviaggio Store. Really glad to be an ambassador for this powerful and useful tool every traveler should have on their devices. Keep up the great work!
        </>
     ),
     showOnHomepage: true,
