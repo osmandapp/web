@@ -79,7 +79,7 @@ const config = {
                 to: '/docs/user/map-legend/osmand',
               },
               {
-                label: 'Versions',
+                label: 'Downloads',
                 to: '/docs/versions/free-versions',
               },
               {
