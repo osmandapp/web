@@ -5,7 +5,7 @@ import styles from './Impressions.module.css';
 
 const ImpressionsList = [
   {
-    url: 'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
+    url: 'https://play.google.com/store/apps/dev?id=8483587772816822023',
     source: '@google-play',
     name: 'Mark Erikson',
     date: 'Feb 28, 2020',
@@ -77,7 +77,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
     showOnHomepage: true,
   },
   {
-    url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
+    url: 'https://play.google.com/store/apps/dev?id=8483587772816822023',
     source: '@google-play',
     name: 'Matias Lavik',
     date: 'April 18, 2022',
