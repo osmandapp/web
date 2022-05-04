@@ -63,7 +63,7 @@ The table shows all the features that are included in the paid and free packages
 | Ad-free access | ✔ | ✔ | ✔ |
 | OsmAnd Cloud | - | - | ✔ |
 | Pro Features | - | - | ✔ |
-| Unlimited map downloads | 7 maps (including updates) | ✔ | ✔ |
+| Unlimited map downloads | 7 map downloads (map update counts as download) | ✔ | ✔ |
 | <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads</p> | ✔ | ✔ |
 | <p>Hourly map updates</p> (1 hour delay) | - | - | ✔ |
 | [Android Auto](https://www.android.com/auto/) | - | ✔ | ✔ |

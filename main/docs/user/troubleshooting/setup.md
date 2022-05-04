@@ -40,7 +40,7 @@ For iOS we have only one version of OsmAnd. If you want to enable the full versi
 
 ### What does 7 free downloads mean?
 
-It means that you have only 7 possibilities to download. It can be either map, updates, voice packs, etc. 
+It means that you have only 7 possibilities to download (map update counts as download). It can be either map, updates, voice packs, etc. 
 Please, note if you remove some items from your downloads the chance for free download does not return. 
 
 ### How can I get the additional map downloads in OsmAnd free?
