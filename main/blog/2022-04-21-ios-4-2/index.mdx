@@ -10,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={require('./banner_ios_4-2.jpg').default} alt="Download online map"/>
 
@@ -23,12 +25,9 @@ Thank you for your support and feedback.
 <!--truncate-->
 
 
-
 ## Route line appearance
 
-Added ability to set width and color
-
-<!--<BlogImageBlock img1="customise_route_line-1.png" img2="customise_route_line-2.png" />-->
+Added ability to customize route line width and color. You can colorize route by selecting a custom color or by <Translate android="false" id="altitude"/>, <Translate android="false" id="gpx_slope"/>, <Translate android="false" id="routeInfo_roadClass_name"/>, <Translate android="false" id="routeInfo_surface_name"/>, <Translate android="false" id="routeInfo_smoothness_name"/>, <Translate android="false" id="routeInfo_tracktype_name"/>
 
 <table class="blogimage">
   <tr>
@@ -39,22 +38,37 @@ Added ability to set width and color
 
 ## Tracks
 
-* Track context menu: added scroll bar with waypoint groups allows to select needed group quicker
-* <Translate android="false" ids="my_places,tracks"/>: added option for deleting several tracks at once. 
+### Scroll bar for waypoint groups
+Track context menu: added scroll bar with waypoint groups allows to select needed group quicker
+<img src={require('./track-waypoints.png').default} alt="Track context menu: waypoints tab"/>
 
+### Improve track managements 
+: added option for deleting several tracks at once. 
 
+<Translate android="false" ids="my_places,tracks"/>
 <table class="blogimage">
   <tr>
-    <td><img src={require('./track-waypoints.png').default} alt="Track context menu: waypoints tab"/></td>
+    <td></td>
     <td><img src={require('./tracks-edit.png').default} alt="My places - Tracks - Edit"/></td>
     </tr>
 </table> 
 
+### Track description
+Added ability to view, add or edit track descriptiopn.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./track-overview-desc.png').default} alt="My places - Tracks - Edit"/></td>
+    <td><img src={require('./track-desc-edit.png').default} alt="Edit "/></td>
+    </tr>
+</table> 
+
+### Include heading
 A new parameter has also been added to the <Translate android="false" id="track_recording"/> plugin: <Translate android="false" id="save_heading"/>.
 
 
 ## Routes
-Transport routes. Fitness and running routes.
+Public transport routes have been divided into types. Fitness and running routes was added into maps.
 
 <table class="blogimage">
   <tr>
@@ -66,7 +80,8 @@ Transport routes. Fitness and running routes.
 
 ## Horseback riding
 
-Added new navigation type and app profile.
+Added new navigation type and app profile for Horseback riding. You can also enable '<Translate android="false" id="rendering_attr_horseRoutes_name"/>' and 'Difficulty of horse trails' in Configure Map menu.
+
 <table class="blogimage">
     <tr>
         <td><img src={require('./horseback-riding_profile.png').default} alt="Horseback riding profile"/></td>
@@ -79,7 +94,7 @@ Added new navigation type and app profile.
 
 ## Files app
 
-OsmAnd files are now visible in the "Files" application
+OsmAnd files are now visible in the "Files" application. You can access all tracks, custom routing and rendering files thru it.
 <table class="blogimage">
   <tr>
     <td><img src={require('./files-1.png').default} alt="Files app"/></td>
@@ -98,16 +113,53 @@ UX of options "Use elevation data" and "Select elevation fluctuation"  was impro
     </tr>
 </table> 
 
+## New map style
+
+"Mapnik" map style was replaced with the new "OSM-Carto" style. It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
+
+If you use "Mapnik" it will be available after the update but as a custom map style. After fresh or new installation you will need to manually import it to use. You can do it by downloading it from GitHub.
+
+<Tabs groupId="map-style">
+<TabItem value="mapnik" label="Mapnik">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_mapnik_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+
+<TabItem value="android" label="OSM-Carto">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_osm-carto_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+</Tabs>
+
+## CarPlay
+* CarPlay bug fixes, added gestures for touchscreens
+* Fixed turn arrows color for match CarPlay light theme.
+
+
 
 ## Street name widget
 
 * now show road shield and exit number during navigation
 * visible in all profiles
 
+## Copy details
 
+It is now possible to copy information from the context menu of any POI, make a long press on a cell to bring up the "Copy" button.
+<img src={require('./context-menu_copy-details.png').default} alt="Transport routes"/>
 
 ## Fixed 
-* CarPlay bug fixes, added gestures for touchscreens
 * Fixed import of GPX files from OSF package
 * Fixed import of custom plugins with included files
 * Fixed various crashes in the Route planning mode
