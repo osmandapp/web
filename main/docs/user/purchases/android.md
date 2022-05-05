@@ -63,8 +63,8 @@ The table shows all the features that are included in the paid and free packages
 | Ad-free access | ✔ | ✔ | ✔ |
 | OsmAnd Cloud | - | - | ✔ |
 | Pro Features | - | - | ✔ |
-| Unlimited map downloads | 7 map downloads (map update counts as download): <br /> Map download or update is meant only download-update of a country (region) map.<br /> ```World overview map, World altitude correction, Map fonts and Voice prompts are not counted as 7 possibilities to download.``` | ✔ | ✔ |
-| <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads</p> | ✔ | ✔ |
+| Unlimited map downloads | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
+| <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
 | <p>Hourly map updates</p> (1 hour delay) | - | - | ✔ |
 | [Android Auto](https://www.android.com/auto/) | - | ✔ | ✔ |
 | Topo data (Contour lines and Terrain) | - | ✔ | ✔ |

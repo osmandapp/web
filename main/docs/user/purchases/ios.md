@@ -25,8 +25,8 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 |    | OsmAnd Free   | OsmAnd In-App | OsmAnd Live subscription |
 | :------------- | :------------- | :------------- | :------------- |
 | Ad-free access | ✔ | ✔ | ✔ |
-| Map downloads |  5 map downloads (map update counts as download): <br /> Map download or update is meant only download-update of a country (region) map.<br /> ```World overview map, World altitude correction, Map fonts and Voice prompts are not counted as 7 possibilities to download.``` | ⁂ | ∞ |
-| Maps update |  Once a month (with 15 days delay) <p> * limited to 5 downloads </p> |  ⁂ - Once a month (with 15 days delay) | Every hour (no delay) | 
+| Map downloads |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ⁂ | ∞ |
+| Maps update |  Once a month (with 15 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ⁂ - Once a month (with 15 days delay) | Every hour (no delay) | 
 | Topo data (Contour lines and Terrain) | - | ⁂ | ✔ |
 | Nautical depths | - | ⁂ | ✔ |
 | Travel guides (Wikipedia) | - | ⁂ | ✔ |
