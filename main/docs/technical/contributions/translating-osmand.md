@@ -7,7 +7,7 @@ sidebar_position: 3
 
 We really appreciate your help translating OsmAnd! Providing display text translations is not very complicated, the preferred way to provide string translations is described here: [OsmAnd @ Hosted Weblate](https://hosted.weblate.org/projects/osmand/).
 
-* If a language you would like to help translating into is not yet listetd there, please open an issue [here](https://github.com/osmandapp/Osmand/issues) (requires a github account).
+* If a language you would like to help translating into is not yet listed there, please open an issue [here](https://github.com/osmandapp/Osmand/issues) (requires a github account).
 * Existing language files could also be modified by editing the respective _strings.xml file_ directly in our code via github mechanisms, but this is not the preferred way.
 * Just for reference: master strings are kept in the [American English strings.xml file](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/res/values/strings.xml). The string data for the map data extractor is in the `swing_messages_{language}.properties` files in the [DataExtractionOsm](https://github.com/osmandapp/Osmand/tree/master/DataExtractionOSM/src/net/osmand/swing) **(NOTE Hardy: link is broken!)** project.
 
@@ -16,7 +16,7 @@ Thank you for your help !
 ## Some Frequent Questions and Answers:
 
 #### Q1: Which strings should I translate?
-The Weblate tool is self explanatory. Only if ypu try to edit files directly:
+The Weblate tool is self explanatory. Only if you try to edit files directly:
 * In `strings.xml`, strings look like `<string name="shared_string_save_as_gpx">Save as GPX track</string>`. Translate only the `Save route as GPX track` part.
 * In `swing_messages.properties`, strings look like `IndexCreator.INDEX_CITIES=Indexing cities...`. Translate only the right part `Indexing cities...`. 
 
