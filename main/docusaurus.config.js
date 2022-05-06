@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
+  staticDirectories: ['static', 'legacy-image-static'],
   presets: [
     [
       'classic',
