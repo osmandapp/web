@@ -118,7 +118,7 @@
 <!-- Does not work -->
 <!--  <tile_source name="Waymarkedtrails Winter Sports" url_template="https://tile.waymarkedtrails.org/slopemap/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="2000"/>-->
   
-  <tile_source name="Генштаб Marshruty.ru" url_template="http://maps.marshruty.ru/ml.ashx?al=1&amp;x={1}&amp;y={2}&amp;z={0}&amp;i=1" ext=".jpg" min_zoom="1" max_zoom="15" tile_size="256" img_density="16" avg_img_size="18000"/>
+  <tile_source name="Генштаб Marshruty.ru" url_template="https://maps.marshruty.ru/ml.ashx?x={1}&amp;y={2}&amp;z={0}&amp;i=1&amp;al=1" ext=".jpg" min_zoom="1" max_zoom="15" tile_size="256" img_density="16" avg_img_size="18000"/>
 
   <tile_source rule="template:1" name="Hitta.se Outdoor (SE)" url_template="https://static.hitta.se/tile/v3/4/{0}/{1}/{2}" ext="png" min_zoom="5" max_zoom="18" tile_size="256" img_density="32" avg_img_size="18000" inverted_y="true"/>
   <tile_source name="Lantmäteriet Topo (SE)" ext="png" min_zoom="3" max_zoom="15" tile_size="256" img_density="32" avg_img_size="18000" url_template='https://api.lantmateriet.se/open/topowebb-ccby/v1/wmts/token/9b342b7d9f12d4ddb92277be9869d860/1.0.0/topowebb/default/3857/{0}/{2}/{1}.png'/>
