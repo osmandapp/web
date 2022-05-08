@@ -14,7 +14,7 @@ The map is a core element of OsmAnd. This section explains how to interact with 
 
 Widgets are User Interface elements that are displayed over the map screen & not attached to the map location. They provide additional information about the current route, speed, altitude, recorded track, etc. & also allow to quickly interact with the application.
 
-### [Navigation](./plugins/index.md)
+### [Navigation](./navigation/index.md)
 
 The navigation functionality guides you to your destinations, by displaying routes, offering turn-by-turn instructions, and optional voice guidance.
 
