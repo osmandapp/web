@@ -50,6 +50,16 @@ To remove search history, please open the Search menu, make a long tap on any se
 
 You can also follow [this guide](../search/index.md) to learn more about the search in OsmAnd.
 
+## Problem with connecting to the GPS connection 
+
+OsmAnd uses the location data determination by your device (to be exact Google service).
+1. Please, check if it is available to update your Google service: [Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en&gl=US)
+2. Please check the Android System Settings - Location and ensure that Location Access is turned On and switched to High Accuracy. You can also try to clear the cache and restart your device. 
+GPS issues usually occur when buildings and other large objects interfere with or interrupt the GPS signal. Please test your GPS performance. If the signal is weak, please set the minimum recording accuracy setting over 15 meters.
+3. Enable GPS-connection widget and check how many satellites connecting: [GPS widget](../widgets/info-widgets#gps-info-android). If there is no satellite connection, your location could not be determined.
+4. Also, you can set up to determine your location via GPS signal only (deny determine your position via wi-fi or Bluetooth connection). How to do this, please, read here: [Google Support](https://support.google.com/android/answer/3467281?hl=en)
+If that doesn't work, reinstall OsmAnd app - that should clear up the bad data and resolve GPS issues. Before reinstalling the app export all your saved information. 
+If the issue is not resolved by reinstalling the app, maybe it occurs due to memory lack, so please check that you have enough RAM available.
 
 ## Other
 
