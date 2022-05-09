@@ -37,15 +37,15 @@ Follow track menu:
 ![Navigation by track screen Android](@site/static/img/navigation/gpx/navigation_gpx_follow_track_android.png) ![Navigation by track screen iOS](@site/static/img/navigation/gpx/navigation_gpx_follow_track_ios.png)
 
 - &nbsp;Track name and track info - clicking to it opens the track in "Plan route" tool.
-- &nbsp;<Translate android="true" ids="select_another_track"/> -
-- &nbsp;<Translate android="true" ids="gpx_option_reverse_route"/> -
+- &nbsp;<Translate android="true" ids="select_another_track"/> - start navigation on another route.
+- &nbsp;<Translate android="true" ids="gpx_option_reverse_route"/> - change the direction of movement along the track in the opposite direction.
 - &nbsp;<Translate android="true" ids="pass_whole_track_descr"/> - <Translate android="true" ids="start_of_the_track"/> or <Translate android="true" ids="nearest_point"/> of the track.
 - &nbsp;<Translate android="true" ids="nav_type_hint"/> - <Translate android="true" ids="routing_profile_straightline"/> or chosen [navigation profile](../personal/profiles.md#navigation-settings).
 
 
 ### Navigation options
 
-[link](../navigation/route-navigation.md#navigation-options)
+[Read more...](../navigation/route-navigation.md#navigation-options)
 
 ## Plan route tool
 
