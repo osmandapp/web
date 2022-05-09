@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-# Maps
+## Maps
 ### Why does OsmAnd not offer access to Google Maps?
 
 Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as far as possible. Secondly, there are licensing issues, so OsmAnd cannot be distributed with Google Maps data.
@@ -23,9 +23,27 @@ Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as f
 
 Unfortunately not. This would require the generation of completely separate contour line data with different geometry and labels. You can obviously generate maps yourself using GDAL and OsmAndMapCreator but that requires technical environment check [Technical Documentation](../../technical/index.md).
 
+### Why long-loading maps for Android 11 and Android 12?
+
+There is a storage access rules in [Android 11-12](https://www.androidauthority.com/android-12-privacy-features-1225859/).
+
+The problem was related to the storing maps of SD cards.
+Android 11 and 12 very slow file access performance. 
+
+[Discuss on the Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/)
+
+[OsmAnd Github issue 1](https://github.com/osmandapp/OsmAnd/issues/10453)
+
+[OsmAnd Github issue 2](https://github.com/osmandapp/OsmAnd/issues/12046)
+
+It's only possible to fix if you migrate maps from sdcard. We're thinking to provide an alternative solution but as of today you can keep some maps on sdcard and copy them manually via FileManager when you need to use them. Sorry for inconvenience but there is no good solution yet.
+If this is your case, please try to Migrate your files to Internal app memory and check how it would work for you. 
+[Menu->Settings->OsmAnd settings->Data storage folder](../personal/storage#data-storage-folder-android).
+
+
 ### Create own maps
 
-# Search
+## Search
 ### Structured (city &#8594; street &#8594; house) address search doesn't find the house
 
 I tried to search CITY - STREET - HOUSE NUMBER and there was no result. 
@@ -36,9 +54,9 @@ I tried to search CITY - STREET - HOUSE NUMBER and there was no result.
 - **Problem in** [Nominatim](https://www.openstreetmap.org/#map=19/33.91937/-118.24357). The house is present on the OpenStreetMap, but not found in Nominatim. [How to fix addresses](https://wiki.openstreetmap.org/wiki/Addresses).
 - **Perhaps a problem in OsmAnd**. The house is present in Nominatim, so this problem in OsmAnd. You can help us to solve it by studying in more detail. [Technical article](../../technical/algorithms/trace-address-search-issues.md).
 
-# Points of Interest
+## Points of Interest
 
-# Tracks and Points
+## Tracks and Points
 ### How to mark different places on the map
 *It looks like duplicated content for Personal Data category*
 You can leave notes for future usage in several forms:
