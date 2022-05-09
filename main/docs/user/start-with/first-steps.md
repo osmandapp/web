@@ -66,7 +66,7 @@ Our goal is to create a fully functional map-oriented application that could be 
 
 ### How to download maps
 
-OsmAnd is an offline map application, so after the '{% data variables.android-values.get_started %}' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
+OsmAnd is an offline map application, so after the '<Translate android="true" ids="get_started"/>' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
 
 <Tabs groupId="operating-systems">
 
