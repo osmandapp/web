@@ -62,7 +62,7 @@ When the navigation is running, you can press the home button. You will get the 
 - &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 - &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
 - &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
-- &nbsp;<Translate android="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - 
+- &nbsp;<Translate android="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - allows to avoid or prefer motorways.
 - &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
 - &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
 - &nbsp;<Translate android="true" ids="follow_track"/> - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
@@ -136,8 +136,8 @@ Buttons:
 <p> </p>
 
 &nbsp;<Translate android="true" ids="screen_timeout"/>:
-- &nbsp;<Translate android="true" ids="system_screen_timeout"/> -
-- &nbsp;<Translate android="true" ids="wake_time"/> - 
+- &nbsp;<Translate android="true" ids="system_screen_timeout"/> - the screen will go blank depending on the device settings.
+- &nbsp;<Translate android="true" ids="wake_time"/> - if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
 
 &nbsp;<Translate android="true" ids="turn_screen_on"/>. Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
 - &nbsp;<Translate android="true" ids="turn_screen_on_proximity_sensor"/> - waving your hand across the screen will turn it on.
