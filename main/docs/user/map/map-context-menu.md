@@ -323,7 +323,7 @@ Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 It is possible to reorder or hide items from the '<Translate android="true" ids="context_menu_actions"/>'. You can move the most useful actions to the top 3 actions and setup whole menu independently for each profile. It is also possible to reset to default settings after all.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>
 
 <p> </p>
 
