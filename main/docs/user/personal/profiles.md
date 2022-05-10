@@ -335,6 +335,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 | **<Translate android="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
 |     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
+|     | <Translate android="true" ids="turn_arrows"/> | Select whether turn arrows are indicated on the route line.  |
+
 
 </TabItem>
 
@@ -386,6 +388,10 @@ In this section you can set [routing and navigation parameters of your profile, 
 |     | <Translate ios="true" ids="routing_attr_height_name"/>  | <Translate ios="true" ids="height_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_length_name"/>  | <Translate ios="true" ids="lenght_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_width_name"/> | <Translate ios="true" ids="width_limit_description"/>   |
+| **<Translate ios="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
+|     | <Translate ios="true" ids="fav_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
+|     | <Translate ios="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
+|     | <Translate ios="true" ids="turn_arrows"/> | Control the visibility of the turn arrows on the route line.  |
 
 </TabItem>
 

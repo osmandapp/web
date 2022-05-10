@@ -25,6 +25,18 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 **Passive** navigation doesn't require to have å destination point set and works automatically once you switch to any navigational profile, for example 'Driving'. In that case application will try to determine which road you are following and display extra information about it i.e. name, lanes info, max speed available. Please note that this approach is quite unreliable and doesn't support all features.
 
 
+## Elevation widget
+
+It's [Pro feature](../purchases/android#pro-features).
+
+The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.
+
+Upper the graph there is info about the sum of Uphill and Downhill for the visual graph (You can change the graph scale by [two-finger movement](../map/interact-with-map#gestures)) and Grade.
+
+
+![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+
+
 ## Bearing
 
 The bearing widget shows the absolute or relative bearing to a target in angular units (<Translate android="true" ids="shared_string_degrees"/> 180, <Translate android="true" ids="shared_string_degrees"/> 360, <Translate android="true" ids="shared_string_milliradians"/>).
@@ -119,7 +131,6 @@ Trigger display time, color is related to the voice navigation prompts and relat
 | Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
 | Approaching| [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
 | Distant | [Prepare to turn](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds | 
-
 
 
 ## Lanes
