@@ -18,11 +18,11 @@ Public transport is an additional layer that allows you to display transport rou
 
 Enable/Disable Public transport layer:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> → &#8230;
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_transport"/> → &#8230;
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,rendering_category_transport"/> → &#8230;
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,map_settings_map,rendering_category_transport"/> → &#8230;
 
 <p> </p>
 
