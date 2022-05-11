@@ -48,11 +48,11 @@ Slide animations could be disabled with special [setting](#disable-all-animation
 
 Keep in mind that during navigation zoom can be controlled by **Auto zoom setting**:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
 
 <p> </p>
 
