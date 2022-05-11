@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Beta Android
+# Android 4.2
 
 OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
