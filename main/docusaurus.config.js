@@ -179,6 +179,10 @@ const config = {
                 label: 'Get OsmAnd Merchandise',
                 href: 'https://www.redbubble.com/people/osmand/works/26426633-osmand',
               },
+              {
+                label: 'support@osmand.net',
+                href: 'mailto:support@osmand.net'
+              },
             ],
           },
         ],
