@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # iOS 4.2 (May 2022)
 
-## Get
+## Join Beta
 
 iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo). They don't have description and could have continuous versioning. They supposed to be stable and ready to use.
 
