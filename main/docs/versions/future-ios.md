@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Beta iOS
+# iOS 4.2
 
 ## Get
 
