@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 ---
 
-# iOS 4.2
+# iOS 4.2 (May 2022)
 
 ## Get
 

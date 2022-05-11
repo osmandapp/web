@@ -16,3 +16,10 @@ OsmAnd produces every day multiple Ready-To-Use builds which allows keep track o
 
 OsmAndMapCreator can be used to create any maps supported by OsmAnd yourself. 
 
+### [Next Android Release](/docs/versions/future-android)
+
+Release notes of next coming Android version which currently available as Beta.
+
+### [Next iOS Release](/docs/versions/future-ios)
+
+Release notes of next coming iOS version which currently available as Beta.
