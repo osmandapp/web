@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Plane route
+title:  Plan route
 ---
 
 import Tabs from '@theme/Tabs';
