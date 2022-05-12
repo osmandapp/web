@@ -130,9 +130,20 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 **Note**: Mapillary application should be installed separately.
 
 
-## * Trip recording widget
+## * Trip recording widgets
+
+
 
 >Enable **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**:  <Translate android="true" ids="shared_string_menu,plugins_screen"/>/<Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="record_plugin_name"/>.
+
+
+
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
 
 This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.
 
@@ -141,7 +152,77 @@ This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugi
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
-| On Click | Starts / Stop track recording |
+| On Click | Starts / Stop track recording |  
+
+___
+
+**Additional options**
+
+
+
+> **Duration**:  
+This widget shows time of track recording the duration in minutes/hours of the currently recorded trip
+
+![widgets](@site/static/img/widgets/duration_widget.png)
+
+| |
+|------------|------------|
+| On Click |  Start > Currently recording track > Track > Overview tab |
+
+___
+
+> **Uphill**:  
+This widget shows uphill duration and time spent in minutes or hours of trip record
+
+![widgets](@site/static/img/widgets/uphill_widget.png)
+
+| | |
+|------------|------------|
+| On Click | Start > Currently recording track > Track > Altitude tab
+ |
+
+___
+
+> **Downhill**:  
+This widget shows downhill duration and time spent in minutes or hours of trip record
+
+![widgets](@site/static/img/widgets/downhill_widget.png)
+
+| | |
+|------------|------------|
+| On Click | Start > Currently recording track > Track > Altitude tab
+ |
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.
+
+![Trip recording (REC) widget](@site/static/img/widgets/widget_trip-recording-rec.png)
+
+| | |
+|------------|------------|
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
+| On Click | Starts / Stop track recording |  
+
+___
+
+ Widgets: **Duration**, **Uphill**, **Downhill**
+ 
+
+> ```This feature doesn't exist for iOS version of OsmAnd.```
+
+
+
+</TabItem>
+
+</Tabs>  
+
+
+
+
  
 ## * Audio-video notes widget (Android)
 
