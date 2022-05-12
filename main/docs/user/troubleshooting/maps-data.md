@@ -23,18 +23,11 @@ Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as f
 
 Unfortunately not. This would require the generation of completely separate contour line data with different geometry and labels. You can obviously generate maps yourself using GDAL and OsmAndMapCreator but that requires technical environment check [Technical Documentation](../../technical/index.md).
 
-### Why long-loading maps for Android 11 and Android 12?
+### Maps slowly loading on Android 11, 12 (SD-card)
 
-There is a storage access rules in [Android 11-12](https://www.androidauthority.com/android-12-privacy-features-1225859/).
+There are new storage access rules in [Android 11-12](https://www.androidauthority.com/android-12-privacy-features-1225859/). The problem is related to the storing maps of SD cards. On Android 11 and 12 very slow file access performance. 
 
-The problem was related to the storing maps of SD cards.
-Android 11 and 12 very slow file access performance. 
-
-[Discuss on the Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/)
-
-[OsmAnd Github issue 1](https://github.com/osmandapp/OsmAnd/issues/10453)
-
-[OsmAnd Github issue 2](https://github.com/osmandapp/OsmAnd/issues/12046)
+[Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/) [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453) [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046)
 
 It's only possible to fix if you migrate maps from sdcard. We're thinking to provide an alternative solution but as of today you can keep some maps on sdcard and copy them manually via FileManager when you need to use them. Sorry for inconvenience but there is no good solution yet.
 If this is your case, please try to Migrate your files to Internal app memory and check how it would work for you. 
