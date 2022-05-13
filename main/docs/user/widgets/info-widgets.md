@@ -163,7 +163,7 @@ ___
 > **Duration**:  
 This widget shows time of track recording the duration in minutes/hours of the currently recorded trip
 
-![widgets](@site/static/img/widgets/duration_widget.png)
+<!-- ![widgets](@site/static/img/widgets/duration_widget.png) -->
 
 | |
 |------------|------------|
@@ -174,7 +174,7 @@ ___
 > **Uphill**:  
 This widget shows uphill duration and time spent in minutes or hours of trip record
 
-![widgets](@site/static/img/widgets/uphill_widget.png)
+<!-- ![widgets](@site/static/img/widgets/uphill_widget.png) -->
 
 | | |
 |------------|------------|
@@ -186,7 +186,7 @@ ___
 > **Downhill**:  
 This widget shows downhill duration and time spent in minutes or hours of trip record
 
-![widgets](@site/static/img/widgets/downhill_widget.png)
+<!-- ![widgets](@site/static/img/widgets/downhill_widget.png) -->
 
 | | |
 |------------|------------|
