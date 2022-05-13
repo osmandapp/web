@@ -18,7 +18,7 @@ OsmAnd is available for [**Android Auto**](https://www.android.com/auto) and [**
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
+<TabItem value="android" label="Android">
 
 **Note:**  Paid feature is available for <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Paid users (Maps+ and subscribers)</a>.
 
@@ -27,7 +27,7 @@ OsmAnd is available for [**Android Auto**](https://www.android.com/auto) and [**
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS"> 
 
 Choosing app profile that will be used while connected to CarPlay: **Menu → Settings → OsmAnd Settings → CarPlay profile**
 

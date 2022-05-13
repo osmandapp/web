@@ -29,3 +29,7 @@ Public Transport navigation is your help during trips in cities
 ### [Voice navigation](./voice-navigation.md)
 
 Navigation instructions and announcements
+
+### [Android Auto / CarPlay](./auto-car.md)
+
+Using a vehicle media screen for navigation by OsmAnd
