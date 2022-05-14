@@ -102,6 +102,81 @@ Tracks list.
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_2_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_2_ios.png)
 
+
+
+### Route line appearance
+
+
+Allows to customize route line by color, width and turn arrows.
+[Pro feature](../purchases/android.md#free-and-paid-features)
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
+
+___
+
+**Color**  
+* <Translate android="true" id="map_widget_renderer"/> – Use map style default color.
+* Custom – Route line is colored by color spots in day or night mode
+* <Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
+* <Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
+* <Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
+* <Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
+* <Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
+* <Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
+* <Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
+* Difficulty of horse trails – Render paths according to difficulty of horse trails
+
+
+
+**Width**
+
+Thin, Medium, Bold, Custom.
+
+**Turn Arrows**
+
+Select whether turn arrows are indicated on the route line.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
+
+___
+
+**Color**  
+* <Translate ios="true" id="map_settings_style"/> – Use map style default color.
+* Custom – Route line is colored by custom color in day and night mode
+* <Translate ios="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
+* <Translate ios="true" id="gpx_slope"/> – Route line will be colorized depending on the elevation profile of the route.
+* <Translate ios="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
+* <Translate ios="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
+* <Translate ios="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
+* <Translate ios="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
+* <Translate ios="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
+* Difficulty of horse trails – Render paths according to difficulty of horse trails
+
+
+**Width**
+
+Thin, Medium, Bold, Custom.
+
+**Turn Arrows**
+
+Select whether turn arrows are indicated on the route line.
+
+
+</TabItem>
+
+</Tabs>  
+
+
 ## Type of navigation
 
 Link to [Navigation profiles](../personal/profiles.md)
