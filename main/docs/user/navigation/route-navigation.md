@@ -107,7 +107,7 @@ Tracks list.
 ### Route line appearance
 
 
-Allows to customize route line by color, width and turn arrows.
+This menu allows you to customize the route line appearance. You can configure the color for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  
 [Pro feature](../purchases/android.md#free-and-paid-features)
 
 
@@ -120,7 +120,11 @@ Allows to customize route line by color, width and turn arrows.
 
 ___
 
+
+
 **Color**  
+Provides to choose a route line's color by types:
+
 * <Translate android="true" id="map_widget_renderer"/> – Use map style default color.
 * Custom – Route line is colored by color spots in day or night mode
 * <Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
@@ -134,12 +138,14 @@ ___
 
 
 
-**Width**
+**Width**  
+Provides to choose a route line's width:
 
-Thin, Medium, Bold, Custom.
+* <Translate ios="true" id="map_settings_style"/> – Default width
+* Thin width / Medium width / Bold width – Use the switch to choose width `-`
+* Custom – Select the width using the slider
 
-**Turn Arrows**
-
+**Turn Arrows**  
 Select whether turn arrows are indicated on the route line.
 
 </TabItem>
@@ -150,7 +156,13 @@ Select whether turn arrows are indicated on the route line.
 
 ___
 
+<!-- ![customise route line 1](@site/static/img/navigation/route/customise_route_line-1.png) -->
+
+![customise route line 1](@site/static/img/navigation/route/customise_route_line-1.png)
+
 **Color**  
+Provides to choose a route line's color by types:
+
 * <Translate ios="true" id="map_settings_style"/> – Use map style default color.
 * Custom – Route line is colored by custom color in day and night mode
 * <Translate ios="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
@@ -163,12 +175,14 @@ ___
 * Difficulty of horse trails – Render paths according to difficulty of horse trails
 
 
-**Width**
+**Width**  
+Provides to choose a route line's width:
 
-Thin, Medium, Bold, Custom.
+* <Translate ios="true" id="map_settings_style"/> – Default width
+* Thin width / Medium width / Bold width – Use the switch to choose width `-`
+* Custom – Select the width using the slider
 
-**Turn Arrows**
-
+**Turn Arrows**  
 Select whether turn arrows are indicated on the route line.
 
 
