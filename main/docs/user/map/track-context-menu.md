@@ -553,23 +553,28 @@ A user can divide a track by intervals (distance or time) and analyze it.
 
 ### GPS filter
 
-A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points.
+<!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points. -->
+
+This filter allows you to change your track to exclud the error points.  Besides, it also lets you check how your changes appear before saving in *Statistics* here. The changes could make with *Smoothing*, *Speed*, *Altitude*, and *GPS Precision* filters that exclude points from the current track. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
 ![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
-In the screen you see the map (with [zoom buttons](../map/interact-with-map.md#my-location--zoom), [my location button](../map/interact-with-map.md#my-location--zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../map/interact-with-map.md#my-location--zoom), [my location button](../map/interact-with-map.md#my-location--zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens "Actions" part of "Filter" or "Statistics" menu.
 - "&#8634;" button allows to reset the track to original.
-- "My track location" button allows to move the map to your track.
+- "My track location" button allows to move the map to your track.-->
+
+The Android GPS Filter app page includes:  
+* A map with a saved track and an extra button *My track location* (it aligns a track to the center of a map)
+* Buttons *Refresh* and *Menu* at the top (*Menu* opens *Action* field at the bottom of the page)
+* Blocks *Filter*, *Statistics*, *Action*
+
 
 **Filter** Menu
 
