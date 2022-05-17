@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
 
 <InfoIncompleteArticle/>
 
@@ -130,13 +132,13 @@ Provides to choose a route line's color by types:
 * &nbsp;<Translate android="true" id="map_widget_renderer"/> – Use map style default color.
 *&nbsp; Custom – Route line is colored by color spots in day or night mode
 * &nbsp;<Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
-* &nbsp;<Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
-* &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
-* &nbsp;<Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
-* &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
-* &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
-* &nbsp;<Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
-* Difficulty of horse trails – Render paths according to difficulty of horse trails
+* <ProFeature/> &nbsp;<Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
+* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
+* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
+* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
+* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
+* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
+* <ProFeature/> Difficulty of horse trails – Render paths according to difficulty of horse trails
 
 
 
