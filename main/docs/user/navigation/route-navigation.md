@@ -118,6 +118,8 @@ This menu allows you to customize the route line appearance. You can configure t
 
 <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
+![Navigation route Android](@site/static/img/navigation/route/route_line_android.png)
+
 ___
 
 
@@ -125,15 +127,15 @@ ___
 **Color**  
 Provides to choose a route line's color by types:
 
-* <Translate android="true" id="map_widget_renderer"/> – Use map style default color.
-* Custom – Route line is colored by color spots in day or night mode
-* <Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
-* <Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
-* <Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
-* <Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
-* <Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
-* <Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
-* <Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
+* &nbsp;<Translate android="true" id="map_widget_renderer"/> – Use map style default color.
+*&nbsp; Custom – Route line is colored by color spots in day or night mode
+* &nbsp;<Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
+* &nbsp;<Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
+* &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
+* &nbsp;<Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
+* &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
+* &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
+* &nbsp;<Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
 * Difficulty of horse trails – Render paths according to difficulty of horse trails
 
 
