@@ -41,7 +41,7 @@ At this release we made two purchase plans for OsmAnd:
 * **'Maps+'** plan has one-time payment and annual subscription. It's light paid version with all needed features: monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
 * **'OsmAnd Pro'** plan has monthly and annual subscriptions. It's a full version with all paid features: OsmAnd Cloud, Pro features, hourly map updates, monthly map updates, unlimited map downloads, offline Wikipedia and Wikivoyage, terrain maps, nautical depth.
 
-Full information you can find [here](https://docs.osmand.net/en/main@latest/osmand/purchases).
+Full information you can find [here](https://osmand.net/docs/user/purchases/).
 
 <table class="blogimage">
   <tr>
@@ -78,7 +78,7 @@ Go to **<Translate android="yes" id="shared_string_menu" /> → Settings → Bac
 
 ## Added night mode for Topo / Offroad rendering styles
 
-We added <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#map-mode">night mode</a> for <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#topo">Topo</a> and <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#offroad">Offroad</a> rendering styles.
+We added <a href="https://osmand.net/docs/user/map/vector-maps#map-mode">night mode</a> for <a href="https://osmand.net/docs/user/map/vector-maps#topo">Topo</a> and <a href="https://osmand.net/docs/user/map/vector-maps#offroad">Offroad</a> rendering styles.
 
 <table class="blogimage">
   <tr>
@@ -89,7 +89,7 @@ We added <a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#
 
 ## Added option to download Contour lines in feet
 
-Now, there is an opportunity to download <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
+Now, there is an opportunity to download <a href="https://osmand.net/docs/user/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
 
 <table class="blogimage">
   <tr>
@@ -167,7 +167,7 @@ Now, you can find it in **<Translate android="yes" id="shared_string_menu" /> �
 
 ## 'Plan Route' improvements
 
-At this release, we continued to improve our <a href="https://osmand.net/features/plan-route#pr-android">'Plan Route'</a> tool.
+At this release, we continued to improve our <a href="https://osmand.net/docs/user/plan-route">'Plan Route'</a> tool.
 Now, you can see a landscape of your trip planning by switching between points and graphs (Overview, Altitude, Slope, Road type, Surface, Steepness) tabs.
 
 <table class="blogimage">
