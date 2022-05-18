@@ -52,7 +52,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
 | **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
 
-## Free and Paid features
+### Free and Paid features
 
 OsmAnd application has many features and tools. Of course, most of them are free. 
 
@@ -85,7 +85,7 @@ The table shows all the features that are included in the paid and free packages
 | OsmAnd Tracker | ✔ | ✔ | ✔ |
 | Export/import app profile | ✔ | ✔ | ✔ |
 
-## Pro Features
+### Pro Features
 
 Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](../purchases/android#prices).
 

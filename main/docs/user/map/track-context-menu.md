@@ -616,7 +616,7 @@ The Graph part has three graph parametes: Overview, Altitude, Speed. This functi
 <TabItem value="ios" label="iOS">
 
 
-> This feature doesn't exist for iOS version of OsmAnd.
+> ```This feature doesn't exist for iOS version of OsmAnd.```
 
 
 </TabItem>

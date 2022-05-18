@@ -144,6 +144,8 @@ If you use "Mapnik" it will be available after the update but as a custom map st
 </Tabs>
 
 ## CarPlay
+
+
 * CarPlay bug fixes, added gestures for touchscreens
 * Fixed turn arrows color for match CarPlay light theme.
 
@@ -158,6 +160,19 @@ If you use "Mapnik" it will be available after the update but as a custom map st
 
 It is now possible to copy information from the context menu of any POI, make a long press on a cell to bring up the "Copy" button.
 <img src={require('./context-menu_copy-details.png').default} alt="Transport routes"/>
+
+## Added copy actions to the "Share" sheet
+
+Now, when you click ([long, short tap](../docs/user/map/map-context-menu#context-menu)) to any point object on the map (POI, favorite, waypoint..) and choose ["Share" button](../docs/user/map/map-context-menu#share) on Context menu you find adding copy actions. Chosen info will be copied to the buffer:
+
+![Copy actions](./copy_actions.png)
+
+* _"Copy address"_ - 
+* _"Copy POI Name"_ 
+* _"Copy coordinates"_
+* _"geo:""_
+
+
 
 ## Fixed 
 * Fixed import of GPX files from OSF package
