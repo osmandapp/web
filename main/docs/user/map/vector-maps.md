@@ -74,11 +74,11 @@ For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads a
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
-### Mapnik
+### OSM-carto
 
 <Translate android="true" ids="mapnik_render_descr"/>
 
-![Mapnik map style](@site/static/img/map/map-style-mapnik.png)
+![OSM-carto map style](@site/static/img/map/map-style-mapnik.png)
 
 ### Desert
 

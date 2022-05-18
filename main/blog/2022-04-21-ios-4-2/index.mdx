@@ -16,18 +16,22 @@ import TabItem from '@theme/TabItem';
 <img src={require('./banner_ios_4-2.jpg').default} alt="Download online map"/>
 
 
-Hi!
-We are glad to announce that iOS app version development does not stand still.
-The new improved version is already available to install on you devices!
-Every day we work to make the iOS version more filled and its functionality would be equal to the Android version. Inevitably, we face  bugs and mistakes on our way, that we try to fix immediately.
+Hi! <br />
+We are glad to announce that iOS app version. Development does not stand still. <br />
+The new improved version is already available to install on you devices! <br />
+Every day we work to make the iOS version more filled and its functionality would be equal to the Android version. Inevitably, we face  bugs and mistakes on our way, that we try to fix immediately. <br />
 Thank you for your support and feedback.
 
 <!--truncate-->
 
-
 ## Route line appearance
 
 Added ability to customize route line width and color. You can colorize route by selecting a custom color or by <Translate android="false" id="altitude"/>, <Translate android="false" id="gpx_slope"/>, <Translate android="false" id="routeInfo_roadClass_name"/>, <Translate android="false" id="routeInfo_surface_name"/>, <Translate android="false" id="routeInfo_smoothness_name"/>, <Translate android="false" id="routeInfo_tracktype_name"/>
+
+You can find the customise line feature here: <br/>
+_OsmAnd Menu -> Settings -> Selected Profile -> Navigation settings -> Customomise route line_ <br/>
+or <br/>
+_[Navigation button](https://osmand.net/docs/user/widgets/map-buttons#directions) -> Options -> Customise route line_
 
 <table class="blogimage">
   <tr>
@@ -39,22 +43,24 @@ Added ability to customize route line width and color. You can colorize route by
 ## Tracks
 
 ### Scroll bar for waypoint groups
-Track context menu: added scroll bar with waypoint groups allows to select needed group quicker
+[Track context menu](https://osmand.net/docs/user/map/track-context-menu#points--waypoints): added scroll bar with waypoint groups allows to select needed group quicker.
 <img src={require('./track-waypoints.png').default} alt="Track context menu: waypoints tab"/>
 
 ### Improve track managements 
-: added option for deleting several tracks at once. 
+Now we added the option for deleting several tracks at once: <br/> 
+_<Translate android="false" ids="my_places,tracks"/> → '&#8230;' button → choose tracks_ (the number of chosen tracks is shown in the upper part of the screen) _→ &#128465; button_ <br/>
 
-<Translate android="false" ids="my_places,tracks"/>
 <table class="blogimage">
   <tr>
-    <td></td>
+    <td><img src={require('./tracks-edit-1.png').default} alt="My places - Tracks - Edit"/></td>
     <td><img src={require('./tracks-edit.png').default} alt="My places - Tracks - Edit"/></td>
     </tr>
 </table> 
 
 ### Track description
-Added ability to view, add or edit track descriptiopn.
+Added ability to view, add or edit track description:<br/>
+[Track Context menu → Overview → Description](https://osmand.net/docs/user/map/track-context-menu#description-and-info). Here you can add the new text or edit the description and read the full description.
+
 
 <table class="blogimage">
   <tr>
@@ -64,23 +70,38 @@ Added ability to view, add or edit track descriptiopn.
 </table> 
 
 ### Include heading
-A new parameter has also been added to the <Translate android="false" id="track_recording"/> plugin: <Translate android="false" id="save_heading"/>.
+A new parameter has also been added to the [<Translate android="false" id="track_recording"/> plugin](https://osmand.net/docs/user/plugins/trip-recording#establish-options): <Translate android="false" id="save_heading"/>.<br/>
+Now, you can save heading information for each recorded point.
+
 
 
 ## Routes
-Public transport routes have been divided into types. Fitness and running routes was added into maps.
+[_Public transport routes_](https://osmand.net/docs/user/map/vector-maps#transport) have been divided into types:<br/>
+
+_OsmAnd menu → Configure map → Map style → Transport_ 
 
 <table class="blogimage">
   <tr>
     <td><img src={require('./transport-routes.png').default} alt="Transport routes"/></td>
+    </tr>
+</table> 
+
+[_Fitness and running routes_](https://osmand.net/docs/user/map/vector-maps#routes) was added into maps.<br/>
+Data for these routes are from [OpenStreetMap project](http://openstreetmap.org/):<br/>
+* The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)<br/>
+* The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)
+
+<table class="blogimage">
+  <tr>
     <td><img src={require('./fitness-trails.png').default} alt="Fitness trails"/></td>
+    <td><img src={require('./fitness-trails-1.png').default} alt="Fitness trails"/></td>    
     </tr>
 </table> 
 
 
 ## Horseback riding
 
-Added new navigation type and app profile for Horseback riding. You can also enable '<Translate android="false" id="rendering_attr_horseRoutes_name"/>' and 'Difficulty of horse trails' in Configure Map menu.
+Added the new [navigation type](https://osmand.net/docs/user/personal/profiles#navigation-settings) and app profile for Horseback riding. You can also enable '_<Translate android="false" id="rendering_attr_horseRoutes_name"/>_' and '_Difficulty of horse trails_' in [Configure Map menu](https://osmand.net/docs/user/map/vector-maps#configure-map-style).
 
 <table class="blogimage">
     <tr>
@@ -91,10 +112,11 @@ Added new navigation type and app profile for Horseback riding. You can also ena
 </table> 
 
 
-
 ## Files app
 
-OsmAnd files are now visible in the "Files" application. You can access all tracks, custom routing and rendering files thru it.
+OsmAnd files are now visible in the "Files" application. You can access all tracks, custom routing and rendering files thru it:<br/>
+_Files → On My Phone → OsmAnd Maps_
+
 <table class="blogimage">
   <tr>
     <td><img src={require('./files-1.png').default} alt="Files app"/></td>
@@ -104,7 +126,7 @@ OsmAnd files are now visible in the "Files" application. You can access all trac
 
 ## Preferred terrain
 
-UX of options "Use elevation data" and "Select elevation fluctuation"  was improved, they were combined and renamed to "<Translate android="false" id="preferred_terrain"/>", currently available for "<Translate android="false" id="app_mode_bicycle"/>" and "<Translate android="false" id="app_mode_pedestrian"/>" profiles.
+UX of options ["Use elevation data" and "Select elevation fluctuation"](https://osmand.net/docs/user/personal/profiles#navigation-settings) was improved, they were combined and renamed to "<Translate android="false" id="preferred_terrain"/>", currently available for "<Translate android="false" id="app_mode_bicycle"/>" and "<Translate android="false" id="app_mode_pedestrian"/>" profiles.
 
 <table class="blogimage">
   <tr>
@@ -115,7 +137,7 @@ UX of options "Use elevation data" and "Select elevation fluctuation"  was impro
 
 ## New map style
 
-"Mapnik" map style was replaced with the new "OSM-Carto" style. It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
+"Mapnik" map style was replaced with the new ["OSM-Carto" style](https://osmand.net/docs/user/map/vector-maps#default-map-styles). It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
 
 If you use "Mapnik" it will be available after the update but as a custom map style. After fresh or new installation you will need to manually import it to use. You can do it by downloading it from GitHub.
 
@@ -145,33 +167,38 @@ If you use "Mapnik" it will be available after the update but as a custom map st
 
 ## CarPlay
 
-
+We upgraded CarPlay function:<br/>
 * CarPlay bug fixes, added gestures for touchscreens
 * Fixed turn arrows color for match CarPlay light theme.
 
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./car-play-img.png').default} alt="Car Play img by Gilles"/></td>
+    </tr>
+</table>
 
 
 ## Street name widget
 
-* now show road shield and exit number during navigation
-* visible in all profiles
+Improved [Street name widget](https://osmand.net/docs/user/widgets/nav-widgets#street-name):
+- show road shield and exit number during navigation
+- visible for all profiles
 
 ## Copy details
 
-It is now possible to copy information from the context menu of any POI, make a long press on a cell to bring up the "Copy" button.
+Now it's possible to copy information from [_Details_ of the map context menu](https://osmand.net/docs/user/map/map-context-menu#details) of any POI: make a long press on a cell to bring up the "Copy" button.
 <img src={require('./context-menu_copy-details.png').default} alt="Transport routes"/>
 
 ## Added copy actions to the "Share" sheet
 
-Now, when you click ([long, short tap](../docs/user/map/map-context-menu#context-menu)) to any point object on the map (POI, favorite, waypoint..) and choose ["Share" button](../docs/user/map/map-context-menu#share) on Context menu you find adding copy actions. Chosen info will be copied to the buffer:
+Now, when you click ([long, short tap](https://osmand.net/docs/user/map/map-context-menu#context-menu)) to any point object on the map (POI, favorite, waypoint..) and choose ["Share" button](https://osmand.net/docs/user/map/map-context-menu#share) on the Map Context menu, you find adding copy actions. Chosen info will be copied to the buffer:
 
 ![Copy actions](./copy_actions.png)
 
-* _"Copy address"_ - 
-* _"Copy POI Name"_ 
-* _"Copy coordinates"_
-* _"geo:""_
-
+* _"Copy address"_ - allows to copy a point address to the bufer. Example from the image: _'Leopoldstraße 30, Wilten'_. 
+* _"Copy POI Name"_ - allows to copy a point name to the bufer. Example from the image: _'Your Placel'_. 
+* _"Copy coordinates"_ - allows to copy point coordinates to the bufer. Example from the image: _'47.25963° N, 11.39645° E'_.
+* _"geo:""_ - allows to copy a point geo tag to the bufer. Example from the image: _'geo:47.25963,11.39645?z=19'_.
 
 
 ## Fixed 
