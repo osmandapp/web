@@ -106,11 +106,17 @@ Tracks list.
 
 
 
+<p> </p>
+
+
+
 ### Route line appearance
 
+This menu allows you to adapt the route line appearance. If there are some changes to your route, you can costomize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by color or just apply any color and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
+Some parameters you can use only with Pro feature <ProFeature/>
 
-This menu allows you to customize the route line appearance. You can configure the color for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  
-[Pro feature](../purchases/android.md#free-and-paid-features)
+<!--This menu allows you to customize the route line appearance. You can configure the color for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  <ProFeature/>
+[Pro feature](../purchases/android.md#free-and-paid-features)-->
 
 
 <Tabs groupId="operating-systems">
@@ -120,37 +126,70 @@ This menu allows you to customize the route line appearance. You can configure t
 
 <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
-![Navigation route Android](@site/static/img/navigation/route/route_line_android.png)
+<p> </p>
+
+![Navigation route Android](@site/static/img/navigation/route/RLApp.png)
 
 ___
 
 
-
-**Color**  
+<!--**Color**  
 Provides to choose a route line's color by types:
 
-* &nbsp;<Translate android="true" id="map_widget_renderer"/> – Use map style default color.
-*&nbsp; Custom – Route line is colored by color spots in day or night mode
-* &nbsp;<Translate android="true" id="altitude"/> – <Translate ios="true" id="route_line_color_elevation_description"/> 
-* <ProFeature/> &nbsp;<Translate android="true" id="shared_string_slope"/> – Route line will be colorized depending on the elevation profile of the route.
-* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/> – <Translate ios="true" id="routeInfo_roadClass_description"/>
-* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" /> – <Translate ios="true" id="routeInfo_surface_description"/>
-* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/> – <Translate ios="true" id="routeInfo_smoothness_description"/> 
-* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" /> – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
-* <ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
-* <ProFeature/> Difficulty of horse trails – Render paths according to difficulty of horse trails
+* &nbsp;*<Translate android="true" id="map_widget_renderer"/>* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles)  
+* &nbsp;*Custom* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map
+* &nbsp;*<Translate android="true" id="altitude"/>* – <Translate ios="true" id="route_line_color_elevation_description"/> 
+* *<ProFeature/> &nbsp;<Translate android="true" id="shared_string_slope"/>* – Route line will be colorized depending on the elevation profile of the route. [Slope](../map/point-layers-on-map.md#favorites)  
+* *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>* – <Translate ios="true" id="routeInfo_roadClass_description"/>
+* *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />* – <Translate ios="true" id="routeInfo_surface_description"/>
+* *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>* – <Translate ios="true" id="routeInfo_smoothness_description"/> 
+* *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />* – <Translate ios="true" id="routeInfo_winter_ice_road_description"/>
+* *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />* – <Translate ios="true" id="routeInfo_tracktype_description"/>
+* *<ProFeature/> &nbsp;Difficulty of horse trails* – Render paths according to difficulty of horse trails-->
 
+
+**Color**  
+Provides to choose a route line's color by types  
+
+|  |
+|------------|
+|&nbsp;*<Translate android="true" id="map_widget_renderer"/>* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |
+| &nbsp;*Custom* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map |
+| &nbsp;*<Translate android="true" id="altitude"/>* – It shows the height above sea level of current geolocation |  
+![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
+|*<ProFeature/> &nbsp;<Translate android="true" id="shared_string_slope"/>* – Route line will be colorized depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
+![Altitude](@site/static/img/navigation/route/Slope.png)  |
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>* – <Translate ios="true" id="routeInfo_roadClass_description"/> [Road style](../map/vector-maps.md#road-style)|
+![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />* – <Translate ios="true" id="routeInfo_surface_description"/>|
+![Altitude](@site/static/img/navigation/route/Surface.png)  |
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>* – <Translate ios="true" id="routeInfo_smoothness_description"/> [Smoothness](../map-legend/osmand.md#surface-smoothness)|
+![Altitude](@site/static/img/navigation/route/Smoothness.png)  |
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />* – <Translate ios="true" id="routeInfo_winter_ice_road_description"/> [Winter and ice roads](../map/vector-maps.md#winter-and-ski)|
+![Altitude](@site/static/img/navigation/route/Winter.png)  |
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />* – <Translate ios="true" id="routeInfo_tracktype_description"/> [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
+![Altitude](@site/static/img/navigation/route/firmness.png)  |
+| *<ProFeature/> &nbsp;Difficulty of horse trails* – Render paths according to difficulty of horse trails|
+
+___
 
 
 **Width**  
 Provides to choose a route line's width:
 
-* <Translate ios="true" id="map_settings_style"/> – Default width
-* Thin width / Medium width / Bold width – Use the switch to choose width `-`
-* Custom – Select the width using the slider
+|  |
+|------------|
+|*<Translate ios="true" id="map_settings_style"/>* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)|
+|*Thin width / Medium width / Bold width* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly |
+|*Custom* – It allows you to show the line in some preferred width. Select the width using the slider.| 
 
-**Turn Arrows**  
-Select whether turn arrows are indicated on the route line.
+___
+
+
+**Turn Arrows**   
+Select whether turn arrows are indicated on the route line or not.  
+
+
 
 </TabItem>
 
@@ -178,6 +217,7 @@ Provides to choose a route line's color by types:
 * <Translate ios="true" id="routeInfo_tracktype_name" /> – <Translate ios="true" id="routeInfo_tracktype_description"/>
 * Difficulty of horse trails – Render paths according to difficulty of horse trails
 
+<p> </p>
 
 **Width**  
 Provides to choose a route line's width:
