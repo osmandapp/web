@@ -24,9 +24,13 @@ Development doesn't stand still, and now the new improved version is available f
 
 ## Route line appearance
 
-This feature adds the ability to customize the width and colour of the route lines. You can configure the appearance of the route line with different settings, such as <Translate android="false" id="altitude"/>, <Translate android="false" id="gpx_slope"/>, <Translate android="false" id="routeInfo_roadClass_name"/>, <Translate android="false" id="routeInfo_surface_name"/>, <Translate android="false" id="routeInfo_smoothness_name"/>, <Translate android="false" id="routeInfo_tracktype_name"/>
+This feature adds the ability to customize the width and colour of the route lines. You can configure [the appearance of the route line](https://osmand.net/docs/user/navigation/route-navigation#route-line-appearance) with different settings, such as Custom and <Translate android="false" id="altitude"/>. <!--, <Translate android="false" id="gpx_slope"/>, <Translate android="false" id="routeInfo_roadClass_name"/>, <Translate android="false" id="routeInfo_surface_name"/>, <Translate android="false" id="routeInfo_smoothness_name"/>, <Translate android="false" id="routeInfo_tracktype_name"/>.-->
 
-The functions are located here: <Translate android="false" ids="menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/> or in <Translate android="false" ids="menu,shared_string_navigation,shared_string_options"/>.
+The functions are located here: _<Translate android="false" ids="menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>_ or in _<Translate android="false" ids="menu,shared_string_navigation,shared_string_options"/>_.
+
+<!--
+![Track context menu: waypoints tab](./customise_route_line-1.png) ![My places - Tracks - Edit](./customise_route_line-2.png)
+-->
 
 <table class="blogimage">
   <tr>
@@ -39,11 +43,12 @@ The functions are located here: <Translate android="false" ids="menu,shared_stri
 
 ### Scroll bar for waypoint groups
 [Track context menu](https://osmand.net/docs/user/map/track-context-menu#points--waypoints): added a scroll bar with groups of waypoints, allowing you to quickly select the fitting group.
+
 <img src={require('./track-waypoints.png').default} alt="Track context menu: waypoints tab"/>
 
 ### Improve track managements 
 In this release we have added the ability to delete more than one track at the time:  
-_<Translate android="false" ids="my_places,tracks"/> → '&#8230;' button → choose tracks_ (the number of selected tracks is displayed at the top of the screen) _→ &#128465; button_ 
+_<Translate android="false" ids="my_places,tracks"/> → '&#8230;' button → choose tracks_ (the number of selected tracks is displayed at the top of the screen) → &#128465; _button_ 
 
 <table class="blogimage">
   <tr>
@@ -56,7 +61,6 @@ _<Translate android="false" ids="my_places,tracks"/> → '&#8230;' button → ch
 In this menu we have added the ability to view, add and edit the description:
 [Track Context menu → Overview → Description](https://osmand.net/docs/user/map/track-context-menu#description-and-info). Here you can add new text or edit an existing description, as well as read the full version of the descriptions.
 
-
 <table class="blogimage">
   <tr>
     <td><img src={require('./track-overview-desc.png').default} alt="My places - Tracks - Edit"/></td>
@@ -65,13 +69,13 @@ In this menu we have added the ability to view, add and edit the description:
 </table> 
 
 ### Include heading
-A new parameter has also been added to the [<Translate android="false" id="track_recording"/> plugin](https://osmand.net/docs/user/plugins/trip-recording#establish-options): <Translate android="false" id="save_heading"/>.
+A new parameter has also been added to the [<Translate android="false" id="track_recording"/> plugin](https://osmand.net/docs/user/plugins/trip-recording#establish-options): _"<Translate android="false" id="save_heading"/>"_.
 Now, you can save heading information for each recorded point.
 
 
 
 ## Routes
-[_Public transport routes_](https://osmand.net/docs/user/map/vector-maps#transport) have been divided into types, you can find them on *<Translate ios="false" id="save_heading"/>*.
+[_Public transport routes_](https://osmand.net/docs/user/map/vector-maps#transport) have been divided into types, you can find them on *<Translate ios="false" id="configure_map"/> → <Translate ios="false" id="rendering_category_transport"/>*.
 
 <table class="blogimage">
   <tr>
@@ -130,9 +134,9 @@ UX of options ["Use elevation data" and "Select elevation fluctuation"](https://
 
 ## New map style
 
-The style of maps "Mapnik" has been replaced by a new style ["OSM-Carto" style](https://osmand.net/docs/user/map/vector-maps#default-map-styles). This was done because at the time "Mapnik" was added to OsmAnd, it was identical to the map style on [OpenStreetMap.org](https://openstreetmap.org), but we didn't have the resources to keep it up to date, so over time it lost similarity to the OSM map style.
+The style of maps "Mapnik" has been replaced by a new style ["OSM-Carto" style](https://osmand.net/docs/user/map/vector-maps#osm-carto). This was done because at the time "Mapnik" was added to OsmAnd, it was identical to the map style on [OpenStreetMap.org](https://openstreetmap.org), but we didn't have the resources to keep it up to date, so over time it lost similarity to the OSM map style.
 
-If you use "Mapnik", it will be available after the update, but as a custom map style. After a fresh or new installation, you will need to manually import it for use. You can do it by downloading it from GitHub.
+If you use "Mapnik", it will be available after the update, but as a custom map style. After a fresh or new installation, you will need to manually import it for use. You can do it by downloading it from [GitHub](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
 
 <Tabs groupId="map-style">
 <TabItem value="mapnik" label="Mapnik">
@@ -161,7 +165,7 @@ If you use "Mapnik", it will be available after the update, but as a custom map 
 ## CarPlay
 
 We upgraded CarPlay function:
-* CarPlay bug fixes, added gestures for touchscreens
+* CarPlay bug fixes, added gestures for touchscreens.
 * Fixed turn arrows color for match CarPlay light theme.
 
 <table class="blogimage">
@@ -174,8 +178,8 @@ We upgraded CarPlay function:
 ## Street name widget
 
 Improved [Street name widget](https://osmand.net/docs/user/widgets/nav-widgets#street-name):
-- show road shield and exit number during navigation
-- visible for all profiles
+- Show road shield and exit number during navigation.
+- Visible for all profiles.
 
 ## Copy details
 
@@ -200,4 +204,8 @@ Now, when you click ([long, short tap](https://osmand.net/docs/user/map/map-cont
 * Fixed various crashes in the Route planning mode
 * Fixed crashes during Navigation
 
+________
+
+<LinksSocial/>
+<LinksTelegram/>
 <AppleStore/>
