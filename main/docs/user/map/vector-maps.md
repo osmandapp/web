@@ -76,7 +76,7 @@ For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads a
 
 ### OSM-carto
 
-This style copies [OpenStreetMap style](https://www.openstreetmap.org/).
+This style simulates default web [OpenStreetMap style](https://www.openstreetmap.org/). Web source code is available at [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code at [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
 ![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
 
