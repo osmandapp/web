@@ -76,9 +76,9 @@ For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads a
 
 ### OSM-carto
 
-<Translate android="true" ids="mapnik_render_descr"/>
+This style copies [OpenStreetMap style](https://www.openstreetmap.org/).
 
-![OSM-carto map style](@site/static/img/map/map-style-mapnik.png)
+![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
 
 ### Desert
 

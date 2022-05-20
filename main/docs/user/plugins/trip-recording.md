@@ -39,12 +39,6 @@ Once the setup is completed, it is possible to make new records, as well as to d
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Recorded trip in iOS](@site/static/img/plugins/trip-recording/ios_recorded_trip1.png) ![Recorded trip in Android](@site/static/img/plugins/trip-recording/and_recorded_trip1.png)
-
-</TabItem>
-
 <TabItem value="ios" label="iOS">
 
 ![Recorded trip in iOS](@site/static/img/plugins/trip-recording/ios_recorded_trip1.png)
@@ -63,15 +57,9 @@ Once the setup is completed, it is possible to make new records, as well as to d
 
 ### Enable plugin
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 The Trip recording plugin is needed for recording new tracks. It is possible to do with the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by the Trip recording plugin. To enable the Trip recording plugin, open the [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
 
-![Enable / Disable Plugin iOS](@site/static/img/plugins/enable_disable_plugin_ios.png) ![Enable / Disable Plugin Android](@site/static/img/plugins/enable_disable_plugin_android.png) 
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -103,14 +91,6 @@ In the **Android** version, to enable the Trip recording plugin, tap the triple 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, open the Configure screen menu and toggle on the Trip recording widget. 
-
-![Adding REC widget in iOS](@site/static/img/plugins/trip-recording/ios_configure_screen_TrRec_widget.png) ![Adding REC widget in Android](@site/static/img/plugins/trip-recording/and_configure_screen_TrRec_widget.png)
-
-</TabItem>
-
 <TabItem value="ios" label="iOS">
 
 The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to make new records. It is added automatically with the Trip recording enabled. However, if anything, to add the REC widget, select a profile and toggle on <Translate ios="true" ids="track_recording"/>** in the following [Configure screen](../widgets/configure-screen.md) menu:
@@ -133,23 +113,14 @@ The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is needed to
 
 </Tabs>
 
-
-
-
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ### Open settings 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 For each specific profile, Trip recording can be configured individually, as the parameters could differ depending on the character of the movement, for example, whether it is the location of a car driver, a cyclist, or a nordic walker that is detected. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, it is needed to select the required profile, and then among other settings of the profile, to find the section dedicated to Trip recording. 
 
-![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/ios_profile_trip_rec2.png) ![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/and_profile_trip_rec2.png)
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -206,18 +177,11 @@ The settings opened from the [plugin](../start-with/first-steps.md#how-to-config
 
 ### Establish options
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 With the Trip recording settings opened for a profile, establish the required options as needed. In general, depending on the character of the movement: driving a car, a bicycle, riding a horse, skiing, etc. - it might be needed to make some adjustments in the manner of how the location points are captured and recorded into a file: scarcely, too much, in intervals, and other, to make the final output look smooth and/or digestible. 
 
 There are such parameters of recording that can be tweaked to fit the context: for example, the time interval of how often the Location module should detect your location; or if detection results are almost similar, whether to log the points or wait for the next detection result; whether it is acceptable to generate individual segments inside one track in case of gaps, and so forth. Use the description of available parameters specified for the respective version of the application: iOS or Android. 
 
-![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/ios_trip_rec_settings1.png) ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/and_trip_rec_settings1.png)
-
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -232,13 +196,12 @@ In the **iOS** version, the available parameters are specified below. Establish 
 | **Minimum displacement** | Given that two points are detected being close to one another, when a minimum displacement option is established, one of the points is removed, if it is detected to be closer than the established interval. It is helpful for none, or little movement, so that not to generate redundant points, regardless of any motion detection. The displacement interval is disabled if the *Not selected* option is set. Otherwise, an interval is considered to be between 2 meters and 50 meters depending on the selected option. For example, 5 meters is used, when there is no need in capturing more precise data than that, and no need in capturing any data at all when not moving. |
 | **Minimum accuracy** | Given that your location is identified via the built-in Location module of the device, when the longitude and latitude are calculated, the resulted location point can be detected accurately to a certain extend and expressed in meters/feet. It is possible to establish a minimum threshold between 1 meter and 50 meters for calculating the accuracy of the detected location in relation to the real location. A too small accuracy may cause the existence of blank spots on the track. It is recommended to decrease the accuracy, or disable at all by establishing the *Not selected* option, in case of uncertainty of the quality of the signals used for identifying the location, whether it is the GPS signal, and/or the mobile phone signal, and/or the Internet connection. For example, GPS signal can be weaker in circumstances when the route goes under the bridge, or between large trees, or high buildings, or in unfavorable weather conditions; and better with the growing number of GPS satellites. |
 | **Minimum speed** | Given that at a low speed the recorded track can be noisy by showing lots of points on a small segment of the route, when the motion is detected and the speed level is calculated to be less than the established threshold, then the points will not be recorded. To disable the minimum speed detection, set the *Not selected* option. To detect only motion to start recording points, set the *>0* option. The rest of options are recommended to be used carefully, and to avoid losing too many points, decrease the minimum threshold. |
+| **Include heading** | If enabled, the heading is saved into the GPX file for every point. The heading is the direction to where the front panel of the vehicle/device points to. It is determined with the angle between the direction where the front panel points to and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 | **Auto-record track** | If enabled, whenever navigation is in progress, the track is recorded automatically, and saved to the respective folder in <Translate ios="true" ids="menu_my_places"/>. Please, note that Track recording consumes the battery energy, and continues to run in the background with the screen being closed. For efficient use of the battery life, check out its status. |
 | **Logging interval during navigation** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded automatically via the enabled **Auto-record track** option. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. |
 | **Auto-split recordings after gap** | If enabled, a new segment will automatically start after a 6-minute gap; a new track will automatically start after a 2-hour gap; and a new file will automatically start when the date has changed. The gap is determined as the absence of any point being recorded. Points can, or cannot be detected, **and** not recorded. It might happen due to a number of reasons as well as the current configuration of the Trip recording functionality. For example, the GPS signal is weak because of the current weather conditions and therefore, the location is not detected and not recorded. Or, the speed of the movement gets below the threshold, and thus, the location is actually detected, but not recorded. Such gaps in recorded data can be used to generate a new segment on the same track, or a new track in the same file, or a new GPX file within one recording identified as single start/stop actions performed once at a time. |
 | **Tracks** | This is a quick re-direction to the folder: <Translate ios="true" ids="menu,my_places,tracks"/> tab. |
 | **Reset plugin settings to default** | This establishes the default values for all of the above settings. |   
-
-
 
 </TabItem>
 
@@ -278,10 +241,6 @@ In the **Android** version, the available parameters are specified below. Establ
 
 ## Create new track 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is used to create new records.  
 
 - To start recording, tap the [REC widget](../widgets/info-widgets.md#-trip-recording-widget), and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically. 
@@ -294,7 +253,7 @@ The [REC widget](../widgets/info-widgets.md#-trip-recording-widget) is used to c
 
 ![REC widget in iOS](@site/static/img/plugins/trip-recording/ios_REC_widget.png) ![REC widget in Android](@site/static/img/plugins/trip-recording/and_REC_widget.png)
 
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -412,11 +371,7 @@ In the **Android** version, tap the [REC widget](../widgets/info-widgets.md#-tri
 
 >**NOTE**: For any troubleshooting details, refer to: [Track recording issues](https://docs.osmand.net/en/main@latest/osmand/troubleshooting/track-recording-issues) 
 
-
-
 &nbsp;&nbsp;&nbsp;&nbsp;
-
-
 
 ## Manage tracks
 
@@ -433,10 +388,6 @@ Once recorded and saved, tracks can be managed, as follows:
 
 ### View all tracks 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 All tracks ever recorded automatically show up in the [**My Places**](../personal/myplaces.md). It is the central storage of all user-generated information organized into tabs by the essence criterion of the saved data. There are favourites, notes, and also tracks. Look at the [**Tracks**](../personal/tracks.md) tab for any trip recordings. 
 
 For any details about [My Places](../personal/myplaces.md), and/or [Tracks](../personal/tracks.md) stored there, refer to the respective sections of the current documentation. However, here it makes sense to underscore, that:
@@ -447,12 +398,7 @@ For any details about [My Places](../personal/myplaces.md), and/or [Tracks](../p
 
 - My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
 
-
-![My Places with tracks in iOS](@site/static/img/plugins/trip-recording/ios_my_places_viewing_tracks.png) ![My Places with tracks in Android](@site/static/img/plugins/trip-recording/and_my_places_viewing_tracks.png)
-
-
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -483,16 +429,9 @@ In the **Android** version, to view all ever-recorded tracks, and/or manage them
 
 ### Show tracks on map
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 Tracks make up an individual data layer that can be shown, or hidden with the respective option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu. Moreover, by tapping Tracks, the dialog with a choice of tracks shows up, and allows you to select what track, or some tracks to display on the map.
 
-![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/ios_show_tracks2.png) ![Show tracks on the map in Android](@site/static/img/plugins/trip-recording/and_show_tracks2.png)
-
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -517,16 +456,10 @@ In the **Android** version, for a specific profile, to display a track on the ma
 </Tabs>
 
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ### Options of context menu
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
 
 When a track is displayed on the map, on tapping it, the [context menu of the track](../map/track-context-menu.md) shows up. For the details of every available option, refer to the respective section of the current documentation. Here is an overview of options:
 
@@ -536,12 +469,9 @@ When a track is displayed on the map, on tapping it, the [context menu of the tr
 
 - a tab for any overview, and/or updates of points and waypoints;
 
-- and other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc.  
+- and other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc. 
 
-![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/ios_tracks_context_menu1.png)  ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/and_tracks_context_menu1.png)
-
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -561,27 +491,16 @@ By tapping a track directly on the map in the **iOS** version, the [context menu
 
 </Tabs>
 
-
-
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-
-
 ### Change folder
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
 
 All recorded tracks are stored [**My Places**](../personal/myplaces.md). It is the only storage for tracks. Even if moved, tracks are moved between folders in My Places. However, as soon as a new track is created, it is automatically saved to the default folder in My Places. The default folder is one and the same for all new tracks. After showing up in the default folder, tracks can be moved to any other preferred folder, as follows:
 
 1. Select more options from the [Context menu](../map/track-context-menu.md) of a track on the map. 
-2. Tap **Change folder** and select another folder in My Places to store the track in. 
+2. Tap **Change folder** and select another folder in My Places to store the track in.
 
-![More options in iOS](@site/static/img/plugins/trip-recording/ios_context_menu_options1.png) ![More options in Android](@site/static/img/plugins/trip-recording/and_context_menu_options1.png)
-
-
-</TabItem>
+<Tabs groupId="operating-systems">
 
 <TabItem value="ios" label="iOS">
 
@@ -672,8 +591,6 @@ To move a track to another folder within My Places, it is possible to use the [C
 </TabItem>
 
 </Tabs>
-
-
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
