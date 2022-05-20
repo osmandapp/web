@@ -113,7 +113,7 @@ Tracks list.
 ### Route line appearance
 
 This menu allows you to adapt the route line appearance. If there are some changes to your route, you can costomize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by color or just apply any color and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
-Some parameters you can use only with Pro feature <ProFeature/>
+> ```Some parameters you can use only with Pro feature``` <ProFeature/>
 
 <!--This menu allows you to customize the route line appearance. You can configure the color for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  <ProFeature/>
 [Pro feature](../purchases/android.md#free-and-paid-features)-->
@@ -126,7 +126,6 @@ Some parameters you can use only with Pro feature <ProFeature/>
 
 <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
-<p> </p>
 
 ![Navigation route Android](@site/static/img/navigation/route/RLApp.png)
 
@@ -148,12 +147,12 @@ Provides to choose a route line's color by types:
 * *<ProFeature/> &nbsp;Difficulty of horse trails* – Render paths according to difficulty of horse trails-->
 
 
-**Color**  
+**Colour**  
 Provides to choose a route line's color by types  
 
 |  |
 |------------|
-|&nbsp;*<Translate android="true" id="map_widget_renderer"/>* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |
+|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |
 | &nbsp;*Custom* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map |
 | &nbsp;*<Translate android="true" id="altitude"/>* – It shows the height above sea level of current geolocation |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
