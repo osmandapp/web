@@ -14,6 +14,8 @@ iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo)
 
 ## What's new
 
+[Read the full release article](https://osmand.net/blog/osmand-ios-4-2-released)
+
 * Route line appearance: added ability to set width and color
 * Tracks: added option for deleting several tracks at once
 * Track context menu: added scroll bar with waypoint groups
