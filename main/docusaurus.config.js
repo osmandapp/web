@@ -57,7 +57,7 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left'},
-          { to: '/docs/hiring', label: '🚵‍♂️ Hiring', position: 'left' },
+          { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
 //          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
             href: 'https://github.com/osmandapp/',
