@@ -578,7 +578,7 @@ The Android GPS Filter app page includes:
 
 **Filter** Menu
 
-Here you can change any filter parameters for your track. The menu two parts: Points and Actions.
+Here you can change any filter parameters for your track. The menu has two parts: Points and Actions.
 
 | **_Points_** | 
 |:------------|

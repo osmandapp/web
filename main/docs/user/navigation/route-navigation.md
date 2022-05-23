@@ -110,7 +110,13 @@ Tracks list.
 ### Route line appearance
 
 This menu allows you to adapt the route line appearance. If there are some changes to your route, you can costomize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by colour or just apply any colour and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
-> ```Some parameters you can use only with Pro feature``` <ProFeature/>
+
+:::note
+  
+Some parameters you can use only with Pro feature <ProFeature/>  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+
+:::
+
 
 <!--This menu allows you to customize the route line appearance. You can configure the colour for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  <ProFeature/>
 [Pro feature](../purchases/android.md#free-and-paid-features)-->
@@ -194,7 +200,7 @@ Select whether turn arrows are indicated on the route line or not.
 
 &nbsp;  
 You can find route line menu by following this path:
-<Translate ios="true" ids="menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
+<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>
 
 
 &nbsp;  

@@ -28,7 +28,11 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ## Elevation widget
 
-> ```This widget you can use only with Pro feature``` <ProFeature/>
+:::note
+  
+This widget you can use only with Pro feature <ProFeature/>  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+
+:::
 
 <!--It's [Pro feature](../purchases/android#pro-features).-->
 
