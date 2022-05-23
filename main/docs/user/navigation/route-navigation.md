@@ -128,7 +128,7 @@ Some parameters you can use only with Pro feature <ProFeature/>  <a href="https:
 <TabItem value="android" label="Android">
 
 &nbsp;  
-You can find route line menu by following this path:
+>You can find route line menu by following this path:
 <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
 
@@ -190,7 +190,8 @@ Select whether turn arrows are indicated on the route line or not.
 
 |  |
 |------------|
-|![Altitude](@site/static/img/navigation/route/turn_arr.png)|
+|![Altitude](@site/static/img/navigation/route/turn_arr.png) ![Altitude](@site/static/img/navigation/route/turn_arr_on_and.png)|
+|![Altitude](@site/static/img/navigation/route/turn_arr_off_and.png) ![Altitude](@site/static/img/navigation/route/turn_arr_off_map_and.png)|
 
 
 
@@ -199,7 +200,7 @@ Select whether turn arrows are indicated on the route line or not.
 <TabItem value="ios" label="iOS">
 
 &nbsp;  
-You can find route line menu by following this path:
+>You can find route line menu by following this path:
 <Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>
 
 
@@ -219,7 +220,7 @@ Provides to choose a route line's colour by types.
 |&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colours. You can see a full description of the colours by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | &nbsp;*"Custom"* – It allows you to show the line in any preferred colour and transparency. You can select different settings for the day map and separately for the night map. |  
-![custom](@site/static/img/navigation/route/custom_2.png) |
+![custom](@site/static/img/navigation/route/custom_ios.png) |
 | &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height above sea level of current geolocation. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
@@ -246,11 +247,11 @@ Provides to choose a route line's width.
 |  |
 |------------|
 |*"<Translate ios="true" id="map_settings_style"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
-![map style](@site/static/img/navigation/route/map_st.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
+![map style](@site/static/img/navigation/route/width_ms_ios.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
-![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
+![width](@site/static/img/navigation/route/width_ios.png)   ![width](@site/static/img/navigation/route/width_med.png)|
 |*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
-![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
+![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
 
 
 
@@ -261,7 +262,8 @@ Select whether turn arrows are indicated on the route line or not.
 
 |  |
 |------------|
-|![Altitude](@site/static/img/navigation/route/turn_arr.png)|
+|![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png) ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_map.png)|
+|![turn_arr_on_ios](@site/static/img/navigation/route/turn_arr_on_ios.png) ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png)|
 ___
 
 <!-- ![customise route line 1](@site/static/img/navigation/route/customise_route_line-1.png) -->
