@@ -29,7 +29,9 @@ Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmA
 
 License. Privacy Policy. Terms of Use.
 
+### 🚵‍♂️ [Hiring](/docs/hiring/)
 
+We are always seeking for new contributors who can join our international team.
 
 
 

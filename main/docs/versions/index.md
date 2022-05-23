@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Versions
 
 ### [Free Releases - Android](/docs/versions/free-versions)

@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # User Guide
 
 OsmAnd provides global offline map browsing and offline navigation with many special tools for Android and iOS.

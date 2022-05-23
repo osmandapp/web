@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Technical documentation
 Technical documentation represents specifications, instructions or an information that requires either an IDE access or an technical level of understanding.
 
