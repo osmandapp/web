@@ -10,6 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 Navigational widgets are enabled during navigation to display information such as distance, arrival or left time, next turns, bearing, current street name, lanes information, max speed, approaching alerts, POIs, waypoints.
@@ -27,11 +28,31 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ## Elevation widget
 
-It's [Pro feature](../purchases/android#pro-features).
+> ```This widget you can use only with Pro feature``` <ProFeature/>
 
-The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.
+<!--It's [Pro feature](../purchases/android#pro-features).-->
 
-Upper the graph there is info about the sum of Uphill and Downhill for the visual graph (You can change the graph scale by [two-finger movement](../map/interact-with-map#gestures)) and Grade.
+The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.  
+
+
+>The widget can be turned on/off by following this path:
+<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
+
+
+&nbsp;  
+When you select a route and press the start button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*. All values are indicated either for the whole route or only for the selected interval by scaling the graph.  
+* *Uphill* – shows the sum of the all distances with increasing altitude for the selected section of the route.   
+* *Downhill* – shows the sum of the all distances with decreasing altitude for the selected section of the route.    
+* *Grade* – shows the road slope in percent for the selected section of the route on the graph.  
+
+
+<!--At the top of the graph, there is information about the sum of *Uphill* and *Downhill* and *Grade* values for the visible segment of the map.
+To interact with the graph, you can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out.-->
+
+&nbsp;  
+Available interactions with the graph:  
+* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
+* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.
 
 
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
