@@ -33,7 +33,7 @@ Go to General menu → Plan a route. Choose "Create new route", next click the P
 </table> 
 
 
-For the second part of our trip, we click the Profile icon and choose our <a href="https://osmand.net/features/navigation-profiles">Enduro navigation profile</a> (Prefer unpaved roads) and "Next segment" (Only the next segment will be recalculated using a chosen profile). After that we choose points for our offroad trip.
+For the second part of our trip, we click the Profile icon and choose our <a href="https://osmand.net/docs/user/personal/profiles">Enduro navigation profile</a> (Prefer unpaved roads) and "Next segment" (Only the next segment will be recalculated using a chosen profile). After that we choose points for our offroad trip.
 
 <table class="blogimage">
   <tr>
@@ -191,7 +191,7 @@ Click Navigation button in General screen → Option → Follow track. Here you 
 
 ## Fixed issues with import/export of profile settings
 
-We fixed issues with importing/exporting of profile settings for <a href="https://osmand.net/features/custom-package">Custom package</a> and <a href="https://osmand.net/features/navigation-profiles">Navigation profiles</a>.
+We fixed issues with importing/exporting of profile settings for <a href="https://osmand.net/blog/custom-package">Custom package</a> and <a href="https://osmand.net/docs/user/personal/profiles">Navigation profiles</a>.
 
 ## What else is in this release?
 

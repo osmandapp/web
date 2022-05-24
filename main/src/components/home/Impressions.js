@@ -71,7 +71,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
       'https://i.imgur.com/KgfFveg.jpg',
     content: (
       <>
-        OsmAnd+ opened to me and to my community/customers the freedom of discovery and scouting we had never experienced before on a motorcycle. I adore and support Osmand+ and talk about it during rides I lead, events I organize, books I write, tutorial I executes and workshops I run at Motoviaggio Store. Really glad to be an ambassador for this powerful and useful tool every traveler should have on their devices. Keep up the great work!
+        OsmAnd+ opened to me and to my community/customers the freedom of discovery and scouting we had never experienced before on a motorcycle. I adore and support OsmAnd+ and talk about it during rides I lead, events I organize, books I write, tutorial I executes and workshops I run at Motoviaggio Store. Really glad to be an ambassador for this powerful and useful tool every traveler should have on their devices. Keep up the great work!
        </>
     ),
     showOnHomepage: true,

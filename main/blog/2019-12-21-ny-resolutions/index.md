@@ -119,7 +119,7 @@ We're proud to have collaboration with <a href="https://www.mapillary.com/">Mapi
 
 * **Quick Action menu**
 
-<a href="https://osmand.net/features/quick-action">This feature</a> was requested many times this year and we were proud to deliver it in 2019. It allows you to have instant access to various actions with 2 clicks from the main screen, e.g. to change a map style, to show specific POI, to switch between raster maps or disable some layers.
+<a href="https://osmand.net/docs/user/widgets/quick-action">This feature</a> was requested many times this year and we were proud to deliver it in 2019. It allows you to have instant access to various actions with 2 clicks from the main screen, e.g. to change a map style, to show specific POI, to switch between raster maps or disable some layers.
 
 <table class="blogimage">
   <tr>
@@ -145,7 +145,7 @@ You can now add a "Home", "Work" point as a destination. The short way to the Na
 
 ### OsmAnd Online GPS Tracker
 
-During this year we made 3 releases of <a href="https://osmand.net/features/tracker">our Tracker</a> (<a href="https://osmand.net/blog/osmand-tracker-0-4-released">0.4</a>, <a href="https://osmand.net/blog/osmand-tracker-0-5-released">0.5</a>, <a href="https://osmand.net/blog/osmand-tracker-0-7-released">0.7</a>).
+During this year we made 3 releases of <a href="https://osmand.net/docs/user/plugins/osmand-tracker">our Tracker</a> (<a href="https://osmand.net/blog/osmand-tracker-0-4-released">0.4</a>, <a href="https://osmand.net/blog/osmand-tracker-0-5-released">0.5</a>, <a href="https://osmand.net/blog/osmand-tracker-0-7-released">0.7</a>).
 
 <table class="blogimage">
   <tr>
@@ -182,7 +182,7 @@ Our list is growing every year and, as of today, we have around 1500 requests wa
 * **Public Transport**
  This feature was completed for Android in 2019 and we plan to migrate all the implemented solutions to the iOS version in 2020. So OSM-ers with iPhones will get a new motivation to map public transport in OSM (<a href="https://osmand.net/blog/guideline-pt">check out our guideline</a>).
 * **Measure Distance**
- We’ve got a lot of requests for <a href="https://osmand.net/features/measure-distance">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
+ We’ve got a lot of requests for <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap-tool">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
 * **GPX**
  While the Android version has more advanced GPX-related features, the iOS version still lacks some base route graphs and stats. Of course it is very important for us not to miss those next year.
 

@@ -92,7 +92,7 @@ As you know, there is the tool named "Radius ruler" in OsmAnd (General menu-> Co
 
 ## Completely deleted Firebase analytics
 
-Since we follow our <a href="https://osmand.net/help-online/privacy-policy">Privacy Policy</a> * in this release, we have removed the Firebase analytics. Now neither of our applications collect any private information of our users.
+Since we follow our <a href="https://osmand.net/docs/legal/privacy-policy">Privacy Policy</a> * in this release, we have removed the Firebase analytics. Now neither of our applications collect any private information of our users.
 
 * Fixed Open in OsmAnd bug in iOS 13
 * Fixed Mapillary performance
