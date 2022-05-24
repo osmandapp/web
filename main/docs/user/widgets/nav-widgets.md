@@ -34,6 +34,8 @@ This widget you can use only with Pro feature <ProFeature/>  <a href="https://os
 
 :::
 
+
+
 <!--It's [Pro feature](../purchases/android#pro-features).-->
 
 The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.  
@@ -44,6 +46,7 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 
 
 &nbsp;  
+**What's in.**
 When you select a route and press the start button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*. All values are indicated either for the whole route or only for the selected interval by scaling the graph.  
 * *Uphill* – shows the sum of the all distances with increasing altitude for the selected section of the route.   
 * *Downhill* – shows the sum of the all distances with decreasing altitude for the selected section of the route.    
@@ -54,7 +57,7 @@ When you select a route and press the start button, the map opens with your curr
 To interact with the graph, you can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out.-->
 
 &nbsp;  
-Available interactions with the graph:  
+**Available interactions with the graph:**  
 * *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 * *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.
 
