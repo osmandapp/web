@@ -30,7 +30,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 :::note
   
-This widget you can use only with Pro feature <ProFeature/>  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+<ProFeature/>  This widget you can use only with Pro feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 
 :::
 
@@ -38,9 +38,12 @@ This widget you can use only with Pro feature <ProFeature/>  <a href="https://os
 
 <!--It's [Pro feature](../purchases/android#pro-features).-->
 
-The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.  
+**General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.  
+
+**What the widget is most useful for.** This widget will best help you with a hiking or biking route. You can see all the obstacles associated with descents and ascents on your route with it. And also, making an analysis of the upcoming route for its passing.    
 
 
+&nbsp;  
 >The widget can be turned on/off by following this path:
 <Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
 
