@@ -11,33 +11,45 @@ import Translate from '@site/src/components/Translate.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
+Hi, Everybody! 
 
-* Widgets redesign: new Look &  Feel, group by Pages, change order and combine as you  want.
-* Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
-* Favorite groups: set default appearance for new points in the group
-* Fixes: online tile-maps auto-update
+After a long pause, we are happy to announce the new 4.2 OsmAnd release for Android devices. You already can update the application and check out the following long-awaited improvements in the new app version.
+
+<img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
 
 <!--truncate-->
 
 ## Widgtes
 
-We've done a lot of work on widgets and the Configure screen interface
+We've done a lot of work on widgets and [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen) interface:
 * We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
-* Added pages for widgets
-* Duplicates
+* Added pages for widgets.
+* Duplicates.
 * Combined widgets from left and right panel, now any widget that was previously only available on the left panel can be added to the right panel.
 
 ### Pages
+
 Widgets in <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped in pages.
 
 ### Duplicates
 
+You can show the same widget for right / left panels at one time.
 
 ## New widgets
 
+Added new widgets: True bearing, Average speed, Trip recording widgets.
+
 ### True bearing
-<img class="inlist" src={require('./map_widgets.png').default} alt="Download online map"/>
+
+Added new widget for the "<Translate android="true" id="shared_string_bearing" />". Now **Bearing** has 3 separate widgets:
+
+[Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)
+
+* **Relative bearing** refers to the angle between your forward direction and the target point.
+* **Magnetic bearing** is the clockwise (horizontal) angle between magnetic north and the target point observed from your location. 
+* **_True bearing_** expressed as a horizontal angle between a geographic meridian and a line on the Earth; esp. a horizontal angle measured clockwise from true north.
+
+![Bearing widget](./bearing_widget.png) ![Bearing widget](./bearing_widget_1.png)
 
 ### Average speed
 
@@ -45,21 +57,16 @@ Widgets in <Translate android="true" id="map_widget_left" /> and <Translate andr
 
 ### Trip reconding widgets
 
-Added two new widgets for the "<Translate android="true" id="shared_string_trip_recording" />" plugin:
+Added new widgets for the "<Translate android="true" id="shared_string_trip_recording" />". Now **Trip recording** has 4 separate widgets:
 
-* **Time of track recording**: shows the duration in minutes/hours of the currently recorded trip. 
+[Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)
 
-<img class="inlist" src={require('./map_widgets.png').default} alt="Download online map"/>
+* **Distance/Start-Stop**: starts or stops trip recording and shows distance of the currently recorded trip.
+* **Duration**: shows the duration in minutes/hours of the currently recorded trip. 
+* **Uphill**: shows the sum of all the climbs of the currently recorded trip. 
+* **Downhill**: shows the sum of all the descents of the currently recorded trip. 
 
-
-* **Uphill**: shows the duration in minutes/hours of the currently recorded trip. 
-
-<img class="inlist" src={require('./map_widgets.png').default} alt="Download online map"/>
-
-
-* **Downhill**: shows the duration in minutes/hours of the currently recorded trip. 
-
-<img class="inlist" src={require('./map_widgets.png').default} alt="Download online map"/>
+![Trip recording widget](./recording_widgets.png) ![Trip recording widget](./recording_widgets_1.png)
 
 ## Default appearance for favorites
 
@@ -112,12 +119,8 @@ Track context menu now shows country or region for the track and track waypoints
     </tr>
 </table> 
 
-
-
 ### Import
 * Split multitrack file into separate tracks during import and-gpx-track
-
-
 
 ## Other
 * Suggest to download map in Search
