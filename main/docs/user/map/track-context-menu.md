@@ -555,15 +555,15 @@ A user can divide a track by intervals (distance or time) and analyze it.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points. -->
 
-This filter allows you to change your track to exclud the error points.  Besides, it also lets you check how your changes appear before saving in *Statistics* here. The changes could make with *Smoothing*, *Speed*, *Altitude*, and *GPS Precision* filters that exclude points from the current track. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.
+This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude* and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu you can check how your changes are displayed on the graph before you save them. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">  
 
->You can find GPS filter by following this path:
-<Translate android="true" ids="shared_string_menu,shared_string_options,shared_string_gps_filter"/>
+>GPS filter is in the context menu options of the selected track:
+<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>
 
 ![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
@@ -602,8 +602,8 @@ In this menu, you can change some parameters of your track with filters such as,
 **Statistics** Menu
 
 This menu is divided into two parts: *Actions* and *Graph*. All of the values displayed in this menu depend on the settings selected in the Filter menu.  
-The *Actions* part shows some statistics. It's similar to the Filter menu.  
-The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
+- The *Actions* part shows some statistics. It's similar to the Filter menu.  
+- The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)  
 
@@ -612,9 +612,9 @@ The *Graph* part displays three types of graphs by parameters: Overview, Altitud
 
 OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.
 
-- <Translate android="true" ids="reset_to_original"/> – allows you to return the parameters to their original state.  
-- <Translate android="true" ids="save_as_copy"/> – allows you to save the track as a new one.
-- <Translate android="true" ids="save_changes_into_file"/> – allows you to rewrite the track with the new parameters.  
+- *<Translate android="true" ids="reset_to_original"/>* – allows you to return the parameters to their original state.  
+- *<Translate android="true" ids="save_as_copy"/>* – allows you to save the track as a new one.
+- *<Translate android="true" ids="save_changes_into_file"/>* – allows you to rewrite the track with the new parameters.  
 
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
 
