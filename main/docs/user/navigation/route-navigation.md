@@ -132,7 +132,7 @@ This menu allows you to adapt the route line appearance. If there are some chang
 <Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
 
-&nbsp;  
+
 ![Navigation route Android](@site/static/img/navigation/route/RLApp.png)
 
   
