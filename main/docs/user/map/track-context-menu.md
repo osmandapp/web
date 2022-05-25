@@ -579,7 +579,7 @@ The Android GPS Filter app page includes:
 * Blocks *Filter*, *Statistics*, *Action*
 
 &nbsp;  
-**Filter** Menu
+#### **Filter** Menu
 
 In this menu, you can change some parameters of your track with filters such as, *Smoothing*, *Speed*, *Altitude*, *GPS precision*. The menu is divided into a Points part and an Actions part.
 
@@ -599,7 +599,7 @@ In this menu, you can change some parameters of your track with filters such as,
 
 
 &nbsp;  
-**Statistics** Menu
+#### **Statistics** Menu
 
 This menu is divided into two parts: *Actions* and *Graph*. All of the values displayed in this menu depend on the settings selected in the Filter menu.  
 - The *Actions* part shows some statistics. It's similar to the Filter menu.  
@@ -608,7 +608,7 @@ This menu is divided into two parts: *Actions* and *Graph*. All of the values di
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)  
 
 &nbsp;  
-**Actions**
+#### **Actions**
 
 OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.
 
@@ -619,18 +619,19 @@ OsmAnd will apply all changes made to the track without updating the file. You c
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
 
 &nbsp;  
+:::note
 **The information is missing**  
-
 In case your track recording is missing some statistics information, you can still use the filter, but with some restrictions. 
 
+:::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
-> ```This feature doesn't exist for iOS version of OsmAnd.```
-
+:::note
+This feature doesn't exist for iOS version of OsmAnd.
+:::
 
 </TabItem>
 
