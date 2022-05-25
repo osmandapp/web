@@ -223,6 +223,7 @@ Provides to choose a route line's colour by types.
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
 | &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height above sea level of current geolocation. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
+<!--
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../map/vector-maps.md#road-style)|
@@ -236,7 +237,7 @@ Provides to choose a route line's colour by types.
 | *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
-![Altitude](@site/static/img/navigation/route/firmness.png)  |
+![Altitude](@site/static/img/navigation/route/firmness.png)  | -->
 
 
 
