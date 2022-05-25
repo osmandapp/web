@@ -20,11 +20,6 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -45,11 +40,6 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers menu Android](@site/static/img/personal/markers/map_markers_menu_android.png) ![Map markers menu iOS](@site/static/img/personal/markers/map_markers_menu_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -83,11 +73,6 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers List Android](@site/static/img/personal/markers/map_markers_list_android.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -125,11 +110,6 @@ Not exist for iOS version
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_android.png) ![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_add_android.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -155,11 +135,6 @@ Not exist for iOS version
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers History Android](@site/static/img/personal/markers/map_markers_history_android.png) ![Map markers History iOS](@site/static/img/personal/markers/map_markers_history_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -189,11 +164,6 @@ Not exist for iOS version
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

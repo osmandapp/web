@@ -26,20 +26,6 @@ Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/in
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="shared_string_address"/>
-
-![Search Street Android](@site/static/img/search/street_search_android.png) ![Search Street iOS](@site/static/img/search/street_search_ios.png)
-
-- [<Translate android="true" ids="search_street"/>](../search/search-address.md#search-street)
-- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address.md#search-citytownlocality)
-- [<Translate android="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
-- [<Translate android="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
-- <Translate android="true" ids="nearest_cities"/>
-
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -84,11 +70,6 @@ Tap to chosen address in the list opens [Map Context menu](../map/map-context-me
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Search Street Android](@site/static/img/search/street_search.png) ![Search Street iOS](@site/static/img/search/address_street_search_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -119,11 +100,6 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Search Street Android](@site/static/img/search/town_search_android.png)  ![Search Street iOS](@site/static/img/search/town_search_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -154,11 +130,6 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Search Postcode Android](@site/static/img/search/postcode_android.png)  ![Search Postcode iOS](@site/static/img/search/postcode_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -185,11 +156,6 @@ Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)  ![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

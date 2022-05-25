@@ -51,17 +51,23 @@ For the Contour lines and Terrain data to show up on the map, the following setu
 
 ### Purchase and enable plugin
 
-Purchase of the Contour lines package is required to enable the plugin and start downloading Contour lines, and/or Hillshade, and/or Slope maps per region. 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+Purchase of the Contour lines package is required to enable the plugin and start downloading Contour lines, and/or Hillshade, and/or Slope maps per region.  
 
 The maps of the Contour lines plugin are distributed through In-App Purchases, subsciptions, and an Android app purchase. For more details on available purchase options, visit [Purchases](../purchases/index.md).  
 
-Having purchased Contour lines, the plugin can be enabled, as displayed on the figures below. 
+Having purchased Contour lines, the plugin can be enabled, as displayed on the figures below.  
 
-![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_ios.png) ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) 
+
+<Tabs groupId="operating-systems">  
+
+
+<TabItem value="android" label="Android">
+
+For purchases on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](../purchases/android.md#free-and-paid-features). To view the already made purchases, go to: <Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/> 
+
+In the **Android** version, to enable the plugin, tap Enable for **Contour lines** in:  <Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>
+
+![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) 
 
 </TabItem>
 
@@ -72,16 +78,6 @@ For purchases on **iOS**, refer to [in-app purchases, or a subscription](../purc
 In the **iOS** version, to enable the plugin, check **Contour lines** in: <Translate ios="true" ids="menu,plugins,product_title_srtm"/>
 
 ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_ios.png) 
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-For purchases on **Android**, refer to [in-app purchases, a subscription, or the full version of the app](../purchases/android.md#free-and-paid-features). To view the already made purchases, go to: <Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/> 
-
-In the **Android** version, to enable the plugin, tap Enable for **Contour lines** in:  <Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>
-
-![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) 
 
 </TabItem>
 
@@ -101,22 +97,16 @@ For example, you can combine the Contour lines region map of the Sicily island w
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Hillshade over Sicily](@site/static/img/plugins/contour-lines/2_hillshade_only.png) ![Slope over Sicily](@site/static/img/plugins/contour-lines/3_slope_only.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Hillshade over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_hillshade1.png) ![Slope over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_slope1.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
 ![Hillshade over Sicily in Android](@site/static/img/plugins/contour-lines/2_hillshade_only.png) ![Slope over Sicily in Androis](@site/static/img/plugins/contour-lines/3_slope_only.png)
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Hillshade over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_hillshade1.png) ![Slope over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_slope1.png)
 
 </TabItem>
 
@@ -136,21 +126,16 @@ For example, to make an assessment of curvature, especially for a mountain ridge
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
 ![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png) 
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 
@@ -167,11 +152,12 @@ The contour interval can be displayed in feet, or meters. It is important to dec
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
+
+<TabItem value="android" label="Android">
 
 The versions - in feet, or meters - are displayed on the download popup, when the [**Contour lines**](../map/vector-maps.md#contour-lines) option is clicked in the country, or region map list. It allows you to choose what Contour lines file is needed: in meters, or in feet. 
 
-![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png) ![Contour lines download dialogue iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
+![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
 
 </TabItem>
 
@@ -183,59 +169,27 @@ The versions - in feet, or meters - are displayed on the download popup, when th
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-The versions - in feet, or meters - are displayed on the download popup, when the [**Contour lines**](../map/vector-maps.md#contour-lines) option is clicked in the country, or region map list. It allows you to choose what Contour lines file is needed: in meters, or in feet. 
-
-![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
-
-</TabItem>
-
 </Tabs>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-#### How to download
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+#### How to download  
 
 To download Contour lines, Hillshade, and/or Slope for a specific area, do the following:
 
 1. Go to  [Download maps menu](../start-with/download-maps.md#download---main-menu).
-
 2. Find your country or region.
-
 3. Choose any of the packages: 
     - Contour lines, 
     - Hillshade, and/or 
     - Slope.
-
 4. For Contour lines, select Meters, or Feet.
+5. Download the files.  
 
-5. Download the files. 
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_ios.png) ![Contour lines download Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_android.png)
+<Tabs groupId="operating-systems">
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-In the **iOS** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:
-
-1. Go to: <Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>
-
-2. Select a country, and observe any of the following sections:
-
-    2.1. The **<Translate ios="true" ids="res_region_map"/>** section provides available packages with maps for the entire country. If needed, download ones. 
-
-    2.2.  The **<Translate ios="true" ids="res_mapsres"/>** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region. 
-
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -250,6 +204,22 @@ In the **Android** version, to download any of the available packages of Contour
     2.2. The **<Translate android="true" ids="regions"/>** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_android.png)
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+In the **iOS** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:
+
+1. Go to: <Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>
+
+2. Select a country, and observe any of the following sections:
+
+    2.1. The **<Translate ios="true" ids="res_region_map"/>** section provides available packages with maps for the entire country. If needed, download ones. 
+
+    2.2.  The **<Translate ios="true" ids="res_mapsres"/>** section lists the regions of the country. If to tap a region, there will be map packages available to download for the region. 
+
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_ios.png)
 
 </TabItem>
 
@@ -270,39 +240,8 @@ For the **Terrain** option, it is possible to enable only one map at a time: eit
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) ![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-#### CONTOUR LINES
-
-In the **iOS** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:
-
-1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
-
-2. Scroll down up to **<Translate ios="true" ids="map_settings_style"/>**, and toggle on the **Contour lines** option. 
-
-![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
-
-#### TERRAIN
-
-In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-
-1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
-
-2. Scroll down up to **<Translate ios="true" ids="map_settings_overunder"/>**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
-
-3. Select one of the options: either **Hillshade**, or **Slope**. 
-
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_ios_selected.png) 
-
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -336,6 +275,33 @@ In the **Android** version, to show one of the **Terrain** maps for the selected
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">
+
+#### CONTOUR LINES
+
+In the **iOS** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:
+
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
+
+2. Scroll down up to **<Translate ios="true" ids="map_settings_style"/>**, and toggle on the **Contour lines** option. 
+
+![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
+
+#### TERRAIN
+
+In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
+
+1. Go to: <Translate ios="true" ids="menu,configure_map"/>.
+
+2. Scroll down up to **<Translate ios="true" ids="map_settings_overunder"/>**, toggle on the **Terrain** option, and tap it, to open the context menu, see the figure below.
+
+3. Select one of the options: either **Hillshade**, or **Slope**. 
+
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_ios_selected.png) 
+
+
+</TabItem>
+
 </Tabs>
 
 
@@ -356,9 +322,18 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/terrain_menu_android.png) ![Terrain menu iOS](@site/static/img/plugins/contour-lines/terrain_menu_ios.png) 
+<TabItem value="android" label="Android">
+
+- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
+- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
+- **<Translate android="true" ids="shared_string_zoom_levels"/>** - two slider options to move to the left, or right, to determine:
+    - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Hillshade is expected to be viewable on the map; and 
+    - the maximum zoom level at which it is expected to disappear;
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen.
+
+![Terrain menu Android](@site/static/img/plugins/contour-lines/terrain_menu_android.png) 
 
 </TabItem>
 
@@ -376,20 +351,6 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
-- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the displayed shadow; 
-- **<Translate android="true" ids="shared_string_zoom_levels"/>** - two slider options to move to the left, or right, to determine:
-    - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Hillshade is expected to be viewable on the map; and 
-    - the maximum zoom level at which it is expected to disappear;
-- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Hillshade package if none is still downloaded for the current geographical location displayed on the screen.
-
-![Terrain menu Android](@site/static/img/plugins/contour-lines/terrain_menu_android.png) 
-
-</TabItem>
-
 </Tabs>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -402,9 +363,20 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/terrain_menu_slopes_android.png) ![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/terrain_menu_slopes_ios.png) 
+
+<TabItem value="android" label="Android">
+
+- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
+- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
+- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
+- **<Translate android="true" ids="shared_string_zoom_levels"/>** - the minimum and maximum options to tap, to select:
+    - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Slope angle colors are expected to be viewable on the map; and 
+    - the maximum zoom level at which the colors are expected to disappear;
+- **<Translate android="true" ids="shared_string_legend"/>** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen.
+
+![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/terrain_menu_slopes_android.png)
 
 </TabItem>
 
@@ -423,21 +395,6 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-- **<Translate android="true" ids="shared_string_terrain"/>** -  a toggle to show, or hide the terrain data on/from the map;
-- **<Translate android="true" ids="shared_string_hillshade"/>** / **<Translate android="true" ids="shared_string_slope"/>** - a choice to display one of the terrain data types: either Hillshade, or Slope;
-- **<Translate android="true" ids="shared_string_transparency"/>** - the percentage bar to determine the preferable level of the transparency for the colors used to show the angle; 
-- **<Translate android="true" ids="shared_string_zoom_levels"/>** - the minimum and maximum options to tap, to select:
-    - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Slope angle colors are expected to be viewable on the map; and 
-    - the maximum zoom level at which the colors are expected to disappear;
-- **<Translate android="true" ids="shared_string_legend"/>** - the legend of colors to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope))
-- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Slope package if none is still downloaded for the current geographical location displayed on the screen.
-
-![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/terrain_menu_slopes_android.png)
-
-</TabItem>
-
 </Tabs>
 
 
@@ -452,9 +409,18 @@ The **Contour lines** settings are available in the context menu of the **Contou
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png) ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/contour_lines_menu_ios.png) 
+
+<TabItem value="android" label="Android">
+
+- **<Translate android="true" ids="shared_string_on"/>** -  a toggle to show, or hide the Contour lines on/from the map;
+- **<Translate android="true" ids="show_from_zoom_level"/>** - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map;
+- **<Translate android="true" ids="srtm_color_scheme"/>** - a choice of color options in which to view the Contour lines on the map; 
+- **<Translate android="true" ids="rendering_attr_contourWidth_name"/>** - a choice of the width options to establish for the Contour lines; 
+- **<Translate android="true" ids="rendering_attr_contourDensity_name"/>** - a choice of the density options to establish for the Contour lines. The higher the density, the slower the map might be rendered;
+- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
+
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
 </TabItem>
 
@@ -468,19 +434,6 @@ The **Contour lines** settings are available in the context menu of the **Contou
 - **<Translate ios="true" ids="osmand_live_available_maps"/>** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/contour_lines_menu_ios.png) 
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-- **<Translate android="true" ids="shared_string_on"/>** -  a toggle to show, or hide the Contour lines on/from the map;
-- **<Translate android="true" ids="show_from_zoom_level"/>** - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map;
-- **<Translate android="true" ids="srtm_color_scheme"/>** - a choice of color options in which to view the Contour lines on the map; 
-- **<Translate android="true" ids="rendering_attr_contourWidth_name"/>** - a choice of the width options to establish for the Contour lines; 
-- **<Translate android="true" ids="rendering_attr_contourDensity_name"/>** - a choice of the density options to establish for the Contour lines. The higher the density, the slower the map might be rendered;
-- **<Translate android="true" ids="welmode_download_maps"/>** - an offer to download a Contour lines package if none is still downloaded for the current geographical location displayed on the screen.
-
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
 </TabItem>
 

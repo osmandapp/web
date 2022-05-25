@@ -43,11 +43,6 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Tracks menu Android](@site/static/img/map/tracks_menu_android.png) ![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png)  
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -73,11 +68,6 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Tracks my places Android](@site/static/img/map/tracks_myplaces_android.png) ![Tracks menu iOS](@site/static/img/map/tracks_myplaces_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -101,11 +91,6 @@ To get to the track Appearance menu, you need to display track on the map, then 
 
  <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track menu options Android](@site/static/img/map/eye_button_android.png) ![Track menu iOS](@site/static/img/map/eye_button_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -192,11 +177,6 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
  <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

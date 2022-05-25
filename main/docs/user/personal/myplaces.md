@@ -21,11 +21,6 @@ In order to manage saved information, you need to go to the [<Translate android=
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![My Places ios](@site/static/img/personal/my_places_ios.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

@@ -234,11 +234,6 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Plan route iOS](@site/static/img/settings/plan_route_ios.png) ![Plan route graph Android](@site/static/img/settings/plan_route_graph_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

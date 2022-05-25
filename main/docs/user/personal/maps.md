@@ -25,11 +25,6 @@ OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Ras
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Maps menu Android](@site/static/img/personal/maps/maps_menu_android.png) ![Download maps menu iOS](@site/static/img/personal/maps/download_map_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -81,11 +76,6 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_ios.png) ![Download map menu general Android](@site/static/img/personal/maps/download_map_menu_1_android.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -121,12 +111,6 @@ Local maps represents all downloaded maps on device grouped by [Types](#map-type
 <p> </p>
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Maps menu Local vector Android](@site/static/img/personal/maps/maps_menu_local_vector_android.png) ![Maps menu Local vector iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -181,11 +165,6 @@ Every month you will be able to update OsmAnd Maps on Updates screen. Here it's 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_menu_update_android.png)  ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_menu_update_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -217,11 +196,6 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 

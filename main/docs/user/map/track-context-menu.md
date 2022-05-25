@@ -31,11 +31,6 @@ There are the next tabs of Track Context menu:
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track menu Android](@site/static/img/personal/tracks/menu_track_android.png) ![Track menu iOS](@site/static/img/personal/tracks/menu_track_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -63,11 +58,6 @@ You can [short tap](../map/map-context-menu.md#select-route-short-tap-for-androi
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track menu overview Android](@site/static/img/personal/tracks/track_menu_overview_android.png) ![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -89,11 +79,6 @@ Info panel shows the track name, info about trip data, distance and direction to
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Full info for track Android](@site/static/img/personal/tracks/full_info_track_android.png) ![Full info for track Android](@site/static/img/personal/tracks/full_info_track_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -174,11 +159,6 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![quick actions for track Android](@site/static/img/personal/tracks/quick_actions_track_android.png) ![quick actions for track iOS](@site/static/img/personal/tracks/quick_actions_track_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -210,11 +190,6 @@ This part contains info about GPX file and description of a GPX track.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Description for track Android](@site/static/img/personal/tracks/description_track_android.png) ![Description for track iOS](@site/static/img/personal/tracks/description_track_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -255,11 +230,6 @@ Graph with additional info and [<Translate android="true" ids="analyze_on_map"/>
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_android.png) ![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -282,11 +252,6 @@ This tab opens a graph with speed / altitude info on distance, additional track 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track graph overview Android](@site/static/img/personal/tracks/track_graph_overview_android.png) ![Track graph overview iOS](@site/static/img/personal/tracks/track_graph_overview_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -323,11 +288,6 @@ This tab opens a graph with altitude / slope info on distance, additional track 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -362,11 +322,6 @@ This tab opens a with speed info on distance, additional track data.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_android.png) ![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -400,11 +355,6 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track menu points Android](@site/static/img/personal/tracks/track_menu_points_android.png) ![Statistics screen track iOS](@site/static/img/personal/tracks/waypoints_track_list_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -426,13 +376,6 @@ Manipulation with waypoints folder: change name and color, delete..
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-"&#8285;" button opens waypoint Group menu.
-
-![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -472,11 +415,6 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  ![Track menu options iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)  
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -525,11 +463,6 @@ A user can divide a track by intervals (distance or time) and analyze it.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
