@@ -33,7 +33,9 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 | Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
 | Offline instant search | ✔ | ✔ | ✔ |
 | Trip recording | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/auto-car.md) | ✔ | ✔ | ✔ |
 | Export GPX tracks | ✔ | ✔ | ✔ |
+| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) |✔ | ✔ | ✔ |
 | Import GPX/KML tracks | ✔ | ✔ | ✔ |
 | "Plan a route" tool | ✔ | ✔ | ✔ |
 | "Map markers" tool | ✔ | ✔ | ✔ |

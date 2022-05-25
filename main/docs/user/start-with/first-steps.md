@@ -12,15 +12,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
+
+
 Welcome to OsmAnd! Explore how to download maps, how to configure the application, how to use map and build a route, how to start navigation and how to search points of interest. Get acquainted with key points of OsmAnd Privacy policy and required Permissions.
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Travel maps Android](@site/static/img/settings/google_play_screen_android.png) ![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png) 
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -41,11 +37,11 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 
 **Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8/ref=sr_1_3?dchild=1&keywords=osmand&qid=1616685559&sr=8-3). 
 
-[![Google play](@site/static/img/steps/en-play-badge.png)](https://play.google.com/store/apps/details?id=net.osmand) [![Huawei](@site/static/img/steps/huawei-app-gallery-badge.png)](https://appgallery.huawei.com/#/app/C101486545) [![Amazon](@site/static/img/steps/amazon-apps-store.png)](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8/ref=sr_1_3?dchild=1&keywords=osmand&qid=1616685559&sr=8-3)
+<AndroidStore/>
 
 **iOS**: [App store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-[![iOS](@site/static/img/steps/app-store-badge.png)](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
+<AppleStore/>
 
 [Read more](../purchases/index.md) about OsmAnd versions and Purchases.  
 
@@ -53,7 +49,7 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 
 Our goal is to create a fully functional map-oriented application that could be used offline & online for various purposes. The application is full of features, so you don't need to switch between different apps and you will have everything at your fingertips:
 - Browse Worldwide Map with lots of details displayed with [many map styles](../map/vector-maps.md).
-- Display,  [search](../search/search-poi.md) and save various [Points of interest](../map/point-layers-on-map).
+- Display,  [search](../search/search-poi.md) and save various [Points of interest](../map/point-layers-on-map.md).
 - [Plan a route](../plan-route/create-route.md) by car, bicycle, foot and combine into multi modal routes.
 - Start [voice guided navigation](../navigation/route-navigation.md) with screen on and off.
 - Make your tourist trip rich with offline [Wikipedia](../plugins/wikipedia.md) and [Wikivoyage](../plan-route/travel-guides.md).
@@ -70,12 +66,6 @@ OsmAnd is an offline map application, so after the '<Translate android="true" id
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![First download screen iOS](@site/static/img/settings/download_map1_ios.png) ![Map](@site/static/img/settings/map_android.png) 
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Show on the map](@site/static/img/settings/download_map1_android.png) ![Map](@site/static/img/settings/map_android.png)
@@ -90,7 +80,11 @@ OsmAnd is an offline map application, so after the '<Translate android="true" id
 
 </Tabs>
 
-**Note**: Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
+:::note
+
+Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
+
+:::
 
 [Read more](../start-with/download-maps.md) about download map options.
 
@@ -99,12 +93,6 @@ OsmAnd is an offline map application, so after the '<Translate android="true" id
 You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Manage profile iOS](@site/static/img/settings/manage_profile_ios.png) ![Configure profile Android](@site/static/img/settings/configure_profile_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -129,12 +117,6 @@ You could manage application settings as [Global settings](../personal/global-se
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
@@ -153,11 +135,7 @@ Enable / disable plugins:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
 
-<p> </p>
-
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
-
-<p> </p>
 
 [Read more](../plugins/index.md) about OsmAnd plugins.
 
@@ -167,12 +145,6 @@ Enable / disable plugins:
 Map is a core element of OsmAnd and it's important to know [how to use it](../map/interact-with-map.md) (gestures, buttons, etc). You could [configure map](../map/configure-map-menu.md) to your needs: [change map style](../map/configure-map-menu.md#map-style-parameters), configure different [map layers](../map/configure-map-menu.md#map-layers) such as favorites, poi, public transport, tracks, contour lines, hillshade and others.
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Configure map Android](@site/static/img/settings/configure_map_menu_android.png) ![Configure map example iOS](@site/static/img/settings/configure_map_example_ios.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -196,12 +168,6 @@ Map is a core element of OsmAnd and it's important to know [how to use it](../ma
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Configure screen Android](@site/static/img/widgets/configure_screen_android.png) ![Configure screen example iOS](@site/static/img/settings/configure_screen_example_ios.png)
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Configure screen Android](@site/static/img/widgets/configure_screen_android.png) ![Configure screen example Android](@site/static/img/settings/configure_screen_example_android.png)
@@ -224,12 +190,6 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Add personal data Andoroid](@site/static/img/settings/personal_data_android.png) ![Add personal data iOS](@site/static/img/settings/personal_data_ios.png)
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Add personal data Andoroid](@site/static/img/settings/personal_data_android.png)
@@ -251,12 +211,6 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 [Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-poi), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png) ![POI on the map](@site/static/img/settings/poi_on_the_map.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -308,12 +262,6 @@ OsmAnd provides many search capabilities including address search. By default it
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Address search Android](@site/static/img/settings/address_search_android.png) ![Address search example](@site/static/img/settings/address_search_example_android.png) 
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Address search Android](@site/static/img/settings/address_search_android.png) ![Search result Android](@site/static/img/settings/address_search_result_android.png)
@@ -328,7 +276,11 @@ OsmAnd provides many search capabilities including address search. By default it
 
 </Tabs>
 
-**Note:** You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
+:::note
+
+ You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
+
+:::
 
 [Read more](../search/search-address.md) about address search.
 
@@ -337,12 +289,6 @@ OsmAnd provides many search capabilities including address search. By default it
 [Navigation](../navigation/index.md) provides you step by step guidance to your destination by displaying the route, offering turn-by-turn instructions, extra road information about surface, smoothness, etc and optional voice guidance.
 
 <Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![Start navigation iOS](@site/static/img/settings/start_navigation_ios.png) ![Route graph Android](@site/static/img/settings/route_graph_android.png)
-
-</TabItem>
 
 <TabItem value="android" label="Android">
 
@@ -366,12 +312,6 @@ OsmAnd provides many search capabilities including address search. By default it
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
-
-![Trip recording menu iOS](@site/static/img/settings/trip_recording_ios.png) ![Overview trip recording Android](@site/static/img/settings/trip_recording_overview_android.png)
-
-</TabItem>
-
 <TabItem value="android" label="Android">
 
 ![Trip recording Android](@site/static/img/settings/trip_recording_android.png) ![Overview trip recording Android](@site/static/img/settings/trip_recording_overview_android.png)
@@ -392,13 +332,7 @@ OsmAnd provides many search capabilities including address search. By default it
 
 OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps are created by volunteer contributors, so they can have more or fewer details depending on how much work has been done at a certain part of the map. Anyone can register as a contributor and add or edit OSM maps. OsmAnd provides an editing plugin that helps to improve the OpenStreetMap. 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
-![OSM note iOS](@site/static/img/settings/osm_note_ios.png) ![Create POI Android](@site/static/img/settings/create_poi_menu_android.png)
-
-</TabItem>
+<Tabs groupId="operating-systems"> 
 
 <TabItem value="android" label="Android">
 
@@ -414,7 +348,16 @@ OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps
 
 </Tabs>
 
-[Read more](../plugins/osm-editing.md) about OSM editing. 
+[Read more](../plugins/osm-editing.md) about OSM editing.
+
+## App shortcuts
+
+[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
+Here, you can click short tap for choosing next actions: _"Navigate to Home", "Navigate to Work", "Start Recording", "Search", "My places", "Navigate to"_. Long tap one of the actions allows you to add new action icon to your device screen.
+
+Tapping to the action icon allows starting this action immediately.
+
+![Shortcuts](@site/static/img/shortcuts/shortcuts1.png) ![Shortcuts](@site/static/img/shortcuts/shortcuts2.png)
 
 ## Privacy
 

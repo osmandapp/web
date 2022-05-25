@@ -66,7 +66,7 @@ The table shows all the features that are included in the paid and free packages
 | Unlimited map downloads | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
 | <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
 | <p>Hourly map updates</p> (1 hour delay) | - | - | ✔ |
-| [Android Auto](https://www.android.com/auto/) | - | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
 | Topo data (Contour lines and Terrain) | - | ✔ | ✔ |
 | Nautical depths | - | ✔ | ✔ |
 | Offline Wikipedia | - | ✔ | ✔ |
@@ -87,14 +87,14 @@ The table shows all the features that are included in the paid and free packages
 
 ### Pro Features
 
-Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](../purchases/android#prices).
+Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](../purchases/android.md#prices).
 
 At this moment, Pro subscription has next features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
 | [OsmAnd cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backuping and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
-| [Customise Route line](../personal/profiles.md#navigation-settings) | changing color and width for the route line during navigation |
+| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 
 
