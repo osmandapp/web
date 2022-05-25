@@ -6,7 +6,7 @@ title: OpenGL / Vulkan Developer
 We are looking for an enthusiastic developer who can help us to bring our Map Engine to the new level.
 
 # Job description
-Develop the best of the best 3D Offline Map application.
+OsmAnd is looking for a passionate and enthusiastic open-source software developer, with good knowledge of at least one of the OpenGL or Vulkan, to join our growing team.
 
 # Qualifications
 
@@ -31,6 +31,7 @@ Develop the best of the best 3D Offline Map application.
 - Working in a friendly and relaxed atmosphere created by a lot of bonding events and activities.
 
 ## What do we offer
+- Develop the best of the best 3D Offline Map application.
 - Competitive salary adequate to your skills and performance;
 - Flexible working hours;
 - 15 days of paid vacation + 15 days at your own expense;
