@@ -113,7 +113,7 @@ This menu allows you to adapt the route line appearance. If there are some chang
 
 :::note
   
-Some parameters you can use only with Pro feature <ProFeature/>  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+<ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 
 :::
 
@@ -129,7 +129,7 @@ Some parameters you can use only with Pro feature <ProFeature/>  <a href="https:
 
 &nbsp;  
 >You can find route line menu by following this path:
-<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
+<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
 
 
 &nbsp;  
