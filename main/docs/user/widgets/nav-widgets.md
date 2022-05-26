@@ -56,12 +56,12 @@ When you select a route and press the start button, the map opens with your curr
 |------------|
 |The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).|
 | *"Uphill"* – shows the sum of the all distances with increasing altitude for the selected section of the route. |
-| ![downhill scheme](@site/static/img/widgets/uphill_sch.png)|  
+| ![uphill scheme](@site/static/img/widgets/sch_uphill.png)|  
 | *"Downhill"* – shows the sum of the all distances with decreasing altitude for the selected section of the route.  |
-| ![downhill scheme](@site/static/img/widgets/downhill_sch.png)|  
+| ![downhill scheme](@site/static/img/widgets/sch_downhill.png)|  
 |***Grade*** is the angle of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The way to calculate Grade is to measure the distance along the slope and the vertical rise and calculate the horizontal run (100% × rise/run)|
 | *"Grade"* – shows the road slope in percent for the selected section of the route on the graph. |
-|![downhill scheme](@site/static/img/widgets/downhill_sch.png)| 
+|![grade scheme](@site/static/img/widgets/sch_grade.png)| 
 
 
 <!--At the top of the graph, there is information about the sum of *Uphill* and *Downhill* and *Grade* values for the visible segment of the map.
