@@ -30,21 +30,16 @@ With the profiles configured individually, it is possible to prepare a Skiing pr
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Ski maps in iOS](@site/static/img/plugins/ski-maps/ios_yes_ski.png) ![No Ski maps in iOS](@site/static/img/plugins/ski-maps/ios_no_ski.png)
+<TabItem value="android" label="Android">
+
+![Ski maps in Android](@site/static/img/plugins/ski-maps/and_yes_ski.png) ![No Ski maps in Android](@site/static/img/plugins/ski-maps/and_no_ski.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Ski maps in iOS](@site/static/img/plugins/ski-maps/ios_yes_ski.png) ![No Ski maps in iOS](@site/static/img/plugins/ski-maps/ios_no_ski.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-![Ski maps in Android](@site/static/img/plugins/ski-maps/and_yes_ski.png) ![No Ski maps in Android](@site/static/img/plugins/ski-maps/and_no_ski.png)
 
 </TabItem>
 
@@ -67,11 +62,7 @@ The following setup makes OsmAnd Ski Map show up on the screen:
 3. If needed, combine maps. 
 
 
-### Enable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+### Enable plugin  
 
 Enabling the Ski map plugin is a quick way to setup OsmAnd Ski Map. The plugin can add the default profile for skiing. If it has not been used yet, the default Skiing profile has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already established for it. Otherwise, the profile would remember the settings of the latest use. 
 
@@ -83,7 +74,22 @@ To enable the Ski Map plugin, do the following:
 
 3. If needed, leave the Ski profile option toggled-on in the opened popup window, so that together with the plugin to enable the Skiing profile. 
 
-![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) ![Ski maps plugin iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_ios.png)
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
+
+To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, tap it in the list of plugins opened, as follows:
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>
+
+![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) 
+
+If the **<Translate android="true" ids="app_mode_skiing"/>** profile is needed, leave the respective option toggled on in the opened popup window and tap **OK**. Otherwise, tap Turn off, and the plugin will be enabled without adding the profile. 
+
+![Enabling Ski profile with plugin in Android](@site/static/img/plugins/ski-maps/and_profile_in_ski_plugin.png)
 
 </TabItem>
 
@@ -103,32 +109,12 @@ If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leav
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
-
-To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, tap it in the list of plugins opened, as follows:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>
-
-![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) 
-
-If the **<Translate android="true" ids="app_mode_skiing"/>** profile is needed, leave the respective option toggled on in the opened popup window and tap **OK**. Otherwise, tap Turn off, and the plugin will be enabled without adding the profile. 
-
-![Enabling Ski profile with plugin in Android](@site/static/img/plugins/ski-maps/and_profile_in_ski_plugin.png)
-
-</TabItem>
-
 </Tabs>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-### Set Winter style
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+### Set Winter style  
 
 The **Winter and Ski** style highlights pistes, ski touring trails, sled paths, etc. - the winter and ski related information. Whenever needed, just enable it for the required profile, as follows: 
 
@@ -138,8 +124,16 @@ The **Winter and Ski** style highlights pistes, ski touring trails, sled paths, 
 
 3. Scroll down up to [Map style](../map/vector-maps.md), open it and check the Winter and Ski style. 
 
+<Tabs groupId="operating-systems">
 
-![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png)
+
+<TabItem value="android" label="Android">
+
+To verify what style is currently established for the profile, and\or to establish the **Winter and ski** style, select the respective option in the list of styles opened, as follows:
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/> 
+
+![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android.png)
 
 </TabItem>
 
@@ -150,16 +144,6 @@ To verify what style is currently established for the profile, and\or to establi
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/> 
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-To verify what style is currently established for the profile, and\or to establish the **Winter and ski** style, select the respective option in the list of styles opened, as follows:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/> 
-
-![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android.png)
 
 </TabItem>
 
@@ -176,7 +160,8 @@ The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
+
+<TabItem value="android" label="Android">
 
 ![No map combination in Android](@site/static/img/plugins/ski-maps/and_no_contour_hillshade.png) ![With map combination in Android](@site/static/img/plugins/ski-maps/and_yes_contour_hillshade.png)
 
@@ -185,12 +170,6 @@ The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski
 <TabItem value="ios" label="iOS">
 
 ![No map combination in iOS](@site/static/img/plugins/ski-maps/ios_no_contours_hillshade.png) ![With map combination in iOS](@site/static/img/plugins/ski-maps/ios_yes_contours_hillshade.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-![No map combination in Android](@site/static/img/plugins/ski-maps/and_no_contour_hillshade.png) ![With map combination in Android](@site/static/img/plugins/ski-maps/and_yes_contour_hillshade.png)
 
 </TabItem>
 
@@ -231,22 +210,17 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Downhill piste type in iOS](@site/static/img/plugins/ski-maps/ios_downhill_piste.png) ![Downhill piste type in Android](@site/static/img/plugins/ski-maps/and_downhill_piste_type.png)
+<TabItem value="android" label="Android">
+
+![Downhill piste type in Android](@site/static/img/plugins/ski-maps/and_downhill_piste_type.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Downhill piste type in iOS](@site/static/img/plugins/ski-maps/ios_downhill_piste.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-![Downhill piste type in Android](@site/static/img/plugins/ski-maps/and_downhill_piste_type.png)
-
 
 </TabItem>
 
@@ -258,21 +232,16 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Nordic piste type in iOS](@site/static/img/plugins/ski-maps/ios_nordic_piste.png) ![Nordic piste type in Android](@site/static/img/plugins/ski-maps/and_nordic_piste_type.png)
+<TabItem value="android" label="Android">
+
+![Nordic piste type in Android](@site/static/img/plugins/ski-maps/and_nordic_piste_type.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Nordic piste type in iOS](@site/static/img/plugins/ski-maps/ios_nordic_piste.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-![Nordic piste type in Android](@site/static/img/plugins/ski-maps/and_nordic_piste_type.png)
 
 </TabItem>
 
@@ -284,21 +253,16 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="def" label="Default" default>
 
-![Ski touring in iOS](@site/static/img/plugins/ski-maps/ios_skitour.png) ![Ski touring in Android](@site/static/img/plugins/ski-maps/and_skitour1.png)
+<TabItem value="android" label="Android">
+
+![Ski touring in Android](@site/static/img/plugins/ski-maps/and_skitour1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Ski touring in iOS](@site/static/img/plugins/ski-maps/ios_skitour.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-![Ski touring in Android](@site/static/img/plugins/ski-maps/and_skitour1.png)
 
 </TabItem>
 
@@ -316,13 +280,18 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 Grooming is performed by special vehicles and ensure the piste is ready for the respective type of activities: classic skiing, skating, other. The same piste can be groomed differently on different segments. If the pistes outside the ski resort boundaries are pictured being groomed, it is a good sign for those going out for skiing.  
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
-
 To check out the map on whether a piste is subject to grooming, it is needed to enable the respective option in the **Details** list opened from the [Configure map](../map/configure-map-menu.md) menu. And the map will show groomed pistes, as exemplified on the figures below. The left-hand one shows no grooming, while the right-hand one differentiates pistes by grooming conditions. 
 
-![No grooming in iOS](@site/static/img/plugins/ski-maps/ios_no_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+To check out the map on whether a piste is subject to grooming, use the **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** option. It makes the map show which pistes are groomed. To enable the option, select the profile and open the **<Translate android="true" ids="rendering_category_details"/>** list, as follows: 
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>
+
+![Enable grooming in Android](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
 
 </TabItem>
 
@@ -337,16 +306,6 @@ To check out the map on whether a piste is subject to grooming, use the **<Trans
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-To check out the map on whether a piste is subject to grooming, use the **<Translate android="true" ids="rendering_attr_pisteGrooming_name"/>** option. It makes the map show which pistes are groomed. To enable the option, select the profile and open the **<Translate android="true" ids="rendering_category_details"/>** list, as follows: 
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details,rendering_attr_pisteGrooming_name"/>
-
-![Enable grooming in Android](@site/static/img/plugins/ski-maps/and_enable_grooming.png) ![Grooming displayed in Android](@site/static/img/plugins/ski-maps/and_yes_grooming.png)
-
-</TabItem>
-
 </Tabs>
 
 
@@ -354,15 +313,20 @@ To check out the map on whether a piste is subject to grooming, use the **<Trans
 
 ### Ski slope routes
 
-With the Skiing profile, the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps.md#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such Ski slopes routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+With the Skiing profile, the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps.md#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such Ski slopes routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
 
 The **Routes** panel in the [Configure map](../map/configure-map-menu.md) menu, opened for a specific profile, shows the **Ski slopes** routes among other available options in the app. To view the Ski slopes routes, enable the respective option. 
 
-![Enabling routes in iOS](@site/static/img/plugins/ski-maps/ios_enable_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png)
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+To view what piste outside the ski resort is possible to navigate along, enable the **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** option in the **<Translate android="true" ids="rendering_category_routes"/>** list, opened for the required profile as follows:
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>
+
+![Routes disabled in Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png) 
 
 </TabItem>
 
@@ -376,16 +340,6 @@ To view what piste outside the ski resort is possible to navigate along, enable 
 
 </TabItem>
 
-<TabItem value="android" label="Android">
-
-To view what piste outside the ski resort is possible to navigate along, enable the **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>** option in the **<Translate android="true" ids="rendering_category_routes"/>** list, opened for the required profile as follows:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>
-
-![Routes disabled in Android](@site/static/img/plugins/ski-maps/and_no_routes.png) ![Routes enabled in Android](@site/static/img/plugins/ski-maps/and_yes_routes.png) 
-
-</TabItem>
-
 </Tabs>
 
 
@@ -393,17 +347,28 @@ To view what piste outside the ski resort is possible to navigate along, enable 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-### Night and lighting
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+### Night and lighting  
 
 The **Winter and ski** style can be used with the [**Night**](../map/vector-maps.md#map-mode) mode. It is an obvious choice for someone who prefers dark colors, and/or it is getting dark at night, as well as for those who does some night skiing. Together with the Night mode, OsmAnd Ski Maps can show which pistes has [lighting](../map/vector-maps.md#details). 
 
 Both options are provided with the [Configure map](../map/configure-map-menu.md) menu. To enable the Night mode, look for the respective option within the **Map mode** section of settings. To make the map show which pistes are lit up at night, enable the respective option in the **Details** section of settings. 
 
-![No lighting in iOS](@site/static/img/plugins/ski-maps/ios_no_lighting.png) ![Night and lighting in Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu.md) menu opened for the needed profile.  
+
+To enable the **Night** mode, select the respective option from the following list: 
+
+<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>
+
+To enable the **Street lighting**, toggle the following option: 
+
+<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>
+
+![Enable Night mode and Lighting in Android](@site/static/img/plugins/ski-maps/and_night_and_lighting1.png) ![Night and lighting in Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
 
 </TabItem>
 
@@ -420,22 +385,6 @@ To enable the **Street lighting**, toggle the following option:
 <Translate ios="true" ids="menu,configure_map,res_details,rendering_attr_streetLighting_name"/>
 
 ![Enabling Night mode and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Night and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-The **Night** mode and **Street lighting** can help during night skiing. Both options are available within the [Configure map](../map/configure-map-menu.md) menu opened for the needed profile.  
-
-To enable the **Night** mode, select the respective option from the following list: 
-
-<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>
-
-To enable the **Street lighting**, toggle the following option: 
-
-<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>
-
-![Enable Night mode and Lighting in Android](@site/static/img/plugins/ski-maps/and_night_and_lighting1.png) ![Night and lighting in Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
 
 </TabItem>
 
@@ -461,17 +410,24 @@ For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-### Remove Ski
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="def" label="Default" default>
+### Remove Ski  
 
 Whenever removing pistes and winter colors from the map is preferable, and/or the ski season is over, do any of the following: 
 
 - uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile, and/or
 
 - disable the Skiing [profile](../personal/profiles.md). 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+To remove the **Winter and ski** style, uncheck the option for the needed profile, as follows:
+
+<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>
+
+![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) 
 
 </TabItem>
 
@@ -482,16 +438,6 @@ To remove the **Winter and ski** style, uncheck the option for the needed profil
 <Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/>
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) 
-
-</TabItem>
-
-<TabItem value="android" label="Android">
-
-To remove the **Winter and ski** style, uncheck the option for the needed profile, as follows:
-
-<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>
-
-![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) 
 
 </TabItem>
 
