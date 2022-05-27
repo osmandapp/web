@@ -109,7 +109,7 @@ Tracks list.
 
 ### Route line appearance
 
-This menu allows you to adapt the route line appearance. If there are some changes to your route, you can costomize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by colour or just apply any colour and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
+This menu allows you to adapt the route line appearance. If there are some changes to your route, you can customize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by colour or just apply any colour and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
 
 :::note
   
@@ -149,7 +149,7 @@ Provides to choose a route line's colour by types.
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | &nbsp;*"Custom"* – It allows you to show the line in any preferred colour and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height above sea level of current geolocation. |  
+| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the colour doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
@@ -221,7 +221,7 @@ Provides to choose a route line's colour by types.
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | &nbsp;*"Custom"* – It allows you to show the line in any preferred colour and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height above sea level of current geolocation. |  
+| &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the colour doesn't represent the absolute height value. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 <!--
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
