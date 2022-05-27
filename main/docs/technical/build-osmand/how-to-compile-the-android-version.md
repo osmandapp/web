@@ -70,7 +70,7 @@ Add debug symbols in the Android Studio project configuration. For this go to Ed
 
 ## Compile OpenGL library
 
-Opengl library is needed for targtes like assembleNightlyFree**Opengl**FatDebug and by default downloaded from [OsmAnd ivy repository](https://builder.osmand.net/ivy/net.osmand/) - [gradle task](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). For local development you might need to compile those library and publish to local ivy repo.
+Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug and by default downloaded from [OsmAnd ivy repository](https://builder.osmand.net/ivy/net.osmand/) - [gradle task](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/build.gradle#L187). For local development you might need to compile those library and publish to local ivy repo.
 
 1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
 2. Install tools.
@@ -96,7 +96,7 @@ Opengl library is needed for targtes like assembleNightlyFree**Opengl**FatDebug 
 
 ### Debug
 
-To be completed: how to set up android ndk debug.
+To be completed: how to set up Android ndk debug.
 
 ## Compile API samples
 <IncompleteArticle/>
