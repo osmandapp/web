@@ -532,10 +532,11 @@ In this menu, you can change some parameters of your track with filters such as,
 
 
 &nbsp;  
-#### **Statistics** Menu
+#### **Statistics**
 
-This menu is divided into two parts: *Actions* and *Graph*. All of the values displayed in this menu depend on the settings selected in the Filter menu.  
-- The *Actions* part shows some statistics. It's similar to the Filter menu.  
+Statistics tab displays information about **modified** track i.e. without filtered values. It's displayed within stat blocks and graph data.
+ 
+- The *Data* part shows statistics similar to the Filter menu.  
 - The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)  
@@ -543,7 +544,7 @@ This menu is divided into two parts: *Actions* and *Graph*. All of the values di
 &nbsp;  
 #### **Actions**
 
-OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.
+Actions list is available on the bottom of **Filter** or **Statistics** tab. OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.
 
 - *<Translate android="true" ids="reset_to_original"/>* – allows you to return the parameters to their original state.  
 - *<Translate android="true" ids="save_as_copy"/>* – allows you to save the track as a new one.
@@ -551,12 +552,6 @@ OsmAnd will apply all changes made to the track without updating the file. You c
 
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
 
-&nbsp;  
-:::note
-**The information is missing**  
-In case your track recording is missing some statistics information, you can still use the filter, but with some restrictions. 
-
-:::
 
 </TabItem>
 
