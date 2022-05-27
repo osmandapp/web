@@ -15,7 +15,7 @@ Target sdk tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/bu
 
 
 ## Compile Android apk
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **development environment**, see [link](setup-the-dev-environment.md).
 2. **Gradle** (command line):
     -  Specify  **environment variables**.   ANDROID_SDK and ANDROID_HOME are where Android studio places things:
     ```
