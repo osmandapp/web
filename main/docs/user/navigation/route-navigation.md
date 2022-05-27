@@ -141,7 +141,7 @@ This menu allows you to adapt the route line appearance. If there are some chang
 <!--Customize route line menu items-->
 &nbsp;  
 **Colour**  
-Provides to choose a route line's colour by types.  
+Select a route line's colour by types.  
 
 |  |
 |------------|
@@ -170,7 +170,7 @@ Provides to choose a route line's colour by types.
 
 &nbsp;  
 **Width**  
-Provides to choose a route line's width.
+Select a route line's width.
 
 |  |
 |------------|
@@ -213,7 +213,7 @@ Select whether turn arrows are indicated on the route line or not.
 <!--Customize route line menu items-->
 &nbsp;  
 **Colour**  
-Provides to choose a route line's colour by types.  
+Select a route line's colour by types.  
 
 |  |
 |------------|
@@ -243,7 +243,7 @@ Provides to choose a route line's colour by types.
 
 &nbsp;  
 **Width**  
-Provides to choose a route line's width.
+Select a route line's width.
 
 |  |
 |------------|
