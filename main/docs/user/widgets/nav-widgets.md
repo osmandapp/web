@@ -76,24 +76,82 @@ All values are indicated either for the whole route or only for the selected int
 
 
 &nbsp;  
-## Bearing
+## Bearing  
 
-The bearing widget shows the absolute or relative bearing to a target in angular units (<Translate android="true" ids="shared_string_degrees"/> 180, <Translate android="true" ids="shared_string_degrees"/> 360, <Translate android="true" ids="shared_string_milliradians"/>).
+:::note
+  
+This article is incomplete and needs improvement.   
+
+:::
+
+&nbsp;  
+>The three bearing widgets can be enabled/disabled by following this path:   
+[Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)
+
+**General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass), or *True* (showing where the cardinal points are). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
+
+The cardinal points are the four main directions of the compass. They are north (*N*), east (*E*), south (*S*)*, and west (*W*).  
+*N*orth – 0° or 360°  
+*E*ast – 90°  
+*S*outh – 180°  
+*W*est – 270°  
+
+**What the widget is most useful for.** A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
+Very useful for cross-country navigation.
+
+<!--&nbsp;  
+**Available interactions with the graph:**   -->
+
+**What's in.**
+
+![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)
+
+
 
 To show a bearing requires to have a **target point** selected. In case you have a **destination** (or a **first intermediate point**, if present) selected for navigation, this will be used as the target point. Otherwise, the **topmost selected marker** will be used.
 
 [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is the clockwise (horizontal) angle between magnetic north and the target point observed from your location. This is the compass value of a magnetic compass you have to follow to reach this target. Example: If the Magnetic bearing is shown as _0° M_, you need move strictly towards magnetic north to reach the target point.
 
-[Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) refers to the angle between your forward direction and the target point. Your **forward direction** is either your **direction of your motion** as taken from the GPS-sensors, or in case you stand still **where you point your device** (i.e. your device orientation as per its magnetic compass). Example: An object with relative bearing of _0°_ is straight ahead of you, an object with relative bearing _180°_ is straight behind you.
+[Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) refers to the angle between your forward direction and the target point. Your **forward direction** is either your **direction of your motion** as taken from the GPS-sensors, or in case you stand still **where you point your device** (i.e. your device orientation as per its magnetic compass). Example: An object with relative bearing of _0°_ is straight ahead of you, an object with relative bearing _180°_ is straight behind you.  
+
+* **Relative bearing** refers to the angle between your forward direction and the target point.
+* **Magnetic bearing** is the clockwise (horizontal) angle between magnetic north and the target point observed from your location. 
+* **True bearing** expressed as a horizontal angle between a geographic meridian and a line on the Earth; esp. a horizontal angle measured clockwise from true north.  
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">   
+
+>Enable/Disable:  
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_bearing"/> or <Translate android="true" ids="map_widget_magnetic_bearing"/>  
+
+>Format.   
+Supports different angular units:  
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+>Enable/Disable:  
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>  
+
+>Format.   
+Supports different angular units:  
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>
+
+
+
+</TabItem>
+
+</Tabs>  
 
 
 ![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)
 
-| | |
-|------------|------------|
-| Enable | Magnetic or relative bearing: <br /> <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_bearing"/> or <Translate android="true" ids="map_widget_magnetic_bearing"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/> |
-| Format | Supports different angular units: <br /> <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>|
-| On Click | Changes between  Relative bearing or Magnetic bearing (with "M") |
+
+<!-- On Click : Changes between  Relative bearing or Magnetic bearing (with "M") -->
 
 ## Navigation points
 ### Destination
