@@ -36,8 +36,6 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 
 
-<!--It's [Pro feature](../purchases/android#pro-features).-->
-
 **General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
 **What the widget is most useful for.** This widget will best help you with a hiking or biking route. You can see all the obstacles associated with descents and ascents on your route with it. And also, making an analysis of the upcoming route for its passing.    
@@ -68,21 +66,16 @@ All values are indicated either for the whole route or only for the selected int
 |  |
 |------------|
 |The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).|
-| *"Uphill"* – shows the sum of the all distances with increasing altitude for the selected section of the route. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png)|  
-| *"Downhill"* – shows the sum of the all distances with decreasing altitude for the selected section of the route.  |
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png)|  
+| *"Uphill"* – shows the sum of the all distances with increasing altitude from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
+| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
+| *"Downhill"* – shows the sum of the all distances with decreasing altitude ffrom your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.|
+| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
-| *"Grade"* – shows the maximum road slope in percent for the selected section of the route on the graph. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png)| 
+| *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
+|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
 
 
-<!--At the top of the graph, there is information about the sum of *Uphill* and *Downhill* and *Grade* values for the visible segment of the map.
-To interact with the graph, you can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out.-->
-
-
-
-
+&nbsp;  
 ## Bearing
 
 The bearing widget shows the absolute or relative bearing to a target in angular units (<Translate android="true" ids="shared_string_degrees"/> 180, <Translate android="true" ids="shared_string_degrees"/> 360, <Translate android="true" ids="shared_string_milliradians"/>).
