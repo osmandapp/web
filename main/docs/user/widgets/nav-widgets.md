@@ -38,7 +38,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <!--It's [Pro feature](../purchases/android#pro-features).-->
 
-**General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope.  
+**General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
 **What the widget is most useful for.** This widget will best help you with a hiking or biking route. You can see all the obstacles associated with descents and ascents on your route with it. And also, making an analysis of the upcoming route for its passing.    
 
@@ -47,33 +47,40 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 >The widget can be turned on/off by following this path:
 <Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
 
+![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+
 
 &nbsp;  
+**Available interactions with the graph:**  
+* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
+* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+
+&nbsp;  
+![point](@site/static/img/widgets/sch_1-1.png)  ![data](@site/static/img/widgets/sch_1-2.png)  
+
+
 **What's in.**
-When you select a route and press the start button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*. All values are indicated either for the whole route or only for the selected interval by scaling the graph.    
+When you select a route and press the start button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You select the optimal scale and see all possible obstacles on your route.  
+The data on the graph of your **current location** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.     
+All values are indicated either for the whole route or only for the selected interval by scaling the graph.
 
 |  |
 |------------|
 |The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).|
 | *"Uphill"* – shows the sum of the all distances with increasing altitude for the selected section of the route. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill.png)|  
+| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png)|  
 | *"Downhill"* – shows the sum of the all distances with decreasing altitude for the selected section of the route.  |
-| ![downhill scheme](@site/static/img/widgets/sch_downhill.png)|  
-|***Grade*** is the angle of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The way to calculate Grade is to measure the distance along the slope and the vertical rise and calculate the horizontal run (100% × rise/run)|
-| *"Grade"* – shows the road slope in percent for the selected section of the route on the graph. |
-|![grade scheme](@site/static/img/widgets/sch_grade.png)| 
+| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png)|  
+|***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
+| *"Grade"* – shows the maximum road slope in percent for the selected section of the route on the graph. |
+|![grade scheme](@site/static/img/widgets/sch_grade_1.png)| 
 
 
 <!--At the top of the graph, there is information about the sum of *Uphill* and *Downhill* and *Grade* values for the visible segment of the map.
 To interact with the graph, you can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out.-->
 
-&nbsp;  
-**Available interactions with the graph:**  
-* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
-* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.
 
-
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 ## Bearing
