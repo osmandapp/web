@@ -23,7 +23,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 **Active** navigation requires to set a destination, calculate the route (Directions) and start navigation (Go), not necessary with voice guidance. All navigational widgets support that type of navigation.
 
-**Passive** navigation doesn't require to have å destination point set and works automatically once you switch to any navigational profile, for example 'Driving'. In that case application will try to determine which road you are following and display extra information about it i.e. name, lanes info, max speed available. Please note that this approach is quite unreliable and doesn't support all features.
+**Passive** navigation doesn't require to have a destination point set and works automatically once you switch to any navigational profile, for example 'Driving'. In that case application will try to determine which road you are following and display extra information about it i.e. name, lanes info, max speed available. Please note that this approach is quite unreliable and doesn't support all features.
 
 
 ## Elevation widget
@@ -34,6 +34,9 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 :::
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
 
 
 **General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
@@ -73,6 +76,19 @@ All values are indicated either for the whole route or only for the selected int
 |***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
 | *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
 |![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+:::note
+This feature doesn't exist for iOS version of OsmAnd.
+:::
+
+</TabItem>
+
+</Tabs>  
 
 
 &nbsp;  
