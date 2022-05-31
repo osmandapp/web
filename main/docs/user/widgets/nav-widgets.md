@@ -93,11 +93,8 @@ All values are indicated either for the whole route or only for the selected int
 </Tabs>  
 
 
-&nbsp;  
 ## Bearing widget  
 
-
-&nbsp;  
 >The bearing widgets can be on/off by following this path:   
 For Android: [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)  
 For iOS: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>   
@@ -126,7 +123,7 @@ The cardinal points are the four main directions of the compass. They are north 
 Very useful for cross-country navigation.
 
 
-#### Available interactions
+### Available interactions
 - Select from a list of available widgets, show, hide.
 - Change the position of widgets on the screen in the right or left panels as you prefer.
 - Change their order in panels.
@@ -156,7 +153,9 @@ In order to display the bearing, a **target point** must be selected. If a **des
 >**Format.** You can change the data display format for angular units:  
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>   
 
-**General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
+### General information
+  
+Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
 The cardinal points are the four main directions of the compass. They are north (*N*), east (*E*), south (*S*), and west (*W*).  
 *North* – 0° or 360°   
 *East* – 90°   
@@ -164,20 +163,17 @@ The cardinal points are the four main directions of the compass. They are north 
 *West* – 270°  
 
 
-#### What the widget is most useful for
+### What the widget is most useful for iOS
 A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
 Very useful for cross-country navigation.
 
 
-#### Available interactions
+### Available interactions
 - Select from a list of available widgets, show, hide.
 - Change their order in panels.
 - Change the format of data displayed in angular units.
 
-
-&nbsp;  
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
-
 <!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
 
 
@@ -187,10 +183,6 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 
 * [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is the clockwise (horizontal) angle between the magnetic north and the target point observed from your location. It is the magnetic compass value that you must follow in order to reach that target. Example: If the **magnetic bearing** is shown as 0° M, you need to move strictly towards the magnetic north to reach the target point.
-
-
-
-
 
 </TabItem>
 
