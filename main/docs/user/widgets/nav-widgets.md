@@ -38,15 +38,15 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">   
 
+&nbsp;  
+>The widget can be turned on/off by following this path:
+<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
+
 
 **General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
 **What the widget is most useful for.** This widget will best help you with a hiking or biking route. You can see all the obstacles associated with descents and ascents on your route with it. And also, making an analysis of the upcoming route for its passing.    
 
-
-&nbsp;  
->The widget can be turned on/off by following this path:
-<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
 
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
@@ -83,8 +83,10 @@ All values are indicated either for the whole route or only for the selected int
 
 
 :::note
-This feature doesn't exist for iOS version of OsmAnd.
-:::
+**This feature doesn't exist for iOS version of OsmAnd.**
+:::  
+
+**General information.** The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.
 
 </TabItem>
 
@@ -100,17 +102,16 @@ This feature doesn't exist for iOS version of OsmAnd.
 For Android: [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)  
 For iOS: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>   
 
-The bearing widget shows the absolute or relative bearing to a target in angular units (Degrees 180, Degrees 360, Milliradians).
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">   
 
->Enable/Disable:  
+>**Enable/Disable**:  
 [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)  
 
->Format. You can change the data display format for angular units:   
+>**Format.** You can change the data display format for angular units:   
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>   
 
 **General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass), or *True* (showing where the cardinal points are). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
@@ -149,13 +150,13 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 <TabItem value="ios" label="iOS">  
 
->Enable/Disable:  
+>**Enable/Disable:**  
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>  
 
->Format. You can change the data display format for angular units:  
+>**Format.** You can change the data display format for angular units:  
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>   
 
-**General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass), or *True* (showing where the cardinal points are). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
+**General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
 The cardinal points are the four main directions of the compass. They are north (*N*), east (*E*), south (*S*), and west (*W*).  
 *North* – 0° or 360°   
 *East* – 90°   
@@ -169,10 +170,11 @@ Very useful for cross-country navigation.
 
 **Available interactions:**  
 - Select from a list of available widgets, show, hide.
-- Change the position of widgets on the screen in the right or left panels as you prefer.
 - Change their order in panels.
 - Change the format of data displayed in angular units.
 
+
+&nbsp;  
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
 
 <!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
