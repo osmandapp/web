@@ -52,7 +52,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 
 &nbsp;  
-**Available interactions with the graph:**  
+#### Interactions with the graph
 * *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 * *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
@@ -126,7 +126,7 @@ The cardinal points are the four main directions of the compass. They are north 
 Very useful for cross-country navigation.
 
 
-**Available interactions:**  
+#### Available interactions
 - Select from a list of available widgets, show, hide.
 - Change the position of widgets on the screen in the right or left panels as you prefer.
 - Change their order in panels.
@@ -164,11 +164,12 @@ The cardinal points are the four main directions of the compass. They are north 
 *West* – 270°  
 
 
-**What the widget is most useful for.** A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
+#### What the widget is most useful for
+A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
 Very useful for cross-country navigation.
 
 
-**Available interactions:**  
+#### Available interactions
 - Select from a list of available widgets, show, hide.
 - Change their order in panels.
 - Change the format of data displayed in angular units.
