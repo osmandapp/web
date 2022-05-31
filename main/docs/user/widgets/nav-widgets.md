@@ -94,14 +94,10 @@ All values are indicated either for the whole route or only for the selected int
 
 
 ## Bearing widget  
-
->The bearing widgets can be on/off by following this path:   
-For Android: [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)  
-For iOS: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>   
-
+  
+Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you. The cardinal points are the four main directions of the compass. They are North (*N* - 0° or 360°), East (*E* - 90°), South (*S* - 180°), and west (*W* - 270°).  
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">   
 
@@ -110,25 +106,6 @@ For iOS: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids=
 
 >**Format.** You can change the data display format for angular units:   
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>   
-
-**General information.** Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass), or *True* (showing where the cardinal points are). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
-The cardinal points are the four main directions of the compass. They are north (*N*), east (*E*), south (*S*), and west (*W*).  
-*North* – 0° or 360°   
-*East* – 90°   
-*South* – 180°   
-*West* – 270°  
-
-
-**What the widget is most useful for.** A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
-Very useful for cross-country navigation.
-
-
-### Available interactions
-- Select from a list of available widgets, show, hide.
-- Change the position of widgets on the screen in the right or left panels as you prefer.
-- Change their order in panels.
-- Change the format of data displayed in angular units.
-
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
 
@@ -144,14 +121,6 @@ Very useful for cross-country navigation.
 >**Format.** You can change the data display format for angular units:  
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>   
 
-### General information
-  
-Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you.  
-The cardinal points are the four main directions of the compass. They are north (*N*), east (*E*), south (*S*), and west (*W*).  
-*North* – 0° or 360°   
-*East* – 90°   
-*South* – 180°   
-*West* – 270°  
 
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
@@ -161,6 +130,8 @@ The cardinal points are the four main directions of the compass. They are north 
 
 </Tabs>  
 
+### Definitions 
+
 In order to display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
 
 * [Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) is the angle between your forward movement direction and the target point. The **forward movement direction** is either the **direction of your movement** obtained from the GPS sensors or if you are standing **where you have pointed your device** (i.e. the orientation of your device according to its magnetic compass). Example: An object with a relative bearing of 0° is directly in front of you and an object with a relative bearing of 180° is directly behind you. The **relative bearing** is the angle between your forward direction and the target point.   
@@ -169,12 +140,10 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 * [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and hearding in our user-friendly interface, making it easy for you to make the right decision early on.
 
-:::note
-**Use cases**
-Navigation using rhumb line.
+### Navigation along the rhumb line.
 - Relative bearing. If you stick with relative bearing 0 degree and head forward, you will arrive to the destination point, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 - Magnetic bearing. If you align compass on the boat / vehicle with widget value and head forward, you will arrive to the destnation, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
-:::  
+
 
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
