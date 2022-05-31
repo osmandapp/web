@@ -133,15 +133,6 @@ Very useful for cross-country navigation.
 ![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
 
 
-In order to display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
-
-* [Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) is the angle between your forward movement direction and the target point. The **forward movement direction** is either the **direction of your movement** obtained from the GPS sensors or if you are standing **where you have pointed your device** (i.e. the orientation of your device according to its magnetic compass). Example: An object with a relative bearing of 0° is directly in front of you and an object with a relative bearing of 180° is directly behind you. The **relative bearing** is the angle between your forward direction and the target point.   
-
-
-* [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is the clockwise (horizontal) angle between the magnetic north and the target point observed from your location. It is the magnetic compass value that you must follow in order to reach that target. Example: If the **magnetic bearing** is shown as 0° M, you need to move strictly towards the magnetic north to reach the target point.
-
-* [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and hearding in our user-friendly interface, making it easy for you to make the right decision early on.
-
 
 </TabItem>
 
@@ -163,30 +154,27 @@ The cardinal points are the four main directions of the compass. They are north 
 *West* – 270°  
 
 
-### What the widget is most useful for iOS
-A bearing is an expression of your position relative to some other (stationary or moving) reference point, which then determines your position line. You can take several bearing lines to find convergent position lines. This is how your actual position is determined. Suppose your vehicle is moving, and your course converges with the course of another vehicle nearby. If you take a bearing sequence between you and the other vehicle, and that bearing remains unchanged, there is a high probability that you are both on a collision course. 
-Very useful for cross-country navigation.
-
-
-### Available interactions
-- Select from a list of available widgets, show, hide.
-- Change their order in panels.
-- Change the format of data displayed in angular units.
-
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
 <!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
 
+</TabItem>
+
+</Tabs>  
 
 In order to display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
 
 * [Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) is the angle between your forward movement direction and the target point. The **forward movement direction** is either the **direction of your movement** obtained from the GPS sensors or if you are standing **where you have pointed your device** (i.e. the orientation of your device according to its magnetic compass). Example: An object with a relative bearing of 0° is directly in front of you and an object with a relative bearing of 180° is directly behind you. The **relative bearing** is the angle between your forward direction and the target point.   
 
-
 * [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) is the clockwise (horizontal) angle between the magnetic north and the target point observed from your location. It is the magnetic compass value that you must follow in order to reach that target. Example: If the **magnetic bearing** is shown as 0° M, you need to move strictly towards the magnetic north to reach the target point.
 
-</TabItem>
+* [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and hearding in our user-friendly interface, making it easy for you to make the right decision early on.
 
-</Tabs>  
+:::note
+**Use cases**
+Navigation using rhumb line.
+- Relative bearing. If you stick with relative bearing 0 degree and head forward, you will arrive to the destination point, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
+- Magnetic bearing. If you align compass on the boat / vehicle with widget value and head forward, you will arrive to the destnation, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
+:::  
 
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
