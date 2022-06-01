@@ -10,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
@@ -148,9 +150,13 @@ Navigation route is a solid line prepared by [Route Preparation process](../navi
 
  ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)
 
-### Route Appearance (Android)
+### Route Appearance
 
-You can customize the route line's appearance for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps.md#map-mode).
+:::note
+<ProFeature/> It's the Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+:::
+
+You can [customize the route line's appearance](../navigation/route-navigation.md##route-line-appearance) for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps.md#map-mode).
 
 <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,customize_route_line"/>
 
