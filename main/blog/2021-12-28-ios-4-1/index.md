@@ -36,7 +36,7 @@ This is a short list of many changes happened in 4.1 release:
 
 Completely redesigned interaction with tracks: a new menu with charts, statistics, ability to change the appearance, coloring by speed, height and slope, and track selection on the map.
 
-Just click on chosen track on the map or open it by <a href="https://docs.osmand.net/en/main@latest/osmand/personal/myplaces">"My Places"</a> menu to enable<a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">"Track context menu"</a>.
+Just click on chosen track on the map or open it by <a href="https://osmand.net/docs/user/personal/myplaces">"My Places"</a> menu to enable<a href="https://osmand.net/docs/user/map/track-context-menu">"Track context menu"</a>.
 
 
 <table class="blogimage">
@@ -50,7 +50,7 @@ Just click on chosen track on the map or open it by <a href="https://docs.osmand
 
 ## New screen for searching by coordinates in different formats
 
-We will add the new screen for <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">coordinates search menu</a>.
+We will add the new screen for <a href="https://osmand.net/docs/user/search/search-address#coordinates-search">coordinates search menu</a>.
 
 <table class="blogimage">
   <tr>
@@ -61,7 +61,7 @@ We will add the new screen for <a href="https://docs.osmand.net/en/main@latest/o
 
 ## Improved coordinate search in OLC format
 
-Upgraded coordinates search in <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">OLC format</a>.
+Upgraded coordinates search in <a href="https://osmand.net/docs/user/search/search-address#coordinates-search">OLC format</a>.
 
 <table class="blogimage">
   <tr>
@@ -72,7 +72,7 @@ Upgraded coordinates search in <a href="https://docs.osmand.net/en/main@latest/o
 
 ## New user-friendly menu for choosing languages to display Wikipedia articles on the map
 
-Changed the Configure map menu for choosing languages for <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/wikipedia">wiki articles</a>.
+Changed the Configure map menu for choosing languages for <a href="https://osmand.net/docs/user/plugins/wikipedia">wiki articles</a>.
 <table class="blogimage">
   <tr>
     <td><img src={require('./wiki.png').default} alt="Image"/></td>
@@ -81,7 +81,7 @@ Changed the Configure map menu for choosing languages for <a href="https://docs.
 
 ## Added ability to easily load maps of all regions of the country with a couple of clicks
 
-Now, you can download region maps of any country <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps">by the bundle</a>.
+Now, you can download region maps of any country <a href="https://osmand.net/docs/user/start-with/download-maps">by the bundle</a>.
 
 <table class="blogimage">
   <tr>
@@ -91,7 +91,7 @@ Now, you can download region maps of any country <a href="https://docs.osmand.ne
 
 ## Added contour lines in feet (You need to re-download files)
 
-We added <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-lines">contour lines maps</a> in feet.
+We added <a href="https://osmand.net/docs/user/plugins/contour-lines">contour lines maps</a> in feet.
 
 <table class="blogimage">
   <tr>
@@ -102,7 +102,7 @@ We added <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/contour-
 
 ## Downloading maps by clicking to the map
 
-Added ability <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/download-maps#download--manage---world-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.
+Added ability <a href="https://osmand.net/docs/user/start-with/download-maps#download--manage---world-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.
 
 <table class="blogimage">
   <tr>
@@ -114,7 +114,7 @@ Added ability <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/
 
 ## New appearance of buttons on the map and added ability to change map zoom by double-tapping and swiping
 
-<a href="https://docs.osmand.net/en/main@latest/osmand/map/interact-with-map">New buttons and new gestures</a> on the general screen.
+<a href="https://osmand.net/docs/user/map/interact-with-map">New buttons and new gestures</a> on the general screen.
 
 <table class="blogimage">
   <tr>
@@ -125,7 +125,7 @@ Added ability <a href="https://docs.osmand.net/en/main@latest/osmand/start-with/
 
 ## Route visibility control is moved to a higher level in the "Configure map" menu with the option of flexible settings
 
-<a href="https://docs.osmand.net/en/main@latest/osmand/map/vector-maps#routes">New routes menu</a> in Configure map menu.
+<a href="https://osmand.net/docs/user/map/vector-maps#routes">New routes menu</a> in Configure map menu.
 
 
 <table class="blogimage">

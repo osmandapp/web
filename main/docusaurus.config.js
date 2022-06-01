@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'osmandapp', // Usually your GitHub org/user name.
   projectName: 'web', // Usually your repo name.
-
+  staticDirectories: ['static', 'legacy-image-static'],
   presets: [
     [
       'classic',
@@ -57,7 +57,8 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left'},
-          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
+          { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
+//          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',
@@ -77,10 +78,10 @@ const config = {
               },
               {
                 label: 'Map legend',
-                to: '/docs/map-legend/osmand',
+                to: '/docs/user/map-legend/osmand',
               },
               {
-                label: 'Versions',
+                label: 'Downloads',
                 to: '/docs/versions/free-versions',
               },
               {
@@ -150,6 +151,14 @@ const config = {
                 label: 'Russian',
                 href: 'https://t.me/ruosmand',
               },
+              {
+                label: 'Spanish',
+                href: 'https://t.me/osmand_es',
+              },
+              {
+                label: 'Arabic',
+                href: 'https://t.me/joinchat/8f5o0TtZAaM0MGJk',
+              },              
             ],
           },
           {
@@ -162,6 +171,18 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/osmandapp',
+              },
+              {
+                label: 'OsmAnd CZ Manuals',
+                href: 'https://osmand.cz/',
+              },
+              {
+                label: 'Get OsmAnd Merchandise',
+                href: 'https://www.redbubble.com/people/osmand/works/26426633-osmand',
+              },
+              {
+                label: 'support@osmand.net',
+                href: 'mailto:support@osmand.net'
               },
             ],
           },

@@ -5,15 +5,15 @@ import styles from './Impressions.module.css';
 
 const ImpressionsList = [
   {
-    url: 'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
-    source: '@google-play',
-    name: 'Mark Erikson',
-    date: 'Feb 28, 2020',
+    url: 'http://youtube.com/c/creedaz',
+    source: 'YouTube',
+    name: 'Manav (Creedaz)',
+    date: 'May 11, 2022',
     avatar:
-      'https://play-lh.googleusercontent.com/a-/AOh14GjAxscEbpLYcyJuR5Mo5ZcUL1sY_jPot-qHE3STQw=w48-h48-n-rw',
+      'https://i.imgur.com/UtVMWqB.jpeg',
     content: (
       <>
-        These are open source maps, so not every business is listed, but you can save and organize locations. When I find a place that I want to remember, but isn't listed in the app, I mark it as a favorite. I love the fact that it offers navigation for walking, biking, and public transport. Great for English language Android users in Beijing.
+        I am mapping the trails in the Indian Himalayas. The various topo layers in OsmAnd help me understand the terrain. Further, the wide range of plugins (contour lines, hill shades, slopes, Open Street Map editing) has made OsmAnd my daily driver for hiking and trail running. The map markers and OSM Notes help me plan my week long hiking traverses and I can also overlay digitised maps for cross referencing. I also use the desktop editor to map hiking routes, high altitude glacial lake, mountain passes, peaks, and POIs (spring, shelters, waterfalls, cairn, campsites etc).
       </>
     ),
     showOnHomepage: true,
@@ -43,7 +43,7 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
       'https://i.imgur.com/jv3iLWy.png',
     content: (
       <>
-       If you’re concerned about online privacy, then you’ll want to be especially careful when choosing a navigation app. After all, for these apps to function you’ll need to at least share your location, and you may find yourself sharing other personal details as well. This open-source navigation app has particularly strong privacy policies — they don’t collect user data, and they let you decide exactly what the app has access to.
+       If you’re concerned about online privacy, then you’ll want to be especially careful when choosing a navigation app. After all, for these apps to function you’ll need to at least share your location, and you may find yourself sharing other personal details as well. OsmAnd is open-source navigation app and has particularly strong privacy policies — it doesn’t collect user data, and let you decide exactly what the app has access to.
       </>
     ),
     showOnHomepage: true,
@@ -63,7 +63,21 @@ The idea of computing all the routes on my device locally is absolutely wonderfu
     showOnHomepage: true,
   },
   {
-    url: 'https://play.google.com/store/apps/details?id=net.osmand&hl=en&gl=US&reviewId=gp%3AAOqpTOGgIkri9G_5UZmBArExTCXTQLvFCDnvIaZ8Hgy3nPQjg_jYRF59tjauouwqIj-Qt8O3X_bzuerC5tU5yQ',
+    url: 'https://www.partireper.it/',
+    source: 'partireper.it',
+    name: 'Gionata Nencini',
+    date: 'May 4, 2022',
+    avatar:
+      'https://i.imgur.com/KgfFveg.jpg',
+    content: (
+      <>
+        OsmAnd+ opened to me and to my community/customers the freedom of discovery and scouting we had never experienced before on a motorcycle. I adore and support OsmAnd+ and talk about it during rides I lead, events I organize, books I write, tutorial I executes and workshops I run at Motoviaggio Store. Really glad to be an ambassador for this powerful and useful tool every traveler should have on their devices. Keep up the great work!
+       </>
+    ),
+    showOnHomepage: true,
+  },
+  {
+    url: 'https://play.google.com/store/apps/dev?id=8483587772816822023',
     source: '@google-play',
     name: 'Matias Lavik',
     date: 'April 18, 2022',

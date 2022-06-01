@@ -28,7 +28,7 @@ Furthermore in the article, there is a final list of extensions and fixes:
 
 ## Introduced “Plan a route" tool
 
-At this release, we added a new tool named <a href="https://osmand.net/features/plan-route#pr-ios">"Plan a route"</a>: menu → Plan a route. Now, you can create your trip by using one or more navigation profiles, saved it like GPX-file.
+At this release, we added a new tool named <a href="https://osmand.net/docs/user/plan-route/">"Plan a route"</a>: menu → Plan a route. Now, you can create your trip by using one or more navigation profiles, saved it like GPX-file.
 
 
 <table class="blogimage">
@@ -44,7 +44,7 @@ At this release, we added a new tool named <a href="https://osmand.net/features/
 
 ## Added import all data types
 
-When you <a href="https://osmand.net/features/navigation-profiles#import_prof_ios">import osf-file (Application profile)</a> you can select data to be imported: rendering styles, quick actions, routing, trips, maps, favorites and etc.
+When you <a href="https://osmand.net/docs/user/personal/profiles#navigation-settings">import osf-file (Application profile)</a> you can select data to be imported: rendering styles, quick actions, routing, trips, maps, favorites and etc.
 
 <table class="blogimage">
   <tr>
@@ -67,7 +67,7 @@ In order to switch text labels go to menu → Map → POI overlay labels.
 
 ## Compass for the "Radius Ruler" tool
 
-Added option to enable сompass over <a href="https://osmand.net/features/ruler#Ruler_iOS">the "Radius Ruler" tool</a>.
+Added option to enable сompass over <a href="https://osmand.net/docs/user/widgets/radius-ruler">the "Radius Ruler" tool</a>.
 
 <table class="blogimage">
   <tr>

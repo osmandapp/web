@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Free Releases — Android
@@ -32,7 +32,7 @@ Release date: 12/2021
 * Improved SRTM height marker rendering
 * Fixed Arabic map captions
 
-<DownloadRelease blog="osmand-android-4-1" release="net.osmand-4.1.11.apk.apk" />
+<DownloadRelease blog="osmand-android-4-1" release="net.osmand-4.1.11.apk" />
 
 ### Version 4.0 
 Release date: 08/2021    
@@ -57,7 +57,7 @@ Release date: 08/2021
 * Fixed crashes with Public transport 
 * Search algorithms improving
 
-<DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk.apk" />
+<DownloadRelease blog="osmand-android-4-0-released" release="net.osmand-4.0.9.apk" />
 
 
 <hr></hr>
@@ -71,7 +71,7 @@ Release date: 02/2021
 * Added OAuth authentication method for OpenStreetMap, improved UI of OSM dialogs.
 * Support custom colors for favorites and track waypoints.
 
-<DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk.apk" />
+<DownloadRelease blog="osmand-3-9" release="net.osmand-3.9.9-399.apk" />
 
 
 ### Version 3.8 
@@ -85,7 +85,7 @@ Release date: 09/2020
 * Improved "Follow track" options in Navigation
 * Fixed issues with import/export of profile settings
 
-<DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3-383.apk.apk" />
+<DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3-383.apk" />
 
 
 ### Version 3.7 
@@ -101,7 +101,7 @@ Release date: 05/2020
 * Fix UI sizes on tablets
 * Fix bugs with RTL
 
-<DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4-374.apk.apk" />
+<DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4-374.apk" />
 
 
 ### Version 3.6 
@@ -119,7 +119,6 @@ Release date: 02/2020
 * Added support for multiline description in Settings
 * Added correct transliteration into the map of Japan
 * Added Antarctica map
-<DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4-374.apk.apk" />
 
 <DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3-363.apk" />
 

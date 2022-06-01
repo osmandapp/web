@@ -55,7 +55,7 @@ After you calculate a route, you can save or share it like a GPX-track. To do th
 
 ### Added nautical maps with depth contours
 
-In this release, we added a full list of Nautical maps like in the Android version. You should go to <a href="https://osmand.net/features/nautical-charts#How_to_use_it_I">*menu-> Maps & Resources-> Nautical maps*</a> for downloading maps. Within this list, you can find Nautical depth contours for many regions of the world. For viewing depth contours on the map you should go to *App menu-> Map-> Map style (Details)->Depth contours*. Note: you must buy <a href="https://osmand.net/features/osmand_purchases#ios_extended_features">a special in-app</a> or subscribe to <a href="https://osmand.net/features/subscription#osm_live_ios">OsmAnd Live</a> to use this feature.
+In this release, we added a full list of Nautical maps like in the Android version. You should go to <a href="https://osmand.net/docs/user/plugins/nautical-charts">*menu-> Maps & Resources-> Nautical maps*</a> for downloading maps. Within this list, you can find Nautical depth contours for many regions of the world. For viewing depth contours on the map you should go to *App menu-> Map-> Map style (Details)->Depth contours*. Note: you must buy <a href="https://osmand.net/docs/user/purchases/ios">a special in-app</a> or subscribe to <a href="https://osmand.net/docs/user/purchases/ios">OsmAnd Live</a> to use this feature.
 
 <table class="blogimage">
   <tr>

@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
 label: Introduction
-title: Menu
+title: Docs
 ---
 
 
-### 🎓 [User guide](/docs/documentation/)
+### 🎓 [User guide](/docs/user/)
 
 User guide about OsmAnd application describing main features & settings.
 
-### 🗺️ [Map legend](/docs/map-legend/)
+### 🗺️ [Map legend](/docs/user/map-legend/)
 
 Key map elements used in OsmAnd Map.
 
-### 📚 [Technical Documentation](/docs/technical-documentation/)
+### 📚 [Technical Documentation](/docs/technical/)
 
 Technical documentation related 
 
@@ -29,7 +29,9 @@ Release notes and links to previous OsmAnd Releases. Beta & Nightly builds. OsmA
 
 License. Privacy Policy. Terms of Use.
 
+### 🚵‍♂️ [Join our team](/docs/hiring/)
 
+We are always seeking for new contributors who can join our international team.
 
 
 

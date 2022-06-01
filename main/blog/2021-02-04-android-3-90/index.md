@@ -28,7 +28,7 @@ Go to menu → <Translate android="yes" id="configure_profile" /> → Actions (E
 
 ## Improved "Plan a route" tool
 
-Our Android team added graphs for segments with the route, added the ability to create and edit multiply segment tracks in the <a href="https://osmand.net/features/plan-route">"Plan a route"</a> feature.
+Our Android team added graphs for segments with the route, added the ability to create and edit multiply segment tracks in the <a href="https://osmand.net/docs/user/plan-route/">"Plan a route"</a> feature.
 
 <table class="blogimage">
   <tr>
@@ -39,7 +39,7 @@ Our Android team added graphs for segments with the route, added the ability to 
 
 ## Improved OSM editing Plugin
 
-You can log in using the safe OAuth method for <a href="https://osmand.net/features/osm-editing-plugin">OpenStreetMap editing plugin</a>. Menu → Plugins → OpenStreetMap editing → Settings.
+You can log in using the safe OAuth method for <a href="https://osmand.net/docs/user/plugins/osm-editing">OpenStreetMap editing plugin</a>. Menu → Plugins → OpenStreetMap editing → Settings.
 
 <table class="blogimage">
   <tr>

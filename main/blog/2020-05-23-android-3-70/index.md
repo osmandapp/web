@@ -20,7 +20,7 @@ We're happy to announce the new 3.7 OsmAnd release for Android devices.
 
 ## New offline slope maps, see slopes  directly on the maps
 
-You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/features/contour-lines-plugin">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
+You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/docs/user/plugins/contour-lines">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
 
 
 <table class="blogimage">
@@ -33,7 +33,7 @@ You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain*
 
 ## Full customization of Favorites and GPX Waypoints * custom colors, icons, shapes
 
-You can customize Favorites and GPX Waypoints. When you edit or create a new point you can choose colors, icons, and shapes for it. Now your points will be more interesting on the map. Read more about favorites <a href="https://osmand.net/features/favourites">here</a>.
+You can customize Favorites and GPX Waypoints. When you edit or create a new point you can choose colors, icons, and shapes for it. Now your points will be more interesting on the map. Read more about favorites <a href="https://osmand.net/docs/user/personal/favorites">here</a>.
 
 <table class="blogimage">
   <tr>
@@ -62,7 +62,7 @@ You can copy settings of UI Customization from another profile or reset to defau
 
 ## Wikipedia as separate layer in Configure map, select only needed languages
 
-During travel, you need to know about interesting places near you. Now you can set viewing Wikipedia articles on the map with needed languages in a special menu. For this go to *Configure map-> Wikipedia*, choose the required languages for articles. After that, POI of Wikipedia will appear on the map. Read more about Wikipedia articles in OsmAnd <a href="https://osmand.net/features/travel#Wikipedia_A">here</a>.
+During travel, you need to know about interesting places near you. Now you can set viewing Wikipedia articles on the map with needed languages in a special menu. For this go to *Configure map-> Wikipedia*, choose the required languages for articles. After that, POI of Wikipedia will appear on the map. Read more about Wikipedia articles in OsmAnd <a href="https://osmand.net/docs/user/plugins/#wikipedia">here</a>.
 
 <table class="blogimage">
   <tr>
@@ -104,7 +104,7 @@ If you change the base profile settings you can reset them to default. To do thi
 
 ## Full GPX routes from Navigation support traffic lanes and complete turn instructions
 
-If you save <a href="https://osmand.net/features/navigation#Save_navigation_route_GPX_file">navigation route as a GPX file</a> or with a <a href="https://osmand.net/features/measure-distance">measure distance</a> tool, this GPX file will keep all the information about traffic lanes and complete turn instructions.
+If you save <a href="https://osmand.net/docs/user/navigation/gpx-navigation">navigation route as a GPX file</a> or with a <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap-tool">measure distance</a> tool, this GPX file will keep all the information about traffic lanes and complete turn instructions.
 
 <table class="blogimage">
   <tr>

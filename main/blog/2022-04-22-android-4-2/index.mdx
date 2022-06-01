@@ -1,0 +1,253 @@
+---
+slug: osmand-android-4-2-released
+title: OsmAnd 4.2 (Android)
+draft: true
+tags: [release, android, widgets, UTM, SwissGrid, OSM-Carto]
+---
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Hi, Everybody! 
+
+After a long pause, we are happy to announce the new 4.2 OsmAnd release for Android devices. You already can update the application and check out the following long-awaited improvements in the new app version.
+
+<img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
+
+<!--truncate-->
+
+## Widgtes
+
+We've done a lot of work on widgets and [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen) interface:
+* We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
+* Added pages for widgets.
+* Duplicates.
+* Combined widgets from left and right panel, now any widget that was previously only available on the left panel can be added to the right panel.
+
+### Pages
+
+Widgets in <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped in pages.
+
+### Duplicates
+
+You can show the same widget for right / left panels at one time.
+
+## New widgets
+
+Added new widgets: True bearing, Average speed, Trip recording widgets.
+
+### True bearing
+
+Added new widget for the "<Translate android="true" id="shared_string_bearing" />". Now **Bearing** has 3 separate widgets:
+
+[Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)
+
+* **Relative bearing** refers to the angle between your forward direction and the target point.
+* **Magnetic bearing** is the clockwise (horizontal) angle between magnetic north and the target point observed from your location. 
+* **_True bearing_** expressed as a horizontal angle between a geographic meridian and a line on the Earth; esp. a horizontal angle measured clockwise from true north.
+
+![Bearing widget](./bearing_widget.png) ![Bearing widget](./bearing_widget_1.png)
+
+### Average speed
+
+<img class="inlist" src={require('./map_widgets.png').default} alt="Download online map"/>
+
+### Trip reconding widgets
+
+Added new widgets for the "<Translate android="true" id="shared_string_trip_recording" />". Now **Trip recording** has 4 separate widgets:
+
+[Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)
+
+* **Distance/Start-Stop**: starts or stops trip recording and shows distance of the currently recorded trip.
+* **Duration**: shows the duration in minutes/hours of the currently recorded trip. 
+* **Uphill**: shows the sum of all the climbs of the currently recorded trip. 
+* **Downhill**: shows the sum of all the descents of the currently recorded trip. 
+
+![Trip recording widget](./recording_widgets.png) ![Trip recording widget](./recording_widgets_1.png)
+
+## Default appearance for favorites
+
+It is now possible to set a default appearance for new points in a favourites group or to change the existing appearance for all favourites at once.
+
+The appearance can be set when creating a new group or changed for an existing one in <Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item" />.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./favorites_add-new-category.png').default} alt="Download online map"/></td>
+        <td><img src={require('./my-places_favorites_group-menu.png').default} alt="Download online map"/></td>
+    </tr>
+</table> 
+
+## Routes
+
+### Hiking
+
+Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
+
+### Other
+
+* Added display of Fitness trails and running routes to the map. Can be enabled in <Translate android="yes" ids="configure_map,rendering_category_routes" />.
+
+<img class="inlist" src={require('./configure-map_routes.png').default} alt="Configure Map: Routes"/>
+
+* Add horse_scale=*
+* Fix piste:grooming option in skimap style #1073
+
+
+## Online SRTM
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./track-menu_track-tab_altitude-empty.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./track-menu_track-tab_altitude-dialog.png').default} alt="track-menu_track-tab_altitude-dialog"/></td>
+        <td><img src={require('./track-menu_track-tab_altitude.png').default} alt="Track-menu on track tab: altitude"/></td>
+    </tr>
+</table> 
+
+## Tracks
+
+### Context menu
+Track context menu now shows country or region for the track and track waypoints. Overview tab now has an "Info" card with details about track location and size.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./ctx-menu_track_location.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./ctx-menu_track_overview_info.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
+### Import
+* Split multitrack file into separate tracks during import and-gpx-track
+
+## Other
+* Suggest to download map in Search
+
+### Coordinates
+
+Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks for that to our contributor [koenigle](https://github.com/koenigle).  
+Coordinate format for profile can be changed in <Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./coordinates-format_swiss-grid.png').default} alt="Transport routes"/></td>
+    <td><img src={require('./context-menu_coordinate_swiss-grid.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
+* Display UTM Zone coordinates as 31T instead of 31N
+
+
+### Graphs
+* Analyze on map: show data from two axes and-ui
+* Align graph lines
+
+<img class="inlist" src={require('./analyze-on-map_altitude-slope_distance.png').default} alt="Analyze on map: Altitude/slope–Distance"/>
+
+
+### New parameters
+
+Add option to display or hide turns arrow in the Route line settings
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./route-line_turn-arrows_visible.png').default} alt="Transport routes"/></td>
+    <td><img src={require('./route-line_turn-arrows_hidden.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table> 
+
+#### Location source
+
+Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />.
+
+<img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
+
+#### Use elevation data
+
+Three parameters were added to **<Translate android="true" id="routing_attr_height_obstacles_name" />** option to adjust preferred terrain on the route: flat, less hilly, and hilly. Previously it was available only for Bicycle navigation.
+
+<img src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
+
+
+## Quick action
+
+* Add Plan route tool to the Quick action menu
+* Overaly/Underlay changes with arrows
+
+
+## Maps
+
+"Mapnik" map style was replaced with the new "OSM-Carto" style. It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
+
+If you use "Mapnik" it will be available after the update but as a custom map style. After fresh or new installation you will need to manually import it to use. You can do it by downloading it from GitHub.
+
+<Tabs groupId="map-style">
+<TabItem value="mapnik" label="Mapnik">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_mapnik_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+
+<TabItem value="android" label="OSM-Carto">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_osm-carto_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+</Tabs>
+
+
+## New POI
+
+New POI and objects was added to offline maps, note they will be availabe with maps from May 1.
+
+* Added: Add carriage=*, Add natural=anthill , Add shop=wool, Add shop=motorcycle_parts , Add shop=rice, Add shop=water_sports , Add shop=printer_ink, Add shop=fuel , Add shop=hairdresser_supply ,, Add shop=tiles, Add shop=collector 
+* Add landuse=greenery, Add natural=blowhole
+* Add support "flow_rate" tag 
+
+## OpenStreetMap Editing
+
+* All OpenStreetMap-related items in Configure Map was combined into one group.  "OSM Mapper assistant" option was spited into separate options: <Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>.
+
+<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="Track context menu: waypoints tab"/>
+
+
+* Fixed tag autocomplete in "Modify POI" mode
+
+<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+
+* Fixed incorrect link to the OpenStreetMap object in context menu. 
+
+## Online maps
+* Fixed: automatica update of online tile maps
+* Updated UI for dowloading online tile maps
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./download-online-map.png').default} alt="Download online map"/></td>
+        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map"/></td>
+    </tr>
+</table> 
+
+
+## Fixed
+
+* Hebrew wikipedia - no images wikipedia
+
+<img class="inlist" src={require('./wiki_krakow_hebrew.png').default} alt="Wikipedia article on Hebrew"/>
+
+
+_________________________________________________
+
+<AndroidStore/>

@@ -9,7 +9,6 @@ export default function LegendItem({itemsMap, columns = 3}) {
   // {'Access Private' : 'access/access_PrivateColor' }
   let items = [];
   let arr = [];
-  console.log(itemsMap);
   Object.entries(itemsMap).forEach((entry) => {
     arr.push(entry);
     if (arr.length == 3) {
@@ -20,7 +19,6 @@ export default function LegendItem({itemsMap, columns = 3}) {
   if (arr.length > 0) {
     items.push(arr);
   }
-  console.log(items);
 
   return (
 

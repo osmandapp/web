@@ -9,7 +9,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-Here is an example of translated string *shared_string_used*: **<Translate android="yes" ids="shared_string_used,shared_string_used" />**
 
 Great news for Android users! OsmAnd 4.1 is here! Here are some of the most important updates. [Update your OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), check out all the new features and let us know if you like everything!
 
@@ -43,7 +42,7 @@ This is a short list of many changes happened in 4.1 release:
 
 OsmAnd is available for <a href="https://www.android.com/auto/">Android Auto</a> function in your vehicle. Now, you can use your media screen for navigation by OsmAnd.
 
-**Note:**Paid feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Paid users (Maps+ and subscribers)</a>.
+**Note:**Paid feature is available for <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Paid users (Maps+ and subscribers)</a>.
 
 <table class="blogimage">
   <tr>
@@ -59,7 +58,7 @@ Menu → choose your profile → Configure screen → Elevation profile
 
 :::note
 
-Pro feature is available for <a href="https://docs.osmand.net/en/main@latest/osmand/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+Pro feature is available for <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 
 :::
 
@@ -73,9 +72,9 @@ Pro feature is available for <a href="https://docs.osmand.net/en/main@latest/osm
 
 ## GPS filter
 
-We added new <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu#options">Options</a> for GPX tracks * "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
+We added new <a href="https://osmand.net/docs/user/map/track-context-menu#options">Options</a> for GPX tracks * "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
 
-Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
+Open <a href="https://osmand.net/docs/user/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
 
 <table class="blogimage">
   <tr>
@@ -87,9 +86,9 @@ Open <a href="https://docs.osmand.net/en/main@latest/osmand/map/track-context-me
 
 ## User interface update for UTM coordinate search
 
-Adding <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM format</a> for Adding <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates searching function</a>.
+Adding <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM format</a> for Adding <a href="https://osmand.net/docs/user/search/search-address#coordinates-search">Coordinates searching function</a>.
 
-Search menu → Address → <a href="https://docs.osmand.net/en/main@latest/osmand/search/search-address#coordinates-search">Coordinates search</a> 
+Search menu → Address → <a href="https://osmand.net/docs/user/search/search-address#coordinates-search">Coordinates search</a> 
 
 <table class="blogimage">
   <tr>
@@ -101,7 +100,7 @@ Search menu → Address → <a href="https://docs.osmand.net/en/main@latest/osma
 
 ## Favorites: added ability to view recently used icons
 
-Adding <a href="https://docs.osmand.net/en/main@latest/osmand/personal/favorites#create">recently used category</a> for Favorite icon.
+Adding <a href="https://osmand.net/docs/user/personal/favorites#create">recently used category</a> for Favorite icon.
 
 <table class="blogimage">
   <tr>
@@ -111,7 +110,7 @@ Adding <a href="https://docs.osmand.net/en/main@latest/osmand/personal/favorites
 
 ## Route planning: will use the selected profile after launch
 
-Improving of <a href="https://docs.osmand.net/en/main@latest/osmand/plan-route/create-route">Plan route tool</a>. Now, you can start planning your route with <a href="https://docs.osmand.net/en/main@latest/osmand/widgets/map-buttons#configure-map">the current app profile</a> (for Browse map profile  *  navigation type "Straight line").
+Improving of <a href="https://osmand.net/docs/user/plan-route/create-route">Plan route tool</a>. Now, you can start planning your route with <a href="https://osmand.net/docs/user/widgets/map-buttons#configure-map">the current app profile</a> (for Browse map profile  *  navigation type "Straight line").
 
 
 <table class="blogimage">
@@ -127,7 +126,7 @@ In this release we fixed Mapillary layer, the plugin is now disabled by default.
 
 Menu → Plugins → Mapillary
 
-Read more about Mapillary plugin <a href="https://docs.osmand.net/en/main@latest/osmand/plugins/mapillary">here</a>.
+Read more about Mapillary plugin <a href="https://osmand.net/docs/user/plugins/mapillary">here</a>.
 
 
 ## Added screen to manage all the history in the app

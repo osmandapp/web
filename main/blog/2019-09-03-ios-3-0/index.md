@@ -58,7 +58,7 @@ Now clicking on a point on the map, provided there is no detailed map, a menu ap
 Added hints for tags and values to the advanced editing screen.
 
 Added hints for tags and values to the advanced editing screen for better experience. Now it is possible to quickly select tags from existing ones.
- <a href="https://osmand.net/features/osm-editing-plugin#How_to_use_it_ios">Additional information.</a>
+ <a href="https://osmand.net/docs/user/plugins/osm-editing">Additional information.</a>
 
 <table class="blogimage">
   <tr>

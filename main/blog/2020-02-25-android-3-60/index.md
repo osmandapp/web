@@ -23,7 +23,7 @@ We're happy to announce the new 3.6 OsmAnd release for Android devices.
 
 Now you can change the order, set each one's icon for the map, change all settings for base profiles and restore them back to defaults
 
-We improved settings for navigation profiles. Now you have more opportunities for transforming your navigation profiles and base profiles too. You can read <a href="https://osmand.net/features/navigation-profiles">the article "Navigation profiles"</a>.
+We improved settings for navigation profiles. Now you have more opportunities for transforming your navigation profiles and base profiles too. You can read <a href="https://osmand.net/docs/user/personal/profiles">the article "Navigation profiles"</a>.
 
 
 <table class="blogimage">
@@ -98,7 +98,7 @@ Now we added Home / Work icons for favorites, it's very easy to find Home/Work o
 
 * Now Sunset / Sunrise is visible in Configure Map
 
-You can find <a href="https://osmand.net/features/map-viewing#Customize_map_Android">*Map mode*</a> within *Configure map* and choose your setting for it.
+You can find <a href="https://osmand.net/docs/user/map/configure-map-menu">*Map mode*</a> within *Configure map* and choose your setting for it.
 Now you see information about *Sunset* or *Sunrise* in the second line of *Map mode*.
 
 <table class="blogimage">
