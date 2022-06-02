@@ -1,0 +1,18 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "net.osmand",
+    "sha256_cert_fingerprints":
+    ["D1:92:F4:FF:FF:F2:FA:E3:7F:28:21:E4:CA:44:F4:CB:E2:48:3E:7F:FA:24:A8:47:20:43:F6:85:DD:5B:ED:27"]
+  }
+},
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "net.osmand.plus",
+    "sha256_cert_fingerprints":
+    ["D1:92:F4:FF:FF:F2:FA:E3:7F:28:21:E4:CA:44:F4:CB:E2:48:3E:7F:FA:24:A8:47:20:43:F6:85:DD:5B:ED:27"]
+  }
+}]
