@@ -11,11 +11,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
-
-
-## Global settings
 
 Global settings are common to all application profiles. In fact, these settings are the settings of OsmAnd system.
 
@@ -25,8 +23,6 @@ Global settings are common to all application profiles. In fact, these settings 
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>
 
-<p> </p>
-
 ![Profiles General Settings Android](@site/static/img/personal/profiles/general_settings_android.png)
 
 </TabItem>
@@ -35,13 +31,13 @@ Global settings are common to all application profiles. In fact, these settings 
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,osmand_settings"/>
 
-<p> </p>
-
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+## General
 
 ### Default profile
 
@@ -125,7 +121,7 @@ iOS device -> Settings -> OsmAnd maps -> General -> iPhone storage -> OsmAnd Map
 
 </Tabs>
 
-### Privacy and security
+## Privacy and security
 
 Here you can set parameters of your privacy and security
 
@@ -133,39 +129,23 @@ Here you can set parameters of your privacy and security
 
 <TabItem value="android" label="Android">
 
-**Analytics**
+### Analytics
 
 &nbsp;<Translate android="true" ids="analytics_pref_title"/> - allows collecting or not next anonymous usage data of OsmAnd: Maps downloaded, Screens visited. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
 
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)
 
-
-**Dialogs and notifications**
-
-&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
-
-![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
-
-**History**
+### History
 
 &nbsp;<Translate android="true" ids="shared_string_history"/> - allows disabling history logging individually for each history type: [search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history). Here you can export history info a file, you can clear all history or for each categories ([search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history)).
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
 
-
-**Proxy**
+### Proxy
 
 &nbsp;<Translate android="true" ids="proxy_pref_title"/> - allows configuring an HTTP proxy for all network requests. You can set Proxy Host and Proxy Port.
 
 ![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
-
-**Legal**
-
-&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
-Select "Keep active" and you will receive alerts and warnings about speed cameras.
-Select "Uninstall". All data related to speed cameras: alerts, notifications, POIs will be deleted until OsmAnd is completely reinstalled.
-
-![General Settings Cameras Android](@site/static/img/personal/profiles/general_settings_cameras_android.png)
 
 </TabItem>
 
@@ -183,3 +163,42 @@ Select "Uninstall". All data related to speed cameras: alerts, notifications, PO
 
 </Tabs>
 
+## Other 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+### Dialogs and notifications
+
+&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+
+![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
+
+### Location source
+
+Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+
+![General Settings notifications Android](@site/static/img/personal/profiles/osmand-settings_location-source_google-play.png)
+
+</TabItem>
+
+</Tabs>
+
+## Legal
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+### Uninstall speed cameras
+
+&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
+Select "Keep active" and you will receive alerts and warnings about speed cameras.
+Select "Uninstall". All data related to speed cameras: alerts, notifications, POIs will be deleted until OsmAnd is completely reinstalled.
+
+![General Settings Cameras Android](@site/static/img/personal/profiles/general_settings_cameras_android.png)
+
+</TabItem>
+
+</Tabs>
