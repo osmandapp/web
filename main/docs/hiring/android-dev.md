@@ -5,12 +5,12 @@ title: Android Developer
 
 We are looking for an enthusiastic developer who can help us to bring our Map Engine to the new level.
 
-# Job description
+## Job description
 OsmAnd is looking for a passionate and enthusiastic open-source software developer, with good knowledge of at least one of the OpenGL or Vulkan, to join our growing team.
 
-# Qualifications
+## Qualifications
 
-### Must have: 
+### Must have 
 - 2+ years experience  in C++11 programming;
 - Experience with OpenGL / Vulkan Pipeline at least 1 year;
 - Experience with GLSL Shader language;
@@ -21,7 +21,7 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 - Gis-expierience especially libs like Gdal / GeographicLib;
 - OpenStreetMap mapper knowledge.
 
-# Company offers
+## Company offers
 
 ### What you can expect from us
 - Learning by doing – you will work with industry experts who are willing to share their knowledge and experience
