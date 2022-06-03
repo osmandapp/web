@@ -50,8 +50,6 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 * *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 * *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
-![point](@site/static/img/widgets/sch_1-1.png)  ![data](@site/static/img/widgets/sch_1-2.png)  
-
 
 ### What's in
 When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
@@ -60,9 +58,12 @@ All values are indicated either for the whole route or only for the selected int
 
 |  |
 |------------|
-| *Location Pin* |
-| The data on the graph of your **current location** contains the location icon, altitude, and percent slope value.  |
-| **Screenshot ** |
+| ***Location Pin*** |
+| The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph. |
+| ![point](@site/static/img/widgets/sch_1-1.png)|
+| ***Additional information*** |
+| The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph. |
+|  ![data](@site/static/img/widgets/sch_1-2.png)|
 |The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).|
 | *"Uphill"* – shows the sum of the all distances with increasing altitude from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
 | ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
@@ -89,6 +90,8 @@ All values are indicated either for the whole route or only for the selected int
 ## Bearing widget  
   
 Bearing is the direction to a target outside your vehicle, such as a destination or point of origin. A bearing can be *Relative* (according to your course), *Magnetic* (according to the compass). For example, a magnetic bearing of 180° is the direction to the south, and a relative bearing of 180° is directly behind you. The cardinal points are the four main directions of the compass. They are North (*N* - 0° or 360°), East (*E* - 90°), South (*S* - 180°), and west (*W* - 270°).  
+
+![Trip recording widget](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems">
 
@@ -123,7 +126,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 </Tabs>  
 
-### Definitions 
+### How it works 
 
 In order to display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
 
@@ -133,7 +136,7 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 * [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and hearding in our user-friendly interface, making it easy for you to make the right decision early on.
 
-### Navigation along the rhumb line.
+### Navigation along the rhumb line
 - Relative bearing. If you stick with relative bearing 0 degree and head forward, you will arrive to the destination point, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 - Magnetic bearing. If you align compass on the boat / vehicle with widget value and head forward, you will arrive to the destnation, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 
