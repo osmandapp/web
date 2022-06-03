@@ -10,13 +10,13 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 
 ## Qualifications
 
-#### Must have
+### Requirements
 - 2+ years experience  in C++11 programming;
 - Experience with OpenGL / Vulkan Pipeline at least 1 year;
 - Experience with GLSL Shader language;
 - Technical English (higher level is advantage).
 
-#### Nice to have
+### Nice to have
 - Git + Github experience;
 - Gis-expierience especially libs like Gdal / GeographicLib;
 - OpenStreetMap mapper knowledge.
