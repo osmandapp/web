@@ -1,8 +1,8 @@
 ---
 slug: osmand-android-4-2-released
 title: OsmAnd 4.2 (Android)
-draft: true
-tags: [release, android, widgets, UTM, SwissGrid, OSM-Carto]
+authors: eugene
+tags: [release, android]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -22,7 +22,7 @@ After a long break, we are happy to announce the release of the new version 4.2 
 
 <!--truncate-->
 
-## Widgtes
+## OsmAnd Widgets 
 
 We've done a lot of work on the widgets and interface of the [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen):
 * We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
@@ -30,7 +30,7 @@ We've done a lot of work on the widgets and interface of the [the Configure scre
 * Duplicates.
 * Combined the widgets from the left and right panels, now any widget that was previously only available in the left panel can be added to the right panel.
 
-### Pages
+### Pages for widgets
 
 Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into pages.
 
@@ -39,7 +39,7 @@ _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change or
 ![Widget page](./widget_page.png) ![Widget page](./widget_page_1.png)
  
 
-### Duplicates
+### Widget Duplicates
 
 You can show the same widget for the right/left panels at the same time, as well as for each page of widgets.
 
@@ -47,12 +47,7 @@ _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change or
 
 ![Widget dublicate](./widget_dublicate.png)
 
-
-## New widgets
-
-Added new widgets: True bearing, Average speed, Trip recording widgets.
-
-### True bearing
+### True bearing widget
 
 Added new widgets for "<Translate android="true" id="shared_string_bearing" />". **Bearing** now has 3 separate widgets:
 
@@ -64,7 +59,7 @@ _[Menu → Configure screen → Widgets → Left / Right panel → Bearing](http
 
 ![Bearing widget](./bearing_widget.png) ![Bearing widget](./bearing_widget_1.png)
 
-### Average speed
+### Average speed widget
 
 The new Average speed widget shows the average speed of the current ride:
 
@@ -107,9 +102,9 @@ The appearance can be set when creating a new group or changed for an existing o
     </tr>
 </table> 
 
-## Routes
+## Routes on the map
 
-### Hiking
+### Selecting a route on the map
 
 [Hiking / Cycling / Travel routes](http://osmand.net/docs/user/map/vector-maps#routes): tap the route symbol, get full route information and download the GPX file for the selected route.
 
@@ -117,7 +112,7 @@ Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/
 
 ![Hiking routes](./hiking_routes.png) ![Hiking routes](./hiking_routes_1.png)
 
-### Other
+### New routes
 
 * Added display of [Fitness trails and running routes](http://osmand.net/docs/user/map/vector-maps#routes) to the map. Can be enabled in _<Translate android="yes" ids="configure_map,rendering_category_routes" />_.
 Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/):
@@ -130,7 +125,7 @@ Data for these routes are taken from [OpenStreetMap project](https://openstreetm
 * Fix piste:grooming option in skimap style #1073
 
 
-## Online SRTM
+## Online Elevation profile
 
 :::note
 <ProFeature/> Online SRTM feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
@@ -148,9 +143,9 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
     </tr>
 </table> 
 
-## Tracks
+## New actions for GPX tracks
 
-### Context menu
+### Track Context menu
 [Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with detailed information about the location and size of the track.
 
 <table class="blogimage">
@@ -167,12 +162,90 @@ Splitting the multitrack file into individual tracks when importing a GPX track.
 
 ![Import multitrack](./import_multitrack.png) ![Import multitrack](./import_multitrack_1.png)
 
+## New items for "Quick action"
 
-## Other
+1. Added ["Plan route"](http://osmand.net/docs/user/plan-route/create-route) tool to the [Quick action menu](http://osmand.net/docs/user/widgets/quick-action).
+2. [Overaly/Underlay](http://osmand.net/docs/user/map/raster-maps#select-map-as-main--underlay--overlay-layer) changes with arrows:
+
+- Switched off a layer: &#10148;"Layer name"
+
+- Switched on a layer: "Layer name"&#10148;
+
+![Quick action](./quick_action.png) ![Quick action](./quick_action_1.png)
+
+
+## The new "Map style"
+
+The Map style "Mapnik" has been replaced by the new style "OSM-Carto". This was done because when "Mapnik" was added to OsmAnd, it was identical to the map style on OpenStreetMap.org, but we had no way to keep it up to date, so over time it lost similarity to the OSM map style.
+
+Using "Mapnik" will be available after the upgrade but as a custom map style. After a fresh or new installation, you will need to import it for use manually. You can do this by downloading it from [GitHub](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+
+<Tabs groupId="map-style">
+
+<TabItem value="android" label="OSM-Carto">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_osm-carto_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+
+<TabItem value="mapnik" label="Mapnik">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
+        <td><img src={require('./map_mapnik_z17.png').default} alt="Fitness trails"/></td>
+    </tr>
+</table>
+
+</TabItem>
+
+</Tabs>
+
+## New POIs
+
+New [POIs and objects](http://osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi) was added to offline maps.
+
+> `Note: they will be availabe with maps from 2022 May 1`
+
+* Add carriage=*, Add natural=anthill , Add shop=wool, Add shop=motorcycle_parts , Add shop=rice, Add shop=water_sports, Add shop=printer_ink, Add shop=fuel, Add shop=hairdresser_supply, Add shop=tiles, Add shop=collector 
+* Add landuse=greenery, Add natural=blowhole
+* Add support "flow_rate" tag 
+
+## OpenStreetMap Editing menu
+
+* All OpenStreetMap-related items in [Configure Map](http://osmand.net/docs/user/map/configure-map-menu) was combined into one group.  "OSM Mapper assistant" option was spited into separate options: _<Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>_.
+
+<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="Track context menu: waypoints tab"/>
+
+
+* Fixed tag autocomplete in "Modify POI" mode.
+
+<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
+
+* Fixed incorrect link to the OpenStreetMap object in context menu. 
+
+## Online maps fixs
+
+* Fixed: automatic update of online tile maps.
+* Updated UI for [dowloading online tile maps](http://osmand.net/docs/user/map/raster-maps#download--update-tiles).
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('./download-online-map.png').default} alt="Download online map"/></td>
+        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map"/></td>
+    </tr>
+</table> 
+
+## Others changes
 
 ### Map download
 
-Suggesting to download map in [Search menu](http://osmand.net/docs/user/search/).
+Suggesting to download map in the [Search menu](http://osmand.net/docs/user/search/).
 
 ![Map download](./map_download.png)
 
@@ -192,15 +265,14 @@ Suggesting to download map in [Search menu](http://osmand.net/docs/user/search/)
 * Fixed UTM Zone. Display [UTM Zone coordinates](http://osmand.net/docs/user/search/search-address#coordinates-search) as 31T instead of 31N.
 
 
-### Graph of track
+### The track Graph
 
-* [Analyze on map](http://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android): show data from two axes and UI.
-* Align graph lines.
+* [Analyze on the map](http://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android): show data from two axes and UI.
+* Aligned graph lines.
 
 <img class="inlist" src={require('./analyze-on-map_altitude-slope_distance.png').default} alt="Analyze on map: Altitude/slope–Distance"/>
 
-
-### New parameter for Route line appearance
+### The new parameter for "Route line appearance"
 
 Added the option to display or hide turns arrow in [the Route line settings](http://osmand.net/docs/user/navigation/route-navigation#route-line-appearance).
 
@@ -214,98 +286,20 @@ Added the option to display or hide turns arrow in [the Route line settings](htt
 ### Location source
 
 The location source can now be switched to "Android API". This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks. You can switch **<Translate android="true" id="location_source" />** in:  
-_<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+_[<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />](https://osmand.net/docs/user/personal/global-settings)_.
 
 <img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
-### Use elevation data
+### Modified "Use elevation data"
 
 Three options have been added to the [**<Translate android="true" id="routing_attr_height_obstacles_name" />**](http://osmand.net/docs/user/personal/profiles#navigation-settings) option, allowing you to set the preferred terrain of the route: *flat*, *less hilly* and *hilly*. Previously, this option was available only for Bicycle navigation.
 
-
 <img src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
-
-## Quick action
-
-* Added ["Plan route"](http://osmand.net/docs/user/plan-route/create-route) tool to the [Quick action menu](http://osmand.net/docs/user/widgets/quick-action).
-* [Overaly/Underlay](http://osmand.net/docs/user/map/raster-maps#select-map-as-main--underlay--overlay-layer) changes with arrows.
-
-Switched off a layer: &#10148;"Layer name"
-
-Switched on a layer: "Layer name"&#10148;
-
-![Quick action](./quick_action.png) ![Quick action](./quick_action_1.png)
-
-
-## Map style
-
-The map style "Mapnik" has been replaced by the new style "OSM-Carto". This was done because when "Mapnik" was added to OsmAnd, it was identical to the map style on OpenStreetMap.org, but we had no way to keep it up to date, so over time it lost similarity to the OSM map style.
-
-Using "Mapnik" will be available after the upgrade but as a custom map style. After a fresh or new installation, you will need to import it for use manually. You can do this by downloading it from [GitHub](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
-
-<Tabs groupId="map-style">
-<TabItem value="mapnik" label="Mapnik">
-
-<table class="blogimage">
-    <tr>
-        <td><img src={require('./map_mapnik_z14.png').default} alt="Transport routes"/></td>
-        <td><img src={require('./map_mapnik_z17.png').default} alt="Fitness trails"/></td>
-    </tr>
-</table>
-
-</TabItem>
-
-<TabItem value="android" label="OSM-Carto">
-
-<table class="blogimage">
-    <tr>
-        <td><img src={require('./map_osm-carto_z14.png').default} alt="Transport routes"/></td>
-        <td><img src={require('./map_osm-carto_z17.png').default} alt="Fitness trails"/></td>
-    </tr>
-</table>
-
-</TabItem>
-</Tabs>
-
-
-## New POI
-
-New [POI and objects](http://osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi) was added to offline maps.
-
-> `Note: they will be availabe with maps from May 1`
-
-* Add carriage=*, Add natural=anthill , Add shop=wool, Add shop=motorcycle_parts , Add shop=rice, Add shop=water_sports, Add shop=printer_ink, Add shop=fuel, Add shop=hairdresser_supply, Add shop=tiles, Add shop=collector 
-* Add landuse=greenery, Add natural=blowhole
-* Add support "flow_rate" tag 
-
-## OpenStreetMap Editing
-
-* All OpenStreetMap-related items in [Configure Map](http://osmand.net/docs/user/map/configure-map-menu) was combined into one group.  "OSM Mapper assistant" option was spited into separate options: <Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>.
-
-<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="Track context menu: waypoints tab"/>
-
-
-* Fixed tag autocomplete in "Modify POI" mode.
-
-<img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
-
-* Fixed incorrect link to the OpenStreetMap object in context menu. 
-
-## Online maps
-* Fixed: automatic update of online tile maps.
-* Updated UI for [dowloading online tile maps](http://osmand.net/docs/user/map/raster-maps#download--update-tiles).
-
-<table class="blogimage">
-    <tr>
-        <td><img src={require('./download-online-map.png').default} alt="Download online map"/></td>
-        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map"/></td>
-    </tr>
-</table> 
-
 
 ## Fixed
 
 * [Hebrew Wikipedia](http://osmand.net/docs/user/plugins/wikipedia) - no images for Wikipedia articles.
+
 
 <img class="inlist" src={require('./wiki_krakow_hebrew.png').default} alt="Wikipedia article on Hebrew"/>
 
