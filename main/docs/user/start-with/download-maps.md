@@ -13,21 +13,25 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-Download maps is a necessarily action for further using map and navigation in offline mode. Maps can be downloaded both by browsing through the regions list from the main menu and by clicking on the needed territory on the map
+Downloading maps is a necessary action for further use of maps and offline navigation. You can download maps by viewing the list of regions in the main menu or by clicking on the desired area on the map.  
 
-Application is not properly functional without offline maps which are not distributed within application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommend to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
+The application can not function normally without offline maps, which are not distributed in the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as search, [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
+
 
 ## Download - First Screen
 
-When the app is launched for the first time, it suggests to download the map based on your internet location. It could be not correctly detected in case you are using VPN and it's possible to select another map region.
+When you first launch the app, it suggests downloading a map based on your Internet location. If you are using a VPN, this may not be detected correctly, so you can select a different map region.  
 
-**Note**: World map. Old versions of OsmAnd (< 3.8) suggest to download World map, so you could browse the map on the planet level zoom. In new OsmAnd versions: small "Mini world overview map" is packaged inside the app. There is a large "World overview map" available to download which contains more details worldwide but it is also provided with detailed maps.
+**Note**: World map. Older versions of OsmAnd (< 3.8) offer a downloadable World map, so you can browse the map on a planetary scale. In newer versions of OsmAnd: a small "Mini World Overview Map" is packaged inside the app. A larger "World Overview Map," which contains more detailed information about the worldwide, can be downloaded.
+
+**Note**: World map. Old versions of OsmAnd (< 3.8) suggest to download World map, so you could browse the map on the planet level zoom. In new OsmAnd versions: small "Mini world overview map" is packaged inside the app. You can download a large "World Overview Map" which contains more detailed information about the worldwide, but it is also provided with detailed maps.
+
 
 ![Download map](@site/static/img/settings/download_map.png)
 
 ## Download - Main menu
 
-You can download new maps and manage already downloaded maps via Main menu:
+YYou can download new maps and manage already downloaded maps through the Main Menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>
 
@@ -36,7 +40,7 @@ You can download new maps and manage already downloaded maps via Main menu:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
 
 This screen has certain features:
-- Refresh button - check available map updates on the OsmAnd servers.
+- Refresh button - checks for available map updates on OsmAnd servers.
 - Search button - search the region by names or large cities inside it.
 - Map counter (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
 - Device memory - show available memory to be used on the device.
