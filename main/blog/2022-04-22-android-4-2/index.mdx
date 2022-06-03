@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Hi, Everybody! 
 
-After a long pause, we are happy to announce the new 4.2 OsmAnd release for Android devices. You already can update the application and check out the following long-awaited improvements in the new app version.
+After a long break, we are happy to announce the release of the new version 4.2 OsmAnd app for Android devices. You can already update the app and check out the following long-awaited improvements in the new version of the app.
 
 <img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
 
@@ -24,15 +24,15 @@ After a long pause, we are happy to announce the new 4.2 OsmAnd release for Andr
 
 ## Widgtes
 
-We've done a lot of work on widgets and [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen) interface:
+We've done a lot of work on the widgets and interface of the [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen):
 * We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
 * Added pages for widgets.
 * Duplicates.
-* Combined widgets from left and right panel, now any widget that was previously only available on the left panel can be added to the right panel.
+* Combined the widgets from the left and right panels, now any widget that was previously only available in the left panel can be added to the right panel.
 
 ### Pages
 
-Widgets in <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped in pages.
+Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into pages.
 
 _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → Add pages_
 
@@ -41,7 +41,7 @@ _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change or
 
 ### Duplicates
 
-You can show the same widget for right / left panels at one time, and for each widget page.
+You can show the same widget for the right/left panels at the same time, as well as for each page of widgets.
 
 _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → "+" chosen widget_
 
@@ -54,13 +54,13 @@ Added new widgets: True bearing, Average speed, Trip recording widgets.
 
 ### True bearing
 
-Added new widget for the "<Translate android="true" id="shared_string_bearing" />". Now **Bearing** has 3 separate widgets:
+Added new widgets for "<Translate android="true" id="shared_string_bearing" />". **Bearing** now has 3 separate widgets:
 
 _[Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)_
 
-* **Relative bearing** refers to the angle between your forward direction and the target point.
-* **Magnetic bearing** is the clockwise (horizontal) angle between magnetic north and the target point observed from your location. 
-* **_True bearing_** expressed as a horizontal angle between a geographic meridian and a line on the Earth; esp. a horizontal angle measured clockwise from true north.
+* **Relative bearing** is the angle between your forward movement direction and the target point.
+* **Magnetic bearing** is the clockwise (horizontal) angle between the magnetic north and the target point observed from your location. 
+* **True bearing** is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, true point bearing is the angle measured in degrees clockwise from the True North line.
 
 ![Bearing widget](./bearing_widget.png) ![Bearing widget](./bearing_widget_1.png)
 
@@ -72,7 +72,7 @@ _Menu → Configure screen → Widgets → Left / Right panel → Average speed_
 
 ![Average speed](./average_speed.png)
 
-The average speed is calculated for a specified time interval. Click to "Settings" button of the Average speed widget for choosing the time interval for which the average speed will be measured:
+The average speed is calculated for the specified time interval. Click on the "Settings" button of the Average Speed widget to select the time interval for which the average speed will be measured:
 
 _Menu → Configure screen → Widgets → Left / Right panel → Average speed_ → ⚙️
 
@@ -80,22 +80,25 @@ _Menu → Configure screen → Widgets → Left / Right panel → Average speed_
 
 ### Trip reconding widgets
 
-Added new widgets for the "<Translate android="true" id="shared_string_trip_recording" />". Now **Trip recording** has 4 separate widgets:
+Added new widgets for "<Translate android="true" id="shared_string_trip_recording" />". **Trip recording** now consists of 4 separate widgets:
 
 _[Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)_
 
 * **Distance/Start-Stop**: starts or stops trip recording and shows distance of the currently recorded trip. Clickable widget.
 * **Duration**: shows the duration in minutes/hours of the currently recorded trip. 
-* **Uphill**: shows the sum of all the climbs of the currently recorded trip. 
-* **Downhill**: shows the sum of all the descents of the currently recorded trip. 
+* **Uphill**: shows the sum of all climbs of the current recorded trip. 
+* **Downhill**: shows the sum of all descents of the current recorded trip. 
 
 ![Trip recording widget](./recording_widgets.png) ![Trip recording widget](./recording_widgets_1.png)
 
 ## Default appearance for favorites
 
-It is now possible to set a default appearance for new points in a favourites group or to change the existing appearance for all favourites at once.
+You can now set the default appearance for new points in a favorites group or change the existing appearance for all favorites points at once.
 
-The appearance can be set when creating a new group or changed for an existing one in _<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item" /> → &#8285; → Change default appearance_.
+The appearance can be set when creating a new group or changed for an existing one:  
+ _<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item" /> → &#8285; → Change default appearance_.
+
+
 
 <table class="blogimage">
     <tr>
@@ -108,9 +111,9 @@ The appearance can be set when creating a new group or changed for an existing o
 
 ### Hiking
 
-[Hiking / Cycling / Travel routes](http://osmand.net/docs/user/map/vector-maps#routes): tap on the route symbol, get full information about the route and download GPX file of chosen route.
+[Hiking / Cycling / Travel routes](http://osmand.net/docs/user/map/vector-maps#routes): tap the route symbol, get full route information and download the GPX file for the selected route.
 
-Routes are marked by [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) on the map. In OsmAnd you can show OSMC symbols and routes in [Configure map menu](http://osmand.net/docs/user/map/vector-maps#routes).
+Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). In OsmAnd you can show OSMC symbols and routes in [Configure map menu](http://osmand.net/docs/user/map/vector-maps#routes).
 
 ![Hiking routes](./hiking_routes.png) ![Hiking routes](./hiking_routes_1.png)
 
@@ -148,7 +151,7 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
 ## Tracks
 
 ### Context menu
-[Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with details about track location and size.
+[Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with detailed information about the location and size of the track.
 
 <table class="blogimage">
     <tr>
@@ -159,7 +162,8 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
 
 ### Import Multitrack
 
-Split multitrack file into separate tracks during import GPX-track. You need to select tracks for improting. Tracks will be in _My Places → Tracks_.
+Splitting the multitrack file into individual tracks when importing a GPX track. You need to select the tracks to improvise. The tracks will be in:  
+ _My Places → Tracks_.
 
 ![Import multitrack](./import_multitrack.png) ![Import multitrack](./import_multitrack_1.png)
 
@@ -174,8 +178,9 @@ Suggesting to download map in [Search menu](http://osmand.net/docs/user/search/)
 
 ### Coordinates
 
-* Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks for that to our contributor [koenigle](https://github.com/koenigle).  
-Coordinate format for profile can be changed in _<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />_.
+* Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks to our co-author [koenigle](https://github.com/koenigle).  
+* You can change the coordinate format for the profile in:  
+ _<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />_.
 
 <table class="blogimage">
   <tr>
@@ -208,13 +213,15 @@ Added the option to display or hide turns arrow in [the Route line settings](htt
 
 ### Location source
 
-Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+The location source can now be switched to "Android API". This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks. You can switch **<Translate android="true" id="location_source" />** in:  
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
 
 <img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
 ### Use elevation data
 
-Three parameters were added to [**<Translate android="true" id="routing_attr_height_obstacles_name" />**](http://osmand.net/docs/user/personal/profiles#navigation-settings) option to adjust preferred terrain on the route: _flat, less hilly_, and _hilly_. Previously it was available only for Bicycle navigation.
+Three options have been added to the [**<Translate android="true" id="routing_attr_height_obstacles_name" />**](http://osmand.net/docs/user/personal/profiles#navigation-settings) option, allowing you to set the preferred terrain of the route: *flat*, *less hilly* and *hilly*. Previously, this option was available only for Bicycle navigation.
+
 
 <img src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
 
@@ -232,9 +239,9 @@ Switched on a layer: "Layer name"&#10148;
 
 ## Map style
 
-"Mapnik" map style was replaced with the new "OSM-Carto" style. It was done because at the time when "Mapnik" was added to OsmAnd it was identical to map style on [OpenStreetMap.org](OpenStreetMap.org) but we didn't have recourse to keep it up to date, so over time, it was lost the similarity with OSM map style.
+The map style "Mapnik" has been replaced by the new style "OSM-Carto". This was done because when "Mapnik" was added to OsmAnd, it was identical to the map style on OpenStreetMap.org, but we had no way to keep it up to date, so over time it lost similarity to the OSM map style.
 
-If you use "Mapnik" it will be available after the update but as a custom map style. After fresh or new installation you will need to manually import it to use. You can do it by downloading it from [GitHub](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+Using "Mapnik" will be available after the upgrade but as a custom map style. After a fresh or new installation, you will need to import it for use manually. You can do this by downloading it from [GitHub](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
 
 <Tabs groupId="map-style">
 <TabItem value="mapnik" label="Mapnik">
