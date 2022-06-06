@@ -26,7 +26,7 @@ Gestures are important part of the map navigation.
 |**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
 |**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
-|**Tilt** - 3D (only iOS) | Press with **two** fingers on the map and then swipe up or down |
+|**Tilt** - 3D | Press with **two** fingers on the map and then swipe up or down |
 
 Slide animations could be disabled with special [setting](#disable-all-animations-android).
 
