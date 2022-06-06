@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: OpenGL / Vulkan Developer
+sidebar_position: 3
+title: iOS Developer
 ---
 
 We are looking for an enthusiastic developer who can help us to bring our Map Engine to the new level.
@@ -11,9 +11,7 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 ## Qualifications
 
 ### Requirements
-- 2+ years experience  in C++11 programming
-- Experience with OpenGL / Vulkan Pipeline at least 1 year
-- Experience with GLSL Shader language
+- 2+ years experience in iOS development
 - Technical English (higher level is advantage)
 
 ### Nice to have
