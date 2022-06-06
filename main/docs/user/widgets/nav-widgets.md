@@ -96,14 +96,14 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">   
-
->**Enable/Disable**:  
-[Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)  
-
->**Format.** You can change the data display format for angular units:   
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>   
+  
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
+
+| | |
+|------------|------------|
+| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)|
+| Format | You can change the data display format for angular units: <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> |
 
 
 
@@ -111,16 +111,15 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 <TabItem value="ios" label="iOS">  
 
->**Enable/Disable:**  
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>  
-
->**Format.** You can change the data display format for angular units:  
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>   
-
 
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
 <!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
+
+| | |
+|------------|------------|
+| Enable | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>|
+| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/> |  
 
 </TabItem>
 
