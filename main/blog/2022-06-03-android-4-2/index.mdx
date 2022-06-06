@@ -86,6 +86,24 @@ _[Menu → Configure screen → Widgets → Left / Right panel → Trip recordin
 
 ![Trip recording widget](./recording_widgets.png) ![Trip recording widget](./recording_widgets_1.png)
 
+## Location source
+
+The location source can now be switched to "Android API". This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks. You can switch **<Translate android="true" id="location_source" />** in:  
+_[<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />](https://osmand.net/docs/user/personal/global-settings)_.
+
+<img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
+
+## 2.5D view for testing
+
+Now, we added 2.5D view on OsmAnd for Android. Switch on OpenGL rendering for staring 2.5D view fot a device: _OsmAnd menu → Plugins → OsmAnd development → Settings → Use OpenGL rendering_. 
+
+2.5D rendering has squares rendering type.
+
+["Tilt"gesture](../docs/user/map/interact-with-map.md#gestures) makes 2.5D veiw.
+
+![2.5D view](./2_5d_view.png) ![2.5D view](./2_5d_view1.png)
+
+
 ## Default appearance for favorites
 
 You can now set the default appearance for new points in a favorites group or change the existing appearance for all favorites points at once.
@@ -112,7 +130,7 @@ Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/
 
 ![Hiking routes](./hiking_routes.png) ![Hiking routes](./hiking_routes_1.png)
 
-### New routes
+### New types of routes
 
 * Added display of [Fitness trails and running routes](http://osmand.net/docs/user/map/vector-maps#routes) to the map. Can be enabled in _<Translate android="yes" ids="configure_map,rendering_category_routes" />_.
 Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/):
@@ -174,7 +192,7 @@ Splitting the multitrack file into individual tracks when importing a GPX track.
 ![Quick action](./quick_action.png) ![Quick action](./quick_action_1.png)
 
 
-## The new "Map style"
+## New "Map style"
 
 The Map style "Mapnik" has been replaced by the new style "OSM-Carto". This was done because when "Mapnik" was added to OsmAnd, it was identical to the map style on OpenStreetMap.org, but we had no way to keep it up to date, so over time it lost similarity to the OSM map style.
 
@@ -265,14 +283,14 @@ Suggesting to download map in the [Search menu](http://osmand.net/docs/user/sear
 * Fixed UTM Zone. Display [UTM Zone coordinates](http://osmand.net/docs/user/search/search-address#coordinates-search) as 31T instead of 31N.
 
 
-### The track Graph
+### Track Graph
 
 * [Analyze on the map](http://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android): show data from two axes and UI.
 * Aligned graph lines.
 
 <img class="inlist" src={require('./analyze-on-map_altitude-slope_distance.png').default} alt="Analyze on map: Altitude/slope–Distance"/>
 
-### The new parameter for "Route line appearance"
+### New parameter for "Route line appearance"
 
 Added the option to display or hide turns arrow in [the Route line settings](http://osmand.net/docs/user/navigation/route-navigation#route-line-appearance).
 
@@ -282,13 +300,6 @@ Added the option to display or hide turns arrow in [the Route line settings](htt
     <td><img src={require('./route-line_turn-arrows_hidden.png').default} alt="Fitness trails"/></td>
     </tr>
 </table> 
-
-### Location source
-
-The location source can now be switched to "Android API". This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks. You can switch **<Translate android="true" id="location_source" />** in:  
-_[<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />](https://osmand.net/docs/user/personal/global-settings)_.
-
-<img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
 ### Modified "Use elevation data"
 
