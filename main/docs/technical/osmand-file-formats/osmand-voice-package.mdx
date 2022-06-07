@@ -6,3 +6,47 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 # Voice packages
 
 <IncompleteArticle/>
+
+OsmAnd supports 2 type of voice packages: **Text-To-Speech** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) available on App Stores or preinstalled and **Recorded Voice packages** (which include recorded voices).
+
+If you couldn't find the voice package you need, please follow examples and create your own voice package. Examples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+
+### Difference between TTS and Recorded pckages
+
+- Text To Speech engine supports Street Name, Refs, POI names pronouncation
+- All Text to Speech supported packages bundled and updated with an application
+- Recorded Packages needs to be installed and updated manually (though configuration file could be updated with app update)
+- Recorded Packages may not support some correct forms and support is limited
+- Recorded Packages don't require any proprietary TTS engine to be installed
+
+### Package Structure
+
+Voice package usually is distributed as .voice.zip, where zip contains 1 folder with [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (main **configuration** file) and sound files if they are present. 
+
+Configuration files are written in JavaScript language. All configuration files are by default TTS-packages, even if there is no TTS present yet to support the language. And later the configuration is extended by mapping 'dictionary phrases' to 'recorded file names'.
+
+```
+function populateDictionary(tts) {
+	// ROUTE CALCULATED
+	dictionary["route_is1"] = tts ? "Die berechnete Strecke ist" : "route_is1.ogg";
+	dictionary["route_is2"] = tts ? "lang" : "route_is2.ogg";
+	dictionary["route_calculate"] = tts ? "Route neu berechnet" : "route_calculate.ogg";
+	dictionary["distance"] = tts ? "die Entfernung beträgt" : "distance.ogg";
+
+	// LEFT/RIGHT
+	dictionary["prepare"] = tts ? "Demnächst " : "prepare.ogg";  // Demnächst sounds better then Vorbereiten zum
+	dictionary["after"] = tts ? "nach" : "after.ogg";
+	
+	dictionary["left"] = tts ? "links abbiegen" : "left.ogg";
+  .....
+}
+
+function route_recalc(dist, seconds) {
+	return dictionary["route_calculate"] + (tts ? ", " : " ") + distance(dist, "nominativ") + (tts ? ", " : " ") + dictionary["time"] + " " + time(seconds) + (tts ? ". " : " ");
+}
+```
+
+
+### Generation custom package
+
+Please checkout [resources project](https://github.com/osmandapp/OsmAnd-resources/) and use the same folder structure as [https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de](German package) - simply make copy. Once it's done you can change, run [generation script](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) and specify needed arguments. Help is inside the script.
