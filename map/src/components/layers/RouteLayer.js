@@ -77,19 +77,23 @@ const RouteLayer = () => {
         if (ctx.endPoint) {
             obj['end'] = ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
         }
+        if (ctx.pinPoint) {
+            obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
+        }
         if (Object.keys(obj).length > 0) {
             if (ctx.routeMode?.mode) {
                 obj['mode'] = ctx.routeMode.mode;
             }
-            if (obj['start'] !== searchParams.get('start') || obj['end'] !== searchParams.get('end') ||
-                obj['mode'] !== searchParams.get('mode')) {
+            if (obj['start'] !== searchParams.get('start') || obj['end'] !== searchParams.get('end')
+                || obj['pin'] !== searchParams.get('pin') || obj['mode'] !== searchParams.get('mode')) {
                 setSearchParams(obj);
             }
         }
-    }, [ctx.startPoint, ctx.endPoint, ctx.routeMode]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeMode]);
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);
+    const pinPointRef = useRef(null);
     const startEventHandlers = useCallback({
         dragend() {
             const marker = startPointRef.current;
@@ -112,6 +116,15 @@ const RouteLayer = () => {
             }
         }
     }, [ctx.setEndPoint, endPointRef]);
+    const pinEventHandlers = useCallback({
+        dragend() {
+            const marker = pinPointRef.current;
+            if (marker != null) {
+                ctx.setPinPoint(marker.getLatLng());
+                ctx.setRouteTrackFile(null);
+            }
+        }
+    }, [ctx.setPinPoint, pinPointRef]);
 
     const intermediatEventHandlers = useCallback({
         // click called after dragend
@@ -161,11 +174,15 @@ const RouteLayer = () => {
                 callback: (e) => ctx.setEndPoint(e.latlng)
             });
             map.contextmenu.addItem({
+                text: 'Add pin',
+                callback: (e) => ctx.setPinPoint(e.latlng)
+            });
+            map.contextmenu.addItem({
                 text: 'Where am I',
                 callback: whereAmI
             });
         }
-    }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, map, ctx.setRouteData]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData]);
     const geojsonMarkerOptions = {
         radius: 8,
         fillColor: "#ff7800",
@@ -218,8 +235,7 @@ const RouteLayer = () => {
         
         return L.circleMarker(latlng, opts);
     };
-
-
+    
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
@@ -237,6 +253,8 @@ const RouteLayer = () => {
                     draggable={true} eventHandlers={intermediatEventHandlers}/>)}
         {ctx.endPoint && <Marker position={ctx.endPoint} icon={MarkerIcon({ bg: 'red' })}
             ref={endPointRef} draggable={true} eventHandlers={endEventHandlers} />}
+        {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={MarkerIcon({ bg: 'yellow' })}
+                                 ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers} />}
     </>;
 };
 
