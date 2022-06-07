@@ -285,7 +285,7 @@ export const AppContextProvider = (props) => {
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
-    let startInit, endInit;
+    let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
@@ -293,11 +293,16 @@ export const AppContextProvider = (props) => {
     if (searchParams.get('end')) {
         let arr = searchParams.get('end').split(',');
         endInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
-    } 
+    }
+    if (searchParams.get('pin')) {
+        let arr = searchParams.get('pin').split(',');
+        pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
+    }
     const [routeMode, setRouteMode] = useState({mode: modeParam, opts: {}, 
         modes: { 'car': { name: 'Car', params: {} } } });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
+    const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
 
@@ -345,6 +350,7 @@ export const AppContextProvider = (props) => {
         tileURL, setTileURL, allTileURLs,
         startPoint, setStartPoint, 
         endPoint, setEndPoint,
+        pinPoint, setPinPoint,
         interPoints, setInterPoints,
         routeData, setRouteData,
         routeMode, setRouteMode,
