@@ -235,8 +235,7 @@ const RouteLayer = () => {
         
         return L.circleMarker(latlng, opts);
     };
-
-    console.log(ctx.pinPoint)
+    
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
