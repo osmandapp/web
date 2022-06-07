@@ -81,7 +81,7 @@ const RouteLayer = () => {
             obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
         }
         if (Object.keys(obj).length > 0) {
-            if (ctx.routeMode?.mode) {
+            if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
                 obj['mode'] = ctx.routeMode.mode;
             }
             if (obj['start'] !== searchParams.get('start') || obj['end'] !== searchParams.get('end')
@@ -235,7 +235,7 @@ const RouteLayer = () => {
         
         return L.circleMarker(latlng, opts);
     };
-    
+
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
             pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
