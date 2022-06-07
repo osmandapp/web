@@ -37,7 +37,7 @@ ___________________________
 - Folder structure (iOS / Android)
 
 
-## Data storage folder (Android)
+## Data storage folder
 
 For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
 
@@ -65,7 +65,7 @@ Memory name | Permission access
 | Manually specified | Depends on the path |
 
 
-## Storage on SD card (Android)
+## Storage on SD card
 
 ### In order to move the OsmAnd home (maps) folder to an external SD card:
 
@@ -111,7 +111,7 @@ storage folder` but the copy operations may take a long time or result in
 errors (e.g. if the SD card is too full).
 
 
-## Backup & Restore (Android)
+## Backup & Restore
 
 ### Backup and Restore for OsmAnd Pro
 

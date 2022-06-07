@@ -15,7 +15,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
 
+:::note
+
 Global settings are common to all application profiles. In fact, these settings are the settings of OsmAnd system.
+
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -85,7 +89,7 @@ Here you can choose system device language or another from the list:
 
 For changing OsmAnd display language you need to make it in iOS settings. Here you can choose a language by default or from the list:
 
-iOS device -> Settings -> OsmAnd maps -> Language
+iOS device → Settings → OsmAnd maps → Language
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
@@ -103,9 +107,7 @@ Here you can change storage folder (Android) and know memorу usage by OsmAnd da
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>
 
-<p> </p>
-
-More info about data storage settings read [here](../personal/storage.md#data-storage-folder-android).
+More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
 
 </TabItem>
 
@@ -113,9 +115,16 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 For iOS system, we can't make any manipulate with the storage folder. We can know only how much memory OsmAnd uses:
 
-iOS device -> Settings -> OsmAnd maps -> General -> iPhone storage -> OsmAnd Maps 
+iOS device → Settings → OsmAnd maps → General → iPhone storage → OsmAnd Maps 
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)
+
+OsmAnd files are visible in the "Files" application. You can access all tracks, custom routing and rendering files through it:
+_Files → On My Phone → OsmAnd Maps_
+
+More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
+
+![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
@@ -153,10 +162,6 @@ Here you can set parameters of your privacy and security
 
 - &nbsp;<Translate ios="true" ids="carplay_profile"/> - profile that will be used while connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
 
-- &nbsp;<Translate ios="true" ids="do_not_show_discount"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
-
-![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_ios.png)
-
 - &nbsp;<Translate ios="true" ids="send_anonymous_data"/> - allows collecting or not next anonymous usage data of OsmAnd: Maps downloaded. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
 
 </TabItem>
@@ -165,25 +170,42 @@ Here you can set parameters of your privacy and security
 
 ## Other 
 
+
+
+### Dialogs and notifications
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-### Dialogs and notifications
 
 &nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
 
-### Location source
+</TabItem>
 
-Location source now can be switched to "Android API". This can be useful for devices without Google Play services, or in cases of inaccurate location or altitude data while recording tracks. You can switch **<Translate android="true" id="location_source" />** in _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+<TabItem value="ios" label="iOS">
 
-![General Settings notifications Android](@site/static/img/personal/profiles/osmand-settings_location-source_google-play.png)
+- &nbsp;<Translate ios="true" ids="do_not_show_discount"/>
+  
+- allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+
+![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_ios.png)
+
 
 </TabItem>
 
 </Tabs>
+
+
+### Location source
+
+You can choose which Google Play or "Android API" services OsmAnd will use to determine your location. This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks.  
+OsmAnd takes data from the resources *Google's Fused Location Providers* and *Android GPS and Network Providers*.  
+You can switch **<Translate android="true" id="location_source" />** in: _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+
+![General Settings notifications Android](@site/static/img/personal/profiles/osmand-settings_location-source_google-play.png)
+
 
 ## Legal
 
