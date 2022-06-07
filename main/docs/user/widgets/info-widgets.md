@@ -82,18 +82,154 @@ The widget is shown at the top of the screen. It shows the geographic coordinate
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
-## GPS Info (Android)
+## GPS Info (Android)  
 
-GPS (Global Positioning System) info widget shows a number of satellites that device detects and uses at that moment. It could be used to check GPS-status in case of a bad GPS-signal.
+:::note
+
+You can reset the current GPS-cache via: 
+<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>
+
+:::  
+
+GPS (Global Positioning System) info widget shows a number of satellites that device detects and uses at that moment. It could be used to check GPS-status in case of a bad GPS-signal.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
 
 ![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
 
 | | |
 |------------|------------|
 | Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,gps_provider"/> |
-| On Click | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |
+| On Click | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
 
-**Note**: you can reset current GPS-cache via  <Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+**This feature doesn't exist for iOS version of OsmAnd.**
+:::  
+
+
+</TabItem>
+
+</Tabs>  
+
+
+
+
+&nbsp;  
+## Trip recording widgets  
+
+:::note
+  
+You can read a more detailed description here: [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md).  
+
+:::  
+
+**Information**  
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for the iOS version OsmAnd only *Distance*.  
+
+<!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
+
+### Pre-use Setup 
+To start using *Trip recording widgets*, you need to make all of the following settings:
+1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
+2. Configure Trip recording for the required [profile](../personal/profiles.md).
+3. Add the **Trip recording widgets** to the screen.  
+
+>**NOTE**: For any troubleshooting details, refer to: [Track recording issues](https://docs.osmand.net/en/main@latest/osmand/troubleshooting/track-recording-issues) 
+  
+
+### Android and iOS platforms   
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">  
+
+> Trip recording widgets can be turned on/off by following this path: [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
+
+<!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
+
+
+**What's in**  
+The screen with a selection of widgets. When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear.    
+&nbsp;  
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-1.png) 
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
+
+| | 
+|------------|
+|**Distance**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
+|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
+|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
+|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)|
+|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
+
+| | 
+|------------|
+|**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+
+| | 
+|------------|
+|**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
+
+| | 
+|------------|
+|**Downhill**: shows the sum of all descents of the current recorded trip.|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
+
+| | |
+|------------|------------|
+| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
+| On Click | Starts / Stop track recording |  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+**Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
+
+:::  
+
+>Trip recording Duration widget can be turned on/off by following this path:  
+Menu → Configure screen → Right panel → Trip recording 
+
+**What's in**  
+Screen with Duration widget. You can tap the widget and more information about the track and the ability to interact with it will appear.
+
+<!--On Click | Starts / Stop track recording-->
+  
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
+
+ 
+
+| | 
+|------------|
+|**Distance**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Before recording*.| 
+|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_ios_rec.png)| 
+|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
+|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
+|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
+
+
+| | |
+|------------|------------|
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
+| On Click | Starts / Stop track recording |  
+
+
+</TabItem>
+
+</Tabs>  
 
 
 ## * Parking widget
@@ -128,105 +264,6 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 | On Click | Opens Mapillary application |
 
 **Note**: Mapillary application should be installed separately.
-
-
-
-
-&nbsp;  
-## * Trip recording widgets  
-
-This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.  
-
-
->4 separate trip recording widgets can be turned on/off by following this path::  
-[Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
-
-> *Enable:* <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/>  
-
-
-![Trip recording widget](@site/static/img/widgets/recording_widgets.png) 
-
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
-During recording it displays recorded track distance.
-
-
-&nbsp;  
-**Distance/Start-Stop**  
-
-> *On Click:* Starts / Stop track recording
-
-| | 
-|------------|
-|Starts or stops trip recording and shows distance of the currently recorded trip.| 
-|![Trip recording (REC) widget](@site/static/img/plugins/trip-recording/trip_recording_widget.png)|
-
-
-
-&nbsp;  
-**Duration**  
-
-> *On Click:* Start > Currently recording track > Track > Overview tab  
-
-| | 
-|------------|
-|This widget shows time of track recording the duration in minutes/hours of the currently recorded trip. (Duration: shows the duration in minutes/hours of the currently recorded trip)|
-|![widgets](@site/static/img/widgets/duration_widget.png)|
-
-
-&nbsp;  
-**Uphill**  
-
-> *On Click:* Start > Currently recording track > Track > Altitude tab  
-
-| | 
-|------------|
-|This widget shows uphill duration and time spent in minutes or hours of trip record. (Uphill: shows the sum of all the climbs of the currently recorded trip.)|
-|![widgets](@site/static/img/widgets/uphill_widget.png)|
-
-
-&nbsp;  
-**Downhill**  
-
-> *On Click:* Start > Currently recording track > Track > Altitude tab  
-
-| | 
-|------------|
-|This widget shows downhill duration and time spent in minutes or hours of trip record. (Downhill: shows the sum of all the descents of the currently recorded trip.)|
-|![widgets](@site/static/img/widgets/downhill_widget.png)|
-
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-This is a [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) widget that provides quick access to start / stop track recording. During recording it displays recorded track distance.
-
-![Trip recording (REC) widget](@site/static/img/widgets/widget_trip-recording-rec.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
-| On Click | Starts / Stop track recording |  
-
- ___
-
- Widgets: **Duration**, **Uphill**, **Downhill**
- 
-
-> ```This feature doesn't exist for iOS version of OsmAnd.```
-
-
-
-</TabItem>
-
-</Tabs>  
-
 
 
 
