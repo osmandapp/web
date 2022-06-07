@@ -22,7 +22,7 @@ After a long break, we are happy to announce the release of the new version 4.2 
 
 <!--truncate-->
 
-## OsmAnd Widgets 
+## New in OsmAnd Widgets 
 
 We've done a lot of work on the widgets and interface of the [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen):
 * We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
@@ -30,19 +30,15 @@ We've done a lot of work on the widgets and interface of the [the Configure scre
 * Duplicates.
 * Combined the widgets from the left and right panels, now any widget that was previously only available in the left panel can be added to the right panel.
 
-### Pages for widgets
+### Pages and Duplicates for widgets
 
-Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into pages.
-
+Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into **Pages**.  
 _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → Add pages_
 
 ![Widget page](./widget_page.png) ![Widget page](./widget_page_1.png)
  
 
-### Widget Duplicates
-
-You can show the same widget for the right/left panels at the same time, as well as for each page of widgets.
-
+You can show **Duplicates** for the right/left panels at the same time, as well as for each page of widgets.  
 _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → "+" chosen widget_
 
 ![Widget dublicate](./widget_dublicate.png)
@@ -86,10 +82,11 @@ _[Menu → Configure screen → Widgets → Left / Right panel → Trip recordin
 
 ![Trip recording widget](./recording_widgets.png) ![Trip recording widget](./recording_widgets_1.png)
 
-## Location source
+## Location provider
 
-You can choose which Google Play or "Android API" service OsmAnd will use to determine your location. This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks. You can switch **<Translate android="true" id="location_source" />** in:  
-_[<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />](https://osmand.net/docs/user/personal/global-settings)_.
+You can choose which Google Play or "Android API" services OsmAnd will use to determine your location. This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks.  
+OsmAnd takes data from the resources *Google's Fused Location Providers* and *Android GPS and Network Providers*.  
+You can switch **<Translate android="true" id="location_source" />** in: _[<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />](https://osmand.net/docs/user/personal/global-settings)_.
 
 <img src={require('./osmand-settings_location-source_google-play.png').default} alt="Modify POI, Tag autocomplete"/>
 
@@ -113,7 +110,7 @@ We've added 2.5D view to OsmAnd for Android. Enable OpenGL rendering to run 2.5D
 
 ## Default appearance for favorites
 
-You can now set the default appearance for new points in a favorites group or change the existing appearance for all favorites points at once.
+You can now set the default appearance for new points in [Favorites group](http://osmand.net/docs/user/personal/favorites) or change the existing appearance for all favorites points at once.
 
 The appearance can be set when creating a new group or changed for an existing one:  
  _<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item" /> → &#8285; → Change default appearance_.
@@ -139,15 +136,14 @@ Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/
 
 ### New types of routes
 
-* Added display of [Fitness trails and running routes](http://osmand.net/docs/user/map/vector-maps#routes) to the map. Can be enabled in _<Translate android="yes" ids="configure_map,rendering_category_routes" />_.
+Added display of [Fitness trails and running routes](http://osmand.net/docs/user/map/vector-maps#routes) to the map. Can be enabled in _<Translate android="yes" ids="configure_map,rendering_category_routes" />_.
 Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/):
 - The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)
 - The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)
 
 ![Fitness routes](./fitness.png) ![Fitness routes](./fitness_1.png)
 
-* Add horse_scale=*
-* Fix piste:grooming option in skimap style #1073
+
 
 
 ## Online Elevation profile
@@ -170,7 +166,7 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
 
 ## New actions for GPX tracks
 
-### Track Context menu
+### Update Track Context Menu
 [Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with detailed information about the location and size of the track.
 
 <table class="blogimage">
@@ -274,11 +270,11 @@ Suggesting to download map in the [Search menu](http://osmand.net/docs/user/sear
 
 ![Map download](./map_download.png)
 
-### Coordinates
+### New Coordinate format
 
-* Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks to our co-author [koenigle](https://github.com/koenigle).  
-* You can change the coordinate format for the profile in:  
- _<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />_.
+Added support for SwissGrid CH1903 / CH1903+ coordinates system, thanks to our co-author [koenigle](https://github.com/koenigle).  
+You can change the coordinate format for the profile in:   
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,general_settings_2,coordinates_format" />_.
 
 <table class="blogimage">
   <tr>
@@ -290,7 +286,7 @@ Suggesting to download map in the [Search menu](http://osmand.net/docs/user/sear
 * Fixed UTM Zone. Display [UTM Zone coordinates](http://osmand.net/docs/user/search/search-address#coordinates-search) as 31T instead of 31N.
 
 
-### Track Graph
+### New Track Graph
 
 * [Analyze on the map](http://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android): show data from two axes and UI.
 * Aligned graph lines.
@@ -310,7 +306,7 @@ Added the option to display or hide turns arrow in [the Route line settings](htt
 
 ### Modified "Use elevation data"
 
-Three options have been added to the [**<Translate android="true" id="routing_attr_height_obstacles_name" />**](http://osmand.net/docs/user/personal/profiles#navigation-settings) option, allowing you to set the preferred terrain of the route: *flat*, *less hilly* and *hilly*. Previously, this option was available only for Bicycle navigation.
+Three options have been added to the [**<Translate android="true" id="routing_attr_height_obstacles_name" />**](http://osmand.net/docs/user/personal/profiles#navigation-settings) option, allowing you to set the preferred terrain of the route: *flat*, *less hilly* and *hilly*. Previously, this option was available only for **Bicycle navigation**.
 
 <img src={require('./use-elevation-data_less-hilly.png').default} alt="Use elevation data: less hilly"/>
 
