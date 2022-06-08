@@ -118,9 +118,6 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
-
-
-&nbsp;  
 ## Trip recording widgets  
 
 :::note
@@ -136,21 +133,19 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ### Pre-use Setup 
 To start using *Trip recording widgets*, you need to make all of the following settings:
-1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
+1. [Enable the plugin](../plugins/trip-recording.md#enable-plugin). 
 2. Configure Trip recording for the required [profile](../personal/profiles.md).
 3. Add the **Trip recording widgets** to the screen.  
 
->**NOTE**: For any troubleshooting details, refer to: [Track recording issues](https://docs.osmand.net/en/main@latest/osmand/troubleshooting/track-recording-issues) 
+>**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) 
   
-
-### Android and iOS platforms   
+### Settings and operations
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">  
 
-> Trip recording widgets can be turned on/off by following this path: [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
+> Trip recording widgets can be turned on/off by following this path: <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,map_widget_left"/> / <Translate android="true" ids="map_widget_right,map_widget_monitoring"/>
 
 <!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
 
@@ -168,26 +163,21 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 |If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
 |![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)|
 |NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
-
-| | 
-|------------|
 |**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-
-| | 
-|------------|
 |**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
-
-| | 
-|------------|
 |**Downhill**: shows the sum of all descents of the current recorded trip.|
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
 
 | | |
 |------------|------------|
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
-| On Click | Starts / Stop track recording |  
+| On Click | Starts / Stop track recording | 
+
+### Dialog of Trip Recording
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
 
 
 </TabItem>
@@ -226,6 +216,10 @@ Screen with Duration widget. You can tap the widget and more information about t
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
 | On Click | Starts / Stop track recording |  
 
+
+### Dialog of Trip Recording
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
 
 </TabItem>
 
