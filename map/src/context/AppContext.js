@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import {
     Air, Cloud, Compress, Shower, Thermostat
 } from '@mui/icons-material';
@@ -259,6 +258,18 @@ async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setSta
     }
 }
 
+function initStartPosition(pinInit, startInit, endInit) {
+    if (pinInit) {
+        return [pinInit.lat.toFixed(6), pinInit.lng.toFixed(6)];
+    } else if (startInit) {
+        return [startInit.lat.toFixed(6), startInit.lng.toFixed(6)];
+    } else if (endInit) {
+        return [endInit.lat.toFixed(6), endInit.lng.toFixed(6)];
+    } else {
+        return [50, 5];
+    }
+}
+
 // var originalDateObj = new Date(weatherDateObj);
 const AppContext = React.createContext();
 
@@ -284,8 +295,10 @@ export const AppContextProvider = (props) => {
     // route
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+
+    let startInit, endInit, pinInit, zInit;
+
     let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
-    let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
@@ -298,6 +311,10 @@ export const AppContextProvider = (props) => {
         let arr = searchParams.get('pin').split(',');
         pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
     }
+    if (searchParams.get('z')) {
+        zInit = searchParams.get('z').split(',');
+    }
+
     const [routeMode, setRouteMode] = useState({mode: modeParam, opts: {}, 
         modes: { 'car': { name: 'Car', params: {} } } });
     const [startPoint, setStartPoint] = useState(startInit);
@@ -305,7 +322,8 @@ export const AppContextProvider = (props) => {
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-
+    const [startPositionMap, setStartPositionMap] = useState(initStartPosition(pinInit, startInit, endInit));
+    const [zoom, setZoom] = useState(zInit ?? 5);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -356,7 +374,9 @@ export const AppContextProvider = (props) => {
         routeMode, setRouteMode,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
-        searchCtx, setSearchCtx
+        searchCtx, setSearchCtx,
+        startPositionMap, setStartPositionMap,
+        zoom, setZoom
 
     }}>
         {props.children}

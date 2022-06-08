@@ -80,6 +80,10 @@ const RouteLayer = () => {
         if (ctx.pinPoint) {
             obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
         }
+         if (ctx.pinPoint || ctx.startPoint || ctx.endPoint) {
+             obj['z'] = map && map.getZoom();
+         }
+
         if (Object.keys(obj).length > 0) {
             if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
                 obj['mode'] = ctx.routeMode.mode;

@@ -35,11 +35,6 @@ const markerOptions = {
   }
 };
 
-
-// initial location on map
-const position = [50, 5];
-
-
 async function addTrackToMap(ctx, file, map) {
   let trackData;
   if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
@@ -129,7 +124,7 @@ const OsmAndMap = () => {
   }, [ctx.tileURL]);
 
   return (
-    <MapContainer center={position} zoom={5} className={classes.root} minZoom={1} maxZoom={20}
+    <MapContainer center={ctx.startPositionMap} zoom={ctx.zoom} className={classes.root} minZoom={1} maxZoom={20}
       zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]}
       >
       
