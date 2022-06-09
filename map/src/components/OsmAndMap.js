@@ -8,7 +8,7 @@ import RouteLayer from "./layers/RouteLayer"
 import WeatherLayer from "./layers/WeatherLayer"
 import L from 'leaflet';
 import MarkerIcon from './MarkerIcon.js'
-import 'leaflet-gpx';
+import '../util/gpx.js';
 import 'leaflet-hash';
 import Utils from "../util/Utils";
 
