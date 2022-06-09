@@ -97,8 +97,26 @@ async function enableLayer(item, ctx, setProgressVisible, visible) {
             updateTextInfo(newGpxFiles, ctx);
         }
         ctx.setSelectedGpxFile(newGpxFiles[item.name]);
-        await loadGpxInfo(item, ctx, newGpxFiles[item.name], setProgressVisible);
-        await loadSrtmGpxInfo(item, ctx, newGpxFiles[item.name], setProgressVisible);
+
+        //loadGpxInfo
+        let gpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-gpx-info?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
+        const gpxInfo = await Utils.fetchUtilLoad(gpxInfoUrl, {}, setProgressVisible);
+        if (gpxInfo.ok) {
+            let data = await gpxInfo.json();
+            newGpxFiles[item.name].summary = data.info;
+            setProgressVisible(false);
+        }
+
+        //loadSrtmGpxInfo
+        let srtmGpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-srtm-gpx-info?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
+        const srtmGpxInfo = await Utils.fetchUtilLoad(srtmGpxInfoUrl, {}, setProgressVisible);
+        if (srtmGpxInfo.ok) {
+            let data = await srtmGpxInfo.json();
+            newGpxFiles[item.name].srtmSummary = data.info;
+            setProgressVisible(false);
+        }
+
+        updateTextInfo(newGpxFiles, ctx);
     }
 }
 
