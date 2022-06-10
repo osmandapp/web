@@ -245,7 +245,36 @@ Sort menu:
 
 ## Import/Export track
 
-How to import and export Tracks and how to find it on your device storage:
+### Import track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Clicking to GPX track file suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md).
+
+- Track GPX file:
+
+- Multitrack GPX file: saving as one GPX track or selected tracks.
+
+![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png) 
+
+- Track KML file:
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+
+
+</TabItem>
+ 
+</Tabs>
+
+### Export track
+
+How to import / export Tracks and how to find it on your device storage:
 
 - [Import / Export functionality](../personal/profiles.md#actions)
 - [Storage](../personal/storage.md)
