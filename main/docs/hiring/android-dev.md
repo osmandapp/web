@@ -3,10 +3,10 @@ sidebar_position: 2
 title: Android Developer
 ---
 
-We are looking for an enthusiastic developer who can help us to bring our Map Engine to the new level.
+We are looking for an enthusiastic developer who can help us to bring our open source Android application to the next level and make it the best and the most powerful across the world.
 
 ## Job description
-OsmAnd is looking for a passionate and enthusiastic open-source software developer, with good knowledge of at least one of the OpenGL or Vulkan, to join our growing team.
+OsmAnd is looking for a passionate and enthusiastic open-source software developer with good knowledge of Android platform and technologies.
 
 ## Qualifications
 
@@ -16,7 +16,7 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 
 ### Nice to have
 - Git + Github experience
-- Gis-expierience
+- Any GIS-expierience
 - OpenStreetMap mapper knowledge
 
 ## Company offers
