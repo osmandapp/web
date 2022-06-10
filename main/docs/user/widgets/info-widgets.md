@@ -118,7 +118,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
-## Trip recording widgets  
+## * Trip recording widgets  
 
 :::note
   
