@@ -287,7 +287,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 | **<Translate android="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
 | "<Translate android="true" ids="routing_attr_driving_style_name"/>"   |  select driving puprose to get shorter, faster, safer or unpaved route. | "<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate android="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
-| "<Translate android="true" ids=""impassable_road/>" |  avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
+| "<Translate android="true" ids="impassable_road"/>" |  avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_borders_name"/>"    |              |
@@ -305,6 +305,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate android="true" ids="routing_attr_avoid_tram_name"/>" |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
 | "<Translate android="true" ids="prefer_in_routing_title"/>" |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_short_way_name"/>" |  <Translate android="true" ids="routing_attr_short_way_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_allow_streams_name"/>" |  allows streams and drains for boat navigation type.  | Boat navigation type |
@@ -371,6 +372,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_tram_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
+|                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
 | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
