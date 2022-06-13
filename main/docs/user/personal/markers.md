@@ -20,7 +20,6 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Map markers Android](@site/static/img/map/map_markers_android.png)
@@ -59,26 +58,19 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_markers"/>
 
-<p> </p>
-
 ![Map markers menu iOS](@site/static/img/personal/markers/map_markers_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-
 ### List
 
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_list"/>
-
-<p> </p>
 
 ![Map markers List Android](@site/static/img/personal/markers/map_markers_list_android.png) 
 
@@ -98,18 +90,15 @@ Actions:
 
 <TabItem value="ios" label="iOS">
 
-Not exist for iOS version
+> ``` Not exist for iOS version ```
 
 </TabItem>
 
 </Tabs>
 
-
-
 ### Groups
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -125,7 +114,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 <TabItem value="ios" label="iOS">
 
-Not exist for iOS version
+> ``` Not exist for iOS version ```
 
 </TabItem>
 
@@ -134,7 +123,6 @@ Not exist for iOS version
 ### History
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -152,29 +140,18 @@ Not exist for iOS version
 
 ### More / Appearance 
 
-![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
-
-- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
-- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers.md#list-android).
-- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
-- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
-- &nbsp;<Translate android="true" ids="marker_save_as_track"/>  (Android) - save active markers like file GPX.
-- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers.md#history).
-
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
 - &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
-- &nbsp;<Translate android="true" ids="sort_by"/>  (Android) - sort Makrers in [List](../personal/markers.md#list-android).
-- &nbsp;<Translate android="true" ids="coordinate_input"/>  (Android) - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
-- &nbsp;<Translate android="true" ids="plan_route"/>  (Android) - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
-- &nbsp;<Translate android="true" ids="marker_save_as_track"/>  (Android) - save active markers like file GPX.
-- &nbsp;<Translate android="true" ids="move_all_to_history"/>  (Android) - deactivate all markers and move its to [History](../personal/markers.md#history).
+- &nbsp;<Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
+- &nbsp;<Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
+- &nbsp;<Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
+- &nbsp;<Translate android="true" ids="marker_save_as_track"/> - save active markers like file GPX.
+- &nbsp;<Translate android="true" ids="move_all_to_history"/> - deactivate all markers and move its to [History](../personal/markers.md#history).
 
 </TabItem>
 
@@ -182,31 +159,99 @@ Not exist for iOS version
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
+- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+
 </TabItem>
 
 </Tabs>
 
 ## Add Marker on the map
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+</Tabs>
 
 ### Actions in Map Context menu
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 [Link to the article](../map/map-context-menu.md#add--edit-marker)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+[Link to the article](../map/map-context-menu.md#add--edit-marker)
+
+</TabItem>
+
+</Tabs>
 
 ## Appearance on the map
 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 [Link to description](../widgets/markers.md#configure-marker-widgets-and-marker-appearance)
 
-![Map markers Appearance Android](@site/static/img/personal/markers/map_markers_appearance_android.png) ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png)
+![Map markers Appearance Android](@site/static/img/personal/markers/map_markers_appearance_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+[Link to description](../widgets/markers.md#configure-marker-widgets-and-marker-appearance)
+
+![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 ## Map markers widgets
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 [Link to description Top Bar](../widgets/markers.md#top-bar-widget-markers)
 
 [Link to description Widget panel](../widgets/markers.md#panel-widgets-markers)
 
-## Plan route for Markers (Android)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+[Link to description Top Bar](../widgets/markers.md#top-bar-widget-markers)
+
+[Link to description Widget panel](../widgets/markers.md#panel-widgets-markers)
+
+</TabItem>
+
+</Tabs>
+
+
+## Plan route for Markers
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 [Link to description](../navigation/markers-navigation.md)
 
@@ -246,8 +291,32 @@ Next, building a route.
 ![Map markers Plan Route Directions Android](@site/static/img/personal/markers/map_markers_plan_route_directions_android.png)
 
 
-## Add/Remove Markers from Favorites/Waypoints (Android)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+> ``` Not exist for iOS version ```
+
+</TabItem>
+
+</Tabs>
+
+## Add/Remove Markers from Favorites/Waypoints
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 [Favorites to Map Markers link](../personal/favorites.md#add-to-map-markers-android)
 
 [Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+> ``` Not exist for iOS version ```
+
+</TabItem>
+
+</Tabs>

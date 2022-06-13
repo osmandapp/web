@@ -118,10 +118,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
-
-
-&nbsp;  
-## Trip recording widgets  
+## * Trip recording widgets  
 
 :::note
   
@@ -144,9 +141,15 @@ To start using *Trip recording widgets*, you need to make all of the following s
   
 
 ### Widgets description   
+1. [Enable the plugin](../plugins/trip-recording.md#enable-plugin). 
+2. Configure Trip recording for the required [profile](../personal/profiles.md).
+3. Add the **Trip recording widgets** to the screen.  
+
+>**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) 
+  
+### Settings and operations
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">  
 
@@ -157,6 +160,7 @@ To start using *Trip recording widgets*, you need to make all of the following s
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
 | On Click | Starts / Stop track recording |
 
+> Trip recording widgets can be turned on/off by following this path: <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,map_widget_left"/> / <Translate android="true" ids="map_widget_right,map_widget_monitoring"/>
 
 <!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
 
@@ -208,12 +212,25 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 
 | | 
 |------------|
+|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
+|**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
 |**Downhill**: shows the sum of all descents of the current recorded trip.|
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
  
 
 If you have several widgets selected, Duration, Uphill, and Downhill, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
 On the graph you can see the information about distance, altitude, slope angle. You can scale the graph and 
+| | |
+|------------|------------|
+| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
+| On Click | Starts / Stop track recording | 
+
+### Dialog of Trip Recording
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
 
 **Description of trip recording information dialog box**  
 
@@ -322,6 +339,10 @@ Screen with Duration widget. You can tap the widget and more information about t
 - Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
 - Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
 
+
+### Dialog of Trip Recording
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
 
 </TabItem>
 

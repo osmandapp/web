@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # How to Compile the iOS Version
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. Install XCode from AppStore (Last tested 12.4)
 3. Install XCode command-line tools
   ```

@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useContext, useState, useMemo, useCallback } from 'react';
-import { Marker, CircleMarker, GeoJSON, useMap } from "react-leaflet";
+import React, { useEffect, useRef, useContext, useState, useCallback } from 'react';
+import { Marker, GeoJSON, useMap } from "react-leaflet";
 import L from 'leaflet';
 import MarkerIcon from '../MarkerIcon.js'
 import AppContext from "../../context/AppContext";
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function dist(a1, a2) {
     // distance is not correct
@@ -59,9 +59,11 @@ function moveableMarker(ctx, map, marker) {
 const RouteLayer = () => {
     const map = useMap();
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
+    const url = useLocation();
 
     const [geocodingData, setGeocodingData] = useState(null);
-    const [searchParams, setSearchParams] = useSearchParams({});
+    const [searchParams, setSearchParams] = useState({});
     useEffect(() => {
         let obj = {};
         if (ctx.startPoint) {
@@ -84,12 +86,18 @@ const RouteLayer = () => {
             if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
                 obj['mode'] = ctx.routeMode.mode;
             }
-            if (obj['start'] !== searchParams.get('start') || obj['end'] !== searchParams.get('end')
-                || obj['pin'] !== searchParams.get('pin') || obj['mode'] !== searchParams.get('mode')) {
-                setSearchParams(obj);
-            }
+            setSearchParams(obj);
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeMode]);
+
+    useEffect(() => {
+        if (searchParams['pin'] || searchParams['start'] || searchParams['end']) {
+            navigate({
+                hash: url.hash,
+                search: "?" + new URLSearchParams(Object.entries(searchParams)).toString()
+            })
+        }
+    }, [searchParams, setSearchParams]);
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);
