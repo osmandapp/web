@@ -12,9 +12,13 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation.  **For Android only**.
+>  ```For Android version only```
+
+Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation.
 
 ## Overview 
+
+>**NOTE**: As of March, 2022, the audio/video notes functionality is available for **Android only**. 
 
 The Audio/video notes plugin extends the functional capabilities of storing the information about a geolocation by giving the user options to create their own representations in different formats, such as: a photo note, a video note, or an audio file, and tie them to a geographical place, or the current position. The recording options are provided with the Audio/video notes widget, and/or the context menu of a POI. The resulted data is automatically saved to the central storage from where it is convenient to manage and share anything needed. 
 
@@ -22,21 +26,15 @@ Simultaneously, all created audio/video notes make up a Recording layer that if 
 
 ![Audio video notes intro](@site/static/img/plugins/audio-video-notes/audio-video-intro.png)
 
-
->**NOTE**: As of March, 2022, the audio/video notes functionality is available for **Android only**. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-
 ## Setup
 
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
-1. Enable the plugin. 
+1. [Enable the plugin](../plugins/audio-video-notes.md#enable-plugin). 
 
-2. If needed, add the widget to the device screen, and/or configure. 
+2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen, and/or configure. 
 
-3. If needed, configure the recording settings per profile. 
+3. If needed, configure [the recording settings](../plugins/audio-video-notes.md#open-settings) per profile. 
 
 
 ### Enable plugin
@@ -136,10 +134,6 @@ The way the Audio/video recording will work can be determined with the settings 
 | **<Translate android="true" ids="notes"/>** | This re-directs you directly to the [Audio/video notes in My Places](../personal/myplaces.md). This is the central storage of all Audio/video notes ever made in the app. |
 | **<Translate android="true" ids="reset_plugin_to_default"/>** | This establishes the default values for all of the above settings.  |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
-
-
-
-
 
 
 

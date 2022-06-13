@@ -392,7 +392,7 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 
 
  
-## * Audio-video notes widget (Android)
+## * Audio-video notes widget
 
 >Enable **[<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,audionotes_plugin_name"/>.
 
