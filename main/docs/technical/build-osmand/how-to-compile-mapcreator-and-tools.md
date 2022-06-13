@@ -6,7 +6,7 @@ sidebar_position: 7
 
 
 ## Compile OsmAndMapCreator
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. **Gradle** (command line):
     - Compile with command line 
     ```
@@ -67,7 +67,7 @@ https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfigint.h
 
 ## Compile qt core version for OsmAndMapCreator
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. Compile and copy icon resources 
 ```
   (cd "resources" && ./verify-embed-resources-list.sh)
