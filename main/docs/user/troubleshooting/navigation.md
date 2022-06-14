@@ -30,11 +30,26 @@ Many long routes (> 200-250km) cannot not be calculated by OsmAnd's offline rout
 For Android version you can create a Navigation Profile with Third-party routing (BRouter) or online navigation type. Read more about it [here](https://osmand.net/docs/user/personal/profiles#navigation).
 
 ## The calculated route does not seem correct
-Should we add content here? If yes, we need to update it.
+
+To track down issues with wrong or sub-optimum routes, please open a new posting in [Github discussions](https://github.com/osmandapp/OsmAnd/discussions) or [Github issue](https://github.com/osmandapp/Osmand/issues) and specify as detailed as possible the following information:
+
+- What version of OsmAnd are you using, on what device?
+- Do you use the offline maps offered within the OsmAnd app for download, or online (tile / raster) maps?
+- If you use offline maps, tell us the exact name of the map file where the routing issue occurs, and its edition date.
+- Tell us whether you have used OsmAnd's in-app offline routing, or any online routing provider like YOURS, OpenRouteService or OSRM.
+- What routing profile is choosen in OsmAnd app (car, bike or pedestrian)?
+- Please specify as exactly as possible the start and end point of your route. If possible, tell us city name and street name for each. Also a [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) from openstreetmap.org can be helpful.
+- Tell us your expected routing, and how OsmAnd routes.
 
 ## Road information
 ### OsmAnd only shows some speed cams
-Should we add content here? If yes, we need to update it.
+
+Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
+- A point (called "node" in OSM terminology) of a way is tagged with "highway=speed_camera"), see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- A group of OSM data elements are joined together in a so called "relation" that contains more elements than a single node to describe the direction that is covered by the speed trap. See [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+
+Currently, OsmAnd can only make use of the elements that consists of a single node. Analyzing of relations is to come in a future release.
+
 
 ## Voice navigation
 ### What is the difference between TTS (text to speech) and recorded voices?
@@ -77,4 +92,4 @@ supporting the language you are looking for: Install it on your device, and foll
 
 ### Navigation stops while screen is off
 
-- Link to trip recording section of the same question
+- [The same issue](../troubleshooting/track-recording-issues.md#the-system-may-kill-background-apps-to-save-power) with track recording in the background.

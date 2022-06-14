@@ -62,4 +62,5 @@ If you already used 7 possibilities for free downloads, you can get 3 extra down
 
 
 ### Contour lines or hillshades do not show up
-It should be linked to plugins
+
+Read more about [Contour lines plugin](../plugins/contour-lines.md).
