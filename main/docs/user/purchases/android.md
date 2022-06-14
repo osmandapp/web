@@ -97,6 +97,27 @@ At this moment, Pro subscription has next features:
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 
+### How to buy
+
+Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
+
+**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro_
+
+or 
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
+
+![Pro Plan](@site/static/img/purchases/pro.png)
+
+
+**OsmAnd Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
+
+![Maps+ Plan](@site/static/img/purchases/maps.png)
+
 
 ## Legacy subscriptions (prior 4.0)
 
