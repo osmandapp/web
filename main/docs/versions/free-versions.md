@@ -17,6 +17,16 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.2 
+Release date: 06/2022
+
+* Widgets redesign: new Look &  Feel, group by Pages, change order and combine as you  want.
+* Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
+* Favorite groups: set default appearance for new points in the group
+* Fixes: online tile-maps auto-update
+
+<DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.3-4203.apk" />
+
 ### Version 4.1 
 Release date: 12/2021
 
