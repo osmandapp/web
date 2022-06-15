@@ -79,7 +79,7 @@ The **Android** version requires one of the [paid services](../purchases/android
 :::
 
 
-The **iOS** version provides the Wikipedia plugin by default. To enable the plugin, turn on the **Wikipedia** option in the following menu of the app: **<Translate ios="true" ids="menu,plugins,product_title_wiki"/>** 
+The **iOS** version provides the Wikipedia plugin by default. To enable the plugin, turn on the **Wikipedia** option in the following menu of the app: *<Translate ios="true" ids="menu,plugins,product_title_wiki"/>* 
 
 
 
@@ -103,10 +103,10 @@ To download the Wikipedia data for a region, go to the [available packages for d
 <TabItem value="android" label="Android">
 
 In the **Android** version, you can open Wikipedia data to download by region as follows:  
-1. Go to: **<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>**  
+1. Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*   
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages.   
  
-To see what data has already been uploaded, go to: **<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>**
+To see what data has already been uploaded, go to: *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
 ![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -115,10 +115,10 @@ To see what data has already been uploaded, go to: **<Translate android="true" i
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, you can open Wikipedia data to download by region as follows: 
-1. Go to: **<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>**  
+1. Go to: *<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>*  
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages.  
 
-To see what data has already been uploaded, go to: **<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>**  
+To see what data has already been uploaded, go to: *<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>*  
 
 ![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png) 
 
@@ -140,9 +140,9 @@ To show or hide Wikipedia POIs, first select a profile and then on/off **Wikiped
 <TabItem value="android" label="Android">
 
 In the **Android** version, to show/hide Wikipedia POIs, do the following:  
-1. Go to: **<Translate android="true" ids="shared_string_menu,configure_map"/>**  
-2. Select a Profile, and look for the **<Translate android="true" ids="shared_string_show"/>** section of settings in the menu.  
-3. Toggle **<Translate android="true" ids="shared_string_wikipedia"/>** on.  
+1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*  
+2. Select a Profile, and look for the *<Translate android="true" ids="shared_string_show"/>* section of settings in the menu.  
+3. Toggle *<Translate android="true" ids="shared_string_wikipedia"/>* on.  
 
 ![Wikipedia POIs on Android](@site/static/img/map/map-wikipedia-on-map.png)
 
@@ -151,9 +151,9 @@ In the **Android** version, to show/hide Wikipedia POIs, do the following:
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, to show/hide Wikipedia POIs, do the following:  
-1. Go to: **<Translate ios="true" ids="menu,configure_map"/>**  
-2. Select a Profile, and look for the **<Translate ios="true" ids="map_settings_show"/>** section in the menu.  
-3. Toggle **<Translate ios="true" ids="res_wiki"/>** on.   
+1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
+2. Select a Profile, and look for the *<Translate ios="true" ids="map_settings_show"/>* section in the menu.  
+3. Toggle *<Translate ios="true" ids="res_wiki"/>* on.   
 
 ![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png) 
 
@@ -182,7 +182,7 @@ and/or
 
 ![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png) 
 
-To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: **<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>**  
+To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*  
 
 ![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png) 
 
@@ -196,7 +196,7 @@ In the **iOS** version, to open [Search](../search/index.md), the Search icon in
 
 ![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
 
-To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: **<Translate ios="true" ids="shared_string_search,categories,res_wiki"/>**
+To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate ios="true" ids="shared_string_search,categories,res_wiki"/>*
 
 ![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
@@ -243,9 +243,9 @@ To set your preferred language, browse the Wikipedia data, navigate to the desir
 <TabItem value="android" label="Android">
 
 In the **Android** version, to set the preferred language for the Wikipedia data, do the following:  
-1. Go to: **<Translate android="true" ids="shared_string_menu,configure_map"/>**  
-2. Select a profile and find the **<Translate android="true" ids="shared_string_show"/>** section of settings.  
-3. Tap **<Translate android="true" ids="shared_string_wikipedia"/>**, toggle it enabled, and then tap **<Translate android="true" ids="shared_string_language"/>**.  
+1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*  
+2. Select a profile and find the *<Translate android="true" ids="shared_string_show"/>* section of settings.  
+3. Tap *<Translate android="true" ids="shared_string_wikipedia"/>*, toggle it enabled, and then tap *<Translate android="true" ids="shared_string_language"/>*.  
 4. Check the preferred language(-s) in the opened list.  
 
 ![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
@@ -255,9 +255,9 @@ In the **Android** version, to set the preferred language for the Wikipedia data
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, to set the preferred language for the Wikipedia data, do the following:  
-1. Go to: **<Translate ios="true" ids="menu,configure_map"/>**  
-2. Select a profile and find the **<Translate ios="true" ids="map_settings_show"/>** section of settings.  
-3. Tap **<Translate ios="true" ids="res_wiki"/>**, if needed, toggle **<Translate ios="true" ids="shared_string_enabled"/>** on, and then tap **<Translate ios="true" ids="language"/>**.  
+1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
+2. Select a profile and find the *<Translate ios="true" ids="map_settings_show"/>* section of settings.  
+3. Tap *<Translate ios="true" ids="res_wiki"/>*, if needed, toggle *<Translate ios="true" ids="shared_string_enabled"/>* on, and then tap *<Translate ios="true" ids="language"/>*.  
 4. Check the preferred language(-s) in the opened list.  
 
 
