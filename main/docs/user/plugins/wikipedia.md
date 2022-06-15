@@ -294,7 +294,7 @@ In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-
 - Tap the current language icon in the header in the upper right corner of the screen, which opens a list of available language options.
 - Select the desired language.
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png) 
+![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png) ![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_2.png)
 
 </TabItem>
 
