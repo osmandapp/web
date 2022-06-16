@@ -32,8 +32,6 @@ Each map in the Contour Lines plugin is an independent option that appears above
 
 Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat. Use contour lines, shading, and colours to show slopes, peaks, rugged terrain, and other altitudes on a map. 
 
-The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
-
 
 ### Setup 
 
@@ -45,7 +43,11 @@ To display Contour line and Terrain data on the map, you must make the following
 4. Include Contour lines and/or relief maps for each profile.
 5. Adjust the map view if necessary.  
 
+### Data source
 
+The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
+
+Link to the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).
 
 ## Purchase and enable plugin
 
