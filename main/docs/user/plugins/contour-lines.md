@@ -35,7 +35,7 @@ Topographic information on a map can be represented by slope shading, contour li
 The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
 
 
-## Setup 
+### Setup 
 
 To display Contour line and Terrain data on the map, you must make the following settings:
 
@@ -47,7 +47,7 @@ To display Contour line and Terrain data on the map, you must make the following
 
 
 
-### Purchase and enable plugin
+## Purchase and enable plugin
 
 To enable the plugin and start downloading contour lines, and/or Hillshade, and/or Slopes for each region, you must purchase the Contour Lines package.  
 
@@ -217,7 +217,7 @@ In the **iOS** version, to download any of the available packages of Contour lin
 
 
 
-### Show / Configure map view
+## Show / Configure map view
 
 Each of the maps: Hillshade, Slope, Contour lines can be configured to look visually different depending on personal preferences, and/or the context of a particular region, and/or other conditions. Use the context menu of the corresponding map option in the Configure Map menu to make the necessary changes in appearance.  
 
