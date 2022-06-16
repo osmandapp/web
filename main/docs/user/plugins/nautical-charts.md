@@ -161,10 +161,7 @@ For optimal presentation, maps can be adapted to current needs: marks and symbol
 > **NOTE**: All numbers on the Nautical Charts are presented in meters. 
 
 
-
-
 ### Set map style to Nautical  
-
 
 By setting the Nautical map style, you can get the best representation of the downloaded and rendered Nautical data. To change the current map style to Nautical, use the [Configure map](../map/configure-map-menu.md) menu, scroll down to Map Style, and select Nautical.  
 
@@ -173,7 +170,7 @@ By setting the Nautical map style, you can get the best representation of the do
 
 <TabItem value="android" label="Android">  
 
-In the **Android** version, to change the map style to **Nautical** and thus, reveal more nautical-specific colours and visualization on the map, go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>* 
+In the _Android_ version, to change the map style to [**Nautical**](../map/vector-maps.md#nautical) and thus, reveal more nautical-specific colours and visualization on the map, go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>* 
 
 ![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -209,7 +206,7 @@ When a Nautical map is displayed on the screen, you can adjust what you see:
 
 <TabItem value="android" label="Android">  
 
-In the **Android** version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
+In the *Android* version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
 
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours.png)
@@ -219,7 +216,7 @@ In the **Android** version with the Nautical plugin set up, you can show or hide
 
 <TabItem value="ios" label="iOS">  
 
-In the **iOS** version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
+In the *iOS* version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
 
         
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours.png)
