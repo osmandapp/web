@@ -217,7 +217,13 @@ In the **iOS** version, to download any of the available packages of Contour lin
 
 
 
-## Show Contour lines/Terrain 
+### Show / Configure map view
+
+Each of the maps: Hillshade, Slope, Contour lines can be configured to look visually different depending on personal preferences, and/or the context of a particular region, and/or other conditions. Use the context menu of the corresponding map option in the Configure Map menu to make the necessary changes in appearance.  
+
+
+
+### Show Contour lines/Terrain 
 
 Usually, as many packages of Contour lines, Hillshade and/or Slopes as needed for specific areas are loaded. After all the downloads are completed, you can determine which [map types](../personal/maps.md#map-types) should be shown for a particular profile. There are two options for each profile - Contour lines and/or Terrain to enable per [profile](../personal/profiles.md):  
 
@@ -284,12 +290,6 @@ In the **iOS** version, to show one of the **Terrain** maps for the selected pro
 
 
 >**NOTE**: If after loading the corresponding map you do not see that Hillshade or Slope are enabled, restart the application.
-
-
-## Configure map view
-
-Each of the maps: Hillshade, Slope, Contour lines can be configured to look visually different depending on personal preferences, and/or the context of a particular region, and/or other conditions. Use the context menu of the corresponding map option in the Configure Map menu to make the necessary changes in appearance.  
-
 
 ### Hillshade map
 
