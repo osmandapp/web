@@ -227,12 +227,12 @@ In the *iOS* version with the Nautical plugin set up, you can show or hide depth
 
 
 
-### Seabed details - Android only
+### Seabed details
 
 Seabed data contains information about vegetation and general surface material such as rocky rocks, shells, gravel, coral, silt, etc. Due to the international classification of seafloor data, there are options for displaying such details on a map: *simple*, *category*, *all* or *omit*.  
 To select one of the seabed detail display options, click on the link: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_seabedDetail_name"/>*  
 
-![Seabed details in Android](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
 | Parameter and Description |
 | --- | 
