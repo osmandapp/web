@@ -272,7 +272,7 @@ The map legend shows the following visual elements that can be found on the map:
 - And other signs of prohibition, information, regulation, recommendation, etc.
 
 
-### Remove Nautical 
+### Disable Nautical map style
 
 To remove Nautical and display one of OsmAnd's conventional maps, do any of the following:
 
