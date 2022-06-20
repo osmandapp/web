@@ -36,6 +36,8 @@
  * rendered on the Leaflet map.
  */
 
+import "../assets/css/gpx.css"
+
 var L = L || require('leaflet');
 
 var _MAX_POINT_INTERVAL_MS = 15000;
@@ -390,7 +392,8 @@ L.GPX = L.FeatureGroup.extend({
             hr: {avg: 0, _total: 0, _points: []},
             duration: {start: null, end: null, moving: 0, total: 0},
             atemp: {avg: 0, _total: 0, _points: []},
-            cad: {avg: 0, _total: 0, _points: []}
+            cad: {avg: 0, _total: 0, _points: []},
+            favouritesGroup: []
         };
     },
 
@@ -416,7 +419,7 @@ L.GPX = L.FeatureGroup.extend({
         var cb = function (gpx, options) {
             var layers = _this._parse_gpx_data(gpx, options);
             if (!layers) {
-                _this.fire('error', {err: 'No parseable layers of type(s) ' + JSON.stringify(options.gpx_options.parseElements)});
+                _this.fire('error', {element: gpx});
                 return;
             }
             _this.addLayer(layers);
@@ -535,6 +538,7 @@ L.GPX = L.FeatureGroup.extend({
 
                 let typeEl = el[i].getElementsByTagName('type');
                 let typeKey = typeEl.length > 0 ? typeEl[0].textContent : null;
+
                 let extEl = el[i].getElementsByTagName('extensions');
                 let address;
                 let icon;
@@ -572,12 +576,40 @@ L.GPX = L.FeatureGroup.extend({
                 var wptIconTypeUrls = options.marker_options.wptIconTypeUrls;
                 var ptMatchers = options.marker_options.pointMatchers || [];
                 var symIcon;
+
                 if (icon) {
-                    //TODO
-                    // let lib = require.resolve('OsmAnd-resources')
-                    // console.log(lib)
-                    // symIcon = new L.GPXTrackIcon({iconUrl: "../web/map/node_modules/OsmAnd-resources/rendering_styles/style-icons/map-icons-png/drawable-xhdpi/" + "mm_" + icon + ".png"});
-                    //symIcon = new L.FavoriteIcon({iconUrl: lib + "/rendering_styles/style-icons/map-icons-png/drawable-xhdpi/mm_amenity_bar.png" });
+                    let svg;
+                    if (background === "circle") {
+                        svg = `
+                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="12" fill="${color}"/>
+                        </svg>
+                            `
+                    }
+                    if (background === "octagon") {
+                        svg = `
+                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
+                        </svg>
+
+                            `
+                    }
+                    if (background === "square") {
+                        svg = `
+                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
+                        </svg>
+                            `
+                    }
+
+                    symIcon = L.divIcon({
+                        html: `
+                              <div>
+                                  ${svg}
+                                  <img class="icon" src="map/images/map-icons-png/mm_${icon}.png"
+                              </div>
+                              `
+                    })
                 } else {
                     if (wptIcons && symKey && wptIcons[symKey]) {
                         symIcon = wptIcons[symKey];
@@ -608,22 +640,41 @@ L.GPX = L.FeatureGroup.extend({
                     continue;
                 }
 
-                var marker = new L.Marker(ll, {
+                let marker = new L.Marker(ll, {
                     clickable: options.marker_options.clickable,
                     title: name,
                     icon: symIcon,
-                    type: 'waypoint'
+                    group: typeKey,
+                    time : time,
+                    address : address,
+                    cmt : cmt
+
                 });
-                console.log(marker)
                 marker.bindPopup("<b>" + name + "</b>" + (desc.length > 0 ? '<br>' + desc : '')).openPopup();
                 this.fire('addpoint', {point: marker, point_type: 'waypoint', element: el[i]});
-                layers.push(marker);
+
+                if (!options.group) {
+                    layers.push(marker);
+                } else {
+                    if (options.group.length > 0) {
+                        options.group.forEach(function(item) {
+                            if (item === 'without group') {
+                                item = null;
+                            }
+                            if (item === typeKey) {
+                                layers.push(marker);
+                            }
+                        });
+                    } else {
+                        this._info.favouritesGroup.push(typeKey)
+                    }
+                }
             }
         }
 
-        if (layers.length > 1) {
+        if (layers !== undefined && layers.length > 1) {
             return new L.FeatureGroup(layers);
-        } else if (layers.length == 1) {
+        } else if (layers !== undefined && layers.length === 1) {
             return layers[0];
         }
     },

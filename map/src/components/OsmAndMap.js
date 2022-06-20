@@ -38,20 +38,9 @@ const markerOptions = {
 // initial location on map
 const position = [50, 5];
 
-
 async function addTrackToMap(ctx, file, map) {
-    let trackData;
-    if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
-        trackData = file.url;
-    } else {
-        // file.urlopts
-        let response = await Utils.fetchUtil(file.url, file.urlopts ? file.urlopts : {});
-        if (response.ok) {
-            trackData = await response.text();
-        } else {
-            trackData = '<gpx version="1.1" />'
-        }
-    }
+    let trackData = await getFileData(file);
+
     file.gpx = new L.GPX(trackData, {
         async: true,
         marker_options: markerOptions
@@ -69,9 +58,43 @@ async function addTrackToMap(ctx, file, map) {
     ctx.setGpxFiles(ctx.gpxFiles);
 }
 
-function removeTrackFromMap(file, map) {
-    map.current.removeLayer(file.gpx);
-    file.gpx = null;
+function removeLayerFromMap(file, map) {
+    if (file && file.gpx && map.current.hasLayer(file.gpx)) {
+        map.current.removeLayer(file.gpx);
+        file.gpx = null;
+    }
+}
+
+async function getFileData(file) {
+    let trackData;
+    if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
+        trackData = file.url;
+    } else {
+        let response = await Utils.fetchUtil(file.url, file.urlopts ? file.urlopts : {});
+        if (response.ok) {
+            trackData = await response.text();
+        } else {
+            trackData = '<gpx version="1.1" />'
+        }
+    }
+    return trackData;
+}
+
+async function addFavoritesToMap(ctx, file, map) {
+    let trackData = await getFileData(file);
+
+    file.gpx = new L.GPX(trackData, {
+        async: true,
+        marker_options: markerOptions,
+        group: ctx.favoritesGroups
+    }).on('loaded', function (e) {
+        map.current.fitBounds(e.target.getBounds());
+    }).on('error', function (e) {
+        let uniqueGroups = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
+        ctx.favoritesGroupsCache.push(uniqueGroups)
+    }).addTo(map.current);
+
+    ctx.setFavoriteFile(ctx.favoriteFile);
 }
 
 const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
@@ -116,10 +139,19 @@ const OsmAndMap = () => {
             if (file.url && !file.gpx) {
                 addTrackToMap(ctx, file, mapRef);
             } else if (!file.url && file.gpx) {
-                removeTrackFromMap(file, mapRef);
+                removeLayerFromMap(file, mapRef);
             }
         });
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
+
+    useEffect(() => {
+        let file = Object.keys(ctx.favoriteFile).length !== 0 ? ctx.favoriteFile : null;
+        if (file && file.url) {
+            removeLayerFromMap(file, mapRef);
+            addFavoritesToMap(ctx, file, mapRef);
+        }
+    }, [ctx.favoriteFile, ctx.setFavoriteFile, ctx.setFavoritesGroups]);
+
 
     useEffect(() => {
         if (tileLayer.current) {
