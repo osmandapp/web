@@ -9,7 +9,6 @@ import L from 'leaflet';
 import MarkerIcon from './MarkerIcon.js'
 import '../util/gpx.js';
 import 'leaflet-hash';
-import Utils from "../util/Utils";
 
 // import 'leaflet.awesome-markers';
 // import 'leaflet.awesome-markers/dist/leaflet.awesome-markers.css';
@@ -17,6 +16,8 @@ import Utils from "../util/Utils";
 
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
+import FavoriteLayer from "./layers/FavoriteLayer";
+import TrackLayer from "./layers/TrackLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,76 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const markerOptions = {
-    startIcon: MarkerIcon({bg: 'blue'}),
-    endIcon: MarkerIcon({bg: 'red'}),
-    wptIcons: {
-        '': MarkerIcon({bg: 'yellow'}),
-    }
-};
-
-
 // initial location on map
 const position = [50, 5];
-
-async function addTrackToMap(ctx, file, map) {
-    let trackData = await getFileData(file);
-
-    file.gpx = new L.GPX(trackData, {
-        async: true,
-        marker_options: markerOptions
-    }).on('loaded', function (e) {
-        let trackPoints = Object.values(e.layers._layers)[0]._latlngs;
-        trackPoints.forEach((point) => {
-            let pointObj = {lat: point.lat, lng: point.lng};
-            // if need distFromStart:e.target._info.elevation._points[index][0]
-            file.points.push(pointObj);
-        })
-        //file.points.push(getPoints(e));
-        map.current.fitBounds(e.target.getBounds());
-    }).addTo(map.current);
-    file.points = [];
-    ctx.setGpxFiles(ctx.gpxFiles);
-}
-
-function removeLayerFromMap(file, map) {
-    if (file && file.gpx && map.current.hasLayer(file.gpx)) {
-        map.current.removeLayer(file.gpx);
-        file.gpx = null;
-    }
-}
-
-async function getFileData(file) {
-    let trackData;
-    if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
-        trackData = file.url;
-    } else {
-        let response = await Utils.fetchUtil(file.url, file.urlopts ? file.urlopts : {});
-        if (response.ok) {
-            trackData = await response.text();
-        } else {
-            trackData = '<gpx version="1.1" />'
-        }
-    }
-    return trackData;
-}
-
-async function addFavoritesToMap(ctx, file, map) {
-    let trackData = await getFileData(file);
-
-    file.gpx = new L.GPX(trackData, {
-        async: true,
-        marker_options: markerOptions,
-        group: ctx.favoritesGroups
-    }).on('loaded', function (e) {
-        map.current.fitBounds(e.target.getBounds());
-    }).on('error', function (e) {
-        let uniqueGroups = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
-        ctx.favoritesGroupsCache.push(uniqueGroups)
-    }).addTo(map.current);
-
-    ctx.setFavoriteFile(ctx.favoriteFile);
-}
 
 const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     if (lat) {
@@ -130,29 +63,6 @@ const OsmAndMap = () => {
         }
     }
 
-
-    useEffect(() => {
-        // var gpx = 'https://www.openstreetmap.org/trace/4020415/data'; // URL to your GPX file or the GPX itself
-        let filesMap = ctx.gpxFiles ? ctx.gpxFiles : {};
-        Object.values(filesMap).forEach((file) => {
-            // could be done in react style ?
-            if (file.url && !file.gpx) {
-                addTrackToMap(ctx, file, mapRef);
-            } else if (!file.url && file.gpx) {
-                removeLayerFromMap(file, mapRef);
-            }
-        });
-    }, [ctx.gpxFiles, ctx.setGpxFiles]);
-
-    useEffect(() => {
-        let file = Object.keys(ctx.favoriteFile).length !== 0 ? ctx.favoriteFile : null;
-        if (file && file.url) {
-            removeLayerFromMap(file, mapRef);
-            addFavoritesToMap(ctx, file, mapRef);
-        }
-    }, [ctx.favoriteFile, ctx.setFavoriteFile, ctx.setFavoritesGroups]);
-
-
     useEffect(() => {
         if (tileLayer.current) {
             tileLayer.current.setUrl(ctx.tileURL.url);
@@ -166,6 +76,8 @@ const OsmAndMap = () => {
 
             <RouteLayer/>
             <WeatherLayer/>
+            <FavoriteLayer/>
+            <TrackLayer/>
             <TileLayer
                 ref={tileLayer}
                 attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Collapse, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Star} from "@mui/icons-material";
 import AppContext from "../../context/AppContext";
