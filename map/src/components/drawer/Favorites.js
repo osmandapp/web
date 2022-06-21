@@ -6,15 +6,33 @@ import AppContext from "../../context/AppContext";
 export default function Favorites() {
     const ctx = useContext(AppContext);
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
+    const [favoritesGpx, setFavoritesGpx] = useState({});
 
-    let favoritesGpx = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
-        ctx.listFiles.uniqueFiles).filter((item) => {
-        return (item.type === 'FAVOURITES');
-    });
+    useEffect(() => {
+        if (ctx.listFiles) {
+            let favoriteFile = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
+                ctx.listFiles.uniqueFiles).filter((item) => {
+                return (item.type === 'FAVOURITES');
+            });
+            let item = favoriteFile[0];
+            if (item) {
+                setFavoritesGpx(favoriteFile[0])
+                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
+                let newFavouriteFile = ctx.favoriteFile[0];
+                if (newFavouriteFile && Object.keys(ctx.favoriteFile).length !== 0) {
+                    newFavouriteFile.url = null;
+                } else {
+                    newFavouriteFile = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
+                }
+                ctx.setFavoriteFile(newFavouriteFile);
+            }
+
+        }
+    }, [ctx.listFiles, ctx.setListFiles]);
 
     async function enableLayerWithGroups(group, ctx, visible) {
-        const item = favoritesGpx[0];
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
+        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(favoritesGpx.type)}&name=${encodeURIComponent(favoritesGpx.name)}`;
+
         if (group !== undefined) {
             if (!visible) {
                 let newArray = ctx.favoritesGroups.filter(function (f) {
@@ -27,20 +45,8 @@ export default function Favorites() {
         }
 
         const newFavouriteFile = Object.assign({}, ctx.favoriteFile);
-        newFavouriteFile[item.name] = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
+        newFavouriteFile[favoritesGpx.name] = {'url': url, 'clienttimems': favoritesGpx.clienttimems, 'name': favoritesGpx.name};
         ctx.setSelectedGpxFile(newFavouriteFile);
-        ctx.setFavoriteFile(newFavouriteFile);
-    }
-
-    async function enableLayer(ctx, item) {
-        setFavoriteGroupsOpen(!favoriteGroupsOpen);
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
-        let newFavouriteFile = ctx.favoriteFile[0];
-        if (newFavouriteFile && Object.keys(ctx.favoriteFile).length !== 0) {
-            newFavouriteFile.url = null;
-        } else {
-            newFavouriteFile = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
-        }
         ctx.setFavoriteFile(newFavouriteFile);
     }
 
@@ -61,7 +67,7 @@ export default function Favorites() {
     }
 
     return <>
-        <MenuItem sx={{mb: 1}} onClick={() => enableLayer(ctx, favoritesGpx[0])}>
+        <MenuItem sx={{mb: 1}} onClick={() => setFavoriteGroupsOpen(!favoriteGroupsOpen)}>
             <ListItemIcon>
                 <Star fontSize="small"/>
             </ListItemIcon>
