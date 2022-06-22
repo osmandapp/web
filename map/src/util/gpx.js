@@ -606,7 +606,7 @@ L.GPX = L.FeatureGroup.extend({
                         html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="map/images/map-icons-png/mm_${icon}.png"
+                                  <img class="icon" src="map/images/poi-icons-svg/mx_${icon}.svg"
                               </div>
                               `
                     })
