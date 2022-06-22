@@ -32,6 +32,9 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 
 In addition to the Nautical style, the plugin provides Nautical map packs for download. This is additional data to enrich the representation of nautical information on the map. They cannot replace the official nautical map. However, based on [OpenSeaMap](http://www.openseamap.org/), Nautical map packs provide important information about inland waterways, wild waters, port and coastal infrastructure, etc., which helps with navigation on the water.  
 
+![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_1.png)  ![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_2.png)  ![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_3.png)
+
+
 
 ### Why the Nautical theme matters 
 
