@@ -33,3 +33,7 @@ Navigation instructions and announcements
 ### [Android Auto / CarPlay](./auto-car.md)
 
 Using a vehicle media screen for navigation by OsmAnd
+
+### [BRouter routing](./thirdparty-routing.md)
+
+BRouter routing for offline
