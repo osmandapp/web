@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Tracks Context menu is menu with actions and data of GPX-track.
 
-For openng Track Context menu:
+For opening Track Context menu:
 
 <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → click to choosing track or just tap to choosing track on the map.
 

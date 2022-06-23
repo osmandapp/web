@@ -14,12 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Short information about tracks and how to use them
+Track on the map is user [recorded trip](../plugins/trip-recording.md) or [plan route](../plan-route/create-route.md) with makred points on it or not. OsmAnd track file has [gpx-format](../plugins/trip-recording.md#gpx-file-details).
 
-Track on the map is user recorded trip or plan route with makred points on it or not. OsmAnd track file has gpx-format.
-
-You can add tracks to OsmAnd in these ways: 
-- &nbsp;Import from the external source.
+You can add / create tracks to / in OsmAnd in these ways: 
+- &nbsp;[Import](./tracks.md#import-track) from the external source.
 - &nbsp;Create in the application using [Plan route](../plan-route/index.md) tool.
 - &nbsp;Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
@@ -27,12 +25,12 @@ All tracks in the application are stored in the [<Translate android="true" ids="
 
 Abilities to manage tracks in OsmAnd:
 - &nbsp;Enable and disable tracks on the map.
-- &nbsp;Configure track appearance, edit and analyze.
-- &nbsp;Use for navigation.
+- &nbsp;Configuring track appearance, editing and analyzing.
+- &nbsp;Using for navigation.
 
 OsmAnd has no limit on the number of tracks to store and display.
 
-There are two options to display [Tracks](../personal/tracks.md) on the map: via [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu or [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu
+There are three options to display Tracks on the map: via [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu, [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu, [Track Context menu](../map/track-context-menu.md)
 
 <Tabs groupId="operating-systems">
 
@@ -151,15 +149,15 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 </Tabs>
 
 
-## Manage Tracks 
+## My Places menu
 
-### My Places
+### Actions
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>_
 
 <p> </p>
 
@@ -167,7 +165,7 @@ At the bottom of the screen are four Actions buttons.
 
 ![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_android.png) 
 
-- "+" button  - allows to import GPX track from device storage.
+- "+" button  - allows [to import](./tracks.md#import-track) GPX track from device storage.
 - "earth" button - opens [Add point menu](../plan-route/coordinate-input.md) for adding points by inputting coordinates.
 - "map" button - allows to choose tracks for showing its on the map.
 - "&#x1F5D1;" button - allows to choose tracks for deleting.
@@ -178,36 +176,25 @@ At the bottom of the screen are four Actions buttons.
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/>
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/>_
+
+Clicking to choosing track opens [Track Context menu](../map/track-context-menu.md) for any actions with it.
+
+Actions with track or tracks (track folders) by clicking to "&#8230;" in top screen.
 
 <p> </p>
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) ![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)
 
 
-**Actions on Folder list**
+ACTIONS: on bottom part of the device screen
+- &nbsp;"_<Translate ios="true" ids="gpx_import_title"/>_"  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
+- &nbsp;"_<Translate ios="true" ids="create_new_trip"/>_" - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
 
-![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)
-
-- &nbsp;"layers" button on the top of the device screen - allows to choose and show tracks on the map from tracks list.
-- &nbsp;"<Translate ios="true" ids="gpx_import_title"/>" on bottom part of the device screen - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>".
-- &nbsp;"<Translate ios="true" ids="create_new_trip"/>" on bottom part of the device screen - opens ["Edit mode"](../personal/tracks.md#edit-mode-ios) for creating new track.
-
-**Actions on Track menu**
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/> → tap to the needed track
-
-<p> </p>
-
-![My places tracks file Actions iOS](@site/static/img/personal/tracks/my_places_track_file_actions_ios.png)
-
-- &nbsp;<Translate ios="true" ids="fav_rename"/> - allows to rename the chosen track.
-- &nbsp;<Translate ios="true" ids="shared_string_remove"/> - allows to delete the chosen track.
-- &nbsp;<Translate ios="true" ids="shared_string_export"/> - allows to delete the chosen track.
-- &nbsp;<Translate ios="true" ids="gpx_edit_mode"/> - allows [to edit / create track](../personal/tracks.md#edit-mode-ios).
-- &nbsp;Trip planning - to be deleted.
-- &nbsp;<Translate ios="true" ids="plan_route_change_folder"/> - allows to change a folder for the chosen track.
-
+Buttons (by clicking to "&#8230;" in top screen):
+- &nbsp;"export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
+- &nbsp;"map" button - allows to choose tracks for showing its on the map.
+- &nbsp;"&#x1F5D1;" button - allows to choose tracks for deleting.
 
 </TabItem>
  
@@ -237,7 +224,7 @@ Sort menu:
 
 <TabItem value="ios" label="iOS">
 
-
+> ```This function doesn't exist for iOS version.```
 
 </TabItem>
  
@@ -278,6 +265,24 @@ How to import / export Tracks and how to find it on your device storage:
 
 - [Import / Export functionality](../personal/profiles.md#actions)
 - [Storage](../personal/storage.md)
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+
+
+</TabItem>
+ 
+</Tabs>
+
+### Export track
 
 ## Read more
 
