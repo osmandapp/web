@@ -28,7 +28,7 @@ Gestures are important part of the map navigation.
 |**Rotate**| Press with **two** fingers on the map and rotate |
 |**Tilt** - 3D | Press with **two** fingers on the map and then swipe up or down |
 
-Slide animations could be disabled with special [setting](#disable-all-animations-android).
+Slide animations could be disabled with special [setting](#disable-all-animations).
 
 ## My Location & Zoom
 
