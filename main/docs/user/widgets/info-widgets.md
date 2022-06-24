@@ -118,6 +118,56 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
+## * Average speed widget  
+
+**General Information**  
+The widget shows what your average speed is. The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes (for more information see below). In addition, if you stop for a long time, this is also an option in the widget, the time is no longer displayed.  
+
+It is a simple but very useful widget without any extra features. You can easily use it if, for example, you need to observe speed limits on highways or if you ride a bicycle.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
+
+You can place Average speed widget on the *Left* or *Right* panel as you prefer.
+
+>The widget can be turned on/off by following this path:
+<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>  
+
+![Average speed widgets](@site/static/img/widgets/avera_speed_1.png)  ![Average speed widgets](@site/static/img/widgets/avera_speed_1-2.png)   
+
+
+The widget has some different views:  
+*Before the interval limit starts / or Osmand application*, *Started*, *The average value for the path traveled*.   
+
+![Average speed widgets](@site/static/img/widgets/nautical_pl_1-1.png)  
+
+
+The average speed is calculated for the specified time interval. Click on the **Settings** button of the Average Speed widget to select the time interval for which the average speed will be measured:  
+><Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/> → ⚙️  
+
+The Settings menu consists of two parts: the choice of the time limit, to calculate the Average speed, and whether or not to include possible stops.  
+
+![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)  
+
+
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+**This feature doesn't exist for iOS version of OsmAnd.**
+:::  
+
+
+</TabItem>
+
+</Tabs>  
+
+
+
 ## * Trip recording widgets  
 
 :::note
@@ -126,16 +176,16 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 
 :::  
 
-**Information**  
+**General Information**  
 Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for the iOS version OsmAnd only *Distance*.  
 
 <!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
 
 ### Pre-use Setup 
 To start using *Trip recording widgets*, you need to make all of the following settings:
-1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
-2. Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
-3. Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
+* [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
+* Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
+* Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
 
 <!--**NOTE**: For any troubleshooting details, refer to: [Track recording issues](https://docs.osmand.net/en/main@latest/osmand/troubleshooting/track-recording-issues)-->
   
@@ -145,22 +195,19 @@ To start using *Trip recording widgets*, you need to make all of the following s
 2. Configure Trip recording for the required [profile](../personal/profiles.md).
 3. Add the **Trip recording widgets** to the screen.  
 
->**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) 
+<!--**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) -->
   
 ### Settings and operations
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
-
-**Settings and Operations**  
+ 
 
 | | |
 |------------|------------|
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
 | On Click | Starts / Stop track recording |
-
-> Trip recording widgets can be turned on/off by following this path: <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,map_widget_left"/> / <Translate android="true" ids="map_widget_right,map_widget_monitoring"/>
 
 <!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
 
@@ -176,8 +223,8 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 **Distance/Start-Stop**  
 
 **Details**  
-- Name of the dialog box - Trip recording  
-- Status: Recording / On pause  
+- Name of the dialog box - *Trip recording*  
+- Status: *Recording / On pause*    
 - Buttons: *Show on map* on/off and [Appearence](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).  
 - Graph  
 - Information box. There is a different list for each of the graphs.  
@@ -189,7 +236,7 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 |**Distance/Start-Stop**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
 |![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
 |If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
-|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)|
+|![Trip recording widget](@site/static/img/widgets/overview.png)|
 |**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
  
 
@@ -222,11 +269,9 @@ The screen with a selection of widgets. When the selected widgets appear on the 
  
 
 If you have several widgets selected, Duration, Uphill, and Downhill, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
-On the graph you can see the information about distance, altitude, slope angle. You can scale the graph and 
-| | |
-|------------|------------|
-| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
-| On Click | Starts / Stop track recording | 
+On the graph you can see the information about distance, altitude, slope angle. You can scale the graph and   
+
+
 
 ### Dialog of Trip Recording
 
@@ -247,29 +292,20 @@ NOTE. By default, the *Track* menu appears when you tap on the widget.
 - Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
 - Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
 
-**Graph**
-
----!!!!!!The widget shows a graph . The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.
+**Graph**  
 
 All values are indicated either for the whole route or only for the selected interval by scaling the graph.  
 
 |  |
 |------------|
-| ***Additional information*** |
-| The right side of the graphs contains data about the highest, average and lowest values of the data related to a particular graph. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  |
-|  ![data](@site/static/img/widgets/sch_1-2.png) ![data](@site/static/img/widgets/sch_1-2.png) ![data](@site/static/img/widgets/sch_1-2.png)|
-|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data.|
-| *"Overview"* Information section: Distance, Time span, Start time, End time|
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
-|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip.|
-| *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|
-|***Speed*** This tab opens with speed info on distance and additional track data.|
-| *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
+| ***Additional information***. The right side of the graphs contains data about the highest, average and lowest values of the data related to a particular graph. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  |
+|  ![data](@site/static/img/widgets/tr_rec_ave.png) ![data](@site/static/img/widgets/tr_rec_alt.png) ![data](@site/static/img/widgets/tr_rec_speed.png)|
+|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time| 
+|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|
+|***Speed*** This tab opens with speed info on distance and additional track data.|*"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|
 
 **Menu**  
-You can read more information [here](https://osmand.net/docs/user/map/track-context-menu/)
+You can read more information [here](https://osmand.net/docs/user/map/track-context-menu/).
 
 1. ***Overview***  
 - **Currently recording track** - general name of the dialog.  
@@ -333,7 +369,7 @@ Screen with Duration widget. You can tap the widget and more information about t
 |![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_ios_rec.png)| 
 |If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
 |![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
-|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|  
+|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|  
 
 **Interactions with the graph**
 - Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
@@ -350,10 +386,10 @@ Screen with Duration widget. You can tap the widget and more information about t
 
 
 
-**Additional interactions with the dialog box after tapping any of the widgets.**  
+<!--**Additional interactions with the dialog box after tapping any of the widgets.**  
 - If you want to close the dialog box, press **X** .  
 - If you gesture to minimize the dialog box, the general name and menu items remain. If you tap on the menu items, the dialog box will expand as before.  
-- You can open the dialog box full screen by swiping up or close it completely by swiping down.
+- You can open the dialog box full screen by swiping up or close it completely by swiping down.-->
 
 
 ## * Parking widget
