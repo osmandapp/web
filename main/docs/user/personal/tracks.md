@@ -230,7 +230,7 @@ Sort menu:
  
 </Tabs>
 
-## Import/Export track
+## Import / Export track
 
 ### Import track
 
@@ -238,21 +238,38 @@ Sort menu:
 
 <TabItem value="android" label="Android">
 
-Clicking to GPX track file suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md).
+There are two variants for importing a track file in OsmAnd. The first is importing by clicking on a track file, the second is by My Places menu action.
+
+1. Importing track by clicking to GPX (KML, KMZ) track file (massengers, email, Drive, File managers..). It suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md): _clicking to the chosen GPX file → opening it by OsmAnd_.
+2. Importing button in _[My places menu → Tracks](../personal/tracks.md#actions)_.
 
 - Track GPX file:
-
 - Multitrack GPX file: saving as one GPX track or selected tracks.
 
 ![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png) 
-
-- Track KML file:
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+There are two variants for importing a track file in OsmAnd. The first is importing by clicking on a track file, the second is by My Places menu action.
+
+1. Importing track by clicking to GPX (KML, KMZ) track file (massengers, email, Drive, File managers..). It suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md): _clicking to the chosen GPX file → opening it by OsmAnd_.
+2. Importing button in  _[My places menu → Tracks](../personal/tracks.md#actions)_.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios.png').default} alt="gpx"/></td>
+        <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_1.png').default} alt="gpx"/></td>
+    </tr>
+</table> 
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_2.png').default} alt="gpx"/></td>
+        <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_3.png').default} alt="gpx"/></td>
+    </tr>
+</table> 
 
 
 </TabItem>
@@ -260,29 +277,26 @@ Clicking to GPX track file suggests to open it by OsmAnd app. Importing tracks s
 </Tabs>
 
 ### Export track
-
-How to import / export Tracks and how to find it on your device storage:
-
-- [Import / Export functionality](../personal/profiles.md#actions)
-- [Storage](../personal/storage.md)
-
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
+Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
+1. By [Track Context menu → Share](../map/track-context-menu.md#options).
+2. By [My Places menu → Tracks](../personal/tracks.md#actions). Exporting more than one track by a bundle.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
+Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
+1. By [Track Context menu → Share](../map/track-context-menu.md#options).
+2. By [My Places menu → Tracks](../personal/tracks.md#actions). Exporting more than one track by a bundle.
 
 </TabItem>
  
 </Tabs>
-
-### Export track
 
 ## Read more
 
