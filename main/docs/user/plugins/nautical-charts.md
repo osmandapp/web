@@ -21,9 +21,10 @@ Nautical map is a detailed graphic representation of oceans, seas, coastal areas
 
 Nautical Chart is a highly detailed topographical map to help skippers navigate a vessel on a selected course on the water. It is similar to a road map for those traveling by car. Often referred to as a *'Chart'* for historical reasons, it is a detailed graphic representation of the oceans, seas, coastal areas and rivers.
 
-Nautical charts are important for professional sailors as well as for amateurs who rent a boat for cruising the city's canals. The maps provide them with a variety of information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.
+Nautical charts are important for professional sailors as well as for amateurs who rent a boat for cruising the city's canals. The maps provide them with a variety of information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.  
 
-![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_maps.png)
+&nbsp;
+![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_1.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_2.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png)  
 
 
 ### What's in
@@ -32,7 +33,6 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 
 In addition to the Nautical style, the plugin provides Nautical map packs for download. This is additional data to enrich the representation of nautical information on the map. They cannot replace the official nautical map. However, based on [OpenSeaMap](http://www.openseamap.org/), Nautical map packs provide important information about inland waterways, wild waters, port and coastal infrastructure, etc., which helps with navigation on the water.  
 
-![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_1.png)  ![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_2.png)  ![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/nautical_3.png)
 
 
 
@@ -50,7 +50,7 @@ The following setup makes the Nautical map show up on the screen:
 1. Purchase Nautical services.  
 2. Enable the plugin.  
 3. Download the Nautical maps.  
-4. Enable the Nautical map style.  
+4. Enable the Nautical map style.   
 
 
 ### Purchase Nautical    
