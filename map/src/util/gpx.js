@@ -606,7 +606,7 @@ L.GPX = L.FeatureGroup.extend({
                         html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="map/images/poi-icons-svg/mx_${icon}.svg"
+                                  <img class="icon" src="images/poi-icons-svg/mx_${icon}.svg"
                               </div>
                               `
                     })
@@ -658,7 +658,7 @@ L.GPX = L.FeatureGroup.extend({
                 } else {
                     if (options.group.length > 0) {
                         options.group.forEach(function(item) {
-                            if (item === 'without group') {
+                            if (item === 'favorites') {
                                 item = null;
                             }
                             if (item === typeKey) {

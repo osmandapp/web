@@ -4,22 +4,17 @@ import L from "leaflet";
 import '../../util/gpx.js';
 import Utils from "../../util/Utils";
 import {useMap} from "react-leaflet";
-import Favorites from "../drawer/Favorites";
 
 async function addFavoritesToMap(ctx, file, map) {
     let trackData = await Utils.getFileData(file);
-
     file.gpx = new L.GPX(trackData, {
         async: true,
-        group: ctx.favoritesGroups
+        group: ctx.favorites.groups
     }).on('loaded', function (e) {
         map.fitBounds(e.target.getBounds());
     }).on('error', function (e) {
-        let uniqueGroups = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
-        ctx.favoritesGroupsCache.push(uniqueGroups);
+        ctx.favorites.groupsUnique = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
     }).addTo(map);
-
-    ctx.setFavoriteFile(ctx.favoriteFile);
 }
 
 function removeLayerFromMap(file, map) {
@@ -32,15 +27,13 @@ function removeLayerFromMap(file, map) {
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
-
     useEffect(() => {
-        let file = Object.keys(ctx.favoriteFile).length !== 0 ? ctx.favoriteFile : null;
+        let file = ctx.favorites.file;
         if (file && file.url) {
             removeLayerFromMap(file, map);
             addFavoritesToMap(ctx, file, map);
         }
-    }, [ctx.favoriteFile, ctx.setFavoriteFile, ctx.setFavoritesGroups]);
-
+    }, [ctx.favorites, ctx.setFavorites]);
 };
 
 export default FavoriteLayer;

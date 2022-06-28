@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import {
     Air, Cloud, Compress, Shower, Thermostat
 } from '@mui/icons-material';
@@ -305,9 +304,7 @@ export const AppContextProvider = (props) => {
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-    const [favoriteFile, setFavoriteFile] = useState({});
-    const [favoritesGroups, setFavoritesGroups] = useState([]);
-    const [favoritesGroupsCache, setFavoritesGroupsCache] = useState([]);
+    const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: []});
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -359,9 +356,7 @@ export const AppContextProvider = (props) => {
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
-        favoriteFile, setFavoriteFile,
-        favoritesGroups, setFavoritesGroups,
-        favoritesGroupsCache, setFavoritesGroupsCache
+        favorites, setFavorites
 
     }}>
         {props.children}

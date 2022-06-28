@@ -6,63 +6,53 @@ import AppContext from "../../context/AppContext";
 export default function Favorites() {
     const ctx = useContext(AppContext);
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
-    const [favoritesGpx, setFavoritesGpx] = useState({});
 
     useEffect(() => {
         if (ctx.listFiles) {
             let favoriteFile = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
-                ctx.listFiles.uniqueFiles).filter((item) => {
+                ctx.listFiles.uniqueFiles).find((item) => {
                 return (item.type === 'FAVOURITES');
             });
-            let item = favoriteFile[0];
-            if (item) {
-                setFavoritesGpx(favoriteFile[0])
-                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(item.type)}&name=${encodeURIComponent(item.name)}`;
-                let newFavouriteFile = ctx.favoriteFile[0];
-                if (newFavouriteFile && Object.keys(ctx.favoriteFile).length !== 0) {
+
+            if (favoriteFile) {
+                let favObj = {};
+                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(favoriteFile.type)}&name=${encodeURIComponent(favoriteFile.name)}`;
+                let newFavouriteFile = ctx.favorites.file;
+                if (newFavouriteFile) {
                     newFavouriteFile.url = null;
                 } else {
-                    newFavouriteFile = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
+                    newFavouriteFile = {'url': url, 'clienttimems': favoriteFile.clienttimems, 'name': favoriteFile.name};
                 }
-                ctx.setFavoriteFile(newFavouriteFile);
+                favObj.file = newFavouriteFile;
+                favObj.groups = [];
+                ctx.setFavorites(favObj);
             }
-
         }
     }, [ctx.listFiles, ctx.setListFiles]);
 
     async function enableLayerWithGroups(group, ctx, visible) {
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(favoritesGpx.type)}&name=${encodeURIComponent(favoritesGpx.name)}`;
-
         if (group !== undefined) {
-            if (!visible) {
-                let newArray = ctx.favoritesGroups.filter(function (f) {
+            ctx.favorites.groups = visible ? [...ctx.favorites.groups, group]
+                : ctx.favorites.groups.filter(function (f) {
                     return f !== group
-                })
-                ctx.setFavoritesGroups(newArray);
-            } else {
-                ctx.setFavoritesGroups(favoritesGroups => [...favoritesGroups, group]);
-            }
+                });
         }
-
-        const newFavouriteFile = Object.assign({}, ctx.favoriteFile);
-        newFavouriteFile[favoritesGpx.name] = {'url': url, 'clienttimems': favoritesGpx.clienttimems, 'name': favoritesGpx.name};
-        ctx.setSelectedGpxFile(newFavouriteFile);
-        ctx.setFavoriteFile(newFavouriteFile);
+        ctx.setFavorites({...ctx.favorites});
     }
 
-    const FavoritesRow = (favoritesGpx, ctx) => ({index, group, style}) => {
+    const FavoritesRow = (ctx) => ({index, group}) => {
         if (group === null) {
-            group = "without group"
+            group = "favorites"
         }
         return (
-            <MenuItem style={style} key={index}>
+            <MenuItem key={index}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
                         {group}
                     </Typography>
                 </ListItemText>
                 <Switch
-                    onChange={(e) => enableLayerWithGroups(group, ctx, e.target.checked)}/>
+                   onChange={(e) => enableLayerWithGroups(group, ctx, e.target.checked)}/>
             </MenuItem>)
     }
 
@@ -76,8 +66,8 @@ export default function Favorites() {
         </MenuItem>
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
             {
-                ctx.favoritesGroupsCache[0] && ctx.favoritesGroupsCache[0].map((group, index) => {
-                    return FavoritesRow(favoritesGpx, ctx)({index: index, group: group});
+                ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.map((group, index) => {
+                    return FavoritesRow(ctx)({index: index, group: group});
                 })
             }
         </Collapse>
