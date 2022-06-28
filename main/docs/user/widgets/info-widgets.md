@@ -177,7 +177,7 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 :::  
 
 **General Information**  
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for the iOS version OsmAnd only *Distance*.  
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**  
 
 <!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
 
@@ -190,12 +190,12 @@ To start using *Trip recording widgets*, you need to make all of the following s
 <!--**NOTE**: For any troubleshooting details, refer to: [Track recording issues](https://docs.osmand.net/en/main@latest/osmand/troubleshooting/track-recording-issues)-->
   
 
-### Widgets description   
+<!--Widgets description   
 1. [Enable the plugin](../plugins/trip-recording.md#enable-plugin). 
 2. Configure Trip recording for the required [profile](../personal/profiles.md).
 3. Add the **Trip recording widgets** to the screen.  
 
-<!--**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) -->
+**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) -->
   
 ### Settings and operations
 
@@ -207,7 +207,8 @@ To start using *Trip recording widgets*, you need to make all of the following s
 | | |
 |------------|------------|
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
-| On Click | Starts / Stop track recording |
+| On Click | Starts/Stop track recording or View the graph|
+
 
 <!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
 
@@ -269,11 +270,8 @@ The screen with a selection of widgets. When the selected widgets appear on the 
  
 
 If you have several widgets selected, Duration, Uphill, and Downhill, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
-On the graph you can see the information about distance, altitude, slope angle. You can scale the graph and   
+On the graph you can see the information about distance, altitude, slope angle. The graph can be scaled.  
 
-
-
-### Dialog of Trip Recording
 
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
 
@@ -290,7 +288,8 @@ NOTE. By default, the *Track* menu appears when you tap on the widget.
 
 **Interactions with the graph**
 - Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
-- Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
+- Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+
 
 **Graph**  
 
@@ -328,9 +327,9 @@ You can add a point or more to the map or delete all. [Read more here](https://o
 This is a separate screen without a map and a track with points:  
 - Show on map - on/off.  
 - Appearance.  
-- [Analyze on the map](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android). *fixs rueng*  
-- Analyze by intervals - overview of the current track recording segment  
-- Share - gpx file  
+- [Analyze on the map](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android).
+- Analyze by intervals - overview of the current track recording segment.  
+- Share - gpx file.    
 
 &nbsp;
 ![Overview](@site/static/img/widgets/option_for3.png)  
@@ -354,7 +353,7 @@ This is a separate screen without a map and a track with points:
 
 
 **What's in**  
-Screen with Duration widget. You can tap the widget and more information about the track and the ability to interact with it will appear.
+Screen with Distance/Start-Stop widget. You can tap the widget and more information about the track and the ability to interact with it will appear.
 
 <!--On Click | Starts / Stop track recording-->
   
@@ -371,19 +370,11 @@ Screen with Duration widget. You can tap the widget and more information about t
 |![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
 |**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|  
 
-**Interactions with the graph**
-- Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
-- Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
 
-
-### Dialog of Trip Recording
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
 
 </TabItem>
 
 </Tabs>  
-
 
 
 <!--**Additional interactions with the dialog box after tapping any of the widgets.**  
