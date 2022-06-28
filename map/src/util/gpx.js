@@ -528,7 +528,7 @@ L.GPX = L.FeatureGroup.extend({
                 let time = timeEl.length > 0 ? timeEl[0].textContent : '';
 
                 let cmtEl = el[i].getElementsByTagName('cmt');
-                let cmt = timeEl.length > 0 ? cmtEl[0].textContent : '';
+                let cmt = cmtEl.length > 0 ? cmtEl[0].textContent : '';
 
                 let descEl = el[i].getElementsByTagName('desc');
                 let desc = descEl.length > 0 ? descEl[0].textContent : '';
