@@ -1,0 +1,17 @@
+.background {
+    left: -20px;
+    top: -20px;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    fill: none;
+    filter: drop-shadow(5px 0 2px gray);
+}
+.icon {
+    position: absolute;
+    z-index:201;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: -6px; left: -6px
+}
