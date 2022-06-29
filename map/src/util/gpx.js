@@ -49,16 +49,7 @@ var _DAY_IN_MILLIS = 24 * _HOUR_IN_MILLIS;
 var _GPX_STYLE_NS = 'http://www.topografix.com/GPX/gpx_style/0/2';
 
 var _DEFAULT_MARKER_OPTS = {
-    startIconUrl: 'map/public/images/gpx/pin-icon-start.png',
-    endIconUrl: 'map/public/images/gpx/pin-icon-end.png',
-    shadowUrl: 'map/public/images/gpx/pin-shadow.png',
     wptIconsType: [],
-    wptIconUrls: {
-        '': 'map/public/images/gpx/pin-icon-wpt.png',
-    },
-    wptIconTypeUrls: {
-        '': 'map/public/images/gpx/pin-icon-wpt.png',
-    },
     pointMatchers: [],
     iconSize: [33, 45],
     shadowSize: [50, 50],
@@ -544,6 +535,7 @@ L.GPX = L.FeatureGroup.extend({
                 let icon;
                 let background;
                 let color;
+                let hidden;
                 if (extEl) {
                     let addressEl = el[i].getElementsByTagName('osmand:address');
                     address = addressEl.length > 0 ? addressEl[0].textContent : '';
@@ -557,6 +549,12 @@ L.GPX = L.FeatureGroup.extend({
                     let colorEl = el[i].getElementsByTagName('osmand:color');
                     color = colorEl.length > 0 ? colorEl[0].textContent : '';
 
+                    let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
+                    hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : '';
+                }
+
+                if (hidden === "true") {
+                    continue;
                 }
 
                 /*
@@ -630,6 +628,17 @@ L.GPX = L.FeatureGroup.extend({
                         symIcon = wptIcons[''];
                     } else if (wptIconUrls && wptIconUrls['']) {
                         symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
+                    } else {
+                        symIcon = L.divIcon({
+                            html: `
+                              <div>
+                                  <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
+                                  </svg>
+                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
+                              </div>
+                              `
+                        })
                     }
                 }
 
@@ -658,7 +667,7 @@ L.GPX = L.FeatureGroup.extend({
                 } else {
                     if (options.group.length > 0) {
                         options.group.forEach(function(item) {
-                            if (item === 'favorites') {
+                            if (item === 'Favorites') {
                                 item = null;
                             }
                             if (item === typeKey) {

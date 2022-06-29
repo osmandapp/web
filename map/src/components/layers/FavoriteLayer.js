@@ -14,6 +14,10 @@ async function addFavoritesToMap(ctx, file, map) {
         map.fitBounds(e.target.getBounds());
     }).on('error', function (e) {
         ctx.favorites.groupsUnique = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
+        if (!ctx.favorites.readFirst) {
+            ctx.favorites.readFirst = true;
+            ctx.setFavorites({...ctx.favorites});
+        }
     }).addTo(map);
 }
 
