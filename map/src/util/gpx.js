@@ -658,7 +658,7 @@ L.GPX = L.FeatureGroup.extend({
                 } else {
                     if (options.group.length > 0) {
                         options.group.forEach(function(item) {
-                            if (item === 'favorites') {
+                            if (item === 'Favorites') {
                                 item = null;
                             }
                             if (item === typeKey) {
