@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Collapse, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
+import React, {useContext, useState} from 'react';
+import {Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Star, ViewHeadline} from "@mui/icons-material";
 import AppContext from "../../context/AppContext";
 
@@ -7,29 +7,6 @@ export default function Favorites() {
     const ctx = useContext(AppContext);
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
     const [enableGroups, setEnableGroups] = useState([]);
-
-    useEffect(() => {
-        if (ctx.listFiles) {
-            let favoriteFile = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
-                ctx.listFiles.uniqueFiles).find((item) => {
-                return (item.type === 'FAVOURITES');
-            });
-
-            if (favoriteFile) {
-                let favObj = {};
-                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(favoriteFile.type)}&name=${encodeURIComponent(favoriteFile.name)}`;
-                let newFavouriteFile = ctx.favorites.file;
-                if (newFavouriteFile) {
-                    newFavouriteFile.url = null;
-                } else {
-                    newFavouriteFile = {'url': url, 'clienttimems': favoriteFile.clienttimems, 'name': favoriteFile.name};
-                }
-                favObj.file = newFavouriteFile;
-                favObj.groups = [];
-                ctx.setFavorites(favObj);
-            }
-        }
-    }, [ctx.listFiles, ctx.setListFiles]);
 
     async function enableLayerWithGroups(group, ctx, visible) {
         if (group !== undefined) {
@@ -92,9 +69,13 @@ export default function Favorites() {
             <ListItemIcon>
                 <Star fontSize="small"/>
             </ListItemIcon>
-            <ListItemText>Favorites </ListItemText>
-            {favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
+            <ListItemText>Favorites {ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.length > 0 ? `(${ctx.favorites.groupsUnique.length})` : ''}</ListItemText>
+            {
+                ctx.favorites.groupsUnique.length === 0 ? <></> :
+                    favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>
+            }
         </MenuItem>
+        {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
             {ctx.favorites.groupsUnique && FavoritesShowAllRow(ctx)}
             {ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.map((group, index) => {
