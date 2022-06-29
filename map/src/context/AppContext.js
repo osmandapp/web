@@ -327,7 +327,7 @@ export const AppContextProvider = (props) => {
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-    const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: []});
+    const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
