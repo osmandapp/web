@@ -544,6 +544,7 @@ L.GPX = L.FeatureGroup.extend({
                 let icon;
                 let background;
                 let color;
+                let hidden;
                 if (extEl) {
                     let addressEl = el[i].getElementsByTagName('osmand:address');
                     address = addressEl.length > 0 ? addressEl[0].textContent : '';
@@ -557,6 +558,12 @@ L.GPX = L.FeatureGroup.extend({
                     let colorEl = el[i].getElementsByTagName('osmand:color');
                     color = colorEl.length > 0 ? colorEl[0].textContent : '';
 
+                    let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
+                    hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : '';
+                }
+
+                if (hidden === "true") {
+                    continue;
                 }
 
                 /*
