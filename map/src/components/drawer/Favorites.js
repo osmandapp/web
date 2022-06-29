@@ -9,22 +9,17 @@ export default function Favorites() {
     const [enableGroups, setEnableGroups] = useState([]);
 
     async function enableLayerWithGroups(group, ctx, visible) {
-        if (group !== undefined) {
-            ctx.favorites.groups = visible ? [...ctx.favorites.groups, group]
-                : ctx.favorites.groups.filter(function (f) {
-                    return f !== group
-                });
-        }
         if (visible) {
             ctx.favorites.groups = [...ctx.favorites.groups, group];
             setEnableGroups([...enableGroups, group]);
         } else {
-            ctx.favorites.groups.filter(function (f) {
+            ctx.favorites.groups = ctx.favorites.groups.filter(function (f) {
                 return f !== group
             });
-            setEnableGroups(enableGroups.filter(function (f) {
+            let updateGroup = enableGroups.filter(function (f) {
                 return f !== group
-            }));
+            });
+            setEnableGroups(updateGroup);
         }
         ctx.setFavorites({...ctx.favorites});
     }
