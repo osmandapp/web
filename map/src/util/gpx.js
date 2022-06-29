@@ -53,12 +53,6 @@ var _DEFAULT_MARKER_OPTS = {
     endIconUrl: 'map/public/images/gpx/pin-icon-end.png',
     shadowUrl: 'map/public/images/gpx/pin-shadow.png',
     wptIconsType: [],
-    wptIconUrls: {
-        '': 'map/public/images/gpx/pin-icon-wpt.png',
-    },
-    wptIconTypeUrls: {
-        '': 'map/public/images/gpx/pin-icon-wpt.png',
-    },
     pointMatchers: [],
     iconSize: [33, 45],
     shadowSize: [50, 50],
@@ -637,6 +631,17 @@ L.GPX = L.FeatureGroup.extend({
                         symIcon = wptIcons[''];
                     } else if (wptIconUrls && wptIconUrls['']) {
                         symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
+                    } else {
+                        symIcon = L.divIcon({
+                            html: `
+                              <div>
+                                  <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
+                                  </svg>
+                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
+                              </div>
+                              `
+                        })
                     }
                 }
 
