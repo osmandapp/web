@@ -256,37 +256,14 @@ The options on the bottom bar can be used to manage the list of notes in My Plac
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)  
 
-
-
-### Share
+### Share with GPX waypoints
 
 **Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>  
-
-You can share notes in two ways.
-
-The first. Allows you to share a specific note.
-- [Add a note](../plugins/audio-video-notes/#create-a-note).
-- Go to My Places. 
-- Click on the three dot menu in the box of any of the notes you want to share.
-- In the list, click the share button.
-- Select the app you want to share from those installed on your device.  
-
-![Share 1](@site/static/img/plugins/audio-video-notes/a-v_share_1.png)
-
-Second. Allows you to select from a list the number of notes you want to share.
-- [Add a note](../plugins/audio-video-notes/#create-a-note).
-- Go to My Places.
-- In the bottom menu is the share button, click on it.
-- A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.
-- Choose what you need and click on the share icon in the upper right corner of the screen.
-- Select the app you want to share with from those installed on your device.  
-
-NOTE. Not all app support file sharing.  
+You could share all Notes including [GPX](#waypoints-created-from-notes) that has selected notes as waypoints on **My Places** screen by clicking on bottom menu button share. A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.
 
 ![Share 1](@site/static/img/plugins/audio-video-notes/a-v_share_2.png)
 
-Each note contains the time at which it was created, the amount of data, and if it is a record, the time of recording, location data, you can add GPX data. 
-File formats: Audio - 3gp, Video - mp4, Photo - jpg.
+Each note contains the time at which it was created, the amount of data, and if it is a record, the time of recording, location data, you can add GPX data. File formats: Audio - 3gp, Video - mp4, Photo - jpg.
 
 
 ### Show all on the map 
