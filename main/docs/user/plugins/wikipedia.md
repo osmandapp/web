@@ -56,12 +56,6 @@ Once purchased, Wikipedia Offline can be enabled in the Plugins menu and then yo
 
 <TabItem value="android" label="Android">  
 
-:::note
-  
-<ProFeature/>  This plugin you can use with Pro feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-
-:::
-
 
 The **Android** version requires one of the [paid services](../purchases/android.md#free-and-paid-features): in-app purchases or a subscription. After making a purchase, to enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section of the main menu.
 
@@ -70,12 +64,6 @@ The **Android** version requires one of the [paid services](../purchases/android
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-:::note
-  
-<ProFeature/>  This plugin you can use with Pro feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-
-:::
 
 
 The **iOS** version provides the Wikipedia plugin by default. To enable the plugin, turn on the **Wikipedia** option in the following menu of the app: *<Translate ios="true" ids="menu,plugins,product_title_wiki"/>* 
