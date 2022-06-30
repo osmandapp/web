@@ -238,29 +238,18 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 |![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
 |If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
 |![Trip recording widget](@site/static/img/widgets/overview.png)|
-|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
+|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|
  
 
 
 
 **Duration, Uphill, Downhill**   
 
-| | 
-|------------|
-|**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-
 
 
 | | 
 |------------|
-|**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
-
-
-| | 
-|------------|
-|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
+|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|
 |**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
@@ -368,7 +357,7 @@ Screen with Distance/Start-Stop widget. You can tap the widget and more informat
 |![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_ios_rec.png)| 
 |If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
 |![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
-|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|  
+|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|  
 
 
 
