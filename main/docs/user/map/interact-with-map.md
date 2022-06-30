@@ -68,7 +68,7 @@ Compass widget indicates how map is oriented on the device screen and top arrow 
 
 ### Configure visibility
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_compass"/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>
 
 <p> </p>
 
