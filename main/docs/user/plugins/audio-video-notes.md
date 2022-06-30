@@ -14,17 +14,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 >  ```For Android version only```
 
-Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation.
+Audio and video recordings for future use when needed or to recall a moment, scene, or interaction after creation are available both in the central repository and on the map as a separate layer of user stories and thoughts tied to geolocation.  
 
 ## Overview 
 
 >**NOTE**: As of March, 2022, the audio/video notes functionality is available for **Android only**. 
 
-The Audio/video notes plugin extends the functional capabilities of storing the information about a geolocation by giving the user options to create their own representations in different formats, such as: a photo note, a video note, or an audio file, and tie them to a geographical place, or the current position. The recording options are provided with the Audio/video notes widget, and/or the context menu of a POI. The resulted data is automatically saved to the central storage from where it is convenient to manage and share anything needed. 
+The Audio/Video Notes plugin extends the functionality of storing geolocation information by giving the user the ability to create their own views in various formats, such as a photo note, video note, or audio file, and associate them with their geographic location or current location. The recording options are provided with the Audio/video notes widget, and/or the context menu of a POI. The resulted data is automatically saved to the central storage from where it is convenient to manage and share anything needed. 
 
-Simultaneously, all created audio/video notes make up a Recording layer that if configured to show up on the map, provides a different view on the recorded data and means for managing it. Within the Recording layer, the audio/video notes are laid out as POIs across the map, thus creating a user-made map narrative, visible only to the owner of the device.
+At the same time, all created audio/video notes make up a Recording layer that if configured to show up on the map, provides a different view of the recorded data and means for managing it. Within the Recording layer, the audio/video notes are laid out as POIs across the map, thus creating a user-made map narrative, visible only to the owner of the device.
 
-![Audio video notes intro](@site/static/img/plugins/audio-video-notes/audio-video-intro.png)
+![Audio video notes intro](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+
+<!--![Audio video notes intro](@site/static/img/plugins/audio-video-notes/audio-video-intro.png)-->
 
 ## Setup
 
@@ -39,7 +41,7 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 
 ### Enable plugin
 
-The Audio/video notes plugin is required for working with the audio/video notes: from creating the notes to viewing them in My Places, and showing on the map. All audio/video notes will be hidden from the map and from My Places, if the plugin becomes disabled. 
+The Audio/video notes plugin is required to work with the audio/video notes: from creating the notes to viewing them in My Places, and showing on the map. All audio/video notes will be hidden from the map and from My Places, if the plugin is disabled. 
 
 To enable the plugin, tap the triple dots beside the enabled **<Translate android="true" ids="audionotes_plugin_name"/>** option in the list of [plugins](../start-with/first-steps.md#how-to-configure-plugins) and select **Enable**.  
 
@@ -51,7 +53,7 @@ To enable the plugin, tap the triple dots beside the enabled **<Translate androi
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-### Add/Configure widget
+### Add Configure widget
 
 The <Translate android="true" ids="map_widget_av_notes"/> widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
 
@@ -61,7 +63,7 @@ Adding the widget to the screen is needed when you would rather skip looking for
 
 1. Open <Translate android="true" ids="shared_string_menu,map_widget_config"/>
 
-2. Scroll down the **<Translate android="true" ids="map_widget_right"/>**.
+2. Select  **<Translate android="true" ids="map_widget_left"/>** or **<Translate android="true" ids="map_widget_right"/>**.
 
 3. Tap **<Translate android="true" ids="map_widget_av_notes"/>** and the context menu of the widget opens. 
 
@@ -73,12 +75,15 @@ Adding the widget to the screen is needed when you would rather skip looking for
 
     - **<Translate android="true" ids="av_def_action_video"/>** - to immediately start to record a video;
 
-    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo. 
-
-5. Make certain <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget to be displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
+    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo.  
 
 
-![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)
+![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
+
+<!--5. Make sure <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget is displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
+
+
+![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)-->
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -93,7 +98,7 @@ For every profile, it is possible to configure the recording settings. There are
 
 From the [plugin](../start-with/first-steps.md#how-to-configure-plugins), the Audio/video recording settings are opened by selecting **Settings** from the triple dots list of the plugin in: 
 
-<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
+**Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
 
 ![Plugin settings](@site/static/img/plugins/audio-video-notes/settings_from_plugin.png)
 
@@ -162,7 +167,7 @@ You can create a photo, video, and/or audio note in any of the following ways:
 - with the [Context menu](../map/map-context-menu.md#-record-av-note-android) of a point on the map - if the note should be tied to the selected point on the map.
 
 
-#### CREATE AND TIE TO YOUR CURRENT POSITION
+#### 1. Create and tie to your current position
 
 To create a note tied to your current position, and thus, avoiding any search of a suitable point on the map to tie the note to, the <Translate android="true" ids="map_widget_av_notes"/> widget is used: tap the widget, and make the note. 
 
@@ -171,7 +176,7 @@ The functions provided by the <Translate android="true" ids="map_widget_av_notes
 ![Audio video plugin widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 
-#### CREATE AND TIE TO SELECTED GEOLOCATION 
+#### 2. Create and tie to selected geolocation
 
 To create a note tied to a selected point on the map, the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point is used, as follows:
 
@@ -188,7 +193,7 @@ To create a note tied to a selected point on the map, the [Context menu](../map/
 
 
 
-#### RECORDER DIALOG
+#### Recorder dialog
 
 For _an audio / video note_, respectively the audio, or video recorder shows up. And you can:
 
@@ -212,7 +217,7 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 
 [My Places](../personal/myplaces.md) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
 
-<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>
+**Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>
 
 ![Audio video plugin My places menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
@@ -238,6 +243,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Manage list of notes in Places
@@ -246,11 +252,42 @@ The options on the bottom bar can be used to manage the list of notes in My Plac
 
 - **<Translate android="true" ids="shared_string_sort"/>** - opens a choice of how to sort: by type, or date, and on selection an option, sorts the list respectively. 
 - **<Translate android="true" ids="shared_string_share"/>** - shows a check list of all notes, including those added as waypoints to GPX files. First, required notes are checked, then the Share icon on tap at the right-hand top corner of the screen provides the available sharing options, and finally, the checked notes are shared, according to the selected option. 
-- **<Translate android="true" ids="shared_string_delete"/>** - shows a check list of audio, photo and video notes only. First, required notes are checked, then the Delete icon at the right-hand top corner of the screen is clicked, and after confirmation, deletes the selected notes. 
-
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+- **<Translate android="true" ids="shared_string_delete"/>** - shows a check list of audio, photo and video notes only. First, required notes are checked, then the Delete icon at the right-hand top corner of the screen is clicked, and after confirmation, deletes the selected notes.  
 
 
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)  
+
+
+
+### Shere notes
+
+**Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>  
+
+You can share notes in two ways.
+
+The first. Allows you to share a specific note.
+- [Add a note](../plugins/audio-video-notes/#create-a-note).
+- Go to My Places. 
+- Click on the three dot menu in the box of any of the notes you want to share.
+- In the list, click the share button.
+- Select the app you want to share from those installed on your device.  
+
+![Share 1](@site/static/img/plugins/audio-video-notes/a-v_share_1.png)
+
+Second. Allows you to select from a list the number of notes you want to share.
+- [Add a note](../plugins/audio-video-notes/#create-a-note).
+- Go to My Places.
+- In the bottom menu is the share button, click on it.
+- A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.
+- Choose what you need and click on the share icon in the upper right corner of the screen.
+- Select the app you want to share with from those installed on your device.  
+
+NOTE. Not all app support file sharing.  
+
+![Share 1](@site/static/img/plugins/audio-video-notes/a-v_share_2.png)
+
+Each note contains the time at which it was created, the amount of data, and if it is a record, the time of recording, location data, you can add GPX data. 
+File formats: Audio - 3gp, Video - mp4, Photo - jpg.
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -265,7 +302,7 @@ To show/hide all notes altogether, use the [Recording layer](../map/point-layers
 
 The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) can be reached out, as follows:
 
-<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>
+**Android**: <Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
