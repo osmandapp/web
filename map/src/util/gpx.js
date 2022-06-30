@@ -528,7 +528,7 @@ L.GPX = L.FeatureGroup.extend({
                 let symKey = symEl.length > 0 ? symEl[0].textContent : null;
 
                 let typeEl = el[i].getElementsByTagName('type');
-                let typeKey = typeEl.length > 0 ? typeEl[0].textContent : null;
+                let typeKey = typeEl.length > 0 ? typeEl[0].textContent : 'Favorites';
 
                 let extEl = el[i].getElementsByTagName('extensions');
                 let address;
@@ -550,11 +550,7 @@ L.GPX = L.FeatureGroup.extend({
                     color = colorEl.length > 0 ? colorEl[0].textContent : '';
 
                     let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
-                    hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : '';
-                }
-
-                if (hidden === "true") {
-                    continue;
+                    hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : 'false';
                 }
 
                 /*
@@ -667,15 +663,12 @@ L.GPX = L.FeatureGroup.extend({
                 } else {
                     if (options.group.length > 0) {
                         options.group.forEach(function(item) {
-                            if (item === 'Favorites') {
-                                item = null;
-                            }
-                            if (item === typeKey) {
+                            if (item.type === typeKey) {
                                 layers.push(marker);
                             }
                         });
                     } else {
-                        this._info.favouritesGroup.push(typeKey)
+                        this._info.favouritesGroup.push({type: typeKey, hidden: hidden})
                     }
                 }
             }

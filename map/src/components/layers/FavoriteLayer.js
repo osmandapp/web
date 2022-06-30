@@ -13,7 +13,8 @@ async function addFavoritesToMap(ctx, file, map) {
     }).on('loaded', function (e) {
         map.fitBounds(e.target.getBounds());
     }).on('error', function (e) {
-        ctx.favorites.groupsUnique = e.target._info.favouritesGroup.filter((v, i, a) => a.indexOf(v) === i);
+        ctx.favorites.groupsUnique = [...new Map(e.target._info.favouritesGroup.map(item =>
+            [item['type'], item])).values()]
         if (!ctx.favorites.readFirst) {
             ctx.favorites.readFirst = true;
             ctx.setFavorites({...ctx.favorites});
