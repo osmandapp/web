@@ -51,7 +51,6 @@ To enable the plugin, tap the triple dots beside the enabled **<Translate androi
 ![Audio video plugin Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_android.png)
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Add Configure widget
 
@@ -139,11 +138,7 @@ The way the Audio/video recording will work can be determined with the settings 
 | **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
 
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-## Manage 1 note
+## Manage single note
 
 You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
 
@@ -155,7 +150,6 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 - play the note;
 - create waypoints in a [track](../plugins/trip-recording.md#gpx-file-details);
 - export to [JOSM](https://josm.openstreetmap.de/);
-
 
 
 ### Create
@@ -208,8 +202,6 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 > **NOTE**: Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab. 
 
 
-
-
 ###  View in My Places
 
 [My Places](../personal/myplaces.md) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
@@ -226,7 +218,7 @@ To show a specific note on the map, use the list of notes in My Places, find the
 ![Audio video plugin My places menu Context](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 
-### Play the note   
+### Play
 
 To play a note, use the respective option in the [Context menu](../map/map-context-menu#-audiovideo-note-android) opened for the note:
 
@@ -251,10 +243,9 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
-
 ## Manage multiple notes
 
-### Manage list in My Places
+### Manage in My Places
 
 The options on the bottom bar can be used to manage the list of notes in My Places, as follows:
 
@@ -298,7 +289,7 @@ Each note contains the time at which it was created, the amount of data, and if 
 File formats: Audio - 3gp, Video - mp4, Photo - jpg.
 
 
-### Show all notes on the map 
+### Show all on the map 
 
 Notes can tell you a story, once displayed on the map: e.g. where to notice signs, which door to open, how to find a way out, an optimal path to go, etc. It is possible to show all notes altogether instead of [one by one](../plugins/audio-video-notes#show-a-note-on-the-map). 
 
@@ -311,8 +302,6 @@ The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) c
 **Android**: <Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
-
-
 
 ## Waypoints created from notes
 
