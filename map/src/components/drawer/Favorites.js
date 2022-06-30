@@ -7,6 +7,7 @@ export default function Favorites() {
     const ctx = useContext(AppContext);
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
     const [enableGroups, setEnableGroups] = useState([]);
+    const [allGroupsOpen, setAllGroupsOpen] = useState(false);
 
     async function enableLayerWithGroups(group, ctx, visible) {
         if (visible) {
@@ -14,10 +15,10 @@ export default function Favorites() {
             setEnableGroups([...enableGroups, group]);
         } else {
             ctx.favorites.groups = ctx.favorites.groups.filter(function (f) {
-                return f !== group
+                return f.type !== group.type
             });
             let updateGroup = enableGroups.filter(function (f) {
-                return f !== group
+                return f.type !== group.type
             });
             setEnableGroups(updateGroup);
         }
@@ -25,24 +26,34 @@ export default function Favorites() {
     }
 
     async function enableLayerAllGroups(ctx, visible) {
-        if (ctx.favorites && ctx.favorites.groupsUnique.length > 0) {
-            ctx.favorites.groups = visible ? ctx.favorites.groups.concat(ctx.favorites.groupsUnique) : enableGroups;
+        if (visible) {
+            if (ctx.favorites && ctx.favorites.groupsUnique.length > 0) {
+                ctx.favorites.groups = ctx.favorites.groupsUnique.filter(function (item) {
+                    return item.hidden === 'false';
+                });
+                ctx.favorites.groups = ctx.favorites.groups.concat(enableGroups);
+            }
+            setEnableGroups(ctx.favorites.groups);
+            setAllGroupsOpen(true);
+        } else {
+            if (ctx.favorites && ctx.favorites.groupsUnique.length > 0) {
+                ctx.favorites.groups = [];
+            }
+            setEnableGroups([]);
+            setAllGroupsOpen(false);
         }
         ctx.setFavorites({...ctx.favorites});
     }
 
     const FavoritesRow = (ctx) => ({index, group}) => {
-        if (group === null) {
-            group = "Favorites"
-        }
         return (
             <MenuItem sx={{ ml: 3 }} key={index} divider>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {group}
+                        {group.type}
                     </Typography>
                 </ListItemText>
-                <Switch
+                <Switch checked={enableGroups.some(e => e.type === group.type)}
                    onChange={(e) => enableLayerWithGroups(group, ctx, e.target.checked)}/>
             </MenuItem>)
     }
@@ -54,7 +65,7 @@ export default function Favorites() {
                     <ViewHeadline fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText> Show all favorites </ListItemText>
-                <Switch
+                <Switch checked={allGroupsOpen}
                     onChange={(e) => enableLayerAllGroups(ctx, e.target.checked)}/>
             </MenuItem>)
     }
