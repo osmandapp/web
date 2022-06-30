@@ -86,7 +86,6 @@ Adding the widget to the screen is needed when you would rather skip looking for
 ![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)-->
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Open settings
 
@@ -114,7 +113,6 @@ From the [settings](../start-with/first-steps.md#how-to-manage-your-settings) of
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Establish options 
 
@@ -145,7 +143,7 @@ The way the Audio/video recording will work can be determined with the settings 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 
-## Manage notes
+## Manage 1 note
 
 You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
 
@@ -211,7 +209,6 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ###  View in My Places
 
@@ -243,8 +240,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;
+## Manage multpile notes
 
 ### Manage list of notes in Places
 
@@ -290,8 +286,6 @@ Each note contains the time at which it was created, the amount of data, and if 
 File formats: Audio - 3gp, Video - mp4, Photo - jpg.
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-
 ### Show all notes on the map 
 
 Notes can tell you a story, once displayed on the map: e.g. where to notice signs, which door to open, how to find a way out, an optimal path to go, etc. It is possible to show all notes altogether instead of [one by one](../plugins/audio-video-notes#show-a-note-on-the-map). 
@@ -308,7 +302,6 @@ The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) c
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Play the note   
 
@@ -321,9 +314,6 @@ Also, [Details](../map/map-context-menu#-audiovideo-note-android) will help by g
 
 ![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png) ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Waypoints created from notes
 
@@ -379,12 +369,6 @@ If to view the GPX file of the track added with a waypoint from an audio/video/p
 ![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
 
-
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
 ## File name details
 
 The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
@@ -393,7 +377,6 @@ The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates au
 
 where `SHORTLINK_LOCATION` indicates the latitude and longitude of the location that the file is linked to. The `SHORTLINK_LOCATION` is encoded, according to the specification https://wiki.openstreetmap.org/wiki/Shortlink.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Export to JOSM 
 
