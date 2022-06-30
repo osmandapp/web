@@ -158,7 +158,7 @@ You can manage your information, thoughts, ideas, etc. tied to a geographical pl
 
 
 
-### Create a note
+### Create
 
 You can create a photo, video, and/or audio note in any of the following ways:
 - with the [Widget](../widgets/info-widgets.md#-audio-video-notes-widget-android) - if the note should be tied to your current geographical position;
@@ -219,15 +219,27 @@ For _a photo note_, the camera functionality shows up, and you can take a photo,
 ![Audio video plugin My places menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 
-### Show a note on the map
+### Show on the map
 
 To show a specific note on the map, use the list of notes in My Places, find the needed one and tap it. As a result, the map shows up, highlights the location of the note, and opens the [Context menu](../plugins/audio-video-notes.md#actions-in-map-context-menu). It is possible to work with the note by selecting the options in the context menu.
 
 ![Audio video plugin My places menu Context](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 
+### Play the note   
 
-### Rename and manage a note
+To play a note, use the respective option in the [Context menu](../map/map-context-menu#-audiovideo-note-android) opened for the note:
+
+- on the map;
+- in My Places. 
+
+Also, [Details](../map/map-context-menu#-audiovideo-note-android) will help by giving more data, like: the latitude and longitude; the date and time of the record, if any photos.
+
+![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png) ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+
+
+
+### Rename, delete, share
 
 To manage a note in My Places, tap the vertical triple points of the note in the list, and the available options show up, as follows: 
 
@@ -240,9 +252,9 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 
-## Manage multpile notes
+## Manage multiple notes
 
-### Manage list of notes in Places
+### Manage list in My Places
 
 The options on the bottom bar can be used to manage the list of notes in My Places, as follows:
 
@@ -255,7 +267,7 @@ The options on the bottom bar can be used to manage the list of notes in My Plac
 
 
 
-### Shere notes
+### Share
 
 **Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>  
 
@@ -300,19 +312,6 @@ The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) c
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
-
-
-
-### Play the note   
-
-To play a note, use the respective option in the [Context menu](../map/map-context-menu#-audiovideo-note-android) opened for the note:
-
-- on the map;
-- in My Places. 
-
-Also, [Details](../map/map-context-menu#-audiovideo-note-android) will help by giving more data, like: the latitude and longitude; the date and time of the record, if any photos.
-
-![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png) ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 
 ## Waypoints created from notes
@@ -369,7 +368,9 @@ If to view the GPX file of the track added with a waypoint from an audio/video/p
 ![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
 
-## File name details
+## Miscallenous
+
+### File name details
 
 The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
 
@@ -378,7 +379,7 @@ The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates au
 where `SHORTLINK_LOCATION` indicates the latitude and longitude of the location that the file is linked to. The `SHORTLINK_LOCATION` is encoded, according to the specification https://wiki.openstreetmap.org/wiki/Shortlink.
 
 
-## Export to JOSM 
+### Export to JOSM 
 
 
 To view everything later, you can export the track together with all the media and see them in the  [JOSM editor](https://josm.openstreetmap.de/). Please note that you'll need to put the media in the corresponding folder (you'll know which one if you click on a video note and see the message about a missing file. Just put it in the indicated folder).
