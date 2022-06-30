@@ -120,7 +120,6 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## * Average speed widget  
 
-**General Information**  
 The widget shows what your average speed is. The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes (for more information see below). In addition, if you stop for a long time, this is also an option in the widget, the time is no longer displayed.  
 
 It is a simple but very useful widget without any extra features. You can easily use it if, for example, you need to observe speed limits on highways or if you ride a bicycle.  
@@ -176,7 +175,6 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 
 :::  
 
-**General Information**  
 Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**  
 
 <!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
