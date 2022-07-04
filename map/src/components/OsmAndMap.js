@@ -1,14 +1,15 @@
-import React, {useEffect, useRef, useContext, useState} from 'react';
+import React, {useEffect, useRef, useContext, useState, useMemo} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl} from "react-leaflet";
+import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl, useMap} from "react-leaflet";
 import AppContext from "../context/AppContext";
-import MapContextMenu from "./MapContextMenu"
+import MapContextMenu from "./contextmenu/MapContextMenu"
 import RouteLayer from "./layers/RouteLayer"
 import WeatherLayer from "./layers/WeatherLayer"
 import L from 'leaflet';
 import MarkerIcon from './MarkerIcon.js'
 import '../util/gpx.js';
 import 'leaflet-hash';
+import ReactLeafletEditable from 'react-leaflet-editable';
 
 // import 'leaflet.awesome-markers';
 // import 'leaflet.awesome-markers/dist/leaflet.awesome-markers.css';
@@ -18,6 +19,9 @@ import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "./layers/FavoriteLayer";
 import TrackLayer from "./layers/TrackLayer";
+import PlanRouteLayer from "./layers/PlanRouteLayer";
+import '../util/Leaflet.Editable.js';
+import {debounce} from "@mui/material";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -71,9 +75,9 @@ const OsmAndMap = () => {
 
     return (
         <MapContainer center={position} zoom={5} className={classes.root} minZoom={1} maxZoom={20}
-                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]}
+                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
         >
-
+            <PlanRouteLayer/>
             <RouteLayer/>
             <WeatherLayer/>
             <FavoriteLayer/>

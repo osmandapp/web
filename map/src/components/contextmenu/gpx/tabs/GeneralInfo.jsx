@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Box, Button } from "@mui/material";
-import { toHHMMSS } from "../../context/AppContext"
+import { toHHMMSS } from "../../../../context/AppContext"
 
 export default function GeneralInfo({ width, summary, url }) {
     let timeRange = '';

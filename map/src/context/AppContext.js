@@ -328,6 +328,7 @@ export const AppContextProvider = (props) => {
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
+    const [planRoute, setPlanRoute] = useState(false);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -382,7 +383,8 @@ export const AppContextProvider = (props) => {
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
-        favorites, setFavorites
+        favorites, setFavorites,
+        planRoute, setPlanRoute
 
     }}>
         {props.children}
