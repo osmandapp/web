@@ -334,7 +334,7 @@ If to view the GPX file of the track added with a waypoint from an audio/video/p
 ![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
 
-## Miscallenous
+## Miscellaneous
 
 ### File name details
 
