@@ -5,6 +5,7 @@ import {TabContext, TabList, TabPanel} from "@mui/lab";
 import GeneralInfo from "./GeneralInfo";
 import PointsTab from "./tabs/PointsTab";
 import GraphTab from "./tabs/GraphTab";
+import InfoTab from "./tabs/InfoTab";
 
 
 const useStyles = makeStyles({
@@ -20,11 +21,12 @@ const PlanRouteContextMenu = ({newRoute, pointsList, setPointsList}) => {
 
     const classes = useStyles();
 
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState("info");
 
     const tabs = {};
     const width = 800;
 
+    tabs.Info = <InfoTab key='info'/>;
     tabs.Points = <PointsTab key='points' newRoute={newRoute} pointsList={pointsList} setPointsList={setPointsList}
                              width={width}/>;
     tabs.Graph = <GraphTab key='graph'/>;

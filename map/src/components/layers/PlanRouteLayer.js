@@ -19,6 +19,7 @@ export default function PlanRouteLayer() {
         if (createRoute) {
             let layer = map.editTools.startPolyline();
             setNewRoute(layer);
+            setDeleteRoute(false);
         }
     }, [createRoute, setCreateRoute]);
 
@@ -28,6 +29,7 @@ export default function PlanRouteLayer() {
                 map.removeLayer(newRoute);
                 setNewRoute(null);
                 setPointsList([]);
+                setCreateRoute(false);
             }
         }
     }, [deleteRoute, setDeleteRoute]);
