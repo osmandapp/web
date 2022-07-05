@@ -171,6 +171,7 @@ Some region downloads could be pretty large and consists of multiple GB. Please 
 If you have required maps downloaded, you can display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
 
 > Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
+
 >**NOTE**: If after loading and enabling the corresponding map you still do not see the changes, please try to restart the application.
 
   
@@ -183,6 +184,7 @@ Contour lines allow you to explore in which direction and how much the surface i
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
     
 #### ENABLE
     
@@ -230,14 +232,17 @@ Contour lines allow you to explore in which direction and how much the surface i
 </Tabs>  
 
 
-
 ### Hillshade map
 
+Hillshade allows you to explore topography by illuminating it with hypothetical lighting that simulates shadow casting, thus revealing curvature that would normally be hidden or obscured by, for example, large amounts of vegetation. You can [configure hillshade visibility](../map/raster-maps.md#hillshade--slope): the transparency of the shadow, and the zoom level at which the Hillshade map will be visible.  
 
-<Tabs groupId="operating-systems">
+
+<Tabs groupId="operating-systems">  
+
 <TabItem value="android" label="Android">
+    
 
-#### TERRAIN
+#### ENABLE
 
 In the **Android** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
 1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>.  
@@ -248,37 +253,8 @@ In the **Android** version, to show one of the **Terrain** maps for the selected
 
 ![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_android_selected.png) 
 
+#### APPEARANCE SETTINGS
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-    
-#### TERRAIN
-
-In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*.  
-2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_overunder"/>* section in the same menu.
-3. In the section, find *<Translate ios="true" ids="map_settings_overunder"/>*, toggle on the **Terrain** option.
-- Tap it, to open the context menu.  
-- Select one of the options: either **Hillshade**, or **Slope**.  
-
-
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_ios_selected.png) 
-
-
-</TabItem>
-
-</Tabs>  
-
-Hillshade allows you to explore topography by illuminating it with hypothetical lighting that simulates shadow casting, thus revealing curvature that would normally be hidden or obscured by, for example, large amounts of vegetation. Available [configurations](../map/configure-map-menu.md): the transparency of the shadow, and the zoom level at which the Hillshade map will be visible.  
-
-The **Hillshade** settings are available in the context menu of the **Terrain** option in the **Configure map** of a specific [profile](../personal/profiles.md).    
-
-<Tabs groupId="operating-systems">  
-
-<TabItem value="android" label="Android">
-
-**Settings** for the appearance of Hillshade.
 - *<Translate android="true" ids="shared_string_terrain"/>* - switch to display or hide terrain elevation data to/from the map.
 - *<Translate android="true" ids="shared_string_hillshade"/>* / *<Translate android="true" ids="shared_string_slope"/>* - choice to display one of the relief data types: either Hillshade or Slope.
 - *<Translate android="true" ids="shared_string_transparency"/>* - percentage scale to determine the degree of transparency the shadow used to display hills.
@@ -293,8 +269,20 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+    
+#### ENABLE
+In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
+1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*.  
+2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_overunder"/>* section in the same menu.
+3. In the section, find *<Translate ios="true" ids="map_settings_overunder"/>*, toggle on the **Terrain** option.
+- Tap it, to open the context menu.  
+- Select one of the options: either **Hillshade**, or **Slope**.  
 
-**Settings** for the appearance of Hillshade.
+
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_ios_selected.png) 
+
+#### APPEARANCE SETTINGS
+
 - *<Translate ios="true" ids="toggle_hillshade"/>* - toggle on/off Terrain on the map.
 - *<Translate ios="true" ids="map_settings_hillshade"/>* / *<Translate ios="true" ids="gpx_slope"/>* - choice to display one of the relief data types: either Hillshade or Slope.
 - *<Translate ios="true" ids="map_settings_layer_transparency"/>* - percentage scale to determine the degree of transparency the shadow used to display hills.
@@ -312,15 +300,15 @@ The **Hillshade** settings are available in the context menu of the **Terrain** 
 
 ### Slope map
 
-The slope allows you to explore the steepness, or incline of a slope expressed as an angle in the number of degrees of deviation from the plane, which corresponds to the vertical distance divided by the horizontal distance. Available [configurations](../map/configure-map-menu.md): the transparency of the colours used to display the angle, and the zoom level at which the Slope map should be visible.  
+The slope allows you to explore the steepness, or incline of a slope expressed as an angle in the number of degrees of deviation from the plane, which corresponds to the vertical distance divided by the horizontal distance.  You can [configure slope visibility](../map/raster-maps.md#hillshade--slope): the transparency of the colours used to display the angle, and the zoom level at which the Slope map should be visible.  
 
-The **Slope** settings are available in the context menu of the **Terrain** option in the **Configure map** of a specific [profile](../personal/profiles.md).  
 
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">  
 
-**Settings** for the appearance of Slope.
+#### APPEARANCE SETTINGS
+
 - *<Translate android="true" ids="shared_string_terrain"/>* - toggle on/off Terrain on the map.
 - *<Translate android="true" ids="shared_string_hillshade"/>* / *<Translate android="true" ids="shared_string_slope"/>* - choice to display one of the relief data types: either Hillshade or Slope.
 - *<Translate android="true" ids="shared_string_transparency"/>* - percentage scale to determine the degree of transparency the colours used to display slope.   
@@ -336,7 +324,8 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 <TabItem value="ios" label="iOS">
 
-**Settings** for the appearance of Slope.
+#### APPEARANCE SETTINGS
+
 - *<Translate ios="true" ids="toggle_hillshade"/>* - toggle on/off Terrain on the map.  
 - *<Translate ios="true" ids="map_settings_hillshade"/>* / *<Translate ios="true" ids="gpx_slope"/>* - choice to display one of the terrain data types: either Hillshade, or Slope.
 - *<Translate ios="true" ids="map_settings_layer_transparency"/>* - percentage scale to determine the degree of transparency the colours used to display slope. 
@@ -352,17 +341,15 @@ The **Slope** settings are available in the context menu of the **Terrain** opti
 
 </Tabs>
 
-> **NOTE**: Contour line colours,  Hillshade, and Slope angle are available for viewing at a certain zoom level, which is set in the settings for a particular map type.
 
+>**NOTE**: There is a colour legend that shows how each colour corresponds to an angle of deviation from the plane. The legend is available in the Slope map settings.    
+![Slope colour legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
 
 ### Combine map types
 
-If you load different types of maps, *Contour lines*, *Hillshade*, *Slope*, you can combine them if necessary. By combining types of maps, you can achieve the optimal configuration of terrain data according to your current needs.
-
-For example, to estimate curvature, especially for a mountain range, the obvious choice to load would be a combination of Contour lines and Hillshade. And to estimate the steepness of a slope, points of equal height, you can display Contour lines and Slope maps together.  
+If you load different types of maps, *Contour lines*, *Hillshade*, *Slope*, you can combine them if necessary. For example, to estimate curvature, especially for a mountain range, the obvious choice to load would be a combination of Contour lines and Hillshade. And to estimate the steepness of a slope, points of equal height, you can display Contour lines and Slope maps together.  
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -379,5 +366,3 @@ For example, to estimate curvature, especially for a mountain range, the obvious
 </Tabs>
 
 
->**NOTE**: There is a colour legend that shows how each colour corresponds to an angle of deviation from the plane. The legend is available in the Slope map settings.    
-![Slope colour legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
