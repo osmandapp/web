@@ -63,7 +63,7 @@ For purchases on **Android**, you can select the subscriptions: *In-app purchase
 - Tap the button.
 - Confirm your choice in **Add new plugin** screen.
 
-![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/enable_pl_2.png) ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/enable_pl_3.png) 
+![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/enable_pl_2.png)
 
 </TabItem>
 
@@ -76,8 +76,7 @@ For purchases on **iOS**, you ca select the subscriptions: *In-app purchases*, *
 - Tap the "off" button, and it will change to "on".
 - Confirm your choice in **New plugin added** screen.
 
-![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_1.png) ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_2.png) ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_3.png) 
-
+![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_1.png) ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_2.png) 
 </TabItem>
 
 </Tabs>
@@ -86,25 +85,11 @@ For purchases on **iOS**, you ca select the subscriptions: *In-app purchases*, *
 
 ## Download Maps
 
- 
-Three types of elevation data packages can be loaded for each region: Contour Lines, Hillshade and Slope. Most often, they can all be downloaded at the country level. In addition, maps at a lower region level are available.  
-
 ### How to download  
 
-To download Contour lines, Hillshade, and/or Slope for a specific area, do the following:
-
-- Go to  [Download maps menu](../start-with/download-maps.md#download---main-menu).
-- Find your country or region.
-- Choose any of the packages: 
-    - Contour lines. 
-    - Hillshade.
-    - Slope.
-- For Contour lines, [Choose Meters or Feet](../plugins/contour-lines#choose-meters-or-feet).
-- Download the files.  
-
+To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific area, do the following:
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -137,7 +122,7 @@ In the **iOS** version, to download any of the available packages of Contour lin
 
 ### Choose Meters or Feet
 
-The contour interval can be displayed in feet or meters. It is important to decide in what units it is convenient for you to see [**Contour lines**](../map/vector-maps.md#contour-lines) to download the appropriate version of the Contour lines map. Units are not interchangeable, and if feet need to be switched into meters, or vice versa, the previous version of the Contour lines map must be removed, in order to download another version.  
+It is important to decide in what units, meters or feet, it is convenient for you to see [**Contour lines**](../map/vector-maps.md#contour-lines) to download the appropriate version of the Contour lines map. Units are not interchangeable, and if feet need to be switched into meters, or vice versa, the previous version of the Contour lines map must be removed, in order to download another version.  
 
 <Tabs groupId="operating-systems">
 
@@ -159,9 +144,9 @@ The contour interval can be displayed in feet or meters. It is important to deci
 
 ### Consider country/region levels 
 
-If you don't want to download the types of maps for the entire country, you can download only the specific regions that you need.  
+Some region downloads could be pretty large and consists of multiple GB. Please download smallest area you need for example there is no full maps for whole Canada but there is a map for Ontario and there is no for Nunavut which is split in 8 regions with convenient download size.
 
-For example, for Italy you can download Hillshade and Slope maps for the entire country only, and Contour lines are available for download also for selected region level. Another example is Canada maps, where all three map types are available to download at the region level, so to display Contour lines and Slope for the Alberta region, all you need to do is load these two maps at the region level.   
+> NOTE: On some devices maps bigger than 2 GB might not be properly supported, please download region version instead than.
 
 <Tabs groupId="operating-systems">
 
