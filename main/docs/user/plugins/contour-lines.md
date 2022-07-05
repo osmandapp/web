@@ -208,7 +208,7 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 #### ENABLE
 
-1. Go to: [*<Translate ios="true" ids="menu,configure_map"/>*]((../map/configure-map-menu.md).  
+1. Go to: [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md).  
 2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_style"/>* section in the same menu. 
 3. In the section, scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
 
