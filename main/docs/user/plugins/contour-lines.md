@@ -184,7 +184,8 @@ Contour lines allow you to explore in which direction and how much the surface i
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
+    
+![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) 
     
 #### ENABLE
     
@@ -198,12 +199,13 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>* - choice of density options for displaying Contour lines on the map: Low, Medium, High (the map loads slower if the density is High).
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
-![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) ![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-   
+
+![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
 #### ENABLE
 
@@ -217,7 +219,7 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 - *<Translate ios="true" ids="map_settings_line_density"/>* - choice of density options for displaying Contour lines on the map: Low, Medium, High (the map loads slower if the density is High).
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
-![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png) ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
+ ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
 </TabItem>
 
@@ -254,6 +256,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
     
 #### ENABLE
 
