@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Contour lines and Terrain
+title: Contour lines and Terrain
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,35 +14,28 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Terrain information such as Contour lines, Hillshades, and Slopes - helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  
-
-## Overview
-
-The Contour Lines plugin is a separate function that can be enabled/disabled as needed. The plugin provides for [downloading](../personal/maps.md#download-maps-maps) the following maps:  
-
-
-- the **Contour lines** map in [vector](../map/vector-maps.md) points, and
-- 2 Terrain maps in [raster](../map/raster-maps.md) pixels:  
-    - **Hillshade** map.  
-    - **Slopes** map. 
+Terrain information such as **Contour lines**, **Hillshades** and **Slopes** - helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
 
 ![Contour lines and Terrain](@site/static/img/plugins/contour-lines/first_screen_1.png)
 
-Each map in the Contour Lines plugin is an independent option that appears above or below the map source when enabled, depending on the settings.
 
-Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat. Use contour lines, shading, and colours to show slopes, peaks, rugged terrain, and other altitudes on a map.  
+## Overview
 
+The Contour Lines plugin is a separate function that can be enabled/disabled as needed. Each [downloaded](../personal/maps.md#download-maps-maps) map in the plugin is an independent option that appears above or below the map source when enabled, depending on the settings.
 
+Contour lines consists of 3 map types:  
+
+- **Contour lines**  - [vector](../map/vector-maps.md) map represented in **feet** or **meters**.
+- **Hillshade** - [raster](../map/raster-maps.md) map layer.
+- **Slopes** - [raster](../map/raster-maps.md) map layer.
 
 ### Setup 
 
 To display Contour line and Terrain data on the map, you must make the following settings:
 
-1. Purchase any of the maps of the Coutour lines.
-2. Enable the Coutour lines plugin in the Plugins section of the main menu.
-3. Download Contour lines and/or Terrain maps for the required regions.
-4. Include Contour lines and/or relief maps for each profile.
-5. Adjust the map view if necessary.  
+1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
+2. [Download](#download-maps) Contour lines and/or Terrain maps.
+3. [Enable and adjust](#show-configure-map-view) contour lines and/or relief on the map view.
 
 ### Data source
 
@@ -90,7 +83,7 @@ For purchases on **iOS**, you ca select the subscriptions: *In-app purchases*, *
 
 
 
-## Download Contour lines/Terrain 
+## Download Maps
 
  
 Three types of elevation data packages can be loaded for each region: Contour Lines, Hillshade and Slope. Most often, they can all be downloaded at the country level. In addition, maps at a lower region level are available.  
