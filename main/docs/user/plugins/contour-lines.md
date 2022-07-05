@@ -35,7 +35,7 @@ To display Contour line and Terrain data on the map:
 
 1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
 2. [Download](#download-maps) Contour lines and/or Terrain maps.
-3. [Enable and adjust](#show-configure-map-view) contour lines and/or relief on the map view.
+3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
 
 ### Data source
 
@@ -144,9 +144,9 @@ It is important to decide in what units, meters or feet, it is convenient for yo
 
 ### Consider country/region levels 
 
-Some region downloads could be pretty large and consists of multiple GB. Please download smallest area you need for example there is no full maps for whole Canada but there is a map for Ontario and there is no for Nunavut which is split in 8 regions with convenient download size.
+Some region downloads could be pretty large and consists of multiple GB. Please download the smallest area you need. For example there is no full map for whole Canada, but there is a map for Ontario province and there is no full map for Nunavut province which is split in 8 regions with convenient download size.
 
-> NOTE: On some devices maps bigger than 2 GB might not be properly supported, please download region version instead than.
+> **NOTE**: On some devices maps bigger than 2 GB might not be properly supported, please download smaller region version instead than.
 
 <Tabs groupId="operating-systems">
 
@@ -168,21 +168,30 @@ Some region downloads could be pretty large and consists of multiple GB. Please 
 
 ## Show / Configure map view
 
-To display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
+If you have required maps downloaded, you can display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
 
-> For the **Terrain** option, only **Hillshade** or **Slope** can be enabled at a time.
+> Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
+>**NOTE**: If after loading and enabling the corresponding map you still do not see the changes, please try to restart the application.
+
   
 ### Contour lines map
 
-Contour lines allow you to explore in which direction and how much the surface is sloped by analyzing Contour lines that are close for steep areas and become more curved as the height increases. Available [configurations](../map/configure-map-menu.md): the minimum zoom level at which contour lines become visible, the colour scheme, line width, and line density.  
+Contour lines allow you to explore in which direction and how much the surface is sloped by analyzing Contour lines that are close for steep areas and become more curved as the height increases. You can configure [contour lines](../map/vector-maps.md#contour-lines): colour, line widths, density and minimum zoom level at which contour lines are visible.
 
-The **Contour lines** settings are available in the context menu of the **Contour lines** option in the [Configure map](../map/vector-maps.md#contour-lines) of a specific [profile](../personal/profiles.md).   
+
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+    
+#### ENABLE
+    
+1. Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md).  
+2. Scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
 
-**Settings** for the appearance of Contour lines.
+![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png)
+
+#### APPEARANCE SETTINGS
 - *<Translate android="true" ids="shared_string_on"/>*/*<Translate android="true" ids="shared_string_off"/>* - show or hide Contour lines on the map.
 - *<Translate android="true" ids="show_from_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate android="true" ids="srtm_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map. 
@@ -195,8 +204,18 @@ The **Contour lines** settings are available in the context menu of the **Contou
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+   
 
-**Settings** for the appearance of Contour lines.
+#### ENABLE
+
+1. Go to: [*<Translate ios="true" ids="menu,configure_map"/>*]((../map/configure-map-menu.md).  
+2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_style"/>* section in the same menu. 
+3. In the section, scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
+
+![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
+
+
+#### APPEARANCE SETTINGS
 - *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
 - *<Translate ios="true" ids="display_starting_at_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate ios="true" ids="map_settings_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
@@ -211,19 +230,12 @@ The **Contour lines** settings are available in the context menu of the **Contou
 </Tabs>  
 
 
+
+### Hillshade map
+
+
 <Tabs groupId="operating-systems">
-
 <TabItem value="android" label="Android">
-
-#### CONTOUR LINES 
-
-In the **Android** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:
-1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*.  
-2. Select a Profile, and find the *<Translate android="true" ids="shared_string_show"/>* section in the same menu.  
-3. In the section, scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
-
-![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png)
-
 
 #### TERRAIN
 
@@ -240,16 +252,7 @@ In the **Android** version, to show one of the **Terrain** maps for the selected
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-#### CONTOUR LINES
-
-In the **iOS** version, to show the **Contour lines** map for the selected profile and all downloaded areas, do the following:  
-1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*.  
-2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_style"/>* section in the same menu. 
-3. In the section, scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
-
-![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
-
+    
 #### TERRAIN
 
 In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
@@ -266,11 +269,6 @@ In the **iOS** version, to show one of the **Terrain** maps for the selected pro
 </TabItem>
 
 </Tabs>  
-
-
->**NOTE**: If after loading the corresponding map you do not see that Hillshade or Slope are enabled, restart the application.
-
-### Hillshade map
 
 Hillshade allows you to explore topography by illuminating it with hypothetical lighting that simulates shadow casting, thus revealing curvature that would normally be hidden or obscured by, for example, large amounts of vegetation. Available [configurations](../map/configure-map-menu.md): the transparency of the shadow, and the zoom level at which the Hillshade map will be visible.  
 
