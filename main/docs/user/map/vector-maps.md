@@ -125,11 +125,11 @@ Download map fonts for simplified / traditional Chinese, Japanese, Korean maps:
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
-## Contour Lines
+## * Contour Lines
 
 Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-settings).
+Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-map).
 
 <Tabs groupId="operating-systems">
 
