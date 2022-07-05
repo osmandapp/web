@@ -12,7 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 Terrain information such as **Contour lines**, **Hillshades** and **Slopes** - helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
 
@@ -50,7 +49,7 @@ Full information is provided in the [License](https://github.com/osmandapp/OsmAn
 
 ## Purchase and enable plugin
 
-To enable the plugin and start downloading contour lines, and/or Hillshade, and/or Slopes for each region, you must purchase Contour Lines package [Purchases](../purchases/index.md).  
+To enable the plugin and start downloading contour lines, and/or Hillshade, and/or Slopes for each region, you must purchase Contour Lines package in [Purchases](../purchases/index.md).  
 
 <Tabs groupId="operating-systems">  
 
