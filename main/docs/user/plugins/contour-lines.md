@@ -168,17 +168,9 @@ Some region downloads could be pretty large and consists of multiple GB. Please 
 
 ## Show / Configure map view
 
-Each of the maps: Hillshade, Slope, Contour lines can be adjusted to a different appearance depending on: personal preferences, the context of a particular region, other conditions. To make the necessary changes to the appearance, use the context menu of the corresponding map option in Configure Map menu.   
+To display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
 
-
-Usually, as many maps of Contour lines, Hillshade and/or Slopes as needed for specific areas are loaded. After all the downloads are completed, you can determine which [map types](../personal/maps.md#map-types) should be shown for a particular profile. There are two options for each profile - Contour lines and/or Terrain to enable per [profile](../personal/profiles.md):  
-
-- only Contour lines.
-- only Terrain.
-- both Contour lines and Terrain together. 
-
->For the **Terrain** option, only one map can be enabled at a time: either **Hillshade** or **Slope**. You can determine which of the two maps is currently enabled by opening the Terrain settings, where the switched option will be the one that is currently enabled.  
-
+> For the **Terrain** option, only **Hillshade** or **Slope** can be enabled at a time.
   
 ### Contour lines map
 
