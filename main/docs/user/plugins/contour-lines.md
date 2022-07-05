@@ -188,8 +188,7 @@ Contour lines allow you to explore in which direction and how much the surface i
     
 #### ENABLE
     
-1. Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md).  
-2. Scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
+Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
 
 #### APPEARANCE SETTINGS
 - *<Translate android="true" ids="shared_string_on"/>*/*<Translate android="true" ids="shared_string_off"/>* - show or hide Contour lines on the map.
@@ -208,9 +207,7 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 #### ENABLE
 
-1. Go to: [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md).  
-2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_style"/>* section in the same menu. 
-3. In the section, scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
+Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
 
 #### APPEARANCE SETTINGS
 - *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
@@ -239,12 +236,7 @@ Hillshade allows you to explore topography by illuminating it with hypothetical 
 
 #### ENABLE
 
-In the **Android** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-1. Go to: <Translate android="true" ids="shared_string_menu,configure_map"/>.  
-2. Select a Profile, and find the *<Translate android="true" ids="shared_string_show"/>* section in the same menu.  
-3. In the section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option.
-- Tap it, to open the context menu.  
-- Select one of the options: either **Hillshade**, or **Slope**.  
+Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 
 #### APPEARANCE SETTINGS
@@ -266,13 +258,7 @@ In the **Android** version, to show one of the **Terrain** maps for the selected
 #### ENABLE
 
 In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*.  
-2. Select a Profile, and find the *<Translate ios="true" ids="map_settings_overunder"/>* section in the same menu.
-3. In the section, find *<Translate ios="true" ids="map_settings_overunder"/>*, toggle on the **Terrain** option.
-- Tap it, to open the context menu.  
-- Select one of the options: either **Hillshade**, or **Slope**.  
-
-
+1. Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 #### APPEARANCE SETTINGS
 
@@ -299,7 +285,12 @@ The slope allows you to explore the steepness, or incline of a slope expressed a
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">  
+    
+    
+#### ENABLE
 
+Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+    
 #### APPEARANCE SETTINGS
 
 - *<Translate android="true" ids="shared_string_terrain"/>* - toggle on/off Terrain on the map.
@@ -317,6 +308,13 @@ The slope allows you to explore the steepness, or incline of a slope expressed a
 
 <TabItem value="ios" label="iOS">
 
+
+#### ENABLE
+
+In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
+1. Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
+
+    
 #### APPEARANCE SETTINGS
 
 - *<Translate ios="true" ids="toggle_hillshade"/>* - toggle on/off Terrain on the map.  
