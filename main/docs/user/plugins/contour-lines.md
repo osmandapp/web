@@ -31,7 +31,7 @@ Contour lines consists of 3 map types:
 
 ### Setup 
 
-To display Contour line and Terrain data on the map, you must make the following settings:
+To display Contour line and Terrain data on the map:
 
 1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
 2. [Download](#download-maps) Contour lines and/or Terrain maps.
@@ -41,10 +41,11 @@ To display Contour line and Terrain data on the map, you must make the following
 
 The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
 
-Link to the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).  
+Full information is provided in the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).  
 
-Please watch the full video tutorial at:  
-[Link to Youtube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg)  
+### Tutorial
+
+[Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg)  
 
 
 ## Purchase and enable plugin
