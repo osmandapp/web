@@ -183,16 +183,17 @@ Contour lines allow you to explore in which direction and how much the surface i
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-    
-    
+
+
 ![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) 
 
-    
+
 #### ENABLE
-    
+
 Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
 
 #### APPEARANCE SETTINGS
+
 - *<Translate android="true" ids="shared_string_on"/>*/*<Translate android="true" ids="shared_string_off"/>* - show or hide Contour lines on the map.
 - *<Translate android="true" ids="show_from_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate android="true" ids="srtm_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map. 
@@ -209,12 +210,12 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
     
 ![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
-    
 #### ENABLE
 
-Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
+Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
 
 #### APPEARANCE SETTINGS
+
 - *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
 - *<Translate ios="true" ids="display_starting_at_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate ios="true" ids="map_settings_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
@@ -222,7 +223,8 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 - *<Translate ios="true" ids="map_settings_line_density"/>* - choice of density options for displaying Contour lines on the map: Low, Medium, High (the map loads slower if the density is High).
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
- ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
+
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
 </TabItem>
 
@@ -290,8 +292,8 @@ The slope allows you to explore the steepness, or incline of a slope expressed a
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">  
-    
-    
+
+
 #### ENABLE
 
 Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
@@ -360,5 +362,3 @@ If you load different types of maps, *Contour lines*, *Hillshade*, *Slope*, you 
 </TabItem>
 
 </Tabs>
-
-
