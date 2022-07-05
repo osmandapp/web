@@ -178,11 +178,6 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
 
 
-To start using *Trip recording widgets*, you need to make all of the following settings:
-* [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
-* Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
-* Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
- 
 
 <Tabs groupId="operating-systems">
 
