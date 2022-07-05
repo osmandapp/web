@@ -260,8 +260,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
     
 #### ENABLE
 
-In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-1. Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 #### APPEARANCE SETTINGS
 
@@ -314,8 +313,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 
 #### ENABLE
 
-In the **iOS** version, to show one of the **Terrain** maps for the selected profile and all downloaded areas, do the following:
-1. Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
+Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
 
     
 #### APPEARANCE SETTINGS
