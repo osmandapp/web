@@ -185,7 +185,9 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 <TabItem value="android" label="Android">
     
+    
 ![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) 
+
     
 #### ENABLE
     
@@ -205,8 +207,10 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 
 <TabItem value="ios" label="iOS">
 
+    
 ![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
+    
 #### ENABLE
 
 Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to *<Translate ios="true" ids="product_title_srtm"/>* and toggle on.   
