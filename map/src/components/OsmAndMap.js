@@ -9,7 +9,6 @@ import L from 'leaflet';
 import MarkerIcon from './MarkerIcon.js'
 import '../util/gpx.js';
 import 'leaflet-hash';
-import ReactLeafletEditable from 'react-leaflet-editable';
 
 // import 'leaflet.awesome-markers';
 // import 'leaflet.awesome-markers/dist/leaflet.awesome-markers.css';
