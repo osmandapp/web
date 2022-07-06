@@ -183,7 +183,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/trip_recording_widget.png) 
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
 
 | | |
 |------------|------------|
