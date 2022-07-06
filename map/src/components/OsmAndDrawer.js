@@ -12,7 +12,6 @@ import MapStyle from "./drawer/MapStyle"
 import RouteMenu from "./drawer/RouteMenu"
 import { useNavigate } from "react-router-dom";
 import Favorites from "./drawer/Favorites";
-import PlanRoute from "./drawer/PlanRoute";
 
 
 
@@ -60,7 +59,6 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
             <Favorites />
             <MapStyle />
             <RouteMenu />
-            <PlanRoute />
         </MenuList>
     </>
     );

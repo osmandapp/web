@@ -185,6 +185,10 @@ export default function LocalGpx() {
                         Upload
                     </Button>
                 </label>
+                    <Button variant="contained" component="span" sx={{ ml: 3 }}
+                            onClick={() => ctx.setPlanRoute((prev) => !prev)}>
+                        Create
+                    </Button>
             </MenuItem>
             { localGpxFiles.length === 0 ? <></> :
                 <MenuItem disableRipple={true}>
