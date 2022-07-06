@@ -548,7 +548,7 @@ L.GPX = L.FeatureGroup.extend({
                     background = backgroundEl.length > 0 ? backgroundEl[0].textContent : '';
 
                     let colorEl = el[i].getElementsByTagName('osmand:color');
-                    color = colorEl.length > 0 ? hexToRgba(colorEl[0].textContent) : '';
+                    color = colorEl.length > 0 ?  this._hexToArgb(colorEl[0].textContent) : '';
 
                     let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
                     hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : 'false';
@@ -687,6 +687,23 @@ L.GPX = L.FeatureGroup.extend({
         } else if (layers !== undefined && layers.length === 1) {
             return layers[0];
         }
+    },
+
+    _hexToArgb: function (hex) {
+        hex = hex.replace(/^#/, '');
+        let alphaFromHex = 1;
+
+        if (hex.length === 8) {
+            alphaFromHex = Number.parseInt(hex.slice(0, 2), 16) / 255;
+            hex = hex.slice(3, 8);
+        }
+        const number = Number.parseInt(hex, 16);
+        const red = number >> 16;
+        const green = (number >> 8) & 255;
+        const blue = number & 255;
+        const alpha = alphaFromHex;
+        const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
+        return `rgb(${red} ${green} ${blue}${alphaString})`;
     },
 
     _parse_segment: function (line, options, polyline_options, tag) {
