@@ -37,6 +37,7 @@
  */
 
 import "../assets/css/gpx.css"
+import hexToRgba from "hex-to-rgba";
 
 var L = L || require('leaflet');
 
@@ -547,7 +548,7 @@ L.GPX = L.FeatureGroup.extend({
                     background = backgroundEl.length > 0 ? backgroundEl[0].textContent : '';
 
                     let colorEl = el[i].getElementsByTagName('osmand:color');
-                    color = colorEl.length > 0 ? colorEl[0].textContent : '';
+                    color = colorEl.length > 0 ? hexToRgba(colorEl[0].textContent) : '';
 
                     let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
                     hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : 'false';
@@ -571,27 +572,35 @@ L.GPX = L.FeatureGroup.extend({
                 var ptMatchers = options.marker_options.pointMatchers || [];
                 var symIcon;
 
-                if (icon) {
+                if (icon && icon !== 'null') {
                     let svg;
-                    if (background === "circle") {
-                        svg = `
+                    if (background && background !== 'null') {
+                        if (background === "circle") {
+                            svg = `
                         <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="24" cy="24" r="12" fill="${color}"/>
                         </svg>
                             `
-                    }
-                    if (background === "octagon") {
-                        svg = `
+                        }
+                        if (background === "octagon") {
+                            svg = `
                         <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                            <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
                         </svg>
 
                             `
-                    }
-                    if (background === "square") {
-                        svg = `
+                        }
+                        if (background === "square") {
+                            svg = `
                         <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
+                        </svg>
+                            `
+                        }
+                    } else {
+                        svg = `
+                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
                         </svg>
                             `
                     }
@@ -653,7 +662,6 @@ L.GPX = L.FeatureGroup.extend({
                     time : time,
                     address : address,
                     cmt : cmt
-
                 });
                 marker.bindPopup("<b>" + name + "</b>" + (desc.length > 0 ? '<br>' + desc : '')).openPopup();
                 this.fire('addpoint', {point: marker, point_type: 'waypoint', element: el[i]});

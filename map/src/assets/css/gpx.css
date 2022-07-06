@@ -15,3 +15,7 @@
     height: 20px;
     top: -6px; left: -6px
 }
+.leaflet-div-icon{
+    background: none !important;
+    border: 0 !important;
+}
