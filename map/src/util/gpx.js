@@ -37,7 +37,6 @@
  */
 
 import "../assets/css/gpx.css"
-import hexToRgba from "hex-to-rgba";
 
 var L = L || require('leaflet');
 
