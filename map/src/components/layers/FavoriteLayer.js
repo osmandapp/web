@@ -10,8 +10,6 @@ async function addFavoritesToMap(ctx, file, map) {
     file.gpx = new L.GPX(trackData, {
         async: true,
         group: ctx.favorites.groups
-    }).on('loaded', function (e) {
-        map.fitBounds(e.target.getBounds());
     }).on('error', function (e) {
         ctx.favorites.groupsUnique = [...new Map(e.target._info.favouritesGroup.map(item =>
             [item['type'], item])).values()]
