@@ -463,7 +463,7 @@ L.GPX = L.FeatureGroup.extend({
                     layers = layers.concat(this._parse_segment(track, options, polyline_options, 'trkpt'));
                 } else {
                     var segments = track.getElementsByTagName('trkseg');
-                    for (j = 0; j < segments.length; j++) {
+                    for (let j = 0; j < segments.length; j++) {
                         layers = layers.concat(this._parse_segment(segments[j], options, polyline_options, 'trkpt'));
                     }
                 }
@@ -564,87 +564,10 @@ L.GPX = L.FeatureGroup.extend({
                  * Otherwise, fall back to the default icon if one was configured, or
                  * finally to the default icon URL, if one was configured.
                  */
-                var wptIcons = options.marker_options.wptIcons;
-                var wptIconUrls = options.marker_options.wptIconUrls;
-                var wptIconsType = options.marker_options.wptIconsType;
-                var wptIconTypeUrls = options.marker_options.wptIconTypeUrls;
-                var ptMatchers = options.marker_options.pointMatchers || [];
-                var symIcon;
 
-                if (icon && icon !== 'null') {
-                    let svg;
-                    if (background && background !== 'null') {
-                        if (background === "circle") {
-                            svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="12" fill="${color}"/>
-                        </svg>
-                            `
-                        }
-                        if (background === "octagon") {
-                            svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
-                        </svg>
-
-                            `
-                        }
-                        if (background === "square") {
-                            svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
-                        </svg>
-                            `
-                        }
-                    } else {
-                        svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
-                        </svg>
-                            `
-                    }
-
-                    symIcon = L.divIcon({
-                        html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="images/poi-icons-svg/mx_${icon}.svg"
-                              </div>
-                              `
-                    })
-                } else {
-                    if (wptIcons && symKey && wptIcons[symKey]) {
-                        symIcon = wptIcons[symKey];
-                    } else if (wptIconsType && typeKey && wptIconsType[typeKey]) {
-                        symIcon = wptIconsType[typeKey];
-                    } else if (wptIconUrls && symKey && wptIconUrls[symKey]) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
-                    } else if (wptIconTypeUrls && typeKey && wptIconTypeUrls[typeKey]) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
-                    } else if (ptMatchers.length > 0) {
-                        for (var j = 0; j < ptMatchers.length; j++) {
-                            if (ptMatchers[j].regex.test(name)) {
-                                symIcon = ptMatchers[j].icon;
-                                break;
-                            }
-                        }
-                    } else if (wptIcons && wptIcons['']) {
-                        symIcon = wptIcons[''];
-                    } else if (wptIconUrls && wptIconUrls['']) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
-                    } else {
-                        symIcon = L.divIcon({
-                            html: `
-                              <div>
-                                  <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
-                                  </svg>
-                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
-                              </div>
-                              `
-                        })
-                    }
-                }
+                color = this._checkColor(color);
+                let svg = this._checkBackground(background, color);
+                let symIcon = this._checkIcon(icon, svg, options, symKey, typeKey, name);
 
                 if (!symIcon) {
                     console.log(
@@ -685,6 +608,84 @@ L.GPX = L.FeatureGroup.extend({
             return new L.FeatureGroup(layers);
         } else if (layers !== undefined && layers.length === 1) {
             return layers[0];
+        }
+    },
+
+    _checkColor: function (color) {
+        return color && color !== 'null' ? color : '#eecc22';
+    },
+
+    _checkBackground: function (background, color) {
+        let svg;
+        if (background && background !== 'null') {
+            if (background === "circle") {
+                svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="12" fill="${color}"/>
+                        </svg>`
+            }
+            if (background === "octagon") {
+                svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
+                        </svg>`
+            }
+            if (background === "square") {
+                svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
+                        </svg>`
+            }
+        } else {
+            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
+                        </svg>`
+        }
+        return svg;
+    },
+
+    _checkIcon: function (icon, svg, options, symKey, typeKey, name) {
+        let wptIcons = options.marker_options.wptIcons;
+        let wptIconUrls = options.marker_options.wptIconUrls;
+        let wptIconsType = options.marker_options.wptIconsType;
+        let wptIconTypeUrls = options.marker_options.wptIconTypeUrls;
+        let ptMatchers = options.marker_options.pointMatchers || [];
+
+        if (icon && icon !== 'null') {
+            return L.divIcon({
+                html: `
+                              <div>
+                                  ${svg}
+                                  <img class="icon" src="images/poi-icons-svg/mx_${icon}.svg"
+                              </div>
+                              `
+            })
+        } else {
+            if (wptIcons && symKey && wptIcons[symKey]) {
+                return  wptIcons[symKey];
+            } else if (wptIconsType && typeKey && wptIconsType[typeKey]) {
+                return  wptIconsType[typeKey];
+            } else if (wptIconUrls && symKey && wptIconUrls[symKey]) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
+            } else if (wptIconTypeUrls && typeKey && wptIconTypeUrls[typeKey]) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
+            } else if (ptMatchers.length > 0) {
+                for (var j = 0; j < ptMatchers.length; j++) {
+                    if (ptMatchers[j].regex.test(name)) {
+                        return  ptMatchers[j].icon;
+                    }
+                }
+            } else if (wptIcons && wptIcons['']) {
+                return  wptIcons[''];
+            } else if (wptIconUrls && wptIconUrls['']) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
+            } else {
+                return  L.divIcon({
+                    html: `
+                              <div>
+                                  ${svg}
+                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
+                              </div>
+                              `
+                })
+            }
         }
     },
 
