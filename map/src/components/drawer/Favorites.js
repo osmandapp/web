@@ -83,7 +83,7 @@ export default function Favorites() {
         </MenuItem>
         {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
-            {ctx.favorites.groupsUnique && FavoritesShowAllRow(ctx)}
+            {ctx.favorites.groupsUnique.length !== 0 && FavoritesShowAllRow(ctx)}
             {ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.map((group, index) => {
                 return FavoritesRow(ctx)({index: index, group: group});
             })}
