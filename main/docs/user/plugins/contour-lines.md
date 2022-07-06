@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-Terrain information such as **Contour lines**, **Hillshades** and **Slopes** - helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
+Terrain information, such as **Contour lines**, **Hillshades** and **Slopes**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
 
 ![Contour lines and Terrain](@site/static/img/plugins/contour-lines/first_screen_1.png)
 
@@ -143,7 +143,7 @@ It is important to decide in what units, meters or feet, it is convenient for yo
 
 ### Consider country/region levels 
 
-Some region downloads could be pretty large and consists of multiple GB. Please download the smallest area you need. For example there is no full map for whole Canada, but there is a map for Ontario province and there is no full map for Nunavut province which is split in 8 regions with convenient download size.
+The download of some regions can be pretty large and consist of multiple GB. Download the smallest area that you need. For example, there is no full map for the whole of Canada, but there is a map for Ontario province and no full map for Nunavut province which is split into 8 regions with convenient download size.
 
 > **NOTE**: On some devices maps bigger than 2 GB might not be properly supported, please download smaller region version instead than.
 
@@ -256,7 +256,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
     - the maximum zoom level at which it should disappear.
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_android_selected.png) 
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_and.png) 
 
 </TabItem>
 
@@ -277,7 +277,7 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
     - the maximum zoom level at which it should disappear.
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/Terrain_menu_ios_selected.png) 
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_ios.png) 
 
 </TabItem>
 
@@ -309,7 +309,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 - *<Translate android="true" ids="shared_string_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/terrain_menu_slopes_android.png)
+![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/slope_and.png)
 
 </TabItem>
 
@@ -332,7 +332,7 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 - *<Translate ios="true" ids="map_settings_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/terrain_menu_slopes_ios.png) 
+![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/slope_ios.png) 
 
 </TabItem>
 
