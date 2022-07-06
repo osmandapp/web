@@ -11,14 +11,10 @@ import React from "react";
 import {
     Cancel, ViewHeadline
 } from "@mui/icons-material";
+import '../../../../util/Leaflet.Editable.js';
 
-const PointsTab = ({newRoute, pointsList, setPointsList, width}) => {
 
-    function deletePoint(index) {
-        pointsList.splice(index, 1);
-        newRoute._latlngs = pointsList;
-        setPointsList([...pointsList]);
-    }
+const PointsTab = ({pointsList, setDeletePoint, width}) => {
 
     const PointRow = () => ({point, index}) => {
         return (
@@ -34,7 +30,7 @@ const PointsTab = ({newRoute, pointsList, setPointsList, width}) => {
                 </ListItemText>
                 <ListItemAvatar>
                     <IconButton x={{mr: 1}} onClick={() => {
-                        deletePoint(index)
+                        setDeletePoint(index)
                     }}>
                         <Cancel fontSize="small"/>
                     </IconButton>

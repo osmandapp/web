@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     }
 })
 
-const PlanRouteContextMenu = ({newRoute, pointsList, setPointsList}) => {
+const PlanRouteContextMenu = ({newRoute, setDeletePoint, pointsList, setPointsList}) => {
 
     const classes = useStyles();
 
@@ -27,8 +27,7 @@ const PlanRouteContextMenu = ({newRoute, pointsList, setPointsList}) => {
     const width = 800;
 
     tabs.Info = <InfoTab key='info'/>;
-    tabs.Points = <PointsTab key='points' newRoute={newRoute} pointsList={pointsList} setPointsList={setPointsList}
-                             width={width}/>;
+    tabs.Points = <PointsTab key='points' pointsList={pointsList} setDeletePoint={setDeletePoint} width={width}/>;
     tabs.Graph = <GraphTab key='graph'/>;
 
     let tabList = [];

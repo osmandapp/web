@@ -14,6 +14,7 @@ export default function PlanRouteLayer() {
     const [deleteRoute, setDeleteRoute] = useState(false);
     const [newRoute, setNewRoute] = useState(new Layer());
     const [pointsList, setPointsList] = useState([]);
+    const [deletePoint, setDeletePoint] = useState(-1);
 
     useEffect(() => {
         if (createRoute) {
@@ -34,10 +35,50 @@ export default function PlanRouteLayer() {
         }
     }, [deleteRoute, setDeleteRoute]);
 
+    useEffect(() => {
+        if (deletePoint !== -1) {
+            pointsList.splice(deletePoint, 1);
+            deleteOldRoute();
+            addNewRoute();
+            setPointsList([...pointsList]);
+        }
+    }, [deletePoint, setDeletePoint]);
+
+    function deleteOldRoute() {
+        let layersWithPolyline = [];
+
+        Object.keys(map._layers).forEach(e => {
+                if (map._layers[e].planroute) {
+                    layersWithPolyline.push(map._layers[e]);
+                }
+            }
+        );
+
+        layersWithPolyline.forEach(function (item) {
+            map.removeLayer(item);
+        });
+        setDeletePoint(-1);
+    }
+
+    function addNewRoute() {
+        let newPoints = [];
+
+        pointsList.forEach(function (item) {
+            newPoints.push({lat: item.lat, lng: item.lng});
+        });
+        let layer = map.editTools.addPolylineByPoints(newPoints)
+        setNewRoute(layer);
+    }
+
 
     return (<>
         {ctx.planRoute && <PanelButtons setCreateRoute={setCreateRoute} setDeleteRoute={setDeleteRoute}/>}
-        {createRoute && <PlanRouteContextMenu newRoute={newRoute} pointsList={pointsList} setPointsList={setPointsList}></PlanRouteContextMenu>}
+        {createRoute && <PlanRouteContextMenu
+            newRoute={newRoute}
+            setDeletePoint={setDeletePoint}
+            pointsList={pointsList}
+            setPointsList={setPointsList}>
+        </PlanRouteContextMenu>}
 
         </>);
 }

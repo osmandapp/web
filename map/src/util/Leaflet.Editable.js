@@ -127,7 +127,8 @@
 
         },
 
-        initialize: function (map, options) {
+        initialize: function (planroute, map, options) {
+            this.planroute = planroute;
             L.setOptions(this, options);
             this._lastZIndex = this.options.zIndex;
             this.map = map;
@@ -307,6 +308,12 @@
             return line;
         },
 
+        addPolylineByPoints: function (arr, latlng, options) {
+            let line = this.createPolyline(arr, options);
+            line.enableEdit(this.map).newShapeByPoints(line._latlngs, line);
+            return line;
+        },
+
         // 🍂method startPolygon(latlng: L.LatLng, options: hash): L.Polygon
         // Start drawing a Polygon. If `latlng` is given, a first point will be added. In any case, continuing on user click.
         // If `options` is given, it will be passed to the Polygon class constructor.
@@ -430,7 +437,7 @@
 
         this.whenReady(function () {
             if (this.options.editable) {
-                this.editTools = new this.options.editToolsClass(this, this.options.editOptions);
+                this.editTools = new this.options.editToolsClass(true, this, this.options.editOptions);
             }
         });
 
@@ -466,9 +473,10 @@
         // The marker used to handle path vertex. You will usually interact with a `VertexMarker`
         // instance when listening for events like `editable:vertex:ctrlclick`.
 
-        initialize: function (latlng, latlngs, editor, options) {
+        initialize: function (planroute, latlng, latlngs, editor, options) {
             // We don't use this._latlng, because on drag Leaflet replace it while
             // we want to keep reference.
+            this.planroute = planroute;
             this.latlng = latlng;
             this.latlngs = latlngs;
             this.editor = editor;
@@ -663,7 +671,8 @@
             draggable: true
         },
 
-        initialize: function (left, right, latlngs, editor, options) {
+        initialize: function (planroute, left, right, latlngs, editor, options) {
+            this.planroute = planroute;
             this.left = left;
             this.right = right;
             this.editor = editor;
@@ -787,6 +796,7 @@
             if (this.isConnected()) this.onFeatureAdd();
             else this.feature.once('add', this.onFeatureAdd, this);
             this.onEnable();
+            this.feature.planroute = true;
             this.feature.on(this._getEvents(), this);
         },
 
@@ -1049,7 +1059,7 @@
         },
 
         addVertexMarker: function (latlng, latlngs) {
-            return new this.tools.options.vertexMarkerClass(latlng, latlngs, this);
+            return new this.tools.options.vertexMarkerClass(true, latlng, latlngs, this);
         },
 
         onNewVertex: function (vertex) {
@@ -1074,7 +1084,7 @@
         },
 
         addMiddleMarker: function (left, right, latlngs) {
-            return new this.tools.options.middleMarkerClass(left, right, latlngs, this);
+            return new this.tools.options.middleMarkerClass(true, left, right, latlngs, this);
         },
 
         onVertexMarkerClick: function (e) {
@@ -1336,6 +1346,11 @@
             // Fired when a new shape is created in a multi (Polygon or Polyline).
             this.fireAndForward('editable:shape:new', {shape: shape});
             if (latlng) this.newPointForward(latlng);
+        },
+
+        newShapeByPoints: function (latlngs, layer) {
+            this.setDrawnLatLngs(latlngs);
+            this.tools.connectCreatedToMap(layer);
         },
 
         deleteShape: function (shape, latlngs) {
@@ -1679,7 +1694,7 @@
         },
 
         initialize: function (map, feature, options) {
-            L.Editable.PathEditor.prototype.initialize.call(this, map, feature, options);
+            L.Editable.PathEditor.prototype.initialize.call(true, this, map, feature, options);
             this._resizeLatLng = this.computeResizeLatLng();
         },
 

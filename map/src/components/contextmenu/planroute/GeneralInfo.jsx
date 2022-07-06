@@ -9,15 +9,14 @@ const GeneralInfo = ({newRoute, pointsList, setPointsList}) => {
     const [distance, setDistance] = useState(0);
 
     map.on("editable:drawing:clicked", e => {
-
         newRoute && pointsList.push({lat: e.latlng.lat, lng: e.latlng.lng})
 
-        let list = pointsList.filter((value, index, self) =>
+        let listWithoutDuplicates = pointsList.filter((value, index, self) =>
                 index === self.findIndex((t) => (
                     t.lat === value.lat && t.lng === value.lng
                 ))
         )
-        setPointsList([...list]);
+        setPointsList([...listWithoutDuplicates]);
     });
 
 
@@ -33,21 +32,18 @@ const GeneralInfo = ({newRoute, pointsList, setPointsList}) => {
         setPointsList([...pointsList]);
     });
 
-    map.on("editable:drawing:move", e => {
-        if (newRoute && e.oldLatLng) {
-            for (let i = 0; i < pointsList.length; i++) {
-                if (pointsList[i].lat === e.oldLatLng.lat && pointsList[i].lng === e.oldLatLng.lng) {
-                    pointsList.splice(i, 1);
-                    break;
-                }
-            }
-            pointsList.push({lat: e.latlng.lat, lng: e.latlng.lng});
-            let list = pointsList.filter((value, index, self) =>
+    map.on("editable:vertex:dragend", e => {
+        if (newRoute._latlngs) {
+            pointsList = [];
+            newRoute._latlngs.forEach(p => pointsList.push({lat: p.lat, lng: p.lng}))
+
+            let listWithoutDuplicates = pointsList.filter((value, index, self) =>
                     index === self.findIndex((t) => (
                         t.lat === value.lat && t.lng === value.lng
                     ))
             )
-            setPointsList([...list]);
+
+            setPointsList([...listWithoutDuplicates]);
         }
     });
 
