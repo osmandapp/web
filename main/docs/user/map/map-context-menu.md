@@ -231,9 +231,13 @@ Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 
 ### Update / Download Online Maps
 
-![Action Download online map Android](@site/static/img/map/action_download_online_map_android.png) ![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
+![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png) ![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
 
-To update or download online maps (tiles) at specific location, you can use object context menu: <Translate android="true" ids="shared_string_download_map"/> and <Translate android="true" ids="update_tile"/>. Please refer to [full instruction](../map/raster-maps.md#download--update-tiles). 
+To update or download online maps (tiles) at specific location, you can use object context menu:  
+**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*.  
+**iOS**: *<Translate ios="true" ids="download_map"/>* and *<Translate ios="true" ids="update_map"/>*.  
+Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).    
+
 
 ### Update / Download Vector Maps
 
@@ -243,10 +247,10 @@ To update or download online maps (tiles) at specific location, you can use obje
 
 In case there is no offline map present at selected location, for example map object menu was opened via Search or via specific Favorite, then the smallest possible offline map will be suggested to [download](../start-with/download-maps.md#download---map-context-menu).  
 
-**Android**: If you already have [downloaded](../start-with/download-maps.md) OsmAnd maps (vector or terrain), it is possible to updated them via context 
+**iOS**: If you already have [downloaded](../start-with/download-maps.md) OsmAnd maps (vector or terrain), it is possible to updated them via context 
 menu. You will need to select the region on the map first - click on any location on worldwide zoom 3-7. 
 
-**Note**: if you have opened context menu for map region (region is higlighted), you will be able to see '<Translate android="true" ids="rendering_category_details"/>' about it: type and size of a available map, link to a wikipedia page, language, population and other.
+>**NOTE**: if you have opened context menu for map region (region is higlighted), you will be able to see '<Translate android="true" ids="rendering_category_details"/>' about it: type and size of a available map, link to a wikipedia page, language, population and other.
 
 ### * Add / Delete Parking point
 
