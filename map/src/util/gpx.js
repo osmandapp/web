@@ -695,7 +695,7 @@ L.GPX = L.FeatureGroup.extend({
 
         if (hex.length === 8) {
             alphaFromHex = Number.parseInt(hex.slice(0, 2), 16) / 255;
-            hex = hex.slice(3, 8);
+            hex = hex.slice(2, 8);
         }
         const number = Number.parseInt(hex, 16);
         const red = number >> 16;
