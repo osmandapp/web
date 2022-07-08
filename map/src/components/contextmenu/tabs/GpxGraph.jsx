@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Area, Tooltip, XAxis, YAxis, AreaChart} from "recharts";
 import {Typography} from "@mui/material";
-import AppContext from "../../../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
 export default function GpxGraph({ data, xAxis, yAxis, width, min, max}) {
     const ctx = useContext(AppContext);

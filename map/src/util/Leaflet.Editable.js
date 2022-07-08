@@ -1,4 +1,7 @@
 'use strict';
+import MarkerIcon from "../components/MarkerIcon";
+import L from "leaflet";
+
 (function (factory, window) {
     /*globals define, module, require*/
 
@@ -443,13 +446,14 @@
 
     });
 
-    L.Editable.VertexIcon = L.DivIcon.extend({
-
+    L.Editable.VertexIcon = L.Icon.extend({
         options: {
-            iconSize: new L.Point(8, 8)
+            iconUrl: '/map/images/map_icons/circle.svg',
+            shadowUrl: '/map/images/map_icons/poi_blue_shield_map.svg',
+            iconSize: [10, 10],
+            shadowSize: [15, 15]
         }
-
-    });
+    })
 
     L.Editable.TouchVertexIcon = L.Editable.VertexIcon.extend({
 

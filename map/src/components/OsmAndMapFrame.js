@@ -1,5 +1,5 @@
-import React, {useState, useContext, useEffect, useMemo} from 'react';
-import {Drawer, Toolbar, Typography, Box, debounce} from "@mui/material";
+import React, {useState, useContext} from 'react';
+import {Drawer, Toolbar, Typography, Box} from "@mui/material";
 import {
     IconButton, AppBar, Input
 } from "@mui/material";
@@ -120,8 +120,7 @@ const OsmAndMapFrame = () => {
                         </Box>
                     </Toolbar>
                 </AppBar>
-                <OsmAndMap>
-                </OsmAndMap>
+                <OsmAndMap/>
             </Box>
             <Drawer
                 //  container={container}

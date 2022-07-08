@@ -4,6 +4,7 @@ import {
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
+import {Layer} from "leaflet";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)', 
@@ -329,6 +330,15 @@ export const AppContextProvider = (props) => {
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
     const [planRoute, setPlanRoute] = useState(false);
+    const [newRoute, setNewRoute] = useState({
+        newRouteLayer: new Layer(),
+        pointsList: [],
+        distance: 0});
+    const [editor, setEditor] = useState({
+        deletePoint : -1,
+        createRoute: false,
+        deleteRoute: false
+    });
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -384,7 +394,9 @@ export const AppContextProvider = (props) => {
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
         favorites, setFavorites,
-        planRoute, setPlanRoute
+        planRoute, setPlanRoute,
+        newRoute, setNewRoute,
+        editor, setEditor
 
     }}>
         {props.children}

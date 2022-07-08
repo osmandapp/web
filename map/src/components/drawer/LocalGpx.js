@@ -17,28 +17,6 @@ const StyledInput = styled('input')({
     display: 'none',
 });
 
-
-function updateTextInfo(gpxFiles, ctx) {
-    // Local GPX files: undefined tracks, NaN km, undefined wpts
-    let dist = 0;
-    let tracks = 0;
-    let wpts = 0;
-    Object.values(gpxFiles).forEach((item) => {
-        if (item.local === true && item.summary) {
-            if (item.summary.totalTracks) {
-                tracks += item.summary.totalTracks;
-            }
-            if (item.summary.wptPoints) {
-                wpts += item.summary.wptPoints;
-            }
-            if (item.summary.totalDistance) {
-                dist += item.summary.totalDistance;
-            }
-        }
-    });
-    ctx.setAppText(`Local GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`)
-}
-
 async function loadInitialState(gpxFiles, setGpxFiles) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-info`, { credentials: 'include' });
     if (response.ok) {
@@ -58,31 +36,6 @@ async function loadInitialState(gpxFiles, setGpxFiles) {
         });
     }
 
-}
-
-async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
-    let formData = new FormData();
-    formData.append('file', file);
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/upload-session-gpx`, {
-        method: 'POST',
-        credentials: 'include',
-        body: formData
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let newinfo = Object.assign({}, gpxFiles);
-        if (data.info) {
-            gpxLayer.summary = data.info.analysis;
-            gpxLayer.srtmSummary = data.info.srtmAnalysis;
-        }
-        newinfo[gpxLayer.name] = gpxLayer;
-        gpxFiles[gpxLayer.name] = gpxLayer;
-        setGpxFiles(newinfo);
-        updateTextInfo(gpxFiles, ctx);
-    } else {
-        let message = await response.text();
-        alert(message);
-    }
 }
 
 
@@ -117,7 +70,7 @@ const fileSelected = (ctx) => async (e) => {
             gpxLayer.name = 'local:' + file.name;
             gpxLayer.localContent = src;
             gpxLayer.local = true;
-            uploadFile(ctx.gpxFiles, ctx.setGpxFiles, ctx, gpxLayer, file);
+            Utils.uploadFile(ctx.gpxFiles, ctx.setGpxFiles, ctx, gpxLayer, file);
         });
         reader.readAsText(file);
     });
@@ -169,6 +122,11 @@ export default function LocalGpx() {
                                     }
                                 }
                             } else {
+                                if (ctx.newRoute.newRouteLayer._latlngs) {
+                                    ctx.editor.deleteRoute = true;
+                                    ctx.editor.createRoute = false;
+                                    ctx.setEditor({...ctx.editor});
+                                }
                                 newGpxFiles[item.name].url = item.localContent;
                                 newGpxFiles[item.name].urlopts = { credentials: 'include' }
                                 ctx.setSelectedGpxFile(item);

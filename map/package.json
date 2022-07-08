@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^14.2.0",
     "@types/leaflet.awesome-markers": "^2.0.25",
     "env-cmd": "^10.1.0",
+    "gpx-builder": "^5.0.0",
     "http-proxy-middleware": "^2.0.6",
     "ionicons": "^6.0.2",
     "leaflet": "^1.8.0",

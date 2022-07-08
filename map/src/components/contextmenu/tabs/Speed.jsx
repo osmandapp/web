@@ -1,19 +1,18 @@
 import React, {useMemo} from 'react';
 import GpxGraph from "./GpxGraph";
-import { Typography, Box } from "@mui/material";
 
-const Elevation = ({ data, width }) => {
+export default function Speed({ data, width }) {
     const graphData = useMemo(() => {
         let result = [];
-        let min = data[0].elevation;
-        let max = data[0].elevation;
+        let min = data[0].speed;
+        let max = data[0].speed;
         let cumDist = 0;
         data.forEach((point) => {
-            let val = Math.round(point.elevation * 10) / 10;
+            let val = Math.round(point.speed * 10) / 10;
             cumDist += point.distance;
             let data = {
                 "Distance": Math.round(cumDist) / 1000,
-                "Elevation": val
+                "Speed": val
             };
             result.push(data);
             min = Math.min(val, min);
@@ -21,13 +20,8 @@ const Elevation = ({ data, width }) => {
         });
         return { res: result, min: min, max: max };
     }, [data]);
-
     return (
-        // min={data.min.toFixed(0)} max={data.max.toFixed(0)}
-        <GpxGraph data={graphData.res} xAxis={"Distance"} yAxis={"Elevation"} 
-            width={width} min={graphData.min} max={graphData.max} />
-        
+        <GpxGraph data={graphData.res} xAxis={"Distance"} yAxis={"Speed"} 
+            width={width} min={0} max={graphData.max} />
     );
 };
-
-export default Elevation;

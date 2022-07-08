@@ -7,14 +7,17 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
-import React from "react";
+import React, {useContext} from "react";
 import {
     Cancel, ViewHeadline
 } from "@mui/icons-material";
-import '../../../../util/Leaflet.Editable.js';
+import '../../../util/Leaflet.Editable.js';
+import AppContext from "../../../context/AppContext";
 
 
-const PointsTab = ({pointsList, setDeletePoint, width}) => {
+const PointsTab = ({width}) => {
+
+    const ctx = useContext(AppContext);
 
     const PointRow = () => ({point, index}) => {
         return (
@@ -30,7 +33,8 @@ const PointsTab = ({pointsList, setDeletePoint, width}) => {
                 </ListItemText>
                 <ListItemAvatar>
                     <IconButton x={{mr: 1}} onClick={() => {
-                        setDeletePoint(index)
+                        ctx.editor.deletePoint = index;
+                        ctx.setEditor({...ctx.editor});
                     }}>
                         <Cancel fontSize="small"/>
                     </IconButton>
@@ -39,7 +43,7 @@ const PointsTab = ({pointsList, setDeletePoint, width}) => {
     }
 
     return (<Box width={width}>
-        {pointsList && pointsList.map((point, index) => {
+        {ctx.newRoute.pointsList && ctx.newRoute.pointsList.map((point, index) => {
             return PointRow()({point: point, index: index});
         })}
     </Box>);
