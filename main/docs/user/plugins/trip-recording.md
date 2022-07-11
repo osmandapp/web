@@ -55,7 +55,7 @@ After setup is complete, you can make new recordings, display and manage tracks 
 
 ### Enable plugin
 
-Trip recording plugin is needed for recording new tracks. It is possible to do with [REC widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
+Trip recording plugin is needed for recording new tracks. It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
 
 <Tabs groupId="operating-systems">
 
@@ -80,24 +80,24 @@ To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-### Add REC widget
+### Add Distance/Start-Stop widget
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the REC widget and [other widgets](../plugins/trip-recording#trip-recording-widgets.md) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+The [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording#trip-recording-widgets.md) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
 
-![Adding REC widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-[REC widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add REC widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
+[Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
 
-![Adding REC widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
 
 </TabItem>
 
@@ -167,7 +167,7 @@ There are recording parameters that you can adjust depending on the context. For
 | **Show start dialog** | If enabled, you need to tap the respective option in the Start dialog to start recording. Otherwise, the recording will start automatically. |
 | **Auto-record track during navigation** | If enabled, the track is automatically recorded during navigation and saved to the respective folder in <Translate android="true" ids="shared_string_my_places"/>. Note that Track recording consumes the battery energy and continues to run in the background when the screen is closed. To use the battery efficiently, keep an eye on its status.| 
 | **Logging interval** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded automatically via the enabled **Auto-record track during navigation** option. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. |
-| **General logging interval** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded **manually via the REC widget**. The option is duplicated on the Start recording dialog. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. |
+| **General logging interval** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded **manually via the Distance/Start-Stop widget**. The option is duplicated on the Start recording dialog. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. |
 | **Minimum displacement** | Given that two points are detected being close to one another, when a minimum displacement option is established, one of the points is removed, if it is detected to be closer than the established interval. It is helpful for none, or little movement, so that not to generate redundant points, regardless of any motion detection. The displacement interval is disabled if the *Not selected* option is set. Otherwise, an interval is considered to be between 2 meters and 50 meters depending on the selected option. For example, 5 meters is used, when there is no need in capturing more precise data than that, and no need in capturing any data at all when not moving. |
 | **Minimum accuracy** | Given that your location is identified via the built-in Location module of the device, when the longitude and latitude are calculated, the resulted location point can be detected accurately to a certain extend and expressed in meters/feet. It is possible to establish a minimum threshold between 1 meter and 50 meters for calculating the accuracy of the detected location in relation to the real location. A too small accuracy may cause the existence of blank spots on the track. It is recommended to decrease the accuracy, or disable at all by establishing the *Not selected* option, in case of uncertainty of the quality of the signals used for identifying the location, whether it is the GPS signal, and/or the mobile phone signal, and/or the Internet connection. For example, GPS signal can be weaker in circumstances when the route goes under the bridge, or between large trees, or high buildings, or in unfavorable weather conditions; and better with the growing number of GPS satellites. |
 | **Minimum speed** | Given that at low speed the recorded track can be noisy, showing a lots of points on a small segment of the route, when motion is detected and the speed level is calculated to be less than the established threshold, then the points will not be recorded. To disable the minimum speed detection, set the *Not selected* option. To detect only motion to start recording points, set the *>0* option. The other options are recommended to use carefully and to avoid losing too many points, lower the minimum threshold. |
@@ -175,8 +175,8 @@ There are recording parameters that you can adjust depending on the context. For
 | **Prevent standalone logging** | If enabled, Trip recording will automatically stop, when the OsmAnd app is stopped, and the notification bar of Android shows no indication of OsmAnd's working in the background. |
 | **Include heading** | If enabled, the heading is saved into the GPX file for every point. The heading is the direction to where the front panel of the vehicle/device points to. It is determined with the angle between the direction where the front panel points to and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 | **Track storage folder** | Given that all tracks are stored in: <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab; it is possible to establish the internal structure of this folder by selecting one of the following two options: either 1. to record all tracks to the *Rec* folder; or 2. to group all tracks by respective month folders, such as: *Rec/yyyy-mm* |
-| **Notification** | If enabled, trip recording messages show up in the system notification area of the device. The notification area is opened with a swipe from the top of the screen to the bottom, and closed with a swipe in the opposite direction. The messages are intended to notify about all start/stop actions of the trip recording functionality and especially useful in case of the enabled **Auto-record track during navigation** option, as well as when the Start recording dialog is disabled and the recording starts silently on tap of the REC widget. Once a message is sent, it is visible in the notification area. A sent message can be cleared, if not needed. The visibility of a sent uncleared message does not depend on the status of the app: whether it runs in the background, foreground, or closed. | 
-| **Online tracking** | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the REC widget is green, instead of red, and every point is transmitted to the specified URL. The **Web address** field is intended for entering the URL in the following format: *https://example.com?lat={0}&lon={1}&timestamp={2}&hdop={3}&altitude={4}&speed={5}* The **Tracking interval** parameter is used to determine the frequency of how often to send the location points. The options can be selected in the range from 0 second to 5 minutes. The **Time buffer** parameter establishes the period of time during which the points will be accumulated in case if the Internet connection is lost.|
+| **Notification** | If enabled, trip recording messages show up in the system notification area of the device. The notification area is opened with a swipe from the top of the screen to the bottom, and closed with a swipe in the opposite direction. The messages are intended to notify about all start/stop actions of the trip recording functionality and especially useful in case of the enabled **Auto-record track during navigation** option, as well as when the Start recording dialog is disabled and the recording starts silently on tap of the Distance/Start-Stop widget. Once a message is sent, it is visible in the notification area. A sent message can be cleared, if not needed. The visibility of a sent uncleared message does not depend on the status of the app: whether it runs in the background, foreground, or closed. | 
+| **Online tracking** | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the Distance/Start-Stop widget is green, instead of red, and every point is transmitted to the specified URL. The **Web address** field is intended for entering the URL in the following format: *https://example.com?lat={0}&lon={1}&timestamp={2}&hdop={3}&altitude={4}&speed={5}* The **Tracking interval** parameter is used to determine the frequency of how often to send the location points. The options can be selected in the range from 0 second to 5 minutes. The **Time buffer** parameter establishes the period of time during which the points will be accumulated in case if the Internet connection is lost.|
 | **Tracks** | This is a quick re-direction to the folder: <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab. |
 | **Reset plugin settings to default** | Establishes default values for all of the above settings. |
 | **Copy from another profile** | Opens a profile selection dialog from which you can copy the established configuration of Trip record values and then set them for the current profile. |
@@ -192,7 +192,7 @@ There are recording parameters that you can adjust depending on the context. For
 
 | Parameter | Description |
 |---|---|
-| **General logging interval** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded **manually via the REC widget**. The option is duplicated on the Start recording dialog. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. The *Always ask* option requires the interval to be established anew on every start of the recording. |
+| **General logging interval** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded **manually via the Distance/Start-Stop widget**. The option is duplicated on the Start recording dialog. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. The *Always ask* option requires the interval to be established anew on every start of the recording. |
 | **Minimum displacement** | Given that two points are detected being close to one another, when a minimum displacement option is established, one of the points is removed, if it is detected to be closer than the established interval. It is helpful for none, or little movement, so that not to generate redundant points, regardless of any motion detection. The displacement interval is disabled if the *Not selected* option is set. Otherwise, an interval is considered to be between 2 meters and 50 meters depending on the selected option. For example, 5 meters is used, when there is no need in capturing more precise data than that, and no need in capturing any data at all when not moving. |
 | **Minimum accuracy** | Given that your location is identified via the built-in Location module of the device, when the longitude and latitude are calculated, the resulted location point can be detected accurately to a certain extend and expressed in meters/feet. It is possible to establish a minimum threshold between 1 meter and 50 meters for calculating the accuracy of the detected location in relation to the real location. A too small accuracy may cause the existence of blank spots on the track. It is recommended to decrease the accuracy, or disable at all by establishing the *Not selected* option, in case of uncertainty of the quality of the signals used for identifying the location, whether it is the GPS signal, and/or the mobile phone signal, and/or the Internet connection. For example, GPS signal can be weaker in circumstances when the route goes under the bridge, or between large trees, or high buildings, or in unfavorable weather conditions; and better with the growing number of GPS satellites. |
 | **Minimum speed** | Given that at low speed the recorded track can be noisy, showing a lots of points on a small segment of the route, when motion is detected and the speed level is calculated to be less than the established threshold, then the points will not be recorded. To disable the minimum speed detection, set the *Not selected* option. To detect only motion to start recording points, set the *>0* option. The other options are recommended to use carefully and to avoid losing too many points, lower the minimum threshold. |
@@ -213,14 +213,14 @@ There are recording parameters that you can adjust depending on the context. For
 
 ## Create new track 
 
-The [REC widget](../widgets/info-widgets#-trip-recording-widgets) is used to create new records.  
+The [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) is used to create new records.  
 
-- To start recording, tap the *REC widget*, and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically.  
-- When in progress, the *REC widget* is colored in red.  
-- *REC widget* is colored green during in progress and when online recording is enabled.  
-- To finish recording, tap the *REC widget* again and confirm the respective option in the Trip recording dialog. In addition, there are a few other options that you can use. All options are described in detail for iOS and Android versions.
+- To start recording, tap the *Distance/Start-Stop widget*, and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically.  
+- When in progress, the *Distance/Start-Stop widget* is colored in red.  
+- *Distance/Start-Stop widget* is colored green during in progress and when online recording is enabled.  
+- To finish recording, tap the *Distance/Start-Stop widget* again and confirm the respective option in the Trip recording dialog. In addition, there are a few other options that you can use. All options are described in detail for iOS and Android versions.
 
-![REC widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![REC widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png)
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png)
 
 <Tabs groupId="operating-systems">
 
@@ -231,7 +231,7 @@ The [REC widget](../widgets/info-widgets#-trip-recording-widgets) is used to cre
 
 There are four options for starting a recording: 
 
-- Using the [REC widget](../widgets/info-widgets#-trip-recording-widgets). 
+- Using the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets). 
 - Use the Trip recording option in the menu.
 - Use the RECORD option in [My Places](../personal/myplaces.md): *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
 - Use the Start Recording icon on the device screen as shown in the examples in the figures below. 
@@ -260,7 +260,7 @@ In the opened Start dialog, it is possible adjust the following recording settin
 
 #### STOP RECORDING 
 
-Tap the [REC widget](../widgets/info-widgets#-trip-recording-widgets), or the Trip recording option in the menu again, to stop recording, and/or to do any of the following extra options in the Trip recording dialog:
+Tap the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets), or the Trip recording option in the menu again, to stop recording, and/or to do any of the following extra options in the Trip recording dialog:
 
 - **Show on map** - if enabled, to show the detected points on the map.
 - **Appearance** - the *Line* icon - to open and work with the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map.
@@ -284,7 +284,7 @@ Tap the [REC widget](../widgets/info-widgets#-trip-recording-widgets), or the Tr
 
 There are two options for starting a recording:
 
-- Using the [REC widget](../widgets/info-widgets#-trip-recording-widgets).
+- Using the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets).
 - Using the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces.md): *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
 
 In any case, the Start dialog opens, unless the **<Translate ios="true" ids="track_interval_remember"/>** option is toggled on, in which you can adjust the following recording settings before confirming the start of the recording by tapping **OK**:
@@ -298,7 +298,7 @@ In any case, the Start dialog opens, unless the **<Translate ios="true" ids="tra
 
 #### STOP RECORDING
 
-To stop recording, or to do any of the following options, tap the [REC widget](../widgets/info-widgets#-trip-recording-widgets) again, and in the opened Track recording dialog, select:
+To stop recording, or to do any of the following options, tap the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) again, and in the opened Track recording dialog, select:
 
 - **Stop recording** - to stop the recording. The track will automatically be put for storing in: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*. 
 - **Show Info** - opens the *Current recording track* [context menu](../map/track-context-menu.md) with options to manage the track and change its [appearance](../map/tracks-on-map.md#track-appearance), i.e. how it looks on the map.   
@@ -310,7 +310,7 @@ To stop recording, or to do any of the following options, tap the [REC widget](.
 
 </Tabs>
 
->**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../docs/user/troubleshooting/track-recording-issues)  
+>**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues)  
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -525,9 +525,9 @@ You can use them to view brief information about the track recording on the scre
 
 ### Pre-use Setup 
 To start using *Trip recording widgets*, you need to make all of the following settings:
-* [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
-* Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
-* Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
+- [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
+- Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
+- Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
 
   
 ### Settings and operations
@@ -537,16 +537,12 @@ To start using *Trip recording widgets*, you need to make all of the following s
 <TabItem value="android" label="Android">  
  
 
-| | |
-|------------|------------|
-| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
-| On Click | Starts/Stop track recording or View the graph|
+Enable  [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
 
 
 <!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
 
-
-**What's in**  
+ 
 The screen with a selection of widgets. When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) for Android consists of 4 widgets. *Distance/Start-Stop* is the main widget, when you tap it opens Trip recording dialog. *Duration*, *Uphill* and *Downhill* are more informational widgets.   
 
 
@@ -665,32 +661,13 @@ This is a separate screen without a map and a track with points:
 **Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
 
 :::  
-
-**Settings and Operations**  
-
-| | |
-|------------|------------|
-| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/> |
-| On Click | Starts / Stop track recording |
-
-
-**What's in**  
-Screen with Distance/Start-Stop widget. You can tap the widget and more information about the track and the ability to interact with it will appear.
-
-<!--On Click | Starts / Stop track recording-->
-  
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
-
  
 
-| | 
-|------------|
-|**Distance/Start-Stop**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Before recording*.| 
-|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_ios_rec.png)| 
-|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
-|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
-|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|  
+To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*  
+Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.
+>**NOTE**. For detailed information about [Distance/Start-Stop widget](../plugins/trip-recording#create-new-track), refer to the respective section of the current documentation.  
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)
 
 
 
@@ -706,12 +683,12 @@ Screen with Distance/Start-Stop widget. You can tap the widget and more informat
 
 The location points are recorded into a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), according to the following structure: *file > track > segments > points*, where:
 
-- one point has a number of attributes: coordinates, speed, altitude, heading;
-- points are grouped into tracks;
-- one track is generated by one recording, i.e. one start and one stop actions;
-- with auto-split after gaps, the next point after the gap makes up a new segment;
-- both segments and tracks are identified with the Start and Finish icons on the map; 
-- both tracks and segments are recorded into a file.
+- One point has a number of attributes: coordinates, speed, altitude, heading.
+- Points are grouped into tracks.
+- One track is generated by one recording, i.e. one start and one stop actions.
+- With auto-split after gaps, the next point after the gap makes up a new segment.
+- Both segments and tracks are identified with the Start and Finish icons on the map. 
+- Both tracks and segments are recorded into a file.
 
 Below is an example of a point and a segment in the track.
 
