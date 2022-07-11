@@ -653,7 +653,7 @@ L.GPX = L.FeatureGroup.extend({
                 html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="images/poi-icons-svg/mx_${icon}.svg"
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${icon}.svg"
                               </div>
                               `
             })
@@ -681,7 +681,7 @@ L.GPX = L.FeatureGroup.extend({
                     html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg"
                               </div>
                               `
                 })
