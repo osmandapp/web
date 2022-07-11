@@ -234,9 +234,11 @@ There are four options for starting a recording:
 - Using the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets). 
 - Use the Trip recording option in the menu.
 - Use the RECORD option in [My Places](../personal/myplaces.md): *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
-- Use the Start Recording icon on the device screen as shown in the examples in the figures below. 
+- Use the Start Recording icon on the device screen as shown in the examples in the figures below.  
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;
+
 
 ![Icon's context menu](@site/static/img/plugins/trip-recording/and_open_from_icon.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
@@ -253,9 +255,8 @@ In the opened Start dialog, it is possible adjust the following recording settin
 - **Settings** - opens the Trip recording settings for the currently opened profile.  
   
 
-![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)
-![Finish recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_2.png)  
-
+![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
+ 
 
 
 #### STOP RECORDING 
@@ -527,58 +528,50 @@ You can use them to view brief information about the track recording on the scre
 To start using *Trip recording widgets*, you need to make all of the following settings:
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 - Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording#establish-options).
-- Add the necessary **Trip recording widgets** to the screen, this setting is *individual for each profile*.  
+- Add the necessary **Trip recording widgets** to the screen. This setting is *individual for each profile*.  
 
   
-### Settings and operations
+### Open Distance/Start-Stop widget options
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
  
 
-Enable  [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
-
-
-<!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
+To open Trip recording widgets options follow:  [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets)  
 
  
-The screen with a selection of widgets. When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md) for Android consists of 4 widgets. *Distance/Start-Stop* is the main widget, when you tap it opens Trip recording dialog. *Duration*, *Uphill* and *Downhill* are more informational widgets.   
+When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, **Trip recording plugin** for *Android* consists of **4 widgets**. *Distance/Start-Stop* is the main widget, when you tap it opens [Trip recording dialog](../plugins/trip-recording#create-new-track). The *Duration*, *Uphill* and *Downhill* widgets are more for information.   
 
 
 &nbsp;  
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-1.png) 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)  
+![Finish recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_2.png)   
 
-**Distance/Start-Stop**  
 
+
+| | 
+|------------|
+|**Distance/Start-Stop**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has 3 different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
+|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
+|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the [Trip recording dialog](../plugins/trip-recording#create-new-track). If it is disabled, it will immediately start recording.|  
+|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|  
 **Details**  
 - Name of the dialog box - *Trip recording*  
 - Status: *Recording / On pause*    
 - Buttons: *Show on map* on/off and [Appearence](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).  
 - Graph  
 - Information box. There is a different list for each of the graphs.  
-- Menu: *Close*, *Pause/Resume*, *Finish*, *Options*.
-
-
-| | 
-|------------|
-|**Distance/Start-Stop**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
-|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
-|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
-|![Trip recording widget](@site/static/img/widgets/overview.png)|
-|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|
+- Menu: *Close*, *Pause/Resume*, *Finish*, *Options*.  
  
 
 
 
-**Duration, Uphill, Downhill**   
-
+### Open widgets options for Android
 
 
 | | 
 |------------|
-|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|
 |**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
@@ -587,15 +580,12 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
  
 
-If you have several widgets selected, Duration, Uphill, and Downhill, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
-On the graph you can see the information about distance, altitude, slope angle. The graph can be scaled.  
+If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
+On the graph you can see the information about distance, altitude, slope angle. The graph can be scaled.   
 
 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
-
-**Description of trip recording information dialog box**  
-
-**What's in**  
+**Description of trip recording information dialog box**   
+  
 * Track. Currently recording track - general name of the dialog.
 * "Track: 1" is the default name of the track if you haven't set it before (you can change it with [Trip settings](https://osmand.net/docs/user/plugins/trip-recording#options-of-context-menu)). ???
 * Graphs **Overview**, **Altitude**, **Speed**, info block with *Average altitude*, *Altitude range*, *Uphill*, *Downhill* and two **menus**: *Analyse on map* and *Options*. 
@@ -610,7 +600,6 @@ NOTE. By default, the *Track* menu appears when you tap on the widget.
 
 
 **Graph**  
-
 All values are indicated either for the whole route or only for the selected interval by scaling the graph.  
 
 |  |
@@ -624,30 +613,28 @@ All values are indicated either for the whole route or only for the selected int
 **Menu**  
 You can read more information [here](https://osmand.net/docs/user/map/track-context-menu/).
 
-1. ***Overview***  
-- **Currently recording track** - general name of the dialog.  
-- A list of information about currently recording track: *Distance*, *Uphill*, *Downhill*, *Altitude range*, *Average speed*, *Maximum speed*, *Time span*, *Time in motion*. This list is scrollable.   
-- Direction and distance to the point on the track  /  Your current location (if you allowed).  
-- Buttons: *Show on map* on/off and [Appearence](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).  
+- ***Overview***  
+  - **Currently recording track** - general name of the dialog.  
+  - A list of information about currently recording track: *Distance*, *Uphill*, *Downhill*, *Altitude range*, *Average speed*, *Maximum speed*, *Time span*, *Time in motion*. This list is scrollable.   
+  - Direction and distance to the point on the track  /  Your current location (if you allowed).  
+  - Buttons: *Show on map* on/off and [Appearence](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).  
 
 &nbsp;
 ![Overview](@site/static/img/widgets/menu_overview.png)  
 
-2. ***Track*** - described above.   
-
-3. ***Points***  
+- ***Track*** - described above.   
+- ***Points***  
 You can add a point or more to the map or delete all. [Read more here](https://osmand.net/docs/user/map/track-context-menu/#waypoints-folder).  
 
-&nbsp;
 ![Overview](@site/static/img/widgets/points_1.png) ![Overview](@site/static/img/widgets/points_2.png) ![Overview](@site/static/img/widgets/points_3.png)
 
-4. ***Options***  
+- ***Options***  
 This is a separate screen without a map and a track with points:  
-- Show on map - on/off.  
-- Appearance.  
-- [Analyze on the map](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android).
-- Analyze by intervals - overview of the current track recording segment.  
-- Share - gpx file.    
+  - Show on map - on/off.  
+  - Appearance.  
+  - [Analyze on the map](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map-android).
+  - Analyze by intervals - overview of the current track recording segment.  
+  - Share - gpx file.    
 
 &nbsp;
 ![Overview](@site/static/img/widgets/option_for3.png)  
@@ -663,8 +650,9 @@ This is a separate screen without a map and a track with points:
 :::  
  
 
-To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*  
-Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.
+To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*   
+
+Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.  
 >**NOTE**. For detailed information about [Distance/Start-Stop widget](../plugins/trip-recording#create-new-track), refer to the respective section of the current documentation.  
 
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)
