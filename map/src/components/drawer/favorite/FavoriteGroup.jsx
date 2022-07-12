@@ -20,10 +20,6 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
         ctx.favorites.visibleMarker.current = null;
     }
 
-    function isItemClick(e) {
-        return typeof e.target.className !== 'string' || (e.target.className === 'string' && !e.target.className.includes('MuiSwitch-input'));
-    }
-
     async function enableLayerWithGroups(group, ctx, visible) {
         removeFavoriteFromMap();
 
@@ -58,11 +54,9 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
     }, [favoritesPointsOpen, setFavoritesPointsOpen]);
 
     return (<div key={'group' + index}>
-        <MenuItem sx={{ml: 3}} divider onClick={(e) => {
-            if (isItemClick(e)) {
-                setIndexGroup(index);
-                toggleFavoritesPointsOpen();
-            }
+        <MenuItem sx={{ml: 3}} divider onClick={() => {
+            setIndexGroup(index);
+            toggleFavoritesPointsOpen();
         }}>
             <ListItemText inset>
                 <Typography variant="inherit" noWrap>
@@ -72,7 +66,8 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             <Switch checked={enableGroups.some(e => e.type === group.type)}
                     onChange={(e) => {
                         enableLayerWithGroups(group, ctx, e.target.checked).then();
-                    }}/>
+                    }}
+                    onClick={(e) => {e.stopPropagation()}}/>
             {group.markers.length === 0 ? <></> : showFavoritePoints.length > 0 ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={showFavoritePoints.includes(index)} timeout="auto">
