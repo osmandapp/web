@@ -598,7 +598,14 @@ L.GPX = L.FeatureGroup.extend({
                             }
                         });
                     } else {
-                        this._info.favouritesGroup.push({type: typeKey, hidden: hidden})
+                        let group = this._info.favouritesGroup.find(g => {
+                            return g.type === typeKey;
+                        })
+                        if (group) {
+                            group.markers.push(marker);
+                        } else {
+                            this._info.favouritesGroup.push({type: typeKey, hidden: hidden, markers: [marker]});
+                        }
                     }
                 }
             }

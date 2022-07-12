@@ -148,6 +148,11 @@ async function loadFavoritesFile(listFiles, setFavorites, favorites) {
         favObj.file = newFavouriteFile;
         favObj.groups = [];
         favObj.groupsUnique = [];
+        favObj.visibleMarker = {
+            prev: null,
+            current: null
+        };
+
         setFavorites(favObj);
     }
 }
@@ -328,7 +333,16 @@ export const AppContextProvider = (props) => {
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-    const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
+    const [favorites, setFavorites] = useState({
+        file: null,
+        groups: [],
+        groupsUnique: [],
+        readFirst: false,
+        visibleMarker: {
+            prev: null,
+            current: null
+        }
+    });
     const [planRoute, setPlanRoute] = useState(false);
     const [newRoute, setNewRoute] = useState({
         newRouteLayer: new Layer(),

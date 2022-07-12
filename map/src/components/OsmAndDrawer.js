@@ -11,7 +11,7 @@ import LocalGpx from "./drawer/LocalGpx"
 import MapStyle from "./drawer/MapStyle"
 import RouteMenu from "./drawer/RouteMenu"
 import { useNavigate } from "react-router-dom";
-import Favorites from "./drawer/Favorites";
+import FavoritesMenu from "./drawer/favorite/FavoritesMenu";
 
 
 
@@ -56,7 +56,7 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
             <Weather />
             <CloudGpx />
             <LocalGpx />
-            <Favorites />
+            <FavoritesMenu />
             <MapStyle />
             <RouteMenu />
         </MenuList>
