@@ -6,8 +6,8 @@ import {
 import { ArrowBack, Person } from '@mui/icons-material';
 import AppContext from "../context/AppContext"
 import Weather from "./drawer/Weather"
-import CloudGpx from "./drawer/CloudGpx"
-import LocalGpx from "./drawer/LocalGpx"
+import CloudGpxMenu from "./drawer/track/CloudGpxMenu"
+import LocalGpxMenu from "./drawer/track/LocalGpxMenu"
 import MapStyle from "./drawer/MapStyle"
 import RouteMenu from "./drawer/RouteMenu"
 import { useNavigate } from "react-router-dom";
@@ -54,8 +54,8 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
         <Divider />
         <MenuList>
             <Weather />
-            <CloudGpx />
-            <LocalGpx />
+            <CloudGpxMenu />
+            <LocalGpxMenu />
             <FavoritesMenu />
             <MapStyle />
             <RouteMenu />

@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem} from "@mui/material";
+import {Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Star} from "@mui/icons-material";
 import AppContext from "../../../context/AppContext";
 import FavoriteAllGroups from "./FavoriteAllGroups";
@@ -16,7 +16,10 @@ export default function FavoritesMenu() {
             <ListItemIcon>
                 <Star fontSize="small"/>
             </ListItemIcon>
-            <ListItemText>Favorites {ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.length > 0 ? `(${ctx.favorites.groupsUnique.length})` : ''}</ListItemText>
+            <ListItemText> Favorites </ListItemText>
+            <Typography variant="body2" color="textSecondary">
+                {ctx.favorites.groupsUnique && ctx.favorites.groupsUnique.length > 0 ? `${ctx.favorites.groupsUnique.length}` : ''}
+            </Typography>
             {ctx.favorites.groupsUnique.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         {ctx.gpxLoading ? <LinearProgress/> : <></>}

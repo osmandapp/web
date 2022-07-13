@@ -41,6 +41,15 @@ const TrackLayer = () => {
     const map = useMap();
 
     useEffect(() => {
+        if (ctx.selectedGpxFile?.details) {
+                map.fitBounds([
+                    [ctx.selectedGpxFile.details.analysis.top, ctx.selectedGpxFile.details.analysis.right],
+                    [ctx.selectedGpxFile.details.analysis.bottom, ctx.selectedGpxFile.details.analysis.left]
+                ])
+        }
+    }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
+
+    useEffect(() => {
         let filesMap = ctx.gpxFiles ? ctx.gpxFiles : {};
         Object.values(filesMap).forEach((file) => {
             if (file.url && !file.gpx) {

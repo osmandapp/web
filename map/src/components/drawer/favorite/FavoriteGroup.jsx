@@ -1,5 +1,5 @@
-import {Collapse, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
-import {ExpandLess, ExpandMore} from "@mui/icons-material";
+import {Collapse, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
+import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import FavoriteItem from "./FavoriteItem";
 import AppContext from "../../../context/AppContext";
@@ -58,7 +58,10 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             setIndexGroup(index);
             toggleFavoritesPointsOpen();
         }}>
-            <ListItemText inset>
+            <ListItemIcon>
+                <Folder fontSize="small"/>
+            </ListItemIcon>
+            <ListItemText>
                 <Typography variant="inherit" noWrap>
                     {group.type}
                 </Typography>

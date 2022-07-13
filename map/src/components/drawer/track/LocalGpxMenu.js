@@ -9,8 +9,8 @@ import {
 import {
     DirectionsWalk, ExpandLess, ExpandMore,
 } from '@mui/icons-material';
-import AppContext from "../../context/AppContext"
-import Utils from "../../util/Utils";
+import AppContext from "../../../context/AppContext"
+import Utils from "../../../util/Utils";
 
 
 const StyledInput = styled('input')({
@@ -25,7 +25,7 @@ async function loadInitialState(gpxFiles, setGpxFiles) {
             let gpxLayer = {};
             gpxLayer.name = 'local:' + item.analysis.name;
             gpxLayer.localContent = `${process.env.REACT_APP_GPX_API}/gpx/get-gpx-file?name=` + encodeURIComponent(item.analysis.name);
-            // gpxLayer.url 
+            // gpxLayer.url
             gpxLayer.local = true;
             let newinfo = Object.assign({}, gpxFiles);
             gpxLayer.summary = item.analysis;
@@ -76,7 +76,7 @@ const fileSelected = (ctx) => async (e) => {
     });
 }
 
-export default function LocalGpx() {
+export default function LocalGpxMenu() {
     const ctx = useContext(AppContext);
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
 
