@@ -19,7 +19,7 @@ export default function TrackItem({file}) {
         item.details?.analysis : localLayer?.summary;
     if (item.clienttimems) {
         clienttime = "Upload time: " + new Date(item.clienttimems).toDateString() +
-            + " " + new Date(item.clienttimems).toLocaleTimeString();
+            +" " + new Date(item.clienttimems).toLocaleTimeString();
     }
     if (summary?.startTime &&
         summary?.startTime !== summary?.endTime) {
@@ -62,7 +62,7 @@ export default function TrackItem({file}) {
             }
             updateTextInfo(newGpxFiles, ctx);
         } else {
-            newGpxFiles[item.name] = { 'url': url, 'clienttimems': item.clienttimems, 'name' : item.name };
+            newGpxFiles[item.name] = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
             ctx.setGpxFiles(newGpxFiles);
             if (item.details?.analysis) {
                 newGpxFiles[item.name].summary = item.details.analysis;
@@ -90,6 +90,30 @@ export default function TrackItem({file}) {
 
             updateTextInfo(newGpxFiles, ctx);
         }
+    }
+
+    async function enableLocalLayer(item, ctx, setProgressVisible, visible) {
+        const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+        if (!visible) {
+            // delete newGpxFiles[item.name];
+            newGpxFiles[item.name].url = null;
+            if (ctx.selectedGpxFile?.name === item.name) {
+                ctx.setSelectedGpxFile(null);
+                if (ctx.mapMarkerListener) {
+                    ctx.mapMarkerListener(null, null);
+                }
+            }
+        } else {
+            if (ctx.newRoute.newRouteLayer._latlngs) {
+                ctx.editor.deleteRoute = true;
+                ctx.editor.createRoute = false;
+                ctx.setEditor({...ctx.editor});
+            }
+            newGpxFiles[item.name].url = item.localContent;
+            newGpxFiles[item.name].urlopts = {credentials: 'include'}
+            ctx.setSelectedGpxFile(item);
+        }
+        ctx.setGpxFiles(newGpxFiles);
     }
 
     function updateTextInfo(gpxFiles, ctx) {
@@ -127,26 +151,39 @@ export default function TrackItem({file}) {
             Uphill / Downhill: ${(diffUp).toFixed(0)} / ${(diffDown).toFixed(0)} m.`)
     }
 
+    function getFileName() {
+        if (item.name.includes('/')) {
+            return item.name.split('/')[1]
+        } else if (item.local && item.name.includes(':')) {
+            return item.name.split(':')[1]
+        } else {
+            return item.name;
+        }
+    }
+
     return (
         <MenuItem key={item.name} onClick={() => ctx.setSelectedGpxFile(file)}>
             <Tooltip title={<div>
                 {item.name}
-                {timeRange ? <><br /><br />Time: </> : <></>}  {timeRange}
-                {distance ? <br /> : <></>} {distance}
-                {timeMoving ? <br /> : <></>} {timeMoving}
-                {updownhill ? <br /> : <></>} {updownhill}
-                {speed ? <br /> : <></>} {speed}
-                {clienttime ? <br /> : <></>} {clienttime}
+                {timeRange ? <><br/><br/>Time: </> : <></>} {timeRange}
+                {distance ? <br/> : <></>} {distance}
+                {timeMoving ? <br/> : <></>} {timeMoving}
+                {updownhill ? <br/> : <></>} {updownhill}
+                {speed ? <br/> : <></>} {speed}
+                {clienttime ? <br/> : <></>} {clienttime}
             </div>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {item.name.slice(0, -4).replace('_', ' ')}
+                        {getFileName()}
                     </Typography>
                 </ListItemText>
             </Tooltip>
             <Switch
                 checked={!!localLayer?.url}
                 onClick={(e) => e.stopPropagation()}
-                onChange={(e) => enableLayer(item, ctx, ctx.setGpxLoading, e.target.checked)} />
+                onChange={(e) => {
+                    item.local ? enableLocalLayer(item, ctx, ctx.setGpxLoading, e.target.checked)
+                        : enableLayer(item, ctx, ctx.setGpxLoading, e.target.checked)
+                }}/>
         </MenuItem>)
 }
