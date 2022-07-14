@@ -1,8 +1,33 @@
 import {ListItemText, MenuItem} from "@mui/material";
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
+import {makeStyles} from "@material-ui/core/styles";
+
+
+const useStyles = makeStyles({
+    icon: {
+        "& .icon": {
+            top: '22px',
+           left: '30px',
+        },
+        "& .background": {
+            left: '0px',
+            top: '2px',
+            filter: "drop-shadow(0 0 0 gray)"
+        }
+    },
+    text: {
+        textOverflow: "clip !important",
+        wordWrap: 'normal !important',
+        "& .css-1exqls6-MuiButtonBase-root-MuiMenuItem-root": {
+            whiteSpace: "normal"
+        }
+    },
+})
 
 export default function FavoriteItem({index, marker}) {
+
+    const classes = useStyles();
 
     const ctx = useContext(AppContext);
 
@@ -14,8 +39,11 @@ export default function FavoriteItem({index, marker}) {
         ctx.setFavorites({...ctx.favorites});
     }
 
-    return (
-        <MenuItem key={'marker' + index} sx={{ml: 3}} divider onClick={() => addFavoriteToMap(marker)}>
+
+    return <div className={classes.text}>
+        <MenuItem key={'marker' + index} sx={{ml: -1}} divider onClick={() => addFavoriteToMap(marker)}>
+            <div className={classes.icon} dangerouslySetInnerHTML={{__html: marker.options.icon.options.html + ''}}/>
             <ListItemText> {marker.options.title} </ListItemText>
-        </MenuItem>)
+        </MenuItem>
+        </div>
 }
