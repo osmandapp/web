@@ -15,8 +15,8 @@ const useStyles = makeStyles({
         minHeight: '40px'
     },
     group: {
-        "& .css-1atbs13-MuiButtonBase-root-MuiMenuItem-root": {
-            minHeight: '50px'
+        '& li': {
+            minHeight: '50px !important'
         }
     }
 })
