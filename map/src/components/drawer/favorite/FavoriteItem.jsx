@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     text: {
         textOverflow: "clip !important",
         wordWrap: 'normal !important',
-        "& .css-1exqls6-MuiButtonBase-root-MuiMenuItem-root": {
+        '& li': {
             whiteSpace: "normal"
         }
     },
