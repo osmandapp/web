@@ -25,7 +25,7 @@ Release date: 06/2022
 * Favorite groups: set default appearance for new points in the group
 * Fixes: online tile-maps auto-update
 
-<DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.4-4204.apk" />
+<DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7-4207.apk" />
 
 ### Version 4.1 
 Release date: 12/2021
