@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useContext, useState, useCallback } from 'react';
-import { Marker, GeoJSON, useMap } from "react-leaflet";
+import { Marker, GeoJSON, useMap, Popup } from "react-leaflet";
 import L from 'leaflet';
 import MarkerIcon from '../MarkerIcon.js'
 import AppContext from "../../context/AppContext";
 import { useNavigate, useLocation } from 'react-router-dom';
+
+
 
 function dist(a1, a2) {
     // distance is not correct
@@ -201,7 +203,22 @@ const RouteLayer = () => {
     };
     const onEachFeature = (feature, layer) => {
         if (feature.properties && feature.properties.description) {
-            layer.bindPopup(feature.properties.description);
+            let desc = feature.properties.description;
+            if (feature.properties.roadId) {    
+                let roadId = feature.properties.roadId;
+                let avoidRoadObj = {
+                    id: roadId,
+                    name: 'Way ' + Math.trunc(roadId / 64)
+                };
+                window['addAvoidRoadId' + avoidRoadObj.id] = () => {  
+                    let newAvoidRoads = Object.assign([], ctx.avoidRoads);
+                    newAvoidRoads.push(avoidRoadObj);
+                    ctx.setAvoidRoads(newAvoidRoads);
+                }
+                desc = `${desc}. <a href="#" onclick="addAvoidRoadId${avoidRoadObj.id}()">` +
+                    `Avoid ${avoidRoadObj.name}</a>`;
+            }
+            layer.bindPopup(desc);
         }
     }
     const pointToLayer = (feature, latlng) => {

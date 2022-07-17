@@ -228,7 +228,7 @@ async function loadRouteModes(routeMode, setRouteMode) {
 }
 
 
-async function calculateRoute(startPoint, endPoint, interPoints, routeMode, setRouteData) {
+async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData) {
     // encodeURIComponent(startPoint.lat)
     setRouteData(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -237,8 +237,15 @@ async function calculateRoute(startPoint, endPoint, interPoints, routeMode, setR
         inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
     });
     const endurl = `points=${endPoint.lat.toFixed(6)},${endPoint.lng.toFixed(6)}`;
-
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}`, {
+    let avoidRoadsUrl = '';
+    avoidRoads.forEach((i) => {
+        avoidRoadsUrl += ',' + i.id;
+    });
+    if (avoidRoadsUrl !== '') {
+        avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
+    }
+    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
+        + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}${avoidRoadsUrl}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     });
@@ -326,6 +333,7 @@ export const AppContextProvider = (props) => {
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
+    const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
 
@@ -341,10 +349,10 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, routeMode, setRouteData);
+            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData);
         }
         // ! routeTrackFile is not part of dependency ! 
-    }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, setRouteData]);
+    }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
     
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
@@ -382,7 +390,8 @@ export const AppContextProvider = (props) => {
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
-        favorites, setFavorites
+        favorites, setFavorites,
+        avoidRoads, setAvoidRoads
 
     }}>
         {props.children}

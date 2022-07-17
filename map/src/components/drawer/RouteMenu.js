@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Settings, RemoveCircle } from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
-    FormControl, InputLabel, Input, Select, Button, Typography
+    FormControl, InputLabel, Input, Select, Button, Typography, Link
 } from "@mui/material";
 import {
     ExpandLess, ExpandMore, Directions
@@ -114,10 +114,10 @@ export default function RouteMenu() {
             {ctx.interPoints.map((item, ind) => (
                 <MenuItem key={"inter"+(ind+1)} sx={{ ml: 2, mr: 2, mt: 1 }} disableRipple={true}>
                     <FormControl fullWidth>
-                        <InputLabel id="end-point-label">Intermediate {ind+1}</InputLabel>
+                        <InputLabel id="inter-point-label">Intermediate {ind+1}</InputLabel>
                         <Input
-                            labelid="end-point-label"
-                            label="End"
+                            labelid="inter-point-label"
+                            label="Intermediate"
                             value={formatLatLon(item)} >
                         </Input>
                     </FormControl>
@@ -143,6 +143,21 @@ export default function RouteMenu() {
                     <RemoveCircle fontSize="small" />
                 </IconButton>
             </MenuItem>}
+            {ctx.avoidRoads.map((item, ind) => (
+                <MenuItem key={"avoid_" + (ind + 1)} sx={{ ml: 2, mr: 2, mt: 1 }} disableRipple={true}>
+                    <FormControl fullWidth>
+                        <Link target="_blank" rel="noopener"
+                            href={"https://openstreetmap.org/way/" + (item.id / 64)}>Avoid {item.name}</Link>
+                    </FormControl>
+                    <IconButton sx={{ ml: 1 }} onClick={() => {
+                        let newinter = Object.assign([], ctx.interPoints);
+                        newinter.splice(ind, 1);
+                        ctx.setAvoidRoads(newinter);
+                    }} >
+                        <RemoveCircle fontSize="small" />
+                    </IconButton>
+                </MenuItem>
+            ))}
             {ctx.routeTrackFile && <MenuItem key='routetrack' sx={{ ml: 2, mr: 2, mt: 1 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="track-file-label">Selected track</InputLabel>
@@ -170,6 +185,7 @@ export default function RouteMenu() {
                     </Button>
                 </label>
             </MenuItem>
+      
         </Collapse>
     </>;
 
