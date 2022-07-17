@@ -118,39 +118,37 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
-## * Average speed widget  
+## Average speed widget  
+ 
 
-The widget shows what your average speed is. The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes (for more information see below). In addition, if you stop for a long time, this is also an option in the widget, the time is no longer displayed.  
+This is a simple but very useful widget without any extra features. It shows what your average speed is. And you can easily use it if, for example, you need to observe speed limits on highways or if you ride a bicycle.  
+Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*  
 
-It is a simple but very useful widget without any extra features. You can easily use it if, for example, you need to observe speed limits on highways or if you ride a bicycle.  
+**Time interval.**  
+The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes.   
+
+
+**Take stops to your account.**   
+***Off*** *setting*: If you stop for a while, zero will also be added to the average speed calculation, which can significantly change the overall value. ***On*** *setting*: If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed not to change much when you stop, for example, at a traffic light or want to take a break from cycling.   
+
+
+![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)
+
+
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">   
 
-You can place Average speed widget on the *Left* or *Right* panel as you prefer.
+ 
+![Average speed widgets](@site/static/img/widgets/aver_widg_1.png)
 
->The widget can be turned on/off by following this path:
-<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>  
-
-![Average speed widgets](@site/static/img/widgets/avera_speed_1.png)  ![Average speed widgets](@site/static/img/widgets/avera_speed_1-2.png)   
-
-
-The widget has some different views:  
-*Before the interval limit starts / or Osmand application*, *Started*, *The average value for the path traveled*.   
-
-![Average speed widgets](@site/static/img/widgets/nautical_pl_1-1.png)  
-
-
-The average speed is calculated for the specified time interval. Click on the **Settings** button of the Average Speed widget to select the time interval for which the average speed will be measured:  
-><Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/> → ⚙️  
-
-The Settings menu consists of two parts: the choice of the time limit, to calculate the Average speed, and whether or not to include possible stops.  
-
-![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)  
-
-
-
+| | |
+|------------|------------|
+| Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_average_speed"/> |
+| | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_average_speed"/> |
+| On Click | – |  
+  
 
 </TabItem>
 
@@ -175,7 +173,7 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 
 :::  
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording#trip-recording-widgets.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
 
 
 
@@ -183,7 +181,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/trip_recording_widget.png) 
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
 
 | | |
 |------------|------------|
