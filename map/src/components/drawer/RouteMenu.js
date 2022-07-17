@@ -150,9 +150,9 @@ export default function RouteMenu() {
                             href={"https://openstreetmap.org/way/" + (item.id / 64)}>Avoid {item.name}</Link>
                     </FormControl>
                     <IconButton sx={{ ml: 1 }} onClick={() => {
-                        let newinter = Object.assign([], ctx.interPoints);
-                        newinter.splice(ind, 1);
-                        ctx.setAvoidRoads(newinter);
+                        let navoidRoads = Object.assign([], ctx.avoidRoads);
+                        navoidRoads.splice(ind, 1);
+                        ctx.setAvoidRoads(navoidRoads);
                     }} >
                         <RemoveCircle fontSize="small" />
                     </IconButton>
