@@ -4717,13 +4717,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"circular-json@npm:^0.5.9":
-  version: 0.5.9
-  resolution: "circular-json@npm:0.5.9"
-  checksum: a52a8ace55dbffd769cab749e2bce53fbd881f11dfdfe2b015e0770b83f01ca753e3d24f36d2a94ecb2ea840806b5386ef5c587ce533869951b96b79c058540b
-  languageName: node
-  linkType: hard
-
 "cjs-module-lexer@npm:^1.0.0":
   version: 1.2.2
   resolution: "cjs-module-lexer@npm:1.2.2"
@@ -9803,7 +9796,6 @@ __metadata:
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
     "@types/leaflet.awesome-markers": ^2.0.25
-    circular-json: ^0.5.9
     env-cmd: ^10.1.0
     gpx-builder: ^5.0.0
     http-proxy-middleware: ^2.0.6
