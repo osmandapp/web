@@ -347,11 +347,14 @@ export const AppContextProvider = (props) => {
     const [newRoute, setNewRoute] = useState({
         newRouteLayer: new Layer(),
         pointsList: [],
-        distance: 0});
+        finished: false,
+        distance: 0
+    });
     const [editor, setEditor] = useState({
-        deletePoint : -1,
+        deletePoint: -1,
         createRoute: false,
-        deleteRoute: false
+        deleteRoute: false,
+        showTrack: false
     });
 
     useEffect(() => {

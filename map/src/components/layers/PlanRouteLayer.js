@@ -16,13 +16,7 @@ export default function PlanRouteLayer() {
     const [openSaveDialog, setOpenSaveDialog] = useState(false);
     const [newFileName, setNewFileName] = useState('');
 
-    useEffect(() => {
-        if (ctx.editor.createRoute && ctx.editor.deletePoint === -1) {
-            ctx.newRoute.newRouteLayer = map.editTools.startPolyline();
-            ctx.setNewRoute({...ctx.newRoute});
-        }
-    }, [ctx.editor, ctx.setEditor]);
-
+    //create gpx
     useEffect(() => {
         if (newFileName !== '') {
             const {Point} = BaseBuilder.MODELS;
@@ -44,6 +38,14 @@ export default function PlanRouteLayer() {
     }, [newFileName, setNewFileName]);
 
     useEffect(() => {
+
+        //create track
+        if (ctx.editor.createRoute && ctx.editor.deletePoint === -1) {
+            ctx.newRoute.newRouteLayer = map.editTools.startPolyline();
+            ctx.setNewRoute({...ctx.newRoute});
+        }
+
+        //delete track
         if (ctx.editor.deleteRoute) {
             if (map.hasLayer(ctx.newRoute.newRouteLayer)) {
                 map.removeLayer(ctx.newRoute.newRouteLayer);
@@ -52,9 +54,8 @@ export default function PlanRouteLayer() {
                 ctx.setNewRoute({...ctx.newRoute});
             }
         }
-    }, [ctx.editor, ctx.setEditor]);
 
-    useEffect(() => {
+        //delete point
         if (ctx.editor.deletePoint !== -1) {
             ctx.newRoute.pointsList.splice(ctx.editor.deletePoint, 1);
             deleteOldRoute();
@@ -64,7 +65,29 @@ export default function PlanRouteLayer() {
             }
             ctx.setNewRoute({...ctx.newRoute});
         }
+
+        //show track
+        if (ctx.editor.showTrack) {
+            deleteOldRoute();
+            addNewRoute();
+            if (ctx.newRoute.pointsList.length > 0) {
+                ctx.newRoute.distance = ctx.newRoute.pointsList[ctx.newRoute.pointsList.length - 1].dist;
+            }
+            ctx.setNewRoute({...ctx.newRoute});
+        }
+
     }, [ctx.editor, ctx.setEditor]);
+
+
+    useEffect(() => {
+        if (ctx.planRoute) {
+            deleteOldRoute();
+            ctx.newRoute.pointsList = [];
+            ctx.newRoute.newRouteLayer = new Layer();
+            ctx.setNewRoute({...ctx.newRoute});
+            map.editTools.stopDrawing()
+        }
+    }, [ctx.planRoute, ctx.setPlanRoute]);
 
     function deleteOldRoute() {
         let layersWithPolyline = [];
@@ -88,8 +111,52 @@ export default function PlanRouteLayer() {
         ctx.newRoute.newRouteLayer = map.editTools.addPolylineByPoints(newPoints);
     }
 
+    map.on("editable:drawing:clicked", e => {
+        ctx.newRoute.pointsList.push({lat: e.latlng.lat, lng: e.latlng.lng})
+        ctx.newRoute.pointsList = Utils.removeDuplicatesPoints(ctx.newRoute.pointsList);
+        ctx.newRoute.pointsList = Utils.getPointsDist(ctx.newRoute.pointsList);
+        ctx.newRoute.distance = ctx.newRoute.pointsList && ctx.newRoute.pointsList.length > 0 ? ctx.newRoute.pointsList[ctx.newRoute.pointsList.length - 1].dist : 0;
+        ctx.setNewRoute({...ctx.newRoute});
+    });
+
+
+    map.on("editable:vertex:deleted", e => {
+        if (ctx.newRoute.newRouteLayer) {
+            for (let i = 0; i < ctx.newRoute.pointsList.length; i++) {
+                if (ctx.newRoute.pointsList[i].lat === e.latlng.lat && ctx.newRoute.pointsList[i].lng === e.latlng.lng) {
+                    ctx.newRoute.pointsList.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        ctx.newRoute.pointsList = Utils.getPointsDist(ctx.newRoute.pointsList);
+        ctx.newRoute.distance = ctx.newRoute.pointsList && ctx.newRoute.pointsList.length > 0 ? ctx.newRoute.pointsList[ctx.newRoute.pointsList.length - 1].dist : 0;
+        ctx.setNewRoute({...ctx.newRoute});
+    });
+
+    map.on("editable:vertex:dragend", e => {
+        if (ctx.newRoute.newRouteLayer._latlngs) {
+            ctx.newRoute.pointsList = [];
+            ctx.newRoute.newRouteLayer._latlngs.forEach(p => ctx.newRoute.pointsList.push({lat: p.lat, lng: p.lng}))
+            ctx.newRoute.pointsList = Utils.removeDuplicatesPoints(ctx.newRoute.pointsList);
+            ctx.newRoute.pointsList = Utils.getPointsDist(ctx.newRoute.pointsList);
+            ctx.newRoute.distance = ctx.newRoute.pointsList && ctx.newRoute.pointsList.length > 0 ? ctx.newRoute.pointsList[ctx.newRoute.pointsList.length - 1].dist : 0;
+            ctx.setNewRoute({...ctx.newRoute});
+        }
+    });
+
+    map.on("editable:drawing:end", e => {
+        ctx.newRoute.finished = true;
+        ctx.setNewRoute({...ctx.newRoute});
+    })
+
+    map.on("editable:drawing:start", e => {
+        ctx.newRoute.finished = false;
+        ctx.setNewRoute({...ctx.newRoute});
+    })
+
     return (<>
         <SaveRouteDialog open={openSaveDialog} setOpen={setOpenSaveDialog} setFileName={setNewFileName}/>
-        {ctx.planRoute && <PanelButtons setOpenSaveDialog={setOpenSaveDialog}/>}
+        {(ctx.planRoute || ctx.editor.showTrack) && <PanelButtons setOpenSaveDialog={setOpenSaveDialog}/>}
     </>);
 }

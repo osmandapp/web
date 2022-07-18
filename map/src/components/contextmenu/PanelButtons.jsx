@@ -1,8 +1,8 @@
 import {ButtonGroup, IconButton, Paper} from "@mui/material";
-import {Create, Delete, Download, Folder, Settings} from "@mui/icons-material";
-import React, {useContext} from "react";
+import {Create, Delete, Download} from "@mui/icons-material";
+import React, {useContext, useEffect, useRef} from "react";
 import {makeStyles} from "@material-ui/styles";
-import {Layer} from "leaflet";
+import L, {Layer} from "leaflet";
 import AppContext from "../../context/AppContext";
 
 const useStyles = makeStyles({
@@ -20,8 +20,17 @@ const PanelButtons = ({setOpenSaveDialog}) => {
 
     const ctx = useContext(AppContext);
 
+    const divContainer = useRef(null);
+
+    useEffect(() => {
+        if (divContainer.current) {
+            L.DomEvent.disableClickPropagation(divContainer.current);
+            L.DomEvent.disableScrollPropagation(divContainer.current);
+        }
+    });
+
     return (
-        <div className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+        <div className={`${classes.buttongroup} ${'leaflet-bottom'}`} ref={divContainer}>
             <div className="leaflet-control leaflet-bar padding-container">
                 <Paper>
                     <ButtonGroup
@@ -45,16 +54,6 @@ const PanelButtons = ({setOpenSaveDialog}) => {
                             }}
                         >
                             <Create fontSize="small"/>
-                        </IconButton>
-                        <IconButton
-                            variant="contained"
-                            type="button"
-                            onClick={() => {
-                                ctx.editor.createRoute = true;
-                                ctx.setEditor({...ctx.editor});
-                            }}
-                        >
-                            <Settings fontSize="small"/>
                         </IconButton>
                         <IconButton
                             variant="contained"

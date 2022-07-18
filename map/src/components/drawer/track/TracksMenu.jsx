@@ -8,6 +8,7 @@ import {styled} from "@mui/material/styles";
 import Utils from "../../../util/Utils";
 import LocalTrackGroup from "./LocalTrackGroup";
 import {makeStyles} from "@material-ui/core/styles";
+import EditorTrack from "./EditorTrack";
 
 const useStyles = makeStyles({
     button: {
@@ -119,6 +120,7 @@ export default function TracksMenu() {
                                    group={group}/>;
             })}
             <LocalTrackGroup/>
+            <EditorTrack/>
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">
                     <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
