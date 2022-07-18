@@ -14,7 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Each profile is available for full customization. In fact, each profile can become a separate application for the needs of the user.
+Each profile is available for full customization. There are the next profiles by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+
+In fact, each profile can become a separate application for the needs of the user. Of course, you can create your own profile with full customization for your needed.
 
 To start setting up an application profile:
 
@@ -308,6 +310,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
 | "<Translate android="true" ids="prefer_in_routing_title"/>" |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/>  |    |
+| "<Translate android="true" ids="transport_hazmat_title"/>" |  <Translate android="true" ids="transport_hazmat_no_desc"/>  | Truck   |
+| "<Translate android="true" ids="routing_attr_goods_restrictions_name"/>" |  <Translate android="true" ids="routing_attr_goods_restrictions_description"/>  | Truck   |
 | "<Translate android="true" ids="routing_attr_short_way_name"/>" |  <Translate android="true" ids="routing_attr_short_way_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_allow_streams_name"/>" |  allows streams and drains for boat navigation type.  | Boat navigation type |
 | "<Translate android="true" ids="routing_attr_allow_intermittent_name"/>" |  allows intermittent water ways for boat navigation type.  | Boat navigation type    |

@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 <InfoIncompleteArticle/>
 
 
-The navigation function allows you to reach your destination easily using voice guidance (optional).
+The navigation function allows you to reach your destination easily using voice guidance (optional). There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
 
 ![Navigation screen Android](@site/static/img/navigation/route/navigation_android.png) ![Navigation screen iOS](@site/static/img/navigation/route/navigation_ios.png)
 
