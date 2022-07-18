@@ -158,7 +158,11 @@ const config = {
               {
                 label: 'Arabic',
                 href: 'https://t.me/joinchat/8f5o0TtZAaM0MGJk',
-              },              
+              },
+              {
+                label: 'Türkçe',
+                href: 'https://t.me/OsmAndTR',
+              },                
             ],
           },
           {
