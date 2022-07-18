@@ -270,24 +270,29 @@ ___
 
 ## Type of navigation
 
-Navigation type is rules how the route will be calculated. This rules content in [routing.xml](./../../technical/osmand-file-formats/osmand-routing-xml.md) file for offline OsmAnd routing. 
+Navigation type is rules how the route will be calculated. This rules content in [routing.xml](./../../technical/osmand-file-formats/osmand-routing-xml.md) file for offline OsmAnd routing. For Android version of OsmAnd there is an opportunity to set Online routing by providers.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-There are two routing engines for OsmAnd in [Navigation settings for profile](../personal/profiles.md#navigation):
+There are next routing engines for OsmAnd in [Navigation settings for profile](../personal/profiles.md#navigation):
 
-- Offline: there are navigation types for any scenario.
+- _[Offline OsmAnd routing](../personal/profiles.md#navigation)_: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md)..
 
-- Online: use precalculated routing from online servers.
+- _[Online routing](../personal/profiles.md#navigation)_ uses online providers services: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.
+
+- _[Third-party routing](../navigation/thirdparty-routing.md)_.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-</TabItem>
+There is OsmAnd engine for offline navigation. For choosing navigation type: [Navigation settings for profile](../personal/profiles.md#navigation):
 
+- _[Offline OsmAnd routing](../personal/profiles.md#navigation)_: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md)..
+
+</TabItem>
 </Tabs>
 
 ## Custom routing
