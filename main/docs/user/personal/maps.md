@@ -2,6 +2,7 @@
 sidebar_position: 5
 title:  Maps
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -9,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
@@ -182,28 +185,30 @@ Every month you will be able to update OsmAnd Maps on Updates screen. Here it's 
 
 ## OsmAnd Live
 
+:::note
+  
+<ProFeature/> You can use live updates only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro (Android)</a> and <a href="https://docs.osmand.net/docs/user/purchases/ios#free-and-paid-features">OsmAnd Live (iOS)</a> subscription.
+
+:::
+
 OsmAnd Live is a special ([available by subscription](../purchases/index.md)) feature that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
 Each map has independent collection  of tiny map updates, please be aware if you have overlapping map regions. In case you want to revert to initial state you can switch off updates and 'Clear cache'.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,osmand_live_title"/>
-
-<p> </p>
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="menu,res_mapsres,res_updates,osmand_live_updates"/>
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 

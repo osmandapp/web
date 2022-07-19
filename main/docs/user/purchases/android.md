@@ -10,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Detailed information about purchases on Android: markets to install, subscriptions vs in app, prices, paid features.
 
@@ -94,6 +96,7 @@ At this moment, Pro subscription has next features:
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
 | [OsmAnd cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backuping and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [OsmAnd live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 
@@ -126,10 +129,10 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 
 ## Restore purchases
 
-1. To restore **a purchased app**, just visit [**Google Play**](https://play.google.com/store/apps/dev?id=8483587772816822023), [**Huawei**](https://appgallery.huawei.com/#/app/C101486545) and reinstall it. If you've already purchased the app with your current Google, Huawei account, you'll be able to redownload it on each app you use.
+1. To restore **OsmAnd+**, just visit [**Google Play**](https://play.google.com/store/apps/dev?id=8483587772816822023) and reinstall it. If you've already purchased the app with your current Google, you'll be able to redownload it on each app you use.
 
 > To restore your **in-app purchase** ([Maps+, Pro](../purchases/android.md#prices)):
-- update Google Play (Huawei). 
+- update Google Play (Huawei AppGallery). 
 - log in to the same Google Play (Huawei AppGallery) account that you used to purchase OsmAnd.
 - install OsmAnd ([Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
 - open OsmAnd with an active Internet connection.
