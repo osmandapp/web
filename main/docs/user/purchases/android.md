@@ -126,9 +126,22 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 
 ## Restore purchases
 
-To restore a purchased app, just visit **Google Play** and reinstall it. If you've already purchased the app with your current Google account, you'll be able to redownload it on each app you use.
+1. To restore **a purchased app**, just visit [**Google Play**](https://play.google.com/store/apps/dev?id=8483587772816822023), [**Huawei**](https://appgallery.huawei.com/#/app/C101486545) and reinstall it. If you've already purchased the app with your current Google, Huawei account, you'll be able to redownload it on each app you use.
 
-To restore a purchase from **Amazon**, navigate through the app as though you were going to purchase the feature again. At the point where you would ordinarily be charged, Amazon instead realizes that you've already purchased it in the past and activates it again for free.
+> To restore your **in-app purchase** ([Maps+, Pro](../purchases/android.md#prices)):
+- update Google Play (Huawei). 
+- log in to the same Google Play (Huawei AppGallery) account that you used to purchase OsmAnd.
+- install OsmAnd ([Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
+- open OsmAnd with an active Internet connection.
+- go to _<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>_ and at the top of the screen should appear that Maps+(Pro) is activated.
+
+![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+
+>- if it does not work, please and clear the cache for Google Play (Huawei AppGallery) and Osmand → restart the device and try to restore again.
+
+2. To restore a purchase from [**Amazon**](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), navigate through the app as though you were going to purchase the feature again. At the point where you would ordinarily be charged, Amazon instead realizes that you've already purchased it in the past and activates it again for free.
+
+
 
 ## Giftcards
 
