@@ -1,10 +1,9 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // components
 import OsmAndMapFrame from './components/OsmAndMapFrame';
 import LoginDialog from './components/LoginDialog';
 import { AppContextProvider } from './context/AppContext'
-import AppContext from './context/AppContext'
 
 
 

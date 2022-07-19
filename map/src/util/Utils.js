@@ -139,7 +139,7 @@ function updateTextInfo(gpxFiles, ctx) {
     ctx.setAppText(`Local GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`)
 }
 
-export default {
+const Utils = {
     fetchUtil,
     fetchUtilLoad,
     getFileData,
@@ -147,4 +147,6 @@ export default {
     getPointsDist,
     removeDuplicatesPoints,
     uploadFile
-}
+};
+
+export default Utils;

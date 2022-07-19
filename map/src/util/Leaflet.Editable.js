@@ -1,9 +1,6 @@
-'use strict';
-import MarkerIcon from "../components/MarkerIcon";
-import L from "leaflet";
 
 (function (factory, window) {
-    /*globals define, module, require*/
+    /*globals define*/
 
     // define an AMD module that relies on 'leaflet'
     if (typeof define === 'function' && define.amd) {
@@ -255,7 +252,7 @@ import L from "leaflet";
         },
 
         onMousedown: function (e) {
-            if (e.originalEvent.which != 1) return;
+            if (e.originalEvent.which !== 1) return;
             this._mouseDown = e;
             this._drawingEditor.onDrawingMouseDown(e);
         },
@@ -373,23 +370,23 @@ import L from "leaflet";
         },
 
         createPolyline: function (latlngs, options) {
-            return this.createLayer(options && options.polylineClass || this.options.polylineClass, latlngs, options);
+            return this.createLayer((options && options.polylineClass) || this.options.polylineClass, latlngs, options);
         },
 
         createPolygon: function (latlngs, options) {
-            return this.createLayer(options && options.polygonClass || this.options.polygonClass, latlngs, options);
+            return this.createLayer((options && options.polygonClass) || this.options.polygonClass, latlngs, options);
         },
 
         createMarker: function (latlng, options) {
-            return this.createLayer(options && options.markerClass || this.options.markerClass, latlng, options);
+            return this.createLayer((options && options.markerClass) || this.options.markerClass, latlng, options);
         },
 
         createRectangle: function (bounds, options) {
-            return this.createLayer(options && options.rectangleClass || this.options.rectangleClass, bounds, options);
+            return this.createLayer((options && options.rectangleClass) || this.options.rectangleClass, bounds, options);
         },
 
         createCircle: function (latlng, options) {
-            return this.createLayer(options && options.circleClass || this.options.circleClass, latlng, options);
+            return this.createLayer((options && options.circleClass) || this.options.circleClass, latlng, options);
         }
 
     });

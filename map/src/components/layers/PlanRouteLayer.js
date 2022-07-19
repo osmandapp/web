@@ -11,7 +11,7 @@ import SaveRouteDialog from "../contextmenu/SaveRouteDialog";
 
 export default function PlanRouteLayer() {
     const ctx = useContext(AppContext);
-    const map = useMap();
+    const map =  useMap();
 
     const [openSaveDialog, setOpenSaveDialog] = useState(false);
     const [newFileName, setNewFileName] = useState('');
