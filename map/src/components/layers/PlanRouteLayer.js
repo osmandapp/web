@@ -68,12 +68,14 @@ export default function PlanRouteLayer() {
 
         //show track
         if (ctx.editor.showTrack) {
+            ctx.setSelectedGpxFile(null);
             deleteOldRoute();
             addNewRoute();
             if (ctx.newRoute.pointsList.length > 0) {
                 ctx.newRoute.distance = ctx.newRoute.pointsList[ctx.newRoute.pointsList.length - 1].dist;
             }
             ctx.setNewRoute({...ctx.newRoute});
+            map.fitBounds(ctx.newRoute.newRouteLayer && ctx.newRoute.newRouteLayer._bounds);
         }
 
     }, [ctx.editor, ctx.setEditor]);

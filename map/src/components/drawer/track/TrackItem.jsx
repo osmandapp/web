@@ -93,6 +93,12 @@ export default function TrackItem({file}) {
     }
 
     async function enableLocalLayer(item, ctx, setProgressVisible, visible) {
+
+        if (ctx.editor.showTrack) {
+            ctx.editor.showTrack = false;
+            ctx.setEditor({...ctx.editor});
+        }
+
         const newGpxFiles = Object.assign({}, ctx.gpxFiles);
         if (!visible) {
             // delete newGpxFiles[item.name];
@@ -104,11 +110,6 @@ export default function TrackItem({file}) {
                 }
             }
         } else {
-            if (ctx.newRoute.newRouteLayer._latlngs) {
-                ctx.editor.deleteRoute = true;
-                ctx.editor.createRoute = false;
-                ctx.setEditor({...ctx.editor});
-            }
             newGpxFiles[item.name].url = item.localContent;
             newGpxFiles[item.name].urlopts = {credentials: 'include'}
             ctx.setSelectedGpxFile(item);

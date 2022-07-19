@@ -42,10 +42,17 @@ const TrackLayer = () => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.details) {
-                map.fitBounds([
-                    [ctx.selectedGpxFile.details.analysis.top, ctx.selectedGpxFile.details.analysis.right],
-                    [ctx.selectedGpxFile.details.analysis.bottom, ctx.selectedGpxFile.details.analysis.left]
-                ])
+            //cloud tracks
+            map.fitBounds([
+                [ctx.selectedGpxFile.details.analysis.top, ctx.selectedGpxFile.details.analysis.right],
+                [ctx.selectedGpxFile.details.analysis.bottom, ctx.selectedGpxFile.details.analysis.left]
+            ])
+        } else if (ctx.selectedGpxFile?.summary) {
+            //local tracks
+            map.fitBounds([
+                [ctx.selectedGpxFile.summary.top, ctx.selectedGpxFile.summary.right],
+                [ctx.selectedGpxFile.summary.bottom, ctx.selectedGpxFile.summary.left]
+            ])
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
