@@ -481,7 +481,7 @@ This setting allows using of any language for names on the map. If names don't h
 
 *<Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>*:
 - &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
-- &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - setting the local language for names.
+- &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - showing the local language for names additionally for chosen language name.
 - &nbsp;"<Translate ios="true" ids="sett_lang_show_trans"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
 
 </TabItem>
@@ -495,8 +495,12 @@ This setting allows using of any language for names on the map. If names don't h
 |------------|
 |**Local names**|
 |![Map language local names](@site/static/img/map/map-language-local-names.png)|
-|**Russian**|
-|![Map language russian](@site/static/img/map/map-language-russian.png)|
+|**Ukranian names**|
+|![Map language ukranian](@site/static/img/map/map-language-urkanian.png)|
+|**Show local names**|
+|![Map language local](@site/static/img/map/map-language-show-local.png)|
+|**Transliterate names**|
+|![Map language transliterate](@site/static/img/map/map-language-transliterate.png)|
 
 ## Custom Map style (own map style)
 If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.
