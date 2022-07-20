@@ -367,7 +367,6 @@ In order to hide some objects on the map you can choose them in this menu:
 
 </Tabs> 
 
- 
 
 <p> </p>
 
@@ -422,8 +421,6 @@ This setting helps to change the text size for names on the map:
 
 </Tabs> 
 
-
-
 <p> </p>
 
 |Example|  
@@ -472,16 +469,20 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 
 <TabItem value="android" label="Android">  
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose transliteration:  
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*   
-
+This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate android="true" ids="use_latin_name_if_missing"/>" switcher):  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*   
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose transliteration:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>*  
+This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="sett_lang_show_trans"/>" switcher): 
+
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>*:
+- &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
+- &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - setting the local language for names.
+- &nbsp;"<Translate ios="true" ids="sett_lang_show_trans"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
 
 </TabItem>
 
