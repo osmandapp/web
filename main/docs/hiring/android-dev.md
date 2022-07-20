@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Android Developer
 ---
 
-We are looking for an enthusiastic developer who can help us to bring our open source Android application to the next level and make it the best and the most powerful across the world.
+We are developing a large Android open source project (https://www.openhub.net/p/Osmand) - Top 10 among Android based on https://www.openstreetmap.org/ (Wikipedia for maps).Our goal is to create a universal map tool that can be used in almost any situation. At the moment, about 2,000,000 people around the world are actively using it.
 
 ## Job description
 OsmAnd is looking for a passionate and enthusiastic open-source software developer with good knowledge of Android platform and technologies.
@@ -12,8 +12,12 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 
 ### Requirements
 - 2+ years experience in Android development
-- Technical English (higher level is advantage)
 - strong knowledge of Java, Kotlin and Android SDK
+- technical English (higher level is advantage)
+- Support Library
+- XML/JSON
+- SQLite
+- OOP, Multithreading & Concurrency
 
 ### Nice to have
 - Git + Github experience
@@ -21,7 +25,7 @@ OsmAnd is looking for a passionate and enthusiastic open-source software develop
 - OpenStreetMap mapper knowledge
 
 ### Responsibilities
-- Implementing new features;
+- Implementing new features
 - Maintaining the project
 - Covering code with unit tests
 - Refactoring code
