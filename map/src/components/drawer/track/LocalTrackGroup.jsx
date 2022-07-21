@@ -6,6 +6,8 @@ import TrackItem from "./TrackItem";
 import Utils from "../../../util/Utils";
 import {makeStyles} from "@material-ui/core/styles";
 import SortTrack from "./SortTrack";
+import EditTrack from "./EditTrack";
+import {styled} from "@mui/material/styles";
 
 const useStyles = makeStyles({
     button: {
@@ -25,9 +27,15 @@ export default function LocalTrackGroup() {
 
     const classes = useStyles();
 
+    const StyledInput = styled('input')({
+        display: 'none',
+    });
+
     const ctx = useContext(AppContext);
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
+    const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
+    const [indexTrack, setIndexTrack] = useState(-1);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
@@ -80,6 +88,50 @@ export default function LocalTrackGroup() {
         }
     }
 
+    useEffect(() => {
+        if (ctx.currentlyEditTrack && ctx.currentlyEditTrack.deleted) {
+            let dt = ctx.currentlyEditTrack.trackName;
+            let res = createdTracks.filter(t => t.name !== dt)
+            setCreatedTracks(res);
+
+            localStorage.setItem('createdTracks', JSON.stringify(res));
+        } else {
+            if (ctx.currentlyEditTrack) {
+                if (ctx.createNewTrack) {
+                    setIndexTrack(-1);
+                    let track = structuredClone(ctx.currentlyEditTrack.pointsList);
+                    createdTracks.push({name: '*Track ' + (createdTracks.length + 1), points: track});
+                    setCreatedTracks([...createdTracks]);
+                    ctx.setCreateNewTrack(false);
+                } else {
+                    if (indexTrack !== -1) {
+                        createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+                        setCreatedTracks([...createdTracks]);
+                    } else {
+                        createdTracks[createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+                        setCreatedTracks([...createdTracks]);
+                    }
+                }
+                localStorage.setItem('createdTracks', JSON.stringify(createdTracks));
+            }
+        }
+    }, [ctx.currentlyEditTrack, ctx.setCurrentlyEditTrack]);
+
+    const fileSelected = (ctx) => async (e) => {
+        Array.from(e.target.files).forEach((file) => {
+            const reader = new FileReader();
+            reader.addEventListener('load', (event) => {
+                let src = event.target.result;
+                let gpxLayer = {};
+                gpxLayer.name = 'local:' + file.name;
+                gpxLayer.localContent = src;
+                gpxLayer.local = true;
+                Utils.uploadFile(ctx.gpxFiles, ctx.setGpxFiles, ctx, gpxLayer, file);
+            });
+            reader.readAsText(file);
+        });
+    }
+
 
     return <div className={classes.group}>
         <MenuItem sx={{ml: 3}} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
@@ -92,7 +144,7 @@ export default function LocalTrackGroup() {
                 </Typography>
             </ListItemText>
             <Typography variant="body2" color="textSecondary">
-                {localGpxFiles.length > 0 ? `${localGpxFiles.length}` : ''}
+                {localGpxFiles.length + createdTracks.length > 0 ? `${localGpxFiles.length + createdTracks.length}` : ''}
             </Typography>
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
@@ -102,6 +154,25 @@ export default function LocalTrackGroup() {
                 return <TrackItem key={file + index}
                                   file={file}/>;
             })}
+            {createdTracks.length > 0 && createdTracks.map((track, index) => {
+                return <EditTrack key={'track' + index}
+                                  index={index}
+                                  setIndexTrack={setIndexTrack}
+                                  track={track}/>;
+            })}
+            <MenuItem disableRipple={true}>
+                <label htmlFor="contained-button-file">
+                    <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
+                                 onChange={fileSelected(ctx)}/>
+                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}>
+                        Upload
+                    </Button>
+                </label>
+                <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
+                        onClick={() => ctx.setCreateNewTrack(!ctx.createNewTrack)}>
+                    Create
+                </Button>
+            </MenuItem>
             {localGpxFiles.length === 0 ? <></> :
                 <MenuItem disableRipple={true}>
                     <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}

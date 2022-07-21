@@ -7,8 +7,8 @@ const EditInfoTab = () => {
     const ctx = useContext(AppContext);
 
     return (<Typography marginLeft={"20px"} variant="subtitle1" color="inherit">
-            {"points: " + ctx.newRoute.pointsList.length}<br/>
-            {"distance: " + Math.trunc(ctx.newRoute.distance) + " m"}
+            {"points: " + ctx.currentlyEditTrack.pointsList.length}<br/>
+            {"distance: " + Math.trunc(ctx.currentlyEditTrack.distance) + " m"}
         </Typography>
     );
 };

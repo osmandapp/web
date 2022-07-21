@@ -4,28 +4,10 @@ import {DirectionsWalk, ExpandLess, ExpandMore} from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
 import TrackGroup from "./TrackGroup";
 import VisibleTracks from "./VisibleTracks";
-import {styled} from "@mui/material/styles";
-import Utils from "../../../util/Utils";
 import LocalTrackGroup from "./LocalTrackGroup";
-import {makeStyles} from "@material-ui/core/styles";
-import EditorTrack from "./EditorTrack";
 
-const useStyles = makeStyles({
-    button: {
-        maxWidth: '120px !important',
-        maxHeight: '40px',
-        minWidth: '120px !important',
-        minHeight: '40px'
-    }
-})
 
 export default function TracksMenu() {
-
-    const StyledInput = styled('input')({
-        display: 'none',
-    });
-
-    const classes = useStyles();
 
     const ctx = useContext(AppContext);
 
@@ -85,21 +67,6 @@ export default function TracksMenu() {
         setVisibleTracks([...visibleTracks]);
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
 
-    const fileSelected = (ctx) => async (e) => {
-        Array.from(e.target.files).forEach((file) => {
-            const reader = new FileReader();
-            reader.addEventListener('load', (event) => {
-                let src = event.target.result;
-                let gpxLayer = {};
-                gpxLayer.name = 'local:' + file.name;
-                gpxLayer.localContent = src;
-                gpxLayer.local = true;
-                Utils.uploadFile(ctx.gpxFiles, ctx.setGpxFiles, ctx, gpxLayer, file);
-            });
-            reader.readAsText(file);
-        });
-    }
-
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
             <ListItemIcon>
@@ -120,20 +87,6 @@ export default function TracksMenu() {
                                    group={group}/>;
             })}
             <LocalTrackGroup/>
-            <EditorTrack/>
-            <MenuItem disableRipple={true}>
-                <label htmlFor="contained-button-file">
-                    <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
-                                 onChange={fileSelected(ctx)}/>
-                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}>
-                        Upload
-                    </Button>
-                </label>
-                <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                        onClick={() => ctx.setPlanRoute((prev) => !prev)}>
-                    Create
-                </Button>
-            </MenuItem>
         </Collapse>
     </>;
 

@@ -89,7 +89,7 @@ export default function MapContextMenu() {
                 tabs["SRTM Ele"] = <Elevation key='srtmele' data={ctx.selectedGpxFile.srtmSummary.elevationData}
                                               width={graphWidth}/>
             }
-        } else if (ctx.newRoute.newRouteLayer._latlngs) {
+        } else if (ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer && ctx.currentlyEditTrack.newRouteLayer._latlngs) {
             tabs.Info = <EditInfoTab key='general'/>;
             tabs.Points = <PointsTab key='points' width={graphWidth}/>;
         }
@@ -103,7 +103,9 @@ export default function MapContextMenu() {
         }
         //create list
         list = list.concat(Object.keys(tabs).map((item, index) =>
-            <Tab disabled={ctx.newRoute.newRouteLayer._latlngs && ctx.newRoute.pointsList.length < 2} value={tabs[item].key + ''} label={item} key={'tab:' + item}/>));
+            <Tab
+                disabled={ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer._latlngs && ctx.currentlyEditTrack.pointsList.length < 2}
+                value={tabs[item].key + ''} label={item} key={'tab:' + item}/>));
         return list;
     }
 

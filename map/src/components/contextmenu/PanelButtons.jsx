@@ -1,9 +1,10 @@
 import {ButtonGroup, IconButton, Paper} from "@mui/material";
-import {Create, Delete, Download} from "@mui/icons-material";
+import {Close, Create, Delete, Download} from "@mui/icons-material";
 import React, {useContext, useEffect, useRef} from "react";
-import {makeStyles} from "@material-ui/styles";
-import L, {Layer} from "leaflet";
+import {makeStyles} from "@material-ui/core/styles";
+import L from "leaflet";
 import AppContext from "../../context/AppContext";
+import {useMap} from "react-leaflet";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -14,11 +15,12 @@ const useStyles = makeStyles({
     }
 })
 
-const PanelButtons = ({setOpenSaveDialog}) => {
+const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
 
     const classes = useStyles();
 
     const ctx = useContext(AppContext);
+    const map = useMap();
 
     const divContainer = useRef(null);
 
@@ -40,17 +42,7 @@ const PanelButtons = ({setOpenSaveDialog}) => {
                             variant="contained"
                             type="button"
                             onClick={() => {
-                                ctx.setSelectedGpxFile(null);
-                                ctx.setWeatherPoint(null);
-                                ctx.newRoute.newRouteLayer = new Layer();
-                                ctx.setNewRoute({...ctx.newRoute});
-                                if (ctx.mapMarkerListener) {
-                                    ctx.mapMarkerListener();
-                                }
-
-                                ctx.editor.createRoute = true;
-                                ctx.editor.deleteRoute = false;
-                                ctx.setEditor({...ctx.editor});
+                                ctx.setCurrentlyEditTrack({...ctx.currentlyEditTrack.create(map, ctx)});
                             }}
                         >
                             <Create fontSize="small"/>
@@ -68,13 +60,19 @@ const PanelButtons = ({setOpenSaveDialog}) => {
                             variant="contained"
                             type="button"
                             onClick={() => {
-                                ctx.editor.deleteRoute = true;
-                                ctx.editor.createRoute = false;
-                                ctx.editor.deletePoint = -1;
-                                ctx.setEditor({...ctx.editor});
+                                ctx.setCurrentlyEditTrack({...ctx.currentlyEditTrack.delete(map)});
                             }}
                         >
                             <Delete fontSize="small"/>
+                        </IconButton>
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            onClick={() => {
+                                setOpenPanelButtons(false);
+                            }}
+                        >
+                            <Close fontSize="small"/>
                         </IconButton>
                     </ButtonGroup>
                 </Paper>

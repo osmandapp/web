@@ -13,11 +13,13 @@ import {
 } from "@mui/icons-material";
 import '../../../util/Leaflet.Editable.js';
 import AppContext from "../../../context/AppContext";
+import {useMap} from "react-leaflet";
 
 
 const PointsTab = ({width}) => {
 
     const ctx = useContext(AppContext);
+    const map = useMap();
 
     const PointRow = () => ({point, index}) => {
         return (
@@ -33,8 +35,7 @@ const PointsTab = ({width}) => {
                 </ListItemText>
                 <ListItemAvatar>
                     <IconButton x={{mr: 1}} onClick={() => {
-                        ctx.editor.deletePoint = index;
-                        ctx.setEditor({...ctx.editor});
+                        ctx.setCurrentlyEditTrack({...ctx.currentlyEditTrack.deletePoint(index, map)});
                     }}>
                         <Cancel fontSize="small"/>
                     </IconButton>
@@ -43,7 +44,7 @@ const PointsTab = ({width}) => {
     }
 
     return (<Box width={width}>
-        {ctx.newRoute.pointsList && ctx.newRoute.pointsList.map((point, index) => {
+        {ctx.currentlyEditTrack.pointsList && ctx.currentlyEditTrack.pointsList.map((point, index) => {
             return PointRow()({point: point, index: index});
         })}
     </Box>);
