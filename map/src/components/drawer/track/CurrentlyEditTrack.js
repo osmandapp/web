@@ -37,12 +37,11 @@ export default class CurrentlyEditTrack {
 
     delete(map) {
         if (map.hasLayer(this.newRouteLayer)) {
-            this.deleted = true;
             map.removeLayer(this.newRouteLayer);
             this.newRouteLayer = new Layer();
             this.pointsList = [];
         }
-
+        this.deleted = true;
         return this;
     }
 
@@ -67,11 +66,10 @@ export default class CurrentlyEditTrack {
     }
 
     showTrack(track, map, ctx) {
-        console.log(track)
         this.pointsList = track.points;
+        this.trackName = track.name;
+        this.deleted = false;
         if (this.pointsList && this.pointsList.length > 0) {
-            this.trackName = track.name;
-            this.deleted = false;
             ctx && ctx.setSelectedGpxFile(null);
             this.deleteOldRoute(map);
             this.addNewRoute(map);
