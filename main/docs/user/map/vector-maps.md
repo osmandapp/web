@@ -256,6 +256,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 To configure it, follow these steps: 
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
 
+![Configure Map Routes section](@site/static/img/map/routes_1.png)
 
 </TabItem>
 
@@ -263,6 +264,8 @@ To configure it, follow these steps:
 
 To configure it, follow these steps: 
 *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,rendering_category_routes"/>*
+
+![Configure Map Routes section](@site/static/img/map/routs_ios.png)
 
 </TabItem>
 
@@ -272,7 +275,7 @@ To configure it, follow these steps:
 
 <p> </p>
 
-![Configure Map Routes section](@site/static/img/map/routes_1.png) 
+ 
 
 |Parameter and Description|   
 |------------|
@@ -385,7 +388,26 @@ In order to hide some objects on the map you can choose them in this menu:
 
 ### Road style
 
-Special settings for roads. When we change colours according to road Atlas or add high contrast of roads or bold outline for roads.
+Special settings for roads. When we change colours according to road Atlas or add high contrast of roads or bold outline for roads.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_attr_roadStyle_name"/>*
+
+
+</TabItem>
+
+</Tabs> 
 
 |Parameter and Description|   
 |------------|

@@ -14,12 +14,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The plugin allows you to record and save data about your movements, which can then be reused, improved, supplemented, used for navigation or shared with friends.
+The plugin allows you to record, save and analyze your training or movement data, such as speed, ascents, descents or route relief, which can then be reused, improved, supplemented or shared with friends.
 
 
 ## Overview
 
-GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
+GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
 
 Trip recording functions: creating new tracks, displaying existing tracks on the map and working with finished recordings. The plugin should only be enabled to create new records.   
 
@@ -39,13 +39,13 @@ After setup is complete, you can make new recordings, display and manage tracks 
 
 <TabItem value="android" label="Android">
 
-![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr.png)
+![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Recorded trip in iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios.png)
+![Recorded trip in iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
 
 </TabItem>
 
@@ -108,7 +108,7 @@ The [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets
 
 ### Open settings 
 
-Trip recording can be configured for each specific profile, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
+*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
 
 <Tabs groupId="operating-systems">
 
@@ -233,16 +233,15 @@ There are four options for starting a recording:
 
 - Using the [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets). 
 - Use the Trip recording option in the menu.
-- Use the RECORD option in [My Places](../personal/myplaces.md): *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
-- Use the Start Recording icon on the device screen as shown in the examples in the figures below.  
+- Use the RECORD option in [My Places](../personal/myplaces.md): *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;
+And another one, use the *Start Recording icon* on the device screen as shown in the examples in the figures below.
+> **NOTE**: Long-tap to open the icon's context menu with an option to Start Recording. Long-tap an option from the icon's context menu, to add it as an individual icon to the screen of the device. 
 
 
 ![Icon's context menu](@site/static/img/plugins/trip-recording/and_open_from_icon.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
-> **NOTE**: Long-tap to open the icon's context menu with an option to Start Recording. Long-tap an option from the icon's context menu, to add it as an individual icon to the screen of the device. 
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -362,7 +361,7 @@ To view all ever-recorded tracks, and/or manage them, go to: *<Translate ios="tr
 
 ### Show tracks on map
 
-Tracks are an individual data layer that can be shown or hidden using the corresponding option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu. In addition, when you tap on [**Tracks**](../map/tracks-on-map#display-via-my-places-menu), a track selection dialog appears, allowing you to choose which track or multiple tracks to display on the map.  
+Tracks are an individual data layer that can be shown or hidden using the corresponding option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu or in the [**My Places**](../plugins/trip-recording#view-all-tracks) menu. In addition, when you tap on [**Tracks**](../map/tracks-on-map#display-via-my-places-menu), a track selection dialog appears, allowing you to choose which track or multiple tracks to display on the map.  
 
 
 <Tabs groupId="operating-systems">
@@ -374,6 +373,10 @@ For a specific profile, to display a track on the map, open **Configure map** an
 
 ![Show tracks on the map in Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Select a track to display in Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_2.png)
 
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording#view-all-tracks) menu and then **Tracks**. The *Visible* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by tapping the Show on map icon on the bottom menu of the screen. Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+
+![Show tracks on the map Android](@site/static/img/plugins/trip-recording/show_andr.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -381,6 +384,12 @@ For a specific profile, to display a track on the map, open **Configure map** an
 For a specific profile, to display a track on the map, open **Configure map** and tap **Tracks**. Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the **Configure map** menu: *<Translate ios="true" ids="menu,configure_map,tracks"/>*.
 
 ![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Select a track to display in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png)
+
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.  
+
+
+![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_ios.png)
+
 
 </TabItem>
 
@@ -404,7 +413,7 @@ For a specific profile, to display a track on the map, open **Configure map** an
 
 <TabItem value="android" label="Android">
 
-When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
+When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
 
 
 ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/opt_ofcont_menu_andr.png)
@@ -413,7 +422,7 @@ When you tap the track directly on the map, the [track context menu](../map/trac
 
 <TabItem value="ios" label="iOS">
 
-When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
+When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
 
 ![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/opt_ofcont_menu_ios.png)
 
@@ -564,10 +573,30 @@ When the selected widgets appear on the map, you can tap any of them and more in
 - Information box. There is a different list for each of the graphs.  
 - Menu: *Close*, *Pause/Resume*, *Finish*, *Options*.  
  
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
 
 
+ 
 
-### Open widgets options for Android
+To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*   
+
+Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.  
+>**NOTE**. For detailed information about [Distance/Start-Stop widget](../plugins/trip-recording#create-new-track), refer to the respective section of the current documentation.  
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)
+
+</TabItem>
+
+</Tabs>  
+
+
+### Open widgets options  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
 
 
 | | 
@@ -605,10 +634,12 @@ All values are indicated either for the whole route or only for the selected int
 |  |
 |------------|
 | ***Additional information***. The right side of the graphs contains data about the highest, average and lowest values of the data related to a particular graph. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  |
-|  ![data](@site/static/img/widgets/tr_rec_ave.png) ![data](@site/static/img/widgets/tr_rec_alt.png) ![data](@site/static/img/widgets/tr_rec_speed.png)|
 |***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time| 
-|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|
+|    ![data](@site/static/img/widgets/tr_rec_ave.png)|
+|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill| 
+| ![data](@site/static/img/widgets/tr_rec_alt.png) |
 |***Speed*** This tab opens with speed info on distance and additional track data.|*"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|
+| ![data](@site/static/img/widgets/tr_rec_speed.png) |
 
 **Menu**  
 You can read more information [here](https://osmand.net/docs/user/map/track-context-menu/).
@@ -624,7 +655,7 @@ You can read more information [here](https://osmand.net/docs/user/map/track-cont
 
 - ***Track*** - described above.   
 - ***Points***  
-You can add a point or more to the map or delete all. [Read more here](https://osmand.net/docs/user/map/track-context-menu/#waypoints-folder).  
+You can add one or more track points to the current track map or delete them all. [Read more here](https://osmand.net/docs/user/map/track-context-menu/#waypoints-folder).  
 
 ![Overview](@site/static/img/widgets/points_1.png) ![Overview](@site/static/img/widgets/points_2.png) ![Overview](@site/static/img/widgets/points_3.png)
 
@@ -637,31 +668,22 @@ This is a separate screen without a map and a track with points:
   - Share - gpx file.    
 
 &nbsp;
-![Overview](@site/static/img/widgets/option_for3.png)  
- 
+![Overview](@site/static/img/widgets/option_for3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
+
 :::note
 **Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
 
 :::  
- 
-
-To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*   
-
-Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.  
->**NOTE**. For detailed information about [Distance/Start-Stop widget](../plugins/trip-recording#create-new-track), refer to the respective section of the current documentation.  
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)
-
-
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+ 
 
 
 
