@@ -231,12 +231,36 @@ Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 
 ### Update / Download Online Maps
 
-![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png) ![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 To update or download online maps (tiles) at specific location, you can use object context menu:  
 **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*.  
-**iOS**: *<Translate ios="true" ids="download_map"/>* and *<Translate ios="true" ids="update_map"/>*.  
-Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).    
+Please refer to [full instruction](../map/raster-maps.md#download--update-tiles). 
+
+
+![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To update or download online maps (tiles) at specific location, you can use object context menu:  
+**iOS**: *<Translate ios="true" ids="download_map"/>* and *<Translate ios="true" ids="update_map"/>*.   
+Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).  
+
+![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+
+
+  
+  
 
 
 ### Update / Download Vector Maps
