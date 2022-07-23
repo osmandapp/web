@@ -209,17 +209,23 @@ If you want to access raster maps offline, you might need to predownload tiles. 
 **Hint**: if you want maps to automitically update tiles after some time, you can configure *expiration time*, so OsmAnd will redownload tiles once the tile is going to be displayed.
 
 
-For this, you need [to choose your online source as Map source](#select-map-as-main--underlay--overlay-layer): 
 
-<Translate android="true" ids="android_button_seq"/> you need to select the area by the size of your screen device and to do a long click on the map - <Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> → 
+> **For this, you need [to choose your online source as Map source](#select-map-as-main--underlay--overlay-layer):**
+
+
+**<Translate android="true" ids="android_button_seq"/>** you need to select the area by the size of your screen device and to do a long click on the map - <Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> → 
 At this screen you need to choose zoom levels → screen of downloading progress → <Translate android="true" ids="shared_string_download"/>
 
-![Download tiles Android](@site/static/img/plugins/online-maps/online-maps-download-tiles-android.png)
+![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
 
-<Translate ios="true" ids="ios_button_seq"/> you need to do a long click on the map - <Translate ios="true" ids="actions,download_map"/> / <Translate ios="true" ids="update_map"/> → 
+
+**<Translate ios="true" ids="ios_button_seq"/>** you need to do a long click on the map - <Translate ios="true" ids="actions,download_map"/> / <Translate ios="true" ids="update_map"/> → 
 At this screen you can select the needed area, choose zoom levels. When you set all parameters you can see a number of tiles and download size. Next, click to <Translate ios="true" ids="shared_string_continue"/> → screen of downloading progress.
 
 ![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+
+
+
 
 ### Change raster map parameters
 Raster maps can be used as is if tiles are already packaged inside the maps. In case raster maps are provided online, there is always a base url to be configured. There are some other basic parameters that can be modified for raster maps - [see here](#add-new-online-raster-map-source). More sophisticated parameters are encoded in the internals of [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
