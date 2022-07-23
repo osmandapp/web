@@ -39,7 +39,7 @@ After setup is complete, you can make new recordings, display and manage tracks 
 
 <TabItem value="android" label="Android">
 
-![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_2.png)
+![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
 
 </TabItem>
 

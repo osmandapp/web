@@ -46,14 +46,14 @@ For Wikipedia data to be displayed on the map, you need to make the following se
 
 ### Purchase and enable plugin  
 
- 
+
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">  
 
-The **Android** version may be free with limited features or requires a [paid services](../purchases/android.md#free-and-paid-features): **in-app and a Maps+ subscription**. After purchasing a subscription, Wikipedia Offline can be enabled in the Plugins menu, and then you will be able to download Wikipedia data for selected geographical regions. To enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section in the main menu: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_wikipedia"/>*  
+Wikipedia plugin is a paid functionality for **Android** version, available for the [paid](../purchases/android.md#free-and-paid-features) version of the **OsmAnd+** application, or for **in-app Maps+** and **Pro** and **Maps+** subscriptions. After purchasing a subscription, Wikipedia Offline can be enabled in the Plugins menu, and then you will be able to download Wikipedia data for selected geographical regions. To enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section in the main menu: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_wikipedia"/>*  
 
 
 ![Wikipedia plugin in Android](@site/static/img/plugins/wikipedia/Wikipedia_plugin_android2.png)
