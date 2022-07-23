@@ -307,6 +307,8 @@ To configure it, follow these steps:
 |![Fitness routes](@site/static/img/map/fitness_1.png)|
 |**<Translate android="true" ids="rendering_attr_showFitnessTrails_description"/>**. A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)|
 |![Fitness routes](@site/static/img/map/fitness_route.png) |
+| **<Translate android="true" ids="travel_routes"/>** Shows previously uploaded specially configured user routes taken from OpenStreetMap categories. |
+| ![Travel routes](@site/static/img/map/travel_routes.png) ![Travel routes](@site/static/img/map/travel_route_2.png)|
 
 
 ### Transport
