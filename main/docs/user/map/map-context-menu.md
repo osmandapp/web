@@ -10,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
@@ -23,18 +25,65 @@ Context menu will appear when you **short tap** on the marked object on the Map.
 
 **Note**: Selectable map objects are OpenStreetMap [node](https://wiki.openstreetmap.org/wiki/Node) or [way](https://wiki.openstreetmap.org/wiki/Way).
 
-![Context menu Android](@site/static/img/map/map_context_menu_short_tap_android.png) ![Context menu iOS](@site/static/img/map/map_context_menu_short_tap_ios.png) 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Context menu Android](@site/static/img/map/map_context_menu_short_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Context menu iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
 
 ### Select any point (long tap)
 Context menu will appear when you hold at any point on the Map with **long tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position. 
 
-![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png) ![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
-### Select route (short tap for Android)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+
+### Select route
 
 Short tap on a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context track menu](../map/track-context-menu.md).
 
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 ### Hide context menu
 
@@ -45,7 +94,23 @@ To hide the context menu:
 ## Details
 In order to gain more details about object you need to click on the "Details" button in the Context menu or move the panel up. 
 
-![Context menu Android](@site/static/img/map/context_menu_android.png) ![Context menu iOS](@site/static/img/map/context_menu_ios.png)
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Context menu Android](@site/static/img/map/context_menu_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Context menu iOS](@site/static/img/map/context_menu_ios.png)
+
+</TabItem>
+
+</Tabs> 
  
 ### Object info
 
@@ -92,7 +157,23 @@ Clicking to 'Nearby POIs/ Wikipedia articles' opens a points list (Wikipedia and
 
 Shown info about Public transport routes for chosen Transport stop. Information about Public transport Context menu and actions with it read [here](../map/public-transport.md#transport-routes-context-menu).
 
-![Public transport Routes Android](@site/static/img/map/pt_routes_android.png) ![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png) 
+ 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Public transport Routes Android](@site/static/img/map/pt_routes_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 ### Favorites / Track Points from the group
 
@@ -104,7 +185,22 @@ This is a list of all points in one group for a [Favorite](../map/point-layers-o
 
 This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by clicking you can open full description.
 
-![Description list](@site/static/img/map/description_list_android.png) ![Description list](@site/static/img/map/description_list_ios.png)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Description list](@site/static/img/map/description_list_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Description list](@site/static/img/map/description_list_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 ### OpenStreetMap link
 
@@ -118,7 +214,11 @@ In this section, you can view photos of the object from different sources web so
 
 ![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)
 
-### * Audio/Video Note (Android)
+### * Audio/Video Note
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 [Audio / Video notes](../plugins/audio-video-notes.md) have additional information on Details Menu and buttons (Delete, Play, Show) in Context menu. 
 
@@ -126,17 +226,53 @@ For Image notes in the Details Menu an image is displayed; when you click on the
  
 ![Image list](@site/static/img/map/image_list_android.png) ![Video list](@site/static/img/map/video_list_android.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+> ```This feature doesn't exist for iOS version```
+
+</TabItem>
+
+</Tabs> 
+
 ## Actions
 
 It is a set of specific manipulations that can be performed on a point or object. This menu is split into two parts: visible section consists of maximum 3 actions and other actions are accessible by 'Actions' button. You can customize (Android) the order of actions in [General settings](#customize-android-advanced).
 
-![Actions menu Android](@site/static/img/map/actions_menu_android.png) ![Actions menu iOS](@site/static/img/map/actions_menu_ios.png)
-![Actions additional menu Android](@site/static/img/map/actions_additional_menu_android.png) ![Actions additional menu iOS](@site/static/img/map/actions_additional_menu_ios.png)
+<Tabs groupId="operating-systems">
 
+<TabItem value="android" label="Android">  
+
+![Actions menu Android](@site/static/img/map/actions_menu_android.png) ![Actions additional menu Android](@site/static/img/map/actions_additional_menu_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Actions menu iOS](@site/static/img/map/actions_menu_ios.png)  ![Actions additional menu iOS](@site/static/img/map/actions_additional_menu_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 ### Add / Edit Favorite
 
-![Add Edit favorite action Android](@site/static/img/map/add_favorite_android.png) ![Add Edit favorite action iOS](@site/static/img/map/add_favorite_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Add Edit favorite action Android](@site/static/img/map/add_favorite_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Add Edit favorite action iOS](@site/static/img/map/add_favorite_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 In the context menu there are options to **add** or to **edit** the selected point / object to the [favorites list](../personal/myplaces.md). 
 - In order to **add**, you need to select a point / object, click on the 'Star' icon (with signature Add) and enter all the necessary information. 
@@ -146,9 +282,20 @@ In the context menu there are options to **add** or to **edit** the selected poi
 
 ### Add / Edit Marker
 
-![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)
+<Tabs groupId="operating-systems">
 
-![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png) ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
+<TabItem value="android" label="Android">  
+
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
+
+</TabItem>
+
+</Tabs> 
 
 It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
 
@@ -162,7 +309,21 @@ Read more about [markers](../personal/markers.md).
 
 ### Share
 
-![Share action Android](@site/static/img/map/action_share_android.png) ![Share action iOS](@site/static/img/map/action_share_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Share action Android](@site/static/img/map/action_share_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Share action iOS](@site/static/img/map/action_share_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 The app provides the opportunity to **<Translate android="true" ids="shared_string_share"/>** location in a variety of ways. You can also share your location by selecting 'your location' icon on the map.
 
@@ -181,9 +342,23 @@ All options to share your location:
 
 ### Directions To / From 
 
-![Directions Android](@site/static/img/map/action_directions_android.png) ![Directions iOS](@site/static/img/map/action_directions_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Directions Android](@site/static/img/map/action_directions_android.png)
 
 ![Multiple Directions Android](@site/static/img/map/action_multiple_directions_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Directions iOS](@site/static/img/map/action_directions_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 In order to start navigation or route planning, you need to select destination first with [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). In case you already have a destination point, the menu will suggest you to replace the destnation point or to insert as another intermediate or start point. 
 
@@ -195,7 +370,21 @@ Read more about [navigation](../navigation/route-navigation.md).
 
 ### Search nearby
 
-![Search action Android](@site/static/img/map/action_search_android.png) ![Search action iOS](@site/static/img/map/action_search_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Search action Android](@site/static/img/map/action_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Search action iOS](@site/static/img/map/action_search_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Via this context menu action it is possible to search around specific location on the map. 
 
@@ -203,7 +392,23 @@ Read more about [search](../search/index.md) functionality.
 
 ### Avoid road
 
-![Avoid action Android](@site/static/img/map/action_avoid_android.png) ![Avoid roads map](@site/static/img/map/action_avoid_roads_list_android.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Avoid action Android](@site/static/img/map/action_avoid_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Avoid roads map](@site/static/img/map/action_avoid_roads_list_android.png)
+
+</TabItem>
+
+</Tabs> 
+
+ 
 
 It is possible to add avoid roads at specific location, so selected roads will be avoided during the route planning. 
 
@@ -215,9 +420,26 @@ Read more about [navigation](../navigation/route-navigation.md).
 
 ### Change object position
 
-![Action Change position Android](@site/static/img/map/action_change_position_android.png) ![Action Change position iOS](@site/static/img/map/action_change_position_ios.png)
+<Tabs groupId="operating-systems">
 
-![Action Change position UI Android](@site/static/img/map/action_change_position_ui_android.png) ![Action Change position UI iOS](@site/static/img/map/action_change_position_ui_iOS.png) 
+<TabItem value="android" label="Android">  
+
+![Action Change position Android](@site/static/img/map/action_change_position_android.png)
+
+![Action Change position UI Android](@site/static/img/map/action_change_position_ui_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action Change position iOS](@site/static/img/map/action_change_position_ios.png)
+
+![Action Change position UI iOS](@site/static/img/map/action_change_position_ui_iOS.png) 
+
+</TabItem>
+
+</Tabs> 
+
 
 Almost every created object by user is moveable i.e. Marker, Favorite, Created POI, Audio/Video Note or Track Waypoint. First select an object on the map and then use '<Translate android="true" ids="change_markers_position"/>' menu to move it to a new location.
 
@@ -257,17 +479,27 @@ Please refer to [full instruction](../map/raster-maps.md#download--update-tiles)
 
 </Tabs> 
 
-
-
-  
-  
-
-
 ### Update / Download Vector Maps
 
-![Action Download vector map Android](@site/static/img/map/action_download_vector_map_android.png) ![Action Download vector map iOS](@site/static/img/map/action_download_vector_map_ios.png)
+<Tabs groupId="operating-systems">
 
-![Select vector map worldwide on Android](@site/static/img/map/download_region_map_via_worldmap.png) ![Select vector map on iOS](@site/static/img/map/download_map_ios.png)
+<TabItem value="android" label="Android">  
+
+![Action Download vector map Android](@site/static/img/map/action_download_vector_map_android.png)
+
+![Select vector map worldwide on Android](@site/static/img/map/download_region_map_via_worldmap.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action Download vector map iOS](@site/static/img/map/action_download_vector_map_ios.png)
+
+![Select vector map on iOS](@site/static/img/map/download_map_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 In case there is no offline map present at selected location, for example map object menu was opened via Search or via specific Favorite, then the smallest possible offline map will be suggested to [download](../start-with/download-maps.md#download---map-context-menu).  
 
@@ -278,9 +510,27 @@ menu. You will need to select the region on the map first - click on any locatio
 
 ### * Add / Delete Parking point
 
-![Action Parking Android](@site/static/img/map/action_parking_android.png) ![Action Parking iOS](@site/static/img/map/action_parking_ios.png)
+<Tabs groupId="operating-systems">
 
-![Action Delete Parking Android](@site/static/img/map/context_menu_limited_parking.png) ![Action Delete Parking iOS](@site/static/img/map/context_menu_limited_parking_ios.png) 
+<TabItem value="android" label="Android">  
+
+![Action Parking Android](@site/static/img/map/action_parking_android.png)
+
+![Action Delete Parking Android](@site/static/img/map/context_menu_limited_parking.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action Parking iOS](@site/static/img/map/action_parking_ios.png)
+
+![Action Delete Parking iOS](@site/static/img/map/context_menu_limited_parking_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+
 
 Any selected location on the map could be marked as [a parking position](../plugins/parking.md). In order to delete parking position, you can open context menu associated with parking location.
 
@@ -288,9 +538,27 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 ### * Add / Edit  Track waypoint
 
-![Action Waypoint Android](@site/static/img/map/action_waypoint_android.png) ![Action Waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
+<Tabs groupId="operating-systems">
 
-![Select Track to add Waypoint Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png) ![Select Track to add Waypoint iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png) 
+<TabItem value="android" label="Android">  
+
+![Action Waypoint Android](@site/static/img/map/action_waypoint_android.png)
+
+![Select Track to add Waypoint Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action Waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
+
+![Select Track to add Waypoint iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+
 
 It is possible to [add waypoints](../personal/tracks.md#add-waypoint) to any track at selected location via Map Context menu - <Translate android="true" ids="context_menu_item_add_waypoint"/> . By default waypoint is added to [currently recording track](../plugins/trip-recording.md#from-widget). Though if there are many [visible tracks](../map/tracks-on-map.md#tracks-on-the-map-layers) on the map, it will be suggested to select the track waypoint will be added to.
 
@@ -298,7 +566,23 @@ Requires [Trip recording plugin](../plugins/trip-recording.md).
 
 ### * Create / Modify POI
 
-![Action POI Android](@site/static/img/map/action_poi_android.png) ![Action POI iOS](@site/static/img/map/action_poi_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Action POI Android](@site/static/img/map/action_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action POI iOS](@site/static/img/map/action_poi_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+ 
 
 With OSM Editing plugin, you can create and modify most of the POIs present on [OpenStreetMap](https://www.openstreetmap.org/).
 
@@ -310,9 +594,26 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 ### * Open OSM Note
 
-![Action Note Android](@site/static/img/map/action_note_android.png) ![Action Note iOS](@site/static/img/map/action_note_ios.png)
+<Tabs groupId="operating-systems">
 
-![Action Add Note Android](@site/static/img/map/action_add_osm_note_ui_android.png) ![Action Add Note iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+<TabItem value="android" label="Android">  
+
+![Action Note Android](@site/static/img/map/action_note_android.png)
+
+![Action Add Note Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Action Note iOS](@site/static/img/map/action_note_ios.png)
+
+![Action Add Note iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
 
 You can [report](../plugins/osm-editing.md#how-to-report-a-mistake) map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
 
@@ -335,7 +636,11 @@ In case you use 'Offline mode' to add / edit POI or OSM Note, you will need to u
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
-### * Record AV Note (Android)
+### * Record AV Note
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 
@@ -347,7 +652,23 @@ Records or takes a media note at selected point on the map.
 
 Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
-## Customize (Android advanced)
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+> ```This feature doesn't exist for iOS version.```
+
+</TabItem>
+
+</Tabs> 
+
+
+
+## Customize
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 It is possible to reorder or hide items from the '<Translate android="true" ids="context_menu_actions"/>'. You can move the most useful actions to the top 3 actions and setup whole menu independently for each profile. It is also possible to reset to default settings after all.
 
@@ -356,5 +677,17 @@ It is possible to reorder or hide items from the '<Translate android="true" ids=
 <p> </p>
 
 ![Context menu actions items ](@site/static/img/map/customize_actions_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+> ```This feature doesn't exist for iOS version.```
+
+</TabItem>
+
+</Tabs> 
+
+
 
  
