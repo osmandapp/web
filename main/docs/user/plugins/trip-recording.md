@@ -85,7 +85,7 @@ To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track
 
 <TabItem value="android" label="Android">
 
-The [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+The [Distance/Start-Stop widget](../widgets/info-widgets#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording#trip-recording-widgets.md) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
