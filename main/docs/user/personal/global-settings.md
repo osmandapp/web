@@ -15,25 +15,24 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
 
-:::note
 
-Global settings are common to all application profiles. In fact, these settings are the settings of OsmAnd system.
+## General
 
-:::
+**Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>_
+**Go to:** *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*
 
-![Profiles General Settings Android](@site/static/img/personal/profiles/general_settings_android.png)
+![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_1.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,osmand_settings"/>_
+**Go to:** *<Translate ios="true" ids="menu,sett_settings,osmand_settings"/>*
 
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_ios.png)
 
@@ -41,47 +40,77 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,se
 
 </Tabs>
 
-## General
-
 ### Default profile
 
-Choosing a profile like a default profile:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-- &nbsp;_<Translate android="true" ids="settings_preset"/>_ - select the profile, that will be used on application start (last used or from profile list). Here you can choose "_<Translate android="true" ids="shared_string_last_used"/>_" profile. It means that the last chosen profile will be used for the application.
+- **<Translate android="true" ids="shared_string_last_used"/>** - selects the profile that was last used.
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/general_settings_default_profile_android.png)
+- **<Translate android="true" ids="settings_preset"/>** - You select the profile that will be used when starting OsmAnd. Can be changed in the application [settings](../personal/profiles.md).
+
+![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_andr.png)  
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- &nbsp;_<Translate ios="true" ids="settings_preset"/>_ - select the profile, that will be used on application start (last used or from profile list). Here you can choose "_<Translate ios="true" ids="last_used"/>_" profile. It means that the last chosen profile will be used for the application.
+- **<Translate android="true" ids="shared_string_last_used"/>** - selects the profile that was last used.
 
-![General Settings Profile iOS](@site/static/img/personal/profiles/general_settings_profile_ios.png)
+- **<Translate android="true" ids="settings_preset"/>** - You select the profile that will be used when starting OsmAnd. Can be changed in the application [settings](../personal/profiles.md).
 
-- &nbsp;_<Translate ios="true" ids="carplay_profile"/>_ - profile that will be used while connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
+![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
-_iOS device → Settings → General → CarPlay
+
 
 </TabItem>
 
 </Tabs>
 
+### CarPlay profile
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+:::note
+
+This option is not available for Android
+
+:::
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+**Go to:** *<Translate ios="true" ids="menu,sett_settings,carplay_profile"/>*
+
+**<Translate ios="true" ids="carplay_profile"/>** - this profile will be used while it is connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
+
+![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+
+
+
+</TabItem>
+
+</Tabs> 
+
+
 ### Display language
 
-Setting display (application) language: 
+You can use the language installed on your device or select any other language from the list. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Here you can choose system device language or another from the list:
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>_
+**Go to:** *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*
 
 ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
 
@@ -89,9 +118,10 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-For changing OsmAnd display language you need to make it in iOS settings. Here you can choose a language by default or from the list:
+To change the display language of OsmAnd, you need to do this in the iOS settings.
 
-_iOS device → Settings → OsmAnd maps → Language_
+**Go to:** *<Translate ios="true" ids="menu,sett_settings,language"/>*
+
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
@@ -101,23 +131,24 @@ _iOS device → Settings → OsmAnd maps → Language_
 
 ### Data storage folder
 
-Here you can change storage folder (Android) and know memorу usage by OsmAnd data.
+Here you can change storage folder (Android) and know memorу usage by OsmAnd data. More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>_
+**Go to:** *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
+![Data storage folder](@site/static/img/personal/profiles/global_sett_andr_1.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-For iOS system, we can't make any manipulate with the storage folder. We can know only how much memory OsmAnd uses:
+For the iOS system, we can not do any manipulation of the storage folder. We can only find out how much memory OsmAnd uses.
 
-_iOS device → Settings → OsmAnd maps → General → iPhone storage → OsmAnd Maps_
+**Go to:** *Device → Settings → OsmAnd maps → General → iPhone storage → OsmAnd Maps*
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)
 
@@ -263,9 +294,9 @@ _iOS device → Settings → Privacy → Location Services_
 
 <TabItem value="android" label="Android">
 
-&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
-Select "Keep active" and you will receive alerts and warnings about speed cameras.
-Select "Uninstall". All data related to speed cameras: alerts, notifications, POIs will be deleted until OsmAnd is completely reinstalled.
+
+&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows you to activate or deactivate the Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, using speed camera warning applications is illegal. You need to make a choice depending on the law in your country. Select "Keep active" and you will receive speed camera warnings and alerts. Select "Uninstall" and all data related to speed cameras: alerts, notifications and POI's will be deleted until you completely reinstall OsmAnd.
+ 
 
 ![General Settings Cameras Android](@site/static/img/personal/profiles/general_settings_cameras_android.png)
 
@@ -273,11 +304,15 @@ Select "Uninstall". All data related to speed cameras: alerts, notifications, PO
 
 <TabItem value="ios" label="iOS">
 
-> ```This screen doesn't exist for iOS version at this moment.```
 
-Read about Screen alert of Speed cameras:
+:::note
 
-_[Screen alerts → Speed cameras](../widgets/nav-widgets.md#alert-widget)_
+This screen doesn't exist for iOS version at this moment.
+
+:::
+
+
+Read about Screen alert of Speed cameras: _[Screen alerts → Speed cameras](../widgets/nav-widgets.md#alert-widget)_
 
 </TabItem>
 
