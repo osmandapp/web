@@ -138,7 +138,7 @@ The way the Audio/video recording will work can be determined with the settings 
 | **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
 
 
-## Manage single note
+## Manage a single note
 
 You can manage your information, thoughts, ideas, etc. tied to a geographical place, as follows:
 
