@@ -58,7 +58,7 @@ Compass widget shows how the map is oriented on your device's screen. You can se
 - **Movement direction** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)
 - **Compass direction** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.  
 
-[Read more info here](../map/interact-with-map#map-orientation--compass).
+[Read more info here](../map/interact-with-map.md#map-orientation--compass).
 
 <Tabs groupId="operating-systems">
 
@@ -80,9 +80,7 @@ Go to:* <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map
 
 ![Compass widget](@site/static/img/widgets/cmp_dir_north_ios.png) ![Compass widget](@site/static/img/widgets/movement_dir_ios.png) ![Compass widget](@site/static/img/widgets/compas_dir_ios.png)
 
-You can choose how the compass is displayed in the widget menu: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
-
->NOTE. Available soon.
+> Available soon: You can choose how the compass is displayed in the widget menu: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
 
 </TabItem>
 
