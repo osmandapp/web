@@ -65,22 +65,18 @@ Speed widget shows your current speed detected by GPS-sensor.
 
 <TabItem value="android" label="Android">   
 
-This is a simple but very useful widget without any extra features. It shows what your average speed is. And you can easily use it if, for example, you need to observe speed limits on highways or if you ride a bicycle.  
+This widget shows yoru average speed in the past for a selected time interval and doesn't require any other features such as recording track or navigation. And you can easily use it for validating your average speed against speed limits on highways, for recording last 5-15 min average speed riding a bicycle.  
 Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*  
 
 **Time interval.**  
-The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is calculated by the formula **_Average Speed = Total Distance Traveled / Total Time Spent Traveling_** 
+The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is taken from recorded points by GPS: **_Average Speed = AVERAGE( GPS_LOCATION.speed )_**. 
 
 
 **Take stops to your account.**   
-***Off*** *setting*: If you stop for a while, zero will also be added to the average speed calculation, which can significantly change the overall value. ***On*** *setting*: If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed not to change much when you stop, for example, at a traffic light or want to take a break from cycling.   
-
+***Off*** *setting*: If you stop for a while, zeroes will also be added to the average speed calculation, which can significantly change the overall value. ***On*** *setting*: If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed not to change much when you stop, for example, at a traffic light or want to take a break from cycling.   
 
 ![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)
 
-
-
- 
 ![Average speed widgets](@site/static/img/widgets/aver_widg_1.png)  
 
 | | |
@@ -102,13 +98,6 @@ The average speed is calculated for the set interval of time, according to your 
 </TabItem>
 
 </Tabs>  
-
-
-
-
-
-
-
 
 
 ## Battery level
