@@ -79,7 +79,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 :::note
 
-This option is not available for Android
+This settings is not available for Android
 
 :::
 
@@ -88,9 +88,10 @@ This option is not available for Android
 
 <TabItem value="ios" label="iOS">  
 
+**<Translate ios="true" ids="carplay_profile"/>** - this profile will be used while it is connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
+
 **Go to:** *<Translate ios="true" ids="menu,sett_settings,carplay_profile"/>*
 
-**<Translate ios="true" ids="carplay_profile"/>** - this profile will be used while it is connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
@@ -131,7 +132,7 @@ To change the display language of OsmAnd, you need to do this in the iOS setting
 
 ### Data storage folder
 
-Here you can change storage folder (Android) and know memorу usage by OsmAnd data. More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
+You can change the storage folder and check the memory usage with OsmAnd data. Read more about storage settings [here](../personal/storage.md#data-storage-folder).
 
 <Tabs groupId="operating-systems">
 
@@ -152,8 +153,8 @@ For the iOS system, we can not do any manipulation of the storage folder. We can
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)
 
-OsmAnd files are visible in the "Files" application. You can access all tracks, custom routing and rendering files through it:
-_Files → On My Phone → OsmAnd Maps_
+OsmAnd files are visible in the "Files" application. To access all tracks, custom routing and rendering files, follow this path:   
+*Files → On My Phone → OsmAnd Maps*
 
 More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
 
@@ -163,72 +164,51 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 </Tabs>
 
+
 ## Privacy and security
-
-Here you can set parameters of your privacy and security.
-
-### Analytics
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android"> 
 
-&nbsp;_<Translate android="true" ids="analytics_pref_title"/>_ - allows collecting or not next anonymous usage data of OsmAnd: Maps downloaded, Screens visited. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
+#### Analytics
 
-![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)
+*<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
+
+![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
+
+#### History
+
+*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/route-navigation.md#history) and [Map markers history](../personal/markers.md#history).  
+
+Available interactions:  
+- Enable/disable history.
+- Delete some items from the history.
+- Share with.
+- Create a backup as a file.
+- Clear all history.  
+
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
+
+#### Proxy
+
+*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows to configuring an HTTP proxy for all network requests. You can set the Proxy Host and Proxy Port.
+
+![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-&nbsp;_<Translate ios="true" ids="send_anonymous_data"/>_ - allows collecting or not next anonymous usage data of OsmAnd: map download statistics. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
+*<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
 
 ![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs> 
 
-### History
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-&nbsp;<Translate android="true" ids="shared_string_history"/> - allows disabling history logging individually for each history type: [search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history). Here you can export history info a file, you can clear all history or for each categories ([search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history)).
-
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-> ```This screen doesn't exist for iOS version at this moment.```
-
-</TabItem>
-
-</Tabs>
-
-### Proxy
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-&nbsp;_<Translate android="true" ids="proxy_pref_title"/>_ - allows configuring an HTTP proxy for all network requests. You can set Proxy Host and Proxy Port.
-
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-> ```This screen doesn't exist for iOS version at this moment.```
-
-</TabItem>
-
-</Tabs>
 
 ## Other 
 
@@ -238,7 +218,7 @@ Here you can set parameters of your privacy and security.
 
 <TabItem value="android" label="Android">
 
-&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+*<Translate android="true" ids="dialogs_and_notifications_title"/>* - this setting allows you to turn on/off pop-ups, dialogs and notifications. This is the Start-up message and the [Download map dialog](../start-with/download-maps.md#download---own-map-advanced) (for example, a promotion, a quiz, an event, etc.).
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
 
@@ -246,7 +226,7 @@ Here you can set parameters of your privacy and security.
 
 <TabItem value="ios" label="iOS">
 
-- &nbsp;_<Translate ios="true" ids="do_not_show_discount"/>_ - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+*<Translate ios="true" ids="do_not_show_discount"/>* - this setting allows you to turn on/off pop-ups, dialogs and notifications. This is the Start-up message and the [Download map dialog](../start-with/download-maps.md#download---own-map-advanced) (for example, a promotion, a quiz, an event, etc.).
 
 ![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_ios.png)
 
@@ -261,44 +241,69 @@ Here you can set parameters of your privacy and security.
 <TabItem value="android" label="Android">
 
 You can choose which Google Play or "Android API" services OsmAnd will use to determine your location. This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks.  
-OsmAnd takes data from the resources *Google's Fused Location Providers* and *Android GPS and Network Providers*.  
-You can switch **<Translate android="true" id="location_source" />** in: _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+OsmAnd receives data from the resources *Google Fused Location Providers* and *Android GPS and Network Providers*.  
+You can switch **<Translate android="true" id="location_source" />** in: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />*.
 
-![General Settings notifications Android](@site/static/img/personal/profiles/osmand-settings_location-source_google-play.png)
+![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-> ```This screen doesn't exist for iOS version at this moment.```
 
-iOS system uses iOS API for location.
+The iOS system uses the iOS API to determine location.  
+All settings for OsmAnd Location can be found in iOS Settings: *iOS device → Settings → OsmAnd maps → Location*  
 
-You can find all settings for OsmAnd Location in iOS Settings:
-
-_iOS device → Settings → OsmAnd maps → Location_
-
-Privacy of Location services:
-
-_iOS device → Settings → Privacy → Location Services_
+Privacy of Location services: *iOS device → Settings → Privacy → Location Services*
 
 </TabItem>
 
 </Tabs>
 
-## Legal
+### Auto-backup
 
-### Uninstall speed cameras
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+By default, the Android system backs up your OsmAnd settings and map markers so you can restore them on new devices or after reinstalling. The size of this backup is limited to 25MB.  
+If you are using [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro), it is best to disable this feature to avoid misunderstandings after reinstallation.  
+
+![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_andr.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+
+This settings is not available for iOS version at this moment.
+
+:::  
+
+
+</TabItem>
+
+</Tabs> 
+
+
+
+## Legal
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 
-&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows you to activate or deactivate the Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, using speed camera warning applications is illegal. You need to make a choice depending on the law in your country. Select "Keep active" and you will receive speed camera warnings and alerts. Select "Uninstall" and all data related to speed cameras: alerts, notifications and POI's will be deleted until you completely reinstall OsmAnd.
+**<Translate android="true" ids="uninstall_speed_cameras"/>**  
+
+This setting allows you to activate or deactivate the speed camera POI ([speed camera alert widget](../widgets/nav-widgets.md#alert-widget)). In some countries or regions, using speed camera warning apps is illegal. You need to make a choice depending on the laws in your country. Select *Keep active* and you will receive speed camera alerts. Select *Delete* and all data related to speed cameras: alerts, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
  
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/general_settings_cameras_android.png)
+![General Settings Cameras Android](@site/static/img/personal/profiles/speed_cam_andr.png)
 
 </TabItem>
 
@@ -307,12 +312,13 @@ _iOS device → Settings → Privacy → Location Services_
 
 :::note
 
-This screen doesn't exist for iOS version at this moment.
+This settings is not available for iOS version at this moment.
 
-:::
+:::  
 
 
-Read about Screen alert of Speed cameras: _[Screen alerts → Speed cameras](../widgets/nav-widgets.md#alert-widget)_
+
+Read about Screen alert of Speed cameras: *[Alert widget](../widgets/nav-widgets.md#alert-widget)*
 
 </TabItem>
 
