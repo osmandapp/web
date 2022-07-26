@@ -173,6 +173,10 @@ const config = {
                 to: '/blog',
               },
               {
+                label: 'Map',
+                to: 'https://osmand.net/map',
+              },
+              {
                 label: 'GitHub',
                 href: 'https://github.com/osmandapp',
               },
