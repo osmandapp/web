@@ -20,9 +20,9 @@ const ElevationTab = ({data, width}) => {
         });
         return {res: result, min: min, max: max};
     }, [data]);
-
+    console.log(graphData)
     return (
-        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"ElevationTab"}
+        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"Elevation"}
                      width={width} min={graphData.min} max={graphData.max}/>
 
     );

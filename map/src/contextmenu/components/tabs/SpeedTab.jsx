@@ -21,7 +21,7 @@ export default function SpeedTab({data, width}) {
         return {res: result, min: min, max: max};
     }, [data]);
     return (
-        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"SpeedTab"}
+        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"Speed"}
                      width={width} min={0} max={graphData.max}/>
     );
 };
