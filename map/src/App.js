@@ -1,8 +1,8 @@
 import { React } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // components
-import OsmAndMapFrame from './components/OsmAndMapFrame';
-import LoginDialog from './components/LoginDialog';
+import OsmAndMapFrame from './drawer/components/OsmAndMapFrame';
+import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext'
 
 
