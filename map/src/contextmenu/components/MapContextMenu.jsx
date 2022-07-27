@@ -62,8 +62,9 @@ export default function MapContextMenu() {
     function closeContextMenu() {
         ctx.setSelectedGpxFile(null);
         ctx.setWeatherPoint(null);
-        ctx.newRoute.newRouteLayer = new Layer();
-        ctx.setNewRoute({...ctx.newRoute});
+        ctx.currentlyEditTrackDispatch({
+            type: 'clean',
+        })
         if (ctx.mapMarkerListener) {
             ctx.mapMarkerListener();
         }
