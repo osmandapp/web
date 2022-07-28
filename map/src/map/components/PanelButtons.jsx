@@ -43,7 +43,7 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             type="button"
                             onClick={() => {
                                 ctx.currentlyEditTrackDispatch({
-                                    type: 'update',
+                                    type: 'startDraw',
                                 })
                             }}
                         >
@@ -63,7 +63,7 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             type="button"
                             onClick={() => {
                                 ctx.currentlyEditTrackDispatch({
-                                    type: 'update',
+                                    type: 'deleteTrack',
                                 })
                             }}
                         >

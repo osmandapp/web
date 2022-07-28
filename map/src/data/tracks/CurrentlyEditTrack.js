@@ -4,9 +4,9 @@ export default class CurrentlyEditTrack {
         newRouteLayer: null,
         pointsList: [],
         trackName: null,
-        finished: false,
         distance: 0,
-        update: false,
+        startDraw: false,
+        deleteTrack: false,
         deletePoint: -1
     };
 

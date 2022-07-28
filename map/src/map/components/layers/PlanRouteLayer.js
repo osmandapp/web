@@ -101,9 +101,7 @@ export default function PlanRouteLayer() {
 
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
-
-            if (ctx.currentlyEditTrack.update) {
-                //create
+            if (ctx.currentlyEditTrack.startDraw) {
                 if (!ctx.currentlyEditTrack.newRouteLayer) {
                     ctx.currentlyEditTrackDispatch({
                         type: 'start',
@@ -111,12 +109,15 @@ export default function PlanRouteLayer() {
                     })
                     ctx.setSelectedGpxFile(null);
                     ctx.setWeatherPoint(null);
-                    //delete
-                } else {
-                    let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
-                    ctx.createdTracks.splice(ctx.createdTracks[selectedTrack], 1);
+                }
+            }
+
+            if (ctx.currentlyEditTrack.deleteTrack) {
+                let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
+                if (selectedTrack) {
+                    ctx.createdTracks.splice(ctx.createdTracks.indexOf(selectedTrack), 1);
                     ctx.setCreatedTracks([...ctx.createdTracks]);
-                    if (map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
+                    if (ctx.currentlyEditTrack.newRouteLayer && map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
                         map.removeLayer(ctx.currentlyEditTrack.newRouteLayer);
                         ctx.currentlyEditTrackDispatch({
                             type: 'delete',

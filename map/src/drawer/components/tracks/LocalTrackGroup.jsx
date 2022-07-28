@@ -37,6 +37,7 @@ export default function LocalTrackGroup() {
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [indexTrack, setIndexTrack] = useState(-1);
+    const [prevIndexTrack, setPrevIndexTrack] = useState(-1);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
@@ -90,37 +91,43 @@ export default function LocalTrackGroup() {
     }
 
     useEffect(() => {
-        if (ctx.currentlyEditTrack && ctx.currentlyEditTrack.deleted) {
-            let dt = ctx.currentlyEditTrack.trackName;
-            let res = ctx.createdTracks.filter(t => t.name !== dt)
-            ctx.setCreatedTracks(res);
-
-            localStorage.setItem('createdTracks', JSON.stringify(res));
-        } else {
-            if (ctx.currentlyEditTrack) {
-                if (ctx.createNewTrack) {
-                    setIndexTrack(-1);
-                    let track = structuredClone(ctx.currentlyEditTrack.pointsList);
-                    ctx.createdTracks.push(new CreatedTrack(('*Track ' + (ctx.createdTracks.length + 1)), track, false));
-                    ctx.setCreatedTracks([...ctx.createdTracks]);
-                    ctx.setCreateNewTrack(false);
-                } else {
+        if (ctx.currentlyEditTrack) {
+            //create new edit track
+            if (ctx.createNewTrack) {
+                setIndexTrack(-1);
+                let track = structuredClone(ctx.currentlyEditTrack.pointsList);
+                ctx.createdTracks.push(new CreatedTrack(('*Track ' + (ctx.createdTracks.length + 1)), track, false));
+                ctx.setCreatedTracks([...ctx.createdTracks]);
+                ctx.setCreateNewTrack(false);
+            } else {
+                if (prevIndexTrack !== indexTrack || prevIndexTrack === -1) {
+                    //choice edit track from menu
                     if (indexTrack !== -1) {
                         if (ctx.createdTracks[indexTrack]) {
                             ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+                            setPrevIndexTrack(indexTrack);
                             ctx.setCreatedTracks([...ctx.createdTracks]);
                         }
                     } else {
+                        //update edit track
                         if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
                             ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
                             ctx.setCreatedTracks([...ctx.createdTracks]);
                         }
                     }
                 }
-                localStorage.setItem('createdTracks', JSON.stringify(ctx.createdTracks));
             }
+            saveToLocalStorage(ctx.createdTracks);
         }
     }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
+
+    function saveToLocalStorage(tracks) {
+        let res = structuredClone(tracks);
+        res.forEach(function (track) {
+            track.selected = false;
+        })
+        localStorage.setItem('createdTracks', JSON.stringify(res));
+    }
 
     const fileSelected = (ctx) => async (e) => {
         Array.from(e.target.files).forEach((file) => {

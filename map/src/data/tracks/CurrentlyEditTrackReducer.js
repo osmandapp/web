@@ -4,16 +4,22 @@ import Utils from "../../util/Utils";
 export default function CurrentlyEditTrackReducer(state, action) {
 
     switch (action.type) {
-        case 'update': {
+        case 'startDraw': {
             return {
                 ...state,
-                update: true,
+                startDraw: true,
+            };
+        }
+        case 'deleteTrack': {
+            return {
+                ...state,
+                deleteTrack: true,
             };
         }
         case 'start': {
             return {
                 ...state,
-                update: false,
+                createTrack: false,
                 newRouteLayer: action.newRouteLayer,
             };
         }
@@ -79,7 +85,7 @@ export default function CurrentlyEditTrackReducer(state, action) {
             return {
                 newRouteLayer: null,
                 pointsList: [],
-                update: false
+                deleteTrack: false
             };
         }
         default:
