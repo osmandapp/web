@@ -90,13 +90,22 @@ export default function LocalTrackGroup() {
         }
     }
 
+    function getTrackName() {
+        if (ctx.createdTracks && ctx.createdTracks.length > 0) {
+            let index = parseInt(ctx.createdTracks.at(-1).name.split(" ")[1]) + 1;
+            return '*Track ' + index;
+        } else {
+            return '*Track ' + (ctx.createdTracks.length + 1);
+        }
+    }
+
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
             //create new edit track
             if (ctx.createNewTrack) {
                 setIndexTrack(-1);
                 let track = structuredClone(ctx.currentlyEditTrack.pointsList);
-                ctx.createdTracks.push(new CreatedTrack(('*Track ' + (ctx.createdTracks.length + 1)), track, false));
+                ctx.createdTracks.push(new CreatedTrack(getTrackName(), track, false));
                 ctx.setCreatedTracks([...ctx.createdTracks]);
                 ctx.setCreateNewTrack(false);
             } else {
