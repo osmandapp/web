@@ -18,6 +18,7 @@ export default function CurrentlyEditTrackReducer(state, action) {
             };
         }
         case 'start': {
+            console.log(state)
             return {
                 ...state,
                 startDraw: false,

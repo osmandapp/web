@@ -79,14 +79,12 @@ export default function PlanRouteLayer() {
                 })
             });
             if (ctx.currentlyEditTrack.startDraw) {
-                if (!ctx.currentlyEditTrack.newRouteLayer) {
                     ctx.currentlyEditTrackDispatch({
                         type: 'start',
                         newRouteLayer: map.editTools.startPolyline(),
                     })
                     ctx.setSelectedGpxFile(null);
                     ctx.setWeatherPoint(null);
-                }
             }
 
             if (ctx.currentlyEditTrack.prepareMap) {
