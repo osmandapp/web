@@ -12,12 +12,10 @@ export default function PlanRouteLayer() {
 
     const [openSaveDialog, setOpenSaveDialog] = useState(false);
     const [openPanelButtons, setOpenPanelButtons] = useState(false);
-    const [prevCreatedTracks, setPrevCreatedTracks] = useState(null);
 
     useEffect(() => {
         let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
         if (selectedTrack && (!ctx.currentlyEditTrack || (ctx.currentlyEditTrack && (selectedTrack.name !== ctx.currentlyEditTrack.trackName)))) {
-            setPrevCreatedTracks(ctx.createdTracks);
             setOpenPanelButtons(true);
             let newRouteLayer;
             let newPoints = [];
@@ -80,7 +78,6 @@ export default function PlanRouteLayer() {
                     type: 'dragendClick',
                 })
             });
-
             if (ctx.currentlyEditTrack.startDraw) {
                 if (!ctx.currentlyEditTrack.newRouteLayer) {
                     ctx.currentlyEditTrackDispatch({
@@ -111,19 +108,12 @@ export default function PlanRouteLayer() {
                 }
             }
 
-            //check delete point
-            if (ctx.currentlyEditTrack.deletePoint && ctx.currentlyEditTrack.deletePoint !== -1) {
-
-                ctx.currentlyEditTrack.pointsList.splice(ctx.currentlyEditTrack.deletePoint, 1);
+            if (ctx.currentlyEditTrack.refreshLayer) {
                 deleteOldRoute(map);
-                ctx.currentlyEditTrack.pointsList = Utils.getPointsDist(ctx.currentlyEditTrack.pointsList);
                 ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
-
                 ctx.currentlyEditTrackDispatch({
-                    type: 'deletePoint',
-                    pointsList: ctx.currentlyEditTrack.pointsList,
-                    layer: ctx.currentlyEditTrack.newRouteLayer,
-                    distance: ctx.currentlyEditTrack.pointsList[ctx.currentlyEditTrack.pointsList.length - 1].dist
+                    type: 'refreshLayer',
+                    layer: ctx.currentlyEditTrack.newRouteLayer
                 })
             }
         }

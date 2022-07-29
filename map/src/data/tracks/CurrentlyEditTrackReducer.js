@@ -20,6 +20,7 @@ export default function CurrentlyEditTrackReducer(state, action) {
         case 'start': {
             return {
                 ...state,
+                startDraw: false,
                 newRouteLayer: action.newRouteLayer,
             };
         }
@@ -68,19 +69,19 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 pointsList: []
             };
         }
-        case 'addDeletePointIndex': {
-            return {
-                ...state,
-                deletePoint: action.index
-            };
-        }
         case 'deletePoint': {
             return {
                 ...state,
-                pointsList: action.pointsList,
+                pointsList: deletePointByIndex(action.index),
+                distance: getDistance(),
+                refreshLayer: true
+            };
+        }
+        case 'refreshLayer': {
+            return {
+                ...state,
                 newRouteLayer: action.layer,
-                distance: action.distance,
-                deletePoint: -1
+                refreshLayer: false
             };
         }
         case 'delete': {
@@ -94,6 +95,15 @@ export default function CurrentlyEditTrackReducer(state, action) {
             return {
                 ...state
             };
+    }
+
+    function deletePointByIndex(index) {
+        if (state.pointsList.length === state.newRouteLayer._latlngs.length) {
+            state.pointsList.splice(index, 1);
+            state.pointsList = Utils.getPointsDist(state.pointsList);
+        }
+
+        return state.pointsList;
     }
 
     function getPointList(e) {

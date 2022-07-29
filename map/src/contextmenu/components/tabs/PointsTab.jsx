@@ -34,7 +34,7 @@ const PointsTab = ({width}) => {
                 <ListItemAvatar>
                     <IconButton x={{mr: 1}} onClick={() => {
                         ctx.currentlyEditTrackDispatch({
-                            type: 'addDeletePointIndex',
+                            type: 'deletePoint',
                             index: index,
                         })
                     }}>

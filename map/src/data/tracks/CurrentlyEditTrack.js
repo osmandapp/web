@@ -7,7 +7,7 @@ export default class CurrentlyEditTrack {
         distance: 0,
         startDraw: false,
         deleteTrack: false,
-        deletePoint: -1,
+        refreshLayer: false,
         prepareMap: false
     };
 
