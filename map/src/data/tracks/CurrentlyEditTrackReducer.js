@@ -18,7 +18,6 @@ export default function CurrentlyEditTrackReducer(state, action) {
             };
         }
         case 'start': {
-            console.log(state)
             return {
                 ...state,
                 startDraw: false,
@@ -58,7 +57,7 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 ...state,
                 trackName: action.track.name,
                 deleted: false,
-                pointsList: action.pointsList,
+                pointsList: Utils.getPointsDist(action.track.points),
                 newRouteLayer: action.routeLayer,
                 prepareMap: false
             };

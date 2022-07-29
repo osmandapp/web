@@ -15,47 +15,15 @@ export default function PlanRouteLayer() {
 
     useEffect(() => {
         let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
-        if (selectedTrack && (!ctx.currentlyEditTrack || (ctx.currentlyEditTrack && (selectedTrack.name !== ctx.currentlyEditTrack.trackName)))) {
+        if (isNewSelectedTrack(selectedTrack)) {
             setOpenPanelButtons(true);
-            let newRouteLayer;
-            let newPoints = [];
             if (selectedTrack.points && selectedTrack.points.length > 0) {
                 deleteOldRoute(map);
-
-                if (ctx.currentlyEditTrack === null) {
-                    ctx.currentlyEditTrackDispatch({
-                        type: 'createTrack',
-                    })
-                }
-
-                selectedTrack.points.forEach(function (item) {
-                    newPoints.push({lat: item.lat, lng: item.lng});
-                });
-                newRouteLayer = map.editTools.addPolylineByPoints(newPoints);
-                map.fitBounds(newRouteLayer && newRouteLayer._bounds);
-
-                ctx.currentlyEditTrackDispatch({
-                    type: 'showTrack',
-                    track: selectedTrack,
-                    pointsList: structuredClone(Utils.getPointsDist(selectedTrack.points)),
-                    routeLayer: newRouteLayer
-                })
+                createNewCurrentlyEditTrack();
+                showTrackWithPointsOnMap(selectedTrack);
             }
         }
     }, [ctx.createdTracks, ctx.setCreatedTracks]);
-
-    function deleteOldRoute(map) {
-        let layersWithPolyline = [];
-        map._layers && Object.keys(map._layers).forEach(e => {
-                if (map._layers[e].planroute) {
-                    layersWithPolyline.push(map._layers[e]);
-                }
-            }
-        );
-        layersWithPolyline.forEach(function (item) {
-            map.removeLayer(item);
-        });
-    }
 
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
@@ -78,45 +46,97 @@ export default function PlanRouteLayer() {
                     type: 'dragendClick',
                 })
             });
-            if (ctx.currentlyEditTrack.startDraw) {
-                    ctx.currentlyEditTrackDispatch({
-                        type: 'start',
-                        newRouteLayer: map.editTools.startPolyline(),
-                    })
-                    ctx.setSelectedGpxFile(null);
-                    ctx.setWeatherPoint(null);
-            }
 
-            if (ctx.currentlyEditTrack.prepareMap) {
-                deleteOldRoute(map);
-                setOpenPanelButtons(true);
-            }
-
-            if (ctx.currentlyEditTrack.deleteTrack) {
-                let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
-                if (selectedTrack) {
-                    ctx.createdTracks.splice(ctx.createdTracks.indexOf(selectedTrack), 1);
-                    ctx.setCreatedTracks([...ctx.createdTracks]);
-                    if (ctx.currentlyEditTrack.newRouteLayer && map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
-                        map.removeLayer(ctx.currentlyEditTrack.newRouteLayer);
-                        ctx.currentlyEditTrackDispatch({
-                            type: 'delete',
-                        })
-                    }
-                }
-            }
-
-            if (ctx.currentlyEditTrack.refreshLayer) {
-                deleteOldRoute(map);
-                ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
-                ctx.currentlyEditTrackDispatch({
-                    type: 'refreshLayer',
-                    layer: ctx.currentlyEditTrack.newRouteLayer
-                })
-            }
+            checkStartDraw();
+            checkPrepareMap();
+            checkDeleteTrack();
+            checkRefreshLayer();
         }
 
     }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
+
+    function checkStartDraw() {
+        if (ctx.currentlyEditTrack.startDraw) {
+            ctx.currentlyEditTrackDispatch({
+                type: 'start',
+                newRouteLayer: map.editTools.startPolyline(),
+            })
+            ctx.setSelectedGpxFile(null);
+            ctx.setWeatherPoint(null);
+        }
+    }
+
+    function checkPrepareMap() {
+        if (ctx.currentlyEditTrack.prepareMap) {
+            deleteOldRoute(map);
+            setOpenPanelButtons(true);
+        }
+    }
+
+    function checkDeleteTrack() {
+        if (ctx.currentlyEditTrack.deleteTrack) {
+            let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
+            if (selectedTrack) {
+                ctx.createdTracks.splice(ctx.createdTracks.indexOf(selectedTrack), 1);
+                ctx.setCreatedTracks([...ctx.createdTracks]);
+                if (ctx.currentlyEditTrack.newRouteLayer && map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
+                    map.removeLayer(ctx.currentlyEditTrack.newRouteLayer);
+                    ctx.currentlyEditTrackDispatch({
+                        type: 'delete',
+                    })
+                }
+            }
+        }
+    }
+
+    function checkRefreshLayer() {
+        deleteOldRoute(map);
+        ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
+        ctx.currentlyEditTrackDispatch({
+            type: 'refreshLayer',
+            layer: ctx.currentlyEditTrack.newRouteLayer
+        })
+    }
+
+    function isNewSelectedTrack(selectedTrack) {
+        return selectedTrack && (!ctx.currentlyEditTrack || (ctx.currentlyEditTrack && (selectedTrack.name !== ctx.currentlyEditTrack.trackName)));
+    }
+
+    function showTrackWithPointsOnMap(selectedTrack) {
+        let newPoints = [];
+        selectedTrack.points.forEach(function (item) {
+            newPoints.push({lat: item.lat, lng: item.lng});
+        });
+        let newRouteLayer = map.editTools.addPolylineByPoints(newPoints);
+        map.fitBounds(newRouteLayer && newRouteLayer._bounds);
+
+        ctx.currentlyEditTrackDispatch({
+            type: 'showTrack',
+            track: selectedTrack,
+            routeLayer: newRouteLayer
+        })
+    }
+
+    function createNewCurrentlyEditTrack() {
+        if (ctx.currentlyEditTrack === null) {
+            ctx.currentlyEditTrackDispatch({
+                type: 'createTrack',
+            })
+        }
+    }
+
+    function deleteOldRoute(map) {
+        let layersWithPolyline = [];
+        map._layers && Object.keys(map._layers).forEach(e => {
+                if (map._layers[e].planroute) {
+                    layersWithPolyline.push(map._layers[e]);
+                }
+            }
+        );
+        layersWithPolyline.forEach(function (item) {
+            map.removeLayer(item);
+        });
+    }
 
     return (<>
         <SaveRouteDialog open={openSaveDialog} setOpen={setOpenSaveDialog}/>
