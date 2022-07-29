@@ -14,31 +14,9 @@ export default function PlanRouteLayer() {
     const [openPanelButtons, setOpenPanelButtons] = useState(false);
     const [prevCreatedTracks, setPrevCreatedTracks] = useState(null);
 
-    if (ctx.currentlyEditTrack) {
-        map.on("editable:drawing:clicked", e => {
-            ctx.currentlyEditTrackDispatch({
-                type: 'click',
-                e: e
-            })
-        });
-
-        map.on("editable:vertex:deleted", e => {
-            ctx.currentlyEditTrackDispatch({
-                type: 'deletedClick',
-                e: e
-            })
-        });
-
-        map.on("editable:vertex:dragend", e => {
-            ctx.currentlyEditTrackDispatch({
-                type: 'dragendClick',
-            })
-        });
-    }
-
     useEffect(() => {
         let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
-        if (selectedTrack) {
+        if (selectedTrack && (!ctx.currentlyEditTrack || (ctx.currentlyEditTrack && (selectedTrack.name !== ctx.currentlyEditTrack.trackName)))) {
             setPrevCreatedTracks(ctx.createdTracks);
             setOpenPanelButtons(true);
             let newRouteLayer;
@@ -65,26 +43,8 @@ export default function PlanRouteLayer() {
                     routeLayer: newRouteLayer
                 })
             }
-        } else if (prevCreatedTracks && prevCreatedTracks.length >= ctx.createdTracks.length) {
-            deleteOldRoute(map);
         }
     }, [ctx.createdTracks, ctx.setCreatedTracks]);
-
-
-    useEffect(() => {
-        if (ctx.createNewTrack) {
-            if (ctx.currentlyEditTrack) {
-                deleteOldRoute(map);
-                ctx.currentlyEditTrackDispatch({
-                    type: 'clean',
-                })
-            }
-            ctx.currentlyEditTrackDispatch({
-                type: 'createTrack',
-            })
-            setOpenPanelButtons(true);
-        }
-    }, [ctx.createNewTrack, ctx.setCreateNewTrack]);
 
     function deleteOldRoute(map) {
         let layersWithPolyline = [];
@@ -101,6 +61,26 @@ export default function PlanRouteLayer() {
 
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
+            map.on("editable:drawing:clicked", e => {
+                ctx.currentlyEditTrackDispatch({
+                    type: 'click',
+                    e: e
+                })
+            });
+
+            map.on("editable:vertex:deleted", e => {
+                ctx.currentlyEditTrackDispatch({
+                    type: 'deletedClick',
+                    e: e
+                })
+            });
+
+            map.on("editable:vertex:dragend", e => {
+                ctx.currentlyEditTrackDispatch({
+                    type: 'dragendClick',
+                })
+            });
+
             if (ctx.currentlyEditTrack.startDraw) {
                 if (!ctx.currentlyEditTrack.newRouteLayer) {
                     ctx.currentlyEditTrackDispatch({
@@ -110,6 +90,11 @@ export default function PlanRouteLayer() {
                     ctx.setSelectedGpxFile(null);
                     ctx.setWeatherPoint(null);
                 }
+            }
+
+            if (ctx.currentlyEditTrack.prepareMap) {
+                deleteOldRoute(map);
+                setOpenPanelButtons(true);
             }
 
             if (ctx.currentlyEditTrack.deleteTrack) {

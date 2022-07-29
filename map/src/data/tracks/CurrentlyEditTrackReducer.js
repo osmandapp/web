@@ -7,6 +7,7 @@ export default function CurrentlyEditTrackReducer(state, action) {
         case 'startDraw': {
             return {
                 ...state,
+                prepareMap: false,
                 startDraw: true,
             };
         }
@@ -19,14 +20,14 @@ export default function CurrentlyEditTrackReducer(state, action) {
         case 'start': {
             return {
                 ...state,
-                createTrack: false,
                 newRouteLayer: action.newRouteLayer,
             };
         }
         case 'createTrack': {
             return {
                 ...state,
-                ...new CurrentlyEditTrack().getState()
+                ...new CurrentlyEditTrack().getState(),
+                prepareMap: true
             };
         }
         case 'click': {
@@ -56,7 +57,8 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 trackName: action.track.name,
                 deleted: false,
                 pointsList: action.pointsList,
-                newRouteLayer: action.routeLayer
+                newRouteLayer: action.routeLayer,
+                prepareMap: false
             };
         }
         case 'clean': {

@@ -102,27 +102,25 @@ export default function LocalTrackGroup() {
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
             //create new edit track
-            if (ctx.createNewTrack) {
+            if (ctx.currentlyEditTrack.prepareMap) {
                 setIndexTrack(-1);
-                let track = structuredClone(ctx.currentlyEditTrack.pointsList);
-                ctx.createdTracks.push(new CreatedTrack(getTrackName(), track, false));
+                ctx.createdTracks.forEach(function (track) {
+                    track.selected = false;
+                })
+                ctx.createdTracks.push(new CreatedTrack(getTrackName(), [], false));
                 ctx.setCreatedTracks([...ctx.createdTracks]);
-                ctx.setCreateNewTrack(false);
             } else {
-                if (prevIndexTrack !== indexTrack || prevIndexTrack === -1) {
-                    //choice edit track from menu
-                    if (indexTrack !== -1) {
-                        if (ctx.createdTracks[indexTrack]) {
-                            ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-                            setPrevIndexTrack(indexTrack);
-                            ctx.setCreatedTracks([...ctx.createdTracks]);
-                        }
-                    } else {
-                        //update edit track
-                        if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
-                            ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-                            ctx.setCreatedTracks([...ctx.createdTracks]);
-                        }
+                if (indexTrack !== -1) {
+                    if (ctx.createdTracks[indexTrack]) {
+                        ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+                        setPrevIndexTrack(indexTrack);
+                        ctx.setCreatedTracks([...ctx.createdTracks]);
+                    }
+                } else {
+                    //update edit track
+                    if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
+                        ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+                        ctx.setCreatedTracks([...ctx.createdTracks]);
                     }
                 }
             }
@@ -190,7 +188,9 @@ export default function LocalTrackGroup() {
                     </Button>
                 </label>
                 <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                        onClick={() => ctx.setCreateNewTrack(!ctx.createNewTrack)}>
+                        onClick={() => ctx.currentlyEditTrackDispatch({
+                            type: 'createTrack',
+                        })}>
                     Create
                 </Button>
             </MenuItem>

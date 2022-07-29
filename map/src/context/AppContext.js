@@ -352,7 +352,6 @@ export const AppContextProvider = (props) => {
     });
     const [currentlyEditTrack, currentlyEditTrackDispatch] = useReducer(CurrentlyEditTrackReducer, null);
     const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
-    const [createNewTrack, setCreateNewTrack] = useState(false);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -409,7 +408,6 @@ export const AppContextProvider = (props) => {
         searchCtx, setSearchCtx,
         favorites, setFavorites,
         currentlyEditTrack, currentlyEditTrackDispatch,
-        createNewTrack, setCreateNewTrack,
         createdTracks, setCreatedTracks
 
     }}>

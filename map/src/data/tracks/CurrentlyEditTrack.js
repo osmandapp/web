@@ -7,7 +7,8 @@ export default class CurrentlyEditTrack {
         distance: 0,
         startDraw: false,
         deleteTrack: false,
-        deletePoint: -1
+        deletePoint: -1,
+        prepareMap: false
     };
 
     getState() {
