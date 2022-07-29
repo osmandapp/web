@@ -11,7 +11,7 @@ import {
 import AppContext from "../../../context/AppContext"
 
 
-async function displayWeather(setWeatherPoint) {
+async function displayWeather(ctx, setWeatherPoint) {
     let lat = 0;
     let lon = 0;
     if (window.location.hash) {
@@ -37,6 +37,7 @@ async function displayWeather(setWeatherPoint) {
         data.week = await responseWeek.json();
     }
     setWeatherPoint(data);
+    ctx.setContextMenuObjectType('weather_point');
 }
 
 function formatWeatherDate(weatherDateObj) {
@@ -131,7 +132,7 @@ export default function Weather() {
             </MenuItem>
             <MenuItem>
                 <Button variant="contained" component="span" sx={{ ml: 3 }}
-                    onClick={() => displayWeather(ctx.setWeatherPoint)}>
+                    onClick={() => displayWeather(ctx, ctx.setWeatherPoint)}>
                     Weather Forecast
                 </Button>
             </MenuItem>

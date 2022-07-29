@@ -20,7 +20,6 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
     const classes = useStyles();
 
     const ctx = useContext(AppContext);
-    const map = useMap();
 
     const divContainer = useRef(null);
 

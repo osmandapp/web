@@ -15,6 +15,9 @@ export default function EditTrackItem({index, setIndexTrack, track}) {
             ctx.createdTracks.forEach(function (track, i) {
                 track.selected = i === index;
             })
+            ctx.createdTracks.forEach(function (track) {
+                track.isNew = false;
+            })
             setIndexTrack(index);
         }
         ctx.setCreatedTracks([...ctx.createdTracks]);

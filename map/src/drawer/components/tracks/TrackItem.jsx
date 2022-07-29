@@ -55,13 +55,11 @@ export default function TrackItem({file}) {
             newGpxFiles[item.name].url = null;
             ctx.setGpxFiles(newGpxFiles);
             if (ctx.selectedGpxFile?.name === item.name) {
-                ctx.setSelectedGpxFile(null);
-                if (ctx.mapMarkerListener) {
-                    ctx.mapMarkerListener(null, null);
-                }
+                ctx.setContextMenuObjectType(null);
             }
             updateTextInfo(newGpxFiles, ctx);
         } else {
+            ctx.setContextMenuObjectType('selected_track');
             newGpxFiles[item.name] = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
             ctx.setGpxFiles(newGpxFiles);
             if (item.details?.analysis) {
@@ -99,15 +97,13 @@ export default function TrackItem({file}) {
             // delete newGpxFiles[item.name];
             newGpxFiles[item.name].url = null;
             if (ctx.selectedGpxFile?.name === item.name) {
-                ctx.setSelectedGpxFile(null);
-                if (ctx.mapMarkerListener) {
-                    ctx.mapMarkerListener(null, null);
-                }
+                ctx.setContextMenuObjectType(null);
             }
         } else {
             newGpxFiles[item.name].url = item.localContent;
             newGpxFiles[item.name].urlopts = {credentials: 'include'}
             ctx.setSelectedGpxFile(item);
+            ctx.setContextMenuObjectType('selected_track');
         }
         ctx.setGpxFiles(newGpxFiles);
     }

@@ -37,7 +37,6 @@ export default function LocalTrackGroup() {
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [indexTrack, setIndexTrack] = useState(-1);
-    const [prevIndexTrack, setPrevIndexTrack] = useState(-1);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
@@ -101,32 +100,44 @@ export default function LocalTrackGroup() {
 
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
-            //create new edit track
             if (ctx.currentlyEditTrack.prepareMap) {
-                setIndexTrack(-1);
-                ctx.createdTracks.forEach(function (track) {
-                    track.selected = false;
-                })
-                ctx.createdTracks.push(new CreatedTrack(getTrackName(), [], false));
-                ctx.setCreatedTracks([...ctx.createdTracks]);
+                createNewEditTrack();
             } else {
                 if (indexTrack !== -1) {
-                    if (ctx.createdTracks[indexTrack]) {
-                        ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-                        setPrevIndexTrack(indexTrack);
-                        ctx.setCreatedTracks([...ctx.createdTracks]);
-                    }
+                    updateSelectedEditTrack();
                 } else {
-                    //update edit track
-                    if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
-                        ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-                        ctx.setCreatedTracks([...ctx.createdTracks]);
-                    }
+                    updateNewEditTrack();
                 }
             }
             saveToLocalStorage(ctx.createdTracks);
         }
     }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
+
+    function createNewEditTrack() {
+        setIndexTrack(-1);
+        ctx.createdTracks.forEach(function (track) {
+            track.selected = false;
+        })
+        if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
+            ctx.createdTracks[ctx.createdTracks.length - 1].isNew = false;
+        }
+        ctx.createdTracks.push(new CreatedTrack(getTrackName(), [], false, true));
+        ctx.setCreatedTracks([...ctx.createdTracks]);
+    }
+
+    function updateSelectedEditTrack() {
+        if (ctx.createdTracks[indexTrack]) {
+            ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+            ctx.setCreatedTracks([...ctx.createdTracks]);
+        }
+    }
+
+    function updateNewEditTrack() {
+        if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
+            ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
+            ctx.setCreatedTracks([...ctx.createdTracks]);
+        }
+    }
 
     function saveToLocalStorage(tracks) {
         let res = structuredClone(tracks);

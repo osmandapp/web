@@ -352,6 +352,40 @@ export const AppContextProvider = (props) => {
     });
     const [currentlyEditTrack, currentlyEditTrackDispatch] = useReducer(CurrentlyEditTrackReducer, null);
     const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
+    const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
+
+    useEffect(() => {
+        if (contextMenuObjectType === 'selected_track') {
+            hideEditTrack();
+            setWeatherPoint(null);
+        }
+        if (contextMenuObjectType === 'weather_point') {
+            hideTrack();
+            hideEditTrack();
+        }
+        if (contextMenuObjectType === 'create_track') {
+            hideTrack();
+            setWeatherPoint(null);
+        }
+    }, [contextMenuObjectType, setContextMenuObjectType]);
+
+    function hideTrack() {
+        if (selectedGpxFile && selectedGpxFile.url) {
+            let newGpxFiles = Object.assign({}, gpxFiles)
+            newGpxFiles[selectedGpxFile.name].url = null;
+            setGpxFiles(newGpxFiles);
+            setSelectedGpxFile(null);
+        }
+    }
+
+    function hideEditTrack() {
+        if (currentlyEditTrack) {
+            currentlyEditTrackDispatch({
+                type: 'deleteLayer',
+            })
+        }
+    }
+
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -408,7 +442,8 @@ export const AppContextProvider = (props) => {
         searchCtx, setSearchCtx,
         favorites, setFavorites,
         currentlyEditTrack, currentlyEditTrackDispatch,
-        createdTracks, setCreatedTracks
+        createdTracks, setCreatedTracks,
+        contextMenuObjectType, setContextMenuObjectType
 
     }}>
         {props.children}

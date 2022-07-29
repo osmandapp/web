@@ -35,7 +35,8 @@ export default function CurrentlyEditTrackReducer(state, action) {
             return {
                 ...state,
                 pointsList: getPointList(action.e),
-                distance: getDistance()
+                distance: getDistance(),
+                deleteLayer: false
             };
         }
         case 'deletedClick': {
@@ -82,6 +83,12 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 ...state,
                 newRouteLayer: action.layer,
                 refreshLayer: false
+            };
+        }
+        case 'deleteLayer': {
+            return {
+                ...state,
+                deleteLayer: true
             };
         }
         case 'delete': {

@@ -11,18 +11,36 @@ export default function PlanRouteLayer() {
 
     const [openSaveDialog, setOpenSaveDialog] = useState(false);
     const [openPanelButtons, setOpenPanelButtons] = useState(false);
+    const [wasSelected, setWasSelected] = useState(false);
+    const [deletedEditTrack, setDeletedEditTrack] = useState(null);
 
     useEffect(() => {
-        let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
-        if (isNewSelectedTrack(selectedTrack)) {
-            setOpenPanelButtons(true);
-            if (selectedTrack.points && selectedTrack.points.length > 0) {
+        if (!ctx.createdTracks.find(t => t.isNew === true)) {
+            let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
+            if (isNewSelectedTrack(selectedTrack) || (selectedTrack && !wasSelected)) {
+                setWasSelected(true);
+                setOpenPanelButtons(true);
+                if (selectedTrack.points && selectedTrack.points.length > 0) {
+                    deleteOldRoute(map);
+                    createNewCurrentlyEditTrack();
+                    showTrackWithPointsOnMap(selectedTrack);
+                }
+            }
+
+            if (selectedTrack === undefined) {
                 deleteOldRoute(map);
-                createNewCurrentlyEditTrack();
-                showTrackWithPointsOnMap(selectedTrack);
+                setWasSelected(false);
             }
         }
     }, [ctx.createdTracks, ctx.setCreatedTracks]);
+
+    useEffect(() => {
+        if (deletedEditTrack) {
+            ctx.createdTracks.splice(ctx.createdTracks.indexOf(deletedEditTrack), 1);
+            ctx.setCreatedTracks([...ctx.createdTracks]);
+        }
+
+    }, [deletedEditTrack, setDeletedEditTrack]);
 
     useEffect(() => {
         if (ctx.currentlyEditTrack) {
@@ -50,9 +68,16 @@ export default function PlanRouteLayer() {
             checkPrepareMap();
             checkDeleteTrack();
             checkRefreshLayer();
+            checkDeleteLayer();
         }
 
     }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
+
+    function checkDeleteLayer() {
+        if (ctx.currentlyEditTrack.deleteLayer) {
+            deleteOldRoute(map);
+        }
+    }
 
     function checkStartDraw() {
         if (ctx.currentlyEditTrack.startDraw) {
@@ -60,8 +85,7 @@ export default function PlanRouteLayer() {
                 type: 'start',
                 newRouteLayer: map.editTools.startPolyline(),
             })
-            ctx.setSelectedGpxFile(null);
-            ctx.setWeatherPoint(null);
+            ctx.setContextMenuObjectType('create_track');
         }
     }
 
@@ -76,14 +100,13 @@ export default function PlanRouteLayer() {
         if (ctx.currentlyEditTrack.deleteTrack) {
             let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
             if (selectedTrack) {
-                ctx.createdTracks.splice(ctx.createdTracks.indexOf(selectedTrack), 1);
-                ctx.setCreatedTracks([...ctx.createdTracks]);
                 if (ctx.currentlyEditTrack.newRouteLayer && map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
                     map.removeLayer(ctx.currentlyEditTrack.newRouteLayer);
                     ctx.currentlyEditTrackDispatch({
                         type: 'delete',
                     })
                 }
+                setDeletedEditTrack(selectedTrack);
             }
         }
     }

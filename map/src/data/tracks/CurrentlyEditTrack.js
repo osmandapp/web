@@ -8,6 +8,7 @@ export default class CurrentlyEditTrack {
         startDraw: false,
         deleteTrack: false,
         refreshLayer: false,
+        deleteLayer: false,
         prepareMap: false
     };
 

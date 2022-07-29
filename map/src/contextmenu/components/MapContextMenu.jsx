@@ -48,26 +48,19 @@ export default function MapContextMenu() {
     });
 
     function definitionTabs() {
-        if (ctx.selectedGpxFile?.url) {
+        if (ctx.contextMenuObjectType === 'selected_track') {
             return new TrackTabList().create(ctx, graphWidth);
         }
-        if (ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer && ctx.currentlyEditTrack.newRouteLayer._latlngs) {
+        if (ctx.contextMenuObjectType === 'create_track' && ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer && ctx.currentlyEditTrack.newRouteLayer._latlngs) {
             return new EditTrackTabList().create(ctx, graphWidth);
         }
-        if (ctx.weatherPoint?.day && ctx.weatherPoint?.week) {
+        if (ctx.contextMenuObjectType === 'weather_point' && ctx.weatherPoint) {
             return new WeatherTabList().create(ctx, graphWidth);
         }
     }
 
     function closeContextMenu() {
-        ctx.setSelectedGpxFile(null);
-        ctx.setWeatherPoint(null);
-        ctx.currentlyEditTrackDispatch({
-            type: 'clean',
-        })
-        if (ctx.mapMarkerListener) {
-            ctx.mapMarkerListener();
-        }
+        ctx.setContextMenuObjectType(null);
     }
 
     return (
