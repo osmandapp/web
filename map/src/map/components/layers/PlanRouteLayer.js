@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {useMap} from "react-leaflet";
 import PanelButtons from "../PanelButtons";
-import Utils from "../../../util/Utils";
 import SaveRouteDialog from "../SaveRouteDialog";
 
 
@@ -90,12 +89,14 @@ export default function PlanRouteLayer() {
     }
 
     function checkRefreshLayer() {
-        deleteOldRoute(map);
-        ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
-        ctx.currentlyEditTrackDispatch({
-            type: 'refreshLayer',
-            layer: ctx.currentlyEditTrack.newRouteLayer
-        })
+        if (ctx.currentlyEditTrack.refreshLayer) {
+            deleteOldRoute(map);
+            ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
+            ctx.currentlyEditTrackDispatch({
+                type: 'refreshLayer',
+                layer: ctx.currentlyEditTrack.newRouteLayer
+            })
+        }
     }
 
     function isNewSelectedTrack(selectedTrack) {
