@@ -48,20 +48,20 @@ Configure screen is a menu that allows you to configure the widgets that will be
 
 #### Right/Left panel widgets  
  - [Route maneuvers](../widgets/nav-widgets.md#next-turns) - shows info about next maneuvers and distance to it.
- - [Navigation point](../widgets/nav-widgets#navigation-points) - shows the distance remaining to the last destination point or first intermediate point, the arrival time or the travel time for the calculated route.
- - [Map markers](../map/point-layers-on-map#markers) - show special points marked as flags on the map.
- - [Bearing](../widgets/nav-widgets.md#bearing) - shows relative, magnetic or true bearing.
- - [Current Speed](../widgets/info-widgets.md#speed) - shows your current speed detected by GPS-sensor.
+ - [Navigation point](../widgets/nav-widgets#navigation-points) (4 widgets inside) - shows the distance remaining to the last destination point or first intermediate point, the arrival time or the travel time for the calculated route. Subwidgets: *Distance to destination*, *Distance to intermediate*, *Time to intermediate*, *Time to destination*.
+ - [Map markers](../map/point-layers-on-map#markers) (2 widgets inside) - show special points marked as flags on the map. Subwidgets: *First marker*, *Second marker*.
+ - [Bearing](../widgets/nav-widgets.md#bearing) (3 widgets inside) - shows relative, magnetic or true bearing.
+ - [Current Speed](../widgets/info-widgets.md#speed) - shows your current speed detected by GPS-sensor. Subwidgets: *Relative bearing*, *Magnetic bearing*, *True bearing*.
  - [Average speed](../widgets/info-widgets#average-speed-widget) - shows what your average speed is.
  - [Speed limit](../widgets/nav-widgets.md#speed-limit) - shows speed limit for the current following road.
  - [Altitude of current location](../widgets/info-widgets.md#altitude) - shows the height above sea level of current geolocation.
  - [GPS info](../widgets/info-widgets.md#gps-info-android) (Android) - shows a number of satellites that device detects and uses at that moment.
- - [* Trip recording](../widgets/info-widgets#-trip-recording-widgets) - provides quick access to start / stop track recording.
+ - [* Trip recording](../widgets/info-widgets#-trip-recording-widgets) (4 widgets inside) - provides quick access to start / stop track recording. Subwidgets: *Distance*, *Duration*, *Uphill*, *Downhill*.
  - [Current time](../widgets/info-widgets.md#current-time) - shows current time from your device.
  - [Battery level](../widgets/info-widgets.md#battery-level) - shows battery level of your device.
  - [Radius ruler](../widgets/radius-ruler.md) - shows distance between users location and inner point of the 'Radius-ruler' tool distance-circles on the map.
  - [* FPS debug info](../widgets/info-widgets.md#-fps-info-android) (Android) - investigate how fast map & map elements are showed & refreshed.
- - [Audio/video notes](../widgets/info-widgets#-audio-video-notes-widget) - provides quick access to start / stop taking a recording (audio / video or photo).
+ - [Audio/video notes](../widgets/info-widgets#-audio-video-notes-widget) (4 widgets inside) - provides quick access to start / stop taking a recording (audio / video or photo). Subwidgets: *On request*, *Record audio*, *Take a photo*.
  - [* Parking](../widgets/info-widgets.md#-parking-widget) - shows distance from the current position to the parking place.
  - [* Mapillary](../widgets/info-widgets.md#-mapillary-widget) - provides quick access to Mapillary app to add Street-Level-Imagery.  
  **Transparent widgets** - makes transparent the background of the navigation and information widgets.
@@ -80,7 +80,18 @@ Configure screen is a menu that allows you to configure the widgets that will be
 
 ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
 
-  
+#### Pages for widgets
+
+Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into **Pages**. To find options, follow these steps: *OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → Add pages*.
+
+![Widget page](@site/static/img/widgets/widget_page.png) ![Widget page](@site/static/img/widgets/widget_page_1.png)
+ 
+
+#### Duplicates for widgets
+
+You can show **Duplicates** for the right and left panels at the same time, as well as for each page of widgets. To find options, follow these steps: *OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → "+" chosen widget*.
+
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)
 
 
 </TabItem>
@@ -117,7 +128,6 @@ Configure screen is a menu that allows you to configure the widgets that will be
 ![Configure screen menu](@site/static/img/widgets/quick_act_ios.png)  
 
 
-
 Most of the widgets could be configured as:
 * Show – widget is visible on the map screen
 * Hide – widget is hidden from the map screen
@@ -127,8 +137,6 @@ Most of the widgets could be configured as:
 </TabItem>
 
 </Tabs>  
-
-
 
 
 ### Buttoms and Remaining elements

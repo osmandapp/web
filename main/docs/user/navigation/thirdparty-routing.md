@@ -22,19 +22,19 @@ BRouter routing doesn't exist for iOS version.
 
 :::
 
-## What's in
+## Overview
 
-OsmAnd uses its own algorithm and resources for routing. There are many parameters for routing in our [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) file. You can modify the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) and add/modify specific details for a/your Navigation type.
+OsmAnd uses its own algorithm and resources for routing. There are many parameters for routing in our [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) file. You can modify the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) and add/modify specific details for your type of Navigation.
 
-But there is also a Third-party routing "engine" which you can use for OsmAnd. It's [BRouter](http://brouter.de/). BRouter uses precalculation routes. It means that you can build your route very quickly offline.
+But there is a third-party routing "engine" that you can use for OsmAnd. This is [BRouter](http://brouter.de/). BRouter uses pre-calculated routes. This means that you can very quickly build a route offline.
 
-How to install and use BRouter can be read in [BRouter readme.txt](http://brouter.de/brouter/readme.txt).
+You can read how to install and use BRouter in the [BRouter readme.txt](http://brouter.de/brouter/readme.txt).
 
 ## How to use
 
 _Below you can read the tutorial on how BRouter is installed and included into OsmAnd routing._
 
-1. You should [install BRouter.apk](https://play.google.com/store/apps/details?id=btools.routingapp) in your device.
+1. You should [install BRouter.app](https://play.google.com/store/apps/details?id=btools.routingapp) in your device.
 2. You should open BRouter and select a routing profile. You can choose a routing profile for your method of travelling (bicycle, moped,car, etc.). To give you more info about choosing the best routing profile for you, you can find more info about each profile  [here](http://brouter.de/brouter/profiles2/). Or you can try to use a routing profile in [BRouter-online](http://brouter.de/brouter-web/).
 
 
