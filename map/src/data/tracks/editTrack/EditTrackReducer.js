@@ -23,6 +23,7 @@ export default function EditTrackReducer(state, action) {
             return {
                 ...state,
                 stopDraw: true,
+                showTrack: false
             };
         }
         case EditTrackAction.createEditTrack: {
@@ -30,7 +31,8 @@ export default function EditTrackReducer(state, action) {
                 ...state,
                 ...new EditTrack().getState(),
                 prepareMap: true,
-                stopDraw: false
+                stopDraw: false,
+                showTrack: false
             };
         }
         case EditTrackAction.refreshLayer: {
@@ -48,7 +50,9 @@ export default function EditTrackReducer(state, action) {
                 pointsList: Utils.getPointsDist(action.track.points),
                 newRouteLayer: action.routeLayer,
                 prepareMap: false,
-                stopDraw: false
+                stopDraw: false,
+                showTrack: true,
+                deleteLayer: false
             };
         }
         case EditTrackAction.click: {

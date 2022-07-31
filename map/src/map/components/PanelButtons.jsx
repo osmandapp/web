@@ -1,6 +1,6 @@
 import {ButtonGroup, IconButton, Paper} from "@mui/material";
-import {Close, Create, Delete, Download} from "@mui/icons-material";
-import React, {useContext, useEffect, useRef} from "react";
+import {AutoGraph, Close, Create, Delete, Download} from "@mui/icons-material";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import L from "leaflet";
 import AppContext from "../../context/AppContext";
@@ -15,13 +15,14 @@ const useStyles = makeStyles({
     }
 })
 
-const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
+const PanelButtons = ({setOpenSaveDialog, setShowContextMenu}) => {
 
     const classes = useStyles();
 
     const ctx = useContext(AppContext);
 
     const divContainer = useRef(null);
+    const [openPanelButtons, setOpenPanelButtons] = useState(false);
 
     useEffect(() => {
         if (divContainer.current) {
@@ -30,7 +31,18 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
         }
     });
 
-    return (
+    useEffect(() => {
+        if (ctx.currentlyEditTrack) {
+            if (ctx.currentlyEditTrack.prepareMap || ctx.currentlyEditTrack.showTrack || ctx.currentlyEditTrack.startDraw){
+                setOpenPanelButtons(true);
+            } else if (ctx.currentlyEditTrack.stopDraw || !ctx.currentlyEditTrack.newRouteLayer){
+                setOpenPanelButtons(false);
+            }
+        }
+
+    }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
+
+    return (openPanelButtons &&
         <div className={`${classes.buttongroup} ${'leaflet-bottom'}`} ref={divContainer}>
             <div className="leaflet-control leaflet-bar padding-container">
                 <Paper>
@@ -68,6 +80,13 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                         >
                             <Delete fontSize="small"/>
                         </IconButton>
+                        { ctx.contextMenuObjectType && <IconButton
+                            variant="contained"
+                            type="button"
+                            onClick={() => {setShowContextMenu(true)}}
+                        >
+                            <AutoGraph fontSize="small"/>
+                        </IconButton>}
                         <IconButton
                             variant="contained"
                             type="button"

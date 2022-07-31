@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState, useCallback } from 'rea
 import { Marker, GeoJSON, useMap } from "react-leaflet";
 import L from 'leaflet';
 import MarkerIcon from '../MarkerIcon.js'
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function dist(a1, a2) {

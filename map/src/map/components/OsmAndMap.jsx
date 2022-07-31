@@ -3,17 +3,17 @@ import {makeStyles} from "@material-ui/core/styles";
 import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl} from "react-leaflet";
 import AppContext from "../../context/AppContext";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu"
-import RouteLayer from "./layers/RouteLayer"
-import WeatherLayer from "./layers/WeatherLayer"
-import MarkerIcon from './MarkerIcon.js'
+import RouteLayer from "../layers/RouteLayer"
+import WeatherLayer from "../layers/WeatherLayer"
+import MarkerIcon from '../MarkerIcon.js'
 import '../../util/gpx.js';
 import 'leaflet-hash';
 
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
-import FavoriteLayer from "./layers/FavoriteLayer";
-import TrackLayer from "./layers/TrackLayer";
-import PlanRouteLayer from "./layers/PlanRouteLayer";
+import FavoriteLayer from "../layers/FavoriteLayer";
+import TrackLayer from "../layers/TrackLayer";
+import PlanRouteLayer from "../layers/PlanRouteLayer";
 import '../../util/Leaflet.Editable.js';
 
 

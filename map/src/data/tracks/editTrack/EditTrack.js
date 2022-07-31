@@ -10,7 +10,8 @@ export default class EditTrack {
         deleteTrack: false,
         refreshLayer: false,
         deleteLayer: false,
-        prepareMap: false
+        prepareMap: false,
+        showTrack: false
     };
 
     getState() {

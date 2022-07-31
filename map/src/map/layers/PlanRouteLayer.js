@@ -1,17 +1,13 @@
 import React, {useContext, useEffect, useState} from "react";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
-import PanelButtons from "../PanelButtons";
-import SaveRouteDialog from "../SaveRouteDialog";
-import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
+import EditTrackAction from "../../data/tracks/editTrack/EditTrackAction";
 
 
 export default function PlanRouteLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
-    const [openSaveDialog, setOpenSaveDialog] = useState(false);
-    const [openPanelButtons, setOpenPanelButtons] = useState(false);
     const [wasSelected, setWasSelected] = useState(false);
     const [deletedEditTrack, setDeletedEditTrack] = useState(null);
 
@@ -20,7 +16,6 @@ export default function PlanRouteLayer() {
             let selectedTrack = ctx.createdTracks.find(t => t.selected === true);
             if (isNewSelectedTrack(selectedTrack) || (selectedTrack && !wasSelected)) {
                 setWasSelected(true);
-                setOpenPanelButtons(true);
                 if (selectedTrack.points && selectedTrack.points.length > 0) {
                     deleteOldRoute(map);
                     createNewCurrentlyEditTrack();
@@ -94,7 +89,6 @@ export default function PlanRouteLayer() {
     function checkStopDraw() {
         if (ctx.currentlyEditTrack.stopDraw) {
             deleteOldRoute(map);
-            setOpenPanelButtons(false);
             ctx.setContextMenuObjectType(null);
         }
     }
@@ -102,7 +96,6 @@ export default function PlanRouteLayer() {
     function checkPrepareMap() {
         if (ctx.currentlyEditTrack.prepareMap) {
             deleteOldRoute(map);
-            setOpenPanelButtons(true);
         }
     }
 
@@ -143,7 +136,7 @@ export default function PlanRouteLayer() {
         });
         let newRouteLayer = map.editTools.addPolylineByPoints(newPoints);
         map.fitBounds(newRouteLayer && newRouteLayer._bounds);
-
+        ctx.setContextMenuObjectType('create_track');
         ctx.currentlyEditTrackDispatch({
             type: EditTrackAction.showTrack,
             track: selectedTrack,
@@ -171,10 +164,4 @@ export default function PlanRouteLayer() {
             map.removeLayer(item);
         });
     }
-
-    return (<>
-        <SaveRouteDialog open={openSaveDialog} setOpen={setOpenSaveDialog}/>
-        {openPanelButtons &&
-            <PanelButtons setOpenSaveDialog={setOpenSaveDialog} setOpenPanelButtons={setOpenPanelButtons}/>}
-    </>);
 }

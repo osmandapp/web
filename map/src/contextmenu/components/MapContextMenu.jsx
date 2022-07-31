@@ -1,18 +1,15 @@
-import {
-    Paper, Tab, AppBar, Button,
-} from "@mui/material";
+import {Paper, AppBar, Button} from "@mui/material";
 import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useRef, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import L, {Layer} from 'leaflet';
-
-import {
-    Close
-} from '@mui/icons-material';
+import L from 'leaflet';
+import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../data/TrackTabList";
 import CreatedTrackTabList from "../data/CreatedTrackTabList";
 import WeatherTabList from "../data/WeatherTabList";
+import SaveRouteDialog from "../../map/components/SaveRouteDialog";
+import PanelButtons from "../../map/components/PanelButtons";
 
 const useStyles = makeStyles({
     menu: {
@@ -31,6 +28,8 @@ const useStyles = makeStyles({
 export default function MapContextMenu() {
     const ctx = useContext(AppContext);
     const classes = useStyles();
+    const [showContextMenu, setShowContextMenu] = useState(false);
+    const [openSaveDialog, setOpenSaveDialog] = useState(false);
 
     const graphWidth = 600;
     let tabsObj = definitionTabs();
@@ -59,12 +58,19 @@ export default function MapContextMenu() {
         }
     }
 
+    useEffect(() => {
+        if (ctx.contextMenuObjectType) {
+            setShowContextMenu(true);
+        }
+    },[ctx.contextMenuObjectType, ctx.setContextMenuObjectType]);
+
+
     function closeContextMenu() {
-        ctx.setContextMenuObjectType(null);
+        setShowContextMenu(false);
     }
 
-    return (
-        <div className={`${classes.centerStyle} ${'leaflet-bottom'}`} ref={divContainer}>
+    return (<div>
+        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`} ref={divContainer}>
             <div className="leaflet-control leaflet-bar padding-container">
                 {tabList.length > 0 &&
                     <Paper>
@@ -86,6 +92,8 @@ export default function MapContextMenu() {
                     </Paper>
                 }
             </div>
-        </div>
-    );
+        </div>}
+        <SaveRouteDialog open={openSaveDialog} setOpen={setOpenSaveDialog}/>
+        <PanelButtons setOpenSaveDialog={setOpenSaveDialog} setShowContextMenu={setShowContextMenu}/>
+        </div>);
 }

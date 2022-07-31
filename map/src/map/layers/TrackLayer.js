@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import L from "leaflet";
 import MarkerIcon from "../MarkerIcon";
-import AppContext from "../../../context/AppContext";
-import Utils from "../../../util/Utils";
+import AppContext from "../../context/AppContext";
+import Utils from "../../util/Utils";
 import {useMap} from "react-leaflet";
 
 const markerOptions = {

@@ -1,8 +1,8 @@
 import {useContext, useEffect, useState} from 'react';
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import L from "leaflet";
-import '../../../util/gpx.js';
-import Utils from "../../../util/Utils";
+import '../../util/gpx.js';
+import Utils from "../../util/Utils";
 import {useMap} from "react-leaflet";
 
 const FavoriteLayer = () => {

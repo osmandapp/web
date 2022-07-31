@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useMap } from "react-leaflet";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import {TileLayer, LayersControl} from "react-leaflet";
 
 function getWeatherTime(weatherDateObj) {
