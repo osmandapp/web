@@ -10,6 +10,7 @@ import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
 import CreatedTrack from "../../../data/tracks/CreatedTrack";
 import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
+import DrawerUtils from "../../DrawerUtils";
 
 const useStyles = makeStyles({
     button: {
@@ -109,15 +110,16 @@ export default function LocalTrackGroup() {
                     updateNewEditTrack();
                 }
             }
+            if (ctx.currentlyEditTrack.stopDraw) {
+                DrawerUtils.resetAllSelectedTracks(ctx.createdTracks);
+            }
             saveToLocalStorage(ctx.createdTracks);
         }
     }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
 
     function createNewEditTrack() {
         setIndexTrack(-1);
-        ctx.createdTracks.forEach(function (track) {
-            track.selected = false;
-        })
+        DrawerUtils.resetAllSelectedTracks(ctx.createdTracks);
         if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
             ctx.createdTracks[ctx.createdTracks.length - 1].isNew = false;
         }

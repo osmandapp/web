@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
+import DrawerUtils from "../../DrawerUtils";
 
 export default function CreatedTrackItem({index, setIndexTrack, track}) {
 
@@ -8,13 +9,9 @@ export default function CreatedTrackItem({index, setIndexTrack, track}) {
 
     function enableLayer(item, ctx, visible) {
         if (!visible) {
-            ctx.createdTracks.forEach(function (track) {
-                track.selected = false;
-            })
+            DrawerUtils.resetAllSelectedTracks(ctx.createdTracks);
         } else {
-            ctx.createdTracks.forEach(function (track, i) {
-                track.selected = i === index;
-            })
+            DrawerUtils.getTrackByIndex(ctx.createdTracks, index);
             ctx.createdTracks.forEach(function (track) {
                 track.isNew = false;
             })
@@ -25,9 +22,7 @@ export default function CreatedTrackItem({index, setIndexTrack, track}) {
 
     return <div>
         <MenuItem key={'track._leaflet_id' + index} onClick={() => {
-            ctx.createdTracks.forEach(function (track, i) {
-                track.selected = i === index;
-            })
+            DrawerUtils.getTrackByIndex(ctx.createdTracks, index);
             ctx.setCreatedTracks([...ctx.createdTracks]);
             setIndexTrack(index);
         }}>
