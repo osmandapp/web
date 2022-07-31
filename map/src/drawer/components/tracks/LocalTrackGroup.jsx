@@ -10,7 +10,8 @@ import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
 import CreatedTrack from "../../../data/tracks/CreatedTrack";
 import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
-import DrawerUtils from "../../DrawerUtils";
+import CreatedTrackUtils from "../../util/CreatedTrackUtils";
+import LocalTrackUtils from "../../util/LocalTrackUtils";
 
 const useStyles = makeStyles({
     button: {
@@ -65,8 +66,7 @@ export default function LocalTrackGroup() {
 
     }
 
-    let localGpxFiles = (!ctx.gpxFiles ? [] :
-        Object.values(ctx.gpxFiles).filter((item) => item.local === true));
+    let localGpxFiles = LocalTrackUtils.getTrackList(ctx.gpxFiles);
 
     const clearLocalGpx = (ctx) => async (e) => {
         const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/clear`, {
@@ -111,7 +111,7 @@ export default function LocalTrackGroup() {
                 }
             }
             if (ctx.currentlyEditTrack.stopDraw) {
-                DrawerUtils.resetAllSelectedTracks(ctx.createdTracks);
+                CreatedTrackUtils.resetAllSelectedTracks(ctx.createdTracks);
             }
             saveToLocalStorage(ctx.createdTracks);
         }
@@ -119,7 +119,7 @@ export default function LocalTrackGroup() {
 
     function createNewEditTrack() {
         setIndexTrack(-1);
-        DrawerUtils.resetAllSelectedTracks(ctx.createdTracks);
+        CreatedTrackUtils.resetAllSelectedTracks(ctx.createdTracks);
         if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
             ctx.createdTracks[ctx.createdTracks.length - 1].isNew = false;
         }

@@ -11,9 +11,9 @@ function getTrackByIndex(tracks, index) {
     })
 }
 
-const DrawerUtils = {
+const CreatedTrackUtils = {
     resetAllSelectedTracks,
     getTrackByIndex
 };
 
-export default DrawerUtils;
+export default CreatedTrackUtils;

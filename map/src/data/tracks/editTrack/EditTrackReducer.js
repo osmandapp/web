@@ -26,7 +26,6 @@ export default function EditTrackReducer(state, action) {
             };
         }
         case EditTrackAction.createEditTrack: {
-            console.log(true)
             return {
                 ...state,
                 ...new EditTrack().getState(),

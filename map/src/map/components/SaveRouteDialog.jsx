@@ -8,20 +8,33 @@ import {BaseBuilder, buildGPX} from "gpx-builder";
 import {Metadata} from "gpx-builder/dist/builder/BaseBuilder/models";
 import Utils from "../../util/Utils";
 import AppContext from "../../context/AppContext";
+import LocalTrackUtils from "../../drawer/util/LocalTrackUtils";
 
 export default function SaveRouteDialog({open, setOpen}) {
 
     const ctx = useContext(AppContext);
     const valueRef = useRef('');
     const [newFileName, setNewFileName] = useState('');
+    const [nameError, setNameError] = useState(null);
 
     const handleClose = () => {
         setOpen(false);
     };
 
     const handleSave = (handleClose) => {
-        setNewFileName(...valueRef.current.value);
-        handleClose();
+        let name = valueRef.current.value;
+        let localGpxFiles = LocalTrackUtils.getTrackList(ctx.gpxFiles);
+        let alreadyExists;
+        localGpxFiles.forEach(file => {
+            if (file.name.replace(/local:/g,'').replace(/.gpx/g,'') === name) {
+                setNameError("This filename already exists");
+                alreadyExists = true;
+            }
+        })
+        if (!alreadyExists) {
+            setNewFileName(valueRef.current.value);
+            handleClose();
+        }
     };
 
     //create gpx
@@ -58,6 +71,8 @@ export default function SaveRouteDialog({open, setOpen}) {
                     type="name"
                     fullWidth
                     variant="standard"
+                    error={nameError !== null}
+                    helperText={nameError ? nameError : ''}
                 />
             </DialogContent>
             <DialogActions>
