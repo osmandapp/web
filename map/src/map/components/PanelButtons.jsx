@@ -72,7 +72,9 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             variant="contained"
                             type="button"
                             onClick={() => {
-                                setOpenPanelButtons(false);
+                                ctx.currentlyEditTrackDispatch({
+                                    type: 'stopDraw',
+                                })
                             }}
                         >
                             <Close fontSize="small"/>

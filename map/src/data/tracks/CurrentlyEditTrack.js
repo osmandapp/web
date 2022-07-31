@@ -6,6 +6,7 @@ export default class CurrentlyEditTrack {
         trackName: null,
         distance: 0,
         startDraw: false,
+        stopDraw: false,
         deleteTrack: false,
         refreshLayer: false,
         deleteLayer: false,

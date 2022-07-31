@@ -11,6 +11,12 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 startDraw: true,
             };
         }
+        case 'stopDraw': {
+            return {
+                ...state,
+                stopDraw: true,
+            };
+        }
         case 'deleteTrack': {
             return {
                 ...state,
@@ -28,7 +34,8 @@ export default function CurrentlyEditTrackReducer(state, action) {
             return {
                 ...state,
                 ...new CurrentlyEditTrack().getState(),
-                prepareMap: true
+                prepareMap: true,
+                stopDraw: false
             };
         }
         case 'click': {
@@ -60,7 +67,8 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 deleted: false,
                 pointsList: Utils.getPointsDist(action.track.points),
                 newRouteLayer: action.routeLayer,
-                prepareMap: false
+                prepareMap: false,
+                stopDraw: false
             };
         }
         case 'clean': {

@@ -65,6 +65,7 @@ export default function PlanRouteLayer() {
             });
 
             checkStartDraw();
+            checkStopDraw();
             checkPrepareMap();
             checkDeleteTrack();
             checkRefreshLayer();
@@ -86,6 +87,13 @@ export default function PlanRouteLayer() {
                 newRouteLayer: map.editTools.startPolyline(),
             })
             ctx.setContextMenuObjectType('create_track');
+        }
+    }
+
+    function checkStopDraw() {
+        if (ctx.currentlyEditTrack.stopDraw) {
+            deleteOldRoute(map);
+            setOpenPanelButtons(false);
         }
     }
 
