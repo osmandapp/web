@@ -3,6 +3,7 @@ import AppContext from "../../../context/AppContext";
 import {useMap} from "react-leaflet";
 import PanelButtons from "../PanelButtons";
 import SaveRouteDialog from "../SaveRouteDialog";
+import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
 
 
 export default function PlanRouteLayer() {
@@ -46,21 +47,21 @@ export default function PlanRouteLayer() {
         if (ctx.currentlyEditTrack) {
             map.on("editable:drawing:clicked", e => {
                 ctx.currentlyEditTrackDispatch({
-                    type: 'click',
+                    type: EditTrackAction.click,
                     e: e
                 })
             });
 
             map.on("editable:vertex:deleted", e => {
                 ctx.currentlyEditTrackDispatch({
-                    type: 'deletedClick',
+                    type: EditTrackAction.deletedClick,
                     e: e
                 })
             });
 
             map.on("editable:vertex:dragend", e => {
                 ctx.currentlyEditTrackDispatch({
-                    type: 'dragendClick',
+                    type: EditTrackAction.dragendClick,
                 })
             });
 
@@ -83,7 +84,7 @@ export default function PlanRouteLayer() {
     function checkStartDraw() {
         if (ctx.currentlyEditTrack.startDraw) {
             ctx.currentlyEditTrackDispatch({
-                type: 'start',
+                type: EditTrackAction.startDraw,
                 newRouteLayer: map.editTools.startPolyline(),
             })
             ctx.setContextMenuObjectType('create_track');
@@ -94,6 +95,7 @@ export default function PlanRouteLayer() {
         if (ctx.currentlyEditTrack.stopDraw) {
             deleteOldRoute(map);
             setOpenPanelButtons(false);
+            ctx.setContextMenuObjectType(null);
         }
     }
 
@@ -111,7 +113,7 @@ export default function PlanRouteLayer() {
                 if (ctx.currentlyEditTrack.newRouteLayer && map.hasLayer(ctx.currentlyEditTrack.newRouteLayer)) {
                     map.removeLayer(ctx.currentlyEditTrack.newRouteLayer);
                     ctx.currentlyEditTrackDispatch({
-                        type: 'delete',
+                        type: EditTrackAction.deleteTrack,
                     })
                 }
                 setDeletedEditTrack(selectedTrack);
@@ -124,7 +126,7 @@ export default function PlanRouteLayer() {
             deleteOldRoute(map);
             ctx.currentlyEditTrack.newRouteLayer = map.editTools.addPolylineByPoints(ctx.currentlyEditTrack.pointsList);
             ctx.currentlyEditTrackDispatch({
-                type: 'refreshLayer',
+                type: EditTrackAction.refreshLayer,
                 layer: ctx.currentlyEditTrack.newRouteLayer
             })
         }
@@ -143,7 +145,7 @@ export default function PlanRouteLayer() {
         map.fitBounds(newRouteLayer && newRouteLayer._bounds);
 
         ctx.currentlyEditTrackDispatch({
-            type: 'showTrack',
+            type: EditTrackAction.showTrack,
             track: selectedTrack,
             routeLayer: newRouteLayer
         })
@@ -152,7 +154,7 @@ export default function PlanRouteLayer() {
     function createNewCurrentlyEditTrack() {
         if (ctx.currentlyEditTrack === null) {
             ctx.currentlyEditTrackDispatch({
-                type: 'createTrack',
+                type: EditTrackAction.createEditTrack,
             })
         }
     }

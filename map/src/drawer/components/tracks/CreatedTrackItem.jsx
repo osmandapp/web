@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 
-export default function EditTrackItem({index, setIndexTrack, track}) {
+export default function CreatedTrackItem({index, setIndexTrack, track}) {
 
     const ctx = useContext(AppContext);
 

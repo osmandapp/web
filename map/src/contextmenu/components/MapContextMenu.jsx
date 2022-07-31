@@ -11,7 +11,7 @@ import {
 } from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../data/TrackTabList";
-import EditTrackTabList from "../data/EditTrackTabList";
+import CreatedTrackTabList from "../data/CreatedTrackTabList";
 import WeatherTabList from "../data/WeatherTabList";
 
 const useStyles = makeStyles({
@@ -52,7 +52,7 @@ export default function MapContextMenu() {
             return new TrackTabList().create(ctx, graphWidth);
         }
         if (ctx.contextMenuObjectType === 'create_track' && ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer && ctx.currentlyEditTrack.newRouteLayer._latlngs) {
-            return new EditTrackTabList().create(ctx, graphWidth);
+            return new CreatedTrackTabList().create(ctx, graphWidth);
         }
         if (ctx.contextMenuObjectType === 'weather_point' && ctx.weatherPoint) {
             return new WeatherTabList().create(ctx, graphWidth);

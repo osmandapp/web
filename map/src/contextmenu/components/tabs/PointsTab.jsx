@@ -13,6 +13,7 @@ import {
 } from "@mui/icons-material";
 import '../../../util/Leaflet.Editable.js';
 import AppContext from "../../../context/AppContext";
+import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
 
 
 const PointsTab = ({width}) => {
@@ -34,7 +35,7 @@ const PointsTab = ({width}) => {
                 <ListItemAvatar>
                     <IconButton x={{mr: 1}} onClick={() => {
                         ctx.currentlyEditTrackDispatch({
-                            type: 'deletePoint',
+                            type: EditTrackAction.deletePoint,
                             index: index,
                         })
                     }}>

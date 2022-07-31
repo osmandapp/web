@@ -4,7 +4,8 @@ import {
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
-import CurrentlyEditTrackReducer from "../data/tracks/CurrentlyEditTrackReducer";
+import EditTrackReducer from "../data/tracks/editTrack/EditTrackReducer";
+import EditTrackAction from "../data/tracks/editTrack/EditTrackAction";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -350,7 +351,7 @@ export const AppContextProvider = (props) => {
             current: null
         }
     });
-    const [currentlyEditTrack, currentlyEditTrackDispatch] = useReducer(CurrentlyEditTrackReducer, null);
+    const [currentlyEditTrack, currentlyEditTrackDispatch] = useReducer(EditTrackReducer, null);
     const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
     const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
 
@@ -381,7 +382,7 @@ export const AppContextProvider = (props) => {
     function hideEditTrack() {
         if (currentlyEditTrack) {
             currentlyEditTrackDispatch({
-                type: 'deleteLayer',
+                type: EditTrackAction.deleteLayer,
             })
         }
     }

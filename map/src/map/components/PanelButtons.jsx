@@ -4,7 +4,7 @@ import React, {useContext, useEffect, useRef} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import L from "leaflet";
 import AppContext from "../../context/AppContext";
-import {useMap} from "react-leaflet";
+import EditTrackAction from "../../data/tracks/editTrack/EditTrackAction";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -42,7 +42,7 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             type="button"
                             onClick={() => {
                                 ctx.currentlyEditTrackDispatch({
-                                    type: 'startDraw',
+                                    type: EditTrackAction.chooseStartDraw,
                                 })
                             }}
                         >
@@ -62,7 +62,7 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             type="button"
                             onClick={() => {
                                 ctx.currentlyEditTrackDispatch({
-                                    type: 'deleteTrack',
+                                    type: EditTrackAction.chooseDeleteTrack,
                                 })
                             }}
                         >
@@ -73,7 +73,7 @@ const PanelButtons = ({setOpenSaveDialog, setOpenPanelButtons}) => {
                             type="button"
                             onClick={() => {
                                 ctx.currentlyEditTrackDispatch({
-                                    type: 'stopDraw',
+                                    type: EditTrackAction.stopDraw,
                                 })
                             }}
                         >

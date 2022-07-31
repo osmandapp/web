@@ -3,7 +3,7 @@ import PointsTab from "../components/tabs/PointsTab";
 import React from "react";
 import {Tab} from "@mui/material";
 
-export default class EditTrackTabList {
+export default class CreatedTrackTabList {
     state = {
         tabs: null,
         tabList: [],

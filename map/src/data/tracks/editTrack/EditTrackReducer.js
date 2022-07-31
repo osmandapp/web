@@ -1,66 +1,47 @@
-import CurrentlyEditTrack from "./CurrentlyEditTrack";
-import Utils from "../../util/Utils";
+import EditTrack from "./EditTrack";
+import EditTrackAction from "./EditTrackAction";
+import Utils from "../../../util/Utils";
 
-export default function CurrentlyEditTrackReducer(state, action) {
+export default function EditTrackReducer(state, action) {
 
     switch (action.type) {
-        case 'startDraw': {
+        case EditTrackAction.chooseStartDraw: {
             return {
                 ...state,
                 prepareMap: false,
                 startDraw: true,
             };
         }
-        case 'stopDraw': {
-            return {
-                ...state,
-                stopDraw: true,
-            };
-        }
-        case 'deleteTrack': {
-            return {
-                ...state,
-                deleteTrack: true,
-            };
-        }
-        case 'start': {
+        case EditTrackAction.startDraw: {
             return {
                 ...state,
                 startDraw: false,
                 newRouteLayer: action.newRouteLayer,
             };
         }
-        case 'createTrack': {
+        case EditTrackAction.stopDraw: {
             return {
                 ...state,
-                ...new CurrentlyEditTrack().getState(),
+                stopDraw: true,
+            };
+        }
+        case EditTrackAction.createEditTrack: {
+            console.log(true)
+            return {
+                ...state,
+                ...new EditTrack().getState(),
                 prepareMap: true,
                 stopDraw: false
             };
         }
-        case 'click': {
+        case EditTrackAction.refreshLayer: {
             return {
                 ...state,
-                pointsList: getPointList(action.e),
-                distance: getDistance(),
-                deleteLayer: false
+                newRouteLayer: action.layer,
+                refreshLayer: false
             };
         }
-        case 'deletedClick': {
-            return {
-                ...state,
-                pointsList: deletePoint(action.e),
-                distance: getDistance()
-            };
-        }
-        case 'dragendClick': {
-            return {
-                ...state,
-                pointsList: updatePoint(),
-                distance: getDistance()
-            };
-        }
-        case 'showTrack': {
+        case EditTrackAction.showTrack: {
             return {
                 ...state,
                 trackName: action.track.name,
@@ -71,14 +52,42 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 stopDraw: false
             };
         }
-        case 'clean': {
+        case EditTrackAction.click: {
             return {
                 ...state,
-                newRouteLayer: null,
-                pointsList: []
+                pointsList: getPointList(action.e),
+                distance: getDistance(),
+                deleteLayer: false
             };
         }
-        case 'deletePoint': {
+        case EditTrackAction.deletedClick: {
+            return {
+                ...state,
+                pointsList: deletePoint(action.e),
+                distance: getDistance()
+            };
+        }
+        case EditTrackAction.dragendClick: {
+            return {
+                ...state,
+                pointsList: updatePoint(),
+                distance: getDistance()
+            };
+        }
+        case EditTrackAction.chooseDeleteTrack: {
+            return {
+                ...state,
+                deleteTrack: true,
+            };
+        }
+        case EditTrackAction.deleteTrack: {
+            return {
+                newRouteLayer: null,
+                pointsList: [],
+                deleteTrack: false
+            };
+        }
+        case EditTrackAction.deletePoint: {
             return {
                 ...state,
                 pointsList: deletePointByIndex(action.index),
@@ -86,24 +95,10 @@ export default function CurrentlyEditTrackReducer(state, action) {
                 refreshLayer: true
             };
         }
-        case 'refreshLayer': {
-            return {
-                ...state,
-                newRouteLayer: action.layer,
-                refreshLayer: false
-            };
-        }
-        case 'deleteLayer': {
+        case EditTrackAction.deleteLayer: {
             return {
                 ...state,
                 deleteLayer: true
-            };
-        }
-        case 'delete': {
-            return {
-                newRouteLayer: null,
-                pointsList: [],
-                deleteTrack: false
             };
         }
         default:

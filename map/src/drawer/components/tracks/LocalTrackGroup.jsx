@@ -6,10 +6,10 @@ import TrackItem from "./TrackItem";
 import Utils from "../../../util/Utils";
 import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
-import EditTrackItem from "./EditTrackItem";
+import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
-import CurrentlyEditTrack from "../../../data/tracks/CurrentlyEditTrack";
 import CreatedTrack from "../../../data/tracks/CreatedTrack";
+import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
 
 const useStyles = makeStyles({
     button: {
@@ -185,10 +185,10 @@ export default function LocalTrackGroup() {
                                   file={file}/>;
             })}
             {ctx.createdTracks.length > 0 && ctx.createdTracks.map((track, index) => {
-                return <EditTrackItem key={'track' + index}
-                                      index={index}
-                                      setIndexTrack={setIndexTrack}
-                                      track={track}/>;
+                return <CreatedTrackItem key={'track' + index}
+                                         index={index}
+                                         setIndexTrack={setIndexTrack}
+                                         track={track}/>;
             })}
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">
@@ -200,7 +200,7 @@ export default function LocalTrackGroup() {
                 </label>
                 <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
                         onClick={() => ctx.currentlyEditTrackDispatch({
-                            type: 'createTrack',
+                            type: EditTrackAction.createEditTrack,
                         })}>
                     Create
                 </Button>

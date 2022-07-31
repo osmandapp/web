@@ -1,4 +1,4 @@
-export default class CurrentlyEditTrack {
+export default class EditTrack {
 
     state = {
         newRouteLayer: null,
