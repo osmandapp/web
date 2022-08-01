@@ -48,6 +48,7 @@ export default function EditTrackReducer(state, action) {
                 trackName: action.track.name,
                 deleted: false,
                 pointsList: Utils.getPointsDist(action.track.points),
+                distance: getDistanceByActionPoints(action.track.points),
                 newRouteLayer: action.routeLayer,
                 prepareMap: false,
                 stopDraw: false,
@@ -152,5 +153,9 @@ export default function EditTrackReducer(state, action) {
 
     function getDistance() {
         return state.pointsList && state.pointsList.length > 0 ? state.pointsList[state.pointsList.length - 1].dist : 0;
+    }
+
+    function getDistanceByActionPoints(points) {
+        return points.length > 0 ? points[points.length - 1].dist : 0;
     }
 }
