@@ -480,7 +480,7 @@ L.GPX = L.FeatureGroup.extend({
                         el[i].getAttribute('lon'));
 
                     let pointIcon = L.icon({
-                        iconUrl: 'images/map_icons/circle.svg',
+                        iconUrl: '/map/images/map_icons/circle.svg',
                         pointMatchers: [],
                         iconSize: [10, 10],
                         clickable: false
