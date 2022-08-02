@@ -1,11 +1,9 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Air, Cloud, Compress, Shower, Thermostat
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
-import EditTrackReducer from "../data/tracks/editTrack/EditTrackReducer";
-import EditTrackAction from "../data/tracks/editTrack/EditTrackAction";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -14,12 +12,8 @@ const osmandTileURL = {
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png'
 }
 
-// const osmandTileURL = '/tile/hd/{z}/{x}/{y}.png';
-// const osmandTileURL = '/tile/df/{z}/{x}/{y}.png';
-
 
 function getWeatherUrl(layer) {
-    // const urlWeatherPefix = '.';
     return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
 }
 
@@ -351,18 +345,16 @@ export const AppContextProvider = (props) => {
             current: null
         }
     });
-    const [currentlyEditTrack, currentlyEditTrackDispatch] = useReducer(EditTrackReducer, null);
+
     const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
     const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
 
     useEffect(() => {
         if (contextMenuObjectType === 'selected_track') {
-            hideEditTrack();
             setWeatherPoint(null);
         }
         if (contextMenuObjectType === 'weather_point') {
             hideTrack();
-            hideEditTrack();
         }
         if (contextMenuObjectType === 'create_track') {
             hideTrack();
@@ -378,15 +370,6 @@ export const AppContextProvider = (props) => {
             setSelectedGpxFile(null);
         }
     }
-
-    function hideEditTrack() {
-        if (currentlyEditTrack) {
-            currentlyEditTrackDispatch({
-                type: EditTrackAction.deleteLayer,
-            })
-        }
-    }
-
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -442,7 +425,6 @@ export const AppContextProvider = (props) => {
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
         favorites, setFavorites,
-        currentlyEditTrack, currentlyEditTrackDispatch,
         createdTracks, setCreatedTracks,
         contextMenuObjectType, setContextMenuObjectType
 

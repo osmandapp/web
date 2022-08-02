@@ -15,7 +15,7 @@ export default function TracksMenu() {
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
     const [tracksGroups, setTracksGroups] = useState([]);
-    const [visibleTracks, setVisibleTracks] = useState([]);
+    const [visibleTracks, setVisibleTracks] = useState({created: [], cloud: []});
 
     //get gpx files and create groups
     useEffect(() => {
@@ -54,18 +54,30 @@ export default function TracksMenu() {
 
     }, [ctx.listFiles, ctx.setListFiles]);
 
-    //add visible tracks
+
     useEffect(() => {
         if (ctx.gpxFiles) {
-            visibleTracks.length = 0;
+            visibleTracks.cloud = [];
             Object.values(ctx.gpxFiles).forEach((f) => {
                 if (f.url) {
-                    visibleTracks.push(f);
+                    visibleTracks.cloud.push(f);
                 }
             })
         }
-        setVisibleTracks([...visibleTracks]);
+        setVisibleTracks({...visibleTracks});
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
+
+    useEffect(() => {
+        if (ctx.createdTracks) {
+            visibleTracks.created = [];
+            ctx.createdTracks.forEach(t => {
+                if (t.selected) {
+                    visibleTracks.created.push(t)
+                }
+            })
+        }
+        setVisibleTracks({...visibleTracks});
+    }, [ctx.createdTracks, ctx.setCreatedTracks]);
 
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
@@ -80,13 +92,13 @@ export default function TracksMenu() {
         </MenuItem>
         {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
-            {visibleTracks.length > 0 && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
+            {(visibleTracks.created.length > 0 || visibleTracks.cloud.length > 0) && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
+            <LocalTrackGroup/>
             {tracksGroups && tracksGroups.map((group, index) => {
                 return <TrackGroup key={group + index}
                                    index={index}
                                    group={group}/>;
             })}
-            <LocalTrackGroup/>
         </Collapse>
     </>;
 

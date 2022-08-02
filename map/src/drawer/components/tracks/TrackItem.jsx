@@ -59,7 +59,7 @@ export default function TrackItem({file}) {
             }
             updateTextInfo(newGpxFiles, ctx);
         } else {
-            ctx.setContextMenuObjectType('selected_track');
+            ctx.setContextMenuObjectType('track');
             newGpxFiles[item.name] = {'url': url, 'clienttimems': item.clienttimems, 'name': item.name};
             ctx.setGpxFiles(newGpxFiles);
             if (item.details?.analysis) {
@@ -103,7 +103,7 @@ export default function TrackItem({file}) {
             newGpxFiles[item.name].url = item.localContent;
             newGpxFiles[item.name].urlopts = {credentials: 'include'}
             ctx.setSelectedGpxFile(item);
-            ctx.setContextMenuObjectType('selected_track');
+            ctx.setContextMenuObjectType('track');
         }
         ctx.setGpxFiles(newGpxFiles);
     }
@@ -174,6 +174,9 @@ export default function TrackItem({file}) {
                 checked={!!localLayer?.url}
                 onClick={(e) => e.stopPropagation()}
                 onChange={(e) => {
+
+
+
                     item.local ? enableLocalLayer(item, ctx, ctx.setGpxLoading, e.target.checked)
                         : enableLayer(item, ctx, ctx.setGpxLoading, e.target.checked)
                 }}/>

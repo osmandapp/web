@@ -1,4 +1,4 @@
-import WeatherForecast from "../components/WeatherForecast";
+import WeatherForecast from "./components/WeatherForecast";
 import React from "react";
 import {Tab} from "@mui/material";
 

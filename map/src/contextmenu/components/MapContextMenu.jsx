@@ -5,11 +5,8 @@ import {TabContext, TabList, TabPanel} from "@mui/lab";
 import L from 'leaflet';
 import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
-import TrackTabList from "../data/TrackTabList";
-import CreatedTrackTabList from "../data/CreatedTrackTabList";
-import WeatherTabList from "../data/WeatherTabList";
-import SaveRouteDialog from "../../map/components/SaveRouteDialog";
-import PanelButtons from "../../map/components/PanelButtons";
+import TrackTabList from "../TrackTabList";
+import WeatherTabList from "../WeatherTabList";
 
 const useStyles = makeStyles({
     menu: {
@@ -29,7 +26,6 @@ export default function MapContextMenu() {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const [showContextMenu, setShowContextMenu] = useState(false);
-    const [openSaveDialog, setOpenSaveDialog] = useState(false);
 
     const graphWidth = 600;
     let tabsObj = definitionTabs();
@@ -47,11 +43,8 @@ export default function MapContextMenu() {
     });
 
     function definitionTabs() {
-        if (ctx.contextMenuObjectType === 'selected_track') {
+        if (ctx.contextMenuObjectType === 'track') {
             return new TrackTabList().create(ctx, graphWidth);
-        }
-        if (ctx.contextMenuObjectType === 'create_track' && ctx.currentlyEditTrack && ctx.currentlyEditTrack.newRouteLayer && ctx.currentlyEditTrack.newRouteLayer._latlngs) {
-            return new CreatedTrackTabList().create(ctx, graphWidth);
         }
         if (ctx.contextMenuObjectType === 'weather_point' && ctx.weatherPoint) {
             return new WeatherTabList().create(ctx, graphWidth);
@@ -62,7 +55,7 @@ export default function MapContextMenu() {
         if (ctx.contextMenuObjectType) {
             setShowContextMenu(true);
         }
-    },[ctx.contextMenuObjectType, ctx.setContextMenuObjectType]);
+    }, [ctx.contextMenuObjectType, ctx.setContextMenuObjectType]);
 
 
     function closeContextMenu() {
@@ -93,7 +86,5 @@ export default function MapContextMenu() {
                 }
             </div>
         </div>}
-        <SaveRouteDialog open={openSaveDialog} setOpen={setOpenSaveDialog}/>
-        <PanelButtons setOpenSaveDialog={setOpenSaveDialog} setShowContextMenu={setShowContextMenu}/>
-        </div>);
+    </div>);
 }

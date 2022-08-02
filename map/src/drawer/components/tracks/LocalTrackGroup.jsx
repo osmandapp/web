@@ -8,10 +8,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
-import CreatedTrack from "../../../data/tracks/CreatedTrack";
-import EditTrackAction from "../../../data/tracks/editTrack/EditTrackAction";
-import CreatedTrackUtils from "../../util/CreatedTrackUtils";
 import LocalTrackUtils from "../../util/LocalTrackUtils";
+import CreatedTrackUtils from "../../util/CreatedTrackUtils";
 
 const useStyles = makeStyles({
     button: {
@@ -38,11 +36,9 @@ export default function LocalTrackGroup() {
     const ctx = useContext(AppContext);
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
-    const [indexTrack, setIndexTrack] = useState(-1);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
-        // eslint-disable-next-line
     }, []);
 
     async function loadInitialState(gpxFiles, setGpxFiles) {
@@ -90,65 +86,6 @@ export default function LocalTrackGroup() {
         }
     }
 
-    function getTrackName() {
-        if (ctx.createdTracks && ctx.createdTracks.length > 0) {
-            let index = parseInt(ctx.createdTracks.at(-1).name.split(" ")[1]) + 1;
-            return '*Track ' + index;
-        } else {
-            return '*Track ' + (ctx.createdTracks.length + 1);
-        }
-    }
-
-    useEffect(() => {
-        if (ctx.currentlyEditTrack) {
-            if (ctx.currentlyEditTrack.prepareMap) {
-                createNewEditTrack();
-            } else {
-                if (indexTrack !== -1) {
-                    updateSelectedEditTrack();
-                } else {
-                    updateNewEditTrack();
-                }
-            }
-            if (ctx.currentlyEditTrack.stopDraw) {
-                CreatedTrackUtils.resetAllSelectedTracks(ctx.createdTracks);
-            }
-            saveToLocalStorage(ctx.createdTracks);
-        }
-    }, [ctx.currentlyEditTrack, ctx.currentlyEditTrackDispatch]);
-
-    function createNewEditTrack() {
-        setIndexTrack(-1);
-        CreatedTrackUtils.resetAllSelectedTracks(ctx.createdTracks);
-        if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
-            ctx.createdTracks[ctx.createdTracks.length - 1].isNew = false;
-        }
-        ctx.createdTracks.push(new CreatedTrack(getTrackName(), [], false, true));
-        ctx.setCreatedTracks([...ctx.createdTracks]);
-    }
-
-    function updateSelectedEditTrack() {
-        if (ctx.createdTracks[indexTrack]) {
-            ctx.createdTracks[indexTrack].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-            ctx.setCreatedTracks([...ctx.createdTracks]);
-        }
-    }
-
-    function updateNewEditTrack() {
-        if (ctx.createdTracks[ctx.createdTracks.length - 1]) {
-            ctx.createdTracks[ctx.createdTracks.length - 1].points = structuredClone(ctx.currentlyEditTrack.pointsList);
-            ctx.setCreatedTracks([...ctx.createdTracks]);
-        }
-    }
-
-    function saveToLocalStorage(tracks) {
-        let res = structuredClone(tracks);
-        res.forEach(function (track) {
-            track.selected = false;
-        })
-        localStorage.setItem('createdTracks', JSON.stringify(res));
-    }
-
     const fileSelected = (ctx) => async (e) => {
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
@@ -162,6 +99,38 @@ export default function LocalTrackGroup() {
             });
             reader.readAsText(file);
         });
+    }
+
+    function generateNewTrack() {
+        let name = new Date().toDateString();
+        let count = 0;
+        ctx.createdTracks.forEach(t => {
+            if (t.name.split('(')[0] === name) {
+                console.log(name)
+                count++;
+            }
+        })
+        if (count > 0) {
+            name = name + '(' + count + ')';
+        }
+
+        let points = [];
+        let prevPoint;
+        for (let i=1 ; i<=10; i++) {
+            let lat;
+            let lng;
+            if (!prevPoint) {
+                lat = Math.floor(Math.random() * (Math.floor(48.305) - Math.ceil(51.543))) + Math.ceil(51.543);
+                lng = Math.floor(Math.random() * (Math.floor(37.749) - Math.ceil(24.664))) + Math.ceil(24.664);
+            } else {
+                lat = Math.floor(Math.random() * (Math.floor(prevPoint.lat - 2) - Math.ceil(prevPoint.lat + 2))) + Math.ceil(prevPoint.lat + 2);
+                lng = Math.floor(Math.random() * (Math.floor(prevPoint.lng - 2) - Math.ceil(prevPoint.lng + 2))) + Math.ceil(prevPoint.lng + 2);
+            }
+            prevPoint = {lat: lat, lng: lng};
+            points.push({lat: lat, lng: lng})
+        }
+
+        return {name: name, points: points}
     }
 
 
@@ -188,9 +157,8 @@ export default function LocalTrackGroup() {
             })}
             {ctx.createdTracks.length > 0 && ctx.createdTracks.map((track, index) => {
                 return <CreatedTrackItem key={'track' + index}
-                                         index={index}
-                                         setIndexTrack={setIndexTrack}
-                                         track={track}/>;
+                                         track={track}
+                                         index={index}/>;
             })}
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">
@@ -201,10 +169,11 @@ export default function LocalTrackGroup() {
                     </Button>
                 </label>
                 <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                        onClick={() => ctx.currentlyEditTrackDispatch({
-                            type: EditTrackAction.createEditTrack,
-                        })}>
-                    Create
+                        onClick={() => {
+                            ctx.setCreatedTracks([...ctx.createdTracks, generateNewTrack()])
+                            CreatedTrackUtils.saveToLocalStorage(ctx.createdTracks);
+                        }}>
+                    Generate
                 </Button>
             </MenuItem>
             {localGpxFiles.length === 0 ? <></> :

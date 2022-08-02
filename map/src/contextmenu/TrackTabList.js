@@ -1,6 +1,6 @@
-import GeneralInfoTab from "../components/tabs/GeneralInfoTab";
-import ElevationTab from "../components/tabs/ElevationTab";
-import SpeedTab from "../components/tabs/SpeedTab";
+import GeneralInfoTab from "./components/tabs/GeneralInfoTab";
+import ElevationTab from "./components/tabs/ElevationTab";
+import SpeedTab from "./components/tabs/SpeedTab";
 import React from "react";
 import {Tab} from "@mui/material";
 
