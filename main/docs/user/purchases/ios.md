@@ -97,7 +97,7 @@ Use the same Apple ID to restore your purchases.
 
 >User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).  
 
-> If none of the methods worked: 
+> **If none of the methods worked:** 
 > 1. Clear the cache for App Store.
 > 2. Clear the cache for OsmAnd.
 > 3. Restart the device and try to restore again.
