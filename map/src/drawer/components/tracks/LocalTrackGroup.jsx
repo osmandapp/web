@@ -106,7 +106,6 @@ export default function LocalTrackGroup() {
         let count = 0;
         ctx.createdTracks.forEach(t => {
             if (t.name.split('(')[0] === name) {
-                console.log(name)
                 count++;
             }
         })
