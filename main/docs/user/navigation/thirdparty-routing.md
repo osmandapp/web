@@ -24,7 +24,7 @@ BRouter routing doesn't exist for iOS version.
 
 ## Overview
 
-OsmAnd uses its own algorithm and resources for routing. There are many parameters for routing in our [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) file. You can modify the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) and add/modify specific details for your type of Navigation.
+OsmAnd uses its own algorithm and resources for routing. There are many parameters for routing in our [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) file. You can modify the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing) and add or modify specific details for your type of Navigation.
 
 But there is a third-party routing "engine" that you can use for OsmAnd. This is [BRouter](http://brouter.de/). BRouter uses pre-calculated routes. This means that you can very quickly build a route offline.
 
@@ -32,10 +32,10 @@ You can read how to install and use BRouter in the [BRouter readme.txt](http://b
 
 ## How to use
 
-_Below you can read the tutorial on how BRouter is installed and included into OsmAnd routing._
+*Below you can read the tutorial on how BRouter is installed and included in OsmAnd routing.*
 
-1. You should [install BRouter.app](https://play.google.com/store/apps/details?id=btools.routingapp) in your device.
-2. You should open BRouter and select a routing profile. You can choose a routing profile for your method of travelling (bicycle, moped,car, etc.). To give you more info about choosing the best routing profile for you, you can find more info about each profile  [here](http://brouter.de/brouter/profiles2/). Or you can try to use a routing profile in [BRouter-online](http://brouter.de/brouter-web/).
+1. [Install BRouter.app](https://play.google.com/store/apps/details?id=btools.routingapp) in your device.
+2. Open BRouter and select a routing profile. You can choose a routing profile for your method of travelling (bicycle, moped,car, etc.). To give you more info about choosing the best routing profile for you, you can find more info about each profile  [here](http://brouter.de/brouter/profiles2/). Or you can try to use a routing profile in [BRouter-online](http://brouter.de/brouter-web/).
 
 
 <table class="blogimage">
@@ -45,7 +45,7 @@ _Below you can read the tutorial on how BRouter is installed and included into O
     </tr>
 </table> 
 
-3. When you choose and tap the wanted routing profile (in our example, it is _fastbike_), we can download the data necessary for routing.
+3. When you select and tap the desired routing profile (in our example it is a fast bike), OsmAnd will be able to download the data needed for routing.
    
 Open BRouter application and click _Download Manager_.
 
@@ -71,9 +71,10 @@ Choose your area and start downloading.
     </tr>
 </table> 
 
-Now we have installed and downloaded all needed data for Third-party routing. All of our next steps will be in the OsmAnd application.
+You have installed and downloaded all the necessary data for third-party routing. All of the following steps will be performed in the OsmAnd application.  
 
-4. You can choose or create a navigation profile in OsmAnd application. In _[Navigation type](../personal/profiles.md#navigation-settings)_, you choose _BRouter (offline)_: _General menu → Choose (create) Navigation profile → Configure profile → Navigation settings → Navigation type_.
+4. You can choose or create a navigation profile in OsmAnd application. In *[Navigation type](../personal/profiles.md#navigation-settings)*, you choose _BRouter (offline)_: *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_external,routing_profile_broutrer"/>*
+
 
 <table class="blogimage">
     <tr>
@@ -82,13 +83,13 @@ Now we have installed and downloaded all needed data for Third-party routing. Al
     </tr>
 </table> 
 
-5. Everything is now ready for using the special Brouter routing. Now we compare the speed of the routing precalculation data of BRouter with OsmAnd's internal routing.
+5. Everything is now ready to use the Brouter special routing. Now we will compare the pre-calculation speed of the BRouter routing data with the internal OsmAnd routing.
    
 We choose two random points in the Netherlands and start calculation of the trip. We choose Balanced Driving style without using elevation data for Base profile. The time of calculation for this trip is 14.5 sec for our internal OsmAnd routing. The time for Brouter routing Navigation profile is less than 1 sec.
 
-> Note: You must understand that Brouter routing is very fast, but it is not modifyable and/or configurable. For OsmAnd offline routing you can choose any parameters and restrictions offline with fresh map data from Openstreetmap.
+> Note: You should be aware that *Brouter* routing is very fast, but cannot be changed and/or configured. For OsmAnd offline routing, you can select any parameters and restrictions offline with fresh Openstreetmap data.
 
-> Note 2: For some background info on the Brouter routing you can read [this page](http://www.brouter.de/brouter/algorithm.html) on the BRouter website.
+> Note 2: For information about Brouter routing, you can read [this page](http://www.brouter.de/brouter/algorithm.html) on the BRouter website.  
 
 <table class="blogimage">
     <tr>

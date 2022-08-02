@@ -36,7 +36,7 @@ For Android devices you can download the free and paid application on the follow
 
 ## Difference between purchases
 
->OsmAnd+ and OsmAnd Maps+ are fully equal by set of features.
+>OsmAnd+ and OsmAnd Maps+ are completely identical in their feature sets.
 
 **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
 
@@ -138,7 +138,7 @@ To restore your **in-app purchase** ([Maps+, Pro](../purchases/android.md#prices
 - Log in to the same Google Play (Huawei AppGallery) account that you used to purchase OsmAnd.
 - Install OsmAnd ([Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
 - Open OsmAnd with an active Internet connection.
-- Go to _<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>_ and at the top of the screen should appear that Maps+(Pro) is activated.
+- To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*÷ьутг and at the top of the screen should appear that Maps+(Pro) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
