@@ -43,7 +43,6 @@ export default function CreatedTrackLayer() {
             if (track.selected && !track.layer) {
                 addTrackToMap(track);
             } else if (!track.selected && track.layer) {
-                console.log(true)
                 removeLayerFromMap(track);
             }
         });
