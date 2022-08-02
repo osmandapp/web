@@ -2,21 +2,14 @@ import {Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/m
 import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useEffect, useState} from "react";
 import TrackItem from "./TrackItem";
-import {makeStyles} from "@material-ui/core/styles";
-import Actions from "./Actions";
 
-const useStyles = makeStyles({
-    group: {
-        '& .MuiMenuItem-root' : {
-            minHeight: '50px !important',
-            maxHeight: '50px !important',
-        }
-    }
-})
+import Actions from "./Actions";
+import drawerStyles from "../DrawerStyles";
+
 
 export default function TrackGroup({index, group}) {
 
-    const classes = useStyles();
+    const styles = drawerStyles();
 
     const [indexGroup, setIndexGroup] = useState(-1);
     const [tracksOpen, setTracksOpen] = useState(false);
@@ -39,7 +32,7 @@ export default function TrackGroup({index, group}) {
     }, [tracksOpen, setTracksOpen]);
 
 
-    return <div className={classes.group} key={'group' + index}>
+    return <div className={styles.drawerItem} key={'group' + index}>
         <MenuItem sx={{ml: 3}} divider onClick={(e) => {
             if (e.target !== 'path') {
                 setIndexGroup(index);

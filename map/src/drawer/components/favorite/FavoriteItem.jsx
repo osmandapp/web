@@ -2,6 +2,7 @@ import {ListItemText, MenuItem, Tooltip, Typography} from "@mui/material";
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
+import drawerStyles from "../DrawerStyles";
 
 
 const useStyles = makeStyles({
@@ -14,12 +15,6 @@ const useStyles = makeStyles({
             left: '0px',
             top: '2px',
             filter: "drop-shadow(0 0 0 gray)"
-        }
-    },
-    item: {
-        '& .MuiMenuItem-root' : {
-            minHeight: '50px !important',
-            maxHeight: '50px !important',
         }
     },
     text: {
@@ -36,6 +31,7 @@ const useStyles = makeStyles({
 export default function FavoriteItem({index, marker}) {
 
     const classes = useStyles();
+    const styles = drawerStyles();
 
     const ctx = useContext(AppContext);
 
@@ -48,7 +44,7 @@ export default function FavoriteItem({index, marker}) {
     }
 
 
-    return <div className={classes.item}>
+    return <div className={styles.drawerItem}>
         <Tooltip title={marker.options.title} arrow>
             <MenuItem key={'marker' + index} sx={{ml: 2}} divider onClick={() => addFavoriteToMap(marker)}>
                 <div className={classes.icon}

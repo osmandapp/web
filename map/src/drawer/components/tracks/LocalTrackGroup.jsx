@@ -7,6 +7,7 @@ import Utils from "../../../util/Utils";
 import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import {styled} from "@mui/material/styles";
+import drawerStyles from "../DrawerStyles";
 
 const useStyles = makeStyles({
     button: {
@@ -14,18 +15,13 @@ const useStyles = makeStyles({
         maxHeight: '40px',
         minWidth: '120px !important',
         minHeight: '40px'
-    },
-    group: {
-        '& .MuiMenuItem-root' : {
-            minHeight: '50px !important',
-            maxHeight: '50px !important',
-        }
     }
 })
 
 export default function LocalTrackGroup() {
 
     const classes = useStyles();
+    const styles = drawerStyles();
 
     const StyledInput = styled('input')({
         display: 'none',
@@ -101,7 +97,7 @@ export default function LocalTrackGroup() {
     }
 
 
-    return <div className={classes.group}>
+    return <div className={styles.drawerItem}>
         <MenuItem sx={{ml: 3}} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
             <ListItemIcon>
                 <Folder fontSize="small"/>

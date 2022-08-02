@@ -357,28 +357,6 @@ export const AppContextProvider = (props) => {
     const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
 
     useEffect(() => {
-        if (contextMenuObjectType === 'selected_track') {
-            setWeatherPoint(null);
-        }
-        if (contextMenuObjectType === 'weather_point') {
-            hideTrack();
-        }
-        if (contextMenuObjectType === 'create_track') {
-            hideTrack();
-            setWeatherPoint(null);
-        }
-    }, [contextMenuObjectType, setContextMenuObjectType]);
-
-    function hideTrack() {
-        if (selectedGpxFile && selectedGpxFile.url) {
-            let newGpxFiles = Object.assign({}, gpxFiles)
-            newGpxFiles[selectedGpxFile.name].url = null;
-            setGpxFiles(newGpxFiles);
-            setSelectedGpxFile(null);
-        }
-    }
-
-    useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
     }, []);
 
