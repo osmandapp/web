@@ -10,6 +10,8 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Detailed information about purchases on Android: markets to install, subscriptions vs in app, prices, paid features.
 
@@ -34,7 +36,7 @@ For Android devices you can download the free and paid application on the follow
 
 ## Difference between purchases
 
->OsmAnd+ and OsmAnd Maps+ are fully equal by set of features.
+>OsmAnd+ and OsmAnd Maps+ are completely identical in their feature sets.
 
 **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
 
@@ -93,9 +95,31 @@ At this moment, Pro subscription has next features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backuping and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backuping and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
+
+### How to buy
+
+Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
+
+**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro_
+
+or 
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
+
+![Pro Plan](@site/static/img/purchases/pro.png)
+
+
+**OsmAnd Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
+
+_<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
+
+![Maps+ Plan](@site/static/img/purchases/maps.png)
 
 
 ## Legacy subscriptions (prior 4.0)
@@ -105,9 +129,25 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 
 ## Restore purchases
 
-To restore a purchased app, just visit **Google Play** and reinstall it. If you've already purchased the app with your current Google account, you'll be able to redownload it on each app you use.
+1. Restore a purchase from [**Google Play**](https://play.google.com/store/apps/dev?id=8483587772816822023): visit [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) and reinstall the application. If you've already purchased the app with your current Google, you'll be able to redownload it on each app you use.
 
-To restore a purchase from **Amazon**, navigate through the app as though you were going to purchase the feature again. At the point where you would ordinarily be charged, Amazon instead realizes that you've already purchased it in the past and activates it again for free.
+2. Restore a purchase from [**Amazon**](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd): navigate through the app as though you were going to purchase the feature again. At the point where you would ordinarily be charged, Amazon instead realizes that you've already purchased it in the past and activates it again for free.
+
+To restore your **in-app purchase** ([Maps+, Pro](../purchases/android.md#prices)):
+- Update Google Play (Huawei AppGallery). 
+- Log in to the same Google Play (Huawei AppGallery) account that you used to purchase OsmAnd.
+- Install OsmAnd ([Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
+- Open OsmAnd with an active Internet connection.
+- To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*÷ьутг and at the top of the screen should appear that Maps+(Pro) is activated.
+
+![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+
+> If none of the methods worked: 
+> 1. Clear the cache for Google Play (Huawei AppGallery).
+> 2. Clear the cache for OsmAnd.
+> 3. Restart the device and try to restore again.
+
+
 
 ## Giftcards
 

@@ -2,6 +2,7 @@
 sidebar_position: 5
 title:  Maps
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -9,30 +10,28 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
 
 OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Storage](../personal/storage.md) and it is accessible with external tools. 
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
-
-<p> </p>
-
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_menu_android.png) ![Download maps menu Android](@site/static/img/personal/maps/download_map_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_menu_ios.png) ![Download maps menu iOS](@site/static/img/personal/maps/download_map_ios.png)
 
@@ -66,24 +65,19 @@ There are several map types available to download and manage:
 
 Download maps screen allows you to download maps from OsmAnd servers, you will need an active internet connection to do that.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
-
-<p> </p>
-
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>_
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_map_menu_android.png) ![Download map menu general Android](@site/static/img/personal/maps/download_map_menu_1_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_ios.png) ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_1_ios.png)
 
@@ -102,23 +96,19 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 
 Local maps represents all downloaded maps on device grouped by [Types](#map-types)
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>
-
-<p> </p>
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>_
 
 ![Maps menu Local vector Android](@site/static/img/personal/maps/maps_menu_local_vector_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>_
 
 ![Maps menu Local vector iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
 
@@ -155,24 +145,21 @@ Local action available for the map: **<Translate android="true" ids="local_index
 
 Every month you will be able to update OsmAnd Maps on Updates screen. Here it's possible to update all maps with one click. Standard and road-only maps are avalaible every month typically with 2 weeks delay. In case you would like to get access to Hourly updates, please check [OsmAnd Live](#osmand-live).
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,res_updates"/>
-
-<p> </p>
-
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>_
+
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_menu_update_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,res_updates"/>_
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_menu_update_ios.png)
 
@@ -182,28 +169,30 @@ Every month you will be able to update OsmAnd Maps on Updates screen. Here it's 
 
 ## OsmAnd Live
 
+:::note
+  
+<ProFeature/> You can use live updates only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro (Android)</a> and <a href="https://docs.osmand.net/docs/user/purchases/ios#free-and-paid-features">OsmAnd Live (iOS)</a> subscription.
+
+:::
+
 OsmAnd Live is a special ([available by subscription](../purchases/index.md)) feature that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
 Each map has independent collection  of tiny map updates, please be aware if you have overlapping map regions. In case you want to revert to initial state you can switch off updates and 'Clear cache'.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,osmand_live_title"/>
-
-<p> </p>
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="menu,res_mapsres,res_updates,osmand_live_updates"/>
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
@@ -213,8 +202,8 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 **Understanding timestamps**.
 - ```Latest OpenStreetMap update available``` XX-XX-XXXX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
-- ```Andorra Updated```: Today XX:XX - represents the timestamp of the latest changes inside the local. It's always earlier than ```Latest OpenStreetMap update available``` (but not always equal) and represents specific timestamp for  ```Andorra``` region. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```Andorra``` region was modified and processed on OsmAnd servers.
-- ```Andorra Last time checked```: Today XX:XX - represents the latest timestamp that local device checked if new updates are available. It's always ahead of updated timestamps and displays both successful and unsuccessful attempts to download maps.
+- ```Andorra Updated```: Today 14:10 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```Andorra``` region was modified and processed by OsmAnd servers.
+- ```Andorra Last time checked```: Today 14:10 - represents the latest timestamp that local device checked if new updates are available. It's always ahead of updated timestamps and displays both successful and unsuccessful attempts to download maps.
 
 
 **OsmAnd Live restrictions**.

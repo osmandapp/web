@@ -15,25 +15,23 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
 
-:::note
+## Overview
 
-Global settings are common to all application profiles. In fact, these settings are the settings of OsmAnd system.
-
-:::
+**Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system and all changes made will affect the entire application.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>_
+To open OsmAnd settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*
 
-![Profiles General Settings Android](@site/static/img/personal/profiles/general_settings_android.png)
+![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_1.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,osmand_settings"/>_
+To open OsmAnd settings, follow these steps: *<Translate ios="true" ids="menu,sett_settings,osmand_settings"/>*
 
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_ios.png)
 
@@ -43,45 +41,82 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,se
 
 ## General
 
+This section contains the basic settings of OsmAnd, such as selecting a profile when the application loads, language selection and the folder in which the data will be saved.
+
+
 ### Default profile
 
-Choosing a profile like a default profile:
+OsmAnd uses the default profile, *Browse map*, as the first profile for new users and also if this profile has been selected by the user to be used each time the application is restarted. You can choose any profile, Last used and Browse map too, from the list as default.
+
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-- &nbsp;_<Translate android="true" ids="settings_preset"/>_ - select the profile, that will be used on application start (last used or from profile list). Here you can choose "_<Translate android="true" ids="shared_string_last_used"/>_" profile. It means that the last chosen profile will be used for the application.
+- **<Translate android="true" ids="shared_string_last_used"/>** - selects the profile that was last used.
 
-![General Settings Default profile Android](@site/static/img/personal/profiles/general_settings_default_profile_android.png)
+- **<Translate android="true" ids="settings_preset"/>** - You select the profile that will be used when starting OsmAnd. Can be changed in the application [settings](../personal/profiles.md).
+
+![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_andr.png)  
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- &nbsp;_<Translate ios="true" ids="settings_preset"/>_ - select the profile, that will be used on application start (last used or from profile list). Here you can choose "_<Translate ios="true" ids="last_used"/>_" profile. It means that the last chosen profile will be used for the application.
+- **<Translate android="true" ids="shared_string_last_used"/>** - selects the profile that was last used.
 
-![General Settings Profile iOS](@site/static/img/personal/profiles/general_settings_profile_ios.png)
+- **<Translate android="true" ids="settings_preset"/>** - You select the profile that will be used when starting OsmAnd. Can be changed in the application [settings](../personal/profiles.md).
 
-- &nbsp;_<Translate ios="true" ids="carplay_profile"/>_ - profile that will be used while connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
+![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
-_iOS device → Settings → General → CarPlay
+
 
 </TabItem>
 
 </Tabs>
 
+### CarPlay profile
+
+This profile is only available for iOS. It uses your car's audio and video systems to display its data on your phone. 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+:::note
+
+This settings is not available for Android
+
+:::
+
+Read about Android Auto [here](../navigation/auto-car.md)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+**<Translate ios="true" ids="carplay_profile"/>** - this profile will be used while it is connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
+
+To open CarPlay profile, follow these steps: *<Translate ios="true" ids="menu,sett_settings,carplay_profile"/>*
+
+![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+
 ### Display language
 
-Setting display (application) language: 
+Display language is the setting of the language of the entire application, pop-up prompts, internal text, messages, etc. For Android system this can be done in the application, for iOS system - through the iOS settings. You can use the language installed on your device or select any other language from the list. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Here you can choose system device language or another from the list:
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>_
+To select a language, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*
 
 ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
 
@@ -89,9 +124,8 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-For changing OsmAnd display language you need to make it in iOS settings. Here you can choose a language by default or from the list:
+To change the display language of OsmAnd, you need to do this in the iOS settings:  *iOS device → Settings → OsmAnd maps → Language*
 
-_iOS device → Settings → OsmAnd maps → Language_
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
@@ -101,28 +135,29 @@ _iOS device → Settings → OsmAnd maps → Language_
 
 ### Data storage folder
 
-Here you can change storage folder (Android) and know memorу usage by OsmAnd data.
+Read more about storage settings [here](../personal/storage.md#data-storage-folder).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>_
+To find Data storage folder, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
+![Data storage folder](@site/static/img/personal/profiles/global_sett_andr_1.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-For iOS system, we can't make any manipulate with the storage folder. We can know only how much memory OsmAnd uses:
+For the iOS system, we can not do any manipulation of the storage folder. We can only find out how much memory OsmAnd uses.  
 
-_iOS device → Settings → OsmAnd maps → General → iPhone storage → OsmAnd Maps_
+To find Data storage folder, follow these steps: *iOS device → Settings → General → iPhone storage → OsmAnd Maps*
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)
 
-OsmAnd files are visible in the "Files" application. You can access all tracks, custom routing and rendering files through it:
-_Files → On My Phone → OsmAnd Maps_
+OsmAnd files are visible in the "Files" application. To access all tracks, custom routing and rendering files, follow this path:   
+*Files → On My Phone → OsmAnd Maps*
 
 More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
 
@@ -132,74 +167,66 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 </Tabs>
 
+
 ## Privacy and security
 
-Here you can set parameters of your privacy and security.
-
-### Analytics
+OsmAnd allows you to choose whether or not to share your activity in the app, the ability to edit your history and use the proxy of your choice. 
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android"> 
 
-&nbsp;_<Translate android="true" ids="analytics_pref_title"/>_ - allows collecting or not next anonymous usage data of OsmAnd: Maps downloaded, Screens visited. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
+#### Analytics
 
-![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)
+*<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [OsmAnd privacy and security](https://osmand.net/help-online/privacy-policy).  
+To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*
+
+
+![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
+
+#### History
+
+*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/route-navigation.md#history) and [Map markers history](../personal/markers.md#history).  
+To open History settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+
+Available interactions:  
+
+Inside actions
+- Enable/disable history.
+- Delete some items from the history.
+- Share with.  
+
+Actions
+- Create a backup as a file - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
+- Clear all history.  
+
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+
+#### Proxy
+
+
+*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows to configure';// an [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
+To open Proxy settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
+
+![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-&nbsp;_<Translate ios="true" ids="send_anonymous_data"/>_ - allows collecting or not next anonymous usage data of OsmAnd: map download statistics. No data about your position or locations you view on the map are collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).
+*<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
 
 ![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs> 
 
-### History
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-&nbsp;<Translate android="true" ids="shared_string_history"/> - allows disabling history logging individually for each history type: [search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history). Here you can export history info a file, you can clear all history or for each categories ([search history](../search/search-history.md), [navigation history](../navigation/route-navigation.md#history), [map markers history](../personal/markers.md#history)).
-
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-> ```This screen doesn't exist for iOS version at this moment.```
-
-</TabItem>
-
-</Tabs>
-
-### Proxy
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-&nbsp;_<Translate android="true" ids="proxy_pref_title"/>_ - allows configuring an HTTP proxy for all network requests. You can set Proxy Host and Proxy Port.
-
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-> ```This screen doesn't exist for iOS version at this moment.```
-
-</TabItem>
-
-</Tabs>
 
 ## Other 
+
+In this section of the OsmAnd settings, you can configure the notifications you receive, the location service, and how your application settings are saved.
 
 ### Dialogs and notifications
 
@@ -207,7 +234,7 @@ Here you can set parameters of your privacy and security.
 
 <TabItem value="android" label="Android">
 
-&nbsp;<Translate android="true" ids="dialogs_and_notifications_title"/> - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+*<Translate android="true" ids="dialogs_and_notifications_title"/>* - this setting allows you to turn on/off pop-ups, dialogs and notifications. This is the Start-up message and the [Download map dialog](../start-with/download-maps.md#download---own-map-advanced) (for example, a promotion, a quiz, an event, etc.).
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/general_settings_notifications_android.png)
 
@@ -215,7 +242,7 @@ Here you can set parameters of your privacy and security.
 
 <TabItem value="ios" label="iOS">
 
-- &nbsp;_<Translate ios="true" ids="do_not_show_discount"/>_ - allows switching on/off popups, dialogs and notifications. It's [the download map dialog](../start-with/download-maps.md#download---map-zoom-in) and startp-up message (like promotion, quiz and etc.).
+*<Translate ios="true" ids="do_not_show_discount"/>* - this setting allows you to turn on/off pop-ups, dialogs and notifications. This is the Start-up message and the [Download map dialog](../start-with/download-maps.md#download---own-map-advanced) (for example, a promotion, a quiz, an event, etc.).
 
 ![General Settings Dialogs iOS](@site/static/img/personal/profiles/general_settings_dialogs_ios.png)
 
@@ -225,59 +252,93 @@ Here you can set parameters of your privacy and security.
 
 ### Location source
 
+OsmAnd provides you with a choice of services to determine your location. 
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 You can choose which Google Play or "Android API" services OsmAnd will use to determine your location. This can be useful for devices without Google Play services or in case of inaccurate location or altitude data when recording tracks.  
-OsmAnd takes data from the resources *Google's Fused Location Providers* and *Android GPS and Network Providers*.  
-You can switch **<Translate android="true" id="location_source" />** in: _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings" />_.
+OsmAnd receives data from the resources *Google Fused Location Providers* and *Android GPS and Network Providers*.  
+You can switch **<Translate android="true" id="location_source" />** in: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
-![General Settings notifications Android](@site/static/img/personal/profiles/osmand-settings_location-source_google-play.png)
+![Auto-backup](@site/static/img/personal/profiles/location_source_andr.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-> ```This screen doesn't exist for iOS version at this moment.```
 
-iOS system uses iOS API for location.
+The iOS system uses the iOS API to determine location.  
+All settings for OsmAnd Location can be found in iOS Settings: *iOS device → Settings → OsmAnd maps → Location*  
 
-You can find all settings for OsmAnd Location in iOS Settings:
-
-_iOS device → Settings → OsmAnd maps → Location_
-
-Privacy of Location services:
-
-_iOS device → Settings → Privacy → Location Services_
+Privacy of Location services: *iOS device → Settings → Privacy → Location Services*
 
 </TabItem>
 
 </Tabs>
 
+### Auto-backup
+
+Android or OsmAnd Cloud can save your data and app settings.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+By default, the Android system backs up your OsmAnd settings and [Favorites](../personal/favorites.md) map markers so you can restore them on new devices or after reinstalling. The size of this backup is limited to 25MB.  
+**If you are using [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro), it is best to disable this feature to avoid misunderstandings after reinstallation.**  
+
+![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_andr.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+
+This settings is not available for iOS version at this moment.
+
+:::  
+
+
+</TabItem>
+
+</Tabs> 
+
+
 ## Legal
 
-### Uninstall speed cameras
+OsmAnd can warn you about speed cameras, but only if the laws in your country permit it.
+
+### Uninstall speed camera
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-&nbsp;<Translate android="true" ids="uninstall_speed_cameras"/> - allows activating or not Speed camera POI's ([alert widget of speed camearas](../widgets/nav-widgets.md#alert-types)). In some countries or regions, the use of speed camera warning applications is prohibited by law. You need to make a choice depending on the law of your country.
-Select "Keep active" and you will receive alerts and warnings about speed cameras.
-Select "Uninstall". All data related to speed cameras: alerts, notifications, POIs will be deleted until OsmAnd is completely reinstalled.
 
-![General Settings Cameras Android](@site/static/img/personal/profiles/general_settings_cameras_android.png)
+This setting allows you to activate or deactivate the speed camera POI ([speed camera alert widget](../widgets/nav-widgets.md#alert-widget)). In some countries or regions, using speed camera warning apps is illegal. You need to make a choice depending on the laws in your country. Select *Keep active* and you will receive speed camera alerts. Select *Delete* and all data related to speed cameras: alerts, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
+ 
+
+![General Settings Cameras Android](@site/static/img/personal/profiles/speed_cam_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-> ```This screen doesn't exist for iOS version at this moment.```
 
-Read about Screen alert of Speed cameras:
+:::note
 
-_[Screen alerts → Speed cameras](../widgets/nav-widgets.md#alert-widget)_
+This settings is not available for iOS version at this moment.
+
+:::  
+
+
+
+Read about Screen alert of Speed cameras: *[Alert widget](../widgets/nav-widgets.md#alert-widget)*
 
 </TabItem>
 

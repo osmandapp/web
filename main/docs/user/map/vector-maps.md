@@ -10,23 +10,36 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-Vector maps are designed to be a default source of map data for OsmAnd, so they need to be downloaded to the device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style could be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour Lines information. You can create your own map style OsmAnd to display required information.
+Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour Lines information. You can create your own OsmAnd map style to demonstrate the necessary information.
 
 ## Use cases
 
-Configurable & Custom Map styles are one of the main advantages of OsmAnd. Each user can customize the display of the map for himself and his hobbies, configure to show or hide certain map objects, sizes, and colors of these objects and change the scale on which to display certain objects.
+Configurable & Custom Map styles are one of the main advantages of OsmAnd. Each user can customize the display of the map for himself and his hobbies, configure to show or hide certain map objects, sizes, and colours of these objects and change the scale on which to display certain objects.
 
-## Default Map styles
+## Default Map styles  
 
-OsmAnd offers you numerous map styles and data layers to fit the purpose by default. Let's take a glance at the main ones for day and night modes:
+OsmAnd offers you many map styles and data layers that fit by default. Let's take a look at the main ones for day and night modes.  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_offline"/>
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_offline"/>*  
+
+</TabItem>
+
+</Tabs>  
 
 ### OsmAnd
 
@@ -44,7 +57,7 @@ OsmAnd style is the default style of map rendering, general-purpose style. It of
 
 <Translate android="true" ids="unirs_render_descr"/>
 
-UniRS and LightRS styles are author styles that render the basic map information but in different color schemes.
+UniRS and LightRS styles are author styles that render the basic map information but in different colour schemes.
 
 UniRS style: <Translate android="true" ids="unirs_render_descr"/>
 
@@ -107,25 +120,38 @@ Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
 
 The spelling of local names in simplified / traditional chinese, japanese, korean languages ([Map language](../map/vector-maps#map-language)) could be shown in erroneous hieroglyphs or even in squares. This happens when the device does not support the required fonts. Some issues with these incorrect fonts on our Github page: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862). To do this, OsmAnd for Android has the ability to download the necessary fonts for download.
 
-Download map fonts for simplified / traditional Chinese, Japanese, Korean maps:
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,other_menu_group,fonts_header"/>
+Download map fonts for simplified / traditional Chinese, Japanese, Korean maps:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,other_menu_group,fonts_header"/>*
 
 <p>  </p>
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
-## Contour Lines
+## * Contour Lines
 
 Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-settings).
+Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-map).
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,index_srtm_ele"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,product_title_srtm"/>
+To configure it, follow these steps:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,index_srtm_ele"/>*  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To configure it, follow these steps:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,product_title_srtm"/>* 
+
+</TabItem>
+
+</Tabs> 
+
 
 <p> </p>
 
@@ -138,15 +164,28 @@ More information about [Contour lines](../plugins/contour-lines.md).
 
 ### Map mode
 
-During day and night, you need to use mode for the map. [Map styles](#default-map-styles) have night and day mode styles. In this menu, you find the time of sunrise and sunset.
+During day and night, you need to use mode for the map. [Map styles](#default-map-styles) have night and day mode styles. In this menu, you find the time of sunrise and sunset.  
 
-In order to change <Translate android="true" ids="daynight"/>:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>
+<TabItem value="android" label="Android">  
 
-<p> </p>
+In order to change <Translate android="true" ids="daynight"/>:   
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+In order to change <Translate android="true" ids="daynight"/>:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*
+
+</TabItem>
+
+</Tabs> 
+
+
 
 <p> </p>
 
@@ -159,79 +198,117 @@ Here you can choose:
 |**<Translate android="true" ids="daynight_mode_night"/>**|Switching on night mode only.|
 |**<Translate android="true" ids="daynight_mode_sensor"/>**|Using a light sensor for day/night mode.|
 
-### Details
+### Details  
 
-In <Translate android="true" ids="rendering_category_details"/> menu you can show or hide the next additional map details:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>
+<TabItem value="android" label="Android">  
 
-<p> </p>
+In <Translate android="true" ids="rendering_category_details"/> menu you can show or hide the next additional map details:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*   
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+In <Translate android="true" ids="rendering_category_details"/> menu you can show or hide the next additional map details:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*
+
+</TabItem>
+
+</Tabs> 
+
+ 
 
 <p> </p>
 
 |Parameter and Description|
 |------------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>: Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
 |![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>: Showing type of surface of roads. Color of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](../map-legend/index.md).|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Showing type of surface of roads. Colour of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](../map-legend/index.md).|
 |![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png)|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>: Showing smoothness (grade) of the road. What smoothness is of your roads: good, bad or maybe horrible and etc: good, bad or maybe horrible and etc. Look at [Map legend](../map-legend/index.md) to find your road smoothness.|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map legend](../map-legend/index.md) to determine the smoothness of your road.|
 |![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>:  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](../map-legend/index.md) to find your road access. |
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**.  Showing access of roads: private or permissive, or only for emergency, or maybe toll road. Look at [Map legend](../map-legend/index.md) to find your road access. |
 |![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>: Showing green board and labels "LEZ" for [Low Emission Zones](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) in cities. A [Low-Emission Zone (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) is a geographically defined area which seeks to restrict or deter access by certain polluting vehicles with the aim of improving the air quality. It will help you not receive penalties in the green city center.|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. Showing green board and labels "LEZ" for [Low Emission Zones](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) in cities. A [Low-Emission Zone (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) is a geographically defined area which seeks to restrict or deter access by certain polluting vehicles with the aim of improving the air quality. It will help you not receive penalties in the green city center.|
 |![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>: Coloring buildings and places have special colors for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](../map-legend/index.md) to find your color for the building. |
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. Coloring buildings and places have special colours for each category: regular buildings, industrial, commercial, etc. Look at [Map legend](../map-legend/index.md) to find your colour for the building. |
 |![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>: Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](../map-legend/index.md).|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. Showing street lighting on the map. On the map, you can see illuminated and not illuminated streets, underground illuminated ways and temporarily illuminated streets. Look at [Map legend](../map-legend/index.md).|
 |![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>:Special setting for mappers. Showed refs, remarks, comments on the map from other mappers. |
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. Special setting for mappers. Showed refs, remarks, comments on the map from other mappers. |
 |![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>: Showing nautical depth contours on seas. You need to have a [nautical plugin](../plugins/nautical-charts) and download Nautical maps.|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Showing nautical depth contours on seas. You need to have a [nautical plugin](../plugins/nautical-charts) and download Nautical maps.|
 |![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>: Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). A nature reserve is a protected area of importance for wildlife, flora, fauna or features of geological or other special interest.|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). A nature reserve is a protected area of importance for wildlife, flora, fauna or features of geological or other special interest.|
 |![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|
+
 
 ### Routes
 
-In OsmAnd you can highlight official routes (present on OpenStreetMap) and hiking symbol overlay for your activities. It is very useful for your cycling, hiking, etc. You can select multiple routes at once though they will be displayed as layers and if the road has multiple routes over it only top color will be visible. If you have some specific rendering styles enabled, you could have a bigger routes variety i.e. for **_Snowmobile style_** you could select **_Snowmobile routes_**.
+In OsmAnd you can highlight official routes (present on OpenStreetMap) and hiking symbol overlay for your activities. It is very useful for your cycling, hiking, etc. You can select multiple routes at once though they will be displayed as layers and if the road has multiple routes over it only top colour will be visible. If you have some specific rendering styles enabled, you could have a bigger routes variety i.e. for **_Snowmobile style_** you could select **_Snowmobile routes_**.  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To configure it, follow these steps: 
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
+
+![Configure Map Routes section](@site/static/img/map/routes_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To configure it, follow these steps: 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,rendering_category_routes"/>*
+
+![Configure Map Routes section](@site/static/img/map/routs_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,rendering_category_routes"/>
-
-<p> </p>
-
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
+ 
 
 |Parameter and Description|   
 |------------|
 |**_<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>_**|
-|<Translate android="true" ids="layer_route"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](../map-legend/index.md).|
+|<Translate android="true" ids="layer_route"/>. <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>. Look at [Map legend](../map-legend/index.md).|
 |![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)|
-|<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>: <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>.|
+|<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>. <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>.|
 |![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**: Showing colored MTB trails. Look at [Map legend](../map-legend/index.md).|
+|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**. Showing colored MTB trails. Look at [Map legend](../map-legend/index.md).|
 |![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)|
 |**_<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>_**|
-|<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>: [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
+|<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>. [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
 |![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)|
-|<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>: [<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol). |
+|<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>. [<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol). |
 |![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)|
-|<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>: [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks). |
+|<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks). |
 |![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**: Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by color.|
+|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by colour.|
 |![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
-|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**: Showing colored routes of ski slopes. This setting is supported by [map style "Winter and ski"](../map/vector-maps.md#winter-and-ski).|
+|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is supported by [map style "Winter and ski"](../map/vector-maps.md#winter-and-ski).|
 |![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
-|**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**: Showing colored routes and symbols for riding horses.|
+|**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**. Showing colored routes and symbols for riding horses.|
 |![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)|
-|**<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**: Showing [icons of access, dangerous areas, tourism of whitewater sports](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). |
+|**<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**. Showing [icons of access, dangerous areas, tourism of whitewater sports](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). |
 |![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)|
+|**<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**. Used for named, numbered, or otherwise designated running routes used primarily for athletics. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)|
+|![Fitness routes](@site/static/img/map/fitness_1.png)|
+|**<Translate android="true" ids="rendering_attr_showFitnessTrails_description"/>**. A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)|
+|![Fitness routes](@site/static/img/map/fitness_route.png) |
+| **<Translate android="true" ids="travel_routes"/>** Shows previously uploaded specially configured user routes taken from OpenStreetMap categories. *Android only*. |
+| ![Travel routes](@site/static/img/map/travel_route_2.png) ![Travel routes](@site/static/img/map/travel_routes.png) |
 
 
 ### Transport
@@ -240,44 +317,69 @@ In navigation in cities, you need to see public transport in more contrast and s
 
 You can click to a public transport stop and choose one of the public transport routes. You see all routes with stops.
 
-In OsmAnd  we can choose special rendering for these needed:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>
+<TabItem value="android" label="Android">  
 
-<p> </p>
+In OsmAnd  we can choose special rendering for these needed:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*     
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_transport"/>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+In OsmAnd  we can choose special rendering for these needed:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_transport"/>*    
+
+</TabItem>
+
+</Tabs> 
+
+ 
 
 <p> </p>
 
 |Parameter and Description|   
 |------------|
-|**<Translate android="true" ids="rendering_attr_transportStops_name"/>**: Showing public transport stops.|
+|**<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Showing public transport stops.|
 |![Map transport stops](@site/static/img/map/map-transport-stops.png)|
-|**<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**: Showing bus, trolleybus, shuttle routes.|
+|**<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Showing bus, trolleybus, shuttle routes.|
 |![Map transport bus](@site/static/img/map/map-transport-bus.png)|
-|**<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**: Showing tram and train routes. |
+|**<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Showing tram and train routes. |
 |![Map transport tram](@site/static/img/map/map-transport-tram.png)|
-|**<Translate android="true" ids="rendering_attr_subwayMode_name"/>**: Showing underground routes.|
+|**<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Showing underground routes.|
 |![Map transport subway](@site/static/img/map/map-transport-subway.png)|
 
 ### Hide
 
-Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).
-In order to hide some objects on the map you can choose them in this menu:
+Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_hide"/>
+In order to hide some objects on the map you can choose them in this menu:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+ In order to hide some objects on the map you can choose them in this menu:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_hide"/>* 
+
+</TabItem>
+
+</Tabs> 
+
 
 <p> </p>
 
 |Parameter          |Description        
 |:------------|:---------------|
 |<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>| Hide regional boundaries inside of countries, but state boundaries are visible. |
-|<Translate android="true" ids="rendering_attr_natureReserves_name"/>| Hide nature boundaries (national parks etc.) |
 |<Translate android="true" ids="rendering_attr_noPolygons_name"/>|Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#change-layer-parameters-transparency).  |
 |<Translate android="true" ids="rendering_attr_hideBuildings_name"/>|Hide all polygons of buildings. |
 |<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>|Hide all polygons of water (seas, lakes, reservoirs etc.)  |
@@ -290,30 +392,60 @@ In order to hide some objects on the map you can choose them in this menu:
 
 ### Road style
 
-Special settings for roads. When we change colors according to road Atlas or add high contrast of roads or bold outline for roads.
+Special settings for roads. When we change colours according to road Atlas or add high contrast of roads or bold outline for roads.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_attr_roadStyle_name"/>*
+
+
+</TabItem>
+
+</Tabs> 
 
 |Parameter and Description|   
 |------------|
-|**<Translate android="true" ids="rendering_value_default_name"/>**: Default style for highways. Look at [Map legend](../map-legend/index.md).|
+|**<Translate android="true" ids="rendering_value_default_name"/>**. Default style for highways. Look at [Map legend](../map-legend/index.md).|
 |![Map road style default](@site/static/img/map/map-road-style-default.png)|
-|**<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**: Style of German road atlas.|
+|**<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style of German road atlas.|
 |![Map road style german](@site/static/img/map/map-road-style-german.png)|
-|**<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**: Style of American road atlas.|
+|**<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style of American road atlas.|
 |![Map road style american](@site/static/img/map/map-road-style-american.png)|
-|**<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**: The high contrast of roads.|
+|**<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. The high contrast of roads.|
 |![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)|
-|**<Translate android="true" ids="rendering_value_boldOutline_name"/>**: Bold outline for roads.|
+|**<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Bold outline for roads.|
 |![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)|
 
 ### Text size
 
-This setting helps to change the text size for names on the map:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>
+<TabItem value="android" label="Android">  
 
-<p> </p>
+This setting helps to change the text size for names on the map:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*     
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_text_size"/>
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+This setting helps to change the text size for names on the map:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_text_size"/>*   
+
+</TabItem>
+
+</Tabs> 
 
 <p> </p>
 
@@ -326,13 +458,27 @@ This setting helps to change the text size for names on the map:
 
 ### Map magnifier
 
-This setting helps to change the magnifier of the map. It is applicable for raster & vector maps. For raster maps it applies a magnifying effect, so text labels look bigger or smaller. For vector maps it provides a more or less detailed map, if you put it to a low value it will produce a noisy / slow map. You can choose this setting by long-click to "+" or "-" button on the screen or:
+This setting helps to change the magnifier of the map. It is applicable for raster & vector maps. For raster maps it applies a magnifying effect, so text labels look bigger or smaller. For vector maps it provides a more or less detailed map, if you put it to a low value it will produce a noisy / slow map.  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_map_magnifier"/>
+You can choose this setting by long-click to "+" or "-" button on the screen or:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+You can choose this setting by long-click to "+" or "-" button on the screen or:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_map_magnifier"/>* 
+
+</TabItem>
+
+</Tabs> 
+
 
 <p> </p>
 
@@ -345,13 +491,29 @@ This setting helps to change the magnifier of the map. It is applicable for rast
 
 ### Map Language
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose transliteration:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>
+<TabItem value="android" label="Android">  
 
-<p> </p>
+This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate android="true" ids="use_latin_name_if_missing"/>" switcher):  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*   
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="sett_lang_show_trans"/>" switcher): 
+
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>*:
+- &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
+- &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - showing the local language for names additionally for chosen language name.
+- &nbsp;"<Translate ios="true" ids="sett_lang_show_trans"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
+
+</TabItem>
+
+</Tabs> 
+
 
 <p> </p>
 
@@ -359,8 +521,12 @@ This setting allows using of any language for names on the map. If names don't h
 |------------|
 |**Local names**|
 |![Map language local names](@site/static/img/map/map-language-local-names.png)|
-|**Russian**|
-|![Map language russian](@site/static/img/map/map-language-russian.png)|
+|**Ukranian names**|
+|![Map language ukranian](@site/static/img/map/map-language-urkanian.png)|
+|**Show local names**|
+|![Map language local](@site/static/img/map/map-language-show-local.png)|
+|**Transliterate names**|
+|![Map language transliterate](@site/static/img/map/map-language-transliterate.png)|
 
 ## Custom Map style (own map style)
 If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.

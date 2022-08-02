@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # How to Compile the iOS Version
 
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. Install XCode from AppStore (Last tested 12.4)
 3. Install XCode command-line tools
   ```
@@ -71,3 +71,12 @@ Comment out ```__bsfd```, ```__bsrd``` lines and save file.
   - Check that all repositories are up to date and on correct branches.
   - Restart your computer. (Yes, it can help). 
   - Then run `$ ./prepare.sh` and try to build the project again.
+
+11. Debug QT (optional). If you want to see QT values in debug mode run this:
+  ```
+$ mkdir -p ~/qtlldb
+$ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
+$ touch  ~/.lldbinit
+$ echo "command script import ~/qtlldb/both.py" >> ~/.lldbinit
+  ```
+After set this parameters reboot your computer.

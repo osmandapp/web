@@ -57,6 +57,50 @@ Speed widget shows your current speed detected by GPS-sensor.
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
+
+## Average speed widget  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
+
+This widget shows your average speed in the past for a selected time interval and doesn't require any other features such as recording track or navigation. And you can easily use it for validating your average speed against speed limits on highways, for recording last 5-15 min average speed riding a bicycle.  
+
+Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*  
+
+**Time interval.**  
+The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is taken from recorded points by GPS: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.
+
+
+**Take stops to your account.**   
+***Off*** *setting*: If you stop for a while, zeroes will also be added to the average speed calculation, which can significantly change the overall value. ***On*** *setting*: If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed not to change much when you stop, for example, at a traffic light or want to take a break from cycling.   
+
+![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)
+
+![Average speed widgets](@site/static/img/widgets/aver_widg_1.png)  
+
+| | |
+|------------|------------|
+| Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_average_speed"/> |
+| | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_average_speed"/> |
+| On Click | – |  
+  
+ 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+**This feature doesn't exist for iOS version of OsmAnd.**
+:::  
+
+
+</TabItem>
+
+</Tabs>  
+
+
 ## Battery level
 
 This widget shows battery level of your device.
@@ -118,7 +162,8 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
-## Trip recording widgets  
+
+## * Trip recording widgets  
 
 :::note
   
@@ -126,58 +171,21 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 
 :::  
 
-**Information**  
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for the iOS version OsmAnd only *Distance*.  
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording#trip-recording-widgets.md). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
 
-<!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
 
-### Pre-use Setup 
-To start using *Trip recording widgets*, you need to make all of the following settings:
-1. [Enable the plugin](../plugins/trip-recording.md#enable-plugin). 
-2. Configure Trip recording for the required [profile](../personal/profiles.md).
-3. Add the **Trip recording widgets** to the screen.  
-
->**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues.md) 
-  
-### Settings and operations
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-> Trip recording widgets can be turned on/off by following this path: <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,map_widget_left"/> / <Translate android="true" ids="map_widget_right,map_widget_monitoring"/>
-
-<!--![Trip recording widget](@site/static/img/widgets/record_1.png) -->
-
-
-**What's in**  
-The screen with a selection of widgets. When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear.    
-&nbsp;  
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-1.png) 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
-
-| | 
-|------------|
-|**Distance**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
-|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
-|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
-|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)|
-|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
-|**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
-|**Downhill**: shows the sum of all descents of the current recorded trip.|
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
 
 | | |
 |------------|------------|
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
-| On Click | Starts / Stop track recording | 
+| On Click | Starts/Stop track recording or View the graph|
 
-### Dialog of Trip Recording
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-2.png)
 
 
 </TabItem>
@@ -189,37 +197,13 @@ The screen with a selection of widgets. When the selected widgets appear on the 
 
 :::  
 
->Trip recording Duration widget can be turned on/off by following this path:  
-Menu → Configure screen → Right panel → Trip recording 
-
-**What's in**  
-Screen with Duration widget. You can tap the widget and more information about the track and the ability to interact with it will appear.
-
-<!--On Click | Starts / Stop track recording-->
-  
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
-
- 
-
-| | 
-|------------|
-|**Distance**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has three different views: *Recording*, *Paused*, *Before recording*.| 
-|![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_ios_rec.png)| 
-|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the Trip recording dialog. If it is disabled, it will immediately start recording.|  
-|![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_4.png) |
-|NOTE. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is activ, then tapping on it opens the Trip recording dialog, anyway.|
-
+![trip_recording_widget](@site/static/img/widgets/widget_trip-recording-rec.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_monitoring"/> |
-| On Click | Starts / Stop track recording |  
+| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/> |
+| On Click | Starts / Stop track recording |
 
-
-### Dialog of Trip Recording
-
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_ios_tap.png) 
 
 </TabItem>
 
@@ -258,11 +242,11 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 | On Click | Opens Mapillary application |
 
 **Note**: Mapillary application should be installed separately.
-
+  
 
 
  
-## * Audio-video notes widget (Android)
+## * Audio-video notes widget
 
 >Enable **[<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,audionotes_plugin_name"/>.
 

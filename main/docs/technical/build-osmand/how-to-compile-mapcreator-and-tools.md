@@ -6,7 +6,7 @@ sidebar_position: 7
 
 
 ## Compile OsmAndMapCreator
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
 2. **Gradle** (command line):
     - Compile with command line 
     ```
@@ -67,17 +67,13 @@ https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfig
 https://github.com/osmandapp/OsmAnd-core/blob/legacy_core/externals/jpeg/jconfigint.h
 
 ## Compile qt core version for OsmAndMapCreator
-1. First setup the **development environment**, see {% link /setup-the-dev-environment %}.
-2. Compile and copy icon resources 
-```
-  (cd "resources" && ./verify-embed-resources-list.sh)
-```
-3. Prepare build (cmake) for specific target. Example clang / linux :
+1. First setup the **[development environment](setup-the-dev-environment.md)**.
+2. Prepare build (cmake) for specific target. Example clang / linux :
 ```
    alias clang='clang -std=c++11'
    build/amd64-linux-clang.sh release
 ```
-4. Compile library release
+3. Compile library release
 ```
     (cd "baked/amd64-linux-clang-release.make" && make -j4)
 ```

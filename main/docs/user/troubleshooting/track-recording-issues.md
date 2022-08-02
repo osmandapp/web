@@ -34,6 +34,10 @@ Obviously it's better not to record track in bad conditions and use "Pause", als
 - Points with bad precision (GPS hdoop)
 - Points closer than a threshold in meters
 
+### Android API or Google Services API
+
+It's very important to notice that you change how OsmAnd access location data from Android device. In OsmAnd Settings - Location Source there are **Android API** or **Google Play Services**, in many cases changing to **Android API** helps to improve recorded track and make it less noisy.
+
 ## The system may kill background apps to save power
 Starting with Android 4.4 (or maybe before), new Android power saving options limit CPU max speed, screen brightness, and may kill running apps. Mitigations:
 - (A1) For outdoor use (screen brightness), map rendering (CPU limit), and 'background' track recording I like none of these power saving features and usually turn the device (Android) power saving to entirely off.

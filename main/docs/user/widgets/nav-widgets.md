@@ -136,8 +136,8 @@ In order to display the bearing, a **target point** must be selected. If a **des
 * [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) is expressed as the horizontal angle between the geographic meridian and a line on Earth. Specifically, **true point bearing** is the angle measured in degrees clockwise from the True North line. OsmAnd software will show you the true bearing and hearding in our user-friendly interface, making it easy for you to make the right decision early on.
 
 ### Navigation along the rhumb line
-- Relative bearing. If you stick with relative bearing 0 degree and head forward, you will arrive to the destination point, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
-- Magnetic bearing. If you align compass on the boat / vehicle with widget value and head forward, you will arrive to the destnation, but not with the most short route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
+- Relative bearing. If you stick to a relative bearing of 0 degrees and move forward, you will arrive at the destination point, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
+- Magnetic bearing. If you align the compass on your boat/vehicle with the widget value and head forward, you will arrive at your destination, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 
 
 

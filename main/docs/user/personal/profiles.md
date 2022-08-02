@@ -14,7 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Each profile is available for full customization. In fact, each profile can become a separate application for the needs of the user.
+Each profile is available for full customization. There are the next profiles by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+
+In fact, each profile can become a separate application for the needs of the user. Of course, you can create your own profile with full customization for your needed.
 
 To start setting up an application profile:
 
@@ -151,7 +153,7 @@ In this section you can set parameters of units & formats for chosen application
 |          | <Translate android="true" ids="si_nm"/> | 0.54 nml |
 |**<Translate android="true" ids="coordinates_format"/>**| <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
-|          | <Translate android="true" ids=""dd_mm_ss_format/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
+|          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
@@ -283,11 +285,12 @@ In this section you can set [routing and navigation parameters of your profile, 
 |:------------|:---------------|:---------------|
 |**<Translate android="true" ids="nav_type_hint"/>:**| <Translate android="true" ids="select_nav_profile_dialog_message"/> |     |
 | <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md).            |
-| <Translate android="true" ids="shared_string_online"/> |  Online routing builds the route servers' resources online by the Internet connection. |   List of online routing providers. Here you can add an online routing engine: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org/), GPX.   |
+| <Translate android="true" ids="shared_string_online"/> |  Online routing builds the route servers' resources online by the Internet connection. |   List of online routing providers. Here you can add an online routing engine: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.   |
+| <Translate android="true" ids="routing_profile_broutrer"/> |  [Offline third-party routing](https://brouter.de/)  |   The full description read [here](../navigation/thirdparty-routing.md)   |
 | **<Translate android="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
 | "<Translate android="true" ids="routing_attr_driving_style_name"/>"   |  select driving puprose to get shorter, faster, safer or unpaved route. | "<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate android="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
-| "<Translate android="true" ids=""impassable_road/>" |  avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
+| "<Translate android="true" ids="impassable_road"/>" |  avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_borders_name"/>"    |              |
@@ -305,13 +308,16 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate android="true" ids="routing_attr_avoid_tram_name"/>" |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
 | "<Translate android="true" ids="prefer_in_routing_title"/>" |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/>  |    |
+| "<Translate android="true" ids="transport_hazmat_title"/>" |  <Translate android="true" ids="transport_hazmat_no_desc"/>  | Truck   |
+| "<Translate android="true" ids="routing_attr_goods_restrictions_name"/>" |  <Translate android="true" ids="routing_attr_goods_restrictions_description"/>  | Truck   |
 | "<Translate android="true" ids="routing_attr_short_way_name"/>" |  <Translate android="true" ids="routing_attr_short_way_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_allow_streams_name"/>" |  allows streams and drains for boat navigation type.  | Boat navigation type |
 | "<Translate android="true" ids="routing_attr_allow_intermittent_name"/>" |  allows intermittent water ways for boat navigation type.  | Boat navigation type    |
 | "<Translate android="true" ids="routing_attr_max_num_changes_name"/>" |  specify upper limit of changes of for public transport.  | Public transport navigation type    |
 | "<Translate android="true" ids="routing_attr_allow_motorway_name"/>" |  <Translate android="true" ids="routing_attr_allow_motorway_description"/>  | Cycling |
-| "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids=""routing_attr_allow_private_description/>  |    |
+| "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_height_obstacles_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
@@ -323,7 +329,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 | "<Translate android="true" ids="development"/>" | using live updates and the initial part for calculation the route    |    |
 |   | "<Translate android="true" ids="use_live_routing"/>"    |  Enable navigation for [OsmAnd Live changes](../personal/maps.md#osmand-live).  |
 |   | "<Translate android="true" ids="use_fast_recalculation"/>"   |  <Translate android="true" ids="use_fast_recalculation_desc"/> |
-|   | "<Translate android="true" ids=""use_two_phase_routing/>"   |  <Translate android="true" ids="complex_routing_descr"/> |
+|   | "<Translate android="true" ids="use_two_phase_routing"/>"   |  <Translate android="true" ids="complex_routing_descr"/> |
 | **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 | **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
 | **<Translate android="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
@@ -371,6 +377,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_tram_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
+|                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
 | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
@@ -408,7 +415,7 @@ Parameters for "Map during navigation" and others:
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 | **<Translate android="true" ids="map_during_navigation"/>:** |  Change map behavior during navigation.   |              |
-| "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids=choose_auto_follow_route_descr""/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids="choose_auto_follow_route_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate android="true" ids="auto_zoom_none"/>, <Translate android="true" ids="auto_zoom_farthest"/>, <Translate android="true" ids="auto_zoom_far"/>, <Translate android="true" ids="auto_zoom_close"/>. |
 | "<Translate android="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate android="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map.md#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
 | "<Translate android="true" ids="snap_to_road"/>"  |  <Translate android="true" ids="snap_to_road_descr"/>.   |    |

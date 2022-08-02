@@ -19,6 +19,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 The navigation function allows you to reach your destination easily using voice guidance (optional).
 
+There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+
 ![Navigation screen Android](@site/static/img/navigation/route/navigation_android.png) ![Navigation screen iOS](@site/static/img/navigation/route/navigation_ios.png)
 
 ## How to use
@@ -105,8 +107,6 @@ Tracks list.
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_2_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_2_ios.png)
 
 
-
-
 ### Route line appearance
 
 This menu allows you to adapt the route line appearance. If there are some changes to your route, you can customize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by colour or just apply any colour and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
@@ -136,8 +136,6 @@ This menu allows you to adapt the route line appearance. If there are some chang
 ![Navigation route Android](@site/static/img/navigation/route/RLApp.png)
 
   
-
-
 <!--Customize route line menu items-->
 &nbsp;  
 **Colour**  
@@ -180,7 +178,6 @@ Select a route line's width.
 ![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
 |*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
 ![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
-
 
 
 
@@ -269,16 +266,36 @@ ___
 
 <!-- ![customise route line 1](@site/static/img/navigation/route/customise_route_line-1.png) -->
 
-
-
 </TabItem>
 
 </Tabs>  
 
-
 ## Type of navigation
 
-Link to [Navigation profiles](../personal/profiles.md)
+Navigation type is rules how the route will be calculated. This rules content in [routing.xml](./../../technical/osmand-file-formats/osmand-routing-xml.md) file for offline OsmAnd routing. For Android version of OsmAnd there is an opportunity to set Online routing by providers.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+There are next routing engines for OsmAnd in [Navigation settings for profile](../personal/profiles.md#navigation):
+
+- _[Offline OsmAnd routing](../personal/profiles.md#navigation)_: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md)..
+
+- _[Online routing](../personal/profiles.md#navigation)_ uses online providers services: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.
+
+- _[Third-party routing](../navigation/thirdparty-routing.md)_.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+There is OsmAnd engine for offline navigation. For choosing navigation type: [Navigation settings for profile](../personal/profiles.md#navigation):
+
+- _[Offline OsmAnd routing](../personal/profiles.md#navigation)_: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md)..
+
+</TabItem>
+</Tabs>
 
 ## Custom routing
 
