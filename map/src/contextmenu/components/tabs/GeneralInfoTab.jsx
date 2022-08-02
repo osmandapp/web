@@ -29,13 +29,13 @@ export default function GeneralInfoTab({width, summary, url}) {
     if (info?.hasElevationData) {
         updownhill = "Uphill/downhill: " + info.diffElevationUp.toFixed(0)
             + "/" + info?.diffElevationDown.toFixed(0) + " m";
-        elevation = "ElevationTab (min/avg/max): " +
+        elevation = "Elevation (min/avg/max): " +
             (info.minElevation).toFixed(1) + " / " +
             (info.avgElevation).toFixed(1) + " / " +
             (info.maxElevation).toFixed(1) + " m"
     }
     if (info?.hasSpeedData) {
-        speed = "SpeedTab (min/avg/max): " +
+        speed = "Speed (min/avg/max): " +
             (info.minSpeed * 3.6).toFixed(0) + " / " +
             (info.avgSpeed * 3.6).toFixed(0) + " / " +
             (info.maxSpeed * 3.6).toFixed(0) + " km/h"

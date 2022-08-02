@@ -85,14 +85,6 @@ function getPointsDist(list) {
     return list;
 }
 
-function removeDuplicatesPoints(list) {
-    return list.filter((value, index, self) =>
-            index === self.findIndex((t) => (
-                t.lat === value.lat && t.lng === value.lng
-            ))
-    )
-}
-
 async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -145,7 +137,6 @@ const Utils = {
     getFileData,
     getDistance,
     getPointsDist,
-    removeDuplicatesPoints,
     uploadFile
 };
 

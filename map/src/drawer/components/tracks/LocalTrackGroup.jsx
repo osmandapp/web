@@ -8,7 +8,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
-import LocalTrackUtils from "../../util/LocalTrackUtils";
 import CreatedTrackUtils from "../../util/CreatedTrackUtils";
 
 const useStyles = makeStyles({
@@ -62,7 +61,8 @@ export default function LocalTrackGroup() {
 
     }
 
-    let localGpxFiles = LocalTrackUtils.getTrackList(ctx.gpxFiles);
+    let localGpxFiles = !ctx.gpxFiles ? [] :
+        Object.values(ctx.gpxFiles).filter((item) => item.local === true);
 
     const clearLocalGpx = (ctx) => async (e) => {
         const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/clear`, {
