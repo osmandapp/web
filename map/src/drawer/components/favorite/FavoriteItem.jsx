@@ -17,13 +17,13 @@ const useStyles = makeStyles({
         }
     },
     item: {
-        '& li': {
+        '& .MuiMenuItem-root' : {
             minHeight: '50px !important',
             maxHeight: '50px !important',
         }
     },
     text: {
-        '& p': {
+        '& .MuiTypography-root' : {
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",

@@ -7,8 +7,9 @@ import Actions from "./Actions";
 
 const useStyles = makeStyles({
     group: {
-        '& li': {
-        minHeight: '50px !important'
+        '& .MuiMenuItem-root' : {
+            minHeight: '50px !important',
+            maxHeight: '50px !important',
         }
     }
 })

@@ -16,8 +16,9 @@ const useStyles = makeStyles({
         minHeight: '40px'
     },
     group: {
-        '& li': {
-            minHeight: '50px !important'
+        '& .MuiMenuItem-root' : {
+            minHeight: '50px !important',
+            maxHeight: '50px !important',
         }
     }
 })

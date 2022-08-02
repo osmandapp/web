@@ -6,8 +6,9 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
     group: {
-        '& li': {
-            minHeight: '50px !important'
+        '& .MuiMenuItem-root' : {
+            minHeight: '50px !important',
+            maxHeight: '50px !important',
         }
     }
 })
