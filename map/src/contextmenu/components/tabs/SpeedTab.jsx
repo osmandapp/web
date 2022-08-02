@@ -1,8 +1,7 @@
 import React, {useMemo} from 'react';
-import GpxGraph from "./GpxGraph";
-import { Typography, Box } from "@mui/material";
+import GpxGraphTab from "./GpxGraphTab";
 
-export default function Speed({ data, width }) {
+export default function SpeedTab({data, width}) {
     const graphData = useMemo(() => {
         let result = [];
         let min = data[0].speed;
@@ -19,10 +18,10 @@ export default function Speed({ data, width }) {
             min = Math.min(val, min);
             max = Math.max(val, max);
         });
-        return { res: result, min: min, max: max };
+        return {res: result, min: min, max: max};
     }, [data]);
     return (
-        <GpxGraph data={graphData.res} xAxis={"Distance"} yAxis={"Speed"} 
-            width={width} min={0} max={graphData.max} />
+        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"Speed"}
+                     width={width} min={0} max={graphData.max}/>
     );
 };

@@ -6,29 +6,24 @@ import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 
 const osmandTileURL = {
-    uiname: 'Mapnik (tiles)', 
+    uiname: 'Mapnik (tiles)',
     key: 'mapniktile',
-    tileSize: 512, 
+    tileSize: 512,
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png'
 }
 
-// const osmandTileURL = '/tile/hd/{z}/{x}/{y}.png';
-// const osmandTileURL = '/tile/df/{z}/{x}/{y}.png';
-
-
 
 function getWeatherUrl(layer) {
-    // const urlWeatherPefix = '.';
     return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
 }
 
 function getLayers() {
     const layers = [
-        { key: "temperature", name: "Temperature", opacity: 0.5, iconComponent: <Thermostat fontSize="small" /> },
-        { key: "pressure", name: "Pressure", opacity: 0.6, iconComponent: <Compress fontSize="small" /> },
-        { key: "wind", name: "Wind", opacity: 0.6, iconComponent: <Air fontSize="small" /> },
-        { key: "cloud", name: "Cloud", opacity: 0.5, iconComponent: <Cloud fontSize="small" /> },
-        { key: "precip", name: "Precipitation", opacity: 0.7, iconComponent: <Shower fontSize="small" /> },
+        {key: "temperature", name: "Temperature", opacity: 0.5, iconComponent: <Thermostat fontSize="small"/>},
+        {key: "pressure", name: "Pressure", opacity: 0.6, iconComponent: <Compress fontSize="small"/>},
+        {key: "wind", name: "Wind", opacity: 0.6, iconComponent: <Air fontSize="small"/>},
+        {key: "cloud", name: "Cloud", opacity: 0.5, iconComponent: <Cloud fontSize="small"/>},
+        {key: "precip", name: "Precipitation", opacity: 0.7, iconComponent: <Shower fontSize="small"/>},
     ];
     layers.map((item) => {
         item.url = getWeatherUrl(item.key);
@@ -42,20 +37,21 @@ function getLayers() {
 }
 
 let monthNames = {};
+
 function evaluateMonthNames() {
     if (Object.keys(monthNames).length > 0) {
         return monthNames;
     }
-    for(var i = 0; i < 12; i++ ) {
+    for (var i = 0; i < 12; i++) {
         var objDate = new Date();
         objDate.setDate(1);
         objDate.setMonth(i);
-        monthNames[objDate.toLocaleString("en-us", { month: "short" })] = i + 1;
+        monthNames[objDate.toLocaleString("en-us", {month: "short"})] = i + 1;
         monthNames[objDate.toLocaleString(window.navigator.userLanguage || window.navigator.language,
-            { month: "short" })] = i + 1;
+            {month: "short"})] = i + 1;
     }
     return monthNames;
-    
+
 }
 
 export const toHHMMSS = function (time) {
@@ -64,9 +60,15 @@ export const toHHMMSS = function (time) {
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-    if (hours < 10) { hours = "0" + hours; }
-    if (minutes < 10) { minutes = "0" + minutes; }
-    if (seconds < 10) { seconds = "0" + seconds; }
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
     return hours + ':' + minutes + ':' + seconds;
 }
 
@@ -147,6 +149,11 @@ async function loadFavoritesFile(listFiles, setFavorites, favorites) {
         favObj.file = newFavouriteFile;
         favObj.groups = [];
         favObj.groupsUnique = [];
+        favObj.visibleMarker = {
+            prev: null,
+            current: null
+        };
+
         setFavorites(favObj);
     }
 }
@@ -160,7 +167,7 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, 
         let newUser = user?.username;
         if (loginUser !== newUser) {
             if (newUser) {
-                setUserEmail(newUser, { days: 30 });
+                setUserEmail(newUser, {days: 30});
             }
             setLoginUser(newUser);
         }
@@ -219,11 +226,11 @@ function formatRouteMode(routeMode) {
 async function loadRouteModes(routeMode, setRouteMode) {
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         let data = await response.json();
-        setRouteMode({ mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params });
+        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
     }
 }
 
@@ -247,15 +254,15 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
         + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}${avoidRoadsUrl}`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         let data = await response.json();
-        let props = {}; 
+        let props = {};
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
         }
-        setRouteData({ geojson: data, id: new Date().getTime(), props: props });
+        setRouteData({geojson: data, id: new Date().getTime(), props: props});
     }
 }
 
@@ -273,22 +280,21 @@ async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setSta
         if (data?.features?.length > 0) {
             let coords = data?.features[0].geometry.coordinates;
             if (coords.length > 0) {
-                start = { lat: coords[0][1], lng: coords[0][0] };
-                end = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
+                start = {lat: coords[0][1], lng: coords[0][0]};
+                end = {lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0]};
             }
             props = data.features[0]?.properties;
         }
         setStartPoint(start);
         setEndPoint(end);
         setInterPoints([]);
-        setRouteData({ geojson: data, id: new Date().getTime(), props: props });
+        setRouteData({geojson: data, id: new Date().getTime(), props: props});
     } else {
         let message = await response.text();
         alert(message);
     }
 }
 
-// var originalDateObj = new Date(weatherDateObj);
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
@@ -317,25 +323,38 @@ export const AppContextProvider = (props) => {
     let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
-        startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
-    } 
+        startInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
+    }
     if (searchParams.get('end')) {
         let arr = searchParams.get('end').split(',');
-        endInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
+        endInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
     if (searchParams.get('pin')) {
         let arr = searchParams.get('pin').split(',');
-        pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
+        pinInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
-    const [routeMode, setRouteMode] = useState({mode: modeParam, opts: {}, 
-        modes: { 'car': { name: 'Car', params: {} } } });
+    const [routeMode, setRouteMode] = useState({
+        mode: modeParam, opts: {},
+        modes: {'car': {name: 'Car', params: {}}}
+    });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
     const [interPoints, setInterPoints] = useState([]);
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-    const [favorites, setFavorites] = useState({file: null, groups: [], groupsUnique: [], readFirst: false});
+    const [favorites, setFavorites] = useState({
+        file: null,
+        groups: [],
+        groupsUnique: [],
+        readFirst: false,
+        visibleMarker: {
+            prev: null,
+            current: null
+        }
+    });
+
+    const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -357,14 +376,14 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
     }, []);
-    
+
     useEffect(() => {
         checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail);
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [loginUser]);
     useEffect(() => {
         loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading);
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [loginUser]);
     useEffect(() => {
         loadFavoritesFile(listFiles, setFavorites, favorites).then();
@@ -381,7 +400,7 @@ export const AppContextProvider = (props) => {
         selectedGpxFile, setSelectedGpxFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
-        startPoint, setStartPoint, 
+        startPoint, setStartPoint,
         endPoint, setEndPoint,
         pinPoint, setPinPoint,
         interPoints, setInterPoints,
@@ -391,7 +410,8 @@ export const AppContextProvider = (props) => {
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
         favorites, setFavorites,
-        avoidRoads, setAvoidRoads
+        avoidRoads, setAvoidRoads,
+        contextMenuObjectType, setContextMenuObjectType
 
     }}>
         {props.children}

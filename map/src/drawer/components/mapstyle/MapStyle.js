@@ -5,8 +5,8 @@ import {
 } from "@mui/material";
 import { Settings } from '@mui/icons-material';
 import { ExpandLess, ExpandMore, Map } from '@mui/icons-material';
-import AppContext from "../../context/AppContext"
-import RenderingSettingsDialog from './RenderingSettingsDialog';
+import AppContext from "../../../context/AppContext"
+import RenderingSettingsDialog from '../route/RenderingSettingsDialog';
 // import Utils from "../../util/Utils";
 
 

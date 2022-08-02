@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {Area, Tooltip, XAxis, YAxis, AreaChart} from "recharts";
 import {Typography} from "@mui/material";
-import AppContext from "../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
-export default function GpxGraph({ data, xAxis, yAxis, width, min, max}) {
+export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
     const ctx = useContext(AppContext);
 
     max = Math.ceil(max / 10) * 10;
@@ -35,7 +35,7 @@ export default function GpxGraph({ data, xAxis, yAxis, width, min, max}) {
                         </linearGradient>
                     </defs>
                     <XAxis dataKey={xAxis} type="number" tickCount={11}/>
-                    <YAxis type="number" tickCount={6} domain={[min, max]} />
+                    <YAxis type="number" tickCount={6} domain={[min, max]}/>
                     <Tooltip/>
                     <Area
                         type="monotone"
@@ -46,6 +46,6 @@ export default function GpxGraph({ data, xAxis, yAxis, width, min, max}) {
                     />
                 </AreaChart>
             </Typography>
-    </>
+        </>
     );
 };

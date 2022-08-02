@@ -1,8 +1,8 @@
 import React from 'react';
-import { Typography, Box, Button } from "@mui/material";
-import { toHHMMSS } from "../../context/AppContext"
+import {Typography, Box, Button} from "@mui/material";
+import {toHHMMSS} from "../../../context/AppContext"
 
-export default function GeneralInfo({ width, summary, url }) {
+export default function GeneralInfoTab({width, summary, url}) {
     let timeRange = '';
     let distance = '';
     let timeMoving = '';
@@ -42,16 +42,16 @@ export default function GeneralInfo({ width, summary, url }) {
     }
 
     return (<Box width={width}>
-        <Typography variant="subtitle1" color="inherit" >
-            {info?.name} 
+        <Typography variant="subtitle1" color="inherit">
+            {info?.name}
             {url ? <Button onClick={() => window.open(url)}>Download</Button> : <></>}
-            {timeRange ? <><br /><br />Time: </> : <></>}  {timeRange}
-            {distance ? <br /> : <></>} {distance}
-            {speed ? <br /> : <></>} {speed}
-            {timeMoving ? <br /> : <></>} {timeMoving}
-            {elevation ? <br /> : <></>} {elevation}
-            {updownhill ? <br /> : <></>} {updownhill}
+            {timeRange ? <><br/><br/>Time: </> : <></>} {timeRange}
+            {distance ? <br/> : <></>} {distance}
+            {speed ? <br/> : <></>} {speed}
+            {timeMoving ? <br/> : <></>} {timeMoving}
+            {elevation ? <br/> : <></>} {elevation}
+            {updownhill ? <br/> : <></>} {updownhill}
         </Typography>
-        
+
     </Box>);
 };

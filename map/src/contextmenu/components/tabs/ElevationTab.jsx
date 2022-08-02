@@ -1,8 +1,7 @@
 import React, {useMemo} from 'react';
-import GpxGraph from "./GpxGraph";
-import { Typography, Box } from "@mui/material";
+import GpxGraphTab from "./GpxGraphTab";
 
-const Elevation = ({ data, width }) => {
+const ElevationTab = ({data, width}) => {
     const graphData = useMemo(() => {
         let result = [];
         let min = data[0].elevation;
@@ -19,15 +18,14 @@ const Elevation = ({ data, width }) => {
             min = Math.min(val, min);
             max = Math.max(val, max);
         });
-        return { res: result, min: min, max: max };
+        return {res: result, min: min, max: max};
     }, [data]);
 
     return (
-        // min={data.min.toFixed(0)} max={data.max.toFixed(0)}
-        <GpxGraph data={graphData.res} xAxis={"Distance"} yAxis={"Elevation"} 
-            width={width} min={graphData.min} max={graphData.max} />
-        
+        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"Elevation"}
+                     width={width} min={graphData.min} max={graphData.max}/>
+
     );
 };
 
-export default Elevation;
+export default ElevationTab;

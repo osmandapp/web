@@ -1,23 +1,18 @@
 import React, {useEffect, useRef, useContext, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl} from "react-leaflet";
-import AppContext from "../context/AppContext";
-import MapContextMenu from "./MapContextMenu"
-import RouteLayer from "./layers/RouteLayer"
-import WeatherLayer from "./layers/WeatherLayer"
-import L from 'leaflet';
-import MarkerIcon from './MarkerIcon.js'
-import '../util/gpx.js';
+import AppContext from "../../context/AppContext";
+import MapContextMenu from "../../contextmenu/components/MapContextMenu"
+import RouteLayer from "../layers/RouteLayer"
+import WeatherLayer from "../layers/WeatherLayer"
+import MarkerIcon from '../MarkerIcon.js'
+import '../../util/gpx.js';
 import 'leaflet-hash';
-
-// import 'leaflet.awesome-markers';
-// import 'leaflet.awesome-markers/dist/leaflet.awesome-markers.css';
-// import 'ionicons/css/ionicons.min.css'
 
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
-import FavoriteLayer from "./layers/FavoriteLayer";
-import TrackLayer from "./layers/TrackLayer";
+import FavoriteLayer from "../layers/FavoriteLayer";
+import TrackLayer from "../layers/TrackLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,14 +44,12 @@ const OsmAndMap = () => {
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
 
-    let hash = null;
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
 
     const whenReadyHandler = event => {
         const {target: map} = event;
         map.attributionControl.setPrefix('');
-        hash = new L.Hash(map);
         mapRef.current = map;
         if (!ctx.mapMarkerListener) {
             ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
@@ -71,9 +64,8 @@ const OsmAndMap = () => {
 
     return (
         <MapContainer center={position} zoom={5} className={classes.root} minZoom={1} maxZoom={20}
-                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]}
+                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
         >
-
             <RouteLayer/>
             <WeatherLayer/>
             <FavoriteLayer/>

@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Drawer, Toolbar, Typography, Box} from "@mui/material";
+import React, {useState, useContext} from 'react';
+import {Drawer, Toolbar, Typography, Box} from "@mui/material";
 import {
     IconButton, AppBar, Input
 } from "@mui/material";
@@ -7,10 +7,10 @@ import {
     Close,
     Menu, Search
 } from '@mui/icons-material';
-import OsmAndMap from './OsmAndMap';
+import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet} from 'react-router-dom';
-import AppContext from "../context/AppContext";
+import AppContext from "../../context/AppContext";
 
 const OsmAndMapFrame = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -120,8 +120,7 @@ const OsmAndMapFrame = () => {
                         </Box>
                     </Toolbar>
                 </AppBar>
-                <OsmAndMap>
-                </OsmAndMap>
+                <OsmAndMap/>
             </Box>
             <Drawer
                 //  container={container}

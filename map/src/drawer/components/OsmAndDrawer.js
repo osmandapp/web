@@ -4,14 +4,13 @@ import {
     Divider, MenuItem, ListItemIcon, MenuList, Box, IconButton
 } from "@mui/material";
 import { ArrowBack, Person } from '@mui/icons-material';
-import AppContext from "../context/AppContext"
-import Weather from "./drawer/Weather"
-import CloudGpx from "./drawer/CloudGpx"
-import LocalGpx from "./drawer/LocalGpx"
-import MapStyle from "./drawer/MapStyle"
-import RouteMenu from "./drawer/RouteMenu"
+import AppContext from "../../context/AppContext"
+import Weather from "./weather/Weather"
+import TracksMenu from "./tracks/TracksMenu"
+import MapStyle from "./mapstyle/MapStyle"
+import RouteMenu from "./route/RouteMenu"
 import { useNavigate } from "react-router-dom";
-import Favorites from "./drawer/Favorites";
+import FavoritesMenu from "./favorite/FavoritesMenu";
 
 
 
@@ -54,9 +53,8 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
         <Divider />
         <MenuList>
             <Weather />
-            <CloudGpx />
-            <LocalGpx />
-            <Favorites />
+            <TracksMenu />
+            <FavoritesMenu />
             <MapStyle />
             <RouteMenu />
         </MenuList>

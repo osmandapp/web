@@ -37,7 +37,7 @@ function moveableMarker(ctx, map, marker) {
                 let minDist = dist(ctx.endPoint, mv) +
                     dist(ctx.interPoints[ctx.interPoints.length - 1], mv);
                 for (let i = 0; i < ctx.interPoints.length; i++) {
-                    let dst = dist(i == 0 ? ctx.startPoint : ctx.interPoints[i - 1], mv) +
+                    let dst = dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], mv) +
                         dist(ctx.interPoints[i], mv);
                     if (dst < minDist) {
                         minInd = i;

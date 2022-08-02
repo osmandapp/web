@@ -358,19 +358,19 @@ L.GPX = L.FeatureGroup.extend({
 
     // Private methods
     _merge_objs: function (a, b) {
-        var _ = {};
-        for (var attr in a) {
-            _[attr] = a[attr];
+        let _ = {};
+        for (let attr1 in a) {
+            _[attr1] = a[attr1];
         }
-        for (var attr in b) {
-            _[attr] = b[attr];
+        for (let attr2 in b) {
+            _[attr2] = b[attr2];
         }
         return _;
     },
 
     _prepare_data_point: function (p, trans1, trans2, trans_tooltip) {
-        var r = [trans1 && trans1(p[0]) || p[0], trans2 && trans2(p[1]) || p[1]];
-        r.push(trans_tooltip && trans_tooltip(r[0], r[1]) || (r[0] + ': ' + r[1]));
+        let r = [(trans1 && trans1(p[0])) || p[0], (trans2 && trans2(p[1])) || p[1]];
+        r.push((trans_tooltip && trans_tooltip(r[0], r[1])) || (r[0] + ': ' + r[1]));
         return r;
     },
 
@@ -389,8 +389,8 @@ L.GPX = L.FeatureGroup.extend({
     },
 
     _load_xml: function (url, cb, options, async) {
-        if (async == undefined) async = this.options.async;
-        if (options == undefined) options = this.options;
+        if (async === undefined) async = this.options.async;
+        if (options === undefined) options = this.options;
 
         var req = new window.XMLHttpRequest();
         req.open('GET', url, async);
@@ -399,8 +399,8 @@ L.GPX = L.FeatureGroup.extend({
         } catch (e) {
         }
         req.onreadystatechange = function () {
-            if (req.readyState != 4) return;
-            if (req.status == 200) cb(req.responseXML, options);
+            if (req.readyState !== 4) return;
+            if (req.status === 200) cb(req.responseXML, options);
         };
         req.send(null);
     },
@@ -431,7 +431,7 @@ L.GPX = L.FeatureGroup.extend({
     },
 
     _parse_gpx_data: function (xml, options) {
-        var i, t, l, el, layers = [];
+        var i, el, layers = [];
 
         var name = xml.getElementsByTagName('name');
         if (name.length > 0) {
@@ -463,7 +463,7 @@ L.GPX = L.FeatureGroup.extend({
                     layers = layers.concat(this._parse_segment(track, options, polyline_options, 'trkpt'));
                 } else {
                     var segments = track.getElementsByTagName('trkseg');
-                    for (j = 0; j < segments.length; j++) {
+                    for (let j = 0; j < segments.length; j++) {
                         layers = layers.concat(this._parse_segment(segments[j], options, polyline_options, 'trkpt'));
                     }
                 }
@@ -480,7 +480,7 @@ L.GPX = L.FeatureGroup.extend({
                         el[i].getAttribute('lon'));
 
                     let pointIcon = L.icon({
-                        iconUrl: 'images/map_icons/circle.svg',
+                        iconUrl: '/map/images/map_icons/circle.svg',
                         pointMatchers: [],
                         iconSize: [10, 10],
                         clickable: false
@@ -547,7 +547,7 @@ L.GPX = L.FeatureGroup.extend({
                     background = backgroundEl.length > 0 ? backgroundEl[0].textContent : '';
 
                     let colorEl = el[i].getElementsByTagName('osmand:color');
-                    color = colorEl.length > 0 ? colorEl[0].textContent : '';
+                    color = colorEl.length > 0 ?  this._hexToArgb(colorEl[0].textContent) : '';
 
                     let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
                     hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : 'false';
@@ -564,79 +564,10 @@ L.GPX = L.FeatureGroup.extend({
                  * Otherwise, fall back to the default icon if one was configured, or
                  * finally to the default icon URL, if one was configured.
                  */
-                var wptIcons = options.marker_options.wptIcons;
-                var wptIconUrls = options.marker_options.wptIconUrls;
-                var wptIconsType = options.marker_options.wptIconsType;
-                var wptIconTypeUrls = options.marker_options.wptIconTypeUrls;
-                var ptMatchers = options.marker_options.pointMatchers || [];
-                var symIcon;
 
-                if (icon) {
-                    let svg;
-                    if (background === "circle") {
-                        svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="12" fill="${color}"/>
-                        </svg>
-                            `
-                    }
-                    if (background === "octagon") {
-                        svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
-                        </svg>
-
-                            `
-                    }
-                    if (background === "square") {
-                        svg = `
-                        <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
-                        </svg>
-                            `
-                    }
-
-                    symIcon = L.divIcon({
-                        html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="images/poi-icons-svg/mx_${icon}.svg"
-                              </div>
-                              `
-                    })
-                } else {
-                    if (wptIcons && symKey && wptIcons[symKey]) {
-                        symIcon = wptIcons[symKey];
-                    } else if (wptIconsType && typeKey && wptIconsType[typeKey]) {
-                        symIcon = wptIconsType[typeKey];
-                    } else if (wptIconUrls && symKey && wptIconUrls[symKey]) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
-                    } else if (wptIconTypeUrls && typeKey && wptIconTypeUrls[typeKey]) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
-                    } else if (ptMatchers.length > 0) {
-                        for (var j = 0; j < ptMatchers.length; j++) {
-                            if (ptMatchers[j].regex.test(name)) {
-                                symIcon = ptMatchers[j].icon;
-                                break;
-                            }
-                        }
-                    } else if (wptIcons && wptIcons['']) {
-                        symIcon = wptIcons[''];
-                    } else if (wptIconUrls && wptIconUrls['']) {
-                        symIcon = new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
-                    } else {
-                        symIcon = L.divIcon({
-                            html: `
-                              <div>
-                                  <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                      <circle cx="24" cy="24" r="12" fill="#eecc22"/>
-                                  </svg>
-                                  <img class="icon" src="images/poi-icons-svg/mx_special_star.svg"
-                              </div>
-                              `
-                        })
-                    }
-                }
+                color = this._checkColor(color);
+                let svg = this._checkBackground(background, color);
+                let symIcon = this._checkIcon(icon, svg, options, symKey, typeKey, name);
 
                 if (!symIcon) {
                     console.log(
@@ -653,7 +584,6 @@ L.GPX = L.FeatureGroup.extend({
                     time : time,
                     address : address,
                     cmt : cmt
-
                 });
                 marker.bindPopup("<b>" + name + "</b>" + (desc.length > 0 ? '<br>' + desc : '')).openPopup();
                 this.fire('addpoint', {point: marker, point_type: 'waypoint', element: el[i]});
@@ -668,7 +598,14 @@ L.GPX = L.FeatureGroup.extend({
                             }
                         });
                     } else {
-                        this._info.favouritesGroup.push({type: typeKey, hidden: hidden})
+                        let group = this._info.favouritesGroup.find(g => {
+                            return g.type === typeKey;
+                        })
+                        if (group) {
+                            group.markers.push(marker);
+                        } else {
+                            this._info.favouritesGroup.push({type: typeKey, hidden: hidden, markers: [marker]});
+                        }
                     }
                 }
             }
@@ -679,6 +616,101 @@ L.GPX = L.FeatureGroup.extend({
         } else if (layers !== undefined && layers.length === 1) {
             return layers[0];
         }
+    },
+
+    _checkColor: function (color) {
+        return color && color !== 'null' ? color : '#eecc22';
+    },
+
+    _checkBackground: function (background, color) {
+        let svg;
+        if (background && background !== 'null') {
+            if (background === "circle") {
+                svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="12" fill="${color}"/>
+                        </svg>`
+            }
+            if (background === "octagon") {
+                svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${color}"/>
+                        </svg>`
+            }
+            if (background === "square") {
+                svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${color}"/>
+                        </svg>`
+            }
+        } else {
+            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="24" cy="24" r="12" fill="${color}"/>
+                        </svg>`
+        }
+        return svg;
+    },
+
+    _checkIcon: function (icon, svg, options, symKey, typeKey, name) {
+        let wptIcons = options.marker_options.wptIcons;
+        let wptIconUrls = options.marker_options.wptIconUrls;
+        let wptIconsType = options.marker_options.wptIconsType;
+        let wptIconTypeUrls = options.marker_options.wptIconTypeUrls;
+        let ptMatchers = options.marker_options.pointMatchers || [];
+
+        if (icon && icon !== 'null') {
+            return L.divIcon({
+                html: `
+                              <div>
+                                  ${svg}
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${icon}.svg"
+                              </div>
+                              `
+            })
+        } else {
+            if (wptIcons && symKey && wptIcons[symKey]) {
+                return  wptIcons[symKey];
+            } else if (wptIconsType && typeKey && wptIconsType[typeKey]) {
+                return  wptIconsType[typeKey];
+            } else if (wptIconUrls && symKey && wptIconUrls[symKey]) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
+            } else if (wptIconTypeUrls && typeKey && wptIconTypeUrls[typeKey]) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
+            } else if (ptMatchers.length > 0) {
+                for (var j = 0; j < ptMatchers.length; j++) {
+                    if (ptMatchers[j].regex.test(name)) {
+                        return  ptMatchers[j].icon;
+                    }
+                }
+            } else if (wptIcons && wptIcons['']) {
+                return  wptIcons[''];
+            } else if (wptIconUrls && wptIconUrls['']) {
+                return  new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
+            } else {
+                return  L.divIcon({
+                    html: `
+                              <div>
+                                  ${svg}
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg"
+                              </div>
+                              `
+                })
+            }
+        }
+    },
+
+    _hexToArgb: function (hex) {
+        hex = hex.replace(/^#/, '');
+        let alphaFromHex = 1;
+
+        if (hex.length === 8) {
+            alphaFromHex = Number.parseInt(hex.slice(0, 2), 16) / 255;
+            hex = hex.slice(2, 8);
+        }
+        const number = Number.parseInt(hex, 16);
+        const red = number >> 16;
+        const green = (number >> 8) & 255;
+        const blue = number & 255;
+        const alpha = alphaFromHex;
+        const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
+        return `rgb(${red} ${green} ${blue}${alphaString})`;
     },
 
     _parse_segment: function (line, options, polyline_options, tag) {
@@ -798,27 +830,27 @@ L.GPX = L.FeatureGroup.extend({
 
         if (options.marker_options.startIcon || options.marker_options.startIconUrl) {
             // add start pin
-            var marker = new L.Marker(coords[0], {
+            let startMarker = new L.Marker(coords[0], {
                 clickable: options.marker_options.clickable,
                 icon: options.marker_options.startIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.startIconUrl})
             });
-            this.fire('addpoint', {point: marker, point_type: 'start', element: el[0]});
-            layers.push(marker);
+            this.fire('addpoint', {point: startMarker, point_type: 'start', element: el[0]});
+            layers.push(startMarker);
         }
 
         if (options.marker_options.endIcon || options.marker_options.endIconUrl) {
             // add end pin
-            var marker = new L.Marker(coords[coords.length - 1], {
+            let endMarker = new L.Marker(coords[coords.length - 1], {
                 clickable: options.marker_options.clickable,
                 icon: options.marker_options.endIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.endIconUrl})
             });
-            this.fire('addpoint', {point: marker, point_type: 'end', element: el[el.length - 1]});
-            layers.push(marker);
+            this.fire('addpoint', {point: endMarker, point_type: 'end', element: el[el.length - 1]});
+            layers.push(endMarker);
         }
 
         // add named markers
-        for (var i = 0; i < markers.length; i++) {
-            var marker = new L.Marker(markers[i].coords, {
+        for (let i = 0; i < markers.length; i++) {
+            let marker = new L.Marker(markers[i].coords, {
                 clickable: options.marker_options.clickable,
                 title: markers[i].label,
                 icon: markers[i].icon
@@ -836,17 +868,17 @@ L.GPX = L.FeatureGroup.extend({
         if (e.length > 0) {
             var _ = e[0].getElementsByTagName('color');
             if (_.length > 0) style.color = '#' + _[0].textContent;
-            var _ = e[0].getElementsByTagName('opacity');
+             _ = e[0].getElementsByTagName('opacity');
             if (_.length > 0) style.opacity = _[0].textContent;
-            var _ = e[0].getElementsByTagName('weight');
+             _ = e[0].getElementsByTagName('weight');
             if (_.length > 0) style.weight = _[0].textContent;
-            var _ = e[0].getElementsByTagName('linecap');
+             _ = e[0].getElementsByTagName('linecap');
             if (_.length > 0) style.lineCap = _[0].textContent;
-            var _ = e[0].getElementsByTagName('linejoin');
+             _ = e[0].getElementsByTagName('linejoin');
             if (_.length > 0) style.lineJoin = _[0].textContent;
-            var _ = e[0].getElementsByTagName('dasharray');
+             _ = e[0].getElementsByTagName('dasharray');
             if (_.length > 0) style.dashArray = _[0].textContent;
-            var _ = e[0].getElementsByTagName('dashoffset');
+             _ = e[0].getElementsByTagName('dashoffset');
             if (_.length > 0) style.dashOffset = _[0].textContent;
         }
         return this._merge_objs(style, overrides)
