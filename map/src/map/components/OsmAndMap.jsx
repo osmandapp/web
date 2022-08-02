@@ -14,7 +14,6 @@ import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
 import TrackLayer from "../layers/TrackLayer";
 import CreatedTrackLayer from "../layers/CreatedTrackLayer";
-import '../../util/Leaflet.Editable.js';
 
 
 const useStyles = makeStyles((theme) => ({
