@@ -118,6 +118,10 @@ const config = {
                 label: 'Facebook',
                 href: 'https://facebook.com/osmandapp/',
               },
+              {
+                label: 'Telegram Channel',
+                href: 'https://t.me/OsmAnd_News',
+              }, 
             ],
           },
           {
