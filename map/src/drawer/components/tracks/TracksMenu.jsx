@@ -15,7 +15,7 @@ export default function TracksMenu() {
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
     const [tracksGroups, setTracksGroups] = useState([]);
-    const [visibleTracks, setVisibleTracks] = useState({created: [], cloud: []});
+    const [visibleTracks, setVisibleTracks] = useState({files: []});
 
     //get gpx files and create groups
     useEffect(() => {
@@ -57,27 +57,15 @@ export default function TracksMenu() {
 
     useEffect(() => {
         if (ctx.gpxFiles) {
-            visibleTracks.cloud = [];
+            visibleTracks.files = [];
             Object.values(ctx.gpxFiles).forEach((f) => {
                 if (f.url) {
-                    visibleTracks.cloud.push(f);
+                    visibleTracks.files.push(f);
                 }
             })
         }
         setVisibleTracks({...visibleTracks});
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
-
-    useEffect(() => {
-        if (ctx.createdTracks) {
-            visibleTracks.created = [];
-            ctx.createdTracks.forEach(t => {
-                if (t.selected) {
-                    visibleTracks.created.push(t)
-                }
-            })
-        }
-        setVisibleTracks({...visibleTracks});
-    }, [ctx.createdTracks, ctx.setCreatedTracks]);
 
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
@@ -92,7 +80,7 @@ export default function TracksMenu() {
         </MenuItem>
         {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
-            {(visibleTracks.created.length > 0 || visibleTracks.cloud.length > 0) && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
+            {(visibleTracks.files.length > 0) && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
             <LocalTrackGroup/>
             {tracksGroups && tracksGroups.map((group, index) => {
                 return <TrackGroup key={group + index}

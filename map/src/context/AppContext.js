@@ -354,7 +354,6 @@ export const AppContextProvider = (props) => {
         }
     });
 
-    const [createdTracks, setCreatedTracks] = useState(localStorage.getItem('createdTracks') !== null ? JSON.parse(localStorage.getItem('createdTracks')) : []);
     const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
 
     useEffect(() => {
@@ -434,7 +433,6 @@ export const AppContextProvider = (props) => {
         searchCtx, setSearchCtx,
         favorites, setFavorites,
         avoidRoads, setAvoidRoads,
-        createdTracks, setCreatedTracks,
         contextMenuObjectType, setContextMenuObjectType
 
     }}>

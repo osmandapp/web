@@ -6,9 +6,7 @@ import TrackItem from "./TrackItem";
 import Utils from "../../../util/Utils";
 import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
-import CreatedTrackItem from "./CreatedTrackItem";
 import {styled} from "@mui/material/styles";
-import CreatedTrackUtils from "../../util/CreatedTrackUtils";
 
 const useStyles = makeStyles({
     button: {
@@ -101,37 +99,6 @@ export default function LocalTrackGroup() {
         });
     }
 
-    function generateNewTrack() {
-        let name = new Date().toDateString();
-        let count = 0;
-        ctx.createdTracks.forEach(t => {
-            if (t.name.split('(')[0] === name) {
-                count++;
-            }
-        })
-        if (count > 0) {
-            name = name + '(' + count + ')';
-        }
-
-        let points = [];
-        let prevPoint;
-        for (let i=1 ; i<=10; i++) {
-            let lat;
-            let lng;
-            if (!prevPoint) {
-                lat = Math.floor(Math.random() * (Math.floor(48.305) - Math.ceil(51.543))) + Math.ceil(51.543);
-                lng = Math.floor(Math.random() * (Math.floor(37.749) - Math.ceil(24.664))) + Math.ceil(24.664);
-            } else {
-                lat = Math.floor(Math.random() * (Math.floor(prevPoint.lat - 2) - Math.ceil(prevPoint.lat + 2))) + Math.ceil(prevPoint.lat + 2);
-                lng = Math.floor(Math.random() * (Math.floor(prevPoint.lng - 2) - Math.ceil(prevPoint.lng + 2))) + Math.ceil(prevPoint.lng + 2);
-            }
-            prevPoint = {lat: lat, lng: lng};
-            points.push({lat: lat, lng: lng})
-        }
-
-        return {name: name, points: points}
-    }
-
 
     return <div className={classes.group}>
         <MenuItem sx={{ml: 3}} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
@@ -144,7 +111,7 @@ export default function LocalTrackGroup() {
                 </Typography>
             </ListItemText>
             <Typography variant="body2" color="textSecondary">
-                {localGpxFiles.length + ctx.createdTracks.length > 0 ? `${localGpxFiles.length + ctx.createdTracks.length}` : ''}
+                {localGpxFiles.length > 0 ? `${localGpxFiles.length}` : ''}
             </Typography>
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
@@ -154,11 +121,6 @@ export default function LocalTrackGroup() {
                 return <TrackItem key={file + index}
                                   file={file}/>;
             })}
-            {ctx.createdTracks.length > 0 && ctx.createdTracks.map((track, index) => {
-                return <CreatedTrackItem key={'track' + index}
-                                         track={track}
-                                         index={index}/>;
-            })}
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">
                     <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
@@ -167,13 +129,6 @@ export default function LocalTrackGroup() {
                         Upload
                     </Button>
                 </label>
-                <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                        onClick={() => {
-                            ctx.setCreatedTracks([...ctx.createdTracks, generateNewTrack()])
-                            CreatedTrackUtils.saveToLocalStorage(ctx.createdTracks);
-                        }}>
-                    Generate
-                </Button>
             </MenuItem>
             {localGpxFiles.length === 0 ? <></> :
                 <MenuItem disableRipple={true}>

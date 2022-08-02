@@ -13,7 +13,6 @@ import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
 import TrackLayer from "../layers/TrackLayer";
-import CreatedTrackLayer from "../layers/CreatedTrackLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -67,7 +66,6 @@ const OsmAndMap = () => {
         <MapContainer center={position} zoom={5} className={classes.root} minZoom={1} maxZoom={20}
                       zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
         >
-            <CreatedTrackLayer/>
             <RouteLayer/>
             <WeatherLayer/>
             <FavoriteLayer/>
