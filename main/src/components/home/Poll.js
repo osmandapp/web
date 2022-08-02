@@ -37,7 +37,7 @@ export default function Poll({id}) {
     }
 
     const submitResult = async () => {
-        if (!ansId) {
+        if (ansId === null) {
             alert('Please select any answer to submit');
             return;
         }
