@@ -129,16 +129,34 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 
 ## Restore purchases
 
-1. Restore a purchase from [**Google Play**](https://play.google.com/store/apps/dev?id=8483587772816822023): visit [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) and reinstall the application. If you've already purchased the app with your current Google, you'll be able to redownload it on each app you use.
 
-2. Restore a purchase from [**Amazon**](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd): navigate through the app as though you were going to purchase the feature again. At the point where you would ordinarily be charged, Amazon instead realizes that you've already purchased it in the past and activates it again for free.
+**Restore a purchase from** [**Google Play**](https://play.google.com/store/apps/details?id=net.osmand).   
+Use the same Google ID to restore your purchases.  
 
-To restore your **in-app purchase** ([Maps+, Pro](../purchases/android.md#prices)):
-- Update Google Play (Huawei AppGallery). 
-- Log in to the same Google Play (Huawei AppGallery) account that you used to purchase OsmAnd.
-- Install OsmAnd ([Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
+- Log in to the same Google Play account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
+- Visit [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and reinstall the application. If you've already purchased the app with your current Google, you'll be able to reload it on each app you use.
+- To see all of your purchases follow this [link](https://support.google.com/googleplay/answer/2850369?hl=en).
+
+**Restore a purchase from [*Amazon*](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).**  
+Use the same Amazon ID to restore your purchases.  
+
+- Navigate through the app as if you were going to purchase the feature again.
+- At the point when you would normally be charged, Amazon realizes that you have already purchased this app in the past and will activate it again.  
+- To see all of your purchases follow this [link](https://www.amazon.com/gp/help/customer/display.html?nodeId=GB8P5MQSYFYHPCQ5&ref_=hp_201357410_c_Set-Parental-Controls-for-In-A).
+
+**Restore a purchase from [*Huawei AppGallery*](https://consumer.huawei.com/en/support/content/en-us00694320/).**  
+Use the same Huawei ID to restore your purchases.  
+
+- Navigate through the app as if you were going to purchase the feature again.
+- At the point when you would normally be charged, Huawei realizes that you have already purchased this app in the past and will activate it again.  
+
+
+**To restore your *in-app purchase* ([Maps+, Pro, OsmAnd Live](../purchases/android.md#prices)).**
+- Update Google Play (Amazon, Huawei AppGallery). 
+- Log in to the same Google Play (Amazon, Huawei AppGallery) account that you used to purchase OsmAnd.
+- Install OsmAnd ([Google Play](https://play.google.com/store/apps/details?id=net.osmand), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
 - Open OsmAnd with an active Internet connection.
-- To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*÷ьутг and at the top of the screen should appear that Maps+(Pro) is activated.
+- To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 

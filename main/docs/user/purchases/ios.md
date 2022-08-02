@@ -89,13 +89,18 @@ Here is detailed information about all in apps with prices for US / Europe regio
 Use the same Apple ID to restore your purchases.
 
 - Log in to the same Apple App Store account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
-- Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257.).
+- Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Open OsmAnd Maps with an active Internet connection.
-- Go to _<Translate ios="true" ids="menu,res_mapsres,maps,purchases,restore_all_purchases"/>_ and at the top of the screen should appear that Maps+(Pro, Live) is activated.
+- To restore purchases follow these steps: *<Translate ios="true" ids="menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
->User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).
+>User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).  
+
+> If none of the methods worked: 
+> 1. Clear the cache for App Store.
+> 2. Clear the cache for OsmAnd.
+> 3. Restart the device and try to restore again.
 
 ## Giftcards
 
