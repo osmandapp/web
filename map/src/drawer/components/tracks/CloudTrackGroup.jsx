@@ -1,13 +1,13 @@
 import {Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useEffect, useState} from "react";
-import TrackItem from "./TrackItem";
+import CloudTrackItem from "./CloudTrackItem";
 
 import Actions from "./Actions";
-import drawerStyles from "../DrawerStyles";
+import drawerStyles from "../../styles/DrawerStyles";
 
 
-export default function TrackGroup({index, group}) {
+export default function CloudTrackGroup({index, group}) {
 
     const styles = drawerStyles();
 
@@ -56,8 +56,8 @@ export default function TrackGroup({index, group}) {
             <Actions files={group.files}
                      setSortFiles={setSortFiles}/>
             {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
-                return <TrackItem key={file + index}
-                                  file={file}/>
+                return <CloudTrackItem key={file + index}
+                                       file={file}/>
             })}
         </Collapse>
     </div>

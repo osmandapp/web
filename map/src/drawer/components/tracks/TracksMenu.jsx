@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from 'react';
 import {Typography, ListItemText, Collapse, MenuItem, ListItemIcon, LinearProgress, Button} from "@mui/material";
 import {DirectionsWalk, ExpandLess, ExpandMore} from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
-import TrackGroup from "./TrackGroup";
+import CloudTrackGroup from "./CloudTrackGroup";
 import VisibleTrackGroup from "./VisibleTrackGroup";
 import LocalTrackGroup from "./LocalTrackGroup";
 
@@ -11,11 +11,14 @@ export default function TracksMenu() {
 
     const ctx = useContext(AppContext);
 
-    const [gpxOpen, setGpxOpen] = useState(false);
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
     const [tracksGroups, setTracksGroups] = useState([]);
-    const [visibleTracks, setVisibleTracks] = useState({files: []});
+    const [visibleTracks, setVisibleTracks] = useState({localClient: [], files: []});
+
+    function visibleTracksOpen() {
+        return visibleTracks.localClient.length > 0 || visibleTracks.files.length > 0;
+    }
 
     //get gpx files and create groups
     useEffect(() => {
@@ -67,6 +70,18 @@ export default function TracksMenu() {
         setVisibleTracks({...visibleTracks});
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
 
+    useEffect(() => {
+        if (ctx.localClientsTracks) {
+            visibleTracks.localClient = [];
+            ctx.localClientsTracks.forEach(t => {
+                if (t.selected) {
+                    visibleTracks.localClient.push(t)
+                }
+            })
+        }
+        setVisibleTracks({...visibleTracks});
+    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
+
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
             <ListItemIcon>
@@ -76,16 +91,16 @@ export default function TracksMenu() {
             <Typography variant="body2" color="textSecondary">
                 {gpxFiles.length > 0 ? `${gpxFiles.length}` : ''}
             </Typography>
-            {gpxFiles.length === 0 ? <></> : gpxOpen ? <ExpandLess/> : <ExpandMore/>}
+            {gpxFiles.length === 0 ? <></> : tracksGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
-            {(visibleTracks.files.length > 0) && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
+            {visibleTracksOpen() && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
             <LocalTrackGroup/>
             {tracksGroups && tracksGroups.map((group, index) => {
-                return <TrackGroup key={group + index}
-                                   index={index}
-                                   group={group}/>;
+                return <CloudTrackGroup key={group + index}
+                                        index={index}
+                                        group={group}/>;
             })}
         </Collapse>
     </>;

@@ -1,13 +1,15 @@
-import {Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {Button, Collapse, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import TrackItem from "./TrackItem";
 import Utils from "../../../util/Utils";
 import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
+import LocalClientTrackItem from "./LocalClientTrackItem";
 import {styled} from "@mui/material/styles";
-import drawerStyles from "../DrawerStyles";
+import LocalClientTrackUtils from "../../util/LocalClientTrackUtils";
+import drawerStyles from "../../styles/DrawerStyles";
+import LocalServerTrackItem from "./LocalServerTrackItem";
 
 const useStyles = makeStyles({
     button: {
@@ -30,10 +32,18 @@ export default function LocalTrackGroup() {
     const ctx = useContext(AppContext);
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
+    const [isClearLocalClientTracks, setIsClearLocalClientTracks] = useState(false);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
     }, []);
+
+    useEffect(() => {
+        if (isClearLocalClientTracks) {
+            ctx.setLocalClientsTracks([]);
+            setIsClearLocalClientTracks(false);
+        }
+    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 
     async function loadInitialState(gpxFiles, setGpxFiles) {
         const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-info`, {credentials: 'include'});
@@ -59,7 +69,12 @@ export default function LocalTrackGroup() {
     let localGpxFiles = !ctx.gpxFiles ? [] :
         Object.values(ctx.gpxFiles).filter((item) => item.local === true);
 
-    const clearLocalGpx = (ctx) => async (e) => {
+    const clearLocalTracks = () => async () => {
+        await clearLocalServerTracks();
+        clearLocalClientTracks();
+    }
+
+    async function clearLocalServerTracks() {
         const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/clear`, {
             method: 'POST',
             credentials: 'include'
@@ -73,12 +88,23 @@ export default function LocalTrackGroup() {
                     newinfo[item.name].local = false;
                     newinfo[item.name].url = null;
                     newinfo[item.name].localContent = null;
-                    // delete newinfo[item.name];
                 }
             });
             ctx.setAppText('');
             ctx.setGpxFiles(newinfo);
         }
+    }
+
+    function clearLocalClientTracks() {
+        setIsClearLocalClientTracks(true);
+        LocalClientTrackUtils.unselectedAllTrack(ctx.localClientsTracks);
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        localStorage.removeItem('localClientsTracks');
+    }
+
+    function generateLocalClientTracks() {
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalClientTrackUtils.generateNewTrack(ctx)])
+        LocalClientTrackUtils.saveToLocalStorage(ctx.localClientsTracks);
     }
 
     const fileSelected = (ctx) => async (e) => {
@@ -108,15 +134,20 @@ export default function LocalTrackGroup() {
                 </Typography>
             </ListItemText>
             <Typography variant="body2" color="textSecondary">
-                {localGpxFiles.length > 0 ? `${localGpxFiles.length}` : ''}
+                {localGpxFiles.length + ctx.localClientsTracks.length > 0 ? `${localGpxFiles.length + ctx.localClientsTracks.length}` : ''}
             </Typography>
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
             <Actions files={localGpxFiles} setSortFiles={setSortFiles}/>
             {localGpxFiles.length > 0 && (sortFiles.length > 0 ? sortFiles : localGpxFiles).map((file, index) => {
-                return <TrackItem key={file + index}
-                                  file={file}/>;
+                return <LocalServerTrackItem key={file + index}
+                                             file={file}/>;
+            })}
+            {ctx.localClientsTracks.length > 0 && ctx.localClientsTracks.map((track, index) => {
+                return <LocalClientTrackItem key={'track' + index}
+                                             track={track}
+                                             index={index}/>;
             })}
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">
@@ -126,19 +157,28 @@ export default function LocalTrackGroup() {
                         Upload
                     </Button>
                 </label>
+                <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
+                        onClick={() => generateLocalClientTracks()}>
+                    Generate
+                </Button>
             </MenuItem>
-            {localGpxFiles.length === 0 ? <></> :
-                <MenuItem disableRipple={true}>
-                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}
-                            onClick={clearLocalGpx(ctx)}>
-                        Clear
-                    </Button>
-                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                            onClick={() => window.open(`${process.env.REACT_APP_GPX_API}/gpx/download-obf`)}>
-                        Get OBF
-                    </Button>
-                </MenuItem>
-            }
+            <MenuItem disableRipple={true}>
+                <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}
+                        onClick={clearLocalTracks(ctx)}>
+                    Clear
+                </Button>
+                {localGpxFiles.length !== 0 &&
+                    <Tooltip title={
+                        <p>
+                            For saved tracks
+                        </p>
+                    }>
+                        <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
+                                onClick={() => window.open(`${process.env.REACT_APP_GPX_API}/gpx/download-obf`)}>
+                            Get OBF
+                        </Button>
+                    </Tooltip>}
+            </MenuItem>
         </Collapse>
     </div>
 }

@@ -2,7 +2,7 @@ import {ListItemText, MenuItem, Tooltip, Typography} from "@mui/material";
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
-import drawerStyles from "../DrawerStyles";
+import drawerStyles from "../../styles/DrawerStyles";
 
 
 const useStyles = makeStyles({
