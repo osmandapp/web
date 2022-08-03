@@ -378,6 +378,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
 |                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
+| Goods vehicles restrictions |  Consider access permissions for light goods vehicles (goods)   |   Driving routing |
+| Motor type |  allows choosing type of motor: Petrol, Diesel, Lpg, Gas, Electric, Hybrid  |   Driving routing |
 | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
