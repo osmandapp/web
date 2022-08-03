@@ -56,3 +56,14 @@ SAVE it:
 ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
 
 ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)
+
+
+### Edit an existing Custom POI filter
+
+From the main screen :
+1. tap on the agnifying glass to open the Search screen
+1. select the Categories tab
+1. choose the custom category : screen with search results will open
+1. tap on filter icon and then on Filter screen
+1. tap on the 3-dot icon
+1. in the drop-down menu, select "Edit categories"
