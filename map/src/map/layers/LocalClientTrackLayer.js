@@ -9,8 +9,6 @@ export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
-    const [deletedEditTrack, setDeletedEditTrack] = useState(null);
-
     const markerOptions = {
         startIcon: MarkerIcon({bg: 'blue'}),
         endIcon: MarkerIcon({bg: 'red'}),
@@ -46,12 +44,4 @@ export default function LocalClientTrackLayer() {
             }
         });
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
-
-    useEffect(() => {
-        if (deletedEditTrack) {
-            ctx.localClientsTracks.splice(ctx.localClientsTracks.indexOf(deletedEditTrack), 1);
-            ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
-        }
-
-    }, [deletedEditTrack, setDeletedEditTrack]);
 }
