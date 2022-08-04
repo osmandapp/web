@@ -10,7 +10,6 @@ export default function LocalClientTrackLayer() {
     const map = useMap();
 
     const [layers, setLayers] = useState([]);
-
     const markerOptions = {
         startIcon: MarkerIcon({bg: 'blue'}),
         endIcon: MarkerIcon({bg: 'red'}),
@@ -18,23 +17,7 @@ export default function LocalClientTrackLayer() {
             '': MarkerIcon({bg: 'yellow'}),
         }
     };
-
-    function removeLayerFromMap(layer) {
-        map.removeLayer(layer.layer);
-        layers.splice(layers.indexOf(layer), 1);
-        setLayers([...layers]);
-    }
-
-    function clearUnusedLayers() {
-        let listForDeleted = [];
-        layers.forEach(l => {
-            if (ctx.localClientsTracks.find(t => t.name === l.name) === undefined) {
-                listForDeleted.push(l);
-            }
-        })
-        listForDeleted.forEach(l => removeLayerFromMap(l));
-    }
-
+    
     function addTrackToMap(track) {
         let layer = new L.GPX(track.gpx, {
             async: true,
@@ -42,7 +25,7 @@ export default function LocalClientTrackLayer() {
         }).on('loaded', function (e) {
             map.fitBounds(e.target.getBounds());
         }).addTo(map);
-        setLayers([...layers, {name: track.name, layer: layer}])
+        layers.push({name: track.name, layer: layer, active: true})
     }
 
     useEffect(() => {
@@ -55,18 +38,25 @@ export default function LocalClientTrackLayer() {
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
     useEffect(() => {
-        if (layers.length > ctx.localClientsTracks.length) {
-            clearUnusedLayers();
-        } else {
-            Object.values(ctx.localClientsTracks).forEach((track) => {
-                let currLayer = layers.find(l => l.name === track.name);
-                if (track.selected && !currLayer) {
-                    addTrackToMap(track);
-                } else if (!track.selected && currLayer) {
-                    removeLayerFromMap(currLayer);
-                }
-            });
-        }
+        layers.forEach(l => l.active = false);
+        Object.values(ctx.localClientsTracks).forEach((track) => {
+            let currLayer = layers.find(l => l.name === track.name);
+            if (track.selected && !currLayer) {
+                addTrackToMap(track);
+            } else if (currLayer) {
+                currLayer.active = track.selected;
+            }
+        });
+
+        let deletedLayers = new Set();
+        layers.forEach(l => {
+            if (!l.active) {
+                deletedLayers.add(l)
+                map.removeLayer(l.layer);
+            }
+        });
+
+        setLayers([...layers.filter(x => !deletedLayers.has(x))]);
 
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 }
