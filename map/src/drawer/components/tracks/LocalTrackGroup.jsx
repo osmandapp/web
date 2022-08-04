@@ -152,23 +152,14 @@ export default function LocalTrackGroup() {
                     Generate
                 </Button>
             </MenuItem>
-            <MenuItem disableRipple={true}>
-                <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}
-                        onClick={clearLocalTracks(ctx)}>
-                    Clear
-                </Button>
-                {localGpxFiles.length !== 0 &&
-                    <Tooltip title={
-                        <p>
-                            For saved tracks
-                        </p>
-                    }>
-                        <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                                onClick={() => window.open(`${process.env.REACT_APP_GPX_API}/gpx/download-obf`)}>
-                            Get OBF
-                        </Button>
-                    </Tooltip>}
-            </MenuItem>
+            {(localGpxFiles.length !== 0 || ctx.localClientsTracks.length !== 0) &&
+                <MenuItem disableRipple={true}>
+                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}
+                            onClick={clearLocalTracks(ctx)}>
+                        Clear
+                    </Button>
+                </MenuItem>
+            }
         </Collapse>
     </div>
 }

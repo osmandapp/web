@@ -1,4 +1,4 @@
-import {Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {Button, Collapse, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Map} from "@mui/icons-material";
 import React, {useState} from "react";
 import CloudTrackItem from "./CloudTrackItem";
@@ -8,7 +8,7 @@ import LocalServerTrackItem from "./LocalServerTrackItem";
 
 const useStyles = makeStyles({
     group: {
-        '& .MuiMenuItem-root' : {
+        '& .MuiMenuItem-root': {
             minHeight: '50px !important',
             maxHeight: '50px !important',
         }
@@ -52,10 +52,23 @@ export default function VisibleTrackGroup({visibleTracks}) {
             {visibleTracks.files.length > 0 && visibleTracks.files.map((track, index) => {
                 return track.local
                     ? <LocalServerTrackItem key={track + index}
-                                       file={track}/>
+                                            file={track}/>
                     : <CloudTrackItem key={track + index}
                                       file={track}/>;
             })}
+            {visibleTracks.files.find(f => f.local) &&
+                <MenuItem disableRipple={true}>
+                    <Tooltip title={
+                        <p>
+                            For saved tracks
+                        </p>
+                    }>
+                        <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
+                                onClick={() => window.open(`${process.env.REACT_APP_GPX_API}/gpx/download-obf`)}>
+                            Get OBF
+                        </Button>
+                    </Tooltip>
+                </MenuItem>}
         </Collapse>
     </div>
 }
