@@ -111,15 +111,13 @@ You can disable all map animations during map change (gestures and buttons) in S
 
 - ** Use Magnetic sensor** - smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till:  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>
 
-## External input device buttons
+## External input device buttons (Android)
 
 Select an external control device, such as a keyboard or WunderLINQ.
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
 
-<p> </p>
-
-Note: the keyboard works with the setting disabled too.
+> Note: the keyboard works with the setting disabled too. 
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
@@ -138,3 +136,6 @@ Note: the keyboard works with the setting disabled too.
 |**&#8594; **| Parrot  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
 |**&#8595; **| Wunderlinq  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
 |**&#8593; **| Wunderlinq  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**ESC**| Wunderlinq  | Opens Wunderlinq dashboard |
+
+> You can check other details in [the code](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
