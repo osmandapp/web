@@ -99,7 +99,7 @@ At this moment, Pro subscription has next features:
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
-| [Online SRTM](https://osmand.net/blog/osmand-android-4-2-released#online-elevation-profile) | calculates online the altitude for your track. [Shuttle Radar Topography Mission](https://www.wikiwand.com/en/Shuttle_Radar_Topography_Mission#:~:text=The%20Shuttle%20Radar%20Topography%20Mission,the%20ASTER%20GDEM%20in%202009). |
+| [Online Elevation profile](https://osmand.net/blog/osmand-android-4-2-released#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection). |
 
 ### How to buy
 
@@ -131,16 +131,12 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 ## Restore purchases
 
 
-### Google Play
-
 **Restore a purchase from** [_**Google Play**_](https://play.google.com/store/apps/details?id=net.osmand).   
 Use the same Google ID to restore your purchases.  
 
 - Log in to the same Google Play account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
 - Visit [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and reinstall the application. If you've already purchased the app with your current Google, you'll be able to reload it on each app you use.
 - To see all of your purchases follow this [link](https://support.google.com/googleplay/answer/2850369).
-
-### Amazon
 
 **Restore a purchase from [*Amazon*](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).**  
 Use the same Amazon ID to restore your purchases.  
@@ -149,15 +145,12 @@ Use the same Amazon ID to restore your purchases.
 - At the point when you would normally be charged, Amazon realizes that you have already purchased this app in the past and will activate it again.  
 - To see all of your purchases follow this [link](https://www.amazon.com/gp/help/customer/display.html?nodeId=GB8P5MQSYFYHPCQ5&ref_=hp_201357410_c_Set-Parental-Controls-for-In-A).
 
-### Huawei AppGallery
-
 **Restore a purchase from [*Huawei AppGallery*](https://consumer.huawei.com/en/support/content/en-us00694320/).**  
 Use the same Huawei ID to restore your purchases.  
 
 - Navigate through the app as if you were going to purchase the feature again.
 - At the point when you would normally be charged, Huawei realizes that you have already purchased this app in the past and will activate it again.  
 
-### In App
 
 **To restore your *in-app purchase* ([Maps+, Pro, OsmAnd Live](../purchases/android.md#prices)).**
 - Update Google Play (Amazon, Huawei AppGallery). 
@@ -168,12 +161,10 @@ Use the same Huawei ID to restore your purchases.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
-### Others
-
-**If none of the methods worked:**
- 1. Clear the cache for Google Play (Huawei AppGallery).
- 2. Clear the cache for OsmAnd.
- 3. Restart the device and try to restore again.
+> **If none of the methods worked:**
+> 1. Clear the cache for Google Play (Huawei AppGallery).
+> 2. Clear the cache for OsmAnd.
+> 3. Restart the device and try to restore again.
 
 
 
