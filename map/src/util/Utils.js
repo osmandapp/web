@@ -103,32 +103,20 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
         newinfo[gpxLayer.name] = gpxLayer;
         gpxFiles[gpxLayer.name] = gpxLayer;
         setGpxFiles(newinfo);
-        updateTextInfo(gpxFiles, ctx);
     } else {
         let message = await response.text();
         alert(message);
     }
 }
 
-function updateTextInfo(gpxFiles, ctx) {
-    // Local GPX files: undefined tracks, NaN km, undefined wpts
-    let dist = 0;
-    let tracks = 0;
-    let wpts = 0;
-    Object.values(gpxFiles).forEach((item) => {
-        if (item.local === true && item.summary) {
-            if (item.summary.totalTracks) {
-                tracks += item.summary.totalTracks;
-            }
-            if (item.summary.wptPoints) {
-                wpts += item.summary.wptPoints;
-            }
-            if (item.summary.totalDistance) {
-                dist += item.summary.totalDistance;
-            }
-        }
-    });
-    ctx.setAppText(`Local GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`)
+function getFileName(file) {
+    if (file.name.includes('/')) {
+        return file.name.split('/')[1]
+    } else if (file.local && file.name.includes(':')) {
+        return file.name.split(':')[1]
+    } else {
+        return file.name;
+    }
 }
 
 const Utils = {
@@ -136,8 +124,8 @@ const Utils = {
     fetchUtilLoad,
     getFileData,
     getDistance,
-    getPointsDist,
-    uploadFile
+    uploadFile,
+    getFileName
 };
 
 export default Utils;

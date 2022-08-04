@@ -3,7 +3,6 @@ import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material
 import React, {useContext} from "react";
 import Utils from "../../../util/Utils";
 import TrackInfo from "./TrackInfo";
-import TrackUtils from "../../util/TrackUtils";
 
 export default function CloudTrackItem({file}) {
 
@@ -22,20 +21,18 @@ export default function CloudTrackItem({file}) {
         newGpxFiles[file.name].url = null;
         ctx.setGpxFiles(newGpxFiles);
         if (ctx.selectedGpxFile?.name === file.name) {
-            ctx.setContextMenuObjectType(null);
+            ctx.setCurrentObjectType(null);
         }
-        TrackUtils.updateTextInfo(newGpxFiles, ctx);
     }
 
     async function addTrackToMap(setProgressVisible) {
         let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
         const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-        ctx.setContextMenuObjectType('track');
+        ctx.setCurrentObjectType('cloud_track');
         newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
         ctx.setGpxFiles(newGpxFiles);
         if (file.details?.analysis) {
             newGpxFiles[file.name].summary = file.details.analysis;
-            TrackUtils.updateTextInfo(newGpxFiles, ctx);
         }
         ctx.setSelectedGpxFile(newGpxFiles[file.name]);
 
@@ -56,7 +53,6 @@ export default function CloudTrackItem({file}) {
             newGpxFiles[file.name].srtmSummary = data.info;
             setProgressVisible(false);
         }
-        TrackUtils.updateTextInfo(newGpxFiles, ctx);
     }
 
     return (
@@ -64,7 +60,7 @@ export default function CloudTrackItem({file}) {
             <Tooltip title={<TrackInfo file={file}/>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {TrackUtils.getFileName(file)}
+                        {Utils.getFileName(file)}
                     </Typography>
                 </ListItemText>
             </Tooltip>

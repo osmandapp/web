@@ -1,8 +1,8 @@
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import React, {useContext} from "react";
 import TrackInfo from "./TrackInfo";
-import TrackUtils from "../../util/TrackUtils";
 import AppContext from "../../../context/AppContext";
+import Utils from "../../../util/Utils";
 
 export default function LocalServerTrackItem({file}) {
 
@@ -21,7 +21,7 @@ export default function LocalServerTrackItem({file}) {
         newGpxFiles[file.name].url = file.localContent;
         newGpxFiles[file.name].urlopts = {credentials: 'include'}
         ctx.setSelectedGpxFile(file);
-        ctx.setContextMenuObjectType('track');
+        ctx.setCurrentObjectType('local_server_track');
 
         ctx.setGpxFiles(newGpxFiles);
     }
@@ -30,7 +30,7 @@ export default function LocalServerTrackItem({file}) {
         const newGpxFiles = Object.assign({}, ctx.gpxFiles);
         newGpxFiles[file.name].url = null;
         if (ctx.selectedGpxFile?.name === file.name) {
-            ctx.setContextMenuObjectType(null);
+            ctx.setCurrentObjectType(null);
         }
         ctx.setGpxFiles(newGpxFiles);
     }
@@ -40,7 +40,7 @@ export default function LocalServerTrackItem({file}) {
             <Tooltip title={<TrackInfo file={file}/>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {TrackUtils.getFileName(file)}
+                        {Utils.getFileName(file)}
                     </Typography>
                 </ListItemText>
             </Tooltip>

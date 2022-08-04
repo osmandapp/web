@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Air, Cloud, Compress, Shower, Thermostat
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
+import LocalTracksStorage from "./LocalTracksStorage";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -312,7 +313,12 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
-    const [appText, setAppText] = useState('');
+    const [selectedObjects, setSelectedObjects] = useState({
+        cloudTracks: false,
+        localServerTracks: false,
+        localClientTracks: false,
+        weather: false
+    });
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
@@ -354,8 +360,8 @@ export const AppContextProvider = (props) => {
         }
     });
 
-    const [localClientsTracks, setLocalClientsTracks] = useState(localStorage.getItem('localClientsTracks') !== null ? JSON.parse(localStorage.getItem('localClientsTracks')) : []);
-    const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
+    const [localClientsTracks, setLocalClientsTracks] = useState(LocalTracksStorage.loadTracks());
+    const [currentObjectType, setCurrentObjectType] = useState(null);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -373,7 +379,7 @@ export const AppContextProvider = (props) => {
         }
         // ! routeTrackFile is not part of dependency ! 
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
-    
+
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
     }, []);
@@ -397,7 +403,7 @@ export const AppContextProvider = (props) => {
         loginUser, setLoginUser,
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
-        appText, setAppText,
+        selectedObjects, setSelectedObjects,
         selectedGpxFile, setSelectedGpxFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
@@ -413,7 +419,7 @@ export const AppContextProvider = (props) => {
         favorites, setFavorites,
         avoidRoads, setAvoidRoads,
         localClientsTracks, setLocalClientsTracks,
-        contextMenuObjectType, setContextMenuObjectType
+        currentObjectType, setCurrentObjectType
 
     }}>
         {props.children}

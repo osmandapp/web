@@ -7,9 +7,10 @@ import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import LocalClientTrackItem from "./LocalClientTrackItem";
 import {styled} from "@mui/material/styles";
-import LocalClientTrackUtils from "../../util/LocalClientTrackUtils";
+import LocalTrackGenerator from "../../../context/LocalTrackGenerator";
 import drawerStyles from "../../styles/DrawerStyles";
 import LocalServerTrackItem from "./LocalServerTrackItem";
+import LocalTracksStorage from "../../../context/LocalTracksStorage";
 
 const useStyles = makeStyles({
     button: {
@@ -32,18 +33,10 @@ export default function LocalTrackGroup() {
     const ctx = useContext(AppContext);
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
-    const [isClearLocalClientTracks, setIsClearLocalClientTracks] = useState(false);
 
     useEffect(() => {
         loadInitialState(ctx.gpxFiles, ctx.setGpxFiles).then();
     }, []);
-
-    useEffect(() => {
-        if (isClearLocalClientTracks) {
-            ctx.setLocalClientsTracks([]);
-            setIsClearLocalClientTracks(false);
-        }
-    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 
     async function loadInitialState(gpxFiles, setGpxFiles) {
         const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-info`, {credentials: 'include'});
@@ -72,6 +65,7 @@ export default function LocalTrackGroup() {
     const clearLocalTracks = () => async () => {
         await clearLocalServerTracks();
         clearLocalClientTracks();
+        ctx.setCurrentObjectType(null);
     }
 
     async function clearLocalServerTracks() {
@@ -90,21 +84,18 @@ export default function LocalTrackGroup() {
                     newinfo[item.name].localContent = null;
                 }
             });
-            ctx.setAppText('');
             ctx.setGpxFiles(newinfo);
         }
     }
 
     function clearLocalClientTracks() {
-        setIsClearLocalClientTracks(true);
-        LocalClientTrackUtils.unselectedAllTrack(ctx.localClientsTracks);
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        ctx.setLocalClientsTracks([]);
         localStorage.removeItem('localClientsTracks');
     }
 
     function generateLocalClientTracks() {
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalClientTrackUtils.generateNewTrack(ctx)])
-        LocalClientTrackUtils.saveToLocalStorage(ctx.localClientsTracks);
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalTrackGenerator.generate(ctx)])
+        LocalTracksStorage.saveTracks(ctx.localClientsTracks);
     }
 
     const fileSelected = (ctx) => async (e) => {

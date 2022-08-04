@@ -9,6 +9,8 @@ export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
+    const [layers, setLayers] = useState([]);
+
     const markerOptions = {
         startIcon: MarkerIcon({bg: 'blue'}),
         endIcon: MarkerIcon({bg: 'red'}),
@@ -17,31 +19,40 @@ export default function LocalClientTrackLayer() {
         }
     };
 
-    function removeLayerFromMap(track) {
-        map.removeLayer(track.layer);
-        track.layer = null;
-        ctx.setLocalClientsTracks(...[ctx.localClientsTracks]);
+    function removeLayerFromMap(layer) {
+        map.removeLayer(layer.layer);
+        layers.splice(layers.indexOf(layer), 1);
+        setLayers([...layers]);
+    }
+
+    function removeAllTracks() {
+        layers.forEach(l => map.removeLayer(l.layer));
+        setLayers([]);
     }
 
     function addTrackToMap(track) {
-        track.layer = new L.GPX(track.gpx, {
+        let layer = new L.GPX(track.gpx, {
             async: true,
             marker_options: markerOptions
         }).on('loaded', function (e) {
             map.fitBounds(e.target.getBounds());
         }).addTo(map);
-
-        ctx.setLocalClientsTracks(...[ctx.localClientsTracks]);
+        setLayers([...layers, {name: track.name, layer: layer}])
     }
 
     useEffect(() => {
-        let trackMap = ctx.localClientsTracks ? ctx.localClientsTracks : {};
-        Object.values(trackMap).forEach((track) => {
-            if (track.selected && !track.layer) {
-                addTrackToMap(track);
-            } else if (!track.selected && track.layer) {
-                removeLayerFromMap(track);
-            }
-        });
+        if (ctx.localClientsTracks.length === 0) {
+            removeAllTracks()
+        } else {
+            Object.values(ctx.localClientsTracks).forEach((track) => {
+                let currLayer = layers.find(l => l.name === track.name);
+                if (track.selected && !currLayer) {
+                    addTrackToMap(track);
+                } else if (!track.selected && currLayer) {
+                    removeLayerFromMap(currLayer);
+                }
+            });
+        }
+
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 }

@@ -43,19 +43,19 @@ export default function MapContextMenu() {
     });
 
     function definitionTabs() {
-        if (ctx.contextMenuObjectType === 'track') {
+        if (ctx.currentObjectType === 'cloud_track' || ctx.currentObjectType === 'local_server_track') {
             return new TrackTabList().create(ctx, graphWidth);
         }
-        if (ctx.contextMenuObjectType === 'weather_point' && ctx.weatherPoint) {
+        if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
             return new WeatherTabList().create(ctx, graphWidth);
         }
     }
 
     useEffect(() => {
-        if (ctx.contextMenuObjectType) {
+        if (ctx.currentObjectType) {
             setShowContextMenu(true);
         }
-    }, [ctx.contextMenuObjectType, ctx.setContextMenuObjectType]);
+    }, [ctx.currentObjectType, ctx.setCurrentObjectType]);
 
 
     function closeContextMenu() {

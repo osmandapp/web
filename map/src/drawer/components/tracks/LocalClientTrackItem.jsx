@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import LocalClientTrackUtils from "../../util/LocalClientTrackUtils";
 import {BaseBuilder, buildGPX} from "gpx-builder";
 import {Metadata, Point} from "gpx-builder/dist/builder/BaseBuilder/models";
+import LocalTracksStorage from "../../../context/LocalTracksStorage";
 
 export default function LocalClientTrackItem({track, index}) {
 
@@ -16,7 +16,7 @@ export default function LocalClientTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        LocalClientTrackUtils.saveToLocalStorage(ctx.localClientsTracks);
+        LocalTracksStorage.saveTracks(ctx.localClientsTracks);
     }
 
     function addGpx(track) {
@@ -36,16 +36,17 @@ export default function LocalClientTrackItem({track, index}) {
     }
 
     function deleteTrackFromMap() {
-        LocalClientTrackUtils.unselectedTrack(ctx.localClientsTracks, track);
+        ctx.setCurrentObjectType(null);
+        ctx.localClientsTracks[track.index].selected = false;
         ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
     }
 
     function addTrackToMap() {
+        ctx.setCurrentObjectType('local_client_track');
         track.index = indexTrack;
         setIndexTrack(indexTrack);
-        LocalClientTrackUtils.selectedTrack(ctx.localClientsTracks, indexTrack);
+        ctx.localClientsTracks[index].selected = true;
         addGpx(track);
-        ctx.setContextMenuObjectType(null);
     }
 
     return <div>
@@ -55,7 +56,7 @@ export default function LocalClientTrackItem({track, index}) {
             </div>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {"*" + track.name}
+                        {"* " + track.name}
                     </Typography>
                 </ListItemText>
             </Tooltip>

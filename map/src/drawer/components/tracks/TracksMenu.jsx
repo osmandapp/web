@@ -82,6 +82,16 @@ export default function TracksMenu() {
         setVisibleTracks({...visibleTracks});
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 
+    useEffect(() => {
+        ctx.setSelectedObjects(prevState => ({
+            ...prevState,
+            localClientTracks: visibleTracks.localClient.length > 0,
+            localServerTracks: visibleTracks.files.filter(f => f.local).length > 0,
+            cloudTracks: visibleTracks.files.filter(f => !f.local).length > 0
+        }));
+    }, [visibleTracks, setVisibleTracks]);
+
+
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
             <ListItemIcon>
