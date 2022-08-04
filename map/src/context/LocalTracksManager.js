@@ -1,3 +1,17 @@
+function loadTracks() {
+    return localStorage.getItem('localClientsTracks') !== null ? JSON.parse(localStorage.getItem('localClientsTracks')) : [];
+}
+
+function saveTracks(tracks) {
+    if (tracks.length > 0) {
+        let res = [];
+        tracks.forEach(function (track) {
+            res.push({name: track.name, points: track.points, selected: false, gpx: track.gpx})
+        })
+        localStorage.setItem('localClientsTracks', JSON.stringify(res));
+    }
+}
+
 function generate(ctx) {
     let name = createName(ctx);
     let points = createPoints();
@@ -39,9 +53,10 @@ function createPoints() {
     return points;
 }
 
-
-const LocalTrackGenerator = {
+const LocalTracksManager = {
+    loadTracks,
+    saveTracks,
     generate
 };
 
-export default LocalTrackGenerator;
+export default LocalTracksManager;

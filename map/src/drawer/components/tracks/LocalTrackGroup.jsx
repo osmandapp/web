@@ -7,10 +7,9 @@ import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import LocalClientTrackItem from "./LocalClientTrackItem";
 import {styled} from "@mui/material/styles";
-import LocalTrackGenerator from "../../../context/LocalTrackGenerator";
 import drawerStyles from "../../styles/DrawerStyles";
 import LocalServerTrackItem from "./LocalServerTrackItem";
-import LocalTracksStorage from "../../../context/LocalTracksStorage";
+import LocalTracksManager from "../../../context/LocalTracksManager";
 
 const useStyles = makeStyles({
     button: {
@@ -94,8 +93,8 @@ export default function LocalTrackGroup() {
     }
 
     function generateLocalClientTracks() {
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalTrackGenerator.generate(ctx)])
-        LocalTracksStorage.saveTracks(ctx.localClientsTracks);
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalTracksManager.generate(ctx)])
+        LocalTracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     const fileSelected = (ctx) => async (e) => {

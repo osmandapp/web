@@ -3,7 +3,7 @@ import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import {BaseBuilder, buildGPX} from "gpx-builder";
 import {Metadata, Point} from "gpx-builder/dist/builder/BaseBuilder/models";
-import LocalTracksStorage from "../../../context/LocalTracksStorage";
+import LocalTracksManager from "../../../context/LocalTracksManager";
 
 export default function LocalClientTrackItem({track, index}) {
 
@@ -16,7 +16,7 @@ export default function LocalClientTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        LocalTracksStorage.saveTracks(ctx.localClientsTracks);
+        LocalTracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     function addGpx(track) {
