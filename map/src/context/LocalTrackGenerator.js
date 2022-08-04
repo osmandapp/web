@@ -8,12 +8,12 @@ function createName(ctx) {
     let name = new Date().toDateString();
     let count = 0;
     ctx.localClientsTracks.forEach(t => {
-        if (t.name.split('(')[0] === name) {
+        if (t.name.split(' - ')[0] === name) {
             count++;
         }
     })
     if (count > 0) {
-        name = name + '(' + count + ')';
+        name = name + ' - ' + count;
     }
 
     return name;
