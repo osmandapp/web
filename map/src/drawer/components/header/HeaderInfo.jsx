@@ -121,7 +121,7 @@ export default function HeaderInfo() {
                 hourstr = hours + " hours";
             }
         }
-        return `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()} :00 [${hourstr}]`;
+        return `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}]`;
     }
 
     return <Box sx={{ml: 1}}>
