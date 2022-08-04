@@ -27,13 +27,18 @@ Unfortunately not. This would require the generation of completely separate cont
 
 There are new storage access rules in [Android 11-12](https://www.androidauthority.com/android-12-privacy-features-1225859/). The problem is related to the storing maps of SD cards. On Android 11 and 12 very slow file access performance. 
 
-[Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/) [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453) [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046) [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943)
+[Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
-- It's possible to fix if you migrate maps from sdcard. We're thinking to provide an alternative solution but as of today you can keep some maps on sdcard and copy them manually via FileManager when you need to use them. Sorry for inconvenience but there is no good solution yet.
-If this is your case, please try to Migrate your files to Internal app memory and check how it would work for you. 
-[Menu->Settings->OsmAnd settings->Data storage folder](../personal/storage#data-storage-folder-android).
+1. _Migrate maps from SD-card._ It's possible to fix if you migrate maps from SD-card. We're thinking to provide an alternative solution but as of today you can keep some maps on SD-card and copy them manually via File Manager when you need to use them. Sorry for inconvenience but there is no good solution yet.
+If this is your case, please try **to Migrate your files to Internal app memory** and check how it would work for you. 
+[Menu → Settings → OsmAnd settings → Data storage folder](../personal/storage#data-storage-folder-android).
 
-- The second decision it's to set the storage location to _/storage/XXXX-XXXX/Download/osmand_ where XXXX-XXXX is the name of a SD-Card: [Menu->Settings->OsmAnd settings->Data storage folder](../personal/storage#data-storage-folder-android)->"Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-1003687327)).
+2. _Setting the storage location manually._ The second decisions it's to set the storage location manually (Menu → Settings → OsmAnd settings → Data storage folder → Manually specified) to :
+  
+   - _/storage/XXXX-XXXX/Download/osmand_   (in this version, there was an error opening some file when loading, then you can download the World Overview map, but no other regions are shown.)
+   - _**/storage/XXXX-XXXX/Download**_ (in this version it works, you can download maps, etc., but OsmAnd does not see everything that is written to folders by other programs ([SasPlanet and etc.](../../technical/map-creation/create-offline-maps-yourself.md)))
+
+where XXXX-XXXX is the name of a SD-Card: [Menu → Settings → OsmAnd settings → Data storage folder](../personal/storage#data-storage-folder-android) → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
 
 
 ### Create own maps
@@ -56,11 +61,11 @@ I tried to search CITY - STREET - HOUSE NUMBER and there was no result.
 *It looks like duplicated content for Personal Data category*
 You can leave notes for future usage in several forms:
 
--   [Favorites](../personal/favorites.md): they are constant points on the map. You can add a description to every Favorite. To add it, please make a long tap -> tap Add.
--   [Markers](../personal/markers.md): the temporary points with the directions settings. You can see the distance from the selected point or your current location to the Marker and remove it fast. To add it, please make a long tap -> tap Marker.
--   [Waypoints](../personal/tracks.md): the points along your route. You can add a description to this point. To add a waypoint, please make a long tap on the map -> Directions -> rst intermediate waypoint.
--   [Audio/Video notes](../plugins/audio-video-notes.md): these are points with your audio-, video-, and photo files added to the selected point on the map. Please enable the Audio/video notes plugin in OsmAnd menu -> Plugins. To add it, please make a long tap -> Actions -> select the required file to add.
--   [OSM Notes](https://www.facebook.com/watch/?v=673312246195291): your reports on the mistakes in the OpenStreetMap source. Please enable the OSM editing plugin in OsmAnd menu -> Plugins. To add it, please make a long tap -> Actions -> Add OSM note.
+-   [Favorites](../personal/favorites.md): they are constant points on the map. You can add a description to every Favorite. To add it, please make a long tap  →  tap Add.
+-   [Markers](../personal/markers.md): the temporary points with the directions settings. You can see the distance from the selected point or your current location to the Marker and remove it fast. To add it, please make a long tap  →  tap Marker.
+-   [Waypoints](../personal/tracks.md): the points along your route. You can add a description to this point. To add a waypoint, please make a long tap on the map  →  Directions  →  rst intermediate waypoint.
+-   [Audio/Video notes](../plugins/audio-video-notes.md): these are points with your audio-, video-, and photo files added to the selected point on the map. Please enable the Audio/video notes plugin in OsmAnd menu  →  Plugins. To add it, please make a long tap  →  Actions  →  select the required file to add.
+-   [OSM Notes](https://www.facebook.com/watch/?v=673312246195291): your reports on the mistakes in the OpenStreetMap source. Please enable the OSM editing plugin in OsmAnd menu  →  Plugins. To add it, please make a long tap  →  Actions  →  Add OSM note.
 -   [POIs](../search/index.md): these are the points of interest from the OSM map source. Please enable the POI overlay in Configure map menu or select a certain category in the
 -   [Search](../search/index.md).
 
