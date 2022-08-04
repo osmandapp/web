@@ -384,7 +384,8 @@ L.GPX = L.FeatureGroup.extend({
             duration: {start: null, end: null, moving: 0, total: 0},
             atemp: {avg: 0, _total: 0, _points: []},
             cad: {avg: 0, _total: 0, _points: []},
-            favouritesGroup: []
+            favouritesGroup: [],
+            bounds: null
         };
     },
 
@@ -414,6 +415,7 @@ L.GPX = L.FeatureGroup.extend({
                 return;
             }
             _this.addLayer(layers);
+            _this._info.bounds = layers.getBounds();
             _this.fire('loaded', {layers: layers, element: gpx});
         }
         if (input.substr(0, 1) === '<') { // direct XML has to start with a <

@@ -26,32 +26,36 @@ export default function CloudTrackItem({file}) {
     }
 
     async function addTrackToMap(setProgressVisible) {
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-        const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-        ctx.setCurrentObjectType('cloud_track');
-        newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
-        ctx.setGpxFiles(newGpxFiles);
-        if (file.details?.analysis) {
-            newGpxFiles[file.name].summary = file.details.analysis;
-        }
-        ctx.setSelectedGpxFile(newGpxFiles[file.name]);
+        if (file.url) {
+            ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
+        } else {
+            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+            const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+            ctx.setCurrentObjectType('cloud_track');
+            newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
+            ctx.setGpxFiles(newGpxFiles);
+            if (file.details?.analysis) {
+                newGpxFiles[file.name].summary = file.details.analysis;
+            }
+            ctx.setSelectedGpxFile(newGpxFiles[file.name]);
 
-        //loadGpxInfo
-        let gpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-        const gpxInfo = await Utils.fetchUtilLoad(gpxInfoUrl, {}, setProgressVisible);
-        if (gpxInfo.ok) {
-            let data = await gpxInfo.json();
-            newGpxFiles[file.name].summary = data.info;
-            setProgressVisible(false);
-        }
+            //loadGpxInfo
+            let gpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+            const gpxInfo = await Utils.fetchUtilLoad(gpxInfoUrl, {}, setProgressVisible);
+            if (gpxInfo.ok) {
+                let data = await gpxInfo.json();
+                newGpxFiles[file.name].summary = data.info;
+                setProgressVisible(false);
+            }
 
-        //loadSrtmGpxInfo
-        let srtmGpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-srtm-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-        const srtmGpxInfo = await Utils.fetchUtilLoad(srtmGpxInfoUrl, {}, setProgressVisible);
-        if (srtmGpxInfo.ok) {
-            let data = await srtmGpxInfo.json();
-            newGpxFiles[file.name].srtmSummary = data.info;
-            setProgressVisible(false);
+            //loadSrtmGpxInfo
+            let srtmGpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-srtm-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+            const srtmGpxInfo = await Utils.fetchUtilLoad(srtmGpxInfoUrl, {}, setProgressVisible);
+            if (srtmGpxInfo.ok) {
+                let data = await srtmGpxInfo.json();
+                newGpxFiles[file.name].srtmSummary = data.info;
+                setProgressVisible(false);
+            }
         }
     }
 

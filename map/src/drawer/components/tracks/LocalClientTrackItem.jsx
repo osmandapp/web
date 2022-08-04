@@ -43,10 +43,13 @@ export default function LocalClientTrackItem({track, index}) {
 
     function addTrackToMap() {
         ctx.setCurrentObjectType('local_client_track');
-        track.index = indexTrack;
-        setIndexTrack(indexTrack);
-        ctx.localClientsTracks[index].selected = true;
-        addGpx(track);
+        if (indexTrack !== undefined) {
+            track.index = indexTrack;
+            setIndexTrack(indexTrack);
+            ctx.localClientsTracks[indexTrack].selected = true;
+            addGpx(track);
+        }
+        ctx.setSelectedGpxFile(track);
     }
 
     return <div>

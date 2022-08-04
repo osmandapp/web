@@ -41,6 +41,15 @@ export default function LocalClientTrackLayer() {
     }
 
     useEffect(() => {
+        if (ctx.selectedGpxFile?.selected) {
+            let currLayer = layers.find(l => l.name === ctx.selectedGpxFile.name);
+            if (currLayer) {
+                map.fitBounds(currLayer.layer._info.bounds);
+            }
+        }
+    }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
+
+    useEffect(() => {
         if (ctx.localClientsTracks.length === 0) {
             removeAllTracks()
         } else {
