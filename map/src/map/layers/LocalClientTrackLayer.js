@@ -25,9 +25,14 @@ export default function LocalClientTrackLayer() {
         setLayers([...layers]);
     }
 
-    function removeAllTracks() {
-        layers.forEach(l => map.removeLayer(l.layer));
-        setLayers([]);
+    function clearUnusedLayers() {
+        let listForDeleted = [];
+        layers.forEach(l => {
+            if (ctx.localClientsTracks.find(t => t.name === l.name) === undefined) {
+                listForDeleted.push(l);
+            }
+        })
+        listForDeleted.forEach(l => removeLayerFromMap(l));
     }
 
     function addTrackToMap(track) {
@@ -50,8 +55,8 @@ export default function LocalClientTrackLayer() {
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
     useEffect(() => {
-        if (ctx.localClientsTracks.length === 0) {
-            removeAllTracks()
+        if (layers.length > ctx.localClientsTracks.length) {
+            clearUnusedLayers();
         } else {
             Object.values(ctx.localClientsTracks).forEach((track) => {
                 let currLayer = layers.find(l => l.name === track.name);

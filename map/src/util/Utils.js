@@ -109,7 +109,8 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     }
 }
 
-function getFileName(file) {
+function getFileName(currentFile) {
+    let file = Object.assign('', currentFile);
     file.name = file.name.replace(/.gpx/, '');
     if (file.name.includes('/')) {
         return file.name.split('/')[1]
