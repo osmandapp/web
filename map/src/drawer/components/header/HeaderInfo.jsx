@@ -82,7 +82,7 @@ export default function HeaderInfo() {
                 }
             }
         });
-        return `Local saved GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`
+        return `Selected local saved GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`
     }
 
     function addLocalClientInfo() {
@@ -92,7 +92,7 @@ export default function HeaderInfo() {
                 tracks++;
             }
         });
-        return `Local GPX files: ${tracks} tracks`
+        return `Selected local GPX files: ${tracks} tracks`
     }
 
     function addWeatherInfo() {
