@@ -115,7 +115,8 @@ You can disable all map animations during map change (gestures and buttons) in S
 
 Select an external control device, such as a keyboard or WunderLINQ.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
+**<Translate android="true" ids="android_button_seq"/>** <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
+
 
 > Note: the keyboard works with the setting disabled too. 
 
