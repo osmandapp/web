@@ -62,7 +62,7 @@ export default function SearchInfo() {
     };
 
     return <>
-        {!ctx.appText && ctx.searchCtx.query !== undefined && <>
+        {ctx.searchCtx.query !== undefined && <>
             <Input inputProps={{style: {color: "white"}}}
                    label="Search Results"
                    inputRef={(input) => {
@@ -78,14 +78,10 @@ export default function SearchInfo() {
                 <Close/>
             </IconButton>
         </>}
-        {!ctx.appText && ctx.searchCtx.query === undefined && <>
+        {ctx.searchCtx.query === undefined && <>
             <IconButton onClick={searchEnable} color="inherit">
                 <Search/>
             </IconButton>
-            <Typography variant="h6" color="inherit" align="justify"
-                        style={{display: 'inline'}}>
-                {process.env.REACT_APP_WEBSITE_NAME}
-            </Typography>
         </>}
     </>
 }

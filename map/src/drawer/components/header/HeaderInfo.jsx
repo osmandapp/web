@@ -7,32 +7,43 @@ export default function HeaderInfo() {
 
     const ctx = useContext(AppContext);
 
-    const [textInfo, setTextInfo] = useState('');
+    const [textInfo, setTextInfo] = useState({
+        tracks: {text: ''},
+        weather: {text: ''},
+        welcome: {text: ''}
+    });
 
     useEffect(() => {
-
-        function selectedObjectsEmpty() {
-            return !ctx.selectedObjects.cloudTracks && !ctx.selectedObjects.localServerTracks && !ctx.selectedObjects.localClientTracks && !ctx.selectedObjects.weather;
-        }
-
-        if (selectedObjectsEmpty()) {
-            setTextInfo('');
+        if (ctx.selectedObjects.tracks) {
+            let text = addTrackInfo();
+            setTextInfo(prevState => ({
+                ...prevState,
+                tracks: {text: text},
+                weather: {text: ''},
+                welcome: {text: ''}
+            }));
+        } else if (ctx.selectedObjects.weather) {
+            let text = addWeatherInfo();
+            setTextInfo(prevState => ({
+                ...prevState,
+                tracks: {text: ''},
+                weather: {text: text},
+                welcome: {text: ''}
+            }));
         } else {
-            setTextInfo(<div>
-                {ctx.selectedObjects.cloudTracks && addCloudTrackInfo()}
-                {ctx.selectedObjects.cloudTracks ?
-                    <br/> : <></>} {ctx.selectedObjects.localServerTracks && addLocalServerInfo()}
-                {ctx.selectedObjects.localServerTracks ?
-                    <br/> : <></>} {ctx.selectedObjects.localClientTracks && addLocalClientInfo()}
-                {ctx.selectedObjects.localClientTracks ?
-                    <br/> : <></>} {ctx.selectedObjects.weather && addWeatherInfo()}
-            </div>)
+            setTextInfo(prevState => ({
+                ...prevState,
+                tracks: {text: ''},
+                weather: {text: ''},
+                welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
+            }));
         }
     }, [ctx.selectedObjects, ctx.setSelectedObjects]);
 
-    function addCloudTrackInfo() {
+    function addTrackInfo() {
         let dist = 0;
         let tracks = 0;
+        let seg = 0;
         let wpts = 0;
         let time = 0;
         let diffUp = 0;
@@ -41,6 +52,9 @@ export default function HeaderInfo() {
             if (item.local !== true && item.summary && item.url) {
                 if (item.summary.totalTracks) {
                     tracks += item.summary.totalTracks;
+                }
+                if (item.summary.points) {
+                    seg += item.summary.points - 1;
                 }
                 if (item.summary.wptPoints) {
                     wpts += item.summary.wptPoints;
@@ -58,18 +72,7 @@ export default function HeaderInfo() {
                     diffDown += item.summary.diffElevationDown;
                 }
             }
-        });
 
-        return `Selected GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts. 
-            Time moving: ${toHHMMSS(time)}. 
-            Uphill / Downhill: ${(diffUp).toFixed(0)} / ${(diffDown).toFixed(0)} m.`
-    }
-
-    function addLocalServerInfo() {
-        let dist = 0;
-        let tracks = 0;
-        let wpts = 0;
-        Object.values(ctx.gpxFiles).forEach((item) => {
             if (item.local === true && item.summary && item.url) {
                 if (item.summary.totalTracks) {
                     tracks += item.summary.totalTracks;
@@ -82,17 +85,20 @@ export default function HeaderInfo() {
                 }
             }
         });
-        return `Selected local saved GPX files: ${tracks} tracks, ${(dist / 1000.0).toFixed(1)} km, ${wpts} wpts`
-    }
 
-    function addLocalClientInfo() {
-        let tracks = 0;
         Object.values(ctx.localClientsTracks).forEach((item) => {
             if (item.selected) {
                 tracks++;
             }
         });
-        return `Selected local GPX files: ${tracks} tracks`
+
+        let segInfo = seg > 0 ? `: ${seg} segments` : ``;
+        let distInfo = dist > 0 ? `, ${(dist / 1000.0).toFixed(1)} km` : ``;
+        let wptInfo = wpts > 0 ? `, ${wpts} wpts.` : ``;
+        let timeInfo = time > 0 ? ` Time moving: ${toHHMMSS(time)}.` : ``;
+        let uphillDownhillInfo = diffUp > 0 || diffDown ? ` Uphill / Downhill: ${(diffUp).toFixed(0)} / ${(diffDown).toFixed(0)} m.` : ``;
+
+        return `Selected ${tracks} Tracks${segInfo}${distInfo}${wptInfo}${timeInfo}${uphillDownhillInfo}`
     }
 
     function addWeatherInfo() {
@@ -124,11 +130,10 @@ export default function HeaderInfo() {
         return `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}]`;
     }
 
-    return <Box sx={{ml: 1}}>
-        {textInfo === ''
-            ? <SearchInfo/>
-            : <Typography variant="h6" color="inherit">
-                {textInfo}
-            </Typography>}
+    return <Box>
+        <Typography variant="h6" color="inherit" style={{display: 'inline'}}>
+            <SearchInfo/>
+            {textInfo.tracks.text + textInfo.weather.text + textInfo.welcome.text}
+        </Typography>
     </Box>
 }

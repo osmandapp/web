@@ -83,11 +83,10 @@ export default function TracksMenu() {
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 
     useEffect(() => {
+        let allTracksLength = visibleTracks.localClient.length + visibleTracks.files.length;
         ctx.setSelectedObjects(prevState => ({
             ...prevState,
-            localClientTracks: visibleTracks.localClient.length > 0,
-            localServerTracks: visibleTracks.files.filter(f => f.local).length > 0,
-            cloudTracks: visibleTracks.files.filter(f => !f.local).length > 0
+            tracks: allTracksLength > 0
         }));
     }, [visibleTracks, setVisibleTracks]);
 

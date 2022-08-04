@@ -314,9 +314,7 @@ export const AppContextProvider = (props) => {
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [selectedObjects, setSelectedObjects] = useState({
-        cloudTracks: false,
-        localServerTracks: false,
-        localClientTracks: false,
+        tracks: false,
         weather: false
     });
     // 
