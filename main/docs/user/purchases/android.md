@@ -99,7 +99,7 @@ At this moment, Pro subscription has next features:
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
-| [Online Elevation profile](https://osmand.net/blog/osmand-android-4-2-released#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection). |
+| [Online Elevation profile](https://osmand.net/blog/osmand-android-4-2-released#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection) |
 
 ### How to buy
 
