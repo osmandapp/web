@@ -10,10 +10,10 @@ export default function HeaderInfo() {
     const [text, setText] = useState([]);
 
     useEffect(() => {
-        if (ctx.headerText.tracks.text === '' && ctx.headerText.weather.text === '') {
+        if (ctx.headerText.tracks.text === '' && ctx.headerText.weather.text === '' && ctx.headerText.search.text === '') {
             setText(ctx.headerText.welcome.text);
         } else {
-            setText(ctx.headerText.weather.text + ' ' + ctx.headerText.tracks.text);
+            setText(ctx.headerText.search.text + ' ' + ctx.headerText.weather.text + ' ' + ctx.headerText.tracks.text);
         }
     }, [ctx.headerText, ctx.setHeaderText]);
 

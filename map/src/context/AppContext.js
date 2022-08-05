@@ -357,8 +357,9 @@ export const AppContextProvider = (props) => {
     const [localClientsTracks, setLocalClientsTracks] = useState(LocalTracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
-        tracks: {text: ''},
+        search: {text: ''},
         weather: {text: ''},
+        tracks: {text: ''},
         welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
     });
 

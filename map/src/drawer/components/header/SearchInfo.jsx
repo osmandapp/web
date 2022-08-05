@@ -1,11 +1,13 @@
 import {IconButton, Input, Typography} from "@mui/material";
 import {Close, Search} from "@mui/icons-material";
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
 
 export default function SearchInfo() {
 
     const ctx = useContext(AppContext);
+
+    const [processSearch, setProcessSearch] = useState(false);
 
     const searchEnable = () => {
         const shallowClone = {...ctx.searchCtx};
@@ -26,6 +28,7 @@ export default function SearchInfo() {
                 return;
             }
             let latlng = {lat: parseFloat(arr[1]), lng: parseFloat(arr[2])};
+            setProcessSearch(true);
             searchAsync(ctx.searchCtx.query, latlng).then();
         }
     }
@@ -58,8 +61,24 @@ export default function SearchInfo() {
             copy.props = props;
             copy.geojson = data;
             ctx.setSearchCtx(copy);
+            setProcessSearch(false);
         }
     };
+
+    useEffect(() => {
+        let resultText = '';
+        if (processSearch) {
+            resultText = `Searching…`;
+        } else {
+            if (ctx.searchCtx.geojson) {
+                resultText = `Found ${ctx.searchCtx.geojson.features.length} search results.`
+            }
+        }
+        ctx.setHeaderText(prevState => ({
+            ...prevState,
+            search: {text: resultText}
+        }));
+    }, [ctx.searchCtx, ctx.setSearchCtx, processSearch, setProcessSearch]);
 
     return <>
         {ctx.searchCtx.query !== undefined && <>
