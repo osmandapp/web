@@ -14,28 +14,64 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.
+## Overview
+
+The OsmAnd development plugin is only necessary for *developers and experienced users*. It allows you to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for normal application use.
 
 
-Development plugin allows you to settings OsmAnd for testing: to simulate navigation routes, check screen rendering performance, etc.
+## Enable plugin
 
 
-## Enable / Disable plugin
+<Tabs groupId="operating-systems">
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,developer_plugin"/>
+<TabItem value="android" label="Android">  
+
+
+**Enable** OsmAnd development plugin:
+- Tap **OsmAnd development** in the list of plugins in: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development"/>*. Or tap the triple dot to the right of the option and select *Enable*.
+- Tap the "off" button, and it will change to "on".
+- Confirm your choice in **New plugin added** screen.
 
 ![Development plugin Android](@site/static/img/plugins/development/development_plugin_android.png)
 
 
-### Plugin settings
+</TabItem>
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,developer_plugin,shared_string_settings"/>
-
-![Development Settings Android](@site/static/img/plugins/development/development_plugin_settings_android.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_plugin_settings_2_android.png)
+<TabItem value="ios" label="iOS">  
 
 
-Settings and info
+> ```Not available for iOS version.```
+
+
+</TabItem>
+
+</Tabs> 
+
+
+## Plugin settings
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To find OsmAnd development plugin, follow these steps: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development,shared_string_settings"/>*
+
+![Development Settings Android](@site/static/img/plugins/development/development_plugin_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_plugin_settings_2_andr.png)
+
+
+### Settings and info
+
+These plugin settings are global and apply to all profiles.  
+
+
+- <Translate android="true" ids="use_opengl_render"/> - <Translate android="true" ids="use_opengl_render_descr"/>  
+
+
+**Safe**:
+
 - <Translate android="true" ids="safe_mode"/> - <Translate android="true" ids="safe_mode_description"/>
+- <Translate android="true" ids="approx_safe_mode"/> - <Translate android="true" ids="approx_safe_mode_description"/>
 
 **Navigation**:
 
@@ -44,19 +80,69 @@ Settings and info
 **OsmAnd development**:
 
 - <Translate android="true" ids="trace_rendering"/> - <Translate android="true" ids="trace_rendering_descr"/> 
+- <Translate android="true" ids="transparent_status_bar"/> - <Translate android="true" ids="transparent_status_bar_descr"/>. 
 - <Translate android="true" ids="simulate_initial_startup"/> - <Translate android="true" ids="simulate_initial_startup_descr"/>
 - <Translate android="true" ids="show_free_version_banner"/> - <Translate android="true" ids="show_free_version_banner_description"/>
--&nbsp;<Translate android="true" ids="test_voice_prompts"/> - [<Translate android="true" ids="play_commands_of_currently_selected_voice"/>](../navigation/voice-navigation.md#testing-of-voice-prompts-android) 
-- <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>
+- <Translate android="true" ids="test_voice_prompts"/> - Select a voice and test by playing announcements.
+- <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>.
 
 **Info**:
 
+- <Translate android="true" ids="memory_allocated_for_routing"/> - see below in this article.
 - <Translate android="true" ids="global_app_allocated_memory"/> - shows operatinal memory for Adnroid and ART (Android Runtime).
 - <Translate android="true" ids="native_app_allocated_memory"/> - shows native memory for Android and ART (Android Runtime).
-- <Translate android="true" ids="agps_info"/> - shows info about A-GPS data
-- <Translate android="true" ids="day_night_info"/> - shows sunrise/sunset time.
+- <Translate android="true" ids="agps_info"/> - shows info about A-GPS data.
+- <Translate android="true" ids="day_night_info"/> - shows sunrise/sunset time.  
+
+
+### Memory allocated for routing  
+
+<Translate android="true" ids="memory_allocated_for_routing"/> - <Translate android="true" ids="memory_allocated_for_routing_ds"/>  
+
+- Minimum value = 64 MB.
+- Maximum value = 50% of Phone memory.
+- Default value = 256 MB.  
+
+
+![Development Settings Android](@site/static/img/plugins/development/development_plugin_memory_alloc_android.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+> ```Not available for iOS version.```
+
+
+</TabItem>
+
+</Tabs> 
+
 
 ## How to use
 
-Click to <Translate android="true" ids="simulate_your_location"/> in the Settings → Navigation. 
-Next, you need to choose route simulation speed and choose GPX track for simulation of device location.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+- Tap to **<Translate android="true" ids="simulate_your_location"/>** in the <Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development,shared_string_settings"/> → Navigation. 
+- Select a route simulation speed.
+- Select a GPX track to simulate the location of the device.  
+
+![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png)
+![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+> ```Not available for iOS version.```
+
+</TabItem>
+
+</Tabs> 
+
+

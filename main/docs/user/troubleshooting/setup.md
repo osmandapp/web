@@ -27,8 +27,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### How to restore purchases?
 
-- For iOS: Please open OsmAnd go to Menu → Maps & Resources → Purchases tab → tap 'Restore All Purchases' button → enter your Apple ID.
-- For Android: Please log in to your Google Play account using the same email you used when purchasing OsmAnd. Enter 'OsmAnd+' or OsmAnd free (if you want to restore OsmAnd Unlimited) to the search field and install the app. You won't have to pay again, all paid function should be available by default. If that is not the case, please go to your device's Settings → Apps → 'Google Play' and clear the cache. Then restart the device and try again.
+- **For iOS**: Please open OsmAnd go to Menu → Maps & Resources → Purchases tab → tap 'Restore All Purchases' button → enter your Apple ID. Or read [this article](../purchases/ios.md#restore-purchases).
+- **For Android**: Please log in to the same app store account using the same email you used when purchasing OsmAnd. Enter 'OsmAnd+' or OsmAnd free (if you want to restore Maps+, OsmAnd Live, OsmAnd Pro) to the search field and install the app. You won't have to pay again, all paid function should be available by default. If that is not the case, please go to your device's Settings → Apps → select your app store and clear the cache. Then restart the device and try again. Or read [this article](../purchases/android.md#restore-purchases).
+
+### How to restore Contour lines plugin purchase?
+
+To restore [Contour lines plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
+- Log into the same Google Play account which you used to purchase Contour lines plugin, and install it: [https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
+- If the Install button is not active, please make sure to update the Google Play and OsmAnd apps, clear their cache and restart the device, then try install the plugin again.
+- After installation, please enable the Contour Lines plugin in [OsmAnd menu → Plugins](../plugins/contour-lines.md), download the required files in the [Download maps menu](../start-with/download-maps.md#download---main-menu) and enable its display in the [Configure map menu](../map/configure-map-menu.md).
 
 ### How can I identify that OsmAnd Unlimited is active?
 

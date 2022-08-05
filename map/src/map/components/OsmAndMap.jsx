@@ -8,7 +8,7 @@ import WeatherLayer from "../layers/WeatherLayer"
 import MarkerIcon from '../MarkerIcon.js'
 import '../../util/gpx.js';
 import 'leaflet-hash';
-
+import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
@@ -46,10 +46,12 @@ const OsmAndMap = () => {
     const hoverPointRef = useRef(null);
 
     const ctx = useContext(AppContext);
+    let hash = null;
     const [hoverPoint, setHoverPoint] = useState(null);
 
     const whenReadyHandler = event => {
         const {target: map} = event;
+        hash = new L.Hash(map);
         map.attributionControl.setPrefix('');
         mapRef.current = map;
         if (!ctx.mapMarkerListener) {

@@ -333,7 +333,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 | **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 | **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
 | **<Translate android="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
-|     | <Translate android="true" ids="default_speed_setting_title"/>  | <Translate android="true" ids="default_speed_setting_descr"/>.  |
+|     | <Translate android="true" ids="default_speed_setting_title"/>  | Estimates arrival times for unknown road types and limits the speed for all roads (can affect routing). For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h.  |
 |     | <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
@@ -378,6 +378,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_bus_name"/>" |              |
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
 |                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
+| Goods vehicles restrictions |  Consider access permissions for light goods vehicles (goods)   |   Driving routing |
+| Motor type |  allows choosing type of motor: Petrol, Diesel, Lpg, Gas, Electric, Hybrid  |   Driving routing |
 | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
@@ -390,11 +392,11 @@ In this section you can set [routing and navigation parameters of your profile, 
 | **<Translate ios="true" ids="voice_announces"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  <Translate ios="true" ids="speak_descr"/>  |
 | **<Translate ios="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget.  | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 | **<Translate ios="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
-|     | <Translate ios="true" ids="default_speed"/>  | <Translate ios="true" ids="default_speed_dialog_msg"/>   |
+|     | <Translate ios="true" ids="default_speed"/>  | <Translate ios="true" ids="default_speed_dialog_msg"/>. For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
 |     | <Translate ios="true" ids="routing_attr_weight_name"/>   | <Translate ios="true" ids="weight_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_height_name"/>  | <Translate ios="true" ids="height_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_length_name"/>  | <Translate ios="true" ids="lenght_limit_description"/>   |
-|     | <Translate ios="true" ids="routing_attr_width_name"/> | <Translate ios="true" ids="width_limit_description"/>   |
+|     | <Translate ios="true" ids="routing_attr_width_name"/>   | <Translate ios="true" ids="width_limit_description"/>   |
 | **<Translate ios="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
 |     | <Translate ios="true" ids="fav_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate ios="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |

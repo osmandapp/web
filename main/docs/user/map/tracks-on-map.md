@@ -173,11 +173,13 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>
 
-<p> </p>
-
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_routes"/>
 
-<p> </p>
+### Save as a Track
+
+You can select route on the map by clicking on the shield, later you could save it as a Track and use it later to navigate, edit or plan another route.
+
+
 
 **Read more** about Map Routes at [Vector map style](../map/vector-maps.md#routes).
 
