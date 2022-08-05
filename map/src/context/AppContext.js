@@ -236,7 +236,7 @@ async function loadRouteModes(routeMode, setRouteMode) {
 }
 
 
-async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData) {
+async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, setProcessRoute) {
     // encodeURIComponent(startPoint.lat)
     setRouteData(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -258,6 +258,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
         headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
+        setProcessRoute(false);
         let data = await response.json();
         let props = {};
         if (data.features.length > 0) {
@@ -360,8 +361,10 @@ export const AppContextProvider = (props) => {
         search: {text: ''},
         weather: {text: ''},
         tracks: {text: ''},
+        route: {text: ''},
         welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
     });
+    const [processRoute, setProcessRoute] = useState(false);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -375,10 +378,26 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData);
+            setProcessRoute(true);
+            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, setProcessRoute);
         }
         // ! routeTrackFile is not part of dependency ! 
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
+
+    useEffect(() => {
+        let resultText = '';
+        if (processRoute) {
+            resultText = `Route calculating…`;
+        } else {
+            if (routeData) {
+                resultText = `Route ${Math.trunc(routeData.props.overall.distance)} km for ${routeMode.mode} is found.`
+            }
+        }
+        setHeaderText(prevState => ({
+            ...prevState,
+            route: {text: resultText}
+        }));
+    }, [processRoute, setProcessRoute, routeData, setRouteData]);
 
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
