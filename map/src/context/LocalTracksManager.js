@@ -27,7 +27,7 @@ function createName(ctx) {
         }
     })
     if (count > 0) {
-        name = name + ' - ' + count;
+        name = name + ' - ' + (count + 1);
     }
 
     return name;
