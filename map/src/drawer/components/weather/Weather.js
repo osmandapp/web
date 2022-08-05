@@ -8,7 +8,7 @@ import {
 import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
-import AppContext from "../../../context/AppContext"
+import AppContext, {toHHMMSS} from "../../../context/AppContext"
 
 
 async function displayWeather(ctx, setWeatherPoint) {
@@ -59,10 +59,42 @@ export default function Weather() {
     const [weatherOpen, setWeatherOpen] = useState(false);
 
     useEffect(() => {
-        ctx.setSelectedObjects(prevState => ({
+        let resultText = '';
+        let weatherDateObj = ctx.weatherDate;
+        let hours = (-(new Date().getTime() - weatherDateObj.getTime()) / 3600000).toFixed(0);
+        let hourstr = "now"
+        if (hours !== 0) {
+            let day = 0;
+            while (hours >= 24) {
+                day++;
+                hours -= 24;
+            }
+            if (day > 0) {
+                if (day === 1) {
+                    hourstr = "+ " + day + " day ";
+                } else {
+                    hourstr = "+ " + day + " days ";
+                }
+                hours = hours - hours % 3;
+            } else if (hours > 0) {
+                hourstr = "+";
+            }
+            if (hours > 0) {
+                hourstr += hours + " hours";
+            } else if (hours < 0) {
+                hourstr = hours + " hours";
+            }
+        }
+
+        if (weatherOpen) {
+            resultText = `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}]`;
+        }
+
+        ctx.setHeaderText(prevState => ({
             ...prevState,
-            weather: weatherOpen
+            weather: {text: resultText}
         }));
+
     }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.updateWeatherLayers, weatherOpen]);
 
     return <>

@@ -313,10 +313,6 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
-    const [selectedObjects, setSelectedObjects] = useState({
-        tracks: false,
-        weather: false
-    });
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
@@ -360,6 +356,11 @@ export const AppContextProvider = (props) => {
 
     const [localClientsTracks, setLocalClientsTracks] = useState(LocalTracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
+    const [headerText, setHeaderText] = useState({
+        tracks: {text: ''},
+        weather: {text: ''},
+        welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
+    });
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -401,7 +402,6 @@ export const AppContextProvider = (props) => {
         loginUser, setLoginUser,
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
-        selectedObjects, setSelectedObjects,
         selectedGpxFile, setSelectedGpxFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
@@ -417,7 +417,8 @@ export const AppContextProvider = (props) => {
         favorites, setFavorites,
         avoidRoads, setAvoidRoads,
         localClientsTracks, setLocalClientsTracks,
-        currentObjectType, setCurrentObjectType
+        currentObjectType, setCurrentObjectType,
+        headerText, setHeaderText
 
     }}>
         {props.children}

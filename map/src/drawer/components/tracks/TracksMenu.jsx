@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {Typography, ListItemText, Collapse, MenuItem, ListItemIcon, LinearProgress, Button} from "@mui/material";
 import {DirectionsWalk, ExpandLess, ExpandMore} from '@mui/icons-material';
-import AppContext from "../../../context/AppContext"
+import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import CloudTrackGroup from "./CloudTrackGroup";
 import VisibleTrackGroup from "./VisibleTrackGroup";
 import LocalTrackGroup from "./LocalTrackGroup";
@@ -82,12 +82,75 @@ export default function TracksMenu() {
         setVisibleTracks({...visibleTracks});
     }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
 
+
     useEffect(() => {
-        let allTracksLength = visibleTracks.localClient.length + visibleTracks.files.length;
-        ctx.setSelectedObjects(prevState => ({
+        let resultText = '';
+        let dist = 0;
+        let tracks = 0;
+        let seg = 0;
+        let wpts = 0;
+        let time = 0;
+        let diffUp = 0;
+        let diffDown = 0;
+        Object.values(ctx.gpxFiles).forEach((item) => {
+            if (item.local !== true && item.summary && item.url) {
+                if (item.summary.totalTracks) {
+                    tracks += item.summary.totalTracks;
+                }
+                if (item.summary.points) {
+                    seg += item.summary.points - 1;
+                }
+                if (item.summary.wptPoints) {
+                    wpts += item.summary.wptPoints;
+                }
+                if (item.summary.totalDistance) {
+                    dist += item.summary.totalDistance;
+                }
+                if (item.summary.timeMoving) {
+                    time += item.summary.timeMoving;
+                }
+                if (item.summary.diffElevationUp) {
+                    diffUp += item.summary.diffElevationUp;
+                }
+                if (item.summary.diffElevationDown) {
+                    diffDown += item.summary.diffElevationDown;
+                }
+            }
+
+            if (item.local === true && item.summary && item.url) {
+                if (item.summary.totalTracks) {
+                    tracks += item.summary.totalTracks;
+                }
+                if (item.summary.wptPoints) {
+                    wpts += item.summary.wptPoints;
+                }
+                if (item.summary.totalDistance) {
+                    dist += item.summary.totalDistance;
+                }
+            }
+        });
+
+        Object.values(ctx.localClientsTracks).forEach((item) => {
+            if (item.selected) {
+                tracks++;
+            }
+        });
+
+        if (tracks > 0) {
+            let segInfo = seg > 0 ? `: ${seg} segments` : ``;
+            let distInfo = dist > 0 ? `, ${(dist / 1000.0).toFixed(1)} km` : ``;
+            let wptInfo = wpts > 0 ? `, ${wpts} wpts.` : ``;
+            let timeInfo = time > 0 ? ` Time moving: ${toHHMMSS(time)}.` : ``;
+            let uphillDownhillInfo = diffUp > 0 || diffDown ? ` Uphill / Downhill: ${(diffUp).toFixed(0)} / ${(diffDown).toFixed(0)} m.` : ``;
+
+            resultText = `Selected ${tracks} Tracks${segInfo}${distInfo}${wptInfo}${timeInfo}${uphillDownhillInfo}`;
+        }
+
+        ctx.setHeaderText(prevState => ({
             ...prevState,
-            tracks: allTracksLength > 0
+            tracks: {text: resultText}
         }));
+
     }, [visibleTracks, setVisibleTracks]);
 
 
