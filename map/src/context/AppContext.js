@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Air, Cloud, Compress, Shower, Thermostat
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
+import LocalTracksManager from "./LocalTracksManager";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -312,7 +313,6 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
-    const [appText, setAppText] = useState('');
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
@@ -354,7 +354,14 @@ export const AppContextProvider = (props) => {
         }
     });
 
-    const [contextMenuObjectType, setContextMenuObjectType] = useState(null);
+    const [localClientsTracks, setLocalClientsTracks] = useState(LocalTracksManager.loadTracks());
+    const [currentObjectType, setCurrentObjectType] = useState(null);
+    const [headerText, setHeaderText] = useState({
+        search: {text: ''},
+        weather: {text: ''},
+        tracks: {text: ''},
+        welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
+    });
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode);
@@ -372,7 +379,7 @@ export const AppContextProvider = (props) => {
         }
         // ! routeTrackFile is not part of dependency ! 
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
-    
+
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
     }, []);
@@ -396,7 +403,6 @@ export const AppContextProvider = (props) => {
         loginUser, setLoginUser,
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
-        appText, setAppText,
         selectedGpxFile, setSelectedGpxFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
@@ -411,7 +417,9 @@ export const AppContextProvider = (props) => {
         searchCtx, setSearchCtx,
         favorites, setFavorites,
         avoidRoads, setAvoidRoads,
-        contextMenuObjectType, setContextMenuObjectType
+        localClientsTracks, setLocalClientsTracks,
+        currentObjectType, setCurrentObjectType,
+        headerText, setHeaderText
 
     }}>
         {props.children}
