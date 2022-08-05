@@ -26,8 +26,6 @@ To start setting up an application profile:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile)
 
-<p> </p>
-
 ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_android.png)
 
 </TabItem>
@@ -35,8 +33,6 @@ To start setting up an application profile:
 <TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles"/>
-
-<p> </p>
 
 ![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
@@ -80,15 +76,12 @@ This section of settings contains settings of the cursor on the map and map view
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="general_settings_2"/>
-<p> </p> 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2"/>
-
-<p> </p>
 
 </TabItem>
 
@@ -251,7 +244,6 @@ In this part, there are all settings for navigation mode of a profile.
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>
-<p> </p>
 
 ![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
 
@@ -261,25 +253,25 @@ In this part, there are all settings for navigation mode of a profile.
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>
 
-<p> </p>
-
 ![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-#### **Navigation**
-
 In this section you can set [routing and navigation parameters of your profile, map during navigation and vehicle parameters](../navigation/index.md).
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
 
 &nbsp;<Translate android="true" ids="nav_type_hint"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
 
 &nbsp;<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
+
+
+#### Navigation Type
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -287,7 +279,29 @@ In this section you can set [routing and navigation parameters of your profile, 
 | <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md).            |
 | <Translate android="true" ids="shared_string_online"/> |  Online routing builds the route servers' resources online by the Internet connection. |   List of online routing providers. Here you can add an online routing engine: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.   |
 | <Translate android="true" ids="routing_profile_broutrer"/> |  [Offline third-party routing](https://brouter.de/)  |   The full description read [here](../navigation/thirdparty-routing.md)   |
-| **<Translate android="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+|**<Translate ios="true" ids="nav_type_title"/>**| choose your Navigation type which controls how routes are calcualted.  | Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate ios="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate ios="true" ids="m_style_bicycle"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="nav_type_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate ios="true" ids="m_style_car"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="m_style_pulic_transport"/>](../map/public-transport.md), [<Translate ios="true" ids="nav_type_ski"/>](../plugins/ski-maps.md), [<Translate ios="true" ids="nav_type_straight_line"/>](../navigation/boat-navigation.md#straight-line). |
+
+</TabItem>
+
+</Tabs>
+
+
+#### Route parameters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="route_parameters"/>** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
 | "<Translate android="true" ids="routing_attr_driving_style_name"/>"   |  select driving puprose to get shorter, faster, safer or unpaved route. | "<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate android="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
 | "<Translate android="true" ids="impassable_road"/>" |  avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
@@ -323,39 +337,21 @@ In this section you can set [routing and navigation parameters of your profile, 
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    |  
 | "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
-| "<Translate android="true" ids="recalculate_route"/>" | allows to recalculate the route by the next cases:    |    |
+| **_<Translate android="true" ids="recalculate_route"/>_** | allows to recalculate the route by the next cases:    |    |
 |   | "<Translate android="true" ids="route_recalculation_dist_title"/>"    |  <Translate android="true" ids="recalculate_route_in_deviation"/>. <Translate android="true" ids="select_distance_route_will_recalc"/>  |
 |   | "<Translate android="true" ids="in_case_of_reverse_direction"/>"   |  The route will be recalculated if the direction is changed to reverse. |
-| "<Translate android="true" ids="development"/>" | using live updates and the initial part for calculation the route    |    |
+| **_<Translate android="true" ids="development"/>_** | using live updates and the initial part for calculation the route    |    |
 |   | "<Translate android="true" ids="use_live_routing"/>"    |  Enable navigation for [OsmAnd Live changes](../personal/maps.md#osmand-live).  |
 |   | "<Translate android="true" ids="use_fast_recalculation"/>"   |  <Translate android="true" ids="use_fast_recalculation_desc"/> |
 |   | "<Translate android="true" ids="use_two_phase_routing"/>"   |  <Translate android="true" ids="complex_routing_descr"/> |
-| **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
-| **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
-| **<Translate android="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
-|     | <Translate android="true" ids="default_speed_setting_title"/>  | Estimates arrival times for unknown road types and limits the speed for all roads (can affect routing). For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h.  |
-|     | <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
-| **<Translate android="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
-|     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
-|     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
-|     | <Translate android="true" ids="turn_arrows"/> | Select whether turn arrows are indicated on the route line.  |
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-&nbsp;<Translate ios="true" ids="nav_type_title"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
-
-&nbsp;<Translate ios="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
-
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|**<Translate ios="true" ids="nav_type_title"/>**| choose your Navigation type which controls how routes are calcualted.  | Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate ios="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate ios="true" ids="m_style_bicycle"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="nav_type_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate ios="true" ids="m_style_car"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate ios="true" ids="m_style_pulic_transport"/>](../map/public-transport.md), [<Translate ios="true" ids="nav_type_ski"/>](../plugins/ski-maps.md), [<Translate ios="true" ids="nav_type_straight_line"/>](../navigation/boat-navigation.md#straight-line). |
-| **<Translate ios="true" ids="route_parameters"/>:** |  allows setting routing for any cases and showing additional info about roads.   |              |
+| **<Translate ios="true" ids="route_parameters"/>** |  allows setting routing for any cases and showing additional info about roads.   |              |
 | "<Translate ios="true" ids="recalculate_route"/>" |  <Translate ios="true" ids="route_recalculation_descr"/>    |              |
 | "<Translate ios="true" ids="recalculate_wrong_dir"/>"  |  the route will be recalculated if you are moving to the start point.   |              |
 | "<Translate ios="true" ids="routing_attr_driving_style_name"/>"   |  select driving puprose to get shorter, faster, safer or unpaved route. | "<Translate ios="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate ios="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate ios="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate ios="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
@@ -389,10 +385,84 @@ In this section you can set [routing and navigation parameters of your profile, 
 | "<Translate ios="true" ids="routing_attr_allow_private_name"/>" |  ignore the Private Access restriction for routing  |    |
 | "<Translate ios="true" ids="consider_limitations_param"/>" |  using temporaty limitations for routing from OpenStreetMap data  |    |
 | "<Translate ios="true" ids="road_speeds"/>" |  setting the minimum and the maximum travel speed for all roads in the route.  |    |
-| **<Translate ios="true" ids="voice_announces"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  <Translate ios="true" ids="speak_descr"/>  |
+
+</TabItem>
+
+</Tabs>
+
+
+#### Screen alerts
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget. Alerts shown bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
 | **<Translate ios="true" ids="screen_alerts"/>** | showing or not alerts on the screen like a widget.  | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
-| **<Translate ios="true" ids="vehicle_parameters"/>** | specified vehicle parameters may affect routing:   |   |
-|     | <Translate ios="true" ids="default_speed"/>  | <Translate ios="true" ids="default_speed_dialog_msg"/>. For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
+
+</TabItem>
+
+</Tabs>
+
+#### Voice announcements
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="voice_announcements"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  Configure to announce street names, traffic warnings (forced stops, speed bumps), speed camera warnings, speed limits.  |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate ios="true" ids="voice_announces"/>** | on/off and settings of [voice guidance](../navigation/voice-navigation.md) during navigation.    |  <Translate ios="true" ids="speak_descr"/>  |
+
+</TabItem>
+
+</Tabs>
+
+
+#### Vehicle parameters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="vehicle_parameters"/>** | vehicle parameters that may affect routing   |   |
+|     | **<Translate android="true" ids="default_speed_setting_title"/>**  | - Used as a speed to estimate [arrival time](../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. <br/> - Used to determine how late/early voice announcements should be pronounced - [details](../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). <br/> - Affects speed formatting [Unit of speed](#general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  <br/> - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
+|     | <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
+|     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
+|     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
+|     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
+| **<Translate android="true" ids="customize_route_line"/>** | Specify color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
+|     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
+|     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
+|     | <Translate android="true" ids="turn_arrows"/> | Select whether turn arrows are indicated on the route line.  |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate ios="true" ids="vehicle_parameters"/>** | vehicle parameters may affect routing:   |   |
+|     | **<Translate ios="true" ids="default_speed"/>**  | - Used as a speed to estimate [arrival time](../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. <br/> - Used to determine how late/early voice announcements should be pronounced - [details](../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). <br/> - Affects speed formatting [Unit of speed](#general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  <br/> - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
 |     | <Translate ios="true" ids="routing_attr_weight_name"/>   | <Translate ios="true" ids="weight_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_height_name"/>  | <Translate ios="true" ids="height_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_length_name"/>  | <Translate ios="true" ids="lenght_limit_description"/>   |
@@ -405,6 +475,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 </TabItem>
 
 </Tabs>
+
 
 #### **Other**
 
@@ -451,7 +522,6 @@ Here you can set parameters for [<Translate android="true" ids="configure_map"/>
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>
-<p> </p>
 
 Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
@@ -485,7 +555,6 @@ Here you can set parameters for [<Translate android="true" ids="map_widget_confi
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,layer_map_appearance"/>
-<p> </p>
 
 Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
@@ -497,7 +566,6 @@ Set parameters for [Configure screen](../widgets/configure-screen.md) menu for c
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,layer_map_appearance"/>
 
-<p> </p>
 
 Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
@@ -516,7 +584,6 @@ You can choose the color of the profile elements, its icon and name, also assign
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>
-<p> </p>
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -538,7 +605,6 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,profile_appearance"/>
 
-<p> </p>
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -698,7 +764,7 @@ This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#pl
 <TabItem value="ios" label="iOS">
 
 
-> `Not exist for iOS version.`
+> `Doesn't exist for iOS version.`
 
 
 </TabItem>
@@ -714,7 +780,6 @@ This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editi
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,osm_editing_plugin_name"/>
-<p> </p>
 
 </TabItem>
 
@@ -722,7 +787,6 @@ This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 Check!
 <Translate ios="true" ids="ios_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,product_title_osm_editing"/>
-<p> </p>
 
 </TabItem>
 
@@ -737,14 +801,13 @@ This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacerevie
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,open_place_reviews"/>
-<p> </p>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 
-> `Not exist for iOS version.`
+> `Doesn't exist for iOS version.`
 
 
 </TabItem>
@@ -760,14 +823,13 @@ This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>
-<p> </p>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 
-> `Not exist for iOS version.`
+> `Doesn't exist for iOS version.`
 
 
 </TabItem>
@@ -783,14 +845,13 @@ This menu opens [Development plugin settings](../plugins/accessibility.md) for t
 <TabItem value="android" label="Android">
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,development"/>
-<p> </p>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 
-> `Not exist for iOS version.`
+> `Doesn't exist for iOS version.`
 
 
 </TabItem>
