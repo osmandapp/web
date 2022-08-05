@@ -109,6 +109,28 @@ There are three options to display Tracks on the map: via [Configure map](../map
  
 </Tabs>
 
+#### Add waypoint by Quick Action
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Creat the item ["Add track waypoint"](../widgets/quick-action.md#create-items):
+
+![Quick action widget](@site/static/img/widgets/waypoint_qa_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Creat the item ["Add track waypoint"](../widgets/quick-action.md#create-items):
+
+![Quick action widget](@site/static/img/widgets/waypoint_qa_ios.png)
+
+</TabItem>
+ 
+</Tabs>
+
 <!-- ### Edit mode (iOS)
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks,create_new_trip"/>

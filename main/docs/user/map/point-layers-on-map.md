@@ -104,9 +104,9 @@ Enable / disable markers on the map:
 
 [Read more](../widgets/markers.md#configure-marker-widgets-and-marker-appearance) about marker appearance.
 
-## Track points
+## Track Waypoints
 
-Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape.
+Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../personal/tracks.md#add-waypoint).
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)
 
