@@ -11,6 +11,7 @@ import MapStyle from "./mapstyle/MapStyle"
 import RouteMenu from "./route/RouteMenu"
 import { useNavigate } from "react-router-dom";
 import FavoritesMenu from "./favorite/FavoritesMenu";
+import SearchResultMenu from "./search/SearchResultMenu";
 
 
 
@@ -57,6 +58,7 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
             <FavoritesMenu />
             <MapStyle />
             <RouteMenu />
+            <SearchResultMenu />
         </MenuList>
     </>
     );
