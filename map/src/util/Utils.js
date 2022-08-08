@@ -127,7 +127,8 @@ const Utils = {
     getFileData,
     getDistance,
     uploadFile,
-    getFileName
+    getFileName,
+    getPointsDist
 };
 
 export default Utils;

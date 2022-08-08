@@ -133,12 +133,14 @@ export default function TracksMenu() {
         Object.values(ctx.localClientsTracks).forEach((item) => {
             if (item.selected) {
                 tracks++;
+                dist += item.points[item.points.length - 1].dist;
+                seg += item.points.length - 1;
             }
         });
 
         if (tracks > 0) {
             let segInfo = seg > 0 ? `: ${seg} segments` : ``;
-            let distInfo = dist > 0 ? `, ${(dist / 1000.0).toFixed(1)} km` : ``;
+            let distInfo = dist > 0 ? `, ${(dist / 1000.0).toFixed(1)} km.` : ``;
             let wptInfo = wpts > 0 ? `, ${wpts} wpts.` : ``;
             let timeInfo = time > 0 ? ` Time moving: ${toHHMMSS(time)}.` : ``;
             let uphillDownhillInfo = diffUp > 0 || diffDown ? ` Uphill / Downhill: ${(diffUp).toFixed(0)} / ${(diffDown).toFixed(0)} m.` : ``;

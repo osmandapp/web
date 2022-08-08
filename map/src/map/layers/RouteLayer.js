@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useContext, useState, useCallback } from 'react';
-import { Marker, GeoJSON, useMap, Popup } from "react-leaflet";
+import { Marker, GeoJSON, useMap} from "react-leaflet";
 import L from 'leaflet';
 import MarkerIcon from '../MarkerIcon.js'
 import AppContext from "../../context/AppContext";
@@ -260,6 +260,13 @@ const RouteLayer = () => {
         
         return L.circleMarker(latlng, opts);
     };
+
+    useEffect(() => {
+        let searchRes = ctx.searchCtx.chooseResult;
+        if (searchRes) {
+            map.flyTo([searchRes[1], searchRes[0]], 17)
+        }
+    }, [ctx.searchCtx, ctx.setSearchCtx]);
 
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}

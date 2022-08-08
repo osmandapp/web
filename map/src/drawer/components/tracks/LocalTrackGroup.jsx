@@ -3,7 +3,6 @@ import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
-import {makeStyles} from "@material-ui/core/styles";
 import Actions from "./Actions";
 import LocalClientTrackItem from "./LocalClientTrackItem";
 import {styled} from "@mui/material/styles";
@@ -11,18 +10,8 @@ import drawerStyles from "../../styles/DrawerStyles";
 import LocalServerTrackItem from "./LocalServerTrackItem";
 import LocalTracksManager from "../../../context/LocalTracksManager";
 
-const useStyles = makeStyles({
-    button: {
-        maxWidth: '120px !important',
-        maxHeight: '40px',
-        minWidth: '120px !important',
-        minHeight: '40px'
-    }
-})
-
 export default function LocalTrackGroup() {
 
-    const classes = useStyles();
     const styles = drawerStyles();
 
     const StyledInput = styled('input')({
@@ -143,18 +132,18 @@ export default function LocalTrackGroup() {
                 <label htmlFor="contained-button-file">
                     <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
                                  onChange={fileSelected(ctx)}/>
-                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}>
+                    <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}>
                         Upload
                     </Button>
                 </label>
-                <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
+                <Button className={styles.button} variant="contained" component="span" sx={{ml: 2}}
                         onClick={() => generateLocalClientTracks()}>
                     Generate
                 </Button>
             </MenuItem>
             {(localGpxFiles.length !== 0 || ctx.localClientsTracks.length !== 0) &&
                 <MenuItem disableRipple={true}>
-                    <Button className={classes.button} variant="contained" component="span" sx={{ml: 3}}
+                    <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}
                             onClick={clearLocalTracks(ctx)}>
                         Clear
                     </Button>
