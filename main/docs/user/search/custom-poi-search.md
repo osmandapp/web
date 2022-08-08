@@ -45,6 +45,18 @@ SAVE it:
 ![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
 
 
+### Edit an existing Custom POI filter
+
+From the main screen:
+1. Tap on the agnifying glass to open the Search screen
+2. Select the Categories tab
+3. Choose the custom category : screen with search results will open
+4. Tap on filter icon and then on Filter screen
+5. Tap on the 3-dot icon
+6. In the drop-down menu, select "Edit categories"
+
+
+
 ### Delete Custom POI filter
 
 **iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
@@ -57,13 +69,3 @@ SAVE it:
 
 ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)
 
-
-### Edit an existing Custom POI filter
-
-From the main screen :
-1. tap on the agnifying glass to open the Search screen
-1. select the Categories tab
-1. choose the custom category : screen with search results will open
-1. tap on filter icon and then on Filter screen
-1. tap on the 3-dot icon
-1. in the drop-down menu, select "Edit categories"
