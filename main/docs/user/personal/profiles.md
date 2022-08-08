@@ -450,6 +450,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
+|     | <Translate android="true" ids="routing_attr_motor_type_name"/> | <Translate android="true" ids="routing_attr_motor_type_description"/>   |
 | **<Translate android="true" ids="customize_route_line"/>** | Specify color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
 |     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
