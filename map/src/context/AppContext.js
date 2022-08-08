@@ -396,7 +396,7 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                resultText = `Route ${Math.trunc(data.props.overall.distance)} km for ${routeMode.mode} is found.`
+                resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
             }
         }
         setHeaderText(prevState => ({
