@@ -16,6 +16,10 @@ export default function SearchResultMenu() {
         ctx.setSearchCtx([]);
     }
 
+    function showSearchResults() {
+        return ctx.searchCtx && ctx.searchCtx.geojson && ctx.searchCtx.geojson.features.length > 0;
+    }
+
     useEffect(() => {
         if (ctx.searchCtx.geojson) {
             if (ctx.searchCtx.geojson.features.length > 200) {
@@ -29,7 +33,7 @@ export default function SearchResultMenu() {
     }, [ctx.searchCtx, ctx.setSearchCtx]);
 
     return <>
-        <MenuItem sx={{mb: 1}} onClick={() => setSearchResultOpen(!searchResultOpen)}>
+        {showSearchResults() && <MenuItem sx={{mb: 1}} onClick={() => setSearchResultOpen(!searchResultOpen)}>
             <ListItemIcon>
                 <Search fontSize="small"/>
             </ListItemIcon>
@@ -39,7 +43,7 @@ export default function SearchResultMenu() {
             </Typography>
             {ctx.searchCtx.geojson && ctx.searchCtx.geojson.features.length === 0 ? <></> : searchResultOpen ?
                 <ExpandLess/> : <ExpandMore/>}
-        </MenuItem>
+        </MenuItem>}
         {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={searchResultOpen} timeout="auto" unmountOnExit>
             {
