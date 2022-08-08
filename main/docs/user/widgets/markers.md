@@ -10,11 +10,32 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+## Overview
 
-Map markers are selected points marked as flags on the map. They provide useful information for direct-point-navigation on the map screen.
+Map markers are selected points marked with flags on the map. They provide useful information for navigating to direct points on the map screen.
 
 ## Top bar widget (markers)  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
 
 ![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget.png)
 
@@ -31,6 +52,26 @@ On the top bar widget you could see the distance and the direction to the marker
 
 ## Panel widgets (markers)  
 
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
+
 ![Panel widgets](@site/static/img/widgets/map_markers_widget.png)
 
 On panel widgets only distance to the map marker is displayed.
@@ -45,7 +86,26 @@ On panel widgets only distance to the map marker is displayed.
 
 ## Configure Marker widgets and Marker appearance
 
-All Markers appearance settings and widget settings are configurable via same menu.
+All marker appearance settings and widget parameters are configured through the same menu.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
+
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,map_markers_item,appearance_on_the_map"/> 
 

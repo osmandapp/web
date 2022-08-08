@@ -18,7 +18,7 @@ Downloading maps is a necessary action for further use of maps and offline navig
 The application can not function normally without offline maps, which are not distributed in the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as search, [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
 
 
-## Download - First Screen
+## First Screen
 
 When you first launch the app, it suggests downloading a map based on your Internet location. If you are using a VPN, this may not be detected correctly, so you can select a different map region.  
 
@@ -39,7 +39,7 @@ When you first launch the app, it suggests downloading a map based on your Inter
 </TabItem>
 </Tabs>
 
-## Download - Main menu
+## Main menu
 
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
@@ -84,7 +84,7 @@ This screen has certain features:
 </TabItem>
 </Tabs>
 
-## Download - Map Context menu
+## Map Context menu
 
 
 <Tabs groupId="operating-systems">
@@ -104,7 +104,7 @@ One of the option to download map is via World map and [Map Context menu](../map
 </TabItem>
 </Tabs>
 
-## Download / Manage - World Map
+## Manage - World Map
 
 
 <Tabs groupId="operating-systems">
@@ -126,7 +126,7 @@ One way to download the map is to zoom out the World map and by short tap select
 
 **Note**: At low zoom level map selected to download will be highlighted in yellow and maps that already downloaded will be highlighted in green, deactivated maps will be highlighted in orange. 'Deactivated' maps allow to speed up program in case you have many downloaded maps.
 
-## Download - Map Zoom in
+## Map Zoom in
 
 
 <Tabs groupId="operating-systems">
@@ -150,7 +150,7 @@ It is possible to download a map of a certain area just by zooming in on the Wor
 </TabItem>
 </Tabs>
 
-## Download - Own map (Advanced)
+## Own map (Advanced)
 
 There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
 
@@ -172,7 +172,39 @@ You can download several types of maps: Standard, Roads-only (lightweight maps w
 
 **[Read more about types of maps](../personal/maps.md#type-of-maps)**.
 
-![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu_ios.png)
+![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu_ios.png)  
+
 
 </TabItem>
 </Tabs>
+
+## Manage - Downloaded Map
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To find out how to manage one or more maps, follow these steps: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>*  
+
+* Tap on a map folder in the your maps list or the three dots menu.
+* You can choose:
+* * *Deactivate:* Activate, Rename, Delete.
+* * *Rename.*
+* * *Delete.*
+
+> NOTE. Deactivated maps
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+* Tap on a map folder in the your maps list.
+* Delete.
+
+![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png)
+
+</TabItem>
+
+</Tabs> 

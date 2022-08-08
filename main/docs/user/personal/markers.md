@@ -13,9 +13,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Markers interface is a convenient tool that helps you save points on the map for your short-term needs.
+## Overview
 
-ap markers are special points marked as flags on the map. You can customize their look & feel with **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/> ) and **distance indication** (<Translate android="true" ids="show_direction"/> ). 
+Markers interface is a tool that helps you save temporary points on the map for later use. Markers are special points marked on the map as flags. You can customize their appearance by adding **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/> ) and **distance indication** (<Translate android="true" ids="show_direction"/> ). All marker flags have different colours for better visibility.  
 
 
 <Tabs groupId="operating-systems">
@@ -34,8 +34,34 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 </Tabs>
 
+## How to add
 
-## Map markers menu
+A long tap on the map visible on the screen opens a point menu where you can select *Markers* to add a marker to the map. You can add markers even for unloaded areas.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Map markers](@site/static/img/personal/markers/map_markers_andr.png)  ![Map markers](@site/static/img/personal/markers//map_markers_andr_2.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Map markers](@site/static/img/personal/markers/map_markers_ios_1.png)
+
+
+</TabItem>
+
+</Tabs> 
+
+
+
+## Map markers menu  
+
+In this menu you can customize the markers you have added. Sort, group, view history, and more.
 
 <Tabs groupId="operating-systems">
 
@@ -44,7 +70,7 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers"/>
 
-![Map markers menu Android](@site/static/img/personal/markers/map_markers_menu_android.png)
+![Map markers menu Android](@site/static/img/personal/markers/map_markers_menu_android_2.png)
 
 - &nbsp;<Translate android="true" ids="shared_string_list"/>  - keeps all your Map markers in the one place. Here you can move Map marker to the History part or replace it.
 - &nbsp;<Translate android="true" ids="shared_string_groups"/>  - contains groups of your Map markers. 
@@ -56,6 +82,8 @@ ap markers are special points marked as flags on the map. You can customize thei
 
 <TabItem value="ios" label="iOS">
 
+Tapping the menu item (<Translate ios="true" ids="map_markers"/>) opens a list of all markers on the map and the history of previously added markers.
+
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_markers"/>
 
 ![Map markers menu iOS](@site/static/img/personal/markers/map_markers_menu_ios.png)
@@ -65,6 +93,8 @@ ap markers are special points marked as flags on the map. You can customize thei
 </Tabs>
 
 ### List
+
+Active Map markers: map marker color, showing the big arrow to the location (color arrow), distance to it from your location, data of creation of this marker.
 
 <Tabs groupId="operating-systems">
 
@@ -97,7 +127,7 @@ Actions:
 </Tabs>
 
 ### Groups
-
+                      
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
