@@ -23,21 +23,17 @@ Map markers are selected points marked with flags on the map. They provide usefu
 
 <TabItem value="android" label="Android">  
 
-
-
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-
-
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios.png)
 
 </TabItem>
 
 </Tabs> 
-
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget.png)
 
 On the top bar widget you could see the distance and the direction to the marker from current location. It is possible to configure to see 1 or 2 top markers in the widget.
 
