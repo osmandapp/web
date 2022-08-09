@@ -8,7 +8,7 @@ In case you want to reuse OsmAnd's code, create a sample app using OsmAnd's API 
 ### [OsmAnd Builds](./osmand-builds.md)
 OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
-### [OsmAnd API, SDK - Samples](./osmand-api.md)
+### [OsmAnd API, SDK - Samples](../osmand-api-sdk/index.md)
 In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
 
 ### OsmAnd development environment
