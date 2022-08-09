@@ -2,7 +2,7 @@ import Admonition from '@theme/Admonition';
 
 # Build with OsmAnd 
 
-Read **[Technical documentation](../technical/osmand-api-sdk/index.md)** how to integrate with OsmAnd.
+Read **[Technical documentation](../technical/osmand-api-sdk/)** how to integrate with OsmAnd.
 
 ## Use OsmAnd API
 OsmAnd API allows you to control the installed OsmAnd app. Starting development via the API is easy and straightforward and can be embedded in any application, **without licensing requirements** of the target app. The only drawback is that the user should have OsmAnd already installed.
@@ -28,7 +28,7 @@ You can build your own project in any way your like. Integration with OsmAnd API
   </div>
 </Admonition>  
 
-Read **[Technical documentation](../technical/osmand-api-sdk/index.md)** for more details.
+Read **[Technical documentation](../technical/osmand-api-sdk/)** for more details.
 
 ### License
 Since there is no direct code usage from the core OsmAnd project, the License is different for the OsmAnd API and for the OsmAnd Core project. Most likely application using OsmAnd API will be written from scratch and this application provided as an example won't be used at all. For OsmAnd API the least restrictive license is used, MIT license.
@@ -53,7 +53,7 @@ OsmAnd Sample represents a possiblity to built an application on top of OsmAnd c
   </div>
 </Admonition>  
 
-Read **[Technical documentation](../technical/osmand-api-sdk/index.md)** for more details.
+Read **[Technical documentation](../technical/osmand-api-sdk/)** for more details.
 
 
 ### License
