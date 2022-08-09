@@ -113,7 +113,7 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins
 
-[Plugins](../plugins/index.md) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](../../technical/build-osmand/osmand-api-sdk/index.md) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu.md) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
+[Plugins](../plugins/index.md) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](../../technical/osmand-api-sdk/index.md) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu.md) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
 
 <Tabs groupId="operating-systems">
 
