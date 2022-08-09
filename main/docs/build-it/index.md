@@ -23,7 +23,7 @@ You can build your own project in any way your like. Integration with OsmAnd API
     Browse Github source code and Install Demo from Google Play.
   </p>
   <div>
-    <a href="https://play.google.com/store/apps/details?id=net.osmand.osmandapidemo"><button class="button button--primary">Google Play</button></a>
+    <a href="https://play.google.com/store/apps/details?id=net.osmand.osmandapidemo"><button class="button button--primary">Google Play</button></a> &nbsp;&nbsp;&nbsp;
     <a href="https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample"><button class="button button--primary">Github</button></a>
   </div>
 </Admonition>  
@@ -48,6 +48,7 @@ OsmAnd Sample represents a possiblity to built an application on top of OsmAnd c
   </p>
   <div>
     <a href="https://download.osmand.net/latest-night-build/OsmAndCore-sample-armv7.apk"><button class="button button--primary">Google Play</button></a>
+ &nbsp;&nbsp;&nbsp;
     <a href="https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample"><button class="button button--primary">Github</button></a>
   </div>
 </Admonition>  
