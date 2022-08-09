@@ -1,3 +1,5 @@
+import Utils from "../util/Utils";
+
 function loadTracks() {
     return localStorage.getItem('localClientsTracks') !== null ? JSON.parse(localStorage.getItem('localClientsTracks')) : [];
 }
@@ -14,7 +16,7 @@ function saveTracks(tracks) {
 
 function generate(ctx) {
     let name = createName(ctx);
-    let points = createPoints();
+    let points = Utils.getPointsDist(createPoints());
     return {name: name, points: points}
 }
 

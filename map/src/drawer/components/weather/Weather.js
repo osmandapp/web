@@ -87,7 +87,7 @@ export default function Weather() {
         }
 
         if (weatherOpen) {
-            resultText = `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}]`;
+            resultText = `${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}].`;
         }
 
         ctx.setHeaderText(prevState => ({

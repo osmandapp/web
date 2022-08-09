@@ -236,7 +236,7 @@ async function loadRouteModes(routeMode, setRouteMode) {
 }
 
 
-async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData) {
+async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText) {
     // encodeURIComponent(startPoint.lat)
     setRouteData(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -252,6 +252,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     if (avoidRoadsUrl !== '') {
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
+    getRouteText(true, null)
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
         + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}${avoidRoadsUrl}`, {
         method: 'GET',
@@ -263,7 +264,9 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
         }
-        setRouteData({geojson: data, id: new Date().getTime(), props: props});
+        let allData = {geojson: data, id: new Date().getTime(), props: props};
+        setRouteData(allData);
+        getRouteText(false, allData)
     }
 }
 
@@ -360,6 +363,7 @@ export const AppContextProvider = (props) => {
         search: {text: ''},
         weather: {text: ''},
         tracks: {text: ''},
+        route: {text: ''},
         welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
     });
 
@@ -375,10 +379,31 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData);
+            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText);
+        } else {
+            setHeaderText(prevState => ({
+                ...prevState,
+                route: {text: ``}
+            }));
         }
         // ! routeTrackFile is not part of dependency ! 
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
+
+
+    function getRouteText(processRoute, data) {
+        let resultText = ``;
+        if (processRoute) {
+            resultText = `Route calculating…`;
+        } else {
+            if (data) {
+                resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
+            }
+        }
+        setHeaderText(prevState => ({
+            ...prevState,
+            route: {text: resultText}
+        }));
+    }
 
     useEffect(() => {
         loadTileUrls(setAllTileURLs);
