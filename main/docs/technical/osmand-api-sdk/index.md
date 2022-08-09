@@ -12,14 +12,14 @@ Main concept behind this approach that Target application is communicated with O
 
 List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
 
-Pros: 
+**Pros** 
 - No License issues - available for all possible purposes
 - Always supported, versionned & maintained by OsmAnd Team
 - The Easiest integration requires the fewest lines of code
 - Always to not mix OsmAnd logic and App business logic
 - Smallest size (2 MB)
 
-Cons:
+**Cons**
 - Requires OsmAnd application to be installed next to your app
 - Limited number of methods comparing to SDK or Library approach
 - Limited branding capabilities though it could have a branded logo, branded profiles, map styles & etc in the OsmAnd app
@@ -30,11 +30,11 @@ Please check the example on [Github repo](https://github.com/osmandapp/osmand-ap
 ## Android OsmAnd OpenGL SDK
 OsmAnd OpenGL SDK sample uses special library which provides only OpenGL rendering (also available in 3D). In the demo app user can browse map and open context menu which should be present at standard OsmAnd location. In order to run the demo, you would need to install OsmAnd and download maps to **Shared location**, demo doesn't use any local OsmAnd API. Demo also has context menu & search but this code was copy/pasted from OsmAnd itself and has same License as OsmAnd's code.
 
-Pros:
+**Pros**
 - No need for OsmAnd /  OsmAnd+ to be installed 
 - Pure map library solution
 
-Cons:
+**Cons**
 - Strict License, mainly GPL
 - No routing, no API's, no helpers - only pure map solution
 - Size 80-120 MB (possible to shrink by removing World basemap 20 MB). Other size manipulation could be done based on the intent of the target app.
@@ -45,12 +45,12 @@ Demo app only for ARM-devices [OsmAnd-qt-arm-nightly.apk(https://download.osmand
 ## Android OsmAnd Full Library SDK
 OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / All UI fragments is part of that library which gives the freedom to use what's already present in OsmAnd but requires a good understanding how it is possible to combine several layers / services.
 
-Pros:
+**Pros**
 - No need for OsmAnd / OsmAnd+ to be installed 
 - All possible functions / methods from OsmAnd are available to be reused
 - Doesn't require much own code to build a rich application
 
-Cons:
+**Cons**
 - No documentation
 - Strict code License, exactly the same as OsmAnd code itself
 - API is Not stable (cause it's not an API, it's internal library basically)
