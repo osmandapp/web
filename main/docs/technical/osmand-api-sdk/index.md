@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # OsmAnd API, SDK - Samples
 In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
  
