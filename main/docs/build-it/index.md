@@ -1,3 +1,7 @@
+import Admonition from '@theme/Admonition';
+
+# Build with OsmAnd 
+
 ## Use OsmAnd API
 OsmAnd API allows you to control the installed OsmAnd app. Starting development via the API is easy and straightforward and can be embedded in any application, **without licensing requirements** of the target app. The only drawback is that the user should have OsmAnd already installed.
 
