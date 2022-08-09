@@ -1,11 +1,10 @@
 # OsmAnd API, SDK - Samples
 In case you want to use OsmAnd as a library for your app, you might consider to use it via SDK or via API. Now these options are available only for Android.
  
-There are 3 main ways how to reuse OsmAnd power in your app:
+There are 2 main ways how to reuse OsmAnd power in your app:
 - Android OsmAnd AIDL API
-- Android OsmAnd OpenGL SDK
-- Android OsmAnd Full Library
-All the code for 3 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
+- Android OsmAnd Full Library SDK
+All the code for 2 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
 
 ## Android OsmAnd AIDL API
 Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl). OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
@@ -27,21 +26,6 @@ List of APIs is pretty long and you can get acquainted with it inside [Demo App]
 
 Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample).
 
-## Android OsmAnd OpenGL SDK
-OsmAnd OpenGL SDK sample uses special library which provides only OpenGL rendering (also available in 3D). In the demo app user can browse map and open context menu which should be present at standard OsmAnd location. In order to run the demo, you would need to install OsmAnd and download maps to **Shared location**, demo doesn't use any local OsmAnd API. Demo also has context menu & search but this code was copy/pasted from OsmAnd itself and has same License as OsmAnd's code.
-
-**Pros**
-- No need for OsmAnd /  OsmAnd+ to be installed 
-- Pure map library solution
-
-**Cons**
-- Strict License, mainly GPL
-- No routing, no API's, no helpers - only pure map solution
-- Size 80-120 MB (possible to shrink by removing World basemap 20 MB). Other size manipulation could be done based on the intent of the target app.
-
-Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-qt-core-sample).
-Demo app only for ARM-devices [OsmAnd-qt-arm-nightly.apk(https://download.osmand.net/latest-night-build/OsmAnd-qt-arm-nightly.apk).
-
 ## Android OsmAnd Full Library SDK
 OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / All UI fragments is part of that library which gives the freedom to use what's already present in OsmAnd but requires a good understanding how it is possible to combine several layers / services.
 
@@ -51,12 +35,13 @@ OsmAnd Full library reuses complete OsmAnd as a library. Basically All code / Al
 - Doesn't require much own code to build a rich application
 
 **Cons**
-- No documentation
+- No full documentation
 - Strict code License, exactly the same as OsmAnd code itself
+- API that uses OsmAnd servers requires a direct consent from OsmAnd team
 - API is Not stable (cause it's not an API, it's internal library basically)
-- Size 70-90 MB (possible to shrink by removing World basemap 20 MB). Other size manipulation could be done based on the intent of the target app.
+- Size 70-150 MB (possible to shrink by removing World basemap 20 MB). Other size manipulation could be done based on the intent of the target app.
 
-Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-qt-core-sample).
+Please check the example on [Github repo](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample).
 Demo app [OsmAnd-map-sample.apk](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk).
 
 ## License
