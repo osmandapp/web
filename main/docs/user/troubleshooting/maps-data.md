@@ -42,6 +42,19 @@ If this is your case, please try **to Migrate your files to Internal app memory 
 
 where XXXX-XXXX is the name of a SD-Card: [Menu → Settings → OsmAnd settings → Data storage folder](../personal/storage#data-storage-folder-android) → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
 
+### Deleting map data after the app update (if selected Multiuser storage 1)
+
+About this issue of OsmAnd Android version: [Github](https://github.com/osmandapp/OsmAnd/issues/13404)
+
+If _Multiuser Storage 1_ is selected as [the storage location](../personal/storage.md#data-storage-folder), then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**. 
+
+While you need to choose the next ways for saving your map data during the application updates:
+
+1. make [a backup](../personal/storage.md#local-backup) of these files before updating OsmAnd (_..Android/obb/net.osmand_) and restore these files before opening the OsmAnd update.
+
+2. Change the path of OsmAnd folder (This path is also writable by all apps: Wifi FTP server, X-plore, USB cable connected to Linux PC):
+
+/storage/emulated/0/Android/**obb**/net.osmand → /storage/emulated/0/Android/**media**/net.osmand
 
 ### Create own maps
 
