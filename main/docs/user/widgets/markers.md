@@ -54,21 +54,18 @@ On the top bar widget you could see the distance and the direction to the marker
 
 <TabItem value="android" label="Android">  
 
-
-
+![Panel widgets](@site/static/img/widgets/map_markers_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-
-
+![Panel widgets](@site/static/img/widgets/map_markers_widget_ios.png)
 
 </TabItem>
 
 </Tabs> 
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget.png)
 
 On panel widgets only distance to the map marker is displayed.
 
@@ -88,6 +85,8 @@ All marker appearance settings and widget parameters are configured through the 
 
 <TabItem value="android" label="Android">  
 
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,map_markers_item,appearance_on_the_map"/> 
+
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map.png)
 
 
@@ -95,22 +94,19 @@ All marker appearance settings and widget parameters are configured through the 
 
 <TabItem value="ios" label="iOS">  
 
+**<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,map_markers,appearance_on_map"/> 
 
+![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
 
 </TabItem>
 
 </Tabs> 
 
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,map_markers_item,appearance_on_the_map"/> 
-
-**<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,map_markers,appearance_on_map"/> 
-
 |    | Description    | State | 
 | :------------- | :------------- | :------------- |
 | <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
-|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/> | 
+|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
 |  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
 | <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
 | <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
