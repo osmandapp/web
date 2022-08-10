@@ -345,6 +345,42 @@ OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps
 
 [Read more](../plugins/osm-editing.md) about OSM editing.
 
+### How to close the app
+
+<Tabs groupId="operating-systems"> 
+
+<TabItem value="android" label="Android">
+
+There are two available variants of how to close OsmAnd.
+
+1. Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
+
+Before it the user needs to do the following,  otherwise, OsmAnd will work in the background:
+- [dismiss navigation](../navigation/route-navigation.md)
+- [stop map downloading and updating](../start-with/download-maps.md)
+- [stop trip recording](../plugins/trip-recording.md#create-new-track) 
+- [stop audio/video note recording](../plugins/audio-video-notes.md)
+
+2. _"Force stop'_ function:
+    - long press to OsmAnd icon → click to _i_ button → _"Force stop"_ 
+    - Open the settings and tap Apps & notifications → OsmAnd → _"Force stop"_ 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
+
+Before it the user needs to do the following,  otherwise, OsmAnd will work in the background:
+- [cancel navigation](../navigation/route-navigation.md)
+- [stop map downloading and updating](../start-with/download-maps.md)
+- [stop trip recording](../plugins/trip-recording.md#create-new-track) 
+- [stop audio/video note recording](../plugins/audio-video-notes.md)
+
+</TabItem>
+
+</Tabs>
+
 ## App shortcuts
 
 [App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
