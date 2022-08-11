@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -61,13 +62,13 @@ There are three options to display Tracks on the map: via [Configure map](../map
 
 <TabItem value="android" label="Android">
 
-- Read how to add points by coordinates: &nbsp;[By Coordinate input](../plan-route/coordinate-input.md) 
+Read how to add points by coordinates: &nbsp;[By Coordinate input](../plan-route/coordinate-input.md) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-> ```Coordinate input for **iOS** is not supported while.```
+<InfoAndroidOnly />
 
 </TabItem>
  
@@ -79,13 +80,13 @@ There are three options to display Tracks on the map: via [Configure map](../map
 
 <TabItem value="android" label="Android">
 
-- Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
+Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
+Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
 
 </TabItem>
  
@@ -97,25 +98,8 @@ There are three options to display Tracks on the map: via [Configure map](../map
 
 <TabItem value="android" label="Android">
 
-- How to add a waypoint to a track here: &nbsp;[Map Context menu - Add/Edit Track waypoint](../map/map-context-menu.md#-add--edit--track-waypoint).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-- How to add a waypoint to a track here: &nbsp;[Map Context menu- Add/Edit Track waypoint](../map/map-context-menu.md#-add--edit--track-waypoint).
-
-</TabItem>
- 
-</Tabs>
-
-#### Add waypoint by Quick Action
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Creat the item ["Add track waypoint"](../widgets/quick-action.md#create-items):
+- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
+- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
 
 ![Quick action widget](@site/static/img/widgets/waypoint_qa_android.png)
 
@@ -123,33 +107,15 @@ Creat the item ["Add track waypoint"](../widgets/quick-action.md#create-items):
 
 <TabItem value="ios" label="iOS">
 
-Creat the item ["Add track waypoint"](../widgets/quick-action.md#create-items):
+- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
+- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
 
 ![Quick action widget](@site/static/img/widgets/waypoint_qa_ios.png)
+
 
 </TabItem>
  
 </Tabs>
-
-<!-- ### Edit mode (iOS)
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks,create_new_trip"/>
-
-<p> </p>
-
-![Edit mode ios](@site/static/img/personal/tracks/edit_mode_ios.png) 
-
-- Add points - click to <Translate ios="true" ids="add_waypoint"/> or <Translate ios="true" ids="select_wpt_on_map"/>.
-
-![Edit mode adding point ios](@site/static/img/personal/tracks/edit_mode_add_point_ios.png) 
-
-- Edit / delete - clicking to "Pencil" button open menu with "Edit" and "Delete" buttons. 
-
-![Edit mode edit point ios](@site/static/img/personal/tracks/edit_mode_edit_point_ios.png)  ![Edit mode edit point ios](@site/static/img/personal/tracks/edit_mode_edit_point_1_ios.png)
-
-- Change order - long tap to "&#9776;" button and change the order of chosen point by moving up or down.
-
-![Edit mode moving point ios](@site/static/img/personal/tracks/edit_mode_moving_point_ios.png)  -->
 
 
 ### Edit via Plan Route
