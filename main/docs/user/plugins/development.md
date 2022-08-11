@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 <InfoIncompleteArticle/>
 
@@ -40,7 +42,7 @@ The OsmAnd development plugin is only necessary for *developers and experienced 
 <TabItem value="ios" label="iOS">  
 
 
-> ```Not available for iOS version.```
+<InfoAndroidOnly />
 
 
 </TabItem>
@@ -111,8 +113,7 @@ These plugin settings are global and apply to all profiles.
 
 <TabItem value="ios" label="iOS">  
 
-> ```Not available for iOS version.```
-
+<InfoAndroidOnly />
 
 </TabItem>
 
@@ -139,7 +140,7 @@ These plugin settings are global and apply to all profiles.
 <TabItem value="ios" label="iOS">  
 
 
-> ```Not available for iOS version.```
+<InfoAndroidOnly />
 
 </TabItem>
 

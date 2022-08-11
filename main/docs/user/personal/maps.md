@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
 
@@ -175,7 +175,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,re
 
 :::
 
-OsmAnd Live is a special ([available by subscription](../purchases/index.md)) feature that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
+OsmAnd Live is a special feature  ([available by subscription](../purchases/index.md) or [free OSM Mappers](#free-for-osm-mappers))  that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
 Each map has independent collection  of tiny map updates, please be aware if you have overlapping map regions. In case you want to revert to initial state you can switch off updates and 'Clear cache'.
 
@@ -188,28 +188,6 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
-:::note
-
-**"OsmAnd Live" is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).**
-
-1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
-2. [Log in by your OpenStreetMap username](../plugins/osm-editing.md#plugin-settings).
-3. OpenStreetMap users need to have [a minimum of 15 changes](../plugins/osm-editing.md#plugin-settings) over the last two-month period for accessing unlimited hourly map updates.
-
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
-
-:::
-
-**Understanding timestamps**.
-- ```Latest OpenStreetMap update available``` XX-XX-XXXX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
-- ```Andorra Updated```: Today 14:10 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```Andorra``` region was modified and processed by OsmAnd servers.
-- ```Andorra Last time checked```: Today 14:10 - represents the latest timestamp that local device checked if new updates are available. It's always ahead of updated timestamps and displays both successful and unsuccessful attempts to download maps.
-
-**OsmAnd Live restrictions**.
-- Address changes on the map & in the search are not supported yet. Address information could be updated with regular monthly updates.
-- Updated roads don't have altitude information thus the slope graphics could be affected.
-- Modified and deleted route relations are not handled correctly which could lead to display of no longer existing public transport lanes and hiking routes.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -218,18 +196,31 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
-**Understanding timestamps**.
+</TabItem>
+
+</Tabs>
+
+
+
+### Update timestamps 
 - ```Latest OpenStreetMap update available``` XX-XX-XXXX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
 - ```Andorra Updated```: Today 14:10 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```Andorra``` region was modified and processed by OsmAnd servers.
 - ```Andorra Last time checked```: Today 14:10 - represents the latest timestamp that local device checked if new updates are available. It's always ahead of updated timestamps and displays both successful and unsuccessful attempts to download maps.
 
-
-**OsmAnd Live restrictions**.
+### OsmAnd Live limitations
 - Address changes on the map & in the search are not supported yet. Address information could be updated with regular monthly updates.
 - Updated roads don't have altitude information thus the slope graphics could be affected.
 - Modified and deleted route relations are not handled correctly which could lead to display of no longer existing public transport lanes and hiking routes.
 
-</TabItem>
+### Free for OSM Mappers
 
-</Tabs>
+<InfoAndroidOnly />
+
+OsmAnd Live" is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).
+
+1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
+2. [Log in by your OpenStreetMap username](../plugins/osm-editing.md#plugin-settings).
+3. OpenStreetMap users need to have [a minimum of 15 changes](../plugins/osm-editing.md#plugin-settings) over the last two-month period for accessing unlimited hourly map updates.
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 

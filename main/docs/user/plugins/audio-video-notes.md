@@ -11,14 +11,13 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
->  ```For Android version only```
+<InfoAndroidOnly />
 
 Audio and video recordings for future use when needed or to recall a moment, scene, or interaction after creation are available both in the central repository and on the map as a separate layer of user stories and thoughts tied to geolocation.  
 
 ## Overview 
-
->**NOTE**: As of March, 2022, the audio/video notes functionality is available for **Android only**. 
 
 The Audio/Video Notes plugin extends the functionality of storing geolocation information by giving the user the ability to create their own views in various formats, such as a photo note, video note, or audio file, and associate them with their geographic location or current location. The recording options are provided with the Audio/video notes widget, and/or the context menu of a POI. The resulted data is automatically saved to the central storage from where it is convenient to manage and share anything needed. 
 
