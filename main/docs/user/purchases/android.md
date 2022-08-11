@@ -137,8 +137,8 @@ To restore the purchase, please check what OsmAnd plan you bought.
 - **Huawei App Gallery**: you can check it in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/ ).
 
 ### Install Application
-
-- Log in to the Market (Google Play, Amazon, Huawei AppGallery) with **same account** that you have an OsmAnd purchase.
+- Update Market app (Google Play, Amazon, Huawei AppGallery). 
+- Log in with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.
 - Install an application by the link below.
 
 |  App  | Google Play   | Amazon | Huawei AppGallery |
@@ -149,9 +149,6 @@ To restore the purchase, please check what OsmAnd plan you bought.
 ### Restore Subscription / In App
 
 **To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](../purchases/android.md#prices)).**
-- Update Google Play (Amazon, Huawei AppGallery). 
-- Log in to the same Google Play, Amazon, Huawei AppGallery account that you used to purchase OsmAnd.
-- Install OsmAnd ([Google Play](https://play.google.com/store/apps/details?id=net.osmand), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
 - Open OsmAnd with an active Internet connection.
 - To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
 
