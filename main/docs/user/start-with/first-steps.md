@@ -355,11 +355,11 @@ There are two available variants of how to close OsmAnd.
 
 1. Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
 
-Before it the user needs to do the following,  otherwise, OsmAnd will work in the background:
-- [dismiss navigation](../navigation/route-navigation.md)
-- [stop map downloading and updating](../start-with/download-maps.md)
-- [stop trip recording](../plugins/trip-recording.md#create-new-track) 
-- [stop audio/video note recording](../plugins/audio-video-notes.md)
+Before it you might need to do the following, otherwise, OsmAnd will work in the background:
+- [Dismiss navigation](../navigation/route-navigation.md)
+- [Stop map downloading and updating](../start-with/download-maps.md)
+- [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
+- [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
 2. _"Force stop'_ function:
     - long press to OsmAnd icon → click to _i_ button → _"Force stop"_ 
@@ -371,11 +371,11 @@ Before it the user needs to do the following,  otherwise, OsmAnd will work in th
 
 Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
 
-Before it the user needs to do the following,  otherwise, OsmAnd will work in the background:
-- [cancel navigation](../navigation/route-navigation.md)
-- [stop map downloading and updating](../start-with/download-maps.md)
-- [stop trip recording](../plugins/trip-recording.md#create-new-track) 
-- [stop audio/video note recording](../plugins/audio-video-notes.md)
+Before it you might need to do the following, otherwise, OsmAnd will work in the background:
+- [Cancel navigation](../navigation/route-navigation.md)
+- [Stop map downloading and updating](../start-with/download-maps.md)
+- [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
+- [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
 </TabItem>
 
