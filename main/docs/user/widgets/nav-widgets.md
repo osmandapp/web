@@ -171,14 +171,39 @@ Intermediate Destination widget shows the distance left to the first intermediat
 
 ### Arrival time or Time to go
 
-The widget shows <Translate android="true" ids="access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
+<Tabs groupId="operating-systems">
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_time_to_go_widget.png)
+<TabItem value="android" label="Android">  
+
+The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Translate android="true" ids="map_widget_time"/>_ to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
+
+![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> |
 | On Click | Changes between "Arrival time" to "Time to go" and vice versa. |  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Translate android="true" ids="map_widget_time"/>_ to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
+
+![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)
+
+| | |
+|------------|------------|
+| Enable |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
+| On Click | Changes between "Arrival time" to "Time to go" and vice versa. |  
+
+</TabItem>
+
+</Tabs>  
+
+
+
 
 ### Intermediate arrival time
 
