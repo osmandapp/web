@@ -171,7 +171,7 @@ You can read a more detailed description here: [<Translate android="true" ids="r
 
 :::  
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording#trip-recording-widgets). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#trip-recording-widgets). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
 
 
 
@@ -183,7 +183,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 | | |
 |------------|------------|
-| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets#-trip-recording-widgets) |
+| Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording
 | On Click | Starts/Stop track recording or View the graph|
 
 

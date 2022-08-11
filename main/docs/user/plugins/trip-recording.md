@@ -80,10 +80,9 @@ To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track
 
 
 
-### Add Distance/Start-Stop widget
+### Add Recording widget
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 

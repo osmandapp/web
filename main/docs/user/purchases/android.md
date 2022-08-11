@@ -130,45 +130,34 @@ New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subsc
 
 ## Restore purchases
 
+### Find your purchase
+To restore the purchase, please check what OsmAnd plan you bought. 
+- **Google Play**: you can check it in the [Google Play order history](https://support.google.com/googleplay/answer/2850369). 
+- **Amazon**: you can check it in the [Amazon App store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) open it → click on the Menu → Appstore for Android → Your apps and subscriptions → review your order history. 
+- **Huawei App Gallery**: you can check it in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/ ).
 
-### Google Play
+### Install Application
 
-**Restore a purchase from** [_**Google Play**_](https://play.google.com/store/apps/details?id=net.osmand).   
-Use the same Google ID to restore your purchases.  
+- Log in to the Market (Google Play, Amazon, Huawei AppGallery) with **same account** that you have an OsmAnd purchase.
+- Install an application by the link below.
 
-- Log in to the same Google Play account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
-- Visit [Google Play](https://play.google.com/store/apps/details?id=net.osmand) and reinstall the application. If you've already purchased the app with your current Google, you'll be able to reload it on each app you use.
-- To see all of your purchases follow this [link](https://support.google.com/googleplay/answer/2850369).
+|  App  | Google Play   | Amazon | Huawei AppGallery |
+| :------------- | :------------- | :------------- | :------------- |
+| OsmAnd  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand) | [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | [✔ Install](https://appgallery.huawei.com/#/app/C101486545) | 
+| OsmAnd+  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand.plus) |  [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | - | 
 
-### Amazon
+### Restore Subscription / In App
 
-**Restore a purchase from [*Amazon*](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).**  
-Use the same Amazon ID to restore your purchases.  
-
-- Navigate through the app as if you were going to purchase the feature again.
-- At the point when you would normally be charged, Amazon realizes that you have already purchased this app in the past and will activate it again.  
-- To see all of your purchases follow this [link](https://www.amazon.com/gp/help/customer/display.html?nodeId=GB8P5MQSYFYHPCQ5&ref_=hp_201357410_c_Set-Parental-Controls-for-In-A).
-
-### Huawei AppGallery
-
-**Restore a purchase from [*Huawei AppGallery*](https://consumer.huawei.com/en/support/content/en-us00694320/).**  
-Use the same Huawei ID to restore your purchases.  
-
-- Navigate through the app as if you were going to purchase the feature again.
-- At the point when you would normally be charged, Huawei realizes that you have already purchased this app in the past and will activate it again.  
-
-### In App
-
-**To restore your *in-app purchase* ([Maps+, Pro, OsmAnd Live](../purchases/android.md#prices)).**
+**To restore your *in-app purchase* or *subscription* ([Maps+, Pro, OsmAnd Live](../purchases/android.md#prices)).**
 - Update Google Play (Amazon, Huawei AppGallery). 
-- Log in to the same Google Play (Amazon, Huawei AppGallery) account that you used to purchase OsmAnd.
+- Log in to the same Google Play, Amazon, Huawei AppGallery account that you used to purchase OsmAnd.
 - Install OsmAnd ([Google Play](https://play.google.com/store/apps/details?id=net.osmand), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8), [Huawei](https://appgallery.huawei.com/#/app/C101486545)).
 - Open OsmAnd with an active Internet connection.
 - To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
-### Others
+### Other cases
 
 **If none of the methods worked:**
  1. Clear the cache for Google Play (Huawei AppGallery).
