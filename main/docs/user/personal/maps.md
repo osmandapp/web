@@ -220,7 +220,7 @@ OsmAnd Live" is available for OpenStreetMap mappers which [contribute OSM](https
 
 1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
 2. [Log in by your OpenStreetMap username](../plugins/osm-editing.md#plugin-settings).
-3. OpenStreetMap users need to have [a minimum of 15 changes](../plugins/osm-editing.md#plugin-settings) over the last two-month period for accessing unlimited hourly map updates.
+3. OpenStreetMap users need to have a minimum of **15 changes** over the last two-month period for accessing unlimited hourly map updates.
 
 ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
