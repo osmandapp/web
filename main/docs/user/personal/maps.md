@@ -188,6 +188,15 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
+- &nbsp; _<Translate android="true" ids="shared_string_enabled"/>_ / _<Translate android="true" ids="shared_string_disabled"/>_ - switching on/off "OsmAnd live" updates function.
+- &nbsp; "&#8230; &#124;" - opening "OsmAnd live" settings of the chosen map.
+- &nbsp; _<Translate android="true" ids="update_frequency"/>_ - choosing map update frequency for the map:  <Translate android="true" ids="hourly"/>, <Translate android="true" ids="daily"/>, <Translate android="true" ids="weekly"/>.
+- &nbsp; _<Translate android="true" ids="update_now"/>_ - allows to start "OsmAnd live" of the map updating.
+- &nbsp; _<Translate android="true" ids="updates_size"/>_ - shows "the live updates" size.
+- &nbsp; &#x1F5D1; button - allows to delete "the live updates" map.
+- &nbsp; _<Translate android="true" ids="only_download_over_wifi"/>_ - <Translate android="true" ids="shared_string_enabled"/>/<Translate android="true" ids="shared_string_disabled"/> download "the live updates" by Wi-Fi connection.
+
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -196,6 +205,15 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
+- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ (<Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/>) - switching on/off "OsmAnd live" updates function.
+- &nbsp; "&#43;" - adding available maps for "live updates".
+- &nbsp; "&#62;" - opening "OsmAnd live" settings of the chosen map.
+- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ - <Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/> "live updates" for the map.
+- &nbsp; _<Translate ios="true" ids="osmand_live_wifi_only"/>_ - <Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/> download "the live updates" by Wi-Fi connection.
+- &nbsp;_<Translate ios="true" ids="osmand_live_upd_frequency"/>_ - choosing map update frequency for the map:  <Translate ios="true" ids="osmand_live_hourly"/>, <Translate ios="true" ids="osmand_live_daily"/>, <Translate ios="true" ids="osmand_live_weekly"/>.
+- &nbsp; _<Translate ios="true" ids="osmand_live_updates_size"/>_ - shows "the live updates" size.
+- &nbsp; _<Translate ios="true" ids="osmand_live_update_now"/>_ - allows to start "OsmAnd live" of the map updating.
+
 </TabItem>
 
 </Tabs>
@@ -203,9 +221,9 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 
 ### Update timestamps 
-- ```Latest OpenStreetMap update available``` XX-XX-XXXX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
-- ```Andorra Updated```: Today 14:10 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```Andorra``` region was modified and processed by OsmAnd servers.
-- ```Andorra Last time checked```: Today 14:10 - represents the latest timestamp that local device checked if new updates are available. It's always ahead of updated timestamps and displays both successful and unsuccessful attempts to download maps.
+- ```Latest OpenStreetMap update available``` XXXX-XX-XX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
+- ```'Region name' Updated```: Today 13:21 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```'Region name'``` region was modified and processed by OsmAnd servers: there is the next timestamp - ```Incluldes OSM changes made until 2022-08-12, 12:05```.
+- ```'Next update```: Today 14:21 - represents the next timestamp when a local device will check if new updates are available.
 
 ### OsmAnd Live limitations
 - Address changes on the map & in the search are not supported yet. Address information could be updated with regular monthly updates.
