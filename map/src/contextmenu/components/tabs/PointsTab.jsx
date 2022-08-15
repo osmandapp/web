@@ -31,7 +31,7 @@ const PointsTab = ({width}) => {
 
     return (<Box width={width}>
         <div style={{maxHeight: '50vh', overflow: 'auto'}}>
-            {ctx.selectedGpxFile && ctx.selectedGpxFile.points.map((point, index) => {
+            {ctx.selectedGpxFile && ctx.selectedGpxFile.points && ctx.selectedGpxFile.points.map((point, index) => {
                 return PointRow()({point: point, index: index});
             })}
         </div>
