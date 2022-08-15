@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
@@ -166,27 +167,14 @@ You can [customize the route line's appearance](../navigation/route-navigation.m
 
 ## Routes on the map
 
- 
-
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a Track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
-
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_routes"/>
-
-### Save as a Track
-
-You can select route on the map by clicking on the shield, later you could save it as a Track and use it later to navigate, edit or plan another route.
-
-
-
-**Read more** about Map Routes at [Vector map style](../map/vector-maps.md#routes).
-
- <Tabs groupId="operating-systems">
+<Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
+
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are selectable by [clicking on the route shield](./tracks-on-map.md#save-as-a-track) or with the right configuration of a visible set of routes, it's possible to follow the route by color & shields.  You can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
+
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
 
@@ -194,19 +182,66 @@ You can select route on the map by clicking on the shield, later you could save 
 
 <TabItem value="ios" label="iOS">
 
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_routes"/>
+
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
+ ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+
+### Save as a Track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+[Hiking / Cycling / Travel routes](../map/vector-maps.md#routes) are clickable. Just tap **the route symbol**, get full route information and download the GPX file for the selected route. (Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol).)
+
+Clicking on a shield ([OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)) proposes to choose the nearest routes.
+
+![Routes on the ground](@site/static/img/map/routes-4.png)
+
+Choosing the route opens [Track Context menu](../map/track-context-menu.md):
+
+![Routes on the ground](@site/static/img/map/routes-5.png)
+
+You can view the route, and its relief, download it as a GPX-file, edit it with "Plan route" tool and even start navigation along it:
+- look at Route info (Distance, Uphill, Downhill, Altitude range, Route name, Network, Operator, etc.). 
+
+![Routes on the ground](@site/static/img/map/routes-6.png)
+
+- looking at Altitude Graph, Analyze on map, Share like GPX-file and etc.
+
+![Routes on the ground](@site/static/img/map/routes-7.png)
+
+- download the route like GPX-file by clicking to "Download" button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
+
+![Routes on the ground](@site/static/img/map/routes-8.png) ![Routes on the ground](@site/static/img/map/routes-9.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+
 
 
 ## Read more
 
-
+["Routes on the map" blog article](https://docs.osmand.net/blog/routes)
 
 [Track Context menu](../map/track-context-menu.md)
 
