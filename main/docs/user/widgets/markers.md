@@ -46,26 +46,40 @@ On the top bar widget you could see the distance and the direction to the marker
 | Format distance | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>  |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
 
+
 ## Panel widgets (markers)  
-
-
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget.png)
+![Panel widgets](@site/static/img/widgets/map_markers_widget.png) ![Panel widgets](@site/static/img/widgets/map_markers_widget_settings.png)
+
+On panel widgets **"Distance"** and **"Estimated time of arrival"** to the map marker are displayed.
+
+:::note
+**"Estimated time of arrival" (ETA)** is the value that is calculated as the distance to the marker / the average speed. 
+
+_The average speed_ is calculated from a specified interval (15sec - 60 min). For example, we have 300 location points with speed data during a specified 10 min. Average speed is the sum of speeds from points data / 300.
+
+_The distance to the marker_ is a straight distance from your position (or a specific map point) to the marker.
+:::
+
+| | |
+|------------|------------|
+| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_widgets"/>  |
+|  | <Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> |
+| On long tap | Centers map view to the marker position |
+| On short tap | Changing between "Distance" / "Estimated time of arrival" |
+| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
+| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Panel widgets](@site/static/img/widgets/map_markers_widget_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
 
 On panel widgets only distance to the map marker is displayed.
 
@@ -74,8 +88,13 @@ On panel widgets only distance to the map marker is displayed.
 | Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_widgets"/>  |
 | On Click | Centers map view to the marker position |
 | On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+| Format | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  |
+
+
+</TabItem>
+
+</Tabs> 
+
 
 ## Configure Marker widgets and Marker appearance
 
