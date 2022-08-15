@@ -1,12 +1,13 @@
 ---
 sidebar_position: 4
 ---
+import Translate from '@site/src/components/Translate.js';
 
 # Navigation Voice Prompt Triggering
 
 **(Compiled by Hardy 2013, last reviewed 2021-01)**
 ## Principle
-* Far-out prompts are simply triggered based on a **lead distance threshold**, derived by converting a meaningful lead time via the **{% data variables.android-values.default_speed_setting_title %}** of the profile.
+* Far-out prompts are simply triggered based on a **lead distance threshold**, derived by converting a meaningful lead time via the **<Translate ios="android" ids="default_speed_setting_title />** of the profile.
 * Users can change the **<Translate ios="android" ids="default_speed_setting_title />** of the profile and it will affect the trigger distance for voice prompts.
 * *Note*: The **<Translate ios="android" ids="default_speed_setting_title />** also affects the calculated route time 
 * Another way to change the voice prompt timing is to configure setting **<Translate ios="android" ids="arrival_distance />**. Check column **Arrival setting** further below to see which voice prompts will be affected. The trigger distance will be multiplied by the following factor
