@@ -10,9 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 Common issues with track recording: Noise, gaps, and inaccuracies
 
@@ -36,7 +34,7 @@ You may
   - Points with bad precision (GPS 'hdop')
   - Points closer than a threshold in meters
 
-- **Android API or Google Services API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
+- **Google Services API or Android API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
 
 
 ## Recorded tracks have gaps
@@ -75,7 +73,7 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 
 ## OsmAnd 3.9 - Google Play Services (Altitude issues)
 
-- **Android API or Google Services API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
+- **Google Services API or Android API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
 
 [Google issue](https://issuetracker.google.com/issues/180218747) is already reported, probably will be fixed 09-03-2021.
 Since OsmAnd 3.9 Google Play has changed their policy and in order to comply, OsmAnd had to use Google Play Services to obtain locations while running in background (as a foreground service by Android terminology - notification is always visible). Note: this change didn't affect Nightly, F-Droid, Huawei, Amazon builds. 
@@ -96,6 +94,7 @@ Track recording will keep GPX on continuously via an Android foreground service.
 - (A3) For intervals \>=30sec, we turn GPS on only for each sampling point. This has some noticeable effect on the accuracy of the points recorded, but reduces battery usage to order-of-magnitude 1.2% per hour for 30sec track recording.
 
 **<del> (B) GPS Wake-up Issues</del>**
+
 In order to achieve the GPS wake-up, so far we use the Android AlarmManger to wake up the device periodically (also from Doze mode, which was introduced in Android 6). New Android versions introduced the following issues:
 - **(B1) AlarmManager's setRepeating() became inexact starting with Android 4.4:**  
 Mitigation: We now use *setRepeating()* only up to Android 4.2, the new *setExact()* method starting with Android 4.4, and *setExactAndAllowWhileIdle()* for Android 8+. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
