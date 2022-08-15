@@ -26,13 +26,12 @@ export default function MapContextMenu() {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const [showContextMenu, setShowContextMenu] = useState(false);
-
-    const graphWidth = 600;
-    let tabsObj = definitionTabs();
+    const [value, setValue] = useState('general');
+    const [tabsObj, setTabsObj] = useState(null);
 
     let tabList = tabsObj ? tabsObj.tabList : [];
-    const [value, setValue] = useState(tabsObj ? tabsObj.defaultTab : 'general');
     let tabs = tabsObj ? tabsObj.tabs : null;
+
     const divContainer = useRef(null);
 
     useEffect(() => {
@@ -42,18 +41,19 @@ export default function MapContextMenu() {
         }
     });
 
-    function definitionTabs() {
-        if (ctx.currentObjectType === 'cloud_track' || ctx.currentObjectType === 'local_server_track') {
-            return new TrackTabList().create(ctx, graphWidth);
-        }
-        if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-            return new WeatherTabList().create(ctx, graphWidth);
-        }
-    }
-
     useEffect(() => {
         if (ctx.currentObjectType) {
             setShowContextMenu(true);
+            const graphWidth = 600;
+            let obj;
+            if (ctx.currentObjectType === 'cloud_track' || ctx.currentObjectType === 'local_server_track') {
+                obj = new TrackTabList().create(ctx, graphWidth);
+            }
+            if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                obj = new WeatherTabList().create(ctx, graphWidth);
+            }
+            setTabsObj(obj);
+            setValue(obj.defaultTab);
         }
     }, [ctx.currentObjectType, ctx.setCurrentObjectType]);
 
