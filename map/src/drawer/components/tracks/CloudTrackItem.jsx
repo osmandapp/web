@@ -26,18 +26,17 @@ export default function CloudTrackItem({file}) {
     }
 
     async function addTrackToMap(setProgressVisible) {
+        ctx.setCurrentObjectType('cloud_track');
         if (file.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
         } else {
             let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-            ctx.setCurrentObjectType('cloud_track');
             newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
             ctx.setGpxFiles(newGpxFiles);
             if (file.details?.analysis) {
                 newGpxFiles[file.name].summary = file.details.analysis;
             }
-            ctx.setSelectedGpxFile(newGpxFiles[file.name]);
 
             //loadGpxInfo
             let gpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
@@ -56,6 +55,7 @@ export default function CloudTrackItem({file}) {
                 newGpxFiles[file.name].srtmSummary = data.info;
                 setProgressVisible(false);
             }
+            ctx.setSelectedGpxFile(newGpxFiles[file.name]);
         }
     }
 

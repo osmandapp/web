@@ -30,9 +30,6 @@ export default function MapContextMenu() {
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
 
-    let tabList = tabsObj ? tabsObj.tabList : [];
-    let tabs = tabsObj ? tabsObj.tabs : null;
-
     const divContainer = useRef(null);
 
     useEffect(() => {
@@ -60,8 +57,7 @@ export default function MapContextMenu() {
         } else {
             setTabsObj(null);
         }
-    }, [ctx.currentObjectType, ctx.setCurrentObjectType]);
-
+    }, [ctx.selectedGpxFile, ctx.currentObjectType]);
 
     function closeContextMenu() {
         setShowContextMenu(false);
@@ -70,10 +66,10 @@ export default function MapContextMenu() {
     return (<div>
         {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`} ref={divContainer}>
             <div className="leaflet-control leaflet-bar padding-container">
-                {tabList.length > 0 &&
+                {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
                         <TabContext value={value}>
-                            {Object.values(tabs).map((item, index) =>
+                            {Object.values(tabsObj.tabs).map((item, index) =>
                                 <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}> {item} </TabPanel>)
                             }
                             <AppBar position="static" color="default">
@@ -83,7 +79,7 @@ export default function MapContextMenu() {
                                     }}>
                                         <Close/>
                                     </Button>
-                                    <TabList onChange={(e, newValue) => setValue(newValue)} children={tabList}/>
+                                    <TabList onChange={(e, newValue) => setValue(newValue)} children={tabsObj.tabList}/>
                                 </div>
                             </AppBar>
                         </TabContext>

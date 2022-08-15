@@ -52,7 +52,7 @@ export default function LocalClientTrackLayer() {
             map.removeLayer(selectedPointMarker.marker);
         }
         let marker = createPointMarkerOnMap();
-        map.flyTo([marker._latlng.lat, marker._latlng.lng + 0.04], 14)
+        map.flyTo([marker._latlng.lat, marker._latlng.lng], 14)
         setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
     }
 
