@@ -28,7 +28,7 @@ Most typical issues encountered in navigation mode.
 
 ### [Track recording](./track-recording-issues.md)
 
-Common issues with track recording: interruptions while recording the track, wrong recorded data, etc.
+Common issues with track recording: Noise, gaps, and inaccuracies
 
 ### [General](./general.md)
 
