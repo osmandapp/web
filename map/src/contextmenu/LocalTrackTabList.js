@@ -6,15 +6,16 @@ export default class LocalTrackTabList {
     state = {
         tabs: null,
         tabList: [],
-        defaultTab: 'info'
+        defaultTab: 'info',
+        graphWidth: 600
     };
 
-    create(ctx, graphWidth) {
+    create() {
         let tabs = {};
         let list = [];
 
-        tabs.Info = <LocalInfoTab key='info' width={graphWidth}/>;
-        tabs.Points = <PointsTab key='points' width={graphWidth}/>;
+        tabs.Info = <LocalInfoTab key='info' width={this.state.graphWidth}/>;
+        tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
 
         list = list.concat(Object.keys(tabs).map((item) =>
             <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>));

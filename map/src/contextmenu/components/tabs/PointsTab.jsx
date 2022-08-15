@@ -8,9 +8,14 @@ const PointsTab = ({width}) => {
 
     const ctx = useContext(AppContext);
 
+    function showPointOnMap(point) {
+        ctx.selectedGpxFile.showPoint = point;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
     const PointRow = () => ({point, index}) => {
         return (
-            <MenuItem key={index} divider>
+            <MenuItem key={index} divider onClick={() => showPointOnMap(point)}>
                 <ListItemIcon>
                     <ViewHeadline fontSize="small"/>
                 </ListItemIcon>
@@ -25,7 +30,7 @@ const PointsTab = ({width}) => {
 
 
     return (<Box width={width}>
-        <div style={{maxHeight: 300, overflow: 'auto'}}>
+        <div style={{maxHeight: '50vh', overflow: 'auto'}}>
             {ctx.selectedGpxFile && ctx.selectedGpxFile.points.map((point, index) => {
                 return PointRow()({point: point, index: index});
             })}

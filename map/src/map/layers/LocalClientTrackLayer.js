@@ -10,6 +10,8 @@ export default function LocalClientTrackLayer() {
     const map = useMap();
 
     const [layers, setLayers] = useState({});
+    const [selectedPointMarker, setSelectedPointMarker] = useState(null);
+
     const markerOptions = {
         startIcon: MarkerIcon({bg: 'blue'}),
         endIcon: MarkerIcon({bg: 'red'}),
@@ -29,11 +31,37 @@ export default function LocalClientTrackLayer() {
         layers[track.name] = {layer: layer, active: true}
     }
 
+    function createPointMarkerOnMap() {
+        return new L.marker({
+            lng: ctx.selectedGpxFile.showPoint.lng,
+            lat: ctx.selectedGpxFile.showPoint.lat
+        }, {
+            icon: MarkerIcon({bg: 'yellow'})
+        }).addTo(map);
+    }
+
+    function showSelectedTrackOnMap() {
+        let currLayer = layers[ctx.selectedGpxFile.name];
+        if (currLayer) {
+            map.fitBounds(currLayer.layer._info.bounds);
+        }
+    }
+
+    function showSelectedPointOnMap() {
+        if (selectedPointMarker) {
+            map.removeLayer(selectedPointMarker.marker);
+        }
+        let marker = createPointMarkerOnMap();
+        map.flyTo([marker._latlng.lat, marker._latlng.lng + 0.04], 14)
+        setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
+    }
+
     useEffect(() => {
         if (ctx.selectedGpxFile?.selected) {
-            let currLayer = layers[ctx.selectedGpxFile.name];
-            if (currLayer) {
-                map.fitBounds(currLayer.layer._info.bounds);
+            if (ctx.selectedGpxFile.showPoint) {
+                showSelectedPointOnMap();
+            } else {
+                showSelectedTrackOnMap();
             }
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
@@ -53,6 +81,9 @@ export default function LocalClientTrackLayer() {
 
         for (let l in layers) {
             if (!layers[l].active) {
+                if (selectedPointMarker && selectedPointMarker.trackName === l) {
+                    map.removeLayer(selectedPointMarker.marker);
+                }
                 map.removeLayer(layers[l].layer);
                 delete layers[l];
             }

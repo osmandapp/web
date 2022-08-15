@@ -35,9 +35,17 @@ export default function LocalClientTrackItem({track, index}) {
         ]);
     }
 
+    function cleanSelectedTrackIfNeed(currentTrack) {
+        if (ctx.selectedGpxFile && ctx.selectedGpxFile.name === currentTrack.name) {
+            ctx.setSelectedGpxFile(null);
+        }
+    }
+
     function deleteTrackFromMap() {
+        let currentTrack = ctx.localClientsTracks[track.index];
         ctx.setCurrentObjectType(null);
-        ctx.localClientsTracks[track.index].selected = false;
+        currentTrack.selected = false;
+        cleanSelectedTrackIfNeed(currentTrack);
         ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
     }
 
@@ -49,7 +57,7 @@ export default function LocalClientTrackItem({track, index}) {
             ctx.localClientsTracks[indexTrack].selected = true;
             addGpx(track);
         }
-        ctx.setSelectedGpxFile(track);
+        ctx.setSelectedGpxFile(Object.assign({}, track));
     }
 
     return <div>

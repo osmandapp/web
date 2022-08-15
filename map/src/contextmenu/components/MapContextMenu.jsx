@@ -45,16 +45,15 @@ export default function MapContextMenu() {
     useEffect(() => {
         if (ctx.currentObjectType) {
             setShowContextMenu(true);
-            const graphWidth = 600;
             let obj;
             if (ctx.currentObjectType === 'cloud_track' || ctx.currentObjectType === 'local_server_track') {
-                obj = new TrackTabList().create(ctx, graphWidth);
+                obj = new TrackTabList().create(ctx);
             }
             if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                obj = new WeatherTabList().create(ctx, graphWidth);
+                obj = new WeatherTabList().create(ctx);
             }
             if (ctx.currentObjectType === 'local_client_track') {
-                obj = new LocalTrackTabList().create(ctx, graphWidth);
+                obj = new LocalTrackTabList().create();
             }
             setTabsObj(obj);
             setValue(obj.defaultTab);
