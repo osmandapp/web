@@ -34,7 +34,7 @@ You may
   - Points with bad precision (GPS 'hdop')
   - Points closer than a threshold in meters
 
-- **Google Services API or Android API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
+- **Google Services API or Android API:** You may further change how OsmAnd receives location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
 
 
 ## Recorded tracks have gaps
@@ -73,20 +73,18 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 
 ## OsmAnd 3.9 - Google Play Services (Altitude issues)
 
-- **Google Services API or Android API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
+Google Play has changed their policy and in order to comply, OsmAnd since version 3.9 (except Nightly, F-Droid, Huawei, Amazon builds) has to use Google Play Services to obtain location fixes while running in the background (i.e. in Android terminology as a foreground service with visible system notification).
 
-[Google issue 180218747](https://issuetracker.google.com/issues/180218747) is already reported, probably will be fixed 09-03-2021.
-Since OsmAnd 3.9 Google Play has changed their policy and in order to comply, OsmAnd had to use Google Play Services to obtain locations while running in background (as a foreground service by Android terminology - notification is always visible). Note: this change didn't affect Nightly, F-Droid, Huawei, Amazon builds. 
-We've discovered that after that change there is a problem of recording altitude [Github issue related to altitude problems](https://github.com/osmandapp/OsmAnd/issues/10864), looks like Google Play Services very aggressively interpolate altitude and leads to a problem.
+After that change there seems a problem with recording altitude: Apparently Google Play Services interpolate the altitude measurement very aggressively, see [Github issue #10864](https://github.com/osmandapp/OsmAnd/issues/10864). This issue affects Android 10, possibly not Android 11. [Google issue 180218747](https://issuetracker.google.com/issues/180218747) is already reported, probably will be fixed 09-03-2021.
 
-So far during our tests, we've noticed that **Android 11 doesn't have issue** recording altitude, but **Android 10 does have that issue**.
-
-**Workaround**:  Use Nightly, F-Droid, Huawei, Amazon builds and switch from Google Play version. 
+As a workaround, in [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) you may switch the location source from **Google Play Services** to **Android API**.
 
 
-## OsmAnd 3.9 - GPS wakeup (2020/12)
-Subsequent sections (A) and (B) are now outdated, GPS Wake-Up has been removed from our code (commit [Drop waking navigation service on alarm](https://github.com/osmandapp/OsmAnd/commit/950a9cc8f8660b3f3d750391ddc1429d5dc38b34)). The changes are related to new Google Play restrictions on Background location access: Since OsmAnd doesn't want to access any location in background and doesn't need that permission, we were forced to delete that doze method anyway.
-Track recording will keep GPX on continuously via an Android foreground service. 
+## OsmAnd 3.9: GPS wakeup now replaced by continuous foreground service (2020/12)
+
+As of version 3.9, when needed for track recording or navigation, OsmAnsd will keep GPX on continuously via an Android foreground service, and this will be visible as an Android system notification.
+
+The prior strategy of using a doze mode and periodic GPS Wake-Up has been removed from our code (commit [Drop waking navigation service on alarm](https://github.com/osmandapp/OsmAnd/commit/950a9cc8f8660b3f3d750391ddc1429d5dc38b34)), as required by new Google Play restrictions on Background location access. As a result, the following sections (A) and (B) apply only to versions of OsmAnd prior to 3.9:
 
 **<del> (A) GPS Wake-up Strategy</del>**
 - (A1) While OsmAnd is used for e.g. Navigation: We keep the system's GPS module on all the time, as continuous location information is key here. Effect on battery use (order of magnitude) seems about 5% per hour on older systems up to Android 4.4, 2-3% for newer systems.
