@@ -29,7 +29,7 @@ There are 2 typical accuracy issues leading to a 'messy' recorded track.
 You may
 - either avoid such issues if using "Pause" to interrupt the recording during such conditions.
 - It is also possible to edit a track later and remove "noisy" points. 
-- Or you can use the [Track settings](/osmand/plugins/trip-recording) to already while recording filter "noisy" points based on your **experience** and **recording device**, you can filter out points by various criteria: 
+- Or you can use the Trip recording Plugin settings to filter "noisy" points already while recording, based on your **experience** and **recording device**. You can filter out points by various criteria: 
   - Points with low or zero speed
   - Points with bad precision (GPS 'hdop')
   - Points closer than a threshold in meters
@@ -75,7 +75,7 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 
 - **Google Services API or Android API:** You may further change how OsmAnd receices location data on Android devices. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) select between **Google Play Services** and **Android API**, in many cases changing to **Android API** helps to improve the recorded tracks and makes them less noisy.
 
-[Google issue](https://issuetracker.google.com/issues/180218747) is already reported, probably will be fixed 09-03-2021.
+[Google issue 180218747](https://issuetracker.google.com/issues/180218747) is already reported, probably will be fixed 09-03-2021.
 Since OsmAnd 3.9 Google Play has changed their policy and in order to comply, OsmAnd had to use Google Play Services to obtain locations while running in background (as a foreground service by Android terminology - notification is always visible). Note: this change didn't affect Nightly, F-Droid, Huawei, Amazon builds. 
 We've discovered that after that change there is a problem of recording altitude [Github issue related to altitude problems](https://github.com/osmandapp/OsmAnd/issues/10864), looks like Google Play Services very aggressively interpolate altitude and leads to a problem.
 
