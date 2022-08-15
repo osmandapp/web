@@ -14,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 
 Common issues with track recording: Noise, gaps, and inaccuracies
 
-This article addresses OsmAnd's GPS track recording issues. **'Background'** means to simply refer to the OsmAnd app not being displayed in the foreground, in particular when the device screen is off (which is different from the Android-internal definition of 'background').
-The following issues have been observed over time in different Android versions.
+This article addresses issues with GPX track recording which have been observed over time in different Android versions. **'Background'** means to simply refer to the OsmAnd app not being displayed in the foreground, in particular when the device screen is off (which is different from the Android-internal definition of 'background').
 
-**Note**: Since Android 11 (2020/12) there is no option "Always allow" to use location in background but this **doesn't limit** background track recording, according to Google docummentation it's considered **foreground usage** because internally foreground service permission is used and notification about track being recorded is always visible.
+**Note**: Since Android 11 (2020/12) there is no more system permission option "Always allow" to use location access in the background, but this **does not limit** OsmAnd's background track recording: According to Google's documentation it is now considered **foreground usage**, as internally the foreground service permission is now used and a system notification about a track being recorded is always visible.
 
 
 ## Recorded tracks are noisy
@@ -44,7 +43,7 @@ You may
 
 ### Check in OsmAnd
 
-* To allow OsmAnd recording tracks while the device screen is off, make sure the OsmAnd setting (under) 'Prevent standalone logging' under Plugin/Trip recording is deactivated.
+* To allow OsmAnd recording tracks while the device screen is off, make sure the OsmAnd setting (under) **'Prevent standalone logging'** under Plugin/Trip recording is deactivated.
 * Update OsmAnd to 3.9 or higher. Different Android versions apply different strategies to reduce power consumption [by killing apps running in the background](https://dontkillmyapp.com/). New versions of OsmAnd therefore deploy a Foreground service during navigation or while recording a trip, visible in the Android notification bar. This should keep the app active on most systems, at least under Android 8+ (Issues [\#5255](https://github.com/osmandapp/Osmand/issues/5255), [\#5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
 ### In Android, try these steps
@@ -71,7 +70,7 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 * **Apps / ... / Special access / Optimize battery usage / All** = Leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
 
 
-## OsmAnd 3.9 - Google Play Services (Altitude issues)
+## OsmAnd 3.9: Altitude issues when using Google Play Services
 
 Google Play has changed their policy and in order to comply, OsmAnd since version 3.9 (except Nightly, F-Droid, Huawei, Amazon builds) has to use Google Play Services to obtain location fixes while running in the background (i.e. in Android terminology as a foreground service with visible system notification).
 
