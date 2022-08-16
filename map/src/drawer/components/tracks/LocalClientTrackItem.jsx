@@ -1,9 +1,8 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import {BaseBuilder, buildGPX} from "gpx-builder";
-import {Metadata, Point} from "gpx-builder/dist/builder/BaseBuilder/models";
 import LocalTracksManager from "../../../context/LocalTracksManager";
+import Utils from "../../../util/Utils";
 
 export default function LocalClientTrackItem({track, index}) {
 
@@ -20,14 +19,8 @@ export default function LocalClientTrackItem({track, index}) {
     }
 
     function addGpx(track) {
-        let points = [];
-        track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
-        const gpxData = new BaseBuilder();
-        gpxData.setSegmentPoints(points);
-        gpxData.setMetadata(new Metadata({name: 'new'}))
-        let newGpx = buildGPX(gpxData.toObject());
         let selectedTrack = ctx.localClientsTracks[indexTrack];
-        selectedTrack.gpx = newGpx;
+        selectedTrack.gpx = Utils.getGpx(track);
         ctx.setLocalClientsTracks([
             ...ctx.localClientsTracks.slice(0, indexTrack),
             selectedTrack,

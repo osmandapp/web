@@ -28,7 +28,7 @@ export default function LocalClientTrackLayer() {
             map.fitBounds(e.target.getBounds());
         }).addTo(map);
 
-        layers[track.name] = {layer: layer, active: true}
+        layers[track.name] = {layer: layer, points: Object.assign([], track.points), active: true};
     }
 
     function createPointMarkerOnMap() {
@@ -66,6 +66,12 @@ export default function LocalClientTrackLayer() {
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
+    function updateTrackOnMap(track) {
+        map.removeLayer(layers[track.name].layer);
+        delete layers[track.name];
+        addTrackToMap(track)
+    }
+
     useEffect(() => {
         for (let l in layers) {
             layers[l].active = false;
@@ -76,6 +82,9 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track);
             } else if (currLayer) {
                 currLayer.active = track.selected;
+                if (track.points.length !== currLayer.points.length) {
+                    updateTrackOnMap(track)
+                }
             }
         });
 
