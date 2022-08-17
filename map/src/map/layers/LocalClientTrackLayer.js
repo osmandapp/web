@@ -20,12 +20,14 @@ export default function LocalClientTrackLayer() {
         }
     };
 
-    function addTrackToMap(track) {
+    function addTrackToMap(track, fitBounds) {
         let layer = new L.GPX(track.gpx, {
             async: true,
             marker_options: markerOptions
         }).on('loaded', function (e) {
-            map.fitBounds(e.target.getBounds());
+            if (fitBounds) {
+                map.fitBounds(e.target.getBounds());
+            }
         }).addTo(map);
 
         layers[track.name] = {layer: layer, points: Object.assign([], track.points), active: true};
@@ -69,7 +71,18 @@ export default function LocalClientTrackLayer() {
     function updateTrackOnMap(track) {
         map.removeLayer(layers[track.name].layer);
         delete layers[track.name];
-        addTrackToMap(track)
+        addTrackToMap(track, false)
+    }
+
+    function orderPointsWasChanged(tracksP, layersP) {
+        for (let tp in tracksP) {
+            for (let lp in layersP) {
+                if (tp === lp && (tracksP[tp].lat !== layersP[lp].lat || tracksP[tp].lng !== layersP[lp].lng)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     useEffect(() => {
@@ -79,10 +92,10 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localClientsTracks).forEach((track) => {
             let currLayer = layers[track.name]
             if (track.selected && !currLayer) {
-                addTrackToMap(track);
+                addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (track.points.length !== currLayer.points.length) {
+                if (track.points.length !== currLayer.points.length || orderPointsWasChanged(track.points, currLayer.points)) {
                     updateTrackOnMap(track)
                 }
             }
