@@ -27,7 +27,7 @@ const LocalInfoTab = ({width}) => {
     const ctx = useContext(AppContext);
     const [points, setPoints] = useState(0);
     const [distance, setDistance] = useState(0);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
+    const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
     const [disableButton, setDisableButton] = useState(true);
 
     useEffect(() => {
