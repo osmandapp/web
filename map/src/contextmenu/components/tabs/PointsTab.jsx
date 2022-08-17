@@ -29,14 +29,12 @@ const PointsTab = ({width}) => {
         ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
     }
 
-    const getItemStyle = (isDragging, draggableStyle, index) => ({
+    const getItemStyle = (isDragging, draggableStyle) => ({
         userSelect: "none",
         background: isDragging ? '#fbc73a' : "white",
         color: isDragging ? "white" : "black",
         borderBottom: '0.5px solid gray',
-        ...draggableStyle,
-        left: isDragging ? "25px" : "0",
-        top: isDragging ? draggableStyle.top - 450 + "px" : "0"
+        ...draggableStyle
     });
 
     const PointRow = () => ({point, index}) => {
@@ -49,8 +47,7 @@ const PointsTab = ({width}) => {
                               key={index} divider onClick={() => showPointOnMap(point)}
                               style={getItemStyle(
                                   snapshot.isDragging,
-                                  provided.draggableProps.style,
-                                  index
+                                  provided.draggableProps.style
                               )}
                     >
                         <ListItemIcon>
