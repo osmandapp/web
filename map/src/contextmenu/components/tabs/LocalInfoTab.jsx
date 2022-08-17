@@ -1,28 +1,13 @@
-import {Box, Button, ListItemIcon, Typography} from "@mui/material";
+import {Box, Button, Grid, ListItemIcon, ListItemText, MenuItem, TextareaAutosize, Typography} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import {Edit} from "@mui/icons-material";
-import {makeStyles} from "@material-ui/core/styles";
+import {Commit, Create, DoneOutline, RouteOutlined,} from "@mui/icons-material";
 import LocalTracksManager from "../../../context/LocalTracksManager";
-
-const useStyles = makeStyles({
-    input: {
-        border: 'none',
-        backgroundColor: 'transparent',
-        outline: 'none',
-        fontSize: 16,
-        marginLeft: -2
-    },
-    editButton: {
-        '& .MuiListItemIcon-root': {
-            minWidth: 'auto !important',
-        }
-    }
-})
+import contextMenuStyles from "../../styles/ContextMenuStyles";
 
 const LocalInfoTab = ({width}) => {
 
-    const classes = useStyles();
+    const styles = contextMenuStyles();
 
     const ctx = useContext(AppContext);
     const [points, setPoints] = useState(0);
@@ -46,16 +31,15 @@ const LocalInfoTab = ({width}) => {
         return url;
     }
 
-    function onChangeFileName(e) {
-        setFileName(e.target.value);
-    }
-
     function changeFileName(e) {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.type === 'click') {
+            setDisableButton(!disableButton);
             let existName = ctx.localClientsTracks.find(t => t.name === fileName);
             if (!existName) {
                 let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
                 currentTrack.name = fileName;
+                ctx.selectedGpxFile.name = fileName;
+                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
                 LocalTracksManager.saveTracks(ctx.localClientsTracks);
             }
@@ -67,20 +51,52 @@ const LocalInfoTab = ({width}) => {
     }, [ctx.selectedGpxFile])
 
     return (<Box width={width}>
-            <Typography className={classes.editButton} variant="subtitle1" color="inherit">
-                <input style={{width: fileName.length + "ch"}} className={classes.input}
-                       name="title"
-                       onChange={(e) => onChangeFileName(e)}
-                       value={fileName}
-                       disabled={disableButton}
-                       onKeyDown={(e) => changeFileName(e)}
-                />
-                <ListItemIcon onClick={() => setDisableButton(!disableButton)}>
-                    <Edit fontSize="small"/>
-                </ListItemIcon>
-                {<Button onClick={() => getUrl().click()}>Download gpx</Button>}<br/><br/>
-                {"Points: " + points}<br/>
-                {"Distance: " + distance + " km"}
+            <Typography className={styles.info} variant="subtitle1" color="inherit">
+                <Grid container spacing={2}>
+                    <Grid item xs={8}>
+                        <TextareaAutosize
+                            style={{width: fileName.length + "ch"}}
+                            className={styles.name}
+                            name="title"
+                            onChange={(e) => setFileName(e.target.value)}
+                            value={fileName}
+                            disabled={disableButton}
+                            onKeyDown={(e) => changeFileName(e)}
+                        />
+                        {disableButton && <ListItemIcon onClick={() => setDisableButton(!disableButton)}>
+                            <Create fontSize="small"/>
+                        </ListItemIcon>}
+                        {!disableButton && <ListItemIcon onClick={(e) => changeFileName(e)}>
+                            <DoneOutline fontSize="small"/>
+                        </ListItemIcon>}
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Box display="flex" justifyContent="flex-end">
+                            <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                                    onClick={() => getUrl().click()}>Download gpx</Button><br/>
+                        </Box>
+                    </Grid>
+                </Grid>
+                <MenuItem sx={{ml: -2}}>
+                    <ListItemIcon>
+                        <Commit fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {"Points: " + points}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>
+                <MenuItem sx={{ml: -2}}>
+                    <ListItemIcon>
+                        <RouteOutlined fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {"Distance: " + distance + " km"}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>
             </Typography>
         </Box>
     );

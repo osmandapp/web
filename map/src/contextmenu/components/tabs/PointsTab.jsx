@@ -84,6 +84,7 @@ const PointsTab = ({width}) => {
         const [removed] = currentTrack.points.splice(startIndex, 1)
         currentTrack.points.splice(endIndex, 0, removed)
         updateTrack(currentTrack);
+        LocalTracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     return (<DragDropContext onDragEnd={onDragEnd}><Box width={width}>
