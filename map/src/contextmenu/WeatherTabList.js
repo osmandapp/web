@@ -6,18 +6,19 @@ export default class WeatherTabList {
     state = {
         tabs: null,
         tabList: [],
-        defaultTab: 'weatherday'
+        defaultTab: 'weatherday',
+        graphWidth: 600
     };
 
-    create(ctx, graphWidth) {
+    create(ctx) {
         let tabs = {};
         let list = [];
         let loc = ctx.weatherPoint.lat.toFixed(2) + ' ' + ctx.weatherPoint.lon.toFixed(2);
 
         tabs["Day forecast"] =
-            <WeatherForecast key="weatherday" width={graphWidth} data={ctx.weatherPoint.day} loc={loc}/>
+            <WeatherForecast key="weatherday" width={this.state.graphWidth} data={ctx.weatherPoint.day} loc={loc}/>
         tabs["Week forecast"] =
-            <WeatherForecast key="weatherweek" width={graphWidth} data={ctx.weatherPoint.week} loc={loc}/>
+            <WeatherForecast key="weatherweek" width={this.state.graphWidth} data={ctx.weatherPoint.week} loc={loc}/>
 
         list = list.concat(Object.keys(tabs).map((item, index) =>
             <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>));

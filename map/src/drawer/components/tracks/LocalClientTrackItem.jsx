@@ -1,9 +1,8 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import {BaseBuilder, buildGPX} from "gpx-builder";
-import {Metadata, Point} from "gpx-builder/dist/builder/BaseBuilder/models";
-import LocalTracksManager from "../../../context/LocalTracksManager";
+import TracksManager from "../../../context/TracksManager";
+import Utils from "../../../util/Utils";
 
 export default function LocalClientTrackItem({track, index}) {
 
@@ -16,18 +15,12 @@ export default function LocalClientTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        LocalTracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     function addGpx(track) {
-        let points = [];
-        track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
-        const gpxData = new BaseBuilder();
-        gpxData.setSegmentPoints(points);
-        gpxData.setMetadata(new Metadata({name: 'new'}))
-        let newGpx = buildGPX(gpxData.toObject());
         let selectedTrack = ctx.localClientsTracks[indexTrack];
-        selectedTrack.gpx = newGpx;
+        selectedTrack.gpx = Utils.getGpx(track);
         ctx.setLocalClientsTracks([
             ...ctx.localClientsTracks.slice(0, indexTrack),
             selectedTrack,
@@ -35,9 +28,17 @@ export default function LocalClientTrackItem({track, index}) {
         ]);
     }
 
+    function cleanSelectedTrackIfNeed(currentTrack) {
+        if (ctx.selectedGpxFile && ctx.selectedGpxFile.name === currentTrack.name) {
+            ctx.setSelectedGpxFile(null);
+        }
+    }
+
     function deleteTrackFromMap() {
+        let currentTrack = ctx.localClientsTracks[track.index];
         ctx.setCurrentObjectType(null);
-        ctx.localClientsTracks[track.index].selected = false;
+        currentTrack.selected = false;
+        cleanSelectedTrackIfNeed(currentTrack);
         ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
     }
 
@@ -49,7 +50,7 @@ export default function LocalClientTrackItem({track, index}) {
             ctx.localClientsTracks[indexTrack].selected = true;
             addGpx(track);
         }
-        ctx.setSelectedGpxFile(track);
+        ctx.setSelectedGpxFile(Object.assign({}, track));
     }
 
     return <div>

@@ -1,3 +1,6 @@
+import {Point} from "gpx-builder/dist/builder/BaseBuilder/models";
+import {BaseBuilder, buildGPX} from "gpx-builder";
+
 async function fetchUtil(url, options) {
 
     const fetchData = async () => {
@@ -99,6 +102,7 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
         if (data.info) {
             gpxLayer.summary = data.info.analysis;
             gpxLayer.srtmSummary = data.info.srtmAnalysis;
+            gpxLayer.metadata = data.info.metadata;
         }
         newinfo[gpxLayer.name] = gpxLayer;
         gpxFiles[gpxLayer.name] = gpxLayer;
@@ -109,16 +113,12 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     }
 }
 
-function getFileName(currentFile) {
-    let file = Object.assign('', currentFile);
-    file.name = file.name.replace(/.gpx/, '');
-    if (file.name.includes('/')) {
-        return file.name.split('/')[1]
-    } else if (file.local && file.name.includes(':')) {
-        return file.name.split(':')[1]
-    } else {
-        return file.name;
-    }
+function getGpx(track) {
+    let points = [];
+    track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
+    const gpxData = new BaseBuilder();
+    gpxData.setSegmentPoints(points);
+    return buildGPX(gpxData.toObject());
 }
 
 const Utils = {
@@ -127,8 +127,8 @@ const Utils = {
     getFileData,
     getDistance,
     uploadFile,
-    getFileName,
-    getPointsDist
+    getPointsDist,
+    getGpx
 };
 
 export default Utils;
