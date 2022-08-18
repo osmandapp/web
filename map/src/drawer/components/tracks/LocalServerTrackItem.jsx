@@ -2,7 +2,7 @@ import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material
 import React, {useContext} from "react";
 import TrackInfo from "./TrackInfo";
 import AppContext from "../../../context/AppContext";
-import Utils from "../../../util/Utils";
+import TracksManager from "../../../context/TracksManager";
 
 export default function LocalServerTrackItem({file}) {
 
@@ -40,7 +40,7 @@ export default function LocalServerTrackItem({file}) {
             <Tooltip title={<TrackInfo file={file}/>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {Utils.getFileName(file)}
+                        {TracksManager.getFileName(file)}
                     </Typography>
                 </ListItemText>
             </Tooltip>

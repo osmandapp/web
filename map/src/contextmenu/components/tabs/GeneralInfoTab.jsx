@@ -3,7 +3,7 @@ import {Typography, Box, Button, ListItemIcon, ListItemText, MenuItem, Grid, Div
 import {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
-import Utils from "../../../util/Utils";
+import TracksManager from "../../../context/TracksManager";
 
 export default function GeneralInfoTab({width, summary, url, ctx}) {
 
@@ -62,11 +62,11 @@ export default function GeneralInfoTab({width, summary, url, ctx}) {
         )
     }
 
-    return (<Box width={width}>
+    return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={8}>
-                    {info && Utils.prepareName(info.name, false)}
+                    {info && TracksManager.prepareName(info.name, false)}
                 </Grid>
                 <Grid item xs={4}>
                     <Box display="flex" justifyContent="flex-end">

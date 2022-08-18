@@ -3,6 +3,8 @@ import ElevationTab from "./components/tabs/ElevationTab";
 import SpeedTab from "./components/tabs/SpeedTab";
 import React from "react";
 import {Tab} from "@mui/material";
+import LocalInfoTab from "./components/tabs/LocalInfoTab";
+import PointsTab from "./components/tabs/PointsTab";
 
 export default class TrackTabList {
 
@@ -19,6 +21,12 @@ export default class TrackTabList {
         const hasAltitude = ctx.selectedGpxFile?.summary?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.summary?.hasSpeedData;
 
+        if (ctx.currentObjectType === 'local_client_track') {
+            tabs.Info = <LocalInfoTab key='info' width={this.state.graphWidth}/>;
+            tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
+            this.state.defaultTab = 'info';
+        }
+
         if (ctx.selectedGpxFile?.summary) {
             tabs.Info = <GeneralInfoTab key='general' summary={ctx.selectedGpxFile.summary}
                                         url={ctx.selectedGpxFile.url} width={this.state.graphWidth} ctx={ctx}/>;
@@ -34,7 +42,7 @@ export default class TrackTabList {
 
         if (ctx.selectedGpxFile?.srtmSummary) {
             tabs.SRTM = <GeneralInfoTab key='srtm'
-                                        width={this.state.graphWidth} summary={ctx.selectedGpxFile.srtmSummary}/>;
+                                        width={this.state.graphWidth} summary={ctx.selectedGpxFile.srtmSummary} ctx={ctx}/>;
         }
 
         if (ctx.selectedGpxFile?.srtmSummary?.elevationData &&

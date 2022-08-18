@@ -4,7 +4,7 @@ import {
 } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
-import LocalTracksManager from "./LocalTracksManager";
+import TracksManager from "./TracksManager";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -357,7 +357,7 @@ export const AppContextProvider = (props) => {
         }
     });
 
-    const [localClientsTracks, setLocalClientsTracks] = useState(LocalTracksManager.loadTracks());
+    const [localClientsTracks, setLocalClientsTracks] = useState(TracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: {text: ''},

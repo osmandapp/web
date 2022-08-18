@@ -2,7 +2,7 @@ import {Box, Button, Grid, ListItemIcon, ListItemText, MenuItem, TextareaAutosiz
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {Commit, Create, DoneOutline, RouteOutlined,} from "@mui/icons-material";
-import LocalTracksManager from "../../../context/LocalTracksManager";
+import TracksManager from "../../../context/TracksManager";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 
 const LocalInfoTab = ({width}) => {
@@ -41,7 +41,7 @@ const LocalInfoTab = ({width}) => {
                 ctx.selectedGpxFile.name = fileName;
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
-                LocalTracksManager.saveTracks(ctx.localClientsTracks);
+                TracksManager.saveTracks(ctx.localClientsTracks);
             }
         }
     }
@@ -50,12 +50,12 @@ const LocalInfoTab = ({width}) => {
         setFileName(ctx.selectedGpxFile.name)
     }, [ctx.selectedGpxFile])
 
-    return (<Box width={width}>
+    return (<Box className={styles.item} width={width}>
             <Typography className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
                         <TextareaAutosize
-                            style={{width: fileName.length + "ch"}}
+                            style={{width: fileName.length + "ch", resize: 'none'}}
                             className={styles.name}
                             name="title"
                             onChange={(e) => setFileName(e.target.value)}

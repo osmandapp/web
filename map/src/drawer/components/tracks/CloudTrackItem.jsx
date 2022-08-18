@@ -3,6 +3,7 @@ import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material
 import React, {useContext} from "react";
 import Utils from "../../../util/Utils";
 import TrackInfo from "./TrackInfo";
+import TracksManager from "../../../context/TracksManager";
 
 export default function CloudTrackItem({file}) {
 
@@ -65,7 +66,7 @@ export default function CloudTrackItem({file}) {
             <Tooltip title={<TrackInfo file={file}/>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {Utils.getFileName(file)}
+                        {TracksManager.getFileName(file)}
                     </Typography>
                 </ListItemText>
             </Tooltip>

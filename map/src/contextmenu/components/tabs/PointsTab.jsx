@@ -3,7 +3,7 @@ import React, {useContext} from "react";
 import {Cancel, ViewHeadline} from "@mui/icons-material";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
-import LocalTracksManager from "../../../context/LocalTracksManager";
+import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 
 
@@ -20,7 +20,7 @@ const PointsTab = ({width}) => {
         let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
         currentTrack.points.splice(index, 1);
         updateTrack(currentTrack);
-        LocalTracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     function updateTrack(currentTrack) {
@@ -84,7 +84,7 @@ const PointsTab = ({width}) => {
         const [removed] = currentTrack.points.splice(startIndex, 1)
         currentTrack.points.splice(endIndex, 0, removed)
         updateTrack(currentTrack);
-        LocalTracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     return (<DragDropContext onDragEnd={onDragEnd}><Box width={width}>

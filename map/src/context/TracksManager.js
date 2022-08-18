@@ -55,10 +55,28 @@ function createPoints() {
     return points;
 }
 
-const LocalTracksManager = {
+function getFileName(currentFile) {
+    let file = Object.assign('', currentFile);
+    return prepareName(file.name, file.local);
+}
+
+function prepareName(name, local) {
+    name = name.replace(/.gpx/, '');
+    if (name.includes('/')) {
+        return name.split('/')[1]
+    } else if (local && name.includes(':')) {
+        return name.split(':')[1]
+    } else {
+        return name;
+    }
+}
+
+const TracksManager = {
     loadTracks,
     saveTracks,
-    generate
+    generate,
+    getFileName,
+    prepareName
 };
 
-export default LocalTracksManager;
+export default TracksManager;

@@ -113,22 +113,6 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     }
 }
 
-function getFileName(currentFile) {
-    let file = Object.assign('', currentFile);
-    return prepareName(file.name, file.local);
-}
-
-function prepareName(name, local) {
-    name = name.replace(/.gpx/, '');
-    if (name.includes('/')) {
-        return name.split('/')[1]
-    } else if (local && name.includes(':')) {
-        return name.split(':')[1]
-    } else {
-        return name;
-    }
-}
-
 function getGpx(track) {
     let points = [];
     track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
@@ -143,10 +127,8 @@ const Utils = {
     getFileData,
     getDistance,
     uploadFile,
-    getFileName,
     getPointsDist,
-    getGpx,
-    prepareName
+    getGpx
 };
 
 export default Utils;

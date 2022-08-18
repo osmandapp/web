@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import LocalTracksManager from "../../../context/LocalTracksManager";
+import TracksManager from "../../../context/TracksManager";
 import Utils from "../../../util/Utils";
 
 export default function LocalClientTrackItem({track, index}) {
@@ -15,7 +15,7 @@ export default function LocalClientTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        LocalTracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     function addGpx(track) {

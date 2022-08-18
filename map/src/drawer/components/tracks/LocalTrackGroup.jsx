@@ -8,7 +8,7 @@ import LocalClientTrackItem from "./LocalClientTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import LocalServerTrackItem from "./LocalServerTrackItem";
-import LocalTracksManager from "../../../context/LocalTracksManager";
+import TracksManager from "../../../context/TracksManager";
 
 export default function LocalTrackGroup() {
 
@@ -83,8 +83,8 @@ export default function LocalTrackGroup() {
     }
 
     function generateLocalClientTracks() {
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks, LocalTracksManager.generate(ctx)])
-        LocalTracksManager.saveTracks(ctx.localClientsTracks);
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks, TracksManager.generate(ctx)])
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     const fileSelected = (ctx) => async (e) => {

@@ -7,7 +7,6 @@ import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
-import LocalTrackTabList from "../LocalTrackTabList";
 
 const useStyles = makeStyles({
     menu: {
@@ -42,14 +41,12 @@ export default function MapContextMenu() {
         if (ctx.currentObjectType) {
             setShowContextMenu(true);
             let obj;
-            if (ctx.currentObjectType === 'cloud_track' || ctx.currentObjectType === 'local_server_track') {
-                obj = new TrackTabList().create(ctx);
-            }
-            if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                obj = new WeatherTabList().create(ctx);
-            }
-            if (ctx.currentObjectType === 'local_client_track') {
-                obj = new LocalTrackTabList().create();
+            if (ctx.currentObjectType) {
+                if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                    obj = new WeatherTabList().create(ctx);
+                } else {
+                    obj = new TrackTabList().create(ctx);
+                }
             }
             setTabsObj(obj);
             setValue(obj.defaultTab);

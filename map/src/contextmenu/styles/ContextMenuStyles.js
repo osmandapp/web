@@ -14,7 +14,13 @@ const contextMenuStyles = makeStyles({
         marginLeft: -2,
         border: 'none',
         backgroundColor: 'transparent',
-        outline: 'none'
+        outline: 'none',
+        cursor: 'pointer'
+    },
+    item: {
+        '& .MuiMenuItem-root': {
+            userSelect: 'text'
+        }
     }
 })
 
