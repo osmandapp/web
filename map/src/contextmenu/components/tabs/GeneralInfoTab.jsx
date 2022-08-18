@@ -66,13 +66,9 @@ export default function GeneralInfoTab({width, summary, url, ctx}) {
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={8}>
-                    {info && TracksManager.prepareName(info.name, false)}
-                </Grid>
-                <Grid item xs={4}>
-                    <Box display="flex" justifyContent="flex-end">
-                        <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                                onClick={() => window.open(url)}>Download gpx</Button><br/>
-                    </Box>
+                    <Typography className={styles.name} variant="inherit">
+                        {info && TracksManager.prepareName(info.name, false)}
+                    </Typography>
                 </Grid>
             </Grid>
             {ctx.selectedGpxFile?.metadata?.desc && Description()({desc: ctx.selectedGpxFile?.metadata?.desc})}
@@ -137,6 +133,8 @@ export default function GeneralInfoTab({width, summary, url, ctx}) {
                 </ListItemText>
             </MenuItem>}
         </Typography>
+        <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                onClick={() => window.open(url)}>Download gpx</Button><br/>
 
     </Box>);
 };

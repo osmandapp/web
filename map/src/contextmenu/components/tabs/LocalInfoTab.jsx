@@ -1,7 +1,7 @@
 import {Box, Button, Grid, ListItemIcon, ListItemText, MenuItem, TextareaAutosize, Typography} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import {Commit, Create, DoneOutline, RouteOutlined,} from "@mui/icons-material";
+import {Commit, RouteOutlined,} from "@mui/icons-material";
 import TracksManager from "../../../context/TracksManager";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 
@@ -55,27 +55,43 @@ const LocalInfoTab = ({width}) => {
     return (<Box className={styles.item} width={width}>
             <Typography className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
-                    <Grid item xs={8}>
-                        <TextareaAutosize
-                            style={{width: fileName.length + "ch", resize: 'none'}}
-                            className={styles.name}
+                    <Grid item xs={11}>
+                        {!disableButton && <TextareaAutosize
+                            style={{maxWidth: '438px', width: fileName.length + "ch", resize: 'none'}}
+                            className={styles.nameInput}
                             name="title"
                             onChange={(e) => setFileName(e.target.value)}
                             value={fileName}
                             disabled={disableButton}
                             onKeyDown={(e) => changeFileName(e)}
-                        />
-                        {disableButton && <ListItemIcon onClick={() => setDisableButton(!disableButton)}>
-                            <Create fontSize="small"/>
-                        </ListItemIcon>}
-                        {!disableButton && <ListItemIcon onClick={(e) => changeFileName(e)}>
-                            <DoneOutline fontSize="small"/>
-                        </ListItemIcon>}
+                            autoFocus={true}
+                        />}
+                        {
+                            disableButton && <Typography className={styles.name} variant="inherit" maxWidth={'530px'}>
+                                {fileName}
+                            </Typography>
+                        }
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={1}>
                         <Box display="flex" justifyContent="flex-end">
-                            <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                                    onClick={() => getUrl().click()}>Download gpx</Button><br/>
+                            {disableButton &&
+                                <Button variant="contained" style={{backgroundColor: '#fbc73a'}} onClick={() => {
+                                    setDisableButton(false);
+                                }}>
+                                    edit
+                                </Button>}
+                            {!disableButton && <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
+                                                       onClick={(e) => changeFileName(e)}>
+                                save
+                            </Button>}
+                            {!disableButton &&
+                                <Button sx={{ml: 2}} variant="contained" style={{backgroundColor: '#aad3df'}}
+                                        onClick={() => {
+                                            setFileName(ctx.selectedGpxFile.name)
+                                            setDisableButton(!disableButton)
+                                        }}>
+                                    close
+                                </Button>}
                         </Box>
                     </Grid>
                 </Grid>
@@ -99,6 +115,8 @@ const LocalInfoTab = ({width}) => {
                         </Typography>
                     </ListItemText>
                 </MenuItem>
+                <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                        onClick={() => getUrl().click()}>Download gpx</Button><br/>
             </Typography>
         </Box>
     );
