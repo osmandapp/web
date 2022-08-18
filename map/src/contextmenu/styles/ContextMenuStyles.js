@@ -26,7 +26,8 @@ const contextMenuStyles = makeStyles({
         fontSize: 20,
         color: 'black',
         outline: 'none',
-        letterSpacing: "normal"
+        letterSpacing: "normal",
+        lineHeight: "normal"
     },
 
     item: {
