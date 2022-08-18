@@ -102,6 +102,7 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
         if (data.info) {
             gpxLayer.summary = data.info.analysis;
             gpxLayer.srtmSummary = data.info.srtmAnalysis;
+            gpxLayer.metadata = data.info.metadata;
         }
         newinfo[gpxLayer.name] = gpxLayer;
         gpxFiles[gpxLayer.name] = gpxLayer;

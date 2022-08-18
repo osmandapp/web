@@ -21,7 +21,7 @@ export default class TrackTabList {
 
         if (ctx.selectedGpxFile?.summary) {
             tabs.Info = <GeneralInfoTab key='general' summary={ctx.selectedGpxFile.summary}
-                                        url={ctx.selectedGpxFile.url} width={this.state.graphWidth}/>;
+                                        url={ctx.selectedGpxFile.url} width={this.state.graphWidth} ctx={ctx}/>;
         }
         const elevationData = ctx.selectedGpxFile?.summary?.elevationData;
         if (elevationData && elevationData.length > 0 && hasAltitude) {

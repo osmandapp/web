@@ -1,13 +1,15 @@
-import React from 'react';
-import {Typography, Box, Button, ListItemIcon, ListItemText, MenuItem, Grid} from "@mui/material";
+import React, {useState} from 'react';
+import {Typography, Box, Button, ListItemIcon, ListItemText, MenuItem, Grid, Divider} from "@mui/material";
 import {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import Utils from "../../../util/Utils";
 
-export default function GeneralInfoTab({width, summary, url}) {
+export default function GeneralInfoTab({width, summary, url, ctx}) {
 
     const styles = contextMenuStyles();
+
+    const [showMore, setShowMore] = useState(false);
 
     let timeRange = '';
     let distance = '';
@@ -47,6 +49,19 @@ export default function GeneralInfoTab({width, summary, url}) {
             (info.maxSpeed * 3.6).toFixed(0) + " km/h"
     }
 
+    const Description = () => ({desc}) => {
+        return (<ListItemText>
+                <Typography component={'span'} variant="inherit">
+                    {showMore ? desc : desc.substring(0, 140)}
+                    {desc.length > 70 && <ListItemIcon onClick={() => setShowMore(!showMore)}>
+                        {showMore ? "...less" : "...more"}
+                    </ListItemIcon>}
+                </Typography>
+                <Divider light/>
+            </ListItemText>
+        )
+    }
+
     return (<Box width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
@@ -60,16 +75,7 @@ export default function GeneralInfoTab({width, summary, url}) {
                     </Box>
                 </Grid>
             </Grid>
-            {timeRange && <MenuItem sx={{ml: -2}}>
-                <ListItemIcon>
-                    <AccessTime fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {"Time: " + timeRange}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
+            {ctx.selectedGpxFile?.metadata?.desc && Description()({desc: ctx.selectedGpxFile?.metadata?.desc})}
             {distance && <MenuItem sx={{ml: -2}}>
                 <ListItemIcon>
                     <RouteOutlined fontSize="small"/>
@@ -80,7 +86,17 @@ export default function GeneralInfoTab({width, summary, url}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
-            {speed && <MenuItem sx={{ml: -2}}>
+            {timeRange && <MenuItem sx={{ml: -2, mt: -1}}>
+                <ListItemIcon>
+                    <AccessTime fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                        {"Time: " + timeRange}
+                    </Typography>
+                </ListItemText>
+            </MenuItem>}
+            {speed && <MenuItem sx={{ml: -2, mt: -1}}>
                 <ListItemIcon>
                     <Speed fontSize="small"/>
                 </ListItemIcon>
@@ -90,7 +106,7 @@ export default function GeneralInfoTab({width, summary, url}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
-            {timeMoving && <MenuItem sx={{ml: -2}}>
+            {timeMoving && <MenuItem sx={{ml: -2, mt: -1}}>
                 <ListItemIcon>
                     <AvTimer fontSize="small"/>
                 </ListItemIcon>
@@ -100,7 +116,7 @@ export default function GeneralInfoTab({width, summary, url}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
-            {elevation && <MenuItem sx={{ml: -2}}>
+            {elevation && <MenuItem sx={{ml: -2, mt: -1}}>
                 <ListItemIcon>
                     <Terrain fontSize="small"/>
                 </ListItemIcon>
@@ -110,7 +126,7 @@ export default function GeneralInfoTab({width, summary, url}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
-            {updownhill && <MenuItem sx={{ml: -2}}>
+            {updownhill && <MenuItem sx={{ml: -2, mt: -1}}>
                 <ListItemIcon>
                     <ImportExport fontSize="small"/>
                 </ListItemIcon>

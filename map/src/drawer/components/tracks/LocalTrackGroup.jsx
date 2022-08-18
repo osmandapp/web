@@ -37,6 +37,7 @@ export default function LocalTrackGroup() {
                 // gpxLayer.url
                 gpxLayer.local = true;
                 let newinfo = Object.assign({}, gpxFiles);
+                gpxLayer.metadata = item.metadata;
                 gpxLayer.summary = item.analysis;
                 gpxLayer.srtmSummary = item.srtmAnalysis;
                 newinfo[gpxLayer.name] = gpxLayer;

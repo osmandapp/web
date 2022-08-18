@@ -87,7 +87,7 @@ const LocalInfoTab = ({width}) => {
                         </Typography>
                     </ListItemText>
                 </MenuItem>
-                <MenuItem sx={{ml: -2}}>
+                <MenuItem sx={{ml: -2, mt: -1}}>
                     <ListItemIcon>
                         <RouteOutlined fontSize="small"/>
                     </ListItemIcon>
