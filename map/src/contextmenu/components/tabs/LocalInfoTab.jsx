@@ -47,7 +47,9 @@ const LocalInfoTab = ({width}) => {
     }
 
     useEffect(() => {
-        setFileName(ctx.selectedGpxFile.name)
+        if (ctx.selectedGpxFile) {
+            setFileName(ctx.selectedGpxFile.name);
+        }
     }, [ctx.selectedGpxFile])
 
     return (<Box className={styles.item} width={width}>
