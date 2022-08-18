@@ -49,6 +49,9 @@ const LocalInfoTab = ({width}) => {
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             setFileName(ctx.selectedGpxFile.name);
+            if (!disableButton) {
+                setDisableButton(!disableButton);
+            }
         }
     }, [ctx.selectedGpxFile])
 
