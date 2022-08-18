@@ -19,7 +19,10 @@ const contextMenuStyles = makeStyles({
         '&[disabled]': {
             border: 'none'
         },
-        marginBottom: -13
+        marginBottom: -10,
+        paddingBottom: '8px',
+        paddingTop: '8px'
+
     },
     name: {
         fontFamily: "Arial",
@@ -27,7 +30,7 @@ const contextMenuStyles = makeStyles({
         color: 'black',
         outline: 'none',
         letterSpacing: "normal",
-        lineHeight: "normal"
+        paddingBottom: '2px'
     },
 
     item: {
