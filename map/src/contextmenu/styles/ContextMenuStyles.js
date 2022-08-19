@@ -30,7 +30,9 @@ const contextMenuStyles = makeStyles({
         color: 'black',
         outline: 'none',
         letterSpacing: "normal",
-        paddingBottom: '2px'
+        paddingBottom: '2px',
+        lineHeight: "normal",
+        overflowWrap: 'break-word'
     },
 
     item: {
@@ -38,7 +40,8 @@ const contextMenuStyles = makeStyles({
             userSelect: 'text'
         },
         '& .MuiTypography-root': {
-            marginLeft: "1px !important"
+            marginLeft: "1px !important",
+            marginTop: '6px'
         }
     }
 })
