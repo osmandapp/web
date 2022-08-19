@@ -7,6 +7,7 @@ import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
+import PanelButtons from "./PanelButtons";
 
 const useStyles = makeStyles({
     menu: {
@@ -39,19 +40,19 @@ export default function MapContextMenu() {
 
     useEffect(() => {
         if (ctx.currentObjectType) {
-            setShowContextMenu(true);
-            let obj;
-            if (ctx.currentObjectType) {
-                if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                    obj = new WeatherTabList().create(ctx);
-                } else {
-                    obj = new TrackTabList().create(ctx);
-                }
+            let obj = (ctx.currentObjectType === 'weather' && ctx.weatherPoint)
+                ? new WeatherTabList().create(ctx)
+                : ctx.selectedGpxFile
+                    ? new TrackTabList().create(ctx)
+                    : null;
+            if (obj) {
+                setShowContextMenu(true);
+                setTabsObj(obj);
+                setValue(obj.defaultTab);
             }
-            setTabsObj(obj);
-            setValue(obj.defaultTab);
         } else {
             setTabsObj(null);
+            setShowContextMenu(false);
         }
     }, [ctx.selectedGpxFile, ctx.currentObjectType]);
 
@@ -83,5 +84,6 @@ export default function MapContextMenu() {
                 }
             </div>
         </div>}
+        <PanelButtons showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
     </div>);
 }

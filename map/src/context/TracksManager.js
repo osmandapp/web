@@ -21,16 +21,25 @@ function generate(ctx) {
 }
 
 function createName(ctx) {
-    let name = new Date().toDateString();
+    let date = new Date().toDateString();
     let count = 0;
+    let name;
+    let maxNumber = 0;
     ctx.localClientsTracks.forEach(t => {
-        if (t.name.split(' - ')[0] === name) {
+        if (t.name.split(' - ')[0] === date) {
+            let sp = parseInt(t.name.split(' - ')[1], 10);
             count++;
+            if (sp > maxNumber) {
+                maxNumber = sp;
+            }
         }
     })
-    if (count > 0) {
-        name = name + ' - ' + (count + 1);
-    }
+    name = count > 0 ? (date + ' - ' + (count + 1)) : date;
+    ctx.localClientsTracks.forEach(t => {
+        if (t.name === name) {
+            name = date + ' - ' + (maxNumber + 1);
+        }
+    })
 
     return name;
 }
