@@ -54,9 +54,9 @@ Search button buttons provides quick access from the map to [search capabilities
 ## Compass
 
 Compass widget shows how the map is oriented on your device's screen. You can select three types of compass:
-- **No rotation (north always upwards)**. Map without rotation, the direction is always pointed towards north on top of the map. When rotating with [two fingers gesture](../map/interact-with-map.md#gestures), the direction of the widget changes to the direction of map rotation. By tapping on the widget the compass and the map go to the initial position.
-- **Movement direction** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)
-- **Compass direction** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.  
+- **Fixed (north is up):** Map exhibits no automatic rotation, the north direction aways points upwards. When manually rotating with a [two fingers gesture](../map/interact-with-map.md#gestures), the widget's north direction changes accordingly. By tapping on the widget, the compass and the map return to the original orientation.
+- **Movement direction:** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)
+- **Compass direction:** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.  
 
 [Read more info here](../map/interact-with-map.md#map-orientation--compass).
 
@@ -68,7 +68,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 ![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
 
-You can choose how the compass is displayed in the widget menu: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
+You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
 
 ![Compass widget](@site/static/img/widgets/compass_andr_1.png)
 
@@ -78,12 +78,10 @@ You can choose how the compass is displayed in the widget menu: *Always visible*
 
 Go to:* <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
 
-![Compass widget](@site/static/img/widgets/cmp_dir_north_ios.png) ![Compass widget](@site/static/img/widgets/movement_dir_ios.png) ![Compass widget](@site/static/img/widgets/compas_dir_ios.png)
+![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
 
-> Available soon: You can choose how the compass is displayed in the widget menu: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
+You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
 
 </TabItem>
 
 </Tabs> 
-
-Compass widget can be hidden if the current orientation mode is **<Translate android="true" ids="rotate_map_none_opt"/>** and the map north is pointing exactly to the top of the device.
