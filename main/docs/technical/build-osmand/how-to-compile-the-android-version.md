@@ -101,17 +101,15 @@ To be completed: how to set up Android ndk debug.
 ## Compile API samples
 <IncompleteArticle/>
 
-There are 3 types of samples apps provided by OsmAnd, they are all represented in [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) Github repo and compiled regularly at [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
+There are 2 types of samples apps provided by OsmAnd, they are all represented in [osmand-api-demo](https://github.com/osmandapp/osmand-api-demo) Github repo and compiled regularly at [OsmAnd Builder](https://builder.osmand.net:8080/view/OsmAnd%20Builds/job/OsmAnd-API-demo/).
 
 Compile script:
 ```
 (cd OsmAnd-api-sample && ./gradlew clean assembleRelease)
 (cd OsmAnd-map-sample && ./gradlew clean assembleRelease)
-(cd OsmAnd-qt-core-sample && ./gradlew clean assembleRelease)
 ```
 
 - [OsmAnd-api-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-api-sample) - [the simplest sample application](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk) that interacts with with already installed OsmAnd via AIDL interface and Intents.
 - [OsmAnd-map-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-map-sample) - [a sample application](https://download.osmand.net/latest-night-build/OsmAnd-map-sample.apk) has fully integrated OsmAnd inside it as SDK. Allows to use all internall APIs.
-- [OsmAnd-opengl-sample](https://github.com/osmandapp/osmand-api-demo/tree/master/OsmAnd-qt-core-sample) - [a sample application](https://download.osmand.net/latest-night-build/OsmAnd-qt-core-sample.apk) that has only core element such as Map  & routing integrated inside. Maps needs to be installed separately into Shared OsmAnd storage (OsmAnd itself is not used).
 
 **[Read more](../osmand-api-sdk/index.md)**.
