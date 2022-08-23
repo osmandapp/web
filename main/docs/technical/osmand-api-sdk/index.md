@@ -4,10 +4,11 @@ In case you want to use OsmAnd as a library for your app, you might consider to 
 There are 2 main ways how to reuse OsmAnd power in your app:
 - Android OsmAnd AIDL API
 - Android OsmAnd Full Library SDK
+
 All the code for 2 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
 
 ## Android OsmAnd AIDL API
-Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl). OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
+Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) or intents api. OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
 
 List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
 
@@ -20,7 +21,7 @@ List of APIs is pretty long and you can get acquainted with it inside [Demo App]
 
 **Cons**
 - Requires OsmAnd application to be installed next to your app
-- Limited number of methods comparing to SDK or Library approach
+- Limited number of methods comparing to Full Library SDK approach
 - Limited branding capabilities though it could have a branded logo, branded profiles, map styles & etc in the OsmAnd app
 - Not possible to pass code & UI elements to OsmAnd, so all interaction could be done only via switching screens between apps and callbacks
 
