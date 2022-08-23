@@ -30,7 +30,18 @@ public class SimpleMapActivity extends AppCompatActivity {
 }
 ```
 
+Open the activity’s XML layout file and add the following:
+
+```
+	<net.osmand.plus.views.MapViewWithLayers
+		android:id="@+id/map_view_with_layers"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical" />		
+```
+
 The MapViewWithLayers contains its own lifecycle methods. In order for your app to correctly call the MapView's lifecycle methods, you must override the following lifecycle methods in the Activity that contains the MapViewWithLayers and call these methods.
+
 ```
 
 	@Override
