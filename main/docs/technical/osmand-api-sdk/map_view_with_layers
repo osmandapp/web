@@ -3,7 +3,8 @@ sidebar_position: 5
 ---
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-# Map view can be added as view in code or xml layout
+# Map view can be added as view in code or xml layout via net.osmand.plus.views.MapViewWithLayers
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
