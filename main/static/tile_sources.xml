@@ -14,9 +14,9 @@
    -->
 
 <!-- Bing Maps -->
-   <tile_source rule="template:1" name="Microsoft Maps" url_template="http://r0.ortho.tiles.virtualearth.net/tiles/r{q}.png?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" ext=".png"/>
-   <tile_source rule="template:1" name="Microsoft Hybrid" url_template="http://h0.ortho.tiles.virtualearth.net/tiles/h{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
-   <tile_source rule="template:1" name="Microsoft Earth" url_template="http://a0.ortho.tiles.virtualearth.net/tiles/a{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
+   <tile_source rule="template:1" name="Microsoft Maps" url_template="https://tiles.virtualearth.net/tiles/r{q}.png?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" ext=".png"/>
+   <tile_source rule="template:1" name="Microsoft Hybrid" url_template="https://tiles.virtualearth.net/tiles/h{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
+   <tile_source rule="template:1" name="Microsoft Earth" url_template="https://tiles.virtualearth.net/tiles/a{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
 
 <!--   <tile_source name="Public Transport" url_template="http://openptmap.org/tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="5000"/> -->
 
