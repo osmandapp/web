@@ -7,7 +7,7 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 There is only map and switch for opengl rengering 
 
   ```
-  public class SimpleMapActivity extends AppCompatActivity implements OsmandMapListener {
+public class SimpleMapActivity extends AppCompatActivity {
 
 	private OsmandApplication app;
 	private OsmandMapTileView mapTileView;
@@ -22,10 +22,9 @@ There is only map and switch for opengl rengering
 		mapViewWithLayers = findViewById(R.id.map_view_with_layers);
 
 		app = (OsmandApplication) getApplication();
-		OsmandMap osmandMap = app.getOsmandMap();
-		osmandMap.addListener(this);
 
-		mapTileView = osmandMap.getMapView();
+		mapTileView = app.getOsmandMap().getMapView();
+		mapTileView.setupOpenGLView();
 
 		ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null) {
@@ -41,8 +40,7 @@ There is only map and switch for opengl rengering
 			RestartActivity.doRestart(this);
 		});
 
-		mapTileView.setupOpenGLView();
-
+		//set start location and zoom for map
 		mapTileView.setIntZoom(14);
 		mapTileView.setLatLon(52.3704312, 4.8904288);
 	}
@@ -71,24 +69,6 @@ There is only map and switch for opengl rengering
 	protected void onDestroy() {
 		super.onDestroy();
 		mapViewWithLayers.onDestroy();
-		app.getOsmandMap().removeListener(this);
-		mapTileView.clearTouchDetectors();
-	}
-
-	@Override
-	public void onChangeZoom(int i) {
-
-	}
-
-	@Override
-	public void onSetMapElevation(float v) {
-		mapViewWithLayers.onSetMapElevation(v);
-	}
-
-	@Override
-	public void onSetupOpenGLView(boolean b) {
-		mapViewWithLayers.setupOpenGLView(b);
-		mapTileView.setupTouchDetectors(this);
 	}
 }
 ```
