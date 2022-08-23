@@ -92,3 +92,27 @@ There is only map and switch for opengl rengering
 	}
 }
 ```
+
+This is layout for sample activities - 
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.google.android.material.switchmaterial.SwitchMaterial
+		android:id="@+id/opengl_switch"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="@dimen/content_padding"
+		android:text="@string/use_opengl_render" />
+
+	<net.osmand.plus.views.MapViewWithLayers
+		android:id="@+id/map_view_with_layers"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical" />
+
+</LinearLayout>
+```
