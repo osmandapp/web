@@ -7,6 +7,12 @@ There are 2 main ways how to reuse OsmAnd power in your app:
 
 All the code for 2 samples is available in [a single repository](https://github.com/osmandapp/osmand-api-demo).
 
+## SDK Examples
+
+Here is the list of examples how to use SDK inside your product.
+
+[Simple map](./add_mapview.md) - how to add the map to simple application.
+
 ## Android OsmAnd AIDL API
 Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) or intents api. OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
 
