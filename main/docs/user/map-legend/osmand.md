@@ -34,8 +34,6 @@ import TabItem from '@theme/TabItem';
 <img src={require('@site/static/img/map-legend/osmand-surface-smoothness.png').default} alt="OsmAnd Map style" />
 
 ## Access
-<img src={require('@site/static/img/map-legend/osmand-access.png').default} alt="OsmAnd Map style" />
-
 
 <LegendItem itemsMap={{
         'Access Private' : 'access/access_PrivateColor',
@@ -78,7 +76,6 @@ import TabItem from '@theme/TabItem';
 </LegendItem>
 
 ## Sport, leisure
-<img src={require('@site/static/img/map-legend/osmand-sport-leisure.png').default} alt="OsmAnd Map style" />
 
 <LegendItem itemsMap={{
         'Stadium' : 'sport_leisure/sport_Stadium',
@@ -102,7 +99,6 @@ import TabItem from '@theme/TabItem';
 </LegendItem>
 
 
-
 ## Built-up areas
 <img src={require('@site/static/img/map-legend/osmand-built-up_areas.png').default} alt="OsmAnd Map style" />
 
@@ -112,19 +108,23 @@ import TabItem from '@theme/TabItem';
         'Water Park' : 'built-up-areas/built-up_WaterPark',
         'Theme Park' : 'built-up-areas/built-up_ThemePark',
         'Zoo' : 'built-up-areas/built-up_Zoo',
+        }}>
+</LegendItem>
+
+### Landuse
+<LegendItem itemsMap={{
         'Residential' : 'built-up-areas/built-up_Residential',
         'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
-        'Industrial landuse' : 'built-up-areas/built-up_landuseIndustrialColor',
-        'Garages landuse' : 'built-up-areas/built-up_landuseGaragesColor',
-        'Railway landuse' : 'built-up-areas/built-up_landuseRailway',
+        'Industrial' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Garages' : 'built-up-areas/built-up_landuseGaragesColor',
+        'Railway' : 'built-up-areas/built-up_landuseRailway',
         'Farmyard' : 'built-up-areas/built-up_farmyardColor',
-        'Retail landuse' : 'built-up-areas/built-up_landuseRetailColor',
-        'Commercial landuse' : 'built-up-areas/built-up_landuseCommercialColor',
+        'Retail' : 'built-up-areas/built-up_landuseRetailColor',
+        'Commercial' : 'built-up-areas/built-up_landuseCommercialColor',
         'Abandone place' : 'built-up-areas/built-up_placeAbandoned',
         'Animal Keeping' : 'built-up-areas/built-up_AnimalKeeping',
         }}>
 </LegendItem>
-
 
 
 ### Parking
