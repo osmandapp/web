@@ -106,6 +106,48 @@ import TabItem from '@theme/TabItem';
 ## Built-up areas
 <img src={require('@site/static/img/map-legend/osmand-built-up_areas.png').default} alt="OsmAnd Map style" />
 
+<LegendItem itemsMap={{
+        'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
+        'Monastery' : 'built-up-areas/built-up_Monastery',
+        'Water Park' : 'built-up-areas/built-up_WaterPark',
+        'Theme Park' : 'built-up-areas/built-up_ThemePark',
+        'Zoo' : 'built-up-areas/built-up_Zoo',
+        'Residential' : 'built-up-areas/built-up_Residential',
+        'Residential (Rural)' : 'built-up-areas/built-up_ResidentialRural',
+        'Industrial landuse' : 'built-up-areas/built-up_landuseIndustrialColor',
+        'Garages landuse' : 'built-up-areas/built-up_landuseGaragesColor',
+        'Railway landuse' : 'built-up-areas/built-up_landuseRailway',
+        'Farmyard' : 'built-up-areas/built-up_farmyardColor',
+        'Retail landuse' : 'built-up-areas/built-up_landuseRetailColor',
+        'Commercial landuse' : 'built-up-areas/built-up_landuseCommercialColor',
+        'Abandone place' : 'built-up-areas/built-up_placeAbandoned',
+        'Animal Keeping' : 'built-up-areas/built-up_AnimalKeeping',
+        }}>
+</LegendItem>
+
+
+
+### Parking
+<LegendItem itemsMap={{
+        'Parking' : 'built-up-areas/built-up_Parkig',
+        'Parking Permissive access' : 'built-up-areas/built-up_ParkigPermissive',
+        'Parkig Access Customers' : 'built-up-areas/built-up_ParkigAccessCustomers',
+        'ParkigPaid' : 'built-up-areas/built-up_ParkigPaid',
+        'ParkigBicycle' : 'built-up-areas/built-up_ParkigBicycle',
+        }}>
+</LegendItem>
+
+### Cemetery
+<LegendItem itemsMap={{
+        'Cemetery' : 'built-up-areas/built-up_cemeteryColor',
+        'Christian cemetery' : 'built-up-areas/built-up_cemeteryColorСhristian',
+        'Muslim cemetery' : 'built-up-areas/built-up_cemeteryColorMuslim',
+        'Jewish cemetery' : 'built-up-areas/built-up_cemeteryColorJewish',
+        }}>
+</LegendItem>
+
+
+
 ## Nature
 <img src={require('@site/static/img/map-legend/osmand-nature.png').default} alt="OsmAnd Map style" />
 
