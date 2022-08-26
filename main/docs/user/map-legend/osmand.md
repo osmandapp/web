@@ -100,7 +100,6 @@ import TabItem from '@theme/TabItem';
 
 
 ## Built-up areas
-<img src={require('@site/static/img/map-legend/osmand-built-up_areas.png').default} alt="OsmAnd Map style" />
 
 <LegendItem itemsMap={{
         'Place Of Worship' : 'built-up-areas/built-up_PlaceOfWorship',
@@ -108,6 +107,22 @@ import TabItem from '@theme/TabItem';
         'Water Park' : 'built-up-areas/built-up_WaterPark',
         'Theme Park' : 'built-up-areas/built-up_ThemePark',
         'Zoo' : 'built-up-areas/built-up_Zoo',
+        'Climbing Crag' : 'built-up-areas/built-up_ClimbingCrag',
+        'Landuse Allotments Color' : 'built-up-areas/built-up_landuseAllotmentsColor',
+        'City Wall' : 'built-up-areas/built-up_CityWall',
+        'Fountain' : 'built-up-areas/built-up_Fountain',
+        'Cinema' : 'built-up-areas/built-up_amenityCinema',
+        'Hospital' : 'built-up-areas/built-up_amenityHospital',
+        'Social Facility' : 'built-up-areas/built-up_SocialFacility',
+        'LandFill' : 'built-up-areas/built-up_LandFill',
+        'Spoil heap' : 'built-up-areas/built-up_spoilHeapColor',
+        'Landuse Construction Color' : 'built-up-areas/built-up_landuseConstructionColor',
+        'Prison' : 'built-up-areas/built-up_Prison',
+        'Quarry' : 'built-up-areas/built-up_landuseQuarry',
+        'Military' : 'built-up-areas/built-up_landuseMilitary',
+        'Military Danger Area' : 'built-up-areas/built-up_landuseMilitaryDangerArea',
+        'Power Plant' : 'built-up-areas/built-up_landusePowerPlant',
+        'Power Substation' : 'built-up-areas/built-up_landusePowerSubstation',
         }}>
 </LegendItem>
 
@@ -146,6 +161,24 @@ import TabItem from '@theme/TabItem';
         }}>
 </LegendItem>
 
+### Education
+<LegendItem itemsMap={{
+        'KinderGarten' : 'built-up-areas/built-up_amenityKinderGarten',
+        'School' : 'built-up-areas/built-up_amenitySchool',
+        'College' : 'built-up-areas/built-up_amenityCollege',
+        'University' : 'built-up-areas/built-up_amenityUniversity',
+        'Training' : 'built-up-areas/built-up_amenityTraining',
+        'Library' : 'built-up-areas/built-up_amenityLibrary',
+        }}>
+</LegendItem>
+
+### Historic
+<LegendItem itemsMap={{
+        'Archaeological Site' : 'built-up-areas/built-up_ArchaeologicalSite',
+        'Historic Ruins' : 'built-up-areas/built-up_HistoricRuins',
+        'Palaeontological Site' : 'built-up-areas/built-up_PalaeontologicalSite',
+        }}>
+</LegendItem>
 
 
 ## Nature
