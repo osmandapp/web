@@ -5,6 +5,7 @@ import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
+import GPXCreator from "../../../util/GPXCreator";
 
 
 const PointsTab = ({width}) => {
@@ -19,14 +20,44 @@ const PointsTab = ({width}) => {
     function deletePoint(index) {
         let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
         currentTrack.points.splice(index, 1);
+        currentTrack.trk.forEach(t => {
+            t.forEach(s => {
+                let ind = s.points.findIndex(p => p.id === index);
+                if (ind !== -1) {
+                    s.points.splice(ind, 1);
+                }
+            })
+        })
         updateTrack(currentTrack);
         TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
-    function updateTrack(currentTrack) {
-        currentTrack.points = Utils.getPointsDist(currentTrack.points);
-        currentTrack.gpx = Utils.getGpx(currentTrack);
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+    const onDragEnd = result => {
+        if (!result.destination) {
+            return;
+        }
+        reorder(result.source.index, result.destination.index);
+    }
+
+    const reorder = (startIndex, endIndex) => {
+        let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        const [removed] = currentTrack.points.splice(startIndex, 1);
+        currentTrack.points.splice(endIndex, 0, removed);
+        currentTrack.trk.forEach(t => {
+            let removed;
+            t.forEach(s => {
+                let ind = s.points.findIndex(p => p.id === startIndex);
+                if (ind !== -1) {
+                    removed = s.points.splice(ind, 1);
+                }
+            })
+            t.forEach(s => {
+                let ind = s.points.findIndex(p => p.id === endIndex);
+                s.points.splice(ind, 0, removed[0]);
+            })
+        })
+        updateTrack(currentTrack);
+        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     const getItemStyle = (isDragging, draggableStyle) => ({
@@ -36,6 +67,17 @@ const PointsTab = ({width}) => {
         borderBottom: '0.5px solid gray',
         ...draggableStyle
     });
+
+    function updateTrack(currentTrack) {
+        currentTrack.points = Utils.getPointsDist(currentTrack.points);
+        currentTrack.gpx = GPXCreator.createGpx(currentTrack);
+        const file = new File([currentTrack.gpx], `${currentTrack.name}.gpx`, {
+            type: "gpx",
+        });
+        Utils.getInfoFile(currentTrack, file).then();
+        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
+    }
 
     const PointRow = () => ({point, index}) => {
         return (
@@ -56,7 +98,7 @@ const PointsTab = ({width}) => {
                         <ListItemText>
                             <Typography variant="inherit" noWrap>
                                 Point - {index + 1}<br/>
-                                {point.dist === 0 ? "start" : Math.round(point.dist / 100) / 10.0 + " km"}
+                                {point.dist === 0 ? "start" : Math.round(point.dist) + " m"}
                             </Typography>
                         </ListItemText>
                         <ListItemAvatar>
@@ -70,21 +112,6 @@ const PointsTab = ({width}) => {
                     </MenuItem>
                 )}
             </Draggable>)
-    }
-
-    const onDragEnd = result => {
-        if (!result.destination) {
-            return;
-        }
-        reorder(result.source.index, result.destination.index);
-    }
-
-    const reorder = (startIndex, endIndex) => {
-        let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        const [removed] = currentTrack.points.splice(startIndex, 1)
-        currentTrack.points.splice(endIndex, 0, removed)
-        updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localClientsTracks);
     }
 
     return (<DragDropContext onDragEnd={onDragEnd}><Box width={width}>

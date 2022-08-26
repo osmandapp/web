@@ -28,6 +28,7 @@ export default function MapContextMenu() {
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
+    const [prevTrack, setPrevTrack] = useState(null);
 
     const divContainer = useRef(null);
 
@@ -38,23 +39,30 @@ export default function MapContextMenu() {
         }
     });
 
+    function selectedFileWasChanged() {
+        return !ctx.selectedGpxFile || ctx.selectedGpxFile && ctx.selectedGpxFile.name && ctx.selectedGpxFile.name !== prevTrack.name;
+    }
+
     useEffect(() => {
-        if (ctx.currentObjectType) {
-            let obj = (ctx.currentObjectType === 'weather' && ctx.weatherPoint)
-                ? new WeatherTabList().create(ctx)
-                : ctx.selectedGpxFile
-                    ? new TrackTabList().create(ctx)
-                    : null;
-            if (obj) {
-                setShowContextMenu(true);
-                setTabsObj(obj);
-                setValue(obj.defaultTab);
+        if (!prevTrack || selectedFileWasChanged()) {
+            if (ctx.currentObjectType) {
+                setPrevTrack(ctx.selectedGpxFile)
+                let obj = (ctx.currentObjectType === 'weather' && ctx.weatherPoint)
+                    ? new WeatherTabList().create(ctx)
+                    : ctx.selectedGpxFile
+                        ? new TrackTabList().create(ctx)
+                        : null;
+                if (obj) {
+                    setShowContextMenu(true);
+                    setTabsObj(obj);
+                    setValue(obj.defaultTab);
+                }
+            } else {
+                setTabsObj(null);
+                setShowContextMenu(false);
             }
-        } else {
-            setTabsObj(null);
-            setShowContextMenu(false);
         }
-    }, [ctx.selectedGpxFile, ctx.currentObjectType]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile]);
 
     function closeContextMenu() {
         setShowContextMenu(false);

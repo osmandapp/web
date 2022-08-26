@@ -3,6 +3,7 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
 import MarkerIcon from "../MarkerIcon";
+import Utils from "../../util/Utils";
 
 
 export default function LocalClientTrackLayer() {
@@ -28,6 +29,26 @@ export default function LocalClientTrackLayer() {
             if (fitBounds) {
                 map.fitBounds(e.target.getBounds());
             }
+            if (layer._info.meta) {
+                track.metadata = layer._info.meta;
+            }
+
+            if (layer._info.trk.length > 0) {
+                track.trk = layer._info.trk;
+            }
+
+            if (layer._info.rte.length > 0) {
+                track.rte = layer._info.rte;
+            }
+
+            if (layer._info.wpt) {
+                track.wpt = layer._info.wpt;
+            }
+
+            if (layer._info.points.length > 0) {
+                track.points = Utils.getPointsDist(layer._info.points);
+            }
+            ctx.setSelectedGpxFile(Object.assign({}, track));
         }).addTo(map);
 
         layers[track.name] = {layer: layer, points: Object.assign([], track.points), active: true};
@@ -42,19 +63,11 @@ export default function LocalClientTrackLayer() {
         }).addTo(map);
     }
 
-    function showSelectedTrackOnMap() {
-        let currLayer = layers[ctx.selectedGpxFile.name];
-        if (currLayer) {
-            map.fitBounds(currLayer.layer._info.bounds);
-        }
-    }
-
     function showSelectedPointOnMap() {
         if (selectedPointMarker) {
             map.removeLayer(selectedPointMarker.marker);
         }
         let marker = createPointMarkerOnMap();
-        map.fitBounds(L.latLngBounds([marker.getLatLng()]), {maxZoom: 11});
         setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
     }
 
@@ -62,8 +75,6 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.selected) {
             if (ctx.selectedGpxFile.showPoint) {
                 showSelectedPointOnMap();
-            } else {
-                showSelectedTrackOnMap();
             }
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);

@@ -57,7 +57,8 @@ export default function CloudTrackItem({file}) {
                 newGpxFiles[file.name].srtmSummary = data.info;
                 setProgressVisible(false);
             }
-            ctx.setSelectedGpxFile(newGpxFiles[file.name]);
+            //ctx.setSelectedGpxFile(newGpxFiles[file.name]);
+            ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
         }
     }
 

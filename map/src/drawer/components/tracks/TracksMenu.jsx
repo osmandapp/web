@@ -133,8 +133,10 @@ export default function TracksMenu() {
         Object.values(ctx.localClientsTracks).forEach((item) => {
             if (item.selected) {
                 tracks++;
-                dist += item.points[item.points.length - 1].dist;
-                seg += item.points.length - 1;
+                if (item.points.length > 0) {
+                    dist += item.points[item.points.length - 1].dist;
+                    seg += item.points.length - 1;
+                }
             }
         });
 

@@ -20,11 +20,12 @@ async function addTrackToMap(ctx, file, map) {
         async: true,
         marker_options: markerOptions
     }).on('loaded', function (e) {
-        let trackPoints = Object.values(e.layers._layers)[0]._latlngs;
-        trackPoints.forEach((point) => {
-            let pointObj = {lat: point.lat, lng: point.lng};
-            file.points.push(pointObj);
-        })
+        // let trackPoints = Object.values(e.layers._layers)[0]._latlngs;
+        // trackPoints.forEach((point) => {
+        //     let pointObj = {lat: point.lat, lng: point.lng};
+        //     file.points.push(pointObj);
+        // })
+        ctx.setSelectedGpxFile(Object.assign({}, file));
         map.fitBounds(e.target.getBounds());
     }).addTo(map);
     file.points = [];
@@ -39,15 +40,6 @@ function removeLayerFromMap(file, map) {
 const TrackLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
-
-    useEffect(() => {
-        if (ctx.selectedGpxFile?.summary) {
-            map.fitBounds([
-                [ctx.selectedGpxFile.summary.top, ctx.selectedGpxFile.summary.right],
-                [ctx.selectedGpxFile.summary.bottom, ctx.selectedGpxFile.summary.left]
-            ])
-        }
-    }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
     useEffect(() => {
         let filesMap = ctx.gpxFiles ? ctx.gpxFiles : {};

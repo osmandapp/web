@@ -8,7 +8,15 @@ function saveTracks(tracks) {
     if (tracks.length > 0) {
         let res = [];
         tracks.forEach(function (track) {
-            res.push({name: track.name, points: track.points, selected: false, gpx: track.gpx})
+            res.push({
+                name: track.name,
+                points: track.points,
+                selected: false,
+                content: track.content,
+                gpx: track.gpx,
+                srtmSummary: track.srtmSummary,
+                summary: track.summary
+            })
         })
         localStorage.setItem('localClientsTracks', JSON.stringify(res));
     }

@@ -1,6 +1,3 @@
-import {Point} from "gpx-builder/dist/builder/BaseBuilder/models";
-import {BaseBuilder, buildGPX} from "gpx-builder";
-
 async function fetchUtil(url, options) {
 
     const fetchData = async () => {
@@ -88,6 +85,24 @@ function getPointsDist(list) {
     return list;
 }
 
+async function getInfoFile(gpxLayer, file) {
+    let formData = new FormData();
+    formData.append('file', file);
+    const response = await fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-analysis`, {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+    });
+
+    if (response.ok) {
+        let data = await response.json();
+        if (data.info) {
+            gpxLayer.summary = data.info.analysis;
+            gpxLayer.srtmSummary = data.info.srtmAnalysis;
+        }
+    }
+}
+
 async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -102,7 +117,6 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
         if (data.info) {
             gpxLayer.summary = data.info.analysis;
             gpxLayer.srtmSummary = data.info.srtmAnalysis;
-            gpxLayer.metadata = data.info.metadata;
         }
         newinfo[gpxLayer.name] = gpxLayer;
         gpxFiles[gpxLayer.name] = gpxLayer;
@@ -113,14 +127,6 @@ async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
     }
 }
 
-function getGpx(track) {
-    let points = [];
-    track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
-    const gpxData = new BaseBuilder();
-    gpxData.setSegmentPoints(points);
-    return buildGPX(gpxData.toObject());
-}
-
 const Utils = {
     fetchUtil,
     fetchUtilLoad,
@@ -128,7 +134,7 @@ const Utils = {
     getDistance,
     uploadFile,
     getPointsDist,
-    getGpx
+    getInfoFile
 };
 
 export default Utils;

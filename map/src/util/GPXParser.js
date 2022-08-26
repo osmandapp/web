@@ -37,6 +37,7 @@
  */
 
 import "../assets/css/gpx.css"
+import {Point, Segment, Track} from "gpx-builder/dist/builder/BaseBuilder/models";
 
 var L = L || require('leaflet');
 
@@ -377,6 +378,11 @@ L.GPX = L.FeatureGroup.extend({
     _init_info: function () {
         this._info = {
             name: null,
+            points: [],
+            meta: null,
+            trk: [],
+            rte: [],
+            wpt: null,
             length: 0.0,
             elevation: {gain: 0.0, loss: 0.0, max: 0.0, min: Infinity, _points: []},
             speed: {max: 0.0, _points: []},
@@ -433,106 +439,161 @@ L.GPX = L.FeatureGroup.extend({
     },
 
     _parse_gpx_data: function (xml, options) {
-        var i, el, layers = [];
+        let layers = [];
 
-        var name = xml.getElementsByTagName('name');
-        if (name.length > 0) {
-            this._info.name = name[0].textContent;
-        }
-        var desc = xml.getElementsByTagName('desc');
-        if (desc.length > 0) {
-            this._info.desc = desc[0].textContent;
-        }
-        var author = xml.getElementsByTagName('author');
-        if (author.length > 0) {
-            this._info.author = author[0].textContent;
-        }
-        var copyright = xml.getElementsByTagName('copyright');
-        if (copyright.length > 0) {
-            this._info.copyright = copyright[0].textContent;
-        }
+        let parseElements = options.gpx_options.parseElements;
 
-        var parseElements = options.gpx_options.parseElements;
-
-        if (parseElements.indexOf('track') > -1) {
-            // tracks are <trkpt> tags in one or more <trkseg> sections in each <trk>
-            var tracks = xml.getElementsByTagName('trk');
-            for (i = 0; i < tracks.length; i++) {
-                var track = tracks[i];
-                var polyline_options = this._extract_styling(track);
-
-                if (options.gpx_options.joinTrackSegments) {
-                    layers = layers.concat(this._parse_segment(track, options, polyline_options, 'trkpt'));
-                } else {
-                    var segments = track.getElementsByTagName('trkseg');
-                    for (let j = 0; j < segments.length; j++) {
-                        layers = layers.concat(this._parse_segment(segments[j], options, polyline_options, 'trkpt'));
-                    }
-                }
-            }
-        }
-
-        if (parseElements.indexOf('route') > -1) {
-            if (parseElements.indexOf('waypoint') !== -1) {
-                el = xml.getElementsByTagName('rtept');
-                for (i = 1; i < el.length - 1; i++) {
-
-                    let ll = new L.LatLng(
-                        el[i].getAttribute('lat'),
-                        el[i].getAttribute('lon'));
-
-                    let pointIcon = L.icon({
-                        iconUrl: '/map/images/map_icons/circle.svg',
-                        pointMatchers: [],
-                        iconSize: [10, 10],
-                        clickable: false
-                    });
-
-                    let marker = new L.Marker(ll, {
-                        icon: pointIcon
-                    });
-                    layers.push(marker);
-                }
-            } else {
-                // routes are <rtept> tags inside <rte> sections
-                var routes = xml.getElementsByTagName('rte');
-                for (i = 0; i < routes.length; i++) {
-                    layers = layers.concat(this._parse_segment(routes[i], options, {}, 'rtept'));
-                }
-            }
-        }
+        this._parseMETA(xml);
+        layers = this._parseRTE(parseElements, xml, layers, options);
+        layers = this._parseTRK(parseElements, xml, layers, options);
+        layers = this._parseWPT(parseElements, xml, layers, options);
 
         this._info.hr.avg = Math.round(this._info.hr._total / this._info.hr._points.length);
         this._info.cad.avg = Math.round(this._info.cad._total / this._info.cad._points.length);
         this._info.atemp.avg = Math.round(this._info.atemp._total / this._info.atemp._points.length);
 
-        // parse waypoints and add markers for each of them
+        if (layers.length > 1) {
+            return new L.FeatureGroup(layers);
+        } else if (layers.length === 1) {
+            return layers[0];
+        }
+    },
+
+    _parseMETA: function (xml) {
+        let metaTag = xml.getElementsByTagName('metadata');
+        if (metaTag.length > 0) {
+            this._info.meta = {};
+            for (const [key, value] of Object.entries(metaTag[0].children)) {
+                if (key === 'extensions') {
+                    let extTag = metaTag.getElementsByTagName('extensions');
+                    if (extTag.length > 0) {
+                        this._info.meta.extensions = {};
+                        for (const [key, value] of Object.entries(extTag[0].children)) {
+                            this._info.meta.extensions[`${extTag[0].children[key].nodeName}`] = extTag[0].children[key].textContent;
+                        }
+                    }
+                } else {
+                    this._info.meta[`${metaTag[0].children[key].nodeName}`] = metaTag[0].children[key].textContent;
+                }
+            }
+        }
+
+        // let name = metaTag.getElementsByTagName('name');
+        // if (name.length > 0) {
+        //     this._info.meta.name = name[0].textContent;
+        // }
+        // let desc = metaTag.getElementsByTagName('desc');
+        // if (desc.length > 0) {
+        //     this._info.meta.desc = desc[0].textContent;
+        // }
+        // let author = metaTag.getElementsByTagName('author');
+        // if (author.length > 0) {
+        //     this._info.meta.author = author[0].textContent;
+        // }
+        // let copyright = metaTag.getElementsByTagName('copyright');
+        // if (copyright.length > 0) {
+        //     this._info.meta.copyright = copyright[0].textContent;
+        // }
+    },
+
+    _parseTRK: function (parseElements, xml, layers, options) {
+        if (parseElements.indexOf('track') > -1) {
+            // tracks are <trkpt> tags in one or more <trkseg> sections in each <trk>
+            let tracks = xml.getElementsByTagName('trk');
+            for (let i = 0; i < tracks.length; i++) {
+                let track = tracks[i];
+                let polyline_options = this._extract_styling(track);
+                let lastId = 0;
+                let pointsAll = [];
+
+                let segments = track.getElementsByTagName('trkseg');
+                for (let j = 0; j < segments.length; j++) {
+                    let points = this._parse_points(segments[j], options, polyline_options, 'trkpt', lastId);
+                    pointsAll = pointsAll.concat(points)
+                    lastId = points[points.length - 1].id;
+                    if (this._info.trk[i]) {
+                        this._info.trk[i].push({points: points});
+                    } else {
+                        this._info.trk[i] = [];
+                        this._info.trk[i].push({points: points});
+                    }
+                }
+
+                if (options.gpx_options.joinTrackSegments) {
+                    layers = layers.concat(this._createLayers(pointsAll, track, options, 'trkpt', polyline_options, true));
+                } else {
+                    for (let j = 0; j < segments.length; j++) {
+                        layers = layers.concat(this._createLayers(this._info.trk[j].points, segments[j], options, 'trkpt', polyline_options, true));
+                    }
+                }
+            }
+        }
+        return layers;
+    },
+
+    _parseRTE: function (parseElements, xml, layers, options) {
+        if (parseElements.indexOf('route') > -1) {
+            if (parseElements.indexOf('waypoint') !== -1) {
+                let el = xml.getElementsByTagName('rtept');
+                for (let i = 0; i < el.length; i++) {
+                    this._createRteMarker(el[i], layers);
+                }
+
+                this._parseRtePoints(xml, options, layers, false);
+            } else {
+                // routes are <rtept> tags inside <rte> sections
+                this._parseRtePoints(xml, options, layers, true);
+            }
+        }
+        return layers;
+    },
+
+    _parseWPT: function (parseElements, xml, layers, options) {
         if (parseElements.indexOf('waypoint') > -1) {
-            el = xml.getElementsByTagName('wpt');
-            for (i = 0; i < el.length; i++) {
+            let el = xml.getElementsByTagName('wpt');
+            let pointsAll = null;
+            for (let i = 0; i < el.length; i++) {
                 let ll = new L.LatLng(
                     el[i].getAttribute('lat'),
                     el[i].getAttribute('lon'));
 
+                ll.meta = {name: null, time: null, cmt: null, desc: null, symKey: null, typeKey: null};
+                ll.id = i;
+
                 let nameEl = el[i].getElementsByTagName('name');
                 let name = nameEl.length > 0 ? nameEl[0].textContent : '';
+                ll.meta.name = name;
 
                 let timeEl = el[i].getElementsByTagName('time');
                 let time = timeEl.length > 0 ? timeEl[0].textContent : '';
+                ll.meta.time = time;
 
                 let cmtEl = el[i].getElementsByTagName('cmt');
                 let cmt = cmtEl.length > 0 ? cmtEl[0].textContent : '';
+                ll.meta.cmt = cmt;
 
                 let descEl = el[i].getElementsByTagName('desc');
                 let desc = descEl.length > 0 ? descEl[0].textContent : '';
+                ll.meta.desc = desc;
 
                 let symEl = el[i].getElementsByTagName('sym');
                 let symKey = symEl.length > 0 ? symEl[0].textContent : null;
+                ll.meta.symKey = symKey;
 
                 let typeEl = el[i].getElementsByTagName('type');
                 let typeKey = typeEl.length > 0 ? typeEl[0].textContent : 'Favorites';
+                ll.meta.typeKey = typeKey;
 
                 let extEl = el[i].getElementsByTagName('extensions');
+
+                if (extEl.length > 0) {
+                    ll.meta.extensions = {}
+                    for (const [key, value] of Object.entries(extEl[0].children)) {
+                        ll.meta.extensions[extEl[0].children[key].nodeName] = extEl[0].children[key].textContent;
+                    }
+                }
+
+
                 let address;
                 let icon;
                 let background;
@@ -549,12 +610,15 @@ L.GPX = L.FeatureGroup.extend({
                     background = backgroundEl.length > 0 ? backgroundEl[0].textContent : '';
 
                     let colorEl = el[i].getElementsByTagName('osmand:color');
-                    color = colorEl.length > 0 ?  this._hexToArgb(colorEl[0].textContent) : '';
+                    color = colorEl.length > 0 ? this._hexToArgb(colorEl[0].textContent) : '';
 
                     let hiddenEl = el[i].getElementsByTagName('osmand:hidden');
                     hidden = hiddenEl.length > 0 ? hiddenEl[0].textContent : 'false';
                 }
-
+                if (!pointsAll) {
+                    pointsAll = {};
+                }
+                pointsAll[ll.id] = ll;
                 /*
                  * Add waypoint marker based on the waypoint symbol key.
                  *
@@ -583,9 +647,9 @@ L.GPX = L.FeatureGroup.extend({
                     title: name,
                     icon: symIcon,
                     group: typeKey,
-                    time : time,
-                    address : address,
-                    cmt : cmt
+                    time: time,
+                    address: address,
+                    cmt: cmt
                 });
                 marker.bindPopup("<b>" + name + "</b>" + (desc.length > 0 ? '<br>' + desc : '')).openPopup();
                 this.fire('addpoint', {point: marker, point_type: 'waypoint', element: el[i]});
@@ -594,7 +658,7 @@ L.GPX = L.FeatureGroup.extend({
                     layers.push(marker);
                 } else {
                     if (options.group.length > 0) {
-                        options.group.forEach(function(item) {
+                        options.group.forEach(function (item) {
                             if (item.type === typeKey) {
                                 layers.push(marker);
                             }
@@ -611,12 +675,45 @@ L.GPX = L.FeatureGroup.extend({
                     }
                 }
             }
+            this._info.wpt = pointsAll;
         }
+        return layers;
+    },
 
-        if (layers !== undefined && layers.length > 1) {
-            return new L.FeatureGroup(layers);
-        } else if (layers !== undefined && layers.length === 1) {
-            return layers[0];
+    _createRteMarker: function (el, layers) {
+        let ll = new L.LatLng(
+            el.getAttribute('lat'),
+            el.getAttribute('lon'));
+        let pointIcon = L.icon({
+            iconUrl: '/map/images/map_icons/circle.svg',
+            pointMatchers: [],
+            iconSize: [10, 10],
+            clickable: false
+        });
+
+        let marker = new L.Marker(ll, {
+            icon: pointIcon
+        });
+        layers.push(marker);
+    },
+
+    _parseRtePoints: function (xml, options, layers, addLayer) {
+        let routes = xml.getElementsByTagName('rte');
+        let pointsAll = [];
+        let lastId = 0;
+        for (let i = 0; i < routes.length; i++) {
+            let points = this._parse_points(routes[i], options, {}, 'rtept', lastId);
+            pointsAll = pointsAll.concat(points)
+            lastId = points[points.length - 1].id;
+            if (this._info.rte[i]) {
+                this._info.rte[i].push({points: points});
+            } else {
+                this._info.rte[i] = [];
+                this._info.rte[i].push({points: points});
+            }
+            if (addLayer) {
+                layers = layers.concat(this._createLayers(pointsAll, routes[i], options, 'rtept', {}, false));
+            }
         }
     },
 
@@ -668,25 +765,25 @@ L.GPX = L.FeatureGroup.extend({
             })
         } else {
             if (wptIcons && symKey && wptIcons[symKey]) {
-                return  wptIcons[symKey];
+                return wptIcons[symKey];
             } else if (wptIconsType && typeKey && wptIconsType[typeKey]) {
-                return  wptIconsType[typeKey];
+                return wptIconsType[typeKey];
             } else if (wptIconUrls && symKey && wptIconUrls[symKey]) {
-                return  new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
+                return new L.GPXTrackIcon({iconUrl: wptIconUrls[symKey]});
             } else if (wptIconTypeUrls && typeKey && wptIconTypeUrls[typeKey]) {
-                return  new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
+                return new L.GPXTrackIcon({iconUrl: wptIconTypeUrls[typeKey]});
             } else if (ptMatchers.length > 0) {
                 for (var j = 0; j < ptMatchers.length; j++) {
                     if (ptMatchers[j].regex.test(name)) {
-                        return  ptMatchers[j].icon;
+                        return ptMatchers[j].icon;
                     }
                 }
             } else if (wptIcons && wptIcons['']) {
-                return  wptIcons[''];
+                return wptIcons[''];
             } else if (wptIconUrls && wptIconUrls['']) {
-                return  new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
+                return new L.GPXTrackIcon({iconUrl: wptIconUrls['']});
             } else {
-                return  L.divIcon({
+                return L.divIcon({
                     html: `
                               <div>
                                   ${svg}
@@ -715,7 +812,155 @@ L.GPX = L.FeatureGroup.extend({
         return `rgb(${red} ${green} ${blue}${alphaString})`;
     },
 
-    _parse_segment: function (line, options, polyline_options, tag) {
+    _parse_points: function (line, options, polyline_options, tag, lastId) {
+        var el = line.getElementsByTagName(tag);
+        if (!el.length) return [];
+
+        var coords = [];
+        var markers = [];
+        var layers = [];
+        var last = null;
+
+        for (var i = 0; i < el.length; i++) {
+            var _, ll = new L.LatLng(
+                el[i].getAttribute('lat'),
+                el[i].getAttribute('lon'));
+            ll.meta = {};
+            ll.id = i + lastId;
+            _ = el[i].getElementsByTagName('time');
+            if (_.length > 0) {
+                ll.meta.time = new Date(Date.parse(_[0].textContent));
+            }
+            var time_diff = last != null ? Math.abs(ll.meta.time - last.meta.time) : 0;
+
+            _ = el[i].getElementsByTagName('ele');
+            if (_.length > 0) {
+                ll.meta.ele = parseFloat(_[0].textContent);
+            } else {
+                // If the point doesn't have an <ele> tag, assume it has the same
+                // elevation as the point before it (if it had one).
+                if (last != null && last.meta.ele) {
+                    ll.meta.ele = last.meta.ele;
+                }
+            }
+            var ele_diff = last != null ? ll.meta.ele - last.meta.ele : 0;
+            var dist_3d = last != null ? this._dist3d(last, ll) : 0;
+
+            if (tag === 'trkpt') {
+                this._info.points.push({lat: ll.lat, lng: ll.lng, meta: ll.meta});
+            }
+            _ = el[i].getElementsByTagName('name');
+            if (_.length > 0) {
+                var name = _[0].textContent;
+                var ptMatchers = options.marker_options.pointMatchers || [];
+
+                for (var j = 0; j < ptMatchers.length; j++) {
+                    if (ptMatchers[j].regex.test(name)) {
+                        markers.push({label: name, coords: ll, icon: ptMatchers[j].icon, element: el[i]});
+                        break;
+                    }
+                }
+            }
+            _ = el[i].getElementsByTagName('extensions');
+            if (_.length > 0) {
+                ll.meta.extensions = {}
+                for (const [key, value] of Object.entries(_[0].children)) {
+                    ll.meta.extensions[`${_[0].children[key].nodeName}`] = _[0].children[key].textContent;
+                }
+            }
+            _ = el[i].getElementsByTagNameNS('*', 'hr');
+            if (_.length > 0) {
+                ll.meta.hr = parseInt(_[0].textContent);
+                this._info.hr._points.push([this._info.length, ll.meta.hr]);
+                this._info.hr._total += ll.meta.hr;
+            }
+
+            _ = el[i].getElementsByTagNameNS('*', 'cad');
+            if (_.length > 0) {
+                ll.meta.cad = parseInt(_[0].textContent);
+                this._info.cad._points.push([this._info.length, ll.meta.cad]);
+                this._info.cad._total += ll.meta.cad;
+            }
+
+            _ = el[i].getElementsByTagNameNS('*', 'atemp');
+            if (_.length > 0) {
+                ll.meta.atemp = parseInt(_[0].textContent);
+                this._info.atemp._points.push([this._info.length, ll.meta.atemp]);
+                this._info.atemp._total += ll.meta.atemp;
+            }
+
+            if (ll.meta.ele > this._info.elevation.max) {
+                this._info.elevation.max = ll.meta.ele;
+            }
+            if (ll.meta.ele < this._info.elevation.min) {
+                this._info.elevation.min = ll.meta.ele;
+            }
+            this._info.elevation._points.push([this._info.length, ll.meta.ele]);
+
+            if (ll.meta.speed > this._info.speed.max) {
+                this._info.speed.max = ll.meta.speed;
+            }
+            this._info.speed._points.push([this._info.length, ll.meta.speed]);
+
+            if ((last == null) && (this._info.duration.start == null)) {
+                this._info.duration.start = ll.meta.time;
+            }
+            this._info.duration.end = ll.meta.time;
+            this._info.duration.total += time_diff;
+            if (time_diff < options.max_point_interval) {
+                this._info.duration.moving += time_diff;
+            }
+
+            this._info.length += dist_3d;
+
+            if (ele_diff > 0) {
+                this._info.elevation.gain += ele_diff;
+            } else {
+                this._info.elevation.loss += Math.abs(ele_diff);
+            }
+
+            last = ll;
+            coords.push(ll);
+        }
+        return coords;
+    },
+
+    _createLayers: function (coords, line, options, tag, polyline_options, addStartEnd) {
+        let layers = [];
+        //let markers = [];
+        let el = line.getElementsByTagName(tag);
+        let l = new L.Polyline(coords, this._extract_styling(line, polyline_options, options.polyline_options));
+        this.fire('addline', {line: l, element: line});
+        layers.push(l);
+
+        if (addStartEnd) {
+            if (options.marker_options.startIcon || options.marker_options.startIconUrl) {
+                // add start pin
+                let startMarker = new L.Marker(coords[0], {
+                    zIndexOffset: 1000,
+                    clickable: options.marker_options.clickable,
+                    icon: options.marker_options.startIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.startIconUrl})
+                });
+                this.fire('addpoint', {point: startMarker, point_type: 'start', element: el[0]});
+                layers.push(startMarker);
+            }
+
+            if (options.marker_options.endIcon || options.marker_options.endIconUrl) {
+                // add end pin
+                let endMarker = new L.Marker(coords[coords.length - 1], {
+                    zIndexOffset: 1000,
+                    clickable: options.marker_options.clickable,
+                    icon: options.marker_options.endIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.endIconUrl})
+                });
+                this.fire('addpoint', {point: endMarker, point_type: 'end', element: el[el.length - 1]});
+                layers.push(endMarker);
+            }
+        }
+
+        return layers;
+    },
+
+    _parse_segment: function (line, options, polyline_options, tag, segmentObj) {
         var el = line.getElementsByTagName(tag);
         if (!el.length) return [];
 
@@ -733,8 +978,6 @@ L.GPX = L.FeatureGroup.extend({
             _ = el[i].getElementsByTagName('time');
             if (_.length > 0) {
                 ll.meta.time = new Date(Date.parse(_[0].textContent));
-            } else {
-                ll.meta.time = new Date('1970-01-01T00:00:00');
             }
             var time_diff = last != null ? Math.abs(ll.meta.time - last.meta.time) : 0;
 
@@ -756,7 +999,7 @@ L.GPX = L.FeatureGroup.extend({
                 // speed in meter per second
                 ll.meta.speed = time_diff > 0 ? 1000.0 * dist_3d / time_diff : 0;
             }
-
+            //this._info.points.push({lat: ll.lat, lng: ll.lng, meta: ll.meta});
             _ = el[i].getElementsByTagName('name');
             if (_.length > 0) {
                 var name = _[0].textContent;
@@ -825,42 +1068,6 @@ L.GPX = L.FeatureGroup.extend({
             coords.push(ll);
         }
 
-        // add track
-        var l = new L.Polyline(coords, this._extract_styling(line, polyline_options, options.polyline_options));
-        this.fire('addline', {line: l, element: line});
-        layers.push(l);
-
-        if (options.marker_options.startIcon || options.marker_options.startIconUrl) {
-            // add start pin
-            let startMarker = new L.Marker(coords[0], {
-                clickable: options.marker_options.clickable,
-                icon: options.marker_options.startIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.startIconUrl})
-            });
-            this.fire('addpoint', {point: startMarker, point_type: 'start', element: el[0]});
-            layers.push(startMarker);
-        }
-
-        if (options.marker_options.endIcon || options.marker_options.endIconUrl) {
-            // add end pin
-            let endMarker = new L.Marker(coords[coords.length - 1], {
-                clickable: options.marker_options.clickable,
-                icon: options.marker_options.endIcon || new L.GPXTrackIcon({iconUrl: options.marker_options.endIconUrl})
-            });
-            this.fire('addpoint', {point: endMarker, point_type: 'end', element: el[el.length - 1]});
-            layers.push(endMarker);
-        }
-
-        // add named markers
-        for (let i = 0; i < markers.length; i++) {
-            let marker = new L.Marker(markers[i].coords, {
-                clickable: options.marker_options.clickable,
-                title: markers[i].label,
-                icon: markers[i].icon
-            });
-            this.fire('addpoint', {point: marker, point_type: 'label', element: markers[i].element});
-            layers.push(marker);
-        }
-
         return layers;
     },
 
@@ -870,17 +1077,17 @@ L.GPX = L.FeatureGroup.extend({
         if (e.length > 0) {
             var _ = e[0].getElementsByTagName('color');
             if (_.length > 0) style.color = '#' + _[0].textContent;
-             _ = e[0].getElementsByTagName('opacity');
+            _ = e[0].getElementsByTagName('opacity');
             if (_.length > 0) style.opacity = _[0].textContent;
-             _ = e[0].getElementsByTagName('weight');
+            _ = e[0].getElementsByTagName('weight');
             if (_.length > 0) style.weight = _[0].textContent;
-             _ = e[0].getElementsByTagName('linecap');
+            _ = e[0].getElementsByTagName('linecap');
             if (_.length > 0) style.lineCap = _[0].textContent;
-             _ = e[0].getElementsByTagName('linejoin');
+            _ = e[0].getElementsByTagName('linejoin');
             if (_.length > 0) style.lineJoin = _[0].textContent;
-             _ = e[0].getElementsByTagName('dasharray');
+            _ = e[0].getElementsByTagName('dasharray');
             if (_.length > 0) style.dashArray = _[0].textContent;
-             _ = e[0].getElementsByTagName('dashoffset');
+            _ = e[0].getElementsByTagName('dashoffset');
             if (_.length > 0) style.dashOffset = _[0].textContent;
         }
         return this._merge_objs(style, overrides)

@@ -93,10 +93,13 @@ export default function LocalTrackGroup() {
             reader.addEventListener('load', (event) => {
                 let src = event.target.result;
                 let gpxLayer = {};
-                gpxLayer.name = 'local:' + file.name;
-                gpxLayer.localContent = src;
-                gpxLayer.local = true;
-                Utils.uploadFile(ctx.gpxFiles, ctx.setGpxFiles, ctx, gpxLayer, file);
+                gpxLayer.name = TracksManager.prepareName(file.name);
+                gpxLayer.content = src;
+                gpxLayer.gpx = src;
+                Utils.getInfoFile(gpxLayer, file);
+                ctx.localClientsTracks.push(gpxLayer);
+                ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+                TracksManager.saveTracks(ctx.localClientsTracks);
             });
             reader.readAsText(file);
         });
