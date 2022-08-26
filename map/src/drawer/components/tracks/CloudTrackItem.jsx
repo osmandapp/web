@@ -37,7 +37,6 @@ export default function CloudTrackItem({file}) {
             ctx.setGpxFiles(newGpxFiles);
             if (file.details?.analysis) {
                 newGpxFiles[file.name].summary = file.details.analysis;
-                newGpxFiles[file.name].metadata = file.details.metadata;
             }
 
             //loadGpxInfo

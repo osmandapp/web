@@ -44,6 +44,10 @@ export default function MapContextMenu() {
     }
 
     useEffect(() => {
+        if (!ctx.selectedGpxFile) {
+            setPrevTrack(null);
+        }
+
         if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
                 setPrevTrack(ctx.selectedGpxFile)
