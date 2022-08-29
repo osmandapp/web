@@ -154,9 +154,6 @@
 	
    <tile_source name="GeoVelo" url_template="https://tiles4.geovelo.fr/raster/facilities/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="16" tile_size="256" img_density="8" avg_img_size="10000"/>
 
-   <!-- http://openaip.net/ -->
-   <tile_source rule="template:1" name="OpenAIP" url_template="https://1.tile.maps.openaip.net/geowebcache/service/tms/1.0.0/openaip_basemap@EPSG%3A900913@png/{0}/{1}/{2}.png" ext=".png" min_zoom="3" max_zoom="16" tile_size="256" img_density="16" avg_img_size="20000" inverted_y="true"/>
-
    <!-- https://www.openflightmaps.org/ -->
   <tile_source name="OpenFlightMaps" url_template="https://nwy-tiles-api.prod.newaydata.com/tiles/{z}/{x}/{y}.png?path=latest/aero/latest" ext=".png" min_zoom="7" max_zoom="12" tile_size="512" img_density="32" avg_img_size="150000"/>
 
