@@ -71,16 +71,16 @@ export default function TracksMenu() {
     }, [ctx.gpxFiles, ctx.setGpxFiles]);
 
     useEffect(() => {
-        if (ctx.localClientsTracks) {
+        if (ctx.localTracks) {
             visibleTracks.localClient = [];
-            ctx.localClientsTracks.forEach(t => {
+            ctx.localTracks.forEach(t => {
                 if (t.selected) {
                     visibleTracks.localClient.push(t)
                 }
             })
         }
         setVisibleTracks({...visibleTracks});
-    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
+    }, [ctx.localTracks, ctx.setLocalTracks]);
 
 
     useEffect(() => {
@@ -130,7 +130,7 @@ export default function TracksMenu() {
             }
         });
 
-        Object.values(ctx.localClientsTracks).forEach((item) => {
+        Object.values(ctx.localTracks).forEach((item) => {
             if (item.selected) {
                 tracks++;
                 if (item.points?.length > 0) {

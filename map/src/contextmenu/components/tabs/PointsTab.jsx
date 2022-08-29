@@ -18,7 +18,7 @@ const PointsTab = ({width}) => {
     }
 
     function deletePoint(index) {
-        let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
         currentTrack.points.splice(index, 1);
         currentTrack.trk.forEach(t => {
             t.forEach(s => {
@@ -29,7 +29,7 @@ const PointsTab = ({width}) => {
             })
         })
         updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localTracks);
     }
 
     const onDragEnd = result => {
@@ -40,7 +40,7 @@ const PointsTab = ({width}) => {
     }
 
     const reorder = (startIndex, endIndex) => {
-        let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
         const [removed] = currentTrack.points.splice(startIndex, 1);
         currentTrack.points.splice(endIndex, 0, removed);
         currentTrack.trk.forEach(t => {
@@ -57,7 +57,7 @@ const PointsTab = ({width}) => {
             })
         })
         updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localTracks);
     }
 
     const getItemStyle = (isDragging, draggableStyle) => ({
@@ -75,7 +75,7 @@ const PointsTab = ({width}) => {
             type: "gpx",
         });
         TracksManager.getInfoFile(currentTrack, file, ctx);
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        ctx.setLocalTracks([...ctx.localTracks]);
         ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
     }
 

@@ -1,7 +1,7 @@
 import Utils from "../util/Utils";
 
 function loadTracks() {
-    return localStorage.getItem('localClientsTracks') !== null ? JSON.parse(localStorage.getItem('localClientsTracks')) : [];
+    return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
 }
 
 function saveTracks(tracks) {
@@ -18,7 +18,7 @@ function saveTracks(tracks) {
                 summary: track.summary
             })
         })
-        localStorage.setItem('localClientsTracks', JSON.stringify(res));
+        localStorage.setItem('localTracks', JSON.stringify(res));
     }
 }
 
@@ -33,7 +33,7 @@ function createName(ctx) {
     let count = 0;
     let name;
     let maxNumber = 0;
-    ctx.localClientsTracks.forEach(t => {
+    ctx.localTracks.forEach(t => {
         if (t.name.split(' - ')[0] === date) {
             let sp = parseInt(t.name.split(' - ')[1], 10);
             count++;
@@ -43,7 +43,7 @@ function createName(ctx) {
         }
     })
     name = count > 0 ? (date + ' - ' + (count + 1)) : date;
-    ctx.localClientsTracks.forEach(t => {
+    ctx.localTracks.forEach(t => {
         if (t.name === name) {
             name = date + ' - ' + (maxNumber + 1);
         }
@@ -113,9 +113,9 @@ function updateSelectedTrack(ctx, track) {
 }
 
 function addTrack(ctx, track) {
-    ctx.localClientsTracks.push(track);
-    ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
-    TracksManager.saveTracks(ctx.localClientsTracks);
+    ctx.localTracks.push(track);
+    ctx.setLocalTracks([...ctx.localTracks]);
+    TracksManager.saveTracks(ctx.localTracks);
 }
 
 const TracksManager = {

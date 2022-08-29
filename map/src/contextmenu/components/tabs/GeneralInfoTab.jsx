@@ -97,14 +97,14 @@ export default function GeneralInfoTab({width, srtm}) {
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
             setDisableButton(!disableButton);
-            let existName = ctx.localClientsTracks.find(t => t.name === fileName);
+            let existName = ctx.localTracks.find(t => t.name === fileName);
             if (!existName) {
-                let currentTrack = ctx.localClientsTracks.find(t => t.name === ctx.selectedGpxFile.name);
+                let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
                 currentTrack.name = fileName;
                 ctx.selectedGpxFile.name = fileName;
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
-                TracksManager.saveTracks(ctx.localClientsTracks);
+                ctx.setLocalTracks([...ctx.localTracks]);
+                TracksManager.saveTracks(ctx.localTracks);
             }
         }
     }

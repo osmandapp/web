@@ -15,16 +15,16 @@ export default function LocalTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        TracksManager.saveTracks(ctx.localClientsTracks);
+        TracksManager.saveTracks(ctx.localTracks);
     }
 
     function addGpx(track, selectedTrack) {
         if (!selectedTrack.gpx) {
             selectedTrack.gpx = GPXCreator.createGpx(track);
-            ctx.setLocalClientsTracks([
-                ...ctx.localClientsTracks.slice(0, indexTrack),
+            ctx.setLocalTracks([
+                ...ctx.localTracks.slice(0, indexTrack),
                 selectedTrack,
-                ...ctx.localClientsTracks.slice(indexTrack + 1, ctx.localClientsTracks.length)
+                ...ctx.localTracks.slice(indexTrack + 1, ctx.localTracks.length)
             ]);
         }
     }
@@ -36,24 +36,24 @@ export default function LocalTrackItem({track, index}) {
     }
 
     function deleteTrackFromMap() {
-        let currentTrack = ctx.localClientsTracks[track.index];
+        let currentTrack = ctx.localTracks[track.index];
         ctx.setCurrentObjectType(null);
         currentTrack.selected = false;
         cleanSelectedTrackIfNeed(currentTrack);
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     function addTrackToMap() {
         ctx.setCurrentObjectType('local_client_track');
         if (indexTrack !== undefined) {
-            let selectedTrack = ctx.localClientsTracks[indexTrack];
+            let selectedTrack = ctx.localTracks[indexTrack];
             track.index = indexTrack;
             setIndexTrack(indexTrack);
             selectedTrack.selected = true;
             if (!selectedTrack.gpx) {
                 addGpx(track, selectedTrack);
             } else {
-                ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+                ctx.setLocalTracks([...ctx.localTracks]);
             }
         }
         ctx.setSelectedGpxFile(Object.assign({}, track));

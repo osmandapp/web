@@ -30,12 +30,12 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
     });
 
     function deleteCurrentTrack() {
-        let currentTrackIndex = ctx.localClientsTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+        let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
         if (currentTrackIndex !== -1) {
-            ctx.localClientsTracks.splice(currentTrackIndex, 1);
+            ctx.localTracks.splice(currentTrackIndex, 1);
             ctx.setSelectedGpxFile(null);
-            TracksManager.saveTracks(ctx.localClientsTracks);
-            ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+            TracksManager.saveTracks(ctx.localTracks);
+            ctx.setLocalTracks([...ctx.localTracks]);
             setShowContextMenu(false);
         }
     }

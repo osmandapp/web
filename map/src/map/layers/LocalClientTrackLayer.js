@@ -100,7 +100,7 @@ export default function LocalClientTrackLayer() {
         for (let l in layers) {
             layers[l].active = false;
         }
-        Object.values(ctx.localClientsTracks).forEach((track) => {
+        Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = layers[track.name]
             if (track.selected && !currLayer) {
                 addTrackToMap(track, true);
@@ -124,5 +124,5 @@ export default function LocalClientTrackLayer() {
 
         setLayers({...layers});
 
-    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
+    }, [ctx.localTracks, ctx.setLocalTracks]);
 }
