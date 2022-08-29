@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Hi, Everybody! 
 
-After a long break, we are happy to announce the release of the new version 4.2 OsmAnd app for Android devices. You can already update the app and check out the following long-awaited improvements in the new version of the app.
+After a long break, we are happy to announce the release of the new version 4.2 OsmAnd app for Android devices. You can already update the app and check out the following long-awaited improvements in this new version of the app.
 
 <img src={require('./banner_android_4-2.jpg').default} alt="Download online map"/>
 
@@ -24,11 +24,11 @@ After a long break, we are happy to announce the release of the new version 4.2 
 
 ## New in OsmAnd Widgets 
 
-We've done a lot of work on the widgets and interface of the [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen):
-* We redesigned the Configure screen, separating the widgets from the buttons, separating the different widget panels more clearly.
+We've done a lot of work on the widgets and interface of [the Configure screen](https://osmand.net/docs/user/widgets/configure-screen):
+* We redesigned the Configure screen, separating the widgets from the buttons, and spacing the different widget panels more clearly.
 * Added pages for widgets.
 * Duplicates.
-* Combined the widgets from the left and right panels, now any widget that was previously only available in the left panel can be added to the right panel.
+* Combined the widgets from the left and right panels: now any widget that was previously only available in the left panel can be added to the right panel.
 
 ### Pages and Duplicates for widgets
 
@@ -103,7 +103,7 @@ We've added 2.5D view to OsmAnd for Android. Enable OpenGL rendering to run 2.5D
 
 2.5D rendering has squares rendering type.
 
-["Tilt"gesture](https://osmand.net/docs/user/map/interact-with-map/#gestures) makes 2.5D veiw.
+["Tilt"gesture](https://osmand.net/docs/user/map/interact-with-map/#gestures) makes 2.5D view.
 
 ![2.5D view](./2_5d_view.png) ![2.5D view](./2_5d_view1.png)
 
@@ -137,7 +137,7 @@ Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/
 ### New types of routes
 
 Added display of [Fitness trails and running routes](http://osmand.net/docs/user/map/vector-maps#routes) to the map. Can be enabled in _<Translate android="yes" ids="configure_map,rendering_category_routes" />_.
-Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/):
+Data for these routes are taken from the [OpenStreetMap project](https://openstreetmap.org/):
 - The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)
 - The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)
 
@@ -150,7 +150,7 @@ Data for these routes are taken from [OpenStreetMap project](https://openstreetm
 <ProFeature/> Online SRTM feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 :::
 
-This feature allows to calculate Elevation profile for GPX track online by OsmAnd server:
+This feature allows to calculate Elevation profile for GPX track online by the OsmAnd server:
 
 _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Track → Altitude → Calculate online_
 
@@ -165,7 +165,7 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
 ## New actions for GPX tracks
 
 ### Update Track Context Menu
-[Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with detailed information about the location and size of the track.
+[Track context menu](http://osmand.net/docs/user/map/track-context-menu) now shows country or region for the track and track waypoints. [Overview tab](http://osmand.net/docs/user/map/track-context-menu#overview) now has an "Info" card with detailed information about the location and file size of the track.
 
 <table class="blogimage">
     <tr>
@@ -176,7 +176,7 @@ _[Track Context menu](http://osmand.net/docs/user/map/track-context-menu) → Tr
 
 ### Import Multitrack
 
-Splitting the multitrack file into individual tracks when importing a GPX track. You need to select the tracks to improvise. The tracks will be in:  
+Splitting the multitrack file into individual tracks when importing a GPX track. You need to select the tracks to import. The tracks will then be available in:  
  _My Places → Tracks_.
 
 ![Import multitrack](./import_multitrack.png) ![Import multitrack](./import_multitrack_1.png)
@@ -227,26 +227,26 @@ Using "Mapnik" will be available after the upgrade but as a custom map style. Af
 
 ## New POIs
 
-New [POIs and objects](http://osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi) was added to offline maps.
-
-> `Note: they will be availabe with maps from 2022 May 1`
-
-*  Added [shops](https://wiki.openstreetmap.org/wiki/Key:shop): wool, motorcycle_parts , rice, water_sports, printer_ink, fuel, hairdresser_supply, tiles, collector. 
-* Added: [landuse=greenery](https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgreenery), [natural=blowhole](https://wiki.openstreetmap.org/wiki/Tag:natural%3Dblowhole), [natural=anthill](https://wiki.openstreetmap.org/wiki/Tag:natural%3Danthill), [carriage=](https://wiki.openstreetmap.org/wiki/Key:carriage), [support "flow_rate" tag](https://wiki.openstreetmap.org/wiki/Key:flow_rate).
-* Added [clubs](https://wiki.openstreetmap.org/wiki/Key:club): club_automobile, club_fishing, club_sailing, club_shooting, club_veterans. 
+New [POIs and objects](http://osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi) have been added to offline maps in 4.2.
+*  Added new [shops](https://wiki.openstreetmap.org/wiki/Key:shop): wool, motorcycle_parts , rice, water_sports, printer_ink, fuel, hairdresser_supply, tiles, collector. 
+* Added: [landuse=greenery](https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgreenery), [natural=blowhole](https://wiki.openstreetmap.org/wiki/Tag:natural%3Dblowhole), [natural=anthill](https://wiki.openstreetmap.org/wiki/Tag:natural%3Danthill), [carriage=](https://wiki.openstreetmap.org/wiki/Key:carriage).
+* Support ["flow_rate"](https://wiki.openstreetmap.org/wiki/Key:flow_rate) tag.
+* Added new [clubs](https://wiki.openstreetmap.org/wiki/Key:club): club_automobile, club_fishing, club_sailing, club_shooting, club_veterans. 
 
 ## OpenStreetMap Editing menu
 
-* All OpenStreetMap-related items in [Configure Map](http://osmand.net/docs/user/map/configure-map-menu) was combined into one group.  "OSM Mapper assistant" option was spited into separate options: _<Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>_.
+* All OpenStreetMap-related items in [Configure Map](http://osmand.net/docs/user/map/configure-map-menu) have been combined into one single group. The "OSM Mapper assistant" option has been split into four separate options: _<Translate android="true" id="rendering_attr_OSMMapperAssistantFixme_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantNote_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantIconsLowZooms_name"/>, <Translate android="true" id="rendering_attr_OSMMapperAssistantWaterwayTunnels_name"/>_.
 
-<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="Track context menu: waypoints tab"/>
+<img class="inlist" src={require('./configure-map_osm_editing.png').default} alt="OpenStreetMap menu: split options"/>
 
 
 * Fixed tag autocomplete in "Modify POI" mode.
 
 <img class="inlist" src={require('./modify-poi_tag-autocomplete.png').default} alt="Modify POI, Tag autocomplete"/>
 
-* Fixed incorrect link to the OpenStreetMap object in context menu. 
+* Fixed incorrect link to the OpenStreetMap object in the context menu.
+
+(no screenshot available)
 
 ## Online maps fixes
 
@@ -256,7 +256,7 @@ New [POIs and objects](http://osmand.net/docs/user/map/point-layers-on-map#point
 <table class="blogimage">
     <tr>
         <td><img src={require('./download-online-map.png').default} alt="Download online map"/></td>
-        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map"/></td>
+        <td><img src={require('./download-online-map_dowloading.png').default} alt="Download online map: progress bars"/></td>
     </tr>
 </table> 
 
@@ -266,7 +266,7 @@ New [POIs and objects](http://osmand.net/docs/user/map/point-layers-on-map#point
 
 Suggesting to download map in the [Search menu](http://osmand.net/docs/user/search/).
 
-![Map download](./map_download.png)
+![Map download buttons, directly from Search results](./map_download.png)
 
 ### New Coordinate format
 
@@ -281,7 +281,7 @@ _<Translate android="true" ids="shared_string_menu,shared_string_settings,config
     </tr>
 </table> 
 
-* Fixed UTM Zone. Display [UTM Zone coordinates](http://osmand.net/docs/user/search/search-address#coordinates-search) as 31T instead of 31N.
+* Fixed UTM Zone: display [UTM Zone coordinates](http://osmand.net/docs/user/search/search-address#coordinates-search) as 31T instead of 31N.
 
 
 ### New Track Graph
@@ -291,14 +291,14 @@ _<Translate android="true" ids="shared_string_menu,shared_string_settings,config
 
 <img class="inlist" src={require('./analyze-on-map_altitude-slope_distance.png').default} alt="Analyze on map: Altitude/slope–Distance"/>
 
-### New parameter for "Route line appearance"
+### New parameter for "Route&nbsp;line&nbsp;appearance"
 
-Added the option to display or hide turns arrow in [the Route line settings](http://osmand.net/docs/user/navigation/route-navigation#route-line-appearance).
+Added the option to display or hide turn arrows in the [Route line settings](http://osmand.net/docs/user/navigation/route-navigation#route-line-appearance).
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('./route-line_turn-arrows_visible.png').default} alt="Transport routes"/></td>
-    <td><img src={require('./route-line_turn-arrows_hidden.png').default} alt="Fitness trails"/></td>
+    <td><img src={require('./route-line_turn-arrows_visible.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./route-line_turn-arrows_hidden.png').default} alt="turn arrows hidden"/></td>
     </tr>
 </table> 
 
@@ -310,10 +310,10 @@ Three options have been added to the [**<Translate android="true" id="routing_at
 
 ## Fixed
 
-* [Hebrew Wikipedia](http://osmand.net/docs/user/plugins/wikipedia) - no images for Wikipedia articles.
+* [Hebrew Wikipedia](http://osmand.net/docs/user/plugins/wikipedia) - images for Wikipedia articles are visible again.
 
 
-<img class="inlist" src={require('./wiki_krakow_hebrew.png').default} alt="Wikipedia article on Hebrew"/>
+<img class="inlist" src={require('./wiki_krakow_hebrew.png').default} alt="Wikipedia article in Hebrew, with pictures"/>
 
 _________________________________________________
 
