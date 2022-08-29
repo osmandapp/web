@@ -3,8 +3,7 @@ import {ExpandLess, ExpandMore, Map} from "@mui/icons-material";
 import React, {useState} from "react";
 import CloudTrackItem from "./CloudTrackItem";
 import {makeStyles} from "@material-ui/core/styles";
-import LocalClientTrackItem from "./LocalClientTrackItem";
-import LocalServerTrackItem from "./LocalServerTrackItem";
+import LocalTrackItem from "./LocalTrackItem";
 
 const useStyles = makeStyles({
     group: {
@@ -46,15 +45,11 @@ export default function VisibleTrackGroup({visibleTracks}) {
         </MenuItem>
         <Collapse in={visibleTracksOpen} timeout="auto" unmountOnExit>
             {visibleTracks.localClient.length > 0 && visibleTracks.localClient.map((track, index) => {
-                return <LocalClientTrackItem key={track + index}
-                                             track={track}/>;
+                return <LocalTrackItem key={track + index}
+                                       track={track}/>;
             })}
             {visibleTracks.files.length > 0 && visibleTracks.files.map((track, index) => {
-                return track.local
-                    ? <LocalServerTrackItem key={track + index}
-                                            file={track}/>
-                    : <CloudTrackItem key={track + index}
-                                      file={track}/>;
+                return <CloudTrackItem key={track + index} file={track}/>;
             })}
             {visibleTracks.files.find(f => f.local) &&
                 <MenuItem disableRipple={true}>

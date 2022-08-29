@@ -85,56 +85,12 @@ function getPointsDist(list) {
     return list;
 }
 
-async function getInfoFile(gpxLayer, file) {
-    let formData = new FormData();
-    formData.append('file', file);
-    const response = await fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-analysis`, {
-        method: 'POST',
-        credentials: 'include',
-        body: formData
-    });
-
-    if (response.ok) {
-        let data = await response.json();
-        if (data.info) {
-            gpxLayer.summary = data.info.analysis;
-            gpxLayer.srtmSummary = data.info.srtmAnalysis;
-        }
-    }
-}
-
-async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
-    let formData = new FormData();
-    formData.append('file', file);
-    const response = await fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/upload-session-gpx`, {
-        method: 'POST',
-        credentials: 'include',
-        body: formData
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let newinfo = Object.assign({}, gpxFiles);
-        if (data.info) {
-            gpxLayer.summary = data.info.analysis;
-            gpxLayer.srtmSummary = data.info.srtmAnalysis;
-        }
-        newinfo[gpxLayer.name] = gpxLayer;
-        gpxFiles[gpxLayer.name] = gpxLayer;
-        setGpxFiles(newinfo);
-    } else {
-        let message = await response.text();
-        alert(message);
-    }
-}
-
 const Utils = {
     fetchUtil,
     fetchUtilLoad,
     getFileData,
     getDistance,
-    uploadFile,
-    getPointsDist,
-    getInfoFile
+    getPointsDist
 };
 
 export default Utils;

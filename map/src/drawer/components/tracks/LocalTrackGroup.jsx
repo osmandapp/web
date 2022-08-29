@@ -4,11 +4,11 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
 import Actions from "./Actions";
-import LocalClientTrackItem from "./LocalClientTrackItem";
+import LocalTrackItem from "./LocalTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
-import LocalServerTrackItem from "./LocalServerTrackItem";
 import TracksManager from "../../../context/TracksManager";
+import GPXCreator from "../../../util/GPXCreator";
 
 export default function LocalTrackGroup() {
 
@@ -82,27 +82,34 @@ export default function LocalTrackGroup() {
         localStorage.removeItem('localClientsTracks');
     }
 
-    function generateLocalClientTracks() {
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks, TracksManager.generate(ctx)])
-        TracksManager.saveTracks(ctx.localClientsTracks);
+    async function generateLocalClientTracks() {
+        let newTrack = TracksManager.generate(ctx);
+        newTrack.gpx = GPXCreator.createGpx(newTrack);
+        const file = new File([newTrack.gpx], `${newTrack.name}.gpx`, {
+            type: "gpx",
+        });
+        prepareNewTrack(newTrack, file);
     }
 
     const fileSelected = (ctx) => async (e) => {
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
-            reader.addEventListener('load', (event) => {
+            reader.addEventListener('load', async (event) => {
                 let src = event.target.result;
-                let gpxLayer = {};
-                gpxLayer.name = TracksManager.prepareName(file.name);
-                gpxLayer.content = src;
-                gpxLayer.gpx = src;
-                Utils.getInfoFile(gpxLayer, file);
-                ctx.localClientsTracks.push(gpxLayer);
-                ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
-                TracksManager.saveTracks(ctx.localClientsTracks);
+                let newTrack = {};
+                newTrack.name = TracksManager.prepareName(file.name);
+                newTrack.content = src;
+                newTrack.gpx = src;
+                prepareNewTrack(newTrack, file);
             });
             reader.readAsText(file);
         });
+    }
+
+    function prepareNewTrack(track, file) {
+        TracksManager.getInfoFile(track, file, ctx).then();
+        TracksManager.addTrack(ctx, track);
+        TracksManager.updateSelectedTrack(ctx, track);
     }
 
 
@@ -123,14 +130,10 @@ export default function LocalTrackGroup() {
         </MenuItem>
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
             <Actions files={localGpxFiles} setSortFiles={setSortFiles}/>
-            {localGpxFiles.length > 0 && (sortFiles.length > 0 ? sortFiles : localGpxFiles).map((file, index) => {
-                return <LocalServerTrackItem key={file + index}
-                                             file={file}/>;
-            })}
             {ctx.localClientsTracks.length > 0 && ctx.localClientsTracks.map((track, index) => {
-                return <LocalClientTrackItem key={'track' + index}
-                                             track={track}
-                                             index={index}/>;
+                return <LocalTrackItem key={'track' + index}
+                                       track={track}
+                                       index={index}/>;
             })}
             <MenuItem disableRipple={true}>
                 <label htmlFor="contained-button-file">

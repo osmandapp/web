@@ -88,12 +88,45 @@ function prepareName(name, local) {
     }
 }
 
+async function getInfoFile(track, file, ctx) {
+    let formData = new FormData();
+    formData.append('file', file);
+    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-analysis`, {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+    });
+
+    if (response.ok) {
+        let data = await response.json();
+        if (data.info) {
+            track.summary = data.info.analysis;
+            track.srtmSummary = data.info.srtmAnalysis;
+        }
+        updateSelectedTrack(ctx, track);
+    }
+    return track;
+}
+
+function updateSelectedTrack(ctx, track) {
+    ctx.setSelectedGpxFile(Object.assign({}, track));
+}
+
+function addTrack(ctx, track) {
+    ctx.localClientsTracks.push(track);
+    ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+    TracksManager.saveTracks(ctx.localClientsTracks);
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
     generate,
     getFileName,
-    prepareName
+    prepareName,
+    getInfoFile,
+    addTrack,
+    updateSelectedTrack
 };
 
 export default TracksManager;

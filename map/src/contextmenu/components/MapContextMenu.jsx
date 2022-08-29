@@ -40,14 +40,16 @@ export default function MapContextMenu() {
     });
 
     function selectedFileWasChanged() {
-        return !ctx.selectedGpxFile || ctx.selectedGpxFile && ctx.selectedGpxFile.name && ctx.selectedGpxFile.name !== prevTrack.name;
+        return (ctx.selectedGpxFile
+                && ctx.selectedGpxFile.name
+                && ctx.selectedGpxFile.name !== prevTrack.name)
+            || (!prevTrack.summary || !prevTrack.srtmSummary);
     }
 
     useEffect(() => {
         if (!ctx.selectedGpxFile) {
             setPrevTrack(null);
         }
-
         if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
                 setPrevTrack(ctx.selectedGpxFile)

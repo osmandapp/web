@@ -68,13 +68,13 @@ const PointsTab = ({width}) => {
         ...draggableStyle
     });
 
-    function updateTrack(currentTrack) {
+    async function updateTrack(currentTrack) {
         currentTrack.points = Utils.getPointsDist(currentTrack.points);
         currentTrack.gpx = GPXCreator.createGpx(currentTrack);
         const file = new File([currentTrack.gpx], `${currentTrack.name}.gpx`, {
             type: "gpx",
         });
-        Utils.getInfoFile(currentTrack, file).then();
+        TracksManager.getInfoFile(currentTrack, file, ctx);
         ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
         ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
     }

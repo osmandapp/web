@@ -4,7 +4,7 @@ import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material
 import TracksManager from "../../../context/TracksManager";
 import GPXCreator from "../../../util/GPXCreator";
 
-export default function LocalClientTrackItem({track, index}) {
+export default function LocalTrackItem({track, index}) {
 
     const ctx = useContext(AppContext);
     const [indexTrack, setIndexTrack] = useState(index);
@@ -66,7 +66,7 @@ export default function LocalClientTrackItem({track, index}) {
             </div>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {"* " + track.name}
+                        {track.name}
                     </Typography>
                 </ListItemText>
             </Tooltip>
