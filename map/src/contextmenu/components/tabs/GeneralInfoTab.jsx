@@ -63,6 +63,8 @@ export default function GeneralInfoTab({width, srtm}) {
                 new Date(info.startTime).toLocaleTimeString() + " - " +
                 (edate !== stdate ? edate : '') +
                 new Date(info.endTime).toLocaleTimeString());
+        } else {
+            setTimeRange('');
         }
 
         if (info?.totalDistance) {
@@ -75,6 +77,8 @@ export default function GeneralInfoTab({width, srtm}) {
 
         if (info?.timeMoving) {
             setTimeMoving("Time moving: " + toHHMMSS(info?.timeMoving));
+        } else {
+            setTimeMoving('');
         }
 
         if (info?.hasElevationData) {
@@ -84,6 +88,9 @@ export default function GeneralInfoTab({width, srtm}) {
                 (info.minElevation).toFixed(1) + " / " +
                 (info.avgElevation).toFixed(1) + " / " +
                 (info.maxElevation).toFixed(1) + " m");
+        } else {
+            setUpDownHill('');
+            setElevation('');
         }
 
         if (info?.hasSpeedData) {
@@ -91,6 +98,8 @@ export default function GeneralInfoTab({width, srtm}) {
                 (info.minSpeed * 3.6).toFixed(0) + " / " +
                 (info.avgSpeed * 3.6).toFixed(0) + " / " +
                 (info.maxSpeed * 3.6).toFixed(0) + " km/h");
+        } else {
+            setSpeed('');
         }
     }, [ctx.selectedGpxFile]);
 
