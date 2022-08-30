@@ -859,7 +859,11 @@ L.GPX = L.FeatureGroup.extend({
                 el[i].getAttribute('lat'),
                 el[i].getAttribute('lon'));
             ll.meta = {};
+            if (tag === 'trkpt') {
+                this._info.points.push({lat: ll.lat, lng: ll.lng, meta: ll.meta});
+            }
             ll.id = i + lastId;
+
             _ = el[i].getElementsByTagName('time');
             if (_.length > 0) {
                 ll.meta.time = new Date(Date.parse(_[0].textContent));
@@ -879,9 +883,15 @@ L.GPX = L.FeatureGroup.extend({
             var ele_diff = last != null ? ll.meta.ele - last.meta.ele : 0;
             var dist_3d = last != null ? this._dist3d(last, ll) : 0;
 
-            if (tag === 'trkpt') {
-                this._info.points.push({lat: ll.lat, lng: ll.lng, meta: ll.meta});
-            }
+            let tags = ['hdop', 'vdop', 'pdop', 'magvar', 'geoidheight', 'cmt', 'desc', 'src', 'link', 'sym', 'type', 'fix', 'sat', 'ageofdgpsdata', 'dgpsid']
+
+            tags.forEach(t => {
+                let ft = el[i].getElementsByTagName(t);
+                if (ft.length > 0) {
+                    ll.meta[t] = parseFloat(ft[0].textContent);
+                }
+            })
+
             _ = el[i].getElementsByTagName('name');
             if (_.length > 0) {
                 var name = _[0].textContent;
