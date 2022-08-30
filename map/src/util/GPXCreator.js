@@ -1,5 +1,13 @@
-import {BaseBuilder, buildGPX} from "gpx-builder";
-import {Metadata, Point, Route, Segment, Track} from "gpx-builder/dist/builder/BaseBuilder/models";
+import {BaseBuilder, buildGPX} from "./gpx_creator";
+import {
+    Metadata,
+    Point,
+    Route,
+    Segment,
+    Track,
+    RouteSegment,
+    RouteExtensions, RouteType
+} from "./gpx_creator/builder/BaseBuilder/models";
 
 function createGpx(track) {
     const gpxData = new BaseBuilder();
@@ -52,6 +60,25 @@ function createRTE(track, gpxData) {
     }
 }
 
+function getRouteExt(arr, type) {
+    let result = [];
+    if (arr && arr.length > 0) {
+        for (let i in arr) {
+            let properties = {};
+            for (const [key, value] of Object.entries(arr[i])) {
+                properties[key] = value;
+            }
+            if (type === 'segment') {
+                result.push(new RouteSegment(arr[i].id, properties))
+            }
+            if (type === 'type') {
+                result.push(new RouteType(properties))
+            }
+        }
+    }
+    return result;
+}
+
 function createTRK(track, gpxData) {
     let points = [];
 
@@ -69,11 +96,17 @@ function createTRK(track, gpxData) {
                         }
                     }
                     points.push(new Point(p.lat, p.lng, properties))
-
                 });
-                segments.push(new Segment(points));
-            })
 
+                let routeSegments = getRouteExt(s.routesegments, 'segment');
+                let routeTypes = getRouteExt(s.routetypes, 'type');
+
+                if (routeSegments.length > 0 || routeTypes.length > 0) {
+                    segments.push(new Segment(points, new RouteExtensions(routeSegments, routeTypes)));
+                } else {
+                    segments.push(new Segment(points));
+                }
+            })
             tracks.push(new Track(segments));
         }
         gpxData.setTracks(tracks)

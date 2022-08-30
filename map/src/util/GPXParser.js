@@ -509,14 +509,35 @@ L.GPX = L.FeatureGroup.extend({
                 let segments = track.getElementsByTagName('trkseg');
                 for (let j = 0; j < segments.length; j++) {
                     let points = this._parse_points(segments[j], options, polyline_options, 'trkpt', lastId);
+                    let extensions = {}
+                    let routesegments = [];
+                    let routetypes = [];
                     pointsAll = pointsAll.concat(points)
                     lastId = points[points.length - 1].id;
-                    if (this._info.trk[i]) {
-                        this._info.trk[i].push({points: points});
-                    } else {
-                        this._info.trk[i] = [];
-                        this._info.trk[i].push({points: points});
+
+                    let ext = segments[j].getElementsByTagName('extensions');
+                    if (ext.length > 0) {
+                        for (const [key, value] of Object.entries(ext[0].children)) {
+                            if (ext[0].children[key].nodeName === 'osmand:route') {
+                                routesegments = this._getAttributes(ext[0].children[key], routesegments);
+                            } else if (ext[0].children[key].nodeName === 'osmand:types') {
+                                routetypes = this._getAttributes(ext[0].children[key], routetypes);
+                            } else {
+                                extensions[`${ext[0].children[key].nodeName}`] = ext[0].children[key].textContent;
+                            }
+                        }
                     }
+
+                    if (!this._info.trk[i]) {
+                        this._info.trk[i] = [];
+                    }
+
+                    this._info.trk[i].push({
+                        points: points,
+                        extensions: extensions,
+                        routesegments: routesegments,
+                        routetypes: routetypes
+                    });
                 }
 
                 if (options.gpx_options.joinTrackSegments) {
@@ -529,6 +550,18 @@ L.GPX = L.FeatureGroup.extend({
             }
         }
         return layers;
+    },
+
+    _getAttributes: function (element, arr) {
+        for (const [k, v] of Object.entries(element.children)) {
+            const attrNames = v.getAttributeNames();
+            let segment = {};
+            for (let y in attrNames) {
+                segment[`${attrNames[y]}`] = v.getAttribute(attrNames[y]);
+            }
+            arr.push(segment)
+        }
+        return arr;
     },
 
     _parseRTE: function (parseElements, xml, layers, options) {
