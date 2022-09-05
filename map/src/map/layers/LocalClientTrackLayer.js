@@ -91,7 +91,6 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                console.log(track)
                 // if (getTrackPointsLength(track) !== getTrackPointsLength(currLayer.track) || orderPointsWasChanged(track.points, currLayer.points)) {
                 //     updateTrackOnMap(track)
                 // }
