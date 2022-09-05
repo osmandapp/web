@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -451,7 +453,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
 |     | <Translate android="true" ids="routing_attr_motor_type_name"/> | <Translate android="true" ids="routing_attr_motor_type_description"/>   |
-| **<Translate android="true" ids="customize_route_line"/>** | Specify color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
+| **<Translate android="true" ids="customize_route_line"/>** | Specify color and width for the route line during [navigation](../navigation/index.md).   | It's available only with [Pro feature](../purchases/android.md#free-and-paid-features). <ProFeature/> |
 |     | <Translate android="true" ids="shared_string_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate android="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
 |     | <Translate android="true" ids="turn_arrows"/> | Select whether turn arrows are indicated on the route line.  |
@@ -468,7 +470,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |     | <Translate ios="true" ids="routing_attr_height_name"/>  | <Translate ios="true" ids="height_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_length_name"/>  | <Translate ios="true" ids="lenght_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_width_name"/>   | <Translate ios="true" ids="width_limit_description"/>   |
-| **<Translate ios="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | [Pro feature](../purchases/android.md#free-and-paid-features)  |
+| **<Translate ios="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | It's available only with [Pro feature](../purchases/android.md#free-and-paid-features). <ProFeature/>  |
 |     | <Translate ios="true" ids="fav_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate ios="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
 |     | <Translate ios="true" ids="turn_arrows"/> | Control the visibility of the turn arrows on the route line.  |
@@ -628,7 +630,8 @@ You can choose the color of the profile elements, its icon and name, also assign
 Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu.md#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu.md) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu.md).
 
 
-> `Turn off unused [plugins](../plugins) for hide all their controls.`
+> *Turn off unused [plugins](../plugins) for hide all their controls.*
+
 
 
 <Tabs groupId="operating-systems">
@@ -647,52 +650,57 @@ Under each menu there is the info about items quantity / active items.
 
 In this part of the menu you reorder or hide items from the [Drawer](../start-with/main-menu.md#main-menu-drawer).
 
-| Actions | Note |
-|:---------------|:---------------|
-| "Minus" | These items are hidden from the menu, but the represented options or plugins will continue to work.  |
-| "Moving" | These items are moved to other positions in the menu.  |
-| ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png) |   |
-| "Reset" | These items are reset from the "Hidden" part of the menu to the visible. |
-| ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png) |   |
-| "<Translate android="true" ids="reset_to_default"/>" | resetting the "Drawer" menu to default. |
-| "<Translate android="true" ids="copy_from_other_profile"/>" | coping the "Drawer" menu from another profile.  |
-| ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png) |   |
+| Actions:  Note |
+|:---------------|
+| "Minus": These items are hidden from the menu, but the represented options or plugins will continue to work.  |
+| "Moving": These items are moved to other positions in the menu.  |
+| ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)|
+| "Reset": These items are reset from the "Hidden" part of the menu to the visible. |
+| ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)|
+| "<Translate android="true" ids="reset_to_default"/>": resetting the "Drawer" menu to default. |
+| "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Drawer" menu from another profile.  |
+| ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)|
 
 **Configure map**
 
 In this part of the menu you reorder or hide items from the [Configure map](../map/configure-map-menu.md) menu.
 
-| Actions | Note |
-|:---------------|:---------------|
-| "Minus" | These items are hidden from the menu, but the represented options or plugins will continue to work.  |
-| "Moving" | These items are moved to other positions in the menu.  |
-| ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_moving_android.png) |   |
-| "Reset" | These items are reset from the "Hidden" part of the menu to the visible. |
-| ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_configure_reset_item_android.png) |   |
-| "<Translate android="true" ids="reset_to_default"/>" | resetting the "Configure map" menu to default. |
-| "<Translate android="true" ids="copy_from_other_profile"/>" | coping the "Configure map" menu from another profile.  |
-| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_configure_reset_copy_android.png) |   |
+| Actions: Note |
+|:---------------|
+| "Minus": These items are hidden from the menu, but the represented options or plugins will continue to work.|
+| "Moving": These items are moved to other positions in the menu.|
+| ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_moving_android.png)|
+| "Reset": These items are reset from the "Hidden" part of the menu to the visible.|
+| ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_configure_reset_item_android.png)|
+| "<Translate android="true" ids="reset_to_default"/>": resetting the "Configure map" menu to default.|
+| "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Configure map" menu from another profile.|
+| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_configure_reset_copy_android.png)|
 
 
 **Context menu actions**
 
 In this part of the menu you reorder or hide items from the [Context menu actions](../map/map-context-menu.md) menu.
 
-| Actions | Note |
-|:---------------|:---------------|
-| "Minus" | These items are hidden from the menu, but the represented options or plugins will continue to work.  |
-| "Moving" | These items are moved to other positions in the menu.  |
-| ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_context_moving_android.png) |   |
-| "Reset" | These items are reset from the "Hidden" part of the menu to the visible. |
-| ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_reset_item_android.png) |   |
-| "<Translate android="true" ids="reset_to_default"/>" | resetting the "Context menu actions" menu to default. |
-| "<Translate android="true" ids="copy_from_other_profile"/>" | coping the "Context menu actions" menu from another profile.  |
-| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_context_reset_copy_android.png) |   |
+| Actions: Note |
+|:---------------|
+| "Minus": These items are hidden from the menu, but the represented options or plugins will continue to work.  |
+| "Moving": These items are moved to other positions in the menu.|
+| ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_context_moving_android.png)|
+| "Reset": These items are reset from the "Hidden" part of the menu to the visible. |
+| ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_reset_item_android.png)|
+| "<Translate android="true" ids="reset_to_default"/>": resetting the "Context menu actions" menu to default. |
+| "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Context menu actions" menu from another profile.  |
+| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_context_reset_copy_android.png)|
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
 
 </TabItem>
 
 </Tabs>
-
 
 ## Plugin settings
 
@@ -765,7 +773,7 @@ This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#pl
 <TabItem value="ios" label="iOS">
 
 
-> `Doesn't exist for iOS version.`
+<InfoAndroidOnly />
 
 
 </TabItem>
@@ -808,7 +816,7 @@ This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacerevie
 <TabItem value="ios" label="iOS">
 
 
-> `Doesn't exist for iOS version.`
+<InfoAndroidOnly />
 
 
 </TabItem>
@@ -829,9 +837,7 @@ This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for
 
 <TabItem value="ios" label="iOS">
 
-
-> `Doesn't exist for iOS version.`
-
+<InfoAndroidOnly />
 
 </TabItem>
 
@@ -852,7 +858,7 @@ This menu opens [Development plugin settings](../plugins/accessibility.md) for t
 <TabItem value="ios" label="iOS">
 
 
-> `Doesn't exist for iOS version.`
+<InfoAndroidOnly />
 
 
 </TabItem>
