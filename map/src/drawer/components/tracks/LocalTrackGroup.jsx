@@ -7,7 +7,6 @@ import LocalTrackItem from "./LocalTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
-import GPXCreator from "../../../util/GPXCreator";
 
 export default function LocalTrackGroup() {
 
@@ -26,34 +25,26 @@ export default function LocalTrackGroup() {
         localStorage.removeItem('localTracks');
     }
 
-    async function generateLocalTrack() {
+    function generateLocalTrack() {
         let newTrack = TracksManager.generate(ctx);
-        newTrack.gpx = GPXCreator.createGpx(newTrack);
-        const file = new File([newTrack.gpx], `${newTrack.name}.gpx`, {
-            type: "gpx",
-        });
-        prepareNewTrack(newTrack, file);
+        prepareNewTrack(newTrack);
     }
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async (event) => {
-                let src = event.target.result;
-                let newTrack = {};
-                newTrack.name = TracksManager.prepareName(file.name);
-                newTrack.content = src;
-                newTrack.gpx = src;
-                prepareNewTrack(newTrack, file);
+                let track = await TracksManager.getTrackData(file);
+                track.name = TracksManager.prepareName(file.name);
+                prepareNewTrack(track);
             });
             reader.readAsText(file);
         });
     }
 
-    function prepareNewTrack(track, file) {
-        TracksManager.getInfoFile(track, file, ctx).then();
+    function prepareNewTrack(track) {
         TracksManager.addTrack(ctx, track);
-        TracksManager.updateSelectedTrack(ctx, track);
+        //TracksManager.updateSelectedTrack(ctx, track);
     }
 
 

@@ -3,7 +3,7 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
 import MarkerIcon from "../MarkerIcon";
-import Utils from "../../util/Utils";
+import LayerCreator from "../LayerCreator";
 
 
 export default function LocalClientTrackLayer() {
@@ -13,45 +13,13 @@ export default function LocalClientTrackLayer() {
     const [layers, setLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
-    const markerOptions = {
-        startIcon: MarkerIcon({bg: 'blue'}),
-        endIcon: MarkerIcon({bg: 'red'}),
-        wptIcons: {
-            '': MarkerIcon({bg: 'yellow'}),
-        }
-    };
-
     function addTrackToMap(track, fitBounds) {
-        let layer = new L.GPX(track.gpx, {
-            async: true,
-            marker_options: markerOptions
-        }).on('loaded', function (e) {
-            if (fitBounds) {
-                map.fitBounds(e.target.getBounds());
-            }
-            if (layer._info.meta) {
-                track.metadata = layer._info.meta;
-            }
-
-            if (layer._info.trk.length > 0) {
-                track.trk = layer._info.trk;
-            }
-
-            if (layer._info.rte.length > 0) {
-                track.rte = layer._info.rte;
-            }
-
-            if (layer._info.wpt) {
-                track.wpt = layer._info.wpt;
-            }
-
-            if (layer._info.points.length > 0) {
-                track.points = Utils.getPointsDist(layer._info.points);
-            }
-            ctx.setSelectedGpxFile(Object.assign({}, track));
-        }).addTo(map);
-
-        layers[track.name] = {layer: layer, points: Object.assign([], track.points), active: true};
+        let layer = LayerCreator.createLayersByTrackData(track);
+        if (fitBounds) {
+            map.fitBounds(layer.getBounds());
+        }
+        layer.addTo(map);
+        layers[track.name] = {layer: layer, track: Object.assign([], track), active: true};
     }
 
     function createPointMarkerOnMap() {
@@ -61,6 +29,13 @@ export default function LocalClientTrackLayer() {
         }, {
             icon: MarkerIcon({bg: 'yellow'})
         }).addTo(map);
+    }
+
+    function showSelectedTrackOnMap() {
+        let currLayer = layers[ctx.selectedGpxFile.name];
+        if (currLayer) {
+            map.fitBounds(currLayer.layer.getBounds());
+        }
     }
 
     function showSelectedPointOnMap() {
@@ -75,6 +50,8 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.selected) {
             if (ctx.selectedGpxFile.showPoint) {
                 showSelectedPointOnMap();
+            } else {
+                showSelectedTrackOnMap();
             }
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
@@ -96,6 +73,14 @@ export default function LocalClientTrackLayer() {
         return false;
     }
 
+    function getTrackPointsLength(track) {
+        let length = 0;
+        track.tracks.forEach(t => {
+            length += t.points.length;
+        })
+        return length;
+    }
+
     useEffect(() => {
         for (let l in layers) {
             layers[l].active = false;
@@ -106,9 +91,10 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (track.points.length !== currLayer.points.length || orderPointsWasChanged(track.points, currLayer.points)) {
-                    updateTrackOnMap(track)
-                }
+                console.log(track)
+                // if (getTrackPointsLength(track) !== getTrackPointsLength(currLayer.track) || orderPointsWasChanged(track.points, currLayer.points)) {
+                //     updateTrackOnMap(track)
+                // }
             }
         });
 

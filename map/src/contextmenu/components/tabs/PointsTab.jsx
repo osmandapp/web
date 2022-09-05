@@ -5,7 +5,6 @@ import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
-import GPXCreator from "../../../util/GPXCreator";
 
 
 const PointsTab = ({width}) => {
@@ -70,7 +69,6 @@ const PointsTab = ({width}) => {
 
     async function updateTrack(currentTrack) {
         currentTrack.points = Utils.getPointsDist(currentTrack.points);
-        currentTrack.gpx = GPXCreator.createGpx(currentTrack);
         const file = new File([currentTrack.gpx], `${currentTrack.name}.gpx`, {
             type: "gpx",
         });

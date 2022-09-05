@@ -9,7 +9,7 @@ export default function SpeedTab({width}) {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setData(ctx.selectedGpxFile?.summary?.speedData)
+            setData(ctx.selectedGpxFile?.analysis?.speedData)
         }
     }, [ctx.selectedGpxFile]);
 

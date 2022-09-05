@@ -53,7 +53,7 @@ export default function GeneralInfoTab({width, srtm}) {
             setPoints(ctx.selectedGpxFile.points.length);
         }
 
-        let info = srtm ? ctx.selectedGpxFile?.srtmSummary : ctx.selectedGpxFile?.summary;
+        let info = srtm ? ctx.selectedGpxFile?.srtmAnalysis : ctx.selectedGpxFile?.summary;
 
         if (info?.startTime &&
             info?.startTime !== info?.endTime) {
@@ -67,37 +67,38 @@ export default function GeneralInfoTab({width, srtm}) {
             setTimeRange('');
         }
 
-        if (info?.totalDistance) {
-            setDistance("Distance: " + (info?.totalDistance / 1000).toFixed(1) + " km");
-        } else {
-            if (ctx.selectedGpxFile && ctx.selectedGpxFile.points?.length > 0) {
-                setDistance("Distance: " + (Math.round(ctx.selectedGpxFile.points[ctx.selectedGpxFile.points.length - 1].dist / 100) / 10.0) + " km");
-            }
+        if (ctx.selectedGpxFile?.analysis?.totalDistance) {
+            setDistance("Distance: " + (ctx.selectedGpxFile.analysis?.totalDistance / 1000).toFixed(1) + " km");
         }
+        // else {
+        //     if (ctx.selectedGpxFile && ctx.selectedGpxFile.points?.length > 0) {
+        //         setDistance("Distance: " + (Math.round(ctx.selectedGpxFile.points[ctx.selectedGpxFile.points.length - 1].dist / 100) / 10.0) + " km");
+        //     }
+        // }
 
-        if (info?.timeMoving) {
-            setTimeMoving("Time moving: " + toHHMMSS(info?.timeMoving));
+        if (ctx.selectedGpxFile?.analysis?.timeMoving) {
+            setTimeMoving("Time moving: " + toHHMMSS(ctx.selectedGpxFile.analysis?.timeMoving));
         } else {
             setTimeMoving('');
         }
 
-        if (info?.hasElevationData) {
-            setUpDownHill("Uphill/downhill: " + info.diffElevationUp.toFixed(0)
-                + "/" + info?.diffElevationDown.toFixed(0) + " m");
+        if (ctx.selectedGpxFile?.analysis?.hasElevationData) {
+            setUpDownHill("Uphill/downhill: " + ctx.selectedGpxFile.analysis?.diffElevationUp.toFixed(0)
+                + "/" + ctx.selectedGpxFile.analysis?.diffElevationDown.toFixed(0) + " m");
             setElevation("Elevation (min/avg/max): " +
-                (info.minElevation).toFixed(1) + " / " +
-                (info.avgElevation).toFixed(1) + " / " +
-                (info.maxElevation).toFixed(1) + " m");
+                (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
+                (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
+                (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
         } else {
             setUpDownHill('');
             setElevation('');
         }
 
-        if (info?.hasSpeedData) {
+        if (ctx.selectedGpxFile?.analysis?.hasSpeedData) {
             setSpeed("Speed (min/avg/max): " +
-                (info.minSpeed * 3.6).toFixed(0) + " / " +
-                (info.avgSpeed * 3.6).toFixed(0) + " / " +
-                (info.maxSpeed * 3.6).toFixed(0) + " km/h");
+                (ctx.selectedGpxFile.analysis?.minSpeed * 3.6).toFixed(0) + " / " +
+                (ctx.selectedGpxFile.analysis?.avgSpeed * 3.6).toFixed(0) + " / " +
+                (ctx.selectedGpxFile.analysis?.maxSpeed * 3.6).toFixed(0) + " km/h");
         } else {
             setSpeed('');
         }
@@ -154,9 +155,11 @@ export default function GeneralInfoTab({width, srtm}) {
                 <Grid item xs={1}>
                     <Box display="flex" justifyContent="flex-end">
                         {disableButton &&
-                            <Button variant="contained" style={{backgroundColor: '#fbc73a'}} onClick={() => {
-                                setDisableButton(false);
-                            }}>
+                            <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
+                                //         onClick={() => {
+                                //     setDisableButton(false);
+                                // }}
+                            >
                                 edit
                             </Button>}
                         {!disableButton && <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
@@ -265,13 +268,14 @@ export default function GeneralInfoTab({width, srtm}) {
             </MenuItem>}
         </Typography>
         <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                onClick={() => {
-                    if (ctx.selectedGpxFile.url) {
-                        window.open(ctx.selectedGpxFile.url)
-                    } else {
-                        getUrl().click()
-                    }
-                }}>Download gpx</Button><br/>
+            // onClick={() => {
+            //     if (ctx.selectedGpxFile.url) {
+            //         window.open(ctx.selectedGpxFile.url)
+            //     } else {
+            //         getUrl().click()
+            //     }
+            // }}
+        >Download gpx</Button><br/>
 
     </Box>);
 };

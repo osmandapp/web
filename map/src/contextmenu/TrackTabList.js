@@ -18,33 +18,33 @@ export default class TrackTabList {
         let tabs = {};
         let list = [];
 
-        const hasAltitude = ctx.selectedGpxFile?.summary?.hasElevationData;
-        const hasSpeed = ctx.selectedGpxFile?.summary?.hasSpeedData;
+        const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
+        const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
         tabs.Info = <GeneralInfoTab key='general'
                                     url={ctx.selectedGpxFile.url} width={this.state.graphWidth} srtm={false}/>;
-        if (ctx.currentObjectType !== 'cloud_track') {
+        if (false) {
             tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 
-        const elevationData = ctx.selectedGpxFile?.summary?.elevationData;
+        const elevationData = ctx.selectedGpxFile?.analysis?.elevationData;
         if (elevationData && elevationData.length > 0 && hasAltitude) {
             tabs.Elevation = <ElevationTab key='elevation' width={this.state.graphWidth} srtm={false}/>
         }
 
-        const speedData = ctx.selectedGpxFile?.summary?.speedData;
+        const speedData = ctx.selectedGpxFile?.analysis?.speedData;
         if (speedData && speedData.length > 0 && hasSpeed) {
             tabs.Speed = <SpeedTab key='speed' data={speedData} width={this.state.graphWidth}/>;
         }
 
-        if (ctx.selectedGpxFile?.srtmSummary) {
+        if (ctx.selectedGpxFile?.srtmAnalysis) {
             tabs.SRTM = <GeneralInfoTab key='srtm'
                                         width={this.state.graphWidth} srtm={true}/>;
         }
 
-        if (ctx.selectedGpxFile?.srtmSummary?.elevationData &&
-            ctx.selectedGpxFile.srtmSummary.elevationData.length > 0) {
-            tabs["SRTM Ele"] = <ElevationTab key='srtmele' data={ctx.selectedGpxFile.srtmSummary.elevationData}
+        if (ctx.selectedGpxFile?.srtmAnalysis?.elevationData &&
+            ctx.selectedGpxFile.srtmAnalysis.elevationData.length > 0) {
+            tabs["SRTM Ele"] = <ElevationTab key='srtmele' data={ctx.selectedGpxFile.srtmAnalysis.elevationData}
                                              width={this.state.graphWidth} srtm={true}/>
         }
 

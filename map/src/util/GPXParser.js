@@ -37,7 +37,6 @@
  */
 
 import "../assets/css/gpx.css"
-import {Point, Segment, Track} from "gpx-builder/dist/builder/BaseBuilder/models";
 
 var L = L || require('leaflet');
 

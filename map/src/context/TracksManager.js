@@ -1,4 +1,5 @@
 import Utils from "../util/Utils";
+import {Point, Track, TrackData} from "./TrackStore";
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -10,12 +11,12 @@ function saveTracks(tracks) {
         tracks.forEach(function (track) {
             res.push({
                 name: track.name,
-                points: track.points,
-                selected: false,
-                content: track.content,
-                gpx: track.gpx,
-                srtmSummary: track.srtmSummary,
-                summary: track.summary
+                metadata: track.metadata,
+                tracks: track.tracks,
+                wpts: track.wpts,
+                analysis: track.analysis,
+                srtmAnalysis: track.srtmAnalysis,
+                selected: false
             })
         })
         localStorage.setItem('localTracks', JSON.stringify(res));
@@ -25,7 +26,13 @@ function saveTracks(tracks) {
 function generate(ctx) {
     let name = createName(ctx);
     let points = Utils.getPointsDist(createPoints());
-    return {name: name, points: points}
+    points.push({lat: 44, lng: 19, gap: true})
+    points.push({lat: 48, lng: 31})
+    points.push({lat: 48, lng: 49})
+    let pointsArr = [];
+    points.forEach(p => pointsArr.push(new Point({lat: p.lat, lng: p.lng, dist: p.dist, gap: p.gap}, null, null)))
+    let tracks = [new Track(null, pointsArr, null)]
+    return new TrackData(name, tracks, null, null, null);
 }
 
 function createName(ctx) {
@@ -88,22 +95,27 @@ function prepareName(name, local) {
     }
 }
 
-async function getInfoFile(track, file, ctx) {
+async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-gpx-analysis`, {
+    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-track-data`, {
         method: 'POST',
         credentials: 'include',
         body: formData
     });
 
+    let track = null;
     if (response.ok) {
-        let data = await response.json();
-        if (data.info) {
-            track.summary = data.info.analysis;
-            track.srtmSummary = data.info.srtmAnalysis;
+        let resp = await response.text();
+        if (resp) {
+            let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                return value === "***NaN***" ? NaN : value;
+            });
+            if (data) {
+                track = data.gpx_data;
+                // updateSelectedTrack(ctx, track);
+            }
         }
-        updateSelectedTrack(ctx, track);
     }
     return track;
 }
@@ -124,7 +136,7 @@ const TracksManager = {
     generate,
     getFileName,
     prepareName,
-    getInfoFile,
+    getTrackData,
     addTrack,
     updateSelectedTrack
 };

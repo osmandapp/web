@@ -2,7 +2,6 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import TracksManager from "../../../context/TracksManager";
-import GPXCreator from "../../../util/GPXCreator";
 
 export default function LocalTrackItem({track, index}) {
 
@@ -16,17 +15,6 @@ export default function LocalTrackItem({track, index}) {
             addTrackToMap();
         }
         TracksManager.saveTracks(ctx.localTracks);
-    }
-
-    function addGpx(track, selectedTrack) {
-        if (!selectedTrack.gpx) {
-            selectedTrack.gpx = GPXCreator.createGpx(track);
-            ctx.setLocalTracks([
-                ...ctx.localTracks.slice(0, indexTrack),
-                selectedTrack,
-                ...ctx.localTracks.slice(indexTrack + 1, ctx.localTracks.length)
-            ]);
-        }
     }
 
     function cleanSelectedTrackIfNeed(currentTrack) {
@@ -50,11 +38,7 @@ export default function LocalTrackItem({track, index}) {
             track.index = indexTrack;
             setIndexTrack(indexTrack);
             selectedTrack.selected = true;
-            if (!selectedTrack.gpx) {
-                addGpx(track, selectedTrack);
-            } else {
-                ctx.setLocalTracks([...ctx.localTracks]);
-            }
+            ctx.setLocalTracks([...ctx.localTracks]);
         }
         ctx.setSelectedGpxFile(Object.assign({}, track));
     }

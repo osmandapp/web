@@ -11,10 +11,10 @@ const ElevationTab = ({width, srtm}) => {
     useEffect(() => {
 
         if (ctx.selectedGpxFile) {
-            if (srtm && ctx.selectedGpxFile?.srtmSummary) {
-                setData(ctx.selectedGpxFile.srtmSummary.elevationData)
-            } else if (!srtm && ctx.selectedGpxFile?.summary?.hasElevationData && ctx.selectedGpxFile?.summary?.elevationData) {
-                setData(ctx.selectedGpxFile?.summary?.elevationData)
+            if (srtm && ctx.selectedGpxFile?.srtmAnalysis) {
+                setData(ctx.selectedGpxFile.srtmAnalysis.elevationData)
+            } else if (!srtm && ctx.selectedGpxFile?.analysis?.hasElevationData && ctx.selectedGpxFile?.analysis?.elevationData) {
+                setData(ctx.selectedGpxFile?.analysis?.elevationData)
             } else {
                 setData(null);
             }
