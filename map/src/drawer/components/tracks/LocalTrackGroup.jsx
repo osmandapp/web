@@ -35,8 +35,10 @@ export default function LocalTrackGroup() {
             const reader = new FileReader();
             reader.addEventListener('load', async (event) => {
                 let track = await TracksManager.getTrackData(file);
-                track.name = TracksManager.prepareName(file.name);
-                prepareNewTrack(track);
+                if (track) {
+                    track.name = TracksManager.prepareName(file.name);
+                    prepareNewTrack(track);
+                }
             });
             reader.readAsText(file);
         });
