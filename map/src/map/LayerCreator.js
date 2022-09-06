@@ -18,25 +18,12 @@ function parsePoints(points, layers) {
     let coordsAll = [];
     points.forEach(point => {
         if (point.geometry) {
-            if (point.geometry.points) {
-                let coords = [];
-                point.geometry.points.forEach(p => {
-                    if (p.info.profile === 'gap' && coords.length > 0) {
-                        layers.push(new L.Polyline(coords, getPolylineOpt()));
-                        coordsAll = coordsAll.concat(Object.assign([], coords));
-                        coords = [];
-                    } else {
-                        coords.push(new L.LatLng(p.info.lat, p.info.lng))
-                    }
-
-                    points.forEach(p => {
-                        layers.push(new L.Marker((new L.LatLng(p.info.lat, p.info.lng)), {icon: markerOptions.route}));
-                    })
+            if (point.geometry.segments) {
+                point.geometry.segments.forEach(s => {
+                    drawPoints(points, s.points, coordsAll, layers);
                 })
-                coordsAll = coordsAll.concat(Object.assign([], coords));
-                if (coords.length > 0) {
-                    layers.push(new L.Polyline(coords, getPolylineOpt()));
-                }
+            } else if (point.geometry.points) {
+                drawPoints(points, point.geometry.points, coordsAll, layers);
             }
         } else {
             if (point.info.profile === 'gap' && coordsTrk.length > 0) {
@@ -54,6 +41,27 @@ function parsePoints(points, layers) {
         addStartEndMarkers(coordsAll, layers);
     } else {
         addStartEndMarkers(points, layers);
+    }
+}
+
+function drawPoints(points, pointsTrk, coordsAll, layers) {
+    let coords = [];
+    pointsTrk.forEach(p => {
+        if (p.info.profile === 'gap' && coords.length > 0) {
+            layers.push(new L.Polyline(coords, getPolylineOpt()));
+            coordsAll = coordsAll.concat(Object.assign([], coords));
+            coords = [];
+        } else {
+            coords.push(new L.LatLng(p.info.lat, p.info.lng))
+        }
+
+        points.forEach(p => {
+            layers.push(new L.Marker((new L.LatLng(p.info.lat, p.info.lng)), {icon: markerOptions.route}));
+        })
+    })
+    coordsAll = coordsAll.concat(Object.assign([], coords));
+    if (coords.length > 0) {
+        layers.push(new L.Polyline(coords, getPolylineOpt()));
     }
 }
 

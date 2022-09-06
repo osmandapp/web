@@ -98,7 +98,7 @@ function prepareName(name, local) {
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/get-track-data`, {
+    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
         method: 'POST',
         credentials: 'include',
         body: formData

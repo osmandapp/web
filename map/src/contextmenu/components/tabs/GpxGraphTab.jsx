@@ -11,12 +11,33 @@ export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
 
     function onMouseMoveGraph(e) {
         if (e.isTooltipActive) {
-            if (ctx.mapMarkerListener && ctx.selectedGpxFile.points) {
-                const lat = Object.values(ctx.selectedGpxFile.points)[e.activeTooltipIndex].lat;
-                const lng = Object.values(ctx.selectedGpxFile.points)[e.activeTooltipIndex].lng;
+            if (ctx.mapMarkerListener && ctx.selectedGpxFile) {
+                let pointList = getAllPoints();
+                const lat = Object.values(pointList)[e.activeTooltipIndex].info.lat;
+                const lng = Object.values(pointList)[e.activeTooltipIndex].info.lng;
                 ctx.mapMarkerListener(lat, lng);
             }
         }
+    }
+
+    function getAllPoints() {
+        let pointList = [];
+        ctx.selectedGpxFile.tracks.forEach(track => {
+            track.points.forEach(point => {
+                if (point.geometry) {
+                    if (point.geometry.segments) {
+                        point.geometry.segments.forEach(seg => {
+                            pointList.push.apply(pointList, seg.points);
+                        })
+                    } else {
+                        pointList.push.apply(pointList, point.geometry.points)
+                    }
+                } else {
+                    pointList.push(point);
+                }
+            })
+        })
+        return pointList;
     }
 
     return (<>
