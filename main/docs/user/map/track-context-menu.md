@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -280,9 +281,6 @@ This tab opens a graph with speed / altitude info on distance, additional track 
 </Tabs>
 
 
-
-
-
 ### Altitude
 
 This tab opens a graph with altitude / slope info on distance, additional track data.
@@ -299,6 +297,22 @@ This tab opens a graph with altitude / slope info on distance, additional track 
 - <Translate android="true" ids="altitude_range"/>
 - <Translate android="true" ids="altitude_ascent"/>
 - <Translate android="true" ids="altitude_descent"/>
+
+#### Online Elevation profile
+
+:::note
+<ProFeature/> Online SRTM feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+:::
+
+This feature allows to calculate Elevation profile for GPX track online by the OsmAnd server:
+
+_[Track Context menu](../map/track-context-menu.md) → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
+
+Calculate altitude online on OsmAnd servers, based on satellite imagery and digital elevation models. Differences vs. device recorded altitude may be used as altitude correction.
+
+![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)
+![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png) 
+![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude.png) 
 
 </TabItem>
 
@@ -479,7 +493,7 @@ A user can divide a track by intervals (distance or time) and analyze it.
 
 <TabItem value="ios" label="iOS">
 
-> This feature doesn't exist for iOS version of OsmAnd.
+<InfoAndroidOnly />
 
 </TabItem>
 
@@ -558,9 +572,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 
 <TabItem value="ios" label="iOS">
 
-:::note
-This feature doesn't exist for iOS version of OsmAnd.
-:::
+<InfoAndroidOnly />
 
 </TabItem>
 
