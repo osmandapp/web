@@ -334,7 +334,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 | "<Translate android="true" ids="routing_attr_max_num_changes_name"/>" |  specify upper limit of changes of for public transport.  | Public transport navigation type    |
 | "<Translate android="true" ids="routing_attr_allow_motorway_name"/>" |  <Translate android="true" ids="routing_attr_allow_motorway_description"/>  | Cycling |
 | "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
-| "<Translate android="true" ids="routing_attr_allow_private_for_truck_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_for_truck_description"/>  |    |
+| "<Translate android="true" ids="routing_attr_allow_private_for_truck_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_for_truck_description"/>  | Track    |
 | "<Translate android="true" ids="routing_attr_height_obstacles_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
@@ -378,7 +378,6 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
 |                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
 | Goods vehicles restrictions |  Consider access permissions for light goods vehicles (goods)   |   Driving routing |
-| Motor type |  allows choosing type of motor: Petrol, Diesel, Lpg, Gas, Electric, Hybrid  |   Driving routing |
 | <Translate ios="true" ids="routing_attr_hazmat_category_name"/> |  <Translate ios="true" ids="transport_hazmat_no_desc"/>  |   Truck |
 | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
@@ -473,6 +472,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 |     | <Translate ios="true" ids="routing_attr_height_name"/>  | <Translate ios="true" ids="height_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_length_name"/>  | <Translate ios="true" ids="lenght_limit_description"/>   |
 |     | <Translate ios="true" ids="routing_attr_width_name"/>   | <Translate ios="true" ids="width_limit_description"/>   |
+| Motor type |  allows choosing type of motor: Petrol, Diesel, Lpg, Gas, Electric, Hybrid  |   Driving routing |
 | **<Translate ios="true" ids="customize_route_line"/>** | Change color and width for the route line during [navigation](../navigation/index.md).   | It's available only with [Pro feature](../purchases/android.md#free-and-paid-features). <ProFeature/>  |
 |     | <Translate ios="true" ids="fav_color"/> | Using color by: Map style, Custom, Altitude, Slope, Road type, Surface, Smoothness, Winter and ice roads,Surface firmness.  |
 |     | <Translate ios="true" ids="shared_string_width"/> | Using width by: Map style, Thin, Medium, Bold, Custom.  |
