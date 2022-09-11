@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Area, Tooltip, XAxis, YAxis, AreaChart} from "recharts";
 import {Typography} from "@mui/material";
 import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 
 export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
     const ctx = useContext(AppContext);
@@ -12,32 +13,12 @@ export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
     function onMouseMoveGraph(e) {
         if (e.isTooltipActive) {
             if (ctx.mapMarkerListener && ctx.selectedGpxFile) {
-                let pointList = getAllPoints();
-                const lat = Object.values(pointList)[e.activeTooltipIndex].info.lat;
-                const lng = Object.values(pointList)[e.activeTooltipIndex].info.lng;
+                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+                const lat = Object.values(pointList)[e.activeTooltipIndex].lat;
+                const lng = Object.values(pointList)[e.activeTooltipIndex].lng;
                 ctx.mapMarkerListener(lat, lng);
             }
         }
-    }
-
-    function getAllPoints() {
-        let pointList = [];
-        ctx.selectedGpxFile.tracks.forEach(track => {
-            track.points.forEach(point => {
-                if (point.geometry) {
-                    if (point.geometry.segments) {
-                        point.geometry.segments.forEach(seg => {
-                            pointList.push.apply(pointList, seg.points);
-                        })
-                    } else {
-                        pointList.push.apply(pointList, point.geometry.points)
-                    }
-                } else {
-                    pointList.push(point);
-                }
-            })
-        })
-        return pointList;
     }
 
     return (<>

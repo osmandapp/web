@@ -1,5 +1,6 @@
 import Utils from "../util/Utils";
 import {Point, Track, TrackData} from "./TrackStore";
+import {post} from "axios";
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -11,11 +12,11 @@ function saveTracks(tracks) {
         tracks.forEach(function (track) {
             res.push({
                 name: track.name,
-                metadata: track.metadata,
+                metaData: track.metaData,
                 tracks: track.tracks,
                 wpts: track.wpts,
+                ext: track.ext,
                 analysis: track.analysis,
-                srtmAnalysis: track.srtmAnalysis,
                 selected: false
             })
         })
@@ -130,6 +131,45 @@ function addTrack(ctx, track) {
     TracksManager.saveTracks(ctx.localTracks);
 }
 
+function getTrackPoints(track) {
+    let points = [];
+    if (track.tracks) {
+        track.tracks.forEach(track => {
+            track.points.forEach(point => {
+                if (point.geometry) {
+                    point.geometry.forEach(trk => {
+                        points.push(trk);
+                    })
+                } else {
+                    points.push(point);
+                }
+            })
+        })
+    }
+    return points;
+}
+
+async function getGpxTrack(ctx) {
+    let trackData = {
+        tracks: ctx.selectedGpxFile.tracks,
+        wpts: ctx.selectedGpxFile.wpts,
+        metaData: ctx.selectedGpxFile.metaData,
+        ext: ctx.selectedGpxFile.ext,
+        analysis: null
+    }
+
+    if (!trackData.metaData.name) {
+        trackData.metaData.name = ctx.selectedGpxFile.name;
+    }
+
+    return await post(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -138,7 +178,9 @@ const TracksManager = {
     prepareName,
     getTrackData,
     addTrack,
-    updateSelectedTrack
+    updateSelectedTrack,
+    getTrackPoints,
+    getGpxTrack
 };
 
 export default TracksManager;

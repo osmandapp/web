@@ -2,25 +2,25 @@ import React, {useContext, useEffect, useMemo, useState} from 'react';
 import GpxGraphTab from "./GpxGraphTab";
 import AppContext from "../../../context/AppContext";
 
-export default function SpeedTab({width}) {
+export default function SpeedTab({points, width}) {
     const ctx = useContext(AppContext);
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setData(ctx.selectedGpxFile?.analysis?.speedData)
+            setData(points)
         }
     }, [ctx.selectedGpxFile]);
 
     const graphData = useMemo(() => {
         if (data) {
             let result = [];
-            let min = data[0].speed;
-            let max = data[0].speed;
+            let min = data[0].ext.speed;
+            let max = data[0].ext.speed;
             let cumDist = 0;
             data.forEach((point) => {
-                let val = Math.round(point.speed * 10) / 10;
+                let val = Math.round(point.ext.speed * 10) / 10;
                 cumDist += point.distance;
                 let data = {
                     "Distance": Math.round(cumDist) / 1000,

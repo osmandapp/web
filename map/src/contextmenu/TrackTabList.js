@@ -4,6 +4,7 @@ import SpeedTab from "./components/tabs/SpeedTab";
 import React from "react";
 import {Tab} from "@mui/material";
 import PointsTab from "./components/tabs/PointsTab";
+import TracksManager from "../context/TracksManager";
 
 export default class TrackTabList {
 
@@ -21,20 +22,20 @@ export default class TrackTabList {
         const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
+        let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+
         tabs.Info = <GeneralInfoTab key='general'
                                     url={ctx.selectedGpxFile.url} width={this.state.graphWidth} srtm={false}/>;
         if (false) {
             tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 
-        const elevationData = ctx.selectedGpxFile?.analysis?.elevationData;
-        if (elevationData && elevationData.length > 0 && hasAltitude) {
-            tabs.Elevation = <ElevationTab key='elevation' width={this.state.graphWidth} srtm={false}/>
+        if (hasAltitude) {
+            tabs.Elevation = <ElevationTab key='elevation' points={points} width={this.state.graphWidth} srtm={false}/>
         }
 
-        const speedData = ctx.selectedGpxFile?.analysis?.speedData;
-        if (speedData && speedData.length > 0 && hasSpeed) {
-            tabs.Speed = <SpeedTab key='speed' data={speedData} width={this.state.graphWidth}/>;
+        if (hasSpeed) {
+            tabs.Speed = <SpeedTab key='speed' points={points} width={this.state.graphWidth}/>;
         }
 
         if (ctx.selectedGpxFile?.srtmAnalysis) {

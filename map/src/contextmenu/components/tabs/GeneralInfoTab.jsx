@@ -1,14 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
-    Typography,
     Box,
     Button,
+    Divider,
+    Grid,
     ListItemIcon,
     ListItemText,
     MenuItem,
-    Grid,
-    Divider,
-    TextareaAutosize
+    TextareaAutosize,
+    Typography
 } from "@mui/material";
 import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
@@ -30,14 +30,6 @@ export default function GeneralInfoTab({width, srtm}) {
     const [upDownHill, setUpDownHill] = useState('');
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
-
-    function getUrl() {
-        const url = document.createElement('a');
-        url.href = URL.createObjectURL(new Blob([ctx.selectedGpxFile.gpx]));
-        url.download = `${ctx.selectedGpxFile.name}.gpx`;
-
-        return url;
-    }
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
@@ -70,11 +62,6 @@ export default function GeneralInfoTab({width, srtm}) {
         if (ctx.selectedGpxFile?.analysis?.totalDistance) {
             setDistance("Distance: " + (ctx.selectedGpxFile.analysis?.totalDistance / 1000).toFixed(1) + " km");
         }
-        // else {
-        //     if (ctx.selectedGpxFile && ctx.selectedGpxFile.points?.length > 0) {
-        //         setDistance("Distance: " + (Math.round(ctx.selectedGpxFile.points[ctx.selectedGpxFile.points.length - 1].dist / 100) / 10.0) + " km");
-        //     }
-        // }
 
         if (ctx.selectedGpxFile?.analysis?.timeMoving) {
             setTimeMoving("Time moving: " + toHHMMSS(ctx.selectedGpxFile.analysis?.timeMoving));
@@ -192,10 +179,21 @@ export default function GeneralInfoTab({width, srtm}) {
         )
     }
 
+    const downloadGpx = async () => {
+        let gpx = await TracksManager.getGpxTrack(ctx);
+        if (gpx) {
+            gpx = gpx.data;
+            const url = document.createElement('a');
+            url.href = URL.createObjectURL(new Blob([gpx]));
+            url.download = `${ctx.selectedGpxFile.name}.gpx`;
+            url.click()
+        }
+    }
+
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             {ctx.currentObjectType === 'local_client_track' ? EditName() : NoEditName()}
-            {ctx.selectedGpxFile?.metadata?.desc && Description()({desc: ctx.selectedGpxFile?.metadata?.desc})}
+            {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
             {distance && <MenuItem sx={{ml: -2}}>
                 <ListItemIcon>
                     <RouteOutlined fontSize="small"/>
@@ -268,13 +266,7 @@ export default function GeneralInfoTab({width, srtm}) {
             </MenuItem>}
         </Typography>
         <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-            // onClick={() => {
-            //     if (ctx.selectedGpxFile.url) {
-            //         window.open(ctx.selectedGpxFile.url)
-            //     } else {
-            //         getUrl().click()
-            //     }
-            // }}
+                onClick={downloadGpx}
         >Download gpx</Button><br/>
 
     </Box>);
