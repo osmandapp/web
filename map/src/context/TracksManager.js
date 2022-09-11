@@ -1,5 +1,5 @@
 import Utils from "../util/Utils";
-import {Point, Track, TrackData} from "./TrackStore";
+import {MetaData, Point, Track, TrackData} from "./TrackStore";
 import {post} from "axios";
 
 function loadTracks() {
@@ -27,13 +27,12 @@ function saveTracks(tracks) {
 function generate(ctx) {
     let name = createName(ctx);
     let points = Utils.getPointsDist(createPoints());
-    points.push({lat: 44, lng: 19, gap: true})
-    points.push({lat: 48, lng: 31})
-    points.push({lat: 48, lng: 49})
     let pointsArr = [];
-    points.forEach(p => pointsArr.push(new Point({lat: p.lat, lng: p.lng, dist: p.dist, gap: p.gap}, null, null)))
-    let tracks = [new Track(null, pointsArr, null)]
-    return new TrackData(name, tracks, null, null, null);
+    points.forEach(p => pointsArr.push(new Point(p.lat, p.lng, 99999, 99999, p.dist, null, null, null, {})));
+    let tracks = [new Track(pointsArr, {})];
+    let newTrack = new TrackData(new MetaData(name, null, {}), null, tracks, null, {});
+    newTrack.name = name;
+    return newTrack;
 }
 
 function createName(ctx) {
@@ -157,7 +156,7 @@ async function getGpxTrack(ctx) {
         ext: ctx.selectedGpxFile.ext,
         analysis: null
     }
-
+    console.log(ctx.selectedGpxFile)
     if (!trackData.metaData.name) {
         trackData.metaData.name = ctx.selectedGpxFile.name;
     }
