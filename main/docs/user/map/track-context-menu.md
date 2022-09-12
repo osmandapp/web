@@ -310,7 +310,7 @@ _[Track Context menu](../map/track-context-menu.md) → <Translate android="true
 
 Calculate altitude online on OsmAnd servers, based on satellite imagery and digital elevation models. Differences vs. device recorded altitude may be used as altitude correction.
 
-This feature can help to find Altitude data for any places:
+This feature can help to find Altitude data for any place:
 
 ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)
 ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png) 
