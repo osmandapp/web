@@ -21,7 +21,7 @@ Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as f
 
 ### Is there a way to have contour lines displayed in feet also, instead of meters?
 
-Unfortunately not. This would require the generation of completely separate contour line data with different geometry and labels. You can obviously generate maps yourself using GDAL and OsmAndMapCreator but that requires technical environment check [Technical Documentation](../../technical/index.md).
+Yes. You need to choose Feet or Meters data befor downloading Contour lines data: [read here about it](../../user/plugins/contour-lines.md#choose-meters-or-feet).
 
 ### Maps slowly loading on Android 11, 12 (SD-card)
 
@@ -56,7 +56,11 @@ While you need to choose the next ways for saving your map data during the appli
 
 /storage/emulated/0/Android/**obb**/net.osmand → /storage/emulated/0/Android/**media**/net.osmand
 
-### Create own maps
+### No maps rendering for Google Pixel device
+
+For the last versions of OsmAnd 4.2 (Android), [map rendering doesn't work](https://github.com/osmandapp/OsmAnd/issues/15045) for Google Pixel device. You can see the white OsmAnd screen without the map.
+The resolution of this problem is to switch on OpenGL rendering:
+_[OsmAnd menu → Plugins → OsmAnd development → Settings → Use OpenGL rendering](https://osmand.net/blog/osmand-android-4-2-released#25d-view-for-testing)_ and restart OsmAnd.
 
 ## Search
 ### Structured (city &#8594; street &#8594; house) address search doesn't find the house
@@ -69,7 +73,6 @@ I tried to search CITY - STREET - HOUSE NUMBER and there was no result.
 - **Problem in** [Nominatim](https://www.openstreetmap.org/#map=19/33.91937/-118.24357). The house is present on the OpenStreetMap, but not found in Nominatim. [How to fix addresses](https://wiki.openstreetmap.org/wiki/Addresses).
 - **Perhaps a problem in OsmAnd**. The house is present in Nominatim, so this problem in OsmAnd. You can help us to solve it by studying in more detail. [Technical article](../../technical/algorithms/trace-address-search-issues.md).
 
-## Points of Interest
 
 ## Tracks and Points
 ### How to mark different places on the map

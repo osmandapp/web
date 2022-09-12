@@ -45,16 +45,14 @@ Go to Menu → 'Download maps' and press on the map counter. (The field that say
 
 For iOS we have only one version of OsmAnd. If you want to enable the full version you need to get more functions in-app. 
 
-### What does 7 free downloads mean?
+### What does 5 or 7 free downloads mean?
 
-It means that you have only 7 possibilities to download (map update counts as download). It can be either map, updates, voice packs, etc. 
+It means that you have only 5(iOS) or 7(Android) possibilities to download (map update counts as download). It can be either map, updates, voice packs, etc. 
 Please, note if you remove some items from your downloads the chance for free download does not return. 
 
 ### How can I get the additional map downloads in OsmAnd free?
 
-If you already used 7 possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
-
-## Plugins
+If you already used 5(iOS) or 7(Android) possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
 
 ## Import files
 

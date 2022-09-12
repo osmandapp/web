@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
@@ -45,16 +46,17 @@ Context menu will appear when you **short tap** on the marked object on the Map.
 ### Select any point (long tap)
 Context menu will appear when you hold at any point on the Map with **long tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position. 
 
-
-
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android"> 
+ 
+
 ![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
 
 ![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
@@ -110,11 +112,12 @@ In order to gain more details about object you need to click on the "Details" bu
 
 </TabItem>
 
-</Tabs> 
- 
+</Tabs>
+
+
 ### Object info
 
- This panel includes additional information about the object. This info could be copied to the buffer by tap on it. Additional information about object includes:
+This panel includes additional information about the object. This info could be copied to the buffer by tap on it. Additional information about object includes:
 
 - [Coordinates](../map/map-context-menu.md#coordinates)
 - [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
@@ -230,7 +233,7 @@ For Image notes in the Details Menu an image is displayed; when you click on the
 
 <TabItem value="ios" label="iOS">  
 
-> ```This feature doesn't exist for iOS version```
+<InfoAndroidOnly />
 
 </TabItem>
 
@@ -656,7 +659,7 @@ Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
 <TabItem value="ios" label="iOS">  
 
-> ```This feature doesn't exist for iOS version.```
+<InfoAndroidOnly />
 
 </TabItem>
 
@@ -682,7 +685,7 @@ It is possible to reorder or hide items from the '<Translate android="true" ids=
 
 <TabItem value="ios" label="iOS">  
 
-> ```This feature doesn't exist for iOS version.```
+<InfoAndroidOnly />
 
 </TabItem>
 
