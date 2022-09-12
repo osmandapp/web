@@ -42,10 +42,31 @@ You further acknowledge and agree that OsmAnd B.V. shall not be responsible or l
 The Service or any part thereof, any version of the Software installed on your mobile device may be changed, updated, added to, limited or terminated, at any time, 
 temporarily or permanently, without notice, for any reason or no reason by OsmAnd B.V. in its sole discretion ("Updates"). You agree to bear the risks of and hold OsmAnd B.V.harmless for any and all effects that the Updates may have on you and your ability to use the Service, in whole or in part.  
 
-### Download Maps 
-- OsmAnd provides monthly & hourly maps to download from own servers and requires random UUID generated on each client to monitor the download activity and provide the best download service. This log data is not shared with any 3rd party and used solely to have a generic report active users / active downloads monthly.
-- Currently UUID rotation is not implemented and it could be achieved only the app reinstall. 
-- OsmAnd doesn’t communicate information if map was installed manually.
+### Unique User Indentifier
+
+UUID implemented to prevent fraud, predict traffic usage and provide the best service where it is most used. 
+
+- OsmAnd app generates random UUID (Unique User Identifier) for every fact of installation of the app. UUID contains informations about the downloaded maps from our server, time user has the app on its device, IP adress used by user to download maps, number of application launches. This data is stored anonymously on our server and couldn't be sent to third party. Information about the user's IP is not collected regularly, only at the moment of downloading the maps from our server. OsmAnd doesn’t collect any data to the server if map was downloaded or installed via local import.
+- UUID change could be achieved by the app reinstall. 
+- For iOS version - UUID is tied to the Apple <a href="https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor">identifierForVendor</a>.
+
+The collected data is used for reports and statistics, according to the Privacy Policy. Never shared with third party. 
+  
+### Donwloaded Maps Info
+
+Helps to learn the region popularity to provide the best service where it is most used. As OsmAnd provides map updates up to 1 hour, it is important to know which maps to prepare for loading first.
+
+- The map download data is tied to the UUID (Unique User Identifier) and contains the IP adress which was used to download maps, the date and time when it was downloaded, the list of downloaded regions.
+- OsmAnd doesn’t collect IP data if map was installed manually.
+
+### Sharing the Screens data (optional)
+
+Feature disabled by default. By enabling it you are sharing:
+
+- List of names of used screens (features) without any user content / user input data. For example, you share you used the search feature, but never share what you were searching for.  
+- Screens data is tied to the UUID.
+
+The collected data is used for reports and statistics, according to the Privacy Policy. Never shared with third party.
   
 ### Apple ToS
 If you use the Service on an Apple device, then you agree and acknowledge that:  
