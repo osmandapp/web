@@ -61,13 +61,15 @@ Additionally we increase order for [icons](https://github.com/osmandapp/OsmAnd-c
 | GPXLayer (chart icon)         |  90 500       |                         |
 | GPXLayer (selected icon)      |  90 600       |                         |
 | OSM notes                     |  200 000      | OSM notes and fixme     |
-| POI icons                     |  300 000      | POI overlay icons       |
-| Public transport icons        |  500 001      | Public transport icons  |
+| POI                           |  300 000      | POI overlay icons       |
+| Audio Video notes             |  350 000      |                         |
+| Favourites                    |  400 000      | Favorites overlay icons |
+| Public transport              |  500 001      | Public transport icons  |
 | My location                   |  600 000      | My location             |
 | Navigation (start,via,end)    |  700 000      | Navigation points       |
 | Navigation selected point     |  700 600      | Navigation points       |
 | MapMarkersLayer (markers)     |  730 000      |                         |
-| Avoid roads                   |  750 000      | Avoid roads            |
+| Avoid roads                   |  750 000      | ImpassableRoadsLayer    |
 | Icons - **VectorMapLayer**    |  1 000 000 +  | Vector map icons 1 000 000 + iconOrder from style |
 
 ### Android. Order by text and shields
