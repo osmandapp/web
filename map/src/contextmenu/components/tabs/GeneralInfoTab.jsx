@@ -143,9 +143,9 @@ export default function GeneralInfoTab({width, srtm}) {
                     <Box display="flex" justifyContent="flex-end">
                         {disableButton &&
                             <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                                //         onClick={() => {
-                                //     setDisableButton(false);
-                                // }}
+                                        onClick={() => {
+                                    setDisableButton(false);
+                                }}
                             >
                                 edit
                             </Button>}

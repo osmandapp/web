@@ -156,7 +156,7 @@ async function getGpxTrack(ctx) {
         ext: ctx.selectedGpxFile.ext,
         analysis: null
     }
-    console.log(ctx.selectedGpxFile)
+
     if (!trackData.metaData.name) {
         trackData.metaData.name = ctx.selectedGpxFile.name;
     }

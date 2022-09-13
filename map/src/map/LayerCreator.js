@@ -30,6 +30,7 @@ function parsePoints(points, layers) {
         }
     })
 
+    //add start end
     if (coordsTrk.length > 0) {
         layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));
         coordsAll = coordsAll.concat(Object.assign([], coordsTrk));
