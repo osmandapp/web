@@ -20,12 +20,11 @@ function parsePoints(points, layers) {
         if (point.geometry) {
             drawRoutePoints(points, point.geometry, coordsAll, layers);
         } else {
+            coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === 'gap' && coordsTrk.length > 0) {
                 layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));
                 coordsAll = coordsAll.concat(Object.assign([], coordsTrk));
                 coordsTrk = [];
-            } else {
-                coordsTrk.push(new L.LatLng(point.lat, point.lng))
             }
         }
     })
