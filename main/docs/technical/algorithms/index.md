@@ -10,3 +10,4 @@ Functional Descriptions:
 * [What Intents Does OsmAnd Listen to?](./osmand-intents.md)
 * [Navigation Voice Prompt Triggering](./voice-prompt-triggering.md)
 * [Trace Address Search Issues](./trace-address-search-issues.md)
+* [Map rendering: layers, text, symbols, buttons and their order](./map-rendering-layers.md)
