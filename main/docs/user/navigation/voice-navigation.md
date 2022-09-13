@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -20,15 +22,26 @@ Receiving voice prompts during navigation: turn-by-turn insctructions, allerts, 
 
 User can receive voice prompts during navigation. To enable voice prompts for app profiles, turn on or turn off voice prompts (You can also turn on or turn off voice prompts on [the icon of sound on the navigation screen](../navigation/route-navigation.md#navigation-options)):
 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>
 
-<p> </p>
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_navigation_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>
 
-<p> </p>
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_navigation_ios.png)
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_navigation_android.png) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_navigation_ios.png)
+</TabItem>
+
+</Tabs>
 
 - &nbsp;<Translate android="true" ids="shared_string_on"/>/<Translate android="true" ids="shared_string_off"/> - allows to configure to announce street names, traffic warnings, speed camera warnings, speed limits.
 - &nbsp;<Translate android="true" ids="shared_string_language"/> - select preferred language and type of voice (for Android: TTS or recorded).
@@ -49,17 +62,31 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 <Translate android="true" ids="interrupt_music"/> - voice prompts pause music playback.
 
-### Download voice prompts (Android)
+### Download voice prompts
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 For OsmAnd (Android version) you can download voice prompts files:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice,index_name_voice"/>
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+
 ## TTS (text-to-speech)
 
 If you select a TTS voice, you need to have a respective [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. These are partly included in Android, iOS or can be installed separately. Please go to your [Android (device) settings](https://support.google.com/accessibility/android/answer/6006983), find Language and keyboard / Text-to-speech output or similar. Select or install an engine, then also install the language support for the language you need, this may be an extra setting or small download.
 
-Please test ('Listen to an example' or similar test button provided) if your Android TTS is working ok. Then you may also test if your OsmAnd voice prompts have been selected properly by going to Settings-> Plugins-> OsmAnd development-> Test voice prompts. (OsmAnd development plugin must be activated to see the setting). To disable voice prompts, please go to "Configure profile"-> "Navigation Settings"-> "Voice prompts"-> "Voice guidance" and select 'Do not use' option.
+Please test ('Listen to an example' or similar test button provided) if your Android TTS is working ok. Then you may also test if your OsmAnd voice prompts have been selected properly by going to [Settings-> Plugins-> OsmAnd development-> Test voice prompts](voice-navigation.md#testing-of-voice-prompts). (OsmAnd development plugin must be activated to see the setting). To disable voice prompts, please go to "Configure profile"-> "Navigation Settings"-> "Voice prompts"-> "Voice guidance" and select 'Do not use' option.
 
 
 ## How to use
@@ -71,8 +98,21 @@ Please test ('Listen to an example' or similar test button provided) if your And
 - Background navigation - sound.
 
 
-## Testing of voice prompts (Android)
+## Testing of voice prompts
 
-[OsmAnd development plugin](../plugins/development.md)
+<Tabs groupId="operating-systems">
 
-[Testing your voice prompts](../plugins/development.md#plugin-settings)
+<TabItem value="android" label="Android">
+
+For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development.md#osmand-development).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+

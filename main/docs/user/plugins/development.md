@@ -70,16 +70,16 @@ These plugin settings are global and apply to all profiles.
 - <Translate android="true" ids="use_opengl_render"/> - <Translate android="true" ids="use_opengl_render_descr"/>  
 
 
-**Safe**:
+#### Safe:
 
 - <Translate android="true" ids="safe_mode"/> - <Translate android="true" ids="safe_mode_description"/>
 - <Translate android="true" ids="approx_safe_mode"/> - <Translate android="true" ids="approx_safe_mode_description"/>
 
-**Navigation**:
+#### Navigation:
 
 - <Translate android="true" ids="simulate_your_location"/> - <Translate android="true" ids="simulate_your_location_gpx_descr"/>
 
-**OsmAnd development**:
+#### OsmAnd development:
 
 - <Translate android="true" ids="trace_rendering"/> - <Translate android="true" ids="trace_rendering_descr"/> 
 - <Translate android="true" ids="transparent_status_bar"/> - <Translate android="true" ids="transparent_status_bar_descr"/>. 
@@ -88,7 +88,7 @@ These plugin settings are global and apply to all profiles.
 - <Translate android="true" ids="test_voice_prompts"/> - Select a voice and test by playing announcements.
 - <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>.
 
-**Info**:
+#### Info:
 
 - <Translate android="true" ids="memory_allocated_for_routing"/> - see below in this article.
 - <Translate android="true" ids="global_app_allocated_memory"/> - shows operatinal memory for Adnroid and ART (Android Runtime).
