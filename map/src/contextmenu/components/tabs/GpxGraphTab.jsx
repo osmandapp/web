@@ -18,6 +18,8 @@ export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
                 const lng = Object.values(pointList)[e.activeTooltipIndex].lng;
                 ctx.mapMarkerListener(lat, lng);
             }
+        } else {
+            ctx.mapMarkerListener(null, null);
         }
     }
 
