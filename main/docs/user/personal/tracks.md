@@ -273,6 +273,7 @@ There are two variants for importing a track file in OsmAnd. The first is import
 Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
 1. By [Track Context menu → Share](../map/track-context-menu.md#options).
 2. By [My Places menu → Tracks](../personal/tracks.md#actions). Exporting more than one track by a bundle.
+3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
 
 </TabItem>
 
@@ -281,6 +282,7 @@ Exporting track file or files to any massengers, email, file managers, Drive , a
 Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
 1. By [Track Context menu → Share](../map/track-context-menu.md#options).
 2. By [My Places menu → Tracks](../personal/tracks.md#actions). Exporting more than one track by a bundle.
+3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
 
 </TabItem>
  

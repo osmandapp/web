@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -159,6 +160,8 @@ Two screens:
 Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup"/>
+
+iOS Menu → Settings → Backup & Restore → Local backup
 
 <p> </p>
 
