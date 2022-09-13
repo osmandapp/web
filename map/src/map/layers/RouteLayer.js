@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useContext, useState, useCallback } from 'react';
-import { Marker, GeoJSON, useMap} from "react-leaflet";
+import React, {useEffect, useRef, useContext, useState, useCallback} from 'react';
+import {Marker, GeoJSON, useMap} from "react-leaflet";
 import L from 'leaflet';
-import MarkerIcon from '../MarkerIcon.js'
 import AppContext from "../../context/AppContext";
-import { useNavigate, useLocation } from 'react-router-dom';
-
+import {useNavigate, useLocation} from 'react-router-dom';
+import markerOptions from "../markers/MarkerOptions";
 
 
 function dist(a1, a2) {
@@ -14,8 +13,9 @@ function dist(a1, a2) {
 }
 
 function moveableMarker(ctx, map, marker) {
-    let moved ;
+    let moved;
     let mv;
+
     function trackCursor(evt) {
         marker.setLatLng(evt.latlng)
     }
@@ -139,7 +139,7 @@ const RouteLayer = () => {
     const intermediatEventHandlers = useCallback({
         // click called after dragend
         clicknotworking(event) {
-           // console.log('Marker clicked');
+            // console.log('Marker clicked');
             let ind = event.target.options['data-index'];
             let newinter = Object.assign([], ctx.interPoints);
             newinter.splice(ind, 1);
@@ -159,7 +159,7 @@ const RouteLayer = () => {
         const params = `lat=${e.latlng.lat.toFixed(6)}&lon=${e.latlng.lng.toFixed(6)}`;
         const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/geocoding?${params}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
+            headers: {'Content-Type': 'application/json'}
         });
         if (response.ok) {
             let data = await response.json();
@@ -167,7 +167,7 @@ const RouteLayer = () => {
             if (data.features.length > 0) {
                 props = data.features[0]?.properties;
             }
-            setGeocodingData({ geojson: data, id: new Date().getTime(), props: props });
+            setGeocodingData({geojson: data, id: new Date().getTime(), props: props});
         }
     };
 
@@ -204,13 +204,13 @@ const RouteLayer = () => {
     const onEachFeature = (feature, layer) => {
         if (feature.properties && feature.properties.description) {
             let desc = feature.properties.description;
-            if (feature.properties.roadId) {    
+            if (feature.properties.roadId) {
                 let roadId = feature.properties.roadId;
                 let avoidRoadObj = {
                     id: roadId,
                     name: 'Way ' + Math.trunc(roadId / 64)
                 };
-                window['addAvoidRoadId' + avoidRoadObj.id] = () => {  
+                window['addAvoidRoadId' + avoidRoadObj.id] = () => {
                     let newAvoidRoads = Object.assign([], ctx.avoidRoads);
                     newAvoidRoads.push(avoidRoadObj);
                     ctx.setAvoidRoads(newAvoidRoads);
@@ -223,7 +223,7 @@ const RouteLayer = () => {
     }
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
-        if (feature.properties && feature.properties.description && 
+        if (feature.properties && feature.properties.description &&
             feature.properties.description.includes('[MUTE]')) {
             opts.fillColor = '#777';
         }
@@ -249,15 +249,15 @@ const RouteLayer = () => {
         let opts = Object.assign({}, geojsonMarkerOptions);
         if (feature.properties && feature.properties.index) {
             opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
-            let clrs = ['#6DD6DA','#95D9DA', '#A2ABB5', '#AE8CA3','#817F82'];
+            let clrs = ['#6DD6DA', '#95D9DA', '#A2ABB5', '#AE8CA3', '#817F82'];
             let indx = [3, 10, 30, 100, 1000];
-            for(var i = 0; i < indx.length; i++) {
+            for (var i = 0; i < indx.length; i++) {
                 if (feature.properties.index > indx[i]) {
                     opts.fillColor = clrs[i];
                 }
             }
         }
-        
+
         return L.circleMarker(latlng, opts);
     };
 
@@ -270,23 +270,21 @@ const RouteLayer = () => {
 
     return <>
         {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
-            pointToLayer={pointToLayer} onEachFeature={onEachFeature} />}
+                                   pointToLayer={pointToLayer} onEachFeature={onEachFeature}/>}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
-            pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature} />}
+                                   pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature}/>}
         {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
-            pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature} />}
-        {ctx.startPoint && //<CircleMarker center={ctx.startPoint} radius={5} pathOptions={{ color: 'green' }} opacity={1}
-            <Marker position={ctx.startPoint} icon={MarkerIcon({ bg: 'blue' })}
-                ref={startPointRef} draggable={true} eventHandlers={startEventHandlers} />}
-        {ctx.interPoints.map((it, ind) => 
-            // <CircleMarker key={'mark'+ind} center={it} radius={5} pathOptions={{ color: 'green', 
-            //     radius: 8, fillOpacity: 0.8 }} opacity={1} on
-            <Marker key={'mark' + ind} data-index={ind} position={it} icon={MarkerIcon({ bg: 'blue' })}
+                                           pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature}/>}
+        {ctx.startPoint &&
+            <Marker position={ctx.startPoint} icon={markerOptions.startIcon}
+                    ref={startPointRef} draggable={true} eventHandlers={startEventHandlers}/>}
+        {ctx.interPoints.map((it, ind) =>
+            <Marker key={'mark' + ind} data-index={ind} position={it} icon={markerOptions.startIcon}
                     draggable={true} eventHandlers={intermediatEventHandlers}/>)}
-        {ctx.endPoint && <Marker position={ctx.endPoint} icon={MarkerIcon({ bg: 'red' })}
-            ref={endPointRef} draggable={true} eventHandlers={endEventHandlers} />}
-        {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={MarkerIcon({ bg: 'yellow' })}
-                                 ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers} />}
+        {ctx.endPoint && <Marker position={ctx.endPoint} icon={markerOptions.endIcon}
+                                 ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}
+        {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={markerOptions.pointerIcons}
+                                 ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers}/>}
     </>;
 };
 

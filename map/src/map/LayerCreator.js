@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import MarkerIcon from "./MarkerIcon";
+import markerOptions from "./markers/MarkerOptions";
 
 function createLayersByTrackData(data) {
     let layers = [];
@@ -51,7 +51,9 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
         }
 
         points.forEach(p => {
-            layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {icon: markerOptions.route}));
+            layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {
+                icon: markerOptions.route,
+            }));
         })
     })
     coordsAll = coordsAll.concat(Object.assign([], coords));
@@ -139,29 +141,14 @@ function getSvgBackground(colorBackground, point) {
     return svg;
 }
 
-const markerOptions = {
-    startIcon: MarkerIcon({bg: 'blue'}),
-    endIcon: MarkerIcon({bg: 'red'}),
-    wptIcons: {
-        '': MarkerIcon({bg: 'yellow'}),
-    },
-    route: L.icon({
-        iconUrl: '/map/images/map_icons/circle.svg',
-        iconSize: [10, 10],
-        clickable: false
-    })
-};
-
 function addStartEndMarkers(points, layers) {
     let start = new L.LatLng(points[0].lat, points[0].lng);
     let end = new L.LatLng(points[points.length - 1].lat, points[points.length - 1].lng);
 
     layers.push(new L.Marker(start, {
-        zIndexOffset: 1000,
         icon: markerOptions.startIcon
     }))
     layers.push(new L.Marker(end, {
-        zIndexOffset: 1000,
         icon: markerOptions.endIcon
     }))
 }

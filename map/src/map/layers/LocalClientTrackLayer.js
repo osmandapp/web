@@ -2,8 +2,9 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
-import MarkerIcon from "../MarkerIcon";
+import MarkerIcon from "../markers/MarkerIcon";
 import LayerCreator from "../LayerCreator";
+import markerOptions from "../markers/MarkerOptions";
 
 
 export default function LocalClientTrackLayer() {
@@ -27,7 +28,7 @@ export default function LocalClientTrackLayer() {
             lng: ctx.selectedGpxFile.showPoint.lng,
             lat: ctx.selectedGpxFile.showPoint.lat
         }, {
-            icon: MarkerIcon({bg: 'yellow'})
+            icon: markerOptions.pointerIcons
         }).addTo(map);
     }
 
