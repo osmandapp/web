@@ -96,7 +96,7 @@ const PointsTab = ({width}) => {
                         <ListItemText>
                             <Typography variant="inherit" noWrap>
                                 Point - {index + 1}<br/>
-                                {point.dist === 0 ? "start" : Math.round(point.dist) + " m"}
+                                {point.distanceFromStart === 0 ? "start" : Math.round(point.distanceFromStart) + " m"}
                             </Typography>
                         </ListItemText>
                         <ListItemAvatar>
@@ -118,7 +118,7 @@ const PointsTab = ({width}) => {
                 <div ref={provided.innerRef}
                      style={{maxHeight: '35vh', overflow: 'auto'}}
                      {...provided.droppableProps}>
-                    {ctx.selectedGpxFile && ctx.selectedGpxFile.points && ctx.selectedGpxFile.points.map((point, index) => {
+                    {ctx.selectedGpxFile && TracksManager.getActivePoints(ctx.selectedGpxFile).map((point, index) => {
                         return PointRow()({point: point, index: index});
                     })}
                     {provided.placeholder}

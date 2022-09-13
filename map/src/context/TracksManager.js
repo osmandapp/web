@@ -28,7 +28,7 @@ function generate(ctx) {
     let name = createName(ctx);
     let points = Utils.getPointsDist(createPoints());
     let pointsArr = [];
-    points.forEach(p => pointsArr.push(new Point(p.lat, p.lng, 99999, 99999, p.dist, null, null, null, {})));
+    points.forEach(p => pointsArr.push(new Point(p.lat, p.lng, 99999, 99999, p.distance, null, null, null, {})));
     let tracks = [new Track(pointsArr, {})];
     let newTrack = new TrackData(new MetaData(name, null, {}), null, tracks, null, {});
     newTrack.name = name;
@@ -125,6 +125,7 @@ function updateSelectedTrack(ctx, track) {
 }
 
 function addTrack(ctx, track) {
+    addDistance(track);
     ctx.localTracks.push(track);
     ctx.setLocalTracks([...ctx.localTracks]);
     TracksManager.saveTracks(ctx.localTracks);
@@ -146,6 +147,46 @@ function getTrackPoints(track) {
         })
     }
     return points;
+}
+
+function getActivePoints(track) {
+    let points = [];
+    if (track.tracks) {
+        track.tracks.forEach(track => {
+            track.points.forEach(point => {
+                points.push(point);
+            })
+        })
+    }
+    return points;
+}
+
+function addDistance(track) {
+    let hasOnlyTrk = false;
+    if (track.tracks) {
+        track.tracks.forEach(track => {
+            for (let point in track.points) {
+                if (point.geometry) {
+                    let distanceFromStart = 0;
+                    point.geometry.forEach(trk => {
+                        let currIndex = point.geometry.indexOf(trk);
+                        if (trk.distance === 0 && currIndex !== 0) {
+                            trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
+                        }
+                        distanceFromStart += trk.distance;
+                        point['distanceFromStart'] = distanceFromStart;
+                        point['distance'] += trk.distance;
+                    })
+                } else {
+                    hasOnlyTrk = true;
+                    break;
+                }
+            }
+            if (hasOnlyTrk) {
+                track.points = Utils.getPointsDist(track.points);
+            }
+        })
+    }
 }
 
 async function getGpxTrack(ctx) {
@@ -179,7 +220,8 @@ const TracksManager = {
     addTrack,
     updateSelectedTrack,
     getTrackPoints,
-    getGpxTrack
+    getGpxTrack,
+    getActivePoints
 };
 
 export default TracksManager;
