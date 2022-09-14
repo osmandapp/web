@@ -4,7 +4,7 @@ sidebar_position: 2
 import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 # Simple Map activity
-There is only map and switch for opengl rengering 
+There is only map and switch for opengl rendering 
 
   ```
 public class SimpleMapActivity extends AppCompatActivity {
