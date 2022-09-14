@@ -10,7 +10,6 @@ const ElevationTab = ({points, width, srtm}) => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            console.log(ctx.selectedGpxFile)
             if (srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis) {
                 setData({data: points, srtm: true});
             } else if (ctx.selectedGpxFile.analysis?.hasElevationData) {
@@ -23,7 +22,6 @@ const ElevationTab = ({points, width, srtm}) => {
 
     const graphData = useMemo(() => {
         if (data) {
-            console.log(data)
             let elevation = data.srtm ? "srtmEle" : "ele";
             let points = data.data;
             let result = [];

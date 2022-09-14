@@ -50,12 +50,14 @@ export default function MapContextMenu() {
         }
         if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
-                setPrevTrack(ctx.selectedGpxFile)
-                let obj = (ctx.currentObjectType === 'weather' && ctx.weatherPoint)
-                    ? new WeatherTabList().create(ctx)
-                    : ctx.selectedGpxFile
-                        ? new TrackTabList().create(ctx)
-                        : null;
+                let obj;
+                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile.tracks) {
+                    obj = new TrackTabList().create(ctx);
+                } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                    obj = WeatherTabList().create(ctx);
+                } else if (ctx.selectedGpxFile) {
+                    obj = new TrackTabList().create(ctx);
+                }
                 if (obj) {
                     setShowContextMenu(true);
                     setTabsObj(obj);
