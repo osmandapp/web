@@ -172,7 +172,7 @@ export default function GeneralInfoTab({width, srtm}) {
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={8}>
                     <Typography className={styles.name} variant="inherit">
-                        {ctx.selectedGpxFile?.summary && TracksManager.prepareName(ctx.selectedGpxFile.summary.name, false)}
+                        {ctx.selectedGpxFile?.name && TracksManager.prepareName(ctx.selectedGpxFile.name, false)}
                     </Typography>
                 </Grid>
             </Grid>

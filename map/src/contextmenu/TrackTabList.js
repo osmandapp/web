@@ -37,7 +37,7 @@ export default class TrackTabList {
         if (hasSpeed) {
             tabs.Speed = <SpeedTab key='speed' points={points} width={this.state.graphWidth}/>;
         }
-
+        console.log(ctx.selectedGpxFile)
         if (ctx.selectedGpxFile?.analysis && ctx.selectedGpxFile.analysis.srtmAnalysis) {
             tabs.SRTM = <GeneralInfoTab key='srtm'
                                         width={this.state.graphWidth} srtm={true}/>;

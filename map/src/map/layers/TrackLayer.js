@@ -1,23 +1,16 @@
 import React, {useContext, useEffect} from 'react';
-import L from "leaflet";
 import AppContext from "../../context/AppContext";
-import Utils from "../../util/Utils";
 import {useMap} from "react-leaflet";
-import markerOptions from "../markers/MarkerOptions";
+import LayerCreator from "../LayerCreator";
 
 
 async function addTrackToMap(ctx, file, map) {
-    let trackData = await Utils.getFileData(file);
-
-    file.gpx = new L.GPX(trackData, {
-        async: true,
-        marker_options: markerOptions
-    }).on('loaded', function (e) {
-        ctx.setSelectedGpxFile(Object.assign({}, file));
-        map.fitBounds(e.target.getBounds());
-    }).addTo(map);
-    file.points = [];
+    let layer = LayerCreator.createLayersByTrackData(file);
+    file.gpx = layer;
+    map.fitBounds(layer.getBounds());
+    layer.addTo(map);
     ctx.setGpxFiles(ctx.gpxFiles);
+    ctx.setSelectedGpxFile(Object.assign({}, file));
 }
 
 function removeLayerFromMap(file, map) {
