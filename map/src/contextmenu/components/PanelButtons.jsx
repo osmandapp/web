@@ -46,13 +46,13 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                 <ButtonGroup
                     orientation="vertical"
                     color="primary">
-                    <IconButton
+                    {ctx.currentObjectType !== 'cloud_track' && <IconButton
                         variant="contained"
                         type="button"
                         onClick={() => deleteCurrentTrack()}
                     >
                         <Delete fontSize="small"/>
-                    </IconButton>
+                    </IconButton>}
                     <IconButton
                         variant="contained"
                         type="button"
