@@ -2,9 +2,9 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
-import MarkerIcon from "../markers/MarkerIcon";
 import LayerCreator from "../LayerCreator";
 import markerOptions from "../markers/MarkerOptions";
+import TracksManager from "../../context/TracksManager";
 
 
 export default function LocalClientTrackLayer() {
@@ -60,7 +60,7 @@ export default function LocalClientTrackLayer() {
     function updateTrackOnMap(track) {
         map.removeLayer(layers[track.name].layer);
         delete layers[track.name];
-        addTrackToMap(track, false)
+        addTrackToMap(track, false);
     }
 
     function orderPointsWasChanged(tracksP, layersP) {
@@ -74,14 +74,6 @@ export default function LocalClientTrackLayer() {
         return false;
     }
 
-    function getTrackPointsLength(track) {
-        let length = 0;
-        track.tracks.forEach(t => {
-            length += t.points.length;
-        })
-        return length;
-    }
-
     useEffect(() => {
         for (let l in layers) {
             layers[l].active = false;
@@ -92,9 +84,9 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                // if (getTrackPointsLength(track) !== getTrackPointsLength(currLayer.track) || orderPointsWasChanged(track.points, currLayer.points)) {
-                //     updateTrackOnMap(track)
-                // }
+                if (TracksManager.getActivePoints(track) !== TracksManager.getActivePoints(currLayer.track) || orderPointsWasChanged(track.points, currLayer.points)) {
+                    updateTrackOnMap(track);
+                }
             }
         });
 

@@ -38,15 +38,10 @@ export default class TrackTabList {
             tabs.Speed = <SpeedTab key='speed' points={points} width={this.state.graphWidth}/>;
         }
 
-        if (ctx.selectedGpxFile?.srtmAnalysis) {
+        if (ctx.selectedGpxFile?.analysis && ctx.selectedGpxFile.analysis.srtmAnalysis) {
             tabs.SRTM = <GeneralInfoTab key='srtm'
                                         width={this.state.graphWidth} srtm={true}/>;
-        }
-
-        if (ctx.selectedGpxFile?.srtmAnalysis?.elevationData &&
-            ctx.selectedGpxFile.srtmAnalysis.elevationData.length > 0) {
-            tabs["SRTM Ele"] = <ElevationTab key='srtmele' data={ctx.selectedGpxFile.srtmAnalysis.elevationData}
-                                             width={this.state.graphWidth} srtm={true}/>
+            tabs["SRTM Ele"] = <ElevationTab key='srtmele' points={points} width={this.state.graphWidth} srtm={true}/>
         }
 
         list = list.concat(Object.keys(tabs).map((item, index) =>

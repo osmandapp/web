@@ -162,28 +162,33 @@ function getActivePoints(track) {
 }
 
 function addDistance(track) {
-    let hasOnlyTrk = false;
     if (track.tracks) {
-        track.tracks.forEach(track => {
-            for (let point in track.points) {
-                if (point.geometry) {
-                    let distanceFromStart = 0;
-                    point.geometry.forEach(trk => {
-                        let currIndex = point.geometry.indexOf(trk);
-                        if (trk.distance === 0 && currIndex !== 0) {
-                            trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
+        track.tracks.forEach(t => {
+            if (!track.hasOnlyTrk) {
+                let distanceFromStart = 0;
+                for (let point of t.points) {
+                    if (point.geometry) {
+                        if (point.geometry.length > 0) {
+                            point.geometry.forEach(trk => {
+                                let currIndex = point.geometry.indexOf(trk);
+                                if (trk.distance === 0 && currIndex !== 0) {
+                                    trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
+                                }
+                                distanceFromStart += trk.distance;
+                                point['distanceFromStart'] = distanceFromStart;
+                                point['distance'] += trk.distance;
+                            })
+                        } else {
+                            point.distanceFromStart = 0;
                         }
-                        distanceFromStart += trk.distance;
-                        point['distanceFromStart'] = distanceFromStart;
-                        point['distance'] += trk.distance;
-                    })
-                } else {
-                    hasOnlyTrk = true;
-                    break;
+                    } else {
+                        track.hasOnlyTrk = true;
+                        t.points = Utils.getPointsDist(t.points);
+                        break;
+                    }
                 }
-            }
-            if (hasOnlyTrk) {
-                track.points = Utils.getPointsDist(track.points);
+            } else {
+                t.points = Utils.getPointsDist(t.points);
             }
         })
     }
