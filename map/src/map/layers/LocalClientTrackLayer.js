@@ -84,7 +84,7 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (TracksManager.getActivePoints(track) !== TracksManager.getActivePoints(currLayer.track) || orderPointsWasChanged(track.points, currLayer.points)) {
+                if (TracksManager.getActivePoints(track).length !== TracksManager.getActivePoints(currLayer.track).length) {
                     updateTrackOnMap(track);
                 }
             }

@@ -26,7 +26,7 @@ export default function CloudTrackItem({file}) {
         }
     }
 
-    async function addTrackToMap() {
+    async function addTrackToMap(setProgressVisible) {
         ctx.setCurrentObjectType('cloud_track');
         if (file.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
@@ -37,7 +37,8 @@ export default function CloudTrackItem({file}) {
             let f = await Utils.getFileData(newGpxFiles[file.name]);
             let track = await TracksManager.getTrackData(new Blob([f]));
             if (track) {
-                track.name = TracksManager.prepareName(file.name);
+                track.name = file.name;
+                setProgressVisible(false);
             }
             Object.keys(track).forEach(t => {
                 newGpxFiles[file.name][`${t}`] = track[t];

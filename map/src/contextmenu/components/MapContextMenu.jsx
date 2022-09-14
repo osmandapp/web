@@ -51,7 +51,7 @@ export default function MapContextMenu() {
         if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
                 let obj;
-                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile.tracks) {
+                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
                     obj = WeatherTabList().create(ctx);

@@ -93,39 +93,39 @@ export default function TracksMenu() {
         let diffUp = 0;
         let diffDown = 0;
         Object.values(ctx.gpxFiles).forEach((item) => {
-            if (item.local !== true && item.summary && item.url) {
-                if (item.summary.totalTracks) {
-                    tracks += item.summary.totalTracks;
+            if (item.local !== true && item.analysis && item.url) {
+                if (item.analysis.totalTracks) {
+                    tracks += item.analysis.totalTracks;
                 }
-                if (item.summary.points) {
-                    seg += item.summary.points - 1;
+                if (item.analysis.points) {
+                    seg += item.analysis.points - 1;
                 }
-                if (item.summary.wptPoints) {
-                    wpts += item.summary.wptPoints;
+                if (item.analysis.wptPoints) {
+                    wpts += item.analysis.wptPoints;
                 }
-                if (item.summary.totalDistance) {
-                    dist += item.summary.totalDistance;
+                if (item.analysis.totalDistance) {
+                    dist += item.analysis.totalDistance;
                 }
-                if (item.summary.timeMoving) {
-                    time += item.summary.timeMoving;
+                if (item.analysis.timeMoving) {
+                    time += item.analysis.timeMoving;
                 }
-                if (item.summary.diffElevationUp) {
-                    diffUp += item.summary.diffElevationUp;
+                if (item.analysis.diffElevationUp) {
+                    diffUp += item.analysis.diffElevationUp;
                 }
-                if (item.summary.diffElevationDown) {
-                    diffDown += item.summary.diffElevationDown;
+                if (item.analysis.diffElevationDown) {
+                    diffDown += item.analysis.diffElevationDown;
                 }
             }
 
-            if (item.local === true && item.summary && item.url) {
-                if (item.summary.totalTracks) {
-                    tracks += item.summary.totalTracks;
+            if (item.local === true && item.analysis && item.url) {
+                if (item.analysis.totalTracks) {
+                    tracks += item.analysis.totalTracks;
                 }
-                if (item.summary.wptPoints) {
-                    wpts += item.summary.wptPoints;
+                if (item.analysis.wptPoints) {
+                    wpts += item.analysis.wptPoints;
                 }
-                if (item.summary.totalDistance) {
-                    dist += item.summary.totalDistance;
+                if (item.analysis.totalDistance) {
+                    dist += item.analysis.totalDistance;
                 }
             }
         });
