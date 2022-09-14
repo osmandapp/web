@@ -42,7 +42,12 @@ The OsmAnd development plugin is only necessary for *developers and experienced 
 <TabItem value="ios" label="iOS">  
 
 
-<InfoAndroidOnly />
+**Enable** OsmAnd development plugin:
+- Tap **OsmAnd development** in the list of plugins in: *<Translate ios="true" ids="menu,plugins,product_title_development"/>*. Or tap the button to the right of the option and select *Ok*.
+- Tap the "Turn off" button, and it will change to "Ok".
+- Confirm your choice in **New plugin added** screen.
+
+![Development plugin iOS](@site/static/img/plugins/development/development_plugin_ios.png)
 
 
 </TabItem>
@@ -113,7 +118,11 @@ These plugin settings are global and apply to all profiles.
 
 <TabItem value="ios" label="iOS">  
 
-<InfoAndroidOnly />
+To find settings of OsmAnd development plugin, follow these steps: *<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development"/>*. 
+
+Here you can simulate your position by GPX-track. [Read here](../plugins/development.md#how-to-use) about GPX-track simulation.
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_1_ios.png)
 
 </TabItem>
 
@@ -121,7 +130,6 @@ These plugin settings are global and apply to all profiles.
 
 
 ## How to use
-
 
 <Tabs groupId="operating-systems">
 
@@ -139,8 +147,26 @@ These plugin settings are global and apply to all profiles.
 
 <TabItem value="ios" label="iOS">  
 
+You can simulate location moving by using GPX track:
+- _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing"/>_:
 
-<InfoAndroidOnly />
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_ios.png)
+
+- Select a GPX track to simulate the location of the device _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,shared_string_gpx_track"/>_
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png)
+
+- Select a route simulation speed: _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,simulate_location_movement_speed"/>_  
+  - _Original_ (the location movement speed during the simulation will be equal to the speed in the selected file).
+  - _x2_ (the location movement speed during the simulation will be x2 bigger to the speed in the selected file).
+  - _x3_ (the location movement speed during the simulation will be x3 bigger to the speed in the selected file).
+  - _x4_ (the location movement speed during the simulation will be x4 bigger to the speed in the selected file).
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_speed_ios.png)
+
+- Star-stop of the location movement: _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,shared_string_start"/> / <Translate ios="true" ids="shared_string_stop"/>_ 
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_start_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_stop_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_simulation_ios.png)
 
 </TabItem>
 
