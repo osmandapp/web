@@ -45,15 +45,16 @@ temporarily or permanently, without notice, for any reason or no reason by OsmAn
 **5.2** You agree to bear the risks of and hold OsmAnd B.V. harmless for any and all effects that the Updates may have on you and your ability to use the Service, in whole or in part.  
 
 ## 6. Unique User Indentifier
-**6.1** You agree that OsmAnd B.V. generates UUID (Unique User Identifier) for each OsmAnd app installation and shared with OsmAnd Servers during Map downloads. UUID implemented to monitor fair usage of server resources, predict traffic usage and generate general reports monthly map downloads.
+**6.1** You agree that OsmAnd B.V. generates UUID (Unique User Identifier) for each OsmAnd app installation and shared with OsmAnd Servers during Map downloads. UUID is implemented to monitor fair usage of server resources, predict traffic usage and provide general reports monthly map downloads.
 
-- OsmAnd app generates random UUID for every fact of installation of the app. UUID contains informations about the downloaded maps from our server, time user has the app on its device, IP adress used by user to download maps, number of application launches. This data is stored anonymously on our server and couldn't be sent to third party. Information about the user's IP is not collected regularly, only at the moment of downloading the maps from our server. OsmAnd doesn’t collect any data to the server if map was downloaded or installed via local import.
-- UUID changes during each app reinstall, since OsmAnd 4.2 UUID is rotated every 3 months. 
-- For iOS version - UUID is tied to the Apple <a href="https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor">identifierForVendor</a>.
+- OsmAnd app generates on device a random UUID for every fact of installation of the app. UUID is sent with request to download vector maps from OsmAnd servers. General map download request contains IP, UUID, number of days since install, number of starts and map information. It doesn't have any geo or other private information. UUID is not linked or shared with any other information.
+- UUID changes during each app reinstall and automatically every 3 months (since OsmAnd 4.2). 
+- iOS: UUID is tied to the Apple <a href="https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor">identifierForVendor</a>.
+- UUID-request is not sent if map downloaded to the phone and installed manually.
 
-**6.2** The collected data is used for reports and statistics, according to the <a href="https://osmand.net/docs/legal/privacy-policy">Privacy Policy</a>. Never shares with third party. 
+**6.2** The collected data is used for reports and statistics, according to the <a href="https://osmand.net/docs/legal/privacy-policy">Privacy Policy</a>. It's never shared with any third party. 
 
-**6.3** OsmAnd B.V. allows [to switch off](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) the user data collection of usage OsmAnd app. The UUID for this case of disabling data collection is not generated and not assigned.
+**6.3** OsmAnd B.V. allows [to switch off](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) the user data collection of usage OsmAnd app. The UUID in this case is not sent with any download request.
   
 ## 7. Apple ToS
 **7.1** If you use the Service on an Apple device, then you agree and acknowledge that:  
@@ -96,4 +97,4 @@ OsmAnd B.V. can only refund your payment within 72 hours after your transaction 
 ## 11. Contact Us
 **11.1** If you have any questions about these Terms, please contact us: contactus@osmand.net  
 
-** Last updated: 15 September 2022 **  
+** Last updated: 16 September 2022 **  
