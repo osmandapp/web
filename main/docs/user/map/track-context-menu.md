@@ -440,7 +440,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 - &nbsp;<Translate android="true" ids="shared_string_show_on_map"/> - shows or not the track on the map.
 - &nbsp;<Translate android="true" ids="shared_string_appearance"/> - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
 - &nbsp;<Translate android="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
-- &nbsp;<Translate android="true" ids="gpx_join_gaps"/> - allows to join gaps of the track.
+- &nbsp;<Translate android="true" ids="join_segments"/> - allows to join gaps of the track.
 - &nbsp;<Translate android="true" ids="analyze_on_map"/> - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
 - &nbsp;<Translate android="true" ids="analyze_by_intervals"/> - [analyze the track by time or distance intervals](../map/track-context-menu.md#split-interval).
 - &nbsp;<Translate android="true" ids="shared_string_share"/> - export the chosen track.
