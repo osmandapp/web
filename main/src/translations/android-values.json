@@ -1462,7 +1462,6 @@
   "app_mode_wagon": "Wagon",
   "app_mode_pickup_truck": "Pickup truck",
   "shared_string_default": "Default",
-  "gpx_join_gaps": "Join gaps",
   "app_mode_camper": "Camper",
   "app_mode_campervan": "Campervan (RV)",
   "rendering_attr_showLez_description": "Show Low Emission Zones on the map. Does not affect routing.",
