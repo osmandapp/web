@@ -52,9 +52,7 @@ You may
 
 ### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25)
 
-I have successfully tested the following Power settings under Android 9, 10 and later 11 (on Samsung devices) for OsmAnd to log gapless tracks:
-
-Please locate these **11 settings** and set accordingly:
+I have successfully tested the following Power settings under Android 9, 10 and later 11 (on Samsung devices) for OsmAnd to log gapless tracks. Please locate these **11 settings** and set accordingly:
 * (1) **Power (saving) mode** = OFF
 * (2) **Adaptive power saving** = OFF   (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging.)
 * (3) **Adaptive battery** = ON   (candidate for 'OFF', but no problem detected so far)
