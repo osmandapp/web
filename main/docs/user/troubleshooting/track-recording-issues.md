@@ -38,8 +38,9 @@ You may
 
 ## Recorded tracks have gaps
 
-- In general: Starting with Android 4.4 (or maybe before), new Android power saving options allow limiting CPU max speed and screen brightness, and facilitate apps being killed in the background, e.g. while the device screen is turned off.
-- For outdoor use (screen brightness), map rendering (CPU limit), and 'background' track recording these power saving features may impair your experience with OsmAnd, you may want to consider turning the device (Android) power saving entirely off. (It depends on the apps, but I observe no decisive increase in power usage for any of my apps.)
+Since at least Android 4.4, Android power saving options have allowed the system to limit CPU max speed, screen brightness, and kill apps in the background (e.g. when the device screen is off).
+
+For outdoor use (screen brightness), map rendering (CPU limit), and track recording these power saving features may impair your experience with OsmAnd, hence you may want to consider turning the device (Android) power saving entirely off. (It may depend on your portfolio of apps, but I observe no noticeable impact on power usage on my devices.)
 
 ### Check in OsmAnd
 
