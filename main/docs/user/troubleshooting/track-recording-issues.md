@@ -59,7 +59,7 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 * (3) **Adaptive battery** = ON   (candidate for 'OFF', but no problem detected so far)
 * (4) **Put unused apps to sleep** = OFF   (check list of sleeping apps)
 * (5) **Auto disable unused apps** = OFF   (seems not to exist anymore in Android 10)
-* (6) **Optimize settings** = OFF   (in Android 10 under Device care / Advanced, in Android 11 seems gone)
+* (6) **Optimize settings** = OFF   (in Android 10 under "_Device care / Advanced_", in Android 11 seems gone)
 * (7) **Auto optimize (daily)** = ON
 * (8) **Auto restart (at set times)** = OFF
 * (9) **Optimize Settings** = OFF   (in Android 11 seems gone)
