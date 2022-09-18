@@ -54,20 +54,27 @@ You may
 
 I have successfully tested the following Power settings under Android 9, 10 and later 11 (on Samsung devices) for OsmAnd to log gapless tracks:
 
-* **Device care / (Battery) or (3-dots / Automation):**
-  * _Power saving mode_ = OFF
-  * _Adaptive power saving_ = OFF (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging)
-* **Device care / Battery (under And9 under / Settings, under And 10 under / App Power Management):**
-  * _Adaptive battery_ = ON (candidate for 'OFF', but no problem detected so far)
-  * _Put unused apps to sleep_ = OFF (check list of sleeping apps)
-  * _Auto disable unused apps_ = OFF (seems not to exist anymore in And10)
-  * _Optimize settings_ = OFF (in And10 under Device care / Advanced, in And 11 seems gone)
-* **Device Care / Advanced:**
-  * _Notifications_ = ON
-  * _Auto optimize (daily)_ = ON
-  * _Auto restart (at set times)_ = OFF
-  * _Optimize Settings_ = OFF (in And 11 seems gone)
-* **Apps / ... / Special access / Optimize battery usage / All** = Leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
+Please locate these **11 settings** and set accordingly:
+* (1) **Power (saving) mode** = OFF
+* (2) **Adaptive power saving** = OFF   (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging.)
+* (3) **Adaptive battery** = ON   (candidate for 'OFF', but no problem detected so far)
+* (4) **Put unused apps to sleep** = OFF   (check list of sleeping apps)
+* (5) **Auto disable unused apps** = OFF   (seems not to exist anymore in Android 10)
+* (6) **Optimize settings** = OFF   (in Android 10 under Device care / Advanced, in Android 11 seems gone)
+* (7) **Notifications** = ON   (may have been removed in Android 11)
+* (8) **Auto optimize (daily)** = ON
+* (9) **Auto restart (at set times)** = OFF
+* (10) **Optimize Settings** = OFF   (in Android 11 seems gone)
+* (11) **Apps / OsmAnd / Optimize Battery Usage** or **Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd** = May leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
+
+Depending on your version of Android these settings may be scattered over these _various Android Settings screens_:
+* _Device care_
+* _Device care / 3-dots / Automation_
+* _Device Care / Advanced_
+* _Device care / Battery_
+* _Device care / Battery / Settings_
+* _Device care / Battery / App Power Management_
+* _Device care / Battery / More battery settings_
 
 
 ## OsmAnd 3.9: Altitude issues when using Google Play Services
