@@ -60,7 +60,7 @@ I have successfully tested the following Power settings under Android 9, 10 and 
 * **Device care / Battery / App Power Management (under And9 called 'Settings'):**
   * _Adaptive battery_ = ON (candidate for 'OFF', but no problem detected so far)
   * _Put unused apps to sleep_ = OFF (check list of sleeping apps)
-  * _Auto disable unused app_s = OFF (seems not to exist anymore in And10)
+  * _Auto disable unused apps_ = OFF (seems not to exist anymore in And10)
   * _Optimize settings_ = OFF (in And10 under Device care / Advanced, in And 11 seems gone)
 * **Device Care / Advanced:**
   * _Notifications_ = ON
