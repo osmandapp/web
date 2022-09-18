@@ -52,21 +52,21 @@ You may
 
 ### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25)
 
-I have successfully tested the following Power settings under Android 9, 10 and later 11 (on Samsung devices), with particular attention if OsmAnd logging works reliably:
+I have successfully tested the following Power settings under Android 9, 10 and later 11 (on Samsung devices) for OsmAnd to log gapless tracks:
 
 * **Device care / Battery:**
-  * Power mode = Optimized
-  * Adaptive power saving = OFF (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging)
+  * _Power mode_ = Optimized
+  * _Adaptive power saving_ = OFF (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging)
 * **Device care / Battery / App Power Management (under And9 called 'Settings'):**
-  * Adaptive battery = ON (candidate for 'OFF', but no problem detected so far)
-  * Put unused apps to sleep = OFF (check list of sleeping apps)
-  * Auto disable unused apps = OFF (seems not to exist anymore in And10)
-  * Optimize settings = OFF (in And10 under Device care / Advanced)
+  * _Adaptive battery_ = ON (candidate for 'OFF', but no problem detected so far)
+  * _Put unused apps to sleep_ = OFF (check list of sleeping apps)
+  * _Auto disable unused app_s = OFF (seems not to exist anymore in And10)
+  * _Optimize settings_ = OFF (in And10 under Device care / Advanced, in And 11 seems gone)
 * **Device Care / Advanced:**
-  * Notifications = ON
-  * Auto optimization = ON
-  * Auto restart = OFF
-  * Optimize Settings = OFF
+  * _Notifications_ = ON
+  * _Auto optimize (daily)_ = ON
+  * _Auto restart (at set times)_ = OFF
+  * _Optimize Settings_ = OFF (in And 11 seems gone)
 * **Apps / ... / Special access / Optimize battery usage / All** = Leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
 
 
