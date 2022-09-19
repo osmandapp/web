@@ -243,7 +243,34 @@ function updateStat(track) {
     track.analysis.timeMoving = null;
     track.analysis.diffElevationUp = null;
     track.analysis.diffElevationDown = null;
-    // updateSpeed();
+    if (track.analysis.hasSpeedData) {
+        let totalSpeedSum = 0;
+        let speedCount = 0;
+        for (let t of track.tracks) {
+            for (let p of t.points) {
+                if (p.geometry) {
+                    for (let g of p.geometry) {
+                        let speed = g.ext.speed;
+                        track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
+                        if (speed > 0) {
+                            totalSpeedSum += speed;
+                            track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
+                            speedCount++;
+                        }
+                    }
+                } else {
+                    let speed = p.ext.speed;
+                    track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
+                    if (speed > 0) {
+                        totalSpeedSum += speed;
+                        track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
+                        speedCount++;
+                    }
+                }
+            }
+        }
+        track.analysis.avgSpeed = totalSpeedSum / speedCount;
+    }
     // updateElevation();
 }
 
