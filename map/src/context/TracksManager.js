@@ -33,6 +33,9 @@ function generate(ctx) {
     let tracks = [new Track(pointsArr, {})];
     let newTrack = new TrackData(new MetaData(name, null, {}), null, tracks, null, {});
     newTrack.name = name;
+    newTrack.analysis = [];
+    addDistance(newTrack);
+
     return newTrack;
 }
 
