@@ -17,7 +17,8 @@ function saveTracks(tracks) {
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
-                selected: false
+                selected: false,
+                hasOnlyTrk: track.hasOnlyTrk
             })
         })
         localStorage.setItem('localTracks', JSON.stringify(res));
@@ -167,6 +168,7 @@ function addDistance(track) {
             if (!track.hasOnlyTrk) {
                 let distanceFromStart = 0;
                 for (let point of t.points) {
+                    console.log(point)
                     if (point.geometry) {
                         if (point.geometry.length > 0) {
                             point.geometry.forEach(trk => {
