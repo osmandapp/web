@@ -168,7 +168,6 @@ function addDistance(track) {
             if (!track.hasOnlyTrk) {
                 let distanceFromStart = 0;
                 for (let point of t.points) {
-                    console.log(point)
                     if (point.geometry) {
                         if (point.geometry.length > 0) {
                             point.geometry.forEach(trk => {
@@ -273,7 +272,43 @@ function updateStat(track) {
         }
         track.analysis.avgSpeed = totalSpeedSum / speedCount;
     }
-    // updateElevation();
+
+    if (track.analysis.hasElevationData) {
+        let totalEleSum = 0;
+        let eleCount = 0;
+        track.analysis.minElevation = 0;
+        for (let t of track.tracks) {
+            for (let p of t.points) {
+                if (p.geometry) {
+                    for (let g of p.geometry) {
+                        let ele = g.ele;
+                        if (isNaN(ele)) {
+                            ele = p.geometry[p.geometry.indexOf(g) - 1].ele;
+                        }
+                        track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
+                        if (ele > 0) {
+                            totalEleSum += ele;
+                            track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
+                            eleCount++;
+                        }
+                    }
+                } else {
+                    let ele = p.ele;
+                    if (isNaN(ele)) {
+                        ele = t.points[t.points.indexOf(p) - 1].ele;
+                    }
+                    track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
+                    if (ele > 0) {
+                        totalEleSum += ele;
+                        track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
+                        eleCount++;
+                    }
+                }
+            }
+        }
+        track.analysis.avgElevation = totalEleSum / eleCount;
+        track.analysis.minElevation = isNaN(track.analysis.minElevation) ? 0 : track.analysis.minElevation;
+    }
 }
 
 const TracksManager = {

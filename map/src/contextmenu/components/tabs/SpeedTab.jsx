@@ -1,15 +1,16 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react';
 import GpxGraphTab from "./GpxGraphTab";
 import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 
-export default function SpeedTab({points, width}) {
+export default function SpeedTab({width}) {
     const ctx = useContext(AppContext);
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setData(points)
+            setData(TracksManager.getTrackPoints(ctx.selectedGpxFile));
         }
     }, [ctx.selectedGpxFile]);
 

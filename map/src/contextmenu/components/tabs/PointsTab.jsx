@@ -100,7 +100,7 @@ const PointsTab = ({width}) => {
             track.points = Utils.getPointsDist(track.points);
         })
         ctx.setLocalTracks([...ctx.localTracks]);
-        //ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
+        ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
     }
 
     const PointRow = () => ({point, index}) => {

@@ -50,6 +50,7 @@ export default function MapContextMenu() {
         }
         if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
+                setPrevTrack(ctx.selectedGpxFile);
                 let obj;
                 if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);

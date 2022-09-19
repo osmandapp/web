@@ -22,8 +22,6 @@ export default class TrackTabList {
         const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
-        let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-
         tabs.Info = <GeneralInfoTab key='general'
                                     url={ctx.selectedGpxFile.url} width={this.state.graphWidth} srtm={false}/>;
         if (ctx.currentObjectType !== 'cloud_track') {
@@ -31,11 +29,11 @@ export default class TrackTabList {
         }
 
         if (hasAltitude) {
-            tabs.Elevation = <ElevationTab key='elevation' points={points} width={this.state.graphWidth} srtm={false}/>
+            tabs.Elevation = <ElevationTab key='elevation' width={this.state.graphWidth} srtm={false}/>
         }
 
         if (hasSpeed) {
-            tabs.Speed = <SpeedTab key='speed' points={points} width={this.state.graphWidth}/>;
+            tabs.Speed = <SpeedTab key='speed' width={this.state.graphWidth}/>;
         }
 
         if (ctx.selectedGpxFile?.analysis && ctx.selectedGpxFile.analysis.srtmAnalysis) {

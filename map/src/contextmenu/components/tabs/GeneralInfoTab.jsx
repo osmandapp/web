@@ -74,13 +74,11 @@ export default function GeneralInfoTab({width, srtm}) {
                 setUpDownHill("Uphill/downhill: " + ctx.selectedGpxFile.analysis?.diffElevationUp.toFixed(0)
                     + "/" + ctx.selectedGpxFile.analysis?.diffElevationDown.toFixed(0) + " m");
             }
-            if (ctx.selectedGpxFile.analysis?.minElevation && ctx.selectedGpxFile.analysis?.avgElevation
-                && ctx.selectedGpxFile.analysis?.maxElevation) {
-                setElevation("Elevation (min/avg/max): " +
+            setElevation("Elevation (min/avg/max): " +
                     (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
                     (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
                     (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
-            }
+
         } else {
             setUpDownHill('');
             setElevation('');

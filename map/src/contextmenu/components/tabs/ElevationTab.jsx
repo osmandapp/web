@@ -1,8 +1,9 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react';
 import GpxGraphTab from "./GpxGraphTab";
 import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 
-const ElevationTab = ({points, width, srtm}) => {
+const ElevationTab = ({width, srtm}) => {
 
     const ctx = useContext(AppContext);
 
@@ -10,6 +11,7 @@ const ElevationTab = ({points, width, srtm}) => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
+            let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
             if (srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis) {
                 setData({data: points, srtm: true});
             } else if (ctx.selectedGpxFile.analysis?.hasElevationData) {
