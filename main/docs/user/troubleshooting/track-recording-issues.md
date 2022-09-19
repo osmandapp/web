@@ -62,8 +62,7 @@ I have successfully tested the following Power settings under Android 9, 10, and
 * (6) **Optimize settings** = OFF   (in Android 10 under "_Device care / Advanced_", in Android 11 seems gone)
 * (7) **Auto optimize (daily)** = ON
 * (8) **Auto restart (at set times)** = OFF
-* (9) **Optimize Settings** = OFF   (in Android 11 seems gone)
-* (10) **Optimize Battery Usage** (under "_Apps / OsmAnd / Battery_" or "_Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd_") = May leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
+* (9) **Optimize Battery Usage** (under "_Apps / OsmAnd / Battery_" or "_Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd_") = May leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
 
 Best search for the above settings by name (with and without the expressions in parentheses). Depending on your version of Android, they may be scattered over these various _Android Settings screens_:
 * _Device care_
