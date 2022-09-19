@@ -215,6 +215,38 @@ async function getGpxTrack(ctx) {
         });
 }
 
+
+async function getNewGeometry(ctx, index) {
+    let points = getActivePoints(ctx.selectedGpxFile);
+    let trackData = [JSON.stringify(points[index - 1]), JSON.stringify(points[index + 1])]
+
+    let result = await post(`${process.env.REACT_APP_GPX_API}/gpx/get-track-points-between-two-route-points`, trackData,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+
+    if (result) {
+        result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            return value === "***NaN***" ? NaN : value;
+        });
+        return result.points;
+    }
+}
+
+function updateStat(track) {
+    addDistance(track);
+    let activePoints = getActivePoints(track);
+    track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+    track.analysis.timeMoving = null;
+    track.analysis.diffElevationUp = null;
+    track.analysis.diffElevationDown = null;
+    // updateSpeed();
+    // updateElevation();
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -226,7 +258,9 @@ const TracksManager = {
     updateSelectedTrack,
     getTrackPoints,
     getGpxTrack,
-    getActivePoints
+    getActivePoints,
+    getNewGeometry,
+    updateStat
 };
 
 export default TracksManager;

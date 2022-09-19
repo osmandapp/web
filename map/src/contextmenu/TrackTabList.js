@@ -26,7 +26,7 @@ export default class TrackTabList {
 
         tabs.Info = <GeneralInfoTab key='general'
                                     url={ctx.selectedGpxFile.url} width={this.state.graphWidth} srtm={false}/>;
-        if (false) {
+        if (ctx.currentObjectType !== 'cloud_track') {
             tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 

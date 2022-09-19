@@ -20,7 +20,7 @@ export default function LocalClientTrackLayer() {
             map.fitBounds(layer.getBounds());
         }
         layer.addTo(map);
-        layers[track.name] = {layer: layer, track: Object.assign([], track), active: true};
+        layers[track.name] = {layer: layer, points: TracksManager.getActivePoints(track), active: true};
     }
 
     function createPointMarkerOnMap() {
@@ -84,7 +84,7 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (TracksManager.getActivePoints(track).length !== TracksManager.getActivePoints(currLayer.track).length) {
+                if (TracksManager.getActivePoints(track).length !== currLayer.points.length) {
                     updateTrackOnMap(track);
                 }
             }

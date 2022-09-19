@@ -41,11 +41,11 @@ export default function GeneralInfoTab({width, srtm}) {
     }, [ctx.selectedGpxFile])
 
     useEffect(() => {
-        if (ctx.selectedGpxFile && ctx.selectedGpxFile.points) {
-            setPoints(ctx.selectedGpxFile.points.length);
+        if (ctx.selectedGpxFile) {
+            setPoints(TracksManager.getActivePoints(ctx.selectedGpxFile).length);
         }
 
-        let info = srtm ? ctx.selectedGpxFile?.srtmAnalysis : ctx.selectedGpxFile?.summary;
+        let info = srtm ? ctx.selectedGpxFile?.srtmAnalysis : ctx.selectedGpxFile?.analysis;
 
         if (info?.startTime &&
             info?.startTime !== info?.endTime) {
@@ -70,12 +70,17 @@ export default function GeneralInfoTab({width, srtm}) {
         }
 
         if (ctx.selectedGpxFile?.analysis?.hasElevationData) {
-            setUpDownHill("Uphill/downhill: " + ctx.selectedGpxFile.analysis?.diffElevationUp.toFixed(0)
-                + "/" + ctx.selectedGpxFile.analysis?.diffElevationDown.toFixed(0) + " m");
-            setElevation("Elevation (min/avg/max): " +
-                (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
-                (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
-                (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
+            if (ctx.selectedGpxFile.analysis?.diffElevationUp && ctx.selectedGpxFile.analysis?.diffElevationDown) {
+                setUpDownHill("Uphill/downhill: " + ctx.selectedGpxFile.analysis?.diffElevationUp.toFixed(0)
+                    + "/" + ctx.selectedGpxFile.analysis?.diffElevationDown.toFixed(0) + " m");
+            }
+            if (ctx.selectedGpxFile.analysis?.minElevation && ctx.selectedGpxFile.analysis?.avgElevation
+                && ctx.selectedGpxFile.analysis?.maxElevation) {
+                setElevation("Elevation (min/avg/max): " +
+                    (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
+                    (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
+                    (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
+            }
         } else {
             setUpDownHill('');
             setElevation('');

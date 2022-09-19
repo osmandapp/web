@@ -16,24 +16,47 @@ const PointsTab = ({width}) => {
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
-    function deletePoint(index) {
+    const deletePoint = async (index) => {
         let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        if (currentTrack) {
-            if (currentTrack.hasOnlyTrk) {
-                let lengthSum = 0;
-                for (let track of currentTrack.tracks) {
-                    if (lengthSum > index) {
-                        lengthSum += track.length;
-                        break;
-                    } else {
-                        let ind = index - lengthSum;
-                        track.points.splice(ind, 1);
+        if (currentTrack && TracksManager.getActivePoints(currentTrack).length > 2) {
+            await deletePointByIndex(currentTrack, index, !currentTrack.hasOnlyTrk);
+            TracksManager.updateStat(currentTrack);
+            updateTrack(currentTrack);
+            TracksManager.saveTracks(ctx.localTracks);
+        }
+    }
+
+    async function deletePointByIndex(currentTrack, index, geometry) {
+        let lengthSum = 0;
+        for (let track of currentTrack.tracks) {
+            let firstPoint = index === 0 || index === lengthSum;
+            let lastPoint = index === (track.points.length - 1 + lengthSum);
+
+            if (firstPoint) {
+                if (geometry) {
+                    track.points[1].geometry = [];
+                }
+                track.points.splice(0, 1);
+                break;
+            } else if (lastPoint) {
+                track.points.splice(track.points.length - 1, 1);
+                break;
+            } else {
+                if (index > track.points.length - 1 + lengthSum) {
+                    lengthSum += track.points.length;
+                } else {
+                    let ind = index - lengthSum;
+                    if (geometry) {
+                        let newGeometry = await TracksManager.getNewGeometry(ctx, ind);
+                        if (newGeometry) {
+                            track.points[ind + 1].geometry = newGeometry;
+                        }
                     }
+                    track.points.splice(ind, 1);
+                    break;
                 }
             }
         }
-        updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localTracks);
     }
 
     const onDragEnd = result => {
@@ -105,7 +128,7 @@ const PointsTab = ({width}) => {
                         <ListItemAvatar>
                             <IconButton x={{mr: 1}} onClick={(e) => {
                                 e.stopPropagation();
-                                deletePoint(index)
+                                deletePoint(index);
                             }}>
                                 <Cancel fontSize="small"/>
                             </IconButton>
