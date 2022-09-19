@@ -279,15 +279,11 @@ function updateStat(track) {
     if (track.analysis.hasElevationData) {
         let totalEleSum = 0;
         let eleCount = 0;
-        track.analysis.minElevation = 0;
         for (let t of track.tracks) {
             for (let p of t.points) {
                 if (p.geometry) {
                     for (let g of p.geometry) {
-                        let ele = g.ele;
-                        if (isNaN(ele)) {
-                            ele = p.geometry[p.geometry.indexOf(g) - 1].ele;
-                        }
+                        let ele = getEle(g, "ele", p.geometry);
                         track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
                         if (ele > 0) {
                             totalEleSum += ele;
@@ -296,10 +292,7 @@ function updateStat(track) {
                         }
                     }
                 } else {
-                    let ele = p.ele;
-                    if (isNaN(ele)) {
-                        ele = t.points[t.points.indexOf(p) - 1].ele;
-                    }
+                    let ele = getEle(p, "ele", t.points);
                     track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
                     if (ele > 0) {
                         totalEleSum += ele;
@@ -310,8 +303,19 @@ function updateStat(track) {
             }
         }
         track.analysis.avgElevation = totalEleSum / eleCount;
-        track.analysis.minElevation = isNaN(track.analysis.minElevation) ? 0 : track.analysis.minElevation;
     }
+}
+
+function getEle(point, elevation, array) {
+    let ele = point[elevation];
+    while (isNaN(ele)) {
+        if (array && array.indexOf(point) < array.length -1) {
+            ele = array[array.indexOf(point) - 1].ele;
+        } else {
+            ele = 0;
+        }
+    }
+    return ele;
 }
 
 const TracksManager = {
@@ -327,7 +331,8 @@ const TracksManager = {
     getGpxTrack,
     getActivePoints,
     getNewGeometry,
-    updateStat
+    updateStat,
+    getEle
 };
 
 export default TracksManager;

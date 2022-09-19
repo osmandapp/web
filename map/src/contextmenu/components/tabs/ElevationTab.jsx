@@ -31,7 +31,8 @@ const ElevationTab = ({width, srtm}) => {
             let max = points[0][elevation];
             let cumDist = 0;
             points.forEach((point) => {
-                let val = Math.round(point[elevation] * 10) / 10;
+                let ele = TracksManager.getEle(point, elevation, points)
+                let val = Math.round(ele * 10) / 10;
                 cumDist += point.distance;
                 let dataTab = {
                     "Distance": Math.round(cumDist) / 1000,
