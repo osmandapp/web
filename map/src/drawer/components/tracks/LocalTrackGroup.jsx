@@ -80,19 +80,11 @@ export default function LocalTrackGroup() {
                         Upload
                     </Button>
                 </label>
-                <Button className={styles.button} variant="contained" component="span" sx={{ml: 2}}
-                        onClick={() => generateLocalTrack()}>
-                    Generate
-                </Button>
+                {ctx.localTracks.length !== 0 &&  <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}
+                        onClick={() => clearLocalTracks()}>
+                    Clear
+                </Button>}
             </MenuItem>
-            {ctx.localTracks.length !== 0 &&
-                <MenuItem disableRipple={true}>
-                    <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}
-                            onClick={() => clearLocalTracks()}>
-                        Clear
-                    </Button>
-                </MenuItem>
-            }
         </Collapse>
     </div>
 }

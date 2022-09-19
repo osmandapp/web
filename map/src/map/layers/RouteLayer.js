@@ -4,6 +4,7 @@ import L from 'leaflet';
 import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
 import markerOptions from "../markers/MarkerOptions";
+import TracksManager from "../../context/TracksManager";
 
 
 function dist(a1, a2) {
@@ -171,6 +172,11 @@ const RouteLayer = () => {
         }
     };
 
+    function generateLocalTrack() {
+        let newTrack = TracksManager.generate(ctx);
+        TracksManager.addTrack(ctx, newTrack);
+    }
+
     useEffect(() => {
         if (map) {
             // const map = mapRef.current;
@@ -190,6 +196,10 @@ const RouteLayer = () => {
             map.contextmenu.addItem({
                 text: 'Where am I',
                 callback: whereAmI
+            });
+            map.contextmenu.addItem({
+                text: 'Generate track',
+                callback: generateLocalTrack
             });
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData]);
