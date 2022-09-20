@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import markerOptions from "./markers/MarkerOptions";
+import MarkerOptions from "./markers/MarkerOptions";
 
 function createLayersByTrackData(data) {
     let layers = [];
@@ -52,7 +52,7 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
 
         points.forEach(p => {
             layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {
-                icon: markerOptions.route,
+                icon: MarkerOptions.options.route,
             }));
         })
     })
@@ -65,7 +65,7 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
 function parseWpt(points, layers) {
     points && points.forEach(point => {
         let pInfo = point.ext;
-        let icon = getWptIcon(pInfo)
+        let icon = MarkerOptions.getWptIcon(pInfo)
         if (icon) {
             let opt = {clickable: true, icon: icon};
             opt.group = pInfo.type ? pInfo.type : 'Favorites';
@@ -90,66 +90,15 @@ function parseWpt(points, layers) {
     })
 }
 
-function getWptIcon(point) {
-    let colorBackground = (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
-    let svg = getSvgBackground(colorBackground, point);
-
-    if (point.extensions?.icon) {
-        return L.divIcon({
-            html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${point.extensions.icon}.svg"
-                              </div>
-                              `
-        })
-    } else {
-        return L.divIcon({
-            html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg"
-                              </div>
-                              `
-        })
-    }
-}
-
-function getSvgBackground(colorBackground, point) {
-    let svg;
-    if (point.extensions?.background) {
-        if (point.extensions.background === "circle") {
-            svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
-                        </svg>`
-        }
-        if (point.extensions.background === "octagon") {
-            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>
-                        </svg>`
-        }
-        if (point.extensions.background === "square") {
-            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>
-                        </svg>`
-        }
-    } else {
-        svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                         <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
-                        </svg>`
-    }
-    return svg;
-}
-
 function addStartEndMarkers(points, layers) {
     let start = new L.LatLng(points[0].lat, points[0].lng);
     let end = new L.LatLng(points[points.length - 1].lat, points[points.length - 1].lng);
 
     layers.push(new L.Marker(start, {
-        icon: markerOptions.startIcon
+        icon: MarkerOptions.options.startIcon
     }))
     layers.push(new L.Marker(end, {
-        icon: markerOptions.endIcon
+        icon: MarkerOptions.options.endIcon
     }))
 }
 

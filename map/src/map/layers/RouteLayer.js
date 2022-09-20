@@ -3,8 +3,8 @@ import {Marker, GeoJSON, useMap} from "react-leaflet";
 import L from 'leaflet';
 import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
-import markerOptions from "../markers/MarkerOptions";
 import TracksManager from "../../context/TracksManager";
+import MarkerOptions from "../markers/MarkerOptions";
 
 
 function dist(a1, a2) {
@@ -286,14 +286,14 @@ const RouteLayer = () => {
         {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
                                            pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature}/>}
         {ctx.startPoint &&
-            <Marker position={ctx.startPoint} icon={markerOptions.startIcon}
+            <Marker position={ctx.startPoint} icon={MarkerOptions.options.startIcon}
                     ref={startPointRef} draggable={true} eventHandlers={startEventHandlers}/>}
         {ctx.interPoints.map((it, ind) =>
-            <Marker key={'mark' + ind} data-index={ind} position={it} icon={markerOptions.startIcon}
+            <Marker key={'mark' + ind} data-index={ind} position={it} icon={MarkerOptions.options.startIcon}
                     draggable={true} eventHandlers={intermediatEventHandlers}/>)}
-        {ctx.endPoint && <Marker position={ctx.endPoint} icon={markerOptions.endIcon}
+        {ctx.endPoint && <Marker position={ctx.endPoint} icon={MarkerOptions.options.endIcon}
                                  ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}
-        {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={markerOptions.pointerIcons}
+        {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={MarkerOptions.options.pointerIcons}
                                  ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers}/>}
     </>;
 };

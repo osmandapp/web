@@ -13,7 +13,7 @@ import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
 import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
-import markerOptions from "../markers/MarkerOptions";
+import MarkerOptions from "../markers/MarkerOptions";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -84,7 +84,7 @@ const OsmAndMap = () => {
             />
 
             {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={markerOptions.pointerIcons} />}
+                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons} />}
             <MapContextMenu/>
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>

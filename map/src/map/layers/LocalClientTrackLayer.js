@@ -3,8 +3,8 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
 import LayerCreator from "../LayerCreator";
-import markerOptions from "../markers/MarkerOptions";
 import TracksManager from "../../context/TracksManager";
+import MarkerOptions from "../markers/MarkerOptions";
 
 
 export default function LocalClientTrackLayer() {
@@ -20,7 +20,7 @@ export default function LocalClientTrackLayer() {
             map.fitBounds(layer.getBounds());
         }
         layer.addTo(map);
-        layers[track.name] = {layer: layer, points: TracksManager.getActivePoints(track), active: true};
+        layers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: true};
     }
 
     function createPointMarkerOnMap() {
@@ -28,7 +28,7 @@ export default function LocalClientTrackLayer() {
             lng: ctx.selectedGpxFile.showPoint.lng,
             lat: ctx.selectedGpxFile.showPoint.lat
         }, {
-            icon: markerOptions.pointerIcons
+            icon: MarkerOptions.options.pointerIcons
         }).addTo(map);
     }
 
@@ -84,7 +84,7 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (TracksManager.getActivePoints(track).length !== currLayer.points.length) {
+                if (TracksManager.getEditablePoints(track).length !== currLayer.points.length) {
                     updateTrackOnMap(track);
                 }
             }

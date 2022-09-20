@@ -153,7 +153,7 @@ function getTrackPoints(track) {
     return points;
 }
 
-function getActivePoints(track) {
+function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach(track => {
@@ -220,11 +220,11 @@ async function getGpxTrack(ctx) {
 }
 
 
-async function getNewGeometry(ctx, index) {
-    let points = getActivePoints(ctx.selectedGpxFile);
+async function updateRouteBetweenPoints(ctx, index) {
+    let points = getEditablePoints(ctx.selectedGpxFile);
     let trackData = [JSON.stringify(points[index - 1]), JSON.stringify(points[index + 1])]
 
-    let result = await post(`${process.env.REACT_APP_GPX_API}/gpx/get-track-points-between-two-route-points`, trackData,
+    let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, trackData,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -242,7 +242,7 @@ async function getNewGeometry(ctx, index) {
 
 function updateStat(track) {
     addDistance(track);
-    let activePoints = getActivePoints(track);
+    let activePoints = getEditablePoints(track);
     track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
     track.analysis.timeMoving = null;
     track.analysis.diffElevationUp = null;
@@ -329,8 +329,8 @@ const TracksManager = {
     updateSelectedTrack,
     getTrackPoints,
     getGpxTrack,
-    getActivePoints,
-    getNewGeometry,
+    getEditablePoints,
+    updateRouteBetweenPoints,
     updateStat,
     getEle
 };

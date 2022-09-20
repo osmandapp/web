@@ -42,7 +42,7 @@ export default function GeneralInfoTab({width, srtm}) {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setPoints(TracksManager.getActivePoints(ctx.selectedGpxFile).length);
+            setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
         }
 
         let info = srtm ? ctx.selectedGpxFile?.srtmAnalysis : ctx.selectedGpxFile?.analysis;
