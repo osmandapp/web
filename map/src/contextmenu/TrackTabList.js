@@ -39,7 +39,7 @@ export default class TrackTabList {
         if (ctx.selectedGpxFile?.analysis && ctx.selectedGpxFile.analysis.srtmAnalysis) {
             tabs.SRTM = <GeneralInfoTab key='srtm'
                                         width={this.state.graphWidth} srtm={true}/>;
-            tabs["SRTM Ele"] = <ElevationTab key='srtmele' points={points} width={this.state.graphWidth} srtm={true}/>
+            tabs["SRTM Ele"] = <ElevationTab key='srtmele' width={this.state.graphWidth} srtm={true}/>
         }
 
         list = list.concat(Object.keys(tabs).map((item, index) =>
