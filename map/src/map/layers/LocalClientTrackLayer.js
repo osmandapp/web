@@ -63,17 +63,6 @@ export default function LocalClientTrackLayer() {
         addTrackToMap(track, false);
     }
 
-    function orderPointsWasChanged(tracksP, layersP) {
-        for (let tp in tracksP) {
-            for (let lp in layersP) {
-                if (tp === lp && (tracksP[tp].lat !== layersP[lp].lat || tracksP[tp].lng !== layersP[lp].lng)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     useEffect(() => {
         for (let l in layers) {
             layers[l].active = false;
@@ -84,7 +73,7 @@ export default function LocalClientTrackLayer() {
                 addTrackToMap(track, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (TracksManager.getEditablePoints(track).length !== currLayer.points.length) {
+                if (track.updated) {
                     updateTrackOnMap(track);
                 }
             }

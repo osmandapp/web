@@ -19,73 +19,100 @@ const PointsTab = ({width}) => {
     const deletePoint = async (index) => {
         let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
         if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2) {
-            await deletePointByIndex(currentTrack, index, !currentTrack.hasOnlyTrk);
+            await deletePointByIndex(currentTrack, index);
             TracksManager.updateStat(currentTrack);
             updateTrack(currentTrack);
             TracksManager.saveTracks(ctx.localTracks);
         }
     }
 
-    async function deletePointByIndex(currentTrack, index, geometry) {
+    const onDragEnd = async result => {
+        if (!result.destination) {
+            return;
+        }
+        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        await reorder(result.source.index, result.destination.index, currentTrack);
+        updateTrack(currentTrack);
+        TracksManager.saveTracks(ctx.localTracks);
+    }
+
+    async function reorder(startIndex, endIndex, currentTrack) {
+        let removed = await deletePointByIndex(currentTrack, startIndex);
+        if (removed.length > 0) {
+            await insertPointToTrack(currentTrack, endIndex, removed[0]);
+        }
+    }
+
+    async function deletePointByIndex(currentTrack, index) {
         let lengthSum = 0;
         for (let track of currentTrack.tracks) {
             let firstPoint = index === 0 || index === lengthSum;
             let lastPoint = index === (track.points.length - 1 + lengthSum);
-
             if (firstPoint) {
-                if (geometry) {
-                    track.points[1].geometry = [];
+                if (track.points[index + 1].geometry) {
+                    track.points[index + 1].geometry = [];
                 }
-                track.points.splice(0, 1);
-                break;
+                return track.points.splice(0, 1);
             } else if (lastPoint) {
-                track.points.splice(track.points.length - 1, 1);
-                break;
+                return track.points.splice(track.points.length - 1, 1);
             } else {
-                if (index > track.points.length - 1 + lengthSum) {
-                    lengthSum += track.points.length;
-                } else {
-                    let ind = index - lengthSum;
-                    if (geometry) {
-                        let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, ind);
-                        if (newGeometry) {
-                            track.points[ind + 1].geometry = newGeometry;
+                for (let i = 0; i <= track.points.length - 1; i++) {
+                    if (i + lengthSum === index) {
+                        if (track.points[i].geometry) {
+                            let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], track.points[i + 1]);
+                            if (newGeometry) {
+                                track.points[i + 1].geometry = newGeometry;
+                            }
+                        }
+                        return track.points.splice(i, 1);
+                    }
+                }
+            }
+            lengthSum += track.points.length;
+        }
+    }
+
+    async function insertPointToTrack(currentTrack, index, point) {
+        let lengthSum = 0;
+        for (let track of currentTrack.tracks) {
+            let firstPoint = index === 0 || index === lengthSum;
+            let lastPoint = index === (track.points.length - 1 + lengthSum);
+            for (let i = 0; i <= track.points.length - 1; i++) {
+                if (i + lengthSum === index && point) {
+                    if (firstPoint) {
+                        if (track.points[i + 1].geometry) {
+                            let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
+                            if (newGeometryFromNewPoint) {
+                                track.points[i + 1].geometry = newGeometryFromNewPoint;
+                            }
+                        }
+                    } else if (lastPoint) {
+                        if (track.points[i - 1].geometry) {
+                            let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
+                            if (newGeometryToNewPoint) {
+                                point.geometry = newGeometryToNewPoint;
+                            }
+                        }
+                    } else {
+                        if (track.points[i + 1].geometry) {
+                            let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
+                            if (newGeometryToNewPoint) {
+                                point.geometry = newGeometryToNewPoint;
+                            }
+                            let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
+                            if (newGeometryFromNewPoint) {
+                                track.points[i + 1].geometry = newGeometryFromNewPoint;
+                            }
                         }
                     }
-                    track.points.splice(ind, 1);
+                    track.points.splice(index, 0, point);
                     break;
                 }
             }
+            lengthSum += track.points.length;
         }
     }
 
-    const onDragEnd = result => {
-        if (!result.destination) {
-            return;
-        }
-        reorder(result.source.index, result.destination.index);
-    }
-
-    const reorder = (startIndex, endIndex) => {
-        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        const [removed] = currentTrack.points.splice(startIndex, 1);
-        currentTrack.points.splice(endIndex, 0, removed);
-        currentTrack.trk.forEach(t => {
-            let removed;
-            t.forEach(s => {
-                let ind = s.points.findIndex(p => p.id === startIndex);
-                if (ind !== -1) {
-                    removed = s.points.splice(ind, 1);
-                }
-            })
-            t.forEach(s => {
-                let ind = s.points.findIndex(p => p.id === endIndex);
-                s.points.splice(ind, 0, removed[0]);
-            })
-        })
-        updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localTracks);
-    }
 
     const getItemStyle = (isDragging, draggableStyle) => ({
         userSelect: "none",
@@ -96,6 +123,7 @@ const PointsTab = ({width}) => {
     });
 
     function updateTrack(currentTrack) {
+        currentTrack.updated = true;
         currentTrack.tracks.forEach(track => {
             track.points = Utils.getPointsDist(track.points);
         })

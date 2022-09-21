@@ -220,10 +220,7 @@ async function getGpxTrack(ctx) {
 }
 
 
-async function updateRouteBetweenPoints(ctx, index) {
-    let points = getEditablePoints(ctx.selectedGpxFile);
-    let start = points[index - 1];
-    let end = points[index + 1];
+async function updateRouteBetweenPoints(ctx, start, end) {
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
