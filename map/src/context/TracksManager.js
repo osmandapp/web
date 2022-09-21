@@ -312,9 +312,20 @@ function updateStat(track) {
 
 function getEle(point, elevation, array) {
     let ele = point[elevation];
+    let ind = array.indexOf(point);
+    //value smoothing
     while (isNaN(ele)) {
-        if (array && array.indexOf(point) < array.length -1) {
-            ele = array[array.indexOf(point) - 1].ele;
+        if (array && ind !== 0) {
+            let prevP = array[ind - 1];
+            if (prevP[elevation]) {
+                ele = prevP[elevation];
+            } else {
+                if (ind - array.indexOf(point) > 2) {
+                    ele = 0
+                } else {
+                    ind++;
+                }
+            }
         } else {
             ele = 0;
         }
