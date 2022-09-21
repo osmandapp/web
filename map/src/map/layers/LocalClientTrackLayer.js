@@ -14,13 +14,13 @@ export default function LocalClientTrackLayer() {
     const [layers, setLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
-    function addTrackToMap(track, fitBounds) {
+    function addTrackToMap(track, fitBounds, active) {
         let layer = LayerCreator.createLayersByTrackData(track);
         if (fitBounds) {
             map.fitBounds(layer.getBounds());
         }
         layer.addTo(map);
-        layers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: true};
+        layers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: active};
     }
 
     function createPointMarkerOnMap() {
@@ -57,10 +57,10 @@ export default function LocalClientTrackLayer() {
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
-    function updateTrackOnMap(track) {
+    function updateTrackOnMap(track, active) {
         map.removeLayer(layers[track.name].layer);
         delete layers[track.name];
-        addTrackToMap(track, false);
+        addTrackToMap(track, false, active);
     }
 
     useEffect(() => {
@@ -70,11 +70,11 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = layers[track.name]
             if (track.selected && !currLayer) {
-                addTrackToMap(track, true);
+                addTrackToMap(track, true, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
                 if (track.updated) {
-                    updateTrackOnMap(track);
+                    updateTrackOnMap(track, currLayer.active);
                 }
             }
         });

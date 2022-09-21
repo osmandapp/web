@@ -69,7 +69,7 @@ export default function GeneralInfoTab({width, srtm}) {
             setTimeMoving('');
         }
 
-        if (ctx.selectedGpxFile.analysis?.diffElevationUp && ctx.selectedGpxFile.analysis?.diffElevationDown) {
+        if (ctx.selectedGpxFile && ctx.selectedGpxFile.analysis?.diffElevationUp && ctx.selectedGpxFile.analysis?.diffElevationDown) {
             setUpDownHill("Uphill/downhill: " + ctx.selectedGpxFile.analysis?.diffElevationUp.toFixed(0)
                 + "/" + ctx.selectedGpxFile.analysis?.diffElevationDown.toFixed(0) + " m");
         } else {
