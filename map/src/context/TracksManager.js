@@ -317,7 +317,7 @@ function getEle(point, elevation, array) {
     while (isNaN(ele)) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
-            if (prevP[elevation]) {
+            if (prevP && prevP[elevation]) {
                 ele = prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
