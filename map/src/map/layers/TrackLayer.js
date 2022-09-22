@@ -5,6 +5,7 @@ import LayerCreator from "../LayerCreator";
 
 
 async function addTrackToMap(ctx, file, map) {
+    console.log(file)
     let layer = LayerCreator.createLayersByTrackData(file);
     file.gpx = layer;
     map.fitBounds(layer.getBounds());

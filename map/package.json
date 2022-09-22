@@ -23,6 +23,7 @@
     "leaflet-contextmenu": "^1.4.0",
     "leaflet-hash": "^0.2.1",
     "leaflet.awesome-markers": "^2.0.5",
+    "pako": "^2.0.4",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.8.1",

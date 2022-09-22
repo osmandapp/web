@@ -35,7 +35,10 @@ export default function CloudTrackItem({file}) {
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
             newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
             let f = await Utils.getFileData(newGpxFiles[file.name]);
-            let track = await TracksManager.getTrackData(new Blob([f]));
+            const gpxfile = new File([f], file.name, {
+                type: "text/plain",
+            });
+            let track = await TracksManager.getTrackData(gpxfile);
             if (track) {
                 track.name = file.name;
                 setProgressVisible(false);
