@@ -52,7 +52,7 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                 let file = new FormData();
                 file.append('file', oMyBlob, ctx.selectedGpxFile.name);
 
-                await post(`${process.env.REACT_APP_GPX_API}/userdata/upload-file`, file,
+                await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
                     {
                         params: {
                             name: ctx.selectedGpxFile.name + ".gpx",

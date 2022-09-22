@@ -13,7 +13,6 @@ module.exports = function (app) {
         logLevel: 'debug'
     });
     app.use('/mapapi/', proxy);
-    app.use('/userdata/', proxy);
     app.use('/routing/', proxy);
     app.use('/gpx/', proxy);
     app.use('/tile/', proxy);
