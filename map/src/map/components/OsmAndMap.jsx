@@ -5,7 +5,6 @@ import AppContext from "../../context/AppContext";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu"
 import RouteLayer from "../layers/RouteLayer"
 import WeatherLayer from "../layers/WeatherLayer"
-import '../../util/GPXParser.js';
 import 'leaflet-hash';
 import L from 'leaflet';
 import 'leaflet-contextmenu';

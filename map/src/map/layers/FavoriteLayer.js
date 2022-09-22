@@ -1,7 +1,6 @@
 import {useContext, useEffect, useState} from 'react';
 import AppContext from "../../context/AppContext";
-import L from "leaflet";
-import '../../util/GPXParser.js';
+import GPXEditor from '../../util/gpxParser';
 import Utils from "../../util/Utils";
 import {useMap} from "react-leaflet";
 
@@ -58,7 +57,7 @@ const FavoriteLayer = () => {
 
     async function addFavoritesLayerToMap(file) {
         let trackData = await Utils.getFileData(file);
-        file.gpx = new L.GPX(trackData, {
+        file.gpx = new GPXEditor(trackData, {
             async: true,
             group: ctx.favorites.groups
         }).on('error', function (e) {
