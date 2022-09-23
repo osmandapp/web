@@ -12,32 +12,76 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 <InfoIncompleteArticle/>
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
 
 
 The navigation function allows you to reach your destination easily using voice guidance (optional).
 
 There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
 
-![Navigation screen Android](@site/static/img/navigation/route/navigation_android.png) ![Navigation screen iOS](@site/static/img/navigation/route/navigation_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+![Navigation screen Android](@site/static/img/navigation/route/navigation_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation screen iOS](@site/static/img/navigation/route/navigation_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ## How to use
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>
 
-<p> </p>
+Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
+
+![Navigation screen select point Android](@site/static/img/navigation/route/navigation_points_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings"/>
 
-<p> </p>
-
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
-![Navigation screen select point Android](@site/static/img/navigation/route/navigation_points_android.png) ![Navigation screen iOS](@site/static/img/navigation/route/navigation_points_ios.png)
+![Navigation screen iOS](@site/static/img/navigation/route/navigation_points_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 Tap to <Translate android="true" ids="route_from"/> (your current position by default) or <Translate android="true" ids="route_from"/> for select Start-Finish points of your navigation:
 - &nbsp;<Translate android="true" ids="search_button"/> - opens [the search menu](../search/index.md) for choosing point.
@@ -63,6 +107,10 @@ When the navigation is running, you can press the home button. You will get the 
 
 ### Navigation options
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 - &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 - &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
 - &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
@@ -76,6 +124,33 @@ When the navigation is running, you can press the home button. You will get the 
 - &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens Navigation settings of app profile.
 - &nbsp;<Translate android="true" ids="customize_route_line"/> - opens menu of Route line.
 - &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+- &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
+- &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
+- &nbsp;<Translate android="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - allows to avoid or prefer motorways.
+- &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
+- &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
+- &nbsp;<Translate android="true" ids="follow_track"/> - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
+- &nbsp;<Translate android="true" ids="routing_attr_allow_private_name"/> - allows to navigate to private zone.
+- &nbsp;<Translate android="true" ids="routing_attr_short_way_name"/> - calculates navigation by fuel-efficient algorithm.
+- &nbsp;<Translate android="true" ids="temporary_conditional_routing"/> - allows to consider temporary limitations.
+- &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens Navigation settings of app profile.
+- &nbsp;<Translate android="true" ids="customize_route_line"/> - opens menu of Route line.
+- &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation.
+
+
+</TabItem>
+
+</Tabs>
+
+#### Simulate navigation
+
+
 
 
 ### Home - Work points
