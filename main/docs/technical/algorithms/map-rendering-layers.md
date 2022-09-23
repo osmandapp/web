@@ -24,63 +24,59 @@ Order of vector map icons (iconOrder) and text (textorder) are mainly set in the
 Order of layers icons and text depends from order of layer and can be not so different than layer order.
 Additionally we increase order of road [shields](https://github.com/osmandapp/OsmAnd-core/blob/41388a1ea569c98af029a60db7ebe0db7aa34e50/src/Map/MapPrimitiviser_P.cpp#L2720) for show their above.
 
-## Tables of order in Android and iOS 
+## Android. Order tables
 
-<details><summary>Android. Order by layers</summary>  
+### Android. Map Icons order
 
-| Layer                             | Order/Range | Description            |
-| --------------------------------- | ----------: |----------------------- |
-| MapTileLayer (underlay)           | -50 000     | Rasnter tiles underlay |
-| **MapVectorLayer**                |       0     | Base for vector tiles  |
-| MapTileLayer (main layer)         |   5 000     | Base for raster tiles  |
-| MapTileLayer (overlay)            |  70 000     | Raster tiles overlay   |
-| DownloadedRegionsLayer            |  50 000     | Show downloaded green regions|
-| TerrainLayer                      |  60 000     | Base for raster tiles  |
-| GPXLayer (lines)                  |  90 000     | Order for track lines  |
-| RouteLayer                        |  100 000    | Navigation route       |
-| PreviewRouteLineLayer             |  150 000    | Not used OpenGL        |
-| OsmBugsLayer                      |  200 000    | OSM notes and fixme    |
-| POIMapLayer                       |  300 000    | POI overlay            |
-| Audio Video Layer                 |  350 000    |                        |
-| OsmEditsLayer                     |  350 000    | Edit OSM plugin        |
-| FavouritesLayer                   |  400 000    | Favorites overlay      |
-| TransportStopsLayer               |  500 000    | Public transport       |
-| MapTextLayer                      |  595 000    | Not used OpenGL        |
-| PointNavigationLayer              |  700 000    | Navigation points      |
-| MapMarkersLayer (lines)           |  729 999    | Each line -1           |
-| ImpassableRoadsLayer              |  750 000    | Avoid roads            |
-| RadiusRulerControlLayer           |  780 000    | Not used OpenGL        |
-| DistanceRulerControlLayer (lines) |  790 000    | Not used OpenGL        |
-| ContextMenuLayer                  |  800 000    |                        |
-| PointLocationLayer                |  800 000    | My location layer      |
-| MapInfoLayer                      |  900 000    |                        |
-| MapillaryVectorLayer              |  1 000 000  | Mapillary points / lines|  
+| Layer                             | Order/Range | Type | Description           |
+| --------------------------------- | ----------: |------|-----------------------|
+| MapTileLayer (underlay)           | -50 000     | Map | Raster tiles underlay |
+| **MapVectorLayer**                |       0     | Map | Map vector tiles  |
+| MapTileLayer (main layer)         |   5 000     | Map | Map raster tiles  |
+| MapTileLayer (overlay)            |  70 000     | Map | Raster tiles overlay   |
+| DownloadedRegionsLayer            |  50 000     | Polygons | Show downloaded regions |
+| TerrainLayer                      |  60 000     | Map | Base for raster tiles  |
+| GPXLayer (lines)                  |  90 000     | Lines | Order for track lines  |
+| RouteLayer                        |  100 000    | Lines | Navigation route       |
+| PreviewRouteLineLayer             |  150 000    | - |  Not used OpenGL        |
+| OsmBugsLayer                      |  200 000    | Points | OSM notes and fixme    |
+| POIMapLayer                       |  300 000    | Points | POI overlay            |
+| Audio Video Layer                 |  350 000    | Points |                        |
+| OsmEditsLayer                     |  350 000    | Points | Edit OSM plugin        |
+| FavouritesLayer                   |  400 000    | Points | Favorites overlay      |
+| TransportStopsLayer               |  500 000    | Points | Public transport stops |
+| MapTextLayer                      |  595 000    | - |Not used OpenGL        |
+| PointNavigationLayer              |  700 000    | Points | Finish / start points      |
+| MapMarkersLayer (lines)           |  729 999    | Lines  | Each line -1           |
+| ImpassableRoadsLayer              |  750 000    | Points | Avoid roads            |
+| RadiusRulerControlLayer           |  780 000    |  - | Not used OpenGL        |
+| DistanceRulerControlLayer (lines) |  790 000    | ?? |  Not used OpenGL ?        |
+| ContextMenuLayer                  |  800 000    | Points | Pin of context menu|
+| PointLocationLayer                |  800 000    | Points | My location point      |
+| MapInfoLayer                      |  900 000    | ?? | ???  |
+| MapillaryVectorLayer              |  1 000 000  | Points / Lines ?? | Mapillary points / lines|   
 
-</details>
+### Android. Icons order
 
-<details><summary> Android. Order by icons </summary>  
+| Icon                          | Order/Range   | Type | Description             |
+| ----------------------------- | ------------: | ------ | ----------------------- |
+| **Icons** - **VectorMapLayer**|  1 - 255      | Points | Vector map, iconOrder in style, 100 by default |
+| GPX track start, finish       |  90 101       | Points | GPXLayer                |
+| GPX track waypoint            |  90 300       | Points | GPXLayer                |
+| GPX track chart icon          |  90 500       | Points | GPXLayer                |
+| GPX track selected icon       |  90 600       | Points | GPXLayer                |
+| OSM notes                     |  200 000      | Points | OSM notes     |
+| POI                           |  300 000      | Points | POI overlay icons       |
+| Audio Video notes             |  350 000      | Points |                         |
+| Favourites                    |  400 000      | Points | Favorites overlay       |
+| Transport stops               |  500 001      | Points | Public transport        |
+| My location                   |  600 000      | Points | My location             |
+| Navigation (start,via,end)    |  700 000      | Points | Navigation points       |
+| Navigation selected point     |  700 600      | Points | Navigation points       |
+| MapMarkersLayer (markers)     |  730 000      | Points |                       |
+| Avoid roads                   |  750 000      | Points | ImpassableRoadsLayer    |
 
-| Icon                          | Order/Range   | Description             |
-| ----------------------------- | ------------: | ----------------------- |
-| Icons - **VectorMapLayer**    |  1 - 255      | Vector map, iconOrder in style, 100 by default |
-| GPX track start, finish       |  90 101       | GPXLayer                |
-| GPX track waypoint            |  90 300       | GPXLayer                |
-| GPX track chart icon          |  90 500       | GPXLayer                |
-| GPX track selected icon       |  90 600       | GPXLayer                |
-| OSM notes                     |  200 000      | OSM notes and fixme     |
-| POI                           |  300 000      | POI overlay icons       |
-| Audio Video notes             |  350 000      |                         |
-| Favourites                    |  400 000      | Favorites overlay       |
-| Transport stops               |  500 001      | Public transport        |
-| My location                   |  600 000      | My location             |
-| Navigation (start,via,end)    |  700 000      | Navigation points       |
-| Navigation selected point     |  700 600      | Navigation points       |
-| MapMarkersLayer (markers)     |  730 000      |                         |
-| Avoid roads                   |  750 000      | ImpassableRoadsLayer    |
-
-</details>
-
-<details><summary> Android. Order by text and shields </summary>  
+### Android.Text and shield order
 
 | Text / shield                 | Order/Range   | Description             |
 | ----------------------------- | ------------: | ----------------------- |
@@ -92,10 +88,7 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | DistanceRulerControlLayer (text) |   790 000  | Not used OpenGL         |
 | Fixme                         | 1 000 000     | OSM fixme text          |
 
-</details>
-
-
-<details><summary> Android. Controls, rendered over OpenGL </summary>  
+### Android. Overlay controls
 
 | Control                       | Order/Range   | Description             |
 | ----------------------------- | ------------: | ----------------------- |
@@ -103,9 +96,10 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | MapControlsLayer              |  1 100 000    |                         |
 | MapQuickActionLayer           |  1 200 000    |                         |
 
-</details>
 
-<details><summary> iOS. Order by layers </summary>  
+## iOS. Order tables
+
+### iOS. Layers order
 
 | Layer                        | Real order  | Description                   |
 | ---------------------------- | ----------: |------------------------------ |
@@ -127,9 +121,8 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | OARoutePointsLayer           | 209 000     | Navigation points     |
 | OAContextMenuLayer           | 210 000     |                       |
 
-</details>
 
-<details><summary> iOS. Order of raster layers by layer index </summary>  
+### iOS. Raster layers order
 
 | Layer                        | Layer index | Description          |
 | ---------------------------- | ----------: |--------------------- |
@@ -141,9 +134,7 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | OAWeatherRasterLayer	       | 25          |                      |
 | OAWeatherContourLayer	       | 30          |                      |
 
-</details>
-
-<details><summary> iOS. Order by icons </summary>  
+### iOS. Icons order
 
 | Icon                          | Order/Range   | Description                                   |
 | ----------------------------- | ------------: | --------------------------------------------- |
@@ -164,9 +155,7 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | Navigation route, my location |  207 025      | (OARouteLayer)                                |
 | Navigation route, arrows      |  208 000      | (OARouteLayer)                                |
 
-</details>
-
-<details><summary> iOS. Order by text and shields </summary>  
+### iOS. Text / sheilds order
 
 | Text / shield                 | Order/Range   | Description                                   |
 | ----------------------------- | ------------: | --------------------------------------------- |
@@ -177,7 +166,3 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | OARulerByTapControlLayer (text) |   170 000   |                                               |
 | Shields                       |  180 000 +    | Shields over roads, textOrder + 180 000       |
 | Map markers (text on line)    |  207  000     |                                               |
-
-</details>
-
-
