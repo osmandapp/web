@@ -66,6 +66,29 @@ Next, you'll need to set the starting point and the destination. As for the star
 
 ![Navigation screen select point Android](@site/static/img/navigation/route/navigation_points_android.png)
 
+Tap to <Translate android="true" ids="route_from"/> (your current position by default) or <Translate android="true" ids="route_from"/> for select Start-Finish points of your navigation:
+- &nbsp;<Translate android="true" ids="search_button"/> - opens [the search menu](../search/index.md) for choosing point.
+- &nbsp;<Translate android="true" ids="shared_string_address"/> - opens address search menu for choosing point.
+- &nbsp;<Translate android="true" ids="shared_string_my_location"/> - allows to choose Your position for point.
+- &nbsp;<Translate android="true" ids="shared_string_select_on_map"/> - opens the map for choosing point by tapping on the map.
+- &nbsp;<Translate android="true" ids="shared_string_favorites"/> - allows to choose [Favorite](../personal/favorites.md) for point.
+- &nbsp;<Translate android="true" ids="shared_string_markers"/> - allows to choose [Map marker](../personal/markers.md) for point.
+- &nbsp;Swap Starting point and Destination - allows to change Start <-> Finish points.
+
+
+"Swap Starting point and Destination" and "&#43;" buttons:
+- "Swap Starting point and Destination" - allows to change Start <-> Finish points.
+- "&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
+
+
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
+
+
+![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
+
+When the navigation is running, you can press the home button. You will get the message 'OsmAnd is running in the background'. This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the “Turn on screen” option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
+
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -77,11 +100,6 @@ To start the navigation, you need to use [the navigation button](../widgets/map-
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
 ![Navigation screen iOS](@site/static/img/navigation/route/navigation_points_ios.png)
-
-</TabItem>
-
-</Tabs>
-
 
 Tap to <Translate android="true" ids="route_from"/> (your current position by default) or <Translate android="true" ids="route_from"/> for select Start-Finish points of your navigation:
 - &nbsp;<Translate android="true" ids="search_button"/> - opens [the search menu](../search/index.md) for choosing point.
@@ -98,12 +116,17 @@ Tap to <Translate android="true" ids="route_from"/> (your current position by de
 - "&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
 
 
- As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
 
 
-![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png) ![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
 
 When the navigation is running, you can press the home button. You will get the message 'OsmAnd is running in the background'. This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the “Turn on screen” option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
+
+
+</TabItem>
+
+</Tabs>
 
 ### Navigation options
 
@@ -151,8 +174,6 @@ When the navigation is running, you can press the home button. You will get the 
 #### Simulate navigation
 
 
-
-
 ### Home - Work points
 
 [Special points](../personal/favorites.md#special-favorites-personal) of Favorites in Navigation menu for quickly access.
@@ -175,11 +196,28 @@ Tracks list.
 
 ### Details
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_ios.png)
+<Tabs groupId="operating-systems">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_1_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_1_ios.png)
+<TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_2_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_2_ios.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_android.png)
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_1_android.png)
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_2_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_ios.png)
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_1_ios.png)
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_details_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ### Route line appearance
@@ -325,8 +363,6 @@ Select a route line's width.
 ![width](@site/static/img/navigation/route/width_ios.png)   ![width](@site/static/img/navigation/route/width_med.png)|
 |*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
 ![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
-
-
 
 
 &nbsp;  
