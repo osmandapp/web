@@ -7,6 +7,7 @@ import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
+import {post} from "axios";
 
 export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowContextMenu}) {
 
@@ -18,15 +19,45 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
         setDialogOpen(!dialogOpen);
     };
 
-    function deleteCurrentTrack() {
-        let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-        if (currentTrackIndex !== -1) {
-            ctx.localTracks.splice(currentTrackIndex, 1);
-            ctx.setSelectedGpxFile(null);
-            TracksManager.saveTracks(ctx.localTracks);
-            ctx.setLocalTracks([...ctx.localTracks]);
+    async function deleteCurrentTrack() {
+        if (ctx.currentObjectType === 'cloud_track' && ctx.loginUser) {
             setShowContextMenu(false);
+            const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+            newGpxFiles[ctx.selectedGpxFile.name].url = null;
+            ctx.setGpxFiles(newGpxFiles);
+
+            ctx.gpxFiles.trackGroups.forEach(group => {
+                let currentFile = group.files.findIndex(file =>
+                    file.name === ctx.selectedGpxFile.name
+                );
+                if (currentFile !== 1) {
+                    group.files.splice(currentFile, 1);
+                }
+            })
+
+            ctx.setSelectedGpxFile(null);
+            setDialogOpen(false);
+            await post(`${process.env.REACT_APP_GPX_API}/mapapi/delete-file`, "",
+                {
+                    params: {
+                        name: ctx.selectedGpxFile.name,
+                        type: 'gpx',
+                    }
+                }
+            );
+
+        } else if (ctx.currentObjectType === 'local_client_track') {
+            let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+            if (currentTrackIndex !== -1) {
+                ctx.localTracks.splice(currentTrackIndex, 1);
+                ctx.setSelectedGpxFile(null);
+                TracksManager.saveTracks(ctx.localTracks);
+                ctx.setLocalTracks([...ctx.localTracks]);
+                setShowContextMenu(false);
+                setDialogOpen(false);
+            }
         }
+
     }
 
     return (

@@ -49,13 +49,13 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                         >
                             <Folder fontSize="small"/>
                         </IconButton>}
-                        {ctx.currentObjectType !== 'cloud_track' && <IconButton
+                        <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => setOpenDeleteDialog(true)}
                         >
                             <Delete fontSize="small"/>
-                        </IconButton>}
+                        </IconButton>
                         <IconButton
                             variant="contained"
                             type="button"
