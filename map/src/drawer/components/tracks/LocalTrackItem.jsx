@@ -50,7 +50,7 @@ export default function LocalTrackItem({track, index}) {
             </div>}>
                 <ListItemText inset>
                     <Typography variant="inherit" noWrap>
-                        {track.name}
+                        {"* " + track.name}
                     </Typography>
                 </ListItemText>
             </Tooltip>

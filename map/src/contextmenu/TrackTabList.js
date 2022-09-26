@@ -4,7 +4,6 @@ import SpeedTab from "./components/tabs/SpeedTab";
 import React from "react";
 import {Tab} from "@mui/material";
 import PointsTab from "./components/tabs/PointsTab";
-import TracksManager from "../context/TracksManager";
 
 export default class TrackTabList {
 
@@ -22,8 +21,7 @@ export default class TrackTabList {
         const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
-        tabs.Info = <GeneralInfoTab key='general'
-                                    url={ctx.selectedGpxFile.url} width={this.state.graphWidth} srtm={false}/>;
+        tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
         if (ctx.currentObjectType !== 'cloud_track') {
             tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
         }

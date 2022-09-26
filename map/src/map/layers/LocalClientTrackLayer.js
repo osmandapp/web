@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
-import LayerCreator from "../LayerCreator";
+import TrackLayerProvider from "../TrackLayerProvider";
 import TracksManager from "../../context/TracksManager";
 import MarkerOptions from "../markers/MarkerOptions";
 
@@ -15,7 +15,7 @@ export default function LocalClientTrackLayer() {
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     function addTrackToMap(track, fitBounds, active) {
-        let layer = LayerCreator.createLayersByTrackData(track);
+        let layer = TrackLayerProvider.createLayersByTrackData(track);
         if (fitBounds) {
             map.fitBounds(layer.getBounds());
         }

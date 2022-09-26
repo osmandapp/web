@@ -63,6 +63,22 @@ function createName(ctx) {
     return name;
 }
 
+function excludeNameDuplicates(ctx, name) {
+    let count = 0;
+    ctx.localTracks.forEach(t => {
+        if (t.name.includes(name)) {
+            count++;
+        }
+    })
+
+    if (count > 0) {
+        count++;
+        name = name + ' - ' + count;
+    }
+
+    return name;
+}
+
 function createPoints() {
     let points = [];
     let prevPoint;
@@ -129,6 +145,8 @@ function updateSelectedTrack(ctx, track) {
 }
 
 function addTrack(ctx, track) {
+    track.name = TracksManager.prepareName(track.name, true);
+    track.name = excludeNameDuplicates(ctx, track.name);
     addDistance(track);
     ctx.localTracks.push(track);
     ctx.setLocalTracks([...ctx.localTracks]);

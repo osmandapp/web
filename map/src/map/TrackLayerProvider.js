@@ -64,28 +64,32 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
 
 function parseWpt(points, layers) {
     points && points.forEach(point => {
-        let pInfo = point.ext;
-        let icon = MarkerOptions.getWptIcon(pInfo)
-        if (icon) {
-            let opt = {clickable: true, icon: icon};
-            opt.group = pInfo.type ? pInfo.type : 'Favorites';
-            if (pInfo.name) {
-                opt.title = pInfo.name;
-            }
-            if (pInfo.time) {
-                opt.time = pInfo.time;
-            }
-            if (pInfo.address) {
-                opt.address = pInfo.address;
-            }
-            if (pInfo.cmt) {
-                opt.cmt = pInfo.cmt;
-            }
+        if (point.ext) {
+            let pInfo = point.ext;
+            let icon = MarkerOptions.getWptIcon(pInfo)
+            if (icon) {
+                let opt = {clickable: true, icon: icon};
+                opt.group = pInfo.type ? pInfo.type : 'Favorites';
+                if (pInfo.name) {
+                    opt.title = pInfo.name;
+                }
+                if (pInfo.time) {
+                    opt.time = pInfo.time;
+                }
+                if (pInfo.address) {
+                    opt.address = pInfo.address;
+                }
+                if (pInfo.cmt) {
+                    opt.cmt = pInfo.cmt;
+                }
 
-            let marker = new L.Marker(new L.LatLng(pInfo.lat, pInfo.lon), opt);
-            marker.bindPopup("<b>" + point.name + "</b>" + (pInfo.desc?.length > 0 ? '<br>' + pInfo.desc : '')).openPopup();
+                let marker = new L.Marker(new L.LatLng(pInfo.lat, pInfo.lon), opt);
+                if (point.name) {
+                    marker.bindPopup("<b>" + point.name + "</b>" + (pInfo.desc?.length > 0 ? '<br>' + pInfo.desc : '')).openPopup();
+                }
 
-            layers.push(marker);
+                layers.push(marker);
+            }
         }
     })
 }
@@ -109,8 +113,8 @@ function getPolylineOpt() {
 }
 
 
-const LayerCreator = {
+const TrackLayerProvider = {
     createLayersByTrackData
 };
 
-export default LayerCreator;
+export default TrackLayerProvider;

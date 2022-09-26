@@ -1,12 +1,11 @@
 import React, {useContext, useEffect} from 'react';
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
-import LayerCreator from "../LayerCreator";
+import TrackLayerProvider from "../TrackLayerProvider";
 
 
 async function addTrackToMap(ctx, file, map) {
-    console.log(file)
-    let layer = LayerCreator.createLayersByTrackData(file);
+    let layer = TrackLayerProvider.createLayersByTrackData(file);
     file.gpx = layer;
     map.fitBounds(layer.getBounds());
     layer.addTo(map);

@@ -70,7 +70,6 @@ const OsmAndMap = () => {
         >
             <LocalClientTrackLayer/>
             <RouteLayer/>
-            <WeatherLayer/>
             <FavoriteLayer/>
             <TrackLayer/>
             <TileLayer

@@ -52,7 +52,7 @@ export default function TracksMenu() {
                 tracksGroups.unshift(defGroup);
             }
         }
-
+        ctx.gpxFiles.trackGroups = tracksGroups;
         setTracksGroups(tracksGroups);
 
     }, [ctx.listFiles, ctx.setListFiles]);

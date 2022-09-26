@@ -27,7 +27,7 @@ export default function LocalTrackGroup() {
 
     function generateLocalTrack() {
         let newTrack = TracksManager.generate(ctx);
-        prepareNewTrack(newTrack);
+        TracksManager.addTrack(ctx, newTrack);
     }
 
     const fileSelected = () => async (e) => {
@@ -36,17 +36,12 @@ export default function LocalTrackGroup() {
             reader.addEventListener('load', async (event) => {
                 let track = await TracksManager.getTrackData(file);
                 if (track) {
-                    track.name = TracksManager.prepareName(file.name);
-                    prepareNewTrack(track);
+                    track.name = file.name;
+                    TracksManager.addTrack(ctx, track);
                 }
             });
             reader.readAsText(file);
         });
-    }
-
-    function prepareNewTrack(track) {
-        TracksManager.addTrack(ctx, track);
-        //TracksManager.updateSelectedTrack(ctx, track);
     }
 
 

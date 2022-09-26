@@ -152,9 +152,9 @@ export default function GeneralInfoTab({width, srtm}) {
                     <Box display="flex" justifyContent="flex-end">
                         {disableButton &&
                             <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                                        onClick={() => {
-                                    setDisableButton(false);
-                                }}
+                                    onClick={() => {
+                                        setDisableButton(false);
+                                    }}
                             >
                                 edit
                             </Button>}
@@ -276,7 +276,19 @@ export default function GeneralInfoTab({width, srtm}) {
         </Typography>
         <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={downloadGpx}
-        >Download gpx</Button><br/>
-
+        >Download</Button>
+        {ctx.currentObjectType === 'local_client_track' &&
+            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                    onClick={() => {
+                        ctx.selectedGpxFile.save = true;
+                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                    }}
+            >Save to Cloud</Button>}
+        {ctx.currentObjectType === 'cloud_track' &&
+            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                    onClick={() => {
+                        TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
+                    }}
+            >Edit</Button>}
     </Box>);
 };
