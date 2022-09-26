@@ -30,7 +30,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                 let currentFile = group.files.findIndex(file =>
                     file.name === ctx.selectedGpxFile.name
                 );
-                if (currentFile !== 1) {
+                if (currentFile !== -1) {
                     group.files.splice(currentFile, 1);
                 }
             })
