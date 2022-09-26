@@ -60,25 +60,25 @@ There are the next navigation profiles by default: _Driving, Cycling, Walking, T
 
 To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>_
 
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
 ![Navigation screen select point Android](@site/static/img/navigation/route/navigation_points_android.png)
 
-Tap to <Translate android="true" ids="route_from"/> (your current position by default) or <Translate android="true" ids="route_from"/> for select Start-Finish points of your navigation:
-- &nbsp;<Translate android="true" ids="search_button"/> - opens [the search menu](../search/index.md) for choosing point.
-- &nbsp;<Translate android="true" ids="shared_string_address"/> - opens address search menu for choosing point.
-- &nbsp;<Translate android="true" ids="shared_string_my_location"/> - allows to choose Your position for point.
-- &nbsp;<Translate android="true" ids="shared_string_select_on_map"/> - opens the map for choosing point by tapping on the map.
-- &nbsp;<Translate android="true" ids="shared_string_favorites"/> - allows to choose [Favorite](../personal/favorites.md) for point.
-- &nbsp;<Translate android="true" ids="shared_string_markers"/> - allows to choose [Map marker](../personal/markers.md) for point.
-- &nbsp;Swap Starting point and Destination - allows to change Start <-> Finish points.
+Tap to _<Translate android="true" ids="route_from"/>_ (your current position by default) or _<Translate android="true" ids="route_from"/>_ for select Start-Finish points of your navigation:
+- &nbsp;_<Translate android="true" ids="search_button"/>_ - opens [the search menu](../search/index.md) for choosing point.
+- &nbsp;_<Translate android="true" ids="shared_string_address"/>_ - opens [address search menu](../search/search-address.md) for choosing point.
+- &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows to choose [Your position](../map/interact-with-map.md#my-location--zoom) for point.
+- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map for choosing point by tapping on the map.
+- &nbsp;_<Translate android="true" ids="shared_string_favorites"/>_ - allows to choose [Favorite](../personal/favorites.md) for point.
+- &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose [Map marker](../personal/markers.md) for point.
+- &nbsp;_Swap Starting point and Destination_ - allows to change Start <-> Finish points.
 
 
 "Swap Starting point and Destination" and "&#43;" buttons:
-- "Swap Starting point and Destination" - allows to change Start <-> Finish points.
-- "&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
+- &nbsp;_"Swap Starting point and Destination"_ - allows to change Start <-> Finish points.
+- &nbsp;"&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
 
 
 As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
@@ -86,7 +86,7 @@ As soon as your points are selected, the app will create a route and will start 
 
 ![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
 
-When the navigation is running, you can press the home button. You will get the message 'OsmAnd is running in the background'. This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the “Turn on screen” option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
+When the navigation is running, you can press the home button. You will get the message ['OsmAnd is running in the background'](../navigation/route-navigation.md#background-navigation). This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the [“Turn on screen”](../navigation/route-navigation.md#turn-on-screen) option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
 
 
 </TabItem>
@@ -95,24 +95,24 @@ When the navigation is running, you can press the home button. You will get the 
 
 To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings"/>
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings"/>_
 
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
 ![Navigation screen iOS](@site/static/img/navigation/route/navigation_points_ios.png)
 
-Tap to <Translate android="true" ids="route_from"/> (your current position by default) or <Translate android="true" ids="route_from"/> for select Start-Finish points of your navigation:
-- &nbsp;<Translate android="true" ids="search_button"/> - opens [the search menu](../search/index.md) for choosing point.
-- &nbsp;<Translate android="true" ids="shared_string_address"/> - opens address search menu for choosing point.
-- &nbsp;<Translate android="true" ids="shared_string_my_location"/> - allows to choose Your position for point.
-- &nbsp;<Translate android="true" ids="shared_string_select_on_map"/> - opens the map for choosing point by tapping on the map.
-- &nbsp;<Translate android="true" ids="shared_string_favorites"/> - allows to choose [Favorite](../personal/favorites.md) for point.
-- &nbsp;<Translate android="true" ids="shared_string_markers"/> - allows to choose [Map marker](../personal/markers.md) for point.
-- &nbsp;Swap Starting point and Destination - allows to change Start <-> Finish points.
+Tap to _<Translate ios="true" ids="route_from"/>_ (your current position by default) or _<Translate ios="true" ids="route_from"/>_ for select Start-Finish points of your navigation:
+- &nbsp;_<Translate ios="true" ids="search_activity"/>_ - opens [the search menu](../search/index.md) for choosing point.
+- &nbsp;_<Translate ios="true" ids="shared_string_address"/>_ - opens address search menu for choosing point.
+- &nbsp;_<Translate ios="true" ids="shared_string_my_location"/>_ - allows to choose Your position for point.
+- &nbsp;_<Translate ios="true" ids="shared_string_select_on_map"/>_ - opens the map for choosing point by tapping on the map.
+- &nbsp;_<Translate ios="true" ids="my_favorites"/>_ - allows to choose [Favorite](../personal/favorites.md) for point.
+- &nbsp;_<Translate ios="true" ids="map_markers"/>_ - allows to choose [Map marker](../personal/markers.md) for point.
+- &nbsp;_<Translate ios="true" ids="swap_points"/>_  - allows to change Start <-> Finish points.
 
 
-"Swap Starting point and Destination" and "&#43;" buttons:
-- "Swap Starting point and Destination" - allows to change Start <-> Finish points.
+&nbsp;_<Translate ios="true" ids="swap_points"/>_ and "&#43;" buttons:
+- &nbsp;_<Translate ios="true" ids="swap_points"/>_ - allows to change Start <-> Finish points.
 - "&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
 
 
@@ -121,8 +121,7 @@ As soon as your points are selected, the app will create a route and will start 
 
 ![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
 
-When the navigation is running, you can press the home button. You will get the message 'OsmAnd is running in the background'. This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the “Turn on screen” option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
-
+When the navigation is running, you can press the home button. You will get the message 'OsmAnd is running in the background'. This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts.
 
 </TabItem>
 
@@ -134,6 +133,10 @@ When the navigation is running, you can press the home button. You will get the 
 
 <TabItem value="android" label="Android">
 
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>_
+
+![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png)
+
 - &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 - &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
 - &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
@@ -152,19 +155,37 @@ When the navigation is running, you can press the home button. You will get the 
 
 <TabItem value="ios" label="iOS">
 
-- &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
-- &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
-- &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
-- &nbsp;<Translate android="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - allows to avoid or prefer motorways.
-- &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
-- &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
-- &nbsp;<Translate android="true" ids="follow_track"/> - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
-- &nbsp;<Translate android="true" ids="routing_attr_allow_private_name"/> - allows to navigate to private zone.
-- &nbsp;<Translate android="true" ids="routing_attr_short_way_name"/> - calculates navigation by fuel-efficient algorithm.
-- &nbsp;<Translate android="true" ids="temporary_conditional_routing"/> - allows to consider temporary limitations.
-- &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens Navigation settings of app profile.
-- &nbsp;<Translate android="true" ids="customize_route_line"/> - opens menu of Route line.
-- &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation.
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options"/>_
+
+
+![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios.png)
+
+<!--
+- &nbsp;<Translate ios="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+- &nbsp;<Translate ios="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate ios="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate ios="true" ids="routing_attr_driving_style_safety_name"/>, <Translate ios="true" ids="routing_attr_driving_style_balance_name"/>, <Translate ios="true" ids="routing_attr_driving_style_speed_name"/>.
+- &nbsp;<Translate ios="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
+- &nbsp;<Translate ios="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - allows to avoid or prefer motorways.
+- &nbsp;<Translate ios="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
+- &nbsp;<Translate ios="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
+- &nbsp;<Translate ios="true" ids="routing_attr_allow_private_name"/> - allows to navigate to private zone.
+- &nbsp;<Translate ios="true" ids="routing_attr_short_way_name"/> - calculates navigation by fuel-efficient algorithm.
+- &nbsp;<Translate ios="true" ids="temporary_conditional_routing"/> - allows to consider temporary limitations.-->
+
+- &nbsp;<Translate ios="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+
+**Route parameters:**
+- &nbsp;<Translate ios="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
+- &nbsp;<Translate ios="true" ids="routing_attr_short_way_name"/> - calculates navigation by fuel-efficient algorithm.
+- &nbsp;<Translate ios="true" ids="routing_attr_prefer_unpaved_name"/> - 
+- &nbsp;<Translate ios="true" ids="routing_attr_allow_private_name"/> - allows to navigate to private zone.
+- &nbsp;Goods vehicles restrictions - 
+- &nbsp;<Translate ios="true" ids="consider_limitations_param"/> - allows to consider temporary limitations.
+
+**Advanced:**
+- &nbsp;<Translate ios="true" ids="follow_track"/> - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
+- &nbsp;<Translate ios="true" ids="routing_settings_2"/> - opens Navigation settings of app profile.
+- &nbsp;<Translate ios="true" ids="customize_route_line"/> - opens menu of Route line.
+- &nbsp;<Translate ios="true" ids="simulate_navigation"/> - allows to simulate your navigation.
 
 
 </TabItem>
@@ -192,7 +213,22 @@ Tracks list.
 
 ## Navigation route
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android.png) ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### Details
 
@@ -242,7 +278,7 @@ This menu allows you to adapt the route line appearance. If there are some chang
 
 &nbsp;  
 >You can find route line menu by following this path:
-<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>
+_<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>_
 
 
 
@@ -250,8 +286,10 @@ This menu allows you to adapt the route line appearance. If there are some chang
 
   
 <!--Customize route line menu items-->
-&nbsp;  
-**Colour**  
+&nbsp;
+
+#### Colour
+
 Select a route line's colour by types.  
 
 |  |
@@ -280,7 +318,7 @@ Select a route line's colour by types.
 
 
 &nbsp;  
-**Width**  
+#### Width 
 Select a route line's width.
 
 |  |
@@ -295,7 +333,7 @@ Select a route line's width.
 
 
 &nbsp;  
-**Turn Arrows**   
+#### Turn Arrows  
 Select whether turn arrows are indicated on the route line or not. 
 
 |  |
@@ -303,15 +341,13 @@ Select whether turn arrows are indicated on the route line or not.
 |![Altitude](@site/static/img/navigation/route/turn_arr.png) ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)|
 |![Altitude](@site/static/img/navigation/route/turn_arr_off_and.png) ![Altitude](@site/static/img/navigation/route/turn_arr_off_map_and.png)|
 
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 &nbsp;  
 >You can find route line menu by following this path:
-<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>
+_<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>_
 
 
 &nbsp;  
@@ -322,7 +358,7 @@ Select whether turn arrows are indicated on the route line or not.
 
 <!--Customize route line menu items-->
 &nbsp;  
-**Colour**  
+#### Colour
 Select a route line's colour by types.  
 
 |  |
@@ -352,7 +388,7 @@ Select a route line's colour by types.
 
 
 &nbsp;  
-**Width**  
+#### Width
 Select a route line's width.
 
 |  |
@@ -366,7 +402,7 @@ Select a route line's width.
 
 
 &nbsp;  
-**Turn Arrows**   
+#### Turn Arrows
 Select whether turn arrows are indicated on the route line or not. 
 
 |  |
