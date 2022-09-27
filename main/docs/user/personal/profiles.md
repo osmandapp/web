@@ -379,12 +379,16 @@ In this section you can set [routing and navigation parameters of your profile, 
 |                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
 | Goods vehicles restrictions |  Consider access permissions for light goods vehicles (goods)   |   Driving routing |
 | <Translate ios="true" ids="routing_attr_hazmat_category_name"/> |  <Translate ios="true" ids="transport_hazmat_no_desc"/>  |   Truck |
-| "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    |  
+| "<Translate ios="true" ids="preferred_terrain"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
+|   | "<Translate ios="true" ids="shared_string_any"/>"  | <Translate ios="true" ids="route_preferred_terrain_any"/>    | 
+|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_flat"/>    | 
+|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_less_hilly"/>    | 
+|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_hilly"/>  |  
 | "<Translate ios="true" ids="routing_attr_height_obstacles_name"/>" |  Using elevation fluctuation for routing.  |    |
 | "<Translate ios="true" ids="routing_attr_allow_motorway_name"/>" |  using Motorways for routing  |   Cycling routing |
+| "<Translate ios="true" ids="prefer_in_routing_title"/>" | <Translate ios="true" ids="avoid_routes_and_road"/>    | Navigation type - On foot  |
+|                 |  "Prefer hiking routes"    |  using [hiking routes](../map/vector-maps.md#routes) for routing.           |
+|                 |  "Prefer tactile paving"    |  using tactile paving road types for routing.            |
 | "<Translate ios="true" ids="routing_attr_allow_private_name"/>" |  ignore the Private Access restriction for routing  |    |
 | "<Translate ios="true" ids="routing_attr_allow_private_for_truck_name"/>" |  allow access to private areas for trucks  |  Truck  |
 | "<Translate ios="true" ids="consider_limitations_param"/>" |  using temporaty limitations for routing from OpenStreetMap data  |    |
