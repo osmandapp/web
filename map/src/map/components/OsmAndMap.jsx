@@ -5,8 +5,6 @@ import AppContext from "../../context/AppContext";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu"
 import RouteLayer from "../layers/RouteLayer"
 import WeatherLayer from "../layers/WeatherLayer"
-import MarkerIcon from '../MarkerIcon.js'
-import '../../util/gpx.js';
 import 'leaflet-hash';
 import L from 'leaflet';
 import 'leaflet-contextmenu';
@@ -14,6 +12,7 @@ import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
 import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
+import MarkerOptions from "../markers/MarkerOptions";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +70,6 @@ const OsmAndMap = () => {
         >
             <LocalClientTrackLayer/>
             <RouteLayer/>
-            <WeatherLayer/>
             <FavoriteLayer/>
             <TrackLayer/>
             <TileLayer
@@ -84,7 +82,7 @@ const OsmAndMap = () => {
             />
 
             {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerIcon({bg: 'yellow'})}/>}
+                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons} />}
             <MapContextMenu/>
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>

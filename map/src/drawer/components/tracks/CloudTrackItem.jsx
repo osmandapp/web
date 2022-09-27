@@ -34,30 +34,20 @@ export default function CloudTrackItem({file}) {
             let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
             newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
+            let f = await Utils.getFileData(newGpxFiles[file.name]);
+            const gpxfile = new File([f], file.name, {
+                type: "text/plain",
+            });
+            let track = await TracksManager.getTrackData(gpxfile);
+            if (track) {
+                track.name = file.name;
+                setProgressVisible(false);
+            }
+            Object.keys(track).forEach(t => {
+                newGpxFiles[file.name][`${t}`] = track[t];
+            });
             ctx.setGpxFiles(newGpxFiles);
-            if (file.details?.analysis) {
-                newGpxFiles[file.name].summary = file.details.analysis;
-                newGpxFiles[file.name].metadata = file.details.metadata;
-            }
-
-            //loadGpxInfo
-            let gpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-            const gpxInfo = await Utils.fetchUtilLoad(gpxInfoUrl, {}, setProgressVisible);
-            if (gpxInfo.ok) {
-                let data = await gpxInfo.json();
-                newGpxFiles[file.name].summary = data.info;
-                setProgressVisible(false);
-            }
-
-            //loadSrtmGpxInfo
-            let srtmGpxInfoUrl = `${process.env.REACT_APP_USER_API_SITE}/mapapi/get-srtm-gpx-info?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-            const srtmGpxInfo = await Utils.fetchUtilLoad(srtmGpxInfoUrl, {}, setProgressVisible);
-            if (srtmGpxInfo.ok) {
-                let data = await srtmGpxInfo.json();
-                newGpxFiles[file.name].srtmSummary = data.info;
-                setProgressVisible(false);
-            }
-            ctx.setSelectedGpxFile(newGpxFiles[file.name]);
+            ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
         }
     }
 

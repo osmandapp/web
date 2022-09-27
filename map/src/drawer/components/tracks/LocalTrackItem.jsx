@@ -2,9 +2,8 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import TracksManager from "../../../context/TracksManager";
-import Utils from "../../../util/Utils";
 
-export default function LocalClientTrackItem({track, index}) {
+export default function LocalTrackItem({track, index}) {
 
     const ctx = useContext(AppContext);
     const [indexTrack, setIndexTrack] = useState(index);
@@ -15,17 +14,7 @@ export default function LocalClientTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        TracksManager.saveTracks(ctx.localClientsTracks);
-    }
-
-    function addGpx(track) {
-        let selectedTrack = ctx.localClientsTracks[indexTrack];
-        selectedTrack.gpx = Utils.getGpx(track);
-        ctx.setLocalClientsTracks([
-            ...ctx.localClientsTracks.slice(0, indexTrack),
-            selectedTrack,
-            ...ctx.localClientsTracks.slice(indexTrack + 1, ctx.localClientsTracks.length)
-        ]);
+        TracksManager.saveTracks(ctx.localTracks);
     }
 
     function cleanSelectedTrackIfNeed(currentTrack) {
@@ -35,20 +24,21 @@ export default function LocalClientTrackItem({track, index}) {
     }
 
     function deleteTrackFromMap() {
-        let currentTrack = ctx.localClientsTracks[track.index];
+        let currentTrack = ctx.localTracks[track.index];
         ctx.setCurrentObjectType(null);
         currentTrack.selected = false;
         cleanSelectedTrackIfNeed(currentTrack);
-        ctx.setLocalClientsTracks([...ctx.localClientsTracks]);
+        ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     function addTrackToMap() {
         ctx.setCurrentObjectType('local_client_track');
         if (indexTrack !== undefined) {
+            let selectedTrack = ctx.localTracks[indexTrack];
             track.index = indexTrack;
             setIndexTrack(indexTrack);
-            ctx.localClientsTracks[indexTrack].selected = true;
-            addGpx(track);
+            selectedTrack.selected = true;
+            ctx.setLocalTracks([...ctx.localTracks]);
         }
         ctx.setSelectedGpxFile(Object.assign({}, track));
     }

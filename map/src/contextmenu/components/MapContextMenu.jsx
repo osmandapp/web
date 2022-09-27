@@ -7,6 +7,7 @@ import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
+import PanelButtons from "./PanelButtons";
 
 const useStyles = makeStyles({
     menu: {
@@ -27,6 +28,7 @@ export default function MapContextMenu() {
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
+    const [prevTrack, setPrevTrack] = useState(null);
 
     const divContainer = useRef(null);
 
@@ -37,23 +39,39 @@ export default function MapContextMenu() {
         }
     });
 
+    function selectedFileWasChanged() {
+        return (ctx.selectedGpxFile?.name && prevTrack?.name
+                && ctx.selectedGpxFile.name !== prevTrack.name);
+    }
+
     useEffect(() => {
-        if (ctx.currentObjectType) {
-            setShowContextMenu(true);
-            let obj;
+        if (!ctx.selectedGpxFile) {
+            setPrevTrack(null);
+            setTabsObj(null);
+            setShowContextMenu(false);
+        }
+        if (!prevTrack || selectedFileWasChanged()) {
             if (ctx.currentObjectType) {
-                if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                    obj = new WeatherTabList().create(ctx);
-                } else {
+                setPrevTrack(ctx.selectedGpxFile);
+                let obj;
+                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
+                    obj = new TrackTabList().create(ctx);
+                } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                    obj = WeatherTabList().create(ctx);
+                } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx);
                 }
+                if (obj) {
+                    setShowContextMenu(true);
+                    setTabsObj(obj);
+                    setValue(obj.defaultTab);
+                }
+            } else {
+                setTabsObj(null);
+                setShowContextMenu(false);
             }
-            setTabsObj(obj);
-            setValue(obj.defaultTab);
-        } else {
-            setTabsObj(null);
         }
-    }, [ctx.selectedGpxFile, ctx.currentObjectType]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile]);
 
     function closeContextMenu() {
         setShowContextMenu(false);
@@ -83,5 +101,6 @@ export default function MapContextMenu() {
                 }
             </div>
         </div>}
+        <PanelButtons showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
     </div>);
 }

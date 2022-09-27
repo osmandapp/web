@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Area, Tooltip, XAxis, YAxis, AreaChart} from "recharts";
 import {Typography} from "@mui/material";
 import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 
 export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
     const ctx = useContext(AppContext);
@@ -11,11 +12,14 @@ export default function GpxGraphTab({data, xAxis, yAxis, width, min, max}) {
 
     function onMouseMoveGraph(e) {
         if (e.isTooltipActive) {
-            if (ctx.mapMarkerListener && ctx.selectedGpxFile.points) {
-                const lat = Object.values(ctx.selectedGpxFile.points)[e.activeTooltipIndex].lat;
-                const lng = Object.values(ctx.selectedGpxFile.points)[e.activeTooltipIndex].lng;
+            if (ctx.mapMarkerListener && ctx.selectedGpxFile) {
+                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+                const lat = Object.values(pointList)[e.activeTooltipIndex].lat;
+                const lng = Object.values(pointList)[e.activeTooltipIndex].lng;
                 ctx.mapMarkerListener(lat, lng);
             }
+        } else {
+            ctx.mapMarkerListener(null, null);
         }
     }
 

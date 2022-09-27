@@ -75,7 +75,7 @@ var _DEFAULT_GPX_OPTS = {
     joinTrackSegments: true
 };
 
-L.GPX = L.FeatureGroup.extend({
+let GPXEditor = L.FeatureGroup.extend({
     initialize: function (gpx, options) {
         options.max_point_interval = options.max_point_interval || _MAX_POINT_INTERVAL_MS;
         options.marker_options = this._merge_objs(
@@ -870,17 +870,17 @@ L.GPX = L.FeatureGroup.extend({
         if (e.length > 0) {
             var _ = e[0].getElementsByTagName('color');
             if (_.length > 0) style.color = '#' + _[0].textContent;
-             _ = e[0].getElementsByTagName('opacity');
+            _ = e[0].getElementsByTagName('opacity');
             if (_.length > 0) style.opacity = _[0].textContent;
-             _ = e[0].getElementsByTagName('weight');
+            _ = e[0].getElementsByTagName('weight');
             if (_.length > 0) style.weight = _[0].textContent;
-             _ = e[0].getElementsByTagName('linecap');
+            _ = e[0].getElementsByTagName('linecap');
             if (_.length > 0) style.lineCap = _[0].textContent;
-             _ = e[0].getElementsByTagName('linejoin');
+            _ = e[0].getElementsByTagName('linejoin');
             if (_.length > 0) style.lineJoin = _[0].textContent;
-             _ = e[0].getElementsByTagName('dasharray');
+            _ = e[0].getElementsByTagName('dasharray');
             if (_.length > 0) style.dashArray = _[0].textContent;
-             _ = e[0].getElementsByTagName('dashoffset');
+            _ = e[0].getElementsByTagName('dashoffset');
             if (_.length > 0) style.dashOffset = _[0].textContent;
         }
         return this._merge_objs(style, overrides)
@@ -915,3 +915,5 @@ L.GPX = L.FeatureGroup.extend({
 if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = L;
 }
+
+export default GPXEditor;

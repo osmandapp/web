@@ -2,7 +2,9 @@ import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import L from "leaflet";
-import MarkerIcon from "../MarkerIcon";
+import TrackLayerProvider from "../TrackLayerProvider";
+import TracksManager from "../../context/TracksManager";
+import MarkerOptions from "../markers/MarkerOptions";
 
 
 export default function LocalClientTrackLayer() {
@@ -12,25 +14,13 @@ export default function LocalClientTrackLayer() {
     const [layers, setLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
-    const markerOptions = {
-        startIcon: MarkerIcon({bg: 'blue'}),
-        endIcon: MarkerIcon({bg: 'red'}),
-        wptIcons: {
-            '': MarkerIcon({bg: 'yellow'}),
+    function addTrackToMap(track, fitBounds, active) {
+        let layer = TrackLayerProvider.createLayersByTrackData(track);
+        if (fitBounds) {
+            map.fitBounds(layer.getBounds());
         }
-    };
-
-    function addTrackToMap(track, fitBounds) {
-        let layer = new L.GPX(track.gpx, {
-            async: true,
-            marker_options: markerOptions
-        }).on('loaded', function (e) {
-            if (fitBounds) {
-                map.fitBounds(e.target.getBounds());
-            }
-        }).addTo(map);
-
-        layers[track.name] = {layer: layer, points: Object.assign([], track.points), active: true};
+        layer.addTo(map);
+        layers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: active};
     }
 
     function createPointMarkerOnMap() {
@@ -38,14 +28,14 @@ export default function LocalClientTrackLayer() {
             lng: ctx.selectedGpxFile.showPoint.lng,
             lat: ctx.selectedGpxFile.showPoint.lat
         }, {
-            icon: MarkerIcon({bg: 'yellow'})
+            icon: MarkerOptions.options.pointerIcons
         }).addTo(map);
     }
 
     function showSelectedTrackOnMap() {
         let currLayer = layers[ctx.selectedGpxFile.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer._info.bounds);
+            map.fitBounds(currLayer.layer.getBounds());
         }
     }
 
@@ -54,7 +44,6 @@ export default function LocalClientTrackLayer() {
             map.removeLayer(selectedPointMarker.marker);
         }
         let marker = createPointMarkerOnMap();
-        map.fitBounds(L.latLngBounds([marker.getLatLng()]), {maxZoom: 11});
         setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
     }
 
@@ -68,35 +57,24 @@ export default function LocalClientTrackLayer() {
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
-    function updateTrackOnMap(track) {
+    function updateTrackOnMap(track, active) {
         map.removeLayer(layers[track.name].layer);
         delete layers[track.name];
-        addTrackToMap(track, false)
-    }
-
-    function orderPointsWasChanged(tracksP, layersP) {
-        for (let tp in tracksP) {
-            for (let lp in layersP) {
-                if (tp === lp && (tracksP[tp].lat !== layersP[lp].lat || tracksP[tp].lng !== layersP[lp].lng)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        addTrackToMap(track, false, active);
     }
 
     useEffect(() => {
         for (let l in layers) {
             layers[l].active = false;
         }
-        Object.values(ctx.localClientsTracks).forEach((track) => {
+        Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = layers[track.name]
             if (track.selected && !currLayer) {
-                addTrackToMap(track, true);
+                addTrackToMap(track, true, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
-                if (track.points.length !== currLayer.points.length || orderPointsWasChanged(track.points, currLayer.points)) {
-                    updateTrackOnMap(track)
+                if (track.updated) {
+                    updateTrackOnMap(track, currLayer.active);
                 }
             }
         });
@@ -113,5 +91,5 @@ export default function LocalClientTrackLayer() {
 
         setLayers({...layers});
 
-    }, [ctx.localClientsTracks, ctx.setLocalClientsTracks]);
+    }, [ctx.localTracks, ctx.setLocalTracks]);
 }

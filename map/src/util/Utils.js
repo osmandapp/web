@@ -1,6 +1,3 @@
-import {Point} from "gpx-builder/dist/builder/BaseBuilder/models";
-import {BaseBuilder, buildGPX} from "gpx-builder";
-
 async function fetchUtil(url, options) {
 
     const fetchData = async () => {
@@ -77,48 +74,17 @@ function getPointsDist(list) {
     if (list.length > 0) {
         for (let index = 0; index < list.length; ++index) {
             if (index === 0) {
-                list[index].dist = 0
+                list[index].distance = 0
+                list[index].distanceFromStart = 0
             } else {
                 let d = getDistance(list[index].lat, list[index].lng, list[index - 1].lat, list[index - 1].lng);
                 dist += d;
-                list[index].dist = dist;
+                list[index].distance = d;
+                list[index].distanceFromStart = dist;
             }
         }
     }
     return list;
-}
-
-async function uploadFile(gpxFiles, setGpxFiles, ctx, gpxLayer, file) {
-    let formData = new FormData();
-    formData.append('file', file);
-    const response = await fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/upload-session-gpx`, {
-        method: 'POST',
-        credentials: 'include',
-        body: formData
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let newinfo = Object.assign({}, gpxFiles);
-        if (data.info) {
-            gpxLayer.summary = data.info.analysis;
-            gpxLayer.srtmSummary = data.info.srtmAnalysis;
-            gpxLayer.metadata = data.info.metadata;
-        }
-        newinfo[gpxLayer.name] = gpxLayer;
-        gpxFiles[gpxLayer.name] = gpxLayer;
-        setGpxFiles(newinfo);
-    } else {
-        let message = await response.text();
-        alert(message);
-    }
-}
-
-function getGpx(track) {
-    let points = [];
-    track.points.forEach(p => points.push(new Point(p.lat, p.lng)));
-    const gpxData = new BaseBuilder();
-    gpxData.setSegmentPoints(points);
-    return buildGPX(gpxData.toObject());
 }
 
 const Utils = {
@@ -126,9 +92,7 @@ const Utils = {
     fetchUtilLoad,
     getFileData,
     getDistance,
-    uploadFile,
-    getPointsDist,
-    getGpx
+    getPointsDist
 };
 
 export default Utils;

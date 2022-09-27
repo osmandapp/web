@@ -357,7 +357,7 @@ export const AppContextProvider = (props) => {
         }
     });
 
-    const [localClientsTracks, setLocalClientsTracks] = useState(TracksManager.loadTracks());
+    const [localTracks, setLocalTracks] = useState(TracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: {text: ''},
@@ -442,7 +442,7 @@ export const AppContextProvider = (props) => {
         searchCtx, setSearchCtx,
         favorites, setFavorites,
         avoidRoads, setAvoidRoads,
-        localClientsTracks, setLocalClientsTracks,
+        localTracks, setLocalTracks,
         currentObjectType, setCurrentObjectType,
         headerText, setHeaderText
 

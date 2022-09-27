@@ -19,7 +19,10 @@ const contextMenuStyles = makeStyles({
         '&[disabled]': {
             border: 'none'
         },
-        marginBottom: -13
+        marginBottom: -10,
+        paddingBottom: '8px',
+        paddingTop: '8px'
+
     },
     name: {
         fontFamily: "Arial",
@@ -27,7 +30,9 @@ const contextMenuStyles = makeStyles({
         color: 'black',
         outline: 'none',
         letterSpacing: "normal",
-        lineHeight: "normal"
+        paddingBottom: '2px',
+        lineHeight: "normal",
+        overflowWrap: 'break-word'
     },
 
     item: {
@@ -35,7 +40,8 @@ const contextMenuStyles = makeStyles({
             userSelect: 'text'
         },
         '& .MuiTypography-root': {
-            marginLeft: "1px !important"
+            marginLeft: "1px !important",
+            marginTop: '6px'
         }
     }
 })

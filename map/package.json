@@ -15,14 +15,17 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
     "@types/leaflet.awesome-markers": "^2.0.25",
+    "axios": "^0.27.2",
     "env-cmd": "^10.1.0",
-    "gpx-builder": "^5.0.0",
     "http-proxy-middleware": "^2.0.6",
     "ionicons": "^6.0.2",
     "leaflet": "^1.8.0",
     "leaflet-contextmenu": "^1.4.0",
     "leaflet-hash": "^0.2.1",
     "leaflet.awesome-markers": "^2.0.5",
+    "pako": "^2.0.4",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -40,7 +43,8 @@
     "build": "react-scripts build",
     "build:staging": "env-cmd -f .env.staging react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "patch-package"
   },
   "eslintConfig": {
     "extends": [

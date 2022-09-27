@@ -1,29 +1,54 @@
-import React, {useMemo} from 'react';
+import React, {useContext, useEffect, useMemo, useState} from 'react';
 import GpxGraphTab from "./GpxGraphTab";
+import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 
-const ElevationTab = ({data, width}) => {
+const ElevationTab = ({width, srtm}) => {
+
+    const ctx = useContext(AppContext);
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        if (ctx.selectedGpxFile) {
+            let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+            if (srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis) {
+                setData({data: points, srtm: true});
+            } else if (ctx.selectedGpxFile.analysis?.hasElevationData) {
+                setData({data: points, srtm: false});
+            } else {
+                setData(null);
+            }
+        }
+    }, [ctx.selectedGpxFile]);
+
     const graphData = useMemo(() => {
-        let result = [];
-        let min = data[0].elevation;
-        let max = data[0].elevation;
-        let cumDist = 0;
-        data.forEach((point) => {
-            let val = Math.round(point.elevation * 10) / 10;
-            cumDist += point.distance;
-            let data = {
-                "Distance": Math.round(cumDist) / 1000,
-                "Elevation": val
-            };
-            result.push(data);
-            min = Math.min(val, min);
-            max = Math.max(val, max);
-        });
-        return {res: result, min: min, max: max};
+        if (data) {
+            let elevation = data.srtm ? "srtmEle" : "ele";
+            let points = data.data;
+            let result = [];
+            let min = points[0][elevation];
+            let max = points[0][elevation];
+            let cumDist = 0;
+            points.forEach((point) => {
+                let ele = TracksManager.getEle(point, elevation, points)
+                let val = Math.round(ele * 10) / 10;
+                cumDist += point.distance;
+                let dataTab = {
+                    "Distance": Math.round(cumDist) / 1000,
+                    "Elevation": val
+                };
+                result.push(dataTab);
+                min = Math.min(val, min);
+                max = Math.max(val, max);
+            });
+            return {res: result, min: min, max: max};
+        }
     }, [data]);
 
     return (
-        <GpxGraphTab data={graphData.res} xAxis={"Distance"} yAxis={"Elevation"}
-                     width={width} min={graphData.min} max={graphData.max}/>
+        <GpxGraphTab data={graphData?.res} xAxis={"Distance"} yAxis={"Elevation"}
+                     width={width} min={graphData?.min} max={graphData?.max}/>
 
     );
 };
