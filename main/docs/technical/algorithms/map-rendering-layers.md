@@ -26,16 +26,22 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 
 ## Android. Order tables
 
-### Android. Map Icons order
+### Android. Raster layers
 
 | Layer                             | Order/Range | Type | Description           |
 | --------------------------------- | ----------: |------|-----------------------|
 | MapTileLayer (underlay)           | -50 000     | Map | Raster tiles underlay |
 | **MapVectorLayer**                |       0     | Map | Map vector tiles  |
 | MapTileLayer (main layer)         |   5 000     | Map | Map raster tiles  |
-| MapTileLayer (overlay)            |  70 000     | Map | Raster tiles overlay   |
-| DownloadedRegionsLayer            |  50 000     | Polygons | Show downloaded regions |
 | TerrainLayer                      |  60 000     | Map | Base for raster tiles  |
+| MapTileLayer (overlay)            |  70 000     | Map | Raster tiles overlay   |
+
+### Android. Symbol layers
+
+| Layer                             | Order/Range | Type | Description           |
+| --------------------------------- | ----------: |------|-----------------------|
+| **Icons** - **VectorMapLayer**    |  ? 1 - 255 ?| Points | Vector map, iconOrder in style, 100 by default |
+| DownloadedRegionsLayer            |  50 000     | Polygons | Show downloaded regions |
 | GPXLayer (lines)                  |  90 000     | Lines | Order for track lines  |
 | RouteLayer                        |  100 000    | Lines | Navigation route       |
 | PreviewRouteLineLayer             |  150 000    | - |  Not used OpenGL        |
@@ -55,13 +61,7 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | PointLocationLayer                |  800 000    | Points | My location point      |
 | MapInfoLayer                      |  900 000    | ?? | ???  |
 | MapillaryVectorLayer              |  1 000 000  | Points / Lines ?? | Mapillary points / lines|   
-
-### Android. Icons order
-
-| Icon                          | Order/Range   | Type | Description             |
-| ----------------------------- | ------------: | ------ | ----------------------- |
-| **Icons** - **VectorMapLayer**|  1 - 255      | Points | Vector map, iconOrder in style, 100 by default |
-| GPX track start, finish       |  90 101       | Points | GPXLayer                |
+| GPX track start, finish           |  90 101       | Points | GPXLayer                |
 | GPX track waypoint            |  90 300       | Points | GPXLayer                |
 | GPX track chart icon          |  90 500       | Points | GPXLayer                |
 | GPX track selected icon       |  90 600       | Points | GPXLayer                |
@@ -76,19 +76,17 @@ Additionally we increase order of road [shields](https://github.com/osmandapp/Os
 | MapMarkersLayer (markers)     |  730 000      | Points |                       |
 | Avoid roads                   |  750 000      | Points | ImpassableRoadsLayer    |
 
-### Android.Text and shield order
-
 | Text / shield                 | Order/Range   | Description             |
 | ----------------------------- | ------------: | ----------------------- |
 | Text - **VectorMapLayer**     |  1 - 255      | Vector map texts, textOrder from style, 100 by default |
 | GPXLayer (wpt text)           |  90 300       | Order waypoints text in GPX |
-| Shields - **VectorMapLayer**  |  180 000 +    | Shields over roads, textOrder + 180 000 |
+| Shields - **VectorMapLayer**  |  180 000 + 255 | Shields over roads, textOrder + 180 000 |
 | POI (name)                    |  300 000      | POI overlay name        |
-| MapMarkersLayer (text on line)|  730  000     |                         |
+| MapMarkersLayer (text on line) |  730  000     |                         |
 | DistanceRulerControlLayer (text) |   790 000  | Not used OpenGL         |
 | Fixme                         | 1 000 000     | OSM fixme text          |
 
-### Android. Overlay controls
+### Android. Canvas controls
 
 | Control                       | Order/Range   | Description             |
 | ----------------------------- | ------------: | ----------------------- |
