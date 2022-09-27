@@ -135,21 +135,23 @@ When the navigation is running, you can press the home button. You will get the 
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>_
 
-![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png)
+![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
 
-- &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
-- &nbsp;<Translate android="true" ids="routing_attr_driving_style_name"/> (bicycle..) - allows to choose driving style for bicycle navigation type: <Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>.
-- &nbsp;<Translate android="true" ids="routing_attr_height_obstacles_name"/> (bicycle..) - allows to avoid strong uphills: <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>.
-- &nbsp;<Translate android="true" ids="routing_attr_allow_motorway_name"/> (bicycle..) - allows to avoid or prefer motorways.
-- &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
+Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
+
+- &nbsp;_<Translate android="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+- &nbsp;_<Translate android="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose driving style for bicycle navigation type: _<Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>_.
+- &nbsp;_<Translate android="true" ids="routing_attr_height_obstacles_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to avoid strong uphills: _<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>_.
+- &nbsp;_<Translate android="true" ids="routing_attr_allow_motorway_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to avoid or prefer motorways.
+- &nbsp;_<Translate android="true" ids="impassable_road"/>_ - allows to select a road you want to avoid during navigation, either on the map.
 - &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
-- &nbsp;<Translate android="true" ids="follow_track"/> - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
-- &nbsp;<Translate android="true" ids="routing_attr_allow_private_name"/> - allows to navigate to private zone.
-- &nbsp;<Translate android="true" ids="routing_attr_short_way_name"/> - calculates navigation by fuel-efficient algorithm.
-- &nbsp;<Translate android="true" ids="temporary_conditional_routing"/> - allows to consider temporary limitations.
-- &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens Navigation settings of app profile.
-- &nbsp;<Translate android="true" ids="customize_route_line"/> - opens menu of Route line.
-- &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation.
+- &nbsp;_<Translate android="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
+- &nbsp;_<Translate android="true" ids="routing_attr_allow_private_name"/>_ - allows to navigate to private zone.
+- &nbsp;_<Translate android="true" ids="routing_attr_short_way_name"/>_ - calculates navigation by fuel-efficient algorithm.
+- &nbsp;_<Translate android="true" ids="temporary_conditional_routing"/>_ - allows to consider temporary limitations.
+- &nbsp;_<Translate android="true" ids="routing_settings_2"/>_ - opens Navigation settings of app profile.
+- &nbsp;_<Translate android="true" ids="customize_route_line"/>_ - opens menu of Route line.
+- &nbsp;_<Translate android="true" ids="simulate_navigation"/>_ - allows to simulate your navigation.
 
 </TabItem>
 
