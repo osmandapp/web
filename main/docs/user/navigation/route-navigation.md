@@ -242,7 +242,7 @@ When the navigation route is built. You can start to simulate a motion by this w
 
 _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
 
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/> → &#8230;|_
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/> → &#8230;|_
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
