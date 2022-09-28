@@ -32,7 +32,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The navigation function allows you to reach your destination easily using voice guidance (optional).
 
-There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. 
+
+:::note 
+Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -135,22 +139,22 @@ When the navigation is running, you can press the home button. You will get the 
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>_
 
-![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
-
 Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
+
+![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
 
 - &nbsp;_<Translate android="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 - &nbsp;_<Translate android="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose driving style for bicycle navigation type: _<Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>_.
-- &nbsp;_<Translate android="true" ids="routing_attr_height_obstacles_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to avoid strong uphills: _<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>_.
+- &nbsp;_<Translate android="true" ids="routing_attr_height_obstacles_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows [to avoid strong uphills](../personal/profiles.md#route-parameters): _<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>_.
 - &nbsp;_<Translate android="true" ids="routing_attr_allow_motorway_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to avoid or prefer motorways.
-- &nbsp;_<Translate android="true" ids="impassable_road"/>_ - allows to select a road you want to avoid during navigation, either on the map.
+- &nbsp;_<Translate android="true" ids="impassable_road"/>_ - allows to select a road you want [to avoid during navigation](../personal/profiles.md#route-parameters), either on the map.
 - &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
 - &nbsp;_<Translate android="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
 - &nbsp;_<Translate android="true" ids="routing_attr_allow_private_name"/>_ - allows to navigate to private zone.
 - &nbsp;_<Translate android="true" ids="routing_attr_short_way_name"/>_ - calculates navigation by fuel-efficient algorithm.
 - &nbsp;_<Translate android="true" ids="temporary_conditional_routing"/>_ - allows to consider temporary limitations.
-- &nbsp;_<Translate android="true" ids="routing_settings_2"/>_ - opens Navigation settings of app profile.
-- &nbsp;_<Translate android="true" ids="customize_route_line"/>_ - opens menu of Route line.
+- &nbsp;_<Translate android="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
+- &nbsp;_<Translate android="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
 - &nbsp;_<Translate android="true" ids="simulate_navigation"/>_ - allows to simulate your navigation.
 
 </TabItem>
@@ -159,14 +163,13 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options"/>_
 
+Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
 
 ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_2.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_3.png)
 
 - &nbsp;_<Translate ios="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 
 **Route parameters:**
-
-Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
 
 - &nbsp;<Translate ios="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
 - &nbsp;_<Translate ios="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose [driving style](../personal/profiles.md#route-parameters) for bicycle navigation type: _<Translate ios="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate ios="true" ids="routing_attr_driving_style_safety_name"/>, <Translate ios="true" ids="routing_attr_driving_style_balance_name"/>, <Translate ios="true" ids="routing_attr_driving_style_speed_name"/>_.
@@ -191,9 +194,6 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 </Tabs>
 
-#### Simulate navigation
-
-
 ### Home - Work points
 
 [Special points](../personal/favorites.md#special-favorites-personal) of Favorites in Navigation menu for quickly access.
@@ -209,6 +209,40 @@ List of shown track on the map. Clicking by one of it opens [Follow track](../na
 ### History
 
 Tracks list.
+
+### Simulate navigation
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,simulate_navigation"/>  →  &#x2699_
+
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
+
+- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](../navigation/route-navigation.md#how-to-use).
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
+
+
 
 ## Navigation route
 
