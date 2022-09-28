@@ -155,7 +155,7 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 - &nbsp;_<Translate android="true" ids="temporary_conditional_routing"/>_ - allows to consider temporary limitations.
 - &nbsp;_<Translate android="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
 - &nbsp;_<Translate android="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
-- &nbsp;_<Translate android="true" ids="simulate_navigation"/>_ - allows to simulate your navigation.
+- &nbsp;_<Translate android="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).
 
 </TabItem>
 
@@ -163,13 +163,13 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options"/>_
 
-Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
-
 ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_2.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_3.png)
 
 - &nbsp;_<Translate ios="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 
 **Route parameters:**
+
+Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
 
 - &nbsp;<Translate ios="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
 - &nbsp;_<Translate ios="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose [driving style](../personal/profiles.md#route-parameters) for bicycle navigation type: _<Translate ios="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate ios="true" ids="routing_attr_driving_style_safety_name"/>, <Translate ios="true" ids="routing_attr_driving_style_balance_name"/>, <Translate ios="true" ids="routing_attr_driving_style_speed_name"/>_.
@@ -185,9 +185,9 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 **Advanced:**
 - &nbsp;_<Translate ios="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
-- &nbsp;_<Translate ios="true" ids="routing_settings_2"/>_ - opens Navigation settings of app profile.
-- &nbsp;_<Translate ios="true" ids="customize_route_line"/>_ - opens menu of Route line.
-- &nbsp;_<Translate ios="true" ids="simulate_navigation"/>_ - allows to simulate your navigation.
+- &nbsp;_<Translate ios="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
+- &nbsp;_<Translate ios="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
+- &nbsp;_<Translate ios="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).
 
 
 </TabItem>
@@ -217,7 +217,7 @@ Tracks list.
 
 <TabItem value="android" label="Android">
 
-When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
 
@@ -237,6 +237,23 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/> → &#8230;|_
+
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+
+- &nbsp;_<Translate ios="true" ids="simulation_preview_mode_title"/>_ - <Translate ios="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Cancel" button](../navigation/route-navigation.md#how-to-use).
+
 
 </TabItem>
 
