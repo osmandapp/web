@@ -83,7 +83,7 @@ Tap to _<Translate android="true" ids="route_from"/>_ (your current position by 
 ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
 
-As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode you need to tap on "Dismiss" button.
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode, tap on the "Dismiss" button.
 
 
 ![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
@@ -116,9 +116,20 @@ Tap to _<Translate ios="true" ids="route_from"/>_ (your current position by defa
 &nbsp;_<Translate ios="true" ids="swap_points"/>_ and "&#43;" buttons:
 - &nbsp;_<Translate ios="true" ids="swap_points"/>_ - allows to change Start <-> Finish points.
 - "&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
+- &nbsp;"&#x1F589;" - allows to open destination the points list ("Destinations") for edition.
 
+ The points list:
+  - &nbsp;"Options" - opens the sort menu with next options of sorting destinations points: _<Translate ios="true" ids="intermediate_items_sort_by_distance"/>, <Translate ios="true" ids="switch_start_finish"/>, <Translate ios="true" ids="add_waypoint_short"/>, <Translate ios="true" ids="clear_all_intermediates"/>_.
+  - &nbsp;"&#10005;" - allows to delete destination point from the points list. At first, you need to side-move the point line.
+  - &nbsp;"&#9776;" - allows to change point order in the points list.
+  - &nbsp;"&#9776; <Translate ios="true" ids="clear_all_intermediates"/>" button - allows to clear all intermediate points from the list.
+  - &nbsp;"<Translate ios="true" ids="poi"/>" button - allows to choose [categories of POI](../map/point-layers-on-map.md#poi-types) for showing on the map.  
+  - &nbsp;"<Translate ios="true" ids="my_favorites"/>" button - allows showing the info of your [Favorites](../personal/favorites.md) points on [the widget](../widgets/nav-widgets.md#approach-poisfavorites) with editing distance from your location to Favorite.
+  - &nbsp;"<Translate ios="true" ids="show_traffic_warnings"/>" button - allows showing the info about [Traffic Warnings](../widgets/nav-widgets.md#alert-types) on your way. Tapping on "&#10005;" button near the warning delete it from your navigation way.
 
-As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
+![Navigation interpoints ios](@site/static/img/navigation/route/navigation_interpoints_ios.png) ![Navigation interpoints ios](@site/static/img/navigation/route/navigation_interpoints_ios_2.png) ![Navigation interpoints ios](@site/static/img/navigation/route/navigation_interpoints_ios_3.png)
+
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode, tap on the "Cancel" button.
 
 
 ![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
