@@ -68,16 +68,22 @@ Tap to _<Translate android="true" ids="route_from"/>_ (your current position by 
 
 
 "Swap Starting point and Destination" and "&#43;" buttons:
-- &nbsp;"&#8595;&#8593;"_"Swap Starting point and Destination"_ - allows to change Start <-> Finish points.
+- &nbsp;"&#8595;&#8593;"_Swap Starting point and Destination_ - allows to change Start <-> Finish points.
 - &nbsp;"&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
-- &nbsp;"&#x1F589;" - allows to open destination the points list for edition.
-- &nbsp;"&#10005;" - allows to delete destination point from the points list.
-- &nbsp;"&#61;" - allows to change point order in the points list.
+- &nbsp;"&#x1F589;" - allows to open destination the points list ("Destinations") for edition.
 
-![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png)
+ The points list:
+  - &nbsp;"&#8592;" - moves to Navigation menu screen.
+  - &nbsp;"Sort" - opens the sort menu with next options of sorting destinations points: _<Translate android="true" ids="intermediate_items_sort_by_distance"/>, <Translate android="true" ids="switch_start_finish"/>, <Translate android="true" ids="reverse_all_points"/>, <Translate android="true" ids="add_intermediate_point"/>, <Translate android="true" ids="clear_all_intermediates"/>_.
+  - &nbsp;"&#10005;" - allows to delete destination point from the points list.
+  - &nbsp;"&#61;" - allows to change point order in the points list.
+  - &nbsp;"&#43; Add" button - opens context menu "Add intermediate".
+  - &nbsp;"&#9776; Clear all" button - allows to clear all points.
+
+![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
 
-As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode you need to tap on "Dismiss" button.
 
 
 ![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
