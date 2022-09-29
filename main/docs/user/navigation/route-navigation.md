@@ -17,22 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
-
-
 The navigation function allows you to reach your destination easily using voice guidance (optional).
 
-There are the next navigation profiles by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. 
+There are the next navigation profiles ([type of navigation](../navigation/route-navigation.md#type-of-navigation)) by default: _Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. 
 
 :::note 
 Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.
@@ -81,8 +68,13 @@ Tap to _<Translate android="true" ids="route_from"/>_ (your current position by 
 
 
 "Swap Starting point and Destination" and "&#43;" buttons:
-- &nbsp;_"Swap Starting point and Destination"_ - allows to change Start <-> Finish points.
+- &nbsp;"&#8595;&#8593;"_"Swap Starting point and Destination"_ - allows to change Start <-> Finish points.
 - &nbsp;"&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
+- &nbsp;"&#x1F589;" - allows to open destination the points list for edition.
+- &nbsp;"&#10005;" - allows to delete destination point from the points list.
+- &nbsp;"&#61;" - allows to change point order in the points list.
+
+![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png)
 
 
 As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button.
