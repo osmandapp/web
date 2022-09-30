@@ -505,7 +505,15 @@ There is OsmAnd engine for offline navigation. For choosing navigation type: [Na
 
 ## Custom routing
 
-OsmAnd allows modification _render.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+OsmAnd allows modification _routing.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+
+For start modification [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you need to copy it and start changing it for your needs. Please, read attentively [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25). Example of [routing.xml from OsmAnd user](https://groups.google.com/g/osmand/c/JvV7p_JJvEU). 
+
+For adding new routing.xml to OsmAnd just tap to this file and open by OsmAnd.
+
+
+For your Profile you need to choose your [Navigation type](../navigation/route-navigation.md#type-of-navigation).
+
 
 ## Background navigation
 
