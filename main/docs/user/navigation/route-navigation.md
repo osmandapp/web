@@ -505,17 +505,45 @@ There is OsmAnd engine for offline navigation. For choosing navigation type: [Na
 
 ## Custom routing
 
-Link to Tech Documentation
+OsmAnd allows modification _render.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
 
 ## Background navigation
 
-Navigation instruction in the background mode.
+<Tabs groupId="operating-systems">
+<TabItem value="android" label="Android">
+
+When you created your route and started navigation. You can use it on Background. You receive voice prompts and silent notifications.
+This mode is important for low battery consumption.
+
+</TabItem>
+<TabItem value="ios" label="iOS">
+
+When you created your route and started navigation. You can use it on Background. You receive voice prompts.
+This mode is important for low battery consumption.
+
+</TabItem>
+</Tabs>
+
 
 ### Sound
 
+<Tabs groupId="operating-systems">
+<TabItem value="android" label="Android">
+
 Voice prompts in backgroun during navigation. [Voice navigation](../navigation/voice-navigation.md).
 
+</TabItem>
+<TabItem value="ios" label="iOS">
+
+Voice prompts in backgroun during navigation. [Voice navigation](../navigation/voice-navigation.md).
+
+</TabItem>
+</Tabs>
+
 ### Notification
+
+<Tabs groupId="operating-systems">
+<TabItem value="android" label="Android">
 
 Notification info: Turn-by-turn instructions; arrows; arrival time and time to go, current speed.
 
@@ -526,17 +554,38 @@ Buttons:
 - &nbsp;<Translate android="true" ids="shared_string_pause"/> - allows to pause your navigation.
 - &nbsp;<Translate android="true" ids="shared_string_resume"/> - allows to resume your navigation.
 
+</TabItem>
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+</Tabs>
+
 ### Turn on screen
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>
+<Tabs groupId="operating-systems">
+<TabItem value="android" label="Android">
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>_
 
 <p> </p>
 
-&nbsp;<Translate android="true" ids="screen_timeout"/>:
-- &nbsp;<Translate android="true" ids="system_screen_timeout"/> - the screen will go blank depending on the device settings.
-- &nbsp;<Translate android="true" ids="wake_time"/> - if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
+&nbsp;**<Translate android="true" ids="screen_timeout"/>**:
+- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings.
+- &nbsp;_<Translate android="true" ids="wake_time"/>_ - if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
 
-&nbsp;<Translate android="true" ids="turn_screen_on"/>. Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
-- &nbsp;<Translate android="true" ids="turn_screen_on_proximity_sensor"/> - waving your hand across the screen will turn it on.
-- &nbsp;<Translate android="true" ids="turn_screen_on_navigation_instructions"/> - each navigation instruction will turn the screen on.
-- &nbsp;<Translate android="true" ids="turn_screen_on_power_button"/> - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
+&nbsp;**<Translate android="true" ids="turn_screen_on"/>**. Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
+- &nbsp;_<Translate android="true" ids="turn_screen_on_proximity_sensor"/>_ - waving your hand across the screen will turn it on.
+- &nbsp;_<Translate android="true" ids="turn_screen_on_navigation_instructions"/>_ - each navigation instruction will turn the screen on.
+- &nbsp;_<Translate android="true" ids="turn_screen_on_power_button"/>_ - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
+
+
+</TabItem>
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+</Tabs>
+
