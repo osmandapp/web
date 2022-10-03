@@ -122,7 +122,11 @@ To get to the track Appearance menu, you need to display track on the map, then 
 |**<Translate android="true" ids="select_track_width"/>** - changes the thickness for the track between **_<Translate android="true" ids="rendering_value_thin_name"/>_**, **_<Translate android="true" ids="rendering_value_medium_name"/>_**, **_<Translate android="true" ids="rendering_value_bold_name"/>, <Translate android="true" ids="shared_string_custom"/>_**.|
 |![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)|
 
-### Analyze Track on Map (Android)
+### Analyze Track on Map
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>
 
@@ -137,6 +141,13 @@ This option allows you to interactively review track information using graphs an
 
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
 
 <!-- 
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 4 Android](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
