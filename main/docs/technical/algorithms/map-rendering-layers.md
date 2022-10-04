@@ -32,17 +32,17 @@ Other layers are instance in the plugins.
 ### Android. Symbols layers
 | Layer / symbols                   | Order/Range | Type     | Description             |
 | --------------------------------- | ----------: |----------|-------------------------|
+| DownloadedRegionsLayer            |  -1 100 000 | Polygons | Show downloaded regions |
 | Icons (MapVectorLayer)            |  -1 000 000 | Points   | Vector map, iconOrder in style with [adding 1000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
+| GPXLayer (lines)                  |  -500 000   | Lines    | Track lines             |
+| RouteLayer                        |  -200 000   | Lines    | Navigation route        |
 | Text (MapVectorLayer)             |  1 - 255    | Text     | Vector map, textOrder in [style](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 by default |
 | Shileds (MapVectorLayer)          |  1 - 255    | Shields  | Vector map, textOrder in style for shields, 100 by default |
-| DownloadedRegionsLayer            |  50 000     | Polygons | Show downloaded regions |
-| GPXLayer (lines)                  |  90 000     | Lines    | Track lines             |
 | GPX track start, finish           |  90 101     | Points   | GPXLayer                |
 | GPX track waypoint                |  90 300     | Points   | GPXLayer                |
 | GPXLayer (wpt name)               |  90 300     | Text     | Waypoints name          |
 | GPX track chart icon              |  90 500     | Points   | GPXLayer                |
 | GPX track selected icon           |  90 600     | Points   | GPXLayer                |
-| RouteLayer                        |  100 000    | Lines    | Navigation route        |
 | OSM notes (OsmBugsLayer)          |  200 000    | Points   | OSM notes               |
 | Fixme icon (OsmBugsLayer)         |  200 000    | Points   | OSM fixme icons         |
 | Fixme text (OsmBugsLayer)         |  200 000    | Text     | OSM fixme text          |
