@@ -161,7 +161,7 @@ const config = {
               },
               {
                 label: 'Arabic',
-                href: 'https://t.me/joinchat/8f5o0TtZAaM0MGJk',
+                href: 'https://t.me/+NwG00ihXJlBjZTA0',
               },
               {
                 label: 'Türkçe',
