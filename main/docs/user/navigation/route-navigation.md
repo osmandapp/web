@@ -583,7 +583,8 @@ You can control the device screen to save power. This mode has two general setti
 <p> </p>
 
 #### Screen timeout
-- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings. Enable it for using _Turn the screen off_ as per the system's screen timeout. "Change setting" button opens system menu.
+
+- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings. Enable it for using _Turn the screen off_ as per the system's screen timeout. _"Change setting"_ button opens system menu.
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
@@ -594,6 +595,9 @@ You can control the device screen to save power. This mode has two general setti
 #### Turn screen on
 
 Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
+
+![turn screen on Android](@site/static/img/navigation/route/turn_screen_on_android.png)
+
 - &nbsp;_<Translate android="true" ids="turn_screen_on_proximity_sensor"/>_ - waving your hand across the screen will turn it on.
 - &nbsp;_<Translate android="true" ids="turn_screen_on_navigation_instructions"/>_ - each navigation instruction will turn the screen on.
 - &nbsp;_<Translate android="true" ids="turn_screen_on_power_button"/>_ - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
