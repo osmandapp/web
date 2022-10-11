@@ -520,13 +520,12 @@ For your Profile you need to choose your [Navigation type](../navigation/route-n
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
 
-When you created your route and started navigation. You can use it on Background. You receive voice prompts and silent notifications.
-This mode is important for low battery consumption.
+When you created your route and started navigation. You can use it in the Background. You receive voice prompts and silent notifications. This mode is important for low battery consumption.
 
 </TabItem>
 <TabItem value="ios" label="iOS">
 
-When you created your route and started navigation. You can use it on Background. You receive voice prompts.
+When you created your route and started navigation. You can use it in the Background. You receive voice prompts.
 This mode is important for low battery consumption.
 
 </TabItem>
@@ -538,12 +537,12 @@ This mode is important for low battery consumption.
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
 
-Voice prompts in backgroun during navigation. [Voice navigation](../navigation/voice-navigation.md).
+Set your voice prompts and listen to navigation prompts. [Voice navigation](../navigation/voice-navigation.md).
 
 </TabItem>
 <TabItem value="ios" label="iOS">
 
-Voice prompts in backgroun during navigation. [Voice navigation](../navigation/voice-navigation.md).
+Set your voice prompts and listen to navigation prompts. [Voice navigation](../navigation/voice-navigation.md).
 
 </TabItem>
 </Tabs>
@@ -553,14 +552,14 @@ Voice prompts in backgroun during navigation. [Voice navigation](../navigation/v
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
 
-Notification info: Turn-by-turn instructions; arrows; arrival time and time to go, current speed.
+You can see notification info in Drop-down system menu: _Turn-by-turn instructions; arrows; arrival time and time to go, current speed_.
 
 ![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
 
-Buttons:
-- &nbsp;<Translate android="true" ids="stop_navigation_service"/> - allows to stop your navigation.
-- &nbsp;<Translate android="true" ids="shared_string_pause"/> - allows to pause your navigation.
-- &nbsp;<Translate android="true" ids="shared_string_resume"/> - allows to resume your navigation.
+Active buttons on Drop-down system menu for your navigation:
+- &nbsp;_<Translate android="true" ids="stop_navigation_service"/>_ - allows to stop your navigation.
+- &nbsp;_<Translate android="true" ids="shared_string_pause"/>_ - allows to pause your navigation.
+- &nbsp;_<Translate android="true" ids="shared_string_resume"/>_ - allows to resume your navigation.
 
 </TabItem>
 <TabItem value="ios" label="iOS">
@@ -570,20 +569,31 @@ Buttons:
 </TabItem>
 </Tabs>
 
-### Turn on screen
+### Screen control
 
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>_
 
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
+
+You can control the device screen to save power. This mode has two general settings:  _<Translate android="true" ids="screen_timeout"/>_ and _<Translate android="true" ids="turn_screen_on"/>_.
+
 <p> </p>
 
-&nbsp;**<Translate android="true" ids="screen_timeout"/>**:
-- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings.
-- &nbsp;_<Translate android="true" ids="wake_time"/>_ - if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
+#### Screen timeout
+- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings. Enable it for using _Turn the screen off_ as per the system's screen timeout. "Change setting" button opens system menu.
 
-&nbsp;**<Translate android="true" ids="turn_screen_on"/>**. Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
+![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
+
+- &nbsp;_<Translate android="true" ids="wake_time"/>_ - if "Keep screen on" is enabled the device screen applies no timeout. if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
+
+![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+
+#### Turn screen on
+
+Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
 - &nbsp;_<Translate android="true" ids="turn_screen_on_proximity_sensor"/>_ - waving your hand across the screen will turn it on.
 - &nbsp;_<Translate android="true" ids="turn_screen_on_navigation_instructions"/>_ - each navigation instruction will turn the screen on.
 - &nbsp;_<Translate android="true" ids="turn_screen_on_power_button"/>_ - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
