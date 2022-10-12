@@ -29,4 +29,4 @@ The SQLIte format used in OsmAnd is based on the "BigPlanet" SQLite as supported
 
 This format is also used by Hillshade and Slope files distributed by OsmAnd application.
 
-The class supporting this is SQLiteTileSource at or near [https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/SQLiteTileSource.java\#L33](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/SQLiteTileSource.java#L33).
+The class supporting this is SQLiteTileSource at or near [https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/resources/SQLiteTileSource.java#L36).
