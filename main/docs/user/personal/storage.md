@@ -175,6 +175,10 @@ errors (e.g. if the SD card is too full).
 
 ### Backup and Restore for OsmAnd Pro
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore"/>
@@ -213,16 +217,29 @@ Two screens:
 
 &nbsp;<Translate android="true" ids="backup_delete_old_data"/> - Current versions of your data will be preserved on OsmAnd Cloud.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
+
+</TabItem>
+
+</Tabs>
+
+
+
 
 ### Local backup
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 
 Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup"/>
-
-iOS Menu → Settings → Backup & Restore → Local backup
-
-<p> </p>
 
 - &nbsp;<Translate android="true" ids="backup_into_file"/> - creating and saving OSF-file in your device.
 
@@ -232,8 +249,32 @@ iOS Menu → Settings → Backup & Restore → Local backup
 
 - &nbsp;<Translate android="true" ids="restore_from_file"/> - opening and restoring OSF-file (you backup).
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
+
+iOS Menu → Settings → Backup & Restore → Local backup
+
+- &nbsp;<Translate android="true" ids="backup_into_file"/> - creating and saving OSF-file in your device.
+
+![Backup local Android](@site/static/img/personal/backup/backup_local_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_1_android.png)
+
+![Backup local Android](@site/static/img/personal/backup/backup_local_2_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_3_android.png)
+
+- &nbsp;<Translate android="true" ids="restore_from_file"/> - opening and restoring OSF-file (you backup).
+
+</TabItem>
+
+</Tabs>
 
 ## Copy raster map package created on PC 
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps.md#sqlite-vs-metainfo-sources).
 Next, you need to move your map package file(s) to OsmAnd-tiles directory:
@@ -242,7 +283,21 @@ For **Android** OsmAnd - you need to access storage to copy file(s) from PC to t
 
 ![Import sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps.md#sqlite-vs-metainfo-sources).
+Next, you need to move your map package file(s) to OsmAnd-tiles directory:
+
 For **iOS** OsmAnd - you need to click the file on your iTunes or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
 
 ![Import sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)
+
+
+</TabItem>
+
+</Tabs>
+
+
 
