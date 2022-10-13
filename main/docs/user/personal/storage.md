@@ -11,34 +11,70 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoIncompleteArticle/>
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
 
 How to configure, access and change data storage for maps, tracks and other personal data
 
 ## Storage info in Download maps menu
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 There is toolbar about storage information in [Download maps menu](../personal/maps.md#download-maps-maps). Here you see Device memory and free space in device storage. 
-For **iOS**, you can estimate how much memory spacing of OsmAnd data is in the device storage (orange color).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>
 
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
-
-<p> </p>
-
-![Storage info Android](@site/static/img/personal/maps/maps_menu_local_vector_android.png) ![Storage info iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
+![Storage info Android](@site/static/img/personal/maps/maps_menu_local_vector_android.png)
 
 ___________________________
 
 - Favorite backups
 - Folder structure (iOS / Android)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+There is toolbar about storage information in [Download maps menu](../personal/maps.md#download-maps-maps). Here you see Device memory and free space in device storage. 
+For **iOS**, you can estimate how much memory spacing of OsmAnd data is in the device storage (orange color).
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>
+
+![Storage info iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
+
+___________________________
+
+- Favorite backups
+- Folder structure (iOS / Android)
+
+</TabItem>
+
+</Tabs>
 
 ## Data storage folder
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 
 For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
 
@@ -66,7 +102,21 @@ Memory name | Permission access
 | Manually specified | Depends on the path |
 
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
+
 ## Storage on SD card
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ### In order to move the OsmAnd home (maps) folder to an external SD card:
 
@@ -111,6 +161,15 @@ may also be invoked in OsmAnd itself via `Menu/Settings/General/Data
 storage folder` but the copy operations may take a long time or result in
 errors (e.g. if the SD card is too full).
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
 
 ## Backup & Restore
 
