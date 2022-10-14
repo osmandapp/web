@@ -233,7 +233,7 @@ Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ me
 
 ```This feature for iOS version will be available for OsmAnd 4.3 release.```
 
-You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
+You need to subscribe to [OsmAnd Pro](https://osmand.net/docs/user/purchases/ios#free-and-paid-features).
 
 </TabItem>
 
@@ -290,7 +290,7 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 <TabItem value="android" label="Android">
 
-Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps.md).
+Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
 Next, you need to move your map package file(s) to OsmAnd-tiles directory:
 
 For **Android** OsmAnd - you need to access storage to copy file(s) from PC to the device folder BASE_OSMAND_STORAGE/tiles_ or you can click the file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
@@ -301,7 +301,7 @@ For **Android** OsmAnd - you need to access storage to copy file(s) from PC to t
 
 <TabItem value="ios" label="iOS">
 
-Map package can be saved in two formats: [SQ Lite and Metainfo](../map/raster-maps.md).
+Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
 Next, you need to move your map package file(s) to OsmAnd-tiles directory:
 
 For **iOS** OsmAnd - you need to click the file on your iTunes or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
