@@ -179,13 +179,23 @@ errors (e.g. if the SD card is too full).
 
 <TabItem value="android" label="Android">
 
+:::note
 You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
+:::
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore"/>
+When you subscrebed to [OsmAnd Pro](../purchases/android.md#free-and-paid-features), you need to make registration for _Backup & Restore_ function or enter your registrated e-mail:
 
-<p> </p>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>_
 
-Two screens:
+You need to enter the e-mail address you registered with.
+
+![Backup registration Android](@site/static/img/personal/backup/backup_registration_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_1_android.png)
+
+A one-time password for the next step will be sent to it. 
+
+![Backup registration Android](@site/static/img/personal/backup/backup_registration_2_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_3_android.png)
+
+Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ menu has two screns:
 
 **<Translate android="true" ids="shared_string_status"/>**
 
@@ -221,33 +231,35 @@ Two screens:
 
 <TabItem value="ios" label="iOS">
 
-You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
+```This feature for iOS version will be available for OsmAnd 4.3 release.```
+
+You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
 
 </TabItem>
 
 </Tabs>
 
-
-
-
 ### Local backup
 
 <Tabs groupId="operating-systems">
-
 <TabItem value="android" label="Android">
 
 
 Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup"/>
+- &nbsp;_<Translate android="true" ids="backup_into_file"/>_ - creating and saving OSF-file in your device.
 
-- &nbsp;<Translate android="true" ids="backup_into_file"/> - creating and saving OSF-file in your device.
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup,backup_into_file"/>
 
 ![Backup local Android](@site/static/img/personal/backup/backup_local_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_1_android.png)
 
+- &nbsp;_<Translate android="true" ids="restore_from_file"/>_ - opening and restoring OSF-file (you backup).
+
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup,restore_from_file"/>
+
 ![Backup local Android](@site/static/img/personal/backup/backup_local_2_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_3_android.png)
 
-- &nbsp;<Translate android="true" ids="restore_from_file"/> - opening and restoring OSF-file (you backup).
+
 
 </TabItem>
 
@@ -255,15 +267,17 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
 
-iOS Menu → Settings → Backup & Restore → Local backup
+- &nbsp;_<Translate ios="true" ids="backup_into_file"/>_ - creating and saving OSF-file in your device.
 
-- &nbsp;<Translate android="true" ids="backup_into_file"/> - creating and saving OSF-file in your device.
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,local_backup,backup_into_file"/>
 
-![Backup local Android](@site/static/img/personal/backup/backup_local_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_1_android.png)
+![Backup local iOS](@site/static/img/personal/backup/backup_local_ios.png) ![Backup local iOS](@site/static/img/personal/backup/backup_local_1_ios.png)
 
-![Backup local Android](@site/static/img/personal/backup/backup_local_2_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_3_android.png)
+- &nbsp;_<Translate ios="true" ids="restore_from_file"/>_ - opening and restoring OSF-file (you backup).
 
-- &nbsp;<Translate android="true" ids="restore_from_file"/> - opening and restoring OSF-file (you backup).
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,local_backup,restore_from_file"/>
+
+![Backup local iOS](@site/static/img/personal/backup/backup_local_2_ios.png) ![Backup local iOS](@site/static/img/personal/backup/backup_local_3_ios.png)
 
 </TabItem>
 
