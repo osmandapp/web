@@ -20,7 +20,7 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 ## Free and Paid features
 
-⁂ - needed [purchase](#prices).
+⁂ - needed [purchase](#in-app-purchases).
 
 |    | OsmAnd Free   | OsmAnd In-App | OsmAnd Live subscription |
 | :------------- | :------------- | :------------- | :------------- |

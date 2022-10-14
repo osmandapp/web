@@ -63,11 +63,11 @@ The following setup makes the Nautical map show up on the screen:
 
 :::note
   
-<ProFeature/>  Nautical maps you can use with Pro or Free feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>. 
+Nautical maps are [a paid feature](../purchases/android.md#free-and-paid-features) of OsmAnd.
 
 :::
   
-For more details, visit [Purchases](../purchases/ios.md#in-app-purchases).  
+For more details, visit [Purchases](../purchases/android.md#free-and-paid-features).  
 Additionally, view purchases you have already made by opening the following section: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
 
 </TabItem>
@@ -76,7 +76,7 @@ Additionally, view purchases you have already made by opening the following sect
 
 :::note
   
-<ProFeature/>  Nautical maps you can use with Pro or Free feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.  
+Nautical maps are [a paid feature](../purchases/ios.md#free-and-paid-features) of OsmAnd. 
 
 :::  
 
