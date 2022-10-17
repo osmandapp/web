@@ -21,7 +21,7 @@ function formatRouteInfo(props) {
     let res = ['Route: '];
     if (props?.overall?.distance) {
         let dst = (props.overall.distance / 1000).toFixed(1);
-        res.push(<b>{dst + ' km'}</b>);
+        res.push(<b key={"dst"}>{dst + ' km'}</b>);
         res.push(', ');
     }
     if (props?.overall?.time) {
@@ -30,7 +30,7 @@ function formatRouteInfo(props) {
         if (min < 10) {
             min = '0' + min;
         }
-        res.push(<b>{Math.floor(hours).toFixed(0) + ':' + min}</b>);
+        res.push(<b key={"time"}>{Math.floor(hours).toFixed(0) + ':' + min}</b>);
         res.push(', ');
     }
     res[res.length - 1] = '.';

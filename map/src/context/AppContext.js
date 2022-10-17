@@ -215,7 +215,7 @@ function formatRouteMode(routeMode) {
     Object.keys(routeMode.opts).forEach(o => {
         if (routeMode.opts[o]?.value === true) {
             routeModeStr += ',' + o;
-        } else if (routeMode.opts[o]?.value === false) {
+        } else if (routeMode.opts[o]?.value === false || routeMode.opts[o]?.value === "") {
             // skip
         } else {
             routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
@@ -377,8 +377,11 @@ export const AppContextProvider = (props) => {
         }
     }, [routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint]);
 
+    const triggeredRef = React.useRef(true);
+
     useEffect(() => {
-        if (!routeTrackFile && startPoint && endPoint) {
+        if (triggeredRef.current && !routeTrackFile && startPoint && endPoint) {
+            triggeredRef.current = false;
             calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText);
         } else {
             setHeaderText(prevState => ({
@@ -389,6 +392,10 @@ export const AppContextProvider = (props) => {
         // ! routeTrackFile is not part of dependency ! 
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
 
+    setTimeout(() => {
+        triggeredRef.current = true;
+    }, 1000);
+
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
@@ -396,7 +403,9 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
+                if (data.props.overall?.distance) {
+                    resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
+                }
             }
         }
         setHeaderText(prevState => ({
