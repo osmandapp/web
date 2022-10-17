@@ -15,7 +15,7 @@ Detailed information about purchases on iOS: subscriptions vs in app, prices, pa
 
 ## Install OsmAnd on iOS
 
-You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257.).
+You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 ## Free and Paid features
