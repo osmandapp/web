@@ -173,6 +173,8 @@ errors (e.g. if the SD card is too full).
 
 ## Backup & Restore
 
+This feature helps to keep and restore your OsmAnd data. There are two variants of backuping in OsmAnd: [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) and [Local](../personal/storage.md#local-backup).
+
 ### Backup and Restore for OsmAnd Pro
 
 
@@ -221,19 +223,21 @@ At this screen you can set your login and backup data.
 
 ![Backup settings screen Android](@site/static/img/personal/backup/backup_settings_screen_android.png)
 
-- &nbsp;Back up data - select data and folders to back up.
+- &nbsp;_<Translate android="true" ids="backup_data"/>_ - select data and folders to back up.
 
 ![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_android.png)
 
-- &nbsp;_<Translate android="true" ids="backup_version_history"/>_ - <Translate android="true" ids="backup_storage_taken"/>
+- &nbsp;_<Translate android="true" ids="backup_version_history"/>_ - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.
   
-- &nbsp;_<Translate android="true" ids="login_account"/>_
-  
-- &nbsp;_<Translate android="true" ids="backup_danger_zone"/>_
-  
-&nbsp;_<Translate android="true" ids="backup_delete_all_data"/>_ - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
+![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_1_android.png)
 
-&nbsp;_<Translate android="true" ids="backup_delete_old_data"/>_ - Current versions of your data will be preserved on OsmAnd Cloud.
+- &nbsp;_<Translate android="true" ids="login_account"/>_ - allows to log out from your account.
+  
+- &nbsp;_<Translate android="true" ids="backup_danger_zone"/>_:
+  
+  - &nbsp;"_<Translate android="true" ids="backup_delete_all_data"/>_" button - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
+
+  - &nbsp;"_<Translate android="true" ids="backup_delete_old_data"/>_" button - Current versions of your data will be preserved on OsmAnd Cloud.
 
 </TabItem>
 

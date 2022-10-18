@@ -159,6 +159,7 @@ To restore the purchase, please check what OsmAnd plan you bought.
 - Log in with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.
 - Open OsmAnd with an active Internet connection.
 - To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
+- OsmAnd Pro allows to registrate Pro functions for all platforms (Android and iOS). If you have OsmAnd Pro account you need to use it [for activation OsmAnd Pro](../personal/storage.md#backup-and-restore-for-osmand-pro) for your device.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
