@@ -62,15 +62,45 @@ Street-level imagery (Mapillary) are green points on the map. Street-view photos
 
 Enable / disable Street-level imagery on the map: 
 
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> 
+
+![Mapillary plugin points on the map Android](@site/static/img/plugins/mapillary/mapillary_plugin_points_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/>
 
-![Mapillary plugin points on the map Android](@site/static/img/plugins/mapillary/mapillary_plugin_points_android.png) ![Mapillary plugin points on the map iOS](@site/static/img/plugins/mapillary/mapillary_plugin_points_ios.png)
+![Mapillary plugin points on the map iOS](@site/static/img/plugins/mapillary/mapillary_plugin_points_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Cliking to the green points opens Mapillary screen in OsmAnd, where user can view images from Mapillary service.
 
-![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png)
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Click to &#8285; button (Android) - opens chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
 
@@ -83,12 +113,26 @@ There are info about username and year in bottom corner.
 
 The filter images menu:
 
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> → &#8230;
+
+![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/> → &#8230;
 
+![Mapillary plugin filter iOS](@site/static/img/plugins/mapillary/mapillary_plugin_filter_ios.png)
 
-![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png) ![Mapillary plugin filter iOS](@site/static/img/plugins/mapillary/mapillary_plugin_filter_ios.png)
+</TabItem>
+
+</Tabs>
 
 Actions:
 - <Translate android="true" ids="shared_string_on"/> / <Translate android="true" ids="shared_string_off"/> - enable or disable mapillary map layer.
@@ -104,13 +148,41 @@ Filter images by sumbitter, by date or by type. Only active in closeup zoom (17)
 
 In the [Details](../map/map-context-menu.md#details) of selected point on the map of [Map Context menu you can find Mapillary images](../map/map-context-menu.md#online-photos) if there are near selected point.
 
+<Tabs groupId="operating-systems">
 
-![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png) ![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png)
+
+<TabItem value="android" label="Android">
+
+![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Click to the images opens [viewing images doublescreen](../plugins/mapillary.md#viewing-images):
 
-![Mapillary plugin dialogue Android](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_android.png) ![Mapillary plugin  dialogue  iOS](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_ios.png)
+<Tabs groupId="operating-systems">
 
+
+<TabItem value="android" label="Android">
+
+![Mapillary plugin dialogue Android](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin  dialogue  iOS](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 ### Adding images
 
