@@ -16,14 +16,40 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 [The Mapillary layer](https://www.mapillary.com/) brings street-level views straight into the OsmAnd app. This means you can easily check out the surroundings at any place of interest or along the route you have planned with OsmAnd. Where imagery is missing, you can just add it yourself so that others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
 
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
 
 ## Enable / Disable plugin
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,mapillary"/>
 
-**<Translate ios="true" ids="ios_button_seq"/>:**  by default.
-
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_plugin_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,plugins,mapillary"/>
+
+![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_plugin_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ## How to use
