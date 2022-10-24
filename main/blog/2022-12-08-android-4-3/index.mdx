@@ -5,36 +5,98 @@ authors: eugene
 tags: [release, android]
 draft: true
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-Preview text.
-Create folder in /blog/ with date and short article title.
-Create folder in "/blog/" with date and short article title, example '2021-12-10-android-4-1'.
-Copy this file into created folder and rename file into 'index.md'.
+Great news for Android users!
+
+We're happy to announce the new 4.3 OsmAnd release for Android devices. 
+
+
+
 
 <!--truncate-->
 
-• New faster map rendering engine
-• Smooth animation for location changes during movement
-• Added widget with coordinates of map center; "Distance to tap" added text size option; "Map marker" widget added option to change click behavior
-• Fixed "Display position" option
-• GPX added support for "link", "cmt", "desc" tags and for any custom extensions
-• Reorganised "Nautical maps"
-• Added support for ANT+ sensors
-• Added ability to switch Mountain bike routes scheme classification,
-• Added option to disable UUID
-• Add new data on the map: different clubs, filters for swimming, different types of playgrounds
+
+What's new:
+* [New faster map rendering engine](#new-faster-map-rendering-engine)
+* [Smooth animation for location changes during movement](#smooth-animation)
+* [New improvements for Widgets](#new-improvements-for-widgets): Added widget with coordinates of map center; "Distance to tap" added text size option; "Map marker" widget added option to change click behavior
+* Reorganised "Nautical maps"
+* Added ability to switch Mountain bike routes scheme classification,
+* GPX added support for "link", "cmt", "desc" tags and for any custom extensions
+* Added option to disable UUID
+* Added support for ANT+ sensors
+* Add new data on the map: different clubs, filters for swimming, different types of playgrounds
+* Bugs fixed
+* Fixed "Display position" option
 
 
-<Translate android="yes" id="configure_profile" />
+## New faster map rendering engine
 
-## Header
-* List item
-* List item
+In the previous release OsmAnd 4.2, we added [this feature for testing](./osmand-android-4-2-released#25d-view-for-testing). Now, OpenGL rendering engine is available by default.
 
+### 2.5D projection
+
+The setting for Enable/Disable 2.5D view is located in profile settings:
+
+_Menu → Configure profile → General settings → 2.5D view_ 
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./2-5-d-view_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./2-5-d-view_2.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
+
+When 2.5D view is enabled, you can change the view angle [by gesture _Tilt_](https://osmand.net/docs/user/map/interact-with-map#gestures) or [by _My location_ button](https://osmand.net/docs/user/map/interact-with-map#my-location--zoom).
+
+## Smooth animation
+
+Routing animation (icon movement during navigation) works smoothly now.
+
+## New improvements for Widgets
+
+What's new for Widgets?
+
+### Coordinates widget: map center
+
+_"Coordinate widget - Map center"_ was added. Users can look for coordinates info for any points on the map fast. For [Coordinates widget](https://osmand.net/docs/user/widgets/info-widgets#coordinates-widget) you can show _Map center_ and / or _Current location_ info panel on top of the screen device:
+
+_Menu → Configure screen → Widgets → Top panel → Coordinates widget → Coordinates:map center / Coordinates:current location_
+
+Where green icons are _Map center_ coordinates, blue icons are _My location_ coordinates.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./coordinates_widget_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./coordinates_widget_2.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
+
+### Improvement of Distance by Tap
+
+
+Now there is oportunity to change text size for _Distance by Tap_ widget
+
+
+
+
+
+
+
+
+
+
+## Fixed
 
 _________________________________________________
 
