@@ -27,7 +27,7 @@ function HomepageHeader() {
             //  to="https://maptile.osmand.net/map">OsmAnd World Map</Link>
           }
         </div>
-        <div className="margin-vert--lg">
+        <div className="margin-vert--xl">
           <AllStores />
         </div>
       </div>

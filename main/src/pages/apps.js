@@ -12,7 +12,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className="margin-vert--lg">
+        <div className="margin-vert--xl">
           <AllStores />
         </div>
       </div>
