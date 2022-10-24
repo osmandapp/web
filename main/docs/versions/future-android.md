@@ -16,13 +16,17 @@ You can participate in testing OsmAnd beta build thru Google Play.
 
 ## What's new
 
-* New faster map rendering engine
-* Smooth animation for location changes during movement
-* Added widget with coordinates of map center; "Distance to tap" added text size option; "Map marker" widget added option to change click behavior
-* Fixed "Display position" option
-* GPX added support for "link", "cmt", "desc" tags and for any custom extensions
-* Reorganised "Nautical maps"
-* Added support for ANT+ sensors
-* Added ability to switch Mountain bike routes scheme classification,
-* Added option to disable UUID
-* Add new data on the map: different clubs, filters for swimming, different types of playgrounds
+* New faster map rendering engine.
+* Smooth animation for location changes during movement.
+* New improvements for Widgets: 
+   * added widget with coordinates of map center; 
+   * "Distance to tap" added text size option; 
+   * "Map marker" widget added option to change click behavior.
+* Reorganised "Nautical maps".
+* Added ability to switch Mountain bike routes scheme classification.
+* GPX added support for "link", "cmt", "desc" tags and for any custom extensions.
+* Added option to disable UUID.
+* Added support for ANT+ sensors.
+* Add new data on the map: different clubs, filters for swimming, different types of playgrounds.
+* Bugs fixed.
+* Fixed "Display position" option.
