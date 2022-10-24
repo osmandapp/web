@@ -20,11 +20,7 @@ Great news for Android users!
 
 We're happy to announce the new 4.3 OsmAnd release for Android devices. 
 
-
-
-
 <!--truncate-->
-
 
 What's new:
 * [New faster map rendering engine](#new-faster-map-rendering-engine)
@@ -82,10 +78,60 @@ Where green icons are _Map center_ coordinates, blue icons are _My location_ coo
     </tr>
 </table> 
 
-### Improvement of Distance by Tap
+### Improvement of _Distance by Tap_
+
+Now there is an opportunity to change the text size for info on [_Distance by Tap_](https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap-tool) tool:
+
+_Menu → Configure screen → Buttons → Distance by tap → Text size → Large / Normal_ 
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./distance_by_tap_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./distance_by_tap_2.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
+
+### Improvement of _Map marker widget_
+
+_Map marker widget_ can show _Estimated arrival time (ETA)_ now, not only the distance to the Map marker.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_marker_widget_6.png').default} alt="turn arrows visible"/></td>
+    </tr>
+</table> 
 
 
-Now there is oportunity to change text size for _Distance by Tap_ widget
+At first, you need to add _Map marker widget_ to left or right panel: _Menu → Widgets → left / Right panel → Map markers_. Than you need check settings of these widgets by tapping on &#9881; button. 
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_marker_widget.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./map_marker_widget_1.png').default} alt="turn arrows visible"/></td>
+    </tr>
+</table> 
+
+Here you can choose what widget will show: Distance or ETA. What action will be by clicking on widget: _Switch mode_ or _Go to marker location_.
+
+_Switch mode_ changes mode from _Distance_ to _ETA_ and vice versa.
+
+_Go to marker location_ moves the center map to chosen Map marker.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_marker_widget_2.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./map_marker_widget_3.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
+
+_Estimated arrival time (ETA)_ widget you can choose the time interval: Specify the time interval for speed averaging (used for the arrival time estimate).
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_marker_widget_4.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./map_marker_widget_5.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
 
 
 
