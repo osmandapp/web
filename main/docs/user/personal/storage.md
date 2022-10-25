@@ -173,7 +173,7 @@ errors (e.g. if the SD card is too full).
 
 ## Backup & Restore
 
-This feature helps to keep and restore your OsmAnd data. There are two variants of backuping in OsmAnd: [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) and [Local](../personal/storage.md#local-backup).
+This feature helps to keep and restore your OsmAnd data. There are two variants of backing up in OsmAnd: [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) and [Local](../personal/storage.md#local-backup).
 
 ### Backup and Restore for OsmAnd Pro
 
@@ -207,7 +207,7 @@ Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ me
 ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_android.png)
 
 Here you can start to make a backup and restore data online and local:
-- &nbsp;"_<Translate android="true" ids="backup_now"/>_" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backuping.
+- &nbsp;"_<Translate android="true" ids="backup_now"/>_" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backing up.
 
 ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_1_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_2_android.png)
 
