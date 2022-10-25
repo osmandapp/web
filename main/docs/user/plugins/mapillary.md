@@ -14,28 +14,28 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-[The Mapillary layer](https://www.mapillary.com/) brings street-level views straight into the OsmAnd app. This means you can easily check out the surroundings at any place of interest or along the route you have planned with OsmAnd. Where imagery is missing, you can just add it yourself so that others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
+To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillari](https://www.mapillary.com/) (an internet connection is required).
+
+## Overview
+
+[The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app. So you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it by yourself and others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
+
+## Setup 
+
+To display street-level imaginary on the OsmAnd map, you need to make the following settings: 
+   
+1. Enable the [Mapillary plugin](https://docs.osmand.net/docs/user/plugins/mapillary#enable-plugin) in the Plugins section of the main menu.    
+2. Display the [Street-level imagery](https://docs.osmand.net/docs/user/plugins/mapillary#enable-layer-map) on the map for the required profile in the Configure map menu.
+
+
+### Enable plugin
+
+To enable plugin go to
+*<Translate ids="menu,plugins,mapillary"/>*
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
-
-## Enable / Disable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,mapillary"/>
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_plugin_android.png) 
 
@@ -43,9 +43,30 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,plugins,mapillary"/>
-
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_plugin_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+### Enable Layer Map
+
+To display street-level imagery on the map go to 
+*<Translate ids="menu,configure_map,street_level_imagery"/>*
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) 
 
 </TabItem>
 
@@ -58,16 +79,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Viewing images
 
-Street-level imagery (Mapillary) are green points on the map. Street-view photos attached to these points. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map. In order to open street-view photo you need to press on the green point.
-
-Enable / disable Street-level imagery on the map: 
+Street-level imageries are displayed as green points on the map. Mapillary user’s photos are attached to these points. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map. 
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> 
 
 ![Mapillary plugin points on the map Android](@site/static/img/plugins/mapillary/mapillary_plugin_points_android.png)
 
@@ -75,15 +92,13 @@ Enable / disable Street-level imagery on the map:
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/>
-
 ![Mapillary plugin points on the map iOS](@site/static/img/plugins/mapillary/mapillary_plugin_points_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Cliking to the green points opens Mapillary screen in OsmAnd, where user can view images from Mapillary service.
+In order to open the street-view photo, you need to press on the green point. Mapillary window will pop up in the Osmand app and the picture of the selected place will be shown.
 
 <Tabs groupId="operating-systems">
 
@@ -102,23 +117,19 @@ Cliking to the green points opens Mapillary screen in OsmAnd, where user can vie
 
 </Tabs>
 
-Click to &#8285; button (Android) - opens chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
+Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
 
-Clicking to arrows on the images allows to move image by image.
-
-There are info about username and year in bottom corner.
-
+Tap on an arrow to moove from image to image.
 
 ### Filtering the data
 
-The filter images menu:
+You can create a filter and select which photos you would like to display on the map. Go to 
+*<Translate ids="menu,configure_map,street_level_imagery"/>*→ &#8230;
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/> → &#8230;
 
 ![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png) 
 
@@ -126,27 +137,24 @@ The filter images menu:
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,street_level_imagery"/> → &#8230;
-
 ![Mapillary plugin filter iOS](@site/static/img/plugins/mapillary/mapillary_plugin_filter_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Actions:
-- <Translate android="true" ids="shared_string_on"/> / <Translate android="true" ids="shared_string_off"/> - enable or disable mapillary map layer.
-- <Translate android="true" ids="mapillary_menu_title_tile_cache"/> - reload tiles to see up to date data
+In these menu you can:
+- enable or disable mapillary map layer
+- reload layer to see up to date data
 
-Filter images by sumbitter, by date or by type. Only active in closeup zoom (17):
-- <Translate android="true" ids="mapillary_menu_title_username"/> - filter images by user. View only images by selected username.
-- <Translate android="true" ids="mapillary_menu_title_dates"/> - filter images by date. Start date to End date.
-- <Translate android="true" ids="mapillary_menu_title_pano"/> - allows to showing only 360 &#176; images.
+Filter images by date or by type. Only active in closeup zoom:
+- filter images by date. Start date to End date.
+- display only 360 &#176; images.
 
 
 ### Images in Map Context menu
 
-In the [Details](../map/map-context-menu.md#details) of selected point on the map of [Map Context menu you can find Mapillary images](../map/map-context-menu.md#online-photos) if there are near selected point.
+In the [Details](../map/map-context-menu.md#details) of selected point on the map of [Map Context menu](../map/map-context-menu.md#online-photos) you can find Mapillary images if there are near selected point.
 
 <Tabs groupId="operating-systems">
 
@@ -165,7 +173,7 @@ In the [Details](../map/map-context-menu.md#details) of selected point on the ma
 
 </Tabs>
 
-Click to the images opens [viewing images doublescreen](../plugins/mapillary.md#viewing-images):
+Tap on the images opens [viewing images doublescreen](../plugins/mapillary.md#viewing-images):
 
 <Tabs groupId="operating-systems">
 
@@ -186,8 +194,40 @@ Click to the images opens [viewing images doublescreen](../plugins/mapillary.md#
 
 ### Adding images
 
-1. By clicking to [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) opens [Mapillary application](https://www.mapillary.com/mobile-apps).
+Tap on the [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) to open the [Mapillary application](https://www.mapillary.com/mobile-apps).
 
-2. If there aren't photos near selected point on the map user can see next dialogue on [Online photos of Map Context menu](../map/map-context-menu.md#online-photos):  Add photos. By clicking "Add photos" button opens Mapillary application.
+<Tabs groupId="operating-systems">
 
 
+<TabItem value="android" label="Android">
+
+![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_app_activation_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+If there are no photos near selected point on the map, you can add them by clicking on button "Add photos" in [Online photos of Map Context menu](../map/map-context-menu.md#online-photos). The Mapillary application opens.
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_add_photo_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_add_photo_ios.png)
+
+</TabItem>
+
+</Tabs>
