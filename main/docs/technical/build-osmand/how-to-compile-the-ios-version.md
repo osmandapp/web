@@ -73,7 +73,7 @@ Comment out ```__bsfd```, ```__bsrd``` lines and save file.
   - Then run `$ ./prepare.sh` and try to build the project again.
   
 11. Troubleshooting (m1 mac)
-  - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```amd64``` to **Excluded Architectures** of ```OsmAnd_projects```. 
+  - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```arm64``` to **Excluded Architectures** of ```OsmAnd_projects```. 
 
 12. Debug QT (optional). If you want to see QT values in debug mode run this:
   ```
