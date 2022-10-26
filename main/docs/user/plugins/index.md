@@ -45,7 +45,7 @@ Make contributions to OpenStreetMap.
 
 ### [Mapillary](./mapillary.md)
 
-Mapillary
+To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
