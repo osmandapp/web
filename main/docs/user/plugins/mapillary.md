@@ -212,7 +212,7 @@ Tap on the [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) to o
 
 </Tabs>
 
-If there are no photos near selected point on the map, you can add them by clicking on button "Add photos" in [Online photos of Map Context menu](../map/map-context-menu.md#online-photos). The Mapillary application opens.
+If there are no photos near selected point on the map, you can also add them by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
 
@@ -233,14 +233,16 @@ If there are no photos near selected point on the map, you can add them by click
 
 ### Enable/Disable Mapillary Widget
 
-The Mapillary widget is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the Configure screen section of the Main Menu.
+The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the Configure screen [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 To enable/disable widget demonstration on the main screen go to
-*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,mapillary"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,mapillary"/>*
+
+or *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,mapillary"/>*
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_disable_android.png) 
 
@@ -249,7 +251,7 @@ To enable/disable widget demonstration on the main screen go to
 <TabItem value="ios" label="iOS">
 
 To enable/disable widget demonstration on the main screen go to 
-*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,mapillary"/>*
+*<Translate ios="true" ids="menu,layer_map_appearance,shared_string_widgets,mapillary"/>*
 
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_widget_disable_ios.png) 
 
