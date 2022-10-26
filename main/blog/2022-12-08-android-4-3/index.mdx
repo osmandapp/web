@@ -159,11 +159,44 @@ Example of MTB IMBA icons for trails and [legend](https://docs.osmand.net/docs/u
     </tr>
 </table> 
 
+## Disable UUID
+
+What's been done by sorted by priority:
+
+1. It's possible to disable that UUID (Unique User Identifier) sending in [Privacy Global Settings](https://test.osmand.net/docs/user/personal/global-settings#privacy-and-security) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month.
+2. UUID is rotated every 3 months so there is no user profile built for a longer history.
+3. ToS with explanation has been updated [https://osmand.net/help-online/terms-of-use/](https://osmand.net/help-online/terms-of-use/).
+4. There is a clear indication On first screen after installation and a link to ToS.
+
+## New updates for GPX files
+
+1. Favorites: show content of ```<cmt>``` tag similar to waypoints:
+
+```
+<wpt lat="30.297375" lon="-87.4320327">
+  <name>Caf� Beignet</name>
+  <cmt>Open 6:30 am to 12:00 pm. Closed Sun &amp; Wed</cmt>
+</wpt>
+```
+
+2. Phone numbers for the Waypoint attributes
+
+```
+<wpt lat="52" lon="5">
+<extension>
+<phone>My phone number</phone>
+<website>https://test.website</website>
+<comment>Comment</comment>
+<extension>
+</wpt>
+```
+
+3. Tags for description: name, desc, cmt, link.
 
 
 
 
-## Fixed
+## More
 
 ### Display position
 
@@ -175,7 +208,16 @@ Changed [the Appearance setting](https://osmand.net/docs/user/personal/profiles#
     </tr>
 </table> 
 
+### Support external devices ANT+
 
+At this release, we added support [external devices ANT+](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external devices Bluetooth we will plan for the next release. 
+
+### Added Map data
+
+We added and changed the next data for rendering on the map:
+- POI with tag [_club key_](https://wiki.openstreetmap.org/wiki/Key:club): the full list you can find [here](https://github.com/osmandapp/OsmAnd/issues/10486).
+- Added more filter options for [Swimming POIs](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dswimming).
+- Tag [emergency=lifeguard](https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dlifeguard_base).
 
 _________________________________________________
 
