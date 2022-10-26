@@ -288,6 +288,216 @@ Exporting track file or files to any massengers, email, file managers, Drive , a
  
 </Tabs>
 
+
+## Manage tracks
+
+After recording and saving, the tracks can be managed as follows:  
+
+- In [**My Places**](../personal/myplaces.md), so that to view all ever recorded data pieces in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). 
+- In [**Configure map**](../map/configure-map-menu.md), so that to select a specific track and display it on the map.
+- With the [**Context menu**](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+
+
+### View all tracks 
+
+All tracks ever recorded are automatically displayed in [**My Places**](../personal/myplaces.md). This is the central storage of all user-generated information, organized in tabs according to the main criterion of saved data. There are favourites, notes, and tracks. Browse through [**Tracks**](../personal/tracks.md) tab to find any trip recordings. 
+
+More information about [My Places](../personal/myplaces.md), and/or [Tracks](../personal/tracks.md) stored in it can be found in the relevant sections of the current documentation. However, it makes sense to underscore here that:
+
+- The internal organization of the Tracks tab in My Places can be managed with the Trip recording plugin settings described above.
+- This is a useful place to consult with in case of doubts, for example, on what/if something is recorded, what/if something is visible right now on the map, and so forth.
+- My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+To view all ever-recorded tracks, and/or manage them, go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+
+![My Places with tracks in Android](@site/static/img/plugins/trip-recording/view_all_tr_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+To view all ever-recorded tracks, and/or manage them, go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+
+![My Places with tracks in iOS](@site/static/img/plugins/trip-recording/view_all_tr_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
+
+### Show tracks on map
+
+Tracks are an individual data layer that can be shown or hidden using the corresponding option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu or in the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu. In addition, when you tap on [**Tracks**](../map/tracks-on-map.md#display-via-my-places-menu), a track selection dialog appears, allowing you to choose which track or multiple tracks to display on the map.  
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+For a specific profile, to display a track on the map, open **Configure map** and tap **Tracks**. Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the **Configure map** menu: *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/>*.
+
+![Show tracks on the map in Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Select a track to display in Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_2.png)
+
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Visible* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by tapping the Show on map icon on the bottom menu of the screen. Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+
+![Show tracks on the map Android](@site/static/img/plugins/trip-recording/show_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+For a specific profile, to display a track on the map, open **Configure map** and tap **Tracks**. Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the **Configure map** menu: *<Translate ios="true" ids="menu,configure_map,tracks"/>*.
+
+![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Select a track to display in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png)
+
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.  
+
+
+![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_ios.png)
+
+
+</TabItem>
+
+</Tabs>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+### Options of context menu
+
+ When a track is displayed on the map, tapping on it, the [track context menu](../map/track-context-menu.md) appears. For detailed information about each available option, refer to the respective section of the current documentation. Here is an overview of the options:
+
+- Basic info to show the distance, ascending and descending areas, description and quick action buttons, such as whether to show the track on the map, its appearance, points and if to place the track for navigation.
+- Graphs for analysis of altitude and speed.
+- Tab for any overview and/or updates of points and waypoints.
+- And other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc. 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
+
+
+![Context menu of a track in Android](@site/static/img/plugins/trip-recording/opt_ofcont_menu_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
+
+![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/opt_ofcont_menu_ios.png)
+
+</TabItem>
+
+
+</Tabs>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+### Change folder
+
+All recorded tracks are stored [**My Places**](../personal/myplaces.md). This is the only storage location for tracks. Even when moved, tracks are moved between folders in My Places. However, as soon as a new track is created, it is automatically saved to the default folder in My Places. The default folder is one and the same for all new tracks. After showing up in the default folder, tracks can be moved to any other preferred folder, as follows:
+
+- Select more options from the [Context menu](../map/track-context-menu.md) of a track on the map. 
+- Tap **Change folder** and select another folder in My Places to store the track in.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Default folder in My Places for saved new tracks: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+
+The default folder can be established in [Trip recording settings](../plugins/trip-recording.md#establish-options) as one of the following options:
+
+- The `Rec` folder, which is one folder for all tracks. 
+- The `Rec/yyyy-mm` folder is created individually for each month and contains tracks recorded during that month.
+
+Then you can move the track to any other preferred folder in the My Places using the:
+
+- [Context menu of a track on the map](../map/track-context-menu.md).
+- [Context menu of a track in My Places](../personal/tracks.md#my-places-menu).  
+
+
+#### CONTEXT MENU ON THE MAP
+
+To move a track to another folder inside My Places, you can use [Context menu of a track on the map](../map/track-context-menu.md) as follows: 
+
+- Open the **Context menu** of a track on the map in one of the following ways:  
+    - By tapping a track in My Places, the map shows up with the context menu opened for the track.
+    - By tapping a track directly on the map.  
+    In any case, make certain the track is visible on the map.  
+- Tap **<Translate android="true" ids="shared_string_options"/>**.
+- Tap **<Translate android="true" ids="change_folder"/>** from the opened *<Translate android="true" ids="shared_string_options"/> list*.
+- Select a folder to move the track to. 
+
+![More options in Android](@site/static/img/plugins/trip-recording/change_folder_andr_1.png) ![Change folder in Android](@site/static/img/plugins/trip-recording/change_folder_andr_2.png)  
+
+
+#### CONTEXT MENU IN MY PLACES
+
+To move a track to another folder inside My Places, you can use [Context menu of a track in My Places](../personal/tracks.md#manage-tracks) as follows: 
+
+- Open: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+- Tap the triple points on the right of the required track.
+- Tap **<Translate android="true" ids="shared_string_move"/>** from the opened context menu.
+- Select a folder to move the track to. 
+
+![Move with My Places in Android](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Default folder in My Places for saved new tracks: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+
+You can then move the track to any other preferred folder in My Places and/or export the GPX file to an external storage device.   
+
+
+#### MOVE TRACK WITHIN MY PLACES
+
+To move a track from the default folder to another folder in My Places, do the following:
+
+- Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:  
+    - By tapping a track in My Places, the map shows up with the context menu opened for the track.
+    - By tapping a track directly on the map.  
+    In any case, make certain the track is visible on the map. 
+- Tap the triple points on the extreme right of the bottom panel.
+- Tap **<Translate ios="true" ids="plan_route_change_folder"/>** from the opened *<Translate ios="true" ids="actions"/> list*.
+- Select a folder to move the track to.   
+
+![More options in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_1.png) ![Change folder in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_2.png)  
+
+
+#### EXPORT GPX FILE TO EXTERNAL STORAGE
+
+To export a GPX file to an external storage, do the following: 
+
+- Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
+    - By tapping a track in My Places, the map shows up with the context menu opened for the track;
+    - By tapping a track directly on the map.  
+    In any case, make certain the track is visible on the map. 
+- Tap **<Translate ios="true" ids="shared_string_export"/>**.
+- Select the required storage to export the GPX file to.  
+
+
+![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
 ## Read more
 
 - [Show track on Map](../map/tracks-on-map.md)
