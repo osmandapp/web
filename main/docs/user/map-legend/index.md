@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# Map legend
+# Map Legend
 
 OsmAnd map legend for any styles
 
