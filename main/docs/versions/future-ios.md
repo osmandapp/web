@@ -14,7 +14,7 @@ iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo)
 
 ## What's new
 
-[Read the release article](https://osmand.net/blog/osmand-ios-4-3-released)
+<!-- [Read the release article](https://osmand.net/blog/osmand-ios-4-3-released) -->
 
 * Smooth animation for location changes during movement
 * CarPlay: added lanes, 2.5D view, fixed sound issues while connected over Bluetooth
