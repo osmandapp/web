@@ -23,20 +23,19 @@ We're happy to announce the new 4.3 OsmAnd release for Android devices.
 <!--truncate-->
 
 What's new:
-* [New faster map rendering engine](#new-faster-map-rendering-engine)
-* [Smooth animation for location changes during movement](#smooth-animation)
+* [New faster map rendering engine](#new-faster-map-rendering-engine).
+* [Smooth animation for location changes during movement](#smooth-animation).
 * [New improvements for Widgets](#new-improvements-for-widgets):
   * Added widget with coordinates of map center; 
   * "Distance to tap" added text size option; 
   * "Map marker" widget added option to change click behavior.
-* [Reorganised "Nautical maps"](#nautical-maps-folder)
-* Added ability to switch [Mountain bike routes](#mtb-imba-trails) scheme classification
-* GPX added support for "link", "cmt", "desc" tags and for any custom extensions
-* Added option to disable UUID
-* Added support for ANT+ sensors
-* Add new data on the map: different clubs, filters for swimming, different types of playgrounds
-* Bugs fixed
-* Fixed ["Display position"](#display-position) option
+* [Reorganised "Nautical maps"](#nautical-maps-folder).
+* Added ability to switch [Mountain bike routes](#mtb-imba-trails) scheme classification.
+* [GPX added support](#new-updates-for-gpx-files) for "link", "cmt", "desc" tags and for any custom extensions.
+* Added option [to disable UUID](#disable-uuid).
+* Added support for [ANT+ sensors](#support-external-devices-ant).
+* Add [new data](#added-map-data) on the map: different clubs, filters for swimming, different types of playgrounds.
+* Fixed ["Display position"](#display-position) option.
 
 
 ## New faster map rendering engine
@@ -170,18 +169,15 @@ What's been done by sorted by priority:
 
 ## New updates for GPX files
 
-1. Favorites: show content of ```<cmt>``` tag similar to waypoints:
+1. Favorites: show content of ```<cmt>``` tag similar to waypoints, phone numbers for the Waypoint, attributes
+name, desc, cmt, link:
 
 ```
 <wpt lat="30.297375" lon="-87.4320327">
   <name>Caf� Beignet</name>
   <cmt>Open 6:30 am to 12:00 pm. Closed Sun &amp; Wed</cmt>
 </wpt>
-```
 
-2. Phone numbers for the Waypoint attributes
-
-```
 <wpt lat="52" lon="5">
 <extension>
 <phone>My phone number</phone>
@@ -191,8 +187,11 @@ What's been done by sorted by priority:
 </wpt>
 ```
 
-3. Tags for description: name, desc, cmt, link.
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./gpx_tags.png').default} alt="turn arrows visible"/></td>
+    </tr>
+</table> 
 
 
 
