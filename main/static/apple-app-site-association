@@ -3,7 +3,7 @@
         "apps": [],
         "details": [{
             "appID": "LM67P5MQ23.net.osmand.maps",
-            "paths": ["/go*", "/add-tile-source*"]
+            "paths": ["/go*", "/add-tile-source*", "/map*"]
         }]
     }
 }
