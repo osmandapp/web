@@ -25,29 +25,10 @@ To display street-level images on the OsmAnd map, you need to make the following
 1. Enable the [Mapillary plugin](#enable-plugin) in the Plugins section of the main menu.    
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
-### Enable plugin
-
-To enable plugin go to
-*<Translate ids="menu,plugins,mapillary"/>*.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_plugin_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_plugin_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
 
 ## Map Layer
+
+Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points.  To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -69,10 +50,7 @@ To enable plugin go to
 
 ### Enable Layer
 
-To display street-level imagery on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md):
-*<Translate ids="menu,configure_map,street_level_imagery"/>*.  
-
-Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points.  To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
+To display street-level imagery on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md) section of Main menu: *<Translate ids="menu,configure_map,street_level_imagery"/>*.  
 
 <Tabs groupId="operating-systems">
 
@@ -98,7 +76,7 @@ Map layer of street-level imagery is displayed on the OsmAnd map as rows of conn
 
 ### Filtering the data
 
-You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees. *Question: why do we need to reload tile cache*. Go to *<Translate ids="menu,configure_map,street_level_imagery"/>*→ &#8230; . 
+You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="menu,configure_map,street_level_imagery"/>*→ &#8230; . 
 
 <Tabs groupId="operating-systems">
 
@@ -116,9 +94,14 @@ You can create a filter and select which photos you would like to display on the
 
 </Tabs>
 
+:::note Tile cash
+Use *reload tile cache* if the selected images are not displayed.
+:::
+
+
 ## Map Context menu
 
-You can also view nearby Mapillary photos (30 m radius) in the [Map Context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
+You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
 
 <Tabs groupId="operating-systems">
 

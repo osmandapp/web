@@ -213,7 +213,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 ### Online photos 
 
-In this section, you can view photos of the object from different sources web sources. Such as [Mapillary](../plugins/mapillary.md) - takes the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - takes photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - takes urls from OpenStreetMap tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
+In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - takes the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - takes photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - takes urls from OpenStreetMap tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
 
 ![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)
 

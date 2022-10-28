@@ -4,8 +4,7 @@ sidebar_position: 2
 
 # MAP 
 
-The map is a core element of OsmAnd. This section explains how to interact with map, how to configure additional POI layers, how to customize map for trekking, cycling or navigating offroad, how to add terrain information, how to enable street level imagery etc.
-
+The map is a core element of OsmAnd. In this section of User guide you can find useful information on how to interact with map, how to customize map view for trekking, cycling or navigating offroad, how to configure additional POI layers or enable street level imagery etc.
 
 ### [Interact with map](./interact-with-map.md)
 

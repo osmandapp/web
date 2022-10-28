@@ -1,10 +1,10 @@
 ---
 sidebar_position: 8
+title:  Plugins
 ---
 
-# Plugins 
-
-Plugins activate advanced settings and additional functionality for OsmAnd like trip recording, showing terrain data on the map, street views by Mapillary, offline Wikipedia articles on the map and etc.
+## Overview
+Plugins provide additional functionality to OsmAnd, such as trip recording, possibility to read Wikipedia articles offline, additional terrain data on the map, street-level views by Mapillary etc.
 
 ### [Online maps](./online-map.md)
 
@@ -62,5 +62,35 @@ OsmAnd development plugin is only necessary for developers and experienced users
 ### [Accessibility](./accessibility.md)
 
 Accessibility plugin makes the device's accessibility features directly available in OsmAnd.
+
+## Enable plugins
+
+To enable plugins go to
+*<Translate ids="menu,plugins"/>*.
+
+### Enable plugin
+
+To enable plugin go to
+
+*<Translate ids="menu,plugins"/>*.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_plugin_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_plugin_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
 
 
