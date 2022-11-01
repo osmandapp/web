@@ -49,26 +49,27 @@ export default function MapContextMenu() {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
-        }
-        if (!prevTrack || selectedFileWasChanged()) {
-            if (ctx.currentObjectType) {
-                setPrevTrack(ctx.selectedGpxFile);
-                let obj;
-                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
-                    obj = new TrackTabList().create(ctx);
-                } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                    obj = WeatherTabList().create(ctx);
-                } else if (ctx.selectedGpxFile) {
-                    obj = new TrackTabList().create(ctx);
+        } else {
+            if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged()) {
+                if (ctx.currentObjectType) {
+                    setPrevTrack(ctx.selectedGpxFile);
+                    let obj;
+                    if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
+                        obj = new TrackTabList().create(ctx);
+                    } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                        obj = WeatherTabList().create(ctx);
+                    } else if (ctx.selectedGpxFile) {
+                        obj = new TrackTabList().create(ctx);
+                    }
+                    if (obj) {
+                        setShowContextMenu(true);
+                        setTabsObj(obj);
+                        setValue(obj.defaultTab);
+                    }
+                } else {
+                    setTabsObj(null);
+                    setShowContextMenu(false);
                 }
-                if (obj) {
-                    setShowContextMenu(true);
-                    setTabsObj(obj);
-                    setValue(obj.defaultTab);
-                }
-            } else {
-                setTabsObj(null);
-                setShowContextMenu(false);
             }
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile]);
