@@ -22,13 +22,13 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings: 
    
-1. Enable the [Mapillary plugin](#enable-plugin) in the Plugins section of the main menu.    
+1. Enable the [Mapillary plugin](../start-with/first-steps.md#how-to-configure-plugins) in the Plugins section of the main menu.    
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
 ## Map Layer
 
-Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points.  To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
+Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -143,7 +143,7 @@ In order to add photos you will need to register in the [Mapillary application](
 
 ### Mapillary Widget
 
-The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the Configure screen [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
+The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
 
 <Tabs groupId="operating-systems">
 

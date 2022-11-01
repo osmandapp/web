@@ -113,7 +113,9 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins
 
-[Plugins](../plugins/index.md) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](../../technical/osmand-api-sdk/index.md) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu.md) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
+[Plugins](../plugins/index.md) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
+
+You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md). 
 
 <Tabs groupId="operating-systems">
 
@@ -121,21 +123,21 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
+To enable / disable plugins go to:
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
+To enable / disable plugins go to:
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
+
 </TabItem>
 
 </Tabs>
-
-Enable / disable plugins:
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
 
 [Read more](../plugins/index.md) about OsmAnd plugins.
 
