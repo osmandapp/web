@@ -3,6 +3,15 @@ sidebar_position: 8
 title:  Plugins
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 ## Overview
 Plugins greatly enhance OsmAnd functionality. Each of them is designed to solve a separate problem, such as trip recording, getting Wikipedia articles offline, putting additional terrain data or street-level views on the map etc.
 Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separate installed programs). 3rd party plugins work via OsmAnd API and can get access to OsmAnd data. 
