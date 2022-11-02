@@ -14,19 +14,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Ski map view shows winter colors and pistes - ski paths down a mountain or cross-country - as well as cableways, chairlifts, amenities and services nearby, which are useful in navigating through the destinations like recreational areas, ski resorts, and terrain parks.
+**Ski Map View** - shows winter colors and trails - downhill or cross-country ski trails - as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
 
 
 ## Overview
 
-To illustrate skiing location and amenities, most resorts and parks provide their piste map/trail map. OsmAnd Ski Map shows known/popular ski touring trails, officially approved ski areas and piste maps of most ski resorts on the northern and southern hemispheres, in Europe, Scandinavia, central Asia, Japan, North America, and other. 
+To show the location and skiing opportunities, most resorts and parks provide their own trail maps. OsmAnd Ski Map shows known/popular slopes, officially approved ski areas, and trail maps of most ski resorts in the northern and southern hemispheres, Europe, Scandinavia, Central Asia, Japan, North America, and other countries.
 
 The Piste Maps of [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) is the source of data for OsmAnd Ski Map. Combined with the default vector maps, the Ski Map of OsmAnd preserves its accuracy and benefits from a variety of contributors, like: ski resorts, lift operators, instructors, eager mountaineers, winter sports enthusiasts, etc.
 
 OsmAnd Ski Map is delivered as part of the default vector maps, and does not require any extra downloading. However, it is disabled by default. The plugin allows you quickly to enable OsmAnd Ski Map and start to use it. OsmAnd Ski Map is one of the [Map Styles](../map/vector-maps.md) that provide extra capabilities by highlighting some objects, while making other less viable. 
 
-With the profiles configured individually, it is possible to prepare a Skiing profile specifically for skiing. It will highlight an assorted amount of winter and ski related information on the map. Below are two profiles: the left-hand one is for skiing, the other one is for driving. And the profile for skiing highlights pistes, aerial ways, winter colors, etc. - the map objects useful when navigating through the ski area.
+If you customize profiles, you can prepare a Skiing profile specifically for skiing. It will highlight an assorted amount of winter and ski related information on the map. Below are two profiles: the left-hand one is for skiing, the other one is for driving. And the profile for skiing highlights pistes, aerial ways, winter colors, etc. - the map objects useful when navigating through the ski area.
 
 <Tabs groupId="operating-systems">
 
@@ -47,9 +47,6 @@ With the profiles configured individually, it is possible to prepare a Skiing pr
 
 
 
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Setup
 
@@ -112,7 +109,6 @@ If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leav
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Set Winter style  
 
@@ -149,10 +145,9 @@ To verify what style is currently established for the profile, and\or to establi
 
 </Tabs>
 
->**NOTE**: The Skiing profile is initially created to be used together with the Winter and Ski style, as by default the Skiing profile is expected to have the Ski navigation established, which is intended for navigating along the pistes. However, what navigation type to use for every specific profile can be changed, and established individually, and thus, the final configuration of the profile, the map style and the navigation is fully governed by the settings made by the user.
+>**NOTE**: The Skiing profile was originally created to be used together with the Winter and Ski styles, as the Skiing profile must have Ski navigation installed by default to navigate the trails. However, the type of navigation for each specific profile can be changed and set individually, so the final configuration of the profile, map style and navigation completely depends on the user settings.
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Combine maps
 
@@ -176,18 +171,17 @@ The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Ski map options
 
-While reading the map, it is possible to get other accompanying details, like: the complexity of a specific piste, the type of the trail, if any grooming is conducted, if the path is lit up at night, or other characteristics that might be helpful to skiing and snowboarding enthusiasts. 
+By reading the map, you can find out other related details such as: the difficulty of a particular trail, the type of trail, whether or not grooming is done, whether the trail is lit at night, or other characteristics that may be helpful to you.
 
 > **NOTE**: The options covered herein, are worth considering also when using the [Ski navigation](../navigation/route-navigation.md). As a rule, it is available within the [Ski profile](../personal/profiles.md). The default navigation for the Ski profile is the **Ski navigation**, unless it is established otherwise. The Ski navigation is supplied with individual route parameters applicable only to skiing, and builds the route along pistes. 
 
 
 ### Piste difficulty
 
-Being aware of the difficulty of a specific piste makes sense for alpine/downhill skiers, and also anybody who is visiting a ski resort, or area, so that to get straight to the point, and/or turn in the right direction. The difficulty of a piste is displayed with colors. Colors might differ in different resorts as well as in different countries. Below is some hands-on reference. 
+Knowing the difficulty of a particular trail makes sense for skiers, and for anyone visiting a ski resort or area to get to the right point and/or turn in the right direction. The difficulty of a piste is displayed in color. The colors may be different from one resort to another and from one country to another. Below are some practical guidelines. 
 
 | Color | Description | 
 | --- | --- |
@@ -197,10 +191,9 @@ Being aware of the difficulty of a specific piste makes sense for alpine/downhil
 | ![Advanced difficulty](@site/static/img/plugins/ski-maps/4c_black_1.png) | Slopes of advanced difficulty |
 | ![Expert difficulty](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Slopes of expert difficulty | 
 
->**NOTE**: For more specific guidance on each piste difficulty type, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty), and/or any other sources that consider also inclination, the presence of any obstacles and hazards.  
+>**NOTE**: For more specific guidance on each type of trail difficulty, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) data or any other source that also takes into account slope, obstacles, and hazards.  
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Piste type 
 
@@ -408,7 +401,7 @@ OsmAnd Ski Map is built as one of the rendering styles that determine what objec
 For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file.
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 ### Remove Ski  
 
