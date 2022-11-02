@@ -51,7 +51,7 @@ Here will be description how to purchase plugin.
 
 ### Plugin Features
 
-There are 4 main Feature groups which plugin could contribute: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**.
+There are 5 main Feature groups which plugin could contribute: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style / Source**.
 
 | Feature Group | Plugin  | How to configure |
 |---------------|---------|------------------|
