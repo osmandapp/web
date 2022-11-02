@@ -77,69 +77,6 @@ To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track
 
 
 
-### Add Recording widget
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording.md#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
-
-![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-[Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
-
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-### Profile settings 
-
-*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-Menu **Settings** can be opened in two ways: app [settings](../start-with/first-steps.md#how-to-manage-your-settings), or [plugin](../start-with/first-steps.md#how-to-configure-plugins) settings. 
-
-#### APP SETTINGS 
-
-Go to *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate android="true" ids="record_plugin_name"/>**.  
-
-
-![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/app_sett_andr.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-#### PLUGIN SETTINGS
-
-The settings opened from the [plugin](../start-with/first-steps.md#how-to-configure-plugins). Go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group"/>*, tap the triple point at the right side of **<Translate android="true" ids="map_widget_monitoring"/>**, or tap the **<Translate android="true" ids="map_widget_monitoring"/>** option, select **Settings**.  
-
-![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_1.png) ![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to *<Translate ios="true" ids="menu,sett_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate ios="true" ids="track_recording"/>**.  
-
-![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/app_sett_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
 
 
 ## Record new track 
@@ -239,6 +176,45 @@ To stop recording, or to do any of the following options, tap the [Distance/Star
 >**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues)  
 
 
+
+### Profile settings 
+
+*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+Menu **Settings** can be opened in two ways: app [settings](../start-with/first-steps.md#how-to-manage-your-settings), or [plugin](../start-with/first-steps.md#how-to-configure-plugins) settings. 
+
+#### APP SETTINGS 
+
+Go to *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate android="true" ids="record_plugin_name"/>**.  
+
+
+![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/app_sett_andr.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+#### PLUGIN SETTINGS
+
+The settings opened from the [plugin](../start-with/first-steps.md#how-to-configure-plugins). Go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group"/>*, tap the triple point at the right side of **<Translate android="true" ids="map_widget_monitoring"/>**, or tap the **<Translate android="true" ids="map_widget_monitoring"/>** option, select **Settings**.  
+
+![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_1.png) ![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to *<Translate ios="true" ids="menu,sett_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate ios="true" ids="track_recording"/>**.  
+
+![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/app_sett_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
 ### Recording parameters
 
 Depending on the character of your movement: driving, cycling, horseback riding, skiing, etc., you may need to make some adjustments to the way you capture and record location points in the file: few, too many, spacing, and others to make the end result look smooth and usable.
@@ -310,6 +286,30 @@ To start using *Trip recording widgets*, you need to make all of the following s
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 - Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options).
 - Add the necessary **Trip recording widgets** to the screen. This setting is *individual for each profile*.  
+
+
+### Add Recording widget
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording.md#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+[Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
+
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
   
 ### Distance (Start-Stop)
