@@ -14,26 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The plugin allows you to record, save and analyze your training or movement data, such as speed, ascents, descents or route relief, which can then be reused, improved, supplemented or shared with friends.
-
+Trip recording plugin is a special tool that is designed to record your routs, movements and trainings. Afterwards you can analyze your data, such as speed, ascents, descents or terrain particularities of the trip. Recordings can be reused, modified, updated and shared with friends.
 
 ## Overview
 
-GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
-
-Trip recording functions: creating new tracks, displaying existing tracks on the map and working with finished recordings. The plugin should only be enabled to create new records.   
-
-
-
-## Setup 
-
-To start creating new records, you need to make the following settings: 
-
-1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins).  
-2. Configure Trip recording for the required [profile](../personal/profiles.md).  
-3. If needed, add [Trip recording widgets](#widgets) to the screen.   
-
-After setup is complete, you can make new recordings, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
+Trip recording plugin is used to create new tracks, display recorded tracks on the map and work with existing records. The route can be recorded while navigating or simply on the go.
 
 <Tabs groupId="operating-systems">
 
@@ -51,11 +36,23 @@ After setup is complete, you can make new recordings, display and manage tracks 
 
 </Tabs>
 
+## Setup 
+
+To start recording tracks, you need to make the following settings: 
+
+1. Enable the [Trip recording plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+2. Configure Trip recording for the required [profile](../personal/profiles.md).  
+3. If needed, add [Trip recording widgets](#widgets) to the screen.   
+
+After setup is complete, you can make new records, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
+
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Enable plugin
 
-Trip recording plugin is needed for recording new tracks. It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
+It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
 
 <Tabs groupId="operating-systems">
 
@@ -457,6 +454,7 @@ This is a separate screen without a map and a track with points:
 
 ## Recorded GPX file
 
+GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
 The location points are recorded into a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), according to the following structure: *file > track > segments > points*, where:
 
 - One point has a number of attributes: coordinates, speed, altitude, heading.
