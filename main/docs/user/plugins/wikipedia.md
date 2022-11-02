@@ -75,7 +75,7 @@ Wikipedia plugin for **iOS** is available in a **free version**. Wikipedia Offli
 
 
 
-### Download Wikipedia packages 
+## Download Wikipedia packages 
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.      
 
@@ -111,7 +111,7 @@ To see what data has already been uploaded, go to: *<Translate ios="true" ids="m
 </Tabs>
 
 
-### Display Wikipedia on the map
+## Display Wikipedia on the map
 
 By loading Wikipedia data for the required regions, you can control the visibility of that data on the map. Visibility is controlled by [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia), which can be shown or hidden for all uploaded regions by a certain [profile](../personal/profiles.md), for example, a profile for driving, a profile for cycling, another profile to show public transport, etc.  
 
