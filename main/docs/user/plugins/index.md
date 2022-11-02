@@ -51,7 +51,7 @@ Here will be description how to purchase plugin.
 
 ### Plugin Features
 
-There are 5 main Feature groups which plugin could contribute: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style / Source**.
+OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
 | Feature Group | Plugin  | How to configure |
 |---------------|---------|------------------|
