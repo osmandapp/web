@@ -89,41 +89,7 @@ In the **iOS** version, to enable the Parking plug-in, open the list of plug-ins
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
-
-### Add Parking widget
-
-The [Parking widget](../widgets/info-widgets.md#-parking-widget) is added to the screen automatically as soon as the Parking plugin is enabled. However, before installing a parking spot, make sure that the plugin is on the screen, and if not, add it by enabling the appropriate option in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.  
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-In the **Android** version, toggle on the <Translate android="true" ids="map_widget_parking"/> widget in: 
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_parking"/> 
-
-![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-In the **iOS** version, toggle on the <Translate ios="true" ids="product_title_parking"/> widget in: 
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,layer_map_appearance,product_title_parking"/>
-
-
-![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Parking point on the map
 
@@ -297,3 +263,35 @@ To delete a Parking spot from the map, long-tap it and select **<Translate ios="
 </TabItem>
 
 </Tabs>
+
+## Parking widget
+
+The [Parking widget](../widgets/info-widgets.md#-parking-widget) is added to the screen automatically as soon as the Parking plugin is enabled. However, before installing a parking spot, make sure that the plugin is on the screen, and if not, add it by enabling the appropriate option in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.  
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+In the **Android** version, toggle on the <Translate android="true" ids="map_widget_parking"/> widget in: 
+
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_parking"/> 
+
+![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+In the **iOS** version, toggle on the <Translate ios="true" ids="product_title_parking"/> widget in: 
+
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,layer_map_appearance,product_title_parking"/>
+
+
+![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+
