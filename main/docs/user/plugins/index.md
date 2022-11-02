@@ -49,6 +49,16 @@ To enable / disable plugins go to:
 
 Here will be description how to purchase plugin.
 
+### Plugin Features
+
+There are 4 main Feature groups which plugin could contribute: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**.
+
+| Feature Group | Plugin  | How to configure |
+|---------------|---------|------------------|
+| Widgets | Recording ...     | Configure Screen |
+| Layer | ...     | Configure Map |
+| Context menu Actions | .... |   |
+
 ### Plugin Settings
 
 Here will be description of specific plugin settings. 
