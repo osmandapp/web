@@ -45,7 +45,7 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: [Contour lines and Terrain](plugins/contour-lines#overview), [Wikipedia](../plugins/wikipedia#overview), [Nautical map view](../plugins/nautical-charts#overview).
+Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: [Contour lines and Terrain](../plugins/contour-lines.md#overview), [Wikipedia](../plugins/wikipedia.md#overview), [Nautical map view](../plugins/nautical-charts.md#overview). 
 Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
 ### Plugin Features
 
