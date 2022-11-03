@@ -125,7 +125,7 @@ After enabling the Nautical plugin, you can download Nautical maps, select a Nau
 </Tabs>
 
 
-### Download Nautical maps  
+## Download Nautical maps  
 
 When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [nautical map](../start-with/download-maps.md#type-of-maps) contain details such as:
 - Nautical marks and symbols.
@@ -164,7 +164,8 @@ For optimal presentation, maps can be adapted to current needs: marks and symbol
 > **NOTE**: All numbers on the Nautical Charts are presented in meters. 
 
 
-### Set map style to Nautical  
+
+## Nautical map style
 
 By setting the Nautical map style, you can get the best representation of the downloaded and rendered Nautical data. To change the current map style to Nautical, use the [Configure map](../map/configure-map-menu.md) menu, scroll down to Map Style, and select Nautical.  
 

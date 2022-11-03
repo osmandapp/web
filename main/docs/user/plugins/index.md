@@ -3,22 +3,61 @@ sidebar_position: 8
 title:  Plugins
 ---
 
-## Overview
-Plugins provide additional functionality to OsmAnd, such as trip recording, possibility to read Wikipedia articles offline, additional terrain data on the map, street-level views by Mapillary etc.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+## Overview
+Plugins greatly enhance OsmAnd functionality. Each of them is designed to solve a separate problem, such as trip recording, getting Wikipedia articles offline, putting additional terrain data or street-level views on the map etc.
+Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separate installed programs). 3rd party plugins work via OsmAnd API and can get access to OsmAnd data. 
 
 ## Configure plugin
-
-To enable plugins go to
-*<Translate ids="menu,plugins"/>*.
+In order to get access to the specific functions, provided by a plugin, it must be [enabled first](#enable--disable). You need to [purchase](#purchase) some plugins before use. In some cases special map layer should be activated or user profile should be [configured](#plugin-settings).
 
 ### Enable / disable
 
-To enable or disable plugin, you need go to Main Menu - Plugins.
+You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md). 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
+
+To enable / disable plugins go to:
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
+
+To enable / disable plugins go to:
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
+
+</TabItem>
+
+</Tabs>
 
 ### Purchase
 
 Here will be description how to purchase plugin.
+
+### Plugin Features
+
+OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
+
+| Feature Group | Plugin  | How to configure |
+|---------------|---------|------------------|
+| Widgets | Recording ...     | Configure Screen |
+| Layer | ...     | Configure Map |
+| Context menu Actions | .... |   |
 
 ### Plugin Settings
 

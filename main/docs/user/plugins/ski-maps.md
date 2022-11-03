@@ -109,6 +109,7 @@ If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leav
 </Tabs>
 
 
+## Map Style
 
 ### Set Winter style  
 

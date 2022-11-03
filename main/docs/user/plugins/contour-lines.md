@@ -28,13 +28,6 @@ Contour lines consists of 3 map types:
 - **Hillshade** - [raster](../map/raster-maps.md) map layer.
 - **Slopes** - [raster](../map/raster-maps.md) map layer.
 
-### Setup 
-
-To display Contour line and Terrain data on the map:
-
-1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
-2. [Download](#download-maps) Contour lines and/or Terrain maps.
-3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
 
 ### Data source
 
@@ -42,12 +35,21 @@ The altitude data on the map - between 70 degrees north latitude and 70 degrees 
 
 Full information is provided in the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).  
 
+## Setup 
+
+To display Contour line and Terrain data on the map:
+
+1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
+2. [Download](#download-maps) Contour lines and/or Terrain maps.
+3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
+
+
 ### Tutorial
 
 [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg)  
 
 
-## Purchase and enable plugin
+## Purchase and enable plugin (To update)
 
 To enable the plugin and start downloading contour lines, and/or Hillshade, and/or Slopes for each region, you must purchase Contour Lines package in [Purchases](../purchases/index.md).  
 
@@ -79,8 +81,6 @@ For purchases on **iOS**, you ca select the subscriptions: *In-app purchases*, *
 </TabItem>
 
 </Tabs>
-
-
 
 ## Download Maps
 

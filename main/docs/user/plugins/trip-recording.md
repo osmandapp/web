@@ -14,26 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The plugin allows you to record, save and analyze your training or movement data, such as speed, ascents, descents or route relief, which can then be reused, improved, supplemented or shared with friends.
-
+Trip recording plugin is a special tool that is designed to record your routs, movements and trainings. Afterwards you can analyze your data, such as speed, ascents, descents or terrain particularities of the trip. Recordings can be reused, modified, updated and shared with friends.
 
 ## Overview
 
-GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
-
-Trip recording functions: creating new tracks, displaying existing tracks on the map and working with finished recordings. The plugin should only be enabled to create new records.   
-
-
-
-## Setup 
-
-To start creating new records, you need to make the following settings: 
-
-1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins).  
-2. Configure Trip recording for the required [profile](../personal/profiles.md).  
-3. If needed, add [Trip recording widgets](#widgets) to the screen.   
-
-After setup is complete, you can make new recordings, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
+Trip recording plugin is used to create new tracks, display recorded tracks on the map and work with existing records. The route can be recorded while navigating or simply on the go.
 
 <Tabs groupId="operating-systems">
 
@@ -51,11 +36,23 @@ After setup is complete, you can make new recordings, display and manage tracks 
 
 </Tabs>
 
+## Setup 
+
+To start recording tracks, you need to make the following settings: 
+
+1. Enable the [Trip recording plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+2. Configure Trip recording for the required [profile](../personal/profiles.md).  
+3. If needed, add [Trip recording widgets](#widgets) to the screen.   
+
+After setup is complete, you can make new records, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
+
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Enable plugin
 
-Trip recording plugin is needed for recording new tracks. It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
+It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
 
 <Tabs groupId="operating-systems">
 
@@ -79,69 +76,6 @@ To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track
 
 
 
-
-### Add Recording widget
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording.md#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
-
-![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-[Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
-
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-### Profile settings 
-
-*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-Menu **Settings** can be opened in two ways: app [settings](../start-with/first-steps.md#how-to-manage-your-settings), or [plugin](../start-with/first-steps.md#how-to-configure-plugins) settings. 
-
-#### APP SETTINGS 
-
-Go to *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate android="true" ids="record_plugin_name"/>**.  
-
-
-![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/app_sett_andr.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-#### PLUGIN SETTINGS
-
-The settings opened from the [plugin](../start-with/first-steps.md#how-to-configure-plugins). Go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group"/>*, tap the triple point at the right side of **<Translate android="true" ids="map_widget_monitoring"/>**, or tap the **<Translate android="true" ids="map_widget_monitoring"/>** option, select **Settings**.  
-
-![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_1.png) ![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to *<Translate ios="true" ids="menu,sett_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate ios="true" ids="track_recording"/>**.  
-
-![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/app_sett_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 
 
@@ -242,6 +176,45 @@ To stop recording, or to do any of the following options, tap the [Distance/Star
 >**NOTE**: For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues)  
 
 
+
+### Profile settings 
+
+*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+Menu **Settings** can be opened in two ways: app [settings](../start-with/first-steps.md#how-to-manage-your-settings), or [plugin](../start-with/first-steps.md#how-to-configure-plugins) settings. 
+
+#### APP SETTINGS 
+
+Go to *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate android="true" ids="record_plugin_name"/>**.  
+
+
+![Trip recording settings per profile in Android](@site/static/img/plugins/trip-recording/app_sett_andr.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+#### PLUGIN SETTINGS
+
+The settings opened from the [plugin](../start-with/first-steps.md#how-to-configure-plugins). Go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group"/>*, tap the triple point at the right side of **<Translate android="true" ids="map_widget_monitoring"/>**, or tap the **<Translate android="true" ids="map_widget_monitoring"/>** option, select **Settings**.  
+
+![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_1.png) ![Settings opened from the plugin](@site/static/img/plugins/trip-recording/app_sett_plug_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to *<Translate ios="true" ids="menu,sett_settings"/>*, select a [profile](../personal/profiles.md) and tap **<Translate ios="true" ids="track_recording"/>**.  
+
+![Trip recording settings per profile in iOS](@site/static/img/plugins/trip-recording/app_sett_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
 ### Recording parameters
 
 Depending on the character of your movement: driving, cycling, horseback riding, skiing, etc., you may need to make some adjustments to the way you capture and record location points in the file: few, too many, spacing, and others to make the end result look smooth and usable.
@@ -313,6 +286,30 @@ To start using *Trip recording widgets*, you need to make all of the following s
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 - Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options).
 - Add the necessary **Trip recording widgets** to the screen. This setting is *individual for each profile*.  
+
+
+### Add Recording widget
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording.md#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+[Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
+
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
   
 ### Distance (Start-Stop)
@@ -457,6 +454,7 @@ This is a separate screen without a map and a track with points:
 
 ## Recorded GPX file
 
+GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
 The location points are recorded into a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), according to the following structure: *file > track > segments > points*, where:
 
 - One point has a number of attributes: coordinates, speed, altitude, heading.
