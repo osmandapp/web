@@ -172,7 +172,7 @@ The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski
 
 
 
-## Ski map options
+## Map Layer
 
 By reading the map, you can find out other related details such as: the difficulty of a particular trail, the type of trail, whether or not grooming is done, whether the trail is lit at night, or other characteristics that may be helpful to you.
 
@@ -240,7 +240,6 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 </Tabs>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 **Ski touring piste** is often used by skiers for a nordic ascent and a downhill descent. The difficulty of a ski touring piste is often marked with the respective color. The Ski navigation can build a route along this type of piste, thus allowing you to combine the piste types.
 
@@ -262,16 +261,14 @@ Pistes differ by type. A type represents different characterstics for a piste to
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
-**Other** piste types, like: Hiking piste, Sleigh and sled piste can, or cannot be used for the Ski navigation, however, they may be applicable for the On foot navigation, or other. 
+**Other** Trail types such as Hiking Trails or Sledging Trails can be used for skiing or hiking.
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
-### Piste grooming
+### Grooming trails
 
-Grooming is performed by special vehicles and ensure the piste is ready for the respective type of activities: classic skiing, skating, other. The same piste can be groomed differently on different segments. If the pistes outside the ski resort boundaries are pictured being groomed, it is a good sign for those going out for skiing.  
+Grooming is performed by special machines and ensures that the track is ready for the appropriate activity: classic skating, skating, and others. The same trail can be groomed differently in different areas. If the pistes outside the ski resort boundaries are pictured being groomed, it is a good sign for those going out for skiing.  
 
 To check out the map on whether a piste is subject to grooming, it is needed to enable the respective option in the **Details** list opened from the [Configure map](../map/configure-map-menu.md) menu. And the map will show groomed pistes, as exemplified on the figures below. The left-hand one shows no grooming, while the right-hand one differentiates pistes by grooming conditions. 
 
@@ -392,11 +389,10 @@ To enable the **Street lighting**, toggle the following option:
 For any reference, use the [Ski map legend](../../user/map-legend/ski-map.md). It helps to be certain of the types of piste displayed on the map, as well as the types of aerial ways and other characteristics that can be read from the map.  
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Map data details
 
-OsmAnd Ski Map is built as one of the rendering styles that determine what objects to show on the map and the objects' appearance. All rendering styles are described within an XML file. For the rules that govern the internal structure of the XML file, refer to the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
+OsmAnd Ski Map is built as one of the rendering styles, which determines which objects to show on the map and the appearance of objects. All rendering styles are described in the XML file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
 
 For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file.
 
@@ -405,7 +401,7 @@ For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](
 
 ### Remove Ski  
 
-Whenever removing pistes and winter colors from the map is preferable, and/or the ski season is over, do any of the following: 
+If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following 
 
 - uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile, and/or
 
@@ -436,4 +432,4 @@ To remove the **Winter and ski** style, uncheck the option for the needed profil
 
 </Tabs>
 
->**NOTE**: Disabling the Skiing profile is also an option to consider, if the Winter and ski style gets disabled together with the profile. 
+>**NOTE**: Disabling the Skiing profile can also be considered if Winter and Ski style are disabled along with the profile. 
