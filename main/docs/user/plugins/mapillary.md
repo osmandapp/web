@@ -108,13 +108,13 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png) ![Mapillary plugin dialogue Android](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_android.png)
+![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png) ![Mapillary plugin  dialogue  iOS](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_ios.png)
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png)
 
 </TabItem>
 
@@ -125,7 +125,6 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 In order to add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the Map Context menu by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
