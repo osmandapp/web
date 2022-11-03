@@ -21,25 +21,23 @@ In order to get access to the specific functions, provided by a plugin, it must 
 
 ### Enable / disable
 
-You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md). 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
-
 To enable / disable plugins go to:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
-
 To enable / disable plugins go to:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
+
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
 </TabItem>
 
@@ -47,8 +45,8 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Here will be description how to purchase plugin.
-
+Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: [Contour lines and Terrain](plugins/contour-lines#overview), [Wikipedia](../plugins/wikipedia#overview), [Nautical map view](../plugins/nautical-charts#overview).
+Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
 ### Plugin Features
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
@@ -58,6 +56,24 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 | Widgets | Recording ...     | Configure Screen |
 | Layer | ...     | Configure Map |
 | Context menu Actions | .... |   |
+
+| Plugin | Map layer or style | Context menu actions | Widget | Configure Screen | Profile |
+|--------|--------------------|----------------------|--------|------------------|---------|
+|Online maps| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+| Contour lines and Terrain | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+| Wikipedia | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+| Trip recording | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Parking position| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Audio/video notes| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Ski map view| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Nautical map view| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|OpenStreetMap editing| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Mapillary| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|OpenPlaceReviews| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|OsmAnd Tracker| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|OsmAnd development| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+|Accessibility| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+
 
 ### Plugin Settings
 

@@ -216,7 +216,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - shows photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
 
 :::note Online photos
-At this moment in iOS are available only images provided by the Mapillari service .
+At this moment in iOS are available only images provided by the Mapillari service and Wikimedia.
 :::
 
 ![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)

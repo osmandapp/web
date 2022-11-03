@@ -22,7 +22,7 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings: 
    
-1. Enable the [Mapillary plugin](../start-with/first-steps.md#how-to-configure-plugins) in the Plugins section of the main menu.    
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the Plugins section of the main menu.    
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
@@ -58,6 +58,10 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
 
+:::note Mapillary Photo viewer
+- Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
+- Tap on an arrow to move from image to image.
+:::
 
 </TabItem>
 
@@ -65,14 +69,14 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png) 
 
+:::note Mapillary Photo viewer
+- Tap on an arrow to move from image to image.
+:::
+
 </TabItem>
 
 </Tabs>
 
-:::note Mapillary Photo viewer
-- Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
-- Tap on an arrow to move from image to image.
-:::
 
 ### Filtering the data
 
