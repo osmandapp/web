@@ -48,8 +48,6 @@ After setup is complete, you can make new records, display and manage tracks on 
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-
 ### Enable plugin
 
 It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 

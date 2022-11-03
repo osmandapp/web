@@ -14,11 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+## Overview  
 
-OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews project](https://openplacereviews.org/).
+
+OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews project](https://openplacereviews.org/).  
+
+## Setup  
 
 
-## Enable / Disable plugin
+### Enable / Disable plugin
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews"/> 
 

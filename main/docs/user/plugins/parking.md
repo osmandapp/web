@@ -41,15 +41,12 @@ A parking point on the map and notification in the calendar is provided by the P
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
-## Setting up
+## Setup
 
 To use a parking point on the map, you need to make the following settings:    
-
-1. Enable the plugin.
-
-2. Make sure that the Parking widget is added to the screen.
+1. Enable the plugin.  
+2. Make sure that the Parking widget is added to the screen.  
 
 
 ### Enable plugin

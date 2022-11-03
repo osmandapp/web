@@ -73,11 +73,10 @@ LightRS style: <Translate android="true" ids="light_rs_render_descr"/>
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-### Winter and ski
+### Winter and ski  
 
-<Translate android="true" ids="ski_map_render_descr"/>
 
-Winter and ski style is designed to help you navigate winter sports locations: you'll be able to see ski pistes and other details such as the complexity of skiing tracks and ski lift markers. Key features: renders pistes, aerial ways, and other ski features in a convenient way. Less distracting secondary map objects. Read more about [Ski maps](../plugins/ski-maps.md).
+For skiing sports. Describes the pistes, elevators, cross-country trails, and obscures secondary map objects. **Winter and ski style** is designed to help you with winter sports navigation: you can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key features: the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more about [Ski maps](../plugins/ski-maps.md).
 
 ![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
 

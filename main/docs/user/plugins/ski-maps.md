@@ -14,19 +14,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-**Ski Map View** - shows winter colors and trails - downhill or cross-country ski trails - as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
+**Ski Map View** shows winter colors and downhill or cross-country ski trails, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.  
 
 
 
 ## Overview
 
-To show the location and skiing opportunities, most resorts and parks provide their own trail maps. OsmAnd Ski Map shows known/popular slopes, officially approved ski areas, and trail maps of most ski resorts in the northern and southern hemispheres, Europe, Scandinavia, Central Asia, Japan, North America, and other countries.
+OsmAnd Ski Map shows famous and popular slopes, officially approved ski areas and trail maps of most ski resorts. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) piste maps are the data source for OsmAnd ski maps. Combined with vector maps, the OsmAnd ski map is very accurate and will be useful for instructors, climbers, and winter sports enthusiasts.
 
-The Piste Maps of [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) is the source of data for OsmAnd Ski Map. Combined with the default vector maps, the Ski Map of OsmAnd preserves its accuracy and benefits from a variety of contributors, like: ski resorts, lift operators, instructors, eager mountaineers, winter sports enthusiasts, etc.
+The OsmAnd ski map is part of the vector maps and does not require additional downloads. It is disabled by default. The plugin allows you to enable the OsmAnd ski map and start using it. The OsmAnd Ski Map is one of [Map Styles](../map/vector-maps.md) that provides additional features by highlighting some objects and making others less visible.  
 
-OsmAnd Ski Map is delivered as part of the default vector maps, and does not require any extra downloading. However, it is disabled by default. The plugin allows you quickly to enable OsmAnd Ski Map and start to use it. OsmAnd Ski Map is one of the [Map Styles](../map/vector-maps.md) that provide extra capabilities by highlighting some objects, while making other less viable. 
-
-If you customize profiles, you can prepare a Skiing profile specifically for skiing. It will highlight an assorted amount of winter and ski related information on the map. Below are two profiles: the left-hand one is for skiing, the other one is for driving. And the profile for skiing highlights pistes, aerial ways, winter colors, etc. - the map objects useful when navigating through the ski area.
+Two profiles are shown below: the one on the left is for skiing and the one on the right is for driving. The Skiing profile highlights trails, airways, winter colors, and all map objects useful for navigating the ski area.
 
 <Tabs groupId="operating-systems">
 
@@ -50,41 +48,36 @@ If you customize profiles, you can prepare a Skiing profile specifically for ski
 
 ## Setup
 
-The following setup makes OsmAnd Ski Map show up on the screen:
+The following setting makes the OsmAnd Ski Map appear on the screen:
 
-1. Enable the plugin.
-
-2. Set the Winter and Ski map style.
-
-3. If needed, combine maps. 
+1. Enable [Ski map view plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+2. Set the Winter and Ski map style for the required [profile](../personal/profiles.md).  
+3. If needed, [combine maps](#combine-maps).  
 
 
 ### Enable plugin  
 
-Enabling the Ski map plugin is a quick way to setup OsmAnd Ski Map. The plugin can add the default profile for skiing. If it has not been used yet, the default Skiing profile has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already established for it. Otherwise, the profile would remember the settings of the latest use. 
+Enabling the Ski map view plugin is a quick way to set up OsmAnd Ski Map. The plugin can add a default Skiing profile. If it hasn't already been used, the default Skiing profile has Ski navigation, [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already configured for it. Otherwise, the profile will remember the settings from the last use.  
 
-To enable the Ski Map plugin, do the following:
+To enable the **Ski Map view plugin**, do the following:
 
-1. Open the list of plugins in the menu.
-
-2. Find the Ski map plugin, and tap it. 
-
-3. If needed, leave the Ski profile option toggled-on in the opened popup window, so that together with the plugin to enable the Skiing profile. 
+1. Open the list of plugins in the menu.  
+2. Find the Ski map view plugin, and tap it.  
+3. You can enable or disable the Skiing profile in the pop-up window that opens. 
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
+The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it.  
 
-To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, tap it in the list of plugins opened, as follows:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>
+To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, select it from the list of plugins opened by the following path:  
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>*
 
 ![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) 
 
-If the **<Translate android="true" ids="app_mode_skiing"/>** profile is needed, leave the respective option toggled on in the opened popup window and tap **OK**. Otherwise, tap Turn off, and the plugin will be enabled without adding the profile. 
+If the **<Translate android="true" ids="app_mode_skiing"/>** is required, leave the option enabled in the pop-up window and click **OK**. Tap **Turn off** if you don't want to add the plugin to this profile.  
 
 ![Enabling Ski profile with plugin in Android](@site/static/img/plugins/ski-maps/and_profile_in_ski_plugin.png)
 
@@ -92,11 +85,10 @@ If the **<Translate android="true" ids="app_mode_skiing"/>** profile is needed, 
 
 <TabItem value="ios" label="iOS">
 
-The **<Translate ios="true" ids="product_title_skimap"/>** plugin can  be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
+The **<Translate ios="true" ids="product_title_skimap"/>** plugin can be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
 
-To enable the **<Translate ios="true" ids="product_title_skimap"/>** plugin, tap it in the list of plugins opened, as follows: 
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_skimap"/>
+To enable the **<Translate ios="true" ids="product_title_skimap"/>** plugin, select it from the list of plugins opened by the following path:  
+*<Translate ios="true" ids="menu,plugins,product_title_skimap"/>*
 
 ![Ski maps plugin iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_ios.png)
 
@@ -113,22 +105,19 @@ If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leav
 
 ### Set Winter style  
 
-The **Winter and Ski** style highlights pistes, ski touring trails, sled paths, etc. - the winter and ski related information. Whenever needed, just enable it for the required profile, as follows: 
+**Winter and Ski** style highlights trails, ski touring routes, sledding trails and information related to winter and skiing. Enable it for the profile you want, as shown below:
 
-1. Select the required [profile](../personal/profiles.md). 
-
-2. Open [Configure map](../map/configure-map-menu.md).
-
-3. Scroll down up to [Map style](../map/vector-maps.md), open it and check the Winter and Ski style. 
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to [Map style](../map/vector-maps.md), open it and check the Winter and Ski style.  
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-To verify what style is currently established for the profile, and\or to establish the **Winter and ski** style, select the respective option in the list of styles opened, as follows:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/> 
+To check which style is currently set for the profile, or to set the **Winter and ski** style, select the appropriate option in the styles list that opens, as shown below:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>* 
 
 ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android.png)
 
@@ -136,9 +125,8 @@ To verify what style is currently established for the profile, and\or to establi
 
 <TabItem value="ios" label="iOS">
 
-To verify what style is currently established for the profile, and\or to establish the **Winter and ski** style, select the respective option in the list of styles opened, as follows:
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/> 
+To check which style is currently set for the profile, or to set the **Winter and ski** style, select the appropriate option in the styles list that opens, as shown below:  
+*<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/>*  
 
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios.png)
 
@@ -146,13 +134,13 @@ To verify what style is currently established for the profile, and\or to establi
 
 </Tabs>
 
->**NOTE**: The Skiing profile was originally created to be used together with the Winter and Ski styles, as the Skiing profile must have Ski navigation installed by default to navigate the trails. However, the type of navigation for each specific profile can be changed and set individually, so the final configuration of the profile, map style and navigation completely depends on the user settings.
+>**NOTE**: The Skiing profile is designed to be used in combination with the Winter and Ski styles. However, the navigation type for each specific profile can be changed and set individually, so the final configuration of the profile, map style and navigation completely depends on the user settings.
 
 
 
 ### Combine maps
 
-The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) can be added with the [Contour lines](../plugins/contour-lines.md#show-contour-linesterrain) and\or [Hillshade](../plugins/contour-lines.md#hillshade-map) maps. Below are two examples. The left-hand figure shows pistes on the default vector map, while the one on the right shows pistes on the default vector map combined with the contour lines and the hillshade raster map. In the second case, the map unveils more geolocation insights and elevation data to help making an assessment of the complexity, risks, distance, etc. 
+The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/contour-lines.md#show-contour-linesterrain) and [Hillshade](../plugins/contour-lines.md#hillshade-map). Below are two examples. The left shows tracks on the vector map which is displayed by default, and the right shows tracks on the vector map combined with Contour lines and the Hillshade raster map. In the second case, the map shows more geolocation and elevation data to help estimate difficulty, risk, and distance.  
 
 <Tabs groupId="operating-systems">
 
@@ -175,24 +163,24 @@ The default [vector map](../map/vector-maps.md) with the enabled [Winter and Ski
 
 ## Map Layer
 
-By reading the map, you can find out other related details such as: the difficulty of a particular trail, the type of trail, whether or not grooming is done, whether the trail is lit at night, or other characteristics that may be helpful to you.
+By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
 
-> **NOTE**: The options covered herein, are worth considering also when using the [Ski navigation](../navigation/route-navigation.md). As a rule, it is available within the [Ski profile](../personal/profiles.md). The default navigation for the Ski profile is the **Ski navigation**, unless it is established otherwise. The Ski navigation is supplied with individual route parameters applicable only to skiing, and builds the route along pistes. 
+> **NOTE**: The options described here are available in the [Ski navigation](../navigation/route-navigation.md). By default, the [Skiing profile](../personal/profiles.md) is set to the relevant navigation, unless otherwise specified. The **Skiing navigation** sets the individual route options which apply only to skiing and pistes on the slopes.  
 
 
-### Piste difficulty
+### Pistes by difficulty
 
-Knowing the difficulty of a particular trail makes sense for skiers, and for anyone visiting a ski resort or area to get to the right point and/or turn in the right direction. The difficulty of a piste is displayed in color. The colors may be different from one resort to another and from one country to another. Below are some practical guidelines. 
+The difficulty of traces is usually indicated by certain colors. The colors may be different in different countries and resorts. Below are some practical guidelines. 
 
 | Color | Description | 
 | --- | --- |
-| ![Beginner piste](@site/static/img/plugins/ski-maps/1c_green_1.png) | Beginner piste |
-| ![ Easy hills](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Easy hills | 
-| ![Intermediate slopes](@site/static/img/plugins/ski-maps/3c_red_1.png) | Intermediate slopes | 
-| ![Advanced difficulty](@site/static/img/plugins/ski-maps/4c_black_1.png) | Slopes of advanced difficulty |
-| ![Expert difficulty](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Slopes of expert difficulty | 
+| ![Beginner piste](@site/static/img/plugins/ski-maps/1c_green_1.png) | Green - Beginner piste |
+| ![ Easy hills](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Blue - Easy hills | 
+| ![Intermediate slopes](@site/static/img/plugins/ski-maps/3c_red_1.png) | Red - Intermediate slopes | 
+| ![Advanced difficulty](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gray - Slopes of advanced difficulty |
+| ![Expert difficulty](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Yellow - Slopes of expert difficulty | 
 
->**NOTE**: For more specific guidance on each type of trail difficulty, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) data or any other source that also takes into account slope, obstacles, and hazards.  
+>**NOTE**: For more specific guidance for each trail difficulty type, see the [OSM piste difficulty reference](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) or any other source that also considers slopes, obstacles, and hazards.  
 
 
 
@@ -400,13 +388,12 @@ For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](
 
 
 
-### Remove Ski  
+### Remove Ski map view plugin 
 
 If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following 
 
-- uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile, and/or
-
-- disable the Skiing [profile](../personal/profiles.md). 
+1. Uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile.  
+2. Disable the Skiing [profile](../personal/profiles.md). 
 
 <Tabs groupId="operating-systems">
 

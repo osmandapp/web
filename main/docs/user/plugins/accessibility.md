@@ -14,7 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd.
+Accessibility plugin makes the device's accessibility features directly available in OsmAnd.  
+
+## Overview 
 
 Makes the device's accessibility features directly available in OsmAnd. It facilitates e.g. adjusting the speech rate for text-to-speech voices, configuring D-pad navigation, using a trackball for zoom control, or text-to-speech feedback, for example to auto announce your position.
 
