@@ -44,11 +44,9 @@ A parking point on the map and notification in the calendar is provided by the P
 
 To use a parking point on the map, you need to make the following settings:    
 1. Enable the [Parking position plugin](../start-with/first-steps.md#how-to-configure-plugins) in the Plugins section of the Main menu.  
-2. If needed, add the [Parking widget](#stay-informed) to the screen.  
-  
-:::note Mapillary widget
-The Parking widget becomes available only when the Parking plugin is enabled.
-:::
+2. Add or remove a [parking point](#set-a-point) on the map.
+3. If needed, add the [Parking widget](#parking-widget) to the screen.  
+
 
 ## Parking point on the map
 

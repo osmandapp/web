@@ -41,7 +41,7 @@ Trip recording plugin is used to create new tracks, display recorded tracks on t
 To start recording tracks, you need to make the following settings: 
 
 1. Enable the [Trip recording plugin](../start-with/first-steps.md#how-to-configure-plugins).  
-2. Configure Trip recording for the required [profile](../personal/profiles.md).  
+2. Configure [Trip recording](#profile-settings) settings for each [profile](./index.md#plugin-settings).  
 3. If needed, add [Trip recording widgets](#widgets) to the screen.   
 
 After setup is complete, you can make new records, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   

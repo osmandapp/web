@@ -40,6 +40,7 @@ To display Wikipedia data on the map, you need to make the following setting:
 1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.    
 2. Download the [Wikipedia packages](#download-wikipedia-packages) for the required regions.  
 3. Display the [Wikipedia POIs](#display-wikipedia-on-the-map) on the map for the required profile.  
+4. Configure preferred [languages](#wikipedia-languages) to read articles.
 
 ## Download Wikipedia packages 
 

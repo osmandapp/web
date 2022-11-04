@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 11
 title:  Weather
 ---
 
@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+<InfoIncompleteArticle/>
 
 24h hourly forecast 7 days ahead on the map.
 

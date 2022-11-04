@@ -29,7 +29,10 @@ At the same time, all created audio/video notes make up a Recording layer that i
 
 ## Setup
 
+<InfoIncompleteArticle/>
+
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
+
 
 1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
