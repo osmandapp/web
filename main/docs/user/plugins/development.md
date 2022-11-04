@@ -20,6 +20,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The OsmAnd development plugin is only necessary for *developers and experienced users*. It allows you to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for normal application use.
 
+## Setup 
+
+If you would like to test the OsmAnd app, 
+
+1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
+
 
 ## Enable plugin
 
