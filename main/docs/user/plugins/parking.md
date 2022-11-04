@@ -40,53 +40,15 @@ A parking point on the map and notification in the calendar is provided by the P
 
 </Tabs>
 
-
-
 ## Setup
 
 To use a parking point on the map, you need to make the following settings:    
-1. Enable the plugin.  
-2. Make sure that the Parking widget is added to the screen.  
-
-
-### Enable plugin
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-
-The [Parking widget](../widgets/info-widgets.md#-parking-widget) becomes available if the Parking plugin is enabled. In the list of plugins, find the Parking plugin and enable it.
-
-![Parking plugin in Android](@site/static/img/plugins/parking/parking_plugin_android.png)
- 
-In the **Android**  version, to enable the Parking plugin, tap the triple-dot to the right of the <Translate android="true" ids="osmand_parking_plugin_name"/> option, then tap **Enable** and confirm **OK** in the following dialog box.
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osmand_parking_plugin_name"/> 
-
-![Plugin confirmation in Android](@site/static/img/plugins/parking/and_add_parking_plugin.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-The [Parking widget](../widgets/info-widgets.md#-parking-widget) becomes available with the Parking plugin enabled. In the list of the plugins, find the Parking one and enable it. 
-
-![Parking plugin in iOS](@site/static/img/plugins/parking/parking_plugin_ios.png)
-
-In the **iOS** version, to enable the Parking plug-in, open the list of plug-ins, find the Parking plug-in, check it and confirm with the **Ok** button in the next dialog box.  
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_parking"/>
-
-![Plugin confirmation in iOS](@site/static/img/plugins/parking/ios_add_parking_plugin.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
+1. Enable the [Parking position plugin](../start-with/first-steps.md#how-to-configure-plugins) in the Plugins section of the Main menu.  
+2. If needed, add the [Parking widget](#stay-informed) to the screen.  
+  
+:::note Mapillary widget
+The Parking widget becomes available only when the Parking plugin is enabled.
+:::
 
 ## Parking point on the map
 

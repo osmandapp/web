@@ -21,14 +21,10 @@ OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews pr
 
 ## Setup  
 
-
-### Enable / Disable plugin
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews"/> 
-
-
-![OpenPlaceReview Android](@site/static/img/plugins/openplacereviews/openplacereviews_android.png)
-
+If you want to leave a review about some place of interest, you need to make the following settings: 
+ 
+1. Enable the [OpenPlaceReviews plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.    
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
 ### Plugin settings
 

@@ -26,25 +26,10 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 ## Enable / Disable plugin
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> 
-
-![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>
-
-![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
-
-</TabItem>
-
-</Tabs>
+To start editing maps insidе the OsmAnd app, you need to make the following settings: 
+ 
+1. Enable the [OpenStreetMap editing plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.    
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
 ### Plugin settings
 
