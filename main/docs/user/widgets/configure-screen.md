@@ -139,7 +139,7 @@ Most of the widgets could be configured as:
 </Tabs>  
 
 
-### Buttoms and Remaining elements
+### Buttons and Remaining elements
 
 <Tabs groupId="operating-systems">
 
