@@ -59,22 +59,22 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 
 | Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
 |:--------|:-------|:-------|:-------|:-------|
-|[Online maps](../plugins/#online-maps)| ✔ | ✔ | - |  ✔ |
-|[Contour lines and Terrain](../plugins/#contour-lines-and-terrain) | ✔ | - | - |  ✔ |
-|[Wikipedia](../plugins/#wikipedia) | ✔ | ✔ | - |  ✔ |
-|[Trip recording](../plugins/#trip-recording) | ✔ | ✔ | ✔ |  ✔ |
-|[Parking position](/plugins/#parking-position)| ✔ | ✔ | ✔ |  ✔ |
-|[Audio/video notes](/plugins/#audiovideo-notes)| ✔ | ✔ | ✔ |  ✔ |
-|[Ski map view](../plugins/#ski-map-view)| ✔ | - | - |  ✔ |
-|[Nautical map view](../plugins/#nautical-map-view)| ✔ | - | - |  ✔ |
-|[OpenStreetMap editing](../plugins/#openstreetmap-editing)| ✔ | ✔ | - |  ✔ |
-|[Mapillary](../plugins/#mapillary)| ✔ | ✔ | ✔ | - |  ✔ |
-|[OpenPlaceReviews](../plugins/#openplacereviews)| ✔ | ✔ | - |  ✔ |
+|[Online maps](#online-maps)| ✔ | ✔ | - |  ✔ |
+|[Contour lines and Terrain](#contour-lines-and-terrain) | ✔ | - | - |  ✔ |
+|[Wikipedia](#wikipedia) | ✔ | ✔ | - |  ✔ |
+|[Trip recording](#trip-recording) | ✔ | ✔ | ✔ |  ✔ |
+|[Parking position](#parking-position)| ✔ | ✔ | ✔ |  ✔ |
+|[Audio/video notes](#audiovideo-notes)| ✔ | ✔ | ✔ |  ✔ |
+|[Ski map view](#ski-map-view)| ✔ | - | - |  ✔ |
+|[Nautical map view](#nautical-map-view)| ✔ | - | - |  ✔ |
+|[OpenStreetMap editing](#openstreetmap-editing)| ✔ | ✔ | - |  ✔ |
+|[Mapillary](#mapillary)| ✔ | ✔ | ✔ | - |  ✔ |
+|[OpenPlaceReviews](#openplacereviews)| ✔ | ✔ | - |  ✔ |
 |[Weather](../plugins/weather.md)| ✔ | ✔ | ✔ |  ✔ |
 |🤖 External Sensors| - | - | ✔ |  ✔ |
-|🤖 [OsmAnd Tracker](../plugins/#osmand-tracker)| ✔ | - | ✔ | ✔ |
-|[OsmAnd development](../plugins/#osmand-development)| - | - | ✔ | ✔ |
-|🤖 [Accessibility](../plugins/#accessibility)| - | - | - | - |
+|🤖 [OsmAnd Tracker](#osmand-tracker)| ✔ | - | ✔ | ✔ |
+|[OsmAnd development](#osmand-development)| - | - | ✔ | ✔ |
+|🤖 [Accessibility](#accessibility)| - | - | - | - |
 
 
 ### Plugin Settings
