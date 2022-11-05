@@ -55,28 +55,26 @@ Detailed information about the purchase of the application can be found in the s
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
-| Feature Group | Plugin  | How to configure |
-|---------------|---------|------------------|
-| Widgets | Recording ...     | Configure Screen |
-| Layer | ...     | Configure Map |
-| Context menu Actions | .... |   |
+🤖 - only for Android version.
 
-| Plugin | Map layer or style | Context menu actions | Widget | Configure Screen | Profile |
-|--------|--------------------|----------------------|--------|------------------|---------|
-|Online maps| ✔ | ✔ | ✔ | ✔ |  ✔ |
-| Contour lines and Terrain | ✔ | ✔ | ✔ | ✔ |  ✔ |
-| Wikipedia | ✔ | ✔ | ✔ | ✔ |  ✔ |
-| Trip recording | ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Parking position| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Audio/video notes| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Ski map view| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Nautical map view| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|OpenStreetMap editing| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Mapillary| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|OpenPlaceReviews| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|OsmAnd Tracker| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|OsmAnd development| ✔ | ✔ | ✔ | ✔ |  ✔ |
-|Accessibility| ✔ | ✔ | ✔ | ✔ |  ✔ |
+| Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
+|:--------|:-------|:-------|:-------|:-------|
+|[Online maps](../plugins/#online-maps)| ✔ | ✔ | - |  ✔ |
+|[Contour lines and Terrain](../plugins/#contour-lines-and-terrain) | ✔ | - | - |  ✔ |
+|[Wikipedia](../plugins/#wikipedia) | ✔ | ✔ | - |  ✔ |
+|[Trip recording](../plugins/#trip-recording) | ✔ | ✔ | ✔ |  ✔ |
+|[Parking position](/plugins/#parking-position)| ✔ | ✔ | ✔ |  ✔ |
+|[Audio/video notes](/plugins/#audiovideo-notes)| ✔ | ✔ | ✔ |  ✔ |
+|[Ski map view](../plugins/#ski-map-view)| ✔ | - | - |  ✔ |
+|[Nautical map view](../plugins/#nautical-map-view)| ✔ | - | - |  ✔ |
+|[OpenStreetMap editing](../plugins/#openstreetmap-editing)| ✔ | ✔ | - |  ✔ |
+|[Mapillary](../plugins/#mapillary)| ✔ | ✔ | ✔ | - |  ✔ |
+|[OpenPlaceReviews](../plugins/#openplacereviews)| ✔ | ✔ | - |  ✔ |
+|[Weather](../plugins/weather.md)| ✔ | ✔ | ✔ |  ✔ |
+|🤖 External Sensors| - | - | ✔ |  ✔ |
+|🤖 [OsmAnd Tracker](../plugins/#osmand-tracker)| ✔ | - | ✔ | ✔ |
+|[OsmAnd development](../plugins/#osmand-development)| - | - | ✔ | ✔ |
+|🤖 [Accessibility](../plugins/#accessibility)| - | - | - | - |
 
 
 ### Plugin Settings
