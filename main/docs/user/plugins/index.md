@@ -55,6 +55,12 @@ Detailed information about the purchase of the application can be found in the s
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
+| Feature Group | Plugin  | How to configure |
+|---------------|---------|------------------|
+| Widgets | Recording ...     | Configure Screen |
+| Layer | ...     | Configure Map |
+| Context menu Actions | .... |   |
+
 🤖 - only for Android version.
 
 | Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
