@@ -35,45 +35,12 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 
 ## Setup
 
-For Wikipedia data to be displayed on the map, you need to make the following setting: 
+To display Wikipedia data on the map, you need to make the following setting: 
 
-1. Purchase <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a> paid services if necessary.    
-2. Enable the [Wikipedia plugin](https://docs.osmand.net/docs/user/plugins/wikipedia/#purchase-and-enable-plugin) in the Plugins section of the main menu.    
-3. Download the [Wikipedia packages](https://docs.osmand.net/docs/user/plugins/wikipedia/#download-wikipedia-packages) for the required regions.  
-4. Display the [Wikipedia POIs](https://docs.osmand.net/docs/user/plugins/wikipedia/#display-wikipedia-on-the-map) on the map for the required profile.  
-
-
-
-### Purchase and enable plugin  
-
-
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
-Wikipedia plugin is a paid functionality for **Android** version, available for the [paid](../purchases/android.md#free-and-paid-features) version of the **OsmAnd+** application, or for **in-app Maps+** and **Pro** and **Maps+** subscriptions. After purchasing a subscription, Wikipedia Offline can be enabled in the Plugins menu, and then you will be able to download Wikipedia data for selected geographical regions. To enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section in the main menu: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_wikipedia"/>*  
-
-
-![Wikipedia plugin in Android](@site/static/img/plugins/wikipedia/Wikipedia_plugin_android2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-Wikipedia plugin for **iOS** is available in a **free version**. Wikipedia Offline is included in the Plugins menu and you can download Wikipedia data for selected geographical regions. To enable the plugin, turn on the **Wikipedia** option in the following application menu: *<Translate ios="true" ids="menu,plugins,product_title_wiki"/>* 
-
-
-
-![Wikipedia plugin in iOS](@site/static/img/plugins/wikipedia/Wikipedia_plugin_ios2.png)
-
-</TabItem>
-
-</Tabs>
-
-
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.    
+2. Download the [Wikipedia packages](#download-wikipedia-packages) for the required regions.  
+3. Display the [Wikipedia POIs](#display-wikipedia-on-the-map) on the map for the required profile.  
+4. Configure preferred [languages](#wikipedia-languages) to read articles.
 
 ## Download Wikipedia packages 
 

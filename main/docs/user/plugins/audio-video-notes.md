@@ -29,25 +29,14 @@ At the same time, all created audio/video notes make up a Recording layer that i
 
 ## Setup
 
+<InfoIncompleteArticle/>
+
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
-1. [Enable the plugin](../plugins/audio-video-notes.md#enable-plugin).  
-2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen, and/or configure.  
-3. If needed, configure [the recording settings](../plugins/audio-video-notes.md#open-settings) per profile.  
 
-
-### Enable plugin
-
-The Audio/video notes plugin is required to work with the audio/video notes: from creating the notes to viewing them in My Places, and showing on the map. All audio/video notes will be hidden from the map and from My Places, if the plugin is disabled. 
-
-To enable the plugin, tap the triple dots beside the enabled **<Translate android="true" ids="audionotes_plugin_name"/>** option in the list of [plugins](../start-with/first-steps.md#how-to-configure-plugins) and select **Enable**.  
-
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name"/>
-
-![Audio video plugin Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_android.png)
-
-
+1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
+2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
+3. If needed, configure [the recording settings](#open-settings) per profile.  
 
 ### Add Configure widget
 

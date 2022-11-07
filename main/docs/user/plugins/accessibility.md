@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 12
 title:  Accessibility
 ---
 
@@ -21,9 +21,12 @@ Accessibility plugin makes the device's accessibility features directly availabl
 Makes the device's accessibility features directly available in OsmAnd. It facilitates e.g. adjusting the speech rate for text-to-speech voices, configuring D-pad navigation, using a trackball for zoom control, or text-to-speech feedback, for example to auto announce your position.
 
 
-## Enable / Disable plugin
+## Setup 
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility"/>
+To activate device's accessibility features in OsmAnd, you need to make the following settings: 
+   
+1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.    
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
 
 ### Plugin settings

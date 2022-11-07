@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 11
 title:  Weather
 ---
 
@@ -11,66 +11,56 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoIncompleteArticle/>
 
-To get weather forecast into the OsmAnd app.
+24h hourly forecast 7 days ahead on the map.
+
+Interactive weather map layers allow you to watch for current temperature and weather conditions in your city or any other location on the interactive global map.
 
 ## Overview
 
-Weather plugin brings 24h hourly forecast 7 days ahead on the map into the OsmAnd app. 
+The Weather plugin is used for showing info about current weather info and forecast. This data can be downloaded for use offline.
 
 ## Setup 
 
-To display the Weather data on the OsmAnd map, you need to make the following settings: 
-   
-1. Enable the Weather Plugin in the Plugins section of the main menu.    
-2. Display the Weather layer on the map for the required profile in the Configure map menu.
+To display weather on the OsmAnd map and on the central point of the screen, you need to make the following settings: 
 
 
-## Map Layer
+1. Purchase OsmAnd Pro subscribers paid services if necessary <ProFeature/>.  
+2. Enable the [Weather plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.    
+3. Display the [Weather](#enable-layer) on the map for the required profile in the Configure map menu.
+4. Enable Weather widgets..
+5. Enable the Weather toolbar..
 
 
+### Purchase and enable plugin
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+Weather plugin for **iOS** is available for [Pro users](../purchases/ios.md) <ProFeature/>. Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu: *<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
 
+![Weather plugin in iOS](@site/static/img/plugins/weather/weather_plugin_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-### Enable Layer
+## Display Weather on the map
 
-To display the Weather layer on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md) section of Main menu:
+Weather data can be online and offline. For offline you can download this data for choosed regions.
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
-
-
-## Widgets
-
-
+first select a profile and then on/off Weather option.
 
 <Tabs groupId="operating-systems">
 
@@ -83,25 +73,76 @@ To display the Weather layer on the map, you need to enable layer first in [Conf
 
 <TabItem value="ios" label="iOS">
 
+In the **iOS** version, to show/hide Wikipedia POIs, do the following:  
+1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
+2. Select a Profile, and look for the *<Translate ios="true" ids="map_settings_overunder"/>* section in the menu.  
+3. Toggle *<Translate ios="true" ids="product_title_weather"/>* on.
+4. Choose needed info for displayed: <Translate ios="true" ids="map_settings_weather_layers"/> - *<Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>, <Translate ios="true" ids="map_settings_weather_wind"/>, <Translate ios="true" ids="map_settings_weather_cloud"/>, <Translate ios="true" ids="map_settings_weather_precip"/>* and <Translate ios="true" ids="map_settings_weather_contours"/>: *<Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>*
 
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_ios.png) ![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_1_ios.png)
+
+5. For each <Translate ios="true" ids="map_settings_weather_layers"/> and <Translate ios="true" ids="map_settings_weather_contours"/> you can choose layer <Translate ios="true" ids="map_settings_transp"/> and <Translate ios="true" ids="sett_units"/>: 
+
+*<Translate ios="true" ids="menu,configure_map,product_title_weather,map_settings_weather_precip"/>, <Translate ios="true" ids="map_settings_weather_temp"/>*
+
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_precip_ios.png) ![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_temper_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-## Offline data
+
+## Configure screen
+
+Weather quick menu and widgets.
+
+### Weather toolbar
+
+_<Translate ios="true" ids="screen_settings_weather_toolbar"/>_ is a quick menu for the weather tool in OsmAnd.
+
+Adding the weather button on the map.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+_<Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,screen_settings_weather_toolbar"/>_
 
+![Weather toolbar on iOS](@site/static/img/plugins/weather/weather_toolbar_ios.png) ![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_1_ios.png)
+
+
+A tap on the weather button opens the weather toolbar. 
+
+1. Where you can switch on/off weather layers: *<Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>, <Translate ios="true" ids="map_settings_weather_wind"/>, <Translate ios="true" ids="map_settings_weather_cloud"/>, <Translate ios="true" ids="map_settings_weather_precip"/>* and <Translate ios="true" ids="map_settings_weather_contours"/>: *<Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>*.
+
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_2_ios.png)
+
+2. Long tap on the weather layer button opens [settings menu](#display-weather-on-the-map) for this layer. 
+
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_3_ios.png)
+
+3. Choosing data and time for forecast. 24h hourly forecast 7 days 
+
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_4_ios.png) ![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_5_ios.png)
+
+
+4. Widgets show feather data for the central point: *<Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>, <Translate ios="true" ids="map_settings_weather_wind"/>, <Translate ios="true" ids="map_settings_weather_cloud"/>, <Translate ios="true" ids="map_settings_weather_precip"/>*
+
+![Weather layer on iOS](@site/static/img/plugins/weather/weather_toolbar_6_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+### Weather Widgets
+
+
+## Download Weather forecast
+
+
+
+

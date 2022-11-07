@@ -28,7 +28,6 @@ Contour lines consists of 3 map types:
 - **Hillshade** - [raster](../map/raster-maps.md) map layer.
 - **Slopes** - [raster](../map/raster-maps.md) map layer.
 
-
 ### Data source
 
 The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
@@ -37,50 +36,16 @@ Full information is provided in the [License](https://github.com/osmandapp/OsmAn
 
 ## Setup 
 
-To display Contour line and Terrain data on the map:
+To display Contour lines and Terrain data on the map:
 
-1. [Purchase and Enable](#purchase-and-enable-plugin) plugin.
-2. [Download](#download-maps) Contour lines and/or Terrain maps.
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Contour lines plugin in the Plugins section of the Main menu.
+2. [Download](#download-maps) contour lines and/or terrain maps.
 3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
 
 
-### Tutorial
+## Tutorial
 
 [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg)  
-
-
-## Purchase and enable plugin (To update)
-
-To enable the plugin and start downloading contour lines, and/or Hillshade, and/or Slopes for each region, you must purchase Contour Lines package in [Purchases](../purchases/index.md).  
-
-<Tabs groupId="operating-systems">  
-
-<TabItem value="android" label="Android">
-
-For purchases on **Android**, you can select the subscriptions: *In-app purchases*, *Subscription* or *Full version* of the app, [Free and Paid features](../purchases/android.md#free-and-paid-features). To view the already made purchases, go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>* 
-
-**Enable** Contour lines plugin:
-- Tap **Contour lines** in the list of plugins in: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*.  
-- Tap the button.
-- Confirm your choice in **Add new plugin** screen.
-
-![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_android.png) ![Contour lines plugin on Android](@site/static/img/plugins/contour-lines/enable_pl_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-For purchases on **iOS**, you ca select the subscriptions: *In-app purchases*, *Subscription* of the app [In-App Purchases](../purchases/ios.md#in-app-purchases). To view the already made purchases, go to: *<Translate ios="true" ids="menu,sett_settings,purchases"/>*
-
-**Enable** Contour lines plugin:
-- Tap **Contour lines** in the list of plugins in: *<Translate ios="true" ids="menu,plugins,product_title_srtm"/>*.
-- Tap the "off" button, and it will change to "on".
-- Confirm your choice in **New plugin added** screen.
-
-![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_1.png) ![Contour lines plugin on iOS](@site/static/img/plugins/contour-lines/enable_pl_ios_2.png) 
-</TabItem>
-
-</Tabs>
 
 ## Download Maps
 

@@ -45,7 +45,11 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: [Contour lines and Terrain](../plugins/contour-lines.md#overview), [Wikipedia](../plugins/wikipedia.md#overview), [Nautical map view](../plugins/nautical-charts.md#overview). 
+Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: 
+ - [Contour lines and Terrain](../plugins/contour-lines.md#overview) 
+ - [Wikipedia](../plugins/wikipedia.md#overview)
+ - [Nautical map view](../plugins/nautical-charts.md#overview)
+   
 Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
 ### Plugin Features
 
@@ -57,22 +61,26 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 | Layer | ...     | Configure Map |
 | Context menu Actions | .... |   |
 
-| Plugin | Map layer or style | Context menu actions | Widget | Configure Screen | Profile |
-|--------|--------------------|----------------------|--------|------------------|---------|
-|Online maps| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-| Contour lines and Terrain | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-| Wikipedia | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-| Trip recording | &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Parking position| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Audio/video notes| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Ski map view| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Nautical map view| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|OpenStreetMap editing| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Mapillary| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|OpenPlaceReviews| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|OsmAnd Tracker| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|OsmAnd development| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
-|Accessibility| &#10003 | &#10003 | &#10003 | &#10003 |  &#10003 |
+🤖 - only for Android version.
+
+| Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
+|:--------|:-------|:-------|:-------|:-------|
+|[Online maps](#online-maps)| ✔ | ✔ | - |  ✔ |
+|[Contour lines and Terrain](#contour-lines-and-terrain) | ✔ | - | - |  ✔ |
+|[Wikipedia](#wikipedia) | ✔ | ✔ | - |  ✔ |
+|[Trip recording](#trip-recording) | ✔ | ✔ | ✔ |  ✔ |
+|[Parking position](#parking-position)| ✔ | ✔ | ✔ |  ✔ |
+|[Audio/video notes](#audiovideo-notes)| ✔ | ✔ | ✔ |  ✔ |
+|[Ski map view](#ski-map-view)| ✔ | - | - |  ✔ |
+|[Nautical map view](#nautical-map-view)| ✔ | - | - |  ✔ |
+|[OpenStreetMap editing](#openstreetmap-editing)| ✔ | ✔ | - |  ✔ |
+|[Mapillary](#mapillary)| ✔ | ✔ | ✔ | - |  ✔ |
+|[OpenPlaceReviews](#openplacereviews)| ✔ | ✔ | - |  ✔ |
+|[Weather](../plugins/weather.md)| ✔ | ✔ | ✔ |  ✔ |
+|🤖 External Sensors| - | - | ✔ |  ✔ |
+|🤖 [OsmAnd Tracker](#osmand-tracker)| ✔ | - | ✔ | ✔ |
+|[OsmAnd development](#osmand-development)| - | - | ✔ | ✔ |
+|🤖 [Accessibility](#accessibility)| - | - | - | - |
 
 
 ### Plugin Settings

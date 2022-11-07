@@ -49,81 +49,9 @@ Based on [OpenSeaMap](http://www.openseamap.org/) data, OsmAnd Nautical maps are
 ## Setup   
 
 The following setup makes the Nautical map show up on the screen: 
-1. Purchase Nautical services.  
-2. Enable the plugin.  
-3. Download the Nautical maps.  
-4. Enable the Nautical map style.   
-
-
-### Purchase Nautical    
- 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
-:::note
-  
-Nautical maps are [a paid feature](../purchases/android.md#free-and-paid-features) of OsmAnd.
-
-:::
-  
-For more details, visit [Purchases](../purchases/android.md#free-and-paid-features).  
-Additionally, view purchases you have already made by opening the following section: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-:::note
-  
-Nautical maps are [a paid feature](../purchases/ios.md#free-and-paid-features) of OsmAnd. 
-
-:::  
-
-For more details, visit [Purchases](../purchases/ios.md#in-app-purchases).  
-Additionally, view purchases you have already made by opening the following section: *<Translate ios="true" ids="menu,sett_settings,purchases"/>*  
-
-</TabItem>
-
-</Tabs>
-
-
-### Enable plugin  
-
-After the purchase of **Nautical service**, the Nautical plugin can be enabled. The plugin unlocks more functional capabilities, such as: 
-
-- Download nautical maps. 
-- Enable the Nautical map style for any of the profiles.
-- View depth contours and seabed information. 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-With the purchase of Nautical service made in the *<Translate android="true" ids="android_button_seq"/>* version, to start using Nautical Charts, the Nautical plugin should be enabled, as follows: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_nautical_name"/>*   
-
-After enabling the Nautical plugin, you can download Nautical maps, select a Nautical maps style for the profile, and navigate in nautical details while navigating.
-
-![Nautical maps plugin Android](@site/static/img/plugins/nautical-charts/plugin_nautical_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-With the purchase of Nautical service made in the *<Translate ios="true" ids="ios_button_seq"/>* version, to start using Nautical Charts, the Nautical plugin should be enabled, as follows: *<Translate ios="true" ids="menu,plugins,product_title_nautical"/>*
-
-
-After enabling the Nautical plugin, you can download Nautical maps, select a Nautical maps style for the profile, and navigate in nautical details while navigating.
-
-![Nautical maps plugin iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_ios.png)
-
-</TabItem>
-
-</Tabs>
-
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Nautical map view plugin.  
+2. [Download](#download-nautical-maps) the Nautical maps.  
+3. [Enable and adjust](#nautical-map-style) the Nautical map style.   
 
 ## Download Nautical maps  
 

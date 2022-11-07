@@ -51,15 +51,19 @@ Main disadvantages:
 - No additional layers available like transport or POI on the map.
 - It is not possible to rotate map with readable text (text will be rotated with the map itself, thus will not be easily readable).
 
-## How to use
+## Setup
+
+To display Online maps, you need to make the following settings: 
+
+1. [Enable](../plugins/index.md#enable--disable) Online maps plugin in the Plugins section of the Main menu. 
+2. Make the necessary settings in [Map source](#displaying-online-map) section of the Configure map menu.  
+3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
+
+## Displaying online map
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-First, turn on the Online maps plugin in the <i>app menu-> Plugins-> Online maps</i>.
-
-![Online Maps](@site/static/img/plugins/online-maps/om3.jpg)
 
 To select an online map as your basic map, please go to <i>Configure map-> Map source</i> and select the preferable one from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of installs available. Also, you can define or edit your map source by clicking to <i>Define/Edit...</i>.
 
