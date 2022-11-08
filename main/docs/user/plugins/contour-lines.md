@@ -110,7 +110,9 @@ It is important to decide in what units, meters or feet, it is convenient for yo
 
 The download of some regions can be pretty large and consist of multiple GB. Download the smallest area that you need. For example, there is no full map for the whole of Canada, but there is a map for Ontario province and no full map for Nunavut province which is split into 8 regions with convenient download size.
 
-> **NOTE**: On some devices maps bigger than 2 GB might not be properly supported, please download smaller region version instead than.
+:::note
+On some devices maps bigger than 2 GB might not be properly supported, please download smaller region version instead than.
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -134,9 +136,12 @@ The download of some regions can be pretty large and consist of multiple GB. Dow
 
 If you have required maps downloaded, you can display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
 
-> Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
+:::note
 
->**NOTE**: If after loading and enabling the corresponding map you still do not see the changes, please try to restart the application.
+- Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
+- If after loading and enabling the corresponding map you still do not see the changes, please try to restart the application.
+
+:::
 
   
 ### Contour lines map
@@ -149,13 +154,11 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 <TabItem value="android" label="Android">
 
-
-![Terrain and Contour lines enable Android](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_android.png) 
-
-
 #### ENABLE
 
 Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
+
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
 #### APPEARANCE SETTINGS
 
@@ -166,18 +169,16 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>* - choice of density options for displaying Contour lines on the map: Low, Medium, High (the map loads slower if the density is High).
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-    
-![Terrain and Contour lines enable iOS](@site/static/img/plugins/contour-lines/contour_lines_terrain_enable_ios.png)
 
 #### ENABLE
 
 Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
+
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
 #### APPEARANCE SETTINGS
 
@@ -189,7 +190,6 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
 </TabItem>
 
@@ -204,11 +204,12 @@ Hillshade allows you to explore topography by illuminating it with hypothetical 
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">
-    
 
 #### ENABLE
 
 Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_and.png)
 
 
 #### APPEARANCE SETTINGS
@@ -221,16 +222,17 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
     - the maximum zoom level at which it should disappear.
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_and.png) 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-    
 #### ENABLE
 
 Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+
+
+![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_ios.png) 
+
 
 #### APPEARANCE SETTINGS
 
@@ -242,7 +244,6 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
     - the maximum zoom level at which it should disappear.
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_ios.png) 
 
 </TabItem>
 
@@ -262,7 +263,9 @@ The slope allows you to explore the steepness, or incline of a slope expressed a
 #### ENABLE
 
 Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
-    
+
+![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/slope_and.png)
+
 #### APPEARANCE SETTINGS
 
 - *<Translate android="true" ids="shared_string_terrain"/>* - toggle on/off Terrain on the map.
@@ -274,17 +277,16 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 - *<Translate android="true" ids="shared_string_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
 - *<Translate android="true" ids="welmode_download_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/slope_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
 #### ENABLE
 
 Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
 
+![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/slope_ios.png) 
     
 #### APPEARANCE SETTINGS
 
@@ -297,16 +299,19 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 - *<Translate ios="true" ids="map_settings_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
 - *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
-![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/slope_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
 
->**NOTE**: There is a colour legend that shows how each colour corresponds to an angle of deviation from the plane. 
+:::info LEGEND
+
+There is a colour legend that shows how each colour corresponds to an angle of deviation from the plane. 
 
 ![Slope colour legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
+
+:::
 
 ### Combine map types
 
