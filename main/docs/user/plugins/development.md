@@ -22,7 +22,7 @@ The OsmAnd development plugin is only necessary for *developers and experienced 
 
 ## Setup 
 
-To activate spesial features for developers and testers:
+To activate special features for developers and testers:
 
 1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
