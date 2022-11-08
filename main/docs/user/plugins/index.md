@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 Plugins greatly enhance OsmAnd functionality. Each of them is designed to solve a separate problem, such as trip recording, getting Wikipedia articles offline, putting additional terrain data or street-level views on the map etc.
-Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separate installed programs). 3rd party plugins work via OsmAnd API and can get access to OsmAnd data. 
+Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separately installed programs). 3rd party plugins work via OsmAnd API and can get access to OsmAnd data. 
 
 ## Configure plugin
 In order to get access to the specific functions, provided by a plugin, it must be [enabled first](#enable--disable). You need to [purchase](#purchase) some plugins before use. In some cases special map layer should be activated or user profile should be [configured](#plugin-settings).

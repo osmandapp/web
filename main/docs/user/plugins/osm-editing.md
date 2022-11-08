@@ -14,17 +14,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Make contributions to OpenStreetMap.
+[OpenStreetMap](http://openstreetmap.org/) is a community driven, global public domain mapping project.
+## Overview 
 
+The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community whose goal is to create a comprehensive map of the world and provide updated open source data to every user. With this plugin you can contribute to OSM by, for example, creating or modifying OSM POIs, commenting on OSM notes, adding tags, reporting mistakes on the map etc.  
+Just launch the OsmAnd app and update the information about different locations!
 
-<Translate android="true" ids="osm_editing"/> plugin allows you to make contributions to OpenStreetMap, a global community aimed at creating a comprehensive map of the world and providing up-to date open-source data to every user.
-
-Just launch OsmAnd Maps & Navigation app and update the information about different locations.
-
-Make OSM contributions like creating or modifying OSM POI objects, opening or commenting OSM notes, and contributing recorded GPX files in OsmAnd by supplying your username and password. [OpenStreetMap](http://openstreetmap.org/) is a community driven, global public domain mapping project.
-
-
-## Enable / Disable plugin
+## Setup
 
 To start editing maps insidе the OsmAnd app, you need to make the following settings: 
  

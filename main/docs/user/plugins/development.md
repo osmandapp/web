@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 12
 title:  OsmAnd development
 ---
 
@@ -22,45 +22,10 @@ The OsmAnd development plugin is only necessary for *developers and experienced 
 
 ## Setup 
 
-If you would like to test the OsmAnd app, 
+To activate spesial features for developers and testers:
 
 1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
-
-
-## Enable plugin
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-
-**Enable** OsmAnd development plugin:
-- Tap **OsmAnd development** in the list of plugins in: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development"/>*. Or tap the triple dot to the right of the option and select *Enable*.
-- Tap the "off" button, and it will change to "on".
-- Confirm your choice in **New plugin added** screen.
-
-![Development plugin Android](@site/static/img/plugins/development/development_plugin_android.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-**Enable** OsmAnd development plugin:
-- Tap **OsmAnd development** in the list of plugins in: *<Translate ios="true" ids="menu,plugins,product_title_development"/>*. Or tap the button to the right of the option and select *Ok*.
-- Tap the "Turn off" button, and it will change to "Ok".
-- Confirm your choice in **New plugin added** screen.
-
-![Development plugin iOS](@site/static/img/plugins/development/development_plugin_ios.png)
-
-
-</TabItem>
-
-</Tabs> 
-
 
 ## Plugin settings
 
