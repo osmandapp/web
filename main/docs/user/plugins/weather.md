@@ -38,16 +38,19 @@ To display weather on the OsmAnd map and on the central point of the screen, you
 
 ### Purchase and enable plugin
 
+Weather plugin is available for [Pro users](../purchases/) <ProFeature/>. Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu:
+
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_weather"/>* 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Weather plugin for **iOS** is available for [Pro users](../purchases/ios.md) <ProFeature/>. Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu: *<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
+*<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
 
 ![Weather plugin in iOS](@site/static/img/plugins/weather/weather_plugin_ios.png)
 
@@ -67,13 +70,25 @@ first select a profile and then on/off Weather option.
 
 <TabItem value="android" label="Android">
 
+For showing/hiding Weather layers, do the following:  
+1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*  
+2. Select a Profile, and look for the *<Translate android="true" ids="shared_string_show"/>* section in the menu.  
+3. Toggle *<Translate android="true" ids="shared_string_weather"/>* on.
+4. Choose needed info for displayed: <Translate android="true" ids="shared_string_layers"/> - *<Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>, <Translate android="true" ids="map_settings_weather_wind"/>, <Translate android="true" ids="map_settings_weather_cloud"/>, <Translate android="true" ids="map_settings_weather_precip"/>* and <Translate android="true" ids="shared_string_contours"/>: *<Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>*
 
+![Weather layer on Android](@site/static/img/plugins/weather/weather_layer_android.png) ![Weather layer on Android](@site/static/img/plugins/weather/weather_layer_1_android.png)
+
+5. For each _<Translate android="true" ids="shared_string_layers"/>_ and _<Translate android="true" ids="shared_string_contours"/>_ you can choose layer _<Translate android="true" ids="shared_string_transparency"/>_ and _<Translate android="true" ids="measurement_units"/>_: 
+
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_weather,map_settings_weather_precip"/>, <Translate android="true" ids="map_settings_weather_temp"/>*
+
+![Weather layer on Android](@site/static/img/plugins/weather/weather_layer_precip_android.png) ![Weather layer on Android](@site/static/img/plugins/weather/weather_layer_temper_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, to show/hide Wikipedia POIs, do the following:  
+For showing/hiding Weather layers, do the following:  
 1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
 2. Select a Profile, and look for the *<Translate ios="true" ids="map_settings_overunder"/>* section in the menu.  
 3. Toggle *<Translate ios="true" ids="product_title_weather"/>* on.
@@ -81,7 +96,7 @@ In the **iOS** version, to show/hide Wikipedia POIs, do the following:
 
 ![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_ios.png) ![Weather layer on iOS](@site/static/img/plugins/weather/weather_layer_1_ios.png)
 
-5. For each <Translate ios="true" ids="map_settings_weather_layers"/> and <Translate ios="true" ids="map_settings_weather_contours"/> you can choose layer <Translate ios="true" ids="map_settings_transp"/> and <Translate ios="true" ids="sett_units"/>: 
+5. For each _<Translate ios="true" ids="map_settings_weather_layers"/>_ and _<Translate ios="true" ids="map_settings_weather_contours"/>_ you can choose layer _<Translate ios="true" ids="map_settings_transp"/>_ and _<Translate ios="true" ids="sett_units"/>_: 
 
 *<Translate ios="true" ids="menu,configure_map,product_title_weather,map_settings_weather_precip"/>, <Translate ios="true" ids="map_settings_weather_temp"/>*
 
@@ -105,6 +120,43 @@ Adding the weather button on the map.
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+*???*
+_<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_toolbar"/>_
+
+**need to change the images below:**
+
+![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_ios.png) ![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_1_ios.png)
+
+
+A tap on the weather button opens the weather toolbar. 
+
+1. Where you can switch on/off weather layers: *<Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>, <Translate android="true" ids="map_settings_weather_wind"/>, <Translate android="true" ids="map_settings_weather_cloud"/>, <Translate android="true" ids="map_settings_weather_precip"/>*, and <Translate android="true" ids="shared_string_contours"/>: *<Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>*
+
+**need to change the images below:**
+
+![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_2_ios.png)
+
+2. Long tap on the weather layer button opens [settings menu](#display-weather-on-the-map) for this layer. 
+
+**need to change the images below:**
+
+![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_3_ios.png)
+
+3. Choosing data and time for forecast. 24h hourly forecast 7 days 
+
+**need to change the images below:**
+
+![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_4_ios.png) ![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_5_ios.png)
+
+
+4. Widgets show weather data for the central point: *<Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>, <Translate android="true" ids="map_settings_weather_wind"/>, <Translate android="true" ids="map_settings_weather_cloud"/>, <Translate android="true" ids="map_settings_weather_precip"/>*.
+
+Of course, you can change the time and date to have a point forecast.
+
+**need to change the images below:**
+
+![Weather toolbar on Android](@site/static/img/plugins/weather/weather_toolbar_6_ios.png)
 
 </TabItem>
 
@@ -146,8 +198,16 @@ Weather widgets show current weather data for the central point on the map:
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+_<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,shared_string_weather"/>_ _→ <Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>, <Translate android="true" ids="map_settings_weather_wind"/>, <Translate android="true" ids="map_settings_weather_cloud"/>, <Translate android="true" ids="map_settings_weather_precip"/>_
+
+![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png)
+
+Now, you can see current weather data for the central point on the map.
+
+![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)
+
 
 </TabItem>
 
@@ -167,6 +227,40 @@ Now, you can see current weather data for the central point on the map.
 
 ## Download Weather forecast
 
+Offline forecast is available per country. Duration up to 7 days. You need to select needed countries.
 
+OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
+
+For using forecast offline you need to download weather data:
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>* _→ choose a country → Weather forecast_
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,res_mapsres"/>* _→ choose a country → <Translate ios="true" ids="weather_forecast"/>_
+
+Here you see data info and update button:
+- _"<Translate ios="true" ids="shared_string_updated"/>"_ - shows the time of last update.
+- _"<Translate ios="true" ids="shared_string_next_update"/>"_ - shows the time of then next update.
+- _"<Translate ios="true" ids="shared_string_updates_size"/>"_ - shows size of all updates.
+- _"<Translate ios="true" ids="osmand_live_update_now"/>"_ button - allows to update weather data now.
+
+You can set parameters for data updating:
+- _"<Translate ios="true" ids="osmand_live_upd_frequency"/>"_ button - allows to choose update frequency: 12h, 24h, weekly. OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
+- _"<Translate ios="true" ids="osmand_live_wifi_only"/>"_ button - allows to use Wi-Fi connection for updating.
+- _"<Translate ios="true" ids="weather_remove_forecast"/>"_ button - allows to remove all worecast data for this region.
+
+
+![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
