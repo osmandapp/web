@@ -21,53 +21,24 @@ Plugin needs to be enabled only for Android and it's automatically enabled for i
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 Many new useful map sources you can find in [Anygis project](https://anygis.ru/Web/Html/Osmand_en).
 
-Main article is https://docs.osmand.net/docs/user/map/raster-maps.
-Main article to prepare maps https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Online Maps](@site/static/img/plugins/online-maps/om1.jpg)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Online Maps](@site/static/img/plugins/online-maps/om2.jpg)
-
-</TabItem>
+:::info
+Main article is https://docs.osmand.net/docs/user/map/raster-maps.  
+:::
+## Setup
  
-</Tabs>
+The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
+ 
+1. [Enable](../plugins/index.md#enable--disable) Online maps plugin in the Plugins section of the Main menu.
+2. Make the necessary settings in [Map source](#configure-map-source) section of the Configure map menu.  
+3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
 
-Online map formats of OsmAnd:
-- &nbsp;[SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md)
-- &nbsp;[Metainfo format](../../technical/osmand-file-formats/osmand-metainfo.md)
-
-
-Advantages:
-- To save traffic or storage space when offline map is not available. Usually for small areas, online tiles are more compact.
-- Display time is significantly faster, because maps are not rendered by the device.
-- It is possible to cache online maps with [MapCreator](../../versions/map-creator.md) or [SASPlanet](https://www.facebook.com/georsgis/videos/vb.332654947303300/2224656661106781/?type=2&theater)
-
-
-Main disadvantages:
-- It is reasonable to use only for small areas since the size of online tiles for a country could be more than several GB.
-- No switch between different styles of the map.
-- No additional layers available like transport or POI on the map.
-- It is not possible to rotate map with readable text (text will be rotated with the map itself, thus will not be easily readable).
-
-## How to use
+## Configure map source
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-First, turn on the Online maps plugin in the <i>app menu-> Plugins-> Online maps</i>.
-
-![Online Maps](@site/static/img/plugins/online-maps/om3.jpg)
-
-To select an online map as your basic map, please go to <i>Configure map-> Map source</i> and select the preferable one from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of installs available. Also, you can define or edit your map source by clicking to <i>Define/Edit...</i>.
+To select an online map as your basic map, go to <i>Configure map-> Map source</i> and choose the preferable one from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of installs available. Also, you can define or edit your map source by clicking to <i>Define/Edit...</i>.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om4.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om5.jpg)
 
@@ -94,7 +65,7 @@ Please see full video guide below:
 
 <TabItem value="ios" label="iOS">
 
-To select an online map as your basic map, please go to <i>Map-> Map type-> Online maps</i> and select the one you prefer from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of  available installs.
+To select an online map as your basic map, go to <i>Map-> Map type-> Online maps</i> and select the one you prefer from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of  available installs.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om12.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om13.jpg)
 
@@ -158,7 +129,11 @@ Please see full video guide below:
 
 ## How to prepare raster maps
 
-Despite the plugin being called <i>'Online Maps'</i>, you can use the maps without the internet, as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific <a href="http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip">Map Creator tool</a> developed by OsmAnd team.
+:::info
+Main article to prepare maps https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced
+:::
+
+Despite the plugin being called *Online Maps*, you can use the maps without internet connection as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) developed by OsmAnd team.
 
 Select the area you need to download, click on the Preload area, then set the smallest and the largest zoom levels you want to display and download the tiles.
 For <b>Android version</b> you can copy them to your phone's <i>osmand/tiles/*tile type*</i> folder. You'll also need to open the <i>Configure map-. Overlay map</i> and choose OsmAnd online tiles.

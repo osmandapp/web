@@ -17,7 +17,11 @@ Terrain information, such as **Contour lines**, **Hillshades** and **Slopes**, h
 
 ## Overview
 
-The Contour Lines plugin is a special feature of the OsmAnd app, that can be enabled/disabled as needed. Each provided by this plugin map is an independent layer that appears above or below the main map source when enabled, depending on the settings.
+Each provided by this plugin map is an independent layer that appears above or below the main map source when enabled, depending on the settings.
+
+:::tip NOTE
+The Contour Lines plugin is a paid feature of the OsmAnd app. 
+:::
 
 Contour lines consists of 3 map types:  
 
@@ -93,9 +97,9 @@ To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific ar
 
 </Tabs>
 
-:::note
-The download size of the contour lines maps of mountainous regions can be very large. That is why in OsmAnd maps of some countries and regions are divided into smaller parts.
-On some devices maps bigger than 2 GB might not be properly supported, so download the smallest area that you need. 
+:::caution NOTE
+The download size of the contour lines maps of mountainous regions can be very large. That is why in our app maps of some countries and regions are divided into smaller parts.  
+On older devices maps bigger than 2 GB might not be properly supported, so download the smallest area you need. 
 :::
 
 
@@ -129,14 +133,7 @@ Units of length measurement are not interchangeable, and if feet need to be swit
 
 When you have  downloaded required maps, you can display **Contour lines** / **Terrain**  through [Configure map](../map/configure-map-menu.md) section of Main menu.
 
-:::note
-
-- Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
-- If after loading and enabling the corresponding map you do not see the changes, restart the application.
-
-:::
-
-  
+ 
 ### Contour lines map
 
 Contour lines allow you to explore in which direction and how much the surface is sloped. You can customize displaying of [contour lines](../map/vector-maps.md#contour-lines): colour, line widths, density and minimum zoom level at which contour lines are visible.
@@ -234,6 +231,12 @@ To enable Hillshade layer go to [*<Translate ios="true" ids="menu,configure_map"
 
 </Tabs>  
 
+:::caution
+
+- Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
+- If after loading and enabling the corresponding map you do not see the changes, restart the application.
+
+:::
 
 ### Slope map
 
