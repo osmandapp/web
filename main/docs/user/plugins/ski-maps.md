@@ -47,7 +47,7 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 1. [Enable](../plugins/#enable--disable) Ski map view plugin.  
 2. Set the Winter and Ski map style for the required [profile](../personal/profiles.md).  
-3. If needed, [combine maps](#combine-maps.md).  
+3. If needed, [combine maps](#combine-maps).  
 
 
 ## Map Style
