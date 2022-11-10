@@ -182,8 +182,9 @@ This feature helps to keep and restore your OsmAnd data. There are two variants 
 
 <TabItem value="android" label="Android">
 
+
 :::note
-You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
+&nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/android.md#free-and-paid-features).
 :::
 
 Allows to keep your OsmAnd data in OsmAnd Cloud and restore your data from OsmAnd Cloud. It's a cross platform feature.
