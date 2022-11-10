@@ -15,12 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Terrain information, such as **Contour lines**, **Hillshades** and **Slopes**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
 
-![Contour lines and Terrain](@site/static/img/plugins/contour-lines/first_screen_1.png)
-
-
 ## Overview
 
-The Contour Lines plugin is a separate function that can be enabled/disabled as needed. Each [downloaded](../personal/maps.md#download-maps-maps) map in the plugin is an independent option that appears above or below the map source when enabled, depending on the settings.
+The Contour Lines plugin is a special feature of the OsmAnd app, that can be enabled/disabled as needed. Each provided by this plugin map is an independent layer that appears above or below the main map source when enabled, depending on the settings.
 
 Contour lines consists of 3 map types:  
 
@@ -28,92 +25,7 @@ Contour lines consists of 3 map types:
 - **Hillshade** - [raster](../map/raster-maps.md) map layer.
 - **Slopes** - [raster](../map/raster-maps.md) map layer.
 
-### Data source
-
-The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - are from measurements made by the Shuttle Radar Topography Mission (abbreviated *SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (abbreviated *ASTER*), which is a sensor onboard the Terra satellite and the primary imaging tool in NASA's Earth Observation System. ASTER is a joint effort between NASA, the Japanese Ministry of Economy, Trade, and Industry (abbreviated *METI*), and Japan Space Systems (also known as *J-spacesystems*).
-
-Full information is provided in the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).  
-
-## Setup 
-
-To display Contour lines and Terrain data on the map:
-
-1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Contour lines plugin in the Plugins section of the Main menu.
-2. [Download](#download-maps) contour lines and/or terrain maps.
-3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
-
-
-## Tutorial
-
-[Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg)  
-
-## Download Maps
-
-### How to download  
-
-To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific area, do the following:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-In the **Android** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:  
-- Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*     
-- Choose a country.
-- Download packages from sections:  
-    - The *<Translate android="true" ids="region_maps"/>* section provides available packages with maps for the entire country. If needed, download ones.  
-    - The *<Translate android="true" ids="regions"/>* section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.  
-
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_1.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_2.png)
-
-</TabItem>  
-
-<TabItem value="ios" label="iOS">
-
-In the **iOS** version, to download any of the available packages of Contour lines, Hillshade, and/or Slope, do the following:
-- Go to: *<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>*  
-- Choose a country.
-- Download packages from sections:  
-    - The *<Translate ios="true" ids="res_region_map"/>*  section provides available map packages for the entire country. Download them if necessary.  
-    - The *<Translate ios="true" ids="res_mapsres"/>* section lists the regions of the country. If you tap on a region, the map packs available for download for that region will appear.  
-
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
-
-</TabItem>
-
-</Tabs>
-
-
-### Choose Meters or Feet
-
-It is important to decide in what units, meters or feet, it is convenient for you to see [**Contour lines**](../map/vector-maps.md#contour-lines) to download the appropriate version of the Contour lines map. Units are not interchangeable, and if feet need to be switched into meters, or vice versa, the previous version of the Contour lines map must be removed, in order to download another version.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
-
-![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Contour lines download dialogue iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
-
-</TabItem>
-
-</Tabs>  
-
-
-
-### Consider country/region levels 
-
-The download of some regions can be pretty large and consist of multiple GB. Download the smallest area that you need. For example, there is no full map for the whole of Canada, but there is a map for Ontario province and no full map for Nunavut province which is split into 8 regions with convenient download size.
-
-:::note
-On some devices maps bigger than 2 GB might not be properly supported, please download smaller region version instead than.
-:::
-
+![Contour lines and Terrain](@site/static/img/plugins/contour-lines/first_screen_1.png)
 <Tabs groupId="operating-systems">
 
 
@@ -131,32 +43,110 @@ On some devices maps bigger than 2 GB might not be properly supported, please do
 
 </Tabs>
 
+:::info
+The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - was obtained as a result of measurements carried out by the Shuttle Radar Topography Mission (*SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (*ASTER*), the primary imaging tool in NASA's Earth Observation System.  
+For full information see [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L148).  
+:::
 
-## Show / Configure map view
+## Setup 
 
-If you have required maps downloaded, you can display **Contour lines** / **Terrain**  or change settings on the map you need to access [Configure map](../map/configure-map-menu.md).
+To display Contour lines and Terrain data on the map:
+
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Contour lines plugin in the Plugins section of the Main menu.
+2. [Download](#download-maps) contour lines and/or terrain maps.
+3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
+
+You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+
+## Download Maps
+
+### How to download  
+
+To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific area, do the following:
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+  
+- Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*     
+- Choose a country.
+- Download packages from sections:  
+    - The *<Translate android="true" ids="region_maps"/>* section provides available packages with maps for the entire country. If needed, download ones.  
+    - The *<Translate android="true" ids="regions"/>* section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.  
+
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_1.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_2.png)
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+- Go to: *<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>*  
+- Choose a country.
+- Download packages from sections:  
+    - The *<Translate ios="true" ids="res_region_map"/>*  section provides available map packages for the entire country. Download them if necessary.  
+    - The *<Translate ios="true" ids="res_mapsres"/>* section lists the regions of the country. If you tap on a region, the map packs available for download for that region will appear.  
+
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+:::note
+The download size of the contour lines maps of mountainous regions can be very large. That is why in OsmAnd maps of some countries and regions are divided into smaller parts.
+On some devices maps bigger than 2 GB might not be properly supported, so download the smallest area that you need. 
+:::
+
+
+### Meters or Feet
+
+It is important to decide in what units of length measurement (meters or feet) it is convenient for you to see [**Contour lines**](../map/vector-maps.md#contour-lines) to download the appropriate version of the Contour lines map. 
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
+
+![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Contour lines download dialogue iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
+
+</TabItem>
+
+</Tabs>  
+
+:::caution
+Units of length measurement are not interchangeable, and if feet need to be switched into meters, or vice versa, the previous version of the Contour lines map must be removed in order to download another version.
+:::
+
+
+## Configure map view
+
+When you have  downloaded required maps, you can display **Contour lines** / **Terrain**  through [Configure map](../map/configure-map-menu.md) section of Main menu.
 
 :::note
 
 - Only 1 option, **Hillshade** or **Slope**, for the **Terrain** can be enabled at a time.
-- If after loading and enabling the corresponding map you still do not see the changes, please try to restart the application.
+- If after loading and enabling the corresponding map you do not see the changes, restart the application.
 
 :::
 
   
 ### Contour lines map
 
-Contour lines allow you to explore in which direction and how much the surface is sloped by analyzing Contour lines that are close for steep areas and become more curved as the height increases. You can configure [contour lines](../map/vector-maps.md#contour-lines): colour, line widths, density and minimum zoom level at which contour lines are visible.
-
+Contour lines allow you to explore in which direction and how much the surface is sloped. You can customize displaying of [contour lines](../map/vector-maps.md#contour-lines): colour, line widths, density and minimum zoom level at which contour lines are visible.
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-#### ENABLE
-
-Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
+To enable contour lines layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
@@ -174,9 +164,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 <TabItem value="ios" label="iOS">
 
 
-#### ENABLE
-
-Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
+To enable contour lines layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
@@ -205,9 +193,7 @@ Hillshade allows you to explore topography by illuminating it with hypothetical 
 
 <TabItem value="android" label="Android">
 
-#### ENABLE
-
-Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+To enable Hillshade layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 ![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_and.png)
 
@@ -226,9 +212,8 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 
 <TabItem value="ios" label="iOS">
 
-#### ENABLE
 
-Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+To enable Hillshade layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 
 ![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_ios.png) 
@@ -252,17 +237,14 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 
 ### Slope map
 
-The slope allows you to explore the steepness, or incline of a slope expressed as an angle in the number of degrees of deviation from the plane, which corresponds to the vertical distance divided by the horizontal distance.  You can [configure slope visibility](../map/raster-maps.md#hillshade--slope): the transparency of the colours used to display the angle, and the zoom level at which the Slope map should be visible.  
+The slope map allows you to explore the steepness, or incline of a slope expressed in degrees of deviation from the plane.  You can [configure slope visibility](../map/raster-maps.md#hillshade--slope): the transparency of the colours used to display the angle, and the zoom level at which the Slope map should be visible.  
 
 
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">  
 
-
-#### ENABLE
-
-Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+To enable slope layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate android="true" ids="shared_string_show"/>* section, find *<Translate android="true" ids="shared_string_terrain"/>*, toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 ![Terrain menu slopes Android](@site/static/img/plugins/contour-lines/slope_and.png)
 
@@ -282,9 +264,7 @@ Go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../
 
 <TabItem value="ios" label="iOS">
 
-#### ENABLE
-
-Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
+To enable slope layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
 
 ![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/slope_ios.png) 
     
@@ -307,15 +287,15 @@ Go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-
 
 :::info LEGEND
 
-There is a colour legend that shows how each colour corresponds to an angle of deviation from the plane. 
+Each colour corresponds to an angle of deviation from the plane. 
 
 ![Slope colour legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
 
 :::
 
-### Combine map types
+### Combine layer types
 
-If you load different types of maps, *Contour lines*, *Hillshade*, *Slope*, you can combine them if necessary. For example, to estimate curvature, especially for a mountain range, the obvious choice to load would be a combination of Contour lines and Hillshade. And to estimate the steepness of a slope, points of equal height, you can display Contour lines and Slope maps together.  
+You can combine *Contour lines*, *Hillshade*, *Slope* layers if necessary. For example, to estimate curvature of a mountain range, the obvious choice would be a combination of Contour lines and Hillshade. To estimate the steepness of a slope or to find points of equal height, you can display Contour lines and Slope layers together.  
 
 <Tabs groupId="operating-systems">
 
