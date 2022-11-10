@@ -30,7 +30,7 @@ To display weather on the OsmAnd map and on the central point of the screen, you
 
 
 1. Purchase [OsmAnd Pro subscribers paid services](../purchases/) <ProFeature/> if necessary.  
-2. Enable the [Weather plugin](../plugins#weather.md) in the Plugins section of the Main menu.    
+2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.    
 3. Display the [Weather](#display-weather-on-the-map) on the map for the required profile in the Configure map menu.
 4. Enable Weather widgets.
 5. Enable the Weather toolbar.
