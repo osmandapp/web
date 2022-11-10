@@ -19,7 +19,7 @@ Plugin needs to be enabled only for Android and it's automatically enabled for i
 ## Overview
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
-Many new useful map sources you can find in [Anygis project](https://anygis.ru/Web/Html/Osmand_en).
+Many new useful map sources you can find in [Anygis project](https://anygis.ru/Web/Html/Osmand_en.md).
 
 Main article is https://docs.osmand.net/docs/user/map/raster-maps.
 Main article to prepare maps https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced
