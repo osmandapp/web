@@ -14,23 +14,30 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Make contributions to OpenStreetMap.
 
+## Overview
 
-<Translate android="true" ids="osm_editing"/> plugin allows you to make contributions to OpenStreetMap, a global community aimed at creating a comprehensive map of the world and providing up-to date open-source data to every user.
+<Translate android="true" ids="osm_editing"/> plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user.  
 
-Just launch OsmAnd Maps & Navigation app and update the information about different locations.
+Just launch the **OsmAnd Maps app** and update information about different locations.   
 
 Make OSM contributions like creating or modifying OSM POI objects, opening or commenting OSM notes, and contributing recorded GPX files in OsmAnd by supplying your username and password. [OpenStreetMap](http://openstreetmap.org/) is a community driven, global public domain mapping project.
 
 
-## Enable / Disable plugin
+## Setup
+
+To use OpenStreetMap editing, you need to make the following settings:    
+
+1. Enable [Plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
+
+## Enable plugin
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> 
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> *
 
 ![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
 
@@ -38,7 +45,7 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>
+*<Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>*
 
 ![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
 
@@ -52,7 +59,7 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android.png)
 
@@ -70,7 +77,7 @@ Next settings:
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
 

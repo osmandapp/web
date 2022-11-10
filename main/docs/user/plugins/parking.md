@@ -45,8 +45,9 @@ A parking point on the map and notification in the calendar is provided by the P
 ## Setup
 
 To use a parking point on the map, you need to make the following settings:    
-1. Enable the plugin.  
-2. Make sure that the Parking widget is added to the screen.  
+1. Enable [Plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+2. Set Parking position plugin for the required [profile](../personal/profiles.md).
+2. Make sure that the Parking widget is added to the [screen](https://docs.osmand.net/docs/user/widgets/configure-screen/#overview.md).  
 
 
 ### Enable plugin

@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-OsmAnd Online maps are an extensive addition to the already comprehensive base of OpenStreetMap data the application uses. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite, or hiking routes view and ending with quite specific data like fire hydrants' locations. You can also change the main source of the map from vector maps to online tiles.
+OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 Many new useful map sources you can find in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
 
 <Tabs groupId="operating-systems">
@@ -37,7 +37,7 @@ Many new useful map sources you can find in <a href="https://anygis.ru/Web/Html/
 </Tabs>
 
 Online map formats of OsmAnd:
-- &nbsp;[SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md)
 - &nbsp;[Metainfo format](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 
