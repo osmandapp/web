@@ -14,9 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-**Ski Map View** shows winter colors and downhill or cross-country ski trails, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.  
-
-
 
 ## Overview
 
@@ -46,60 +43,11 @@ Two profiles are shown below: the one on the left is for skiing and the one on t
 
 ## Setup
 
-<InfoIncompleteArticle/>
-
-
 The following setting makes the OsmAnd Ski Map appear on the screen:
 
-1. Enable [Ski map view plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+1. Enable [Ski map view plugin](../plugins#ski-map-view.md).  
 2. Set the Winter and Ski map style for the required [profile](../personal/profiles.md).  
-3. If needed, [combine maps](#combine-maps).  
-
-
-### Enable plugin  
-
-Enabling the Ski map view plugin is a quick way to set up OsmAnd Ski Map. The plugin can add a default Skiing profile. If it hasn't already been used, the default Skiing profile has Ski navigation, [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already configured for it. Otherwise, the profile will remember the settings from the last use.  
-
-To enable the **Ski Map view plugin**, do the following:
-
-1. Open the list of plugins in the menu.  
-2. Find the Ski map view plugin, and tap it.  
-3. You can enable or disable the Skiing profile in the pop-up window that opens. 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it.  
-
-To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, select it from the list of plugins opened by the following path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>*
-
-![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) 
-
-If the **<Translate android="true" ids="app_mode_skiing"/>** is required, leave the option enabled in the pop-up window and click **OK**. Tap **Turn off** if you don't want to add the plugin to this profile.  
-
-![Enabling Ski profile with plugin in Android](@site/static/img/plugins/ski-maps/and_profile_in_ski_plugin.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-The **<Translate ios="true" ids="product_title_skimap"/>** plugin can be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
-
-To enable the **<Translate ios="true" ids="product_title_skimap"/>** plugin, select it from the list of plugins opened by the following path:  
-*<Translate ios="true" ids="menu,plugins,product_title_skimap"/>*
-
-![Ski maps plugin iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_ios.png)
-
-If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leave the respective option toggled on in the opened popup window and tap **OK**. Otherwise, tap Turn off, and the plugin will be enabled without adding the profile. 
-
-![Enabling Ski profile with plugin in iOS](@site/static/img/plugins/ski-maps/ios_profile_in_ski_plugin.png)
-
-</TabItem>
-
-</Tabs>
+3. If needed, [combine maps](../plugins/ski-maps#combine-maps.md).  
 
 
 ## Map Style
