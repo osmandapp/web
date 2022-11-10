@@ -18,6 +18,24 @@ Detailed information about purchases on iOS: subscriptions vs in app, prices, pa
 You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
+<!--RELEASE 4.3
+
+## Difference between purchases
+
+- **Maps+** is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+- **OsmAnd Pro** is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+:::tip Note
+
+OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy it in App Store and you can use it for [Android versions](../purchases/android.md), [OsmAnd.net](http://osmand.net/map) and vice versa.
+
+:::
+
+-->
+
+
+
 ## Free and Paid features
 
 ⁂ - needed [purchase](#in-app-purchases).
@@ -26,7 +44,7 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 | :------------- | :------------- | :------------- | :------------- |
 | Ad-free access | ✔ | ✔ | ✔ |
 | Map downloads |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ⁂ | ∞ |
-| Maps update |  Once a month (with 15 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ⁂ - Once a month (with 15 days delay) | Every hour (no delay) | 
+| Maps update |  Once a month (with 2 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ⁂ - Once a month (with 2 days delay) | Every hour (no delay) | 
 | Topo data (Contour lines and Terrain) | - | ⁂ | ✔ |
 | Nautical depths | - | ⁂ | ✔ |
 | Travel guides (Wikipedia) | - | ⁂ | ✔ |
@@ -43,6 +61,99 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 | SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
 | Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
 | Export/Import app profile | ✔ | ✔ | ✔ |
+
+<!--RELEASE 4.3
+
+## Prices
+
+In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
+
+|    | OsmAnd Free   | In-app "Maps+" | Maps+ | OsmAnd Pro |
+| :------------- | :------------- | :------------- | :------------- | :------------- |
+| **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
+| **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
+| **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
+
+### Free and Paid features
+
+|    | OsmAnd Free   | OsmAnd Maps+ | OsmAnd Pro |
+| :------------- | :------------- | :------------- | :------------- |
+|    |    |_In-App and subscription_ | _Subscription_ |
+| Ad-free access | ✔ | ✔ | ✔ |
+| Map downloads |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ✔ | ✔ |
+| Maps update |  Once a month (with 2 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ✔ | ✔ | 
+| [Pro Features](#pro-features) | - | - | ✔ |
+| Topo data (Contour lines and Terrain) | - | ✔ | ✔ |
+| Nautical depths | - | ✔ | ✔ |
+| Travel guides (Wikipedia) | - | ✔ | ✔ |
+| Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
+| Offline instant search | ✔ | ✔ | ✔ |
+| Trip recording | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/auto-car.md) | ✔ | ✔ | ✔ |
+| Export GPX tracks | ✔ | ✔ | ✔ |
+| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | - | - | ✔ |
+| Import GPX/KML tracks | ✔ | ✔ | ✔ |
+| "Plan a route" tool | ✔ | ✔ | ✔ |
+| "Map markers" tool | ✔ | ✔ | ✔ |
+| Online map sources | ✔ | ✔ | ✔ |
+| SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
+| Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
+| Export/Import app profile | ✔ | ✔ | ✔ |
+
+### Pro Features
+
+Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](#prices).
+
+At this moment, Pro subscription has next features:
+
+|  Pro Feature  | Description   |
+| :------------- | :------------- |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
+| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+| [Weahter plugin](../plugins/weather.md) | weather forecast 24h per 7 days (online and offline)|
+
+
+### How to buy
+
+Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
+
+**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+
+_<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
+
+or 
+
+_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
+
+![Pro Plan](@site/static/img/purchases/pro.png)
+
+
+**Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
+
+_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
+
+![Maps+ Plan](@site/static/img/purchases/maps.png)
+
+
+## Legacy subscriptions (prior 4.0)
+
+New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and techncically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until the user unsubscribes (the price for them might change in the future).
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## In-App Purchases
 
