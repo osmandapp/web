@@ -100,18 +100,18 @@ Having Wikipedia on your trip helps you learn more about the places you visit. I
 <TabItem value="android" label="Android">
 
 To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia"/>*
 
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png)
+![Enable plugins Android](@site/static/img/plugins/plugin-wiki-enable.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/>
+*<Translate ios="true" ids="menu,plugins,res_wiki"/>*
 
-![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png)
+![Enable plugins iOS](@site/static/img/plugins/plugin-wiki-enable-ios.png)
 
 </TabItem>
 
@@ -119,7 +119,28 @@ To enable the Wikipedia plugin, select it from the list of plugins opened by the
 
 ### [Online maps](./online-map.md)
 
-Online layers.
+OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source.  
+
+#### Enable plugin
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_online_maps"/>*
+
+![Enable plugins Android](@site/static/img/plugins/plugin-onlinemaps-enable.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Plugin needs to be enabled only for Android and it's automatically enabled for iOS.
+
+</TabItem>
+
+</Tabs>
 
 ### [Trip recording](./trip-recording.md)
 

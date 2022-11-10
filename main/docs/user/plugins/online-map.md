@@ -28,7 +28,7 @@ Main article is https://docs.osmand.net/docs/user/map/raster-maps.
  
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
  
-1. [Enable](../plugins/index.md#enable--disable) Online maps plugin in the Plugins section of the Main menu.
+1. [Enable](../plugins#online-maps.md) Online maps plugin in the Plugins section of the Main menu.
 2. Make the necessary settings in [Map source](#configure-map-source) section of the Configure map menu.  
 3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
 
