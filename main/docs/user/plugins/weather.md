@@ -29,34 +29,11 @@ The Weather plugin is used for showing info about current weather info and forec
 To display weather on the OsmAnd map and on the central point of the screen, you need to make the following settings: 
 
 
-1. Purchase OsmAnd Pro subscribers paid services if necessary <ProFeature/>.  
-2. Enable the [Weather plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.    
-3. Display the [Weather](#enable-layer) on the map for the required profile in the Configure map menu.
-4. Enable Weather widgets..
-5. Enable the Weather toolbar..
-
-
-### Purchase and enable plugin
-
-Weather plugin is available for [Pro users](../purchases/) <ProFeature/>. Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_weather"/>* 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
-
-![Weather plugin in iOS](@site/static/img/plugins/weather/weather_plugin_ios.png)
-
-</TabItem>
-
-</Tabs>
+1. Purchase [OsmAnd Pro subscribers paid services](../purchases/) <ProFeature/> if necessary.  
+2. Enable the [Weather plugin](../plugins#weather.md) in the Plugins section of the Main menu.    
+3. Display the [Weather](#display-weather-on-the-map) on the map for the required profile in the Configure map menu.
+4. Enable Weather widgets.
+5. Enable the Weather toolbar.
 
 
 ## Display Weather on the map

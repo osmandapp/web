@@ -28,30 +28,9 @@ Make OSM contributions like creating or modifying OSM POI objects, opening or co
 
 To use OpenStreetMap editing, you need to make the following settings:    
 
-1. Enable [Plugin](../start-with/first-steps.md#how-to-configure-plugins).  
+1. Enable [Plugin](../plugins#openstreetmap-editing).  
 2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
 
-## Enable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> *
-
-![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>*
-
-![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 ### Plugin settings
 

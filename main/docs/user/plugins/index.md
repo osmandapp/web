@@ -91,7 +91,31 @@ Here will be description of specific plugin settings.
 
 ### [Wikipedia](./wikipedia.md)
 
-Having Wikipedia with you on a trip helps to learn more about the places you are visiting. It is available offline, and shows the Wikipedia articles in relation to the points of interest directly on the map.
+Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.
+
+#### Enable plugin
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>*
+
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/>
+
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 ### [Online maps](./online-map.md)
 
@@ -115,7 +139,7 @@ Ski Map View shows winter colors and pistes downhill or cross-country, as well a
 
 #### Enable plugin
 
-Enabling the Ski map view plugin is a quick way to set up OsmAnd Ski Map. The plugin can add a default Skiing profile. If it hasn't already been used, the default Skiing profile has Ski navigation, [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already configured for it. Otherwise, the profile will remember the settings from the last use.  
+The plugin can add a default Skiing profile. If it hasn't already been used, the default Skiing profile has Ski navigation, [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already configured for it. Otherwise, the profile will remember the settings from the last use.  
 
 To enable the **Ski Map view plugin**, do the following:
 
@@ -166,11 +190,38 @@ Audio/video notes for future reference in case of need, or just to remember the 
 
 ### [Parking position](./parking.md)
 
-Setting a point on the map of where your car is left in the street, and a calendar notice of when the parking time started to count down, will comfort your efforts in keeping track of the time and the car location.
+Set a point on the map where your car is left on the street and notify your calendar when parking time starts. This will make it easier for you to track the time and location of your car.
+
+#### Enable plugin
+
+
 
 ### [OpenStreetMap editing](./osm-editing.md)
 
-Make contributions to OpenStreetMap.
+<Translate android="true" ids="osm_editing"/> plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user. 
+
+#### Enable plugin
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> *
+
+![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>*
+
+![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
@@ -193,6 +244,30 @@ Connect external sensors to display data in OsmAnd.
 ### [Weather](./weather.md)
 
 24h hourly forecast 7 days ahead on the map.
+
+#### Purchase and enable plugin
+
+Weather plugin is available for [Pro users](../purchases/). Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu:
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_weather"/>* 
+
+![Weather plugin in Android](@site/static/img/plugins/weather-and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
+
+![Weather plugin in iOS](@site/static/img/plugins/weather/weather_plugin_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 ### [OsmAnd development](./development.md)
 
