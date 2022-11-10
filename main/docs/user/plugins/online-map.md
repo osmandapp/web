@@ -15,6 +15,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 
+## Overview
+
 OsmAnd Online maps are an extensive addition to the already comprehensive base of OpenStreetMap data the application uses. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite, or hiking routes view and ending with quite specific data like fire hydrants' locations. You can also change the main source of the map from vector maps to online tiles.
 Many new useful map sources you can find in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
 
@@ -51,13 +53,13 @@ Main disadvantages:
 - No additional layers available like transport or POI on the map.
 - It is not possible to rotate map with readable text (text will be rotated with the map itself, thus will not be easily readable).
 
-## How to use
+## Setup
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-First, turn on the Online maps plugin in the <i>app menu-> Plugins-> Online maps</i>.
+First, turn on the Online maps plugin in the app menu-> Plugins-> Online maps.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om3.jpg)
 
