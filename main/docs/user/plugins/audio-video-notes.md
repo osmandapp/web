@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title:  Audio/video notes
 ---
 
@@ -29,47 +29,17 @@ At the same time, all created audio/video notes make up a Recording layer that i
 
 ## Setup
 
+<InfoIncompleteArticle/>
+
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
+
 
 1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
 3. If needed, configure [the recording settings](#open-settings) per profile.  
 
-### Add Configure widget
 
-The <Translate android="true" ids="map_widget_av_notes"/> widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
-
-![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
-
-Adding the widget to the screen is needed when you would rather skip looking for a geolocation on the map and by default link the notes to your current position. To add, and/or configure the widget, do the following:
-
-1. Open <Translate android="true" ids="shared_string_menu,map_widget_config"/>
-
-2. Select  **<Translate android="true" ids="map_widget_left"/>** or **<Translate android="true" ids="map_widget_right"/>**.
-
-3. Tap **<Translate android="true" ids="map_widget_av_notes"/>** and the context menu of the widget opens. 
-
-4. Select an option you prefer to do by default by tapping the widget:
-
-    - **<Translate android="true" ids="av_def_action_choose"/>** - to open a choice of options;
-
-    - **<Translate android="true" ids="av_def_action_audio"/>** - to immediately start to record an audio message;
-
-    - **<Translate android="true" ids="av_def_action_video"/>** - to immediately start to record a video;
-
-    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo.  
-
-
-![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
-
-<!--5. Make sure <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget is displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
-
-
-![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)-->
-
-
-
-### Open settings
+### Plugin settings
 
 For every profile, it is possible to configure the recording settings. There are two options of how to open the <Translate android="true" ids="audionotes_plugin_name"/> settings: 
 
@@ -93,12 +63,6 @@ From the [settings](../start-with/first-steps.md#how-to-manage-your-settings) of
 
 ![Opening Audio video plugin settings](@site/static/img/plugins/audio-video-notes/settings_avplugin_per_profile2.png) 
 
-
-
-
-### Establish options 
-
-The way the Audio/video recording will work can be determined with the settings described below. Establish the parameters as needed. 
 
 ![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_photo_android.png)  ![Audio video plugin settings Video Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_video_android.png)
 
@@ -225,6 +189,39 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 - **<Translate android="true" ids="shared_string_delete"/>** - to delete the note.
 
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+
+## Recording Widget
+
+The <Translate android="true" ids="map_widget_av_notes"/> widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
+
+![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+
+Adding the widget to the screen is needed when you would rather skip looking for a geolocation on the map and by default link the notes to your current position. To add, and/or configure the widget, do the following:
+
+1. Open <Translate android="true" ids="shared_string_menu,map_widget_config"/>
+
+2. Select  **<Translate android="true" ids="map_widget_left"/>** or **<Translate android="true" ids="map_widget_right"/>**.
+
+3. Tap **<Translate android="true" ids="map_widget_av_notes"/>** and the context menu of the widget opens. 
+
+4. Select an option you prefer to do by default by tapping the widget:
+
+    - **<Translate android="true" ids="av_def_action_choose"/>** - to open a choice of options;
+
+    - **<Translate android="true" ids="av_def_action_audio"/>** - to immediately start to record an audio message;
+
+    - **<Translate android="true" ids="av_def_action_video"/>** - to immediately start to record a video;
+
+    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo.  
+
+
+![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
+
+<!--5. Make sure <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget is displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
+
+
+![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)-->
+
 
 ## Manage multiple notes
 

@@ -41,41 +41,10 @@ Trip recording plugin is used to create new tracks, display recorded tracks on t
 To start recording tracks, you need to make the following settings: 
 
 1. Enable the [Trip recording plugin](../start-with/first-steps.md#how-to-configure-plugins).  
-2. Configure Trip recording for the required [profile](../personal/profiles.md).  
+2. Configure [Trip recording](#profile-settings) settings for each [profile](./index.md#plugin-settings).  
 3. If needed, add [Trip recording widgets](#widgets) to the screen.   
 
 After setup is complete, you can make new records, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
-
-
-
-### Enable plugin
-
-It is possible to do with [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widget), added to the app by Trip recording plugin. To enable Trip recording plugin, open [Plugins](../start-with/first-steps.md#how-to-configure-plugins) list and toggle the respective option. 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-To enable, tap the triple dots at the right side of the option and select **Enable**: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,map_widget_monitoring"/>* 
-
-![Enable / Disable Plugin Android](@site/static/img/plugins/trip-recording/app_sett_plug_andr_1.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-To enable, click on the checkbox: *<Translate ios="true" ids="menu,plugins,track_recording"/>*  
-
-![Enable / Disable Plugin iOS](@site/static/img/plugins/trip-recording/enable_pl_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
-
-
 
 ## Record new track 
 

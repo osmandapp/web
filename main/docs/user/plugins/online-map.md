@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 2
 title:  Online maps
 ---
 
@@ -14,13 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+Plugin needs to be enabled only for Android and it's automatically enabled for iOS.
 
 ## Overview
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 Many new useful map sources you can find in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
 
-<Tabs groupId="operating-systems">
+Main article is https://docs.osmand.net/docs/user/map/raster-maps.
+Main article to prepare maps https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced
 
 <TabItem value="android" label="Android">
 
@@ -37,7 +39,7 @@ Many new useful map sources you can find in <a href="https://anygis.ru/Web/Html/
 </Tabs>
 
 Online map formats of OsmAnd:
-- [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md)
+- &nbsp;[SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md)
 - &nbsp;[Metainfo format](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 
@@ -53,13 +55,13 @@ Main disadvantages:
 - No additional layers available like transport or POI on the map.
 - It is not possible to rotate map with readable text (text will be rotated with the map itself, thus will not be easily readable).
 
-## Setup
+## How to use
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-First, turn on the Online maps plugin in the app menu-> Plugins-> Online maps.
+First, turn on the Online maps plugin in the <i>app menu-> Plugins-> Online maps</i>.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om3.jpg)
 
@@ -172,14 +174,3 @@ Online tiles can be helpful when you need just a small section of the map or a s
 
 
 
-## Mobile Atlas Creator
-
-You can also create your own map tiles using the Mobile Atlas Creator (MOBAC) software. It is a free open-source map creating tool you can use to make offline tile maps from different sources. Just <a href="http://mobac.sourceforge.net/">download</a> the program, then run it.  In the format choosing dialogue pick OsmAnd SQ Lite or OsmAnd tile storage. SQ Lite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQ Lite often happens to be more convenient as it is stored in one place and occupies less storage space. Select an area, then choose an 'atlas' option, press Add selection and then click Load to save your tiles. You can also pick the map source, zoom levels and other features before loading. How to add SQ Lite file in Android and iOS version of OsmAnd you can read in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
-
-![Online Maps](@site/static/img/plugins/online-maps/mobac.jpg)
-
-
-## SASPlanet
-
-Of course, you can use the tool - SASPlanet. There are many offline tile maps from different sources in SASPlanet. Just <a href="http://www.sasgis.org/forum/viewtopic.php?f=52&t=2441">download</a> the program, then run it. How to work with SASPlanet you can look <a href="https://www.youtube.com/watch?v=-0h_Vp-OCTU">here</a>.
-In the format choosing dialogue pick OsmAnd SQ Lite or OsmAnd tile storage. SQ Lite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQ Lite often happens to be more convenient as it is stored in one place and occupies less storage space. Select an area, then choose an 'atlas' option, press Add selection and then click Load to save your tiles. You can also pick the map source, zoom levels and other features before loading. How to add SQ Lite file in Android and iOS version of OsmAnd you can read in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
