@@ -29,19 +29,18 @@ Contour lines consists of 3 map types:
 - **Hillshade** - [raster](../map/raster-maps.md) map layer.
 - **Slopes** - [raster](../map/raster-maps.md) map layer.
 
-![Contour lines and Terrain](@site/static/img/plugins/contour-lines/first_screen_1.png)
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
-![Hillshade over Sicily in Android](@site/static/img/plugins/contour-lines/2_hillshade_only.png) ![Slope over Sicily in Androis](@site/static/img/plugins/contour-lines/3_slope_only.png)
+![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png)
 
-</TabItem>  
+</TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Hillshade over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_hillshade1.png) ![Slope over Sicily in iOS](@site/static/img/plugins/contour-lines/ios_slope1.png)
+![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) 
+
 
 </TabItem>
 
