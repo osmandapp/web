@@ -75,7 +75,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleShowDialog}>Close</Button>
+                <Button onClick={toggleShowDialog}>Cancel</Button>
                 <Button onClick={() => deleteCurrentTrack()}>
                     Delete</Button>
             </DialogActions>

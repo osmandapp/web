@@ -22,6 +22,7 @@ export default function TracksMenu() {
 
     //get gpx files and create groups
     useEffect(() => {
+        let tg = [];
         let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
             ctx.listFiles.uniqueFiles).filter((item) => {
             return (item.type === 'gpx' || item.type === 'GPX')
@@ -33,27 +34,27 @@ export default function TracksMenu() {
         setGpxFiles(files);
 
         files.forEach(f => {
-            let group = tracksGroups.find(g => {
+            let group = tg.find(g => {
                 return g.name === f.folder;
             })
             if (group) {
                 group.files.push(f);
             } else {
-                tracksGroups.push({name: f.folder, files: [f]});
+                tg.push({name: f.folder, files: [f]});
             }
         });
 
-        if (tracksGroups.length > 0) {
-            let defGroup = tracksGroups.find(g => {
+        if (tg.length > 0) {
+            let defGroup = tg.find(g => {
                 return g.name === 'Tracks';
             })
             if (defGroup) {
-                tracksGroups.splice(tracksGroups.indexOf(defGroup), 1);
-                tracksGroups.unshift(defGroup);
+                tg.splice(tg.indexOf(defGroup), 1);
+                tg.unshift(defGroup);
             }
         }
-        ctx.gpxFiles.trackGroups = tracksGroups;
-        setTracksGroups(tracksGroups);
+        ctx.gpxFiles.trackGroups = tg;
+        setTracksGroups(tg);
 
     }, [ctx.listFiles, ctx.setListFiles]);
 

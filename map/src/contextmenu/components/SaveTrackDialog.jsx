@@ -2,12 +2,13 @@ import React, {useContext, useState} from 'react';
 import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import {Button, FormControl, InputLabel, MenuItem, NativeSelect, TextField} from "@mui/material";
+import {Button, FormControl, InputLabel, NativeSelect, TextField} from "@mui/material";
 import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
 import {post} from "axios";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
+import Utils from "../../util/Utils";
 
 export default function SaveTrackDialog() {
 
@@ -35,7 +36,7 @@ export default function SaveTrackDialog() {
                 let file = new FormData();
                 file.append('file', oMyBlob, ctx.selectedGpxFile.name);
 
-                await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
+                const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
                     {
                         params: {
                             name: folder + "/" + fileName + ".gpx",
@@ -43,6 +44,11 @@ export default function SaveTrackDialog() {
                         }
                     }
                 );
+                if (respUpload) {
+                    const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+                    const res = await respGetFiles.json();
+                    ctx.setListFiles(res);
+                }
             }
         }
     }
@@ -75,7 +81,6 @@ export default function SaveTrackDialog() {
                 <FormControl fullWidth>
                     <InputLabel variant="standard" htmlFor="uncontrolled-native">Select group</InputLabel>
                     <NativeSelect
-                        defaultValue={"Tracks"}
                         value={folder}
                         onChange={(e) =>handleChange(e)}
                     >
@@ -104,7 +109,7 @@ export default function SaveTrackDialog() {
                 </TextField>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleShowDialog}>Close</Button>
+                <Button onClick={toggleShowDialog}>Cancel</Button>
                 <Button onClick={() => saveTrack()}>
                     Save</Button>
             </DialogActions>

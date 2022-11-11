@@ -75,9 +75,10 @@ const PointsTab = ({width}) => {
     async function insertPointToTrack(currentTrack, index, point) {
         let lengthSum = 0;
         for (let track of currentTrack.tracks) {
+            track.points.splice(index, 0, point);
             let firstPoint = index === 0 || index === lengthSum;
             let lastPoint = index === (track.points.length - 1 + lengthSum);
-            for (let i = 0; i <= track.points.length - 1; i++) {
+            for (let i = 0; i <= track.points.length; i++) {
                 if (i + lengthSum === index && point) {
                     if (firstPoint) {
                         if (track.points[i + 1].geometry) {
@@ -105,7 +106,6 @@ const PointsTab = ({width}) => {
                             }
                         }
                     }
-                    track.points.splice(index, 0, point);
                     break;
                 }
             }
