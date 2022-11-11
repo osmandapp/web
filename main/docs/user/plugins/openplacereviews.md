@@ -14,10 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+The plugin helps you contribute to the Open Place Reviews project.
+
 ## Overview  
 
-
-OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews project](https://openplacereviews.org/).  
+[Open Place Review](https://openplacereviews.org/) is a project that helps users share information with other users about different places, such as leaving reviews about restaurants, hotels, art galleries, attractions, and other places of that type. And the OpenPlaceReviews plugin lets you contribute to this community.  
 
 ## Setup  
 
