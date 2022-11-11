@@ -14,6 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
 ## Overview
 
@@ -45,7 +46,7 @@ Two profiles are shown below: the one on the left is for skiing and the one on t
 
 The following setting makes the OsmAnd Ski Map appear on the screen:
 
-1. Enable [Ski map view plugin](../plugins#ski-map-view.md).  
+1. Enable [Ski map view plugin](../plugins/index.md#enable--disable).  
 2. Set the Winter and Ski map style for the required [profile](../personal/profiles.md).  
 3. If needed, [combine maps](#combine-maps).  
 

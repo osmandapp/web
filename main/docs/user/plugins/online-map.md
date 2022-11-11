@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Plugin needs to be enabled only for Android and it's automatically enabled for iOS.
+Plugin needs to be enabled only for Android and it's automatically enabled for iOS. It helps you to add to the map the necessary information, both vector type and raster.  
 
 ## Overview
 

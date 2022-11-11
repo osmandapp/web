@@ -14,11 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Trip recording plugin is a special tool that is designed to record your routs, movements and trainings. Afterwards you can analyze your data, such as speed, ascents, descents or terrain particularities of the trip. Recordings can be reused, modified, updated and shared with friends.
+Trip Recorder plugin is a special tool designed to record your routes, movements, and workouts. You can reuse, modify, update, and share your recordings with friends.
 
 ## Overview
 
-Trip recording plugin is used to create new tracks, display recorded tracks on the map and work with existing records. The route can be recorded while navigating or simply on the go.
+Trip recording plugin is used to create new tracks, display recorded tracks on the map and work with existing records. It helps you analyze data such as speed, ascents, descents, or terrain features during your trip. The route can be recorded while navigating or simply on the go.
 
 <Tabs groupId="operating-systems">
 
