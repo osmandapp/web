@@ -17,8 +17,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Overview  
 
 
-OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews project](https://openplacereviews.org/).  
+OpenPlaceReviews plugin allows you to make contributions to [OpenPlaceReviews project](https://openplacereviews.org/). 
 
+:::tip NOTE
+This OsmAnd feature works properly only on Android devices
+:::
 ## Setup  
 
 If you want to leave a review about some place of interest, you need to make the following settings: 

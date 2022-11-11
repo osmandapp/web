@@ -55,13 +55,27 @@ Detailed information about the purchase of the application can be found in the s
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
-| Feature Group | Plugin  | How to configure |
-|---------------|---------|------------------|
-| Widgets | Recording ...     | Configure Screen |
-| Layer | ...     | Configure Map |
-| Context menu Actions | .... |   |
-
 🤖 - only for Android version.
+
+| Plugin name |Features |
+|:------------|:-------|
+|[Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
+|[Online maps](#online-maps)|[Map layer](../plugins/online-map.md#configure-map-source) |
+|[Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
+|[Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+|[Nautical map view](#nautical-map-view)| [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
+|[Ski map view](#ski-map-view)| [Map style](../plugins/ski-maps.md#set-winter-style) , Profile |
+|🤖 [Audio/video notes](#audiovideo-notes)| [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
+|[Parking position](#parking-position)| [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
+|🤖 [OpenPlaceReviews](#openplacereviews)| [Context menu](../plugins/openplacereviews.md#how-to-add) |
+|[Mapillary](#mapillary)| [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
+|🤖 [Accessibility](#accessibility)| - |
+|🤖 [External Sensors](#external-sensors)| Widget, Profile |
+|[Weather](../plugins/weather.md)| [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets) |
+|[OsmAnd development](#osmand-development)| - |
+|🤖 [OsmAnd Tracker](#osmand-tracker)| - |
+
 
 | Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
 |:--------|:-------|:-------|:-------|:-------|
