@@ -55,32 +55,26 @@ Detailed information about the purchase of the application can be found in the s
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
-| Feature Group | Plugin  | How to configure |
-|---------------|---------|------------------|
-| Widgets | Recording ...     | Configure Screen |
-| Layer | ...     | Configure Map |
-| Context menu Actions | .... |   |
-
 🤖 - only for Android version.
 
-| Plugin name |[Map layer](../map) |Context menu|[Widget](../widgets)|[Profile](../personal/profiles.md) |
-|:--------|:-------|:-------|:-------|:-------|
-|[Online maps](#online-maps)| ✔ | ✔ | - |  ✔ |
-|[Contour lines and Terrain](#contour-lines-and-terrain) | ✔ | - | - |  ✔ |
-|[Wikipedia](#wikipedia) | ✔ | ✔ | - |  ✔ |
-|[Trip recording](#trip-recording) | ✔ | ✔ | ✔ |  ✔ |
-|[Parking position](#parking-position)| ✔ | ✔ | ✔ |  ✔ |
-|[Audio/video notes](#audiovideo-notes)| ✔ | ✔ | ✔ |  ✔ |
-|[Ski map view](#ski-map-view)| ✔ | - | - |  ✔ |
-|[Nautical map view](#nautical-map-view)| ✔ | - | - |  ✔ |
-|[OpenStreetMap editing](#openstreetmap-editing)| ✔ | ✔ | - |  ✔ |
-|[Mapillary](#mapillary)| ✔ | ✔ | ✔ | - |  ✔ |
-|[OpenPlaceReviews](#openplacereviews)| ✔ | ✔ | - |  ✔ |
-|[Weather](../plugins/weather.md)| ✔ | ✔ | ✔ |  ✔ |
-|🤖 External Sensors| - | - | ✔ |  ✔ |
-|🤖 [OsmAnd Tracker](#osmand-tracker)| ✔ | - | ✔ | ✔ |
-|[OsmAnd development](#osmand-development)| - | - | ✔ | ✔ |
-|🤖 [Accessibility](#accessibility)| - | - | - | - |
+| Plugin name |Features |
+|:------------|:-------|
+|[Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
+|[Online maps](#online-maps)|[Map layer](../plugins/online-map.md#configure-map-source) |
+|[Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
+|[Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+|[Nautical map view](#nautical-map-view)| [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
+|[Ski map view](#ski-map-view)| [Map style](../plugins/ski-maps.md#set-winter-style) , Profile |
+|🤖 [Audio/video notes](#audiovideo-notes)| [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
+|[Parking position](#parking-position)| [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
+|🤖 [OpenPlaceReviews](#openplacereviews)| [Context menu](../plugins/openplacereviews.md#how-to-add) |
+|[Mapillary](#mapillary)| [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
+|🤖 [Accessibility](#accessibility)| - |
+|🤖 [External Sensors](#external-sensors)| Widget, Profile |
+|[Weather](../plugins/weather.md)| [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets) |
+|[OsmAnd development](#osmand-development)| - |
+|🤖 [OsmAnd Tracker](#osmand-tracker)| - |
 
 
 ### Plugin Settings
@@ -93,54 +87,9 @@ Here will be description of specific plugin settings.
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.
 
-#### Enable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia"/>*
-
-![Enable plugins Android](@site/static/img/plugins/plugin-wiki-enable.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
-*<Translate ios="true" ids="menu,plugins,res_wiki"/>*
-
-![Enable plugins iOS](@site/static/img/plugins/plugin-wiki-enable-ios.png)
-
-</TabItem>
-
-</Tabs>
-
 ### [Online maps](./online-map.md)
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source.  
-
-#### Enable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-To enable the Wikipedia plugin, select it from the list of plugins opened by the following path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_online_maps"/>*
-
-![Enable plugins Android](@site/static/img/plugins/plugin-onlinemaps-enable.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Plugin needs to be enabled only for Android and it's automatically enabled for iOS.
-
-</TabItem>
-
-</Tabs>
 
 ### [Trip recording](./trip-recording.md)
 
@@ -158,53 +107,6 @@ Nautical map provides detailed graphical representation of oceans, seas, coastal
 
 Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
 
-#### Enable plugin
-
-The plugin can add a default Skiing profile. If it hasn't already been used, the default Skiing profile has Ski navigation, [Winter and ski map style](../map/vector-maps.md#winter-and-ski) already configured for it. Otherwise, the profile will remember the settings from the last use.  
-
-To enable the **Ski Map view plugin**, do the following:
-
-1. Open the list of plugins in the menu.  
-2. Find the Ski map view plugin, and tap it.  
-3. You can enable or disable the Skiing profile in the pop-up window that opens. 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-The **<Translate android="true" ids="plugin_ski_name"/>** plugin can  be enabled together with the **<Translate android="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it.  
-
-To enable the **<Translate android="true" ids="plugin_ski_name"/>** plugin, select it from the list of plugins opened by the following path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ski_name"/>*
-
-![Ski maps plugin Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_android.png) 
-
-If the **<Translate android="true" ids="app_mode_skiing"/>** is required, leave the option enabled in the pop-up window and click **OK**. Tap **Turn off** if you don't want to add the plugin to this profile.  
-
-![Enabling Ski profile with plugin in Android](@site/static/img/plugins/ski-maps/and_profile_in_ski_plugin.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-The **<Translate ios="true" ids="product_title_skimap"/>** plugin can be enabled together with the **<Translate ios="true" ids="app_mode_skiing"/>** profile, which on the first use, has the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) established for it. 
-
-To enable the **<Translate ios="true" ids="product_title_skimap"/>** plugin, select it from the list of plugins opened by the following path:  
-*<Translate ios="true" ids="menu,plugins,product_title_skimap"/>*
-
-![Ski maps plugin iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_ios.png)
-
-If the **<Translate ios="true" ids="app_mode_skiing"/>** profile is needed, leave the respective option toggled on in the opened popup window and tap **OK**. Otherwise, tap Turn off, and the plugin will be enabled without adding the profile. 
-
-![Enabling Ski profile with plugin in iOS](@site/static/img/plugins/ski-maps/ios_profile_in_ski_plugin.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
 ### [Audio/video notes](./audio-video-notes.md)
 
 Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.
@@ -213,36 +115,9 @@ Audio/video notes for future reference in case of need, or just to remember the 
 
 Set a point on the map where your car is left on the street and notify your calendar when parking time starts. This will make it easier for you to track the time and location of your car.
 
-#### Enable plugin
-
-
-
 ### [OpenStreetMap editing](./osm-editing.md)
 
 <Translate android="true" ids="osm_editing"/> plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user. 
-
-#### Enable plugin
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> *
-
-![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>*
-
-![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
-
-</TabItem>
-
-</Tabs>
-
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
@@ -266,34 +141,9 @@ Connect external sensors to display data in OsmAnd.
 
 24h hourly forecast 7 days ahead on the map.
 
-#### Purchase and enable plugin
-
-Weather plugin is available for [Pro users](../purchases/). Weather Offline is included in the Plugins menu, you can display and download Weather data for selected geographical regions. To enable the plugin, turn on the **Weather** option in the following application menu:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_weather"/>* 
-
-![Weather plugin in Android](@site/static/img/plugins/weather-and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,plugins,product_title_weather"/>* 
-
-![Weather plugin in iOS](@site/static/img/plugins/weather/weather_plugin_ios.png)
-
-</TabItem>
-
-</Tabs>
-
 ### [OsmAnd development](./development.md)
 
 OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.
-
 
 ### [OsmAnd Tracker](./osmand-tracker.md)
 

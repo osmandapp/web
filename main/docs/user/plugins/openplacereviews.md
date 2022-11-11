@@ -20,6 +20,12 @@ The plugin helps you contribute to the Open Place Reviews project.
 
 [Open Place Review](https://openplacereviews.org/) is a project that helps users share information with other users about different places, such as leaving reviews about restaurants, hotels, art galleries, attractions, and other places of that type. And the OpenPlaceReviews plugin lets you contribute to this community.  
 
+
+:::tip NOTE
+This OsmAnd feature works properly only on Android devices
+:::
+
+
 ## Setup  
 
 If you want to leave a review about some place of interest, you need to make the following settings: 
