@@ -16,11 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <!--This article is incomplete and needs improvement. You can help by creating a revision request.-->
 
-Set a point on the map where your car is left on the street and notify your calendar when parking time starts. This will make it easier for you to track the time and location of your car.
+With the plugin, you can set a point on the map where your car will be left on the street and notify the calendar of the beginning of the parking time. This way, it will be easier for you to keep track of the time and location of your car.
 
 ## Overview 
 
-A parking point on the map and notification in the calendar is provided by the Parking plugin. It's free and works well with downloaded OsmAnd Maps and Navigation. A parking spot helps you remember the exact location where your car is left, as well as be aware of how far it is already from the parking spot and, if necessary, return on time, avoid extra unnecessary expenses, and share the location with your relatives. The parking spot is easy to set up, with or without time tracking, and delete after successful use. 
+Parking point on the map and notification in the calendar is provided by the Parking plugin. It's free and works well with downloaded OsmAnd maps. Parking point helps you know exactly where your car is parked and how far away you are from the parking spot. For example, it can be very useful to get back on time and avoid unnecessary expenses. The plugin also allows you to share the location with the people you want. The parking spot is easy to set up, with or without time tracking, and delete after successful use. 
 
 
 <Tabs groupId="operating-systems">
@@ -43,7 +43,7 @@ A parking point on the map and notification in the calendar is provided by the P
 ## Setup
 
 To use a parking point on the map, you need to make the following settings:    
-1. Enable the [Parking position plugin](../start-with/first-steps.md#how-to-configure-plugins) in the Plugins section of the Main menu.  
+1. Enable the [Parking position plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. Add or remove a [parking point](#set-a-point) on the map.
 3. If needed, add the [Parking widget](#parking-widget) to the screen.  
 

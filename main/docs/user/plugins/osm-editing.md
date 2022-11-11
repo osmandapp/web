@@ -14,21 +14,22 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+The plugin helps you contribute to the development of OpenStreetMap. It is a community driven, global public domain mapping project.
 
 ## Overview
+ 
 
-<Translate android="true" ids="osm_editing"/> plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user.  
+[OpenStreetMap](http://openstreetmap.org/) is a global community that aims to create a comprehensive map of the world and provide up-to-date open-source data to every user, and the **<Translate android="true" ids="osm_editing"/> plugin** allows you to contribute to the community.
 
 Just launch the **OsmAnd Maps app** and update information about different locations.   
-
-Make OSM contributions like creating or modifying OSM POI objects, opening or commenting OSM notes, and contributing recorded GPX files in OsmAnd by supplying your username and password. [OpenStreetMap](http://openstreetmap.org/) is a community driven, global public domain mapping project.
+Make OpenStreetMap contributions like creating or modifying OSM POI objects, opening or commenting OSM notes, and contributing recorded GPX files in OsmAnd by supplying your username and password. 
 
 
 ## Setup
 
 To use OpenStreetMap editing, you need to make the following settings:    
 
-1. Enable [Plugin](../plugins#openstreetmap-editing).  
+1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
 
 
