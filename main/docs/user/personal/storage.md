@@ -201,7 +201,7 @@ A one-time password for the next step will be sent to it.
 
 ![Backup registration Android](@site/static/img/personal/backup/backup_registration_2_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_3_android.png)
 
-Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ menu has two screens: _<Translate android="true" ids="shared_string_status"/>_ and _**<Translate android="true" ids="shared_string_settings"/>**_
+Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ menu has two screens: _<Translate android="true" ids="shared_string_status"/>_ and _<Translate android="true" ids="shared_string_settings"/>_
 
 #### <Translate android="true" ids="shared_string_status"/>
 
@@ -251,24 +251,25 @@ This feature for iOS version will be available for [OsmAnd 4.3 release](../../ve
 <!--
 
 :::note
-&nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
+- &nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
+- Cross platform feature (Android <-> iOS OsmAnd versions).
 :::
 
 Allows to keep your OsmAnd data in OsmAnd Cloud and restore your data from OsmAnd Cloud. It's a cross platform feature.
 
-When you subscrebed to [OsmAnd Pro](../purchases/android.md#free-and-paid-features), you need to make registration for _Backup & Restore_ function or enter your registrated e-mail:
+When you subscrebed to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features), you need to make registration for _Backup & Restore_ function or enter your registrated e-mail:
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>_
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate ios="true" ids="cloud_existing_account"/> / <Translate ios="true" ids="purchase_get"/>_
 
 You need to enter the e-mail address you registered with.
 
-![Backup registration Android](@site/static/img/personal/backup/backup_registration_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_1_android.png)
+![Backup registration iOS](@site/static/img/personal/backup/backup_registration_ios.png) ![Backup registration iOS](@site/static/img/personal/backup/backup_registration_1_ios.png)
 
 A one-time password for the next step will be sent to it. 
 
-![Backup registration Android](@site/static/img/personal/backup/backup_registration_2_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_3_android.png)
+![Backup registration iOS](@site/static/img/personal/backup/backup_registration_2_ios.png) ![Backup registration iOS](@site/static/img/personal/backup/backup_registration_3_ios.png)
 
-Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ menu has two screens: _<Translate android="true" ids="shared_string_status"/>_ and _**<Translate android="true" ids="shared_string_settings"/>**_
+Afer registration your _<Translate ios="true" ids="backup_and_restore"/>_ menu has _Backup_ section and _"<Translate ios="true" ids="shared_string_settings"/>"_ button ⚙️.
 
 #### <Translate android="true" ids="shared_string_status"/>
 
