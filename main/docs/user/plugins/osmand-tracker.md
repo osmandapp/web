@@ -48,12 +48,22 @@ Install OsmAnd Online GPS Tracker APK:
 - [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
 :::caution Note
-**OsmAnd Online GPS Tracker** is available for Android only.
+**OsmAnd Online GPS Tracker** is available for **Android** only.
 :::
 
 ## Settings
 
 There are several settings for managing the frequency of sharing locations and controlling the display of the locations sent to you.
+
+For opening the _Settings_ menu:
+
+_["My location"](#my-location-screen) screen → move screen down (contacts list) → ⋮ → Settings_
+
+or
+
+_[Live now](#live-now-screen) screen → ⋮ → Settings_
+
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings_1.png)
 
 ### Position
 
