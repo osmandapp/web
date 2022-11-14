@@ -12,7 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 Plugin needs to be enabled only for Android and it's automatically enabled for iOS. It helps you to add to the map the necessary information, both vector type and raster.  
 
@@ -30,14 +29,15 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 2. Make the necessary settings in [Map source](#configure-map-source) section of the Configure map menu.  
 3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
 
-## Raster map
+## Use Raster maps on device
 
 :::info
 Detailed information about raster maps visualisation and configuration is present at https://docs.osmand.net/docs/user/map/raster-maps.  
 :::
 
+
 - [Select map as Main / Underlay / Overlay layer](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer)
-- [Change layer parameters (transparency)](../map/raster-maps.md#change-layer-parameters-transparency)
+  * [Change layer parameters (transparency)](../map/raster-maps.md#change-layer-parameters-transparency)
 - [Prepare / copy raster maps to device](../map/raster-maps.md#prepare--copy-raster-maps-to-device)
   * [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)
   * [Magic URL to install map source](../map/raster-maps.md#magic-url-to-install-map-source)
@@ -45,84 +45,28 @@ Detailed information about raster maps visualisation and configuration is presen
   * [Download / update tiles](../map/raster-maps.md#download--update-tiles)
   * [Change raster map parameters](../map/raster-maps.md#change-raster-map-parameters)
 
-<!-- 
-## Configure map source
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-To select an online map as your basic map, go to <i>Configure map-> Map source</i> and choose the preferable one from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of installs available. Also, you can define or edit your map source by clicking to <i>Define/Edit...</i>.
+_ <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/> _
 
-![Online Maps](@site/static/img/plugins/online-maps/om4.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om5.jpg)
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
-When you select an online map as basic map (Overlay/Underlay map) all of map tiles of this map source will be cached. You can check the size of this cached file in the <i>map menu → Download maps → Local (Online and cashed tile maps)</i>. Here, you can delete a map source, clear all tiles, edit or rename it.
-
-![Online Maps](@site/static/img/plugins/online-maps/om6.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om7.jpg)
-
-You can download the selected area of the online map for offline usage (recorded to cache).  To do this, you can choose online map as a basic map, after opening the app screen. The displayed piece of the map on your screen is a selected area. After that, make a long tap on your screen to display the available options where you can choose <i>Actions → Download map</i>. Now you can select max/min zoom for your tiles and click to <i>Download</i>.
-
-![Online Maps](@site/static/img/plugins/online-maps/om8.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om9.jpg)
-
-Not only can you use one map, you can also add up to two of the online tiles to the basic layer: open the <i>app menu-> Configure map-> </i><i>Underlay</i> and an <i>Overlay</i> maps to combine three of them on the screen. For instance, you can open a basic OsmAnd offline vector maps, then add a satellite view for the overlay, and put cycling routes map underneath.
-You can set the base map transparency for your layer and whether display the transparency slider on the main screen or not.
-
-
-![Online Maps](@site/static/img/plugins/online-maps/om10.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om11.jpg)
-
-But how to view all thee maps without getting lost in the details? Simply adjust which information from the map you need and set the transparency of the layer. For example, combining Microsoft Earth map with the basic OsmAnd offline vector map can be very helpful. You can hide all the excessive data from the map and simply overlay roads over the satellite images. To set the features you would like to hide from the current map, just go to <i>Configure map-> Hide</i> and select buildings, polygons, boundaries or all of them together.
-Please see full video guide below:
-
-<iframe width="900" height="506" src="https://www.youtube.com/embed/KBZ1DJa7RMg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-To select an online map as your basic map, go to <i>Map-> Map type-> Online maps</i> and select the one you prefer from the list. If you do not see the desired map on the list, select <i>Install more...</i> to view the entire list of  available installs.
+_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/> _
 
-![Online Maps](@site/static/img/plugins/online-maps/om12.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om13.jpg)
-
-When you select an online map as basic map (Overlay/Underlay map) all of map tiles of this map source will be cashed. You can check the size of the tiles in <i>Maps & Resources-> Installed-> Online Raster Maps</i>. You can delete this map source, clear all tiles, or edit them.
-
-
-<table class="blogimage">
-  <tr>
-    <td><img src={require('@site/static/img/plugins/online-maps/om14.jpg').default} alt="Image"/></td>
-    <td><img src={require('@site/static/img/plugins/online-maps/om15.jpg').default} alt="Image"/></td>
-    <td><img src={require('@site/static/img/plugins/online-maps/om16.jpg').default} alt="Image"/></td>
-  </tr>
-</table> 
-
-
-
-Online maps can be added with a special link. All of these online maps you can select in the <i>General menu → Map → Map type → Online maps</i>.
-
-![Online Maps](@site/static/img/plugins/online-maps/12.jpg) ![Online Maps](@site/static/img/plugins/online-maps/13.jpg)
-
-Not only can you use one map (map type), you can also add up to two of them to the basic layer: open the <i>app menu → Map → Overlay / Underlay</i> maps to combine all three of them on the screen. For instance, you can open a basic OsmAnd offline vector map, then add a satellite view for the overlay, and then put cycling routes map underneath.
-You can choose base map transparency for your layer, set the display of the transparency slider, and select whether display polygons on the map or not.
-
-<table class="blogimage">
-  <tr>
-    <td><img src={require('@site/static/img/plugins/online-maps/om17.jpg').default} alt="Image"/></td>
-    <td><img src={require('@site/static/img/plugins/online-maps/om18.jpg').default} alt="Image"/></td>
-    <td><img src={require('@site/static/img/plugins/online-maps/om19.jpg').default} alt="Image"/></td>
-  </tr>
-</table> 
-
-
-But how to view all thee maps without getting lost in the details? Simply adjust which information from the map you need and set the transparency of the layer. For example, combining the Microsoft Earth map with the basic OsmAnd online tile can be very helpful. You can hide all the excessive data from the map and simply overlay roads over the satellite images. To set the features you would like to hide from the current map, just go to <i>Map-> Map style (Hide)</i> and select buildings, polygons, boundaries or all of them together.
-
-Please see full video guide below:
-
-<iframe width="900" height="506" src="https://www.youtube.com/embed/kmlgPA0W7VA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
- 
+
 </Tabs>
 
--->
 
 ## How to prepare raster maps
 
