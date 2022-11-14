@@ -80,7 +80,7 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 
 ### Plugin Settings
 
-Each plugin could have specific profile or global settings which could be accessed via Plugins → <Plugin>  → Settings or via Settings → <Profile> → <Plugin settings>.
+Each plugin could have specific profile or global settings which could be accessed via Plugins → &le;Plugin&gt;  → Settings or via Settings → &le;Profile&gt; → &le;Plugin settings&gt;.
 
  
 | Plugin name | Settings |
