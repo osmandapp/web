@@ -51,6 +51,7 @@ Most plugins are available for free, only three of them require purchase of OsmA
  - [Nautical map view](../plugins/nautical-charts.md#overview)
    
 Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
+
 ### Plugin Features
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
@@ -59,27 +60,41 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 
 | Plugin name |Features |
 |:------------|:-------|
-|[Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
-|[Online maps](#online-maps)|[Map layer](../plugins/online-map.md#configure-map-source) |
-|[Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
-|[Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
-|[Nautical map view](#nautical-map-view)| [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
-|[Ski map view](#ski-map-view)| [Map style](../plugins/ski-maps.md#set-winter-style) , Profile |
-|🤖 [Audio/video notes](#audiovideo-notes)| [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
+| [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
+| [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
+| [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
+| [Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+| [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), Screen |
+| [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
+| [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), Profile |
+|🤖 [Audio/video notes](#audiovideo-notes) | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
-|[Parking position](#parking-position)| [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
-|🤖 [OpenPlaceReviews](#openplacereviews)| [Context menu](../plugins/openplacereviews.md#how-to-add) |
-|[Mapillary](#mapillary)| [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|🤖 [Accessibility](#accessibility)| - |
-|🤖 [External Sensors](#external-sensors)| Widget, Profile |
-|[Weather](../plugins/weather.md)| [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets) |
-|[OsmAnd development](#osmand-development)| - |
-|🤖 [OsmAnd Tracker](#osmand-tracker)| - |
+|[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
+|🤖 [OpenPlaceReviews](#openplacereviews) | [Context menu](../plugins/openplacereviews.md#how-to-add) |
+|[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
+|🤖 [External Sensors](#external-sensors) | Widget |
+|🤖 [Accessibility](#accessibility) | Custom Settings |
+| [OsmAnd development](#osmand-development) | Custom Settings |
+|🤖 [OsmAnd Tracker](#osmand-tracker) | Map Layer, Widget, Context Menu |
 
 
 ### Plugin Settings
 
-Here will be description of specific plugin settings. 
+Each plugin could have specific profile or global settings which could be accessed via Plugins → <Plugin>  → Settings or via Settings → <Profile> → <Plugin settings>.
+
+ 
+| Plugin name | Settings |
+|:------------|:-------|
+| [Trip recording](#trip-recording) | Trip Recording settings |
+| [Weather](../plugins/weather.md) | Configure measurement units |
+|🤖 [Audio/video notes](#audiovideo-notes) | Select video format, how long to store |
+|[OpenStreetMap editing](#openstreetmap-editing)| Specify user login  |
+|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user login |
+|🤖 [External Sensors](#external-sensors) | Connect to external device |
+|🤖 [Accessibility](#accessibility) | Settings that allow to use Accessibility [Android features](https://www.android.com/accessibility/) |
+| [OsmAnd development](#osmand-development) | Settings that allow to enable features in development or features that could help developers understand user issues |
+|🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
+
 
 ## List
 
