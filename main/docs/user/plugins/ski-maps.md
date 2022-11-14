@@ -47,44 +47,59 @@ Two profiles are shown below: the one on the left is for skiing and the one on t
 The following setting makes the OsmAnd Ski Map appear on the screen:
 
 1. Enable [Ski map view plugin](../plugins/index.md#enable--disable).  
-2. Set the Winter and Ski map style for the required [profile](../personal/profiles.md).  
+2. Set the [Winter and Ski](#set-winter-and-ski-map-style) map style for the required [profile](../personal/profiles.md).  
 3. If needed, [combine maps](#combine-maps).  
+  
 
 
-## Map Style
+## Ski map style
 
-### Set Winter style  
+Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to know exactly the types of pistes displayed on the map, as well as the types of airways and other characteristics that can be read from the map.
 
-**Winter and Ski** style highlights trails, ski touring routes, sledding trails and information related to winter and skiing. Enable it for the profile you want, as shown below:
 
-1. Select the required [profile](../personal/profiles.md).  
-2. Open [Configure map](../map/configure-map-menu.md).  
-3. Scroll down up to [Map style](../map/vector-maps.md), open it and check the Winter and Ski style.  
+### Set Winter and Ski map style  
+
+Winter and Ski map style highlights trails, ski touring routes, sledding trails and information related to winter and skiing.  
+
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-To check which style is currently set for the profile, or to set the **Winter and ski** style, select the appropriate option in the styles list that opens, as shown below:  
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>* 
+To display style on the map, you need to make the following setting:  
 
-![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android.png)
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to Map style, open it and check the **Winter and Ski**.  
+4. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>* 
+
+
+
+![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-To check which style is currently set for the profile, or to set the **Winter and ski** style, select the appropriate option in the styles list that opens, as shown below:  
-*<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/>*  
+To display style on the map, you need to make the following setting:  
 
-![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios.png)
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to Map type, open it and check the **Winter and Ski**.  
+4. *<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
+ 
+
+![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
 </TabItem>
 
 </Tabs>
 
->**NOTE**: The Skiing profile is designed to be used in combination with the Winter and Ski styles. However, the navigation type for each specific profile can be changed and set individually, so the final configuration of the profile, map style and navigation completely depends on the user settings.
+
+:::tip NOTE 
+The Skiing profile is designed to be used in combination with the Winter and Ski styles. However, the navigation type for each specific profile can be changed and set individually, so the final configuration of the profile, map style and navigation completely depends on the user settings.
+:::
 
 
 
@@ -158,7 +173,7 @@ Pistes differ by type. A type represents different characterstics for a piste to
 
 </Tabs>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 **Nordic/backcountry skiing piste** is also used for the Ski navigation. This piste type has no difficulty; can, or cannot have a direction, and most often it goes beyond the boundaries of the ski resort. When navigating along this type of pistes, the Departure and Destination points often can be exchanged. 
 
@@ -238,7 +253,6 @@ To check out the map on whether a piste is subject to grooming, use the **<Trans
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Ski slope routes
 
@@ -272,9 +286,6 @@ To view what piste outside the ski resort is possible to navigate along, enable 
 </Tabs>
 
 
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Night and lighting  
 
@@ -321,14 +332,6 @@ To enable the **Street lighting**, toggle the following option:
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-### Map legend
-
-For any reference, use the [Ski map legend](../../user/map-legend/ski-map.md). It helps to be certain of the types of piste displayed on the map, as well as the types of aerial ways and other characteristics that can be read from the map.  
-
-
-
 ### Map data details
 
 OsmAnd Ski Map is built as one of the rendering styles, which determines which objects to show on the map and the appearance of objects. All rendering styles are described in the XML file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
@@ -338,36 +341,12 @@ For the details on what data OsmAnd Ski Map shows, refer to the [Rendering.xml](
 
 
 
-### Remove Ski map view plugin 
+### Desible Ski map view plugin 
 
-If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following 
+If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following: 
 
-1. Uncheck the [Winter and ski style](../map/vector-maps.md) for the needed profile.  
-2. Disable the Skiing [profile](../personal/profiles.md). 
+- Uncheck the [Winter and Ski](#set-winter-and-ski-map-style) map style for the required profile.  
+- Change [Skiing profile](../personal/profiles.md) to any other profile.
+- Disable [Ski map view plugin](../plugins/index.md#enable--disable). 
 
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-To remove the **Winter and ski** style, uncheck the option for the needed profile, as follows:
-
-<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>
-
-![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-To remove the **Winter and ski** style, uncheck the option for the needed profile, as follows:
-
-<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,winter_and_ski_renderer"/>
-
-![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter.png) 
-
-</TabItem>
-
-</Tabs>
-
->**NOTE**: Disabling the Skiing profile can also be considered if Winter and Ski style are disabled along with the profile. 
+>**NOTE**: The Ski map viewer plugin is a separate application, and disabling its display does not remove it. If you need to uninstall it, go to the Android settings using "Open Settings" in the plugin menu.  

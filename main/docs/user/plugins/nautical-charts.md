@@ -25,7 +25,7 @@ Nautical Chart is a highly detailed topographical map to help skippers navigate 
 
 Nautical charts are important for professional sailors as well as for amateurs who rent a boat for cruising the city's canals. The maps provide them with a variety of information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.  
 
-&nbsp;
+
 ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_1.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_2.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png)  
 
 
@@ -53,7 +53,52 @@ The following setup makes the Nautical map show up on the screen:
 2. [Download](#download-nautical-maps) the Nautical maps.  
 3. [Enable and adjust](#nautical-map-style) the Nautical map style.   
 
-## Download Nautical maps  
+
+
+## Nautical map style
+
+Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt.
+
+### Set Nautical map style
+
+By setting the nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">  
+
+To change the current map style to Nautical, you need to make the following setting:  
+
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to Map style, open it and check the **Nautical**.  
+4. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>* 
+
+
+![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To change the current map style to Nautical, you need to make the following setting:  
+
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to Map style, open it and check the **Nautical**.  
+4. *<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,nautical"/>* 
+
+
+![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
+
+
+</TabItem>
+
+</Tabs>
+
+
+### Download Nautical maps  
 
 When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [nautical map](../start-with/download-maps.md#type-of-maps) contain details such as:
 - Nautical marks and symbols.
@@ -91,33 +136,6 @@ For optimal presentation, maps can be adapted to current needs: marks and symbol
 
 > **NOTE**: All numbers on the Nautical Charts are presented in meters. 
 
-
-
-## Nautical map style
-
-By setting the Nautical map style, you can get the best representation of the downloaded and rendered Nautical data. To change the current map style to Nautical, use the [Configure map](../map/configure-map-menu.md) menu, scroll down to Map Style, and select Nautical.  
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
-In the _Android_ version, to change the map style to [**Nautical**](../map/vector-maps.md#nautical) and thus, reveal more nautical-specific colours and visualization on the map, go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>* 
-
-![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-In the *<Translate ios="true" ids="ios_button_seq"/>* version, to change the map type to [**Nautical**](../map/vector-maps.md#nautical) and thus, reveal more nautical-specific colors and visualization on the map, go to: *<Translate ios="true" ids="menu,configure_map,map_settings_type"/>*  
-
-![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
-
-
-</TabItem>
-
-</Tabs>
 
 
 ## Nautical options
@@ -179,29 +197,6 @@ To select one of the seabed detail display options, click on the link: *<Transla
 >**NOTE**: For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 
 
-
-### Map legend
-
-Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt.
-The map legend shows the following visual elements that can be found on the map:  
-
-- Anchorage and berth.
-- Navigation lines and areas.
-- Buoys and beacons. 
-- Electronic position-fixing systems, fog signals.
-- Lights.
-- Ports, moorings.
-- Offshore platforms.
-- Landmarks.
-- Buildings. 
-- Wrecks and rocks.
-- Bridges, lockgates.
-- Small craft facilities. 
-- Marine farm, fishing.
-- Seabed area.
-- Cables and pipelines.
-- Obstruction.
-- And other signs of prohibition, information, regulation, recommendation, etc.
 
 
 ### Disable Nautical map style
