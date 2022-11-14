@@ -21,9 +21,7 @@ Plugin needs to be enabled only for Android and it's automatically enabled for i
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 Many new useful map sources you can find in [Anygis project](https://anygis.ru/Web/Html/Osmand_en.md).
 
-:::info
-Main article is https://docs.osmand.net/docs/user/map/raster-maps.  
-:::
+
 ## Setup
  
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
@@ -32,6 +30,22 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 2. Make the necessary settings in [Map source](#configure-map-source) section of the Configure map menu.  
 3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
 
+## Raster map
+
+:::info
+Detailed information about raster maps visualisation and configuration is present at https://docs.osmand.net/docs/user/map/raster-maps.  
+:::
+
+- [Select map as Main / Underlay / Overlay layer](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer)
+- [Change layer parameters (transparency)](../map/raster-maps.md#change-layer-parameters-transparency)
+- [Prepare / copy raster maps to device](../map/raster-maps.md#prepare--copy-raster-maps-to-device)
+  * [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)
+  * [Magic URL to install map source](../map/raster-maps.md#magic-url-to-install-map-source)
+- [Manage raster maps](../map/raster-maps.md#manage-raster-maps)
+  * [Download / update tiles](../map/raster-maps.md#download--update-tiles)
+  * [Change raster map parameters](../map/raster-maps.md#change-raster-map-parameters)
+
+<!-- 
 ## Configure map source
 
 <Tabs groupId="operating-systems">
@@ -42,11 +56,11 @@ To select an online map as your basic map, go to <i>Configure map-> Map source</
 
 ![Online Maps](@site/static/img/plugins/online-maps/om4.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om5.jpg)
 
-When you select an online map as basic map (Overlay/Underlay map) all of map tiles of this map source will be cached. You can check the size of this cached file in the <i>map menu-> Download maps-> Local (Online and cashed tile maps)</i>. Here, you can delete a map source, clear all tiles, edit or rename it.
+When you select an online map as basic map (Overlay/Underlay map) all of map tiles of this map source will be cached. You can check the size of this cached file in the <i>map menu → Download maps → Local (Online and cashed tile maps)</i>. Here, you can delete a map source, clear all tiles, edit or rename it.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om6.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om7.jpg)
 
-You can download the selected area of the online map for offline usage (recorded to cache).  To do this, you can choose online map as a basic map, after opening the app screen. The displayed piece of the map on your screen is a selected area. After that, make a long tap on your screen to display the available options where you can choose <i>Actions-> Download map</i>. Now you can select max/min zoom for your tiles and click to <i>Download</i>.
+You can download the selected area of the online map for offline usage (recorded to cache).  To do this, you can choose online map as a basic map, after opening the app screen. The displayed piece of the map on your screen is a selected area. After that, make a long tap on your screen to display the available options where you can choose <i>Actions → Download map</i>. Now you can select max/min zoom for your tiles and click to <i>Download</i>.
 
 ![Online Maps](@site/static/img/plugins/online-maps/om8.jpg) ![Online Maps](@site/static/img/plugins/online-maps/om9.jpg)
 
@@ -81,20 +95,12 @@ When you select an online map as basic map (Overlay/Underlay map) all of map til
 </table> 
 
 
-<!--
- <div class="centeredimageblog">
-<img src="/images/features/om14.jpg" alt="(Image not available offline)"/>
-<img src="/images/features/om15.jpg" alt="(Image not available offline)"/>
-<img src="/images/features/om16.jpg" alt="(Image not available offline)"/>
-<div style="clear:both;"></div>
-</div>
- -->
 
-Online maps can be added with a special link. All of these online maps you can select in the <i>General menu-> Map-> Map type-> Online maps</i>.
+Online maps can be added with a special link. All of these online maps you can select in the <i>General menu → Map → Map type → Online maps</i>.
 
 ![Online Maps](@site/static/img/plugins/online-maps/12.jpg) ![Online Maps](@site/static/img/plugins/online-maps/13.jpg)
 
-Not only can you use one map (map type), you can also add up to two of them to the basic layer: open the <i>app menu-> Map-> Overlay / Underlay</i> maps to combine all three of them on the screen. For instance, you can open a basic OsmAnd offline vector map, then add a satellite view for the overlay, and then put cycling routes map underneath.
+Not only can you use one map (map type), you can also add up to two of them to the basic layer: open the <i>app menu → Map → Overlay / Underlay</i> maps to combine all three of them on the screen. For instance, you can open a basic OsmAnd offline vector map, then add a satellite view for the overlay, and then put cycling routes map underneath.
 You can choose base map transparency for your layer, set the display of the transparency slider, and select whether display polygons on the map or not.
 
 <table class="blogimage">
@@ -105,16 +111,6 @@ You can choose base map transparency for your layer, set the display of the tran
   </tr>
 </table> 
 
-<!--
-
-<div class="centeredimageblog">
-<img src="/images/features/om17.jpg" alt="(Image not available offline)"/>
-<img src="/images/features/om18.jpg" alt="(Image not available offline)"/>
-<img src="/images/features/om19.jpg" alt="(Image not available offline)"/>
-<div style="clear:both;"></div>
-</div>
-
--->
 
 But how to view all thee maps without getting lost in the details? Simply adjust which information from the map you need and set the transparency of the layer. For example, combining the Microsoft Earth map with the basic OsmAnd online tile can be very helpful. You can hide all the excessive data from the map and simply overlay roads over the satellite images. To set the features you would like to hide from the current map, just go to <i>Map-> Map style (Hide)</i> and select buildings, polygons, boundaries or all of them together.
 
@@ -126,6 +122,7 @@ Please see full video guide below:
  
 </Tabs>
 
+-->
 
 ## How to prepare raster maps
 
@@ -138,7 +135,7 @@ Despite the plugin being called *Online Maps*, you can use the maps without inte
 Select the area you need to download, click on the Preload area, then set the smallest and the largest zoom levels you want to display and download the tiles.
 For <b>Android version</b> you can copy them to your phone's <i>osmand/tiles/*tile type*</i> folder. You'll also need to open the <i>Configure map-. Overlay map</i> and choose OsmAnd online tiles.
 
-For <b>iOS version</b> you can choose SQ Lite file in your phone (any messenger or dropbox), OsmAnd will suggest to add it. You'll also need to open <i>Map-> Overlay / Underlay or Map type</i> and choose new map source.
+For <b>iOS version</b> you can choose SQ Lite file in your phone (any messenger or dropbox), OsmAnd will suggest to add it. You'll also need to open <i>Map → Overlay / Underlay or Map type</i> and choose new map source.
 
 How to add SQ Lite file in Android and iOS version of OsmAnd you can read in <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis project</b></a>.
 
