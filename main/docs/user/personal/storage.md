@@ -244,9 +244,81 @@ At this screen you can set your login and backup data.
 
 <TabItem value="ios" label="iOS">
 
-```This feature for iOS version will be available for OsmAnd 4.3 release.```
+:::note
+This feature for iOS version will be available for [OsmAnd 4.3 release](../../versions/future-ios.md).
+:::
 
-You need to subscribe to [OsmAnd Pro](https://osmand.net/docs/user/purchases/ios#free-and-paid-features).
+<!--
+
+:::note
+&nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
+:::
+
+Allows to keep your OsmAnd data in OsmAnd Cloud and restore your data from OsmAnd Cloud. It's a cross platform feature.
+
+When you subscrebed to [OsmAnd Pro](../purchases/android.md#free-and-paid-features), you need to make registration for _Backup & Restore_ function or enter your registrated e-mail:
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>_
+
+You need to enter the e-mail address you registered with.
+
+![Backup registration Android](@site/static/img/personal/backup/backup_registration_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_1_android.png)
+
+A one-time password for the next step will be sent to it. 
+
+![Backup registration Android](@site/static/img/personal/backup/backup_registration_2_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_3_android.png)
+
+Afer registration your _<Translate android="true" ids="backup_and_restore"/>_ menu has two screens: _<Translate android="true" ids="shared_string_status"/>_ and _**<Translate android="true" ids="shared_string_settings"/>**_
+
+#### <Translate android="true" ids="shared_string_status"/>
+
+![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_android.png)
+
+Here you can start to make a backup and restore data online and local:
+- &nbsp;"_<Translate android="true" ids="backup_now"/>_" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backing up.
+
+![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_1_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_2_android.png)
+
+- &nbsp;"_<Translate android="true" ids="backup_restore_data"/>_" button - allows to restore data on your device using existing backups, or back up data to OsmAnd Cloud.
+
+![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_3_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_4_android.png)
+
+- &nbsp;"_<Translate android="true" ids="local_backup"/>_" - allows to back up or restore data from a local file. Read about it [here](../personal/storage.md#local-backup).
+
+#### <Translate android="true" ids="shared_string_settings"/>
+
+At this screen you can set your login and backup data.
+
+![Backup settings screen Android](@site/static/img/personal/backup/backup_settings_screen_android.png)
+
+- &nbsp;_<Translate android="true" ids="backup_data"/>_ - select data and folders to back up.
+
+![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_android.png)
+
+- &nbsp;_<Translate android="true" ids="backup_version_history"/>_ - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.
+  
+![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_1_android.png)
+
+- &nbsp;_<Translate android="true" ids="login_account"/>_ - allows to log out from your account.
+  
+- &nbsp;_<Translate android="true" ids="backup_danger_zone"/>_:
+  
+  - &nbsp;"_<Translate android="true" ids="backup_delete_all_data"/>_" button - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
+
+  - &nbsp;"_<Translate android="true" ids="backup_delete_old_data"/>_" button - Current versions of your data will be preserved on OsmAnd Cloud.
+
+
+-->
+
+
+
+
+
+
+
+
+
+
 
 </TabItem>
 
