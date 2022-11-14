@@ -22,7 +22,7 @@ The plugin helps you contribute to the Open Place Reviews project.
 
 
 :::tip NOTE
-This OsmAnd feature works properly only on Android devices
+OnePlaceReview is only available for the Android version of OsmAnd.
 :::
 
 
