@@ -61,7 +61,7 @@ _["My location"](#my-location-screen) screen → move screen down (contacts list
 
 or
 
-_[Live now](#live-now-screen) screen → ⋮ → Settings_
+_["Live now"](#live-now-screen) screen → ⋮ → Settings_
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings_1.png)
 
