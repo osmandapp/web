@@ -15,17 +15,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-Audio and video recordings for future use when needed or to recall a moment, scene, or interaction after creation are available both in the central repository and on the map as a separate layer of user stories and thoughts tied to geolocation.  
+Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the "My Places" menu and are visible when Audio/Video Notes plugin is enabled.
 
 ## Overview 
 
-The Audio/Video Notes plugin extends the functionality of storing geolocation information by giving the user the ability to create their own views in various formats, such as a photo note, video note, or audio file, and associate them with their geographic location or current location. The recording options are provided with the Audio/video notes widget, and/or the context menu of a POI. The resulted data is automatically saved to the central storage from where it is convenient to manage and share anything needed. 
+The Audio/Video Notes plugin extends OsmAnd's functionality in storing geolocation information by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the POI context menu. The received data is automatically saved in the central storage, from where it can be conveniently managed and shared.   
 
-At the same time, all created audio/video notes make up a Recording layer that if configured to show up on the map, provides a different view of the recorded data and means for managing it. Within the Recording layer, the audio/video notes are laid out as POIs across the map, thus creating a user-made map narrative, visible only to the owner of the device.
+All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.  
 
-![Audio video notes intro](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+![Audio video notes intro](@site/static/img/plugins/audio-video-notes/widgets_view.png) 
 
-<!--![Audio video notes intro](@site/static/img/plugins/audio-video-notes/audio-video-intro.png)-->
 
 ## Setup
 
