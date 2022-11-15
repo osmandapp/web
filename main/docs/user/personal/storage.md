@@ -248,7 +248,7 @@ At this screen you can set your login and backup data.
 This feature for iOS version will be available for [OsmAnd 4.3 release](../../versions/future-ios.md).
 :::
 
-<!--
+<!-
 
 :::note
 - &nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
@@ -271,7 +271,7 @@ A one-time password for the next step will be sent to it.
 
 Afer registration your _<Translate ios="true" ids="backup_and_restore"/>_ menu has _Backup_ section and _"<Translate ios="true" ids="shared_string_settings"/>"_ button ⚙️.
 
-#### <Translate android="true" ids="shared_string_status"/>
+#### <Translate ios="true" ids="shared_string_status"/>
 
 ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_android.png)
 
@@ -286,15 +286,17 @@ Here you can start to make a backup and restore data online and local:
 
 - &nbsp;"_<Translate android="true" ids="local_backup"/>_" - allows to back up or restore data from a local file. Read about it [here](../personal/storage.md#local-backup).
 
-#### <Translate android="true" ids="shared_string_settings"/>
+#### Settings
+
+Click on the _"<Translate ios="true" ids="shared_string_settings"/>"_ button ⚙️ on the screen top.
 
 At this screen you can set your login and backup data.
 
-![Backup settings screen Android](@site/static/img/personal/backup/backup_settings_screen_android.png)
+![Backup settings screen ios](@site/static/img/personal/backup/backup_settings_screen_ios.png)
 
-- &nbsp;_<Translate android="true" ids="backup_data"/>_ - select data and folders to back up.
+- &nbsp;_<Translate ios="true" ids="osmand_cloud"/>_ - opens the screen where you can select data and folders to back up by clicklig on _<Translate ios="true" ids="backup_data"/>_. Here there is info about using memory by clicking _<Translate ios="true" ids="manage_storage"/>_.
 
-![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_android.png)
+![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_ios.png) ![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_1_ios.png)
 
 - &nbsp;_<Translate android="true" ids="backup_version_history"/>_ - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.
   
