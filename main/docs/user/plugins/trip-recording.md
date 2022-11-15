@@ -41,59 +41,56 @@ Trip recording plugin is used to create new tracks, display recorded tracks on t
 To start recording tracks, you need to make the following settings: 
 
 1. Enable the [Trip recording plugin](../start-with/first-steps.md#how-to-configure-plugins).  
-2. Configure [Trip recording](#profile-settings) settings for each [profile](./index.md#plugin-settings).  
+2. Configure [Trip recording](#recording-parameters) parameters for the required [profile](../personal/profiles.md).  
 3. If needed, add [Trip recording widgets](#widgets) to the screen.   
 
-After setup is complete, you can make new records, display and manage tracks on the map by changing their appearance, editing the route, adding waypoints, etc.   
+After setup is complete, you can make new records, display and manage tracks on the map, change their appearance, edit the route, add waypoints, etc.   
 
 ## Record new track 
 
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to create new records.  
-
-- To start recording, tap the *Distance/Start-Stop widget*, and confirm in the opened Start dialog, if it is enabled. Otherwise, confirmation is not needed, and the recording will start automatically.  
-- When in progress, the *Distance/Start-Stop widget* is colored in red.  
-- *Distance/Start-Stop widget* is colored green during in progress and when online recording is enabled.  
-- To finish recording, tap the *Distance/Start-Stop widget* again and confirm the respective option in the Trip recording dialog. In addition, there are a few other options that you can use. All options are described in detail for iOS and Android versions.
-
-### Start
-
-
-![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png)
-
+There are several options to start a new recording:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-There are four options for starting a recording: 
-
-- Using the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets). 
-- Use the Trip recording option in the menu.
-- Use the RECORD option in [My Places](../personal/myplaces.md): *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
-- As an application launcher
+- Usе the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets). 
+- Use the Trip recording option in the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/> tab*.
+- Use the RECORD option in [My Places](../personal/myplaces.md) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
+- Use an [application launcher](#start-as-launcher-android).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-There are two options for starting a recording:
-
-- Using the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets).
-- Using the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces.md): *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+- Use the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets).
+- Use the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces.md): *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
 
 </TabItem>
 
 </Tabs>
 
+### Start
+
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to create new recordings. The same functionality is provided by the Trip recording tab in the Main menu.   
+
+![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) ![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png)  
+- To start a new recording, tap the *Distance/Start-Stop widget*, then confirm your choice in the opened [Start dialog](#start-dialog) (if it is enabled). If confirmation is disabled, recording will start automatically.  
+- To finish recording, tap the *Distance/Start-Stop widget* again and confirm your choice in the Trip recording dialog. In addition, there are a few other options that can be used. 
+
+:::note
+*Distance/Start-Stop widget* is colored green during recording or when online recording is enabled.  
+:::
 #### START DIALOG 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
+Start dialog opens, unless the **<Translate android="true" ids="show_start_dialog"/>** option in the settings section of start dialog is toggled on.
+
 ![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 In the opened Start dialog, it is possible adjust the following recording settings before confirming the start of the recording by tapping **Start**:
-
 - **Show on map** - if enabled, shows the detected points on the map.
 - **Appearance** - the *Line* icon - opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map.
 - **Logging interval** - to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.
@@ -103,10 +100,11 @@ In the opened Start dialog, it is possible adjust the following recording settin
 
 <TabItem value="ios" label="iOS">
 
+Start dialog opens, unless the **<Translate ios="true" ids="track_interval_remember"/>** option is toggled on.
+
 ![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png) ![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_2.png)  
 
-In any case, the Start dialog opens, unless the **<Translate ios="true" ids="track_interval_remember"/>** option is toggled on, in which you can adjust the following recording settings before confirming the start of the recording by tapping **OK**:
-
+n the opened Start dialog, it is possible adjust the following recording settings before confirming the start of the recording by tapping **Start**:
 - **Logging interval** - to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.
 - **Remember my choice** - removes the Start dialog, so that recording to start without confirmation. Once toggled on, the Start dialog will be disabled, and can only reappear after restarting Trip recording plugin.
 - **Show on map** - if enabled, shows detected points on the map. 
@@ -124,10 +122,13 @@ For any troubleshooting details, refer to: [Track recording issues](../troublesh
 
 ### Start as launcher (Android)
 
-Aanother one, use the *Start Recording icon* on the device screen as shown in the examples in the figures below. Long-tap to open the icon's context menu with an option to Start Recording. Long-tap an option from the icon's context menu, to add it as an individual icon to the screen of the device. 
+Another option to start a new recording is to use the *Start Recording icon* on the device screen, as shown in the examples in the figures below. A long press opens the context menu of the icon with the option to Start Recording.
 
 ![Icon's context menu](@site/static/img/plugins/trip-recording/and_open_from_icon.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
+:::note
+Use long press on *Start recording* in the icon context menu to add it as a separate icon to the device screen.
+:::
 ### Stop / Save / Pause
 
 Actions like stop, pause, erase, 
