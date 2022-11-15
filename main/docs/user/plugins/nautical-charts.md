@@ -34,13 +34,13 @@ The Nautical plugin in OsmAnd extends the vector layer map styles with the Nauti
 
 <TabItem value="android" label="Android">
 
-![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_1.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_2.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png) 
+![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_1.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_2.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)  ![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png) 
+![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png) 
 
 </TabItem>
 
@@ -160,15 +160,15 @@ Nautical map can be included in any profile. However, it is most valuable in the
 
 When a Nautical map is displayed on the screen, you can adjust what you see:
 
-- Show or hide the depth contours.
-- Setting the detail level of the seafloor information.  
+- Show or hide the *depth contours*.
+- Setting the detail level of the seafloor information: line width and line color scheme.    
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">  
 
-In the *Android* version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
+With the Nautical plugin set up, you can show or hide depth contours follow this path: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
 
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours.png)
@@ -178,7 +178,7 @@ In the *Android* version with the Nautical plugin set up, you can show or hide d
 
 <TabItem value="ios" label="iOS">  
 
-In the *iOS* version with the Nautical plugin set up, you can show or hide depth contours using the corresponding option in [Configure map](../map/configure-map-menu.md) menu: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
+With the Nautical plugin set up, you can show or hide depth contours follow this path: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
 
         
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours.png)
@@ -191,22 +191,42 @@ In the *iOS* version with the Nautical plugin set up, you can show or hide depth
 
 ### Seabed details
 
-Seabed data contains information about vegetation and general surface material such as rocky rocks, shells, gravel, coral, silt, etc. Due to the international classification of seafloor data, there are options for displaying such details on a map: *simple*, *category*, *all* or *omit*.  
-To select one of the seabed detail display options, click on the link: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_seabedDetail_name"/>*  
+Seabed data contains information about vegetation and general surface material such as rocky rocks, shells, gravel, coral, silt, etc. Due to the international classification of seafloor data, there are options for displaying such details on a map: *simple*, *category*, *all* or *omit*. Use the [Seabed area map legend](../map-legend/nautical-map#seabed-area) for more information.    
+
+
+- **All** - in addition to the seamark symbol, tag or category, also shows qualifications such as fine, sticky, coarse, etc. For seagrass and seaweed, shows data marked with the *taxon* and *genus* tags.  
+- **Category** - in addition to the seamark symbol, also shows the relevant seamark tag, indicating the natural material, or the seaweed and seagrass category.    
+- **Omit** - does not show details of the seafloor.  
+- **Simple** (*for Android version*)- shows the seamark symbols in accordance with INT-1 Ref, indicating the nature of the seabed surface.  
+ 
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">  
+
+To select one of the seabed detail display options, follows: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
-| Parameter and Description |
-| --- | 
-| **Omit** does not show details of the seafloor. |
-| **Simple** - shows the seamark symbols in accordance with INT-1 Ref, indicating the nature of the seabed surface. |
-| ![Seabed simple](@site/static/img/plugins/nautical-charts/seabed_simple1.png) |
-| **Category** - in addition to the seamark symbol, also shows the respective seamark tag, indicating the natural material, or the seaweed/seagrass category. | 
-| ![Seabed category](@site/static/img/plugins/nautical-charts/seabed_category1.png) |
-| **All** - in addition to the seamark symbol, tag or category, also shows qualifications, like: fine, sticky, coarse, etc.; or for seagrass/seaweed, shows data marked with the *taxon* and *genus* tags.|
-| ![Seabed all](@site/static/img/plugins/nautical-charts/seabed_all1.png) | 
+</TabItem>
 
->**NOTE**: For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+<TabItem value="ios" label="iOS">  
+
+
+To select one of the seabed detail display options, follows: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*     
+
+![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
+:::tip NOTE
+For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
+:::  
 
 
 
