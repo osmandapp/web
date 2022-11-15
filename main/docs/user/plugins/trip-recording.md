@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Trip Recorder plugin is a special tool designed to record your routes, movements, and workouts. You can reuse, modify, update, and share your recordings with friends.
+Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. Thanks to this feature you can reuse, modify, update, and share your tracks with friends.
 
 ## Overview
 
@@ -54,7 +54,7 @@ There are several options to start a new recording:
 
 <TabItem value="android" label="Android">
 
-- Usе the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets). 
+- Usе the [Distance/Start-Stop widget](#distance-start-stop). 
 - Use the Trip recording option in the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/> tab*.
 - Use the RECORD option in [My Places](../personal/myplaces.md) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
 - Use an [application launcher](#start-as-launcher-android).
@@ -63,7 +63,7 @@ There are several options to start a new recording:
 
 <TabItem value="ios" label="iOS">
 
-- Use the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets).
+- Use the [Distance/Start-Stop widget](#distance-start-stop).
 - Use the <Translate ios="true" ids="track_recording_name"/> option in [My Places](../personal/myplaces.md): *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
 
 </TabItem>
@@ -72,43 +72,42 @@ There are several options to start a new recording:
 
 ### Start
 
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to create new recordings. The same functionality is provided by the Trip recording tab in the Main menu.   
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to create new recordings. The same functionality is provided by the Trip recording tab in the Main menu (Android only).   
 
-![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) ![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png)  
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) 
 - To start a new recording, tap the *Distance/Start-Stop widget*, then confirm your choice in the opened [Start dialog](#start-dialog) (if it is enabled). If confirmation is disabled, recording will start automatically.  
 - To finish recording, tap the *Distance/Start-Stop widget* again and confirm your choice in the Trip recording dialog. In addition, there are a few other options that can be used. 
 
 :::note
-*Distance/Start-Stop widget* is colored green during recording or when online recording is enabled.  
+*Distance/Start-Stop widget* is colored red during recording or when online recording is enabled.  
 :::
 #### START DIALOG 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Start dialog opens, unless the **<Translate android="true" ids="show_start_dialog"/>** option in the settings section of start dialog is toggled on.
+Start dialog opens, if the **<Translate android="true" ids="show_start_dialog"/>** option is enabled in the settings section of the Start dialog box.
 
 ![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
-In the opened Start dialog, it is possible adjust the following recording settings before confirming the start of the recording by tapping **Start**:
-- **Show on map** - if enabled, shows the detected points on the map.
-- **Appearance** - the *Line* icon - opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map.
-- **Logging interval** - to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.
-- **Settings** - opens the Trip recording settings for the currently opened profile.  
- 
+:::note
+- the **Line** icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the displaying of the track on the map.
+- **Logging interval** is used to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.
+- in the **Settings** menu you can adjust parameters of your recording. For detailed information see [trip recording parameters](#recording-parameters).
+:::
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Start dialog opens, unless the **<Translate ios="true" ids="track_interval_remember"/>** option is toggled on.
+Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"/>** option is not toggled on.
 
-![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png) ![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_2.png)  
+![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png) 
 
-n the opened Start dialog, it is possible adjust the following recording settings before confirming the start of the recording by tapping **Start**:
-- **Logging interval** - to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.
-- **Remember my choice** - removes the Start dialog, so that recording to start without confirmation. Once toggled on, the Start dialog will be disabled, and can only reappear after restarting Trip recording plugin.
-- **Show on map** - if enabled, shows detected points on the map. 
-
+:::note
+- **Logging interval** is used to set the frequency of the requests sent to the GPS sensor to detect and post a new point onto the route of the track.  
+- **Remember my choice** - removes the Start dialog, recording starts without confirmation. Once toggled on, the Start dialog box will be disabled, and may appear again only after restarting the trip recording plugin.
+:::
  
 </TabItem>
 
@@ -119,7 +118,6 @@ n the opened Start dialog, it is possible adjust the following recording setting
 For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues)  
 :::
 
-
 ### Start as launcher (Android)
 
 Another option to start a new recording is to use the *Start Recording icon* on the device screen, as shown in the examples in the figures below. A long press opens the context menu of the icon with the option to Start Recording.
@@ -128,128 +126,81 @@ Another option to start a new recording is to use the *Start Recording icon* on 
 
 :::note
 Use long press on *Start recording* in the icon context menu to add it as a separate icon to the device screen.
+:::  
+
+:::tip Stop / Save / Pause
+To stop recording tap on the relevant button in dialog menu of Distance/Start-Stop widget or Trip recording option in the Main menu (Android only).
 :::
-### Stop / Save / Pause
-
-Actions like stop, pause, erase, 
-
-
-
-#### STOP RECORDING ANDROID
-
-Tap the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets), or the Trip recording option in the menu again, to stop recording, and/or to do any of the following extra options in the Trip recording dialog:
-
-- **Show on map** - if enabled, to show the detected points on the map.
-- **Appearance** - the *Line* icon - to open and work with the [Track Appearance options](../map/tracks-on-map.md#track-appearance) to adjust visual representation of how the track looks like when it is displayed on the map.
-- **Start time** / **End Time** - the timestamps of the first detected point and the last detected point.
-- **Close** - to close the Trip recording dialog and continue recording. 
-- **Pause** - to take a break, and resume recording after a while.
-- **Finish** - to stop the recording. The track will automatically be put for storing in: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*. 
-- **Options** - to reach out for the following options in the context menu: 
-    - **Clear recorded data** - to delete, if any accumulated unsaved data.
-    - **Stop without saving** - to stop recording without saving a track.
-    - **Stop online tracking** - to stop sending recorded points to the specified online resource.
-    - **Save and continue** - to save the track for storing and continue recording further. 
-    - **Start new segment** - to start a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu.md).
-
-#### STOP RECORDING IOS
-
-To stop recording, or to do any of the following options, tap the [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) again, and in the opened Track recording dialog, select:
-
-- **Stop recording** - to stop the recording. The track will automatically be put for storing in: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*. 
-- **Show Info** - opens the *Current recording track* [context menu](../map/track-context-menu.md) with options to manage the track and change its [appearance](../map/tracks-on-map.md#track-appearance), i.e. how it looks on the map.   
-- **Start new segment** - starts a new segment of the current track. The number of segments are available for analysis with the [context menu of the track](../map/track-context-menu.md).
-- **Save current track** - saves the track for storing and asks if to continue to record, or stop. 
-
-
-
 ## Currently recorded track
+
 
 ### Overview recorded information
 
-To view information about  currently recorded track access a dialog with graphs via widget.
+To view information about currently recorded track tap on the trip recording widget. 
 
-On the graph you can see the information about distance, altitude, slope angle. The graph can be scaled.   
+<Tabs groupId="operating-systems">
 
+<TabItem value="android" label="Android">
 
-**Description of trip recording information dialog box**   
-  
-* Track. Currently recording track - general name of the dialog.
-* "Track: 1" is the default name of the track if you haven't set it before (you can change it with [Trip settings](https://osmand.net/docs/user/plugins/trip-recording.md#options-of-context-menu)). ???
-* Graphs **Overview**, **Altitude**, **Speed**, info block with *Average altitude*, *Altitude range*, *Uphill*, *Downhill* and two **menus**: *Analyse on map* and *Options*. 
-* There are menu items below the graph: *Overview*, *Track*, *Points*, *Options*.  
-NOTE. By default, the *Track* menu appears when you tap on the widget.  
+![overview](@site/static/img/plugins/trip-recording/overview.png)
 
-![whats_in_screen](@site/static/img/widgets/whats_in_screen.png)  
+</TabItem>
 
-**Interactions with the graph**
-- Zoom in/out. By default, the graph shows the full recorded path at the current time. You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right and left from the start of recording to the current moment.  
-- Place a point on the graph. If you want to see information at a specific point on your trip recording, you can tap anywhere on the graph and a pointer with the values will appear. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+<TabItem value="ios" label="iOS">
 
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_2.png) ![whats_in_screen](@site/static/img/widgets/whats_in_screen.png) 
 
-**Graph**  
-All values are indicated either for the whole route or only for the selected interval by scaling the graph.  
+</TabItem>
 
-|  |
-|------------|
-| ***Additional information***. The right side of the graphs contains data about the highest, average and lowest values of the data related to a particular graph. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  |
-|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time| 
-|    ![data](@site/static/img/widgets/tr_rec_ave.png)|
-|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill| 
-| ![data](@site/static/img/widgets/tr_rec_alt.png) |
-|***Speed*** This tab opens with speed info on distance and additional track data.|*"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|
-| ![data](@site/static/img/widgets/tr_rec_speed.png) |
+</Tabs>
 
-**Menu**  
-You can read more information [here](../map/track-context-menu.md).
+The graph shows information about distance, altitude, slope angle. 
 
-- ***Overview***  
-  - **Currently recording track** - general name of the dialog.  
-  - A list of information about currently recording track: *Distance*, *Uphill*, *Downhill*, *Altitude range*, *Average speed*, *Maximum speed*, *Time span*, *Time in motion*. This list is scrollable.   
-  - Direction and distance to the point on the track  /  Your current location (if you allowed).  
-  - Buttons: *Show on map* on/off and [Appearence](../map/tracks-on-map.md#track-appearance).  
+:::note  
+The graph can be scaled.   
+- You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
+- If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
+:::
 
-
-![Overview](@site/static/img/widgets/menu_overview.png)  
-
-- ***Track*** - described above.   
-- ***Points***  
-You can add one or more track points to the current track map or delete them all. [Read more here](../map/track-context-menu.md#waypoints-folder).  
-
-![Overview](@site/static/img/widgets/points_1.png) ![Overview](@site/static/img/widgets/points_2.png) ![Overview](@site/static/img/widgets/points_3.png)
-
-- ***Options***  
-This is a separate screen without a map and a track with points:  
-  - Show on map - on/off.  
-  - Appearance.  
-  - [Analyze on the map](../map/tracks-on-map.md#analyze-track-on-map-android).
-  - Analyze by intervals - overview of the current track recording segment.  
-  - Share - gpx file.    
-
-
-![Overview](@site/static/img/widgets/option_for3.png)
-
-
+All values on the graph are indicated either for the whole route or only for the selected interval (while scaling). The right side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
  
+| Info |  Picture |
+|:-------:|-----------------|
+|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time|  ![data](@site/static/img/widgets/tr_rec_ave.png)| 
+|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|  ![data](@site/static/img/widgets/tr_rec_alt.png) |
+|***Speed*** This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|  ![data](@site/static/img/widgets/tr_rec_speed.png)|
 
+:::info 
+Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
+:::
 ### Show on the map
 
-Access context menu Tracks to display currently recorded track.
+If the track displaying was previously disabled, you can enable it via *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> tab*.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![show_tr_onmap_andr_2](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![show_tr_onmap_ios_2](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png) 
+
+</TabItem>
+
+</Tabs>
 
 ### Recorded GPX file
 
-GPS data consists of the latitude and longitude of your location at a specific point in time. If they are recorded in a file as a set of location points arranged in a specific order, the file stores the progress of your journey. Each point in the file also stores coordinates, speed, bearing and elevation. When you place points from the file on the map, your journey is visualized as a track with a fixed start and destination.  
-The location points are recorded into a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), according to the following structure: *file > track > segments > points*, where:
+OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), according to the following structure: *file > track > segments > points*, where:
 
 - One point has a number of attributes: coordinates, speed, altitude, heading.
 - Points are grouped into tracks.
-- One track is generated by one recording, i.e. one start and one stop actions.
-- With auto-split after gaps, the next point after the gap makes up a new segment.
-- Both segments and tracks are identified with the Start and Finish icons on the map. 
-- Both tracks and segments are recorded into a file.
-
-Below is an example of a point and a segment in the track.
+- The next point after the gap makes up a new segment.
+- Both segments and tracks are shown with the Start and Finish icons on the map.
 
 ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)
 
@@ -267,11 +218,10 @@ Below is an example of a point and a segment in the track.
 
 ## Recording parameters
 
-*Trip recording can be configured for each specific profile*, as the parameters may be different depending on the character of the movement, for example, to determine the location of a car driver, a cyclist or a Nordic walker. All [profiles](../personal/profiles.md) are configured in the general [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
+*Trip recording can be configured for each profile*, as the parameters may be different depending on the character of the movement (a car driver, a cyclist or a Nordic walker). You may need to make some adjustments to the way you capture and record location points in the file: few, a lot, with gaps etc. to make the end result look smooth and usable. All [profiles](../personal/profiles.md) are configured in the global [settings](../personal/global-settings.md) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
 
-Depending on the character of your movement: driving, cycling, horseback riding, skiing, etc., you may need to make some adjustments to the way you capture and record location points in the file: few, too many, spacing, and others to make the end result look smooth and usable.
+Depending on the character of your movement: driving, cycling, horseback riding, skiing, etc., you may need to make some adjustments to the way you capture and record location points in the file: few, a lot, with gaps etc. to make the end result look smooth and usable.
 
-There are recording parameters that you can adjust depending on the context. For example, the time interval, how often the Location module should detect your location; whether to record points or wait for the next detection result if the detection results are almost the same; if it is acceptable to generate separate segments within the same track in case of gaps, and so on. Use the descriptions of the available parameters specified for the corresponding Android or iOS version of the application.  
 
 <Tabs groupId="operating-systems">
 
@@ -371,7 +321,7 @@ The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widg
 <TabItem value="android" label="Android">  
  
 
-To open Trip recording widgets options follow:  [Menu → Configure screen → Widgets → Left / Right panel → Trip recording](https://osmand.net/docs/user/widgets/info-widgets.md#-trip-recording-widgets)  
+To open Trip recording widgets options follow: Menu → Configure screen → Widgets → Left / Right panel → Trip recording  
 
  
 When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, **Trip recording plugin** for *Android* consists of **4 widgets**. *Distance/Start-Stop* is the main widget, when you tap it opens [Trip recording dialog](../plugins/trip-recording.md#create-new-track). The *Duration*, *Uphill* and *Downhill* widgets are more for information.   
@@ -443,5 +393,3 @@ If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you d
 </TabItem>
 
 </Tabs> 
-
-
