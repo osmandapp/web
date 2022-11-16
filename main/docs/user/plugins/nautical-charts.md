@@ -160,28 +160,30 @@ Nautical map can be included in any profile. However, it is most valuable in the
 
 When a Nautical map is displayed on the screen, you can adjust what you see:
 
-- Show or hide the *depth contours*.
-- Setting the detail level of the seafloor information: line width and line color scheme.    
+- Show or hide the *Depth contours*.
+- Setting the detail level of the seafloor information: *Line width* and *Line color scheme*.    
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">  
 
-With the Nautical plugin set up, you can show or hide depth contours follow this path: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
+With the Nautical plugin set up, you can show or hide depth contours follow this path:  
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
 
 
-![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours.png)
+![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-2.png)
 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-With the Nautical plugin set up, you can show or hide depth contours follow this path: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
+With the Nautical plugin set up, you can show or hide depth contours follow this path:  
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
 
         
-![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours.png)
+![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
 </TabItem>
 
@@ -205,7 +207,8 @@ Seabed data contains information about vegetation and general surface material s
 
 <TabItem value="android" label="Android">  
 
-To select one of the seabed detail display options, follows: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
+To select one of the seabed detail display options, follows:  
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
@@ -214,7 +217,8 @@ To select one of the seabed detail display options, follows: *<Translate android
 <TabItem value="ios" label="iOS">  
 
 
-To select one of the seabed detail display options, follows: *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*     
+To select one of the seabed detail display options, follows:  
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*     
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
