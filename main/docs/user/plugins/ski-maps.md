@@ -52,10 +52,6 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
   
 
 
-## Ski map style
-
-Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to know exactly the types of pistes displayed on the map, as well as the types of airways and other characteristics that can be read from the map.
-
 
 ### Set Winter and Ski map style  
 
@@ -124,9 +120,26 @@ The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/v
 
 </Tabs>
 
+### Disable Ski map view plugin 
+
+If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following: 
+
+- Uncheck the [Winter and Ski](#set-winter-and-ski-map-style) map style for the required profile.  
+- Change [Skiing profile](../personal/profiles.md) to any other profile.
+- Disable [Ski map view plugin](../plugins/index.md#enable--disable). 
+
+>**NOTE**: The Ski map viewer plugin is a separate application, and disabling its display does not remove it. If you need to uninstall it, go to the Android settings using "Open Settings" in the plugin menu.  
 
 
-## Ski Map options
+## Skiing profile
+
+...
+
+
+## Ski map style
+
+
+Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to know exactly the types of pistes displayed on the map, as well as the types of airways and other characteristics that can be read from the map.
 
 By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
  
@@ -275,14 +288,3 @@ Both options are in [Configure map](../map/configure-map-menu.md) menu.
 
 </Tabs>
 
-
-
-### Desible Ski map view plugin 
-
-If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following: 
-
-- Uncheck the [Winter and Ski](#set-winter-and-ski-map-style) map style for the required profile.  
-- Change [Skiing profile](../personal/profiles.md) to any other profile.
-- Disable [Ski map view plugin](../plugins/index.md#enable--disable). 
-
->**NOTE**: The Ski map viewer plugin is a separate application, and disabling its display does not remove it. If you need to uninstall it, go to the Android settings using "Open Settings" in the plugin menu.  

@@ -64,13 +64,9 @@ The following setup makes the Nautical map show up on the screen:
 
 
 
-## Nautical map style
-
-Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt.
-
 ### Set Nautical map style
 
-By setting the Nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
+Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt. By setting the Nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
 
 <Tabs groupId="operating-systems">
 
@@ -150,11 +146,29 @@ For optimal presentation, maps can be adapted to current needs: marks and symbol
 > **NOTE**: All numbers on the Nautical Charts are presented in meters. 
 
 
+### Disable Nautical map style
 
-## Nautical options
+To remove Nautical and display one of OsmAnd's conventional maps, do any of the following:
 
-Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/boat-navigation.md).   
+- Disable Nautical plugin. 
+- Change the map style to anything else then "Nautical". 
 
+>**NOTE**: Disabling the Nautical plugin does not remove loaded nautical data, so even if you change the rendering method from nautical to any other method when nautical data is downloaded, it remains visible on the map.  
+
+
+
+## Nautical profile
+
+Navigation and map style. Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/boat-navigation.md).   
+
+
+## Nautical map style
+
+.....
+
+### Depth points
+
+....
 
 ### Depth contours  
 
@@ -174,7 +188,6 @@ With the Nautical plugin set up, you can show or hide depth contours follow this
 
 ![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-2.png)
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -182,14 +195,11 @@ With the Nautical plugin set up, you can show or hide depth contours follow this
 With the Nautical plugin set up, you can show or hide depth contours follow this path:  
 *<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
 
-        
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
 </TabItem>
 
 </Tabs>
-
-
 
 ### Seabed details
 
@@ -226,21 +236,9 @@ To select one of the seabed detail display options, follows:
 
 </Tabs>
 
-
-
 :::tip NOTE
 For more details on the classification of the surface details and the rendering options, refer to [OSM's seamark wiki](https://wiki.openstreetmap.org/wiki/Seamarks/INT-1_Section_J).
 :::  
 
 
-
-
-### Disable Nautical map style
-
-To remove Nautical and display one of OsmAnd's conventional maps, do any of the following:
-
-- Disable Nautical plugin. 
-- Change the map style to anything else then "Nautical". 
-
->**NOTE**: Disabling the Nautical plugin does not remove loaded nautical data, so even if you change the rendering method from nautical to any other method when nautical data is downloaded, it remains visible on the map.  
 
