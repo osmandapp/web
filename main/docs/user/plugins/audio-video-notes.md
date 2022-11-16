@@ -28,40 +28,19 @@ All created audio and video notes compose the Record layer. When enabled on the 
 
 ## Setup
 
-<InfoIncompleteArticle/>
-
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
 
 1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
-3. If needed, configure [the recording settings](#open-settings) per profile.  
+3. If needed, configure [the recording settings](#plugin-settings) per profile.  
 
 
 ### Plugin settings
 
-For every profile, it is possible to configure the recording settings. There are two options of how to open the <Translate android="true" ids="audionotes_plugin_name"/> settings: 
-
-- from the plugin, so that to configure recording only for the default profile; 
-
-- from the app settings, so that to configure recording for any of the profiles. 
-
-From the [plugin](../start-with/first-steps.md#how-to-configure-plugins), the Audio/video recording settings are opened by selecting **Settings** from the triple dots list of the plugin in: 
+For every profile, it is possible to configure the recording settings. 
 
 **Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
-
-![Plugin settings](@site/static/img/plugins/audio-video-notes/settings_from_plugin.png)
-
-From the [settings](../start-with/first-steps.md#how-to-manage-your-settings) of the entire app, the Audio/video recording settings can be opened as follows:
-
-1. Go to: <Translate android="true" ids="shared_string_menu,shared_string_settings"/>.
-
-2. Select a profile.
-
-3. Tap the **<Translate android="true" ids="audionotes_plugin_name"/>** option. 
-
-![Opening Audio video plugin settings](@site/static/img/plugins/audio-video-notes/settings_avplugin_per_profile2.png) 
-
 
 ![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_photo_android.png)  ![Audio video plugin settings Video Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_video_android.png)
 
@@ -139,13 +118,13 @@ For _an audio / video note_, respectively the audio, or video recorder shows up.
 - see the length of the record,
 - hide/show the video screen.
 
-> **NOTE**: Also, it is possible to stop the recording with a tap on the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu, or the widget started the recording. 
+Also, it is possible to stop the recording with a tap on the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu, or the widget started the recording. For _a photo note_, the camera functionality shows up, and you can take a photo, view the result, and accept and save it, or take a new photo.
 
 ![Video note recorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png) 
 
-For _a photo note_, the camera functionality shows up, and you can take a photo, view the result, and accept and save it, or take a new photo.
-
-> **NOTE**: Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab. 
+:::info note
+Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab. 
+:::
 
 
 ###  View in My Places
@@ -283,7 +262,10 @@ All waypoints added automatically get an automatically assigned name. The name i
 3. Select the track that the waypoint is intended to be added to. 
 4. The *<Translate android="true" ids="quick_action_add_gpx"/>* dialog opens, and allows the user to set some properties, like: the name to the waypoint, an icon, color, etc. Once done, tap **Save**.
 
->**NOTE**: The name of a manually created waypoint can be established by the user. 
+
+:::info note
+The name of a manually created waypoint can be established by the user. 
+:::
 
 ![Manually adding a waypoint to track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
  
@@ -304,7 +286,9 @@ On the map, a waypoint and an audio/video/photo note can be visible, or not. It 
 | Only notes | Recording layer | 
 | None | Neither Tracks, not Recording layer. |
 
->**NOTE**: When neither Tracks, nor Recording layer is toggled on, both waypoints and notes can be shown by tapping them in My Places. In this case, the map shows the locations of the tapped note, or respectively, the locations of all waypoints of the tapped track. 
+:::info note
+ When neither Tracks, nor Recording layer is toggled on, both waypoints and notes can be shown by tapping them in My Places. In this case, the map shows the locations of the tapped note, or respectively, the locations of all waypoints of the tapped track. 
+:::
 
 ### GPX file with waypoints
 
