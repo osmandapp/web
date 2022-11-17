@@ -14,7 +14,7 @@ The SQLIte format used in OsmAnd is based on the "BigPlanet" SQLite as supported
 ||"randoms"|String. The names of the mirrors of server. Comma-separated. One of these values will randomly replace the placeholder {rdn} in "url" field.|
 ||"referer"|String. HTTP Referer. As used for downloading.|
 ||"rule"|String. Supported template:1 (same as empty), wms_tile, yandex_traffic. Adds specific algorithms how tiles will be downloaded. wms_tile is using proxy server such as whoots.mapwarper.net to deal with WMS sources |
-||"userAgent"|String. HTTP User Agent. As used for downloading.|
+||"useragent"|String. HTTP User Agent. As used for downloading.|
 ||"minzoom"|Integer. Min zoom level. Respective integer. (Also inverted in case of BigPlanet).|
 ||"maxzoom"|Integer. Max zoom level. Respective integer. (Also inverted in case of BigPlanet).|
 ||"ellipsoid"|Integer 0 or 1. 1 for Elliptic Mercator (Yandex tiles). 0 for regular Spheric Web Mercator (OSM, Google maps)|
