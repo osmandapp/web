@@ -11,8 +11,10 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
+<InfoAndroidOnly />
 
 ## Overview
 
@@ -47,9 +49,6 @@ Install OsmAnd Online GPS Tracker APK:
 - [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram),
 - [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
-:::caution Note
-**OsmAnd Online GPS Tracker** is available for **Android** only.
-:::
 
 ## Settings
 

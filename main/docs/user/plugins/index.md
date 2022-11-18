@@ -45,11 +45,13 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use: 
- - [Contour lines and Terrain](../plugins/contour-lines.md#overview) 
- - [Wikipedia](../plugins/wikipedia.md#overview)
- - [Nautical map view](../plugins/nautical-charts.md#overview)
-   
+Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use:  
+
+- [Contour lines and Terrain](../plugins/contour-lines.md)  
+- [Wikipedia](../plugins/wikipedia.md)  
+- [Nautical map view](../plugins/nautical-charts.md)  
+- [Weather](../plugins/weather.md)  
+
 Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
 
 ### Plugin Features
@@ -72,27 +74,29 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
 |🤖 [OpenPlaceReviews](#openplacereviews) | [Context menu](../plugins/openplacereviews.md#how-to-add) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|🤖 [External Sensors](#external-sensors) | Widget |
-|🤖 [Accessibility](#accessibility) | Custom Settings |
-| [OsmAnd development](#osmand-development) | Custom Settings |
-|🤖 [OsmAnd Tracker](#osmand-tracker) | Map Layer, Widget, Context Menu |
+|🤖 [External Sensors](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
+|🤖 [Accessibility](#accessibility) | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
+| [OsmAnd development](#osmand-development) | Custom [Settings](../plugins/development.md#plugin-settings) |
+|🤖 [OsmAnd Tracker](#osmand-tracker) | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#osmand-tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
 
 
 ### Plugin Settings
 
-Each plugin could have specific profile or global settings which could be accessed via Plugins → &le;Plugin&gt;  → Settings or via Settings → &le;Profile&gt; → &le;Plugin settings&gt;.
+Each plugin could have specific profile or global settings which could be accessed via:  
 
- 
+- **Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group"/> → Plugin name → Settings or  
+- **Android**, **iOS**: Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings.  
+
 | Plugin name | Settings |
 |:------------|:-------|
-| [Trip recording](#trip-recording) | Trip Recording settings |
-| [Weather](../plugins/weather.md) | Configure measurement units |
-|🤖 [Audio/video notes](#audiovideo-notes) | Select video format, how long to store |
-|[OpenStreetMap editing](#openstreetmap-editing)| Specify user login  |
-|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user login |
-|🤖 [External Sensors](#external-sensors) | Connect to external device |
-|🤖 [Accessibility](#accessibility) | Settings that allow to use Accessibility [Android features](https://www.android.com/accessibility/) |
-| [OsmAnd development](#osmand-development) | Settings that allow to enable features in development or features that could help developers understand user issues |
+| [Trip recording](#trip-recording) | Сonfigure the trip recording [operation modes](../plugins/trip-recording.md#recording-parameters) |
+| [Weather](#weather) | Configure measurement units for displaying weather events |
+|🤖 [Audio/video notes](#audiovideo-notes) | Select video format, how long to store [etc.](../plugins/audio-video-notes.md#plugin-settings) |
+|[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
+|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login](../plugins/openplacereviews.md#plugin-settings) or use test |
+|🤖 [External Sensors](#external-sensors) | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
+|🤖 [Accessibility](#accessibility) | [Settings](plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
+| [OsmAnd development](#osmand-development) | Plugin [settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
 
 
@@ -136,21 +140,19 @@ Set a point on the map where your car is left on the street and notify your cale
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
-OpenPlaceReviews
+The plugin lets you add and view photos of restaurants, cafes and other points of interest in the context menu of the place.  
 
 ### [Mapillary](./mapillary.md)
 
-To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).
-
+To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
 ### [Accessibility](./accessibility.md)
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd.
-
+Accessibility plugin makes the device's accessibility features directly available in OsmAnd.  
 
 ### [External sensors](./external-sensors.md)
 
-Connect external sensors to display data in OsmAnd.
+Connect external sensors to display data on OsmAndand screen and to store needed information in track recordings.  
 
 ### [Weather](./weather.md)
 
@@ -162,8 +164,4 @@ OsmAnd development plugin is only necessary for developers and experienced users
 
 ### [OsmAnd Tracker](./osmand-tracker.md)
 
-OsmAnd Tracker
-
-
-
-
+OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd.  

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The OsmAnd development plugin is only necessary for *developers and experienced users*. It allows you to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for normal application use.
+The OsmAnd development plugin is designed for *developers and experienced users*. It allows you to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for normal application use.
 
 ## Setup 
 
@@ -143,5 +143,3 @@ You can simulate location moving by using GPX track:
 </TabItem>
 
 </Tabs> 
-
-

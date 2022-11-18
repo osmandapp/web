@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -384,11 +385,7 @@ If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you d
 
 <TabItem value="ios" label="iOS">  
 
-
-:::note
-**Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
-
-:::  
+<InfoAndroidOnly />
 
 </TabItem>
 
