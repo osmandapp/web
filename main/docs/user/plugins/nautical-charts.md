@@ -25,9 +25,6 @@ Nautical Chart is a highly detailed topographical map to help skippers navigate 
 
 Nautical charts are important for professional sailors as well as for amateurs who rent a boat for cruising the city's canals. The maps provide them with a variety of information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.  
 
-The Nautical plugin in OsmAnd extends the vector layer map styles with the Nautical map style. It allows you to display map data according to Nautical Chart rules, for example: yellow areas for land and shoals, light blue areas for shallow waters, etc. For more information see [Map legend](../../user/map-legend/nautical-map.md). 
-
-
 
 <Tabs groupId="operating-systems">
 
@@ -68,18 +65,17 @@ The following setup makes the Nautical map show up on the screen:
 
 Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt. By setting the Nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
 
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
 To change the current map style to Nautical, you need to make the following setting:  
 
 1. Select the required [profile](../personal/profiles.md).  
 2. Open [Configure map](../map/configure-map-menu.md).  
-3. Scroll down up to Map style, open it and check the **Nautical**.  
-4. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>* 
+3. Scroll down up to Map style, open it and check the **Nautical**. 
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+ *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
 ![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
@@ -87,13 +83,7 @@ To change the current map style to Nautical, you need to make the following sett
 
 <TabItem value="ios" label="iOS">  
 
-To change the current map style to Nautical, you need to make the following setting:  
-
-1. Select the required [profile](../personal/profiles.md).  
-2. Open [Configure map](../map/configure-map-menu.md).  
-3. Scroll down up to Map style, open it and check the **Nautical**.  
-4. *<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,"/>* 
-
+ *<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
 ![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -105,17 +95,23 @@ To change the current map style to Nautical, you need to make the following sett
 
 ### Download Nautical maps  
 
+For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, if necessary, contours. On the other hand, standard maps with information about inland, onshore and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.
+
 When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [nautical map](../start-with/download-maps.md#type-of-maps) contain details such as:
 
 
 - **Nautical marks and symbols**   
-Marks and symbols are downloaded once for the entire world. Depth points are available for each hemisphere and for some regions. Depth contours can be downloaded for certain areas and then turned off if you do not need them. If a navigation package is downloaded, its data is displayed on the map according to the navigation settings described below.  
+Marks and symbols are downloaded once for the entire world. Depth points are available for each hemisphere and for some regions. Depth contours can be downloaded for certain areas and then turned off if you do not need them. If a navigation package is downloaded, its data is displayed on the map according to the navigation settings.  
 
 - **Depth points**   
 Nautical data from the depth point packages are represented by numbers displayed on the water that indicate the shallowest depth at a particular location. Depth contour packages allow you to define areas of equal depth. Both points and contours are intended to visualize changes in relief beneath the water surface.   
 
 - **Depth contours**   
-Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, currents, deep and shallow water, channel sides regardless of direction, etc.   
+Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, channel sides regardless of direction, etc.  
+
+:::info NOTE
+All numbers on the Nautical Charts are presented in meters. 
+:::
 
 
 <Tabs groupId="operating-systems">
@@ -141,9 +137,6 @@ All nautical packages are available for download in the following area:
 
 </Tabs>
 
-For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, if necessary, contours. On the other hand, standard maps with information about inland, onshore and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.
-
-> **NOTE**: All numbers on the Nautical Charts are presented in meters. 
 
 
 ### Disable Nautical map style
@@ -153,22 +146,66 @@ To remove Nautical and display one of OsmAnd's conventional maps, do any of the 
 - Disable Nautical plugin. 
 - Change the map style to anything else then "Nautical". 
 
->**NOTE**: Disabling the Nautical plugin does not remove loaded nautical data, so even if you change the rendering method from nautical to any other method when nautical data is downloaded, it remains visible on the map.  
-
+:::info NOTE
+Disabling the Nautical plugin does not remove loaded nautical data, so even if you change the rendering method from nautical to any other method when nautical data is downloaded, it remains visible on the map.  
+:::
 
 
 ## Nautical profile
 
-Navigation and map style. Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/boat-navigation.md).   
+Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/boat-navigation.md).   
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">  
+
+To select Boat profile follow this path:  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+
+
+![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To select Boat profile follow this path:  
+*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*    
+
+![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Nautical map style
 
-.....
+The Nautical plugin in OsmAnd extends the vector layer map styles with the Nautical map style. It allows you to display map data according to Nautical Chart rules, for example: yellow areas for land and shoals, light blue areas for shallow waters, etc. For more information see [Map legend](../../user/map-legend/nautical-map.md).  
+
 
 ### Depth points
 
-....
+Depth point [packages](../start-with/download-maps.md#type-of-maps) are available for Europe, Northern Hemisphere, and Southern Hemisphere and are informational. Depth points indicate changes in topography below the water's surface, indicating the shallowest depth. This is necessary for Boat navigation. After downloading, you need to turn on [Depth contours](#depth-contours) to display it on the map.  
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+![Nautical maps](@site/static/img/plugins/nautical-charts/and_depth_points.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Nautical maps](@site/static/img/plugins/nautical-charts/ios_depth_points.png) 
+
+</TabItem>
+
+</Tabs>
 
 ### Depth contours  
 

@@ -13,6 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
+
+
 The plugin lets you add and view photos of restaurants, cafes and other [points of interest](../map/point-layers-on-map.md#points-of-interest-poi) in the context menu of the place.
 
 ## Overview  
@@ -29,12 +34,13 @@ If you want to leave a review about some place of interest, you need to make the
 
 ### Plugin settings
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews,shared_string_settings"/> 
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews,shared_string_settings"/>* 
 
 ![OpenPlaceReview Settings Android](@site/static/img/plugins/openplacereviews/openplacereviews_plugin_settings_android.png)
 
 
-**Login settings**:
+### Login settings
+
 - &nbsp;<Translate android="true" ids="login_account"/> - login to [OpenPlaceReviews](https://openplacereviews.org/login).
 - &nbsp;<Translate android="true" ids="opr_use_dev_url"/> - use test profile for [OpenPlaceReviews project](https://openplacereviews.org/).
 
@@ -48,7 +54,6 @@ Photos from OpenPlaceReviews project are displayed in [Online Photos](../map/map
 
 ## Upload photos
 
-<InfoAndroidOnly />
 
 Tap on the map where the POI of Restaurants (Cafe) has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then press [<Translate android="true" ids="shared_string_add_photo"/>](../map/map-context-menu.md#online-photos) button and add choose photo from device storage.
 

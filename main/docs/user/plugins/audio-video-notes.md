@@ -13,7 +13,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly />
+<!--<InfoAndroidOnly />-->
+
+
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
+
 
 Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the "My Places" menu and are visible when Audio/Video Notes plugin is enabled.
 

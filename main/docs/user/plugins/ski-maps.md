@@ -57,20 +57,18 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 
 Winter and Ski map style highlights trails, ski touring routes, sledding trails and information related to winter and skiing.  
 
+To display style on the map, you need to make the following setting:  
+1. Select the required [profile](../personal/profiles.md).  
+2. Open [Configure map](../map/configure-map-menu.md).  
+3. Scroll down up to Map style/Map type, open it and check the **Winter and Ski**. 
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-To display style on the map, you need to make the following setting:  
-
-1. Select the required [profile](../personal/profiles.md).  
-2. Open [Configure map](../map/configure-map-menu.md).  
-3. Scroll down up to Map style, open it and check the **Winter and Ski**.  
-4. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>* 
-
-
+Check Winter and Ski in Map style:  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
 ![Enable Winter style in Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Ski maps plugin map style Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
@@ -78,14 +76,9 @@ To display style on the map, you need to make the following setting:
 
 <TabItem value="ios" label="iOS">
 
-To display style on the map, you need to make the following setting:  
-
-1. Select the required [profile](../personal/profiles.md).  
-2. Open [Configure map](../map/configure-map-menu.md).  
-3. Scroll down up to Map type, open it and check the **Winter and Ski**.  
-4. *<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
+Check Winter and Ski in Styles for offline maps:  
+*<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
  
-
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
 </TabItem>
@@ -128,12 +121,40 @@ If removing trails and winter colors from the map are preferred, or the ski seas
 - Change [Skiing profile](../personal/profiles.md) to any other profile.
 - Disable [Ski map view plugin](../plugins/index.md#enable--disable). 
 
->**NOTE**: The Ski map viewer plugin is a separate application, and disabling its display does not remove it. If you need to uninstall it, go to the Android settings using "Open Settings" in the plugin menu.  
+
+:::info NOTE
+The Ski map viewer plugin is a separate application, and disabling its display does not remove it. If you need to uninstall it, go to the Android settings using "Open Settings" in the plugin menu.  
+:::
 
 
 ## Skiing profile
 
-...
+Winter and Ski map style can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default, and comfortable for [Skiing navigation](../navigation/route-navigation.md). The Skiing profile is set to the relevant navigation, unless otherwise specified.  
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">  
+
+To select Skiing profile follow this path:  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+
+
+![Nautical depth contours in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To select Skiing profile follow this path:  
+*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*    
+
+![Depth contours in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Ski map style
@@ -143,9 +164,12 @@ Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It
 
 By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
  
-The options described here are available in the [Ski navigation](../navigation/route-navigation.md). By default, the [Skiing profile](../personal/profiles.md) is set to the relevant navigation, unless otherwise specified. The **Skiing navigation** sets the individual route options which apply only to skiing and pistes on the slopes.   
+The options described here are available in the [Skiing navigation](../navigation/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing and pistes on the slopes.    
 
-> **NOTE**: OsmAnd Ski Map is built as one of the rendering styles, which determines which objects to show on the map and the appearance of objects. All rendering styles are described in the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
+
+:::info NOTE
+OsmAnd Ski Map is built as one of the rendering styles, which determines which objects to show on the map and the appearance of objects. All rendering styles are described in the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
+:::
 
 
 ### Pistes by difficulty
@@ -166,7 +190,7 @@ For more specific guidance for each trail difficulty type, see the [OSM piste di
 :::
 
 
-### Piste type 
+### Piste by types 
 
 Pistes differ by type. A type represents different characteristics for a piste to meet the requirements of different winter related activities: alpine skiing, classic skating, snowboarding, sled riding, backcountry skiing, ski touring, mogul skiing, night skiing, etc. Understanding the [type of the piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) on the map helps in building an optimal navigation route.
 

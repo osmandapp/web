@@ -97,8 +97,10 @@ To set a Parking spot on the map, zoom-in to the required level, then long-tap o
 
 </Tabs>
 
->**NOTE**: The start time is always automatically set for the parking spot. The end time, if a time limit is selected, can only be re-added by recreating the parking space, but not edited. Parking time end notifications can only be placed in the calendar app on your device if you specified Add notification in the Calendar app when you created the parking space.  
 
+:::info NOTE
+The start time is always automatically set for the parking spot. The end time, if a time limit is selected, can only be re-added by recreating the parking space, but not edited. Parking time end notifications can only be placed in the calendar app on your device if you specified Add notification in the Calendar app when you created the parking space.  
+:::
 
 
 ### Stay informed
