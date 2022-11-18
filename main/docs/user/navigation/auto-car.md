@@ -29,10 +29,11 @@ OsmAnd is available for [**Android Auto**](https://www.android.com/auto) and [**
 
 <TabItem value="ios" label="iOS"> 
 
+At first, the iOS device needs to connect with the car media. After connection, the OsmAnd logo will appear on the CarPlay menu. After that, you can start navigation or use the searching feature of OsmAnd in CarPlay.
+
 Choosing app profile that will be used while connected to CarPlay: **Menu → Settings → OsmAnd Settings → CarPlay profile**
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/ios-carplay.png)
-
 
 </TabItem>
 
