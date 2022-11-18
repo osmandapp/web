@@ -11,27 +11,31 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
+<InfoIncompleteArticle/>  
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd.  
+<InfoAndroidOnly />  
 
-## Overview 
+Accessibility plugin makes Accessibility Android features directly available in OsmAnd.  
 
-Makes the device's accessibility features directly available in OsmAnd. It facilitates e.g. adjusting the speech rate for text-to-speech voices, configuring D-pad navigation, using a trackball for zoom control, or text-to-speech feedback, for example to auto announce your position.
+## Overview  
 
+Accessibility plugin facilitates e.g. adjusting the speech rate for text-to-speech voices, configuring D-pad navigation, using a trackball for zoom control, or text-to-speech feedback, for example to auto announce your position.
 
-## Setup 
+## Setup  
 
-To activate device's accessibility features in OsmAnd, you need to make the following settings: 
-   
-1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.    
+To activate device's accessibility features in OsmAnd, you need to make the following settings:  
+
+1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
-
 
 ### Plugin settings
 
 **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>
 
 
-## How to use
+![Accessibility settings android](@site/static/img/plugins/accessibility/аccessibility_settings_android.png) 
+
+
+## How to use  

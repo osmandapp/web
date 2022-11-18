@@ -82,10 +82,10 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 
 ### Plugin Settings
 
-Each plugin could have specific profile or global settings which could be accessed via:  
+Almost each plugin have specific profile or global settings, which can be accessed via:  
 
-- **Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group"/> → Plugin name → Settings or  
-- **Android**, **iOS**: Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings.  
+- **Android**: *Main menu → Plugins → Plugin name → Settings*  or  
+- **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
 
 | Plugin name | Settings |
 |:------------|:-------|

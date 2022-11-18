@@ -20,7 +20,7 @@ Terrain information, such as **Contour lines**, **Hillshades** and **Slopes**, h
 Each provided by this plugin map is an independent layer that appears above or below the main map source when enabled, depending on the settings.
 
 :::tip NOTE
-The Contour Lines plugin is a paid feature of the OsmAnd app. 
+The Contour Lines plugin is a paid feature of the OsmAnd app.  
 :::
 
 Contour lines consists of 3 map types:  
