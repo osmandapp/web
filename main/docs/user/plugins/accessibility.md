@@ -14,11 +14,30 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd.  
+The Accessibility plugin allows you to use special features that are in your device's system settings directly in the OsmAnd app.  
+
 
 ## Overview 
 
-Makes the device's accessibility features directly available in OsmAnd. It facilitates e.g. adjusting the speech rate for text-to-speech voices, configuring D-pad navigation, using a trackball for zoom control, or text-to-speech feedback, for example to auto announce your position.
+Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location.    
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
 
 
 ## Setup 
@@ -29,9 +48,81 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
 
-### Plugin settings
+## Plugin settings
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
+
+### Mode
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_mode.png)
+
+
+### Speech rate
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_speech_rate.png)
+
+
+### Smart autoannounce
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_smart_autoannounce.png)
+
+
+### Autoannounce period
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_autoan_period.png)
+
+
+### Direction style
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_direction_style.png)
+
+
+### Audio directions
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_audio_directions.png)
+
+
+### Haptic directions
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_haptic_directions.png)
 
 
 ## How to use
+
+For the plug-in to work you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+
+
+</TabItem>
+
+</Tabs> 
+
+
