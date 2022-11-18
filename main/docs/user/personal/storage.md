@@ -248,7 +248,7 @@ At this screen you can set your login and backup data.
 This feature for iOS version will be available for [OsmAnd 4.3 release](../../versions/future-ios.md).
 :::
 
-<!-
+<!--
 
 :::note
 - &nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
