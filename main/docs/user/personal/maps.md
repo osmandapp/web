@@ -239,8 +239,6 @@ OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https:
 3. OpenStreetMap users need to have a minimum of [**30 changes**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two-month period for accessing unlimited hourly map updates.
 
 
-
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -251,7 +249,7 @@ OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https:
 
 <TabItem value="ios" label="iOS">
 
-
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
 
 </TabItem>
 
