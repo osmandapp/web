@@ -95,7 +95,7 @@ Each plugin could have specific profile or global settings which could be access
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
 |🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login](../plugins/openplacereviews.md#plugin-settings) or use test |
 |🤖 [External Sensors](#external-sensors) | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
-|🤖 [Accessibility](#accessibility) | [Settings](plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
+|🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | Plugin [settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
 
