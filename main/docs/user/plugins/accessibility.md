@@ -15,31 +15,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>  
 
-The Accessibility plugin allows you to use special features that are in your device's system settings directly in the OsmAnd app.  
+The Accessibility plugin allows you to use [Accessibility Android features](https://www.android.com/accessibility/) directly in the OsmAnd app.  
 
+## Overview  
 
-## Overview 
-
-Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location.    
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
+Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location.  
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-
-
-</TabItem>
-
-</Tabs> 
-
 
 ## Setup 
 
@@ -48,26 +30,13 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
-
 ## Plugin settings
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-
-
-</TabItem>
-
-</Tabs> 
+First you need to enable and configure accessibility features in your phone.  
+After that, you can adjust the use of accessibility functions in Accessibility plugin settings menu in OsmAnd:
+- *Main menu → Plugins → Accessibiblity → Settings*  
+ 
+![Accessibility settings android](@site/static/img/plugins/accessibility/аccessibility_settings_android.png)
 
 ### Mode
 
