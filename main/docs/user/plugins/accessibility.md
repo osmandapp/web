@@ -32,10 +32,11 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 ### Plugin settings
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>
+First you need to enable and configure accessibility features in your phone.  
+After that, you can adjust the use of accessibility functions in Accessibility plugin settings menu in OsmAnd:
+- *Main menu → Plugins → Accessibiblity → Settings*  
 
-
-![Accessibility settings android](@site/static/img/plugins/accessibility/аccessibility_settings_android.png) 
+![Accessibility settings android](@site/static/img/plugins/accessibility/аccessibility_settings_android.png)  
 
 
 ## How to use  
