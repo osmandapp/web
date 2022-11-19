@@ -13,68 +13,74 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-<InfoAndroidOnly />
+<InfoIncompleteArticle/>  
+
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
+
+OsmAnd Tracker is a modified Telegram client created for flexible monitoring and sending messages with GPS locations in real-time.  
+
 
 ## Overview
 
-[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) helps to see your contacts on the map in OsmAnd. It has a social aspect; you need to have contacts, that's why it was challenging for us to choose the platform to build it on.
+[OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) helps you see your contacts on a map in OsmAnd. It has a social aspect to it, meaning that to use it, you need to provide access to your contacts for the platform OsmAnd chooses.  
 
-We have chosen [Telegram](https://telegram.org/) as the most open social platform since it has an [Open API](https://core.telegram.org/api), Open SDK and, moreover, it will eventually have an Open Server implementation (Blockchain).
+We chose [Telegram](https://telegram.org/) s the most open social platform because it has an [Open API](https://core.telegram.org/api), Open SDK and, moreover, will eventually have an Open Server implementation (Blockchain).
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My_Location.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Map.png) 
 
 
-It is important that we have a great level of interoperability between the applications. You can easily exchange your location with your contacts without having 'Telegram mobile app' (OsmAnd Online GPS Tracker is an independent telegram client) and, the other way around, your contacts should not necessarily have [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) in order to see your location.
+### How it works
 
-We designed [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) so you could still use your Telegram app and OsmAnd app naturally without flaws.
+Importantly, there is a high level of compatibility between the apps. You can easily share your location with your contacts without having the Telegram mobile app (OsmAnd Online GPS Tracker is an independent Telegram client), and conversely, your contacts do not need to have [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) to see your location.  
 
-The application sends the Live Location messages to the selected chats for the time you specified, displays a list of your contacts and groups, and checks the chats for the presence of the messages with a location, which are then displayed on the map in OsmAnd.
-The application does not send or view your text messages.
+We designed [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) so that you can continue to use the Telegram app and the OsmAnd app in the way you are used to, without additional restrictions.  
 
+The application sends Live Location messages to selected chats for the time you set, displays a list of your contacts and groups, and checks chats for messages with your location, which are then displayed on the map in OsmAnd.
+The application does not send or view your text messages.  
 
-Log in using your phone number registered in Telegram to enable the following:
-- Manage the list of contacts and groups that send you their location,
-- View the location of contacts and groups in real time on a map in OsmAnd,
-- Set the time for sharing the location separately for each chat,
-- Set the location update frequency,
-- Watch the chronology of your and your contacts' movement.
-
+Log in using your Telegram registered phone number to enable the following:
+- Manage the list of contacts and groups that send you their location.
+- View the location of contacts and groups in real time on a map in OsmAnd.
+- Set the time for sharing the location separately for each chat.
+- Set how often your location is updated.
+- Monitor the chronology of your movements and your contacts.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My-location_1.png)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png) 
+
 
 ## Setup
 
 Install OsmAnd Online GPS Tracker APK:
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram),
+- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
 - [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
 
-## Settings
+## Plugin settings
 
 There are several settings for managing the frequency of sharing locations and controlling the display of the locations sent to you.
 
-For opening the _Settings_ menu:
+For opening the _Settings_ menu:  
 
-_["My location"](#my-location-screen) screen → move screen down (contacts list) → ⋮ → Settings_
-
-or
-
-_["Live now"](#live-now-screen) screen → ⋮ → Settings_
+_["My location"](#my-location-screen) screen → move screen down (contacts list) → ⋮ → Settings_  
+or  
+_["Live now"](#live-now-screen) screen → ⋮ → Settings_  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings_1.png)
+
 
 ### Position
 
 **Send my location** — allows you to set the interval for sending your position from once per second (for increasing accuracy) to once in 5 minutes (for reducing power consumption).
 
-**Not moving** — allows you to set the time (from 1 minute to 1 hour) after which the location of your contact will be considered outdated. If the location becomes outdated, the position becomes gray.
+**Not moving** — allows you to set the time (from 1 minute to 1 hour) after which a contact's location is considered out of date. If a location becomes obsolete, it turns grey.
 
-**Location history** — allows setting the time (from 5 minutes to 24 hours) after which the contact with the deleted location will be hidden from the list and the OsmAnd map.
+**Location history** — allows you to set the time (from 5 minutes to 24 hours) after which the contact with the deleted location will be hidden from the list and the OsmAnd map.
 
-**Send location as** - allows you to make a selection of the category of sending a message about your location in Telegram (3 types of sending): text, map, text and map.
+**Send location as** - allows you to choose a category for sending messages about your location in Telegram (3 types of sending): text, map, text and map.
 
-**Buffer expiration time** - allows you to choose time to keep saving points in the buffer.
+**Buffer expiration time** - allows you to choose the time of saving points in the buffer.
 
 **Background work** - allows you to change battery optimization settings to stabilize location sharing.
 
@@ -83,25 +89,29 @@ _["Live now"](#live-now-screen) screen → ⋮ → Settings_
 
 ### Units & formats
 
-Allows you to add settings for units and formats. Now you can choose your comfortable values for Telegram messages during sharing location.
+Allows you to add settings for units and formats. Now you can choose your comfortable values for Telegram messages when sharing location data.  
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg) 
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg) 
+
 
 ### Appearance
 
-Allows you to show the number of GPS points received from other contacts, as well as sent by you.
+Allows you to show the number of GPS points received from other contacts, as well as those sent by you.
+
 
 ### Privacy
 
 Using proxy inside of OsmAnd Tracker. Go to Settings and write your proxy data: _Settings → Privacy → Proxy Settings_
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg) 
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3-1.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1.jpg) 
+
 
 ### GPS settings
 
-Settings of location points. If you stay at one place some time without moving, for example, your points don't send and your GPX track will be nicer.
+Location point settings. For example, if you stay in one location for some time without moving, your location point data is not sent and your GPX track will display more accurate and accurate data.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/5-1.jpg)
+
 
 ### Share location as
 
@@ -109,103 +119,108 @@ If you want to connect several devices to one Telegram account, you need to clic
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Settings-ShowGPSPoints.png)
 
+
 ### OsmAnd Connect
 
-This setting allows you to select the version of OsmAnd in which your contacts with the position will be displayed on the map.
+This setting allows you to select the version of OsmAnd in which your contacts with their location will appear on the map.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Settings-2.png)
 
+
 ### Account
 
-Here you can check which telegram account you use. 
+Use this setting to check which Telegram account you are currently using. Also in this menu you can exit the OsmAnd Telegram application by simply tapping the _"Log out"_ button.  
 
-At this menu you can log out from OsmAnd Telegram app just to click _"Log out"_ button
 
 ### Logcat buffer
 
 Here you can check and share detailed logs of the app.
 
+
 ## "My location" screen
 
-On this screen you can see your contacts from Telegram. You can choose one or more of its and set parametres of sharing and start to share your location.
+On this screen, you can see your Telegram contacts. You can choose one or more of them, set sharing options, and start sharing your location.  
 
-After the first start, you see Suggested list of contacts. What is it? It's your last five contacts who you shared your location with. You can click only once to continue sharing your location with these contacts.
+After the first launch, you will see a list of Suggested contacts. These are the five most recent contacts you've shared your location with. You can only click once to continue sharing your location with these contacts.  
 
-Time of sharing is your last choosing sharing time for contact.
+Sharing Time is the last sharing time you selected for the contact.  
 
-When you start sharing, you can see in the _"My location"_ screen your Suggested list and button _"Back to OsmAnd"_.
+When you start sharing, you'll see a list of Suggested contacts and a _"Back to OsmAnd"_ button on the _"My location"_ screen.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/8.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/9.jpg)
 
+
 ## "Live now" screen
 
-At this menu, you can see all contacts who are sharing a location for you. Click to the contact and look at it on **OsmAnd map**.
+In this menu, you can see all contacts who are sharing a location with you. Tap the contact and look at it on **OsmAnd map**.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
 
+
  ### "Active marker" on the OsmAnd map
 
-It's very useful to see distance, speed, and angle movement of your contacts at  OsmAnd map and text in Telegram. You can understand at once where and how your contact move.
+Allows you to track the distance, speed, and angle movement of your contacts on the OsmAnd map and in Telegram text. You can understand where and how your contact is moving.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6-1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7-1.jpg)
 
+
 ## "Timeline" screen
 
-This is the third tab in the application.  It is possible to choose the day when you would like to see the history of the location shared with you. When selected, the contacts that showed their location on the selected day are displayed.
+This is the third tab in the application. This is the third tab in the app. Here you can select a day to view the history of locations shared with you. Selecting a day displays the contacts who showed their location that day.  
 
 Monitoring allows you to collect information in the background when your contacts share it. To do this, you must enable it.
 
-To view all information about  contact location, click on the contact's icon, or open the GPX track in OsmAnd and study the track in more detail ([read more here](./trip-recording.md)). You can also share the GPX track for the selected period: by sending it to mail or any instant messenger.
+To view all information about a contact's location, tap its icon or open a GPX track in OsmAnd and explore the track in more detail ([read more here](./trip-recording.md)). You can also share the GPX track for a selected period: by sending it to an email or any instant messenger.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4-1-Timeline.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Timeline_2.png)
 
-You can see the online moving of your contacts on the map of OsmAnd with online GPS-track. For this, you should switch on _"Live"_ at your contact in _"Timeline"_. If there are many sharing contacts at this moment OsmAnd app chooses the color of tracks by random.
+You can see the online movement of your contacts on the OsmAnd map using the online GPS track. To do this, you need to enable _"Live"_ at the contact in the _"Timeline"_. If there are many contacts in common at the moment, the OsmAnd app selects the color of the tracks at random.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/1.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/2.jpg)
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/3.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/4.jpg)
 
-When you click _"Show in OsmAnd"_ or mini-map you can choose special settings for GPX-track your contact in OsmAnd app and see it live moving with track on OsmAnd map.
+When you tap "Show in OsmAnd" or on the mini-map, you can select special settings for GPX tracking of your contact in the OsmAnd app and see their movement in real time on the OsmAnd map.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/5.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/6.jpg)
 
-If you don't have data collected on the selected day there is a special notification on the screen. You can go to select the nearest date with one click.
+If there is no data collected on the selected date, a special notification will appear on the screen. You can move to the nearest date by tapping the forward or backward arrow.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7.jpg)
 
+
 ## OsmAnd Tracker Widget
 
-For viewing [the Widget](../widgets/info-widgets.md#-tracker-widget-android) you should turn OsmAnd Tracker plugin on first. After that, the Widget will be in the upper-right corner of the OsmAnd screen with the signature _"Start"_.
+To view [the Widget](../widgets/info-widgets.md#-tracker-widget-android), you need to first enable the OsmAnd Tracker plugin on first. After that, the Widget will be in the upper-right corner of the OsmAnd screen with the word _"Start"_ on it.  
 
 To switch off it, you can go to _the General menu → Configure screen_ (from OsmAnd version 3.6).
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/10.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/14.jpg)
 
-The Widget has few appearances. At first, it is _"Start"_. When you click _"Start"_ you go to Online OsmAnd Tracker, where you can choose any contacts or click to Suggested contacts.
+The widget has several views.  
 
-When you start sharing your location the Widget changes appearance.
+- The first is Start. When you tap _"Start"_, you go to Online OsmAnd Tracker, where you can select any contacts or tap Suggested Contacts.  
+- Second, when you start sharing your location, the widget changes its appearance.  
 
-The green smile _"OK"_ means that your location is being shared now.
-
-It's mean that everything is ok. The sharing does not have any issues.
-
-The orange smile _"OK"_ means that your location cannot be sent. There are issues with the Internet or with GPS connection.
+   - The green _"OK"_ emoji icon means that your location is now being shared. Everything is normal, the sharing is running without errors.  
+   - An orange _"OK"_ emoji icon means your location cannot be sent. There is a problem with the Internet or GPS connection.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/11.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/13.jpg)
 
-If you don't have an internet connection for a long time, your buffer in OsmAnd Tracker saves points of your location. The Widget in OsmAnd changes its appearance. It starts to show the time of the buffer filling how long the buffer is keeping points of your location.
+- If you don't have an Internet connection for a long time, your location points are saved in the OsmAnd Tracker buffer. The widget in OsmAnd changes its appearance to a gray emoji icon. It shows the buffer fill time, how long the buffer already saves your location points.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/15.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/16.jpg)
 
-As soon as your internet connection is restored, points from the buffer are sent. The Widget in OsmAnd changes its appearance and minutes in the Widget are reduced. When all points from the buffer are sent to Telegram, the Widget is displayed as a green smile.
+- As soon as your internet connection is restored, the location points from the buffer will start unloading. The OsmAnd widget will change its appearance and the minutes in it will begin to decrease. When all the location points from the buffer are sent to Telegram, the widget will appear as _"OK"_ emoji icon.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/18.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/23.jpg)
 
-In OsmAnd, you can see that the Widget has a green smile. It's mean that everything is ok. The sharing process does not have any issues.
+- If you see widget as _"OK"_ emoji icon, it means that everything is fine. The exchange process does not have any problems.
+
 
 ## OsmAnd Assistant
 
-We have also prepared a Telegram bot called 'OsmAnd Assistant,' so you can integrate OsmAnd Telegram with 3rd party trackers or APIs. Hence, you can not only share your location but also the locations of your bicycle or a group of individuals taking part in racing which is available via API, and OsmAnd Telegram will make sure you have a nice presentation of locations on the map in OsmAnd itself.
+The OsmAnd app has its own Telegram bot called "OsmAnd Assistant," which helps you integrate OsmAnd Telegram with third-party trackers or APIs. You'll be able to share not only your location but also the location of your bike or a group of people racing available through the API. OsmAnd Telegram will give you a nice presentation of your locations on the map in OsmAnd itself.  
 
 Please share with us what you think about this new app on [Twitter](https://twitter.com/osmandapp) and other social channels.
 

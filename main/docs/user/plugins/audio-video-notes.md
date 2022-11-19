@@ -42,7 +42,7 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 3. If needed, configure [the recording settings](#plugin-settings) per profile.  
 
 
-### Plugin settings
+## Plugin settings
 
 For every profile, it is possible to configure the recording settings. 
 
@@ -201,10 +201,6 @@ Adding the widget to the screen is needed when you would rather skip looking for
 
 ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
 
-<!--5. Make sure <Translate android="true" ids="shared_string_show"/> or <Translate android="true" ids="shared_string_collapse"/> is selected, so that the widget is displayed on the device screen. In the latter case, it will be available from an arrow icon opening the dropdown list of widgets in the top right-hand corner of the screen. 
-
-
-![Widget options](@site/static/img/plugins/audio-video-notes/av-widget-configure2.png)-->
 
 
 ## Manage multiple notes

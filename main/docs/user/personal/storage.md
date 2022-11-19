@@ -17,19 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
-
 How to configure, access and change data storage for maps, tracks and other personal data
 
 ## Storage info in Download maps menu
@@ -78,9 +65,7 @@ ___________________________
 
 For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>
-
-<p> </p>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>_
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/general_settings_storage_android.png) ![Profiles Storage Settings 1 Android](@site/static/img/personal/profiles/general_settings_storage_1_android.png)
 
@@ -106,7 +91,11 @@ Memory name | Permission access
 
 <TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly/>
+OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md):
+
+_Files → On My Phone → OsmAnd Maps_
+
+![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)
 
 </TabItem>
 
@@ -248,7 +237,7 @@ At this screen you can set your login and backup data.
 This feature for iOS version will be available for [OsmAnd 4.3 release](../../versions/future-ios.md).
 :::
 
-<!-
+<!--
 
 :::note
 - &nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).

@@ -232,13 +232,25 @@ Each map has independent collection  of tiny map updates, please be aware if you
 
 ### Free for OSM Mappers
 
-<InfoAndroidOnly />
-
 OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).
 
 1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
 2. [Log in by your OpenStreetMap username](../plugins/osm-editing.md#plugin-settings).
 3. OpenStreetMap users need to have a minimum of [**30 changes**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two-month period for accessing unlimited hourly map updates.
 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+
+</TabItem>
+
+</Tabs>
