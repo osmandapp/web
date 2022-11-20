@@ -66,9 +66,9 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
 | [Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
-| [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), Screen |
+| [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
-| [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), Profile |
+| [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
 |🤖 [Audio/video notes](#audiovideo-notes) | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
@@ -76,16 +76,16 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |🤖 [External Sensors](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |🤖 [Accessibility](#accessibility) | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
-| [OsmAnd development](#osmand-development) | Custom [Settings](../plugins/development.md#plugin-settings) |
+| [OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#osmand-tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
 
 
 ### Plugin Settings
 
-Each plugin could have specific profile or global settings which could be accessed via:  
+Almost each plugin have specific profile or global settings, which can be accessed via:  
 
-- **Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group"/> → Plugin name → Settings or  
-- **Android**, **iOS**: Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings.  
+- **Android**: *Main menu → Plugins → Plugin name → Settings*  or  
+- **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
 
 | Plugin name | Settings |
 |:------------|:-------|
@@ -93,10 +93,10 @@ Each plugin could have specific profile or global settings which could be access
 | [Weather](#weather) | Configure measurement units for displaying weather events |
 |🤖 [Audio/video notes](#audiovideo-notes) | Select video format, how long to store [etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
-|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login](../plugins/openplacereviews.md#plugin-settings) or use test |
+|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login](../plugins/openplacereviews.md#plugin-settings) or use test registration|
 |🤖 [External Sensors](#external-sensors) | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
 |🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
-| [OsmAnd development](#osmand-development) | Plugin [settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
+| [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
 
 
