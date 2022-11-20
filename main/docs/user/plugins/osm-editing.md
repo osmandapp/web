@@ -33,7 +33,7 @@ To use OpenStreetMap editing, you need to make the following settings:
 2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
 
 
-### Plugin settings
+## Plugin settings
 
 <Tabs groupId="operating-systems">
 
@@ -89,35 +89,32 @@ The plugin lets you create new objects, so-called  [points of interest or POI](.
 
 </Tabs>
 
-### How to add / modify POI
+### How to add / modify POI 
+
+1. Tap on the map where the new POI is to be placed.
+2. Tap on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc.
+4. Register at [OpenStreetMap](http://openstreetmap.org/).
+5. Provide your OSM account information to make changes.  
+
+:::info NOTE
+You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
+:::  
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
-
-[Actions in Map Context menu](../map/map-context-menu.md#actions) - [Create / Modify POI](../map/map-context-menu.md#-create--modify-poi)
-
-**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-
-To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>
+To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
 
-[Actions in Map Context menu](../map/map-context-menu.md#actions) - [Create / Modify POI](../map/map-context-menu.md#-create--modify-poi)
-
-**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-
-To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>
+To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
+*<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
 
 </TabItem>
 
@@ -129,37 +126,44 @@ To view OSM edits layer on the map for tapping to this edits for [openning Map C
 
 <TabItem value="android" label="Android">
 
-openstreetmap.org/). To do that, turn the [Trip recording plugin](../plugins/trip-recording.md) on, record a track, and then click to [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose <Translate android="true" ids="upload_to_openstreetmap"/>. 
+1. Enable [Trip recording plugin](../plugins/trip-recording.md).
+2. Record a track.
+3. Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose <Translate android="true" ids="upload_to_openstreetmap"/>.  
+
+Available settings:  
+
+- **<Translate android="true" ids="shared_string_description"/>** - allows to add description to the track.  
+- **<Translate android="true" ids="gpx_tags_txt"/>** - allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
+- **<Translate android="true" ids="gpx_visibility_txt"/>** - track visibility for OSM users:  
+
+ &nbsp;*Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not associated with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+ 
+ &nbsp;*Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+ 
+ &nbsp;*Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
+ 
+ &nbsp;*Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
+ 
+- **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
+
+
+
+:::info NOTE
+OSM editing must be enabled. In one hour, your track will be added to [OSM traces](https://www.openstreetmap.org/traces) for you to view and for other users to find and use.  
+You can take part in the work on the global map. Just share the tracks you've made. They become part of the [OpenStreetMap](http://openstreetmap.org/) project. Be sure to mark objects and roads.
+:::  
+
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
-
-At this menu:
-- &nbsp;<Translate android="true" ids="shared_string_description"/> - allows to add description to the track.
-- &nbsp;<Translate android="true" ids="gpx_tags_txt"/> - allows to add any tags for to identify your track. Tag "osmand" is tag by default, user can enter tags separted by comma.
-- &nbsp;<Translate android="true" ids="gpx_visibility_txt"/> - track visibility for OSM users:
-
- &nbsp;<Translate android="true" ids="gpx_upload_public_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_identifiable_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_trackable_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_private_visibility_descr"/>
- 
-- &nbsp;<Translate android="true" ids="login_account"/> - [OSM account](https://www.openstreetmap.org/login).
-
-
-Kindly note, that <Translate android="true" ids="osm_editing"/> has to be turned on. 
-In an hour, your track will be added to [https://www.openstreetmap.org/traces](https://www.openstreetmap.org/traces), so you can view it and other users can find it helpful, as well. 
-
-You can participate in the work on the global map. Just share the tracks you've made. They become part of the [OpenStreetMap](http://openstreetmap.org/) project. Make sure you tag objects and roads as well.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 
-> ```This feature is not available for iOS version. ```
+:::info NOTE
+This option is not available for iOS version of OsmAnd app.
+:::  
 
 </TabItem>
 

@@ -12,7 +12,13 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
+<InfoIncompleteArticle/>  
+
+
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
+
 
 The Accessibility plugin allows you to use special features that are in your device's system settings directly in the OsmAnd app.  
 
@@ -21,23 +27,7 @@ The Accessibility plugin allows you to use special features that are in your dev
 
 Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location.    
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
 ![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-
-
-</TabItem>
-
-</Tabs> 
 
 
 ## Setup 
@@ -50,23 +40,9 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 ## Plugin settings
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
+To go to the Accessibility plugin settings, follow this path:  
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-
-
-</TabItem>
-
-</Tabs> 
 
 ### Mode
 
@@ -106,23 +82,9 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 ## How to use
 
 For the plug-in to work you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
+ 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-
-
-</TabItem>
-
-</Tabs> 
 
 
