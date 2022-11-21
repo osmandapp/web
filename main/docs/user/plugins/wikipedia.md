@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.
 
 :::tip NOTE
-The Contour Lines plugin is a paid feature of the OsmAnd app.  
+The Wikipedia plugin is a paid feature of the OsmAnd app.  
 :::
 
 ## Overview 

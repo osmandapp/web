@@ -82,10 +82,34 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 
 ### Plugin Settings
 
+:::caution NOTE
+Only the development plugin changes the settings for all profiles. The remaining plugins are configured for each profile separately.  
+:::
+
 Almost each plugin have specific profile or global settings, which can be accessed via:  
 
 - **Android**: *Main menu → Plugins → Plugin name → Settings*  or  
 - **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Below you can find the list of plugin, that have their own settings.
 
 | Plugin name | Settings |
 |:------------|:-------|
@@ -98,7 +122,6 @@ Almost each plugin have specific profile or global settings, which can be access
 |🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
-
 
 ## List
 

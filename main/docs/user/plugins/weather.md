@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Interactive weather map layers allow you to watch for current temperature and weather conditions in your city or any other location on the interactive global map.
 
 :::tip NOTE
-The Contour Lines plugin is a paid feature of the OsmAnd app. 
+The Weather plugin is a paid feature of the OsmAnd app. 
 :::
 
 ## Overview

@@ -29,20 +29,40 @@ To activate special features for developers and testers:
 
 ## Plugin settings
 
+:::caution NOTE  
+Development plugin settings are global and apply to all profiles.  
+:::
+
+Plugin development settings can be reached via:  
+
+- **Android**: *Main menu → Plugins →OsmAnd development → Settings*  or  
+- **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-To find OsmAnd development plugin, follow these steps: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development,shared_string_settings"/>*
 
 ![Development Settings Android](@site/static/img/plugins/development/development_plugin_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_plugin_settings_2_andr.png)
 
 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_1_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
 ### Settings and info
 
-These plugin settings are global and apply to all profiles.  
 
+
+![Development Settings Android](@site/static/img/plugins/development/development_plugin_memory_alloc_android.png)  
 
 - <Translate android="true" ids="use_opengl_render"/> - <Translate android="true" ids="use_opengl_render_descr"/>  
 
@@ -82,23 +102,9 @@ These plugin settings are global and apply to all profiles.
 - Maximum value = 50% of Phone memory.
 - Default value = 256 MB.  
 
-
-![Development Settings Android](@site/static/img/plugins/development/development_plugin_memory_alloc_android.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
 To find settings of OsmAnd development plugin, follow these steps: *<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development"/>*. 
 
 Here you can simulate your position by GPX-track. [Read here](../plugins/development.md#how-to-use) about GPX-track simulation.
-
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_1_ios.png)
-
-</TabItem>
-
-</Tabs> 
 
 
 ## How to use

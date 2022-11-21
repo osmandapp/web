@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Nautical map view is a detailed graphic representation of oceans, seas, coastal areas, and rivers that helps you navigate the water and know popular routes, obstacles in your waterway, nearest harbors, anchorages, and other important landmarks.  
 
 :::tip NOTE
-The Contour Lines plugin is a paid feature of the OsmAnd app. 
+The Nautical map view plugin is a paid feature of the OsmAnd app.  
 :::
 
 ## Overview
