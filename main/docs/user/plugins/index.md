@@ -58,7 +58,7 @@ Detailed information about the purchase of the application can be found in the s
 
 OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
-🤖 - only for Android version.
+🤖 - only for Android version of OsmAnd.
 
 | Plugin name |Features |
 |:------------|:-------|
@@ -95,21 +95,21 @@ Almost each plugin have specific profile or global settings, which can be access
 
 <TabItem value="android" label="Android">
 
-
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
+![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_1.png) ![Settings plugin Android 2](@site/static/img/plugins/development/plugin_settings_android_2.png) ![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_3.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
-![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
+![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_1.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/plugin_settings_ios_2.png) ![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_3.png)  
 
 </TabItem>
 
 </Tabs>
 
-Below you can find the list of plugin, that have their own settings.
+Below you can find the list of plugins, that have their own settings.
+
+🤖 - only for Android version of OsmAnd.
 
 | Plugin name | Settings |
 |:------------|:-------|
