@@ -26,7 +26,7 @@ The Accessibility plugin allows you to use special features that are in your dev
 
 ## Overview  
 
-Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location. [Learn more](https://www.android.com/accessibility/) about Android accessibility features.  
+Makes device accessibility features directly available in OsmAnd. The plugin allows blind and visually impaired people to take full advantage of the OsmAnd app's features. Accessibility plugin makes it easy to set speech speed for text pronunciation, customize navigation, zoom controls, and automatic announcements. [Learn more](https://www.android.com/accessibility/) about Android accessibility features.
 
 
 ## Setup 
@@ -44,12 +44,12 @@ To go to the Accessibility plugin settings, follow this path:
 
 The Accessibility plugin settings allow you to configure the application in accordance with your individual needs. They relate to the navigation process and are set individually for each [profile](../personal/profiles.md). 
 - **Accessibility Mode**. Allows you to enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and turns on the features *According to the Android system settings*.  
-- **Speech rate**
-- **Smart autoannounce**
+- **Speech rate**. Allows you to adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.  
+- **Smart autoannounce**. If this setting is enabled, you will receive voice announcements when you deviate from the set track.  
 - **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.  
-- **Direction style**
-- **Audio directions**
-- **Haptic directions**. This settings provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.  
+- **Direction style**. Allows you to choose how the OsmAnd app will notify you of directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).  
+- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
+- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.  
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
 
@@ -57,6 +57,11 @@ The Accessibility plugin settings allow you to configure the application in acco
 ## How to use
 
 For the plugin to work, you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
+
+After enabling the plugin and enabling the Accessibility settings for your device, the map's reaction to gestures will be changed. The Screen reader will tell you in which situations to apply which gesture. For example:  
+- Long tap on the map displays a context menu referring not to the tap point but to the map location point.
+- The map is moved with two fingers.
+- A single tap on a graphical interface element gives information about it, and a double tap makes an action.  
  
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
 
