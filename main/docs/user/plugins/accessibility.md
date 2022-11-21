@@ -26,9 +26,7 @@ The Accessibility plugin allows you to use special features that are in your dev
 
 ## Overview  
 
-Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location.  
-
-![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
+Makes device accessibility functions directly available in OsmAnd. This makes it easy to set the speech speed for text pronunciation, adjust the D-pad navigation, use the trackball for zoom control or text feedback, for example as for automatically announcing your location. [Learn more](https://www.android.com/accessibility/) about Android accessibility features.  
 
 
 ## Setup 
@@ -40,48 +38,45 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 ## Plugin settings
 
+The Accessibility plugin settings allow you to configure the application in accordance with your individual needs.
+
 To go to the Accessibility plugin settings, follow this path:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*  
 
+- **Accessibility Mode**. Allows you to enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and turns on the features *According to the Android system settings*.  
+- **Speech rate**
+- **Smart autoannounce**
+- **Autoannounce period**
+- **Direction style**
+- **Audio directions**
+- **Haptic directions**. This settings provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.  
 
-### Mode
+![Accessibility](@site/static/img/plugins/Accessibility/access_.png)
+
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_mode.png)
 
 
-### Speech rate
-
 ![Accessibility](@site/static/img/plugins/Accessibility/access_speech_rate.png)
 
-
-### Smart autoannounce
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_smart_autoannounce.png)
 
 
-### Autoannounce period
-
 ![Accessibility](@site/static/img/plugins/Accessibility/access_autoan_period.png)
 
-
-### Direction style
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_direction_style.png)
 
 
-### Audio directions
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_audio_directions.png)
 
 
-### Haptic directions
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>
-
 
 ## How to use
 
-For the plug-in to work you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
+For the plugin to work you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
  
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
