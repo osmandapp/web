@@ -54,25 +54,35 @@ Plugin development settings can be reached via:
 
 </Tabs>  
 
-- <Translate android="true" ids="safe_mode"/> - <Translate android="true" ids="safe_mode_description"/>
-- <Translate android="true" ids="approx_safe_mode"/> - <Translate android="true" ids="approx_safe_mode_description"/>
-- <Translate android="true" ids="simulate_your_location"/> - <Translate android="true" ids="simulate_your_location_gpx_descr"/>
-- <Translate android="true" ids="trace_rendering"/> - <Translate android="true" ids="trace_rendering_descr"/> 
-- <Translate android="true" ids="transparent_status_bar"/> - <Translate android="true" ids="transparent_status_bar_descr"/>. 
-- <Translate android="true" ids="simulate_initial_startup"/> - <Translate android="true" ids="simulate_initial_startup_descr"/>
-- <Translate android="true" ids="show_free_version_banner"/> - <Translate android="true" ids="show_free_version_banner_description"/>
-- <Translate android="true" ids="test_voice_prompts"/> - Select a voice and test by playing announcements.
-- <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>.  
+:::caution NOTE
+The options listed below are only available in the Android version of OsmAnd
+:::
+
+- **Hightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+
+:::note
+Hightmaps available for testing only for some regions.
+:::
+
+- **<Translate android="true" ids="safe_mode"/>** - <Translate android="true" ids="safe_mode_description"/>
+- **<Translate android="true" ids="approx_safe_mode"/>** - <Translate android="true" ids="approx_safe_mode_description"/>
+- **<Translate android="true" ids="simulate_your_location"/>** - <Translate android="true" ids="simulate_your_location_gpx_descr"/>
+- **<Translate android="true" ids="trace_rendering"/>** - <Translate android="true" ids="trace_rendering_descr"/> 
+- **<Translate android="true" ids="transparent_status_bar"/>** - <Translate android="true" ids="transparent_status_bar_descr"/>. 
+- **<Translate android="true" ids="simulate_initial_startup"/>** - <Translate android="true" ids="simulate_initial_startup_descr"/>
+- **<Translate android="true" ids="show_free_version_banner"/>** - <Translate android="true" ids="show_free_version_banner_description"/>
+- **<Translate android="true" ids="test_voice_prompts"/>** - Select a voice and test by playing announcements.
+- **<Translate android="true" ids="logcat_buffer"/>** - <Translate android="true" ids="logcat_buffer_descr"/>.  
 
 **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
-:::caution NOTE
+:::note
 Higher memory allocation may impact the performance of other apps.
 :::
 
 ## GPX-track simulation
 
-The development plugin provides an opportunity to simulate movement on a GPX track. For these purposes, make the following settings:  
+The development plugin provides an opportunity to simulate movement using a GPX track. For these purposes, do the following:  
 
 - Tap on **<Translate android="true" ids="simulate_your_location"/>**. 
 - Select a route simulation speed.
