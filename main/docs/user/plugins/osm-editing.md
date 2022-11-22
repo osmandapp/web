@@ -35,6 +35,10 @@ To use OpenStreetMap editing, you need to make the following settings:
 
 ## Plugin settings
 
+:::info NOTE
+The plugin settings are global and apply to all profiles.
+:::
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -42,14 +46,13 @@ To use OpenStreetMap editing, you need to make the following settings:
 Use the following path to open the plugin's settings:  
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 
-- &nbsp;**<Translate android="true" ids="login_account"/>** - [<Translate android="true" ids="open_street_map_login_mode"/>](https://www.openstreetmap.org/login) 
+- &nbsp;**Login to OpenStreetMap** - Log in to upload changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
 - &nbsp;**<Translate android="true" ids="offline_edition"/>** - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
 - &nbsp;**<Translate android="true" ids="use_dev_url"/>** - enable or disable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to testing uploading OSM Note / POI / GPX.
 - &nbsp;**<Translate android="true" ids="map_updates_for_mappers"/>** - allows [OsmAnd live](../personal/maps.md#osmand-live) updating for mappers.
 - &nbsp;**<Translate android="true" ids="layer_osm_edits"/>** - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)   
 
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android.png)
-
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -64,12 +67,9 @@ Use the following path to open the plugin's settings:
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
 
-
-
-
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 ## How to use 
 
@@ -163,7 +163,7 @@ The OpenStreetMap editing plugin allows you to report errors on the map.
 1. Tap the map where the new OSM note is to be placed or tap an existing note.
 2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions) or [Comment](../map/map-context-menu#-comment--close-osm-note) if you want to add an error report to an existing note.
 3. Choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu#-open-osm-note) and add the necessary information. 
-5. For a new error report to appear on the map, tap the Upload button.   
+5. For a new error report to appear on the map, tap the Upload button.  
 
 <Tabs groupId="operating-systems">
 
