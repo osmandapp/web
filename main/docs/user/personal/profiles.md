@@ -99,11 +99,12 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
 
-- &nbsp;<Translate android="true" ids="choose_osmand_theme"/> - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
-- &nbsp;<Translate android="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- &nbsp;<Translate android="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
-- &nbsp;<Translate android="true" ids="map_screen_orientation"/> - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
-- &nbsp;<Translate android="true" ids="screen_control"/> - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
+- &nbsp;_<Translate android="true" ids="choose_osmand_theme"/>_ - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
+- &nbsp;_<Translate android="true" ids="rotate_map_to_bearing"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;_<Translate android="true" ids="shared_string_2_5_d_view"/>_ - allows to swtitch on/off [2.5D view](../map/interact-with-map.md#gestures) for [OpenGL rendering](../personal/profiles.md#appearance). Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.
+- &nbsp;_<Translate android="true" ids="display_position"/>_ - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- &nbsp;_<Translate android="true" ids="map_screen_orientation"/>_ - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
+- &nbsp;_<Translate android="true" ids="screen_control"/>_ - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
 
 </TabItem>
 
@@ -112,7 +113,7 @@ In this section of the General settings menu, you can set parameters for the cur
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
 - &nbsp;<Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - enables/disables 2.5D view of the map view. Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D view
+- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - enables/disables 2.5D view of the map view. Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.
 - &nbsp;<Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 
 </TabItem>

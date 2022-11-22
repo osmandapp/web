@@ -167,6 +167,42 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 </Tabs>
 
+### Map rendering engine
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+Starting from version [OsmAnd 4.2](../../../blog/osmand-android-4-2-released) OpenGL rendering engine was added in OsmAnd. From version [OsmAnd 4.3](../../../blog/osmand-android-4-3-released) OpenGL is the rendering engine by default.
+
+Here you can choose **Version 1** of OsmAnd rendering engine or **Version 2 (OpenGL)**. Please, choose the version and restart OsmAnd.
+
+:::tip
+Version 1 renderig is still preferable for older devices.
+
+OpenGL (vesion 2) is a faster map rendering engine, also featuring [2.5D view](../personal/profiles.md#appearance).
+:::
+
+![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_version_android.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::note
+
+OpenGL rendering is the rendering engine by default for iOS version.
+
+:::  
+
+
+</TabItem>
+
+</Tabs> 
+
+
+
 
 ## Privacy and security
 
