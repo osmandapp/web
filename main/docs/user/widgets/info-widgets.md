@@ -10,6 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 Informational widgets provide information about current location, speed, time, battery level on the map display.
@@ -91,9 +94,7 @@ The average speed is calculated for the set interval of time, according to your 
 
 <TabItem value="ios" label="iOS">  
 
-:::note
-**This feature doesn't exist for iOS version of OsmAnd.**
-:::  
+<InfoAndroidOnly />
 
 
 </TabItem>
@@ -114,19 +115,47 @@ This widget shows battery level of your device.
 
 ## Coordinates widget
 
-The widget is shown at the top of the screen. It shows the geographic coordinates of current geo-location.
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_android.png) ![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+The widget is shown at the top of the screen. It shows the geographic coordinates of:
+- &nbsp;_<Translate android="true" ids="map_center_widget"/>_ - shows coordinates of any points on the center screen.
+- &nbsp;_<Translate android="true" ids="current_location_widget"/>_ - shows coordinates of current geolocation.
+
+Where green icons are _Map center_ coordinates, blue icons are _My location_ coordinates.
+
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)
+
 
 | | |
 |------------|------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,coordinates"/> |
-|  | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/> → <Translate android="true" ids="map_center_widget"/> / <Translate android="true" ids="current_location_widget"/>  |
 | On Click | Copies the coordinates to the clipboard |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
-## GPS Info (Android)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+The widget is shown at the top of the screen. It shows the geographic coordinates of current geo-location.
+
+![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios.png)
+
+| | |
+|------------|------------|
+| Enable | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| On Click | Copies the coordinates to the clipboard |
+| Format | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
+
+</TabItem>
+
+</Tabs>
+
+
+## GPS Info  
 
 :::note
 
@@ -152,9 +181,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 <TabItem value="ios" label="iOS">  
 
-:::note
-**This feature doesn't exist for iOS version of OsmAnd.**
-:::  
+<InfoAndroidOnly /> 
 
 
 </TabItem>
