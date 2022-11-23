@@ -1,6 +1,6 @@
 import AppContext from "../../../context/AppContext";
-import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import React, {useContext} from "react";
+import {LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
+import React, {useContext, useState} from "react";
 import Utils from "../../../util/Utils";
 import TrackInfo from "./TrackInfo";
 import TracksManager from "../../../context/TracksManager";
@@ -8,6 +8,8 @@ import TracksManager from "../../../context/TracksManager";
 export default function CloudTrackItem({file}) {
 
     const ctx = useContext(AppContext);
+
+    const [loadingTrack, setLoadingTrack] = useState(false);
 
     async function enableLayer(setProgressVisible, visible) {
         if (!visible) {
@@ -28,6 +30,7 @@ export default function CloudTrackItem({file}) {
 
     async function addTrackToMap(setProgressVisible) {
         ctx.setCurrentObjectType('cloud_track');
+        setProgressVisible(true);
         if (file.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
         } else {
@@ -51,7 +54,7 @@ export default function CloudTrackItem({file}) {
         }
     }
 
-    return (
+    return (<>
         <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
             <Tooltip title={<TrackInfo file={file}/>}>
                 <ListItemText inset>
@@ -64,7 +67,9 @@ export default function CloudTrackItem({file}) {
                 checked={!!ctx.gpxFiles[file.name]?.url}
                 onClick={(e) => e.stopPropagation()}
                 onChange={(e) => {
-                    !file.local && enableLayer(ctx.setGpxLoading, e.target.checked)
+                    !file.local && enableLayer(setLoadingTrack, e.target.checked)
                 }}/>
-        </MenuItem>)
+        </MenuItem>
+        {loadingTrack ? <LinearProgress/> : <></>}
+    </>)
 }
