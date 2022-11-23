@@ -173,7 +173,7 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 <TabItem value="android" label="Android">  
 
-Starting from version [OsmAnd 4.2](../../../blog/osmand-android-4-2-released) OpenGL rendering engine was added in OsmAnd. From version [OsmAnd 4.3](../../../blog/osmand-android-4-3-released) OpenGL is the rendering engine by default.
+Starting from version [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released) OpenGL rendering engine was added in OsmAnd. From version [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) OpenGL is the rendering engine by default.
 
 Here you can choose **Version 1** of OsmAnd rendering engine or **Version 2 (OpenGL)**. Please, choose the version and restart OsmAnd.
 

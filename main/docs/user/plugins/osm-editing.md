@@ -35,7 +35,7 @@ To use OpenStreetMap editing, you need to make the following settings:
 
 ## Plugin settings
 
-:::info NOTE
+:::caution NOTE
 The plugin settings are global and apply to all profiles.
 :::
 
