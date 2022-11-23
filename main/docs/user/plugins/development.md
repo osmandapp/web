@@ -33,20 +33,24 @@ To activate special features for developers and testers:
 Development plugin settings are global and apply to all profiles.  
 :::
 
-Plugin development settings can be reached via:  
-
-- **Android**: *Main menu → Plugins → OsmAnd development → Settings*  or  
-- **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+Plugin development settings can be reached via:  
+
+- *Main menu → Plugins → OsmAnd development → Settings*  or  
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 ![Development Settings Android](@site/static/img/plugins/development/development_android_settings_1.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_android_settings_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+Plugin development settings can be reached via:  
+
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 ![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
 
@@ -64,17 +68,17 @@ The options listed below are only available in the Android version of OsmAnd
 Hightmaps available for testing only for some regions.
 :::
 
-- **<Translate android="true" ids="safe_mode"/>** - <Translate android="true" ids="safe_mode_description"/>
-- **<Translate android="true" ids="approx_safe_mode"/>** - <Translate android="true" ids="approx_safe_mode_description"/>
-- **<Translate android="true" ids="simulate_your_location"/>** - <Translate android="true" ids="simulate_your_location_gpx_descr"/>
-- **<Translate android="true" ids="trace_rendering"/>** - <Translate android="true" ids="trace_rendering_descr"/> 
-- **<Translate android="true" ids="transparent_status_bar"/>** - <Translate android="true" ids="transparent_status_bar_descr"/>. 
-- **<Translate android="true" ids="simulate_initial_startup"/>** - <Translate android="true" ids="simulate_initial_startup_descr"/>
-- **<Translate android="true" ids="show_free_version_banner"/>** - <Translate android="true" ids="show_free_version_banner_description"/>
-- **<Translate android="true" ids="test_voice_prompts"/>** - Select a voice and test by playing announcements.
-- **<Translate android="true" ids="logcat_buffer"/>** - <Translate android="true" ids="logcat_buffer_descr"/>.  
-
-**Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
+- **Safe mode** - Run the app in (slower) safe mode.  
+- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.  
+- **Simulate your position** - [Simulate](../plugins/development#gpx-track-simulation) your position using a recorded GPX track.  
+- **Rendering debug info** - Display the rendering performance.  
+- **Transparent status bar** - The map becomes visible under the status bar.  
+- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Show free version banner** - Display the free version banner even in the paid version.  
+- **Test voice prompts** - Select a voice and test by playing announcements.
+- **Logcat buffer** - Check and share detailed logs of the app.  
+  
+- **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
 :::note
 Higher memory allocation may impact the performance of other apps.
@@ -88,12 +92,15 @@ The development plugin provides an opportunity to simulate movement using a GPX 
 - Select a route simulation speed.
 - Select a GPX track to simulate the location of the device.  
 
+:::note
+The location movement speed during the simulation can be equal to the speed in the file (1), or bigger (x2, x3, x4)
+:::
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
 ![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png) ![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
-
 
 </TabItem>
 
