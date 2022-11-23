@@ -225,8 +225,9 @@ Video guide how to use Radius ruler:
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/>|
-| Units Format |<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>|
+| Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>|
+| Text size | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap,text_size"/>|
+| Units Format |<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>|
 
 </TabItem>
 
