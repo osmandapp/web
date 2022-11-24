@@ -40,7 +40,50 @@ To display weather on the OsmAnd map and on the central point of the screen, you
 5. Enable the Weather toolbar.
 
 
-## Display Weather on the map
+### Download Weather forecast
+
+Offline forecast is available per country. Duration up to 7 days. You need to select needed countries.
+
+OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
+
+For using forecast offline you need to download weather data:
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>* _→ choose a country → Weather forecast_
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,res_mapsres"/>* _→ choose a country → <Translate ios="true" ids="weather_forecast"/>_
+
+Here you see data info and update button:
+- _"<Translate ios="true" ids="shared_string_updated"/>"_ - shows the time of last update.
+- _"<Translate ios="true" ids="shared_string_next_update"/>"_ - shows the time of then next update.
+- _"<Translate ios="true" ids="shared_string_updates_size"/>"_ - shows size of all updates.
+- _"<Translate ios="true" ids="osmand_live_update_now"/>"_ button - allows to update weather data now.
+
+You can set parameters for data updating:
+- _"<Translate ios="true" ids="osmand_live_upd_frequency"/>"_ button - allows to choose update frequency: 12h, 24h, weekly. OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
+- _"<Translate ios="true" ids="osmand_live_wifi_only"/>"_ button - allows to use Wi-Fi connection for updating.
+- _"<Translate ios="true" ids="weather_remove_forecast"/>"_ button - allows to remove all worecast data for this region.
+
+
+![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
+
+## Display Weather layers 
+
+### Combine maps
 
 Weather data can be online and offline. For offline you can download this data for choosed regions.
 
@@ -88,11 +131,7 @@ For showing/hiding Weather layers, do the following:
 </Tabs>
 
 
-## Configure screen
-
-Weather quick menu and widgets.
-
-### Weather toolbar
+### Weather forecast
 
 _<Translate ios="true" ids="screen_settings_weather_toolbar"/>_ is a quick menu for the weather tool in OsmAnd.
 
@@ -173,7 +212,11 @@ Of course, you can change the time and date to have a point forecast.
 
 </Tabs>
 
-### Weather Widgets
+### Quick actions 
+
+There are quick actions configuration to turn on / off.
+
+## Weather Widgets
 
 Weather widgets show current weather data for the central point on the map:
 
@@ -205,43 +248,3 @@ Now, you can see current weather data for the central point on the map.
 </TabItem>
 
 </Tabs>
-
-## Download Weather forecast
-
-Offline forecast is available per country. Duration up to 7 days. You need to select needed countries.
-
-OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
-
-For using forecast offline you need to download weather data:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>* _→ choose a country → Weather forecast_
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,res_mapsres"/>* _→ choose a country → <Translate ios="true" ids="weather_forecast"/>_
-
-Here you see data info and update button:
-- _"<Translate ios="true" ids="shared_string_updated"/>"_ - shows the time of last update.
-- _"<Translate ios="true" ids="shared_string_next_update"/>"_ - shows the time of then next update.
-- _"<Translate ios="true" ids="shared_string_updates_size"/>"_ - shows size of all updates.
-- _"<Translate ios="true" ids="osmand_live_update_now"/>"_ button - allows to update weather data now.
-
-You can set parameters for data updating:
-- _"<Translate ios="true" ids="osmand_live_upd_frequency"/>"_ button - allows to choose update frequency: 12h, 24h, weekly. OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.
-- _"<Translate ios="true" ids="osmand_live_wifi_only"/>"_ button - allows to use Wi-Fi connection for updating.
-- _"<Translate ios="true" ids="weather_remove_forecast"/>"_ button - allows to remove all worecast data for this region.
-
-
-![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-

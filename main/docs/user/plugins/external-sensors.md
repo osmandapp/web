@@ -27,7 +27,7 @@ To display street-level images on the OsmAnd map, you need to make the following
 2. Display the Sensors data on the device screen...
 
 
-## Connection
+### Connection
 
 You need to check that sensors are available.
 
@@ -45,7 +45,7 @@ You need to check that sensors are available.
 
 </Tabs>
 
-## Settings
+### Settings
 
 Settings for the plugin are available by Plugins menu or by Profile settings:
 

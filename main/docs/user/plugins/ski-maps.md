@@ -113,7 +113,7 @@ The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/v
 
 </Tabs>
 
-### Disable Ski map view plugin 
+### Disable Ski map style
 
 If removing trails and winter colors from the map are preferred, or the ski season is over, do one of the following: 
 
