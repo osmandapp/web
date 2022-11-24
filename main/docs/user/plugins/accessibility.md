@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app but there basic **Accessibility** features are supported in **[iOS Version](#how-to-use-ios)**.
+This plugin is available only for the **Android version** of OsmAnd app though basic **Accessibility** features are available in **[iOS Version](#how-to-use-ios)** too.
 :::
 
 

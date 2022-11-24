@@ -62,27 +62,46 @@ Plugin development settings can be reached via:
 The options listed below are only available in the Android version of OsmAnd
 :::
 
-- **Hightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+### Pre-beta features
+
+- **Transparent status bar** - The map becomes visible under the status bar.  
+- **Heightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
 
 :::note
-Hightmaps available for testing only for some regions.
+Heightmaps available for testing only for some regions.
 :::
 
-- **Safe mode** - Run the app in (slower) safe mode.  
-- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.  
-- **Simulate your position** - [Simulate](../plugins/development#gpx-track-simulation) your position using a recorded GPX track.  
+### Troubleshotting
+
+- **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
 - **Rendering debug info** - Display the rendering performance.  
-- **Transparent status bar** - The map becomes visible under the status bar.  
-- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
-- **Show free version banner** - Display the free version banner even in the paid version.  
-- **Test voice prompts** - Select a voice and test by playing announcements.
 - **Logcat buffer** - Check and share detailed logs of the app.  
-  
+
+### Application Testing
+
+- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged. 
+- **Test voice prompts** - Select a voice and test by playing announcements.
+- **Show free version banner** - Display the free version banner even in the paid version.  
+
+### Internal Algorithms
+
+- **Safe mode** - Run the app in (slower) safe mode.  
+- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.    
+
+### Memory settings
+
 - **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
 :::note
 Higher memory allocation may impact the performance of other apps.
 :::
+
+## Widgets
+
+- Widgets FPS
+- Widgets Camera position
+- Center screen
+- Zoom number (Android)
 
 ## GPX-track simulation
 
