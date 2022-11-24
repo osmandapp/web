@@ -94,7 +94,7 @@ The Skiing profile is designed to be used in combination with the Winter and Ski
 
 ### Combine maps
 
-The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/contour-lines.md#show-contour-linesterrain) and [Hillshade](../plugins/contour-lines.md#hillshade-map). Below are two examples. The left shows tracks on the vector map which is displayed by default, and the right shows tracks on the vector map combined with Contour lines and the Hillshade raster map. In the second case, the map shows more geolocation and elevation data to help estimate difficulty, risk, and distance.  
+The [Vector map](../map/vector-maps.md) with [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) included can be completed with [Contour lines](../plugins/contour-lines.md#show-contour-linesterrain) and [Hillshade](../plugins/contour-lines.md#hillshade-map). Below are two examples. The left shows tracks on the vector map which is displayed by default, and the right shows tracks on the vector map combined with Contour lines and the Hillshade raster map. In the second case, the map shows more elevation data to help estimate difficulty, risk, and distance.  
 
 <Tabs groupId="operating-systems">
 
@@ -129,7 +129,7 @@ The Ski map viewer plugin is a separate application, and disabling its display d
 
 ## Skiing profile
 
-Winter and Ski map style can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default, and comfortable for [Skiing navigation](../navigation/route-navigation.md). The Skiing profile is set to the relevant navigation, unless otherwise specified.  
+Winter and Ski map style can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default. The Skiing profile is very comfortable for the [Skiing navigation](../navigation/route-navigation.md).   
 
 
 <Tabs groupId="operating-systems">
@@ -160,21 +160,21 @@ To select Skiing profile follow this path:
 ## Ski map style
 
 
-Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to know exactly the types of pistes displayed on the map, as well as the types of airways and other characteristics that can be read from the map.
+Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It helps to identify the types of pistes on the map, as well as the types of airways and other characteristics that can be read from the map.
 
 By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
  
-The options described here are available in the [Skiing navigation](../navigation/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing and pistes on the slopes.    
+The options described here are available in the [Skiing navigation](../navigation/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing.    
 
 
 :::info NOTE
-OsmAnd Ski Map is built as one of the rendering styles, which determines which objects to show on the map and the appearance of objects. All rendering styles are described in the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
+OsmAnd Ski Map is built as one of the rendering styles, that determines which objects to show on the map and the appearance of objects. All rendering styles are described in the [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) file. For the rules that define the internal structure of the XML file, see the [Rendering documentation](../../technical/osmand-file-formats/osmand-rendering-style.md).
 :::
 
 
 ### Pistes by difficulty
 
-The difficulty of traces is usually indicated by certain colors. The colors may be different in different countries and resorts. Below are some practical guidelines. 
+The difficulty of traces is usually indicated by specific colors. The colors may be different in different countries and resorts. Below are some practical guidelines. 
 
 | Color | Description | 
 | --- | --- |
@@ -192,7 +192,7 @@ For more specific guidance for each trail difficulty type, see the [OSM piste di
 
 ### Piste by types 
 
-Pistes differ by type. A type represents different characteristics for a piste to meet the requirements of different winter related activities: alpine skiing, classic skating, snowboarding, sled riding, backcountry skiing, ski touring, mogul skiing, night skiing, etc. Understanding the [type of the piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) on the map helps in building an optimal navigation route.
+Pistes differ by type. A type represents different characteristics for a piste to meet the requirements of different winter related activities: alpine skiing, classic skating, snowboarding, sled riding, backcountry skiing, ski touring, mogul skiing, night skiing, etc. Understanding the [type of the piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) on the map helps to build an optimal navigation route.
 
 
 - **Downhill/alpine skiing piste**  
@@ -208,7 +208,7 @@ Often used by skiers for a nordic ascent and a downhill descent. The difficulty 
 
 
 - **Other skiing piste**  
-Pistes types such as *Hiking Trails* or *Sledging Trails* can be used for skiing or hiking profiles.
+Piste types such as *Hiking Trails* or *Sledging Trails* can be used for skiing or hiking profiles.
 
 
 
@@ -279,7 +279,7 @@ To find out which pistes outside the ski resort you can navigate, you need to en
 
 ### Night and lighting  
 
-**Winter and ski** style can be used with the [Night mode](../map/vector-maps.md#map-mode). A comfortable choice for those who prefer dark colors, or darkening the screen at night, as well as for those who practice night skiing. Together with the Night mode, OsmAnd Ski Maps also can show which pistes has lighting with [Street Lighting](../map/vector-maps.md#details) option.  
+**Winter and ski** style can be used with the [Night mode](../map/vector-maps.md#map-mode). A comfortable choice for those who prefer dark colors, or darkening the screen at night, as well as for those who practice night skiing. Together with the Night mode, OsmAnd Ski Maps also can show which pistes have lighting with [Street Lighting](../map/vector-maps.md#details) option.  
  
 
 <Tabs groupId="operating-systems">
@@ -299,11 +299,11 @@ Both options are in [Configure map](../map/configure-map-menu.md) menu.
 
 <TabItem value="ios" label="iOS">
 
-Both options are in [Configure map](../map/configure-map-menu.md) menu.  
+You can find both options in the [Configure map](../map/configure-map-menu.md) menu.  
 
-- To enable the **Night mode** option scroll down the list: *<Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*  
+- To enable the **Night mode** scroll down the list: *<Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*  
 
-- To enable the **Street Lighting** option open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate ios="true" ids="menu,configure_map,res_details,rendering_attr_streetLighting_name"/>*
+- To enable the **Street Lighting** open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate ios="true" ids="menu,configure_map,res_details,rendering_attr_streetLighting_name"/>*
 
 
 ![Enabling Night mode and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Night and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
