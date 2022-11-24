@@ -18,9 +18,9 @@ Ski Map View shows winter colors and pistes downhill or cross-country, as well a
 
 ## Overview
 
-OsmAnd Ski Map shows famous and popular slopes, officially approved ski areas and trail maps of most ski resorts. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) piste maps are the data source for OsmAnd ski maps. Combined with vector maps, the OsmAnd ski map is very accurate and will be useful for instructors, climbers, and winter sports enthusiasts.
+OsmAnd Ski Map view plugin shows famous and popular slopes, officially approved ski areas and trail maps of most ski resorts. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) piste maps are the data source for OsmAnd ski maps. Combined vector maps with raster maps, the OsmAnd ski map is very accurate and will be useful for instructors, climbers, and winter sports enthusiasts.
 
-The OsmAnd ski map is part of the vector maps and does not require additional downloads. It is disabled by default. The plugin allows you to enable the OsmAnd ski map and start using it. The OsmAnd Ski Map is one of [Map Styles](../map/vector-maps.md) that provides additional features by highlighting some objects and making others less visible.  
+The OsmAnd ski map is a part of the vector maps and does not require additional downloads. It is disabled by default. The OsmAnd Ski Map is one of [Map Styles](../map/vector-maps.md) that provides additional features by highlighting some objects and making others less visible.  
 
 Two profiles are shown below: the one on the left is for skiing and the one on the right is for driving. The Skiing profile highlights trails, airways, winter colors, and all map objects useful for navigating the ski area.
 
