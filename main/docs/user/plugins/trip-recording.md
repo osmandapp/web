@@ -49,6 +49,8 @@ After setup is complete, you can make new records, display and manage tracks on 
 
 ## Record new track 
 
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) 
+
 There are several options to start a new recording:
 
 <Tabs groupId="operating-systems">
@@ -71,18 +73,7 @@ There are several options to start a new recording:
 
 </Tabs>
 
-### Start
-
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to create new recordings. The same functionality is provided by the Trip recording tab in the Main menu (Android only).   
-
-![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) 
-- To start a new recording, tap the *Distance/Start-Stop widget*, then confirm your choice in the opened [Start dialog](#start-dialog) (if it is enabled). If confirmation is disabled, recording will start automatically.  
-- To finish recording, tap the *Distance/Start-Stop widget* again and confirm your choice in the Trip recording dialog. In addition, there are a few other options that can be used. 
-
-:::note
-*Distance/Start-Stop widget* is colored red during recording or when online recording is enabled.  
-:::
-#### START DIALOG 
+### Start Dialog
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -119,7 +110,7 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 For any troubleshooting details, refer to: [Track recording issues](../troubleshooting/track-recording-issues)  
 :::
 
-### Start as launcher (Android)
+### Launcher (Android)
 
 Another option to start a new recording is to use the *Start Recording icon* on the device screen, as shown in the examples in the figures below. A long press opens the context menu of the icon with the option to Start Recording.
 
@@ -132,10 +123,10 @@ Use long press on *Start recording* in the icon context menu to add it as a sepa
 :::tip Stop / Save / Pause
 To stop recording tap on the relevant button in dialog menu of Distance/Start-Stop widget or Trip recording option in the Main menu (Android only).
 :::
+
 ## Currently recorded track
 
-
-### Overview recorded information
+### Overview screen
 
 To view information about currently recorded track tap on the trip recording widget. 
 

@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app.
+This plugin is available only for the **Android version** of OsmAnd app but there basic **Accessibility** features are supported in **[iOS Version](#how-to-use-ios)**.
 :::
 
 
@@ -28,6 +28,28 @@ The Accessibility plugin allows you to use Accessibility Android features that a
 
 Makes device accessibility features directly available in OsmAnd. The plugin allows blind and visually impaired people to take full advantage of the OsmAnd app's features. Accessibility plugin makes it easy to set speech speed for text pronunciation, customize navigation, zoom controls, and automatic announcements. [Learn more](https://www.android.com/accessibility/) about Android accessibility features.
 
+
+### How to use (Android)
+
+For the plugin to work, you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
+
+After enabling the plugin and enabling the Android Accessibility settings for your device, the map's reaction to gestures will be changed. The Screen reader will tell you in which situations to apply which gesture. 
+
+**Key features**:
+
+- A long tap on the map displays a context menu referring not to the tap point but to the location point of the map.
+- The map is moved with two fingers.
+- A single tap on a graphical interface element gives information about it, and a double tap makes an action.  
+ 
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
+
+:::info NOTE
+All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.
+:::
+
+### How to use (iOS)
+
+Main key feature for iOS.
 
 ## Setup 
 
@@ -52,20 +74,4 @@ The Accessibility plugin settings allow you to configure the application in acco
 - **Direction style**. Allows you to choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).  
 - **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
 - **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.  
-
-
-## How to use
-
-For the plugin to work, you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
-
-After enabling the plugin and enabling the Android Accessibility settings for your device, the map's reaction to gestures will be changed. The Screen reader will tell you in which situations to apply which gesture. For example:  
-- A long tap on the map displays a context menu referring not to the tap point but to the location point of the map.
-- The map is moved with two fingers.
-- A single tap on a graphical interface element gives information about it, and a double tap makes an action.  
- 
-![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
-
-:::info NOTE
-All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.
-:::
 
