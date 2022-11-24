@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -219,6 +220,20 @@ To open Analytics settings, follow these steps: *<Translate android="true" ids="
 
 
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
+
+
+#### Identifiers
+
+Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month.
+
+UUID is rotated every 3 months so there is no user profile built for a longer history.
+
+[Terms of use (ToS)](../../legal/terms-of-use.md) with explanation has been updated.
+
+At this menu, you can enable or disable UUID identifiers.
+
+![UUID Android](@site/static/img/personal/profiles/uuid_android.png) 
+
 
 #### History
 
