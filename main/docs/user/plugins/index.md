@@ -14,10 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 Plugins greatly enhance OsmAnd functionality. Each of them is designed to solve a separate problem, such as trip recording, getting Wikipedia articles offline, putting additional terrain data or street-level views on the map etc.
-Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separately installed programs). 3rd party plugins work via OsmAnd API and can get access to OsmAnd data. 
+Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via OsmAnd API and can get access to OsmAnd data.  
 
 ## Configure plugin
-In order to get access to the specific functions, provided by a plugin, it must be [enabled first](#enable--disable). You need to [purchase](#purchase) some plugins before use. In some cases special map layer should be activated or user profile should be [configured](#plugin-settings).
+In order to get access to the specific functions, provided by a plugin, it must be [enabled first](#enable--disable). You need to [purchase](#purchase) some plugins before use. In some cases, a special map layer should be activated or a user profile should be [configured](#plugin-settings).
 
 ### Enable / disable
 
@@ -45,7 +45,7 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only three of them require purchase of OsmAnd+ or OsmAnd Pro license before use:  
+Most plugins are available for free, only four of them require purchase of OsmAnd+ or OsmAnd Pro license before use:  
 
 - [Contour lines and Terrain](../plugins/contour-lines.md)  
 - [Wikipedia](../plugins/wikipedia.md)  
@@ -56,7 +56,7 @@ Detailed information about the purchase of the application can be found in the s
 
 ### Plugin Features
 
-OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
+OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
 🤖 - only for Android version of OsmAnd.
 
@@ -83,23 +83,25 @@ OsmAnd Plugins could countribute to these Feature groups: **Layer**, **Widgets**
 ### Plugin Settings
 
 :::caution NOTE
-Only the development plugin changes the settings for all profiles. The remaining plugins are configured for each profile separately.  
+Only the development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
 Almost each plugin have specific profile or global settings, which can be accessed via:  
 
-- **Android**: *Main menu → Plugins → Plugin name → Settings*  or  
-- **Android**, **iOS**: *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+- *Main menu → Plugins → Plugin name → Settings*  or  
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
 
 ![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_1.png) ![Settings plugin Android 2](@site/static/img/plugins/development/plugin_settings_android_2.png) ![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_3.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
 
 ![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_1.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/plugin_settings_ios_2.png) ![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_3.png)  
 
@@ -135,11 +137,11 @@ OsmAnd Online maps are an extensive addition to the OpenStreetMap database alrea
 
 ### [Trip recording](./trip-recording.md)
 
-To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, added with waypoints, provided for navigation, shared with friends, etc.
+To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, added with waypoints, provided for navigation, shared with friends, etc.  
 
 ### [Contour lines and Terrain](./contour-lines.md)
 
-Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.
+Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.  
 
 ### [Nautical map view](./nautical-charts.md)
 
@@ -151,7 +153,7 @@ Ski Map View shows winter colors and pistes downhill or cross-country, as well a
 
 ### [Audio/video notes](./audio-video-notes.md)
 
-Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction, once made, are available from the central storage as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.
+Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction. Once made audio/video notes are available from *My places* as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.  
 
 ### [Parking position](./parking.md)
 
@@ -159,11 +161,11 @@ Set a point on the map where your car is left on the street and notify your cale
 
 ### [OpenStreetMap editing](./osm-editing.md)
 
-<Translate android="true" ids="osm_editing"/> plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user. 
+OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user.  
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
-The plugin lets you add and view photos of restaurants, cafes and other points of interest in the context menu of the place.  
+The plugin allows you to add and view photos of restaurants, cafes and other points of interest in the context menu of the place. For Android only.  
 
 ### [Mapillary](./mapillary.md)
 
@@ -171,20 +173,20 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 ### [Accessibility](./accessibility.md)
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd.  
+Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
 
 ### [External sensors](./external-sensors.md)
 
-Connect external sensors to display data on OsmAndand screen and to store needed information in track recordings.  
+Connect external sensors to display data on OsmAndand screen and to store needed information in track recordings. For Android only.  
 
 ### [Weather](./weather.md)
 
-24h hourly forecast 7 days ahead on the map.
+Shows the hourly forecast for the current day and for 7 days ahead.  
 
 ### [OsmAnd development](./development.md)
 
-OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.
+OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.  
 
 ### [OsmAnd Tracker](./osmand-tracker.md)
 
-OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd.  
+OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd. For Android only.  
