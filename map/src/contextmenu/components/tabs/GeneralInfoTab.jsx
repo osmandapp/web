@@ -199,6 +199,13 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
+    function alreadyInEditing() {
+        if (ctx.selectedGpxFile.name) {
+            return ctx.localTracks.find(track =>
+                track.id === TracksManager.prepareName(ctx.selectedGpxFile.name, false)) !== undefined;
+        }
+    }
+
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             {ctx.currentObjectType === 'local_client_track' ? EditName() : NoEditName()}
@@ -285,7 +292,7 @@ export default function GeneralInfoTab({width, srtm}) {
                     }}
             >Save to Cloud</Button>}
         {ctx.currentObjectType === 'cloud_track' &&
-            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+            <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
                     }}

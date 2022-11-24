@@ -12,6 +12,7 @@ function saveTracks(tracks) {
         tracks.forEach(function (track) {
             res.push({
                 name: track.name,
+                id: track.id,
                 metaData: track.metaData,
                 tracks: track.tracks,
                 wpts: track.wpts,
@@ -59,22 +60,6 @@ function createName(ctx) {
             name = date + ' - ' + (maxNumber + 1);
         }
     })
-
-    return name;
-}
-
-function excludeNameDuplicates(ctx, name) {
-    let count = 0;
-    ctx.localTracks.forEach(t => {
-        if (t.name.includes(name)) {
-            count++;
-        }
-    })
-
-    if (count > 0) {
-        count++;
-        name = name + ' - ' + count;
-    }
 
     return name;
 }
@@ -146,7 +131,7 @@ function updateSelectedTrack(ctx, track) {
 
 function addTrack(ctx, track) {
     track.name = TracksManager.prepareName(track.name, true);
-    track.name = excludeNameDuplicates(ctx, track.name);
+    track.id = track.name;
     addDistance(track);
     ctx.localTracks.push(track);
     ctx.setLocalTracks([...ctx.localTracks]);
