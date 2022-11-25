@@ -2,13 +2,19 @@ import React, {useContext, useState} from 'react';
 import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import {Button, FormControl, InputLabel, NativeSelect, TextField} from "@mui/material";
+import {
+    Autocomplete,
+    Button,
+    createFilterOptions,
+    TextField
+} from "@mui/material";
 import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
 import {post} from "axios";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
 import Utils from "../../util/Utils";
+
 
 export default function SaveTrackDialog() {
 
@@ -18,14 +24,38 @@ export default function SaveTrackDialog() {
     const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
     const [dialogOpen, setDialogOpen] = useState(ctx.selectedGpxFile.save);
 
+    let folders = ctx.gpxFiles.trackGroups.map(group => (
+            {
+                title: group.name
+            }
+        )
+    );
+
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
         ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     };
 
+    const getFolderName = (folder) => {
+        if (folder === null) {
+            return null;
+        } else {
+            if (typeof folder === 'string') {
+                return folder;
+            }
+            if (folder.inputValue) {
+                return folder.inputValue;
+            }
+            return folder.title;
+        }
+    }
+
+    const filter = createFilterOptions();
+
     async function saveTrack() {
         toggleShowDialog();
+        let currentFolder = getFolderName(folder);
         if (ctx.loginUser) {
             let gpx = await TracksManager.getGpxTrack(ctx);
             if (gpx) {
@@ -39,7 +69,7 @@ export default function SaveTrackDialog() {
                 const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
                     {
                         params: {
-                            name: folder + "/" + fileName + ".gpx",
+                            name: currentFolder + "/" + fileName + ".gpx",
                             type: 'gpx',
                         }
                     }
@@ -53,9 +83,6 @@ export default function SaveTrackDialog() {
         }
     }
 
-    const handleChange = (event) => {
-        setFolder(event.target.value);
-    };
 
     return (
         <Dialog open={true} onClose={toggleShowDialog}>
@@ -74,43 +101,49 @@ export default function SaveTrackDialog() {
                     id="fileName"
                     type="fileName"
                     fullWidth
+                    error={fileName === ""}
+                    helperText={fileName === "" ? 'Empty name!' : ' '}
                     variant="standard"
                     value={fileName ? fileName : ''}
                 >
                 </TextField>
-                <FormControl fullWidth>
-                    <InputLabel variant="standard" htmlFor="uncontrolled-native">Select group</InputLabel>
-                    <NativeSelect
-                        value={folder}
-                        onChange={(e) =>handleChange(e)}
-                    >
-                        {ctx.gpxFiles.trackGroups && ctx.gpxFiles.trackGroups.map((group) => (
-                            <option
-                                key={group.name}
-                                value={group.name}>
-                                {group.name}
-                            </option>
-                        ))}
-                    }
-                    </NativeSelect>
-                </FormControl>
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    onChange={(e) => {
-                        setFolder(e.target.value);
+                <Autocomplete
+                    value={folder}
+                    onChange={(event, newValue) => {
+                        setFolder(newValue);
                     }}
+                    filterOptions={(options, params) => {
+                        const filtered = filter(options, params);
+                        const {inputValue} = params;
+                        const isExisting = options.some((option) => inputValue === option.title);
+                        if (inputValue !== '' && !isExisting) {
+                            filtered.push({
+                                inputValue,
+                                title: `Add "${inputValue}"`,
+                            });
+                        }
+                        return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
                     id="folder"
-                    label="New group"
-                    type="folder"
-                    fullWidth
-                    variant="standard"
-                >
-                </TextField>
+                    options={folders}
+                    getOptionLabel={(option) => getFolderName(option)}
+                    renderOption={(props, option) => <li {...props}>{option.title}</li>}
+                    freeSolo
+                    renderInput={(params) => (
+                        <TextField
+                            {...params}
+                            label="Folder"
+                            error={folder == null}
+                            helperText={folder == null ? 'Empty folder!' : ' '}/>
+                    )}
+                />
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
-                <Button onClick={() => saveTrack()}>
+                <Button disabled={getFolderName(folder) === null || fileName === ""} onClick={() => saveTrack()}>
                     Save</Button>
             </DialogActions>
         </Dialog>

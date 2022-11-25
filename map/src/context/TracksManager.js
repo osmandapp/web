@@ -114,11 +114,14 @@ async function getTrackData(file) {
         let resp = await response.text();
         if (resp) {
             let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-                return value === "***NaN***" ? NaN : value;
+                if (value === "***NaN***") {
+                    return key === "ele" ? 99999 : NaN;
+                } else {
+                    return value;
+                }
             });
             if (data) {
                 track = data.gpx_data;
-                // updateSelectedTrack(ctx, track);
             }
         }
     }
@@ -317,7 +320,7 @@ function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
     //value smoothing
-    while (isNaN(ele)) {
+    while (isNaN(ele) || ele === 99999) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
             if (prevP && prevP[elevation]) {
