@@ -70,7 +70,7 @@ export default function SaveTrackDialog() {
                     {
                         params: {
                             name: currentFolder + "/" + fileName + ".gpx",
-                            type: 'gpx',
+                            type: 'GPX',
                         }
                     }
                 );
