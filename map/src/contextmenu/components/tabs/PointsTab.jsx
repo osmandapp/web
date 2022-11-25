@@ -1,5 +1,14 @@
-import {Box, IconButton, ListItemAvatar, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
-import React, {useContext} from "react";
+import {
+    Box,
+    IconButton,
+    LinearProgress,
+    ListItemAvatar,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Typography
+} from "@mui/material";
+import React, {useContext, useState} from "react";
 import {Cancel, ViewHeadline} from "@mui/icons-material";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
@@ -10,6 +19,8 @@ import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 const PointsTab = ({width}) => {
 
     const ctx = useContext(AppContext);
+
+    const [loading, setLoading] = useState(false);
 
     function showPointOnMap(point) {
         ctx.selectedGpxFile.showPoint = point;
@@ -59,8 +70,10 @@ const PointsTab = ({width}) => {
                 for (let i = 0; i <= track.points.length - 1; i++) {
                     if (i + lengthSum === index) {
                         if (track.points[i].geometry) {
+                            setLoading(true);
                             let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], track.points[i + 1]);
                             if (newGeometry) {
+                                setLoading(false);
                                 track.points[i + 1].geometry = newGeometry;
                             }
                         }
@@ -82,26 +95,32 @@ const PointsTab = ({width}) => {
                 if (i + lengthSum === index && point) {
                     if (firstPoint) {
                         if (track.points[i + 1].geometry) {
+                            setLoading(true);
                             let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
                             if (newGeometryFromNewPoint) {
+                                setLoading(false);
                                 track.points[i + 1].geometry = newGeometryFromNewPoint;
                             }
                         }
                     } else if (lastPoint) {
                         if (track.points[i - 1].geometry) {
+                            setLoading(true);
                             let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
                             if (newGeometryToNewPoint) {
+                                setLoading(false);
                                 point.geometry = newGeometryToNewPoint;
                             }
                         }
                     } else {
                         if (track.points[i + 1].geometry) {
+                            setLoading(true);
                             let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
                             if (newGeometryToNewPoint) {
                                 point.geometry = newGeometryToNewPoint;
                             }
                             let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
                             if (newGeometryFromNewPoint) {
+                                setLoading(false);
                                 track.points[i + 1].geometry = newGeometryFromNewPoint;
                             }
                         }
@@ -167,6 +186,7 @@ const PointsTab = ({width}) => {
     }
 
     return (<DragDropContext onDragEnd={onDragEnd}><Box width={width}>
+        {loading ? <LinearProgress/> : <></>}
         <Droppable droppableId="droppable-1">
             {(provided) => (
                 <div ref={provided.innerRef}
