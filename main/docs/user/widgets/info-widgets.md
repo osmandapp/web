@@ -237,6 +237,37 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 </Tabs>  
 
 
+## * External sensors widgets
+
+
+:::note 
+You can read a more detailed description here: [External sensors plugin](../plugins/external-sensors.md#widgets).  
+:::  
+
+External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from external sensors. Such as _<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>_.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![External sensor widgets Android](@site/static/img/widgets/ant_widgets_screen_android.png) 
+
+| | |
+|------------|------------|
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="ant_widgets"/>|
+| On Click | - |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly /> 
+
+</TabItem>
+
+</Tabs>  
+
+
 ## * Parking widget
 
 >Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
