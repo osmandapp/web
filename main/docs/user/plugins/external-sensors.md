@@ -83,7 +83,7 @@ The external sensors widgets show external sensors data on the OsmAnd screen.
 <TabItem value="android" label="Android">
 
 To add widgets on the screen:
-- *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="ant_widgets"/>*:
+- *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*:
    - &nbsp;_<Translate android="true" ids="map_widget_ant_heart_rate"/>_
    - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_power"/>_
    - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>_
