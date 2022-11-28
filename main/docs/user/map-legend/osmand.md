@@ -144,11 +144,11 @@ import TabItem from '@theme/TabItem';
 
 ### Parking
 <LegendItem itemsMap={{
-        'Parking' : 'built-up-areas/built-up_Parkig',
-        'Parking Permissive access' : 'built-up-areas/built-up_ParkigPermissive',
-        'Parkig Access Customers' : 'built-up-areas/built-up_ParkigAccessCustomers',
-        'ParkigPaid' : 'built-up-areas/built-up_ParkigPaid',
-        'ParkigBicycle' : 'built-up-areas/built-up_ParkigBicycle',
+        'Parking' : 'built-up-areas/built-up_Parking',
+        'Parking Permissive access' : 'built-up-areas/built-up_ParkingPermissive',
+        'Parking Access Customers' : 'built-up-areas/built-up_ParkingAccessCustomers',
+        'ParkingPaid' : 'built-up-areas/built-up_ParkingPaid',
+        'ParkingBicycle' : 'built-up-areas/built-up_ParkingBicycle',
         }}>
 </LegendItem>
 
