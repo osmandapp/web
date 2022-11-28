@@ -56,6 +56,11 @@ export default function SaveTrackDialog() {
     async function saveTrack() {
         toggleShowDialog();
         let currentFolder = getFolderName(folder);
+        if (currentFolder === "Tracks") {
+            currentFolder = "";
+        } else {
+            currentFolder = currentFolder + "/";
+        }
         if (ctx.loginUser) {
             let gpx = await TracksManager.getGpxTrack(ctx);
             if (gpx) {
@@ -69,7 +74,7 @@ export default function SaveTrackDialog() {
                 const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
                     {
                         params: {
-                            name: currentFolder + "/" + fileName + ".gpx",
+                            name: currentFolder + fileName + ".gpx",
                             type: 'GPX',
                         }
                     }

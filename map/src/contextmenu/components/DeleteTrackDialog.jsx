@@ -31,7 +31,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                 {
                     params: {
                         name: ctx.selectedGpxFile.name,
-                        type: 'gpx',
+                        type: 'GPX',
                     }
                 }
             ).then((response) => response.statusText);
