@@ -32,6 +32,12 @@ If you want to leave a review about some place of interest, you need to make the
 1. Enable the [OpenPlaceReviews plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.    
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
+### Login settings
+
+- &nbsp;<Translate android="true" ids="login_account"/> - login to [OpenPlaceReviews](https://openplacereviews.org/login).
+- &nbsp;<Translate android="true" ids="opr_use_dev_url"/> - use test profile for [OpenPlaceReviews project](https://openplacereviews.org/).
+
+
 ### Plugin settings
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews,shared_string_settings"/>* 
@@ -39,13 +45,8 @@ If you want to leave a review about some place of interest, you need to make the
 ![OpenPlaceReview Settings Android](@site/static/img/plugins/openplacereviews/openplacereviews_plugin_settings_android.png)
 
 
-### Login settings
-
-- &nbsp;<Translate android="true" ids="login_account"/> - login to [OpenPlaceReviews](https://openplacereviews.org/login).
-- &nbsp;<Translate android="true" ids="opr_use_dev_url"/> - use test profile for [OpenPlaceReviews project](https://openplacereviews.org/).
 
 ## View photos
-
 
 Photos from OpenPlaceReviews project are displayed in [Online Photos](../map/map-context-menu.md#online-photos) of Map Context menu].
 

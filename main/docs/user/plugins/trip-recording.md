@@ -122,10 +122,10 @@ Use long press on *Start recording* in the icon context menu to add it as a sepa
 :::  
 
 :::tip Stop / Save / Pause
-To stop recording tap on the relevant button in dialog menu of Distance/Start-Stop widget or Trip recording option in the Main menu (Android only).
+To stop the recording, tap on the relevant button in the *Distance/Start-Stop (REC)* widget dialog box, for the Android version you can also stop the recording by tapping the Main menu item *Trip recording*.
 :::
 
-## Currently recorded track
+## Сurrent track recording
 
 ### Overview screen
 
@@ -135,13 +135,13 @@ To view information about currently recorded track tap on the Trip recording wid
 
 <TabItem value="android" label="Android">
 
-![overview](@site/static/img/plugins/trip-recording/overview.png)
+![overview](@site/static/img/plugins/trip-recording/overview-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_2.png) ![whats_in_screen](@site/static/img/widgets/whats_in_screen.png) 
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)   
 
 </TabItem>
 
@@ -159,9 +159,9 @@ All values on the graph are indicated either for the whole route or only for the
  
 | Info |  Picture |
 | ------- | ----------------- |
-|***Overview***. This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time.|  ![data](@site/static/img/widgets/tr_rec_ave.png)| 
-|***Altitude***. This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill.|  ![data](@site/static/img/widgets/tr_rec_alt.png) |
-|***Speed***. This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected.|  ![data](@site/static/img/widgets/tr_rec_speed.png)|
+|***Overview***. This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-2.png) ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-ios.png) | 
+|***Altitude***. This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-ios.png) |
+|***Speed***. This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png) ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
 Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
@@ -211,7 +211,7 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 | `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
 | `heading` | **Heading** is the direction to where the front panel of the vehicle/device points to. The heading direction is calculated in degrees, and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction where the front panel points to and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 
-## Recording parameters
+## Recording settings
 
 *Trip recording can be configured for each profile*, as the parameters may be different depending on the character of the movement (a car driver, a cyclist or a Nordic walker). You may need to make some adjustments to the way you capture and record location points in the file: few, a lot, with gaps etc. to make the end result look smooth and usable. All [profiles](../personal/profiles.md) are configured in the global [settings](../personal/global-settings.md) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
 
