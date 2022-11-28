@@ -49,7 +49,7 @@ After setup is complete, you can make new records, display and manage tracks on 
 
 ## Record new track 
 
-![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) 
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png) 
 
 There are several options to start a new recording:
 
@@ -159,9 +159,9 @@ All values on the graph are indicated either for the whole route or only for the
  
 | Info |  Picture |
 | ------- | ----------------- |
-|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time|  ![data](@site/static/img/widgets/tr_rec_ave.png)| 
-|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|  ![data](@site/static/img/widgets/tr_rec_alt.png) |
-|***Speed*** This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|  ![data](@site/static/img/widgets/tr_rec_speed.png)|
+|***Overview***. This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time.|  ![data](@site/static/img/widgets/tr_rec_ave.png)| 
+|***Altitude***. This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill.|  ![data](@site/static/img/widgets/tr_rec_alt.png) |
+|***Speed***. This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected.|  ![data](@site/static/img/widgets/tr_rec_speed.png)|
 
 :::info 
 Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
@@ -280,12 +280,12 @@ You can use widgets to view brief information about the track recording on the s
 To start using *Trip recording widgets*, you need to make all of the following settings:
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 - Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options).
-- Add the necessary **Trip recording widgets** to the screen. This setting is *individual for each profile*.  
+- Add the necessary **Trip recording widgets** to the screen. This setting is **individual for each profile**.  
 
 
 ### Add Recording widget
 
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check if you are recording or not, as well as for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled.  
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to quickly check if you are recording or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled.  
 
 <Tabs groupId="operating-systems">
 

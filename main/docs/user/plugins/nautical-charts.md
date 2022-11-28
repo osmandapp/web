@@ -103,13 +103,13 @@ When you [download](../start-with/download-maps.md) a nautical map, more details
 
 
 - **Nautical marks and symbols**   
-Marks and symbols are downloaded once for the entire world. Depth points are available for each hemisphere and for some regions. Depth contours can be downloaded for certain areas and then turned off if you do not need them. If a navigation package is downloaded, its data is displayed on the map according to the navigation settings.  
+Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, and sides of the channel, regardless of the direction, etc. Marks and symbols are downloaded once for the entire world.    
 
 - **Depth points**   
-Nautical data from the depth point packages are represented by numbers displayed on the water that indicate the shallowest depth at a particular location. Depth contour packages allow you to define areas of equal depth. Both points and contours are intended to visualize changes in relief beneath the water surface.   
+Nautical data from the depth point packages are represented by numbers displayed on the water that indicate the shallowest depth at a particular location. Depth points are available for each hemisphere and for some regions.     
 
 - **Depth contours**   
-Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, channel sides regardless of direction, etc.  
+Depth contour packages allow you to define areas of equal depth.  They are intended to visualize changes in relief beneath the water's surface. Depth contours can be downloaded for certain areas and then turned off if you do not need them.   
 
 :::info NOTE
 All depth numbers on the Nautical Charts are indicated in meters. 
