@@ -38,11 +38,14 @@ For Android devices you can download the free and paid application on the follow
 
 >OsmAnd+ and Maps+ are completely identical in their feature sets.
 
-- **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
+#### OsmAnd+
+- _OsmAnd+_ is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
+  
+#### Maps+
+- _Maps+_ is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). All features and the price is the same as for **OsmAnd+**.
 
-- **Maps+** is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). All features and the price is the same as for **OsmAnd+**.
-
-- **OsmAnd Pro** is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+#### OsmAnd Pro
+- _OsmAnd Pro_ is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
 
 :::tip Note
 
@@ -54,7 +57,7 @@ OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-|    | OsmAnd Free   | OsmAnd+ / in-app "Maps+" | Maps+ | OsmAnd Pro |
+|    | OsmAnd Free   | 1. ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [OsmAnd+](#osmand) <br/> 2. ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) in-app ["Maps+"](#maps) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [Maps+](#maps) | ![Pro](@site/static/img/svg/pro_icon.svg) [OsmAnd Pro](#osmand-pro) |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 | **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
 | **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
@@ -66,32 +69,32 @@ OsmAnd application has many features and tools. Of course, most of them are free
 
 The table shows all the features that are included in the paid and free packages of OsmAnd and its price.
 
-|    | OsmAnd Free   | OsmAnd+ <br/>Maps+ (in-app, subscription) | OsmAnd Pro |
+|    | OsmAnd Free   | 1.![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [OsmAnd+](#osmand) <br/> 2.![Maps+](@site/static/img/svg/osmand_maps_plus.svg) ["Maps+"](#maps) (in-app, subscription)  | ![Pro](@site/static/img/svg/pro_icon.svg)  [OsmAnd Pro](#osmand-pro) |
 | :------------- | :------------- | :------------- | :------------- | 
 | Ad-free access | ✔ | ✔ | ✔ |
-| OsmAnd Cloud | - | - | ✔ |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
-| Unlimited map downloads | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
-| <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
-| <p>Hourly map updates</p> (1 hour delay) | - | - | ✔ |
+| [Unlimited map downloads](../start-with/download-maps.md) | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
+| <p>[Monthly map updates](../personal/maps.md#update-maps)</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
+| <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ |
 | [Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
-| Topo data (Contour lines and Terrain) | - | ✔ | ✔ |
-| Nautical depths | - | ✔ | ✔ |
-| Offline Wikipedia | - | ✔ | ✔ |
-| Offline Wikivoyage - Travel guides| - | ✔ | ✔ |
-| Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
-| Offline instant search | ✔ | ✔ | ✔ |
-| Trip recording | ✔ | ✔ | ✔ |
-| Export GPX tracks | ✔ | ✔ | ✔ |
-| Import GPX/KML tracks | ✔ | ✔ | ✔ |
-| "Plan a route" tool | ✔ | ✔ | ✔ |
-| "Map markers" tool | ✔ | ✔ | ✔ |
-| Online map sources | ✔ | ✔ | ✔ | 
-| SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
-| Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
-| Audio/pic/video points | ✔ | ✔ | ✔ |
-| OsmAnd Tracker | ✔ | ✔ | ✔ |
-| Export/import app profile | ✔ | ✔ | ✔ |
+| [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
+| [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
+| [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| ["Plan a route"](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
+| ["Map markers"](../personal/markers.md) tool | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 
+| [SQLitedb/mbtiles Map](../map/raster-maps.md#manage-raster-maps) support | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md) (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 ### Pro Features
 

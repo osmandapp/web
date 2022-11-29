@@ -16,9 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 The plugin helps you contribute to the development of OpenStreetMap. It is a community driven, global public domain mapping project.
 
+
 ## Overview
  
-
 [OpenStreetMap](http://openstreetmap.org/) is a global community that aims to create a comprehensive map of the world and provide up-to-date open-source data to every user, and the **<Translate android="true" ids="osm_editing"/> plugin** allows you to contribute to the community.
 
 Just launch the **OsmAnd Maps app** and update information about different locations.   
@@ -32,10 +32,50 @@ To use OpenStreetMap editing, you need to make the following settings:
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
 
-### Login
 
-- Login and register on openstreetmap.org.
+### Login settings
+
+- Login or Sign Up [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
 - Login in OsmAnd (OAuth / password) - preferred OAuth.
+
+
+### Plugin settings
+
+:::caution NOTE
+The plugin settings are global and apply to all profiles.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Use the following path to open the plugin's settings:  
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
+
+- &nbsp;**Login to OpenStreetMap** - Log in to upload changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
+- &nbsp;**<Translate android="true" ids="offline_edition"/>** - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
+- &nbsp;**<Translate android="true" ids="use_dev_url"/>** - enable or disable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to testing uploading OSM Note / POI / GPX.
+- &nbsp;**<Translate android="true" ids="map_updates_for_mappers"/>** - allows [OsmAnd live](../personal/maps.md#osmand-live) updating for mappers.
+- &nbsp;**<Translate android="true" ids="layer_osm_edits"/>** - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)   
+
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Use the following path to open the plugin's settings:  
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*  
+
+- &nbsp;**<Translate ios="true" ids="shared_string_account"/>** - [Log in to upload new or modified changes first. Use your OSM username and password.](https://www.openstreetmap.org/login) 
+- &nbsp;**<Translate ios="true" ids="osm_offline_editing"/>** - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
+- &nbsp;**<Translate ios="true" ids="osm_edits_title"/>** - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)  
+
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
+
+</TabItem>
+
+</Tabs>  
 
 
 ## How to Contribute 
@@ -78,6 +118,7 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 </Tabs>
 
+
 ### Upload GPX track
 
 For what reason ? 
@@ -107,7 +148,6 @@ Available settings:
 - **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
 
 
-
 :::info NOTE
 OSM editing must be enabled. In one hour, your track will be added to [OSM traces](https://www.openstreetmap.org/traces) for you to view and for other users to find and use.  
 You can take part in the work on the global map. Just share the tracks you've made. They become part of the [OpenStreetMap](http://openstreetmap.org/) project. Be sure to mark objects and roads.
@@ -120,7 +160,6 @@ You can take part in the work on the global map. Just share the tracks you've ma
 
 <TabItem value="ios" label="iOS">
 
-
 :::info NOTE
 This option is not available for iOS version of OsmAnd app.
 :::  
@@ -128,6 +167,7 @@ This option is not available for iOS version of OsmAnd app.
 </TabItem>
 
 </Tabs>
+
 
 ### Create / Close OSM Note
 
@@ -161,42 +201,3 @@ To view the OSM editing layer, you can switch on  [online layer - OSM notes](../
 </TabItem>
 
 </Tabs>
-
-
-## Plugin settings
-
-:::caution NOTE
-The plugin settings are global and apply to all profiles.
-:::
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Use the following path to open the plugin's settings:  
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
-
-- &nbsp;**Login to OpenStreetMap** - Log in to upload changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
-- &nbsp;**<Translate android="true" ids="offline_edition"/>** - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
-- &nbsp;**<Translate android="true" ids="use_dev_url"/>** - enable or disable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to testing uploading OSM Note / POI / GPX.
-- &nbsp;**<Translate android="true" ids="map_updates_for_mappers"/>** - allows [OsmAnd live](../personal/maps.md#osmand-live) updating for mappers.
-- &nbsp;**<Translate android="true" ids="layer_osm_edits"/>** - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)   
-
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Use the following path to open the plugin's settings:  
-*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*  
-
-- &nbsp;**<Translate ios="true" ids="shared_string_account"/>** - [Log in to upload new or modified changes first. Use your OSM username and password.](https://www.openstreetmap.org/login) 
-- &nbsp;**<Translate ios="true" ids="osm_offline_editing"/>** - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
-- &nbsp;**<Translate ios="true" ids="osm_edits_title"/>** - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)  
-
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
-
-</TabItem>
-
-</Tabs>  

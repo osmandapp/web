@@ -49,7 +49,7 @@ After setup is complete, you can make new records, display and manage tracks on 
 
 ## Record new track 
 
-![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios.png) 
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png) 
 
 There are several options to start a new recording:
 
@@ -74,6 +74,7 @@ There are several options to start a new recording:
 </Tabs>
 
 ### Start Dialog
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -121,26 +122,26 @@ Use long press on *Start recording* in the icon context menu to add it as a sepa
 :::  
 
 :::tip Stop / Save / Pause
-To stop recording tap on the relevant button in dialog menu of Distance/Start-Stop widget or Trip recording option in the Main menu (Android only).
+To stop the recording, tap on the relevant button in the *Distance/Start-Stop (REC)* widget dialog box, for the Android version you can also stop the recording by tapping the Main menu item *Trip recording*.
 :::
 
-## Currently recorded track
+## Сurrent track recording
 
 ### Overview screen
 
-To view information about currently recorded track tap on the trip recording widget. 
+To view information about currently recorded track tap on the Trip recording widget. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![overview](@site/static/img/plugins/trip-recording/overview.png)
+![overview](@site/static/img/plugins/trip-recording/overview-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_2.png) ![whats_in_screen](@site/static/img/widgets/whats_in_screen.png) 
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)   
 
 </TabItem>
 
@@ -157,14 +158,16 @@ The graph can be scaled.
 All values on the graph are indicated either for the whole route or only for the selected interval (while scaling). The right side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.
  
 | Info |  Picture |
-|:-------:|-----------------|
-|***Overview*** This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time|  ![data](@site/static/img/widgets/tr_rec_ave.png)| 
-|***Altitude*** This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill|  ![data](@site/static/img/widgets/tr_rec_alt.png) |
-|***Speed*** This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected|  ![data](@site/static/img/widgets/tr_rec_speed.png)|
+| ------- | ----------------- |
+|***Overview***. This tab opens a graph with speed/altitude information on the distance and additional track data. *"Overview"* Information section: Distance, Time span, Start time, End time.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-2.png) ![data](@site/static/img/plugins/trip-recording/tr_rec_ave-ios.png) | 
+|***Altitude***. This tab opens a graph with information about the altitude/grade of current trip recording and additional data about the trip. *"Altitude"* Information section: Average altitude, Altitude range, Uphill, Downhill.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_alt-ios.png) |
+|***Speed***. This tab opens with speed info on distance and additional track data. *"Speed"* Information section: Average speed, Maximum speed, Time in motion, Distance corrected.|  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png) ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
 Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
 :::
+
+
 ### Show on the map
 
 If the track displaying was previously disabled, you can enable it via *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> tab*.
@@ -208,7 +211,7 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 | `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
 | `heading` | **Heading** is the direction to where the front panel of the vehicle/device points to. The heading direction is calculated in degrees, and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction where the front panel points to and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 
-## Recording parameters
+## Recording settings
 
 *Trip recording can be configured for each profile*, as the parameters may be different depending on the character of the movement (a car driver, a cyclist or a Nordic walker). You may need to make some adjustments to the way you capture and record location points in the file: few, a lot, with gaps etc. to make the end result look smooth and usable. All [profiles](../personal/profiles.md) are configured in the global [settings](../personal/global-settings.md) of the entire app. First, you need to select the required profile, and then among other profile settings find the section dedicated to Trip recording. 
 
@@ -272,23 +275,24 @@ Depending on the character of your movement: driving, cycling, horseback riding,
 
 ##  Widgets  
 
-You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**  
-
-<!--**What the widget is most useful for.** You can see more detailed information and graphs (Overview, Altitude, Speed) of your trip. You can set needed parameters for recording and start record of your trip with one tap.  -->
+You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
 
 To start using *Trip recording widgets*, you need to make all of the following settings:
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
 - Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options).
-- Add the necessary **Trip recording widgets** to the screen. This setting is *individual for each profile*.  
+- Add the necessary **Trip recording widgets** to the screen. This setting is **individual for each profile**.  
 
 
 ### Add Recording widget
+
+The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to quickly check if you are recording or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled. You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording.md#trip-recording-widgets) by following: *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording#duration-uphill-downhill) by following:  
+*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
@@ -296,7 +300,8 @@ The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widg
 
 <TabItem value="ios" label="iOS">
 
-[Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widgets) is needed to quickly check whether the recording is in progress or not, and for quick access to the recording settings and information about it. The widget is added automatically when Trip recording plugin is enabled. You can delete or add Distance/Start-Stop widget, by following: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
+You can delete or add Distance/Start-Stop widget, by following:  
+*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
 
@@ -313,48 +318,42 @@ The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widg
 <TabItem value="android" label="Android">  
  
 
-To open Trip recording widgets options follow: Menu → Configure screen → Widgets → Left / Right panel → Trip recording  
-
- 
-When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, **Trip recording plugin** for *Android* consists of **4 widgets**. *Distance/Start-Stop* is the main widget, when you tap it opens [Trip recording dialog](../plugins/trip-recording.md#create-new-track). The *Duration*, *Uphill* and *Downhill* widgets are more for information.   
-
-
+To open **Trip recording widgets** options follow:  
+*Menu → Configure screen → Widgets → Left / Right panel → Trip recording*     
 
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-1.png) 
-![Finish recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_2.png)   
+![Finish recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_2.png)    
 
-
+When the selected widgets appear on the map, you can tap any of them and more information about the track and the ability to interact with it will appear. In general, the **Trip recording plugin** for *Android* consists of **4 widgets**. *Distance/Start-Stop* is the main widget, when you tap it opens the [Trip recording dialog](../plugins/trip-recording#start-dialog). The *Duration*, *Uphill* and *Downhill* widgets are more for information.   
 
 | | 
 |------------|
-|**Distance/Start-Stop**: shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. The widget has 3 different views: *Recording*, *Paused*, *Inactive*.  <!--While recording, it displays the distance to the track being recorded.-->| 
+|**Distance/Start-Stop**: shows the distance of the current trip recording. It is added automatically with the Trip recording plugin enabled, but you can hide the widget in Configure screen menu. The widget has 3 different views: *Recording*, *Paused*, *Inactive*. | 
 |![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png)| 
-|If *Show start dialog* is enable in Trip recording Plugin settings, then tapping on the inactive widget opens the [Trip recording dialog](../plugins/trip-recording.md#create-new-track). If it is disabled, it will immediately start recording.|  
-|**NOTE**. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.|  
-**Details**  
-- Name of the dialog box - *Trip recording*  
-- Status: *Recording / On pause*    
-- Buttons: *Show on map* on/off and [Appearence](https://osmand.net/docs/user/map/tracks-on-map.md#track-appearance).  
-- Graph  
-- Information box. There is a different list for each of the graphs.  
-- Menu: *Close*, *Pause/Resume*, *Finish*, *Options*.  
+|If the Trip Recording Plugin settings have the *Show Startup Dialog* option enabled, tapping on the inactive widget will open the [Trip recording dialog](../plugins/trip-recording#start-dialog). If it is disabled, the recording will start immediately.|  
+
+:::note
+If the option *Show Startup Dialog* is disabled in the Trip Recording Plugin settings and the widget is active, tapping on it will open the Trip Recording Dialog anyway.
+:::
+
  
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-To open **Distance/Start-Stop** widget options follow: *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*   
+To open **Distance/Start-Stop** widget options follow:  
+*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*    
 
-Widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If *Show start dialog* is disabled in Trip recording Plugin settings and widget is active, then tapping on it opens the Trip recording dialog, anyway.  
->**NOTE**. For detailed information about [Distance/Start-Stop widget](../plugins/trip-recording.md#create-new-track), refer to the respective section of the current documentation.  
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  
 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)
+The widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If the *Show start dialog* is disabled in the Trip recording Plugin settings and the widget is active, then tapping on it opens the Trip recording dialog, anyway.  
 
 </TabItem>
 
 </Tabs>  
 
-### Duration, uphill, downhill
+
+### Duration, Uphill, Downhill
 
 <Tabs groupId="operating-systems">
 
@@ -362,21 +361,24 @@ Widget shows the distance of the currently recorded trip. It is added automatica
 
 | | 
 |------------|
-|**Duration**: shows time of track recording the duration in minutes/hours of the currently recorded trip. |
+|**Duration**: shows the time, in hours and minutes, of the current trip recording. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Uphill**: shows the sum of all the climbs of the currently recorded trip. |
+|**Uphill**: shows the sum of all the climbs of the current trip recording. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
-|**Downhill**: shows the sum of all descents of the current recorded trip.|
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|  
+|**Downhill**: shows the sum of all descents of the current trip recording. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|   
  
-
-If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.  
+:::note
+If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.
+:::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-<InfoAndroidOnly />
+:::caution Android only
+Duration, Uphill, and Downhill widgets are currently not available for the iOS version of the OsmAnd app.
+:::
 
 </TabItem>
 

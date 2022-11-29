@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 :::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app though basic **Accessibility** features are available in **[iOS Version](#how-to-use-ios)** too.
+This plugin is available only for the **Android version** of the OsmAnd app. The **[iOS Version](#how-to-use-ios)** uses the basic accessibility features of the system.
 :::
 
 
@@ -33,13 +33,7 @@ Makes device accessibility features directly available in OsmAnd. The plugin all
 
 For the plugin to work, you need to go to Accessibility from the settings item on the app screen, or go directly through the system settings of the device, and select the required settings. To set individual parameters, [see here](#plugin-settings).  
 
-After enabling the plugin and enabling the Android Accessibility settings for your device, the map's reaction to gestures will be changed. The Screen reader will tell you in which situations to apply which gesture. 
-
-**Key features**:
-
-- A long tap on the map displays a context menu referring not to the tap point but to the location point of the map.
-- The map is moved with two fingers.
-- A single tap on a graphical interface element gives information about it, and a double tap makes an action.  
+After enabling the plugin and enabling the Android Accessibility settings for your device, the map's reaction to gestures will be changed. The Android’s TalkBack screen reader will tell you in which situations to apply which gesture. The full **list of TalkBack gestures** can be viewed [here](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation). All of the [OsmAnd gestures](../map/interact-with-map#gestures) that are used to interact with the maps built into the app will also be available.  
  
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
 
@@ -49,7 +43,12 @@ All sound and haptic functions The OsmAnd app accessibility plugin remain runnin
 
 ### How to use (iOS)
 
-Main key feature for iOS.
+The iOS version of the OsmAnd app does not include an Accessibility plugin. However, the accessibility settings configured on your device will also work in the app.  
+- You can read general information about Vision Accessibility iOS features [here](https://www.apple.com/accessibility/vision/).
+- On the iOS system, you can use a VoiceOver gesture-based screen reader. For a full list of VoiceOver gestures on iPhone, click [here](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios). To see lists of gestures and settings for other devices, follow this [link](https://support.apple.com/accessibility).
+- All of the [OsmAnd gestures](../map/interact-with-map#gestures) that are used to interact with the maps built into the app will also be available.  
+
+
 
 ## Setup 
 
@@ -61,7 +60,7 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 
 ## Plugin settings
 
-To go to the Accessibility plugin settings, follow this path:  
+Go to the Accessibility plugin settings, follow this path:  
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*   
 
 ![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  

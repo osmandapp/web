@@ -80,25 +80,30 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | :------------- | :------------- | :------------- | :------------- |
 |    |    |_In-App and subscription_ | _Subscription_ |
 | Ad-free access | ✔ | ✔ | ✔ |
-| Map downloads |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ✔ | ✔ |
-| Maps update |  Once a month (with 2 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ✔ | ✔ | 
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
+| [Map downloads](../start-with/download-maps.md) |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ✔ | ✔ |
+| [Monthly map updates](../personal/maps.md#update-maps) |  Once a month (with 2 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ✔ | ✔ |
+| <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ | 
 | [Pro Features](#pro-features) | - | - | ✔ |
-| Topo data (Contour lines and Terrain) | - | ✔ | ✔ |
-| Nautical depths | - | ✔ | ✔ |
-| Travel guides (Wikipedia) | - | ✔ | ✔ |
-| Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
-| Offline instant search | ✔ | ✔ | ✔ |
-| Trip recording | ✔ | ✔ | ✔ |
-| [CarPlay](../navigation/auto-car.md) | ✔ | ✔ | ✔ |
-| Export GPX tracks | ✔ | ✔ | ✔ |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | - | - | ✔ |
-| Import GPX/KML tracks | ✔ | ✔ | ✔ |
-| "Plan a route" tool | ✔ | ✔ | ✔ |
-| "Map markers" tool | ✔ | ✔ | ✔ |
-| Online map sources | ✔ | ✔ | ✔ |
-| SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
-| Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
-| Export/Import app profile | ✔ | ✔ | ✔ |
+| [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
+| [Travel guides (Wikipedia)](../plugins/wikipedia.md) | - | ✔ | ✔ |
+| [CarPlay](../navigation/auto-car.md) | - | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| ["Plan a route"](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
+| ["Map markers"](../personal/markers.md) tool | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 
+| [SQLitedb/mbtiles Map](../map/raster-maps.md#manage-raster-maps) support | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md) (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+
 
 ### Pro Features
 

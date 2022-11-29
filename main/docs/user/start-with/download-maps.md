@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 Downloading maps is a necessary action for further use of maps and offline navigation. You can download maps by viewing the list of regions in the main menu or by clicking on the desired area on the map.  
@@ -22,9 +24,9 @@ The application can not function normally without offline maps, which are not di
 
 When you first launch the app, it suggests downloading a map based on your Internet location. If you are using a VPN, this may not be detected correctly, so you can select a different map region.  
 
-**Note**: World map. Older versions of OsmAnd (< 3.8) offer a downloadable World map, so you can browse the map on a planetary scale. In newer versions of OsmAnd: a small "Mini World Overview Map" is packaged inside the app. A larger "World Overview Map," which contains more detailed information about the worldwide, can be downloaded.
-
-**Note**: World map. Old versions of OsmAnd (< 3.8) suggest to download World map, so you could browse the map on the planet level zoom. In new OsmAnd versions: small "Mini world overview map" is packaged inside the app. You can download a large "World Overview Map" which contains more detailed information about the worldwide, but it is also provided with detailed maps.
+:::tip Note
+World map. Old versions of OsmAnd (< 3.8) suggest to download World map, so you could browse the map on the planet level zoom. In new OsmAnd versions: small "Mini world overview map" is packaged inside the app. You can download a large "World Overview Map" which contains more detailed information about the worldwide, but it is also provided with detailed maps.
+:::
 
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
@@ -49,15 +51,24 @@ You can download new maps and manage already downloaded maps through the Main Me
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
 
 
-This screen has certain features:
-- Refresh button - checks for available map updates on OsmAnd servers.
-- Search button - search the region by names or large cities inside it.
+**This screen has certain features**
+
+Top screen buttons:
+- _Refresh button_ &#10227; - checks for available map updates on OsmAnd servers.
+- _Search button_ &#x1F50D; - search the region by names or large cities inside it.
+
+Memory info and map counter:
 - Map counter (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- Device memory - show available memory to be used on the device.
-- All downloads / Worldwide - browse and download maps split by continents / countries / regions.
-- Local / Installed - manage already downloaded maps.
-- Updates - check and download monthly map updates.
-- OsmAnd Live - configure hourly map updates for certain regions.
+- [Device memory](../personal/storage.md#storage-info-in-download-maps-menu) - show available memory to be used on the device.
+
+Map search:
+- &#x1F50D; - search the region by names or large cities inside it.
+
+Screens:
+- _All downloads / Worldwide_ - browse and download maps split by continents / countries / regions / types.
+- _Local / Installed_ - manage already downloaded maps.
+- _Updates_ - check and download monthly map updates.
+  - _[OsmAnd Live](../personal/maps.md#osmand-live)_ - configure hourly map updates for certain regions.
 
 ![Download maps regions](@site/static/img/settings/download_maps_regions.png)
 
@@ -69,15 +80,21 @@ You can download new maps and manage already downloaded maps through the Main Me
 _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
 
 
-This screen has certain features:
-- Refresh button - checks for available map updates on OsmAnd servers.
-- Search button - search the region by names or large cities inside it.
-- Map counter (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- Device memory - show available memory to be used on the device.
-- All downloads / Worldwide - browse and download maps split by continents / countries / regions.
-- Local / Installed - manage already downloaded maps.
-- Updates - check and download monthly map updates.
-- OsmAnd Live - configure hourly map updates for certain regions.
+**This screen has certain features**
+
+Top screen buttons:
+- _Refresh button_ &#10227; - checks for available map updates on OsmAnd servers.
+- _Search button_ &#x1F50D; - search the region by names or large cities inside it.
+
+Memory info and map counter:  
+- _Map counter (Free version)_ - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
+- _[Device memory](../personal/storage.md#storage-info-in-download-maps-menu)_ - show available memory to be used on the device.
+
+Maps part:
+- _All downloads / Worldwide_ - browse and download maps split by continents / countries / regions.
+- _Local / Installed_ - manage already downloaded maps.
+- _Updates_ - check and download monthly map updates.
+  - _[Live updates](../personal/maps.md#osmand-live)_ - configure hourly map updates for certain regions.
 
 ![Download maps regions](@site/static/img/settings/download_maps_regions_ios.png)
 

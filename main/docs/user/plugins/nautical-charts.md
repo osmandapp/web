@@ -23,7 +23,7 @@ The Nautical map view plugin is a paid feature of the OsmAnd app.
 
 ## Overview
 
-Nautical Chart is a highly detailed topographical map to help skippers navigate a vessel on a selected course on the water. It is similar to a road map for those traveling by car. Often referred to as a *'Chart'* for historical reasons, it is a detailed graphic representation of the oceans, seas, coastal areas and rivers.
+Nautical Chart is a highly detailed topographical map to help skippers navigate a vessel on a selected course on the water. It is similar to a road map for those traveling by car. Often colled a *'Chart'* for historical reasons, it is a detailed graphic representation of the oceans, seas, coastal areas and rivers.
 
 Nautical charts are important for professional sailors as well as for amateurs who rent a boat for cruising the city's canals. The maps provide them with a variety of information such as sailing routes, navigation lights, danger zones, zones where it is allowed or prohibited to sail or dock, etc.  
 
@@ -65,7 +65,7 @@ The following setup makes the Nautical map show up on the screen:
 
 ### Set Nautical map style
 
-Use the map legend for any reference to what is shown on the nautical map. [Map legend](../../user/map-legend/nautical-map.md) helps anyone who wants to read a map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt. By setting the Nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
+Use the [Map legend](../../user/map-legend/nautical-map.md) for any reference to what is shown on the nautical map. It explains the symbolic elements on a nautical map and serves as a reference to help you navigate when in doubt. By setting the Nautical chart style, you can get the best view of the downloaded and displayed nautical data.  
 
 To change the current map style to Nautical, you need to make the following setting:  
 
@@ -99,20 +99,20 @@ To change the current map style to Nautical, you need to make the following sett
 
 For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, if necessary, contours. On the other hand, standard maps with information about inland, onshore and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.
 
-When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [nautical map](../start-with/download-maps.md#type-of-maps) contain details such as:
+When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [Nautical maps](../start-with/download-maps.md#type-of-maps) contain details such as:
 
 
 - **Nautical marks and symbols**   
-Marks and symbols are downloaded once for the entire world. Depth points are available for each hemisphere and for some regions. Depth contours can be downloaded for certain areas and then turned off if you do not need them. If a navigation package is downloaded, its data is displayed on the map according to the navigation settings.  
+Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, and sides of the channel, regardless of the direction, etc. Marks and symbols are downloaded once for the entire world.    
 
 - **Depth points**   
-Nautical data from the depth point packages are represented by numbers displayed on the water that indicate the shallowest depth at a particular location. Depth contour packages allow you to define areas of equal depth. Both points and contours are intended to visualize changes in relief beneath the water surface.   
+Nautical data from the depth point packages are represented by numbers displayed on the water that indicate the shallowest depth at a particular location. Depth points are available for each hemisphere and for some regions.     
 
 - **Depth contours**   
-Marks and symbols contain all nautical navigational marks for both inland and coastal navigation. Knowing these marks will help you predict the location of rocks, obstructions, anchorages, buoys, currents, deep and shallow water, channel sides regardless of direction, etc.  
+Depth contour packages allow you to define areas of equal depth.  They are intended to visualize changes in relief beneath the water's surface. Depth contours can be downloaded for certain areas and then turned off if you do not need them.   
 
 :::info NOTE
-All numbers on the Nautical Charts are presented in meters. 
+All depth numbers on the Nautical Charts are indicated in meters. 
 :::
 
 
