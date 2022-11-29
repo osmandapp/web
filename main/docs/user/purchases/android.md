@@ -38,11 +38,14 @@ For Android devices you can download the free and paid application on the follow
 
 >OsmAnd+ and Maps+ are completely identical in their feature sets.
 
-- **OsmAnd+** is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
+#### OsmAnd+
+- _OsmAnd+_ is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
+  
+#### Maps+
+- _Maps+_ is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). All features and the price is the same as for **OsmAnd+**.
 
-- **Maps+** is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). All features and the price is the same as for **OsmAnd+**.
-
-- **OsmAnd Pro** is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+#### OsmAnd Pro
+- _OsmAnd Pro_ is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
 
 :::tip Note
 
@@ -54,7 +57,7 @@ OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-|    | OsmAnd Free   | OsmAnd+ / in-app "Maps+" | Maps+ | OsmAnd Pro |
+|    | OsmAnd Free   | 1. ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [OsmAnd+](#osmand) <br/> 2. ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) in-app ["Maps+"](#maps) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [Maps+](#maps) | ![Pro](@site/static/img/svg/pro_icon.svg) [OsmAnd Pro](#osmand-pro) |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 | **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
 | **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
@@ -66,7 +69,7 @@ OsmAnd application has many features and tools. Of course, most of them are free
 
 The table shows all the features that are included in the paid and free packages of OsmAnd and its price.
 
-|    | OsmAnd Free   | OsmAnd+ <br/>Maps+ (in-app, subscription) | OsmAnd Pro <!--![Pro](@site/static/img/svg/pro_icon_label.svg) --> |
+|    | OsmAnd Free   | 1.![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [OsmAnd+](#osmand) <br/> 2.![Maps+](@site/static/img/svg/osmand_maps_plus.svg) ["Maps+"](#maps) (in-app, subscription)  | ![Pro](@site/static/img/svg/pro_icon.svg)  [OsmAnd Pro](#osmand-pro) |
 | :------------- | :------------- | :------------- | :------------- | 
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
