@@ -293,7 +293,7 @@ To configure it, follow these steps:
 |![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
 |**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by colour.|
 |![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
-|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is supported by [map style "Winter and ski"](../map/vector-maps.md#winter-and-ski).|
+|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski). |
 |![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
 |**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**. Showing colored routes and symbols for riding horses.|
 |![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)|

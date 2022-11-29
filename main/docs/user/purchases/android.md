@@ -66,32 +66,32 @@ OsmAnd application has many features and tools. Of course, most of them are free
 
 The table shows all the features that are included in the paid and free packages of OsmAnd and its price.
 
-|    | OsmAnd Free   | OsmAnd+ <br/>Maps+ (in-app, subscription) | OsmAnd Pro |
+|    | OsmAnd Free   | OsmAnd+ <br/>Maps+ (in-app, subscription) | OsmAnd Pro <!--![Pro](@site/static/img/svg/pro_icon_label.svg) --> |
 | :------------- | :------------- | :------------- | :------------- | 
 | Ad-free access | ✔ | ✔ | ✔ |
-| OsmAnd Cloud | - | - | ✔ |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
-| Unlimited map downloads | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
-| <p>Monthly map updates</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
-| <p>Hourly map updates</p> (1 hour delay) | - | - | ✔ |
+| [Unlimited map downloads](../start-with/download-maps.md) | **7 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. | ✔ | ✔ |
+| <p>[Monthly map updates](../personal/maps.md#update-maps)</p>  <p>Once a month (15 days delay)</p> | ✔ <p>* limited to 7 downloads (map update counts as download)</p> | ✔ | ✔ |
+| <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ |
 | [Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
-| Topo data (Contour lines and Terrain) | - | ✔ | ✔ |
-| Nautical depths | - | ✔ | ✔ |
-| Offline Wikipedia | - | ✔ | ✔ |
-| Offline Wikivoyage - Travel guides| - | ✔ | ✔ |
-| Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
-| Offline instant search | ✔ | ✔ | ✔ |
-| Trip recording | ✔ | ✔ | ✔ |
-| Export GPX tracks | ✔ | ✔ | ✔ |
-| Import GPX/KML tracks | ✔ | ✔ | ✔ |
-| "Plan a route" tool | ✔ | ✔ | ✔ |
-| "Map markers" tool | ✔ | ✔ | ✔ |
-| Online map sources | ✔ | ✔ | ✔ | 
-| SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
-| Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
-| Audio/pic/video points | ✔ | ✔ | ✔ |
-| OsmAnd Tracker | ✔ | ✔ | ✔ |
-| Export/import app profile | ✔ | ✔ | ✔ |
+| [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
+| [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
+| [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| ["Plan a route"](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
+| ["Map markers"](../personal/markers.md) tool | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 
+| [SQLitedb/mbtiles Map](../map/raster-maps.md#manage-raster-maps) support | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md) (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 ### Pro Features
 
