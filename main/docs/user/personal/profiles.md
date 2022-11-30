@@ -501,7 +501,6 @@ Parameters for "Map during navigation" and others:
 | **<Translate android="true" ids="map_during_navigation"/>:** |  Change map behavior during navigation.   |              |
 | "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids="choose_auto_follow_route_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate android="true" ids="auto_zoom_none"/>, <Translate android="true" ids="auto_zoom_farthest"/>, <Translate android="true" ids="auto_zoom_far"/>, <Translate android="true" ids="auto_zoom_close"/>. |
-| "<Translate android="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate android="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map.md#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
 | "<Translate android="true" ids="snap_to_road"/>"  |  <Translate android="true" ids="snap_to_road_descr"/>.   |    |
 | **<Translate android="true" ids="animate_my_location"/>** |  <Translate android="true" ids="animate_my_location_desc"/>   |              |
 
@@ -514,7 +513,6 @@ Parameters for "Map during navigation" and others:
 | **Map during navigation:** |  Change map behavior during navigation.   |              |
 | "<Translate ios="true" ids="choose_auto_follow_route"/>" |  <Translate ios="true" ids="choose_auto_center_map_view_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate ios="true" ids="auto_zoom_map"/>"  |  <Translate ios="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate ios="true" ids="auto_zoom_none"/>, <Translate ios="true" ids="auto_zoom_farthest"/>, <Translate ios="true" ids="auto_zoom_far"/>, <Translate ios="true" ids="auto_zoom_close"/>. |
-| "<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed"/>"  |  [<Translate ios="true" ids="map_orientation_change_in_accordance_with_speed_descr"/>](../map/interact-with-map.md#map-orientation-modes).   | Value: 0 km/h, 5 km/h, 7 km/h, 10 km/h, 15 km/h, 20 km/h.    |
 | "<Translate ios="true" ids="snap_to_road"/>"  |  <Translate ios="true" ids="snap_to_road_descr"/>.   |    |
 
 </TabItem>
