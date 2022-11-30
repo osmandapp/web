@@ -70,6 +70,7 @@ Use the following path to open the plugin's settings:
 
 - **<Translate ios="true" ids="shared_string_account"/>**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
 - **Offline editing**. If this setting is enabled, the changes are saved locally first and downloaded upon request, otherwise the changes are downloaded immediately.
+- **Map updates for mappers**. This setting allows to update OsmAnd live for mappers.
 - **<Translate ios="true" ids="osm_edits_title"/>**. Allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md)  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
@@ -88,9 +89,9 @@ Use the following path to open the plugin's settings:
 
 The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you. 
 
-https://docs.osmand.net/docs/user/map/map-context-menu#-create--modify-poi
+<!--https://docs.osmand.net/docs/user/map/map-context-menu#-create--modify-poi
 
-https://docs.osmand.net/docs/user/map/map-context-menu#-upload-poi--osm-note
+https://docs.osmand.net/docs/user/map/map-context-menu#-upload-poi--osm-note-->
 
 1. Tap the map where the new POI is to be placed.
 2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
@@ -144,13 +145,13 @@ Available settings:
 - **<Translate android="true" ids="gpx_tags_txt"/>** - allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>** - track visibility for OSM users:  
 
- &nbsp;*Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not associated with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+ *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not associated with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
  
- &nbsp;*Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+ *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
  
- &nbsp;*Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
+ *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
  
- &nbsp;*Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
+ *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
  
 - **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
 
@@ -178,12 +179,12 @@ This option is not available for iOS version of OsmAnd app.
 
 ### Create / Close OSM Note
 
-https://wiki.openstreetmap.org/wiki/Notes 
+<!--https://wiki.openstreetmap.org/wiki/Notes 
 
 
 https://docs.osmand.net/docs/user/map/map-context-menu#-open-osm-note
 
-https://docs.osmand.net/docs/user/map/map-context-menu#-upload-poi--osm-note
+https://docs.osmand.net/docs/user/map/map-context-menu#-upload-poi--osm-note-->
 
 The OpenStreetMap editing plugin allows you to report errors on the map.
 
