@@ -49,11 +49,15 @@ Written to a gpx file while recording a track.
 ```
 
 ## Calculated route(s)
+
 This data contains all details of a route built with **OsmAnd** (route segments, turns, road names, road types, restrictions, etc.). The route can be completely restored as if just built, even in the absence of the respective offline maps.
 
-A gpx file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A gpx file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the **Plan a route** functionality.
-**Plan a route** also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
+A gpx file may contain several routes. Each of them is contained in a specific segment under **trkseg** / **extensions**. A gpx file is saved in this form when exporting a constructed route or when saving a track that consists of several separate segments via the [**Plan a route**](../../user/plan-route/create-route.md) functionality.
+
+[**Plan a route**](../../user/plan-route/create-route.md) also adds one (or several, in accordance with the number of contained separate segments / tracks) **rte** blocks to the gpx file, containing route key points (**rtept**).
+
 #### Gpx structure:
+
 ```xml
 <trk>
   <trkseg>
@@ -78,10 +82,12 @@ A gpx file may contain several routes. Each of them is contained in a specific s
 <rte>
   <rtept ... />
     // For routes built with the "Plan route", the parameters of key points are saved.
+    // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
     <extensions>
       // Route profile type for next segment (car, bicycle, pedestrian, etc.).
       <profile>...</profile>
       // The index of the point in the gpx segment that corresponds to the first point of the calculated route for this segment.
+      // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
       <trkpt_idx>...</trkpt_idx>
     </extensions>
   </rtept>
