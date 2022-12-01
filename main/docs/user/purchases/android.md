@@ -25,18 +25,21 @@ For Android devices you can download the free and paid application on the follow
 
 |  App  | Google Play   | Amazon | Huawei AppGallery | Free / Paid |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
-| OsmAnd  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand) | [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | [✔ Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
-| OsmAnd+  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand.plus) |  [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | - | Paid |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand) | [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8) | [✔ Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | [✔ Install](https://play.google.com/store/apps/details?id=net.osmand.plus) |  [✔ Install](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC/) | - | Paid |
 
 | Purchase  | Google Play  | Amazon | Huawei AppGallery | App |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
-| In-app Maps+ | ✔ | ✔ | ✔ | OsmAnd |
-| Subscription Maps+ | ✔ | ✔ | ✔| OsmAnd |
-| Subscription OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-app Maps+ | ✔ | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | ✔| OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 ## Difference between purchases
 
->OsmAnd+ and Maps+ are completely identical in their feature sets.
+:::note
+**_OsmAnd+_** and **_Maps+_** are completely identical in their feature sets.
+:::
+
 
 #### OsmAnd+
 - ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _OsmAnd+_ is a separate paid application available on [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus) and [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SEGMC). You can add it to [the Family Library in Google Play](https://support.google.com/googleplay/answer/7007852?hl=en).
@@ -57,8 +60,9 @@ OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-|    | OsmAnd Free   | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [OsmAnd+](#osmand) <br/> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [Maps+](#maps) in-app  | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) [Maps+](#maps) | ![Pro](@site/static/img/svg/pro_icon.svg) [OsmAnd Pro](#osmand-pro) |
+|    | OsmAnd Free   | [OsmAnd+](#osmand) <br/> [Maps+](#maps) in-app  | [Maps+](#maps) | [OsmAnd Pro](#osmand-pro) |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
 | **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
 | **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
@@ -71,7 +75,7 @@ The table shows all the features that are included in the paid and free packages
 
 ||OsmAnd Free| [OsmAnd+](#osmand) <br/> [Maps+](#maps) (in&#8209;app, subscription) | [OsmAnd Pro](#osmand-pro) |
 | :------ | :------------- | :------------------ | :------------------ | 
-|  | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |

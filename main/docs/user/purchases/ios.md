@@ -68,21 +68,21 @@ OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-|    | OsmAnd Free   | In-app "Maps+" | Maps+ | OsmAnd Pro |
+|    | OsmAnd Free <br /> ![Maps+](@site/static/img/svg/osmand_maps.svg)  | In-app "Maps+" <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| Maps+ <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| OsmAnd Pro <br /> ![Pro](@site/static/img/svg/pro_icon.svg)|
 | :------------- | :------------- | :------------- | :------------- | :------------- |
-| **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
+| **Purchase** | - | **One-time**,<br /> use forever | **Subscription**<br /> for 12 months | **Subscription**<br /> for 1 / 12 months |
 | **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
 | **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
 
 ### Free and Paid features
 
-|    | OsmAnd Free   | OsmAnd Maps+ | OsmAnd Pro |
+|    | OsmAnd Free <br /> ![Maps+](@site/static/img/svg/osmand_maps.svg) | OsmAnd Maps+ <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| OsmAnd Pro <br /> ![Pro](@site/static/img/svg/pro_icon.svg) |
 | :------------- | :------------- | :------------- | :------------- |
-|    |    |_In-App and subscription_ | _Subscription_ |
+|    |  _App_  |_In-App and subscription_ | _Subscription_ |
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
-| [Map downloads](../start-with/download-maps.md) |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ✔ | ✔ |
-| [Monthly map updates](../personal/maps.md#update-maps) |  Once a month (with 2 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ✔ | ✔ |
+| [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads <br /> (map update counts as download)**:</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
+| [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
 | <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ | 
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | - | - | ✔ |
@@ -107,7 +107,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 
 ### Pro Features
 
-Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](#prices).
+![Pro](@site/static/img/svg/pro_icon.svg) _Pro Features_ are available for [Pro subscribes](#osmand-pro). It means you need to have [OsmAnd Pro subscription](#osmand-pro).
 
 At this moment, Pro subscription has next features:
 
@@ -123,7 +123,9 @@ At this moment, Pro subscription has next features:
 
 Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
 
-**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+#### OsmAnd Pro
+
+![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
 _<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
 
@@ -133,8 +135,9 @@ _<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_
 
 ![Pro Plan](@site/static/img/purchases/pro.png)
 
+#### Maps+
 
-**Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
 
 _<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
 
