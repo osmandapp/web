@@ -36,22 +36,22 @@ export default function FavoriteItem({index, marker}) {
     const ctx = useContext(AppContext);
 
     function addFavoriteToMap(marker) {
-        if (ctx.favorites.visibleMarker.current) {
-            ctx.favorites.visibleMarker.prev = ctx.favorites.visibleMarker.current;
+        if (ctx.selectedFavoritesFile.markerCurrent) {
+            ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
         }
-        ctx.favorites.visibleMarker.current = marker;
-        ctx.setFavorites({...ctx.favorites});
+        ctx.selectedFavoritesFile.markerCurrent = marker;
+        ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
     }
 
 
     return <div className={styles.drawerItem}>
-        <Tooltip title={marker.options.title} arrow>
+        <Tooltip title={marker.title} arrow>
             <MenuItem key={'marker' + index} sx={{ml: 2}} divider onClick={() => addFavoriteToMap(marker)}>
                 <div className={classes.icon}
-                     dangerouslySetInnerHTML={{__html: marker.options.icon.options.html + ''}}/>
+                     dangerouslySetInnerHTML={{__html: marker.icon + ''}}/>
                 <ListItemText className={classes.text}>
                     <Typography variant="inherit">
-                        {marker.options.title}
+                        {marker.title}
                     </Typography>
                 </ListItemText>
             </MenuItem>

@@ -1,86 +1,43 @@
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect} from 'react';
 import AppContext from "../../context/AppContext";
-import GPXEditor from '../../util/gpxParser';
-import Utils from "../../util/Utils";
+import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
+import TrackLayerProvider from "../TrackLayerProvider";
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
 
-    const [groupsCache, setGroupsCache] = useState(null);
-
+    //add favorites groups
     useEffect(() => {
-        removeFavoriteFromMap(ctx.favorites.visibleMarker.prev);
-
-        if (groupsCache !== ctx.favorites.groups) {
-            updateFavoritesLayers();
-        }
-
-        addFavoriteToMap(ctx.favorites.visibleMarker.current);
+        let filesMap = ctx.favorites ? ctx.favorites : {};
+        Object.values(filesMap).forEach((file) => {
+            if (file.url) {
+                if (!file.markers) {
+                    file.markers = TrackLayerProvider.createLayersByTrackData(file);
+                    if (file.name === ctx.selectedFavoritesFile.file?.name) {
+                        map.fitBounds(file.markers.getBounds());
+                    }
+                }
+                if (file.addToMap) {
+                    file.markers.addTo(map);
+                }
+            } else if (!file.url && file.markers) {
+                map.removeLayer(file.markers);
+            }
+        });
 
     }, [ctx.favorites, ctx.setFavorites]);
 
-
-    function updateFavoritesLayers() {
-        if (ctx.favorites.groupsUnique.length === 0) {
-            let file = ctx.favorites.file;
-            if (file && file.url) {
-                addFavoritesLayerToMap(file).then();
-            }
-        } else {
-            setGroupsCache(ctx.favorites.groups);
-            if (ctx.favorites.groups.length === 0) {
-                map.eachLayer(function (l) {
-                    if (l.options.group) {
-                        map.removeLayer(l);
-                    }
-                })
-            } else {
-                map.eachLayer(function (l) {
-                    ctx.favorites.groups.forEach(g => {
-                        if (l.options.group && g.type !== l.options.group) {
-                            map.removeLayer(l);
-                        }
-                    })
-                    ctx.favorites.groups.forEach(g => {
-                        g.markers.forEach(m => {
-                            if (!map.hasLayer(m)) {
-                                m.addTo(map)
-                            }
-                        })
-                    })
-                })
-            }
+    //add selected favorite
+    useEffect(() => {
+        if (ctx.selectedFavoritesFile.markerCurrent) {
+            map.flyTo([ctx.selectedFavoritesFile.markerCurrent.layer._latlng.lat,ctx.selectedFavoritesFile.markerCurrent.layer._latlng.lng], 17);
+            ctx.selectedFavoritesFile.markerCurrent.layer.addTo(map);
+        } else if (ctx.selectedFavoritesFile.markerPrev) {
+            map.removeLayer(ctx.selectedFavoritesFile.markerPrev.layer);
         }
-    }
-
-    async function addFavoritesLayerToMap(file) {
-        let trackData = await Utils.getFileData(file);
-        file.gpx = new GPXEditor(trackData, {
-            async: true,
-            group: ctx.favorites.groups
-        }).on('error', function (e) {
-            ctx.favorites.groupsUnique = e.target._info.favouritesGroup;
-            if (!ctx.favorites.readFirst) {
-                ctx.favorites.readFirst = true;
-                ctx.setFavorites({...ctx.favorites});
-            }
-        }).addTo(map);
-    }
-
-    function addFavoriteToMap(marker) {
-        if (marker) {
-            marker.addTo(map);
-            map.flyTo([marker._latlng.lat, marker._latlng.lng], 17)
-        }
-    }
-
-    function removeFavoriteFromMap(marker) {
-        if (marker && map.hasLayer(marker)) {
-            map.removeLayer(marker);
-        }
-    }
+    }, [ctx.selectedFavoritesFile, ctx.setSelectedFavoritesFile]);
 };
 
 export default FavoriteLayer;
