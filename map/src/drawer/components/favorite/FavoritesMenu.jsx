@@ -24,7 +24,7 @@ export default function FavoritesMenu() {
 
         let groups = [];
         files.forEach(file => {
-            file.folder = file.name.split(".")[0];
+            file.folder = file.name.split(".")[0].replace('favorites-','');
             groups.push({name: file.folder, file: file});
         })
 
@@ -40,8 +40,8 @@ export default function FavoritesMenu() {
             createAllLayers(ctx, true, favoritesGroups).then();
         } else if (disableAllGroups) {
             deleteAllLayers(ctx, favoritesGroups);
+            setLoadingFavorites(false);
         }
-        setLoadingFavorites(false);
     }, [enableGroups, setEnableGroups]);
 
     async function createAllLayers(ctx, addToMap, groups) {
@@ -86,6 +86,7 @@ export default function FavoritesMenu() {
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }
+            setLoadingFavorites(false);
         }
     }
 

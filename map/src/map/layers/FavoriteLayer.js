@@ -15,12 +15,12 @@ const FavoriteLayer = () => {
             if (file.url) {
                 if (!file.markers) {
                     file.markers = TrackLayerProvider.createLayersByTrackData(file);
-                    if (file.name === ctx.selectedFavoritesFile.file?.name) {
-                        map.fitBounds(file.markers.getBounds());
-                    }
                 }
                 if (file.addToMap) {
                     file.markers.addTo(map);
+                }
+                if (file.name === ctx.selectedFavoritesFile.file?.name) {
+                    map.fitBounds(file.markers.getBounds());
                 }
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);
