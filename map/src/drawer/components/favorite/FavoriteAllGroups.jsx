@@ -3,7 +3,7 @@ import {ViewHeadline} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 
-export default function FavoriteAllGroups({enableGroups, setEnableGroups}) {
+export default function FavoriteAllGroups({setEnableGroups, favoritesGroups}) {
 
     const ctx = useContext(AppContext);
 
@@ -11,26 +11,16 @@ export default function FavoriteAllGroups({enableGroups, setEnableGroups}) {
 
     async function enableLayerAllGroups(ctx, visible) {
         if (visible) {
-            if (ctx.favorites && ctx.favorites.groupsUnique.length > 0) {
-                ctx.favorites.groups = ctx.favorites.groupsUnique.filter(function (item) {
-                    return item.hidden === 'false';
-                });
-                ctx.favorites.groups = ctx.favorites.groups.concat(enableGroups);
-            }
-            setEnableGroups(ctx.favorites.groups);
+            setEnableGroups(favoritesGroups);
             setAllGroupsOpen(true);
         } else {
-            if (ctx.favorites && ctx.favorites.groupsUnique.length > 0) {
-                ctx.favorites.groups = [];
-            }
             setEnableGroups([]);
             setAllGroupsOpen(false);
+            if (ctx.selectedFavoritesFile.markerCurrent) {
+                ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
+            }
+            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
         }
-
-        ctx.favorites.visibleMarker.prev = ctx.favorites.visibleMarker.current;
-        ctx.favorites.visibleMarker.current = null;
-
-        ctx.setFavorites({...ctx.favorites});
     }
 
     return (<MenuItem sx={{ml: 3}} divider>

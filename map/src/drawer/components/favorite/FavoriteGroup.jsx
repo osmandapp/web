@@ -1,8 +1,10 @@
-import {Collapse, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
+import {Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import FavoriteItem from "./FavoriteItem";
 import AppContext from "../../../context/AppContext";
+import Utils from "../../../util/Utils";
+import TracksManager from "../../../context/TracksManager";
 
 export default function FavoriteGroup({index, group, enableGroups, setEnableGroups}) {
 
@@ -11,51 +13,96 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
     const toggleFavoritesPointsOpen = () => {
         setFavoritesPointsOpen(!favoritesPointsOpen);
     };
-    const [indexGroup, setIndexGroup] = useState(-1);
-    const [showFavoritePoints, setShowFavoritePoints] = useState([]);
+
     const [favoritesPointsOpen, setFavoritesPointsOpen] = useState(false);
+    const [loadingFavorites, setLoadingFavorites] = useState(false);
+    const [markers, setMarkers] = useState([]);
 
-    function removeFavoriteFromMap() {
-        ctx.favorites.visibleMarker.prev = ctx.favorites.visibleMarker.current;
-        ctx.favorites.visibleMarker.current = null;
-    }
-
-    async function enableLayerWithGroups(group, ctx, visible) {
-        removeFavoriteFromMap();
-
-        if (visible) {
-            ctx.favorites.groups = [...ctx.favorites.groups, group];
-            setEnableGroups([...enableGroups, group]);
-        } else {
-            ctx.favorites.groups = ctx.favorites.groups.filter(function (f) {
-                return f.type !== group.type
-            });
+    async function enableLayerWithGroups(setProgressVisible, ctx, visible, addToMap) {
+        if (!visible) {
+            deleteGroupFromMap();
             let updateGroup = enableGroups.filter(function (f) {
-                return f.type !== group.type
+                return f.name !== group.name
             });
             setEnableGroups(updateGroup);
+        } else {
+            await addGroupToMap(setProgressVisible, addToMap);
+            setEnableGroups([...enableGroups, group]);
         }
-        ctx.setFavorites({...ctx.favorites});
+    }
+
+    function deleteGroupFromMap() {
+        const newFavoritesFiles = Object.assign({}, ctx.favorites);
+        if (newFavoritesFiles[group.name]) {
+            newFavoritesFiles[group.name].url = null;
+        }
+        ctx.setFavorites(newFavoritesFiles);
+        if (ctx.selectedFavoritesFile.markerCurrent) {
+            ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
+            delete ctx.selectedFavoritesFile.markerCurrent;
+        }
+        delete ctx.selectedFavoritesFile.file;
+
+        ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+    }
+
+    async function addGroupToMap(setProgressVisible, addToMap) {
+        setProgressVisible(true);
+        if (ctx.favorites && ctx.favorites[group.name]) {
+            const newFavoriteFiles = Object.assign({}, ctx.favorites);
+            if (ctx.favorites[group.name].url) {
+                newFavoriteFiles[group.name].addToMap = addToMap;
+            } else {
+                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(group.file.type)}&name=${encodeURIComponent(group.file.name)}`;
+                newFavoriteFiles[group.name] = {
+                    'url': url,
+                    'clienttimems': group.file.clienttimems,
+                    'name': group.file.name,
+                    'addToMap': addToMap
+                };
+                let f = await Utils.getFileData(newFavoriteFiles[group.name]);
+                const favoriteFile = new File([f], group.file.name, {
+                    type: "text/plain",
+                });
+                let favorites = await TracksManager.getTrackData(favoriteFile);
+                if (favorites) {
+                    favorites.name = group.file.name;
+                }
+                Object.keys(favorites).forEach(t => {
+                    newFavoriteFiles[group.name][`${t}`] = favorites[t];
+                });
+            }
+            ctx.setFavorites({...newFavoriteFiles});
+            ctx.selectedFavoritesFile.file = Object.assign({}, newFavoriteFiles[group.name]);
+            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+            setProgressVisible(false);
+        }
     }
 
     useEffect(() => {
-        if (indexGroup !== -1) {
-            if (showFavoritePoints.includes(indexGroup)) {
-                showFavoritePoints.splice(showFavoritePoints.indexOf(indexGroup), 1)
-            } else {
-                showFavoritePoints.push(indexGroup);
-            }
-            setShowFavoritePoints([...showFavoritePoints]);
-        }
-        if (showFavoritePoints.length === 0) {
-            removeFavoriteFromMap();
-            ctx.setFavorites({...ctx.favorites});
+        let markerList = [];
+        if (ctx.favorites[group.name]?.markers) {
+            Object.values(ctx.favorites[group.name].markers._layers).forEach(value => {
+                let marker = {
+                    title: value.options.title,
+                    icon: value.options.icon.options.html,
+                    layer: value
+                }
+                markerList.push(marker);
+            });
+            setMarkers(markerList);
         }
     }, [favoritesPointsOpen, setFavoritesPointsOpen]);
 
+    useEffect(() => {
+        if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedFavoritesFile.file?.name) {
+            ctx.selectedFavoritesFile.file.markers = ctx.favorites[group.name].markers;
+            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+        }
+    }, [ctx.favorites, ctx.setFavorites]);
+
     return (<div key={'group' + index}>
         <MenuItem sx={{ml: 3}} divider onClick={() => {
-            setIndexGroup(index);
             toggleFavoritesPointsOpen();
         }}>
             <ListItemIcon>
@@ -63,18 +110,21 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             </ListItemIcon>
             <ListItemText>
                 <Typography variant="inherit" noWrap>
-                    {group.type}
+                    {group.name}
                 </Typography>
             </ListItemText>
-            <Switch checked={enableGroups.some(e => e.type === group.type)}
+            <Switch checked={enableGroups.some(e => e.name === group.name)}
                     onChange={(e) => {
-                        enableLayerWithGroups(group, ctx, e.target.checked).then();
+                        enableLayerWithGroups(setLoadingFavorites, ctx, e.target.checked, true).then();
                     }}
-                    onClick={(e) => {e.stopPropagation()}}/>
-            {group.markers.length === 0 ? <></> : showFavoritePoints.length > 0 ? <ExpandLess/> : <ExpandMore/>}
+                    onClick={(e) => {
+                        e.stopPropagation()
+                    }}/>
+            {markers === [] ? <></> : favoritesPointsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
-        <Collapse in={showFavoritePoints.includes(index)} timeout="auto">
-            {group.markers.map((marker, index) => {
+        {loadingFavorites ? <LinearProgress/> : <></>}
+        <Collapse in={favoritesPointsOpen} timeout="auto">
+            {markers && markers.map((marker, index) => {
                 return <FavoriteItem key={marker + index}
                                      index={index}
                                      marker={marker}/>;

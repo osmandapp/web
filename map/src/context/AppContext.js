@@ -132,33 +132,6 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading) 
     }
 }
 
-async function loadFavoritesFile(listFiles, setFavorites, favorites) {
-    let favoriteFile = (!listFiles || !listFiles.uniqueFiles ? [] :
-        listFiles.uniqueFiles).find((item) => {
-        return (item.type === 'FAVOURITES');
-    });
-
-    if (favoriteFile) {
-        let favObj = {};
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(favoriteFile.type)}&name=${encodeURIComponent(favoriteFile.name)}`;
-        let newFavouriteFile = favorites.file;
-        if (newFavouriteFile) {
-            newFavouriteFile.url = null;
-        } else {
-            newFavouriteFile = {'url': url, 'clienttimems': favoriteFile.clienttimems, 'name': favoriteFile.name};
-        }
-        favObj.file = newFavouriteFile;
-        favObj.groups = [];
-        favObj.groupsUnique = [];
-        favObj.visibleMarker = {
-            prev: null,
-            current: null
-        };
-
-        setFavorites(favObj);
-    }
-}
-
 async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, listFiles, setListFiles) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET'
@@ -315,6 +288,7 @@ export const AppContextProvider = (props) => {
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
+    const [selectedFavoritesFile, setSelectedFavoritesFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
@@ -346,16 +320,7 @@ export const AppContextProvider = (props) => {
     const [interPoints, setInterPoints] = useState([]);
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
-    const [favorites, setFavorites] = useState({
-        file: null,
-        groups: [],
-        groupsUnique: [],
-        readFirst: false,
-        visibleMarker: {
-            prev: null,
-            current: null
-        }
-    });
+    const [favorites, setFavorites] = useState({});
 
     const [localTracks, setLocalTracks] = useState(TracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
@@ -417,9 +382,6 @@ export const AppContextProvider = (props) => {
         loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading);
         // eslint-disable-next-line
     }, [loginUser]);
-    useEffect(() => {
-        loadFavoritesFile(listFiles, setFavorites, favorites).then();
-    }, [loginUser, listFiles]);
     return <AppContext.Provider value={{
         weatherLayers, updateWeatherLayers,
         weatherDate, setWeatherDate,
@@ -429,6 +391,7 @@ export const AppContextProvider = (props) => {
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
         selectedGpxFile, setSelectedGpxFile,
+        selectedFavoritesFile, setSelectedFavoritesFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
         startPoint, setStartPoint,
