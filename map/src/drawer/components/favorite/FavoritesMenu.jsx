@@ -33,14 +33,12 @@ export default function FavoritesMenu() {
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        setLoadingFavorites(true);
         let enableAllGroups = enableGroups.length === favoritesGroups.length;
         let disableAllGroups = enableGroups.length === 0 && favoritesGroups.length !== 0;
         if (enableAllGroups) {
             createAllLayers(ctx, true, favoritesGroups).then();
         } else if (disableAllGroups) {
             deleteAllLayers(ctx, favoritesGroups);
-            setLoadingFavorites(false);
         }
     }, [enableGroups, setEnableGroups]);
 
@@ -51,17 +49,20 @@ export default function FavoritesMenu() {
     }
 
     function deleteAllLayers(ctx, groups) {
+        setLoadingFavorites(true);
         const newFavoritesFiles = Object.assign({}, ctx.favorites);
         groups.forEach(group => {
             if (newFavoritesFiles[group.name]) {
                 newFavoritesFiles[group.name].url = null;
             }
         });
+        setLoadingFavorites(false);
         ctx.setFavorites(newFavoritesFiles);
     }
 
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
+            setLoadingFavorites(true);
             for (const g of groups) {
                 if (!ctx.favorites[g.name]?.url) {
                     let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(g.file.type)}&name=${encodeURIComponent(g.file.name)}`;
