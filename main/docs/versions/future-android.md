@@ -202,18 +202,20 @@ It's the new paid feature. Read about the Weather plugin [here](https://osmand.n
 
 Changed [the Appearance setting](https://osmand.net/docs/user/personal/profiles#appearance) for Profile _"Display position always in centre"_ to _"Display position"_, where the user can choose two parameters: _Center_ or _Bottom_.
 
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2022-12-08-android-4-3/display_position.png').default} alt="turn arrows visible"/></td>
+    </tr>
+</table>
+
 12. **Default-speed adjustable forecast for elevation-dependent walking/hiking/running trip times**
 
-For an activity like hiking or running, set your respective pedestrian profile's default speed (normally 4km/h) to your individual expected value for flat terrain. Then all route calculations for that profile will forecast the corresponding trip time accounting more precisely for any actual elevation gain, if option "Use elevtion data" is set and elevation data is present on the device.
+For an activity like hiking or running, set your respective pedestrian profile's default speed (normally 4km/h) to your individual expected value for flat terrain. Then all route calculations for that profile will now forecast the corresponding trip time more precisely accounting for any actual elevation gain, if option "Use elevtion data" is set and elevation data is present on the device.
 
 13. **Fixed audio output and volume slider behavior**
 
 Fixed some bugs in reliably using the selected audio stream and activating the volume slider for exactly that stream.
 
-<table class="blogimage">
-  <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/display_position.png').default} alt="turn arrows visible"/></td>
-    </tr>
-</table> 
+
 
 
