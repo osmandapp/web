@@ -36,6 +36,8 @@ What's new:
 * Added support for [ANT+ sensors](#support-external-devices-ant).
 * Add [new data](#added-map-data) on the map: different clubs, filters for swimming, different types of playgrounds.
 * Fixed ["Display position"](#display-position) option.
+* [Elevation-dependent speed](#elevation-dependent-speed).
+* Fixed [slider bahavior](#fixed-slider-bahavior).
 
 
 ## New faster map rendering engine
@@ -225,6 +227,16 @@ We added and changed the next data for rendering on the map:
 - POI with tag [_club key_](https://wiki.openstreetmap.org/wiki/Key:club): the full list you can find [here](https://github.com/osmandapp/OsmAnd/issues/10486).
 - Added more filter options for [Swimming POIs](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dswimming).
 - Tag [emergency=lifeguard](https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dlifeguard_base).
+
+### Elevation-dependent speed
+
+Default-speed adjustable forecast for elevation-dependent _walking/hiking/running_ trip times.
+
+For an activity like hiking or running, set your respective pedestrian profile's default speed (normally 4km/h) to your individual expected value for flat terrain. Then all route calculations for that profile will now forecast the corresponding trip time more precisely accounting for any actual elevation gain, if option "Use elevtion data" is set and elevation data is present on the device.
+
+### Fixed slider bahavior
+
+Fixed some bugs in reliably using the selected audio stream and activating the volume slider for exactly that stream.
 
 _________________________________________________
 

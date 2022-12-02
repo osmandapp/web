@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# iOS 4.3 (November 2022)
+# iOS 4.3 (December 2022)
 
 ## Join Beta
 

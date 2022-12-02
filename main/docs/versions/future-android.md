@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Android 4.3 (November 2022)
+# Android 4.3 (December 2022)
 
 OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
 
