@@ -36,13 +36,12 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
         const newFavoritesFiles = Object.assign({}, ctx.favorites);
         if (newFavoritesFiles[group.name]) {
             newFavoritesFiles[group.name].url = null;
+            ctx.setFavorites(newFavoritesFiles);
         }
-        ctx.setFavorites(newFavoritesFiles);
-        if (ctx.selectedGpxFile.name === group.name) {
-            ctx.selectedGpxFile = null;
+        if (ctx.selectedGpxFile.file.name === group.name) {
+            ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
-
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     async function addGroupToMap(setProgressVisible, addToMap) {
