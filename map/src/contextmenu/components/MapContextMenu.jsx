@@ -8,6 +8,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
+import FavoritesTabList from "../FavoritesTabList";
 
 const useStyles = makeStyles({
     menu: {
@@ -29,6 +30,7 @@ export default function MapContextMenu() {
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
+    const [wasClosed, setWasClosed] = useState(false);
 
     const divContainer = useRef(null);
 
@@ -50,25 +52,26 @@ export default function MapContextMenu() {
             setTabsObj(null);
             setShowContextMenu(false);
         } else {
-            if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged()) {
-                if (ctx.currentObjectType) {
-                    setPrevTrack(ctx.selectedGpxFile);
-                    let obj;
-                    if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
-                        obj = new TrackTabList().create(ctx);
-                    } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                        obj = WeatherTabList().create(ctx);
-                    } else if (ctx.selectedGpxFile) {
-                        obj = new TrackTabList().create(ctx);
-                    }
-                    if (obj) {
-                        setShowContextMenu(true);
-                        setTabsObj(obj);
-                        setValue(obj.defaultTab);
-                    }
-                } else {
-                    setTabsObj(null);
-                    setShowContextMenu(false);
+            if (!ctx.currentObjectType) {
+                setTabsObj(null);
+                setShowContextMenu(false);
+            } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || wasClosed) {
+                let obj;
+                setPrevTrack(ctx.selectedGpxFile);
+                setWasClosed(false);
+                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
+                    obj = new TrackTabList().create(ctx);
+                } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                    obj = WeatherTabList().create(ctx);
+                } else if (ctx.currentObjectType === 'favorite') {
+                    obj = new FavoritesTabList().create(ctx);
+                } else if (ctx.selectedGpxFile) {
+                    obj = new TrackTabList().create(ctx);
+                }
+                if (obj) {
+                    setShowContextMenu(true);
+                    setTabsObj(obj);
+                    setValue(obj.defaultTab);
                 }
             }
         }
@@ -76,6 +79,7 @@ export default function MapContextMenu() {
 
     function closeContextMenu() {
         setShowContextMenu(false);
+        setWasClosed(true);
     }
 
     return (<div>

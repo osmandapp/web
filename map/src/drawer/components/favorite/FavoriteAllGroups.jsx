@@ -16,10 +16,10 @@ export default function FavoriteAllGroups({setEnableGroups, favoritesGroups}) {
         } else {
             setEnableGroups([]);
             setAllGroupsOpen(false);
-            if (ctx.selectedFavoritesFile.markerCurrent) {
-                ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
+            if (ctx.selectedGpxFile?.markerCurrent) {
+                ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
             }
-            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }
 

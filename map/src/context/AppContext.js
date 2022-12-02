@@ -288,7 +288,6 @@ export const AppContextProvider = (props) => {
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
-    const [selectedFavoritesFile, setSelectedFavoritesFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
@@ -391,7 +390,6 @@ export const AppContextProvider = (props) => {
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
         selectedGpxFile, setSelectedGpxFile,
-        selectedFavoritesFile, setSelectedFavoritesFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
         startPoint, setStartPoint,

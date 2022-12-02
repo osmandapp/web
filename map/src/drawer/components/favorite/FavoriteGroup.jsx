@@ -19,6 +19,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
     const [markers, setMarkers] = useState([]);
 
     async function enableLayerWithGroups(setProgressVisible, ctx, visible, addToMap) {
+        ctx.setCurrentObjectType(null);
         if (!visible) {
             deleteGroupFromMap();
             let updateGroup = enableGroups.filter(function (f) {
@@ -37,13 +38,11 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             newFavoritesFiles[group.name].url = null;
         }
         ctx.setFavorites(newFavoritesFiles);
-        if (ctx.selectedFavoritesFile.markerCurrent) {
-            ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
-            delete ctx.selectedFavoritesFile.markerCurrent;
+        if (ctx.selectedGpxFile.name === group.name) {
+            ctx.selectedGpxFile = null;
         }
-        delete ctx.selectedFavoritesFile.file;
 
-        ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     async function addGroupToMap(setProgressVisible, addToMap) {
@@ -73,8 +72,10 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 });
             }
             ctx.setFavorites({...newFavoriteFiles});
-            ctx.selectedFavoritesFile.file = Object.assign({}, newFavoriteFiles[group.name]);
-            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+            let newSelectedGpxFile = {};
+            newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
+            newSelectedGpxFile.name = group.name;
+            ctx.setSelectedGpxFile(newSelectedGpxFile);
             setProgressVisible(false);
         }
     }
@@ -95,9 +96,9 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
     }, [favoritesPointsOpen, setFavoritesPointsOpen]);
 
     useEffect(() => {
-        if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedFavoritesFile.file?.name) {
-            ctx.selectedFavoritesFile.file.markers = ctx.favorites[group.name].markers;
-            ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+        if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
+            ctx.selectedGpxFile.file.markers = ctx.favorites[group.name].markers;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }, [ctx.favorites, ctx.setFavorites]);
 
@@ -127,7 +128,8 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             {markers && markers.map((marker, index) => {
                 return <FavoriteItem key={marker + index}
                                      index={index}
-                                     marker={marker}/>;
+                                     marker={marker}
+                                     group={group}/>;
             })}
         </Collapse>
     </div>)

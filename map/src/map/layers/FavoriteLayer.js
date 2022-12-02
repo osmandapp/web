@@ -17,9 +17,9 @@ const FavoriteLayer = () => {
                     file.markers = TrackLayerProvider.createLayersByTrackData(file);
                 }
                 if (file.addToMap) {
-                    file.markers.addTo(map);
+                    file.markers.addTo(map).on('click', onClick);
                 }
-                if (file.name === ctx.selectedFavoritesFile.file?.name) {
+                if (file.name === ctx.selectedGpxFile.file?.name) {
                     map.fitBounds(file.markers.getBounds());
                 }
             } else if (!file.url && file.markers) {
@@ -31,13 +31,24 @@ const FavoriteLayer = () => {
 
     //add selected favorite
     useEffect(() => {
-        if (ctx.selectedFavoritesFile.markerCurrent) {
-            map.flyTo([ctx.selectedFavoritesFile.markerCurrent.layer._latlng.lat,ctx.selectedFavoritesFile.markerCurrent.layer._latlng.lng], 17);
-            ctx.selectedFavoritesFile.markerCurrent.layer.addTo(map);
-        } else if (ctx.selectedFavoritesFile.markerPrev) {
-            map.removeLayer(ctx.selectedFavoritesFile.markerPrev.layer);
+        if (ctx.selectedGpxFile?.markerCurrent) {
+            map.flyTo([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
+            ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
         }
-    }, [ctx.selectedFavoritesFile, ctx.setSelectedFavoritesFile]);
+        if (ctx.selectedGpxFile?.markerPrev) {
+            map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
+        }
+    }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
+
+    function onClick(e) {
+        ctx.setCurrentObjectType('favorite');
+        if (e.layer) {
+            ctx.selectedGpxFile.markerCurrent = e;
+        } else {
+            ctx.selectedGpxFile.markerCurrent.layer = e.sourceTarget;
+        }
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
 };
 
 export default FavoriteLayer;

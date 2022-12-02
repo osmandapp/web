@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         }
     },
     text: {
-        '& .MuiTypography-root' : {
+        '& .MuiTypography-root': {
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     }
 })
 
-export default function FavoriteItem({index, marker}) {
+export default function FavoriteItem({index, marker, group}) {
 
     const classes = useStyles();
     const styles = drawerStyles();
@@ -36,11 +36,25 @@ export default function FavoriteItem({index, marker}) {
     const ctx = useContext(AppContext);
 
     function addFavoriteToMap(marker) {
-        if (ctx.selectedFavoritesFile.markerCurrent) {
-            ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
+        ctx.setCurrentObjectType(null);
+        let newSelectedGpxFile = {};
+        newSelectedGpxFile.markerCurrent = marker;
+        if (ctx.selectedGpxFile.markerCurrent) {
+            newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
-        ctx.selectedFavoritesFile.markerCurrent = marker;
-        ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+        let file;
+        Object.keys(ctx.favorites).forEach(favorite => {
+            if (favorite === group.name) {
+                Object.values(ctx.favorites[favorite].markers._layers).forEach(m => {
+                    if (m.options.title === marker.title) {
+                        file = ctx.favorites[favorite];
+                    }
+                });
+            }
+        });
+        newSelectedGpxFile.file = file;
+        newSelectedGpxFile.name = marker.title;
+        ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
 
 
