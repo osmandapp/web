@@ -39,7 +39,7 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                     <ButtonGroup
                         orientation="vertical"
                         color="primary">
-                        {ctx.currentObjectType !== 'cloud_track' && <IconButton
+                        {ctx.currentObjectType === 'local_client_track' && <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => {
@@ -49,13 +49,13 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                         >
                             <Folder fontSize="small"/>
                         </IconButton>}
-                        <IconButton
+                        {ctx.currentObjectType === 'local_client_track' && <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => setOpenDeleteDialog(true)}
                         >
                             <Delete fontSize="small"/>
-                        </IconButton>
+                        </IconButton>}
                         <IconButton
                             variant="contained"
                             type="button"
