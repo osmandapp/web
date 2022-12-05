@@ -29,7 +29,7 @@ export default function Poll_1({id}) {
         setResults(r);
     };
     const showResults = async () => {
-        const votes = await fetch(`${pollHost}/api/poll-results?pollId=${pollId}`, {
+        const votes = await fetch(`${pollHost}/api/poll_1-results?pollId=${pollId}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).then(res => res.json());
@@ -41,7 +41,7 @@ export default function Poll_1({id}) {
             alert('Please select any answer to submit');
             return;
         }
-        const votes = await fetch(`${pollHost}/api/poll-submit?pollId=${pollId}&ansId=${ansId}`, {
+        const votes = await fetch(`${pollHost}/api/poll_1-submit?pollId=${pollId}&ansId=${ansId}`, {
             method: 'POST', 
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
@@ -92,8 +92,8 @@ export default function Poll_1({id}) {
                 })}
             </div>
             {!results && <div className={styles.pollButtons}>
-                <input className='button button--primary poll-submit' type="button" value="Submit" onClick={submitResult}/>
-                <input className='button button--secondary poll-results' type="button" value="Results" onClick={showResults} />
+                <input className='button button--primary poll_1-submit' type="button" value="Submit" onClick={submitResult}/>
+                <input className='button button--secondary poll_1-results' type="button" value="Results" onClick={showResults} />
             </div>}
         </div>
     );

@@ -499,8 +499,8 @@ Parameters for "Map during navigation" and others:
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 | **<Translate android="true" ids="map_during_navigation"/>:** |  Change map behavior during navigation.   |              |
-| "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids="choose_auto_follow_route_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate android="true" ids="auto_zoom_none"/>, <Translate android="true" ids="auto_zoom_farthest"/>, <Translate android="true" ids="auto_zoom_far"/>, <Translate android="true" ids="auto_zoom_close"/>. |
+| "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids="choose_auto_follow_route_descr"/>   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <br /> _<Translate android="true" ids="auto_zoom_none"/>_ - manually zoom,<br /> _<Translate android="true" ids="auto_zoom_farthest"/>_ - zoom is 200m.,<br /> _<Translate android="true" ids="auto_zoom_far"/>_ - zoom is 100m.,<br /> _<Translate android="true" ids="auto_zoom_close"/>_ - zoom is 50m. |
 | "<Translate android="true" ids="snap_to_road"/>"  |  <Translate android="true" ids="snap_to_road_descr"/>.   |    |
 | **<Translate android="true" ids="animate_my_location"/>** |  <Translate android="true" ids="animate_my_location_desc"/>   |              |
 
