@@ -10,10 +10,8 @@ import {
 } from "@mui/material";
 import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
-import {post} from "axios";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
-import Utils from "../../util/Utils";
 
 
 export default function SaveTrackDialog() {
@@ -55,37 +53,7 @@ export default function SaveTrackDialog() {
 
     async function saveTrack() {
         toggleShowDialog();
-        let currentFolder = getFolderName(folder);
-        if (currentFolder === "Tracks") {
-            currentFolder = "";
-        } else {
-            currentFolder = currentFolder + "/";
-        }
-        if (ctx.loginUser) {
-            let gpx = await TracksManager.getGpxTrack(ctx);
-            if (gpx) {
-                let convertedData = new TextEncoder().encode(gpx.data);
-                let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
-                let convertedZipped = zippedResult.buffer;
-                let oMyBlob = new Blob([convertedZipped], {type: "gpx"});
-                let file = new FormData();
-                file.append('file', oMyBlob, ctx.selectedGpxFile.name);
-
-                const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
-                    {
-                        params: {
-                            name: currentFolder + fileName + ".gpx",
-                            type: 'GPX',
-                        }
-                    }
-                );
-                if (respUpload) {
-                    const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                    const res = await respGetFiles.json();
-                    ctx.setListFiles(res);
-                }
-            }
-        }
+        await TracksManager.saveTrack(ctx, getFolderName(folder), fileName, TracksManager.GPX_FILE_TYPE);
     }
 
 

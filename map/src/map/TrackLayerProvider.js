@@ -29,6 +29,12 @@ function parsePoints(points, layers) {
         }
     })
 
+    points.forEach(p => {
+        layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {
+            icon: MarkerOptions.options.route,
+        }));
+    })
+
     //add start end
     if (coordsTrk.length > 0) {
         layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));
@@ -49,12 +55,6 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
         } else {
             coords.push(new L.LatLng(p.lat, p.lng))
         }
-
-        points.forEach(p => {
-            layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {
-                icon: MarkerOptions.options.route,
-            }));
-        })
     })
     coordsAll = coordsAll.concat(Object.assign([], coords));
     if (coords.length > 0) {
@@ -64,33 +64,32 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
 
 function parseWpt(points, layers) {
     points && points.forEach(point => {
-        if (point.ext) {
-            let pInfo = point.ext;
-            let icon = MarkerOptions.getWptIcon(pInfo)
-            if (icon) {
-                let opt = {clickable: true, icon: icon};
-                opt.group = pInfo.type ? pInfo.type : 'Favorites';
-                if (pInfo.name) {
-                    opt.title = pInfo.name;
-                }
-                if (pInfo.time) {
-                    opt.time = pInfo.time;
-                }
-                if (pInfo.address) {
-                    opt.address = pInfo.address;
-                }
-                if (pInfo.cmt) {
-                    opt.cmt = pInfo.cmt;
-                }
-
-                let marker = new L.Marker(new L.LatLng(pInfo.lat, pInfo.lon), opt);
-                if (point.name) {
-                    marker.bindPopup("<b>" + point.name + "</b>" + (pInfo.desc?.length > 0 ? '<br>' + pInfo.desc : '')).openPopup();
-                }
-
-                layers.push(marker);
+        let icon = MarkerOptions.getWptIcon(point.ext)
+        let pInfo = point.ext;
+        let opt;
+        if (icon) {
+            opt = {clickable: true, icon: icon};
+            opt.group = pInfo.type ? pInfo.type : 'Favorites';
+            if (pInfo.time) {
+                opt.time = pInfo.time;
+            }
+            if (pInfo.cmt) {
+                opt.cmt = pInfo.cmt;
             }
         }
+        if (point.name) {
+            opt.title = point.name;
+        }
+        if (point.desc) {
+            opt.desc = point.desc;
+        }
+        if (point.address) {
+            opt.address = point.address;
+        }
+
+        let marker = new L.Marker(new L.LatLng(pInfo.lat, pInfo.lon), opt);
+
+        layers.push(marker);
     })
 }
 

@@ -2,6 +2,9 @@ import Utils from "../util/Utils";
 import {MetaData, Point, Track, TrackData} from "./TrackStore";
 import {post} from "axios";
 
+const FAVORITE_FILE_TYPE = 'FAVOURITES';
+const GPX_FILE_TYPE = 'GPX';
+
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
 }
@@ -205,16 +208,17 @@ function addDistance(track) {
 }
 
 async function getGpxTrack(ctx) {
+    let file = ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
     let trackData = {
-        tracks: ctx.selectedGpxFile.tracks,
-        wpts: ctx.selectedGpxFile.wpts,
-        metaData: ctx.selectedGpxFile.metaData,
-        ext: ctx.selectedGpxFile.ext,
+        tracks: file.tracks,
+        wpts: file.wpts,
+        metaData: file.metaData,
+        ext: file.ext,
         analysis: null
     }
 
     if (!trackData.metaData.name) {
-        trackData.metaData.name = ctx.selectedGpxFile.name;
+        trackData.metaData.name = file.name;
     }
 
     return await post(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
@@ -223,6 +227,41 @@ async function getGpxTrack(ctx) {
                 'Content-Type': 'application/json'
             }
         });
+}
+
+async function saveTrack(ctx, currentFolder, fileName, type) {
+    if (type !== FAVORITE_FILE_TYPE) {
+        if (currentFolder === "Tracks") {
+            currentFolder = "";
+        } else {
+            currentFolder = currentFolder + "/";
+        }
+    }
+    if (ctx.loginUser) {
+        let gpx = await getGpxTrack(ctx);
+        if (gpx) {
+            let convertedData = new TextEncoder().encode(gpx.data);
+            let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
+            let convertedZipped = zippedResult.buffer;
+            let oMyBlob = new Blob([convertedZipped], {type: "gpx"});
+            let file = new FormData();
+            file.append('file', oMyBlob, ctx.selectedGpxFile.name);
+
+            const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
+                {
+                    params: {
+                        name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
+                        type: type,
+                    }
+                }
+            );
+            if (respUpload) {
+                const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+                const res = await respGetFiles.json();
+                ctx.setListFiles(res);
+            }
+        }
+    }
 }
 
 
@@ -350,10 +389,13 @@ const TracksManager = {
     updateSelectedTrack,
     getTrackPoints,
     getGpxTrack,
+    saveTrack,
     getEditablePoints,
     updateRouteBetweenPoints,
     updateStat,
-    getEle
+    getEle,
+    FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
+    GPX_FILE_TYPE: GPX_FILE_TYPE
 };
 
 export default TracksManager;
