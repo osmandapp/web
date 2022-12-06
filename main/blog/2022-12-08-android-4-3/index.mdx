@@ -24,22 +24,29 @@ We're happy to announce the new 4.3 OsmAnd release for Android devices.
 
 <!--truncate-->
 
-What's new:
-* [New faster map rendering engine](#new-faster-map-rendering-engine).
-* [Smooth animation for location changes during movement](#smooth-animation).
-* [New improvements for Widgets](#new-improvements-for-widgets):
-  * Added widget with coordinates of map center; 
-  * "Distance to tap" added text size option; 
-  * "Map marker" widget added option to change click behavior.
+What's news:
+* New faster [map rendering engine](#new-faster-map-rendering-engine).
+* [Smooth animation](#smooth-animation) for location changes during movement.
+* [Weather plugin](#weather-plugin).
+* New improvements for [Widgets](#new-improvements-for-widgets):
+  * Added widget with [coordinates of map center](#coordinates-widget-map-center); 
+  * "Distance to tap" added [text size option](#improvement-of-distance-by-tap); 
+  * [ETA](#improvement-of-map-marker-widget) for "Map marker" widget;
+  * [Weather widgets](#weather-widgets);
+  * [Developer widgets](#developer-widgets).
 * [Reorganised "Nautical maps"](#nautical-maps-folder).
 * Added ability to switch [Mountain bike routes](#mtb-imba-trails) scheme classification.
 * [GPX added support](#new-updates-for-gpx-files) for "link", "cmt", "desc" tags and for any custom extensions.
 * Added option [to disable UUID](#disable-uuid).
-* Added support for [ANT+ sensors](#support-external-devices-ant).
-* Add [new data](#added-map-data) on the map: different clubs, filters for swimming, different types of playgrounds.
-* Fixed ["Display position"](#display-position) option.
-* [Elevation-dependent speed](#elevation-dependent-speed).
-* Fixed [slider bahavior](#fixed-slider-bahavior).
+* Add [new data](#added-map-data) on the map.
+* [More](#more):
+  * Fixed ["Display position"](#display-position) option;
+  * Added support for [ANT+ sensors](#support-external-devices-ant);
+  * [Favorites local backup](#favorites-local-backup);
+  * Added [Map data](#added-map-data);
+  * [Elevation-dependent speed](#elevation-dependent-speed);
+  * Fixed [slider bahavior](#fixed-slider-bahavior);
+  * Show/hide layer of [downloaded maps](#downloaded-maps-layer).
 
 
 ## New faster map rendering engine
@@ -64,6 +71,19 @@ When 2.5D view is enabled, you can change the view angle [by gesture _Tilt_](htt
 ## Smooth animation
 
 Routing animation (icon movement during navigation) works smoothly now.
+
+## Weather plugin
+
+Added demo version of [the Weather plugin](https://osmand.net/docs/user/plugins/weather). It's [Pro feature](https://osmand.net/docs/user/purchases/android#pro-features):
+
+- weather [map layers](https://osmand.net/docs/user/plugins/weather#display-weather-layers):  _Temperature, Air pressure, Wind, Cloud, Precipiation_.
+- [weather widgets](#weather-widgets).
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./weather_plugin.png').default} alt="weather"/></td>
+    </tr>
+</table> 
 
 ## New improvements for Widgets
 
@@ -136,6 +156,30 @@ _Estimated arrival time (ETA)_ widget allows you to specify a time interval for 
   <tr>
     <td><img src={require('./map_marker_widget_4.png').default} alt="turn arrows visible"/></td>
     <td><img src={require('./map_marker_widget_5.png').default} alt="turn arrows hidden"/></td>
+    </tr>
+</table> 
+
+### Weather widgets
+
+[Weather widgets](https://osmand.net/docs/user/plugins/weather#weather-widgets) show current weather data for the central point on the map:
+
+_Menu → Configure screen → Right panel / Left panel → Weather → Temperature, Air pressure, Wind, Cloud, Precipitation_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./weather_widgets.png').default} alt="weather widgets"/></td>
+    </tr>
+</table> 
+
+### Developer widgets
+
+Added [developer widgets](https://osmand.net/docs/user/plugins/development#widgets):
+
+_Menu → Configure screen → Right panel / Left panel → Developer widgets: Map Rendering FPS, Camera tilt, Camera elevation, Zoom level, Distance from camera to taget_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./developer_widgets.png').default} alt="developer widgets"/></td>
     </tr>
 </table> 
 
@@ -226,6 +270,18 @@ Changed [the Appearance setting](https://osmand.net/docs/user/personal/profiles#
 
 At this release, we added support for [external ANT+ devices](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external Bluetooth devices is planned for the next release. 
 
+### Favorites local backup
+
+Each saving or editing for Favorites makes [a backup file](https://osmand.net/docs/user/personal/favorites#export--import) (*favorites_bak..gpx.zip*) in the backup folder:
+
+_...net.osmand → files → backup_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./local_backup_favorites.png').default} alt="local backup favorites"/></td>
+    </tr>
+</table> 
+
 
 ### Added Map data
 
@@ -246,6 +302,20 @@ For activities such as walking or running, set the default speed for flat terrai
 ### Fixed slider bahavior
 
 Fixed some bugs related to the reliable use of the selected audio stream and activation of the volume control for this particular stream.  
+
+### Downloaded maps layer
+
+Added the ability to show/hide layer of downloaded maps:
+
+_Menu → Configure map → Map rendering → Show borders of downloaded maps_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_boarders.png').default} alt="map boarders"/></td>
+    <td><img src={require('./map_boarders_1.png').default} alt="map boarders"/></td>
+    </tr>
+</table> 
+
 
 _________________________________________________
 
