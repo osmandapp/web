@@ -14,28 +14,24 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Map markers are selected points marked with flags on the map. They provide useful information for navigating to direct points on the map screen.
+Markers are temporary points indicated on the map in the form of flags. The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers)  
 
-## Top bar widget (markers)  
 
+## Top bar widget
+
+The **Map markers bar**(for Android) and **Distance indication Top bar**(for iOS) widgets displays:
+- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
+- In the form of an arrow, the same color as the marker, indicates the direction from the current location and orientation in space of your device (hearding) towards the marker.
+- Location Address.
+- Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
+
+You can also select one or two markers to display in the widget.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
 ![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-On the top bar widget you could see the distance and the direction to the marker from current location. It is possible to configure to see 1 or 2 top markers in the widget.
 
 | | |
 |------------|------------|
@@ -44,10 +40,28 @@ On the top bar widget you could see the distance and the direction to the marker
 | On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
 | Approach marker | In case your location is within a short radius of the map marker (< 50m), you could see a quick button to remove the map marker (mark as passed).  |
 | Format distance | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>  |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios.png)
+
+| | |
+|------------|------------|
+| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_topbar"/> |
+| On Click | Centers map view to the marker position |
+| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
+| Approach marker | In case your location is within a short radius of the map marker (< 50m), you could see a quick button to remove the map marker (mark as passed).  |
+| Format distance | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  | . 
+
+</TabItem>
+
+</Tabs> 
 
 
-## Panel widgets (markers)  
+
+## Panel widgets
 
 <Tabs groupId="operating-systems">
 
