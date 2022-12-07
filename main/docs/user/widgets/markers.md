@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Markers are temporary points indicated on the map in the form of flags. The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers)  
+Markers are temporary points indicated on the map in the form of flags. The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
 
 
 ## Top bar widget
@@ -35,11 +35,11 @@ You can also select one or two markers to display in the widget.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_topbar"/> |
-| On Click | Centers map view to the marker position |
-| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
-| Approach marker | In case your location is within a short radius of the map marker (< 50m), you could see a quick button to remove the map marker (mark as passed).  |
-| Format distance | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>  |
+| Enable | *Menu → Configure screen → Widgets → Top panel → Map markers* |
+| By tapping | The visible part of the map shifts to the marker location. |
+| Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
+| Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
+| Distance format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 </TabItem>
 
@@ -49,11 +49,10 @@ You can also select one or two markers to display in the widget.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_topbar"/> |
-| On Click | Centers map view to the marker position |
-| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
-| Approach marker | In case your location is within a short radius of the map marker (< 50m), you could see a quick button to remove the map marker (mark as passed).  |
-| Format distance | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  | . 
+| Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>* |
+| By tapping | The visible part of the map shifts to the marker location. |
+| Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
+| Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
 
 </TabItem>
 
@@ -63,13 +62,19 @@ You can also select one or two markers to display in the widget.
 
 ## Panel widgets
 
+The **Map markers**(for Android) widget and **Distance indication Widgets**(for iOS) displays:  
+- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
+- (Only for Android) **Estimated time of arrival**  
+
+You can also select one or two markers to display in the widget.  
+
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget.png) ![Panel widgets](@site/static/img/widgets/map_markers_widget_settings.png)
+![Panel widgets](@site/static/img/widgets/map_markers_widget.png) ![Panel widgets](@site/static/img/widgets/map_markers_widget_settings.png)  
 
-On panel widgets **"Distance"** and **"Estimated time of arrival"** to the map marker are displayed.
 
 :::note
 **"Estimated time of arrival" (ETA)** is the value that is calculated as the distance to the marker / the average speed. 
@@ -81,12 +86,10 @@ _The distance to the marker_ is a straight distance from your position (or a spe
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_widgets"/>  |
-|  | <Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> |
-| On long tap | Centers map view to the marker position |
-| On short tap | Changing between "Distance" / "Estimated time of arrival" |
-| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
+| Enable | *Menu → Configure screen → Widgets → Left / Right panel → Map markers*  |
+| By tapping | Changing between "Distance" / "Estimated time of arrival" |
+| Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
+| Distance format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 </TabItem>
@@ -99,10 +102,9 @@ On panel widgets only distance to the map marker is displayed.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,map_markers_item"/>→ ≡ →<Translate android="true" ids="appearance_on_the_map,shared_string_widgets"/>  |
-| On Click | Centers map view to the marker position |
-| On Map Hold | In order to measure the distance and view the direction from a specific map point to the map marker, press & hold on the map and slightly change map position (so context menu won't open) |
-| Format | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>  |
+| Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
+| By tapping | Centers map view to the marker position |
+| Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 </TabItem>
