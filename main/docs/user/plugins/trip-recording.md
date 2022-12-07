@@ -111,7 +111,7 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 :::info TROUBLESHOOTING
 
-For more information about troubleshooting, read:: [Track recording](../troubleshooting/track-recording-issues)  
+For more information about troubleshooting, read [Track recording](../troubleshooting/track-recording-issues)  
 :::
 
 
