@@ -111,6 +111,7 @@ At this moment, Pro subscription has next features:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
+| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 | [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection) |

@@ -349,6 +349,12 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to 
 
 
 This is a [Developer plugin](../plugins/development.md) widget to investigate how fast map & map elements are showed & refreshed. It displays:
+ 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 - UI interaction FPS - panning & dragging map (higher number).
 - Map refresh FPS - refreshing points, routes on the map (smaller number).
 
@@ -356,10 +362,40 @@ This is a [Developer plugin](../plugins/development.md) widget to investigate ho
 
 | | |
 |------------|------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_fps_info"/> |
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/>/<Translate android="true" ids="map_widget_left"/>  →  <Translate android="true" ids="developer_widgets"/> |
 | On Click | - |
 
-**Note**: FPS doesn't reflect how quickly full offline map screen is rendered, there is another **Developer plugin** setting for it - ***<Translate android="true" ids="trace_rendering"/>***.
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+- Map refresh FPS - refreshing points, routes on the map (smaller number).
+
+![FPS info Android widget](@site/static/img/widgets/fps_info_widget_ios.png)
+
+| | |
+|------------|------------|
+| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_rendering_fps"/> |
+| On Click | - |
+
+</TabItem>
+
+</Tabs>  
+
+
+
+
+
+
+:::note
+FPS doesn't reflect how quickly full offline map screen is rendered, there is another **Developer plugin** setting for it - ***<Translate android="true" ids="trace_rendering"/>***.
+:::
+
+
+
+
+
+
 
 ## Read next
 
