@@ -234,12 +234,6 @@ At this screen you can set your login and backup data.
 <TabItem value="ios" label="iOS">
 
 :::note
-This feature for iOS version will be available for [OsmAnd 4.3 release](../../versions/future-ios.md).
-:::
-
-<!--
-
-:::note
 - &nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features).
 - Cross platform feature (Android <-> iOS OsmAnd versions).
 :::
@@ -298,19 +292,6 @@ At this screen you can set your login and backup data.
   - &nbsp;"_<Translate android="true" ids="backup_delete_all_data"/>_" button - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
 
   - &nbsp;"_<Translate android="true" ids="backup_delete_old_data"/>_" button - Current versions of your data will be preserved on OsmAnd Cloud.
-
-
--->
-
-
-
-
-
-
-
-
-
-
 
 </TabItem>
 

@@ -34,18 +34,22 @@ Development doesn't stand still, and now the new improved version is available f
 * [OsmAnd data](#files-app-updates) for Files app.
 * Added support of [GPX tags](#new-updates-for-gpx-files).
 * Added mode for [the Compass button](#compass-modification).
+* Added [FPS widget](#fps-widget).
+* Added [IMBA trails](#mtb-imba-trails).
+* On/off [downloaded maps layer](#downloaded-maps-layer).
 * [More](#more):
   * Fixed an issue with UTM Coordinates format.
   * Fixed an issue with intermediate points in navigation.
   * Added Canadian road signs for Speed limit and Railway crossing.
 
 
-
 ## New purchase plans
 
-In this release, we added new subscription plans named _"OsmAnd Pro"_ and _"OsmAnd Maps+"_. OsmAnd Pro is a new subscription plan with access to all features, and "Maps+" - with unlimited map downloads and access to paid plugins.
+In this release, we added [new subscription plans](https://osmand.net/docs/user/purchases/ios) named _"OsmAnd Pro"_ and _"OsmAnd Maps+"_. OsmAnd Pro is a new subscription plan with access to all features, and "Maps+" - with unlimited map downloads and access to paid plugins.
 
-OsmAnd Pro is a cross-platform subscription (you can use it for both Android and iOS versions of OsmAnd after registration on our servers).
+:::note
+_OsmAnd Pro_ is a cross-platform subscription (you can use it for both Android and iOS versions of OsmAnd after registration on our servers).
+:::
 
 Read more about iOS purchases [here](https://osmand.net/docs/user/purchases/ios).
 
@@ -72,13 +76,13 @@ Read more info [here](https://osmand.net/docs/user/personal/storage#backup-and-r
 
 Hourly forecast for the current day and 7 days ahead on the map.
 
-The Weather plugin: _Menu → Plugins → Weather_
+[The Weather plugin](https://osmand.net/docs/user/plugins/weather): _Menu → Plugins → Weather_
 
 Download the weather forecast in the _Maps & Resources_ menu for offline use:  _Menu → Maps & Resources → Map Region → Weather forecast_.
 
 Weather widgets: _Temperature, Pressure, Wind, Cloud, Precipitation_. Shows these parameters for the central point on a device screen.
 
-Weather toolbar: _Menu → Configure screen → Weather toolbar_. Quick weather menu on a device screen.
+Weather screen menu: _Menu → Weather_
 
 Weather map layers: _Menu → Configure map → Weather_
 
@@ -90,12 +94,12 @@ Weather map layers: _Menu → Configure map → Weather_
 </table> 
 
 
-### New Purchases screen
+## New Purchases screen
 
 _Menu → Settings → Purchases_
 
 - "Active"  - a list of users' active purchases.
-- "Expires" - a list of inactive purchases.
+- "Expired" - a list of inactive purchases.
 - "Learn more" button - opens a menu with puchases screen.
 - "Help" menu:
     - _"Restore purchases"_ button - allows to restore user purchases.
@@ -113,8 +117,11 @@ _Menu → Settings → Purchases_
 
 Tracks can now [be colored by](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) _Altitude, Speed, Slope, Surface, Smoothness_.
 
-Solid, Altitude, Speed - for free use.
-Slope, Surface, Smoothness - for [OsmAnd Pro](https://osmand.net/docs/user/purchases/ios#free-and-paid-features).
+:::note
+_Solid, Altitude, Speed_ - for free use.
+
+_Slope, Surface, Smoothness_ - for [OsmAnd Pro](https://osmand.net/docs/user/purchases/ios#free-and-paid-features).
+:::
 
 <table class="blogimage">
   <tr>
@@ -128,7 +135,7 @@ Slope, Surface, Smoothness - for [OsmAnd Pro](https://osmand.net/docs/user/purch
 
 ### Local backup
 
-Added local backups generation after each change, backups accessible from the Files app.
+Added [local backups generation](https://osmand.net/docs/user/personal/favorites#export--import) after each change, backups accessible from the Files app.
 
 A backup file is created each time you save or edit a Favorite.
 
@@ -143,7 +150,7 @@ A backup file is created each time you save or edit a Favorite.
 
 ### POI data
 
-POI saved to favorites will store and show all POI data even without an offline map.
+[POI](https://osmand.net/docs/user/map/point-layers-on-map#poi-types) saved to favorites will store and show all POI data even without an offline map.
 
 <table class="blogimage">
   <tr>
@@ -155,9 +162,12 @@ POI saved to favorites will store and show all POI data even without an offline 
 
 ## CarPlay improvements
 
-- added lanes;
+Added next fixes and features for [CarPlay mode](https://osmand.net/docs/user/navigation/auto-car):
+- added road lanes to CarPlay screen;
 - 2.5D view;
 - fixed bug with voice connect over Bluetooth.
+
+CarPlay is a [paid function](https://osmand.net/docs/user/purchases/ios).
 
 ## Smooth animation
 
@@ -169,7 +179,9 @@ Free using [OsmAnd live feature](https://osmand.net/docs/user/personal/maps#free
 
 ## Files app updates
 
-Now, you can see OsmAnd maps files in _Files → On my iPhone → OsmAnd Maps → Resources_.
+Now, you can see OsmAnd maps files in _[Files app](https://apps.apple.com/us/app/files/id1232058109)_:
+
+_Files → On my iPhone → OsmAnd Maps → Resources_
 
 <table class="blogimage">
   <tr>
@@ -179,7 +191,7 @@ Now, you can see OsmAnd maps files in _Files → On my iPhone → OsmAnd Maps �
 
 ## New updates for GPX files
 
-Support of custom extensions, link, cmt, desc tags.
+Support of [custom extensions](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx), link, cmt, desc tags.
 
 1. Favorites: show content of ```<cmt>``` tag similar to waypoints:
 
@@ -207,6 +219,8 @@ Support of custom extensions, link, cmt, desc tags.
 
 ## Compass modification
 
+Changed settings for [Compass](https://osmand.net/docs/user/widgets/map-buttons#compass).
+
 _Menu → Configure screen → Compass_:
 - _Always wisible_.
 - _Always hidden_.
@@ -216,7 +230,42 @@ _Menu → Configure screen → Compass_:
   <tr>
     <td><img src={require('./compass_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
+</table>
+
+## FPS widget
+
+FPS widget is the part of [OsmAnd development plugin](https://osmand.net/docs/user/plugins/development).
+
+This is a [Development plugin](https://osmand.net/docs/user/plugins/development) widget to investigate how fast map & map elements are showed & refreshed. It displays:
+
+[Map refresh FPS](https://osmand.net/docs/user/widgets/info-widgets/#-fps-info) - refreshing points, routes on the map (smaller number).
+
+## MTB IMBA trails
+
+OsmAnd now renders the [MTB IMBA](https://www.imba.com/) trials on the map. You need to switch on _Show MTB IMBA trails_ in _Menu → Configure map → Routes → Mountain bike → MTB Scale/IMBA_.
+
+Here is an example of the MTB IMBA icons for the trails and the [legend](https://docs.osmand.net/docs/user/map-legend/osmand/#routes) for those icons:
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./imba_map.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('./imba_legend.png').default} alt="turn arrows visible"/></td>
+    </tr>
 </table> 
+
+## Downloaded maps layer
+
+Added the ability to show/hide layer of downloaded maps:
+
+_Menu → Configure map → Show on map → Show borders of downloaded maps_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./map_boarders_2.png').default} alt="map boarders"/></td>
+    <td><img src={require('./map_boarders_3.png').default} alt="map boarders"/></td>
+    </tr>
+</table> 
+
 
 ## More
 
