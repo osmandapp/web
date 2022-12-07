@@ -49,9 +49,7 @@ const FavoriteInfoTab = ({width}) => {
     const [descriptionOpen, setDescriptionOpen] = useState(false);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile.saveFavorite) {
-            TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
-        } else if (ctx.selectedGpxFile.markerCurrent) {
+        if (ctx.selectedGpxFile.markerCurrent) {
             let markerName = ctx.selectedGpxFile.markerCurrent.title;
             let wpt = ctx.selectedGpxFile.file.wpts.find(wpt => wpt.name === markerName);
             if (wpt) {
@@ -121,12 +119,16 @@ const FavoriteInfoTab = ({width}) => {
         </Typography>
         <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={toggleEditFavoritesDialogOpen}>Edit</Button>
-        {editFavoritesDialogOpen && <EditFavoriteDialog
-            favorite={favorite}
-            setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}/>}
+        {editFavoritesDialogOpen
+            && <EditFavoriteDialog
+                favorite={favorite}
+                setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}/>}
         <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={toggleDeleteFavoritesDialogOpen}>Delete</Button>
-        {deleteFavoritesDialogOpen && <DeleteFavoriteDialog/>}
+        {deleteFavoritesDialogOpen
+            && <DeleteFavoriteDialog
+                dialogOpen={deleteFavoritesDialogOpen}
+                setDialogOpen={setDeleteFavoritesDialogOpen}/>}
     </Box>);
 }
 

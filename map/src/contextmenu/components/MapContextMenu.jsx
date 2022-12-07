@@ -30,7 +30,6 @@ export default function MapContextMenu() {
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
-    const [wasClosed, setWasClosed] = useState(false);
 
     const divContainer = useRef(null);
 
@@ -42,9 +41,7 @@ export default function MapContextMenu() {
     });
 
     function selectedFileWasChanged() {
-        if (ctx.selectedGpxFile.saveFavorite) {
-            ctx.selectedGpxFile.saveFavorite = false;
-            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        if (ctx.selectedGpxFile.editFavorite) {
             return true;
         }
         return (ctx.selectedGpxFile?.name && prevTrack?.name
@@ -60,10 +57,9 @@ export default function MapContextMenu() {
             if (!ctx.currentObjectType) {
                 setTabsObj(null);
                 setShowContextMenu(false);
-            } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || wasClosed) {
+            } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
-                setWasClosed(false);
                 if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
@@ -84,7 +80,6 @@ export default function MapContextMenu() {
 
     function closeContextMenu() {
         setShowContextMenu(false);
-        setWasClosed(true);
     }
 
     return (<div>

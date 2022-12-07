@@ -38,8 +38,9 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             newFavoritesFiles[group.name].url = null;
             ctx.setFavorites(newFavoritesFiles);
         }
-        if (ctx.selectedGpxFile.file.name === group.name) {
+        if (ctx.selectedGpxFile.nameGroup === group.name) {
             ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+            delete ctx.selectedGpxFile.markerCurrent;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }
@@ -73,7 +74,10 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             ctx.setFavorites({...newFavoriteFiles});
             let newSelectedGpxFile = {};
             newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
-            newSelectedGpxFile.name = group.name;
+            newSelectedGpxFile.nameGroup = group.name;
+            if (ctx.selectedGpxFile.markerCurrent) {
+                newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+            }
             ctx.setSelectedGpxFile(newSelectedGpxFile);
             setProgressVisible(false);
         }
@@ -92,7 +96,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             });
             setMarkers(markerList);
         }
-    }, [favoritesPointsOpen, setFavoritesPointsOpen]);
+    }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
 
     useEffect(() => {
         if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {

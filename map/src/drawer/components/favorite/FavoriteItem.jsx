@@ -39,12 +39,13 @@ export default function FavoriteItem({index, marker, group}) {
         ctx.setCurrentObjectType(null);
         let newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;
-        if (ctx.selectedGpxFile.markerCurrent) {
+        if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
             newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
         let file;
         Object.keys(ctx.favorites).forEach(favorite => {
             if (favorite === group.name) {
+                newSelectedGpxFile.nameGroup = favorite;
                 Object.values(ctx.favorites[favorite].markers._layers).forEach(m => {
                     if (m.options.title === marker.title) {
                         file = ctx.favorites[favorite];

@@ -16,10 +16,10 @@ const FavoriteLayer = () => {
                 if (!file.markers) {
                     file.markers = TrackLayerProvider.createLayersByTrackData(file);
                 }
-                if (file.addToMap) {
+                if (file.addToMap && file.markers) {
                     file.markers.addTo(map).on('click', onClick);
                 }
-                if (file.name === ctx.selectedGpxFile.file?.name) {
+                if (file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
                     map.fitBounds(file.markers.getBounds());
                 }
             } else if (!file.url && file.markers) {
@@ -35,18 +35,27 @@ const FavoriteLayer = () => {
             map.flyTo([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
         }
+
         if (ctx.selectedGpxFile?.markerPrev) {
             map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
+        }
+
+        if (ctx.selectedGpxFile?.editFavorite) {
+            let file = ctx.favorites[ctx.selectedGpxFile.nameGroup];
+            map.removeLayer(file.markers);
+            delete file.markers;
+            ctx.setFavorites({...ctx.favorites});
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
     function onClick(e) {
         ctx.setCurrentObjectType('favorite');
-        if (e.layer) {
-            ctx.selectedGpxFile.markerCurrent = e;
-        } else {
-            ctx.selectedGpxFile.markerCurrent.layer = e.sourceTarget;
-        }
+        ctx.selectedGpxFile.markerCurrent = {
+            title: e.sourceTarget.options.title,
+            icon: e.sourceTarget.options.icon.options.html,
+            layer: e.sourceTarget
+        };
+        ctx.selectedGpxFile.editFavorite = false;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 };

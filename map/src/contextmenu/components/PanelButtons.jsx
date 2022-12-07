@@ -6,6 +6,7 @@ import L from "leaflet";
 import AppContext from "../../context/AppContext";
 import SaveTrackDialog from "./SaveTrackDialog";
 import DeleteTrackDialog from "./DeleteTrackDialog";
+import DeleteFavoriteDialog from "./DeleteFavoriteDialog";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -49,7 +50,7 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                         >
                             <Folder fontSize="small"/>
                         </IconButton>}
-                        {ctx.currentObjectType === 'local_client_track' && <IconButton
+                        {ctx.currentObjectType !== 'weather' && <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => setOpenDeleteDialog(true)}
@@ -69,8 +70,15 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
         </div>
         }
             {ctx.selectedGpxFile.save && <SaveTrackDialog/>}
-            {openDeleteDialog && <DeleteTrackDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog}
-                                                    setShowContextMenu={setShowContextMenu}/>}
+            {openDeleteDialog && (ctx.currentObjectType === 'local_client_track' || ctx.currentObjectType === 'cloud_track')
+                && <DeleteTrackDialog
+                    dialogOpen={openDeleteDialog}
+                    setDialogOpen={setOpenDeleteDialog}
+                    setShowContextMenu={setShowContextMenu}/>}
+            {openDeleteDialog && ctx.currentObjectType === 'favorite'
+                && <DeleteFavoriteDialog
+                    dialogOpen={openDeleteDialog}
+                    setDialogOpen={setOpenDeleteDialog}/>}
         </div>);
 };
 

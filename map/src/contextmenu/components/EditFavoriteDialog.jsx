@@ -1,12 +1,13 @@
 import {Dialog} from "@material-ui/core";
-import {Close, Delete, Folder} from "@mui/icons-material";
-import {ListItemText, TextareaAutosize, IconButton, Grid, TextField, Button} from "@mui/material";
+import {Close, Delete} from "@mui/icons-material";
+import {ListItemText, IconButton, Grid, TextField, Button} from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import React, {useContext, useState} from "react";
 import contextMenuStyles from "../styles/ContextMenuStyles";
 import AppContext from "../../context/AppContext";
+import TracksManager from "../../context/TracksManager";
 
 
 export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen}) {
@@ -104,8 +105,9 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 wpt.name = favoriteName;
                 wpt.address = favoriteAddress === "" ? null : favoriteAddress;
                 wpt.desc = favoriteDescription === "" ? null : favoriteDescription;
-                ctx.selectedGpxFile.saveFavorite = true;
+                ctx.selectedGpxFile.editFavorite = true;
                 ctx.selectedGpxFile.markerCurrent.title = favoriteName;
+                TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
             }
         })
