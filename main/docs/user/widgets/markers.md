@@ -77,7 +77,7 @@ You can also select one or two markers to display in the widget.
 
 
 :::note
-**"Estimated time of arrival" (ETA)** is the value that is calculated as the distance to the marker / the average speed. 
+**"Estimated time of arrival" (ETA)** is the value that is calculated as the distance to the marker / average speed. 
 
 _The average speed_ is calculated from a specified interval (15sec - 60 min). For example, we have 300 location points with speed data during a specified 10 min. Average speed is the sum of speeds from points data / 300.
 
