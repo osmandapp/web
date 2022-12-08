@@ -95,7 +95,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
     }
 
     const FavoriteGroupItem = ({group}) => {
-        let g = group.pointsGroups[group.name === 'favourites' ? "" : group.name];
+        let g = group.pointsGroups[group.name === 'favorites' ? "" : group.name];
         let color = g.color;
         let size = g.points.length;
         return <Box
@@ -216,7 +216,6 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
             }
         }
         if (fileSaved) {
-            console.log(favoriteName)
             ctx.selectedGpxFile.editFavorite = true;
             ctx.selectedGpxFile.markerCurrent.title = favoriteName;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
