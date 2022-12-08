@@ -25,13 +25,16 @@ The **Map markers bar**(for Android) and **Distance indication Top bar**(for iOS
 - Location Address.
 - Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
 
-You can also select one or two markers to display in the widget.  
+You can also select one or two markers to display in the widget. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).    
+:::info
+*The distance to the marker* is the length of the space in a straight line between your position (or a particular point on the map) and the marker.
+:::  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget.png)
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget-02.png)
 
 | | |
 |------------|------------|
@@ -45,7 +48,7 @@ You can also select one or two markers to display in the widget.
 
 <TabItem value="ios" label="iOS">  
 
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios.png)
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios-02.png)
 
 | | |
 |------------|------------|
@@ -64,30 +67,27 @@ You can also select one or two markers to display in the widget.
 
 The **Map markers**(for Android) widget and **Distance indication Widgets**(for iOS) displays:  
 - Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
-- (Only for Android) **Estimated time of arrival**  
+- (Only for Android) **Estimated time of arrival or ETA**.  
+It is the time(hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
+The average speed is calculated as the sum of all speeds (received from location points) for the time interval you selected (from 15 seconds to 60 minutes) divided by the total number of these points.
 
-You can also select one or two markers to display in the widget.  
+You can also select one or two markers to display in the widget. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).   
+:::info
+*The distance to the marker* is the length of the space in a straight line between your position (or a particular point on the map) and the marker.
+:::  
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget.png) ![Panel widgets](@site/static/img/widgets/map_markers_widget_settings.png)  
-
-
-:::note
-**"Estimated time of arrival" (ETA)** is the value that is calculated as the distance to the marker / average speed. 
-
-_The average speed_ is calculated from a specified interval (15sec - 60 min). For example, we have 300 location points with speed data during a specified 10 min. Average speed is the sum of speeds from points data / 300.
-
-_The distance to the marker_ is a straight distance from your position (or a specific map point) to the marker.
-:::
+![Panel widgets](@site/static/img/widgets/map_markers_widget-02.png)  
 
 | | |
 |------------|------------|
 | Enable | *Menu → Configure screen → Widgets → Left / Right panel → Map markers*  |
-| By tapping | Changing between "Distance" / "Estimated time of arrival" |
+| By tapping 1 | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
+| By tapping 2 | The visible part of the map shifts to the marker location (Go to marker location mode) |
 | Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
 | Distance format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
@@ -96,14 +96,13 @@ _The distance to the marker_ is a straight distance from your position (or a spe
 
 <TabItem value="ios" label="iOS">  
 
-![Panel widgets](@site/static/img/widgets/map_markers_widget_ios.png)
+![Panel widgets](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
-On panel widgets only distance to the map marker is displayed.
 
 | | |
 |------------|------------|
 | Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
-| By tapping | Centers map view to the marker position |
+| By tapping | The visible part of the map shifts to the marker location. |
 | Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
@@ -112,26 +111,30 @@ On panel widgets only distance to the map marker is displayed.
 </Tabs> 
 
 
-## Configure Marker widgets and Marker appearance
+## Configure Marker widgets and Appearance on the map
 
-All marker appearance settings and widget parameters are configured through the same menu.
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not.  
+
+Additional settings for the map marker widgets are only available in the Android version of the app. They are described in detail [here](../personal/markers#map-markers-widgets).  
+
+<!--All marker appearance settings and widget parameters are configured through the same menu.-->
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,map_markers_item,appearance_on_the_map"/> 
+*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map.png)
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-**<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,map_markers,appearance_on_map"/> 
+*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
 
-![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 
 </TabItem>
