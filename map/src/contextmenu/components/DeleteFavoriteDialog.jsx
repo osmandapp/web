@@ -25,6 +25,7 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
                 ctx.selectedGpxFile.editFavorite = true;
                 TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                ctx.setFavorites({...ctx.favorites});
                 setDialogOpen(false);
                 ctx.setCurrentObjectType(null);
                 break;

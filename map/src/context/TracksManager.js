@@ -207,12 +207,14 @@ function addDistance(track) {
     }
 }
 
-async function getGpxTrack(ctx) {
-    let file = ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
+async function getGpxTrack(ctx, gpxFile) {
+    let file = gpxFile ? gpxFile : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+
     let trackData = {
         tracks: file.tracks,
         wpts: file.wpts,
         metaData: file.metaData,
+        pointsGroup: file.pointsGroup,
         ext: file.ext,
         analysis: null
     }
@@ -229,7 +231,7 @@ async function getGpxTrack(ctx) {
         });
 }
 
-async function saveTrack(ctx, currentFolder, fileName, type) {
+async function saveTrack(ctx, currentFolder, fileName, type, file) {
     if (type !== FAVORITE_FILE_TYPE) {
         if (currentFolder === "Tracks") {
             currentFolder = "";
@@ -238,7 +240,7 @@ async function saveTrack(ctx, currentFolder, fileName, type) {
         }
     }
     if (ctx.loginUser) {
-        let gpx = await getGpxTrack(ctx);
+        let gpx = await getGpxTrack(ctx, file);
         if (gpx) {
             let convertedData = new TextEncoder().encode(gpx.data);
             let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
@@ -259,6 +261,8 @@ async function saveTrack(ctx, currentFolder, fileName, type) {
                 const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
                 const res = await respGetFiles.json();
                 ctx.setListFiles(res);
+
+                return true;
             }
         }
     }

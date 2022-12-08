@@ -59,7 +59,7 @@ const FavoriteInfoTab = ({width}) => {
                         desc: wpt.desc === 'null' ? "" : wpt.desc,
                         comment: wpt.ext.comment,
                         address: wpt.address === 'null' ? "" : wpt.address,
-                        category: wpt.ext.category,
+                        category: wpt.ext.category ? wpt.ext.category : 'favourites',
                         background: wpt.ext.extensions.background,
                         color: wpt.ext.extensions.color,
                         icon: wpt.ext.extensions.icon,

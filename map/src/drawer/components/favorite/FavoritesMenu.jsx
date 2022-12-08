@@ -21,15 +21,15 @@ export default function FavoritesMenu() {
             ctx.listFiles.uniqueFiles).filter((item) => {
             return item.type === 'FAVOURITES' && item.name.slice(-4) === '.gpx';
         });
-
+        files.sort((a, b) => a.name.localeCompare(b.name))
         let groups = [];
         files.forEach(file => {
-            file.folder = file.name.split(".")[0].replace('favorites-','');
+            file.folder = file.name.split(".")[0].replace('favorites-', '');
             groups.push({name: file.folder, file: file});
         })
 
         createAllLayers(ctx, false, groups).then();
-        setFavoritesGroups(groups)
+        setFavoritesGroups(groups);
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
@@ -63,6 +63,7 @@ export default function FavoritesMenu() {
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
             setLoadingFavorites(true);
+            let resGroups = [];
             for (const g of groups) {
                 if (!ctx.favorites[g.name]?.url) {
                     let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(g.file.type)}&name=${encodeURIComponent(g.file.name)}`;
@@ -72,22 +73,31 @@ export default function FavoritesMenu() {
                         'name': g.file.name,
                         'addToMap': addToMap
                     };
-                    let f = await Utils.getFileData(newFavoritesFiles[g.name]);
-                    const favoriteFile = new File([f], g.file.name, {
-                        type: "text/plain",
-                    });
-                    let favorites = await TracksManager.getTrackData(favoriteFile);
-                    if (favorites) {
-                        favorites.name = g.file.name;
-                        Object.keys(favorites).forEach(t => {
-                            newFavoritesFiles[g.name][`${t}`] = favorites[t];
-                        });
-                    }
+                    await getFavoriteData(g, resGroups, newFavoritesFiles);
                 } else {
+                    await getFavoriteData(g, resGroups, newFavoritesFiles);
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }
+            newFavoritesFiles.groups = resGroups;
             setLoadingFavorites(false);
+            setFavoritesGroups([...resGroups]);
+        }
+    }
+
+    async function getFavoriteData(g, resGroups, newFavoritesFiles) {
+        let f = await Utils.getFileData(newFavoritesFiles[g.name]);
+        const favoriteFile = new File([f], g.file.name, {
+            type: "text/plain",
+        });
+        let favorites = await TracksManager.getTrackData(favoriteFile);
+        g.pointsGroups = favorites.pointsGroups;
+        resGroups.push(g);
+        if (favorites) {
+            favorites.name = g.file.name;
+            Object.keys(favorites).forEach(t => {
+                newFavoritesFiles[g.name][`${t}`] = favorites[t];
+            });
         }
     }
 
