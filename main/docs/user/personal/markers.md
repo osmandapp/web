@@ -258,6 +258,15 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 ## Map markers widgets
 
+The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position.  
+
+To start using *Markers widgets*, you need to make all of the following settings:
+- [Map Context menu](../map/map-context-menu.md#add--edit-marker). 
+- Configure Marker widgets and Marker appearance for the required [profile](../personal/profiles.md).
+
+
+### Add Marker widgets
+
 <!---
 
    * **"Map marker" widget: added option to change click behavior.**
