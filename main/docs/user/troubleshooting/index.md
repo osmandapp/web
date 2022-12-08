@@ -34,4 +34,8 @@ Common issues with track recording: Noise, gaps, and inaccuracies
 
 General issues related to various OsmAnd's features.
 
+### [Crash logs](./crash-logs.md)
+
+How to send crash logs to OsmAnd team
+
 
