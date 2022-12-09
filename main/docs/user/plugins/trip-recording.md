@@ -281,7 +281,7 @@ You can use widgets to view brief information about the track recording on the s
 
 To start using *Trip recording widgets*, you need to make all of the following settings:
 - [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins). 
-- Configure Trip recording for the required [profile](../personal/profiles.md) or configure a general setting for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options).
+- Configure Trip recording for the required [profile](../personal/profiles.md).
 - Add the necessary **Trip recording widgets** to the screen. This setting is **individual for each profile**.  
 
 
