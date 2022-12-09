@@ -16,15 +16,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+:::caution Android only
+External sensors plugin is currently not available for the iOS version of the OsmAnd app.
+:::
+
 The plugin allows to add external sensors for displaying data on the OsmAnd screen.
 
 ## Overview
 
 By this plugin you can have additional data on the OsmAnd screen from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network): _<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>_.
 
-:::caution Note
-Now, external sensors can be connected to OsmAnd by low energy [ANT+ network](https://en.wikipedia.org/wiki/ANT_(network)). 
-
+:::info Note
+Now, external sensors can be connected to OsmAnd by low energy [ANT+ network](https://en.wikipedia.org/wiki/ANT_(network)).  
 Bluetooth network will be added for the next release OsmAnd 4.4.
 :::
 
@@ -36,15 +39,12 @@ To activate connection external sensors:
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 
 
-## Plugin settings
+### Plugin settings
 
-:::caution NOTE  
-External sensors plugin settings are global, and  apply to all profiles.  
+:::info INFO  
+The plugin settings are global and apply to all profiles.  
 :::
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
 
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/>* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/>* 
@@ -63,25 +63,21 @@ Each sensor has two settings:
 ![External sensors plugin settings Android](@site/static/img/plugins/sensors/ant_settings_android.png)
 
 
- 
-</TabItem>
 
-<TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly />
+## How to Use
 
-</TabItem>
 
-</Tabs>
+
 
 ## Widgets
 
 The external sensors widgets show external sensors data on the OsmAnd screen. 
 
-<Tabs groupId="operating-systems">
+<!-- The Parking widget is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the Configure Screen menu. The Parking widget will help you quickly find a parking spot on the map.-->
 
-<TabItem value="android" label="Android">
 
+<!--You can add or delete the Parking widget by following this path:-->
 To add widgets on the screen:
 - *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*:
    - &nbsp;_<Translate android="true" ids="map_widget_ant_heart_rate"/>_
@@ -92,14 +88,5 @@ To add widgets on the screen:
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_android.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_1_android.png)
  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
 
 
