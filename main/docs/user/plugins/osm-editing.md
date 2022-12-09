@@ -78,11 +78,7 @@ Use the following path to open the plugin's settings:
 
 </Tabs>  
 
-
-## How to Use 
-
-After enabling and configuring the plugin, you will be able to create and edit POI and OSM Note, as well as upload GPS tracks. In the OsmAnd app, you can easily complete all of these settings with the OpenStreetMap editing plugin.
-
+## POI 
 
 ### Create / Modify POI 
 
@@ -116,9 +112,7 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 </Tabs>
 
-
-### Upload GPS track
-
+## GPS Track
 _**This feature is not yet available for iOS.**_
 
 The GPS tracks you have recorded are useful for:
@@ -127,15 +121,18 @@ The GPS tracks you have recorded are useful for:
 - **For navigation**. Based on the GPX file data you uploaded, navigation applications and special devices can calculate tracks.
 - **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
 
+:::info NOTE
+Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
+:::  
+
+### Upload GPS track
+
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+
 To upload a track select it from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*,
 click [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
 
-:::info
-You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
-:::
-
-#### Settings
-
+**Settings:**
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
@@ -145,13 +142,12 @@ You can select more than one track to upload to OSM. To do this, tap the *Upload
    - *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
 - **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
 
+:::info
+You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
+:::
 
-:::info NOTE
-Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
-:::  
 
-
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+## OSM Notes
 
 ### Display OSM Notes
 
