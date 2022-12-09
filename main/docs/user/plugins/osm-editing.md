@@ -119,37 +119,30 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 ### Upload GPS track
 
+_**This feature is not yet available for iOS.**_
+
 The GPS tracks you have recorded are useful for:
 
 - **For mappers**. Tracks can be used for drawing maps of all kinds of paths.
 - **For navigation**. Based on the GPX file data you uploaded, navigation applications and special devices can calculate tracks.
 - **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-1. Select the required track from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
-2. Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
+To upload a track select it from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*,
+click [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
 
 :::info
 You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
 :::
 
-Available settings:  
+#### Settings
 
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
-
- *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
- 
- *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
- 
- *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
- 
- *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
- 
+   - *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+   -  *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+   - *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
+   - *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
 - **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
 
 
@@ -159,18 +152,6 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-:::info NOTE
-This option is not available for iOS version of OsmAnd app.
-:::  
-
-</TabItem>
-
-</Tabs>
 
 ### Display OSM Notes
 
