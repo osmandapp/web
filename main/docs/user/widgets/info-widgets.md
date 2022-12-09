@@ -30,7 +30,7 @@ Altitude widget shows the height above sea level of current geolocation. **Andro
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_altitude"/> |
-| On Click | - |
+| By tapping | - |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
 
@@ -44,7 +44,7 @@ This widget shows current time from your device.
 |------------|------------|
 | Enable |  **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
 |  | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-| On Click | - |
+| By tapping | - |
 | Format | Time & Format is configured by device settings |
 
 ## Speed
@@ -56,7 +56,7 @@ Speed widget shows your current speed detected by GPS-sensor.
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/> |
-| On Click  | - |
+| By tapping  | - |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
@@ -87,7 +87,7 @@ The average speed is calculated for the set interval of time, according to your 
 |------------|------------|
 | Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_average_speed"/> |
 | | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_average_speed"/> |
-| On Click | – |  
+| By tapping | – |  
   
  
 </TabItem>
@@ -111,7 +111,7 @@ This widget shows battery level of your device.
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/> |
-| On Click | - |
+| By tapping | - |
 
 ## Coordinates widget
 
@@ -132,7 +132,7 @@ Where green icons are _Map center_ coordinates, blue icons are _My location_ coo
 | | |
 |------------|------------|
 | Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/> → <Translate android="true" ids="map_center_widget"/> / <Translate android="true" ids="current_location_widget"/>  |
-| On Click | Copies the coordinates to the clipboard |
+| By tapping | Copies the coordinates to the clipboard |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
 
 
@@ -147,7 +147,7 @@ The widget is shown at the top of the screen. It shows the geographic coordinate
 | | |
 |------------|------------|
 | Enable | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
-| On Click | Copies the coordinates to the clipboard |
+| By tapping | Copies the coordinates to the clipboard |
 | Format | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
@@ -175,7 +175,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 | | |
 |------------|------------|
 | Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,gps_provider"/> |
-| On Click | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
+| By tapping | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
 
 </TabItem>
 
@@ -211,7 +211,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording
-| On Click | Starts/Stop track recording or View the graph|
+| By tapping | Starts/Stop track recording or View the graph|
 
 
 
@@ -229,7 +229,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | | |
 |------------|------------|
 | Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/> |
-| On Click | Starts / Stop track recording |
+| By tapping | Starts / Stop track recording |
 
 
 </TabItem>
@@ -241,10 +241,10 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 
 :::note 
-You can read a more detailed description here: [External sensors plugin](../plugins/external-sensors.md#widgets).  
+External sensors widgets can be added to the map screen only when OsmAnd External sensors plugin is enabled.  
 :::  
 
-External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from external sensors. Such as _<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>_.  
+External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: _<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>_.  
 
 <Tabs groupId="operating-systems">
 
@@ -255,13 +255,15 @@ External sensors widgets refer to [External sensors plugin](../plugins/external-
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>|
-| On Click | - |
+| By tapping | - |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-<InfoAndroidOnly /> 
+:::caution Android only
+External sensors widgets are currently not available for the iOS version of the OsmAnd app.
+::: 
 
 </TabItem>
 
@@ -281,7 +283,7 @@ This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_parking"/> |
-| On Click | Moves map view to the parking position |
+| By tapping | Moves map view to the parking position |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
 
@@ -297,7 +299,7 @@ This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick ac
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,mapillary_widget"/> |
-| On Click | Opens Mapillary application |
+| By tapping | Opens Mapillary application |
 
 **Note**: Mapillary application should be installed separately.
   
@@ -326,7 +328,7 @@ Configure what default action should be taken (<Translate android="true" ids="sh
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>  |
-| On Click | Start / stops taking a note  |
+| By tapping | Start / stops taking a note  |
 
 ## * Tracker widget (Android)
 
@@ -341,7 +343,7 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to 
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,tracker_item"/> |
-| On Click | Opens OsmAnd Tracker app |
+| By tapping | Opens OsmAnd Tracker app |
 
 ## * Development widgets
 
@@ -363,7 +365,7 @@ This is a [Development plugin](../plugins/development.md) widget to investigate 
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/>/<Translate android="true" ids="map_widget_left"/>  →  <Translate android="true" ids="developer_widgets"/> |
-| On Click | - |
+| By tapping | - |
 
 </TabItem>
 
@@ -376,7 +378,7 @@ This is a [Development plugin](../plugins/development.md) widget to investigate 
 | | |
 |------------|------------|
 | Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_rendering_fps"/> |
-| On Click | - |
+| By tapping | - |
 
 </TabItem>
 

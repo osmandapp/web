@@ -20,7 +20,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 External sensors plugin is currently not available for the iOS version of the OsmAnd app.
 :::
 
-The plugin allows to add external sensors for displaying data on the OsmAnd screen.
+If you have a variety of sensor devices for cycling, you can use the data they record in the OsmAnd app.
+<!--The plugin allows to add external sensors for displaying data on the OsmAnd screen.   
+
+The plugin allows you to read and record data from external sensors running on ANT+ technology and display this data using widgets in the OsmAnd application. -->
 
 ## Overview
 
