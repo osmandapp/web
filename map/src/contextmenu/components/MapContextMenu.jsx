@@ -63,7 +63,7 @@ export default function MapContextMenu() {
                 if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                    obj = WeatherTabList().create(ctx);
+                    obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === 'favorite') {
                     obj = new FavoritesTabList().create(ctx);
                 } else if (ctx.selectedGpxFile) {
