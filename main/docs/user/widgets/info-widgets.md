@@ -343,12 +343,12 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to 
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,tracker_item"/> |
 | On Click | Opens OsmAnd Tracker app |
 
-## * FPS-info
+## * Development widgets
 
->Enable **[Developer plugin](../plugins/development.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,debugging_and_development"/>.
+>Enable **[Development plugin](../plugins/development.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,debugging_and_development"/>.
 
 
-This is a [Developer plugin](../plugins/development.md) widget to investigate how fast map & map elements are showed & refreshed. It displays:
+This is a [Development plugin](../plugins/development.md) widget to investigate how fast map & map elements are showed & refreshed. It displays:
  
 
 <Tabs groupId="operating-systems">

@@ -258,7 +258,48 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 ## Map markers widgets
 
+The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position.  
+
+To start using *Map markers widgets*, you need to make all of the following settings:
+- [Map Context menu](../map/map-context-menu.md#add--edit-marker). 
+- Configure Marker widgets and Marker appearance for the required [profile](../personal/profiles.md).
+
+
+### Add Marker widgets
+
+
+
 <!---
+
+Add / Edit Marker
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
+
+</TabItem>
+
+</Tabs> 
+
+It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
+
+Actions:
+- [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
+- 'Mark passed' (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
+- 'Make active' (Android) - moves marker to the top position (on the top panel).
+- 'Restore marker' (Android) - moves marker from History to active list.
+
+Read more about [markers](../personal/markers.md).
+
+
+
 
    * **"Map marker" widget: added option to change click behavior.**
 
@@ -306,17 +347,25 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 <TabItem value="android" label="Android">
 
-[Link to description Top Bar](../widgets/markers.md#top-bar-widget-markers)
+You can delete or add the Map markers widget by following:  
+*Menu → Configure screen → Widgets → Top panel → Map markers*   
 
-[Link to description Widget panel](../widgets/markers.md#panel-widgets-markers)
+![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets-01.png)  
+
+*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  
+
+![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets-02.png)
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-[Link to description Top Bar](../widgets/markers.md#top-bar-widget-markers)
+You can delete or add the Map markers widget by following:  
+*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  
 
-[Link to description Widget panel](../widgets/markers.md#panel-widgets-markers)
+![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets_ios.png)
+
 
 </TabItem>
 
