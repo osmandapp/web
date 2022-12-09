@@ -144,7 +144,7 @@ In order to display the bearing, a **target point** must be selected. If a **des
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
 
-<!-- On Click : Changes between  Relative bearing or Magnetic bearing (with "M") -->
+<!-- By tapping : Changes between  Relative bearing or Magnetic bearing (with "M") -->
 
 ## Navigation points
 ### Destination
@@ -156,7 +156,7 @@ Destination widget shows the distance left to the last destination point by foll
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,route_descr_destination"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_distance"/>|
-| On Click | Moves the map to a destination point. |    
+| By tapping | Moves the map to a destination point. |    
 
 ### Intermediate destination
 
@@ -167,7 +167,7 @@ Intermediate Destination widget shows the distance left to the first intermediat
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_intermediate_distance"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_intermediate_distance"/>|
-| On Click | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
+| By tapping | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
 
 ### Arrival time or Time to go
 
@@ -182,7 +182,7 @@ The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Tr
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> |
-| On Click | Changes between "Arrival time" to "Time to go" and vice versa. |  
+| By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
 
 
 </TabItem>
@@ -196,7 +196,7 @@ The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Tr
 | | |
 |------------|------------|
 | Enable |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
-| On Click | Changes between "Arrival time" to "Time to go" and vice versa. |  
+| By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
 
 </TabItem>
 
@@ -317,7 +317,7 @@ When maneuvering, the widget shows the scheme of the maneuver and the name (desi
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,map_widget_top_text"/> <br /> <Translate ios="true" ids="ios_button_seq"/> always active |
-| On Click | - | 
+| By tapping | - | 
 
 ## Approach POIs/Favorites
 
