@@ -78,24 +78,10 @@ Use the following path to open the plugin's settings:
 
 </Tabs>  
 
-
-## How to Use 
-
-After enabling and configuring the plugin, you will be able to create and edit POI and OSM Note, as well as upload GPS tracks. In the OsmAnd app, you can easily complete all of these settings with the OpenStreetMap editing plugin.
-
+## POI 
 
 ### Create / Modify POI 
 
-The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you.  
-
-1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
-4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
-
-:::info NOTE
-You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-:::  
 
 <Tabs groupId="operating-systems">
 
@@ -108,7 +94,6 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 <TabItem value="ios" label="iOS">
 
-
 To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
 *<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
 
@@ -116,8 +101,24 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 </Tabs>
 
+The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you.  
 
-### Upload GPS track
+1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
+2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
+4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+
+:::info NOTE
+You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
+:::  
+
+### Offline modifications 
+
+You can view, upload or delete OSM in My Places - OSM POIs. You can also switch on / off the layer with offline modifications. You also can export OSM POIs changes as [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import into JOSM.
+
+
+## GPS Track
+_**This feature is not yet available for iOS.**_
 
 The GPS tracks you have recorded are useful for:
 
@@ -125,68 +126,40 @@ The GPS tracks you have recorded are useful for:
 - **For navigation**. Based on the GPX file data you uploaded, navigation applications and special devices can calculate tracks.
 - **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
 
-<Tabs groupId="operating-systems">
+:::info NOTE
+Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
+:::  
 
-<TabItem value="android" label="Android">
+### Upload GPS track
 
-1. Select the required track from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
-2. Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+
+To upload a track select it from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*,
+click [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
+
+**Settings:**
+- **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
+- **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
+   - *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+   -  *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+   - *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
+   - *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
+- **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
 
 :::info
 You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
 :::
 
-Available settings:  
+### Generate OBF file
 
-- **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
-- **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
+If you have large database of GPX tracks (like Collection of Tracks from OSM with tag 'gpsies' https://osmand.net/uploads/gpsies-cycling.travel.obf), for example downloaded from OpenStreetMap or your own colllection, you can create an OBF file using OsmAndMapCreator (utilities.sh convert-gpx-to-obf <path_to_folder_with_gpx_files>). 
 
- *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
- 
- *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
- 
- *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
- 
- *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
- 
-- **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
+## OSM Notes
 
-
-:::info NOTE
-Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
-:::  
-
-
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-:::info NOTE
-This option is not available for iOS version of OsmAnd app.
-:::  
-
-</TabItem>
-
-</Tabs>
-
-
-### Create / Modify OSM Note
+### Display OSM Notes
 
 The OSM Notes feature allows you to add notes to the map, in which you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
-To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.  
-
-1. Tap the map where the new OSM note is to be placed (or tap a not uploaded note).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu#-open-osm-note) and add the necessary information. When you select a not uploaded OSM note, *Open OSM note* changes to *Modify OSM note*. 
-5. For a new OSM note to appear on the map, tap the Upload button.
-6. If you want to add information to an existing note or not uploaded note, tap the OSM note on the map and select [Comment](../map/map-context-menu#-comment--close-osm-note) and then Upload button.
-
-:::note
-The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -209,3 +182,21 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 </TabItem>
 
 </Tabs>
+
+
+### Create / Modify OSM Note
+
+To create or modify Note you need to access [Context menu Actions](../map/map-context-menu.md#actions). 
+- To create a new OSM note choose Action "Create OSM Note" 
+- To edit comment or close existing OSM note select OSM note via Context menu.
+
+You need Upload changes once you are available online. You also can discard your changes until they are uploaded.
+
+:::note
+To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.  
+:::
+
+:::note
+The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
+:::
+
