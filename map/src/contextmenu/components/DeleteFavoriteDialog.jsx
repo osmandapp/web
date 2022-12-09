@@ -20,7 +20,9 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
         for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
             if (ctx.selectedGpxFile.file.wpts[i].name === ctx.selectedGpxFile.markerCurrent.title) {
                 ctx.selectedGpxFile.file.wpts.splice(i, 1);
-                let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
+                let currentFolder = ctx.selectedGpxFile.file.name;
+                let fileName = ctx.selectedGpxFile.name;
+                let deleted = TracksManager.saveTrack(ctx, currentFolder, fileName, TracksManager.FAVORITE_FILE_TYPE, null, true);
                 if (deleted) {
                     disableSelectedMarker();
                     updateGroupMarkers();
