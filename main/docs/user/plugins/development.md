@@ -209,13 +209,13 @@ Comparison of the map and the earth's surface reveal the following patterns:
 - As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
 - Distortions begin to be observed earlier in high latitudes.
 
-The estimation of map distortions depending on the incline of the point of view is given in the table.  
+The table below contains information about possible distortions of the OsmAnd map depending on the camera (viewer) tilt.
 
 Incline |Latitude |Max Zoom |Height, km |Distortion  
 |-----|-----|-----|-----|-----|
 |90| 26|	6|	5500|	5%|
-|90|	50|	6|	2500|	5%|
-|90|	66|	7|	1300|	5%|
+|90| 50|	6|	2500|	5%|
+|90| 66|	7|	1300|	5%|
 |	|	|	|	|  |
 |65	|26	|8	|1100|	6.5%|
 |65	|50	|8	|800|	6.5%|
@@ -225,9 +225,9 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 |45|	50|	9|	320|	7.5%|
 |45|	66|	8|	210|	7.5%|
 |	|	|	|	| |
-|20|26|	12|	30|	10%|
-|20|	50|	11|	30|	10%|
-|20|	66|	11|	30|	10%|
+|20| 26|	12|	30|	10%|
+|20| 50|	11|	30|	10%|
+|20| 66|	11|	30|	10%|
 
 
 ## GPX-track simulation
