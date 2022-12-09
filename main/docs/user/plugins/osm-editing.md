@@ -172,21 +172,9 @@ This option is not available for iOS version of OsmAnd app.
 
 </Tabs>
 
-
-### Create / Modify OSM Note
+### Display OSM Notes
 
 The OSM Notes feature allows you to add notes to the map, in which you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
-To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.  
-
-1. Tap the map where the new OSM note is to be placed (or tap a not uploaded note).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu#-open-osm-note) and add the necessary information. When you select a not uploaded OSM note, *Open OSM note* changes to *Modify OSM note*. 
-5. For a new OSM note to appear on the map, tap the Upload button.
-6. If you want to add information to an existing note or not uploaded note, tap the OSM note on the map and select [Comment](../map/map-context-menu#-comment--close-osm-note) and then Upload button.
-
-:::note
-The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -209,3 +197,21 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 </TabItem>
 
 </Tabs>
+
+
+### Create / Modify OSM Note
+
+To create or modify Note you need to access [Context menu Actions](../map/map-context-menu.md#actions). 
+- To create a new OSM note choose Action "Create OSM Note" 
+- To edit comment or close existing OSM note select OSM note via Context menu.
+
+You need Upload changes once you are available online. You also can discard your changes until they are uploaded.
+
+:::note
+To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.  
+:::
+
+:::note
+The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
+:::
+
