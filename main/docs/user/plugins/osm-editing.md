@@ -151,6 +151,9 @@ click [Options button](../map/track-context-menu.md#options) of [Track Context m
 You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
 :::
 
+### Generate OBF file
+
+If you have large database of GPX tracks (like Collection of Tracks from OSM with tag 'gpsies' https://osmand.net/uploads/gpsies-cycling.travel.obf), for example downloaded from OpenStreetMap or your own colllection, you can create an OBF file using OsmAndMapCreator (utilities.sh convert-gpx-to-obf <path_to_folder_with_gpx_files>). 
 
 ## OSM Notes
 
