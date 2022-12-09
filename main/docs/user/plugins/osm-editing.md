@@ -82,16 +82,6 @@ Use the following path to open the plugin's settings:
 
 ### Create / Modify POI 
 
-The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you.  
-
-1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
-4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
-
-:::info NOTE
-You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-:::  
 
 <Tabs groupId="operating-systems">
 
@@ -104,13 +94,28 @@ To view an OSM editing layer on a map, tapping that editing layer opens a [Map C
 
 <TabItem value="ios" label="iOS">
 
-
 To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
 *<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
 
 </TabItem>
 
 </Tabs>
+
+The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you.  
+
+1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
+2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
+4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+
+:::info NOTE
+You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
+:::  
+
+### Offline modifications 
+
+You can view, upload or delete OSM in My Places - OSM POIs. You can also switch on / off the layer with offline modifications. You also can export OSM POIs changes as [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import into JOSM.
+
 
 ## GPS Track
 _**This feature is not yet available for iOS.**_
