@@ -96,12 +96,139 @@ Heightmaps available for testing only for some regions.
 Higher memory allocation may impact the performance of other apps.
 :::
 
-## Widgets
+## Widgets  
 
-- Widgets FPS
-- Widgets Camera position
-- Center screen
-- Zoom number (Android)
+You can use OsmAnd development Widgets to get additional information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
+
+:::info  Important
+OsmAnd development Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
+They can be configured for [all profiles](http://osmand.net/docs/user/plugins/trip-recording.md#establish-options) or for the required [profile](../personal/profiles.md).
+:::
+
+### FPS Widget
+
+FPS Widget shows how fast the map and map elements are displayed and refreshed. Numeric value of this parameter displays the number of frames per second (FPS).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To display widget on the main screen go to *Menu → Configure screen → Right panel → Developer Widgets → FPS Widget*  
+or *Menu → Configure screen → Left panel → Developer Widgets → FPS Widget*  
+
+![Development widget fps 1](@site/static/img/plugins/development/ldev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To display widget on the main screen go to *Menu → Configure screen →  FPS Widget*  
+
+![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_fps.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+
+</TabItem>
+
+</Tabs>  
+
+### Elevation Widget  
+
+With Elevation Widget you can find out the elevation above sea level of the current map center.  
+
+To display widget on the main screen go to *Menu → Configure screen → Right panel → Altitude → Elevation: map center*  
+or *Menu → Configure screen → Left panel → Altitude → Elevation: map center*  
+
+:::caution  
+The Widget will display information only after the heightmaps of the desired area are [downloaded](../start-with/download-maps). Please note that these maps are only available for some regions.  
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::caution Android only
+Altitude Widget is currently not available for the iOS version of the OsmAnd app.  
+:::
+
+</TabItem>
+
+</Tabs>  
+
+
+### Camera position Widgets  
+
+In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use Camera position Widgets.
+
+To display widget on the main screen go to *Menu → Configure screen → Right panel → Developer Widgets*  
+or *Menu → Configure screen → Left panel → Developer Widgets*  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Camera position Widgets 21](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::caution Android only
+Camera position Widgets are currently not available for the iOS version of the OsmAnd app.
+:::
+
+</TabItem>
+
+</Tabs>  
+
+**Camera tilt** Widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. Default is 90 degrees (no tilt).  
+
+:::note  
+The camera tilt is changed by moving the camera (viewer) while the center point on the map surface (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
+At the same time, due to the imaginary movement of the viewer, the distance from the camera to the surface changes.
+:::
+
+**Camera Elevation** Widget shows the camera elevation above the surface level.  
+
+**Zoom level** Widget represents the current map zoom level.  
+
+:::note
+The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
+Each next zoom level reduces the imaginary distance to the ground by about 2 times.  
+:::
+
+**Distance from camera to target** shows the distance between camera (viewer) and center of the map.  
+
+Comparison of the map and the earth's surface reveal the following patterns:  
+
+- Maximum distortion is observed at large zooms (6-7 zoom for camera incline 90 degrees).  
+- As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
+- Distortions begin to be observed earlier in high latitudes.
+
+The estimation of map distortions depending on the incline of the point of view is given in the table.  
+
+Incline |Latitude |Max Zoom |Height, km |Distortion  
+|-----|-----|-----|-----|-----|
+|90| 26|	6|	5500|	5%|
+|90|	50|	6|	2500|	5%|
+|90|	66|	7|	1300|	5%|
+|	|	|	|	|  |
+|65	|26	|8	|1100|	6.5%|
+|65	|50	|8	|800|	6.5%|
+|65	|66	|9	|630|	6.5%|
+|	|	|	|	|  |
+|45|	26|	9|	350|	7.5%|
+|45|	50|	9|	320|	7.5%|
+|45|	66|	8|	210|	7.5%|
+|	|	|	|	| |
+|20|26|	12|	30|	10%|
+|20|	50|	11|	30|	10%|
+|20|	66|	11|	30|	10%|
+
 
 ## GPX-track simulation
 
