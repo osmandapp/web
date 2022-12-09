@@ -20,17 +20,32 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
         for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
             if (ctx.selectedGpxFile.file.wpts[i].name === ctx.selectedGpxFile.markerCurrent.title) {
                 ctx.selectedGpxFile.file.wpts.splice(i, 1);
-                ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-                delete ctx.selectedGpxFile.markerCurrent;
-                ctx.selectedGpxFile.editFavorite = true;
-                TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
-                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                ctx.setFavorites({...ctx.favorites});
-                setDialogOpen(false);
-                ctx.setCurrentObjectType(null);
-                break;
+                let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE);
+                if (deleted) {
+                    disableSelectedMarker();
+                    updateGroupMarkers();
+                    closeContextMenu();
+                    break;
+                }
             }
         }
+    }
+
+    function disableSelectedMarker() {
+        ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+        delete ctx.selectedGpxFile.markerCurrent;
+        ctx.selectedGpxFile.editFavorite = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function updateGroupMarkers() {
+        delete ctx.favorites[ctx.selectedGpxFile.nameGroup].markers;
+        ctx.setFavorites({...ctx.favorites});
+    }
+
+    function closeContextMenu() {
+        setDialogOpen(false);
+        ctx.setCurrentObjectType(null);
     }
 
     return (

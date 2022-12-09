@@ -79,7 +79,9 @@ export default function FavoritesMenu() {
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }
-            newFavoritesFiles.groups = resGroups;
+            if (resGroups.length > 0) {
+                newFavoritesFiles.groups = resGroups;
+            }
             setLoadingFavorites(false);
             setFavoritesGroups([...resGroups]);
         }

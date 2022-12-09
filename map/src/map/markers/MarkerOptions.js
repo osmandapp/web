@@ -27,8 +27,9 @@ const options = {
     })
 };
 
-function getWptIcon(point) {
-    let colorBackground = (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
+function getWptIcon(point, color) {
+    let colorBackground = color ? color :
+        (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
     let svg = getSvgBackground(colorBackground, point);
 
     if (point.extensions?.icon) {

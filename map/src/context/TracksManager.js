@@ -207,14 +207,13 @@ function addDistance(track) {
     }
 }
 
-async function getGpxTrack(ctx, gpxFile) {
-    let file = gpxFile ? gpxFile : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+async function getGpxTrack(file) {
 
     let trackData = {
         tracks: file.tracks,
         wpts: file.wpts,
         metaData: file.metaData,
-        pointsGroup: file.pointsGroup,
+        pointsGroups: file.pointsGroups,
         ext: file.ext,
         analysis: null
     }
@@ -240,16 +239,17 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
         }
     }
     if (ctx.loginUser) {
-        let gpx = await getGpxTrack(ctx, file);
+        let gpxFile = file ? file : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+        let gpx = await getGpxTrack(gpxFile);
         if (gpx) {
             let convertedData = new TextEncoder().encode(gpx.data);
             let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
             let convertedZipped = zippedResult.buffer;
             let oMyBlob = new Blob([convertedZipped], {type: "gpx"});
-            let file = new FormData();
-            file.append('file', oMyBlob, ctx.selectedGpxFile.name);
+            let data = new FormData();
+            data.append('file', oMyBlob, gpxFile.name);
 
-            const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, file,
+            const respUpload = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
                 {
                     params: {
                         name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),

@@ -1,6 +1,7 @@
 import {Dialog} from "@material-ui/core";
 import {Close, Delete, Folder} from "@mui/icons-material";
 import {
+    Avatar,
     Box,
     Button,
     Grid,
@@ -30,6 +31,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
     const [favoriteAddress, setFavoriteAddress] = useState(favorite.address);
     const [favoriteDescription, setFavoriteDescription] = useState(favorite.desc);
     const [favoriteGroup, setFavoriteGroup] = useState(null);
+    const [favoriteColor, setFavoriteColor] = useState(favorite.color);
 
     const EditName = () => {
         return (<ListItemText>
@@ -96,8 +98,8 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
 
     const FavoriteGroupItem = ({group}) => {
         let g = group.pointsGroups[group.name === 'favorites' ? "" : group.name];
-        let color = g.color;
-        let size = g.points.length;
+        let colorGroup = g && g.color;
+        let size = g && g.points.length;
         return <Box
             sx={{
                 width: 110,
@@ -108,7 +110,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
             }}>
             <Grid container>
                 <Grid item container xs={3}>
-                    <ListItemIcon style={{color: color}}>
+                    <ListItemIcon style={{color: colorGroup}}>
                         <Folder fontSize="small"/>
                     </ListItemIcon>
                 </Grid>
@@ -135,8 +137,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
         ctx.favorites.groups.forEach(group => {
             if (group.name === favorite.category) {
                 groupList.unshift(group);
-            }
-            else {
+            } else {
                 groupList.push(group);
             }
         })
@@ -177,51 +178,111 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
 
     }
 
-    function editColor() {
+    const EditColor = () => {
+        let colors = ['#10c0f0', '#1010a0', '#eecc22', '#88e030', '#eeee10', '#00842b', '#ff5020', '#8e2512', '#e044bb', '#000001', '#d00d0d', '#a71de1'];
+        const [selectFavoriteColor, setSelectFavoriteColor] = useState(false);
+        let prepareColors = [];
+        colors.forEach(color => {
+            if (color === favorite.color) {
+                prepareColors.unshift(color);
+            } else {
+                prepareColors.push(color);
+            }
+        })
 
+        return (<>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        Select color
+                    </Typography>
+                </ListItemText>
+                <Box
+                    sx={{
+                        display: "flex",
+                        width: 450,
+                        overflow: "hidden",
+                        overflowX: "scroll",
+                    }}
+                >
+                    {prepareColors.map((color, index) => {
+                        return <ListItem key={index} component="div" disablePadding>
+                            <ListItemButton
+                                selected={favoriteColor === color || (!selectFavoriteColor && color === favorite.color)}
+                                onClick={() => {
+                                    setSelectFavoriteColor(true);
+                                    setFavoriteColor(color);
+                                }}
+                            >
+                                <Avatar sx={{bgcolor: color}}> </Avatar>
+                            </ListItemButton>
+                        </ListItem>;
+                    })}
+
+                </Box>
+            </>
+        );
     }
 
     function editShape() {
 
     }
 
-    function saveFavorite() {
+    function save() {
         let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
+        let editSelectedGpxFile = selectedGroupName === ctx.selectedGpxFile.nameGroup;
         let currentGroup = ctx.favorites[selectedGroupName];
-        let editSelectedGpxFile = false;
-        if (selectedGroupName === ctx.selectedGpxFile.nameGroup) {
-            editSelectedGpxFile = true;
-        }
         let currentWpt = getCurrentWpt();
         let fileSaved;
         if (editSelectedGpxFile) {
-            currentGroup.pointsGroups[selectedGroupName] = currentGroup.wpts;
-            fileSaved = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE, currentGroup);
+            currentGroup = prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile);
+            fileSaved = TracksManager.saveTrack(ctx, currentGroup.name, currentWpt.name, TracksManager.FAVORITE_FILE_TYPE, currentGroup);
         } else {
-            //delete wpt from old group
-            ctx.selectedGpxFile.file.wpts = ctx.selectedGpxFile.file.wpts.filter(wpt => wpt.name !== currentWpt.name);
-            ctx.selectedGpxFile.file.pointsGroups[favorite.category] = ctx.selectedGpxFile.file.wpts;
-            let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE, ctx.selectedGpxFile.file);
-            //add wpt to new group
+            let deleted = deleteFavoriteFromOldGroup(currentWpt);
             if (deleted) {
-                if (currentGroup.name !== '') {
-                    currentWpt.ext.category = selectedGroupName;
-                }
-                currentGroup.wpts.push(currentWpt);
-                currentGroup.pointsGroups[selectedGroupName] = currentGroup.wpts;
-                ctx.selectedGpxFile.file = currentGroup;
-                delete ctx.selectedGpxFile.file.markers;
-                delete currentGroup.markers;
+                currentGroup = prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile);
                 fileSaved = TracksManager.saveTrack(ctx, currentGroup.name, currentWpt.name, TracksManager.FAVORITE_FILE_TYPE, currentGroup);
             }
         }
         if (fileSaved) {
-            ctx.selectedGpxFile.editFavorite = true;
-            ctx.selectedGpxFile.markerCurrent.title = favoriteName;
-            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+            delete currentGroup.markers;
+            updateSelectedFavorites(currentGroup, selectedGroupName);
             ctx.setFavorites({...ctx.favorites});
             setEditFavoritesDialogOpen(false);
         }
+    }
+
+    function updateSelectedFavorites(currentGroup, selectedGroupName) {
+        ctx.selectedGpxFile.file = currentGroup
+        ctx.selectedGpxFile.nameGroup = selectedGroupName;
+        ctx.selectedGpxFile.editFavorite = true;
+        ctx.selectedGpxFile.markerCurrent.title = favoriteName;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function deleteFavoriteFromOldGroup(currentWpt) {
+        const resGpxFiles = Object.assign({}, ctx.selectedGpxFile);
+        resGpxFiles.file.wpts = ctx.selectedGpxFile.file.wpts.filter(wpt => wpt.name !== currentWpt.name);
+        resGpxFiles.file.pointsGroups[favorite.category].points = ctx.selectedGpxFile.file.wpts;
+        let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE, resGpxFiles.file);
+        if (deleted) {
+            delete ctx.favorites[resGpxFiles.nameGroup].markers;
+            return true;
+        }
+        return false;
+    }
+
+    function prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile) {
+        if (currentGroup.name !== '') {
+            currentWpt.ext.category = selectedGroupName;
+        }
+        if (editSelectedGpxFile) {
+            currentGroup.wpts = ctx.selectedGpxFile.file.wpts;
+        } else {
+            currentGroup.wpts.push(currentWpt);
+        }
+        currentGroup.pointsGroups[selectedGroupName].points = currentGroup.wpts;
+
+        return currentGroup;
     }
 
     function getCurrentWpt() {
@@ -231,6 +292,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 wpt.name = favoriteName;
                 wpt.address = favoriteAddress === "" ? null : favoriteAddress;
                 wpt.desc = favoriteDescription === "" ? null : favoriteDescription;
+                wpt.color = favoriteColor;
                 res = wpt;
             }
         })
@@ -266,11 +328,11 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 {EditDescription()}
                 {EditGroup()}
                 {editIcon()}
-                {editColor()}
+                {EditColor()}
                 {editShape()}
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => saveFavorite()}>
+                <Button onClick={() => save()}>
                     Save</Button>
                 <Button onClick={() => saveAsFavorite()}>
                     Save as</Button>

@@ -11,10 +11,13 @@ const FavoriteLayer = () => {
     //add favorites groups
     useEffect(() => {
         let filesMap = ctx.favorites ? ctx.favorites : {};
-        Object.values(filesMap).forEach((file) => {
+        Object.entries(filesMap).forEach(([key, file]) => {
             if (file.url) {
                 if (!file.markers) {
                     file.markers = TrackLayerProvider.createLayersByTrackData(file);
+                    if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
+                        updateSelectedFavoriteOnMap(file);
+                    }
                 }
                 if (file.addToMap && file.markers) {
                     file.markers.addTo(map).on('click', onClick);
@@ -25,11 +28,9 @@ const FavoriteLayer = () => {
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);
             }
-        });
-
+        })
     }, [ctx.favorites, ctx.setFavorites]);
 
-    //add selected favorite
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent) {
             map.flyTo([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
@@ -38,13 +39,6 @@ const FavoriteLayer = () => {
 
         if (ctx.selectedGpxFile?.markerPrev) {
             map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
-        }
-
-        if (ctx.selectedGpxFile?.editFavorite) {
-            let file = ctx.favorites[ctx.selectedGpxFile.nameGroup];
-            map.removeLayer(file.markers);
-            delete file.markers;
-            ctx.setFavorites({...ctx.favorites});
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
@@ -55,8 +49,17 @@ const FavoriteLayer = () => {
             icon: e.sourceTarget.options.icon.options.html,
             layer: e.sourceTarget
         };
-        ctx.selectedGpxFile.editFavorite = false;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function updateSelectedFavoriteOnMap(file) {
+        Object.values(file?.markers._layers).forEach(marker => {
+            if (marker.options.title === ctx.selectedGpxFile.markerCurrent.title) {
+                ctx.selectedGpxFile.markerPrev = Object.assign({}, ctx.selectedGpxFile.markerCurrent);
+                ctx.selectedGpxFile.markerCurrent.layer = marker;
+                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+            }
+        })
     }
 };
 

@@ -7,7 +7,6 @@ import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import EditFavoriteDialog from "../EditFavoriteDialog";
 import DeleteFavoriteDialog from "../DeleteFavoriteDialog";
-import TracksManager from "../../../context/TracksManager";
 
 const useStyles = makeStyles({
     icon: {
@@ -61,7 +60,7 @@ const FavoriteInfoTab = ({width}) => {
                         address: wpt.address === 'null' ? "" : wpt.address,
                         category: wpt.ext.category ? wpt.ext.category : 'favourites',
                         background: wpt.ext.extensions.background,
-                        color: wpt.ext.extensions.color,
+                        color: wpt.color,
                         icon: wpt.ext.extensions.icon,
                         lat: wpt.ext.lat,
                         lon: wpt.ext.lon,
@@ -83,11 +82,11 @@ const FavoriteInfoTab = ({width}) => {
                 </Grid>
                 {favorite?.marker && <Grid className={styles.name} item xs={2}>
                     <div className={classes.icon}
-                         dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker).options.html + ''}}/>
+                         dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker, favorite.color).options.html + ''}}/>
                 </Grid>}
             </Grid>
             <Grid container sx={{mt: -9}}>
-                <ListItemIcon style={{color: favorite.color}}>
+                <ListItemIcon style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[favorite.category].color}}>
                     <Folder fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText>
