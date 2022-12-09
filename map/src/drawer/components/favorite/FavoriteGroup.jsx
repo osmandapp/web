@@ -109,7 +109,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
         <MenuItem sx={{ml: 3}} divider onClick={() => {
             toggleFavoritesPointsOpen();
         }}>
-            <ListItemIcon style={{color: group.name && ctx.favorites[group.name].pointsGroups[group.name].color}}>
+            <ListItemIcon style={{color: group.name && ctx.favorites[group.name]?.pointsGroups[group.name]?.color}}>
                 <Folder fontSize="small"/>
             </ListItemIcon>
             <ListItemText>
