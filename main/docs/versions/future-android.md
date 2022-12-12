@@ -26,8 +26,8 @@ _Menu → Configure profile → General settings → 2.5D view_
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/2-5-d-view_1.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/2-5-d-view_2.png').default} alt="turn arrows hidden"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/2-5-d-view_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/2-5-d-view_2.png').default} alt="turn arrows hidden"/></td>
     </tr>
 </table> 
 
@@ -51,8 +51,8 @@ Routing animation (icon movement during navigation) works smoothly now.
 
    <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/coordinates_widget_1.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/coordinates_widget_2.png').default} alt="turn arrows hidden"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/coordinates_widget_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/coordinates_widget_2.png').default} alt="turn arrows hidden"/></td>
     </tr>
    </table> 
 
@@ -63,8 +63,8 @@ Routing animation (icon movement during navigation) works smoothly now.
 
    <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/distance_by_tap_1.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/distance_by_tap_2.png').default} alt="turn arrows hidden"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/distance_by_tap_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/distance_by_tap_2.png').default} alt="turn arrows hidden"/></td>
     </tr>
   </table> 
 
@@ -75,7 +75,7 @@ Routing animation (icon movement during navigation) works smoothly now.
 
    <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_6.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_6.png').default} alt="turn arrows visible"/></td>
     </tr>
    </table> 
   
@@ -83,8 +83,8 @@ Routing animation (icon movement during navigation) works smoothly now.
 
    <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_1.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_1.png').default} alt="turn arrows visible"/></td>
   </tr>
   </table> 
 
@@ -96,8 +96,8 @@ Routing animation (icon movement during navigation) works smoothly now.
 
     <table class="blogimage">
     <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_2.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_3.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_2.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_3.png').default} alt="turn arrows visible"/></td>
     </tr>
     </table> 
 
@@ -105,8 +105,8 @@ Routing animation (icon movement during navigation) works smoothly now.
 
     <table class="blogimage">
     <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_4.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_5.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_4.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/map_marker_widget_5.png').default} alt="turn arrows visible"/></td>
     </tr>
     </table> 
 
@@ -117,7 +117,7 @@ We reorganised ["Nautical maps"](https://osmand.net/docs/user/plugins/nautical-c
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/nautical_folder.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/nautical_folder.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -130,8 +130,8 @@ Example of MTB IMBA icons for trails and [legend](https://docs.osmand.net/docs/u
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/imba_map.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/imba_legend.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/imba_map.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/imba_legend.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -166,7 +166,7 @@ name, desc, cmt, link:
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/gpx_tags.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/gpx_tags.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -204,7 +204,7 @@ Changed [the Appearance setting](https://osmand.net/docs/user/personal/profiles#
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/display_position.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-12-android-4-3/display_position.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table>
 
