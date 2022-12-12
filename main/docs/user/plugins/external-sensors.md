@@ -38,43 +38,41 @@ Bluetooth network will be added for the next release OsmAnd 4.4.
 
 ## Setup 
 
-To activate connection external sensors: 
+To start using data from external sensors, you need to make the following settings: 
    
 1. [Enable](../plugins/index.md#enable--disable) External sensors plugin in the Plugins section of the Main menu.    
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
+3. If needed, add [External sensors widgets](#widgets) to the screen.
 
 
-### Plugin settings
+## Plugin settings
 
 :::info INFO  
 The plugin settings are global and apply to all profiles.  
 :::
 
+Use one of the following paths to open the plugin settings:  
 
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/>* 
-- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/>* 
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/>*   
 
-Here, there are settings for exteranl sensors:
-- &nbsp;_<Translate android="true" ids="map_widget_ant_heart_rate"/>_ - shows user's heart rate during a given activity in real-time.
-- &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_power"/>_ - shows cyclist's power output, which is used to move the bike forward.
-- &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>_ - shows speed at which the user is pedalling.
-- &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_speed"/>_ - shows speed of traveling.
-- &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_dist"/>_ - shows travelled distance.
+![External sensors plugin settings Android](@site/static/img/plugins/sensors/external-sensors-plugin-sett-01.png)  ![External sensors plugin settings Android](@site/static/img/plugins/sensors/external-sensors-plugin-sett-02.png)  
 
-Each sensor has two settings:
-- &nbsp;_<Translate android="true" ids="ant_read_data"/>_ - allows to search and connect to the sensor.
-- &nbsp;_<Translate android="true" ids="ant_write_to_gpx"/>_ - allows to include sensor data in [the recording GPX track](../plugins/trip-recording.md).
+With the plugin, for each external sensor available to the OsmAnd app, you can use two settings:
+- ***<Translate android="true" ids="ant_read_data"/>*** - allows you to connect to the corresponding sensor and read the data it transmits.
+- ***<Translate android="true" ids="ant_write_to_gpx"/>*** - allows you to include sensor data in [the recording GPX track](../plugins/trip-recording.md#recorded-gpx-file).
 
-![External sensors plugin settings Android](@site/static/img/plugins/sensors/ant_settings_android.png)
+| Parameter | Description |
+| --- | --- |
+| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | indicates the user's heart rate data in real time. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | indicates how much power the cyclist exerts when riding. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | indicates the speed at which the cyclist pedals. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | indicates the speed at which the bicycle is moving. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | indicates the distance traveled. |  
 
 
-
-
-## How to Use
 
 <!--### Support external devices ANT+
-
-At this release, we added support for [external ANT+ devices](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external Bluetooth devices is planned for the next release.  
 
 **Added support for ANT+ sensors.**
 
@@ -85,19 +83,10 @@ At this release, we added support [external devices ANT+](https://en.wikipedia.o
 
 ## Widgets
 
-The external sensors widgets show external sensors data on the OsmAnd screen. 
+The [External Sensors widget](../widgets/info-widgets.md#-external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them to the Configure Screen menu. External Sensors widgets help you track data from your external sensors in real time.  
 
-<!-- The Parking widget is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the Configure Screen menu. The Parking widget will help you quickly find a parking spot on the map.-->
-
-
-<!--You can add or delete the Parking widget by following this path:-->
-To add widgets on the screen:
-- *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*:
-   - &nbsp;_<Translate android="true" ids="map_widget_ant_heart_rate"/>_
-   - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_power"/>_
-   - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>_
-   - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_speed"/>_
-   - &nbsp;_<Translate android="true" ids="map_widget_ant_bicycle_dist"/>_
+Use the following path to display the widget on the screen:  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*  
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_android.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_1_android.png)
  
