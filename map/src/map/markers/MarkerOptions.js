@@ -1,5 +1,9 @@
 import L from "leaflet";
 
+const BACKGROUND_WPT_SHAPE_CIRCLE = "circle";
+const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
+const BACKGROUND_WPT_SHAPE_SQUARE = "square";
+
 const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
 
     let svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -27,10 +31,11 @@ const options = {
     })
 };
 
-function getWptIcon(point, color) {
+function getWptIcon(point, color, background) {
     let colorBackground = color ? color :
         (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
-    let svg = getSvgBackground(colorBackground, point);
+    let shapeBackground = background ? background : point.background;
+    let svg = getSvgBackground(colorBackground, shapeBackground);
 
     if (point.extensions?.icon) {
         return L.divIcon({
@@ -53,20 +58,20 @@ function getWptIcon(point, color) {
     }
 }
 
-function getSvgBackground(colorBackground, point) {
+function getSvgBackground(colorBackground, shape) {
     let svg;
-    if (point.extensions?.background) {
-        if (point.extensions.background === "circle") {
+    if (shape) {
+        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE) {
             svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
                         </svg>`
         }
-        if (point.extensions.background === "octagon") {
+        if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
             svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                            <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>
                         </svg>`
         }
-        if (point.extensions.background === "square") {
+        if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
             svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>
                         </svg>`
@@ -81,7 +86,11 @@ function getSvgBackground(colorBackground, point) {
 
 const MarkerOptions = {
     options,
-    getWptIcon
+    getWptIcon,
+    getSvgBackground,
+    BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
+    BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
+    BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE
 };
 
 export default MarkerOptions;

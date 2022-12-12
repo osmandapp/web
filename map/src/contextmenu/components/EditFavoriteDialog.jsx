@@ -20,18 +20,32 @@ import React, {useContext, useState} from "react";
 import contextMenuStyles from "../styles/ContextMenuStyles";
 import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
+import MarkerOptions from "../../map/markers/MarkerOptions";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+    shape: {
+        "& .background": {
+            width: '80px',
+            height: '80px',
+            filter: "drop-shadow(0 0 0 gray)"
+        }
+    }
+})
 
 
 export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen}) {
 
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
+    const classes = useStyles();
 
     const [favoriteName, setFavoriteName] = useState(favorite.name);
     const [favoriteAddress, setFavoriteAddress] = useState(favorite.address);
     const [favoriteDescription, setFavoriteDescription] = useState(favorite.desc);
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteColor, setFavoriteColor] = useState(favorite.color);
+    const [favoriteShape, setFavoriteShape] = useState(favorite.background);
 
     const EditName = () => {
         return (<ListItemText>
@@ -223,8 +237,44 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
         );
     }
 
-    function editShape() {
+    const EditShape = () => {
+        const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
+        let shapes = [MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE, MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON, MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE];
+        let shapesSvg = {};
+        shapes.forEach(shape => {
+            shapesSvg[`${shape}`] = MarkerOptions.getSvgBackground(favoriteColor, shape);
+        })
 
+        return (<>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        Select shape
+                    </Typography>
+                </ListItemText>
+                <Box component="div"
+                     sx={{
+                         display: 'flex',
+                         overflow: "hidden"
+                     }}
+                >
+                    {Object.entries(shapesSvg).map((shape, index) => {
+                        return <ListItem style={{maxWidth: 71}} component="div" key={index} disablePadding>
+                            <ListItemButton
+                                selected={favoriteShape === shape[0] || (!selectFavoriteShape && shape[0] === favorite.background)}
+                                onClick={() => {
+                                    setSelectFavoriteShape(true);
+                                    setFavoriteShape(shape[0]);
+                                }}
+                            >
+                                <div className={classes.shape}
+                                     dangerouslySetInnerHTML={{__html: shape[1] + ''}}/>
+                            </ListItemButton>
+                        </ListItem>
+                    })}
+
+                </Box>
+            </>
+        );
     }
 
     function save() {
@@ -296,6 +346,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 wpt.address = favoriteAddress === "" ? null : favoriteAddress;
                 wpt.desc = favoriteDescription === "" ? null : favoriteDescription;
                 wpt.color = favoriteColor;
+                wpt.background = favoriteShape;
                 res = wpt;
             }
         })
@@ -332,7 +383,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 {EditGroup()}
                 {editIcon()}
                 {EditColor()}
-                {editShape()}
+                {EditShape()}
             </DialogContent>
             <DialogActions>
                 <Button onClick={() => save()}>
