@@ -21,16 +21,18 @@ External sensors plugin is currently not available for the iOS version of the Os
 :::
 
 If you have a variety of sensor devices for cycling, you can use the data they record in the OsmAnd app.
-<!--The plugin allows to add external sensors for displaying data on the OsmAnd screen.   
 
-The plugin allows you to read and record data from external sensors running on ANT+ technology and display this data using widgets in the OsmAnd application. -->
+<!--The plugin allows to add external sensors for displaying data on the OsmAnd screen.  
+
+By this plugin you can have additional data on the OsmAnd screen from [wireless external sensors
+ -->
 
 ## Overview
+The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on ANT+ technology and display this data using widgets in the OsmAnd application. ANT+ is an ultra low power wireless transfer standard that can be used with the basic [ANT protocol](https://en.wikipedia.org/wiki/ANT_(network)). This managed network is capable of collecting, transmitting, and storing sensor data.  
 
-By this plugin you can have additional data on the OsmAnd screen from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network): _<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>_.
+The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed* and *Bicycle Distance*. For the plugin to work, don't forget [to connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) your device to the respective sensors.  
 
-:::info Note
-Now, external sensors can be connected to OsmAnd by low energy [ANT+ network](https://en.wikipedia.org/wiki/ANT_(network)).  
+:::tip Information
 Bluetooth network will be added for the next release OsmAnd 4.4.
 :::
 
@@ -70,7 +72,15 @@ Each sensor has two settings:
 
 ## How to Use
 
+<!--### Support external devices ANT+
 
+At this release, we added support for [external ANT+ devices](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external Bluetooth devices is planned for the next release.  
+
+**Added support for ANT+ sensors.**
+
+At this release, we added support [external devices ANT+](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external devices Bluetooth we will plan for the next release. 
+
+-->
 
 
 ## Widgets
