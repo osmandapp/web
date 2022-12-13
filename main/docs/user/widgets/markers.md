@@ -34,7 +34,7 @@ You can also select one or two markers to display in the widget. Read more about
 
 <TabItem value="android" label="Android">  
 
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget-02.png)
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
 
 | | |
 |------------|------------|
@@ -48,7 +48,7 @@ You can also select one or two markers to display in the widget. Read more about
 
 <TabItem value="ios" label="iOS">  
 
-![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top_bar_widget_ios-02.png)
+![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top-bar-widget-ios.png)
 
 | | |
 |------------|------------|
@@ -60,7 +60,6 @@ You can also select one or two markers to display in the widget. Read more about
 </TabItem>
 
 </Tabs> 
-
 
 
 ## Panel widgets
@@ -98,48 +97,29 @@ You can also select one or two markers to display in the widget. Read more about
 
 ![Panel widgets](@site/static/img/widgets/map_markers_widget_ios-02.png)
 
-
 | | |
 |------------|------------|
 | Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
 | By tapping | The visible part of the map shifts to the marker location. |
 | Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
-
 </TabItem>
 
 </Tabs> 
 
 
-## Configure Marker widgets and Appearance on the map
+## Appearance on the map
 
 Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not.  
-
-Additional settings for the map marker widgets are only available in the Android version of the app. They are described in detail [here](../personal/markers#map-markers-widgets).  
-
-<!--All marker appearance settings and widget parameters are configured through the same menu.-->
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
+Use the following path to configure the appearance of the markers on the map:  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
-
-![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
-
-
-</TabItem>
-
-</Tabs> 
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
 |    | Description    | State | 
 | :------------- | :------------- | :------------- |
@@ -149,3 +129,53 @@ Additional settings for the map marker widgets are only available in the Android
 | <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
 | <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
 | <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Use the following path to configure the appearance of the markers on the map:  
+*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
+
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
+
+|    | Description    | State | 
+| :------------- | :------------- | :------------- |
+| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
+|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
+| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
+| <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
+| <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
+
+</TabItem>
+
+</Tabs> 
+
+
+## Configure Marker widgets
+
+Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings can be read [here](../personal/markers#map-markers-widgets).  
+
+<!--All marker appearance settings and widget parameters are configured through the same menu.-->
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+Use the following path to configure the appearance of the markers on the map:  
+*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
+
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+:::caution Android only
+Map marker widgets settings are not provided for the iOS version of the OsmAnd app.
+:::
+
+</TabItem>
+
+</Tabs> 

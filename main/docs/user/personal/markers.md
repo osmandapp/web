@@ -235,26 +235,30 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 ## Appearance on the map
 
+[Description Appearance on the map](../widgets/markers.md#configure-marker-widgets-and-appearance-on-the-map)  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-[Link to description](../widgets/markers.md#configure-marker-widgets-and-marker-appearance)
+Use the following path to configure the appearance of the markers on the map:  
+*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
-![Map markers Appearance Android](@site/static/img/personal/markers/map_markers_appearance_android.png) 
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-[Link to description](../widgets/markers.md#configure-marker-widgets-and-marker-appearance)
+Use the following path to configure the appearance of the markers on the map:  
+*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
 
-![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png)
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## Map markers widgets
 
@@ -264,9 +268,11 @@ To start using *Map markers widgets*, you need to make all of the following sett
 - [Map Context menu](../map/map-context-menu.md#add--edit-marker). 
 - Configure Marker widgets and Marker appearance for the required [profile](../personal/profiles.md).
 
+<!-- ### Configure Marker widgets
+### Appearance on the map
+-->
 
 ### Add Marker widgets
-
 
 
 <!---
