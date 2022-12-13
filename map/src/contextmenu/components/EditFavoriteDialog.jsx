@@ -25,6 +25,7 @@ import MarkerOptions from "../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import Paper from "@mui/material/Paper";
+import DeleteFavoriteDialog from "./DeleteFavoriteDialog";
 
 const useStyles = makeStyles({
     shape: {
@@ -42,10 +43,20 @@ const useStyles = makeStyles({
             height: '25px'
         }
     },
+    background: {
+        "& .background": {
+            left: '-20px',
+            top: '2px',
+            width: '80px',
+            height: '80px',
+            filter: "drop-shadow(0 0 0 gray)"
+        },
+    }
 })
 
 
-export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen}) {
+export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen,
+                                               deleteFavoritesDialogOpen, setDeleteFavoritesDialogOpen}) {
 
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -62,6 +73,10 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
     const [favoriteIcon, setFavoriteIcon] = useState(favorite.icon);
     const [favoriteCategories, setFavoriteCategories] = useState(null);
     const [currentFavoriteCategories, setCurrentFavoriteCategories] = useState(null);
+
+    const toggleDeleteFavoritesDialogOpen = () => {
+        setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);
+    };
 
     useEffect(() => {
         getPoiCategories().then();
@@ -407,7 +422,7 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
                                     setFavoriteShape(shape[0]);
                                 }}
                             >
-                                <div className={classes.shape}
+                                <div className={classes.background}
                                      dangerouslySetInnerHTML={{__html: shape[1] + ''}}/>
                             </ListItemButton>
                         </ListItem>
@@ -528,6 +543,12 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
                 {EditShape()}
             </DialogContent>
             <DialogActions>
+                <Button onClick={toggleDeleteFavoritesDialogOpen}>
+                    Delete</Button>
+                {deleteFavoritesDialogOpen
+                    && <DeleteFavoriteDialog
+                        dialogOpen={deleteFavoritesDialogOpen}
+                        setDialogOpen={setDeleteFavoritesDialogOpen}/>}
                 <Button onClick={() => save()}>
                     Save</Button>
                 <Button onClick={() => saveAsFavorite()}>

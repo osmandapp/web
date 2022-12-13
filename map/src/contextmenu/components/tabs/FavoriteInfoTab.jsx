@@ -36,7 +36,7 @@ const FavoriteInfoTab = ({width}) => {
         setEditFavoritesDialogOpen(!editFavoritesDialogOpen);
     };
     const toggleDeleteFavoritesDialogOpen = () => {
-        setDeleteFavoritesDialogOpen(!editFavoritesDialogOpen);
+        setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);
     };
     const toggleDescriptionOpen = () => {
         setDescriptionOpen(!descriptionOpen);
@@ -123,7 +123,9 @@ const FavoriteInfoTab = ({width}) => {
             && <EditFavoriteDialog
                 favorite={favorite}
                 editFavoritesDialogOpen={editFavoritesDialogOpen}
-                setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}/>}
+                setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}
+                deleteFavoritesDialogOpen={deleteFavoritesDialogOpen}
+                setDeleteFavoritesDialogOpen={setDeleteFavoritesDialogOpen}/>}
         <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={toggleDeleteFavoritesDialogOpen}>Delete</Button>
         {deleteFavoritesDialogOpen
