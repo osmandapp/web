@@ -69,7 +69,7 @@ function parseWpt(points, layers) {
         let pInfo = point.ext;
         if (icon) {
             opt = {clickable: true, icon: icon};
-            opt.group = pInfo.type ? pInfo.type : 'Favorites';
+            opt.group = pInfo.category ? pInfo.category : 'Favorites';
             if (pInfo.time) {
                 opt.time = pInfo.time;
             }

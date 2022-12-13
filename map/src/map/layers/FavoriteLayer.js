@@ -49,6 +49,9 @@ const FavoriteLayer = () => {
             icon: e.sourceTarget.options.icon.options.html,
             layer: e.sourceTarget
         };
+        if (!ctx.selectedGpxFile.file) {
+            ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.group]);
+        }
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 

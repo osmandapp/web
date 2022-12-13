@@ -551,8 +551,6 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
                         setDialogOpen={setDeleteFavoritesDialogOpen}/>}
                 <Button onClick={() => save()}>
                     Save</Button>
-                <Button onClick={() => saveAsFavorite()}>
-                    Save as</Button>
             </DialogActions>
         </Dialog>
     );
