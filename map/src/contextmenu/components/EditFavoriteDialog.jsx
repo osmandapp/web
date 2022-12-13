@@ -1,5 +1,5 @@
 import {Dialog} from "@material-ui/core";
-import {Close, Delete, Folder} from "@mui/icons-material";
+import {Close, Delete, Folder, History} from "@mui/icons-material";
 import {
     AppBar,
     Avatar,
@@ -247,7 +247,7 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
         list.length > 0 && currentFavoriteCategories && list.unshift(<Tab
             value={tabs[currentFavoriteCategories].key + ''} label={currentFavoriteCategories}
             key={'tab:' + currentFavoriteCategories}/>);
-        list.length > 0 && list.unshift(<Tab value={tabs[DEFAULT_TAB_ICONS].key + ''} label={DEFAULT_TAB_ICONS} key={'tab:' + DEFAULT_TAB_ICONS}/>);
+        list.length > 0 && list.unshift(<Tab icon={<History />} value={tabs[DEFAULT_TAB_ICONS].key + ''} key={'tab:' + DEFAULT_TAB_ICONS}/>);
 
         return (<>
                 <ListItemText>
@@ -259,7 +259,7 @@ export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, s
                      sx={{
                          flexGrow: 1,
                          width: 450,
-                         overflow: "hidden",
+                         overflow: "hidden"
                      }}
                 >
                     <Paper>
