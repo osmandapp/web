@@ -1,6 +1,7 @@
 import {Dialog} from "@material-ui/core";
 import {Close, Delete, Folder} from "@mui/icons-material";
 import {
+    AppBar,
     Avatar,
     Box,
     Button,
@@ -9,36 +10,48 @@ import {
     ListItem,
     ListItemButton,
     ListItemIcon,
-    ListItemText,
+    ListItemText, Tab,
     TextField,
     Typography
 } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import contextMenuStyles from "../styles/ContextMenuStyles";
 import AppContext from "../../context/AppContext";
 import TracksManager from "../../context/TracksManager";
 import MarkerOptions from "../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
+import {TabContext, TabList, TabPanel} from "@mui/lab";
+import Paper from "@mui/material/Paper";
 
 const useStyles = makeStyles({
     shape: {
         "& .background": {
+            left: '-30px',
+            top: '2px',
             width: '80px',
             height: '80px',
             filter: "drop-shadow(0 0 0 gray)"
+        },
+        "& .icon": {
+            left: '14px',
+            top: '13px',
+            width: '25px',
+            height: '25px'
         }
-    }
+    },
 })
 
 
-export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen}) {
+export default function EditFavoriteDialog({favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen}) {
 
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
     const classes = useStyles();
+
+    const DEFAULT_TAB_ICONS = "used";
 
     const [favoriteName, setFavoriteName] = useState(favorite.name);
     const [favoriteAddress, setFavoriteAddress] = useState(favorite.address);
@@ -46,6 +59,13 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteColor, setFavoriteColor] = useState(favorite.color);
     const [favoriteShape, setFavoriteShape] = useState(favorite.background);
+    const [favoriteIcon, setFavoriteIcon] = useState(favorite.icon);
+    const [favoriteCategories, setFavoriteCategories] = useState(null);
+    const [currentFavoriteCategories, setCurrentFavoriteCategories] = useState(null);
+
+    useEffect(() => {
+        getPoiCategories().then();
+    }, [editFavoritesDialogOpen]);
 
     const EditName = () => {
         return (<ListItemText>
@@ -188,8 +208,129 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
         );
     }
 
-    function editIcon() {
+    const EditIcon = () => {
+        const [value, setValue] = useState(DEFAULT_TAB_ICONS);
+        const [selectFavoriteIcon, setSelectFavoriteIcon] = useState(false);
+        let tabs = {};
+        let list = [];
 
+        favoriteCategories && Object.entries(favoriteCategories.categories).map((category, index) => {
+            tabs[category[0]] = <ListIcons
+                key={category[0]}
+                icons={category[1].icons}
+                selectFavoriteIcon={selectFavoriteIcon}
+                setSelectFavoriteIcon={setSelectFavoriteIcon}/>;
+        })
+
+        tabs[DEFAULT_TAB_ICONS] = getTabUsedIcons(selectFavoriteIcon, setSelectFavoriteIcon);
+        list = tabs && list.concat(Object.keys(tabs).map((item, index) => {
+            if (item !== currentFavoriteCategories && item !== DEFAULT_TAB_ICONS) {
+                return <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>
+            }
+        }));
+
+        list.length > 0 && currentFavoriteCategories && list.unshift(<Tab
+            value={tabs[currentFavoriteCategories].key + ''} label={currentFavoriteCategories}
+            key={'tab:' + currentFavoriteCategories}/>);
+        list.length > 0 && list.unshift(<Tab value={tabs[DEFAULT_TAB_ICONS].key + ''} label={DEFAULT_TAB_ICONS} key={'tab:' + DEFAULT_TAB_ICONS}/>);
+
+        return (<>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        Select icon
+                    </Typography>
+                </ListItemText>
+                <Box component="div"
+                     sx={{
+                         flexGrow: 1,
+                         width: 450,
+                         overflow: "hidden",
+                     }}
+                >
+                    <Paper>
+                        <TabContext sx={{maxWidth: 450}} value={value}>
+                            <AppBar position="static" color="default">
+                                <div style={{display: 'inherit'}}>
+                                    <TabList variant="scrollable"
+                                             scrollButtons
+                                             aria-label="visible arrows tabs example"
+                                             onChange={(e, newValue) => {
+                                                 setValue(newValue)
+                                             }} children={list}/>
+                                </div>
+                            </AppBar>
+                            {Object.values(tabs).map((item, index) =>
+                                <TabPanel value={item.key + ""} key={'tabpanel:' + item.key}> {item} </TabPanel>
+                            )}
+                        </TabContext>
+                    </Paper>
+                </Box>
+            </>
+        );
+    }
+
+    const ListIcons = ({icons, selectFavoriteIcon, setSelectFavoriteIcon}) => {
+
+        return <Box
+            sx={{
+                flexWrap: 'wrap',
+                display: 'flex',
+                maxWidth: 400
+            }}
+        >
+            {icons.map((icon, index) => {
+                return <ListItem key={index} sx={{maxWidth: 50, maxHeight: 50}} component="div" disablePadding>
+                    <ListItemButton
+                        sx={{maxWidth: 50, maxHeight: 50, top: -10}}
+                        selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === favorite.icon)}
+                        onClick={() => {
+                            setSelectFavoriteIcon(true);
+                            setFavoriteIcon(icon);
+                        }}
+                    >
+                        <div className={classes.shape}
+                             dangerouslySetInnerHTML={{
+                                 __html: `
+                              <div>
+                                  <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="24" cy="24" r="12" fill="#c1c1c1"/>
+                                  </svg>
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${icon}.svg">
+                              </div>
+                              ` + ''
+                             }}/>
+                    </ListItemButton>
+                </ListItem>
+            })}
+        </Box>
+    }
+
+    function getTabUsedIcons(selectFavoriteIcon, setSelectFavoriteIcon) {
+        let res = [];
+        ctx.selectedGpxFile.file.wpts.forEach(wpt => {
+            if (!res.some(icon => icon === wpt.icon)) {
+                res.push(wpt.icon);
+            }
+        })
+        return <ListIcons
+            key={DEFAULT_TAB_ICONS}
+            icons={res}
+            selectFavoriteIcon={selectFavoriteIcon}
+            setSelectFavoriteIcon={setSelectFavoriteIcon}/>;
+    }
+
+    async function getPoiCategories() {
+        let resp = await fetch("/map/images/poi_categories")
+        const res = await resp.json();
+        if (res) {
+            Object.entries(res.categories).forEach(category => {
+                let currentIcon = category[1].icons.find(icon => icon === favorite.icon);
+                if (currentIcon) {
+                    setCurrentFavoriteCategories(category[0]);
+                }
+            })
+            setFavoriteCategories(res);
+        }
     }
 
     const EditColor = () => {
@@ -214,7 +355,6 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                     sx={{
                         display: "flex",
                         width: 450,
-                        overflow: "hidden",
                         overflowX: "scroll",
                     }}
                 >
@@ -260,6 +400,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                     {Object.entries(shapesSvg).map((shape, index) => {
                         return <ListItem style={{maxWidth: 71}} component="div" key={index} disablePadding>
                             <ListItemButton
+                                sx={{maxHeight: 50}}
                                 selected={favoriteShape === shape[0] || (!selectFavoriteShape && shape[0] === favorite.background)}
                                 onClick={() => {
                                     setSelectFavoriteShape(true);
@@ -347,6 +488,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 wpt.desc = favoriteDescription === "" ? null : favoriteDescription;
                 wpt.color = favoriteColor;
                 wpt.background = favoriteShape;
+                wpt.icon = favoriteIcon;
                 res = wpt;
             }
         })
@@ -381,7 +523,7 @@ export default function EditFavoriteDialog({favorite, setEditFavoritesDialogOpen
                 {EditAddress()}
                 {EditDescription()}
                 {EditGroup()}
-                {editIcon()}
+                {EditIcon()}
                 {EditColor()}
                 {EditShape()}
             </DialogContent>

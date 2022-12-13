@@ -65,7 +65,7 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
 function parseWpt(points, layers) {
     points && points.forEach(point => {
         let opt;
-        let icon = MarkerOptions.getWptIcon(point, point.color)
+        let icon = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon)
         let pInfo = point.ext;
         if (icon) {
             opt = {clickable: true, icon: icon};

@@ -14,7 +14,7 @@ const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
         html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/map_icons/${iconType}.svg"
+                                  <img class="icon" src="/map/images/map_icons/${iconType}.svg">
                               </div>
                               `
     })
@@ -31,18 +31,19 @@ const options = {
     })
 };
 
-function getWptIcon(point, color, background) {
+function getWptIcon(point, color, background, icon) {
     let colorBackground = color ? color :
         (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
     let shapeBackground = background ? background : point.background;
     let svg = getSvgBackground(colorBackground, shapeBackground);
+    let iconWpt = icon ? icon : point.extensions?.icon;
 
-    if (point.extensions?.icon) {
+    if (iconWpt) {
         return L.divIcon({
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${point.extensions.icon}.svg"
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${iconWpt}.svg">
                               </div>
                               `
         })
@@ -51,7 +52,7 @@ function getWptIcon(point, color, background) {
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg"
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg">
                               </div>
                               `
         })

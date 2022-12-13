@@ -61,7 +61,7 @@ const FavoriteInfoTab = ({width}) => {
                         category: wpt.ext.category ? wpt.ext.category : 'favourites',
                         background: wpt.background,
                         color: wpt.color,
-                        icon: wpt.ext.extensions.icon,
+                        icon: wpt.icon,
                         lat: wpt.ext.lat,
                         lon: wpt.ext.lon,
                         time: wpt.ext.time,
@@ -82,11 +82,12 @@ const FavoriteInfoTab = ({width}) => {
                 </Grid>
                 {favorite?.marker && <Grid className={styles.name} item xs={2}>
                     <div className={classes.icon}
-                         dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker, favorite.color, favorite.background).options.html + ''}}/>
+                         dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker, favorite?.color, favorite?.background, favorite?.icon).options.html + ''}}/>
                 </Grid>}
             </Grid>
             <Grid container sx={{mt: -9}}>
-                <ListItemIcon style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[favorite.category].color}}>
+                <ListItemIcon
+                    style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[favorite.category].color}}>
                     <Folder fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText>
@@ -121,6 +122,7 @@ const FavoriteInfoTab = ({width}) => {
         {editFavoritesDialogOpen
             && <EditFavoriteDialog
                 favorite={favorite}
+                editFavoritesDialogOpen={editFavoritesDialogOpen}
                 setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}/>}
         <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={toggleDeleteFavoritesDialogOpen}>Delete</Button>
