@@ -15,9 +15,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Informational widgets provide information about current location, speed, time, battery level on the map display.
+Information widgets display information about your current location, speed, time, and battery level on the map screen.
 
-Most of informational widgets stack together in the right column.
+Most information widgets are located together in the right column.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -231,7 +231,6 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/> |
 | By tapping | Starts / Stop track recording |
 
-
 </TabItem>
 
 </Tabs>  
@@ -239,18 +238,17 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ## * External sensors widgets
 
-
 :::note 
 External sensors widgets can be added to the map screen only when OsmAnd External sensors plugin is enabled.  
 :::  
 
-External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
+External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/ant_widgets_screen_android.png) 
+![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets.png) 
 
 | | |
 |------------|------------|
@@ -273,7 +271,6 @@ External sensors widgets are currently not available for the iOS version of the 
 ## * Parking widget
 
 >Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
-
 
 This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking.md) widget that shows distance from your screen center to the parking place.
 

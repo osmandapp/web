@@ -22,10 +22,6 @@ External sensors plugin is currently not available for the iOS version of the Os
 
 If you have a variety of sensor devices for cycling, you can use the data they record in the OsmAnd app.
 
-<!--The plugin allows to add external sensors for displaying data on the OsmAnd screen.  
-
-By this plugin you can have additional data on the OsmAnd screen from [wireless external sensors
- -->
 
 ## Overview
 The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on ANT+ technology and display this data using widgets in the OsmAnd application. ANT+ is an ultra low power wireless transfer standard that can be used with the basic [ANT protocol](https://en.wikipedia.org/wiki/ANT_(network)). This managed network is capable of collecting, transmitting, and storing sensor data.  
@@ -35,6 +31,7 @@ The OsmAnd External sensors plugin accesses external sensors and can read data s
 :::tip Information
 Bluetooth network will be added for the next release OsmAnd 4.4.
 :::
+
 
 ## Setup 
 
@@ -52,7 +49,6 @@ The plugin settings are global and apply to all profiles.
 :::
 
 Use one of the following paths to open the plugin settings:  
-
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/>* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/>*   
 
@@ -64,31 +60,18 @@ With the plugin, for each external sensor available to the OsmAnd app, you can u
 
 | Parameter | Description |
 | --- | --- |
-| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | indicates the user's heart rate data in real time. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | indicates how much power the cyclist exerts when riding. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | indicates the speed at which the cyclist pedals. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | indicates the speed at which the bicycle is moving. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | indicates the distance traveled. |  
-
-
-
-<!--### Support external devices ANT+
-
-**Added support for ANT+ sensors.**
-
-At this release, we added support [external devices ANT+](https://en.wikipedia.org/wiki/ANT_(network)#ANT+) (speed, cadence, heart rate, distance, cycle power, temperature). The support external devices Bluetooth we will plan for the next release. 
-
--->
+| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | Indicates the user's heart rate data in real time. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | Indicates how much power the cyclist exerts when riding. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | Indicates the speed at which the cyclist pedals. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | Indicates the speed at which the bicycle is moving. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | Indicates the distance traveled. |  
 
 
 ## Widgets
 
-The [External Sensors widget](../widgets/info-widgets.md#-external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them to the Configure Screen menu. External Sensors widgets help you track data from your external sensors in real time.  
+The [External Sensors widget](../widgets/info-widgets.md#-external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them to the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real time.  
 
 Use the following path to display the widget on the screen:  
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*  
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_android.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/ant_widgets_1_android.png)
- 
-
-
+![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid1.png) ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
