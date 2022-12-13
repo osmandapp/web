@@ -20,6 +20,12 @@ You can participate in testing OsmAnd beta build thru Google Play.
   
 In the previous release OsmAnd 4.2, we added [this feature for testing](https://osmand.net/blog/osmand-android-4-2-released#25d-view-for-testing). Now, OpenGL rendering engine is available by default.
 
+:::note
+Be sure to check that you have [OpenGL render mode](https://osmand.net/docs/user/personal/global-settings#map-rendering-engine) enabled:
+
+_Menu → Settings → OsmAnd settings → Map rendering engine → Version 2 (OpenGL)_
+:::
+
 The setting for Enable/Disable 2.5D view is located in profile settings:
 
 _Menu → Configure profile → General settings → 2.5D view_ 
