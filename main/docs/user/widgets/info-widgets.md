@@ -191,14 +191,11 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## Sunset and sunrise widgets
 
+These widgets show "Time left" and time of next sunrise or sunset for center map.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">   
-
-
-Added Sunrise, sunset widgets. These widgets show "Time left" of time of next sunrise or sunset. It's clickable widgets:
-
-Menu → Configure screen → Right panel / Left panel → Sunrise, sunset
 
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
