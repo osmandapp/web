@@ -189,11 +189,11 @@ The initial zoom level (0) is the level at which the entire surface of the earth
 Each next zoom level reduces the imaginary distance to the ground by about 2 times.  
 :::
 
-### Distance from camera to target 
+### Distance to target
 
-The widget shows the distance between camera (viewer) and center of the map.  
+Distance from camera to target widget shows the distance between camera (viewer) and center of the map.  
 
-### Comparison to the real life satellite imagery
+### Comparison with a satellite imagery
 
 A comparison of the map and the earth's surface reveals the following patterns:  
 
