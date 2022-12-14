@@ -164,12 +164,11 @@ Altitude Widget is currently not available for the iOS version of the OsmAnd app
 
 In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use Camera position Widgets.
 
-Use the following path to display the widget on the map screen:  
-*Menu → Configure screen → Left / Right panel → Developer Widgets*    
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*Menu → Configure screen → Left / Right panel → Developer Widgets*    
 
 ![Camera position Widgets 21](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
