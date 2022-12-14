@@ -233,31 +233,48 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 </Tabs>
 
+
 ## Appearance on the map
 
-[Description Appearance on the map](../widgets/markers.md#configure-marker-widgets-and-appearance-on-the-map)  
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. [Description Marker widgets](../widgets/markers.md#configure-marker-widgets-and-appearance-on-the-map)   
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Use the following path to configure the appearance of the markers on the map:  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png) 
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
+
+|    | Description    | State | 
+| :------------- | :------------- | :------------- |
+| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
+|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
+| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
+| <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
+| <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Use the following path to configure the appearance of the markers on the map:  
 *<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
 
-![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
+
+|    | Description    | State | 
+| :------------- | :------------- | :------------- |
+| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
+|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
+| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
 
 </TabItem>
 
-</Tabs>
+</Tabs> 
 
 
 ## Map markers widgets
@@ -353,7 +370,7 @@ Read more about [markers](../personal/markers.md).
 
 <TabItem value="android" label="Android">
 
-You can delete or add the Map markers widget by following:  
+Use the following path to display the widgets on the screen:  
 *Menu → Configure screen → Widgets → Top panel → Map markers*   
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets-01.png)  

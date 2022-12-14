@@ -108,56 +108,9 @@ You can also select one or two markers to display in the widget. Read more about
 </Tabs> 
 
 
-## Appearance on the map
-
-Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-Use the following path to configure the appearance of the markers on the map:  
-*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
-
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
-
-|    | Description    | State | 
-| :------------- | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
-|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
-|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
-| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
-| <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
-| <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Use the following path to configure the appearance of the markers on the map:  
-*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
-
-![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
-
-|    | Description    | State | 
-| :------------- | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
-|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
-|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
-| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
-| <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
-| <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
-
-</TabItem>
-
-</Tabs> 
-
-
-## Configure Marker widgets
+## Configure marker widgets
 
 Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings can be read [here](../personal/markers#map-markers-widgets).  
-
-<!--All marker appearance settings and widget parameters are configured through the same menu.-->
 
 <Tabs groupId="operating-systems">
 
@@ -175,6 +128,33 @@ Use the following path to configure the appearance of the markers on the map:
 :::caution Android only
 Map marker widgets settings are not provided for the iOS version of the OsmAnd app.
 :::
+
+</TabItem>
+
+</Tabs> 
+
+
+## Appearance on the map
+
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information at this [link](../personal/markers.md#appearance-on-the-map)  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To configure the appearance of the map markers, follow this path::  
+*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
+
+![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+To configure the appearance of the map markers, follow this path::  
+*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
+
+![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 
 </TabItem>
 
