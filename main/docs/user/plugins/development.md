@@ -134,16 +134,11 @@ Use the following path to display the widget on the map screen:
 
 With Elevation Widget you can find out the elevation above sea level of the current map center.  
 
-Use the following path to display the widget on the map screen:  
-*Menu → Configure screen → Left / Right panel → Altitude → Elevation: map center* 
-
-:::caution  
-The widget will display the information only after the heightmaps of the desired area are [downloaded](../start-with/download-maps). Please note that these maps are only available for some regions.  
-:::
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*Menu → Configure screen → Left / Right panel → Altitude → Elevation: map center* 
 
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
 
@@ -151,6 +146,7 @@ The widget will display the information only after the heightmaps of the desired
 
 <TabItem value="ios" label="iOS">  
 
+<!-- TODO use component & Review -->
 :::caution Android only
 Altitude Widget is currently not available for the iOS version of the OsmAnd app.  
 :::
@@ -159,6 +155,9 @@ Altitude Widget is currently not available for the iOS version of the OsmAnd app
 
 </Tabs>  
 
+:::caution  
+The widget will display the information only after the heightmaps of the desired area are [downloaded](../start-with/download-maps.md). Please note that these maps are only available for some regions.  
+:::
 
 ### Camera position Widgets  
 
