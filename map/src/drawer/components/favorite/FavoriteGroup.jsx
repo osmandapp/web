@@ -1,5 +1,13 @@
-import {Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Switch, Typography} from "@mui/material";
-import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
+import {
+    Collapse,
+    LinearProgress,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Switch,
+    Typography
+} from "@mui/material";
+import {Add, ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import FavoriteItem from "./FavoriteItem";
 import AppContext from "../../../context/AppContext";

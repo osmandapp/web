@@ -1,0 +1,42 @@
+import React, {useState} from "react";
+import FavoriteManager from "../../../../context/FavoriteManager";
+import {Box, ListItem, ListItemButton, ListItemText, Typography} from "@mui/material";
+import favoriteEditMenuStyles from "../../../styles/FavoriteEditMenuStyles";
+
+export default function EditFavoriteShape({color, favoriteShape, setFavoriteShape, defaultBackground}) {
+    const favoriteStyles = favoriteEditMenuStyles();
+    const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
+    let shapesSvg = FavoriteManager.getShapesSvg(color);
+
+    return (<>
+            <ListItemText>
+                <Typography variant="inherit" noWrap>
+                    Select shape
+                </Typography>
+            </ListItemText>
+            <Box component="div"
+                 sx={{
+                     display: 'flex',
+                     overflow: "hidden"
+                 }}
+            >
+                {Object.entries(shapesSvg).map((shape, index) => {
+                    return <ListItem style={{maxWidth: 71}} component="div" key={index} disablePadding>
+                        <ListItemButton
+                            sx={{maxHeight: 50}}
+                            selected={favoriteShape === shape[0] || (!selectFavoriteShape && shape[0] === defaultBackground)}
+                            onClick={() => {
+                                setSelectFavoriteShape(true);
+                                setFavoriteShape(shape[0]);
+                            }}
+                        >
+                            <div className={favoriteStyles.background}
+                                 dangerouslySetInnerHTML={{__html: shape[1] + ''}}/>
+                        </ListItemButton>
+                    </ListItem>
+                })}
+
+            </Box>
+        </>
+    );
+}

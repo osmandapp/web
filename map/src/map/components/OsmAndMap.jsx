@@ -69,6 +69,7 @@ const OsmAndMap = () => {
                       zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
         >
             <LocalClientTrackLayer/>
+            <RouteLayer/>
             <FavoriteLayer/>
             <WeatherLayer/>
             <FavoriteLayer/>

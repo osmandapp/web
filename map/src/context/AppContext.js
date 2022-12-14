@@ -320,6 +320,10 @@ export const AppContextProvider = (props) => {
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
+    const [addFavorite, setAddFavorite] = useState({
+        add: false,
+        location: null
+    });
 
     const [localTracks, setLocalTracks] = useState(TracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
@@ -402,6 +406,7 @@ export const AppContextProvider = (props) => {
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
         favorites, setFavorites,
+        addFavorite, setAddFavorite,
         avoidRoads, setAvoidRoads,
         localTracks, setLocalTracks,
         currentObjectType, setCurrentObjectType,

@@ -5,8 +5,8 @@ import contextMenuStyles from "../../styles/ContextMenuStyles";
 import AppContext from "../../../context/AppContext";
 import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
-import EditFavoriteDialog from "../EditFavoriteDialog";
-import DeleteFavoriteDialog from "../DeleteFavoriteDialog";
+import EditFavoriteDialog from "../favorite/EditFavoriteDialog";
+import DeleteFavoriteDialog from "../favorite/DeleteFavoriteDialog";
 
 const useStyles = makeStyles({
     icon: {
@@ -58,7 +58,7 @@ const FavoriteInfoTab = ({width}) => {
                         desc: wpt.desc === 'null' ? "" : wpt.desc,
                         comment: wpt.ext.comment,
                         address: wpt.address === 'null' ? "" : wpt.address,
-                        category: wpt.ext.category ? wpt.ext.category : 'favourites',
+                        category: wpt.category ? wpt.category : 'favorites',
                         background: wpt.background,
                         color: wpt.color,
                         icon: wpt.icon,

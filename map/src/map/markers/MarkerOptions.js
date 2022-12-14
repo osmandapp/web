@@ -3,6 +3,9 @@ import L from "leaflet";
 const BACKGROUND_WPT_SHAPE_CIRCLE = "circle";
 const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
 const BACKGROUND_WPT_SHAPE_SQUARE = "square";
+const DEFAULT_WPT_ICON = 'special_star';
+const DEFAULT_WPT_COLOR = '#eecc22';
+
 
 const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
 
@@ -33,7 +36,7 @@ const options = {
 
 function getWptIcon(point, color, background, icon) {
     let colorBackground = color ? color :
-        (point.extensions && point.extensions.color) ? point.extensions.color : '#eecc22';
+        (point.extensions && point.extensions.color) ? point.extensions.color : DEFAULT_WPT_COLOR;
     let shapeBackground = background ? background : point.background;
     let svg = getSvgBackground(colorBackground, shapeBackground);
     let iconWpt = icon ? icon : point.extensions?.icon;
@@ -52,7 +55,7 @@ function getWptIcon(point, color, background, icon) {
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_special_star.svg">
+                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${DEFAULT_WPT_ICON}.svg">
                               </div>
                               `
         })
@@ -91,7 +94,9 @@ const MarkerOptions = {
     getSvgBackground,
     BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
-    BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE
+    BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,
+    DEFAULT_WPT_ICON:DEFAULT_WPT_ICON,
+    DEFAULT_WPT_COLOR:DEFAULT_WPT_COLOR
 };
 
 export default MarkerOptions;

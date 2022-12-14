@@ -67,19 +67,21 @@ function parseWpt(points, layers) {
         let opt;
         let icon = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon)
         let pInfo = point.ext;
+        let lat = point.lat ? point.lat : pInfo.lat;
+        let lon = point.lon ? point.lon : pInfo.lon;
         if (icon) {
             opt = {clickable: true, icon: icon};
-            opt.group = pInfo.category ? pInfo.category : 'Favorites';
-            if (pInfo.time) {
+            if (pInfo?.time) {
                 opt.time = pInfo.time;
             }
-            if (pInfo.cmt) {
+            if (pInfo?.cmt) {
                 opt.cmt = pInfo.cmt;
             }
         }
         if (point.name) {
             opt.title = point.name;
         }
+        opt.category = point.category ? point.category : 'favorites'
         if (point.desc) {
             opt.desc = point.desc;
         }
@@ -87,7 +89,7 @@ function parseWpt(points, layers) {
             opt.address = point.address;
         }
 
-        let marker = new L.Marker(new L.LatLng(pInfo.lat, pInfo.lon), opt);
+        let marker = new L.Marker(new L.LatLng(lat, lon), opt);
 
         layers.push(marker);
     })

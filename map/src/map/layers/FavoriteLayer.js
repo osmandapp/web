@@ -64,6 +64,18 @@ const FavoriteLayer = () => {
             }
         })
     }
+
+    useEffect(() => {
+        if (ctx.addFavorite?.add) {
+            map.on('click', function(e){
+                ctx.addFavorite.location = e.latlng;
+                ctx.addFavorite.add = false;
+                ctx.setAddFavorite({...ctx.addFavorite})
+            });
+        } else if (!ctx.addFavorite.location) {
+            map.off('click');
+        }
+    },[ctx.addFavorite]);
 };
 
 export default FavoriteLayer;

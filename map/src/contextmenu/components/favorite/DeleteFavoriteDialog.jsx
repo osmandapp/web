@@ -2,11 +2,11 @@ import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import TracksManager from "../../context/TracksManager";
+import TracksManager from "../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import {Button} from "@mui/material";
 import React, {useContext} from "react";
-import AppContext from "../../context/AppContext";
+import AppContext from "../../../context/AppContext";
 
 export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
 
