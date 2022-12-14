@@ -112,14 +112,20 @@ You can also select one or two markers to display in the widget. Read more about
 
 Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings can be read [here](../personal/markers#map-markers-widgets).  
 
+<!--*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  -->
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  
+
+<!--*Menu → Configure screen → Widgets → Top panel → Map markers*  -->
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)
+
+<!--![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-02.png)-->
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
 Use the following path to configure the appearance of the markers on the map:  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
-
-![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)
 
 </TabItem>
 

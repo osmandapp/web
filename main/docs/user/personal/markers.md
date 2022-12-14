@@ -395,6 +395,16 @@ You can delete or add the Map markers widget by following:
 </Tabs>
 
 
+### Configure Marker widgets
+
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)
+
+
+### Appearance on the map
+
+You can read how to configure the appearance of the markers in [this section](#appearance-on-the-map) of the current article.
+
+
 ## Plan route for Markers
 
 <Tabs groupId="operating-systems">
