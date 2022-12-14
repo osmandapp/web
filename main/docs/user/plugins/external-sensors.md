@@ -14,7 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
 
 :::caution Android only
 External sensors plugin is currently not available for the iOS version of the OsmAnd app.
@@ -26,7 +25,7 @@ If you have a variety of sensor devices for cycling, you can use the data they r
 ## Overview
 The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+ technology**]((https://en.wikipedia.org/wiki/ANT_(network)) and display this data using widgets in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data.  
 
-The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed* and *Bicycle Distance*. For the plugin to work, don't forget [to connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) your device to the respective sensors.  
+The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed* and *Bicycle Distance*. In order to make the plugin work don't forget [to connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) your device to the respective sensors.  
 
 :::tip Information
 [Bluetooth connected devices](https://developer.android.com/guide/topics/connectivity/bluetooth/ble-overview) will be supported in the future [OsmAnd release](https://github.com/osmandapp/OsmAnd/issues/15459).
