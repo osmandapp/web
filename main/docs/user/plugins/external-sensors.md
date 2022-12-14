@@ -56,7 +56,7 @@ Use one of the following paths to open the plugin settings:
 
 With the plugin, for each external sensor available to the OsmAnd app, you can use two settings:
 - ***<Translate android="true" ids="ant_read_data"/>*** - allows you to connect to the corresponding sensor and read the data it transmits.
-- ***<Translate android="true" ids="ant_write_to_gpx"/>*** - allows you to include sensor data in [the recording GPX track](../plugins/trip-recording.md#recorded-gpx-file).
+- ***<Translate android="true" ids="ant_write_to_gpx"/>*** - allows you to include sensor data in [GPS track record](../plugins/trip-recording.md#recorded-gpx-file).
 
 | Parameter | Description |
 | --- | --- |
