@@ -159,35 +159,41 @@ Altitude Widget is currently not available for the iOS version of the OsmAnd app
 The widget will display the information only after the heightmaps of the desired area are [downloaded](../start-with/download-maps.md). Please note that these maps are only available for some regions.  
 :::
 
-### Camera position Widgets  
+## Camera position Widgets (Android) 
 
 In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use Camera position Widgets.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
 
 *Menu → Configure screen → Left / Right panel → Developer Widgets*    
 
 ![Camera position Widgets 21](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
-**Camera tilt**. The widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
+### Camera tilt
+
+The widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
 
 :::note  
 The camera tilt is changed by moving the camera (viewer) while the center point on the map surface (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
 At the same time, due to the imaginary movement of the viewer, the distance from the camera to the surface changes.
 :::
 
-**Camera Elevation**. The widget shows the camera elevation above the surface level.  
+### Camera Elevation
 
-**Zoom level**. The widget represents the current map zoom level.  
+The widget shows the camera elevation above the surface level.  
+
+### Zoom level
+
+The widget represents the current map zoom level.  
 
 :::note
 The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
 Each next zoom level reduces the imaginary distance to the ground by about 2 times.  
 :::
 
-**Distance from camera to target**. The widget shows the distance between camera (viewer) and center of the map.  
+### Distance from camera to target 
+
+The widget shows the distance between camera (viewer) and center of the map.  
+
+### Comparison to the real life satellite imagery
 
 A comparison of the map and the earth's surface reveals the following patterns:  
 
@@ -214,18 +220,6 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 |20| 26|	12|	30|	10%|
 |20| 50|	11|	30|	10%|
 |20| 66|	11|	30|	10%|
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::caution Android only
-Camera position Widgets are currently not available for the iOS version of the OsmAnd app.
-:::
-
-</TabItem>
-
-</Tabs>  
 
 
 ## GPX-track simulation
