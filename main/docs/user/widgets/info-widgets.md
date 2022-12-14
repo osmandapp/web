@@ -189,6 +189,36 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 </Tabs>  
 
 
+## Sunset and sunrise widgets
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
+
+
+Added Sunrise, sunset widgets. These widgets show "Time left" of time of next sunrise or sunset. It's clickable widgets:
+
+Menu → Configure screen → Right panel / Left panel → Sunrise, sunset
+
+
+![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
+
+| | |
+|------------|------------|
+| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
+| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly /> 
+
+
+</TabItem>
+
+</Tabs>  
+
 
 ## * Trip recording widgets  
 
@@ -210,7 +240,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording
+| Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording |
 | By tapping | Starts/Stop track recording or View the graph|
 
 
