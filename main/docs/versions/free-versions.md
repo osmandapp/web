@@ -17,6 +17,22 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.3 
+Release date: 12/2022
+
+* New, faster Version 2 (OpenGL) map rendering engine, with 2.5D view
+* Smooth animation of location changes while in motion
+* New widgets for map center coordinates and elevation of geolocations
+* "Distance to tap": added text size options
+* "Map marker" widget: added option to change click behavior
+* Fixed "Display position" option
+* GPX: added support for "link", "cmt", "desc" tags and for any custom extensions
+* Reorganized "Nautical maps" list
+* Added support for ANT+ sensors
+* Added option to disable download UUID
+
+<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.3-4303.apk" />
+
 ### Version 4.2 
 Release date: 06/2022
 
