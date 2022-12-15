@@ -36,7 +36,11 @@ export default function CloudTrackItem({file}) {
         } else {
             let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-            newGpxFiles[file.name] = {'url': url, 'clienttimems': file.clienttimems, 'name': file.name};
+            newGpxFiles[file.name] = {
+                'url': url,
+                'clienttimems': file.clienttimems,
+                'updatetimems': file.updatetimems,
+                'name': file.name};
             let f = await Utils.getFileData(newGpxFiles[file.name]);
             const gpxfile = new File([f], file.name, {
                 type: "text/plain",

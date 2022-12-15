@@ -27,11 +27,12 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
 
     async function deleteCurrentTrack() {
         if (ctx.currentObjectType === 'cloud_track' && ctx.loginUser) {
-            let response = await post(`${process.env.REACT_APP_GPX_API}/mapapi/delete-file`, "",
+            let response = await post(`${process.env.REACT_APP_GPX_API}/mapapi/delete-file-version`, "",
                 {
                     params: {
                         name: ctx.selectedGpxFile.name,
                         type: 'GPX',
+                        updatetime: ctx.selectedGpxFile.updatetimems
                     }
                 }
             ).then((response) => response.statusText);
