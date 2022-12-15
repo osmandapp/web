@@ -97,7 +97,7 @@ export default function EditFavoriteDialog({
     function deleteFavoriteFromOldGroup(currentWpt) {
         const resGpxFiles = Object.assign({}, ctx.selectedGpxFile);
         resGpxFiles.file.wpts = ctx.selectedGpxFile.file.wpts.filter(wpt => wpt.name !== currentWpt.name);
-        resGpxFiles.file.pointsGroups[favorite.category].points = ctx.selectedGpxFile.file.wpts;
+        resGpxFiles.file.pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(favorite.category)].points = ctx.selectedGpxFile.file.wpts;
         let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE, resGpxFiles.file, true);
         if (deleted) {
             delete ctx.favorites[resGpxFiles.nameGroup].markers;
@@ -107,15 +107,15 @@ export default function EditFavoriteDialog({
     }
 
     function prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile) {
-        if (currentGroup.name !== '') {
+        if (currentGroup.name !== '' && currentGroup.name !== 'favorites.gpx') {
             currentWpt.category = selectedGroupName;
+            currentGroup.pointsGroups[selectedGroupName].points = currentGroup.wpts;
         }
         if (editSelectedGpxFile) {
             currentGroup.wpts = ctx.selectedGpxFile.file.wpts;
         } else {
             currentGroup.wpts.push(currentWpt);
         }
-        currentGroup.pointsGroups[selectedGroupName].points = currentGroup.wpts;
 
         return currentGroup;
     }

@@ -7,6 +7,7 @@ import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import EditFavoriteDialog from "../favorite/EditFavoriteDialog";
 import DeleteFavoriteDialog from "../favorite/DeleteFavoriteDialog";
+import FavoriteManager from "../../../context/FavoriteManager";
 
 const useStyles = makeStyles({
     icon: {
@@ -59,9 +60,9 @@ const FavoriteInfoTab = ({width}) => {
                         comment: wpt.ext.comment,
                         address: wpt.address === 'null' ? "" : wpt.address,
                         category: wpt.category ? wpt.category : 'favorites',
-                        background: wpt.background,
-                        color: wpt.color,
-                        icon: wpt.icon,
+                        background: wpt.background !== undefined ? wpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                        color: wpt.color !== undefined ? wpt.color : MarkerOptions.DEFAULT_WPT_COLOR,
+                        icon: wpt.icon !== undefined ? wpt.icon : MarkerOptions.DEFAULT_WPT_ICON,
                         lat: wpt.ext.lat,
                         lon: wpt.ext.lon,
                         time: wpt.ext.time,
@@ -87,7 +88,7 @@ const FavoriteInfoTab = ({width}) => {
             </Grid>
             <Grid container sx={{mt: -9}}>
                 <ListItemIcon
-                    style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[favorite.category].color}}>
+                    style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(favorite.category)].color}}>
                     <Folder fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText>

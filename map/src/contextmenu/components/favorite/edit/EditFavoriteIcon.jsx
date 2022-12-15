@@ -27,7 +27,7 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
                 return <ListItem key={index} sx={{maxWidth: 50, maxHeight: 50}} component="div" disablePadding>
                     <ListItemButton
                         sx={{maxWidth: 50, maxHeight: 50, top: -10}}
-                        selected={favoriteIcon === icon || (!selectFavoriteIcon && icon === defaultIcon)}
+                        selected={favoriteIcon === icon || (!selectFavoriteIcon && (icon === defaultIcon))}
                         onClick={() => {
                             setSelectFavoriteIcon(true);
                             setFavoriteIcon(icon);
@@ -60,7 +60,7 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
         ? <ListIcons
             key={FavoriteManager.DEFAULT_TAB_ICONS}
             icons={[MarkerOptions.DEFAULT_WPT_ICON]}/>
-        : getTabUsedIcons(selectFavoriteIcon, setSelectFavoriteIcon);
+        : getTabUsedIcons();
 
     list = tabs && list.concat(Object.keys(tabs).map((item, index) => {
         if (item !== currentIconCategories && item !== FavoriteManager.DEFAULT_TAB_ICONS) {
@@ -74,21 +74,16 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
     list.length > 0 && list.unshift(<Tab icon={<History/>} value={tabs[FavoriteManager.DEFAULT_TAB_ICONS].key + ''}
                                          key={'tab:' + FavoriteManager.DEFAULT_TAB_ICONS}/>);
 
-    function getTabUsedIcons(selectFavoriteIcon, setSelectFavoriteIcon) {
+    function getTabUsedIcons() {
         let res = [];
         selectedGpxFile.file.wpts.forEach(wpt => {
             if (!res.some(icon => icon === wpt.icon)) {
-                res.push(wpt.icon);
+                wpt.icon && res.push(wpt.icon);
             }
         })
         return <ListIcons
             key={FavoriteManager.DEFAULT_TAB_ICONS}
-            icons={res}
-            selectFavoriteIcon={selectFavoriteIcon}
-            setSelectFavoriteIcon={setSelectFavoriteIcon}
-            favoriteIcon={favoriteIcon}
-            setFavoriteIcon={setFavoriteIcon}
-            iconStyle={favoriteStyles.shape}/>;
+            icons={res}/>;
     }
 
     return (<>

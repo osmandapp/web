@@ -13,6 +13,7 @@ import FavoriteItem from "./FavoriteItem";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
+import FavoriteManager from "../../../context/FavoriteManager";
 
 export default function FavoriteGroup({index, group, enableGroups, setEnableGroups}) {
 
@@ -117,7 +118,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
         <MenuItem sx={{ml: 3}} divider onClick={() => {
             toggleFavoritesPointsOpen();
         }}>
-            <ListItemIcon style={{color: group.name && ctx.favorites[group.name]?.pointsGroups[group.name]?.color}}>
+            <ListItemIcon style={{color: group.name && ctx.favorites[group.name]?.pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(group.name)]?.color}}>
                 <Folder fontSize="small"/>
             </ListItemIcon>
             <ListItemText>
