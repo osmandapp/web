@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The plugin helps you take part in a project to create a detailed free geographical map of the world.  OpenStreetMap is a global, community managed, open access map project.
+This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.
 
 
 ## Overview
@@ -45,18 +45,17 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 The plugin settings are global and apply to all profiles.
 :::
 
+- **Login to OpenStreetMap**(Android) / **<Translate ios="true" ids="shared_string_account"/>**(iOS). Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
+- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
+- **<Translate android="true" ids="use_dev_url"/>**(Android). Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
+- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows to update [OsmAnd live](../personal/maps#osmand-live) for mappers. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.    
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Use the following path to open the plugin's settings:  
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
-
-- **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
-- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
-- **<Translate android="true" ids="use_dev_url"/>**. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
-- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows to update [OsmAnd live](../personal/maps#osmand-live) for mappers. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.   
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
@@ -64,15 +63,9 @@ Use the following path to open the plugin's settings:
 
 <TabItem value="ios" label="iOS">
 
-Use the following path to open the plugin's settings:  
-*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*  
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
 
-- **<Translate ios="true" ids="shared_string_account"/>**. Log in to upload new or modified changes. Use your [OSM username and password](https://www.openstreetmap.org/login). 
-- **Offline editing**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
-- **Map updates for mappers**. This setting allows to update [OsmAnd live](../personal/maps#osmand-live) for mappers. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate ios="true" ids="osm_edits_title"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). On this tab you can switch between the *All* *Edit* and *Notes* lists of your unedited OSM notes. The available actions with the note: *Upload modifications to OSM*, *Show modifications on the map*, *Modify OSM changes*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.
-
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
