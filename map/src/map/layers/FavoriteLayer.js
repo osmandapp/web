@@ -19,11 +19,13 @@ const FavoriteLayer = () => {
                         updateSelectedFavoriteOnMap(file);
                     }
                 }
-                if (file.addToMap && file.markers) {
-                    file.markers.addTo(map).on('click', onClick);
-                }
-                if (file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
-                    map.fitBounds(file.markers.getBounds());
+                if (file.markers) {
+                    if (file.addToMap && file.markers) {
+                        file.markers.addTo(map).on('click', onClick);
+                    }
+                    if (file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
+                        map.fitBounds(file.markers.getBounds());
+                    }
                 }
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);

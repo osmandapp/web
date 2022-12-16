@@ -36,7 +36,10 @@ export default function FavoritesMenu() {
         let groups = [];
         files.forEach(file => {
             file.folder = file.name.split(".")[0].replace('favorites-', '');
-            groups.push({name: file.folder, file: file});
+            groups.push({
+                name: file.folder,
+                updatetimems: file.updatetimems,
+                file: file});
         })
 
         createAllLayers(ctx, false, groups).then();
@@ -81,6 +84,7 @@ export default function FavoritesMenu() {
                     newFavoritesFiles[g.name] = {
                         'url': url,
                         'clienttimems': g.file.clienttimems,
+                        'updatetimems': g.file.updatetimems,
                         'name': g.file.name,
                         'addToMap': addToMap
                     };

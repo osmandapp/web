@@ -393,6 +393,32 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
+async function deleteFavorite(data, fileName, updatetime) {
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/delete`, data,
+        {
+            params: {
+                fileName: fileName,
+                fileType: FAVORITE_FILE_TYPE,
+                updatetime: updatetime
+            }
+        }
+    );
+    if (resp.data) {
+        let data = JSON.parse(resp.data.trackData.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            if (value === "***NaN***") {
+                return key === "ele" ? 99999 : NaN;
+            } else {
+                return value;
+            }
+        });
+        return {
+            clienttimems: resp.data.clienttimems,
+            updatetimems: resp.data.updatetimems,
+            data: data
+        }
+    }
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -401,7 +427,7 @@ const TracksManager = {
     prepareName,
     getTrackData,
     addTrack,
-    updateSelectedTrack,
+    deleteFavorite,
     getTrackPoints,
     getGpxTrack,
     saveTrack,

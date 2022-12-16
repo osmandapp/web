@@ -16,15 +16,15 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
         setDialogOpen(!dialogOpen);
     };
 
-    function deleteFavorite() {
+    async function deleteFavorite() {
         for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
             if (ctx.selectedGpxFile.file.wpts[i].name === ctx.selectedGpxFile.markerCurrent.title) {
-                ctx.selectedGpxFile.file.wpts.splice(i, 1);
-                let currentFolder = ctx.selectedGpxFile.file.name;
-                let fileName = ctx.selectedGpxFile.name;
-                let deleted = TracksManager.saveTrack(ctx, currentFolder, fileName, TracksManager.FAVORITE_FILE_TYPE, null, true);
-                if (deleted) {
-                    disableSelectedMarker();
+                let result = await TracksManager.deleteFavorite(
+                    ctx.selectedGpxFile.file.wpts[i],
+                    ctx.selectedGpxFile.file.name,
+                    ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems)
+                if (result) {
+                    updateSelectedFile(result);
                     updateGroupMarkers();
                     closeContextMenu();
                     break;
@@ -33,7 +33,12 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
         }
     }
 
-    function disableSelectedMarker() {
+    function updateSelectedFile(result) {
+        ctx.selectedGpxFile.file.clienttimems = result.clienttimems;
+        ctx.selectedGpxFile.file.updatetimems = result.updatetimems;
+        Object.keys(result.data).forEach(t => {
+            ctx.selectedGpxFile.file[`${t}`] = result.data[t];
+        });
         ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         delete ctx.selectedGpxFile.markerCurrent;
         ctx.selectedGpxFile.editFavorite = true;

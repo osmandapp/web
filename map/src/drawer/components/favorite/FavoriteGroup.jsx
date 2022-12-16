@@ -65,6 +65,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 newFavoriteFiles[group.name] = {
                     'url': url,
                     'clienttimems': group.file.clienttimems,
+                    'updatetimems': group.file.updatetimems,
                     'name': group.file.name,
                     'addToMap': addToMap
                 };
@@ -104,6 +105,8 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 markerList.push(marker);
             });
             setMarkers(markerList);
+        } else {
+            setMarkers([]);
         }
     }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
 
