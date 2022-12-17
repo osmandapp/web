@@ -56,8 +56,8 @@ Read more info [here](https://osmand.net/docs/user/personal/storage#backup-and-r
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/backup_ios.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/backup_1_ios.png').default} alt="turn arrows visible"/></td>    
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/backup_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/backup_1_ios.png').default} alt="turn arrows visible"/></td>    
     </tr>
 </table> 
 
@@ -78,7 +78,7 @@ Weather map layers: _Menu → Configure map → Weather_
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/weather_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/weather_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -98,7 +98,7 @@ _Menu → Settings → Purchases_
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/purchases_screen.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/purchases_screen.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -111,8 +111,8 @@ Slope, Surface, Smoothness - for [OsmAnd Pro](https://osmand.net/docs/user/purch
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/gpx_colors_ios.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/gpx_colors_1_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/gpx_colors_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/gpx_colors_1_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -129,7 +129,7 @@ Each saving or editing for Favorites makes a backup file.
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/favorites_autobackup.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/favorites_autobackup.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -140,8 +140,8 @@ POI saved to favorites will store and show all POI data even without an offline 
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/favorites_poi_ios.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/favorites_poi_1_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/favorites_poi_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/favorites_poi_1_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -166,7 +166,7 @@ Now, you can see OsmAnd maps files in _Files → On my iPhone → OsmAnd Maps �
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/resources_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/resources_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
@@ -207,7 +207,7 @@ _Menu → Configure screen → Compass_:
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2022-12-10-ios-4-3/compass_ios.png').default} alt="turn arrows visible"/></td>
+    <td><img src={require('@site/blog/2022-12-17-ios-4-3/compass_ios.png').default} alt="turn arrows visible"/></td>
     </tr>
 </table> 
 
