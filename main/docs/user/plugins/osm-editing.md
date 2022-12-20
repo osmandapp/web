@@ -144,8 +144,8 @@ select the required track from *<Translate android="true" ids="shared_string_men
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
-   - *Public* means that the track is public and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
-   -  *Identifiable* means that the track will be a public display in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+   - *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+   - *Identifiable* means that the track will be publicly displayed in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
    - *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
    - *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
 - **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
@@ -156,11 +156,11 @@ You can select more than one track to upload to OSM. To do this, tap the *Upload
 
 ### Generate OBF file
 
-If you have large database of GPX tracks (like Collection of Tracks from OSM with tag 'gpsies' https://osmand.net/uploads/gpsies-cycling.travel.obf), for example downloaded from OpenStreetMap or your own colllection, you can create an OBF file using OsmAndMapCreator (utilities.sh convert-gpx-to-obf <path_to_folder_with_gpx_files>). 
+You can create an OBF file with [OsmAndMapCreator](../versions/map-creator/) if you have a large GPX track database. This is a collection of tracks from osmand.net with the 'gpsies' tag, a collection of downloaded tracks from OpenStreetMap or your own collection. 
 
 ## OSM Notes
 
-The OSM Notes feature allows you to add notes to the map, in which you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
+The OSM Notes feature allows you to add notes to the map. In these notes you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
 You can help other users by checking their questions or issues, giving comments and then closing the resolved notes.  
 Read more about the OpenStreetMap Notes [here](https://wiki.openstreetmap.org/wiki/Notes).
 
