@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The plugin helps you take part in a project to create a detailed free geographical map of the world.  OpenStreetMap is a global, community managed, open access map project.
+The plugin helps you take part in a project to create a detailed free geographical map of the world. OpenStreetMap is a global, community managed, open access map project.
 
 
 ## Overview
@@ -118,7 +118,10 @@ You can view, upload or delete OSM in My Places - OSM POIs. You can also switch 
 
 
 ## GPS Track
-_**This feature is not yet available for iOS.**_
+
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
 
 The GPS tracks you have recorded are useful for:
 
@@ -132,10 +135,10 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 
 ### Upload GPS track
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+To upload the GPS track:  
+select the required track from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*, tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or tap the three-dot menu next to the track name and select *Export*.  
 
-To upload a track select it from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*,
-click [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*. Or tap the three-dot menu next to the track name and select *Export*.  
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)   
 
 **Settings:**
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
@@ -157,15 +160,18 @@ If you have large database of GPX tracks (like Collection of Tracks from OSM wit
 
 ## OSM Notes
 
-### Display OSM Notes
-
 The OSM Notes feature allows you to add notes to the map, in which you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
+You can help other users by checking their questions or issues, giving comments and then closing the resolved notes.  
+Read more about the OpenStreetMap Notes [here](https://wiki.openstreetmap.org/wiki/Notes).
+
+### Display OSM Notes  
+
+To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md)
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):   
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)
@@ -173,8 +179,7 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):    
+    
 *<Translate ios="true" ids="menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
@@ -186,17 +191,11 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 
 ### Create / Modify OSM Note
 
-To create or modify Note you need to access [Context menu Actions](../map/map-context-menu.md#actions). 
-- To create a new OSM note choose Action "Create OSM Note" 
-- To edit comment or close existing OSM note select OSM note via Context menu.
-
-You need Upload changes once you are available online. You also can discard your changes until they are uploaded.
-
-:::note
-To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.  
-:::
+To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.
+- Tap the map where the new OSM note is to be placed (or tap a not uploaded note), and select [Actions](../map/map-context-menu.md#actions).
+- If you want to add information to an existing note or not uploaded note, edit a comment, or close a note, tap the OSM note on the map and select the [required action](../map/map-context-menu.md#-comment--close-osm-note).
+- You can upload changes as soon as you are available online. You can also undo changes before they are uploaded.  
 
 :::note
 The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
 :::
-
