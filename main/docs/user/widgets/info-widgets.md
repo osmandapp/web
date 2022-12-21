@@ -295,6 +295,13 @@ External sensors widgets are currently not available for the iOS version of the 
 </Tabs>  
 
 
+## * Weather Widgets
+
+:::note 
+Weather Widgets can be added to the map screen only when OsmAnd Weather plugin is enabled.  
+:::
+
+
 ## * Parking widget
 
 >Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
