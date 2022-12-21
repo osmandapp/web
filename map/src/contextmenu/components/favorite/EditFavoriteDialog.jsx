@@ -59,68 +59,57 @@ export default function EditFavoriteDialog({
         }
     }
 
-    function save() {
+
+    async function save() {
         let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
-        let editSelectedGpxFile = selectedGroupName === ctx.selectedGpxFile.nameGroup;
-        let currentGroup = ctx.favorites[selectedGroupName];
-        let currentWpt = getCurrentWpt();
-        let fileSaved;
-        if (!editSelectedGpxFile) {
-            let deleted = deleteFavoriteFromOldGroup(currentWpt);
-            if (deleted) {
-                fileSaved = addFavoriteToGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile);
-            }
-        } else {
-            fileSaved = addFavoriteToGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile);
-        }
-        if (fileSaved) {
-            delete currentGroup.markers;
-            updateSelectedFavorites(currentGroup, selectedGroupName);
-            ctx.setFavorites({...ctx.favorites});
+        let currentWpt = getCurrentWpt(selectedGroupName);
+
+        let result = await TracksManager.updateFavorite(
+            currentWpt,
+            ctx.selectedGpxFile.name,
+            ctx.selectedGpxFile.file.name,
+            ctx.favorites[selectedGroupName].name,
+            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems,
+            ctx.favorites[selectedGroupName].updatetimems)
+        if (result) {
+            updateFavoriteGroups(result, selectedGroupName);
             setEditFavoritesDialogOpen(false);
         }
     }
 
-    function addFavoriteToGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile) {
-        currentGroup = prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile);
-        return TracksManager.saveTrack(ctx, currentGroup.name, currentWpt.name, TracksManager.FAVORITE_FILE_TYPE, currentGroup, true);
-    }
+    function updateFavoriteGroups(result, selectedGroupName) {
+        //update old group
+        if (result.oldGroupTrackData) {
+            ctx.favorites[ctx.selectedGpxFile.nameGroup].clienttimems = result.oldGroupClienttimems;
+            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems = result.oldGroupUpdatetimems;
+            Object.keys(result.oldGroupTrackData).forEach(t => {
+                ctx.favorites[ctx.selectedGpxFile.nameGroup][`${t}`] = result.oldGroupTrackData[t];
+            });
+            delete ctx.favorites[ctx.selectedGpxFile.nameGroup].markers;
+        }
 
-    function updateSelectedFavorites(currentGroup, selectedGroupName) {
-        ctx.selectedGpxFile.file = currentGroup
+        const newGroup = Object.assign({}, ctx.favorites[selectedGroupName])
+        newGroup.clienttimems = result.newGroupClienttimems;
+        newGroup.updatetimems = result.newGroupUpdatetimems;
+        Object.keys(result.newGroupTrackData).forEach(t => {
+            newGroup[`${t}`] = result.newGroupTrackData[t];
+        });
+
+        //update new group
+        ctx.favorites[selectedGroupName] = newGroup;
+        delete ctx.favorites[selectedGroupName].markers;
+        ctx.setFavorites({...ctx.favorites});
+
+        //update select
+        ctx.selectedGpxFile.file = newGroup
+        ctx.selectedGpxFile.name = favoriteName;
         ctx.selectedGpxFile.nameGroup = selectedGroupName;
         ctx.selectedGpxFile.editFavorite = true;
         ctx.selectedGpxFile.markerCurrent.title = favoriteName;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
-    function deleteFavoriteFromOldGroup(currentWpt) {
-        const resGpxFiles = Object.assign({}, ctx.selectedGpxFile);
-        resGpxFiles.file.wpts = ctx.selectedGpxFile.file.wpts.filter(wpt => wpt.name !== currentWpt.name);
-        resGpxFiles.file.pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(favorite.category)].points = ctx.selectedGpxFile.file.wpts;
-        let deleted = TracksManager.saveTrack(ctx, ctx.selectedGpxFile.file.name, ctx.selectedGpxFile.name, TracksManager.FAVORITE_FILE_TYPE, resGpxFiles.file, true);
-        if (deleted) {
-            delete ctx.favorites[resGpxFiles.nameGroup].markers;
-            return true;
-        }
-        return false;
-    }
-
-    function prepareGroup(currentGroup, selectedGroupName, currentWpt, editSelectedGpxFile) {
-        if (currentGroup.name !== '' && currentGroup.name !== 'favorites.gpx') {
-            currentWpt.category = selectedGroupName;
-            currentGroup.pointsGroups[selectedGroupName].points = currentGroup.wpts;
-        }
-        if (editSelectedGpxFile) {
-            currentGroup.wpts = ctx.selectedGpxFile.file.wpts;
-        } else {
-            currentGroup.wpts.push(currentWpt);
-        }
-
-        return currentGroup;
-    }
-
-    function getCurrentWpt() {
+    function getCurrentWpt(selectedGroupName) {
         let res = null;
         ctx.selectedGpxFile.file.wpts.forEach(wpt => {
             if (wpt.name === favorite.name) {
@@ -130,6 +119,7 @@ export default function EditFavoriteDialog({
                 wpt.color = favoriteColor;
                 wpt.background = favoriteShape;
                 wpt.icon = favoriteIcon;
+                wpt.category = selectedGroupName
                 res = wpt;
             }
         })
