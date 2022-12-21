@@ -1,13 +1,15 @@
-import {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import AppContext from "../../context/AppContext";
 import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
-import L from "leaflet";
+import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const [openAddDialog, setOpenAddDialog] = useState(false);
 
     //add favorites groups
     useEffect(() => {
@@ -67,6 +69,16 @@ const FavoriteLayer = () => {
             }
         })
     }
+
+    useEffect(() => {
+        if (ctx.addFavorite.location && !openAddDialog) {
+            setOpenAddDialog(true);
+        }
+    },[ctx.addFavorite]);
+
+    return <AddFavoriteDialog
+        dialogOpen={openAddDialog}
+        setDialogOpen={setOpenAddDialog}/>
 };
 
 export default FavoriteLayer;

@@ -39,6 +39,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     const [favoriteColor, setFavoriteColor] = useState(MarkerOptions.DEFAULT_WPT_COLOR);
     const [favoriteShape, setFavoriteShape] = useState(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
+    const [errorName, setErrorName] = useState(false);
 
     useEffect(() => {
         getIconCategories().then();
@@ -134,7 +135,9 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             </Grid>
             <DialogContent>
                 <EditFavoriteName favoriteName={favoriteName}
-                                  setFavoriteName={setFavoriteName}/>
+                                  setFavoriteName={setFavoriteName}
+                                  favoriteGroup={favoriteGroup}
+                                  setErrorName={setErrorName}/>
                 {!addAddress && <ListItemText>
                     <IconButton sx={{mt: -1}}
                                 onClick={() => setAddAddress(true)}>
@@ -175,7 +178,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                                    defaultBackground={MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}/>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => save()}>
+                <Button disabled={errorName} onClick={() => save()}>
                     Save</Button>
             </DialogActions>
         </Dialog>

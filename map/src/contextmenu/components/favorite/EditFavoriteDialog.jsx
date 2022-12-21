@@ -36,6 +36,7 @@ export default function EditFavoriteDialog({
     const [favoriteIcon, setFavoriteIcon] = useState(favorite.icon);
     const [favoriteIconCategories, setFavoriteIconCategories] = useState(null);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
+    const [errorName, setErrorName] = useState(false);
 
     const toggleDeleteFavoritesDialogOpen = () => {
         setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);
@@ -148,7 +149,10 @@ export default function EditFavoriteDialog({
             </Grid>
             <DialogContent>
                 <EditFavoriteName favoriteName={favoriteName}
-                                  setFavoriteName={setFavoriteName}/>
+                                  setFavoriteName={setFavoriteName}
+                                  favoriteGroup={favoriteGroup}
+                                  favorite={favorite}
+                                  setErrorName={setErrorName}/>
                 <EditFavoriteAddress favoriteAddress={favoriteAddress}
                                      setFavoriteAddress={setFavoriteAddress}
                                      setClose={null}/>
@@ -181,7 +185,7 @@ export default function EditFavoriteDialog({
                     && <DeleteFavoriteDialog
                         dialogOpen={deleteFavoritesDialogOpen}
                         setDialogOpen={setDeleteFavoritesDialogOpen}/>}
-                <Button onClick={() => save()}>
+                <Button disabled={errorName} onClick={() => save()}>
                     Save</Button>
             </DialogActions>
         </Dialog>

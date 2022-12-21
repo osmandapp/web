@@ -72,7 +72,6 @@ const OsmAndMap = () => {
             <RouteLayer/>
             <FavoriteLayer/>
             <WeatherLayer/>
-            <FavoriteLayer/>
             <TrackLayer/>
             <TileLayer
                 ref={tileLayer}

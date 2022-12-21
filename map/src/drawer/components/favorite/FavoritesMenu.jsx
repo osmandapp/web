@@ -13,7 +13,6 @@ import FavoriteAllGroups from "./FavoriteAllGroups";
 import FavoriteGroup from "./FavoriteGroup";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
-import AddFavoriteDialog from "../../../contextmenu/components/favorite/AddFavoriteDialog";
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -22,7 +21,6 @@ export default function FavoritesMenu() {
     const [enableGroups, setEnableGroups] = useState([]);
     const [favoritesGroups, setFavoritesGroups] = useState([]);
     const [loadingFavorites, setLoadingFavorites] = useState(false);
-    const [openAddDialog, setOpenAddDialog] = useState(false);
 
     //create groups
     useEffect(() => {
@@ -116,12 +114,6 @@ export default function FavoritesMenu() {
         }
     }
 
-    useEffect(() => {
-        if (ctx.addFavorite.location) {
-            setOpenAddDialog(true);
-        }
-    },[ctx.addFavorite]);
-
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setFavoriteGroupsOpen(!favoriteGroupsOpen)}>
             <ListItemIcon>
@@ -146,8 +138,5 @@ export default function FavoritesMenu() {
                                       setEnableGroups={setEnableGroups}/>;
             })}
         </Collapse>
-        {ctx.addFavorite.location && <AddFavoriteDialog
-            dialogOpen={openAddDialog}
-            setDialogOpen={setOpenAddDialog}/>}
     </>;
 }

@@ -5,6 +5,7 @@ import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
 import TracksManager from "../../context/TracksManager";
 import MarkerOptions from "../markers/MarkerOptions";
+import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
 
 
 function dist(a1, a2) {
