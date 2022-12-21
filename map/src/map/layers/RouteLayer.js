@@ -177,6 +177,11 @@ const RouteLayer = () => {
         TracksManager.addTrack(ctx, newTrack);
     }
 
+    function addFavorite(e) {
+        ctx.addFavorite.location = e.latlng;
+        ctx.setAddFavorite({...ctx.addFavorite});
+    }
+
     useEffect(() => {
         if (map) {
             // const map = mapRef.current;
@@ -200,6 +205,10 @@ const RouteLayer = () => {
             map.contextmenu.addItem({
                 text: 'Generate track',
                 callback: generateLocalTrack
+            });
+            map.contextmenu.addItem({
+                text: 'Add favorite',
+                callback: (e) => addFavorite(e)
             });
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData]);

@@ -7,7 +7,6 @@ import AppContext from "../../context/AppContext";
 import SaveTrackDialog from "./SaveTrackDialog";
 import DeleteTrackDialog from "./DeleteTrackDialog";
 import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
-import AddFavoriteDialog from "./favorite/AddFavoriteDialog";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -26,7 +25,6 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
     const divContainer = useRef(null);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-    const [openAddDialog, setOpenAddDialog] = useState(false);
 
     useEffect(() => {
         if (divContainer.current) {
@@ -42,16 +40,6 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                     <ButtonGroup
                         orientation="vertical"
                         color="primary">
-                        {ctx.currentObjectType === 'favorite' && <IconButton
-                            variant="contained"
-                            type="button"
-                            onClick={() => {
-                                ctx.addFavorite.add = true;
-                                ctx.addFavorite.close = false;
-                                ctx.setAddFavorite({...ctx.addFavorite});
-                            }}>
-                            <Add fontSize="small"/>
-                        </IconButton>}
                         {ctx.currentObjectType === 'local_client_track' && <IconButton
                             variant="contained"
                             type="button"
@@ -91,10 +79,6 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                 && <DeleteFavoriteDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}/>}
-            {openAddDialog && ctx.currentObjectType === 'favorite'
-                && <AddFavoriteDialog
-                    dialogOpen={openAddDialog}
-                    setDialogOpen={setOpenAddDialog}/>}
         </div>);
 };
 

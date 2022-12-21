@@ -1,15 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
-    Button,
     Collapse,
-    FormControl, Grid, IconButton, Input, InputLabel,
     LinearProgress,
     ListItemIcon,
     ListItemText,
-    MenuItem, Tooltip,
+    MenuItem,
     Typography
 } from "@mui/material";
-import {ExpandLess, ExpandMore, RemoveCircle, Star} from "@mui/icons-material";
+import {ExpandLess, ExpandMore, Star} from "@mui/icons-material";
 import AppContext from "../../../context/AppContext";
 import FavoriteAllGroups from "./FavoriteAllGroups";
 import FavoriteGroup from "./FavoriteGroup";
@@ -119,11 +117,10 @@ export default function FavoritesMenu() {
     }
 
     useEffect(() => {
-        if (!favoriteGroupsOpen) {
-            ctx.addFavorite.location = null;
-            ctx.setAddFavorite({...ctx.addFavorite});
+        if (ctx.addFavorite.location) {
+            setOpenAddDialog(true);
         }
-    }, [favoriteGroupsOpen]);
+    },[ctx.addFavorite]);
 
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setFavoriteGroupsOpen(!favoriteGroupsOpen)}>
@@ -148,44 +145,9 @@ export default function FavoritesMenu() {
                                       enableGroups={enableGroups}
                                       setEnableGroups={setEnableGroups}/>;
             })}
-            {!ctx.addFavorite?.location && <Tooltip title='Select location on map' arrow>
-                <Button sx={{ml: 4, mt: 2, mb: 2}} variant="contained" component="span"
-                        style={{backgroundColor: '#fbc73a'}}
-                        onClick={() => {
-                            ctx.addFavorite.add = true;
-                            ctx.setAddFavorite({...ctx.addFavorite});
-                        }}>
-                    Add favorite</Button>
-            </Tooltip>}
-            {ctx.addFavorite?.location &&
-                <Button sx={{ml: 4, mt: 2, mb: 2}} variant="contained" component="span"
-                        style={{backgroundColor: '#fbc73a'}}
-                        onClick={() => {
-                            setOpenAddDialog(true);
-                        }}>
-                    Save favorite</Button>}
-            {openAddDialog && <AddFavoriteDialog
-                dialogOpen={openAddDialog}
-                setDialogOpen={setOpenAddDialog}/>}
-            {ctx.addFavorite?.location && <Grid container>
-                <ListItemText nowrap="true" key='favorite' sx={{ml: 4, mt: 1}} disableripple="true">
-                    <FormControl fullWidth>
-                        <InputLabel id="favorite-point-label">Favorite location</InputLabel>
-                        <Input
-                            labelid="start-point-label"
-                            label="Start"
-                            value={ctx.addFavorite.location.lat.toFixed(5) + ", " + ctx.addFavorite.location.lng.toFixed(5)}>
-                        </Input>
-                    </FormControl>
-                </ListItemText>
-                <IconButton sx={{mr: 4, mt: 2}}
-                            onClick={() => {
-                                ctx.addFavorite.location = null;
-                                ctx.setAddFavorite({...ctx.addFavorite});;
-                            }}>
-                    <RemoveCircle fontSize="small"/>
-                </IconButton>
-            </Grid>}
         </Collapse>
+        {ctx.addFavorite.location && <AddFavoriteDialog
+            dialogOpen={openAddDialog}
+            setDialogOpen={setOpenAddDialog}/>}
     </>;
 }

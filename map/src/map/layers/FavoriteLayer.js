@@ -3,6 +3,7 @@ import AppContext from "../../context/AppContext";
 import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
+import L from "leaflet";
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -35,11 +36,11 @@ const FavoriteLayer = () => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent) {
-            map.flyTo([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+            map.fitBounds(new L.FeatureGroup([ctx.selectedGpxFile.markerCurrent.layer]).getBounds()).setZoom(17);
         }
 
-        if (ctx.selectedGpxFile?.markerPrev) {
+        if (ctx.selectedGpxFile?.markerPrev && ctx.selectedGpxFile?.markerPrev.layer) {
             map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
         }
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
@@ -66,18 +67,6 @@ const FavoriteLayer = () => {
             }
         })
     }
-
-    useEffect(() => {
-        if (ctx.addFavorite?.add) {
-            map.on('click', function(e){
-                ctx.addFavorite.location = e.latlng;
-                ctx.addFavorite.add = false;
-                ctx.setAddFavorite({...ctx.addFavorite})
-            });
-        } else if (!ctx.addFavorite.location) {
-            map.off('click');
-        }
-    },[ctx.addFavorite]);
 };
 
 export default FavoriteLayer;

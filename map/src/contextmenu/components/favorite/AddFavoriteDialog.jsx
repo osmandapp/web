@@ -76,8 +76,14 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             selectedGroup.updatetimems)
         if (result) {
             updateGroupMarkers(result, selectedGroup);
-            setDialogOpen(false);
+            closeDialog();
         }
+    }
+
+    function closeDialog() {
+        ctx.addFavorite.location = null;
+        ctx.setAddFavorite({...ctx.addFavorite});
+        setDialogOpen(false);
     }
 
     function updateGroupMarkers(result, selectedGroup) {
@@ -93,6 +99,13 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 g.file = ctx.favorites[selectedGroup.name];
             }
         })
+
+        ctx.selectedGpxFile.file = ctx.favorites[selectedGroup.name];
+        ctx.selectedGpxFile.markerCurrent = {}
+        ctx.selectedGpxFile.markerCurrent.title = favoriteName;
+        ctx.selectedGpxFile.nameGroup = selectedGroup.name;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+
         ctx.setFavorites({...ctx.favorites});
 
         setFavoriteGroup(ctx.favorites[selectedGroup.name]);
