@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can be downloaded for the online use.  
+The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for the online use.  
 
 :::tip NOTE
 The Weather plugin is a paid feature of the OsmAnd app.  
@@ -24,29 +24,31 @@ The Weather plugin is a paid feature of the OsmAnd app.
 
 ## Overview
 
-The data source for the Weather plugin is the Global Forecasting System (https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States' National Weather Service (NWS).  
-Interactive Weather map layers of The OsmAnd app allow you to monitor the current temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days, even offline.  
+Interactive Weather map layers of The OsmAnd app allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days, even offline.  
+The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States' National Weather Service (NWS).  
 
 ## Setup  
 
-To display weather on the OsmAnd map you need to make the following settings:  
+To display Weather on the OsmAnd map you need to make the following settings:  
 
-1. Purchase [OsmAnd Pro subscribers paid services](../purchases/) <ProFeature/> if necessary.  
+1. Purchase [OsmAnd Pro subscribtion](../purchases/) <ProFeature/> if necessary.  
 2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.  
-3. Display the [Weather](#display-weather-on-the-map) on the map using the Weather tab in the dashboard menu.  
-4. [Download](#download-weather-forecast) Weather forcast if you plan to use it offline.  
+3. Choose [units of measurement](#weather-settings) of weather events.  
+4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather tab in the dashboard menu.  
+5. [Download](#download-weather-forecast) Weather forcast if you plan to use it offline.  
+6. If you want to use weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
 
-## Display Weather on the map   
+## Display Weather on the map  
 
-### Weather tab
+### Weather forecast screen  
 
-We craeted a special tab in Main menu for quick access to all Weather tools. Weather tab provide information about temperature, air pressure, wind speed, cloud coverage and precipitation in the form of separate map layers that can be combined with each other and can be supplemented with isolines.  
+We craeted a special Weather tab in Main menu for quick access to all Weather tools. Weather tab provides information about temperature, air pressure, wind speed, cloud coverage and precipitation. At the bottom of the screen you can see the Weather forecast toolbar: the date buttons and the time slider are used to set the exact time for which the weather forecast will be displayed.  
 
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">  
 
-![Weather Dashboard Android 1](@site/static/img/plugins/weather/Weather_dashbord_andr_1.png) ![Weather Dashboard Android 2](@site/static/img/plugins/weather/Weather_dashbord_andr_2.png)
+![Weather Dashboard Android 1](@site/static/img/plugins/weather/Weather_dashbord_andr_1.png) ![Weather Dashboard Android 2](@site/static/img/plugins/weather/Weather_dashbord_andr_2.png)  
 
 </TabItem>  
 
@@ -58,9 +60,61 @@ We craeted a special tab in Main menu for quick access to all Weather tools. Wea
 
 </Tabs>  
 
-### Combine maps
+:::tip  
+For a better display of weather information, we recommend disabling the highlighting of the borders of downloaded maps.  
+Go to *Configure map* and disable *'Show borders of downloaded maps'* option.  
+:::
 
-To get comprehensive weather information, you can not only use the map layers separately, but also easily combine them. Isolines of the same type can also be added to the map.  
+### Weather settings
+
+It is important to decide in what units of measurement it is convenient for you to see Weather data on the map and in the Weather widgets section on the screen. You can choose the appropriate units of measurement for each parameter or use the default values (iOS only). In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+- *Main menu → Plugins → Weather → Settings*.  
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather*.  
+
+![Weather Settings Android](@site/static/img/plugins/weather/Weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/Weather_settings_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather settings*.  
+
+![Weather Settings iOS](@site/static/img/plugins/weather/Weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/Weather_settings_ios_2.png)
+
+</TabItem>
+
+</Tabs>  
+
+:::tip
+In iOS version of OsmAnd you can change meauserment units and transparency level in the menu that opens after a long press on the icon of the needed map layer.  
+:::
+
+### Weather layers  
+
+All weather data is presented in the form of separate map layers.  
+
+|**Weather layers and Description**|  
+|------------|  
+| The **Precipitation layer** displays information about weather events, when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 litre of water on a single square metre. |  
+|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+| **Temperature** expresses quantitatively the perceptions of hotness and coldness. It is measured in degrees. In OsmAnd you can choose between Celsius and Fahrenheit scale. |  
+|![Temperature sheme](@site/static/img/plugins/weather/Temperature.png)|  
+| **Wind** is the movement of air, caused by the uneven heating of the Earth by the sun and the Earth's own rotation. Winds range from light breezes to natural hazards such as hurricanes and tornadoes. In OsmAnd wind speed can be displayed in meters per second (m/s), kilometers per hour (km/h), miles per hour (mph) and knots (kt). |  
+|![Wind sheme](@site/static/img/plugins/weather/Wind.png)|  
+| **Cloud cover** refers to the fraction of the sky obscured by clouds on average when observed from a particular location. Measured in %. |  
+|![Clouds sheme](@site/static/img/plugins/weather/Clouds.png)|  
+| **Atmospheric pressure** is  caused by the weight of air above the measurement point. It decreases with increasing elevation. You can display Atmospheric pressure in hectopascals (hPa), millimeters of mercury (mm Hg), inches of mercury (inHg) |  
+| ![Pressure sheme](@site/static/img/plugins/weather/Pressure.png) |  
+
+### Combine maps  
+
+To get comprehensive weather information, you can not only use the map layers separately, but also easily combine them. Isolines of one specific type can also be added to Weather layer.  
+In iOS version of the OsmAnd app you can also adjust transparancy level of each Weather map layer for better use.
 
 <Tabs groupId="operating-systems">
 
@@ -72,49 +126,43 @@ To get comprehensive weather information, you can not only use the map layers se
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/Weather_combine_layers_ios_1.png)  
+![Combine Weather layers on iOS](@site/static/img/plugins/weather/Weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/Weather_contours.png)  
 
 </TabItem>
 
 </Tabs>
 
-### Weather forecast  
+## Offline forecast
 
-Offline forecast (up to 7 days) can be downloaded for each country. The closer to the current date, the more accurate it will be.  
-If you want to use the weather forecast offline, you should download the weather data in advance:
+### Cache  
 
-<Tabs groupId="operating-systems">
+When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-weather-forecast). On android devices weather information after download is automatively cashed and can be used offline until the forecast expires.  
 
-<TabItem value="android" label="Android">
-
-:::caution iOS only
-Download Weather forecast function is not available for the Android version of the OsmAnd app.  
+:::tip
+On Android devices you can check when Weather data was downloaded by tapping on the Weather widget. Development plugin should be turned on.  
+![Date of weather cash android](@site/static/img/plugins/weather/Weather_cash_andr.png)  
 :::
 
-</TabItem>
+### Download forecast (iOS)
 
-<TabItem value="ios" label="iOS">
+:::caution iOS only
+Download Weather forecast function is not available for the Android version of the OsmAnd app.
+:::
 
-*<Translate ios="true" ids="menu,res_mapsres"/>* _→ choose a country → <Translate ios="true" ids="weather_forecast"/>_
+**Offline forecast** (up to 7 days) can be downloaded for each country. The closer to the current date, the more accurate it will be.  
+If you want to use the weather forecast offline, you should download the weather data in advance.  
 
 ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
-</TabItem>
+In the download forecast menu you can obtain information and set parameters to keep your weather data up to date.  
 
-</Tabs>
-
-Here you see data info and update button:
-
-- "Updated" - shows the time of last update.  
-- "Next update" - shows the time of then next update.  
-- "Updates size" - shows size of all updates.  
-- "Update now" button - allows to update weather data now.  
-
-You can set parameters for data updating:
-
-- "Update frequency" button - allows to choose update frequency: 12h, 24h, weekly. OsmAnd generates a new forecast every 6 hours. The closer to the current date, the more accurate it will be.  
-- "Update only via WiFi" button - allows to use Wi-Fi connection for updating.  
-- "Remove forecast" button - allows to remove all worecast data for this region.  
+- *Updated* - shows when the last update was made.  
+- *Next update* - when the next update will be available.  
+- *Updates size* - shows size of all updates.  
+- *Update now* button - when active allows to update weather data manually without waiting for an automatic update.  
+- *Update frequency*  - can be set to 12h, 24h, weekly.    
+- *Update only via WiFi*  - enable this option if you don't want to use mobile data for downloads.  
+- *Remove forecast* - allows to remove all forecast data for this region.  
 
 :::info  
 OsmAnd generates a new forecast every 6 hours.  
@@ -122,13 +170,13 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets
 
-Weather widgets show current weather data for the central point on the map:
+Weather widgets show current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,shared_string_weather"/>_ _→ <Translate android="true" ids="map_settings_weather_temp"/>, <Translate android="true" ids="map_settings_weather_air_pressure"/>, <Translate android="true" ids="map_settings_weather_wind"/>, <Translate android="true" ids="map_settings_weather_cloud"/>, <Translate android="true" ids="map_settings_weather_precip"/>_
+Menu → Configure screen → Right panel / Left panel → Weather → Temperature, Air pressure, Wind, Cloud, Precipitation
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -136,7 +184,7 @@ _<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widg
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right"/>_ _→ <Translate ios="true" ids="map_settings_weather_temp"/>, <Translate ios="true" ids="map_settings_weather_pressure"/>, <Translate ios="true" ids="map_settings_weather_wind"/>, <Translate ios="true" ids="map_settings_weather_cloud"/>, <Translate ios="true" ids="map_settings_weather_precip"/>_
+Menu → Configure screen → Right panel → Temperature, Pressure, Wind, Cloud, Precipitation
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_ios.png) ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
