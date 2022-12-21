@@ -36,7 +36,7 @@ export default function FavoriteItem({index, marker, group}) {
     const ctx = useContext(AppContext);
 
     function addFavoriteToMap(marker) {
-        ctx.setCurrentObjectType(null);
+        ctx.setCurrentObjectType('favorite');
         let newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;
         if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
