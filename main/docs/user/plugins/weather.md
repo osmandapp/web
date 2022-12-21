@@ -16,16 +16,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for the online use.  
-
 :::tip NOTE
 The Weather plugin is a paid feature of the OsmAnd app.  
 :::
 
+The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for the online use.  
+
+
 ## Overview
 
 Interactive Weather map layers of The OsmAnd app allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days, even offline.  
-The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States' National Weather Service (NWS).  
+The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States National Weather Service (NWS).  
 
 ## Setup  
 
@@ -35,7 +36,7 @@ To display Weather on the OsmAnd map you need to make the following settings:
 2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.  
 3. Choose [units of measurement](#weather-settings) of weather events.  
 4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather tab in the dashboard menu.  
-5. [Download](#download-weather-forecast) Weather forcast if you plan to use it offline.  
+5. [Download](#offline-forecast) Weather forcast if you plan to use it offline.  
 6. If you want to use weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
 
 ## Display Weather on the map  
@@ -91,7 +92,7 @@ It is important to decide in what units of measurement it is convenient for you 
 </Tabs>  
 
 :::tip
-In iOS version of OsmAnd you can change meauserment units and transparency level in the menu that opens after a long press on the icon of the needed map layer.  
+In iOS version of OsmAnd you can change measurement units and transparency level in the menu that opens after a long press on the icon of the needed map layer.  
 :::
 
 ### Weather layers  
@@ -100,21 +101,21 @@ All weather data is presented in the form of separate map layers.
 
 |**Weather layers and Description**|  
 |------------|  
-| The **Precipitation layer** displays information about weather events, when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 litre of water on a single square metre. |  
+| **Precipitation layer** displays information about weather events when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 liter of water on a single square meter. |  
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
-| **Temperature** expresses quantitatively the perceptions of hotness and coldness. It is measured in degrees. In OsmAnd you can choose between Celsius and Fahrenheit scale. |  
+| **Temperature** expresses quantitatively the perceptions of hotness and coldness. It is measured in degrees. In OsmAnd you can choose between Celsius and Fahrenheit scales. |  
 |![Temperature sheme](@site/static/img/plugins/weather/Temperature.png)|  
 | **Wind** is the movement of air, caused by the uneven heating of the Earth by the sun and the Earth's own rotation. Winds range from light breezes to natural hazards such as hurricanes and tornadoes. In OsmAnd wind speed can be displayed in meters per second (m/s), kilometers per hour (km/h), miles per hour (mph) and knots (kt). |  
 |![Wind sheme](@site/static/img/plugins/weather/Wind.png)|  
-| **Cloud cover** refers to the fraction of the sky obscured by clouds on average when observed from a particular location. Measured in %. |  
+| **Cloud cover** refers to the average fraction of the sky obscured by clouds when observed from a particular location. Measured in %. |  
 |![Clouds sheme](@site/static/img/plugins/weather/Clouds.png)|  
 | **Atmospheric pressure** is  caused by the weight of air above the measurement point. It decreases with increasing elevation. You can display Atmospheric pressure in hectopascals (hPa), millimeters of mercury (mm Hg), inches of mercury (inHg) |  
 | ![Pressure sheme](@site/static/img/plugins/weather/Pressure.png) |  
 
 ### Combine maps  
 
-To get comprehensive weather information, you can not only use the map layers separately, but also easily combine them. Isolines of one specific type can also be added to Weather layer.  
-In iOS version of the OsmAnd app you can also adjust transparancy level of each Weather map layer for better use.
+To get comprehensive weather information, you can not only use the map layers separately but also easily combine them. Isolines of one specific type can also be added to the Weather layer.  
+In iOS version of the OsmAnd app you can also adjust the transparency level of each Weather map layer for better use.
 
 <Tabs groupId="operating-systems">
 
@@ -136,10 +137,10 @@ In iOS version of the OsmAnd app you can also adjust transparancy level of each 
 
 ### Cache  
 
-When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-weather-forecast). On android devices weather information after download is automatively cashed and can be used offline until the forecast expires.  
+When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast-ios). On android devices the weather information is automatically cashed after download and can be used offline until the forecast expires.  
 
 :::tip
-On Android devices you can check when Weather data was downloaded by tapping on the Weather widget. Development plugin should be turned on.  
+On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The Development plugin should be turned on.  
 ![Date of weather cash android](@site/static/img/plugins/weather/Weather_cash_andr.png)  
 :::
 
@@ -170,13 +171,13 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets
 
-Weather widgets show current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
+The weather widgets show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Menu → Configure screen → Right panel / Left panel → Weather → Temperature, Air pressure, Wind, Cloud, Precipitation
+Menu → Configure screen → Right panel / Left panel → Weather
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -184,7 +185,7 @@ Menu → Configure screen → Right panel / Left panel → Weather → Temperatu
 
 <TabItem value="ios" label="iOS">
 
-Menu → Configure screen → Right panel → Temperature, Pressure, Wind, Cloud, Precipitation
+Menu → Configure screen → Right panel
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_ios.png) ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
