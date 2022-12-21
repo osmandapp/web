@@ -104,6 +104,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.selectedGpxFile.markerCurrent = {}
         ctx.selectedGpxFile.markerCurrent.title = favoriteName;
         ctx.selectedGpxFile.nameGroup = selectedGroup.name;
+        ctx.selectedGpxFile.name = favoriteName;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
 
         ctx.setFavorites({...ctx.favorites});

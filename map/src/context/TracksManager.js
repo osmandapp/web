@@ -383,7 +383,7 @@ function getEle(point, elevation, array) {
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/delete`, data,
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/delete`, data,
         {
             params: {
                 fileName: fileName,
@@ -402,7 +402,7 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function addFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/add`, data,
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/add`, data,
         {
             params: {
                 fileName: fileName,
@@ -421,7 +421,7 @@ async function addFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/update`, data,
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/update`, data,
         {
             params: {
                 wptName: wptName,
