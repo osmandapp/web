@@ -230,7 +230,7 @@ async function getGpxTrack(file) {
         });
 }
 
-async function saveTrack(ctx, currentFolder, fileName, type, file, update) {
+async function saveTrack(ctx, currentFolder, fileName, type, file) {
     if (type !== FAVORITE_FILE_TYPE) {
         if (currentFolder === "Tracks") {
             currentFolder = "";
@@ -249,25 +249,14 @@ async function saveTrack(ctx, currentFolder, fileName, type, file, update) {
             let data = new FormData();
             data.append('file', oMyBlob, gpxFile.name);
             let res;
-            if (update) {
-                res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/update-file`, data,
-                    {
-                        params: {
-                            name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
-                            type: type,
-                        }
+            res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
+                {
+                    params: {
+                        name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
+                        type: type,
                     }
-                );
-            } else {
-                res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
-                    {
-                        params: {
-                            name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
-                            type: type,
-                        }
-                    }
-                );
-            }
+                }
+            );
 
             if (res) {
                 const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
