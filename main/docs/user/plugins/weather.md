@@ -48,13 +48,13 @@ We craeted a special Weather tab in Main menu for quick access to all Weather to
 
 <TabItem value="android" label="Android">  
 
-![Weather Dashboard Android 1](@site/static/img/plugins/weather/Weather_dashbord_andr_1.png) ![Weather Dashboard Android 2](@site/static/img/plugins/weather/Weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 1](@site/static/img/plugins/weather/weather_dashbord_andr_1.png) ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">  
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/Weather_dashbord_ios_1.png) ![Weather Dashboard in iOS](@site/static/img/plugins/weather/Weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_1.png) ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
 </TabItem>  
 
@@ -71,7 +71,7 @@ It is important to decide in what units of measurement it is convenient for you 
 - *Main menu → Plugins → Weather → Settings*.  
 - *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather*.  
 
-![Weather Settings Android](@site/static/img/plugins/weather/Weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/Weather_settings_andr_2.png)
+![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ It is important to decide in what units of measurement it is convenient for you 
 
 - *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather settings*.  
 
-![Weather Settings iOS](@site/static/img/plugins/weather/Weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/Weather_settings_ios_2.png)
+![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
 </TabItem>
 
@@ -98,13 +98,13 @@ All weather data is presented in the form of separate map layers.
 | **Precipitation layer** displays information about weather events when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 liter of water on a single square meter. |  
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
 | **Temperature** expresses quantitatively the perceptions of hotness and coldness. It is measured in degrees. In OsmAnd you can choose between Celsius and Fahrenheit scales. |  
-|![Temperature sheme](@site/static/img/plugins/weather/Temperature.png)|  
+|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
 | **Wind** is the movement of air, caused by the uneven heating of the Earth by the sun and the Earth's own rotation. Winds range from light breezes to natural hazards such as hurricanes and tornadoes. In OsmAnd wind speed can be displayed in meters per second (m/s), kilometers per hour (km/h), miles per hour (mph) and knots (kt). |  
-|![Wind sheme](@site/static/img/plugins/weather/Wind.png)|  
+|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
 | **Cloud cover** refers to the average fraction of the sky obscured by clouds when observed from a particular location. Measured in %. |  
-|![Clouds sheme](@site/static/img/plugins/weather/Clouds.png)|  
+|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
 | **Atmospheric pressure** is  caused by the weight of air above the measurement point. It decreases with increasing elevation. You can display Atmospheric pressure in hectopascals (hPa), millimeters of mercury (mm Hg), inches of mercury (inHg) |  
-| ![Pressure sheme](@site/static/img/plugins/weather/Pressure.png) |  
+| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
 
 ### Combine maps  
 
@@ -114,13 +114,13 @@ To get comprehensive weather information, you can use the map layers separately 
 
 <TabItem value="android" label="Android">
 
-![Combine Weather layers on Android](@site/static/img/plugins/weather/Weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/Weather_combine_layers_andr_2.png)
+![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/Weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/Weather_contours.png)  
+![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -134,7 +134,7 @@ When the Weather tab is open, unless otherwise specified, the necessary weather 
 
 :::tip
 On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The Development plugin should be turned on.  
-![Date of weather cash android](@site/static/img/plugins/weather/Weather_cash_andr.png)  
+![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Download forecast (iOS)
