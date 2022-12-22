@@ -15,10 +15,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+
 ## Overview
 
 Markers interface is a tool that helps you save temporary points on the map for later use. Markers are special points marked on the map as flags. You can customize their appearance by adding **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/> ) and **distance indication** (<Translate android="true" ids="show_direction"/> ). All marker flags have different colours for better visibility.  
-
 
 <Tabs groupId="operating-systems">
 
@@ -36,10 +36,10 @@ Markers interface is a tool that helps you save temporary points on the map for 
 
 </Tabs>
 
+
 ## How to add
 
 A long tap on the map visible on the screen opens a point menu where you can select *Markers* to add a marker to the map. You can add markers even for unloaded areas.  
-
 
 <Tabs groupId="operating-systems">
 
@@ -47,18 +47,15 @@ A long tap on the map visible on the screen opens a point menu where you can sel
 
 ![Map markers](@site/static/img/personal/markers/map_markers_andr.png)  ![Map markers](@site/static/img/personal/markers//map_markers_andr_2.png)
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Map markers](@site/static/img/personal/markers/map_markers_ios_1.png)
 
-
 </TabItem>
 
 </Tabs> 
-
 
 
 ## Map markers menu  
@@ -67,18 +64,16 @@ In this menu you can customize the markers you have added. Sort, group, view his
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers"/>
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers"/>*   
 
-![Map markers menu Android](@site/static/img/personal/markers/map_markers_menu_android_2.png)
+![Map markers menu Android](@site/static/img/personal/markers/map_markers_menu_android_2.png)  
 
-- &nbsp;<Translate android="true" ids="shared_string_list"/>  - keeps all your Map markers in the one place. Here you can move Map marker to the History part or replace it.
-- &nbsp;<Translate android="true" ids="shared_string_groups"/>  - contains groups of your Map markers. 
-- &nbsp;<Translate android="true" ids="shared_string_history"/>  - keeps all Map markers which were deleted yearlier.
-- &nbsp;<Translate android="true" ids="shared_string_more_without_dots"/>  - keeps Options of Map markers (Appearance) and etc.
-
+- *<Translate android="true" ids="shared_string_list"/>*  - keeps all your Map markers in the one place. Here you can move Map marker to the History part or replace it.
+- *<Translate android="true" ids="shared_string_groups"/>*  - contains groups of your Map markers. 
+- *<Translate android="true" ids="shared_string_history"/>*  - keeps all Map markers which were deleted yearlier.
+- *<Translate android="true" ids="shared_string_more_without_dots"/>*  - keeps Options of Map markers (Appearance) and etc.
 
 </TabItem>
 
@@ -86,13 +81,14 @@ In this menu you can customize the markers you have added. Sort, group, view his
 
 Tapping the menu item (<Translate ios="true" ids="map_markers"/>) opens a list of all markers on the map and the history of previously added markers.
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_markers"/>
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_markers"/>*  
 
 ![Map markers menu iOS](@site/static/img/personal/markers/map_markers_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ### List
 
@@ -102,7 +98,7 @@ Active Map markers: map marker color, showing the big arrow to the location (col
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_list"/>
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_list"/>*  
 
 ![Map markers List Android](@site/static/img/personal/markers/map_markers_list_android.png) 
 
@@ -113,8 +109,8 @@ Non active map markers: map marker color, showing the small arrow to the locatio
 
 Actions:
 
-- &nbsp;Changing the order of Map markers - just click to "&equals;" button and swip up/down the map marker line.
-- &nbsp;Delete the Map marker - click to "&#10003;" button.
+- Changing the order of Map markers - just click to "&equals;" button and swip up/down the map marker line.
+- Delete the Map marker - click to "&#10003;" button.
 
 > ``` The first one or two Map markers are active Map markers. Changing order one of the Map markers to the top list is made it active. ```
 
@@ -128,6 +124,7 @@ Actions:
 
 </Tabs>
 
+
 ### Groups
                       
 <Tabs groupId="operating-systems">
@@ -139,8 +136,8 @@ Actions:
 You can import groups from favorites or track waypoints.
 
 Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
-- &nbsp;<Translate android="true" ids="favourites_group"/>  - from Favorites.
-- &nbsp;<Translate android="true" ids="shared_string_gpx_waypoints"/>  - from track waypoints.
+- <Translate android="true" ids="favourites_group"/>  - from Favorites.
+- <Translate android="true" ids="shared_string_gpx_waypoints"/>  - from track waypoints.
 
 </TabItem>
 
@@ -151,6 +148,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 </TabItem>
 
 </Tabs>
+
 
 ### History
 
@@ -170,6 +168,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 </Tabs>
 
+
 ### More / Appearance 
 
 <Tabs groupId="operating-systems">
@@ -178,12 +177,12 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
-- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
-- &nbsp;<Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
-- &nbsp;<Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
-- &nbsp;<Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
-- &nbsp;<Translate android="true" ids="marker_save_as_track"/> - save active markers like file GPX.
-- &nbsp;<Translate android="true" ids="move_all_to_history"/> - deactivate all markers and move its to [History](../personal/markers.md#history).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
+- <Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
+- <Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
+- <Translate android="true" ids="marker_save_as_track"/> - save active markers like file GPX.
+- <Translate android="true" ids="move_all_to_history"/> - deactivate all markers and move its to [History](../personal/markers.md#history).
 
 </TabItem>
 
@@ -191,11 +190,12 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
-- &nbsp;<Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
 
 </TabItem>
 
 </Tabs>
+
 
 ## Add Marker on the map
 
@@ -215,19 +215,20 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 </Tabs>
 
+
 ### Actions in Map Context menu
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-[Link to the article](../map/map-context-menu.md#add--edit-marker)
+Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-[Link to the article](../map/map-context-menu.md#add--edit-marker)
+Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
 
 </TabItem>
 
@@ -236,41 +237,38 @@ Short or long tap on the map and choose neede action in [Map Context menu](../ma
 
 ## Appearance on the map
 
-Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. [Description Marker widgets](../widgets/markers.md#configure-marker-widgets-and-appearance-on-the-map)   
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. [Description Marker widgets](../widgets/markers.md)   
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Use the following path to configure the appearance of the markers on the map:  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-01.png)   ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
 
-|    | Description    | State | 
-| :------------- | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
-|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
-|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
-| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
-| <Translate android="true" ids="one_tap_active"/> (**Android**) |  Displays / switches marker in the widget by tapping on a marker on the map. |  - | 
-| <Translate android="true" ids="keep_passed_markers"/> (**Android**) | Keeps or hides inactive markers on the map, if a marker is part of the visible group of Favorites or GPX waypoints. | -  |
+|    |    |
+| :------------- | :------------- | 
+| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. | 
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. | 
+| <Translate android="true" ids="show_guide_line"/> | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  | 
+| <Translate android="true" ids="one_tap_active"/> |  With a one-tap the required marker on the map, this marker moves to the top of the list of active Map markers without opening the Context menu. |  
+| <Translate android="true" ids="keep_passed_markers"/> | Markers added as a group of Favourites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map. | 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Use the following path to configure the appearance of the markers on the map:  
 *<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 
-|    | Description    | State | 
-| :------------- | :------------- | :------------- |
-| <Translate android="true" ids="active_markers"/> | Specifies a number of direction indicators| 1 or 2 | 
-|  <Translate android="true" ids="show_direction"/> | Specifies how direction indicators should be displayed | <Translate android="true" ids="shared_string_topbar"/> / <Translate android="true" ids="shared_string_widgets"/>| 
-|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Displays arrows on the map to the top markers in case they are not part of the visible map | - |
-| <Translate android="true" ids="show_guide_line"/> | Shows direction line from user location to the top markers  | - |
+|    |     |  
+| :------------- | :------------- | 
+| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. | 
+|  <Translate android="true" ids="show_direction"/> | Allows you to choose whether or not to display widgets and how they will appear: above the map (<Translate android="true" ids="shared_string_topbar"/>) or on the right side of the screen (<Translate android="true" ids="shared_string_widgets"/>). | 
+|  Arrows on the map |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. | 
+| Direction line | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  | 
 
 </TabItem>
 
@@ -369,8 +367,7 @@ Read more about [markers](../personal/markers.md).
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-Use the following path to display the widgets on the screen:  
+ 
 *Menu → Configure screen → Widgets → Top panel → Map markers*   
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets-01.png)  
@@ -379,16 +376,13 @@ Use the following path to display the widgets on the screen:
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets-02.png)
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-You can delete or add the Map markers widget by following:  
 *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets_ios.png)
-
 
 </TabItem>
 
@@ -413,7 +407,7 @@ You can read how to configure the appearance of the markers in [this section](#a
 
 [Link to description](../navigation/markers-navigation.md)
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
 ![Map markers Plan Route Android](@site/static/img/personal/markers/map_markers_plan_route_android.png)
 
@@ -423,7 +417,7 @@ You need choose markers for your route.
 
 Next 'Options' button (top corner):
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>*
 
 <p> </p>
 
@@ -431,13 +425,13 @@ Next 'Options' button (top corner):
 
 <Translate android="true" ids="shared_string_options"/>:
 
-- &nbsp;<Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation/index.md)).
-- &nbsp;<Translate android="true" ids="make_round_trip"/> - <Translate android="true" ids="make_round_trip_descr"/> Round trip or not. 
+- <Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation/index.md)).
+- <Translate android="true" ids="make_round_trip"/> - <Translate android="true" ids="make_round_trip_descr"/> Round trip or not. 
 
 <Translate android="true" ids="sort_by"/> :
 
-- &nbsp;<Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers.md#list-android).
-- &nbsp;<Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers.md#list-android).
+- <Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers.md#list-android).
+- <Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers.md#list-android).
 
 Next, building a route.
 

@@ -64,9 +64,9 @@ You can also select one or two markers to display in the widget. Read more about
 
 ## Panel widgets
 
-The **Map markers**(for Android) widget and **Distance indication Widgets**(for iOS) displays:  
+The **Map markers** *(for Android)* widget and **Distance indication Widgets** *(for iOS)* displays:  
 - Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
-- (Only for Android) **Estimated time of arrival or ETA**.  
+- **Estimated time of arrival or ETA** *(Only for Android)*.  
 It is the time(hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
 The average speed is calculated as the sum of all speeds (received from location points) for the time interval you selected (from 15 seconds to 60 minutes) divided by the total number of these points.
 
@@ -110,7 +110,7 @@ You can also select one or two markers to display in the widget. Read more about
 
 ## Configure marker widgets
 
-Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings can be read [here](../personal/markers#map-markers-widgets).  
+Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings you can read on this [page](../personal/markers#map-markers-widgets).  
 
 <!--*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  -->
 ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  
@@ -124,7 +124,6 @@ Additional settings for the map marker widgets are only available in the Android
 
 <TabItem value="android" label="Android">  
 
-Use the following path to configure the appearance of the markers on the map:  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
 </TabItem>
@@ -142,25 +141,38 @@ Map marker widgets settings are not provided for the iOS version of the OsmAnd a
 
 ## Appearance on the map
 
-Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information at this [link](../personal/markers.md#appearance-on-the-map)  
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-To configure the appearance of the map markers, follow this path::  
 *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
 
 ![appearence_on_the_map](@site/static/img/widgets/appearence_on_the_map-02.png)  
+
+|    |    |
+| :------------- | :------------- | 
+| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. | 
+|  <Translate android="true" ids="show_arrows_on_the_map"/> |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. | 
+| <Translate android="true" ids="show_guide_line"/> | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  | 
+| <Translate android="true" ids="one_tap_active"/> |  With a one-tap the required marker on the map, this marker moves to the top of the list of active Map markers without opening the Context menu. |  
+| <Translate android="true" ids="keep_passed_markers"/> | Markers added as a group of Favourites or GPX waypoints marked Passed will remain on the map. If the group is not active, the markers will disappear from the map. | 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-To configure the appearance of the map markers, follow this path::  
 *<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
+
+|    |     |  
+| :------------- | :------------- | 
+| <Translate android="true" ids="active_markers"/> | Shows information about the first one or two markers in the Map marker list. | 
+|  <Translate android="true" ids="show_direction"/> | Allows you to choose whether or not to display widgets and how they will appear: above the map (<Translate android="true" ids="shared_string_topbar"/>) or on the right side of the screen (<Translate android="true" ids="shared_string_widgets"/>). | 
+|  Arrows on the map |  Indicates the direction to the tracked marker (one or two) as an arrow on the map. If the marker is in the visible part of the map, no arrow is displayed. | 
+| Direction line | Shows the direction, as a dashed line, from a particular point on the map to the tracked marker in a straight line.  | 
 
 </TabItem>
 
