@@ -20,7 +20,6 @@ This plugin will help you participate in the OpenStreetMap project to create a d
 ## Overview
  
 [OpenStreetMap](http://openstreetmap.org/) is a global community that aims to create a comprehensive map of the world and provide up-to-date open-source data to every user, and the **OpenStreetMap (OSM) editing plugin** allows you to contribute to the community.  
-
 With **OsmAnd** and the **OSM editing plugin**, you can easily contribute your own information to OpenStreetMap.org, such as creating or modifying POIs, adding or commenting notes, and uploading recorded GPX tracks.  
 
 
@@ -33,23 +32,25 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](https://docs.osmand.net/docs/user/map/configure-map-menu/).
 
 
-### Login settings
+## Settings
+
+**Login settings**
 
 - Login or Sign Up [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
 - Login in OsmAnd (OAuth / password) - preferred OAuth.
 
 
-### Plugin settings
+**Plugin settings**
+
+- **Login to OpenStreetMap** *(Android)* / **<Translate ios="true" ids="shared_string_account"/>** *(iOS)*. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
+- **<Translate android="true" ids="offline_edition"/>** *(Android & iOS)*. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
+- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
+- **<Translate android="true" ids="map_updates_for_mappers"/>** *(Android & iOS)*. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
+- **<Translate android="true" ids="layer_osm_edits"/>** *(Android & iOS)*. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
 
 :::info info
 The plugin settings are global and apply to all profiles.
 :::
-
-- **Login to OpenStreetMap**(Android) / **<Translate ios="true" ids="shared_string_account"/>**(iOS). Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
-- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
-- **<Translate android="true" ids="use_dev_url"/>**(Android). Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
-- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.    
 
 <Tabs groupId="operating-systems">
 
@@ -72,28 +73,10 @@ The plugin settings are global and apply to all profiles.
 
 </Tabs>  
 
+
 ## POI 
 
 ### Create / Modify POI 
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-To view an OSM editing layer on a map, tapping that editing layer opens a [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
-*<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
-
-</TabItem>
-
-</Tabs>
 
 The OpenStreetMap editing plugin allows you to create new objects on the map, they are called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add to the map, for example, a new store, or a favorite landmark, if you own a recently opened business, you can also add it to the map to allow people to find you.  
 
@@ -101,6 +84,24 @@ The OpenStreetMap editing plugin allows you to create new objects on the map, th
 2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
 3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
 4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To view an OSM editing layer on a map, enable its display on the map in the [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+o view an OSM editing layer on a map, enable its display on the map in the [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
+*<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
+
+</TabItem>
+
+</Tabs>
 
 :::info NOTE
 You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
@@ -113,15 +114,15 @@ You can view, upload or delete OSM in My Places - OSM POIs. You can also switch 
 
 ## GPS Track
 
-:::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app.
-:::
-
 The GPS tracks you have recorded are useful for:
 
 - **For mappers**. Tracks can be used for drawing maps of all kinds of paths.
 - **For navigation**. Based on the GPX file data you uploaded, navigation applications and special devices can calculate tracks.
-- **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
+- **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).  
+
+:::caution Android only
+This plugin is available only for the **Android version** of OsmAnd app.
+:::
 
 :::info NOTE
 Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
@@ -129,8 +130,10 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 
 ### Upload GPS track
 
-To upload the GPS track:  
-select the required track from *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*, tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or tap the three-dot menu next to the track name and select *Export*.  
+To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
+- Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks.md).  
+- Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
+- Choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Export*.  
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)   
 
@@ -173,7 +176,7 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-    
+
 *<Translate ios="true" ids="menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
@@ -190,6 +193,6 @@ To create a note, you don't need to log in to OpenStreetMap.org, you can send it
 - If you want to add information to an existing note or not uploaded note, edit a comment, or close a note, tap the OSM note on the map and select the [required action](../map/map-context-menu.md#-comment--close-osm-note).
 - You can upload changes as soon as you are available online. You can also undo changes before they are uploaded.  
 
-:::note
+:::info
 The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
 :::
