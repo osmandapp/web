@@ -96,7 +96,7 @@ All weather data is presented in the form of separate map layers.
 |**Weather layers and Description**|  
 |------------|  
 | **Precipitation layer** displays information about weather events when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 liter of water on a single square meter. |  
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+|![Precipitation sheme](@site/static/img/plugins/weather/Precipitation.png)|  
 | **Temperature** expresses quantitatively the perceptions of hotness and coldness. It is measured in degrees. In OsmAnd you can choose between Celsius and Fahrenheit scales. |  
 |![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
 | **Wind** is the movement of air, caused by the uneven heating of the Earth by the sun and the Earth's own rotation. Winds range from light breezes to natural hazards such as hurricanes and tornadoes. In OsmAnd wind speed can be displayed in meters per second (m/s), kilometers per hour (km/h), miles per hour (mph) and knots (kt). |  
