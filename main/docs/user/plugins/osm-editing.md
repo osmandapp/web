@@ -150,7 +150,7 @@ You can select more than one track to upload to OSM. To do this, tap the *Upload
 
 ### Generate OBF file
 
-You can create an OBF file with [OsmAndMapCreator](../versions/map-creator/) if you have a large GPX track database. This is a collection of tracks from osmand.net with the 'gpsies' tag, a collection of downloaded tracks from OpenStreetMap or your own collection. 
+You can create an OBF file with [OsmAndMapCreator](../docs/technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) if you have a large GPX track database. This is a collection of tracks from osmand.net with the 'gpsies' tag, a collection of downloaded tracks from OpenStreetMap or your own collection. 
 
 ## OSM Notes
 

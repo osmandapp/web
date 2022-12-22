@@ -22,11 +22,10 @@ The Weather plugin is a paid feature of the OsmAnd app.
 
 The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for the online use.  
 
-
 ## Overview
 
 Interactive Weather map layers of The OsmAnd app allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days, even offline.  
-The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States National Weather Service (NWS).  
+The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States National Weather Service (NWS) and the European Centre for Medium-Range Weather Forecasts ([ECMWF](https://www.ecmwf.int/)).  
 
 ## Setup  
 
@@ -60,11 +59,6 @@ We craeted a special Weather tab in Main menu for quick access to all Weather to
 </TabItem>  
 
 </Tabs>  
-
-:::tip  
-For a better display of weather information, we recommend disabling the highlighting of the borders of downloaded maps.  
-Go to *Configure map* and disable *'Show borders of downloaded maps'* option.  
-:::
 
 ### Weather settings
 
@@ -114,8 +108,7 @@ All weather data is presented in the form of separate map layers.
 
 ### Combine maps  
 
-To get comprehensive weather information, you can not only use the map layers separately but also easily combine them. Isolines of one specific type can also be added to the Weather layer.  
-In iOS version of the OsmAnd app you can also adjust the transparency level of each Weather map layer for better use.
+To get comprehensive weather information, you can use the map layers separately or easily combine them. Isolines of one specific type can also be added to the Weather layer.  
 
 <Tabs groupId="operating-systems">
 
