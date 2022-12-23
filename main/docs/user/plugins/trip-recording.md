@@ -60,7 +60,7 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 <TabItem value="android" label="Android">
 
 - Usе the [Distance/Start-Stop widget](#distance-start-stop). 
-- Use the **Trip recording** item in the Main menu of the OsmAnd app: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/> tab*.
+- Use the **Trip recording** item in the Main menu of the OsmAnd app: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
 - Use the **RECORD** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
 - Use an [application launcher](#launcher-android).
 
