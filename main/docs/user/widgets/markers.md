@@ -110,33 +110,27 @@ You can also select one or two markers to display in the widget. Read more about
 
 ## Configure marker widgets
 
-Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings you can read on this [page](../personal/markers#map-markers-widgets).  
+Additional settings for the map marker widgets are only available **in the Android version** of the app. General information about the Map markers widget settings you can read on this [page](../personal/markers#map-markers-widgets).  
 
-<!--*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  -->
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  
+**Map markers bar**  
+The top bar widget displays the distance and direction to the next Map marker from your current location.  
 
-<!--*Menu → Configure screen → Widgets → Top panel → Map markers*  -->
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)  
 
-<!--![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-02.png)-->
+<!--|    |     |  
+| :------------- | :------------- | 
+| Active markers | This setting allows you to choose whether one or two markers will be displayed at the top of the screen. | -->
 
-<Tabs groupId="operating-systems">
+**Map markers**  
+The widgets show the distance or estimated time of arrival (ETA) for the first two markers in the list of Map markers.  
 
-<TabItem value="android" label="Android">  
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  
 
-*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::caution Android only
-Map marker widgets settings are not provided for the iOS version of the OsmAnd app.
-:::
-
-</TabItem>
-
-</Tabs> 
+|    |     |  
+| :------------- | :------------- | 
+| Shows | This mode allows you to choose what information the widget will display: *Distance* or *Estimated arrival time*. | 
+| Interval | If *Estimated arrival time* is selected in 'Show', this option appears with a choice of times (from 15 seconds to 60 minutes) for ETA calculation. | 
+| Click on widget |  This setting allows you to choose which action will be performed when you click on the widget: *Switch mode* or *Go to marker location*. |   
 
 
 ## Appearance on the map
