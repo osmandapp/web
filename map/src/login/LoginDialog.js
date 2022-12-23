@@ -128,7 +128,7 @@ export default function LoginDialog() {
                             Total files size: {(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB,
                             cloud storage used: {(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.
                             <br /><br />
-                            <a href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`} target="_blank" >Download backup ~{(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB</a>
+                            <a href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`} target="_blank" >Download backup ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB</a>
                         </span>
                         }
                     </DialogContentText>

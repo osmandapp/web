@@ -117,6 +117,10 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading) 
             const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
             const res = await response.json();
             res.loginUser = loginUser;
+            res.totalUniqueZipSize = 0;
+            res.uniqueFiles.forEach( (f) => {
+                res.totalUniqueZipSize += f.zipSize;
+            });
             res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
                 let ftime = getGpxTime(f);
                 let stime = getGpxTime(s);
