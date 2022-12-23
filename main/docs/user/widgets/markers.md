@@ -112,7 +112,7 @@ You can also select one or two markers to display in the widget. Read more about
 
 Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings you can read on this [page](../personal/markers#map-markers-widgets).  
 
-<!--*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  -->
+*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  
 ![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  
 
 <!--*Menu → Configure screen → Widgets → Top panel → Map markers*  -->

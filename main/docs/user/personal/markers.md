@@ -283,9 +283,6 @@ To start using *Map markers widgets*, you need to make all of the following sett
 - [Map Context menu](../map/map-context-menu.md#add--edit-marker). 
 - Configure Marker widgets and Marker appearance for the required [profile](../personal/profiles.md).
 
-<!-- ### Configure Marker widgets
-### Appearance on the map
--->
 
 ### Add Marker widgets
 
@@ -439,9 +436,7 @@ Next, building a route.
 
 <p> </p>
 
-
 ![Map markers Plan Route Directions Android](@site/static/img/personal/markers/map_markers_plan_route_directions_android.png)
-
 
 </TabItem>
 
@@ -452,6 +447,7 @@ Next, building a route.
 </TabItem>
 
 </Tabs>
+
 
 ## Add/Remove Markers from Favorites/Waypoints
 
@@ -467,7 +463,9 @@ Next, building a route.
 
 <TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly />
+:::caution Android only
+This feature is available only for the **Android version** of OsmAnd app.
+:::
 
 </TabItem>
 
