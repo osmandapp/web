@@ -1,6 +1,6 @@
 import Utils from "../util/Utils";
 import {MetaData, Point, Track, TrackData} from "./TrackStore";
-import {post} from "axios";
+import axios, {post, get} from "axios";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const GPX_FILE_TYPE = 'GPX';
@@ -455,6 +455,16 @@ function prepareTrackData(data) {
     });
 }
 
+async function getBackUp() {
+    let resp = await axios({
+        url: `${process.env.REACT_APP_GPX_API}/mapapi/download-backup`,
+        responseType: 'blob'
+    })
+    if (resp) {
+        return resp;
+    }
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -473,6 +483,7 @@ const TracksManager = {
     updateRouteBetweenPoints,
     updateStat,
     getEle,
+    getBackUp,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     GPX_FILE_TYPE: GPX_FILE_TYPE
 };

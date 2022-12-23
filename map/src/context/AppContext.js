@@ -289,6 +289,7 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
+    const [tracksGroups, setTracksGroups] = useState([])
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
@@ -410,7 +411,8 @@ export const AppContextProvider = (props) => {
         avoidRoads, setAvoidRoads,
         localTracks, setLocalTracks,
         currentObjectType, setCurrentObjectType,
-        headerText, setHeaderText
+        headerText, setHeaderText,
+        tracksGroups, setTracksGroups
 
     }}>
         {props.children}
