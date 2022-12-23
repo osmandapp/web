@@ -13,7 +13,6 @@ export default function TracksMenu() {
 
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
-    const [tracksGroups, setTracksGroups] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({localClient: [], files: []});
 
     function visibleTracksOpen() {
@@ -54,7 +53,7 @@ export default function TracksMenu() {
             }
         }
         ctx.gpxFiles.trackGroups = tg;
-        setTracksGroups(tg);
+        ctx.setTracksGroups(tg);
 
     }, [ctx.listFiles, ctx.setListFiles]);
 
@@ -174,7 +173,7 @@ export default function TracksMenu() {
         <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
             {visibleTracksOpen() && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
             <LocalTrackGroup/>
-            {tracksGroups && tracksGroups.map((group, index) => {
+            {ctx.tracksGroups && ctx.tracksGroups.map((group, index) => {
                 return <CloudTrackGroup key={group + index}
                                         index={index}
                                         group={group}/>;
