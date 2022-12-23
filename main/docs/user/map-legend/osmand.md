@@ -188,8 +188,22 @@ import TabItem from '@theme/TabItem';
 ### Traffic, transportation
 <img src={require('@site/static/img/map-legend/osmand-icons-traffic_transportation.png').default} alt="OsmAnd Map style" />
 
+
 ### Emergency, health
-<img src={require('@site/static/img/map-legend/osmand-icons-emergency.png').default} alt="OsmAnd Map style" />
+
+<LegendItem itemsMap={{
+        'Hospital' : 'health/health_amenity_hospital',
+        'Pharmacy' : 'health/health_amenity_pharmacy',
+        'Emergency Phone' : 'health/health_emergency_phone',
+        'Doctors' : 'health/health_amenity_doctors',
+        'Veterinary' : 'health/health_amenity_veterinary',
+        'Fire station' : 'health/health_amenity_fire_station',
+        'Police' : 'health/health_amenity_police',
+        'Dentist' : 'health/health_amenity_dentist',
+        'Social facility' : 'health/health_social_facility',
+        'Ambulance station' : 'health/health_ambulance_station',
+        }}>
+</LegendItem>
 
 ### Tourism, entertainment
 <img src={require('@site/static/img/map-legend/osmand-icons-tourism-entertainment.png').default} alt="OsmAnd Map style" />

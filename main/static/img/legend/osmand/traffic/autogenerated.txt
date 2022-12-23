@@ -1,0 +1,38 @@
+### Traffic, transportation
+
+<LegendItem itemsMap={{
+        'Parking' : 'traffic/traffic_amenity_parking',
+        'Bus station' : 'traffic/traffic_amenity_bus_station',
+        'Speed camera' : 'traffic/traffic_highway_speed_camera',
+        'Private parking' : 'traffic/traffic_amenity_parking_private',
+        'Public transport station' : 'traffic/traffic_amenity_bus_station',
+        'Paid parking' : 'traffic/traffic_amenity_parking_paid',
+        'Public transport platform' : 'traffic/traffic_highway_bus_stop',
+        'Subway entrance' : 'traffic/traffic_subway_entrance',
+        'Multi-storey parking' : 'traffic/traffic_parking_multi_storey',
+        'Railway halt' : 'traffic/traffic_halt',
+        'Aerialway halt' : 'traffic/traffic_aerialway_station',
+        'Underground parking' : 'traffic/traffic_parking_underground',
+        'Ferry terminal' : 'traffic/traffic_amenity_ferry_terminal',
+        'Bicycle parking' : 'traffic/traffic_bicycle_parking',
+        'Tram stop' : 'traffic/traffic_railway_tram_stop',
+        'Aerodrome' : 'traffic/traffic_aeroway_aerodrome_small',
+        'Motorcycle parking' : 'traffic/traffic_amenity_motorcycle_parking',
+        'Traffic signals' : 'traffic/traffic_highway_traffic_signals_map',
+        'Helipad' : 'traffic/traffic_aeroway_helipad',
+        'Taxi parking' : 'traffic/traffic_amenity_taxi',
+        'Roundabout' : 'traffic/traffic_highway_mini_roundabout',
+        'Gate number in the airport' : 'traffic/traffic_aeroway_gate',
+        'Railway station' : 'traffic/traffic_railway_station',
+        'Dead end' : 'traffic/traffic_highway_noexit',
+        'Bump' : 'traffic/traffic_traffic_calming_bump',
+        'Ford' : 'traffic/traffic_ford',
+        'Highway crossing' : 'traffic/traffic_highway_crossing_map',
+        'Subway station' : 'traffic/traffic_subway_station',
+        'Spaceport' : 'traffic/traffic_spaceport',
+        'Elevator' : 'traffic/traffic_elevator',
+        'Traffic mirror' : 'traffic/traffic_traffic_mirror',
+        'Highway services' : 'traffic/traffic_highway_services',
+        }}>
+</LegendItem>
+
