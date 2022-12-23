@@ -130,7 +130,7 @@ To get comprehensive weather information, you can use the map layers separately 
 
 ### Cache  
 
-When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast-ios). On android devices the weather information is automatically cashed after download and can be used offline until the forecast expires.  
+When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast-ios). On Android devices the weather information is automatically cashed after download and can be used offline until the forecast expires.  
 
 :::tip
 On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The Development plugin should be turned on.  
@@ -164,7 +164,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets
 
-The weather widgets show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
+The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
 
 <Tabs groupId="operating-systems">
 

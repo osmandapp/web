@@ -288,7 +288,7 @@ External sensors widgets refer to [External sensors plugin](../plugins/external-
 
 :::caution Android only
 External sensors widgets are currently not available for the iOS version of the OsmAnd app.
-::: 
+:::  
 
 </TabItem>
 
@@ -297,7 +297,7 @@ External sensors widgets are currently not available for the iOS version of the 
 
 ## * Weather Widgets
 
-:::note 
+:::note  
 Weather Widgets can be added to the map screen only when OsmAnd Weather plugin is enabled.  
 :::
 

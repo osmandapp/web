@@ -74,31 +74,31 @@ Heightmaps available for testing only for some regions.
 ### Troubleshotting
 
 - **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
-- **Rendering debug info** - Display the rendering performance.  
+- **Rendering debug info** - Display the rendering performance (only available for version 1 rendering engine).  
 - **Logcat buffer** - Check and share detailed logs of the app.  
 
 ### Application Testing
 
-- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged. 
-- **Test voice prompts** - Select a voice and test by playing announcements.
+- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Test voice prompts** - Select a voice and test by playing announcements.  
 - **Show free version banner** - Display the free version banner even in the paid version.  
 
 ### Internal Algorithms
 
 - **Safe mode** - Run the app in (slower) safe mode.  
-- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.    
+- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.  
 
 ### Memory settings
 
 - **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
 :::note
-Higher memory allocation may impact the performance of other apps.
+Higher memory allocation may impact the performance of other apps.  
 :::
 
 ## Widgets  
 
-You can use OsmAnd development Widgets to get additional information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
+You can use OsmAnd development [Widgets](../widgets/info-widgets.md#-development-widgets) to get additional information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
 
 :::info  Important
 OsmAnd development Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
@@ -106,14 +106,13 @@ OsmAnd development Widgets can be added to the screen only when OsmAnd developme
 
 ### FPS Widget
 
-FPS Widget shows how fast the map and map elements are displayed and refreshed. The numeric value of this parameter displays the number of frames per second (FPS).  
+The FPS Widget shows how fast the map and map elements are displayed and refreshed. The numeric value of this parameter displays the number of frames per second (FPS).  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Use the following path to display the widget on the map screen:  
-*Menu → Configure screen → Left / Right panel → Developer Widgets → FPS Widget*  
+*Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
 ![Development widget fps 1](@site/static/img/plugins/development/ldev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
@@ -121,8 +120,7 @@ Use the following path to display the widget on the map screen:
 
 <TabItem value="ios" label="iOS">  
 
-Use the following path to display the widget on the map screen:  
-*Menu → Configure screen → FPS Widget*  
+*Menu → Configure screen → Right panel*  
 
 ![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_fps.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
@@ -132,32 +130,15 @@ Use the following path to display the widget on the map screen:
 
 ### Elevation Widget  
 
-With Elevation Widget you can find out the elevation above sea level of the current map center.  
+:::caution Android only
+Elevation Widget is currently not available for the iOS version of the OsmAnd app.  
+:::
 
-<Tabs groupId="operating-systems">
+With Elevation Widget you can find out the elevation above sea level of the current map center. Information can be displayed only when the heightmaps of the desired area are [downloaded](../start-with/download-maps.md).  
 
-<TabItem value="android" label="Android">  
-
-*Menu → Configure screen → Left / Right panel → Altitude → Elevation: map center* 
+*Menu → Configure screen → Left / Right panel → Altitude* 
 
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<!-- TODO use component & Review -->
-:::caution Android only
-Altitude Widget is currently not available for the iOS version of the OsmAnd app.  
-:::
-
-</TabItem>
-
-</Tabs>  
-
-:::caution  
-The widget will display the information only after the heightmaps of the desired area are [downloaded](../start-with/download-maps.md). Please note that these maps are only available for some regions.  
-:::
 
 ## Camera position Widgets (Android) 
 
@@ -165,11 +146,11 @@ In order to make sure that the OsmAnd map is realistic and corresponds to photos
 
 *Menu → Configure screen → Left / Right panel → Developer Widgets*    
 
-![Camera position Widgets 21](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 ### Camera tilt
 
-The widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
+The Camera tilt widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
 
 :::note  
 The camera tilt is changed by moving the camera (viewer) while the center point on the map surface (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
@@ -178,11 +159,11 @@ At the same time, due to the imaginary movement of the viewer, the distance from
 
 ### Camera Elevation
 
-The widget shows the camera elevation above the surface level.  
+The Camera Elevation widget shows the camera elevation above the surface level.  
 
 ### Zoom level
 
-The widget represents the current map zoom level.  
+The Zoom level widget represents the current map zoom level.  
 
 :::note
 The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
@@ -191,17 +172,19 @@ Each next zoom level reduces the imaginary distance to the ground by about 2 tim
 
 ### Distance to target
 
-Distance from camera to target widget shows the distance between camera (viewer) and center of the map.  
+The Distance from camera to target widget shows the distance between camera (viewer) and center of the map.  
 
 ### Comparison with a satellite imagery
 
-A comparison of the map and the earth's surface reveals the following patterns:  
+![Comparison](@site/static/img/plugins/development/comparison.png)
+
+A comparison of the OsmAnd map and the earth's surface reveals the following patterns:  
 
 - Maximum distortion is observed at large zooms (6-7 zoom for camera incline 90 degrees).  
 - As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
 - Distortions begin to be observed earlier in high latitudes.
 
-The table below contains information about possible distortions of the OsmAnd map depending on the camera (viewer) tilt.
+The table below contains information about the tilt of the camera (viewer) and the distance to the target (or zoom level) at which the OsmAnd map distortions become visible. If the camera continues to move away from the target, the observed distortion of the OsmAnd map will increase.  
 
 Incline |Latitude |Max Zoom |Height, km |Distortion  
 |-----|-----|-----|-----|-----|
@@ -226,12 +209,12 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 
 The development plugin provides an opportunity to simulate movement using a GPX track. For these purposes, do the following:  
 
-- Tap **<Translate android="true" ids="simulate_your_location"/>**. 
+- Tap **<Translate android="true" ids="simulate_your_location"/>**.  
 - Select a route simulation speed.
 - Select a GPX track to simulate the location of the device.  
 
 :::note
-The location movement speed during the simulation can be equal to the speed in the file (1), or bigger (x2, x3, x4)
+The location movement speed during the simulation can be equal to the speed in the file (1), or bigger (x2, x3, x4).  
 :::
 
 <Tabs groupId="operating-systems">
