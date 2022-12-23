@@ -298,8 +298,38 @@ External sensors widgets are currently not available for the iOS version of the 
 ## * Weather Widgets
 
 :::note  
-Weather Widgets can be added to the map screen only when OsmAnd Weather plugin is enabled.  
+Weather Widgets can be added to the map screen only when OsmAnd [Weather plugin](../plugins/weather.md) is enabled.  
 :::
+
+The Weather widgets display the current weather information for the central point on the map. They are automaticaly enabled when the [Weather tab](../plugins/weather.md#weather-forecast-screen) is on. The Weather widgets can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png) 
+
+| | |
+|------------|------------|
+| Enable | **Android:** Menu → Configure screen → Left / Right panel → Weather |  
+| By tapping | When the development plugin is enabled, weather forecast information is displayed in a pop-up notification.|
+| Format | **Android:** Menu → Plugins → Weather → Settings or *Menu → [Global Settings](../personal/global-settings.md#overview) → Profile → Weather* |  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
+
+| | |
+|------------|------------|
+| Enable | **iOS:** Menu → Confugure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
+| By tapping | - |
+| Format | Main menu → Global Settings → Profile → Weather |
+
+</TabItem>
+
+</Tabs>
 
 
 ## * Parking widget
@@ -376,59 +406,52 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to 
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,tracker_item"/> |
 | By tapping | Opens OsmAnd Tracker app |
 
-## * Development widgets
+## * Developer widgets
 
->Enable **[Development plugin](../plugins/development.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,debugging_and_development"/>.
+:::note  
+Developer Widgets can be added to the map screen only when OsmAnd [Development plugin](../plugins/development.md) is enabled.  
+:::
 
+Developer Widgets are used to get additional information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
 
-This is a [Development plugin](../plugins/development.md) widget to investigate how fast map & map elements are showed & refreshed. It displays:
- 
+### FPS widget
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-- UI interaction FPS - panning & dragging map (higher number).
-- Map refresh FPS - refreshing points, routes on the map (smaller number).
-
-![FPS info Android widget](@site/static/img/widgets/fps_info_widget.png)
+![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/>/<Translate android="true" ids="map_widget_left"/>  →  <Translate android="true" ids="developer_widgets"/> |
+| Enable | **Android:** Menu → Configure screen → Left / Right panel → Developer widgets |  
 | By tapping | - |
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-- Map refresh FPS - refreshing points, routes on the map (smaller number).
-
-![FPS info Android widget](@site/static/img/widgets/fps_info_widget_ios.png)
+![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_rendering_fps"/> |
+| Enable | **iOS:** Menu → Confugure screen → Right panel → FPS widget |
 | By tapping | - |
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
+### Camera widgets  
 
+<InfoAndroidOnly />
 
+![Camera position widgets](@site/static/img/widgets/camera_position_widgets.png)
 
-
-
-:::note
-FPS doesn't reflect how quickly full offline map screen is rendered, there is another **Developer plugin** setting for it - ***<Translate android="true" ids="trace_rendering"/>***.
-:::
-
-
-
-
-
-
+| | |
+|------------|------------|
+| Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
+| By tapping | - |
 
 ## Read next
 
