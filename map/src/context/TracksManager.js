@@ -457,7 +457,7 @@ function prepareTrackData(data) {
 
 async function getBackUp() {
     let resp = await axios({
-        url: `${process.env.REACT_APP_GPX_API}/mapapi/get_backUp`,
+        url: `${process.env.REACT_APP_GPX_API}/mapapi/download-backup`,
         responseType: 'blob'
     })
     if (resp) {
