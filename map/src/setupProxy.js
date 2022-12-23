@@ -12,12 +12,12 @@ module.exports = function (app) {
         hostRewrite: 'localhost:3000',
         logLevel: 'debug'
     });
+    // TODO /fav -> /mapapi/fav (duplicate)
     app.use('/fav/', proxy);
     app.use('/mapapi/', proxy);
     app.use('/routing/', proxy);
     app.use('/gpx/', proxy);
     app.use('/tile/', proxy);
     app.use('/weather-api/', proxy);
-    // app.use('/weather-api/', testProxy);
     
 };

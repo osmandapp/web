@@ -455,15 +455,6 @@ function prepareTrackData(data) {
     });
 }
 
-async function getBackUp() {
-    let resp = await axios({
-        url: `${process.env.REACT_APP_GPX_API}/mapapi/download-backup`,
-        responseType: 'blob'
-    })
-    if (resp) {
-        return resp;
-    }
-}
 
 const TracksManager = {
     loadTracks,
@@ -483,7 +474,6 @@ const TracksManager = {
     updateRouteBetweenPoints,
     updateStat,
     getEle,
-    getBackUp,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     GPX_FILE_TYPE: GPX_FILE_TYPE
 };

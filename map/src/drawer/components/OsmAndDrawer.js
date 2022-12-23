@@ -12,8 +12,6 @@ import RouteMenu from "./route/RouteMenu"
 import { useNavigate } from "react-router-dom";
 import FavoritesMenu from "./favorite/FavoritesMenu";
 import SearchResultMenu from "./search/SearchResultMenu";
-import BackUp from "./backup/BackUp";
-
 
 
 export default function OsmAndDrawer({ mobile, toggleDrawer }) {
@@ -60,7 +58,6 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
             <MapStyle />
             <RouteMenu />
             <SearchResultMenu />
-            {ctx.loginUser && <BackUp />}
         </MenuList>
     </>
     );

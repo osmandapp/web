@@ -127,11 +127,15 @@ export default function LoginDialog() {
                             Total files: {ctx.listFiles.totalFiles} ({ctx.listFiles.totalFileVersions} including versions).<br />
                             Total files size: {(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB,
                             cloud storage used: {(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.
+                                <br /><br />
+                                <a href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`} target="_blank" download>Download backup ~{(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB</a>
                         </span>
                         }
+                        
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
+                    
                     <Button onClick={handleClose}>Close</Button>
                     <Button onClick={(e) => userLogout(ctx, userEmail, setEmailError, handleClose, setState)}>
                         Logout</Button>
