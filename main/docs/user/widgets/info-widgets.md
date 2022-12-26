@@ -20,23 +20,66 @@ Information widgets are needed for quick access to information important to the 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Altitude
+## Altitude widgets 
+ 
+Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center. 
+ 
+### Altitude: current location 
+ 
+:::note 
+On some Android devices the altitude may not be displayed correctly. To resolve this problem download altitude correction map: 
+<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
+:::
+ 
+<Tabs groupId="operating-systems">
+ 
+<TabItem value="android" label="Android">
 
-Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded (these maps are available for some regions in test format).  
-
-![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
-
+![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)   
+ 
 | | |
 |------------|------------|
-| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude |  
+| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | - |
-| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
+| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+ 
+</TabItem>
+ 
+<TabItem value="ios" label="iOS">
+
+![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+ 
+| | |
+|------------|------------|
+| Enable | **iOS:** Menu → Confugure screen → Right panel → Altitude widget |
+| By tapping | - |
+| Format | **iOS:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+ 
+</TabItem>
+ 
+</Tabs> 
+
+
+### * Elevation: map center
+ 
+<InfoAndroidOnly />  
+
+Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded (these maps are available for some regions in test format). 
+
+![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)   
+ 
+| | |
+|------------|------------|
+| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
+| By tapping | - |
+| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+
 
 ## Current time
 
 This widget shows current time from your device.
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)
+![Current time widget](@site/static/img/widgets/current_time_widget.png)  
 
 | | |
 |------------|------------|
