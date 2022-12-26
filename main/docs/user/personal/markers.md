@@ -280,16 +280,12 @@ To start using *Map markers widgets*, you need to make all of the following sett
 
 ### Add Marker widgets
 
-
-<!---
-
-Add / Edit Marker
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png)  ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)  
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -306,54 +302,29 @@ Actions:
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
 - 'Mark passed' (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
 - 'Make active' (Android) - moves marker to the top position (on the top panel).
-- 'Restore marker' (Android) - moves marker from History to active list.
+- 'Restore marker' (Android) - moves marker from History to active list.  
 
-Read more about [markers](../personal/markers.md).
+**"Map marker" widget: added option to change click behavior.**
 
+_Map marker widget_ can show _Estimated arrival time (ETA)_ now, not only the distance to the Map marker.
 
+![map_marker_w_6](@site/blog/2022-12-12-android-4-3/map_marker_widget_6.png)  
+At first, you need to add _Map marker widget_ to left or right panel: _Menu → Widgets → left / Right panel → Map markers_. Than you need check settings of these widgets by tapping on &#9881; button.  
 
+![map_marker_w](@site/blog/2022-12-12-android-4-3/map_marker_widget.png)  
+![map_marker_w_1](@site/blog/2022-12-12-android-4-3/map_marker_widget_1.png)  
 
-   * **"Map marker" widget: added option to change click behavior.**
+Here you can choose what widget will show: Distance or ETA. What action will be by clicking on widget: _Switch mode_ or _Go to marker location_.  
 
-   _Map marker widget_ can show _Estimated arrival time (ETA)_ now, not only the distance to the Map marker.
+_Switch mode_ changes mode from _Distance_ to _ETA_ and vice versa.  
 
-   <table class="blogimage">
-   <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_6.png').default} alt="turn arrows visible"/></td>
-    </tr>
-   </table> 
-  
-   At first, you need to add _Map marker widget_ to left or right panel: _Menu → Widgets → left / Right panel → Map markers_. Than you need check settings of these widgets by tapping on &#9881; button. 
+_Go to marker location_ moves the center map to chosen Map marker.   
 
-   <table class="blogimage">
-  <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_1.png').default} alt="turn arrows visible"/></td>
-  </tr>
-  </table> 
+![map_marker_w_2](@site/blog/2022-12-12-android-4-3/map_marker_widget_2.png)  ![map_marker_w_2](@site/blog/2022-12-12-android-4-3/map_marker_widget_3.png)  
 
-  Here you can choose what widget will show: Distance or ETA. What action will be by clicking on widget: _Switch mode_ or _Go to marker location_.
+_Estimated arrival time (ETA)_ widget you can choose the time interval: Specify the time interval for speed averaging (used for the arrival time estimate).  
 
-  _Switch mode_ changes mode from _Distance_ to _ETA_ and vice versa.
-
-  _Go to marker location_ moves the center map to chosen Map marker.
-
-    <table class="blogimage">
-    <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_2.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_3.png').default} alt="turn arrows visible"/></td>
-    </tr>
-    </table> 
-
-    _Estimated arrival time (ETA)_ widget you can choose the time interval: Specify the time interval for speed averaging (used for the arrival time estimate).
-
-    <table class="blogimage">
-    <tr>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_4.png').default} alt="turn arrows visible"/></td>
-    <td><img src={require('@site/blog/2022-12-08-android-4-3/map_marker_widget_5.png').default} alt="turn arrows visible"/></td>
-    </tr>
-    </table> 
--->
+![map_marker_w_4](@site/blog/2022-12-12-android-4-3/map_marker_widget_4.png)  ![map_marker_w_5](@site/blog/2022-12-12-android-4-3/map_marker_widget_5.png)  
 
 <Tabs groupId="operating-systems">
 
