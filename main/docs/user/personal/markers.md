@@ -406,9 +406,7 @@ You need choose markers for your route.
 
 Next 'Options' button (top corner):
 
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>*
-
-<p> </p>
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>*  
 
 ![Map markers Plan Route Options Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
@@ -424,9 +422,7 @@ Next 'Options' button (top corner):
 
 Next, building a route.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options,get_directions"/>
-
-<p> </p>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options,get_directions"/>  
 
 ![Map markers Plan Route Directions Android](@site/static/img/personal/markers/map_markers_plan_route_directions_android.png)
 
@@ -456,7 +452,7 @@ Next, building a route.
 <TabItem value="ios" label="iOS">
 
 :::caution Android only
-This feature is available only for the **Android version** of OsmAnd app.
+These features are currently not available for the iOS version of the OsmAnd app.
 :::
 
 </TabItem>
