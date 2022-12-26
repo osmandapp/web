@@ -15,11 +15,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Information widgets display information about your current location, speed, time, and battery level on the map screen.
-
-Most information widgets are located together in the right column.
+Information widgets are needed for quick access to information important to the user. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to the user's specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
+
 
 ## Altitude
 
@@ -33,6 +32,7 @@ Altitude widget shows the height above sea level of current geolocation. **Andro
 | By tapping | - |
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+
 
 ## Current time
 
