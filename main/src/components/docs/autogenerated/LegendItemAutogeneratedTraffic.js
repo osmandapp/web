@@ -1,6 +1,18 @@
-### Traffic, transportation
+import React from 'react';
+import clsx from 'clsx';
+import styles from '../LegendItem.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import LegendItem from "../LegendItem";
 
-<LegendItem itemsMap={{
+
+// This code was automatically generated 
+// with Java-tools SvgMapLegendGenerator
+
+export default function Render() {
+
+    return LegendItem({itemsMap: {
         'Parking' : 'traffic/traffic_amenity_parking',
         'Bus station' : 'traffic/traffic_amenity_bus_station',
         'Speed camera' : 'traffic/traffic_highway_speed_camera',
@@ -49,6 +61,7 @@
         'Mountain pass' : 'traffic/traffic_mountain_pass',
         'Gas station for boats' : 'traffic/traffic_waterway_fuel',
         'Passing place' : 'traffic/traffic_highway_passing_place',
-        }}>
-</LegendItem>
+    }});
+
+}
 
