@@ -21,18 +21,18 @@ Information widgets are needed for quick access to information important to the 
 
 
 ## Altitude widgets 
- 
+
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center. 
- 
+
 ### Altitude: current location 
  
 :::note 
 On some Android devices the altitude may not be displayed correctly. To resolve this problem download altitude correction map: 
 <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
 :::
- 
+
 <Tabs groupId="operating-systems">
- 
+
 <TabItem value="android" label="Android">
 
 ![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)   
@@ -42,9 +42,9 @@ On some Android devices the altitude may not be displayed correctly. To resolve 
 | Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | - |
 | Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
- 
+
 </TabItem>
- 
+
 <TabItem value="ios" label="iOS">
 
 ![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
@@ -54,26 +54,30 @@ On some Android devices the altitude may not be displayed correctly. To resolve 
 | Enable | **iOS:** Menu → Confugure screen → Right panel → Altitude widget |
 | By tapping | - |
 | Format | **iOS:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
- 
+
 </TabItem>
- 
+
 </Tabs> 
 
 
 ### * Elevation: map center
- 
+
 <InfoAndroidOnly />  
+
+## Altitude
 
 Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded (these maps are available for some regions in test format). 
 
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)   
- 
+
 | | |
 |------------|------------|
 | Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | - |
 | Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
 
+| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
+|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
 
 ## Current time
 
