@@ -179,7 +179,7 @@ Starting from version [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-re
 Here you can choose **Version 1** of OsmAnd rendering engine or **Version 2 (OpenGL)**. Please, choose the version and restart OsmAnd.
 
 :::tip
-Version 1 renderig is still preferable for older devices.
+Version 1 rendering is still preferable for older devices.
 
 OpenGL (vesion 2) is a faster map rendering engine, also featuring [2.5D view](../personal/profiles.md#appearance).
 :::

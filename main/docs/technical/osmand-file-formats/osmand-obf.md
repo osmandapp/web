@@ -16,7 +16,7 @@ OsmAnd offline map data is contained in 'obf' files. 'obf' files have a complex 
 
 > Q: How does mapcreator generate its list of all places that will appear later in OsmAnd's offline address search? What objects are used in detail for that? What nodes with a place tag are included, and which are excluded?
 >
-> A: All places that are visible in OsmAnd as Cities are taken from nodes that have the tag "place" [https://wiki.openstreetmap.org/wiki/Place.](https://wiki.openstreetmap.org/wiki/pPlace. "https://wiki.openstreetmap.org/wiki/Place.") Currently city, town, suburb, village, hamlet are used.
+> A: All places that are visible in OsmAnd as Cities are taken from nodes that have the tag "place" [https://wiki.openstreetmap.org/wiki/Place](https://wiki.openstreetmap.org/wiki/Place "https://wiki.openstreetmap.org/wiki/Place"). Currently city, town, suburb, village, hamlet are used.
 >
 > Q: How does mapcreator handle an area polygon that is given via a relation with boundary=administrative? How do you associate a place given as a node with its boundary when it is present in the OSM data?
 >
