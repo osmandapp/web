@@ -452,7 +452,3 @@ Developer Widgets are used to get additional information about map [rendering sp
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
 | By tapping | - |
-
-## Read next
-
-[Map buttons](../widgets/map-buttons.md)
