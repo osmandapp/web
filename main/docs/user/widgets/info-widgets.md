@@ -22,17 +22,15 @@ Information widgets are needed for quick access to information important to the 
 
 ## Altitude
 
-Altitude widget shows the height above sea level of current geolocation. **Android:** on some devices altitude is not displayed correctly due to missing correction of Earth-geoid, you can download it via: <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
+Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded (these maps are available for some regions in test format).  
 
-![Altitude widget](@site/static/img/widgets/altitude_widget.png)
+![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_altitude"/> |
+| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude |  
 | By tapping | - |
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
-
+| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 ## Current time
 
@@ -294,14 +292,13 @@ External sensors widgets are currently not available for the iOS version of the 
 
 </Tabs>  
 
-
-## * Weather Widgets
+## * Weather widgets
 
 :::note  
-Weather Widgets can be added to the map screen only when OsmAnd [Weather plugin](../plugins/weather.md) is enabled.  
+Weather widgets can be added to the map screen only when OsmAnd [Weather plugin](../plugins/weather.md) is enabled.  
 :::
 
-The Weather widgets display the current weather information for the central point on the map. They are automaticaly enabled when the [Weather tab](../plugins/weather.md#weather-forecast-screen) is on. The Weather widgets can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
+The Weather widgets display the current weather information for the central point on the map. The Weather widgets are automaticaly enabled on the [Weather screen](../plugins/weather.md#weather-forecast-screen). They can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
 
 <Tabs groupId="operating-systems">
 
@@ -313,7 +310,7 @@ The Weather widgets display the current weather information for the central poin
 |------------|------------|
 | Enable | **Android:** Menu → Configure screen → Left / Right panel → Weather |  
 | By tapping | When the development plugin is enabled, weather forecast information is displayed in a pop-up notification.|
-| Format | **Android:** Menu → Plugins → Weather → Settings or *Menu → [Global Settings](../personal/global-settings.md#overview) → Profile → Weather* |  
+| Format | **Android:** Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
 
 </TabItem>
 
@@ -325,7 +322,7 @@ The Weather widgets display the current weather information for the central poin
 |------------|------------|
 | Enable | **iOS:** Menu → Confugure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
 | By tapping | - |
-| Format | Main menu → Global Settings → Profile → Weather |
+| Format | **iOS:** Main menu → Global Settings → Profile → Weather |
 
 </TabItem>
 
@@ -451,4 +448,5 @@ Developer Widgets are used to get additional information about map [rendering sp
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
-| By tapping | - |
+| By tapping | - |  
+| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length |
