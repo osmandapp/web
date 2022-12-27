@@ -38,7 +38,10 @@ Markers interface is a tool that helps you save temporary points on the map for 
 </Tabs>
 
 
-## How to add
+## Settings
+
+
+### Add Marker on the map
 
 A long tap on the map visible on the screen opens a point menu where you can select *Markers* to add a marker to the map. You can add markers even for unloaded areas.  
 
@@ -58,42 +61,33 @@ A long tap on the map visible on the screen opens a point menu where you can sel
 
 </Tabs> 
 
-### Add Marker on the map
+
+### Add / Edit Marker
+
+Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+</Tabs> 
 
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
 
-</TabItem>
-
-</Tabs>
-
-
-### Actions in Map Context menu
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-</Tabs>
+Actions:
+- [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
+- 'Mark passed' (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
+- 'Make active' (Android) - moves marker to the top position (on the top panel).
+- 'Restore marker' (Android) - moves marker from History to active list.  
 
 
 ## Map markers menu  
@@ -207,7 +201,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 </Tabs>
 
 
-### More / Appearance 
+### More 
 
 <Tabs groupId="operating-systems">
 
@@ -269,7 +263,67 @@ In the Android version, there are additional settings for [configuring the widge
 </Tabs> 
 
 
-## Map markers widgets
+## Plan route for Markers
+
+<!-- https://osmand.net/docs/user/plan-route/create-route -->
+
+Map markers are selected points marked as flags on the map. They provide useful information for direct-point-navigation on the map screen.    
+
+Navigation to the marker is direct-point-navigation. This navigation is made special for quick destinations. For example, during any off-road competitions.  
+
+At first user need to set [Map marker view](../personal/markers.md) and [Marker widget](../widgets/markers.md).
+User need to find or tap to the object on the map, click to it and choose [Marker button in Map Conctext menu](../map/map-context-menu.md#add--edit-marker).  
+The flag on the object (Map marker) with line from your location to it (option).
+Arrow, line and widget show object location and distance to it.  
+
+![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png) ![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
+
+![Map markers Plan Route Android](@site/static/img/personal/markers/map_markers_plan_route_android.png)
+
+You need choose markers for your route.
+
+![Map markers Plan Route points Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png)
+
+Next 'Options' button (top corner):
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>*  
+
+![Map markers Plan Route Options Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
+
+<Translate android="true" ids="shared_string_options"/>:
+
+- <Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation/index.md)).
+- <Translate android="true" ids="make_round_trip"/> - <Translate android="true" ids="make_round_trip_descr"/> Round trip or not. 
+
+<Translate android="true" ids="sort_by"/> :
+
+- <Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers.md#list-android).
+- <Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers.md#list-android).
+
+Next, building a route.
+
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options,get_directions"/>  
+
+![Map markers Plan Route Directions Android](@site/static/img/personal/markers/map_markers_plan_route_directions_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+
+
+## Marker widgets
 
 The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position.  
 
@@ -357,68 +411,10 @@ _Estimated arrival time (ETA)_ widget you can choose the time interval: Specify 
 
 ### Appearance on the map
 
-You can read how to configure the appearance of the markers in [this section](#appearance-on-the-map) of the current article.
+You can read how to configure the appearance of the markers in [this section](#appearance-on-the-map) of the current article.  
 
 
-## Plan route for Markers
-
-Map markers are selected points marked as flags on the map. They provide useful information for direct-point-navigation on the map screen.    
-
-Navigation to the marker is direct-point-navigation. This navigation is made special for quick destinations. For example, during any off-road competitions.  
-
-At first user need to set [Map marker view](../personal/markers.md) and [Marker widget](../widgets/markers.md).
-User need to find or tap to the object on the map, click to it and choose [Marker button in Map Conctext menu](../map/map-context-menu.md#add--edit-marker).  
-The flag on the object (Map marker) with line from your location to it (option).
-Arrow, line and widget show object location and distance to it.  
-
-![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png) ![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
-
-![Map markers Plan Route Android](@site/static/img/personal/markers/map_markers_plan_route_android.png)
-
-You need choose markers for your route.
-
-![Map markers Plan Route points Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png)
-
-Next 'Options' button (top corner):
-
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options"/>*  
-
-![Map markers Plan Route Options Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
-
-<Translate android="true" ids="shared_string_options"/>:
-
-- <Translate android="true" ids="get_directions"/> - Starting build your route ([Navigation](../navigation/index.md)).
-- <Translate android="true" ids="make_round_trip"/> - <Translate android="true" ids="make_round_trip_descr"/> Round trip or not. 
-
-<Translate android="true" ids="sort_by"/> :
-
-- <Translate android="true" ids="intermediate_items_sort_by_distance"/>   - Sort your markers in [List](../personal/markers.md#list-android).
-- <Translate android="true" ids="shared_string_reverse_order"/>  - Reverse order for markder in [List](../personal/markers.md#list-android).
-
-Next, building a route.
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route,shared_string_options,get_directions"/>  
-
-![Map markers Plan Route Directions Android](@site/static/img/personal/markers/map_markers_plan_route_directions_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
-
-
-## Markers in Favorites
+## Markers from Favorites
 
 <Tabs groupId="operating-systems">
 
@@ -447,6 +443,12 @@ Functions for Favorite folder:
 ## Setting Markers for Waypoints
 
 [Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+
+Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../personal/tracks.md#add-waypoint).
+
+![Track on map](@site/static/img/map/track_point_on_map.png)
+
+[Read more](../map/tracks-on-map.md) about tracks on the map.
 
 <Tabs groupId="operating-systems">
 

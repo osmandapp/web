@@ -10,6 +10,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import Poll from '@site/src/components/home/Poll';
 
 <InfoIncompleteArticle/>
 
@@ -150,6 +151,14 @@ At this screen you can set your login and backup data.
 
 </Tabs>
 
+
+### Backup & Restore
+
+_Menu → Settings → Backup & Restore_
+
+![Backup iOS](@site/static/img/personal/osmAnd-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmAnd-cloud/backup_1_ios.png)
+
+
 ## Login
 
 ## Settings
@@ -161,3 +170,5 @@ At this screen you can set your login and backup data.
 ### Cloud
 
 ### Conflicts
+
+### Cloud backup
