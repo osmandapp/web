@@ -56,9 +56,8 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
 
     async function addGroupToMap(setProgressVisible, addToMap) {
         setProgressVisible(true);
-        if (ctx.favorites && ctx.favorites[group.name]) {
             const newFavoriteFiles = Object.assign({}, ctx.favorites);
-            if (ctx.favorites[group.name].url) {
+            if (ctx.favorites[group.name]?.url) {
                 newFavoriteFiles[group.name].addToMap = addToMap;
             } else {
                 let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(group.file.type)}&name=${encodeURIComponent(group.file.name)}`;
@@ -90,7 +89,6 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             }
             ctx.setSelectedGpxFile(newSelectedGpxFile);
             setProgressVisible(false);
-        }
     }
 
     useEffect(() => {
@@ -107,6 +105,9 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             setMarkers(markerList);
         } else {
             setMarkers([]);
+        }
+        if (favoritesPointsOpen && markers.length === 0) {
+            enableLayerWithGroups(setLoadingFavorites, ctx, favoritesPointsOpen, false).then();
         }
     }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
 
@@ -129,7 +130,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                     {group.name}
                 </Typography>
             </ListItemText>
-            <Switch checked={enableGroups.some(e => e.name === group.name)}
+            <Switch checked={ctx.favorites[group.name]?.addToMap === true && enableGroups.some(e => e.name === group.name)}
                     onChange={(e) => {
                         enableLayerWithGroups(setLoadingFavorites, ctx, e.target.checked, true).then();
                     }}

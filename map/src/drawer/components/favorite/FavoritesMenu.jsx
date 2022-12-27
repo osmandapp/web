@@ -38,12 +38,11 @@ export default function FavoritesMenu() {
                 file: file});
         })
 
-        createAllLayers(ctx, false, groups).then();
         setFavoritesGroups(groups);
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        let enableAllGroups = enableGroups.length === favoritesGroups.length;
+        let enableAllGroups = enableGroups.length === favoritesGroups.length && enableGroups.length > 0;
         let disableAllGroups = enableGroups.length === 0 && favoritesGroups.length !== 0;
         if (enableAllGroups) {
             createAllLayers(ctx, true, favoritesGroups).then();
