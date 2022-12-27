@@ -189,7 +189,7 @@ export default function GeneralInfoTab({width, srtm}) {
     }
 
     const downloadGpx = async () => {
-        let gpx = await TracksManager.getGpxTrack(ctx);
+        let gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
         if (gpx) {
             gpx = gpx.data;
             const url = document.createElement('a');
