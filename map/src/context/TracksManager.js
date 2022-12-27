@@ -262,10 +262,22 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                 const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
                 const resJson = await respGetFiles.json();
                 ctx.setListFiles(resJson);
+                deleteLocalTrack(ctx);
                 return true;
             }
         }
     }
+}
+
+function deleteLocalTrack(ctx) {
+    let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    if (currentTrackIndex !== -1) {
+        ctx.localTracks.splice(currentTrackIndex, 1);
+        TracksManager.saveTracks(ctx.localTracks);
+        ctx.setLocalTracks([...ctx.localTracks]);
+        return true;
+    }
+    return false;
 }
 
 
@@ -474,6 +486,7 @@ const TracksManager = {
     updateRouteBetweenPoints,
     updateStat,
     getEle,
+    deleteLocalTrack,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     GPX_FILE_TYPE: GPX_FILE_TYPE
 };

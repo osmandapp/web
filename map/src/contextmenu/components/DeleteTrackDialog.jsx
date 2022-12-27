@@ -54,12 +54,8 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
             }
 
         } else if (ctx.currentObjectType === 'local_client_track') {
-            let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-            if (currentTrackIndex !== -1) {
-                ctx.localTracks.splice(currentTrackIndex, 1);
-                TracksManager.saveTracks(ctx.localTracks);
-                ctx.setLocalTracks([...ctx.localTracks]);
-
+            let wasDeleted = TracksManager.deleteLocalTrack(ctx);
+            if (wasDeleted) {
                 cleanContextMenu();
             }
         }
