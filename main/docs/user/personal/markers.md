@@ -15,6 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+Map markers are temporary points indicated on the map in the form of flags. Their appearance can be configured with **arrows** (Arrows on the map) and **distance indication** (Direction lines).
 
 ## Overview
 
@@ -56,6 +57,43 @@ A long tap on the map visible on the screen opens a point menu where you can sel
 </TabItem>
 
 </Tabs> 
+
+### Add Marker on the map
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+</Tabs>
+
+
+### Actions in Map Context menu
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
+
+</TabItem>
+
+</Tabs>
 
 
 ## Map markers menu  
@@ -197,44 +235,6 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 </Tabs>
 
 
-## Add Marker on the map
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-</Tabs>
-
-
-### Actions in Map Context menu
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Read about **Add / Edit Marker** [here](../map/map-context-menu.md#add--edit-marker).
-
-</TabItem>
-
-</Tabs>
-
-
 ## Appearance on the map
 
 Setting the appearance of markers is available in both the Android and iOS versions of the OsmAnd app. The "Appearance on Map" menu is a general setting for displaying markers and additional pointers to them.
@@ -304,6 +304,7 @@ Actions:
 - 'Make active' (Android) - moves marker to the top position (on the top panel).
 - 'Restore marker' (Android) - moves marker from History to active list.  
 
+
 **"Map marker" widget: added option to change click behavior.**
 
 _Map marker widget_ can show _Estimated arrival time (ETA)_ now, not only the distance to the Map marker.
@@ -361,11 +362,20 @@ You can read how to configure the appearance of the markers in [this section](#a
 
 ## Plan route for Markers
 
+Map markers are selected points marked as flags on the map. They provide useful information for direct-point-navigation on the map screen.    
+
+Navigation to the marker is direct-point-navigation. This navigation is made special for quick destinations. For example, during any off-road competitions.  
+
+At first user need to set [Map marker view](../personal/markers.md) and [Marker widget](../widgets/markers.md).
+User need to find or tap to the object on the map, click to it and choose [Marker button in Map Conctext menu](../map/map-context-menu.md#add--edit-marker).  
+The flag on the object (Map marker) with line from your location to it (option).
+Arrow, line and widget show object location and distance to it.  
+
+![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png) ![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-[Link to description](../navigation/markers-navigation.md)
 
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_markers,shared_string_more_without_dots,plan_route"/>*
 
@@ -408,23 +418,47 @@ Next, building a route.
 </Tabs>
 
 
-## Add/Remove Markers from Favorites/Waypoints
+## Markers in Favorites
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-[Favorites to Map Markers link](../personal/favorites.md#add-to-map-markers-android)
+You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
 
-[Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+Click to '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
+
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+
+Functions for Favorite folder:
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-:::caution Android only
-These features are currently not available for the iOS version of the OsmAnd app.
-:::
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
+
+
+## Setting Markers for Waypoints
+
+[Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+You can add or remove your Waypoints in/from [Map markers list](../personal/markers.md).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
 
 </TabItem>
 
