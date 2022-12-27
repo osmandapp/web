@@ -14,20 +14,18 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 Information widgets are needed for quick access to information important to the user. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to the user's specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
+## Altitude widgets  
 
-## Altitude widgets 
+Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
-Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center. 
-
-### Altitude: current location 
- 
-:::note 
-On some Android devices the altitude may not be displayed correctly. To resolve this problem download altitude correction map: 
+### Altitude: current location  
+  
+:::note  
+On some Android devices the altitude may not be displayed correctly. To resolve this problem download altitude correction map:  
 <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
 :::
 
@@ -35,45 +33,43 @@ On some Android devices the altitude may not be displayed correctly. To resolve 
 
 <TabItem value="android" label="Android">
 
-![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)   
- 
+![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
+  
 | | |
 |------------|------------|
-| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
+| Enable | Menu → Configure screen → Left / Right panel → Altitude |  
 | By tapping | - |
-| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
- 
+  
 | | |
 |------------|------------|
-| Enable | **iOS:** Menu → Confugure screen → Right panel → Altitude widget |
+| Enable | Menu → Configure screen → Right panel → Altitude widget |
 | By tapping | - |
-| Format | **iOS:** Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
 
-</Tabs> 
-
+</Tabs>  
 
 ### * Elevation: map center
 
 <InfoAndroidOnly />  
 
-Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded (these maps are available for some regions in test format). 
- 
+Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded.  
+  
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png) 
- 
+  
 | | |
 |------------|------------|
-| Enable | **Android:** Menu → Configure screen → Left / Right panel → Altitude | 
+| Enable | Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | - |
-| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
-
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 ## Current time
 
@@ -351,9 +347,9 @@ The Weather widgets display the current weather information for the central poin
 
 | | |
 |------------|------------|
-| Enable | **Android:** Menu → Configure screen → Left / Right panel → Weather |  
+| Enable | Menu → Configure screen → Left / Right panel → Weather |  
 | By tapping | When the development plugin is enabled, weather forecast information is displayed in a pop-up notification.|
-| Format | **Android:** Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
+| Format | Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
 
 </TabItem>
 
@@ -363,14 +359,13 @@ The Weather widgets display the current weather information for the central poin
 
 | | |
 |------------|------------|
-| Enable | **iOS:** Menu → Confugure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
+| Enable | Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
 | By tapping | - |
-| Format | **iOS:** Main menu → Global Settings → Profile → Weather |
+| Format | Main menu → Global Settings → Profile → Weather |
 
 </TabItem>
 
 </Tabs>
-
 
 ## * Parking widget
 
@@ -452,9 +447,11 @@ This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to 
 Developer Widgets can be added to the map screen only when OsmAnd [Development plugin](../plugins/development.md) is enabled.  
 :::
 
-Developer Widgets are used to get additional information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
+Developer Widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
 
 ### FPS widget
+
+The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map and map elements are displayed and refreshed: the higher the rendering speed, the greater the quantitative values in frames per second.  
 
 <Tabs groupId="operating-systems">
 
@@ -464,7 +461,7 @@ Developer Widgets are used to get additional information about map [rendering sp
 
 | | |
 |------------|------------|
-| Enable | **Android:** Menu → Configure screen → Left / Right panel → Developer widgets |  
+| Enable | Menu → Configure screen → Left / Right panel → Developer widgets |  
 | By tapping | - |
 
 </TabItem>
@@ -475,7 +472,7 @@ Developer Widgets are used to get additional information about map [rendering sp
 
 | | |
 |------------|------------|
-| Enable | **iOS:** Menu → Confugure screen → Right panel → FPS widget |
+| Enable | Menu → Configure screen → Right panel → FPS widget |
 | By tapping | - |
 
 </TabItem>
@@ -486,10 +483,12 @@ Developer Widgets are used to get additional information about map [rendering sp
 
 <InfoAndroidOnly />
 
+Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widge](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
+
 ![Camera position widgets](@site/static/img/widgets/camera_position_widgets.png)
 
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
 | By tapping | - |  
-| Format | **Android:** Menu → Settings → App profiles → General settings → Units & formats → Units of length |
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |
