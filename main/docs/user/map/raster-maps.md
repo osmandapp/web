@@ -50,7 +50,7 @@ Comparison to default vector maps.
 
 ## How to use Raster maps 
 ### Enable plugin
-In order to use raster maps  in Android OsmAnd you need to enable [Online maps plugin](../plugins/index.md):
+In order to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/index.md):
 
 <Tabs groupId="operating-systems">
 
