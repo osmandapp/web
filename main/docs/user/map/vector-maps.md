@@ -16,9 +16,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour Lines information. You can create your own OsmAnd map style to demonstrate the necessary information.
 
+
 ## Use cases
 
 Configurable & Custom Map styles are one of the main advantages of OsmAnd. Each user can customize the display of the map for himself and his hobbies, configure to show or hide certain map objects, sizes, and colours of these objects and change the scale on which to display certain objects.
+
 
 ## Default Map styles  
 
@@ -28,18 +30,18 @@ OsmAnd offers you many map styles and data layers that fit by default. Let's tak
 
 <TabItem value="android" label="Android">  
 
-
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*  
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_offline"/>*  
+*<Translate ios="true" ids="menu,configure_map,map_settings_offline"/>*  
 
 </TabItem>
 
 </Tabs>  
+
 
 ### OsmAnd
 
@@ -52,6 +54,7 @@ OsmAnd style is the default style of map rendering, general-purpose style. It of
 <Translate android="true" ids="touring_view_render_descr"/>
 
 ![Touring view map style](@site/static/img/map/map-style-touring.png)
+
 
 ### UniRS and LightRS
 
@@ -67,14 +70,15 @@ LightRS style: <Translate android="true" ids="light_rs_render_descr"/>
 
 ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
 
+
 ### Nautical 
 
-&nbsp;<Translate android="true" ids="nautical_render_descr"/> Read more about [Nautical maps](../plugins/nautical-charts.md).
+For nautical navigation. Features buoys, lighthouses, riverways, sea lanes and marks, harbors, seamark services, and depth contours. Read more about [Nautical maps](../plugins/nautical-charts.md).
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-### Winter and ski  
 
+### Winter and ski  
 
 For skiing sports. Describes the pistes, elevators, cross-country trails, and obscures secondary map objects. **Winter and ski style** is designed to help you with winter sports navigation: you can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key features: the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more about [Ski maps](../plugins/ski-maps.md).
 
@@ -126,6 +130,7 @@ Download map fonts for simplified / traditional Chinese, Japanese, Korean maps:
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
+
 ## * Contour Lines
 
 Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
@@ -136,28 +141,49 @@ Contour lines are available for all map styles and modes and could be configured
 
 <TabItem value="android" label="Android">  
 
-To configure it, follow these steps:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,index_srtm_ele"/>*  
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-To configure it, follow these steps:  
 *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,product_title_srtm"/>* 
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
 
-
-<p> </p>
-
-![Contour lines map style](@site/static/img/map/contour_lines.png)
-
+![Contour lines map style](@site/static/img/map/contour_lines.png)  
 
 More information about [Contour lines](../plugins/contour-lines.md). 
+
+
+## * Nautical depth
+
+Nautical depth contour lines allow you to define areas of equal depth. They are designed to visualize changes in topography below the water surface. Nautical depth is available for all map styles and modes and can be adjusted whether or not the Nautical map view plugin is enabled.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*   
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+More information about [Nautical map view](../plugins/nautical-charts). 
+
 
 ## Configure Map Style
 
@@ -165,28 +191,23 @@ More information about [Contour lines](../plugins/contour-lines.md).
 
 During day and night, you need to use mode for the map. [Map styles](#default-map-styles) have night and day mode styles. In this menu, you find the time of sunrise and sunset.  
 
-<Tabs groupId="operating-systems">
+In order to change Day/night mode:  
+<Tabs groupId="operating-systems">  
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">   
 
-In order to change <Translate android="true" ids="daynight"/>:   
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
-
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-In order to change <Translate android="true" ids="daynight"/>:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*
+*<Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*
 
 </TabItem>
 
-</Tabs> 
+</Tabs>   
 
-
-
-<p> </p>
 
 Here you can choose:
 
@@ -196,6 +217,7 @@ Here you can choose:
 |**<Translate android="true" ids="daynight_mode_day"/>**|Switching on day mode only.|
 |**<Translate android="true" ids="daynight_mode_night"/>**|Switching on night mode only.|
 |**<Translate android="true" ids="daynight_mode_sensor"/>**|Using a light sensor for day/night mode.|
+
 
 ### Details  
 

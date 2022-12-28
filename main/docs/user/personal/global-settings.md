@@ -16,6 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+
 ## Overview
 
 **Global settings** are general [settings](../personal/profiles.md) for all profiles in the OsmAnd application. These are the basic settings for the OsmAnd system and all changes made will affect the entire application.
@@ -24,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-To open OsmAnd settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
 ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_1.png)  ![Profiles General Settings Android](@site/static/img/personal/profiles/global_sett_andr_2.png)
 
@@ -32,7 +33,7 @@ To open OsmAnd settings, follow these steps: *<Translate android="true" ids="sha
 
 <TabItem value="ios" label="iOS">
 
-To open OsmAnd settings, follow these steps: *<Translate ios="true" ids="menu,sett_settings,osmand_settings"/>*
+*<Translate ios="true" ids="menu,sett_settings,osmand_settings"/>*  
 
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_ios.png)
 
@@ -49,7 +50,6 @@ This section contains the basic settings of OsmAnd, such as selecting a profile 
 
 OsmAnd uses the default profile, *Browse map*, as the first profile for new users and also if this profile has been selected by the user to be used each time the application is restarted. You can choose any profile, Last used and Browse map too, from the list as default.
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -59,7 +59,6 @@ OsmAnd uses the default profile, *Browse map*, as the first profile for new user
 - **<Translate android="true" ids="settings_preset"/>** - You select the profile that will be used when starting OsmAnd. Can be changed in the application [settings](../personal/profiles.md).
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_andr.png)  
-
 
 </TabItem>
 
@@ -71,11 +70,10 @@ OsmAnd uses the default profile, *Browse map*, as the first profile for new user
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
-
-
 </TabItem>
 
 </Tabs>
+
 
 ### CarPlay profile
 
@@ -86,9 +84,7 @@ This profile is only available for iOS. It uses your car's audio and video syste
 <TabItem value="android" label="Android">  
 
 :::note
-
 This settings is not available for Android
-
 :::
 
 Read about Android Auto [here](../navigation/auto-car.md)
@@ -116,7 +112,6 @@ Display language is the setting of the language of the entire application, pop-u
 
 <TabItem value="android" label="Android">
 
-
 To select a language, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*
 
 ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
@@ -127,12 +122,12 @@ To select a language, follow these steps: *<Translate android="true" ids="shared
 
 To change the display language of OsmAnd, you need to do this in the iOS settings:  *iOS device → Settings → OsmAnd maps → Language*
 
-
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ### Data storage folder
 
@@ -145,7 +140,6 @@ Read more about storage settings [here](../personal/storage.md#data-storage-fold
 To find Data storage folder, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
 ![Data storage folder](@site/static/img/personal/profiles/global_sett_andr_1.png)
-
 
 </TabItem>
 
@@ -168,41 +162,36 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 </Tabs>
 
+
 ### Map rendering engine
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Starting from version [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released) OpenGL rendering engine was added in OsmAnd. From version [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) OpenGL is the rendering engine by default.
+Starting with [OsmAnd version 4.2](https://osmand.net/blog/osmand-android-4-2-released) the OpenGL rendering engine has been added to OsmAnd in test mode. Since [OsmAnd version 4.3](https://osmand.net/blog/osmand-android-4-3-released) OpenGL is the default rendering engine.  
 
-Here you can choose **Version 1** of OsmAnd rendering engine or **Version 2 (OpenGL)**. Please, choose the version and restart OsmAnd.
+In the OsmAnd settings, you can choose **Version 1** of the OsmAnd rendering engine or **Version 2 (OpenGL)**. To make the selected version work, restart OsmAnd.  
 
 :::tip
-Version 1 rendering is still preferable for older devices.
+*Version 1* rendering s still preferred for older devices.  
 
-OpenGL (vesion 2) is a faster map rendering engine, also featuring [2.5D view](../personal/profiles.md#appearance).
+*Version 2 (OpenGL)* rendering is faster than the Version 1, and it supports [2.5D view](../personal/profiles.md#appearance).
 :::
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_version_android.png)
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-:::note
-
-OpenGL rendering is the rendering engine by default for iOS version.
-
+:::info
+OpenGL rendering is the default rendering engine for the iOS version.
 :::  
-
 
 </TabItem>
 
 </Tabs> 
-
-
 
 
 ## Privacy and security

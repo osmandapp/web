@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Each profile is available for full customization. There are the next profiles by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+Each profile is available for full configuration. The following profiles are available by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
 
 In fact, each profile can become a separate application for the needs of the user. Of course, you can create your own profile with full customization for your needed.
 
@@ -26,7 +26,7 @@ To start setting up an application profile:
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile)
+*<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Browse map or any other profile)
 
 ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_android.png)
 
@@ -34,13 +34,14 @@ To start setting up an application profile:
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles"/>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*
 
 ![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## Profile configuration
 

@@ -199,7 +199,7 @@ Depth point [packages](../start-with/download-maps.md#type-of-maps) are availabl
 When a Nautical map is displayed on the screen, you can adjust what you see:
 
 - Show or hide the *Depth contours*.
-- Setting the detail level of the seafloor information: *Line width* and *Line color scheme*. 
+- Setting the detail level of the seafloor information: [*Line width* and *Line color scheme*](../map/vector-maps.md#-nautical-depth). 
 
 :::info NOTE
 You can help OsmAnd app increase the Depth contours database by adding your information using [OpenSeaMap](https://map.openseamap.org/) 
@@ -209,9 +209,9 @@ You can help OsmAnd app increase the Depth contours database by adding your info
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,rendering_attr_depthContours_name"/>*  
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
-![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-2.png)
+![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
