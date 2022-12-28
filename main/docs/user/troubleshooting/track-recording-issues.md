@@ -18,6 +18,12 @@ This article addresses issues with GPX track recording which have been observed 
 
 **Note**: Since Android 11 (2020/12) there is no more system permission option "Always allow" to use location access in the background, but this **does not limit** OsmAnd's background track recording: According to Google's documentation it is now considered **foreground usage**, as internally the foreground service permission is now used and a system notification about a track being recorded is always visible.
 
+Pleae note that it's simply the new Android wording which can be misleading:
+
+**"Allow while using the app"** means that the app can permanently obtain the location as long as the app is either displayed on the screen itself or has a visible notification in the Android notification bar, like OsmAnd has during navigation or trip recording. (This is technically referred to as "foreground mode".)
+
+**"Allow all the time"**, on the other hand, means that an app can in principle obtain your location 'unnotoiced' without any of these conditions applying. But Android limits the frequency of location access in this ("background") mode to something like once per hour, certainly not the correct mode for a navigtion app.
+
 
 ## Recorded tracks are noisy
 

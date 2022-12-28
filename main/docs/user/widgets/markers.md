@@ -14,20 +14,20 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Markers are temporary points indicated on the map in the form of flags. The widget shows the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. Allows you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
+Markers are temporary points indicated on the map in the form of flags. The widgets show the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. They allow you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
 
 
 ## Top bar widget
 
-The **Map markers bar**(for Android) and **Distance indication Top bar**(for iOS) widgets displays:
-- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
-- In the form of an arrow, the same color as the marker, indicates the direction from the current location and orientation in space of your device (hearding) towards the marker.
+The **Map markers bar** (for Android) widget and **Distance indication - Top bar** (for iOS) widget displays:
+- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
+- An arrow of the same color as the marker indicates the direction from the current location and orientation in space of your device (heading) towards the marker.
 - Location Address.
 - Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
 
-You can also select one or two markers to display in the widget. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).    
+You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).    
 :::info
-*The distance to the marker* is the length of the space in a straight line between your position (or a particular point on the map) and the marker.
+*The distance to the marker* is the length of the straight line between your position (or a particular point on the map) and the marker.
 :::  
 
 <Tabs groupId="operating-systems">
@@ -64,15 +64,15 @@ You can also select one or two markers to display in the widget. Read more about
 
 ## Panel widgets
 
-The **Map markers** *(for Android)* widget and **Distance indication Widgets** *(for iOS)* displays:  
-- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be selected in the Profile settings).
+The **Map markers** *(for Android)* widget and **Distance indication - Widgets** *(for iOS)* displays:  
+- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
 - **Estimated time of arrival or ETA** *(Only for Android)*.  
-It is the time(hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
+This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
 The average speed is calculated as the sum of all speeds (received from location points) for the time interval you selected (from 15 seconds to 60 minutes) divided by the total number of these points.
 
-You can also select one or two markers to display in the widget. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).   
+You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).   
 :::info
-*The distance to the marker* is the length of the space in a straight line between your position (or a particular point on the map) and the marker.
+*The distance to the marker* is the length of the straight line between your position (or a particular point on the map) and the marker.
 :::  
 
 
@@ -108,40 +108,30 @@ You can also select one or two markers to display in the widget. Read more about
 </Tabs> 
 
 
-## Configure marker widgets
+## Configure marker widgets (Android)
 
-Additional settings for the map marker widgets are only available in the Android version of the app. General information about the Map markers widget settings you can read on this [page](../personal/markers#map-markers-widgets).  
+Additional settings for the map marker widgets are only available **in the Android version** of the app. You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
 
-<!--*Menu → Configure screen → Widgets → Left / Right panel → Map markers*  -->
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  
+**Map markers bar**  
+The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.   
 
-<!--*Menu → Configure screen → Widgets → Top panel → Map markers*  -->
-![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-02.png)  
 
-<!--![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-02.png)-->
+**Map markers**  
+The widget shows the distance or estimated time of arrival (ETA) for the first or second marker in the list of Map markers. You can choose: one marker, first or second, to be displayed on the screen or both.    
 
-<Tabs groupId="operating-systems">
+![appearence_on_the_map](@site/static/img/widgets/configure-marker-wid-01.png)  ![appearence_on_the_map](@site/static/img/widgets/settings-marker-wid-first-01.png)  
 
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,appearance_on_the_map"/>* 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::caution Android only
-Map marker widgets settings are not provided for the iOS version of the OsmAnd app.
-:::
-
-</TabItem>
-
-</Tabs> 
+|    |     |  
+| :------------- | :------------- | 
+| Shows | This mode allows you to choose what information the widget will display: *Distance* or *Estimated arrival time*. | 
+| Interval | If *Estimated arrival time* is selected in 'Show', this option appears with a choice of times (from 15 seconds to 60 minutes) for ETA calculation. | 
+| Click on widget |  This setting allows you to choose which action will be performed when you click on the widget: *Switch mode* or *Go to marker location*. |   
 
 
 ## Appearance on the map
 
-Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
+Configuring the appearance of map markers is available in both the Android and iOS versions of OsmAnd. The "Appearance on the Map" menu is a general setting for Map markers and applies whether the widgets are enabled or not. You can read the detailed information on this [page](../personal/markers.md#appearance-on-the-map).  
 
 <Tabs groupId="operating-systems">
 

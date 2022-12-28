@@ -86,23 +86,18 @@ Hide POIs from map style:
 
 [Read more](../map/vector-maps.md#hide).
 
+
 ## Markers
 
-[Map markers](../personal/markers.md) are special points marked as flags on the map. You can customize their look & feel with **arrows** (<Translate android="true" ids="show_arrows_on_the_map"/>) and **distance indication** (<Translate android="true" ids="show_direction"/>). 
+[Map markers](../personal/markers.md) are temporary points indicated on the map in the form of flags. Their appearance can be configured with **arrows** (Arrows on the map) and **distance indication** (Direction lines).  
 
-![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)
+Follow the path to the available markers and their settings:  
+Android: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*  
+iOS: *<Translate ios="true" ids="menu,map_markers"/>*   
 
-Enable / disable markers on the map:
+![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)   
+You can read more about markers appearance in this [article](../personal/markers#appearance-on-the-map).
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_markers_item"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,map_markers"/>
-
-<p> </p>
-
-[Read more](../widgets/markers.md#configure-marker-widgets-and-marker-appearance) about marker appearance.
 
 ## Track Waypoints
 
