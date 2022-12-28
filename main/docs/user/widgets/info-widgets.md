@@ -25,7 +25,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: current location  
   
 :::note  
-On some Android devices the altitude may not be displayed correctly. To resolve this problem download altitude correction map:  
+On some Android devices, the altitude may not be displayed correctly. To resolve this problem, download altitude correction map:  
 <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
 :::
 
@@ -228,31 +228,16 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## Sunset and sunrise widgets
 
-These widgets show "Time left" and time of next sunrise or sunset for center map.
+<InfoAndroidOnly />
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
-
+Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time ("time left") until the expected sunset/sunrise (also for the center of the map). In both cases "time" or "time left" is indicated by the device time.  
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
 
 | | |
 |------------|------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
 | By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly /> 
-
-
-</TabItem>
-
-</Tabs>  
-
 
 ## * Trip recording widgets  
 
@@ -337,7 +322,7 @@ External sensors widgets are currently not available for the iOS version of the 
 Weather widgets can be added to the map screen only when OsmAnd [Weather plugin](../plugins/weather.md) is enabled.  
 :::
 
-The Weather widgets display the current weather information for the central point on the map. The Weather widgets are automaticaly enabled on the [Weather screen](../plugins/weather.md#weather-forecast-screen). They can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
+The Weather widgets display the current weather information for the central point on the map. The Weather widgets are automatically enabled on the [Weather screen](../plugins/weather.md#weather-forecast-screen). They can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
 
 <Tabs groupId="operating-systems">
 
@@ -483,7 +468,7 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 
 <InfoAndroidOnly />
 
-Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widge](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
+Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widget](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
 
 ![Camera position widgets](@site/static/img/widgets/camera_position_widgets.png)
 
