@@ -34,15 +34,15 @@ To display Weather on the OsmAnd map you need to make the following settings:
 1. Purchase [OsmAnd Pro subscribtion](../purchases/) <ProFeature/> if necessary.  
 2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.  
 3. Choose [units of measurement](#weather-settings) of weather events.  
-4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather tab in the dashboard menu.  
+4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather screen in the dashboard menu.  
 5. [Download](#offline-forecast) Weather forcast if you plan to use it offline.  
-6. If you want to use weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
+6. If you want to see up-to-date weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
 
 ## Display Weather on the map  
 
 ### Weather forecast screen  
 
-We craeted a special Weather tab in Main menu for quick access to all Weather tools. Weather tab provides information about temperature, air pressure, wind speed, cloud coverage and precipitation. At the bottom of the screen you can see the Weather forecast toolbar: the date buttons and the time slider are used to set the exact time for which the weather forecast will be displayed.  
+We craeted a special Weather screen in Main menu for quick access to all Weather tools. Weather screen provides information about temperature, air pressure, wind speed, cloud coverage and precipitation. At the bottom of the screen you can see the Weather forecast toolbar: the date buttons and the time slider are used to set the exact time for which the weather forecast will be displayed.  
 
 <Tabs groupId="operating-systems">  
 
@@ -69,7 +69,7 @@ It is important to decide in what units of measurement it is convenient for you 
 <TabItem value="android" label="Android">  
 
 - *Main menu → Plugins → Weather → Settings*.  
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather*.  
+- *Main menu → Settings → Profile → Weather*.  
 
 ![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
@@ -77,7 +77,7 @@ It is important to decide in what units of measurement it is convenient for you 
 
 <TabItem value="ios" label="iOS">  
 
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Weather settings*.  
+- *Main menu → Settings → Profile → Weather settings*.  
 
 ![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
@@ -140,21 +140,25 @@ On Android devices you can check when Weather data was downloaded by tapping the
 ### Download forecast (iOS)
 
 :::caution iOS only
-Download Weather forecast function is not available for the Android version of the OsmAnd app.
-:::
+Download Weather forecast function is not available in the Android version of the OsmAnd app.
+:::  
 
-**Offline forecast** (up to 7 days) can be downloaded for each country. The closer to the current date, the more accurate it will be.  
+&nbsp;  
+
+**Offline forecast** (up to 7 days) can be downloaded for each country. The closer to the current date, the more accurate it will be. 
 If you want to use the weather forecast offline, you should download the weather data in advance.  
+
+&nbsp;  
 
 ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 In the download forecast menu you can obtain information and set parameters to keep your weather data up to date.  
-
+  
 - *Updated* - shows when the last update was made.  
 - *Next update* - when the next update will be available.  
 - *Updates size* - shows size of all updates.  
 - *Update now* button - when active allows to update weather data manually without waiting for an automatic update.  
-- *Update frequency*  - can be set to 12h, 24h, weekly.    
+- *Update frequency*  - can be set to 12h, 24h, weekly.  
 - *Update only via WiFi*  - enable this option if you don't want to use mobile data for downloads.  
 - *Remove forecast* - allows to remove all forecast data for this region.  
 
@@ -164,13 +168,13 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets
 
-The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather tab is on. They also can be placed on the main screen for everyday use. To activate Weather widgets, use the following path:
+The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather screen is on. They also can be placed on the main screen for the chosen profile. To activate Weather widgets, use the following path:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Menu → Configure screen → Right panel / Left panel → Weather
+*Menu → Configure screen → Right panel / Left panel → Weather*
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -178,7 +182,7 @@ Menu → Configure screen → Right panel / Left panel → Weather
 
 <TabItem value="ios" label="iOS">
 
-Menu → Configure screen → Right panel
+*Menu → Configure screen → Right panel*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_ios.png) ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
