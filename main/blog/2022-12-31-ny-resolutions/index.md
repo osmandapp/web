@@ -15,256 +15,168 @@ At the end of each year, we sum up the results of the passing year and write our
 
 <!--truncate-->
 
-2022 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our <a href="https://osmand.net/blog/2022-ny-resolutions">2021 New Year resolutions</a> we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.
 
-One of the biggest achievements of 2021 is that we’ve managed to double our Team up to 20 people and this Team delivers features with quite an incredible pace.
+<!--
+2022 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our 2022 New Year resolutions we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.
 
+One of the biggest achievements of 2022 is that we’ve managed to double our Team up to 20 people and this Team delivers features with quite an incredible pace.
+-->
 
-## [2023 New Year Resolutions](https://www.reddit.com/r/OsmAnd/comments/rt1a2b/2023_new_year_resolutions/)
+## 2023 New Year Resolutions
 
 
 We will start with the list for 2023 and below you can double-check how a similar list was crushed in 2022 😉
 
 New Year 2023:
 
-# Documentation
-# Android - 3       
-   - Tracks Management
-   - Android Auto
-   - Quick Action / Customization
-   - Widgets / Trip Computer
-   - Marketplace / Share plugins / favorites
-   - External controllers
-   - Photo Gallery
-   - Audio/Video -> Favorites
-   - Overall Improves: Settings search, Weather, Files access, Upload GPX
-   - --------
-   - Route Graph
 
-# Web - 1
-   - Free account
-   - Edit Tracks
-   - Edit Favorites
-   - Share Favorites / Packages
- 
-# Backend - 2 
-   - Server maintenance
-   - Live updates
-   - Fast Routing 
-   - Routing explanations (CO2 / Calories)
-   - Photo Gallery
-   - Plan route (Roundtrips)
-   - Routes (iOS)
-   - Search
+### Widgets / Trip Computer
 
-# Rendering - 2
-   - Coloring customization (Raster maps / Tracks)
-   - Bug Fixes
-   - 3D
-   - Icons customization
-   - Heatmap
+* introduce full customization for widgets screen.
+* trip computer for your riding.
 
-# iOS - 4
-   - SDK / Swift
-   - Tracks Management
-   - Widgets / Trip computer
-   - Quick Action / Customization
-   - External controllers
-   - Car Play
-   - Photo Gallery
-   - Audio/Video -> Favorites
-   - Route Preparation: Turn By Turn / Waypoints
-   - GPS Filter
-   - Recording GPX dialog
-   - Online Routing
-   - Overall Improves: Settings search, Weather, Upload GPX
-   - --------
-   - Route Graph
-   - Marketplace / Share plugins / favorites
-   - Wikivoyage
-   - Markers
-   - https://github.com/osmandapp/OsmAnd-Issues/issues/386
+### Quick Action / Customization
 
-
-
-
-
-
-
-
-
-_____________________________________
-
-## OsmAnd Pro
-
-
-
-
-* Introduce OsmAnd Pro features to ***iOS*** and make unified multi-platform synchronization, make the synchronization work automagically.
-* Develop richer variety of valuable features.
-* Promote OsmAnd Pro features to Paid and later to Free version.
-
-
-**Note:** our vision is that after 1-2 years OsmAnd Pro features that don’t require cost per user will become available for Lifetime payment.
-
-## OpenGL / 3D * Fast Maps
-
-
-
-
-* **Android**: we plan to introduce the new fast OpenGL rendering engine and unify our iOS / Android experience.
-* We plan to significantly improve features of 3D rendering and fix our long term issues.
-
-
-
-## Documentation
-
-**Android / iOS / Web:** we plan to finally update our features website and introduce documentation, so we can synchronize it with all platforms and probably introduce a few translations.
-
-
-## Weather
-
-
-**Android / iOS / Web:** let’s bring the weather forecast to OsmAnd and as usual make it a very powerful tool for offline travelers.
-
-
-## Plan Route
-
-
-
-
-
-**Android / iOS / Web:** even though many features were released in 2021, we still have some plans for 2022.
-
-
-* Build User Interface so we can plan a route by picking up points from an existing node network.
-* Easily select OSM routes from the map and include their segments to our new route.
-* Configure roundabout trips with a given distance, features list and our preferences.
-
-
-## Widgets
-
- 
-**Android / iOS:** introduce more powerful widgets and make it easier to access a bigger variety of them on the map.
-
-
-## Tracks
-
-
-
-**Android / iOS / Web:** redesign how we search, store, enable tracks on the map and provide the heatmap for our existing tracks.
-
-## Quick actions / Customization
 **iOS:** bring customization to the same level as we have in Android, so we can configure Drawer / Context Menu etc for our selected profiles.
 
 **Android / iOS:** introduce a more powerful concept of Quick actions, so users can configure more than 1 quickly accessible button on the map.
 
-## Routing
+
+### OsmAnd Pro
+
+* **Android / iOS / Web:** full synchronization
+
+### Photo Gallery
+
+* photos on the map
+* photos for Favorites
+### External Controllers
+
+* BLE external Controllers
+* Notifications for watches
+### Tracks
+
+* **Android / iOS / Web:** OSM GPX tracks collections
+* **iOS:** GPS filter, Recording GPX dialog
+### 3D relief
+
+* **Android / iOS:** 3D relief for offline 
+### Heatmap
+
+* **Android / iOS / Web:** All user tracks on the map
+
+### Routing
+
+* **iOS:** online routing
+
+## 2022 Achievements
+
+Let’s first take a look at what was in the original 2022 resolutions list which nearly doesn’t cover all features implemented in 2022 by 2 major releases * [4.2](https://osmand.net/blog/osmand-ios-4-2-released) and [4.3](https://osmand.net/blog/osmand-ios-4-3-released) (iOS); [4.2](https://osmand.net/blog/osmand-android-4-2-released) and [4.3](https://osmand.net/blog/osmand-android-4-3-released) (Android).
+
+[Resolutions 2022](https://osmand.net/blog/ny-resolutions-2022):
+
+
+* ✔️ Open GL / 3D * Fast Maps (Android)
+* ✔️ OsmAnd Pro (iOS & Web)
+* ✔️ Documentation (Web)
+* ✔️ Web Map (Web)
+* ✔️ Widgets (Android)
+* ✔️ Weather (Android & iOS & Web)
+* ✔️ Plan Route (Android & iOS & Web)???
+* ✔️ Tracks (Android & iOS & Web)
+* ✔️ Quick actions / Customization (Android & iOS) ?
+* ✔️ Online routing (Android)
 
 
 
-   
+### iOS
 
-In 2021 we’ve implemented the possibility to use custom Online Routing and switch to offline once it’s not available. In 2022 we finally plan to take care of our existing bidirectional A*-routing and to improve it with Contraction Hierarchies ideas.
+OsmAnd iOS got 2 major releases with more than <a href="https://github.com/osmandapp/OsmAnd-iOS/milestones?state=closed">200 public features and issues</a> closed on Github.
 
+#### [4.2](https://osmand.net/blog/osmand-ios-4-2-released) * May 19, 2022
 
-## 2021 Achievements
-
-Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases * <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
-
-<a href="https://osmand.net/blog/2021-ny-resolutions">Resolutions 2021:</a>
-
-* 🚧 Travel and Track Collections (Android & iOS) * available with custom Travel.obf files.
-* ✔️ Full export / import (Android / iOS)
-* ✔️ Online Backup (Android) [🚧 iOS]
-* ✔️ Improve Tracks UI & Navigation with Altitude Graph (Android & iOS)
-* ✔️ Plan Route with Track Approximation (iOS)
-* ✔️ Custom user icons for Favorites (iOS)
-* ✔️ Plugins & 🚧 UI Customization (iOS)
-* 🚧 Quick Action Panel 
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./route_line_ios.png').default} alt="route line"/></td>
+    <td><img src={require('./ios-carplay.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
 
 
-## iOS
-
-OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osmandapp/OsmAnd-iOS/milestones?state=closed">200 public features and issues</a> closed on Github.
-
-<a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a> * January 30, 2021
-
+* [Route line appearance](https://osmand.net/blog/osmand-ios-4-2-released#route-line-appearance)
+* [Improved GPX Track file](https://osmand.net/blog/osmand-ios-4-2-released#tracks)
+* [Improvements CarPlay](https://osmand.net/blog/osmand-ios-4-2-released#carplay)
+* [OsmAnd in Files app](https://osmand.net/blog/osmand-ios-4-2-released#files-app)
 
 
+#### [4.3](https://osmand.net/blog/osmand-ios-4-3-released) * December 17, 2022
 
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#plan_route">Plan Route</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#compass">Compass & Radius-Ruler widget</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#poi_text">Text labels for POI’s, markers & gpx waypoints</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#type_snow">Snowmobile map type</a>
-
-
-<a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a> * July 19, 2021
-
-
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./weather_ios.png').default} alt="route line"/></td>
+    <td><img src={require('./backup_1_ios.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
  
-    
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#carplay">Car Play!</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#favorite">Add favorites with custom icons & shape</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#widget">Coordinates widget</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#import_export">Full Import / Export</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#approximate_track">Attach track to the roads</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#custom_plugin">3rd party plugins</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#by_tap">Distance by tap</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#routing_rendering">Custom routing & rendering files</a>
 
 
-<a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> * December 28, 2021
+* [New puchase plans: Pro ans Maps+](https://osmand.net/blog/osmand-ios-4-3-released#new-purchase-plans)
+* [Weather](https://osmand.net/blog/osmand-ios-4-3-released#weather-forecast)
+* [Cloud: backup & sync](https://osmand.net/blog/osmand-ios-4-3-released#cloud-backup)
+* [New colors for GPX tracks and route line](https://osmand.net/blog/osmand-ios-4-3-released#new-colors-for-tracks-and-route-line)
+* [OsmAnd Live for OSMers](https://osmand.net/blog/osmand-ios-4-3-released#osmand-live-for-osmers)
+* [Improvements for Favorites](https://osmand.net/blog/osmand-ios-4-3-released#new-updates-for-favorites)
 
+### Android
 
+OsmAnd Android got 2 major releases (4.2 and 4.3) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">800 public features and issues</a> closed on Github.
         
+#### [4.2](https://osmand.net/blog/osmand-android-4-2-released) * June 3, 2022
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./2_5d_view1.png').default} alt="route line"/></td>
+    <td><img src={require('./hiking_routes.png').default} alt="carplay"/></td>
+    </tr>
+</table>        
+
+
+* [New widgets](https://osmand.net/blog/osmand-android-4-2-released#new-in-osmand-widgets)
+* [2.5D view for testing](https://osmand.net/blog/osmand-android-4-2-released#25d-view-for-testing)
+* [Routes on the map](https://osmand.net/blog/osmand-android-4-2-released#routes-on-the-map)
+* [Location provider](https://osmand.net/blog/osmand-android-4-2-released#location-provider)
+* [Online Elevation profile](https://osmand.net/blog/osmand-android-4-2-released#online-elevation-profile)
+* [Improvements for Quick action](https://osmand.net/blog/osmand-android-4-2-released#new-items-for-quick-action)
+
       
-        
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#tracks">Track context menu, configure track appearance & new interactions</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Contour lines in feet</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#olc">Improved Coordinates search</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#route">Improved OSM Routes visibility</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#download">Download maps by clicking on the map</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Wikipedia by language * layer control</a>
-
-
-## Android
-
-OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">800 public features and issues</a> closed on Github.
-        
-* <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> * February 4, 2021
-       
-        
+#### [4.3](https://osmand.net/blog/osmand-android-4-3-released) * December 12, 2022
       
-* <a href="https://osmand.net/blog/osmand-3-9-released#export_import">Export / Import all data</a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">Plan route with graphs</a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#custom_color">Custom colors for favourites and waypoints</a>
-<a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a> * August 7, 2021
-        
-
-          
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#cloud">Cloud backup and restore</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#live">OsmAnd Live free for contributors</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#online">Online routing as navigation type</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#tracks">Tracks can be colored by distance / slope / altitude</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#routeline">Route line can be colored as well</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#feet">Contour lines in feet</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#dialog">Trip recording dialog with graphs and extra information</a>
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./2-5-d-view_2.png').default} alt="route line"/></td>
+    <td><img src={require('./weather_plugin.png').default} alt="carplay"/></td>
+    </tr>
+</table>  
 
 
-* <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> * December 10, 2021
-      
+* [New map rendering engine and 2.5D projection](https://osmand.net/blog/osmand-android-4-3-released#new-faster-map-rendering-engine)
+* [Weather plugin](https://osmand.net/blog/osmand-android-4-3-released#weather-plugin)
+* [New improvements for Widgets](https://osmand.net/blog/osmand-android-4-3-released#new-improvements-for-widgets)
+* [Smooth animation](https://osmand.net/blog/osmand-android-4-3-released#smooth-animation)
+* [ANT+ devices](https://osmand.net/blog/osmand-android-4-3-released#support-external-devices-ant)
 
-       
-        
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#androidauto">Android Auto</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#elevation">Elevation widget during navigation</a>
- * <a href="https://osmand.net/blog/osmand-android-4-1-released#gps_filter">Easily configurable GPS Filter for tracks</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#favorites">Favorites: easy to use recent icons</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#shortcut">App shortcuts</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#historyscreen">Manage search, navigation, and other history</a>
 
-        
+### Web  
+
+[www.osmand.net/map](https://osmand.net/map)
+
+![Web Map](./web.png)
+
+* [New Website version](https://osmand.net/)
+* [Documenation](https://osmand.net/docs/intro)
+* [Web OsmAnd Map](https://osmand.net/map)
+* [OsmAnd Pro login for Web](https://osmand.net/docs/user/purchases/android#pro-features)
+
 
 ## Summary
 
