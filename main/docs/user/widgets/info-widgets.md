@@ -18,15 +18,16 @@ Information widgets are needed for quick access to information important to the 
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
+
 ## Altitude widgets  
 
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
+
 ### Altitude: current location  
   
 :::note  
-On some Android devices, the altitude may not be displayed correctly. To resolve this problem, download altitude correction map:  
-<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>.
+On some Android devices, the altitude may not be displayed correctly. To resolve this problem, download altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
 :::
 
 <Tabs groupId="operating-systems">
@@ -38,7 +39,7 @@ On some Android devices, the altitude may not be displayed correctly. To resolve
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude |  
-| By tapping | - |
+| By tapping |No changes.|
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
@@ -50,7 +51,7 @@ On some Android devices, the altitude may not be displayed correctly. To resolve
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → Altitude widget |
-| By tapping | - |
+| By tapping |No changes.|
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
@@ -68,7 +69,7 @@ Elevation widget is shown among the "Available widgets" only when [Development p
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude | 
-| By tapping | - |
+| By tapping | No changes. |
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 ## Current time
@@ -81,7 +82,7 @@ This widget shows current time from your device.
 |------------|------------|
 | Enable |  **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
 |  | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-| By tapping | - |
+| By tapping | No changes. |
 | Format | Time & Format is configured by device settings |
 
 ## Speed
@@ -93,7 +94,7 @@ Speed widget shows your current speed detected by GPS-sensor.
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/> |
-| By tapping  | - |
+| By tapping  |No changes.|
 | Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
 |        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
@@ -148,7 +149,7 @@ This widget shows battery level of your device.
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/> |
-| By tapping | - |
+| By tapping |No changes.|
 
 ## Coordinates widget
 
@@ -168,10 +169,9 @@ Where green icons are _Map center_ coordinates, blue icons are _My location_ coo
 
 | | |
 |------------|------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/> → <Translate android="true" ids="map_center_widget"/> / <Translate android="true" ids="current_location_widget"/>  |
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/> → <Translate android="true" ids="map_center_widget"/> / <Translate android="true" ids="current_location_widget"/>  |
 | By tapping | Copies the coordinates to the clipboard |
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
-
+| Format | <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
 
 </TabItem>
 
@@ -183,9 +183,9 @@ The widget is shown at the top of the screen. It shows the geographic coordinate
 
 | | |
 |------------|------------|
-| Enable | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
 | By tapping | Copies the coordinates to the clipboard |
-| Format | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
+| Format | <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
 
@@ -302,7 +302,7 @@ External sensors widgets refer to [External sensors plugin](../plugins/external-
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>|
-| By tapping | - |
+| By tapping |No changes.|
 
 </TabItem>
 
@@ -345,7 +345,7 @@ The Weather widgets display the current weather information for the central poin
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
-| By tapping | - |
+| By tapping |No changes.|
 | Format | Main menu → Global Settings → Profile → Weather |
 
 </TabItem>
@@ -447,7 +447,7 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |  
-| By tapping | - |
+| By tapping |No changes.|
 
 </TabItem>
 
@@ -458,7 +458,7 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → FPS widget |
-| By tapping | - |
+| By tapping |No changes.|
 
 </TabItem>
 
@@ -475,5 +475,5 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
-| By tapping | - |  
+| By tapping |No changes.|  
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |
