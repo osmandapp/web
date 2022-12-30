@@ -7,6 +7,7 @@ import DialogActions from "@mui/material/DialogActions";
 import {Button} from "@mui/material";
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
+import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -19,7 +20,7 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
     async function deleteFavorite() {
         for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
             if (ctx.selectedGpxFile.file.wpts[i].name === ctx.selectedGpxFile.markerCurrent.title) {
-                let result = await TracksManager.deleteFavorite(
+                let result = await FavoritesManager.deleteFavorite(
                     ctx.selectedGpxFile.file.wpts[i],
                     ctx.selectedGpxFile.file.name,
                     ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems)

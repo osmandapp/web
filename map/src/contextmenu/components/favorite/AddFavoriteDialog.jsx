@@ -21,7 +21,7 @@ import EditFavoriteGroup from "./edit/EditFavoriteGroup";
 import EditFavoriteIcon from "./edit/EditFavoriteIcon";
 import EditFavoriteColor from "./edit/EditFavoriteColor";
 import EditFavoriteShape from "./edit/EditFavoriteShape";
-import TracksManager from "../../../context/TracksManager";
+import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -56,9 +56,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
     async function save() {
         let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoriteManager.DEFAULT_GROUP_NAME) : favoriteGroup;
-        let group = ctx.favorites[selectedGroup?.name];
         let favorite;
-        if (group) {
+        if (selectedGroup) {
             favorite = {
                 name: favoriteName,
                 address: favoriteAddress === "" ? null : favoriteAddress,
@@ -71,7 +70,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 lon: ctx.addFavorite.location.lng
             };
         }
-        let result = await TracksManager.addFavorite(
+        let result = await FavoritesManager.addFavorite(
             favorite,
             selectedGroup.file.name,
             selectedGroup.updatetimems)
@@ -88,29 +87,42 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function updateGroupMarkers(result, selectedGroup) {
-        delete ctx.favorites[selectedGroup.name].markers;
-        ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
-        ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
-        Object.keys(result.data).forEach(t => {
-            ctx.favorites[selectedGroup.name][`${t}`] = result.data[t];
-        });
+        if (!ctx.favorites[selectedGroup.name]) {
+            ctx.favorites[selectedGroup.name] = result.data;
+            ctx.favorites[selectedGroup.name].url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
+        } else {
+            delete ctx.favorites[selectedGroup.name].markers;
+            ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
+            ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
+            Object.keys(result.data).forEach(t => {
+                ctx.favorites[selectedGroup.name][`${t}`] = result.data[t];
+            });
+        }
+
         ctx.favorites.groups.forEach(g => {
-            if (g.name === selectedGroup.name) {
+            if (g.name === selectedGroup && result.data) {
                 g.updatetimems = result.updatetimems;
-                g.file = ctx.favorites[selectedGroup.name];
+                g.pointsGroups = result.data.pointsGroups;
+                let file = g.file;
+                Object.keys(result.data).forEach(d => {
+                    file[`${d}`] = result.data[d];
+                });
+                g.file = file;
             }
         })
 
+        createSelectedFile(selectedGroup);
+        ctx.setFavorites({...ctx.favorites});
+        setFavoriteGroup(ctx.favorites[selectedGroup.name]);
+    }
+
+    function createSelectedFile(selectedGroup) {
         ctx.selectedGpxFile.file = ctx.favorites[selectedGroup.name];
         ctx.selectedGpxFile.markerCurrent = {}
         ctx.selectedGpxFile.markerCurrent.title = favoriteName;
         ctx.selectedGpxFile.nameGroup = selectedGroup.name;
         ctx.selectedGpxFile.name = favoriteName;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-
-        ctx.setFavorites({...ctx.favorites});
-
-        setFavoriteGroup(ctx.favorites[selectedGroup.name]);
     }
 
     const CloseDialog = (dialogOpen) => {

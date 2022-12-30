@@ -6,7 +6,6 @@ import DialogActions from "@mui/material/DialogActions";
 import React, {useContext, useEffect, useState} from "react";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import AppContext from "../../../context/AppContext";
-import TracksManager from "../../../context/TracksManager";
 import DeleteFavoriteDialog from "./DeleteFavoriteDialog";
 import FavoriteManager from "../../../context/FavoriteManager";
 import {Close} from "@mui/icons-material";
@@ -17,7 +16,7 @@ import EditFavoriteGroup from "./edit/EditFavoriteGroup";
 import EditFavoriteIcon from "./edit/EditFavoriteIcon";
 import EditFavoriteColor from "./edit/EditFavoriteColor";
 import EditFavoriteShape from "./edit/EditFavoriteShape";
-
+import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function EditFavoriteDialog({
                                                favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen,
@@ -64,45 +63,95 @@ export default function EditFavoriteDialog({
     async function save() {
         let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
         let currentWpt = getCurrentWpt(selectedGroupName);
-
-        let result = await TracksManager.updateFavorite(
+        let ind = ctx.selectedGpxFile.file.wpts.findIndex(wpt => wpt === currentWpt);
+        let newGroup = ctx.favorites.groups.find(g => g.name === selectedGroupName);
+        let result = await FavoritesManager.updateFavorite(
             currentWpt,
             ctx.selectedGpxFile.name,
             ctx.selectedGpxFile.file.name,
-            ctx.favorites[selectedGroupName].name,
+            newGroup.file.name,
             ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems,
-            ctx.favorites[selectedGroupName].updatetimems)
+            newGroup.updatetimems,
+            ind)
         if (result) {
             updateFavoriteGroups(result, selectedGroupName);
             setEditFavoritesDialogOpen(false);
         }
     }
 
+    function getGroups(result, selectedGroupName) {
+        let updatedGroups = [];
+        ctx.favorites.groups.forEach(g => {
+            let newGroup;
+            if (g.name === ctx.selectedGpxFile.nameGroup && result.oldGroupResp?.data) {
+                let file = g.file;
+                Object.keys(result.oldGroupResp.data).forEach(d => {
+                    file[`${d}`] = result.oldGroupResp.data[d];
+                });
+                newGroup = {
+                    name: g.name,
+                    updatetimems: result.oldGroupResp.updatetimems,
+                    file: file,
+                    pointsGroups: result.oldGroupResp.data.pointsGroups
+                }
+            } else if (g.name === selectedGroupName && result.newGroupResp) {
+                let file = g.file;
+                Object.keys(result.newGroupResp.data).forEach(d => {
+                    file[`${d}`] = result.newGroupResp.data[d];
+                });
+                newGroup = {
+                    name: g.name,
+                    updatetimems: result.newGroupResp.updatetimems,
+                    file: g.file,
+                    pointsGroups: result.newGroupResp.data.pointsGroups
+                }
+            } else {
+                newGroup = g;
+            }
+            updatedGroups.push(newGroup);
+        })
+        return updatedGroups;
+    }
+
+    function getSelectedGroup(selectedGroupName) {
+        return ctx.favorites.groups.find(g => g.name === selectedGroupName);
+    }
+
     function updateFavoriteGroups(result, selectedGroupName) {
         //update old group
-        if (result.oldGroupTrackData) {
-            ctx.favorites[ctx.selectedGpxFile.nameGroup].clienttimems = result.oldGroupClienttimems;
-            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems = result.oldGroupUpdatetimems;
-            Object.keys(result.oldGroupTrackData).forEach(t => {
-                ctx.favorites[ctx.selectedGpxFile.nameGroup][`${t}`] = result.oldGroupTrackData[t];
+        if (result.oldGroupResp) {
+            ctx.favorites[ctx.selectedGpxFile.nameGroup].clienttimems = result.oldGroupResp.clienttimems;
+            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems = result.oldGroupResp.updatetimems;
+            Object.keys(result.oldGroupResp.data).forEach(t => {
+                ctx.favorites[ctx.selectedGpxFile.nameGroup][`${t}`] = result.oldGroupResp.data[t];
             });
             delete ctx.favorites[ctx.selectedGpxFile.nameGroup].markers;
         }
+        ctx.favorites.groups = getGroups(result, selectedGroupName);
+        let selectedGroup = getSelectedGroup(selectedGroupName);
 
-        const newGroup = Object.assign({}, ctx.favorites[selectedGroupName])
-        newGroup.clienttimems = result.newGroupClienttimems;
-        newGroup.updatetimems = result.newGroupUpdatetimems;
-        Object.keys(result.newGroupTrackData).forEach(t => {
-            newGroup[`${t}`] = result.newGroupTrackData[t];
-        });
+        if (!ctx.favorites[selectedGroupName]) {
+            const newGroup = result.newGroupResp.data;
+            newGroup.url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
+            newGroup.clienttimems = result.newGroupResp.clienttimems;
+            newGroup.updatetimems = result.newGroupResp.updatetimems;
+        } else {
+            const newGroup = Object.assign({}, ctx.favorites[selectedGroupName])
+            newGroup.clienttimems = result.newGroupResp.clienttimems;
+            newGroup.updatetimems = result.newGroupResp.updatetimems;
+            Object.keys(result.newGroupResp.data).forEach(t => {
+                newGroup[`${t}`] = result.newGroupResp.data[t];
+            });
+            ctx.favorites[selectedGroupName] = newGroup;
+            delete ctx.favorites[selectedGroupName].markers;
+        }
 
-        //update new group
-        ctx.favorites[selectedGroupName] = newGroup;
-        delete ctx.favorites[selectedGroupName].markers;
         ctx.setFavorites({...ctx.favorites});
+        updateSelectedFile(selectedGroup, selectedGroupName);
+    }
 
-        //update select
-        ctx.selectedGpxFile.file = newGroup
+    function updateSelectedFile(selectedGroup, selectedGroupName) {
+        ctx.selectedGpxFile.file = selectedGroup.file
         ctx.selectedGpxFile.name = favoriteName;
         ctx.selectedGpxFile.nameGroup = selectedGroupName;
         ctx.selectedGpxFile.editFavorite = true;

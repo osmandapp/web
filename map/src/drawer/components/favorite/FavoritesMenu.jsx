@@ -13,6 +13,7 @@ import FavoriteAllGroups from "./FavoriteAllGroups";
 import FavoriteGroup from "./FavoriteGroup";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
+import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -30,19 +31,28 @@ export default function FavoritesMenu() {
         });
         files.sort((a, b) => a.name.localeCompare(b.name))
         let groups = [];
+        const newFavoritesFiles = Object.assign({}, ctx.favorites);
+        if (!newFavoritesFiles.groups) {
+            newFavoritesFiles.groups = [];
+        }
         files.forEach(file => {
             file.folder = file.name.split(".")[0].replace('favorites-', '');
-            groups.push({
+            let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
+            let group = {
                 name: file.folder,
                 updatetimems: file.updatetimems,
-                file: file});
+                file: file,
+                pointsGroups: pointsGroups
+            }
+            newFavoritesFiles.groups.push(group);
+            ctx.setFavorites(newFavoritesFiles);
+            groups.push(group);
         })
-
         setFavoritesGroups(groups);
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        let enableAllGroups = enableGroups.length === favoritesGroups.length && enableGroups.length > 0;
+        let enableAllGroups = enableGroups.length === favoritesGroups.length;
         let disableAllGroups = enableGroups.length === 0 && favoritesGroups.length !== 0;
         if (enableAllGroups) {
             createAllLayers(ctx, true, favoritesGroups).then();
@@ -85,7 +95,6 @@ export default function FavoritesMenu() {
                     };
                     await getFavoriteData(g, resGroups, newFavoritesFiles);
                 } else {
-                    await getFavoriteData(g, resGroups, newFavoritesFiles);
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }

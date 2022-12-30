@@ -7,7 +7,6 @@ import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import EditFavoriteDialog from "../favorite/EditFavoriteDialog";
 import DeleteFavoriteDialog from "../favorite/DeleteFavoriteDialog";
-import FavoriteManager from "../../../context/FavoriteManager";
 
 const useStyles = makeStyles({
     icon: {
@@ -72,6 +71,12 @@ const FavoriteInfoTab = ({width}) => {
         }
     }, [ctx.selectedGpxFile])
 
+    function getColor() {
+        let currentGroup = ctx.favorites.groups.find(g => g.name === favorite.category);
+        if (currentGroup && currentGroup.pointsGroups[favorite.category]) {
+            return currentGroup.pointsGroups[favorite.category].color;
+        }
+    }
 
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
@@ -88,7 +93,7 @@ const FavoriteInfoTab = ({width}) => {
             </Grid>
             <Grid container sx={{mt: -9}}>
                 <ListItemIcon
-                    style={{color: favorite.category && ctx.favorites[favorite.category].pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(favorite.category)].color}}>
+                    style={{color: favorite.category && getColor()}}>
                     <Folder fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText>

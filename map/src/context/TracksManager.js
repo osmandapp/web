@@ -394,79 +394,6 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
-async function deleteFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/delete`, data,
-        {
-            params: {
-                fileName: fileName,
-                fileType: FAVORITE_FILE_TYPE,
-                updatetime: updatetime
-            }
-        }
-    );
-    if (resp.data) {
-        return {
-            clienttimems: resp.data.clienttimems,
-            updatetimems: resp.data.updatetimems,
-            data: prepareTrackData(resp.data.trackData)
-        }
-    }
-}
-
-async function addFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/add`, data,
-        {
-            params: {
-                fileName: fileName,
-                fileType: FAVORITE_FILE_TYPE,
-                updatetime: updatetime
-            }
-        }
-    );
-    if (resp.data) {
-        return {
-            clienttimems: resp.data.clienttimems,
-            updatetimems: resp.data.updatetimems,
-            data: prepareTrackData(resp.data.trackData)
-        }
-    }
-}
-
-async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/fav/update`, data,
-        {
-            params: {
-                wptName: wptName,
-                oldGroupName: oldGroupName,
-                newGroupName: newGroupName,
-                oldGroupUpdatetime: oldGroupUpdatetime,
-                newGroupUpdatetime: newGroupUpdatetime,
-                fileType: FAVORITE_FILE_TYPE
-            }
-        }
-    );
-    if (resp.data) {
-        return {
-            newGroupClienttimems: resp.data.newGroupClienttimems,
-            newGroupUpdatetimems: resp.data.newGroupUpdatetimems,
-            newGroupTrackData: prepareTrackData(resp.data.newGroupTrackData),
-            oldGroupClienttimems: resp.data.oldGroupClienttimems,
-            oldGroupUpdatetimems: resp.data.oldGroupUpdatetimems,
-            oldGroupTrackData: prepareTrackData(resp.data.oldGroupTrackData)
-        }
-    }
-}
-
-function prepareTrackData(data) {
-    return data && JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-        if (value === "***NaN***") {
-            return key === "ele" ? 99999 : NaN;
-        } else {
-            return value;
-        }
-    });
-}
-
 
 const TracksManager = {
     loadTracks,
@@ -476,9 +403,6 @@ const TracksManager = {
     prepareName,
     getTrackData,
     addTrack,
-    deleteFavorite,
-    addFavorite,
-    updateFavorite,
     getTrackPoints,
     getGpxTrack,
     saveTrack,

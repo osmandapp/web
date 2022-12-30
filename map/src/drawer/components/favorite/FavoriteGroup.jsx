@@ -7,13 +7,12 @@ import {
     Switch,
     Typography
 } from "@mui/material";
-import {Add, ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
+import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import FavoriteItem from "./FavoriteItem";
 import AppContext from "../../../context/AppContext";
 import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
-import FavoriteManager from "../../../context/FavoriteManager";
 
 export default function FavoriteGroup({index, group, enableGroups, setEnableGroups}) {
 
@@ -27,7 +26,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
     const [loadingFavorites, setLoadingFavorites] = useState(false);
     const [markers, setMarkers] = useState([]);
 
-    async function enableLayerWithGroups(setProgressVisible, ctx, visible, addToMap) {
+    async function enableLayerWithGroups(setProgressVisible, visible) {
         ctx.setCurrentObjectType(null);
         if (!visible) {
             deleteGroupFromMap();
@@ -36,8 +35,33 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             });
             setEnableGroups(updateGroup);
         } else {
-            await addGroupToMap(setProgressVisible, addToMap);
+            await addGroupToMap(setProgressVisible, true);
             setEnableGroups([...enableGroups, group]);
+        }
+    }
+
+    async function getFavorites(addToMap, newFavoriteFiles) {
+        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(group.file.type)}&name=${encodeURIComponent(group.file.name)}`;
+        newFavoriteFiles[group.name] = {
+            'url': url,
+            'clienttimems': group.file.clienttimems,
+            'updatetimems': group.file.updatetimems,
+            'name': group.file.name,
+            'addToMap': addToMap
+        };
+        let f = await Utils.getFileData(newFavoriteFiles[group.name]);
+        if (f) {
+            const favoriteFile = new File([f], group.file.name, {
+                type: "text/plain",
+            });
+            let favorites = await TracksManager.getTrackData(favoriteFile);
+            if (favorites) {
+                favorites.name = group.file.name;
+            }
+            Object.keys(favorites).forEach(t => {
+                newFavoriteFiles[group.name][`${t}`] = favorites[t];
+            });
+            return newFavoriteFiles;
         }
     }
 
@@ -56,39 +80,24 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
 
     async function addGroupToMap(setProgressVisible, addToMap) {
         setProgressVisible(true);
-            const newFavoriteFiles = Object.assign({}, ctx.favorites);
-            if (ctx.favorites[group.name]?.url) {
-                newFavoriteFiles[group.name].addToMap = addToMap;
-            } else {
-                let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(group.file.type)}&name=${encodeURIComponent(group.file.name)}`;
-                newFavoriteFiles[group.name] = {
-                    'url': url,
-                    'clienttimems': group.file.clienttimems,
-                    'updatetimems': group.file.updatetimems,
-                    'name': group.file.name,
-                    'addToMap': addToMap
-                };
-                let f = await Utils.getFileData(newFavoriteFiles[group.name]);
-                const favoriteFile = new File([f], group.file.name, {
-                    type: "text/plain",
-                });
-                let favorites = await TracksManager.getTrackData(favoriteFile);
-                if (favorites) {
-                    favorites.name = group.file.name;
-                }
-                Object.keys(favorites).forEach(t => {
-                    newFavoriteFiles[group.name][`${t}`] = favorites[t];
-                });
-            }
+        let newFavoriteFiles = Object.assign({}, ctx.favorites);
+        if (ctx.favorites[group.name]?.url) {
+            newFavoriteFiles[group.name].addToMap = addToMap;
             ctx.setFavorites({...newFavoriteFiles});
-            let newSelectedGpxFile = {};
-            newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
-            newSelectedGpxFile.nameGroup = group.name;
-            if (ctx.selectedGpxFile.markerCurrent) {
-                newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+        } else {
+            newFavoriteFiles = await getFavorites(addToMap, newFavoriteFiles);
+            if (addToMap) {
+                let newSelectedGpxFile = {};
+                newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
+                newSelectedGpxFile.nameGroup = group.name;
+                if (ctx.selectedGpxFile.markerCurrent) {
+                    newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+                }
+                ctx.setSelectedGpxFile(newSelectedGpxFile);
+                ctx.setFavorites({...newFavoriteFiles});
             }
-            ctx.setSelectedGpxFile(newSelectedGpxFile);
-            setProgressVisible(false);
+        }
+        setProgressVisible(false);
     }
 
     useEffect(() => {
@@ -103,13 +112,15 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 markerList.push(marker);
             });
             setMarkers(markerList);
-        } else {
-            setMarkers([]);
-        }
-        if (favoritesPointsOpen && markers.length === 0) {
-            enableLayerWithGroups(setLoadingFavorites, ctx, favoritesPointsOpen, false).then();
+        } else if (favoritesPointsOpen && markers.length === 0) {
+            getFavoritesWithoutLayers().then();
         }
     }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
+
+    async function getFavoritesWithoutLayers() {
+        let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
+        ctx.setFavorites({...newFavoriteFiles});
+    }
 
     useEffect(() => {
         if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -118,11 +129,18 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
         }
     }, [ctx.favorites, ctx.setFavorites]);
 
+    function getColor() {
+        let currentGroup = ctx.favorites.groups.find(g => g.name === group.name);
+        if (currentGroup && currentGroup.pointsGroups[group.name]) {
+            return currentGroup.pointsGroups[group.name].color;
+        }
+    }
+
     return (<div key={'group' + index}>
         <MenuItem sx={{ml: 3}} divider onClick={() => {
             toggleFavoritesPointsOpen();
         }}>
-            <ListItemIcon style={{color: group.name && ctx.favorites[group.name]?.pointsGroups[FavoriteManager.getGroupNameFromPointsGroups(group.name)]?.color}}>
+            <ListItemIcon style={{color: group.name && getColor()}}>
                 <Folder fontSize="small"/>
             </ListItemIcon>
             <ListItemText>
@@ -130,13 +148,14 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                     {group.name}
                 </Typography>
             </ListItemText>
-            <Switch checked={ctx.favorites[group.name]?.addToMap === true && enableGroups.some(e => e.name === group.name)}
-                    onChange={(e) => {
-                        enableLayerWithGroups(setLoadingFavorites, ctx, e.target.checked, true).then();
-                    }}
-                    onClick={(e) => {
-                        e.stopPropagation()
-                    }}/>
+            <Switch
+                checked={ctx.favorites[group.name]?.addToMap === true && enableGroups.some(e => e.name === group.name)}
+                onChange={(e) => {
+                    enableLayerWithGroups(setLoadingFavorites, e.target.checked).then();
+                }}
+                onClick={(e) => {
+                    e.stopPropagation()
+                }}/>
             {markers === [] ? <></> : favoritesPointsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         {loadingFavorites ? <LinearProgress/> : <></>}

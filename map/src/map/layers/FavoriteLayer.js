@@ -37,7 +37,7 @@ const FavoriteLayer = () => {
     }, [ctx.favorites, ctx.setFavorites]);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile?.markerCurrent) {
+        if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
             map.setView([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
         }
@@ -55,7 +55,7 @@ const FavoriteLayer = () => {
             layer: e.sourceTarget
         };
         if (!ctx.selectedGpxFile.file) {
-            ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.group]);
+            ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
         }
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
