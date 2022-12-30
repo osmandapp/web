@@ -27,7 +27,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: current location  
   
 :::note  
-On some Android devices, the altitude may not be displayed correctly. To resolve this problem, download altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+Altitude may not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -39,7 +39,7 @@ On some Android devices, the altitude may not be displayed correctly. To resolve
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude |  
-| By tapping |No changes.|
+| By tapping | No changes.|
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
@@ -51,18 +51,19 @@ On some Android devices, the altitude may not be displayed correctly. To resolve
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → Altitude widget |
-| By tapping |No changes.|
+| By tapping | No changes.|
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
 
 </Tabs>  
 
+
 ### * Elevation: map center
 
 <InfoAndroidOnly />  
 
-Elevation widget is shown among the "Available widgets" only when [Development plugin](../plugins/development.md) is enabled. Note, that elevation data is displayed when hightmaps of desired area are downloaded.  
+The Elevation widget is shown among the "Available widgets" only when the [Development plugin](../plugins/development.md) is enabled. Note, that the elevation data is displayed when the appropriate maps of the required area are downloaded.  
   
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png) 
   
@@ -72,6 +73,7 @@ Elevation widget is shown among the "Available widgets" only when [Development p
 | By tapping | No changes. |
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
+
 ## Current time
 
 This widget shows current time from your device.
@@ -80,12 +82,13 @@ This widget shows current time from your device.
 
 | | |
 |------------|------------|
-| Enable |  **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-|  | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
+| Enable |  *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
+|  | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
 | By tapping | No changes. |
-| Format | Time & Format is configured by device settings |
+| Format | Time & Format is configured by device settings. |
 
-## Speed
+
+## Current speed
 
 Speed widget shows your current speed detected by GPS-sensor.
 
@@ -94,24 +97,21 @@ Speed widget shows your current speed detected by GPS-sensor.
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/> |
-| By tapping  |No changes.|
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
+| By tapping  | No changes.|
+| Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
+|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
 
 ## Average speed widget  
 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
+<InfoAndroidOnly />
 
 This widget shows your average speed in the past for a selected time interval and doesn't require any other features such as recording track or navigation. And you can easily use it for validating your average speed against speed limits on highways, for recording last 5-15 min average speed riding a bicycle.  
 
-Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*  
+Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*   
 
 **Time interval.**  
-The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is taken from recorded points by GPS: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.
+The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is taken from recorded points by GPS: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
 
 
 **Take stops into account.**  
@@ -123,26 +123,13 @@ The average speed is calculated for the set interval of time, according to your 
 
 | | |
 |------------|------------|
-| Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_average_speed"/> |
-| | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_average_speed"/> |
-| By tapping | – |  
-  
- 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly />
-
-
-</TabItem>
-
-</Tabs>  
+| Enable |  Menu → Configure screen → Left / Right panel → Average speed |
+| By tapping | No changes. |   
 
 
 ## Battery level
 
-This widget shows battery level of your device.
+This widget shows the battery level of your device.
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)
 
@@ -151,33 +138,33 @@ This widget shows battery level of your device.
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/> |
 | By tapping |No changes.|
 
+
 ## Coordinates widget
 
+This widget is displayed at the top of the screen and shows the current geographic coordinates.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-The widget is shown at the top of the screen. It shows the geographic coordinates of:
-- &nbsp;_<Translate android="true" ids="map_center_widget"/>_ - shows coordinates of any points on the center screen.
-- &nbsp;_<Translate android="true" ids="current_location_widget"/>_ - shows coordinates of current geolocation.
+- *Coordinates: map center* - shows the geographic coordinates of the current map center.
+- *Coordinates: current location* - shows the geographic coordinates of current geolocation.
 
-Where green icons are _Map center_ coordinates, blue icons are _My location_ coordinates.
+Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of the user's current location.
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)
-
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/> → <Translate android="true" ids="map_center_widget"/> / <Translate android="true" ids="current_location_widget"/>  |
-| By tapping | Copies the coordinates to the clipboard |
+| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/>  |
+| By tapping | Copies the coordinates to the clipboard. |
 | Format | <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-The widget is shown at the top of the screen. It shows the geographic coordinates of current geo-location.
+The widget shows the geographic coordinates of the current geolocation.
 
 ![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios.png)
 
@@ -194,36 +181,21 @@ The widget is shown at the top of the screen. It shows the geographic coordinate
 
 ## GPS Info  
 
+<InfoAndroidOnly /> 
+
 :::note
-
 You can reset the current GPS-cache via: 
-<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>
-
+*<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*  
 :::  
 
-GPS (Global Positioning System) info widget shows a number of satellites that device detects and uses at that moment. It could be used to check GPS-status in case of a bad GPS-signal.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
+GPS (Global Positioning System) info widget shows a number of satellites that device detects and uses at that moment. It could be used to check GPS-status in case of a bad GPS-signal.   
 
 ![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
 
 | | |
 |------------|------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,gps_provider"/> |
+| Enable | Menu → Configure screen → Left / Right panel → GPS info |  
 | By tapping | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly /> 
-
-
-</TabItem>
-
-</Tabs>  
 
 
 ## Sunset and sunrise widgets
@@ -239,17 +211,14 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
 | By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
 
+
 ## * Trip recording widgets  
 
-:::note
-  
+:::note  
 You can read a more detailed description here: [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md).  
-
 :::  
 
 Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
-
-
 
 <Tabs groupId="operating-systems">
 
@@ -260,9 +229,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording |
-| By tapping | Starts/Stop track recording or View the graph|
-
-
+| By tapping | Starts/Stop track recording or View the graph. |
 
 </TabItem>
 
@@ -270,7 +237,6 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 :::note
 **Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
-
 :::  
 
 ![trip_recording_widget](@site/static/img/widgets/widget_trip-recording-rec.png)
@@ -287,34 +253,21 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ## * External sensors widgets
 
+<InfoAndroidOnly />
+
 :::note 
 External sensors widgets can be added to the map screen only when OsmAnd External sensors plugin is enabled.  
 :::  
 
 External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
 ![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets.png) 
 
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>|
-| By tapping |No changes.|
+| By tapping | No changes.|   
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::caution Android only
-External sensors widgets are currently not available for the iOS version of the OsmAnd app.
-:::  
-
-</TabItem>
-
-</Tabs>  
 
 ## * Weather widgets
 
@@ -345,19 +298,21 @@ The Weather widgets display the current weather information for the central poin
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
-| By tapping |No changes.|
+| By tapping | No changes.|
 | Format | Main menu → Global Settings → Profile → Weather |
 
 </TabItem>
 
 </Tabs>
 
+
 ## * Parking widget
 
->Enable **[<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) / <Translate ios="true" ids="res_mapsres"/> (iOS) → <Translate android="true" ids="osmand_parking_plugin_name"/>.
+:::note  
+Parking widget can be added to the map screen only when OsmAnd [Parking plugin](../plugins/parking.md) is enabled.  
+:::  
 
-This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](../plugins/parking.md) widget that shows distance from your screen center to the parking place.
-
+This is a Parking plugin widget that shows distance from your screen center to the parking place.  
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)
 
@@ -365,66 +320,68 @@ This is a [<Translate android="true" ids="osmand_parking_plugin_name"/> plugin](
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_parking"/> |
 | By tapping | Moves map view to the parking position |
-| Format | **<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
-|        | **<Translate ios="true" ids="ios_button_seq"/>:**  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+| Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
+|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+
 
 ## * Mapillary widget
 
->Enable **[Mapillary plugin](../plugins/mapillary)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> (Android) /<Translate ios="true" ids="res_mapsres"/> (iOS) →  Mapillary.
+:::note  
+Mapillary widget can be added to the map screen only when OsmAnd [Mapillary plugin](../plugins/mapillary.md) is enabled.  
+:::  
 
+This is a Mapillary plugin widget that provides quick access to Mapillary app to add Street-Level-Imagery.
 
-This is a [Mapillary plugin](../plugins/mapillary) widget that provides quick access to Mapillary app to add Street-Level-Imagery.
-
-<!-- ! ![Mapillary widget](@site/static/img/plugins/mapillary/mapillary_widget.png) -->
+![Mapillary widget](@site/static/img/widgets/mapillary_widget.png) 
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,mapillary_widget"/> |
-| By tapping | Opens Mapillary application |
-
-**Note**: Mapillary application should be installed separately.
-  
+| Enable | *Android*: Menu → Configure screen → Left / Right panel → Mapillary |
+|  | *iOS*: Menu → Configure screen → Right panel → Mapillary |
+| By tapping | Opens Mapillary application. |
 
 
- 
-## * Audio-video notes widget
+## * Audio/video notes widget
 
->Enable **[<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen,audionotes_plugin_name"/>.
+:::note  
+Audio/video notes widget can be added to the map screen only when OsmAnd [<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md) is enabled.  
+:::  
 
+This is an Audio/video notes plugin widget that provides quick access to start or stop recording (audio/video or photo).
 
-This is a [<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md) widget that provides quick access to start / stop taking a recording (audio / video or photo).
-
-![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
-
-Configure what default action should be taken (<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>):
+You can configure which action can be selected by default:
 - On request – every time dialog to choose aciton is displayed. (default state).
 - Record audio – takes an audio note by default.
 - Record video – records a video by default.
-- Take a photo – takes a photo by default.
+- Take a photo – takes a photo by default.  
 
-<!-- ![Audio-video widget on request](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget_on_request.png) -->
-<!-- ![Audio-video widget configure](@site/static/img/plugins/audio-video-notes/av-widget-configure.png) -->
-
+![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>  |
 | By tapping | Start / stops taking a note  |
 
-## * Tracker widget (Android)
 
->Install **[OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram)** from Google Play or other source.
+## * Tracker widget
 
->Enable **[OsmAnd Tracker plugin](../plugins/osmand-tracker.md)**: <Translate android="true" ids="shared_string_menu,plugins_screen"/> →  OsmAnd Online GPS Tracker.
+<InfoAndroidOnly />
 
-This is [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) widget is used to get quick access to OsmAnd Tracker app and share your location with other people. It shows whether connection is online or offline and if sharing location is enabled, then the time since last successful sending is dispalyed.
+:::note  
+Tracker widget can be added to the map screen only when [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) is enabled.  
+:::  
+
+For the plugin and widget to work, you need to install [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram)** from Google Play or other sources.  
+
+This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker app and share your location information with other users. It shows whether connection is online or offline and if sharing location is enabled, then the time since last successful sending is dispalyed.
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,tracker_item"/> |
-| By tapping | Opens OsmAnd Tracker app |
+| By tapping | Opens OsmAnd Tracker app. |
+
 
 ## * Developer widgets
 
@@ -433,6 +390,7 @@ Developer Widgets can be added to the map screen only when OsmAnd [Development p
 :::
 
 Developer Widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
+
 
 ### FPS widget
 
@@ -447,7 +405,7 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |  
-| By tapping |No changes.|
+| By tapping | No changes.|
 
 </TabItem>
 
@@ -458,11 +416,12 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Right panel → FPS widget |
-| By tapping |No changes.|
+| By tapping | No changes.|
 
 </TabItem>
 
 </Tabs>
+
 
 ### Camera widgets  
 
@@ -475,5 +434,5 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
-| By tapping |No changes.|  
+| By tapping | No changes.|  
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |
