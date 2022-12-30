@@ -5,34 +5,27 @@ authors: victor
 tags: [resolutions, OsmAnd]
 ---
 
-Happy New 2023 Year!
+Happy New Year!
 
-<!--
-
-At the end of each year, we sum up the results of the passing year and write our plans for the next one. This tradition started 5 years ago and we continue doing it each year. Sometimes our ambitions are not nearly completed, sometimes we overshoot the plan.
--->
+It has already become a tradition that at the end of December we sum up the results of the outgoing year and write plans for the next one. This is our 6th Resolutions to our users.
 
 <!--truncate-->
 
 
-<!--
-2022 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our 2022 New Year resolutions we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.
+Indeed, 2022 was a very difficult year for our team. Last year, we wanted to quickly return to normal without COVID, but most of our team ended up in a situation called war. All our work plans had to be adjusted, but despite everything that happened, we managed to cope with the tasks and become even more united.
 
-One of the biggest achievements of 2022 is that we’ve managed to double our Team up to 20 people and this Team delivers features with quite an incredible pace.
--->
+In 2022 we launched the new OsmAnd website with new [documentation](https://osmand.net/docs/intro) and [map](https://osmand.net/ma). We also introduced the Pro cross-platform subscription for iOS, launched the new rendering engine for Android, and a test version of 3D terrain.
 
 ## 2023 New Year Resolutions
 
-
 We will start with the list for 2023 and below you can double-check how a similar list was crushed in 2022 😉
 
-New Year 2023:
-
+Road map 2023:
 
 ### Widgets / Trip Computer
 
-* introduce full customization for widgets screen.
-* trip computer for your riding.
+* **Android / iOS:** introduce full customization for widgets screen
+* **Android / iOS:** Trip Computer for your rides
 
 ![widgets](./widgets.png)
 
@@ -46,6 +39,7 @@ New Year 2023:
 ### OsmAnd Pro
 
 * **Android / iOS / Web:** full synchronization
+* **Android / iOS / Web:** edit tracks and Favorites
 
 ![Cross-platform](./cross-platform.png)
 
@@ -53,14 +47,50 @@ New Year 2023:
 
 * photos on the map
 * photos for Favorites
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./photo_gallery.png').default} alt="route line"/></td>
+    <td><img src={require('./photo_gallery_1.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./photo_gallery_2.png').default} alt="route line"/></td>
+    <td><img src={require('./photo_gallery_3.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
+
 ### External Controllers
 
-* BLE external Controllers
-* Notifications for watches
+* **Android / iOS :** BLE external Controllers
+* **Android / iOS :** Notifications for watches
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./external.png').default} alt="route line"/></td>
+    <td><img src={require('./external_1.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
+
 ### Tracks
 
 * **Android / iOS / Web:** OSM GPX tracks collections
 * **iOS:** GPS filter, Recording GPX dialog
+* **Android / iOS:** Tracks Management
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('./tracks_1.png').default} alt="route line"/></td>
+    <td><img src={require('./tracks_2.png').default} alt="carplay"/></td>
+    </tr>
+</table> 
+
+### Favorites
+
+* **Android / iOS:** audio/video/photo notes for Favorites
+
 ### 3D relief
 
 * **Android / iOS:** 3D relief for offline 
@@ -70,9 +100,14 @@ New Year 2023:
 
 * **Android / iOS / Web:** All user tracks on the map
 
+### CarPlay / Android Auto
+
+* **Android / iOS:** feature update
 ### Routing
 
 * **iOS:** online routing
+
+![Online routing](./online_routing_ios.png)
 
 ## 2022 Achievements
 
@@ -91,8 +126,6 @@ Let’s first take a look at what was in the original 2022 resolutions list whic
 * ✔️ Tracks (Android & iOS & Web)
 * ✔️ Quick actions / Customization (Android & iOS) ?
 * ✔️ Online routing (Android)
-
-
 
 ### iOS
 
@@ -185,10 +218,12 @@ OsmAnd Android got 2 major releases (4.2 and 4.3) with more than <a href="https:
 
 ## Summary
 
-We are starting the new 2022 year with 12 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
+<!-- Абзацы ниже надо переписать, они повторяются с прошлого года, я только 2022 на 2023 поменял -->
 
-Thank you (our lovely users) for being with us during these difficult years for travels, we feel your support and we hope to meet your expectations. We wish all the best in 2022!
+We are starting the new 2023 year with 15 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
 
-**Happy 2022!**
+Thank you (our lovely users) for being with us during these difficult years for travels, we feel your support and we hope to meet your expectations. We wish all the best in 2023!
+
+**Happy 2023!**
 
 **Victor Shcherb & OsmAnd Team**
