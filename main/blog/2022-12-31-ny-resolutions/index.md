@@ -1,6 +1,6 @@
 ---
 slug: ny-resolutions-2023
-title: 2022 New Year resolutions
+title: 2023 New Year resolutions
 authors: victor
 tags: [resolutions, OsmAnd]
 draft: true
