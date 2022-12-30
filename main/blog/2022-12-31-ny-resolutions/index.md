@@ -46,6 +46,8 @@ New Year 2023:
 
 * **Android / iOS / Web:** full synchronization
 
+![Cross-platform](./cross-platform.png)
+
 ### Photo Gallery
 
 * photos on the map
