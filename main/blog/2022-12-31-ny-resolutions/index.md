@@ -97,7 +97,7 @@ _____________________________________
 
 ## OsmAnd Pro
 
-![OsmAnd Pro](./1.png)
+
 
 
 * Introduce OsmAnd Pro features to ***iOS*** and make unified multi-platform synchronization, make the synchronization work automagically.
@@ -109,7 +109,7 @@ _____________________________________
 
 ## OpenGL / 3D * Fast Maps
 
-![OpenGL](./3dmaps.png) 
+
 
 
 * **Android**: we plan to introduce the new fast OpenGL rendering engine and unify our iOS / Android experience.
@@ -118,19 +118,19 @@ _____________________________________
 
 
 ## Documentation
-![Documentation](./documentation.png) 
+
 **Android / iOS / Web:** we plan to finally update our features website and introduce documentation, so we can synchronize it with all platforms and probably introduce a few translations.
 
 
 ## Weather
-![Documentation](./weather.png) 
+
 
 **Android / iOS / Web:** let’s bring the weather forecast to OsmAnd and as usual make it a very powerful tool for offline travelers.
 
 
 ## Plan Route
 
-![Plan route](./planroute.png) 
+
 
 
 
@@ -144,12 +144,12 @@ _____________________________________
 
 ## Widgets
 
-![Widgets](./widgets.png)  
+ 
 **Android / iOS:** introduce more powerful widgets and make it easier to access a bigger variety of them on the map.
 
 
 ## Tracks
-![Tracks](./tracks.png) 
+
 
 
 **Android / iOS / Web:** redesign how we search, store, enable tracks on the map and provide the heatmap for our existing tracks.
@@ -161,7 +161,7 @@ _____________________________________
 
 ## Routing
 
-![Routing](./routing.png) 
+
 
    
 
@@ -190,7 +190,7 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 
 <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a> * January 30, 2021
 
-![3-9-ios](./3-9-ios.png) 
+
 
 
 * <a href="https://osmand.net/blog/osmand-ios-3-90-released#plan_route">Plan Route</a>
@@ -202,7 +202,7 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a> * July 19, 2021
 
 
-![4-0-ios](./4-0-ios.png)  
+ 
     
 * <a href="https://osmand.net/blog/osmand-ios-4-0-released#carplay">Car Play!</a>
 * <a href="https://osmand.net/blog/osmand-ios-4-0-released#favorite">Add favorites with custom icons & shape</a>
@@ -217,7 +217,7 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> * December 28, 2021
 
 
-![4-1-ios](./4-1-ios.png)         
+        
       
         
 * <a href="https://osmand.net/blog/osmand-ios-4-1-released#tracks">Track context menu, configure track appearance & new interactions</a>
@@ -234,14 +234,14 @@ OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="http
         
 * <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> * February 4, 2021
        
-![3-9-android](./3-9-android.png)          
+        
       
 * <a href="https://osmand.net/blog/osmand-3-9-released#export_import">Export / Import all data</a>
 * <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">Plan route with graphs</a>
 * <a href="https://osmand.net/blog/osmand-3-9-released#custom_color">Custom colors for favourites and waypoints</a>
 <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a> * August 7, 2021
         
-![4-0-android](./4-0-android.png)
+
           
 * <a href="https://osmand.net/blog/osmand-android-4-0-released#cloud">Cloud backup and restore</a>
 * <a href="https://osmand.net/blog/osmand-android-4-0-released#live">OsmAnd Live free for contributors</a>
@@ -254,7 +254,7 @@ OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="http
 
 * <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> * December 10, 2021
       
-![4-1-android](./4-1-android.png)
+
        
         
 * <a href="https://osmand.net/blog/osmand-android-4-1-released#androidauto">Android Auto</a>
