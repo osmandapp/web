@@ -35,6 +35,8 @@ New Year 2023:
 * introduce full customization for widgets screen.
 * trip computer for your riding.
 
+![widgets](./widgets.png)
+
 ### Quick Action / Customization
 
 **iOS:** bring customization to the same level as we have in Android, so we can configure Drawer / Context Menu etc for our selected profiles.
@@ -63,6 +65,8 @@ New Year 2023:
 ### 3D relief
 
 * **Android / iOS:** 3D relief for offline 
+
+![3D](./3d-relief.png)
 ### Heatmap
 
 * **Android / iOS / Web:** All user tracks on the map
