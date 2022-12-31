@@ -115,7 +115,7 @@ Finalize and make a stable release of a 3D fully offline worldwide map.
 
 ## 2022 Achievements
 
-Let’s first take a look at what was in the original 2022 resolutions list which nearly doesn’t cover all features implemented in 2022 by 2 major releases * [4.2](https://osmand.net/blog/osmand-ios-4-2-released) and [4.3](https://osmand.net/blog/osmand-ios-4-3-released) (iOS); [4.2](https://osmand.net/blog/osmand-android-4-2-released) and [4.3](https://osmand.net/blog/osmand-android-4-3-released) (Android).
+Let’s take a look at what was in the original 2022 resolutions list which nearly doesn’t cover all features implemented in 2022 by 2 major releases * [4.2](https://osmand.net/blog/osmand-ios-4-2-released) and [4.3](https://osmand.net/blog/osmand-ios-4-3-released) (iOS); [4.2](https://osmand.net/blog/osmand-android-4-2-released) and [4.3](https://osmand.net/blog/osmand-android-4-3-released) (Android).
 
 [Resolutions 2022](https://osmand.net/blog/ny-resolutions-2022):
 
@@ -222,9 +222,9 @@ OsmAnd Android got 2 major releases (4.2 and 4.3) with more than <a href="https:
 
 ## Summary
 
-We are starting the new 2023 year with 15 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
+We are starting the new 2023 year with 15 Software engineers fully equipped and motivated to bring OsmAnd to the next level. We are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
 
-Thank you (our lovely users) for being with us during these difficult years for travels, we feel your support and we hope to meet your expectations. We wish all the best in 2023!
+Thank you (our dear users) for being with us during these difficult years for traveling, we feel your support and we hope to meet your expectations. We wish all the best in 2023!
 
 **Happy 2023!**
 
