@@ -16,7 +16,7 @@ In 2022 we launched the new OsmAnd website with new [documentation](https://osma
 
 ## 2023 New Year Resolutions
 
-We will start with the list for 2023 and below you can double-check how a similar list was crushed in 2022 😉
+Let's start with the to-do list for 2023, and below you can double-check how a similar list was  crushed in 2022 😉
 
 ### Widgets / Trip Computer
 
@@ -29,26 +29,26 @@ We will start with the list for 2023 and below you can double-check how a simila
 
 ### Quick Action / Customization
 
-**iOS:** bring customization to the same level as we have in Android, so we can configure Drawer / Context Menu etc for our selected profiles. 
+**iOS:** we'll bring customization to the same level as in Android, so you can configure Driver / Context Menu etc for selected profiles.
 
-**Android / iOS:** introduce a more powerful concept of Quick actions, so users can configure more than 1 quickly accessible button on the map.
+**Android / iOS:** we plan to introduce a more powerful concept of quick actions so that users can configure more than 1 shortcut buttons on the map.
 
 
 ### OsmAnd Cloud
 
 * **Android / iOS / Web:** Seamless integration through all platforms
 * **Android / iOS / Web:** Edit & sync Tracks / Favorites online
-* **Android / iOS / Web:** Allow to share Tracks / Favorites with friends & family
+* **Android / iOS / Web:** Share Tracks / Favorites with friends & family
 
 ![Cross-platform](./cross-platform.png)
 
 ### Photo Gallery
 
-Bring integration of Map & Photos to the next level including personal photos and public domain from Wikimedia.
+Next level of integration of Map & Photos including personal photos and public domain from Wikimedia.
 
-* Display photos on the map
+* Displaying photos on the map
 * Search and browse POI using photos
-* Allow attaching Photos to Favorites and Tracks
+* Attaching Photos to Favorites and Tracks
 
 <table class="blogimage">
   <tr>
@@ -66,7 +66,7 @@ Bring integration of Map & Photos to the next level including personal photos an
 
 ### External Devices
 
-** Android / iOS **
+**Android / iOS**
 
 Improve integration with external devices such as sensors, controllers, joysticks, smartwatches
 
@@ -93,9 +93,6 @@ Improve integration with external devices such as sensors, controllers, joystick
     <td><img src={require('./tracks_2.png').default} alt="carplay"/></td>
     </tr>
 </table> 
-
-### Favorites
-
 
 ### 3D maps
 
