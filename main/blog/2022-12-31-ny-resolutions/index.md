@@ -45,8 +45,8 @@ Road map 2023:
 
 ### Photo Gallery
 
-* photos on the map
-* photos for Favorites
+* **Android / iOS / Web:** photos on the map
+* **Android / iOS / Web:** photos for Favorites
 
 <table class="blogimage">
   <tr>
@@ -64,8 +64,8 @@ Road map 2023:
 
 ### External Controllers
 
-* **Android / iOS :** BLE external Controllers
-* **Android / iOS :** Notifications for watches
+* **Android / iOS:** BLE external Controllers
+* **Android / iOS:** Notifications for watches
 
 <table class="blogimage">
   <tr>
@@ -122,9 +122,9 @@ Let’s first take a look at what was in the original 2022 resolutions list whic
 * ✔️ Web Map (Web)
 * ✔️ Widgets (Android)
 * ✔️ Weather (Android & iOS & Web)
-* ✔️ Plan Route (Android & iOS & Web)???
+* ✔️ Plan Route (Android & iOS & Web)
 * ✔️ Tracks (Android & iOS & Web)
-* ✔️ Quick actions / Customization (Android & iOS) ?
+* ✔️ Quick actions / Customization (Android & iOS)
 * ✔️ Online routing (Android)
 
 ### iOS
