@@ -3,7 +3,6 @@ slug: ny-resolutions-2023
 title: 2023 New Year resolutions
 authors: victor
 tags: [resolutions, OsmAnd]
-draft: true
 ---
 
 Happy New Year!
