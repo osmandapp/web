@@ -7,46 +7,48 @@ tags: [resolutions, OsmAnd]
 
 Happy New Year!
 
-It has already become a tradition that at the end of December we sum up the results of the outgoing year and write plans for the next one. This is our 6th Resolutions to our users.
-
-<!--truncate-->
+We have a good tradition every end of the year to write down New Year Resolutions for the next year and sum up the results of the past year ([Resolutions 2022](https://osmand.net/blog/ny-resolutions-2022)). It's already our 6th Resolutions. 
 
 
-Indeed, 2022 was a very difficult year for our team. Last year, we wanted to quickly return to normal without COVID, but most of our team ended up in a situation called war. All our work plans had to be adjusted, but despite everything that happened, we managed to cope with the tasks and become even more united.
+2022 was very difficult for our team though we stayed strong and #StandWithUkraine 🇺🇦. Nevertheless, there is quite a lot to be proud of 2022 achievements.
 
-In 2022 we launched the new OsmAnd website with new [documentation](https://osmand.net/docs/intro) and [map](https://osmand.net/ma). We also introduced the Pro cross-platform subscription for iOS, launched the new rendering engine for Android, and a test version of 3D terrain.
+In 2022 we launched the new OsmAnd website with new [documentation](https://osmand.net/docs/intro) and [map](https://osmand.net/map). We also introduced the Pro cross-platform subscription for iOS, Android, Web and finally released OpenGL Rendering for Android with 3D terrain.
 
 ## 2023 New Year Resolutions
 
 We will start with the list for 2023 and below you can double-check how a similar list was crushed in 2022 😉
 
-Road map 2023:
-
 ### Widgets / Trip Computer
 
-* **Android / iOS:** introduce full customization for widgets screen
-* **Android / iOS:** Trip Computer for your rides
+**Android + iOS**
+* Full customization for widgets screen - left / right / bottom / top panels
+* Trip Computer and large widgets 
+* Bigger variety of Widgets for your travels and rides
 
 ![widgets](./widgets.png)
 
 ### Quick Action / Customization
 
-**iOS:** bring customization to the same level as we have in Android, so we can configure Drawer / Context Menu etc for our selected profiles.
+**iOS:** bring customization to the same level as we have in Android, so we can configure Drawer / Context Menu etc for our selected profiles. 
 
 **Android / iOS:** introduce a more powerful concept of Quick actions, so users can configure more than 1 quickly accessible button on the map.
 
 
-### OsmAnd Pro
+### OsmAnd Cloud
 
-* **Android / iOS / Web:** full synchronization
-* **Android / iOS / Web:** edit tracks and Favorites
+* **Android / iOS / Web:** Seamless integration through all platforms
+* **Android / iOS / Web:** Edit & sync Tracks / Favorites online
+* **Android / iOS / Web:** Allow to share Tracks / Favorites with friends & family
 
 ![Cross-platform](./cross-platform.png)
 
 ### Photo Gallery
 
-* **Android / iOS / Web:** photos on the map
-* **Android / iOS / Web:** photos for Favorites
+Bring integration of Map & Photos to the next level including personal photos and public domain from Wikimedia.
+
+* Display photos on the map
+* Search and browse POI using photos
+* Allow to attach Photos to Favorites and Tracks
 
 <table class="blogimage">
   <tr>
@@ -62,10 +64,15 @@ Road map 2023:
     </tr>
 </table> 
 
-### External Controllers
+### External Devices
 
-* **Android / iOS:** BLE external Controllers
-* **Android / iOS:** Notifications for watches
+** Android / iOS **
+
+Improve integration with external devices such as sensors, controllers, joysticks, smartwatches
+
+* Support BLE Sensors
+* Customize Bluetooth keyboards / controllers access
+* Smart notifications management for watches
 
 <table class="blogimage">
   <tr>
@@ -76,9 +83,9 @@ Road map 2023:
 
 ### Tracks
 
-* **Android / iOS / Web:** OSM GPX tracks collections
 * **iOS:** GPS filter, Recording GPX dialog
-* **Android / iOS:** Tracks Management
+* **Android / iOS:** Redesigned Tracks Management
+* **Android / iOS:** Generate / share personal heatmap and tracks collection
 
 <table class="blogimage">
   <tr>
@@ -89,25 +96,25 @@ Road map 2023:
 
 ### Favorites
 
-* **Android / iOS:** audio/video/photo notes for Favorites
 
-### 3D relief
+### 3D maps
 
-* **Android / iOS:** 3D relief for offline 
+* **Android / iOS** 
+
+Finalize and make a stable release of 3D fully offline worldwide map.
 
 ![3D](./3d-relief.png)
-### Heatmap
 
-* **Android / iOS / Web:** All user tracks on the map
+### Overall improvements
 
-### CarPlay / Android Auto
+- Complete offline documentation
+- Photo / video attachments to Favorites points
+- CarPlay
+- Android Auto
+- Fast Auto Routing
+- Alternative Routes
+- Different Weather forecast providers
 
-* **Android / iOS:** feature update
-### Routing
-
-* **iOS:** online routing
-
-![Online routing](./online_routing_ios.png)
 
 ## 2022 Achievements
 
@@ -117,7 +124,7 @@ Let’s first take a look at what was in the original 2022 resolutions list whic
 
 
 * ✔️ Open GL / 3D * Fast Maps (Android)
-* ✔️ OsmAnd Pro (iOS & Web)
+* ✔️ OsmAnd Cloud (iOS & Web)
 * ✔️ Documentation (Web)
 * ✔️ Web Map (Web)
 * ✔️ Widgets (Android)
@@ -213,12 +220,10 @@ OsmAnd Android got 2 major releases (4.2 and 4.3) with more than <a href="https:
 * [New Website version](https://osmand.net/)
 * [Documenation](https://osmand.net/docs/intro)
 * [Web OsmAnd Map](https://osmand.net/map)
-* [OsmAnd Pro login for Web](https://osmand.net/docs/user/purchases/android#pro-features)
+* [OsmAnd Pro - Features](https://osmand.net/docs/user/purchases/android#pro-features)
 
 
 ## Summary
-
-<!-- Абзацы ниже надо переписать, они повторяются с прошлого года, я только 2022 на 2023 поменял -->
 
 We are starting the new 2023 year with 15 Software engineers fully equipped and motivated to bring OsmAnd to the next level. Though we are sticking to our mission to build ***the most powerful open source cartographic tool for Travels*** *(Offline & Online)*.
 
