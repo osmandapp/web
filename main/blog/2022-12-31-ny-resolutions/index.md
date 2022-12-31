@@ -48,7 +48,7 @@ Bring integration of Map & Photos to the next level including personal photos an
 
 * Display photos on the map
 * Search and browse POI using photos
-* Allow to attach Photos to Favorites and Tracks
+* Allow attaching Photos to Favorites and Tracks
 
 <table class="blogimage">
   <tr>
@@ -101,7 +101,7 @@ Improve integration with external devices such as sensors, controllers, joystick
 
 * **Android / iOS** 
 
-Finalize and make a stable release of 3D fully offline worldwide map.
+Finalize and make a stable release of a 3D fully offline worldwide map.
 
 ![3D](./3d-relief.png)
 
