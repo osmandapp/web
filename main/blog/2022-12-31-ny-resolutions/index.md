@@ -215,7 +215,7 @@ OsmAnd Android got 2 major releases (4.2 and 4.3) with more than <a href="https:
 ![Web Map](./web.png)
 
 * [New Website version](https://osmand.net/)
-* [Documenation](https://osmand.net/docs/intro)
+* [Documentation](https://osmand.net/docs/intro)
 * [Web OsmAnd Map](https://osmand.net/map)
 * [OsmAnd Pro - Features](https://osmand.net/docs/user/purchases/android#pro-features)
 
