@@ -19,25 +19,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Track on the map is user [recorded trip](../plugins/trip-recording.md) or [plan route](../plan-route/create-route.md) with makred points on it or not. OsmAnd track file has [gpx-format](../plugins/trip-recording.md#gpx-file-details).
 
 You can add / create tracks to / in OsmAnd in these ways: 
-- &nbsp;[Import](./tracks.md#import-track) from the external source.
-- &nbsp;Create in the application using [Plan route](../plan-route/index.md) tool.
-- &nbsp;Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
+- [Import](./tracks.md#import-track) from the external source.
+- Create in the application using [Plan route](../plan-route/index.md) tool.
+- Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
 All tracks in the application are stored in the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md).
 
 Abilities to manage tracks in OsmAnd:
-- &nbsp;Enable and disable tracks on the map.
-- &nbsp;Configuring track appearance, editing and analyzing.
-- &nbsp;Using for navigation.
+- Enable and disable tracks on the map.
+- Configuring track appearance, editing and analyzing.
+- Using for navigation.
 
 OsmAnd has no limit on the number of tracks to store and display.
 
-There are three options to display Tracks on the map: via [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu, [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu, [Track Context menu](../map/track-context-menu.md)
+There are three options to display Tracks on the map:
+- [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu.
+- [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu.
+- [Track Context menu](../map/track-context-menu.md).  
+
+Formats: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
+Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
 
 ![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
 
@@ -52,55 +57,29 @@ There are three options to display Tracks on the map: via [Configure map](../map
 </Tabs>
 
 
-- &nbsp;Formats: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.
-- &nbsp;Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
-
 ## Create / Edit Track
+
 
 ### Coordinate input
 
-<Tabs groupId="operating-systems">
+<InfoAndroidOnly /> 
 
-<TabItem value="android" label="Android">
+Read how to add points by coordinates: [By Coordinate input](../plan-route/coordinate-input.md) 
 
-Read how to add points by coordinates: &nbsp;[By Coordinate input](../plan-route/coordinate-input.md) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
- 
-</Tabs>
 
 ### Record track
 
-<Tabs groupId="operating-systems">
+Read about [Trip recording Plugin](../plugins/trip-recording.md).  
 
-<TabItem value="android" label="Android">
-
-Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
-
-</TabItem>
- 
-</Tabs>
 
 ### Add waypoint
 
+- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
+- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
-- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
 
 ![Quick action widget](@site/static/img/widgets/waypoint_qa_android.png)
 
@@ -108,11 +87,7 @@ Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
 
 <TabItem value="ios" label="iOS">
 
-- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
-- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
-
 ![Quick action widget](@site/static/img/widgets/waypoint_qa_ios.png)
-
 
 </TabItem>
  
@@ -121,24 +96,11 @@ Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
 
 ### Edit via Plan Route
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-- &nbsp;[Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-- &nbsp;[Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).
-
-</TabItem>
- 
-</Tabs>
+- [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
 
 
 ## My Places menu
+
 
 ### Actions
 
@@ -146,9 +108,7 @@ Read about &nbsp;[Trip recording Plugin](../plugins/trip-recording.md).
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>_
-
-<p> </p>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>_  
 
 At the bottom of the screen are four Actions buttons.
 
@@ -169,31 +129,28 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,me
 
 Clicking to choosing track opens [Track Context menu](../map/track-context-menu.md) for any actions with it.
 
-Actions with track or tracks (track folders) by clicking to "&#8230;" in top screen.
-
-<p> </p>
+Actions with track or tracks (track folders) by clicking to "&#8230;" in top screen.  
 
 ![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) ![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)
 
 
 ACTIONS: on bottom part of the device screen
-- &nbsp;"_<Translate ios="true" ids="gpx_import_title"/>_"  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
-- &nbsp;"_<Translate ios="true" ids="create_new_trip"/>_" - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
+- "_<Translate ios="true" ids="gpx_import_title"/>_"  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
+- "_<Translate ios="true" ids="create_new_trip"/>_" - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
 
 Buttons (by clicking to "&#8230;" in top screen):
-- &nbsp;"export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
-- &nbsp;"map" button - allows to choose tracks for showing its on the map.
-- &nbsp;"&#x1F5D1;" button - allows to choose tracks for deleting.
+- "export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
+- "map" button - allows to choose tracks for showing its on the map.
+- "&#x1F5D1;" button - allows to choose tracks for deleting.
 
 </TabItem>
  
 </Tabs>
 
+
 ### Search / Sort
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
+<InfoAndroidOnly />  
 
 Clicking to "&#x1F50D;" button on the top of the device screen opens the searching function of the tracks list.
 
@@ -209,23 +166,10 @@ Sort menu:
 - <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
 - <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
- 
-</Tabs>
 
 ## Import / Export track
 
 ### Import track
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
 
 There are two variants for importing a track file in OsmAnd. The first is importing by clicking on a track file, the second is by My Places menu action.
 
@@ -235,16 +179,15 @@ There are two variants for importing a track file in OsmAnd. The first is import
 - Track GPX file:
 - Multitrack GPX file: saving as one GPX track or selected tracks.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-There are two variants for importing a track file in OsmAnd. The first is importing by clicking on a track file, the second is by My Places menu action.
-
-1. Importing track by clicking to GPX (KML, KMZ) track file (massengers, email, Drive, File managers..). It suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md): _clicking to the chosen GPX file → opening it by OsmAnd_.
-2. Importing button in  _[My places menu → Tracks](../personal/tracks.md#actions)_.
 
 <table class="blogimage">
     <tr>
@@ -264,6 +207,7 @@ There are two variants for importing a track file in OsmAnd. The first is import
 </TabItem>
  
 </Tabs>
+
 
 ### Export track
 
@@ -313,7 +257,7 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 
 <TabItem value="android" label="Android">
 
-To view all ever-recorded tracks, and/or manage them, go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
 
 ![My Places with tracks in Android](@site/static/img/plugins/trip-recording/view_all_tr_andr.png)
 
@@ -321,15 +265,13 @@ To view all ever-recorded tracks, and/or manage them, go to: *<Translate android
 
 <TabItem value="ios" label="iOS">
 
-To view all ever-recorded tracks, and/or manage them, go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+*<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*
 
 ![My Places with tracks in iOS](@site/static/img/plugins/trip-recording/view_all_tr_ios.png)
 
 </TabItem>
 
 </Tabs>
-
-
 
 
 ### Show tracks on map
@@ -369,7 +311,7 @@ To display a track on the map another way, open the [**My Places**](../plugins/t
 </Tabs>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 ### Options of context menu
@@ -404,7 +346,7 @@ When you tap the track directly on the map, the [track context menu](../map/trac
 
 </Tabs>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 ### Change folder
 
