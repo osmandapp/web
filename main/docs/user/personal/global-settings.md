@@ -41,6 +41,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
+
 ## General
 
 This section contains the basic settings of OsmAnd, such as selecting a profile when the application loads, language selection and the folder in which the data will be saved.
@@ -165,9 +166,9 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
+:::info
+OpenGL rendering is the default rendering engine for the iOS version.
+:::  
 
 Starting with [OsmAnd version 4.2](https://osmand.net/blog/osmand-android-4-2-released) the OpenGL rendering engine has been added to OsmAnd in test mode. Since [OsmAnd version 4.3](https://osmand.net/blog/osmand-android-4-3-released) OpenGL is the default rendering engine.  
 
@@ -179,19 +180,7 @@ In the OsmAnd settings, you can choose **Version 1** of the OsmAnd rendering eng
 *Version 2 (OpenGL)* rendering is faster than the Version 1, and it supports [2.5D view](../personal/profiles.md#appearance).
 :::
 
-![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_version_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::info
-OpenGL rendering is the default rendering engine for the iOS version.
-:::  
-
-</TabItem>
-
-</Tabs> 
+![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_version_android.png)  
 
 
 ## Privacy and security
@@ -202,26 +191,28 @@ OsmAnd allows you to choose whether or not to share your activity in the app, th
 
 <TabItem value="android" label="Android"> 
 
+
 #### Analytics
 
 *<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [OsmAnd privacy and security](https://osmand.net/help-online/privacy-policy).  
-To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*
-
+To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
 
 
 #### Identifiers
 
-Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month.
+A UUID (Unique User Identifier) is generated for each installation of the OsmAnd application and sent to the servers during map loading. A random UUID is used to download offline maps from OsmAnd servers to control rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads. The UUID changes every 3 months.  
 
-UUID is rotated every 3 months so there is no user profile built for a longer history.
+Starting with OsmAnd version 4.3, you can disable the collection of user data when using the OsmAnd app. Then the UUID will not be sent with any download request.  
 
-[Terms of use (ToS)](../../legal/terms-of-use.md) with explanation has been updated.
+You can read more information in the [Terms of use (ToS)](../../legal/terms-of-use.md).  
 
-At this menu, you can enable or disable UUID identifiers.
+*Menu → Settings → OsmAnd settings → Privacy and security → Identifiers*
 
 ![UUID Android](@site/static/img/personal/profiles/uuid_android.png) 
+
+<!--Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month. UUID is rotated every 3 months so there is no user profile built for a longer history.-->
 
 
 #### History
