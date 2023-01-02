@@ -71,20 +71,20 @@ This section contains all the settings related to the appearance, navigation set
 
 ### General settings
 
-This section of settings contains settings of the cursor on the map and map view, settings of units & formats of map and profile data, settings of external input devices, and other sensors.
+This section contains settings of the cursor on the map and map view, settings of units & formats of map and profile data, settings of external input devices, and other sensors.
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="general_settings_2"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2"/>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2"/>*
 
 </TabItem>
 
@@ -100,12 +100,12 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
 
-- &nbsp;_<Translate android="true" ids="choose_osmand_theme"/>_ - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
-- &nbsp;_<Translate android="true" ids="rotate_map_to_bearing"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- &nbsp;_<Translate android="true" ids="shared_string_2_5_d_view"/>_ - allows to swtitch on/off [2.5D view](../map/interact-with-map.md#gestures) for [OpenGL rendering](../personal/profiles.md#appearance). Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.
-- &nbsp;_<Translate android="true" ids="display_position"/>_ - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
-- &nbsp;_<Translate android="true" ids="map_screen_orientation"/>_ - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
-- &nbsp;_<Translate android="true" ids="screen_control"/>_ - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
+- _<Translate android="true" ids="choose_osmand_theme"/>_ - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
+- _<Translate android="true" ids="rotate_map_to_bearing"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- _<Translate android="true" ids="shared_string_2_5_d_view"/>_ - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- _<Translate android="true" ids="display_position"/>_ - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- _<Translate android="true" ids="map_screen_orientation"/>_ - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
+- _<Translate android="true" ids="screen_control"/>_ - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
 
 </TabItem>
 
@@ -113,9 +113,9 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;<Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - enables/disables 2.5D view of the map view. Use ["Gesture"](../map/interact-with-map.md#gestures) or ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.
-- &nbsp;<Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- <Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- <Translate ios="true" ids="allow_3D_view"/> - if 2.5D viewing mode is enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- <Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 
 </TabItem>
 
@@ -216,12 +216,12 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 ![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
 
-- &nbsp;<Translate android="true" ids="use_volume_buttons_as_zoom"/> - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
-- &nbsp;[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- &nbsp;[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) - &nbsp;allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- &nbsp;<Translate android="true" ids="tap_on_map_to_hide_interface"/> - use or not fullscreen mode of OsmAnd app on the device.
-- &nbsp;[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode. 
-- &nbsp;[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
+- <Translate android="true" ids="use_volume_buttons_as_zoom"/> - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- <Translate android="true" ids="tap_on_map_to_hide_interface"/> - use or not fullscreen mode of OsmAnd app on the device.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode. 
+- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
 
 </TabItem>
 
@@ -229,7 +229,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 You can enable/disable buttons and input devices for OsmAnd.
 
-- &nbsp;[<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
+- [<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
 
 </TabItem>
 
@@ -265,9 +265,9 @@ In this part, there are all settings for navigation mode of a profile.
 
 In this section you can set [routing and navigation parameters of your profile, map during navigation and vehicle parameters](../navigation/index.md).
 
-&nbsp;<Translate android="true" ids="nav_type_hint"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+<Translate android="true" ids="nav_type_hint"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
 
-&nbsp;<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
+<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
 
 
 #### Navigation Type
@@ -711,18 +711,17 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 ## Plugin settings
 
-[Plugins](https://docs.osmand.net/en/main@latest../plugins) are a collection of settings that can be enabled with one click. Plugins also unlock additional functions of the application, they can be either [paid or free](../purchases/index.md). Some plugins have their own settings. Among other things, you can enable or disable plugins for each profile separately.
+:::note
+Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating it in the setting list for the profile.
+:::
 
-
-> Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating it in the setting list for the profile.
-
+[Plugins](https://docs.osmand.net/en/main@latest../plugins) are a collection of settings that can be enabled with one click. Plugins also unlock additional functions of the application, they can be either [paid or free](../purchases/index.md). Some plugins have their own settings. Among other things, you can enable or disable plugins for each profile separately.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings"/>
-<p> </p>
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings"/>*   
 
 ![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_android.png)
 
@@ -730,15 +729,14 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,plugins"/>
-
-<p> </p>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins"/>*   
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ### Trip recording
 
@@ -748,44 +746,27 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,record_plugin_name"/>
-<p> </p>
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,record_plugin_name"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,plugins,track_recording"/>
-
-<p> </p>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins,track_recording"/>*
 
 </TabItem>
 
 </Tabs>
+
 
 ### Audio / Video notes
 
-This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.
+<InfoAndroidOnly />  
 
-<Tabs groupId="operating-systems">
+This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.  
 
-<TabItem value="android" label="Android">
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,audionotes_plugin_name"/>*  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,audionotes_plugin_name"/>
-
-<p> </p>
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-<InfoAndroidOnly />
-
-
-</TabItem>
-
-</Tabs>
 
 ### OpenStreetMap editing
 
@@ -795,107 +776,65 @@ This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,osm_editing_plugin_name"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,osm_editing_plugin_name"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Check!
-<Translate ios="true" ids="ios_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,product_title_osm_editing"/>
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*
 
 </TabItem>
 
 </Tabs>
+
 
 ### OpenPlaceReviews
 
-This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.
+<InfoAndroidOnly />  
 
-<Tabs groupId="operating-systems">
+This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.  
 
-<TabItem value="android" label="Android">
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,open_place_reviews"/>*
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,open_place_reviews"/>
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-<InfoAndroidOnly />
-
-
-</TabItem>
-
-</Tabs>
 
 ### Accesibility
 
-This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for the selected profile. Where you can choose any parameters for your needed.
+<InfoAndroidOnly />  
 
-<Tabs groupId="operating-systems">
+This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for the selected profile. Where you can choose any parameters for your needed.  
 
-<TabItem value="android" label="Android">
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>*
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
 
 ### OsmAnd development
 
-This menu opens [Development plugin settings](../plugins/accessibility.md) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.
+<InfoAndroidOnly />  
 
-<Tabs groupId="operating-systems">
+This menu opens [Development plugin settings](../plugins/accessibility.md) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.  
 
-<TabItem value="android" label="Android">
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,development"/>*  
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/> (Browse map or any other profile) → <Translate android="true" ids="plugins_settings,development"/>
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-<InfoAndroidOnly />
-
-
-</TabItem>
-
-</Tabs>
 
 ## Actions
 
-Actions with chosen profile: export, copy from another profile, reset to default, delete profile:
+Actions with chosen profile:  
+- Export profile.
+- Copy from another profile.
+- Reset to default.
+- Delete profile.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)
-
-- &nbsp;<Translate android="true" ids="export_profile"/>
-- &nbsp;<Translate android="true" ids="copy_from_other_profile"/>
-- &nbsp;<Translate android="true" ids="map_widget_reset"/>
-- &nbsp;<Translate android="true" ids="profile_alert_delete_title"/>
+![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)
-- &nbsp;<Translate android="true" ids="export_profile"/>
-- &nbsp;<Translate android="true" ids="copy_from_other_profile"/>
-- &nbsp;<Translate android="true" ids="map_widget_reset"/>
-- &nbsp;<Translate android="true" ids="profile_alert_delete_title"/>
+![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
 
 </TabItem>
 
