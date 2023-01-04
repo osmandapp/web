@@ -109,8 +109,7 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 </Tabs>
 
-:::info TROUBLESHOOTING
-
+:::info TROUBLESHOOTING  
 For more information about troubleshooting, read [Track recording](../troubleshooting/track-recording-issues)  
 :::
 
@@ -170,7 +169,7 @@ The graph can be scaled.
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
-Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
+Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md#options), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
 :::
 
 
@@ -272,7 +271,6 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 </TabItem>
 
 </Tabs>
-
 
 
 ##  Widgets  

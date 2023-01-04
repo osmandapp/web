@@ -94,6 +94,25 @@ Read about [Trip recording Plugin](../plugins/trip-recording.md).
 </Tabs>
 
 
+#### Waypoint format description
+
+OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: *file > track > segments > points*.
+
+- One point has a number of attributes: coordinates, speed, altitude, heading.
+- Points are grouped into tracks.
+- The next point after the gap makes up a new segment.
+- Both segments and tracks are shown with the Start and Finish icons on the map.
+
+![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)
+
+| Parameter | Description | 
+| --- | --- |
+| `trkpt` | **Description** | 
+| `trkseg` | **Mobile number**  |
+| `lat` |  | 
+| `lon` |  |
+
+
 ### Edit via Plan Route
 
 - [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
@@ -254,7 +273,6 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
@@ -278,9 +296,7 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 
 Tracks are an individual data layer that can be shown or hidden using the corresponding option in the [**Configure map**](../map/configure-map-menu.md#map-data-layers) menu or in the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu. In addition, when you tap on [**Tracks**](../map/tracks-on-map.md#display-via-my-places-menu), a track selection dialog appears, allowing you to choose which track or multiple tracks to display on the map.  
 
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -300,18 +316,13 @@ For a specific profile, to display a track on the map, open **Configure map** an
 
 ![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Select a track to display in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png)
 
-To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.  
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.    
 
-
-![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_ios.png)
-
+![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_ios.png)  
 
 </TabItem>
 
 </Tabs>
-
-
-
 
 
 ### Options of context menu
@@ -325,11 +336,9 @@ To display a track on the map another way, open the [**My Places**](../plugins/t
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
-
 
 ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/opt_ofcont_menu_andr.png)
 
@@ -343,9 +352,7 @@ When you tap the track directly on the map, the [track context menu](../map/trac
 
 </TabItem>
 
-
 </Tabs>
-
 
 
 ### Change folder
@@ -431,8 +438,7 @@ To export a GPX file to an external storage, do the following:
     - By tapping a track directly on the map.  
     In any case, make certain the track is visible on the map. 
 - Tap **<Translate ios="true" ids="shared_string_export"/>**.
-- Select the required storage to export the GPX file to.  
-
+- Select the required storage to export the GPX file to.   
 
 ![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
