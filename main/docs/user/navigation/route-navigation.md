@@ -329,23 +329,29 @@ This menu allows you to adapt the route line appearance. If there are some chang
 <!--This menu allows you to customize the route line appearance. You can configure the colour for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  <ProFeature/>
 [Pro feature](../purchases/android.md#free-and-paid-features)-->
 
+<!--### Route Appearance
+
+:::note
+<ProFeature/> It's the Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+:::
+
+You can [customize the route line's appearance](../navigation/route-navigation.md##route-line-appearance) for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps.md#map-mode).
+
+<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,customize_route_line"/>  
+
+![Route Customization Android](@site/static/img/map/route_custom_android.png) -->
+
+
 
 <Tabs groupId="operating-systems">
 
 
 <TabItem value="android" label="Android">
 
-&nbsp;  
->You can find route line menu by following this path:
-_<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>_
+_<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>_  
 
+![Navigation route Android](@site/static/img/navigation/route/RLApp.png)  
 
-
-![Navigation route Android](@site/static/img/navigation/route/RLApp.png)
-
-  
-<!--Customize route line menu items-->
-&nbsp;
 
 #### Colour
 
@@ -372,12 +378,11 @@ Select a route line's colour by types.
 | *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
-![Altitude](@site/static/img/navigation/route/firmness.png)  |
+![Altitude](@site/static/img/navigation/route/firmness.png)  |  
 
 
+#### Width  
 
-&nbsp;  
-#### Width 
 Select a route line's width.
 
 |  |
@@ -402,10 +407,8 @@ Select whether turn arrows are indicated on the route line or not.
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-&nbsp;  
->You can find route line menu by following this path:
 _<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>_
 
 
@@ -501,7 +504,9 @@ There is OsmAnd engine for offline navigation. For choosing navigation type: [Na
 - _[Offline OsmAnd routing](../personal/profiles.md#navigation)_: [<Translate android="true" ids="app_mode_boat"/>](../navigation/boat-navigation.md#boat), [<Translate android="true" ids="rendering_value_bicycle_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="routing_profile_direct_to"/>](../navigation/boat-navigation.md#direct-to-point), [<Translate android="true" ids="rendering_value_car_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](../navigation/route-navigation.md), [<Translate android="true" ids="app_mode_public_transport"/>](../map/public-transport.md), [<Translate android="true" ids="routing_profile_ski"/>](../plugins/ski-maps.md), [<Translate android="true" ids="routing_profile_straightline"/>](../navigation/boat-navigation.md#straight-line), [<Translate android="true" ids="horseback_riding"/>](../navigation/route-navigation.md)..
 
 </TabItem>
+
 </Tabs>
+
 
 ## Custom routing
 
@@ -604,6 +609,7 @@ Select screen wake-up options (make sure OsmAnd is in the foreground when the de
 
 
 </TabItem>
+
 <TabItem value="ios" label="iOS">
 
 <InfoAndroidOnly/>
