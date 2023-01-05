@@ -58,21 +58,25 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
 
 </Tabs>  
 
-
 ### * Elevation: map center
 
 <InfoAndroidOnly />  
 
-The Elevation widget is shown among the "Available widgets" only when the [Development plugin](../plugins/development.md) is enabled. Note, that the elevation data is displayed when the appropriate maps of the required area are downloaded.  
+To display Elevation widget among *Altitude widgets*:
+- enable the [Development plugin](../plugins/development.md)
+- switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
   
-![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png) 
+![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
   
+:::note
+Elevation widget will display information only when the hightmaps of the required area are downloaded.  
+:::
+
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | No changes. |
 | Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
-
 
 ## Current time
 
@@ -435,4 +439,3 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
 | By tapping | No changes.|  
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |

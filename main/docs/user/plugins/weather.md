@@ -34,7 +34,7 @@ To display Weather on the OsmAnd map you need to make the following settings:
 1. Purchase [OsmAnd Pro subscribtion](../purchases/) <ProFeature/> if necessary.  
 2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.  
 3. Choose [units of measurement](#weather-settings) of weather events.  
-4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather screen in the dashboard menu.  
+4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather screen in the dashboard menu (don't forget to zoom out).  
 5. [Download](#offline-forecast) Weather forcast if you plan to use it offline.  
 6. If you want to see up-to-date weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
 
@@ -86,14 +86,14 @@ It is important to decide in what units of measurement it is convenient for you 
 </Tabs>  
 
 :::tip
-In iOS version of OsmAnd you can change measurement units and transparency level in the menu that opens after a long press on the icon of the needed map layer.  
+In iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long press on the icon of the needed map layer.  
 :::
 
 ### Weather layers  
 
-All weather data is presented in the form of separate map layers.  
+All weather data is presented in the form of separate map layers. To see weather layers on the map you need to zoom out, they are only available at zooms 2-12.  
 
-|**Weather layers and Description**|  
+| |  
 |------------|  
 | **Precipitation layer** displays information about weather events when water in different aggregate states falls from the sky to the ground. Precipitation is rain, snow, sleet or hail. The precipitation scale is graduated in millimeters (or inches) of water that would be received by 1 square meter in 24 hours. 1 mm of rain translates to 1 liter of water on a single square meter. |  
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  

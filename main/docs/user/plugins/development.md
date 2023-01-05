@@ -13,19 +13,21 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
+  
+Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.  
 
 ## Overview
 
-The OsmAnd development plugin is designed for *developers and experienced users*. It allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for daily use of the application.
+The OsmAnd development plugin allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is designed for *developers and experienced users* and not required for daily use of the application.  
 
 ## Setup  
 
 To activate special features for developers and testers:
 
 1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
-2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).  
+3. Enable [developer widgets](#widgets) if necessary.  
 
 ## Plugin settings
 
@@ -37,8 +39,6 @@ Development plugin settings are global and apply to all profiles.
 
 <TabItem value="android" label="Android">  
 
-Plugin development settings can be reached via two options:  
-
 - *Main menu → Plugins → OsmAnd development → Settings*. 
 - *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
@@ -47,8 +47,6 @@ Plugin development settings can be reached via two options:
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-Plugin development settings can be reached via:  
 
 - *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
@@ -66,10 +64,6 @@ The options listed below are only available in the Android version of OsmAnd
 
 - **Transparent status bar** - The map becomes visible under the status bar.  
 - **Heightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
-
-:::note
-Heightmaps available for testing only for some regions.
-:::
 
 ### Troubleshotting
 
@@ -98,15 +92,15 @@ Higher memory allocation may impact the performance of other apps.
 
 ## Widgets  
 
-You can use OsmAnd development [Widgets](../widgets/info-widgets.md#-development-widgets) to get additional information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
+You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#-developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
 
 :::info  Important
-OsmAnd development Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
+OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::
 
 ### FPS Widget
 
-The FPS Widget shows how fast the map and map elements are displayed and refreshed. The numeric value of this parameter displays the number of frames per second (FPS).  
+The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).  
 
 <Tabs groupId="operating-systems">
 
@@ -130,38 +124,44 @@ The FPS Widget shows how fast the map and map elements are displayed and refresh
 
 ### Elevation Widget  
 
-:::caution Android only
-Elevation Widget is currently not available for the iOS version of the OsmAnd app.  
-:::
+<InfoAndroidOnly />
 
-With Elevation Widget you can find out the elevation above sea level of the current map center. Information can be displayed only when the heightmaps of the desired area are [downloaded](../start-with/download-maps.md).  
+With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you can find out the elevation above sea level of the current map center. To display elevation data:
 
-*Menu → Configure screen → Left / Right panel → Altitude* 
+- Enable *Heightmap* option in the OsmAnd Development plugin [settings](#plugin-settings)
+- [Download](../start-with/download-maps.md) heightmaps of the desired area are  
+- Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
 
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
 
-## Camera position Widgets (Android) 
+## Camera position Widgets (Android)  
 
-In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use Camera position Widgets.
+In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use [Camera position Widgets](../widgets/info-widgets.md#camera-widgets).
 
-*Menu → Configure screen → Left / Right panel → Developer Widgets*    
+*Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 ### Camera tilt
 
+![Camera tilt widget 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+
 The Camera tilt widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
 
 :::note  
-The camera tilt is changed by moving the camera (viewer) while the center point on the map surface (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
+The camera tilt is changed by moving the camera (viewer) while the center point on the map (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
 At the same time, due to the imaginary movement of the viewer, the distance from the camera to the surface changes.
 :::
 
 ### Camera Elevation
 
-The Camera Elevation widget shows the camera elevation above the surface level.  
+![Camera elevation widget 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+
+The Camera Elevation widget shows the camera elevation above the surface level. Camera elevation is indicated in meters / kilometers.  
 
 ### Zoom level
+
+![Zoom level widget 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 The Zoom level widget represents the current map zoom level.  
 
@@ -172,7 +172,9 @@ Each next zoom level reduces the imaginary distance to the ground by about 2 tim
 
 ### Distance to target
 
-The Distance from camera to target widget shows the distance between camera (viewer) and center of the map.  
+![Distance to target widget 1](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+
+The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
 
 ### Comparison with a satellite imagery
 
@@ -184,42 +186,37 @@ A comparison of the OsmAnd map and the earth's surface reveals the following pat
 - As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
 - Distortions begin to be observed earlier in high latitudes.
 
-The table below contains information about the tilt of the camera (viewer) and the distance to the target (or zoom level) at which the OsmAnd map distortions become visible. If the camera continues to move away from the target, the observed distortion of the OsmAnd map will increase.  
+The table below contains information about the tilt of the camera and the distance to the target and zoom level at which the OsmAnd map distortions become visible. If the camera continues to move away from the target, the observed distortion of the OsmAnd map will increase.  
 
 Incline |Latitude |Max Zoom |Height, km |Distortion  
 |-----|-----|-----|-----|-----|
-|90| 26|	6|	5500|	5%|
-|90| 50|	6|	2500|	5%|
-|90| 66|	7|	1300|	5%|
+|90|26|6|5500|5%|
+|90|50|6|2500|5%|
+|90|66|7|1300|5%|
 |	|	|	|	|  |
-|65	|26	|8	|1100|	6.5%|
-|65	|50	|8	|800|	6.5%|
-|65	|66	|9	|630|	6.5%|
+|65|26|8|1100|6.5%|
+|65|50|8|800|6.5%|
+|65|66|9|630|6.5%|
 |	|	|	|	|  |
-|45|	26|	9|	350|	7.5%|
-|45|	50|	9|	320|	7.5%|
-|45|	66|	8|	210|	7.5%|
+|45|26|9|350|7.5%|
+|45|50|9|320|7.5%|
+|45|66|8|210|7.5%|
 |	|	|	|	| |
-|20| 26|	12|	30|	10%|
-|20| 50|	11|	30|	10%|
-|20| 66|	11|	30|	10%|
-
+|20| 26|12|30|10%|
+|20| 50|11|30|10%|
+|20| 66|11|30|10%|
 
 ## GPX-track simulation
 
-The development plugin provides an opportunity to simulate movement using a GPX track. For these purposes, do the following:  
-
-- Tap **<Translate android="true" ids="simulate_your_location"/>**.  
-- Select a route simulation speed.
-- Select a GPX track to simulate the location of the device.  
-
-:::note
-The location movement speed during the simulation can be equal to the speed in the file (1), or bigger (x2, x3, x4).  
-:::
+OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use **simulate your position** option in the OsmAnd development plugin [settings](#plugin-settings):  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+- Tap **Simulate your position**.  
+- Select a route simulation speed.
+- Select a GPX track to simulate the location and movement of the device.  
 
 ![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png) ![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
 
@@ -227,8 +224,26 @@ The location movement speed during the simulation can be equal to the speed in t
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png) 
+- Tap **Simulate your position**.  
+- Select a track to simulate the location and movement of the device.
+- Select movement simulation speed.
+- Tap Start buton.  
+
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
 </Tabs>  
+  
+
+:::tip Note
+The location movement speed during the simulation can be equal to the recorded speed (1), or faster (x2, x3, x4).  
+:::
+  
+
+After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
+To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap on **stop** in the **simulate your position** option.
+
+:::note  
+You can also use GPX-track simulation directly from [navigation menu](../navigation/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case you can use voice promts and other navigation options.  
+:::  
