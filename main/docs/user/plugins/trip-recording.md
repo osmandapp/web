@@ -169,7 +169,7 @@ The graph can be scaled.
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
-Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md#options), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track.  
+Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md#options), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track. To make the necessary changes to the track, such as *Rename track*, use the [Options](https://osmand.net/docs/user/map/track-context-menu#options) tab of the Tracks Context menu.  
 :::
 
 
@@ -244,7 +244,7 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 | **Online tracking** | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the Distance/Start-Stop (REC) widget turns green instead of red, and each point is transmitted to a specified URL. The **Web address** field is for entering the URL using the parameter syntax: lat={0}, lon={1}, timestamp={2}, hdop={3}, altitude={4}, speed={5}, bearing={6}. The **Tracking Interval** parameter is used to determine the frequency of sending location points. The options can be selected from 0 seconds to 5 minutes. The **Time Buffer** parameter sets the period of time that location points are saved if there is no Internet connection. |
 | **Tracks** | This is a quick re-direction to the folder: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*. |
 | **Reset plugin settings to default** | You can reset all profile settings to the default ones that you had when you installed the application. |
-| **Copy from another profile** | You can copy the Trip recording plugin settings from another profile. |
+| **Copy from another profile** | You can copy the Trip recording plugin settings from another profile. |  
 
 
 </TabItem>
