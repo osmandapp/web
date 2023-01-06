@@ -22,30 +22,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-OsmAnd is available for Android Auto and CarPlay functions in your vehicle. You can use the multimedia screen to navigate using OsmAnd.  
+## Overview
 
-
-## Setup
-
-For OsmAnd to work, you need to connect your Android or iOS device to the vehicle's multimedia system. To find out how to do this, please visit the relevant websites: [**Android Auto**](https://www.android.com/auto) and [**CarPlay**](https://www.apple.com/ios/carplay/). Once connected, an icon with the logo and the title OsmAnd will appear in the application menu on the selected platform. You will then be able to start the navigation or use the OsmAnd search function in Android Auto or CarPlay.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android Auto">
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-1.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="CarPlay"> 
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-1.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-4.png)
-
-</TabItem>
-
-</Tabs>
-
-First, you need to select the profile that will be used when connecting to Android Auto or CarPlay. This can be done here: *Menu → Settings → OsmAnd Settings → CarPlay profile*
+OsmAnd is available for *Android Auto* and *CarPlay* functions in your vehicle. You can connect your Android or iPhone device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
 <Tabs groupId="operating-systems">
 
@@ -63,3 +42,28 @@ First, you need to select the profile that will be used when connecting to Andro
 
 </Tabs>
 
+
+## Setup
+
+For OsmAnd to work, you need to connect your Android or iOS device to the vehicle's multimedia system. To find out how to do this, please visit the relevant websites: [**Android Auto**](https://www.android.com/auto) and [**CarPlay**](https://www.apple.com/ios/carplay/). Once connected, an icon with the logo and the title OsmAnd will appear in the application menu on the selected platform. You will then be able to start the navigation or use the OsmAnd search function in Android Auto or CarPlay.  
+
+:::note
+You need to select the profile that will be used when connecting to Android Auto or CarPlay. To do this, follow the steps here:  
+*Menu → Settings → OsmAnd Settings → CarPlay profile*
+:::  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-1.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-1.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
+
+</TabItem>
+
+</Tabs>  
