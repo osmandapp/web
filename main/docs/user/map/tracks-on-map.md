@@ -103,16 +103,6 @@ To get to the track Appearance menu, you need to display track on the map, then 
 
 ![Track menu options Android](@site/static/img/map/track-appear-and-1.png) ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png) 
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png) 
-
-</TabItem>
-
-</Tabs>
-
 |**Parameter and Description**|   
 |------------|
 |**<Translate android="true" ids="gpx_split_interval"/>** - splits track into intervals by **_Distance_** or **_Time_** and displays shields on the map.|
@@ -124,7 +114,32 @@ To get to the track Appearance menu, you need to display track on the map, then 
 |**<Translate android="true" ids="shared_string_color"/>** -  changes the color (solid or gradient) of the track using internal data: **_Solid Color_**, **_Height_**, **_Speed_**, **_Slope_** (PRO feature), **_Smoothness_** (OsmAnd plan route), **_Surface_** (OsmAnd plan route). If necessary data is not available grey color is displayed. |
 |![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)|
 |**<Translate android="true" ids="select_track_width"/>** - changes the thickness for the track between **_<Translate android="true" ids="rendering_value_thin_name"/>_**, **_<Translate android="true" ids="rendering_value_medium_name"/>_**, **_<Translate android="true" ids="rendering_value_bold_name"/>, <Translate android="true" ids="shared_string_custom"/>_**.|
-|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)|  
+|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
+
+|**Parameter and Description**|   
+|------------|
+|**Direction arrows** - Adds the arrow signs to indicate the direction of travel along the track.|
+|![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
+|**Show start and finish icons** - Shows or hides start/finish icons of the track segments.|
+|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|   
+|**<Translate android="true" ids="shared_string_color"/>** -  changes the color (solid or gradient) of the track using internal data: **_Solid Color_**, **_Height_**, **_Speed_**, **_Slope_** (PRO feature), **_Smoothness_** (OsmAnd plan route), **_Surface_** (OsmAnd plan route). If necessary data is not available grey color is displayed. |
+|![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)|
+|**Width** - changes the thickness for the track between **_<Translate android="true" ids="rendering_value_thin_name"/>_**, **_<Translate android="true" ids="rendering_value_medium_name"/>_**, **_<Translate android="true" ids="rendering_value_bold_name"/>, <Translate android="true" ids="shared_string_custom"/>_**.|
+|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
+|**Split interval** - splits track into intervals by **_Distance_** or **_Time_** and displays shields on the map.|
+|![Track menu Appearance Split interval Android](@site/static/img/map/track_appearance_menu_split_interval_android.png)|
+|**Join gaps** |
+|**Reset to original** |
+
+</TabItem>
+
+</Tabs> 
 
 
 ### Analyze Track on Map
