@@ -1,8 +1,8 @@
 import Utils from "../util/Utils";
 import {MetaData, Point, Track, TrackData} from "./TrackStore";
-import axios, {post, get} from "axios";
+import {post} from "axios";
+import FavoritesManager from "./FavoritesManager";
 
-const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const GPX_FILE_TYPE = 'GPX';
 
 function loadTracks() {
@@ -231,7 +231,7 @@ async function getGpxTrack(file) {
 }
 
 async function saveTrack(ctx, currentFolder, fileName, type, file) {
-    if (type !== FAVORITE_FILE_TYPE) {
+    if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
         if (currentFolder === "Tracks") {
             currentFolder = "";
         } else {
@@ -252,7 +252,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
                 {
                     params: {
-                        name: type === FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
+                        name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
                         type: type,
                     }
                 }
@@ -411,7 +411,6 @@ const TracksManager = {
     updateStat,
     getEle,
     deleteLocalTrack,
-    FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     GPX_FILE_TYPE: GPX_FILE_TYPE
 };
 

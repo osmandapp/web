@@ -12,16 +12,16 @@ import React, {useContext, useEffect, useState} from "react";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import AppContext from "../../../context/AppContext";
 import {Add, Close} from "@mui/icons-material";
-import FavoriteManager from "../../../context/FavoriteManager";
 import MarkerOptions from "../../../map/markers/MarkerOptions";
-import EditFavoriteName from "./edit/EditFavoriteName";
-import EditFavoriteAddress from "./edit/EditFavoriteAddress";
-import EditFavoriteDescription from "./edit/EditFavoriteDescription";
-import EditFavoriteGroup from "./edit/EditFavoriteGroup";
-import EditFavoriteIcon from "./edit/EditFavoriteIcon";
-import EditFavoriteColor from "./edit/EditFavoriteColor";
-import EditFavoriteShape from "./edit/EditFavoriteShape";
+import FavoriteName from "./structure/FavoriteName";
+import FavoriteAddress from "./structure/FavoriteAddress";
+import FavoriteDescription from "./structure/FavoriteDescription";
+import FavoriteGroup from "./structure/FavoriteGroup";
+import FavoriteIcon from "./structure/FavoriteIcon";
+import FavoriteColor from "./structure/FavoriteColor";
+import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
+import FavoriteEditHelper from "./FavoriteEditHelper";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -46,7 +46,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }, [dialogOpen]);
 
     async function getIconCategories() {
-        let resp = await fetch(FavoriteManager.FAVORITE_GROUP_FOLDER)
+        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER)
         const res = await resp.json();
         if (res) {
             setCurrentIconCategories('special');
@@ -55,7 +55,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     async function save() {
-        let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoriteManager.DEFAULT_GROUP_NAME) : favoriteGroup;
+        let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
         let favorite;
         if (selectedGroup) {
             favorite = {
@@ -100,31 +100,11 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
         ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
 
-        ctx.favorites.groups.forEach(g => {
-            if (g.name === selectedGroup.name && result.data) {
-                g.updatetimems = result.updatetimems;
-                g.pointsGroups = result.data.pointsGroups;
-                let file = g.file;
-                Object.keys(result.data).forEach(d => {
-                    file[`${d}`] = result.data[d];
-                });
-                g.file = file;
-            }
-        })
+        FavoriteEditHelper.updateSelectedGroup(ctx.favorites.groups, selectedGroup.name, result);
+        FavoriteEditHelper.updateSelectedFile(ctx, null, favoriteName, selectedGroup.name, false);
 
-        createSelectedFile(selectedGroup);
         ctx.setFavorites({...ctx.favorites});
         setFavoriteGroup(ctx.favorites[selectedGroup.name]);
-    }
-
-    function createSelectedFile(selectedGroup) {
-        let newGroup = ctx.favorites.groups.find(g => g.name === selectedGroup.name);
-        ctx.selectedGpxFile.file = newGroup.file;
-        ctx.selectedGpxFile.markerCurrent = {}
-        ctx.selectedGpxFile.markerCurrent.title = favoriteName;
-        ctx.selectedGpxFile.nameGroup = newGroup.name;
-        ctx.selectedGpxFile.name = favoriteName;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     const CloseDialog = (dialogOpen) => {
@@ -148,10 +128,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 </Grid>
             </Grid>
             <DialogContent>
-                <EditFavoriteName favoriteName={favoriteName}
-                                  setFavoriteName={setFavoriteName}
-                                  favoriteGroup={favoriteGroup}
-                                  setErrorName={setErrorName}/>
+                <FavoriteName favoriteName={favoriteName}
+                              setFavoriteName={setFavoriteName}
+                              favoriteGroup={favoriteGroup}
+                              setErrorName={setErrorName}/>
                 {!addAddress && <ListItemText>
                     <IconButton sx={{mt: -1}}
                                 onClick={() => setAddAddress(true)}>
@@ -159,9 +139,9 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                     </IconButton>
                     Add address
                 </ListItemText>}
-                {addAddress && <EditFavoriteAddress favoriteAddress={favoriteAddress}
-                                                    setFavoriteAddress={setFavoriteAddress}
-                                                    setClose={setAddAddress}/>}
+                {addAddress && <FavoriteAddress favoriteAddress={favoriteAddress}
+                                                setFavoriteAddress={setFavoriteAddress}
+                                                setClose={setAddAddress}/>}
                 {!addDescription && <ListItemText>
                     <IconButton sx={{mt: -1}}
                                 onClick={() => setAddDescription(true)}>
@@ -169,27 +149,27 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                     </IconButton>
                     Add description
                 </ListItemText>}
-                {addDescription && <EditFavoriteDescription favoriteDescription={favoriteDescription}
-                                                            setFavoriteDescription={setFavoriteDescription}
-                                                            setClose={addDescription}/>}
-                <EditFavoriteGroup favoriteGroup={favoriteGroup}
-                                   setFavoriteGroup={setFavoriteGroup}
-                                   groups={ctx.favorites.groups}
-                                   defaultGroup={FavoriteManager.DEFAULT_GROUP_NAME}/>
-                <EditFavoriteIcon favoriteIcon={favoriteIcon}
-                                  setFavoriteIcon={setFavoriteIcon}
-                                  currentIconCategories={currentIconCategories}
-                                  favoriteIconCategories={favoriteIconCategories}
-                                  selectedGpxFile={ctx.selectedGpxFile}
-                                  add={true}
-                                  defaultIcon={MarkerOptions.DEFAULT_WPT_ICON}/>
-                <EditFavoriteColor favoriteColor={favoriteColor}
-                                   setFavoriteColor={setFavoriteColor}
-                                   defaultColor={MarkerOptions.DEFAULT_WPT_COLOR}/>
-                <EditFavoriteShape color={favoriteColor}
-                                   favoriteShape={favoriteShape}
-                                   setFavoriteShape={setFavoriteShape}
-                                   defaultBackground={MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}/>
+                {addDescription && <FavoriteDescription favoriteDescription={favoriteDescription}
+                                                        setFavoriteDescription={setFavoriteDescription}
+                                                        setClose={addDescription}/>}
+                <FavoriteGroup favoriteGroup={favoriteGroup}
+                               setFavoriteGroup={setFavoriteGroup}
+                               groups={ctx.favorites.groups}
+                               defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>
+                <FavoriteIcon favoriteIcon={favoriteIcon}
+                              setFavoriteIcon={setFavoriteIcon}
+                              currentIconCategories={currentIconCategories}
+                              favoriteIconCategories={favoriteIconCategories}
+                              selectedGpxFile={ctx.selectedGpxFile}
+                              add={true}
+                              defaultIcon={MarkerOptions.DEFAULT_WPT_ICON}/>
+                <FavoriteColor favoriteColor={favoriteColor}
+                               setFavoriteColor={setFavoriteColor}
+                               defaultColor={MarkerOptions.DEFAULT_WPT_COLOR}/>
+                <FavoriteShape color={favoriteColor}
+                               favoriteShape={favoriteShape}
+                               setFavoriteShape={setFavoriteShape}
+                               defaultBackground={MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}/>
             </DialogContent>
             <DialogActions>
                 <Button disabled={errorName} onClick={() => save()}>

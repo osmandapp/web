@@ -8,6 +8,7 @@ import {Button} from "@mui/material";
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import FavoritesManager from "../../../context/FavoritesManager";
+import FavoriteEditHelper from "./FavoriteEditHelper";
 
 export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -25,25 +26,14 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
                     ctx.selectedGpxFile.file.name,
                     ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems)
                 if (result) {
-                    updateSelectedFile(result);
+                    FavoriteEditHelper.updateSelectedGroup(ctx.favorites.groups, ctx.selectedGpxFile.nameGroup, result);
+                    FavoriteEditHelper.updateSelectedFile(ctx, result, ctx.selectedGpxFile.markerCurrent.title, ctx.selectedGpxFile.nameGroup, true);
                     updateGroupMarkers();
                     closeContextMenu();
                     break;
                 }
             }
         }
-    }
-
-    function updateSelectedFile(result) {
-        ctx.selectedGpxFile.file.clienttimems = result.clienttimems;
-        ctx.selectedGpxFile.file.updatetimems = result.updatetimems;
-        Object.keys(result.data).forEach(t => {
-            ctx.selectedGpxFile.file[`${t}`] = result.data[t];
-        });
-        ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-        delete ctx.selectedGpxFile.markerCurrent;
-        ctx.selectedGpxFile.editFavorite = true;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     function updateGroupMarkers() {

@@ -1,17 +1,12 @@
 import React, {useState} from "react";
-import FavoriteManager from "../../../../context/FavoriteManager";
 import {Avatar, Box, ListItem, ListItemButton, ListItemText, Typography} from "@mui/material";
+import FavoritesManager from "../../../../context/FavoritesManager";
 
-export default function EditFavoriteColor({favoriteColor, setFavoriteColor, defaultColor}) {
+export default function FavoriteColor({favoriteColor, setFavoriteColor, defaultColor}) {
+
     const [selectFavoriteColor, setSelectFavoriteColor] = useState(false);
-    let prepareColors = [];
-    FavoriteManager.colors.forEach(color => {
-        if (color === defaultColor) {
-            prepareColors.unshift(color);
-        } else {
-            prepareColors.push(color);
-        }
-    })
+
+    let prepareColors = FavoritesManager.getFirstItem(FavoritesManager.colors, defaultColor);
 
     return (<>
             <ListItemText>

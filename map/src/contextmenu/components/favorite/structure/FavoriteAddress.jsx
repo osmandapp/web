@@ -3,7 +3,8 @@ import {Delete} from "@mui/icons-material";
 import React from "react";
 import contextMenuStyles from "../../../styles/ContextMenuStyles";
 
-export default function EditFavoriteAddress({favoriteAddress, setFavoriteAddress, setClose}) {
+export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, setClose}) {
+
     const menuStyles = contextMenuStyles();
 
     return (<ListItemText>

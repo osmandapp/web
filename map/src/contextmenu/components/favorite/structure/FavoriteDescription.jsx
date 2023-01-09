@@ -3,7 +3,8 @@ import {Delete} from "@mui/icons-material";
 import React from "react";
 import contextMenuStyles from "../../../styles/ContextMenuStyles";
 
-export default function EditFavoriteDescription({favoriteDescription, setFavoriteDescription, setClose}) {
+export default function FavoriteDescription({favoriteDescription, setFavoriteDescription, setClose}) {
+
     const menuStyles = contextMenuStyles();
 
     return (<ListItemText sx={{mt: 3}}>

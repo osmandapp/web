@@ -1,12 +1,14 @@
 import React, {useState} from "react";
-import FavoriteManager from "../../../../context/FavoriteManager";
 import {Box, ListItem, ListItemButton, ListItemText, Typography} from "@mui/material";
 import favoriteEditMenuStyles from "../../../styles/FavoriteEditMenuStyles";
+import FavoritesManager from "../../../../context/FavoritesManager";
 
-export default function EditFavoriteShape({color, favoriteShape, setFavoriteShape, defaultBackground}) {
+export default function FavoriteShape({color, favoriteShape, setFavoriteShape, defaultBackground}) {
+
     const favoriteStyles = favoriteEditMenuStyles();
+
     const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
-    let shapesSvg = FavoriteManager.getShapesSvg(color);
+    let shapesSvg = FavoritesManager.getShapesSvg(color);
 
     return (<>
             <ListItemText>

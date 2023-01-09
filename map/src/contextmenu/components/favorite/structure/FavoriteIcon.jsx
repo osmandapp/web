@@ -1,16 +1,17 @@
 import React, {useState} from "react";
-import FavoriteManager from "../../../../context/FavoriteManager";
 import MarkerOptions from "../../../../map/markers/MarkerOptions";
 import {AppBar, Box, ListItem, ListItemButton, ListItemText, Tab, Typography} from "@mui/material";
 import {History} from "@mui/icons-material";
 import Paper from "@mui/material/Paper";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import favoriteEditMenuStyles from "../../../styles/FavoriteEditMenuStyles";
+import FavoritesManager from "../../../../context/FavoritesManager";
 
-export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, currentIconCategories, favoriteIconCategories, selectedGpxFile, add, defaultIcon}) {
+export default function FavoriteIcon({favoriteIcon, setFavoriteIcon, currentIconCategories, favoriteIconCategories, selectedGpxFile, add, defaultIcon}) {
+
     const favoriteStyles = favoriteEditMenuStyles();
 
-    const [value, setValue] = useState(FavoriteManager.DEFAULT_TAB_ICONS);
+    const [value, setValue] = useState(FavoritesManager.DEFAULT_TAB_ICONS);
     const [selectFavoriteIcon, setSelectFavoriteIcon] = useState(false);
     let tabs = {};
     let list = [];
@@ -56,14 +57,14 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
             icons={category[1].icons}/>;
     })
 
-    tabs[FavoriteManager.DEFAULT_TAB_ICONS] = add
+    tabs[FavoritesManager.DEFAULT_TAB_ICONS] = add
         ? <ListIcons
-            key={FavoriteManager.DEFAULT_TAB_ICONS}
+            key={FavoritesManager.DEFAULT_TAB_ICONS}
             icons={[MarkerOptions.DEFAULT_WPT_ICON]}/>
         : getTabUsedIcons();
 
     list = tabs && list.concat(Object.keys(tabs).map((item, index) => {
-        if (item !== currentIconCategories && item !== FavoriteManager.DEFAULT_TAB_ICONS) {
+        if (item !== currentIconCategories && item !== FavoritesManager.DEFAULT_TAB_ICONS) {
             return <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>
         }
     }));
@@ -71,8 +72,8 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
     list.length > 0 && currentIconCategories && list.unshift(<Tab
         value={tabs[currentIconCategories].key + ''} label={currentIconCategories}
         key={'tab:' + currentIconCategories}/>);
-    list.length > 0 && list.unshift(<Tab icon={<History/>} value={tabs[FavoriteManager.DEFAULT_TAB_ICONS].key + ''}
-                                         key={'tab:' + FavoriteManager.DEFAULT_TAB_ICONS}/>);
+    list.length > 0 && list.unshift(<Tab icon={<History/>} value={tabs[FavoritesManager.DEFAULT_TAB_ICONS].key + ''}
+                                         key={'tab:' + FavoritesManager.DEFAULT_TAB_ICONS}/>);
 
     function getTabUsedIcons() {
         let res = [];
@@ -82,7 +83,7 @@ export default function EditFavoriteIcon({favoriteIcon, setFavoriteIcon, current
             }
         })
         return <ListIcons
-            key={FavoriteManager.DEFAULT_TAB_ICONS}
+            key={FavoritesManager.DEFAULT_TAB_ICONS}
             icons={res}/>;
     }
 

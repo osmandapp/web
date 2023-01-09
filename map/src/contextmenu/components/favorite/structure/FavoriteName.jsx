@@ -3,7 +3,7 @@ import React, {useContext, useEffect, useState} from "react";
 import contextMenuStyles from "../../../styles/ContextMenuStyles";
 import AppContext from "../../../../context/AppContext";
 
-export default function EditFavoriteName({favoriteName, setFavoriteName, favoriteGroup, favorite, setErrorName}) {
+export default function FavoriteName({favoriteName, setFavoriteName, favoriteGroup, favorite, setErrorName}) {
 
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);

@@ -1,20 +1,14 @@
 import {Box, Grid, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
-import FavoriteManager from "../../../../context/FavoriteManager";
 import {Folder} from "@mui/icons-material";
 import React from "react";
+import FavoritesManager from "../../../../context/FavoritesManager";
 
-export default function EditFavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
-    let groupList = [];
-    groups.forEach(group => {
-        if (group.name === defaultGroup) {
-            groupList.unshift(group);
-        } else {
-            groupList.push(group);
-        }
-    })
+export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
+
+    let groupList = FavoritesManager.getFirstItem(groups, defaultGroup);
 
     const FavoriteGroupItem = (group) => {
-        let g = group.pointsGroups[group.name === FavoriteManager.DEFAULT_GROUP_NAME ? "" : group.name];
+        let g = group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];
         let colorGroup = g && g.color;
         let size = g && g.points.length;
         return <Box
