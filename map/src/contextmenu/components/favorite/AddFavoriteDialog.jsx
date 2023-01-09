@@ -92,15 +92,16 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             ctx.favorites[selectedGroup.name].url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
         } else {
             delete ctx.favorites[selectedGroup.name].markers;
-            ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
-            ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
             Object.keys(result.data).forEach(t => {
                 ctx.favorites[selectedGroup.name][`${t}`] = result.data[t];
             });
         }
 
+        ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
+        ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
+
         ctx.favorites.groups.forEach(g => {
-            if (g.name === selectedGroup && result.data) {
+            if (g.name === selectedGroup.name && result.data) {
                 g.updatetimems = result.updatetimems;
                 g.pointsGroups = result.data.pointsGroups;
                 let file = g.file;
@@ -117,10 +118,11 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function createSelectedFile(selectedGroup) {
-        ctx.selectedGpxFile.file = ctx.favorites[selectedGroup.name];
+        let newGroup = ctx.favorites.groups.find(g => g.name === selectedGroup.name);
+        ctx.selectedGpxFile.file = newGroup.file;
         ctx.selectedGpxFile.markerCurrent = {}
         ctx.selectedGpxFile.markerCurrent.title = favoriteName;
-        ctx.selectedGpxFile.nameGroup = selectedGroup.name;
+        ctx.selectedGpxFile.nameGroup = newGroup.name;
         ctx.selectedGpxFile.name = favoriteName;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
