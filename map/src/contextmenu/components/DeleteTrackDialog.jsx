@@ -34,8 +34,8 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                         type: 'GPX'
                     }
                 }
-            ).then((response) => response.statusText);
-            if (response === "OK") {
+            );
+            if (response.status === 200) {
                 //delete layer
                 const newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
