@@ -65,7 +65,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 color: favoriteColor,
                 background: favoriteShape,
                 icon: favoriteIcon,
-                category: selectedGroup.name,
+                category: getCategoryName(selectedGroup),
                 lat: ctx.addFavorite.location.lat,
                 lon: ctx.addFavorite.location.lng
             };
@@ -78,6 +78,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             updateGroupMarkers(result, selectedGroup);
             closeDialog();
         }
+    }
+
+    function getCategoryName(selectedGroup) {
+        return selectedGroup.name !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroup.name : null;
     }
 
     function closeDialog() {
