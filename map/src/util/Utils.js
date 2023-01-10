@@ -87,12 +87,30 @@ function getPointsDist(list) {
     return list;
 }
 
+function hexToArgb(hex) {
+    hex = hex.replace(/^#/, '');
+    let alphaFromHex = 1;
+
+    if (hex.length === 8) {
+        alphaFromHex = Number.parseInt(hex.slice(0, 2), 16) / 255;
+        hex = hex.slice(2, 8);
+    }
+    const number = Number.parseInt(hex, 16);
+    const red = number >> 16;
+    const green = (number >> 8) & 255;
+    const blue = number & 255;
+    const alpha = alphaFromHex;
+    const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
+    return `rgb(${red} ${green} ${blue}${alphaString})`;
+}
+
 const Utils = {
     fetchUtil,
     fetchUtilLoad,
     getFileData,
     getDistance,
-    getPointsDist
+    getPointsDist,
+    hexToArgb
 };
 
 export default Utils;

@@ -1,11 +1,13 @@
 import {post} from "axios";
 import MarkerOptions from "../map/markers/MarkerOptions";
+import Utils from "../util/Utils";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
 const DEFAULT_TAB_ICONS = "used";
 const FAVORITE_GROUP_FOLDER = "/map/images/poi_categories";
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
+const FAV_FILE_PREFIX = "favorites-";
 const colors = ['#10c0f0', '#1010a0', '#eecc22', '#88e030', '#eeee10', '#00842b', '#ff5020', '#8e2512', '#e044bb', '#000001', '#d00d0d', '#a71de1'];
 const shapes = [MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE, MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON, MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE];
 
@@ -109,6 +111,16 @@ function getFirstItem(items, defaultItem) {
     return list;
 }
 
+function getColorGroup(ctx, groupName) {
+    let currentGroup = ctx.favorites.groups.find(g => g.name === groupName);
+    if (currentGroup && currentGroup.pointsGroups[groupName]) {
+        let color = currentGroup.pointsGroups[groupName].color;
+        if (color) {
+            return Utils.hexToArgb(color);
+        }
+    }
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
@@ -116,11 +128,13 @@ const FavoritesManager = {
     prepareTrackData,
     getShapesSvg,
     getFirstItem,
+    getColorGroup,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,
     DEFAULT_GROUP_WPT_COLOR: DEFAULT_GROUP_WPT_COLOR,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
+    FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     colors: colors,
     shapes: shapes
 }

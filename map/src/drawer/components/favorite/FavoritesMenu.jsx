@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
     Collapse,
-    LinearProgress,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -21,13 +20,12 @@ export default function FavoritesMenu() {
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
     const [enableGroups, setEnableGroups] = useState([]);
     const [favoritesGroups, setFavoritesGroups] = useState([]);
-    const [loadingFavorites, setLoadingFavorites] = useState(false);
 
     //create groups
     useEffect(() => {
         let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
             ctx.listFiles.uniqueFiles).filter((item) => {
-            return item.type === 'FAVOURITES' && item.name.slice(-4) === '.gpx';
+            return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
         });
         files.sort((a, b) => a.name.localeCompare(b.name))
         let groups = [];
@@ -36,7 +34,7 @@ export default function FavoritesMenu() {
             newFavoritesFiles.groups = [];
         }
         files.forEach(file => {
-            file.folder = file.name.split(".")[0].replace('favorites-', '');
+            file.folder = file.name.split(".")[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
             let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
             let group = {
                 name: file.folder,
@@ -68,20 +66,17 @@ export default function FavoritesMenu() {
     }
 
     function deleteAllLayers(ctx, groups) {
-        setLoadingFavorites(true);
         const newFavoritesFiles = Object.assign({}, ctx.favorites);
         groups.forEach(group => {
             if (newFavoritesFiles[group.name]) {
                 newFavoritesFiles[group.name].url = null;
             }
         });
-        setLoadingFavorites(false);
         ctx.setFavorites(newFavoritesFiles);
     }
 
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
-            setLoadingFavorites(true);
             let resGroups = [];
             for (const g of groups) {
                 if (!ctx.favorites[g.name]?.url) {
@@ -101,7 +96,6 @@ export default function FavoritesMenu() {
             if (resGroups.length > 0) {
                 newFavoritesFiles.groups = resGroups;
             }
-            setLoadingFavorites(false);
             setFavoritesGroups([...resGroups]);
         }
     }
@@ -133,7 +127,6 @@ export default function FavoritesMenu() {
             </Typography>
             {favoritesGroups.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
-        {loadingFavorites ? <LinearProgress/> : <></>}
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
             {favoritesGroups.length !== 0 &&
                 <FavoriteAllGroups setEnableGroups={setEnableGroups}

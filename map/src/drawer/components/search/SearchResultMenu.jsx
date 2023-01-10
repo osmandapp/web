@@ -1,4 +1,4 @@
-import {Button, Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Search} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
@@ -44,7 +44,6 @@ export default function SearchResultMenu() {
             {ctx.searchCtx.geojson && ctx.searchCtx.geojson.features.length === 0 ? <></> : searchResultOpen ?
                 <ExpandLess/> : <ExpandMore/>}
         </MenuItem>}
-        {ctx.gpxLoading ? <LinearProgress/> : <></>}
         <Collapse in={searchResultOpen} timeout="auto" unmountOnExit>
             {
                 ctx.searchCtx.geojson && ctx.searchCtx.geojson.features.length > 0 &&

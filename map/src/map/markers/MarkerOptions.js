@@ -1,4 +1,5 @@
 import L from "leaflet";
+import Utils from "../../util/Utils";
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = "circle";
 const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
@@ -37,6 +38,7 @@ const options = {
 function getWptIcon(point, color, background, icon) {
     let colorBackground = color ? color :
         (point.extensions && point.extensions.color) ? point.extensions.color : DEFAULT_WPT_COLOR;
+    colorBackground = Utils.hexToArgb(colorBackground);
     let shapeBackground = background ? background : point.background;
     let svg = getSvgBackground(colorBackground, shapeBackground);
     let iconWpt = icon ? icon : point.extensions?.icon;

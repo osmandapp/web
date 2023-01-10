@@ -2,6 +2,7 @@ import {Box, Grid, ListItem, ListItemButton, ListItemIcon, ListItemText, Typogra
 import {Folder} from "@mui/icons-material";
 import React from "react";
 import FavoritesManager from "../../../../context/FavoritesManager";
+import Utils from "../../../../util/Utils";
 
 export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
 
@@ -9,7 +10,10 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
 
     const FavoriteGroupItem = (group) => {
         let g = group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];
-        let colorGroup = g && g.color;
+        let colorGroup;
+        if (g && g.color) {
+            colorGroup = Utils.hexToArgb(g.color);
+        }
         let size = g && g.points.length;
         return <Box
             sx={{
