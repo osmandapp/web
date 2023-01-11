@@ -64,12 +64,12 @@ Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Form
 
 <InfoAndroidOnly /> 
 
-Read how to add points by coordinates: [By Coordinate input](../plan-route/coordinate-input.md) 
+A simple and fast tool for creating points by specifying geographic coordinates. Read how to add points by coordinates: [By Coordinate input](../plan-route/coordinate-input.md) 
 
 
 ### Record track
 
-Read about [Trip recording Plugin](../plugins/trip-recording.md).  
+Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends. Read about [Trip recording Plugin](../plugins/trip-recording.md).  
 
 
 ### Add waypoint
@@ -81,13 +81,13 @@ Read about [Trip recording Plugin](../plugins/trip-recording.md).
 
 <TabItem value="android" label="Android">
 
-![Quick action widget](@site/static/img/widgets/waypoint_qa_android.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-and-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-and-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Quick action widget](@site/static/img/widgets/waypoint_qa_ios.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-2.png)
 
 </TabItem>
  
@@ -107,10 +107,15 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 
 | Parameter | Description | 
 | --- | --- |
-| `trkpt` | **Description** | 
-| `trkseg` | **Mobile number**  |
-| `lat` |  | 
-| `lon` |  |
+| `trkpt` | **Point** shows the detected geographical location of the user. Every point is provided with the latitude and the longitude as base attributes of the detected location. | 
+| `trkseg` | **Segment** groups points between gaps detected as absence of any movement within one recording. |
+| `lat` | **Latitude** is one of the geographical coordinates to identify the location with. | 
+| `lon` | **Longitude** is one of the geographical coordinates to identify the location with. |
+| `ele` | **Elevation** is the hight of the point above the sea, calculated in meters. |
+| `time` | **Timestamp** is the date and time of when the point was recorded. |
+| `hdop` | **HDOP** is one of the terms of GPS accuracy, horizontal accuracy, calculated in meters, abbrev. from *Horizontal Dilution of Precision*, determined as the error caused by the relative position of the GPS satellites. |
+| `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
+| `heading` | **Heading** is the direction to where the front panel of the vehicle/device is pointing. The heading direction is calculated in degrees and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction the front panel is pointing and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 
 
 ### Edit via Plan Route

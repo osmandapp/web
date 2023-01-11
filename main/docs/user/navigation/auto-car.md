@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::tip NOTE
   
-<ProFeature/> Android Auto / CarPlay you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/">OsmAnd Pro subscribers</a>.
+Android Auto and CarPlay are [paid features](../user.md/purchases/).
 
 :::
 
