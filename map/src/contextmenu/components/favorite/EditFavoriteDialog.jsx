@@ -116,16 +116,28 @@ export default function EditFavoriteDialog({
         ctx.selectedGpxFile.file.wpts.forEach(wpt => {
             if (wpt.name === favorite.name) {
                 wpt.name = favoriteName;
-                wpt.address = favoriteAddress === "" ? null : favoriteAddress;
-                wpt.desc = favoriteDescription === "" ? null : favoriteDescription;
+                wpt.address = getAddress();
+                wpt.desc = getDescription();
                 wpt.color = favoriteColor;
                 wpt.background = favoriteShape;
                 wpt.icon = favoriteIcon;
-                wpt.category = selectedGroupName
+                wpt.category = getCategory(selectedGroupName);
                 res = wpt;
             }
         })
         return res;
+    }
+
+    function getCategory(name) {
+        return name !== FavoritesManager.DEFAULT_GROUP_NAME ? name : null;
+    }
+
+    function getAddress() {
+        return favoriteAddress === "" ? null : favoriteAddress;
+    }
+
+    function getDescription() {
+        return favoriteDescription === "" ? null : favoriteDescription;
     }
 
     const CloseDialog = (dialogOpen) => {
