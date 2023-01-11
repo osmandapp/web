@@ -1,0 +1,24 @@
+<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g transform="translate(135.000000, 2.000000) scale(1.666667 1.666667) "> 
+
+<g clip-path="url(#clip0)">
+<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M13 1H5C2.79086 1 1 2.79086 1 5V13C1 15.2091 2.79086 17 5 17H13C15.2091 17 17 15.2091 17 13V5C17 2.79086 15.2091 1 13 1ZM5 0C2.23858 0 0 2.23858 0 5V13C0 15.7614 2.23858 18 5 18H13C15.7614 18 18 15.7614 18 13V5C18 2.23858 15.7614 0 13 0H5Z" fill="#1578B3"/>
+<rect opacity="0.95" x="1" y="1" width="16" height="16" rx="4" fill="#45ABE9"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<path d="M0 0H18V18H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+
+</g>
+
+
+<g transform="translate(141.000000, 8.000000) scale(0.031034 0.031034) "> 
+
+<path d="M401 69L358 181H313.5L356.5 69H307.5L264.5 181H220L263 69H214L171 181H126.5L169.5 69H120.5L77.5 181V399V404.209V511H85.5L128.5 399H173L130 511H179L222 399H266.5L223.5 511H272.5L315.5 399H360L317 511H366L409 399H453.5L410.5 511H459.5L502.5 399V181V175.791V69H494.5L451.5 181H407L450 69H401Z" fill="#ffffff"/>
+
+</g>
+
+</svg>
