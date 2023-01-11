@@ -74,8 +74,19 @@ Trip recording (Android) / Track recording (iOS) plugin is a special tool design
 
 ### Add waypoint
 
-- Add waypoint via [Context menu](../map/map-context-menu.md#-add--edit--track-waypoint).
-- Add waypoint as Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
+Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
+
+To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.  
+
+1. **Add** the name of the waypoint, the address of the selected place and a description for it.
+2. **Select** Group.
+- You can select previously created categories of groups or create a new one.
+- For a new group (in the application it is also called a new category) of waypoints you create a name and an appearance. The icon, its color and shape will be used for all new waypoints added to the group.
+3. **Appearance** setting:
+- Icon from the list: *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
+- Color of the icon.
+- Shape of the icon: *Circle, Octagon, Square*.
+4. **Replace** another point with this, if you need to.
 
 <Tabs groupId="operating-systems">
 
@@ -93,35 +104,27 @@ Trip recording (Android) / Track recording (iOS) plugin is a special tool design
  
 </Tabs>
 
+:::note
+You can also add a waypoint as a Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
+:::
 
 #### Waypoint format description
 
-OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: *file > track > segments > points*.
+OsmAnd records tracks and their included waypoints to a [GPX file format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: file > track > segments > points. Available tags and descriptions of their parameters can be found in the Recorded [GPX file section](../plugins/trip-recording.md#recorded-gpx-file) of the Trip recording plugin article.  
 
-- One point has a number of attributes: coordinates, speed, altitude, heading.
-- Points are grouped into tracks.
-- The next point after the gap makes up a new segment.
-- Both segments and tracks are shown with the Start and Finish icons on the map.
+![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  
 
-![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)
+#### Waypoint and Favorites
 
-| Parameter | Description | 
-| --- | --- |
-| `trkpt` | **Point** shows the detected geographical location of the user. Every point is provided with the latitude and the longitude as base attributes of the detected location. | 
-| `trkseg` | **Segment** groups points between gaps detected as absence of any movement within one recording. |
-| `lat` | **Latitude** is one of the geographical coordinates to identify the location with. | 
-| `lon` | **Longitude** is one of the geographical coordinates to identify the location with. |
-| `ele` | **Elevation** is the hight of the point above the sea, calculated in meters. |
-| `time` | **Timestamp** is the date and time of when the point was recorded. |
-| `hdop` | **HDOP** is one of the terms of GPS accuracy, horizontal accuracy, calculated in meters, abbrev. from *Horizontal Dilution of Precision*, determined as the error caused by the relative position of the GPS satellites. |
-| `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
-| `heading` | **Heading** is the direction to where the front panel of the vehicle/device is pointing. The heading direction is calculated in degrees and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction the front panel is pointing and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
+General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).
 
+#### Waypoints folder
+
+You can configure available waypoint folders in the Tracks Context menu: show on map, rename, change appearance, add to markers, copy to favorites or delete. A detailed description is in this [article](../map/track-context-menu.md#waypoints-folder).
 
 ### Edit via Plan Route
 
 - [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
-
 
 ## My Places menu
 

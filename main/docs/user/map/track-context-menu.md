@@ -16,9 +16,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Tracks The context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
+The Tracks context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
 
-There are the next tabs of Track Context menu:
+Track Context menu includes:
 
 - [Overview](../map/track-context-menu.md#overview).
 - [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs). 
@@ -75,7 +75,18 @@ You can [short tap](../map/map-context-menu.md#select-route-short-tap-for-androi
 
 ### Info panel
 
-Info panel shows the track name, info about trip data, distance and direction to chosen track point from your position.
+Details are described in the information panel:
+- *The track name* - you can change it in [Options menu](../map/track-context-menu.md#options).
+- *Short description of the track* - short part from [full description](../map/track-context-menu.md#description).
+- *Direction and distance to the point on the track* - blue arrow with distance.
+- Info panel of data trip:  
+     - <Translate android="true" ids="distance"/> - showing track distance.
+     - <Translate android="true" ids="altitude_ascent"/> / <Translate android="true" ids="altitude_descent"/> - sums of ascents and descents of a trip.
+     - <Translate android="true" ids="altitude_range"/> - showing min and max altitude of a trip.
+     - <Translate android="true" ids="average_speed"/> - average speed of a trip.
+     - <Translate android="true" ids="max_speed"/> - max speed of a trip.  
+     - <Translate android="true" ids="shared_string_time_span"/> - recorded time of a trip.  
+     - <Translate android="true" ids="shared_string_time_moving"/> - sum of time during motion of a trip.  
 
 <Tabs groupId="operating-systems">
 
@@ -83,70 +94,11 @@ Info panel shows the track name, info about trip data, distance and direction to
 
 ![Full info for track Android](@site/static/img/personal/tracks/full_info_track_android.png)
 
-Next track info:
-- *The track name* - you can change it in [Options menu](../map/track-context-menu.md#options).
-- *Short description of the track* - short part from [full description](../map/track-context-menu.md#description).
-- *Direction and distance to the point on the track* - blue arrow with distance.
-- Info panel of data trip:
-
- <Translate android="true" ids="distance"/> - showing track distance.
-
- <Translate android="true" ids="altitude_ascent"/> / <Translate android="true" ids="altitude_descent"/> - sums of ascents and descents of a trip.
-
- <Translate android="true" ids="altitude_range"/> - showing min and max altitude of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="average_speed"/> - average speed of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="max_speed"/> - max speed of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="shared_string_time_span"/> - recorded time of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="shared_string_time_moving"/> - sum of time during motion of a trip.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Full info for track Android](@site/static/img/personal/tracks/full_info_track_ios.png)
-
-Next track info:
-- The track name - you can change it in [Options menu](../map/track-context-menu.md#options).
-- Direction and distance to the point on the track - blue arrow with distance.
-- Info panel of data trip:
-
- <Translate ios="true" ids="shared_string_distance"/> - showing track distance.
- 
-<p>  </p>
-
- <Translate ios="true" ids="gpx_ascent"/> / <Translate ios="true" ids="gpx_descent"/> - sums of ascents and descents of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_alt_range"/> - showing min and max altitude of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_average_speed"/> - average speed of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_max_speed"/> - max speed of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="total_time"/> - recorded time of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="moving_time"/> - sum of time during motion of a trip.
 
 </TabItem>
 

@@ -17,9 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>  
 
 :::tip NOTE
-  
 Android Auto and CarPlay are [paid features](../user.md/purchases/).
-
 :::
 
 ## Overview
