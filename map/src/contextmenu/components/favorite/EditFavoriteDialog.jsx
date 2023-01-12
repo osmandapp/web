@@ -192,14 +192,24 @@ export default function EditFavoriteDialog({
                                defaultBackground={favorite.background}/>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleDeleteFavoritesDialogOpen}>
-                    Delete</Button>
-                {deleteFavoritesDialogOpen
-                    && <DeleteFavoriteDialog
-                        dialogOpen={deleteFavoritesDialogOpen}
-                        setDialogOpen={setDeleteFavoritesDialogOpen}/>}
-                <Button disabled={errorName} onClick={() => save()}>
-                    Save</Button>
+                <Grid container spacing={3}>
+                    <Grid item xs={8}>
+                        <Button sx={{marginLeft: "auto"}} onClick={toggleDeleteFavoritesDialogOpen}>
+                            Delete</Button>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Button onClick={() => setEditFavoritesDialogOpen(false)}>
+                            Cancel</Button>
+                    </Grid>
+                    <Grid item xs={2}>
+                        {deleteFavoritesDialogOpen
+                            && <DeleteFavoriteDialog
+                                dialogOpen={deleteFavoritesDialogOpen}
+                                setDialogOpen={setDeleteFavoritesDialogOpen}/>}
+                        <Button disabled={errorName} onClick={() => save()}>
+                            Save</Button>
+                    </Grid>
+                </Grid>
             </DialogActions>
         </Dialog>
     );
