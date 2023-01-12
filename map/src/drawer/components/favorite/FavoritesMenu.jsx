@@ -46,7 +46,7 @@ export default function FavoritesMenu() {
             ctx.setFavorites(newFavoritesFiles);
             groups.push(group);
         })
-        setFavoritesGroups(groups);
+        setFavoritesGroups(FavoritesManager.getFirstItem(groups, FavoritesManager.DEFAULT_GROUP_NAME));
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
