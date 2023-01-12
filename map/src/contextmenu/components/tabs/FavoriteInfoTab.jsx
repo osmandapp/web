@@ -56,13 +56,13 @@ const FavoriteInfoTab = ({width}) => {
                 setFavorite(
                     {
                         name: wpt.name,
-                        desc: wpt.desc === 'null' ? "" : wpt.desc,
+                        desc: isNoValue(wpt.desc) ? "" : wpt.desc,
                         comment: wpt.ext.comment,
-                        address: wpt.address === 'null' ? "" : wpt.address,
-                        category: wpt.category ? wpt.category : 'favorites',
-                        background: wpt.background !== undefined ? wpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
-                        color: wpt.color !== undefined ? wpt.color : MarkerOptions.DEFAULT_WPT_COLOR,
-                        icon: wpt.icon !== undefined ? wpt.icon : MarkerOptions.DEFAULT_WPT_ICON,
+                        address: isNoValue(wpt.address) ? "" : wpt.address,
+                        category: wpt.category ? wpt.category : FavoritesManager.DEFAULT_GROUP_NAME,
+                        background: prepareBackground(wpt.background),
+                        color: prepareColor(wpt.color),
+                        icon: prepareIcon(wpt.icon),
                         lat: wpt.ext.lat,
                         lon: wpt.ext.lon,
                         time: wpt.ext.time,
@@ -72,6 +72,21 @@ const FavoriteInfoTab = ({width}) => {
         }
     }, [ctx.selectedGpxFile])
 
+    function isNoValue(value) {
+        return value === undefined || value === 'null' || value === null;
+    }
+
+    function prepareColor(value) {
+        return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_COLOR : value;
+    }
+
+    function prepareBackground(value) {
+        return isNoValue(value) ? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE : value;
+    }
+
+    function prepareIcon(value) {
+        return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
+    }
 
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">

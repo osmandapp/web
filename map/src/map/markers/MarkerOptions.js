@@ -36,12 +36,13 @@ const options = {
 };
 
 function getWptIcon(point, color, background, icon) {
-    let colorBackground = color ? color :
-        (point.extensions && point.extensions.color) ? point.extensions.color : DEFAULT_WPT_COLOR;
+    let colorBackground = color && color !== 'null' ? color :
+        (point.extensions?.color && point.extensions.color !== 'null') ? point.extensions.color : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
     let shapeBackground = background ? background : point.background;
     let svg = getSvgBackground(colorBackground, shapeBackground);
-    let iconWpt = icon ? icon : point.extensions?.icon;
+    let iconWpt = icon && icon !== 'null' ? icon :
+        (point.extensions?.icon && point.extensions.icon !== 'null') ? point.extensions.icon : DEFAULT_WPT_ICON;
 
     if (iconWpt) {
         return L.divIcon({
