@@ -39,7 +39,6 @@ const FavoriteLayer = () => {
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
-            map.setView([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
         }
 
         if (ctx.selectedGpxFile?.markerPrev && ctx.selectedGpxFile?.markerPrev.layer) {
