@@ -14,6 +14,7 @@ We have a good tradition every end of the year to write down New Year Resolution
 
 In 2022 we launched the new OsmAnd website with new [documentation](https://osmand.net/docs/intro) and [map](https://osmand.net/map). We also introduced the Pro cross-platform subscription for iOS, Android, Web and finally released OpenGL Rendering for Android with 3D terrain.
 
+<!--truncate-->
 ## 2023 New Year Resolutions
 
 Let's start with the to-do list for 2023, and below you can double-check how a similar list was  crushed in 2022 😉
