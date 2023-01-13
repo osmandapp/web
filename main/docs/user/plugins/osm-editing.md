@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.
+This plugin helps you participate in the OpenStreetMap project to create a detailed free geographical map of the world.
 
 
 ## Overview
@@ -160,9 +160,7 @@ The GPS tracks you have recorded are useful for:
 Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
 :::  
 
-:::caution Android only
-This feature is available only for the **Android version** of OsmAnd app.
-:::
+<InfoAndroidOnly />
 
 
 ### Upload GPS track

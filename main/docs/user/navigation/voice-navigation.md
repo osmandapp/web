@@ -16,7 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Receiving voice prompts during navigation: turn-by-turn insctructions, allerts, additional info.
+Receive voice prompts while navigating: turn-by-turn instructions, alerts, and additional information.  
+
 
 ## Settings of voice prompts
 
@@ -27,7 +28,7 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_navigation_android.png)
 
@@ -35,7 +36,7 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_navigation_ios.png)
 
@@ -62,35 +63,19 @@ User can receive voice prompts during navigation. To enable voice prompts for ap
 
 <Translate android="true" ids="interrupt_music"/> - voice prompts pause music playback.
 
-### Download voice prompts
 
-<Tabs groupId="operating-systems">
+## Download voice prompts
 
-<TabItem value="android" label="Android">
+<InfoAndroidOnly />  
 
 For OsmAnd (Android version) you can download voice prompts files:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice,index_name_voice"/>
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice,index_name_voice"/>*
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
-
-## TTS (text-to-speech)
-
-If you select a TTS voice, you need to have a respective [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. These are partly included in Android, iOS or can be installed separately. Please go to your [Android (device) settings](https://support.google.com/accessibility/android/answer/6006983), find Language and keyboard / Text-to-speech output or similar. Select or install an engine, then also install the language support for the language you need, this may be an extra setting or small download.
-
-Please test ('Listen to an example' or similar test button provided) if your Android TTS is working ok. Then you may also test if your OsmAnd voice prompts have been selected properly by going to [Settings-> Plugins-> OsmAnd development-> Test voice prompts](voice-navigation.md#testing-of-voice-prompts). (OsmAnd development plugin must be activated to see the setting). To disable voice prompts, please go to "Configure profile"-> "Navigation Settings"-> "Voice prompts"-> "Voice guidance" and select 'Do not use' option.
+![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)
 
 
 ## How to use
-
 
 - Listen during navigation.
 - Click to arrows for listen voice prompts again.
@@ -98,21 +83,16 @@ Please test ('Listen to an example' or similar test button provided) if your And
 - Background navigation - sound.
 
 
+## TTS (text-to-speech)
+
+If you select a TTS voice, you need to have a respective [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. These are partly included in Android, iOS or can be installed separately. Please go to your [Android (device) settings](https://support.google.com/accessibility/android/answer/6006983), find Language and keyboard / Text-to-speech output or similar. Select or install an engine, then also install the language support for the language you need, this may be an extra setting or small download.
+
+Please test ('Listen to an example' or similar test button provided) if your Android TTS is working ok. Then you may also test if your OsmAnd voice prompts have been selected properly by going to [Settings-> Plugins-> OsmAnd development-> Test voice prompts](voice-navigation.md#testing-of-voice-prompts). (OsmAnd development plugin must be activated to see the setting). To disable voice prompts, please go to "Configure profile"-> "Navigation Settings"-> "Voice prompts"-> "Voice guidance" and select 'Do not use' option.  
+
+
 ## Testing of voice prompts
 
-<Tabs groupId="operating-systems">
+<InfoAndroidOnly />  
 
-<TabItem value="android" label="Android">
-
-For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development.md#osmand-development).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
+For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).
 
