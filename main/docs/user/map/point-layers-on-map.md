@@ -16,35 +16,55 @@ On map you could display points such as Favorites, POI, Markers, Wikipedia, Sear
 
 ## Favorites
 
-[Favorites](../personal/favorites.md) are special points marked by user and by default displayed as yellow star. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6.
+[Favorites](../personal/favorites.md) are special points on the map marked by user and by default displayed as yellow stars. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6. 
+To enable / disable favorites on the map:
 
-![Favotires layer Android](@site/static/img/map/favorites_layer.png) ![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
- 
-Enable / disable favorites on the map:
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,favorites_item"/>
+<TabItem value="android" label="Android">
 
-<p> </p>
+*Menu → Configure map → Favorites*
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,favorites"/>
+![Favotires layer Android](@site/static/img/map/favorites_layer.png)  
 
-<p> </p>
+</TabItem>
 
-**Note** (Android): you could disable certain groups of favorites to be displayed on the map and during search - <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/> → Select folder and press '<Translate android="true" ids="shared_string_show_on_map"/>'.
+<TabItem value="ios" label="iOS">
 
+*Menu → Configure map → Favorites*
+
+![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+:::info
+In Android version of OsmAnd you can display only certain groups of favorites on the map and during search. Go to *Menu → My Places → Favorites*, tap on on &#8942; and choose  either *Show it on the map* or not.
+:::
 ## Favorite / POI names
 
-By default favorites and point of interests are displayed without name to not clutter map with text. You can enable names in <Translate android="true" ids="configure_map"/> settings.
+By default, Favorites and point of interests (POIs) are displayed without names, so as not to clutter up the map with text. You can enable names in Configure map menu.  
 
-![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png) 
+<Tabs groupId="operating-systems">
 
-Enable / disable POI overlay labels on the map:
+<TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>
+*Menu → Configure map → Point Labels (POI, Favorites)*
 
-<p> </p>
+![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,layer_amenity_label"/>
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Menu → Configure map → Point Labels (POI, Favorites)*
+
+![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
+
+</TabItem>
+
+</Tabs>
 
 ## Points of interest (POI)
 

@@ -31,7 +31,7 @@ The data source for the Weather plugin is the [Global Forecasting System](https:
 
 To display Weather on the OsmAnd map you need to make the following settings:  
 
-1. Purchase [OsmAnd Pro subscribtion](../purchases/) <ProFeature/> if necessary.  
+1. Purchase [OsmAnd Pro subscription](../purchases/) <ProFeature/> if necessary.  
 2. [Enable](../plugins/#enable--disable) the Weather plugin in the Plugins section of the Main menu.  
 3. Choose [units of measurement](#weather-settings) of weather events.  
 4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather screen in the dashboard menu (don't forget to zoom out).  
