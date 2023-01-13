@@ -312,7 +312,7 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup,backup_into_file"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Backup local Android](@site/static/img/personal/backup/backup_local_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_1_android.png)  
 
@@ -320,7 +320,7 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,local_backup,backup_into_file"/>*  
+*<Translate ios="true" ids="menu,shared_string_settings,local_backup,backup_into_file"/>*  
 
 ![Backup local iOS](@site/static/img/personal/backup/backup_local_ios.png) ![Backup local iOS](@site/static/img/personal/backup/backup_local_1_ios.png)
 
