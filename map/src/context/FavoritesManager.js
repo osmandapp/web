@@ -100,16 +100,19 @@ function prepareTrackData(data) {
     });
 }
 
-function getFirstItem(items, defaultItem) {
+function orderList(items, defaultItem) {
     let list = [];
-    items.forEach(i => {
+    let hiddenList = [];
+    items && items.forEach(i => {
         if (i.name === defaultItem) {
             list.unshift(i);
+        } else if (i.hidden) {
+            hiddenList.push(i);
         } else {
             list.push(i);
         }
     })
-    return list;
+    return list.concat(hiddenList);
 }
 
 function getColorGroup(ctx, groupName) {
@@ -131,7 +134,7 @@ const FavoritesManager = {
     updateFavorite,
     prepareTrackData,
     getShapesSvg,
-    getFirstItem,
+    orderList,
     getColorGroup,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,

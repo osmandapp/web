@@ -41,7 +41,7 @@ export default function FavoriteIcon({favoriteIcon, setFavoriteIcon, currentIcon
                                   <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                       <circle cx="24" cy="24" r="12" fill="#c1c1c1"/>
                                   </svg>
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${icon}.svg">
+                                  <img class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${icon}.svg">
                               </div>
                               ` + ''
                              }}/>

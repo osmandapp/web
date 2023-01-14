@@ -6,7 +6,7 @@ export default function FavoriteColor({favoriteColor, setFavoriteColor, defaultC
 
     const [selectFavoriteColor, setSelectFavoriteColor] = useState(false);
 
-    let prepareColors = FavoritesManager.getFirstItem(FavoritesManager.colors, defaultColor);
+    let prepareColors = FavoritesManager.orderList(FavoritesManager.colors, defaultColor);
 
     return (<>
             <ListItemText>

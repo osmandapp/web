@@ -6,6 +6,7 @@ const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
 const BACKGROUND_WPT_SHAPE_SQUARE = "square";
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
+const POI_ICONS_FOLDER = "poi-icons-web-svg";
 
 
 const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
@@ -49,7 +50,7 @@ function getWptIcon(point, color, background, icon) {
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${iconWpt}.svg">
+                                  <img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${iconWpt}.svg">
                               </div>
                               `
         })
@@ -58,7 +59,7 @@ function getWptIcon(point, color, background, icon) {
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/poi-icons-svg/mx_${DEFAULT_WPT_ICON}.svg">
+                                  <img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg">
                               </div>
                               `
         })
@@ -99,7 +100,8 @@ const MarkerOptions = {
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,
     DEFAULT_WPT_ICON:DEFAULT_WPT_ICON,
-    DEFAULT_WPT_COLOR:DEFAULT_WPT_COLOR
+    DEFAULT_WPT_COLOR:DEFAULT_WPT_COLOR,
+    POI_ICONS_FOLDER:POI_ICONS_FOLDER
 };
 
 export default MarkerOptions;

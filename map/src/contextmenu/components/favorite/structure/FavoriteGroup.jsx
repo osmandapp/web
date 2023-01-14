@@ -6,7 +6,7 @@ import Utils from "../../../../util/Utils";
 
 export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
 
-    let groupList = FavoritesManager.getFirstItem(groups, defaultGroup);
+    let groupList = FavoritesManager.orderList(groups, defaultGroup);
 
     const FavoriteGroupItem = (group) => {
         let g = group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];

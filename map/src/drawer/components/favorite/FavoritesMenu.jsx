@@ -20,6 +20,7 @@ export default function FavoritesMenu() {
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
     const [enableGroups, setEnableGroups] = useState([]);
     const [favoritesGroups, setFavoritesGroups] = useState([]);
+    const [openFavoritesGroups, setOpenFavoritesGroups] = useState([]);
 
     //create groups
     useEffect(() => {
@@ -40,17 +41,41 @@ export default function FavoritesMenu() {
                 name: file.folder,
                 updatetimems: file.updatetimems,
                 file: file,
-                pointsGroups: pointsGroups
+                pointsGroups: pointsGroups,
+                hidden: isHidden(pointsGroups, file.folder)
             }
             newFavoritesFiles.groups.push(group);
             ctx.setFavorites(newFavoritesFiles);
             groups.push(group);
         })
-        setFavoritesGroups(FavoritesManager.getFirstItem(groups, FavoritesManager.DEFAULT_GROUP_NAME));
+        let resGroups = FavoritesManager.orderList(groups, FavoritesManager.DEFAULT_GROUP_NAME);
+        setFavoritesGroups(resGroups);
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        let enableAllGroups = enableGroups.length === favoritesGroups.length;
+        let res = [];
+        favoritesGroups.forEach(g => {
+            if (g.hidden !== true) {
+                res.push(g);
+            }
+        })
+        setOpenFavoritesGroups(res);
+    }, [favoritesGroups]);
+
+    function isHidden(pointsGroups, name) {
+        let group = pointsGroups[name];
+        if (group) {
+            for (let point of group.points) {
+                if (point.ext.extensions.hidden === "true") {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    useEffect(() => {
+        let enableAllGroups = enableGroups.length === openFavoritesGroups.length;
         let disableAllGroups = enableGroups.length === 0 && favoritesGroups.length !== 0;
         if (enableAllGroups) {
             createAllLayers(ctx, true, favoritesGroups).then();
@@ -74,11 +99,9 @@ export default function FavoritesMenu() {
         });
         ctx.setFavorites(newFavoritesFiles);
     }
-
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
-            let resGroups = [];
-            for (const g of groups) {
+            for (const g of openFavoritesGroups) {
                 if (!ctx.favorites[g.name]?.url) {
                     let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(g.file.type)}&name=${encodeURIComponent(g.file.name)}`;
                     newFavoritesFiles[g.name] = {
@@ -88,26 +111,23 @@ export default function FavoritesMenu() {
                         'name': g.file.name,
                         'addToMap': addToMap
                     };
-                    await getFavoriteData(g, resGroups, newFavoritesFiles);
+                    await getFavoriteData(g, newFavoritesFiles);
                 } else {
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }
-            if (resGroups.length > 0) {
-                newFavoritesFiles.groups = resGroups;
-            }
-            setFavoritesGroups([...resGroups]);
+            setFavoritesGroups(FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME));
         }
     }
 
-    async function getFavoriteData(g, resGroups, newFavoritesFiles) {
+    async function getFavoriteData(g, newFavoritesFiles) {
         let f = await Utils.getFileData(newFavoritesFiles[g.name]);
         const favoriteFile = new File([f], g.file.name, {
             type: "text/plain",
         });
         let favorites = await TracksManager.getTrackData(favoriteFile);
-        g.pointsGroups = favorites.pointsGroups;
-        resGroups.push(g);
+        let ind = newFavoritesFiles.groups.findIndex((obj => obj.name === g.name));
+        newFavoritesFiles.groups[ind].pointsGroups = favorites.pointsGroups;
         if (favorites) {
             favorites.name = g.file.name;
             Object.keys(favorites).forEach(t => {
@@ -125,12 +145,12 @@ export default function FavoritesMenu() {
             <Typography variant="body2" color="textSecondary">
                 {favoritesGroups && favoritesGroups.length > 0 ? `${favoritesGroups.length}` : ''}
             </Typography>
-            {favoritesGroups.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
+            {favoritesGroups?.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
-            {favoritesGroups.length !== 0 &&
+            {favoritesGroups?.length !== 0 &&
                 <FavoriteAllGroups setEnableGroups={setEnableGroups}
-                                   favoritesGroups={favoritesGroups}/>}
+                                   favoritesGroups={openFavoritesGroups}/>}
             {favoritesGroups && favoritesGroups.map((group, index) => {
                 return <FavoriteGroup key={group + index}
                                       index={index}
