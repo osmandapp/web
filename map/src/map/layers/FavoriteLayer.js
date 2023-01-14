@@ -4,6 +4,7 @@ import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
 import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
+import FavoritesManager from "../../context/FavoritesManager";
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -33,12 +34,17 @@ const FavoriteLayer = () => {
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);
             }
+            deleteOldMarkers(file);
         })
     }, [ctx.favorites, ctx.setFavorites]);
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+            if (ctx.selectedGpxFile.zoom) {
+                map.setView([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
+                delete ctx.selectedGpxFile.zoom;
+            }
         }
 
         if (ctx.selectedGpxFile?.markerPrev && ctx.selectedGpxFile?.markerPrev.layer) {
@@ -54,12 +60,9 @@ const FavoriteLayer = () => {
             icon: e.sourceTarget.options.icon.options.html,
             layer: e.sourceTarget
         };
-        if (!ctx.selectedGpxFile.name) {
-            ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
-        }
-        if (!ctx.selectedGpxFile.file) {
-            ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
-        }
+        ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
+        ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category ? e.sourceTarget.options.category : FavoritesManager.DEFAULT_GROUP_NAME;
+        ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
@@ -78,6 +81,13 @@ const FavoriteLayer = () => {
             setOpenAddDialog(true);
         }
     },[ctx.addFavorite]);
+
+    function deleteOldMarkers(file) {
+        if (file.oldMarkers) {
+            map.removeLayer(file.oldMarkers);
+            delete file.oldMarkers;
+        }
+    }
 
     return <AddFavoriteDialog
         dialogOpen={openAddDialog}

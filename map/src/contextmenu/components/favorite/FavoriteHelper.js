@@ -1,3 +1,4 @@
+import L from "leaflet";
 
 function updateSelectedFile(ctx, result, favoriteName, groupName, deleted) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
@@ -21,11 +22,6 @@ function updateSelectedGroup(favorites, selectedGroupName, result) {
     favorites.groups.forEach(g => {
         if (g.name === selectedGroupName && result.data) {
             updateGroupData(g, result);
-            if (favorites[selectedGroupName]) {
-                Object.keys(result.data).forEach(d => {
-                    favorites[selectedGroupName][`${d}`] = result.data[d];
-                });
-            }
         }
     })
 }
@@ -88,10 +84,35 @@ function updateMarker(newSelectedFile, deleted, name) {
     }
 }
 
-const FavoriteEditHelper = {
-    updateSelectedFile,
-    updateSelectedGroup,
-    updateGroupAfterChange
+function updateGroupObj(selectedGroup, result) {
+    const group = Object.assign({}, selectedGroup);
+    group.oldMarkers = Object.assign(new L.FeatureGroup(), group.markers);
+    Object.keys(result.data).forEach(t => {
+        group[`${t}`] = result.data[t];
+    });
+    group.clienttimems = result.clienttimems;
+    group.updatetimems = result.updatetimems;
+    delete group.markers;
+
+    return group;
 }
 
-export default FavoriteEditHelper;
+function createGroupObj(result, selectedGroup) {
+    let group;
+    group = result.data;
+    group.url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
+    group.clienttimems = result.clienttimems;
+    group.updatetimems = result.updatetimems;
+
+    return group;
+}
+
+const FavoriteHelper = {
+    updateSelectedFile,
+    updateSelectedGroup,
+    updateGroupAfterChange,
+    updateGroupObj,
+    createGroupObj
+}
+
+export default FavoriteHelper;

@@ -21,7 +21,7 @@ import FavoriteIcon from "./structure/FavoriteIcon";
 import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
-import FavoriteEditHelper from "./FavoriteEditHelper";
+import FavoriteHelper from "./FavoriteHelper";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -92,21 +92,12 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
     function updateGroupMarkers(result, selectedGroup) {
         if (!ctx.favorites[selectedGroup.name]) {
-            ctx.favorites[selectedGroup.name] = result.data;
-            ctx.favorites[selectedGroup.name].url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
+            ctx.favorites[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
-            delete ctx.favorites[selectedGroup.name].markers;
-            Object.keys(result.data).forEach(t => {
-                ctx.favorites[selectedGroup.name][`${t}`] = result.data[t];
-            });
+            ctx.favorites[selectedGroup.name] = FavoriteHelper.updateGroupObj(ctx.favorites[selectedGroup.name], result)
         }
-
-        ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
-        ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
-
-        FavoriteEditHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
-        FavoriteEditHelper.updateSelectedFile(ctx, result, favoriteName, selectedGroup.name, false);
-
+        FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
+        FavoriteHelper.updateSelectedFile(ctx, result, favoriteName, selectedGroup.name, false);
         ctx.setFavorites({...ctx.favorites});
         setFavoriteGroup(ctx.favorites[selectedGroup.name]);
     }

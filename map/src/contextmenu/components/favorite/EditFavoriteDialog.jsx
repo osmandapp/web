@@ -16,7 +16,7 @@ import FavoriteIcon from "./structure/FavoriteIcon";
 import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
-import FavoriteEditHelper from "./FavoriteEditHelper";
+import FavoriteHelper from "./FavoriteHelper";
 
 export default function EditFavoriteDialog({
                                                favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen,
@@ -79,35 +79,19 @@ export default function EditFavoriteDialog({
     }
 
     function updateFavoriteGroups(result, selectedGroupName) {
-        //update old group
-        if (result.oldGroupResp) {
-            ctx.favorites[ctx.selectedGpxFile.nameGroup].clienttimems = result.oldGroupResp.clienttimems;
-            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems = result.oldGroupResp.updatetimems;
-            Object.keys(result.oldGroupResp.data).forEach(t => {
-                ctx.favorites[ctx.selectedGpxFile.nameGroup][`${t}`] = result.oldGroupResp.data[t];
-            });
-            delete ctx.favorites[ctx.selectedGpxFile.nameGroup].markers;
-        }
-        ctx.favorites.groups = FavoriteEditHelper.updateGroupAfterChange(ctx, result, selectedGroupName)
+        ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(ctx, result, selectedGroupName)
         let selectedGroup = ctx.favorites.groups.find(g => g.name === selectedGroupName);
 
-        if (!ctx.favorites[selectedGroupName]) {
-            const newGroup = result.newGroupResp.data;
-            newGroup.url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(selectedGroup.file.type)}&name=${encodeURIComponent(selectedGroup.file.name)}`;
-            newGroup.clienttimems = result.newGroupResp.clienttimems;
-            newGroup.updatetimems = result.newGroupResp.updatetimems;
-        } else {
-            const newGroup = Object.assign({}, ctx.favorites[selectedGroupName])
-            newGroup.clienttimems = result.newGroupResp.clienttimems;
-            newGroup.updatetimems = result.newGroupResp.updatetimems;
-            Object.keys(result.newGroupResp.data).forEach(t => {
-                newGroup[`${t}`] = result.newGroupResp.data[t];
-            });
-            ctx.favorites[selectedGroupName] = newGroup;
-            delete ctx.favorites[selectedGroupName].markers;
+        if (result.oldGroupResp) {
+            ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(ctx.favorites[ctx.selectedGpxFile.nameGroup], result.oldGroupResp);
         }
 
-        FavoriteEditHelper.updateSelectedFile(ctx, null, favoriteName, selectedGroupName, false);
+        if (!ctx.favorites[selectedGroupName]) {
+            ctx.favorites[selectedGroupName] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
+        } else {
+            ctx.favorites[selectedGroupName] = FavoriteHelper.updateGroupObj(ctx.favorites[selectedGroupName], result.newGroupResp);
+        }
+        FavoriteHelper.updateSelectedFile(ctx, null, favoriteName, selectedGroupName, false);
         ctx.setFavorites({...ctx.favorites});
     }
 
