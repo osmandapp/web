@@ -275,6 +275,12 @@ async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setSta
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
+
+    const OBJECT_TYPE_FAVORITE = 'favorite';
+    const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
+    const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
+    const OBJECT_TYPE_WEATHER = 'weather';
+
     // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, updateWeatherLayers] = useState(getLayers());
@@ -412,7 +418,12 @@ export const AppContextProvider = (props) => {
         localTracks, setLocalTracks,
         currentObjectType, setCurrentObjectType,
         headerText, setHeaderText,
-        tracksGroups, setTracksGroups
+        tracksGroups, setTracksGroups,
+        OBJECT_TYPE_FAVORITE,
+        OBJECT_TYPE_CLOUD_TRACK,
+        OBJECT_TYPE_LOCAL_CLIENT_TRACK,
+        OBJECT_TYPE_WEATHER
+
 
     }}>
         {props.children}

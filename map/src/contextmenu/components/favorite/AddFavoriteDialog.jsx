@@ -104,8 +104,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.favorites[selectedGroup.name].clienttimems = result.clienttimems;
         ctx.favorites[selectedGroup.name].updatetimems = result.updatetimems;
 
-        FavoriteEditHelper.updateSelectedGroup(ctx.favorites.groups, selectedGroup.name, result);
-        FavoriteEditHelper.updateSelectedFile(ctx, null, favoriteName, selectedGroup.name, false);
+        FavoriteEditHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
+        FavoriteEditHelper.updateSelectedFile(ctx, result, favoriteName, selectedGroup.name, false);
 
         ctx.setFavorites({...ctx.favorites});
         setFavoriteGroup(ctx.favorites[selectedGroup.name]);

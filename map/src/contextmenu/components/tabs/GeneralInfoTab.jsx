@@ -208,7 +208,7 @@ export default function GeneralInfoTab({width, srtm}) {
 
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
-            {ctx.currentObjectType === 'local_client_track' ? EditName() : NoEditName()}
+            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
             {distance && <MenuItem sx={{ml: -2}}>
                 <ListItemIcon>
@@ -284,14 +284,14 @@ export default function GeneralInfoTab({width, srtm}) {
         <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                 onClick={downloadGpx}
         >Download</Button>
-        {ctx.currentObjectType === 'local_client_track' &&
+        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
                         ctx.selectedGpxFile.save = true;
                         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                     }}
             >Save to Cloud</Button>}
-        {ctx.currentObjectType === 'cloud_track' &&
+        {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
             <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));

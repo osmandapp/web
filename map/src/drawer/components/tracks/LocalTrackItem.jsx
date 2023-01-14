@@ -32,7 +32,8 @@ export default function LocalTrackItem({track, index}) {
     }
 
     function addTrackToMap() {
-        ctx.setCurrentObjectType('local_client_track');
+        let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+        ctx.setCurrentObjectType(type);
         if (indexTrack !== undefined) {
             let selectedTrack = ctx.localTracks[indexTrack];
             track.index = indexTrack;

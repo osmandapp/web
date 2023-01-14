@@ -22,7 +22,7 @@ export default class TrackTabList {
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
         tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
-        if (ctx.currentObjectType !== 'cloud_track') {
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 

@@ -37,7 +37,8 @@ async function displayWeather(ctx, setWeatherPoint) {
         data.week = await responseWeek.json();
     }
     setWeatherPoint(data);
-    ctx.setCurrentObjectType('weather');
+    let type = ctx.OBJECT_TYPE_WEATHER;
+    ctx.setCurrentObjectType(type);
 }
 
 const addWeatherHours = (ctx, hours) => () => {

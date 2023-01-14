@@ -40,7 +40,7 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                     <ButtonGroup
                         orientation="vertical"
                         color="primary">
-                        {ctx.currentObjectType === 'local_client_track' && <IconButton
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => {
@@ -50,7 +50,7 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
                         >
                             <Folder fontSize="small"/>
                         </IconButton>}
-                        {ctx.currentObjectType !== 'weather' && <IconButton
+                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER && <IconButton
                             variant="contained"
                             type="button"
                             onClick={() => setOpenDeleteDialog(true)}
@@ -70,12 +70,12 @@ const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
         </div>
         }
             {ctx.selectedGpxFile.save && <SaveTrackDialog/>}
-            {openDeleteDialog && (ctx.currentObjectType === 'local_client_track' || ctx.currentObjectType === 'cloud_track')
+            {openDeleteDialog && (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK || ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK)
                 && <DeleteTrackDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}
                     setShowContextMenu={setShowContextMenu}/>}
-            {openDeleteDialog && ctx.currentObjectType === 'favorite'
+            {openDeleteDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE
                 && <DeleteFavoriteDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}/>}

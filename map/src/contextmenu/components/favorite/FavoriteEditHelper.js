@@ -17,18 +17,27 @@ function updateSelectedFile(ctx, result, favoriteName, groupName, deleted) {
     ctx.setSelectedGpxFile(newSelectedFile);
 }
 
-function updateSelectedGroup(groups, selectedGroupName, result) {
-    groups.forEach(g => {
+function updateSelectedGroup(favorites, selectedGroupName, result) {
+    favorites.groups.forEach(g => {
         if (g.name === selectedGroupName && result.data) {
-            g.updatetimems = result.updatetimems;
-            g.pointsGroups = result.data.pointsGroups;
-            let file = g.file;
-            Object.keys(result.data).forEach(d => {
-                file[`${d}`] = result.data[d];
-            });
-            g.file = file;
+            updateGroupData(g, result);
+            if (favorites[selectedGroupName]) {
+                Object.keys(result.data).forEach(d => {
+                    favorites[selectedGroupName][`${d}`] = result.data[d];
+                });
+            }
         }
     })
+}
+
+function updateGroupData(object, result) {
+    object.updatetimems = result.updatetimems;
+    object.pointsGroups = result.data.pointsGroups;
+    let file = Object.assign({}, object.file);
+    Object.keys(result.data).forEach(d => {
+        file[`${d}`] = result.data[d];
+    });
+    object.file = file;
 }
 
 function updateGroupAfterChange(ctx, result, selectedGroupName) {

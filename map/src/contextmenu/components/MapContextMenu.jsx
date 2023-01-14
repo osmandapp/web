@@ -60,11 +60,11 @@ export default function MapContextMenu() {
             } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
-                if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
+                if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
-                } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
                     obj = new WeatherTabList().create(ctx);
-                } else if (ctx.currentObjectType === 'favorite') {
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
                 } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx);

@@ -48,7 +48,8 @@ export default function CloudTrackItem({file}) {
             let track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
             if (track) {
-                ctx.setCurrentObjectType('cloud_track');
+                let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+                ctx.setCurrentObjectType(type);
                 track.name = file.name;
                 Object.keys(track).forEach(t => {
                     newGpxFiles[file.name][`${t}`] = track[t];
