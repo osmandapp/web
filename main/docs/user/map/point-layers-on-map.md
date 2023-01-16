@@ -16,7 +16,7 @@ On map you could display points such as Favorites, POI, Markers, Wikipedia, Sear
 
 ## Favorites
 
-[Favorites](../personal/favorites.md) are special points on the map marked by user and by default displayed as yellow stars. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6. 
+[Favorites](../personal/favorites.md) are special points on the map marked by user and by default displayed as yellow stars. Though it could be customized with any color, shape and icon. They become visible on the map from the zoom level 6.  
 To enable / disable favorites on the map:
 
 <Tabs groupId="operating-systems">

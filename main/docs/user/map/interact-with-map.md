@@ -26,7 +26,7 @@ Gestures are important part of the map navigation.
 |**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
 |**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
-|**Tilt** - 3D | Press with **two** fingers on the map and then swipe up or down. <br /> Android: [switch on OpenGL rendering](../plugins/development.md#plugin-settings) and restart OsmAnd. <br /> Currently we have variable tilt angle, it depends on device's screen height in pixels: Minimum - from 33 to 45 degrees. Note: Thus tablets have a smaller tilt angle than phones. |
+|**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL) is available |
 
 Slide animations could be disabled with special [setting](#disable-all-animations).
 
@@ -98,15 +98,21 @@ The compass widget indicates how the map is oriented: the red arrow or the top o
 
 If rotate map by bearing (movement direction) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement the map won't be rotated. In this mode the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode. This setting can be changed via *Menu → Settings → Profile → General settings → Display position*.  
 
-### Map tilt
+### Map Tilt and Horizon
 
-Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the "My location" icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).
+You can change [camera tilt](../plugins/development.md#camera-tilt)
 
-
+Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the ["My location"](#my-location--zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
 
 :::note
-You can not change Camera tilt when old map rendering engine is on.
+You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
+
+At the bottom of the horizon some place is filled with grey color, only few map details can be observed.
+
+Here you can read about the OsmAnd map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery).  
+
+
 
 ## Settings
 

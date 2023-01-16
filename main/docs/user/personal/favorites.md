@@ -533,11 +533,11 @@ Actions:
 
 You can also use Export/Import favorite functions.  
 
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
-
-- <Translate ios="true" ids="fav_import_title"/> - <Translate ios="true" ids="fav_import_desc"/>.
+- <Translate ios="true" ids="fav_import_title"/> - <Translate ios="true" ids="fav_import_desc"/>
 
 - <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.
+
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
 
 After each edit of Favorites OsmAnd makes a backup file. They can be found using iPhone *Files* program.  
 
@@ -548,4 +548,3 @@ After each edit of Favorites OsmAnd makes a backup file. They can be found using
 </TabItem>
 
 </Tabs>
-
