@@ -173,11 +173,6 @@ const RouteLayer = () => {
         }
     };
 
-    function generateLocalTrack() {
-        let newTrack = TracksManager.generate(ctx);
-        TracksManager.addTrack(ctx, newTrack);
-    }
-
     function addFavorite(e) {
         ctx.addFavorite.location = e.latlng;
         ctx.setAddFavorite({...ctx.addFavorite});
@@ -202,10 +197,6 @@ const RouteLayer = () => {
             map.contextmenu.addItem({
                 text: 'Where am I',
                 callback: whereAmI
-            });
-            map.contextmenu.addItem({
-                text: 'Generate track',
-                callback: generateLocalTrack
             });
             map.contextmenu.addItem({
                 text: 'Add favorite',

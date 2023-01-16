@@ -1,5 +1,4 @@
 import Utils from "../util/Utils";
-import {MetaData, Point, Track, TrackData} from "./TrackStore";
 import {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 
@@ -29,20 +28,6 @@ function saveTracks(tracks) {
     }
 }
 
-function generate(ctx) {
-    let name = createName(ctx);
-    let points = Utils.getPointsDist(createPoints());
-    let pointsArr = [];
-    points.forEach(p => pointsArr.push(new Point(p.lat, p.lng, 99999, 99999, p.distance, null, null, null, {})));
-    let tracks = [new Track(pointsArr, {})];
-    let newTrack = new TrackData(new MetaData(name, null, {}), null, tracks, null, {});
-    newTrack.name = name;
-    newTrack.analysis = [];
-    addDistance(newTrack);
-
-    return newTrack;
-}
-
 function createName(ctx) {
     let date = new Date().toDateString();
     let count = 0;
@@ -65,26 +50,6 @@ function createName(ctx) {
     })
 
     return name;
-}
-
-function createPoints() {
-    let points = [];
-    let prevPoint;
-    for (let i = 1; i <= 10; i++) {
-        let lat;
-        let lng;
-        if (!prevPoint) {
-            lat = Math.floor(Math.random() * (Math.floor(48.305) - Math.ceil(51.543))) + Math.ceil(51.543);
-            lng = Math.floor(Math.random() * (Math.floor(37.749) - Math.ceil(24.664))) + Math.ceil(24.664);
-        } else {
-            lat = Math.floor(Math.random() * (Math.floor(prevPoint.lat - 2) - Math.ceil(prevPoint.lat + 2))) + Math.ceil(prevPoint.lat + 2);
-            lng = Math.floor(Math.random() * (Math.floor(prevPoint.lng - 2) - Math.ceil(prevPoint.lng + 2))) + Math.ceil(prevPoint.lng + 2);
-        }
-        prevPoint = {lat: lat, lng: lng};
-        points.push({lat: lat, lng: lng})
-    }
-
-    return points;
 }
 
 function getFileName(currentFile) {
@@ -398,7 +363,6 @@ function getEle(point, elevation, array) {
 const TracksManager = {
     loadTracks,
     saveTracks,
-    generate,
     getFileName,
     prepareName,
     getTrackData,
