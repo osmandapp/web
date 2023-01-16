@@ -95,6 +95,7 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 In OsmAnd you can change the color, the thickness of the track, display arrows and icons of the starting and ending points.
 
+
 To get to the track Appearance menu, you need to display track on the map, then in the [Track Context menu](../map/track-context-menu#overview) in the <Translate android="true" ids="shared_string_overview"/> section, [shortcut](../map/map-context-menu.md#select-route-short-tap-for-android) is to click on the "palette" icon.  
 
 <Tabs groupId="operating-systems">
