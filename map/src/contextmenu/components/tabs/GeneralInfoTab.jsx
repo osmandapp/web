@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
     Box,
-    Button,
+    Button, CircularProgress,
     Divider,
     Grid,
     ListItemIcon,
@@ -14,6 +14,8 @@ import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
+import {post} from "axios";
+import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function GeneralInfoTab({width, srtm}) {
 
@@ -30,6 +32,8 @@ export default function GeneralInfoTab({width, srtm}) {
     const [upDownHill, setUpDownHill] = useState('');
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
+
+    const [loadingSrtm, setLoadingSrtm] = useState(false);
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
@@ -207,6 +211,33 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
+    async function getTrackWithSrtm() {
+        setLoadingSrtm(true);
+        let data = {
+            tracks: ctx.selectedGpxFile.tracks,
+            wpts: ctx.selectedGpxFile.wpts,
+            metaData: ctx.selectedGpxFile.metaData,
+            pointsGroups: ctx.selectedGpxFile.pointsGroups,
+            ext: ctx.selectedGpxFile.ext,
+            analysis: ctx.selectedGpxFile.analysis
+        }
+        let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/get-srtm-data`, data,
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        if (resp.data) {
+            setLoadingSrtm(false);
+            let data = FavoritesManager.prepareTrackData(resp.data);
+            Object.keys(data.data).forEach(t => {
+                ctx.selectedGpxFile[`${t}`] = data.data[t];
+            });
+            ctx.selectedGpxFile.update = true;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
+    }
+
     return (<Box className={styles.item} width={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
@@ -298,5 +329,10 @@ export default function GeneralInfoTab({width, srtm}) {
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
                     }}
             >Edit</Button>}
+        {!ctx.selectedGpxFile?.analysis?.srtmAnalysis &&
+            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                    onClick={() => getTrackWithSrtm()}
+            >Get SRTM</Button>}
+        {loadingSrtm && <CircularProgress sx={{mb: -1, ml: 1}} size={20}/>}
     </Box>);
 };

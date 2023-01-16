@@ -41,7 +41,7 @@ export default function MapContextMenu() {
     });
 
     function selectedFileWasChanged() {
-        if (ctx.selectedGpxFile.editFavorite) {
+        if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {
             return true;
         }
         return (ctx.selectedGpxFile?.name && prevTrack?.name
