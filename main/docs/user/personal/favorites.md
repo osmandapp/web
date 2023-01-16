@@ -539,7 +539,7 @@ You can also use Export/Import favorite functions.
 
 ![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
 
-After each edit of Favorites OsmAnd makes a backup file. They can be found using iPhone *Files* program.  
+After each edit of Favorites OsmAnd makes a backup file.  They can be found using iPhone *Files* program.  
 
 *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
