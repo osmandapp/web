@@ -194,7 +194,8 @@ export default function GeneralInfoTab({width, srtm}) {
             gpx = gpx.data;
             const url = document.createElement('a');
             url.href = URL.createObjectURL(new Blob([gpx]));
-            url.download = `${ctx.selectedGpxFile.name}.gpx`;
+            let name = TracksManager.prepareName(ctx.selectedGpxFile.name, ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
+            url.download = `${name}.gpx`;
             url.click()
         }
     }
