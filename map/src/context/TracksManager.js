@@ -96,17 +96,26 @@ async function getTrackData(file) {
     return track;
 }
 
-function updateSelectedTrack(ctx, track) {
-    ctx.setSelectedGpxFile(Object.assign({}, track));
+function addTrack(ctx, track) {
+    prepareTrack(track);
+    ctx.localTracks.push(track);
+    ctx.setLocalTracks([...ctx.localTracks]);
+    openNewLocalTrack(ctx);
+    TracksManager.saveTracks(ctx.localTracks);
 }
 
-function addTrack(ctx, track) {
+function prepareTrack(track) {
     track.name = TracksManager.prepareName(track.name, true);
     track.id = track.name;
     addDistance(track);
-    ctx.localTracks.push(track);
-    ctx.setLocalTracks([...ctx.localTracks]);
-    TracksManager.saveTracks(ctx.localTracks);
+}
+
+function openNewLocalTrack(ctx) {
+    let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+    ctx.setCurrentObjectType(type);
+    let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
+    selectedTrack.selected = true;
+    ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
 }
 
 function getTrackPoints(track) {

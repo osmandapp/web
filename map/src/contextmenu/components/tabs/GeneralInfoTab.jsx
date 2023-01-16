@@ -144,7 +144,7 @@ export default function GeneralInfoTab({width, srtm}) {
                     />}
                     {
                         disableButton && <Typography className={styles.name} variant="inherit" maxWidth={'530px'}>
-                            {fileName}
+                            {"* " + fileName}
                         </Typography>
                     }
                 </Grid>
