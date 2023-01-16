@@ -27,8 +27,7 @@ Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by de
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
-
+<TabItem value="android" label="Android">  
 
 ![Navigation screen Android](@site/static/img/navigation/route/navigation_android.png)
 
@@ -140,13 +139,14 @@ When the navigation is running, you can press the home button. You will get the 
 
 </Tabs>
 
+
 ### Navigation options
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>_
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>*
 
 Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
 
@@ -170,7 +170,7 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options"/>_
+*<Translate ios="true" ids="menu,routing_settings,shared_string_options"/>*  
 
 ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_2.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_3.png)
 
