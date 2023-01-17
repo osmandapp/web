@@ -85,13 +85,13 @@ You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for th
 Voice prompt settings can be global and applied to all profiles.
 :::
 
-### Speed cameras
+#### Speed cameras
 
 [Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) in some countries is prohibited by the law. [Go back to settings](#settings-of-voice-prompts).  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
-### Announcement time
+#### Announcement time
 
 The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. [Go back to settings](#settings-of-voice-prompts).  
 
