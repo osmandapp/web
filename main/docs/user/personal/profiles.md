@@ -111,9 +111,9 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- <Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- <Translate ios="true" ids="allow_3D_view"/> - if 2.5D viewing mode is enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- <Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- &nbsp;<Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;<Translate ios="true" ids="allow_3D_view"/> - if 2.5D viewing mode is enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- &nbsp;<Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 
 </TabItem>
 
