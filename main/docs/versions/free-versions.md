@@ -31,7 +31,7 @@ Release date: 12/2022
 * Added support for ANT+ sensors
 * Added option to disable download UUID
 
-<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.5-4305.apk" />
+<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.6-4306.apk" />
 
 ### Version 4.2 
 Release date: 06/2022
