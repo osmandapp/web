@@ -26,7 +26,7 @@ Gestures are important part of the map navigation.
 |**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
 |**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
-|**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL) is available |
+|**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL)  |
 
 Slide animations could be disabled with special [setting](#disable-all-animations).
 
@@ -92,27 +92,39 @@ There are 3 map orientation modes designed for different circumstances. They can
 
 </Tabs>  
 
-The compass widget indicates how the map is oriented: the red arrow or the top of the blue arrow points towards north. It also shows the current [Map orientation mode](#map-orientation-modes). Single tap on the compass will cycle through all [Map orientation modes](#map-orientation-modes).
+The compass widget indicates how the map is oriented: the red arrow or the top of the blue arrow points towards north. It also shows the current [Map orientation mode](#map-orientation-modes). Single tap on the compass will cycle through all of the modes.  
 
 ### Rotate map by bearing
 
-If rotate map by bearing (movement direction) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement the map won't be rotated. In this mode the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode. This setting can be changed via *Menu → Settings → Profile → General settings → Display position*.  
+If rotate map by bearing (rotation by movement direction) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement the map won't be rotated. In this mode the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode. This setting can be changed via *Menu → Settings → Profile → General settings → Display position*.  
 
 ### Map Tilt and Horizon
 
-You can change [camera tilt](../plugins/development.md#camera-tilt)
+With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Under horizon you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only few map details can be observed.  
+The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
+
+
+:::info
 Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the ["My location"](#my-location--zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
-
-:::note
 You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
-
-At the bottom of the horizon some place is filled with grey color, only few map details can be observed.
-
-Here you can read about the OsmAnd map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery).  
-
-
 
 ## Settings
 

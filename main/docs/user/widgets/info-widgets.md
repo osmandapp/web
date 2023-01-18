@@ -68,7 +68,7 @@ To display Elevation widget among *Altitude widgets*:
   
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
   
-:::note
+:::caution
 Elevation widget will display information only when the hightmaps of the required area are downloaded.  
 :::
 

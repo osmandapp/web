@@ -506,7 +506,7 @@ Functions for Favorite folder:
 
 <TabItem value="android" label="Android">
 
-Tap on &#8942; button opens special functions menu for a chosen favorite or a favorite folder.
+Tap on &#8942; button opens special functions menu for a chosen favorite or a favorite folder.  
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -517,29 +517,38 @@ Another way to expot and import Favorites is to use Actions buttons at the botto
 ![Favorites actions android](@site/static/img/personal/favorites_actions_android.png)
 
 Actions:
-- '&#43;' - allows to import Favorites points (favorite.gpx) from device storage.
-- '&#60;' - allows to export (share) all Favorites points like "favorite.gpx" file.
+- &#43; - allows to import Favorites (favorite.gpx) from the device storage.
+- &#60; - allows to export (share) all your Favorites as "favorite.gpx" file.
+
+After each edit of Favorites OsmAnd makes a backup file.  They can be found using file manager programs.  
+
+*Android → data → net.osmand → files → favorites*
+
+![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
+
+:::caution
+In the latest versions of Android, access to system directories is limited.
+:::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Tap on &#128393; button opens special functions menu for a chosen Favorite folder. You need to choose folder or points for actions.
+Tap on &#128393; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) for actions.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
 Actions:
-- 'Import loader' - allows to share/import Favorites points (folders) as "favourite.gpx" file.
+- &#8657 - allows to share/import Favorites points (folders) as "favourite.gpx" file.
 
 You can also use Export/Import favorite functions.  
 
-- <Translate ios="true" ids="fav_import_title"/> - <Translate ios="true" ids="fav_import_desc"/>
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)  
 
-- <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.
+- <Translate ios="true" ids="fav_import_title"/> - allows to import Favorites as waypoints from GPX file (common GPS data format).  
+- <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.  To share the favorites.gpx file you can open file from Dropbox, Email, or any other source - Use Open In function.
 
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
-
-After each edit of Favorites OsmAnd makes a backup file.  They can be found using iPhone *Files* program.  
+After each edit of Favorites OsmAnd makes a backup file.  They can be found using iPhone (iPad) *Files* program.  
 
 *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
