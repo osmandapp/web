@@ -221,7 +221,6 @@ Tracks list.
 
 ### Simulate navigation
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -263,11 +262,9 @@ When you click on ["Start" button](../navigation/route-navigation.md#how-to-use)
 
 For stop the simulation of navigation you need to click on ["Navigation" button → "Cancel" button](../navigation/route-navigation.md#how-to-use).
 
-
 </TabItem>
 
 </Tabs>
-
 
 
 ## Navigation route

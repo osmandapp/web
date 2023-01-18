@@ -45,12 +45,11 @@ To start setting up an application profile:
 
 ## Profile configuration
 
-This section contains all the settings related to the appearance, navigation settings, map rendering, configure menu, and screen of a profile.
+This section contains all the settings related to the appearance, navigation settings, map rendering, configure menu, and screen of a profile.  
 
-
-> `All settings affect the selected application profile only.`
-
-
+:::note
+All settings affect the selected application profile only.
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -72,7 +71,6 @@ This section contains all the settings related to the appearance, navigation set
 ### General settings
 
 This section contains settings of the cursor on the map and map view, settings of units & formats of map and profile data, settings of external input devices, and other sensors.
-
 
 <Tabs groupId="operating-systems">
 
@@ -113,9 +111,9 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- <Translate ios="true" ids="rotate_map_to_bearing"/> - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- <Translate ios="true" ids="allow_3D_view"/> - if 2.5D viewing mode is enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- <Translate ios="true" ids="always_center_position_on_map"/> - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- &nbsp;*<Translate ios="true" ids="rotate_map_to_bearing"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- &nbsp;*<Translate ios="true" ids="always_center_position_on_map"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.  
 
 </TabItem>
 
@@ -124,13 +122,11 @@ In this section of the General settings menu, you can set parameters for the cur
 
 #### **Units & formats**
 
-
 In this section you can set parameters of units & formats for chosen application profile.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
 
 ![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profile_gs_unitsformats_android.png)
 
@@ -239,15 +235,16 @@ You can enable/disable buttons and input devices for OsmAnd.
 
 In this part, there are all settings for navigation mode of a profile.
 
-
-> `This part of settings doesn't exist for "Browse map" profile.`
-
+:::note
+This part of settings doesn't exist for "Browse map" profile.
+:::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
 
 ![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
 
@@ -255,7 +252,8 @@ In this part, there are all settings for navigation mode of a profile.
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+
 
 ![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
@@ -269,9 +267,7 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 <Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
 
-
 #### Navigation Type
-
 
 <Tabs groupId="operating-systems">
 
@@ -295,7 +291,6 @@ In this section you can set [routing and navigation parameters of your profile, 
 </TabItem>
 
 </Tabs>
-
 
 #### Route parameters
 
@@ -400,7 +395,6 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 </Tabs>
 
-
 #### Screen alerts
 
 <Tabs groupId="operating-systems">
@@ -445,7 +439,6 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 </Tabs>
 
-
 #### Vehicle parameters
 
 <Tabs groupId="operating-systems">
@@ -489,9 +482,9 @@ In this section you can set [routing and navigation parameters of your profile, 
 </Tabs>
 
 
-#### **Other**
+#### **Map during navigation**
 
-Parameters for "Map during navigation" and others:
+Parameters for 'Map during navigation' and 'Animate location change'. Change map behavior during navigation.
 
 <Tabs groupId="operating-systems">
 
@@ -499,11 +492,10 @@ Parameters for "Map during navigation" and others:
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="map_during_navigation"/>:** |  Change map behavior during navigation.   |              |
-| "<Translate android="true" ids="choose_auto_follow_route"/>" |  <Translate android="true" ids="choose_auto_follow_route_descr"/>   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| "<Translate android="true" ids="auto_zoom_map"/>"  |  <Translate android="true" ids="auto_zoom_map_descr"/>.   | Value: <br /> _<Translate android="true" ids="auto_zoom_none"/>_ - manually zoom,<br /> _<Translate android="true" ids="auto_zoom_farthest"/>_ - zoom is 200m.,<br /> _<Translate android="true" ids="auto_zoom_far"/>_ - zoom is 100m.,<br /> _<Translate android="true" ids="auto_zoom_close"/>_ - zoom is 50m. |
-| "<Translate android="true" ids="snap_to_road"/>"  |  <Translate android="true" ids="snap_to_road_descr"/>.   |    |
-| **<Translate android="true" ids="animate_my_location"/>** |  <Translate android="true" ids="animate_my_location_desc"/>   |              |
+| "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> _<Translate android="true" ids="auto_zoom_none"/>_ - manually zoom. <br /> _<Translate android="true" ids="auto_zoom_farthest"/>_ - zoom is 200m.<br /> _<Translate android="true" ids="auto_zoom_far"/>_ - zoom is 100m. <br /> _<Translate android="true" ids="auto_zoom_close"/>_ - zoom is 50m. |
+| "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+| **<Translate android="true" ids="animate_my_location"/>** |  Smooth location transition on the map during navigation.  |              |
 
 </TabItem>
 
@@ -511,10 +503,10 @@ Parameters for "Map during navigation" and others:
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| **Map during navigation:** |  Change map behavior during navigation.   |              |
-| "<Translate ios="true" ids="choose_auto_follow_route"/>" |  <Translate ios="true" ids="choose_auto_center_map_view_descr"/>.   |  Value: Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| "<Translate ios="true" ids="auto_zoom_map"/>"  |  <Translate ios="true" ids="auto_zoom_map_descr"/>.   | Value: <Translate ios="true" ids="auto_zoom_none"/>, <Translate ios="true" ids="auto_zoom_farthest"/>, <Translate ios="true" ids="auto_zoom_far"/>, <Translate ios="true" ids="auto_zoom_close"/>. |
-| "<Translate ios="true" ids="snap_to_road"/>"  |  <Translate ios="true" ids="snap_to_road_descr"/>.   |    |
+| "<Translate ios="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.   |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec. |
+| "<Translate ios="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position).  | Value: <br />  *<Translate ios="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate ios="true" ids="auto_zoom_farthest"/>* - zoom is 200m. <br /> *<Translate ios="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate ios="true" ids="auto_zoom_close"/>* - zoom is 50m. |
+| "<Translate ios="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.  | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+| Animate location change |  Smooth location transition on the map during navigation.  |              |
 
 </TabItem>
 
@@ -531,7 +523,7 @@ Here you can set parameters for [<Translate android="true" ids="configure_map"/>
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
 
 Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
@@ -541,9 +533,7 @@ Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,configure_map"/>
-
-<p> </p>
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,configure_map"/>*  
 
 Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
@@ -634,24 +624,19 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 ### UI Customization
 
-Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu.md#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu.md) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu.md).
+Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu.md#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu.md) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu.md).  
 
+<InfoAndroidOnly />
 
-> *Turn off unused [plugins](../plugins) for hide all their controls.*
+:::note
+Turn off unused [plugins](../plugins) for hide all their controls.
+:::  
 
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,ui_customization"/>
-<p> </p>
+*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization"/>*  
 
 Under each menu there is the info about items quantity / active items.
 
-![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)
-
+![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
 **Drawer**
 
@@ -666,7 +651,7 @@ In this part of the menu you reorder or hide items from the [Drawer](../start-wi
 | ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)|
 | "<Translate android="true" ids="reset_to_default"/>": resetting the "Drawer" menu to default. |
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Drawer" menu from another profile.  |
-| ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)|
+| ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)|  
 
 **Configure map**
 
@@ -681,8 +666,7 @@ In this part of the menu you reorder or hide items from the [Configure map](../m
 | ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_configure_reset_item_android.png)|
 | "<Translate android="true" ids="reset_to_default"/>": resetting the "Configure map" menu to default.|
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Configure map" menu from another profile.|
-| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_configure_reset_copy_android.png)|
-
+| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_configure_reset_copy_android.png)|  
 
 **Context menu actions**
 
@@ -697,17 +681,7 @@ In this part of the menu you reorder or hide items from the [Context menu action
 | ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_reset_item_android.png)|
 | "<Translate android="true" ids="reset_to_default"/>": resetting the "Context menu actions" menu to default. |
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Context menu actions" menu from another profile.  |
-| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_context_reset_copy_android.png)|
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
+| ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_context_reset_copy_android.png)|  
 
 ## Plugin settings
 
