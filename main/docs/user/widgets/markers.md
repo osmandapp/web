@@ -19,7 +19,8 @@ Markers are temporary points indicated on the map in the form of flags. The widg
 
 ## Top bar widget
 
-The **Map markers bar** (for Android) widget and **Distance indication - Top bar** (for iOS) widget displays:
+<!-- 1. Android map_markers_bar use constant strings if possible 2. Create bug for iOS missing  -->
+The **Map markers bar** (Android) widget / **Distance indication - Top bar** (iOS) widget displays:
 - Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
 - An arrow of the same color as the marker indicates the direction from the current location and orientation in space of your device (heading) towards the marker.
 - Location Address.
@@ -65,8 +66,8 @@ You can also select to display one or two markers. Read more about widget settin
 ## Panel widgets
 
 The **Map markers** *(for Android)* widget and **Distance indication - Widgets** *(for iOS)* displays:  
-- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
-- **Estimated time of arrival or ETA** *(Only for Android)*.  
+- _Distance from your current location_ to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
+- _Estimated time of arrival or ETA_ *(Only for Android)*.  
 This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
 The average speed is calculated as the sum of all speeds (received from location points) for the time interval you selected (from 15 seconds to 60 minutes) divided by the total number of these points.
 
