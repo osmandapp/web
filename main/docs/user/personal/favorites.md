@@ -506,7 +506,7 @@ Functions for Favorite folder:
 
 <TabItem value="android" label="Android">
 
-Tap on &#8942; button opens special functions menu for a chosen favorite or a favorite folder.  
+Tap on &#8942; button opens special functions menu for a chosen favorite folder.  
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -522,12 +522,12 @@ Actions:
 
 After each edit of Favorites OsmAnd makes a backup file.  They can be found using file manager programs.  
 
-*Android → data → net.osmand → files → favorites*
+*Android → data → net.osmand → files → backup*
 
 ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 :::caution
-In the latest versions of Android, access to system directories is limited.
+In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it using messengers or cloud services etc.  
 :::
 
 </TabItem>
