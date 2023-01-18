@@ -84,7 +84,6 @@ const OsmAndMap = () => {
 
             {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
                 && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons} />}
-            <MapContextMenu/>
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
         </MapContainer>

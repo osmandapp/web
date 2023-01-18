@@ -14,8 +14,6 @@ import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
-import {post} from "axios";
-import FavoritesManager from "../../../context/FavoritesManager";
 
 export default function GeneralInfoTab({width, srtm}) {
 
@@ -154,7 +152,7 @@ export default function GeneralInfoTab({width, srtm}) {
                 </Grid>
                 <Grid item xs={1}>
                     <Box display="flex" justifyContent="flex-end">
-                        {disableButton &&
+                        {!ctx.createTrack && disableButton &&
                             <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
                                     onClick={() => {
                                         setDisableButton(false);
@@ -211,34 +209,7 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
-    async function getTrackWithSrtm() {
-        setLoadingSrtm(true);
-        let data = {
-            tracks: ctx.selectedGpxFile.tracks,
-            wpts: ctx.selectedGpxFile.wpts,
-            metaData: ctx.selectedGpxFile.metaData,
-            pointsGroups: ctx.selectedGpxFile.pointsGroups,
-            ext: ctx.selectedGpxFile.ext,
-            analysis: ctx.selectedGpxFile.analysis
-        }
-        let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/get-srtm-data`, data,
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-        if (resp.data) {
-            setLoadingSrtm(false);
-            let data = FavoritesManager.prepareTrackData(resp.data);
-            Object.keys(data.data).forEach(t => {
-                ctx.selectedGpxFile[`${t}`] = data.data[t];
-            });
-            ctx.selectedGpxFile.update = true;
-            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-        }
-    }
-
-    return (<Box className={styles.item} width={width}>
+    return (<Box className={styles.item} minWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
@@ -312,26 +283,46 @@ export default function GeneralInfoTab({width, srtm}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
+            {ctx.createTrack && !ctx.selectedGpxFile.newPoint &&
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        Click on map...
+                    </Typography>
+                </ListItemText>
+            }
         </Typography>
-        <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                onClick={downloadGpx}
-        >Download</Button>
-        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+        {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+            <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                    onClick={() => {
+                        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, setLoadingSrtm).then();
+                        TracksManager.addTrack(ctx, ctx.selectedGpxFile);
+                        ctx.setCreateTrack({enable: false});
+                    }}
+            >Save</Button>}
+        {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                    onClick={() => ctx.setCreateTrack({enable: true})}
+            >Clear</Button>}
+        {!ctx.createTrack && <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+                                     onClick={downloadGpx}
+        >Download</Button>}
+        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
                         ctx.selectedGpxFile.save = true;
                         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                     }}
             >Save to Cloud</Button>}
-        {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
-            <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
+        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+            <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span"
+                    style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
                     }}
             >Edit</Button>}
-        {!ctx.selectedGpxFile?.analysis?.srtmAnalysis &&
+        {!ctx.createTrack && !ctx.selectedGpxFile?.analysis?.srtmAnalysis &&
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => getTrackWithSrtm()}
+                    onClick={() => TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm)}
             >Get SRTM</Button>}
         {loadingSrtm && <CircularProgress sx={{mb: -1, ml: 1}} size={20}/>}
     </Box>);

@@ -34,6 +34,10 @@ const PointsTab = ({width}) => {
             TracksManager.updateStat(currentTrack);
             updateTrack(currentTrack);
             TracksManager.saveTracks(ctx.localTracks);
+        } else {
+            await deletePointByIndex(ctx.selectedGpxFile, index);
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }
 
@@ -42,9 +46,15 @@ const PointsTab = ({width}) => {
             return;
         }
         let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        await reorder(result.source.index, result.destination.index, currentTrack);
-        updateTrack(currentTrack);
-        TracksManager.saveTracks(ctx.localTracks);
+        if (currentTrack) {
+            await reorder(result.source.index, result.destination.index, currentTrack);
+            updateTrack(currentTrack);
+            TracksManager.saveTracks(ctx.localTracks);
+        } else {
+            await reorder(result.source.index, result.destination.index, ctx.selectedGpxFile);
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
     }
 
     async function reorder(startIndex, endIndex, currentTrack) {
@@ -170,6 +180,8 @@ const PointsTab = ({width}) => {
                             <Typography variant="inherit" noWrap>
                                 Point - {index + 1}<br/>
                                 {point.distanceFromStart === 0 ? "start" : Math.round(point.distanceFromStart) + " m"}
+                                {" • "}
+                                {point.profile}
                             </Typography>
                         </ListItemText>
                         <ListItemAvatar>
@@ -185,7 +197,7 @@ const PointsTab = ({width}) => {
             </Draggable>)
     }
 
-    return (<DragDropContext onDragEnd={onDragEnd}><Box width={width}>
+    return (<DragDropContext onDragEnd={onDragEnd}><Box minWidth={width}>
         {loading ? <LinearProgress/> : <></>}
         <Droppable droppableId="droppable-1">
             {(provided) => (

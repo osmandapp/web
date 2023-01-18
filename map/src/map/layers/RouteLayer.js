@@ -3,9 +3,7 @@ import {Marker, GeoJSON, useMap} from "react-leaflet";
 import L from 'leaflet';
 import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
-import TracksManager from "../../context/TracksManager";
 import MarkerOptions from "../markers/MarkerOptions";
-import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
 
 
 function dist(a1, a2) {
@@ -201,6 +199,10 @@ const RouteLayer = () => {
             map.contextmenu.addItem({
                 text: 'Add favorite',
                 callback: (e) => addFavorite(e)
+            });
+            map.contextmenu.addItem({
+                text: 'Create track',
+                callback: () => ctx.setCreateTrack({enable: true})
             });
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData]);

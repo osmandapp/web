@@ -8,6 +8,7 @@ import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
+import MapContextMenu from "../../contextmenu/components/MapContextMenu";
 
 const OsmAndMapFrame = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -36,6 +37,7 @@ const OsmAndMapFrame = () => {
                     </Toolbar>
                 </AppBar>
                 <OsmAndMap/>
+                <MapContextMenu drawerWidth={drawerWidth}/>
             </Box>
             <Drawer
                 //  container={container}

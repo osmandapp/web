@@ -3,6 +3,8 @@ import {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 
 const GPX_FILE_TYPE = 'GPX';
+const GET_SRTM_DATA = 'get-srtm-data';
+const GET_ANALYSIS = 'get-analysis';
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -115,6 +117,7 @@ function openNewLocalTrack(ctx) {
     ctx.setCurrentObjectType(type);
     let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
     selectedTrack.selected = true;
+    selectedTrack.index = ctx.localTracks.length - 1;
     ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
 }
 
@@ -192,7 +195,10 @@ async function getGpxTrack(file) {
         analysis: null
     }
 
-    if (!trackData.metaData.name) {
+    if (!trackData.metaData?.name) {
+        if (!trackData.metaData) {
+            trackData.metaData = {};
+        }
         trackData.metaData.name = file.name;
     }
 
@@ -262,7 +268,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
                 routeMode: start.profile,
-                hasSpeed: start.ext.speed !== 0 || end.ext.speed !== 0,
+                hasSpeed: start?.ext?.speed !== 0 || end?.ext?.speed !== 0,
                 hasRouting: start.segment !== null || end.segment !== null
             },
             headers: {
@@ -282,7 +288,9 @@ async function updateRouteBetweenPoints(ctx, start, end) {
 function updateStat(track) {
     addDistance(track);
     let activePoints = getEditablePoints(track);
-    track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+    if (track.analysis.totalDistance) {
+        track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+    }
     track.analysis.timeMoving = null;
     track.analysis.diffElevationUp = null;
     track.analysis.diffElevationDown = null;
@@ -368,6 +376,33 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
+async function getTrackWithAnalysis(path, ctx, setLoading) {
+    setLoading(true);
+    let data = {
+        tracks: ctx.selectedGpxFile.tracks,
+        wpts: ctx.selectedGpxFile.wpts,
+        metaData: ctx.selectedGpxFile.metaData,
+        pointsGroups: ctx.selectedGpxFile.pointsGroups,
+        ext: ctx.selectedGpxFile.ext,
+        analysis: ctx.selectedGpxFile.analysis
+    }
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    if (resp.data) {
+        setLoading(false);
+        let data = FavoritesManager.prepareTrackData(resp.data);
+        Object.keys(data.data).forEach(t => {
+            ctx.selectedGpxFile[`${t}`] = data.data[t];
+        });
+        ctx.selectedGpxFile.update = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+}
+
 
 const TracksManager = {
     loadTracks,
@@ -384,7 +419,13 @@ const TracksManager = {
     updateStat,
     getEle,
     deleteLocalTrack,
-    GPX_FILE_TYPE: GPX_FILE_TYPE
+    createName,
+    getTrackWithAnalysis,
+    prepareTrack,
+    addDistance,
+    GPX_FILE_TYPE: GPX_FILE_TYPE,
+    GET_SRTM_DATA: GET_SRTM_DATA,
+    GET_ANALYSIS: GET_ANALYSIS
 };
 
 export default TracksManager;

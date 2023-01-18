@@ -1,8 +1,7 @@
 import {Paper, AppBar, Button} from "@mui/material";
 import AppContext from "../../context/AppContext"
-import React, {useState, useContext, useRef, useEffect} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import L from 'leaflet';
 import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
@@ -23,22 +22,13 @@ const useStyles = makeStyles({
 })
 
 
-export default function MapContextMenu() {
+export default function MapContextMenu({drawerWidth}) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
-
-    const divContainer = useRef(null);
-
-    useEffect(() => {
-        if (divContainer.current) {
-            L.DomEvent.disableClickPropagation(divContainer.current);
-            L.DomEvent.disableScrollPropagation(divContainer.current);
-        }
-    });
 
     function selectedFileWasChanged() {
         if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {
@@ -83,7 +73,7 @@ export default function MapContextMenu() {
     }
 
     return (<div>
-        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`} ref={divContainer}>
+        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`}>
             <div className="leaflet-control leaflet-bar padding-container">
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
@@ -106,6 +96,6 @@ export default function MapContextMenu() {
                 }
             </div>
         </div>}
-        <PanelButtons showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
+        <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
     </div>);
 }

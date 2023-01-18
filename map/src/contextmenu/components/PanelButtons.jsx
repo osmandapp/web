@@ -1,8 +1,7 @@
 import {ButtonGroup, IconButton, Paper} from "@mui/material";
-import {Add, Close, Delete, Folder} from "@mui/icons-material";
-import React, {useContext, useEffect, useRef, useState} from "react";
+import {Close, Delete, Folder} from "@mui/icons-material";
+import React, {useContext, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import L from "leaflet";
 import AppContext from "../../context/AppContext";
 import SaveTrackDialog from "./SaveTrackDialog";
 import DeleteTrackDialog from "./DeleteTrackDialog";
@@ -11,30 +10,21 @@ import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
 const useStyles = makeStyles({
     buttongroup: {
         top: '20%',
-        left: '5px',
         width: '10px',
         height: '10px',
     }
 })
 
-const PanelButtons = ({showContextMenu, setShowContextMenu}) => {
+const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
 
     const classes = useStyles();
 
     const ctx = useContext(AppContext);
-    const divContainer = useRef(null);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
-    useEffect(() => {
-        if (divContainer.current) {
-            L.DomEvent.disableClickPropagation(divContainer.current);
-            L.DomEvent.disableScrollPropagation(divContainer.current);
-        }
-    });
-
     return (ctx.selectedGpxFile &&
-        <div>{showContextMenu && <div className={`${classes.buttongroup} ${'leaflet-bottom'}`} ref={divContainer}>
+        <div>{showContextMenu && <div style={{left: drawerWidth + 10}} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
             <div className="leaflet-control leaflet-bar padding-container">
                 <Paper>
                     <ButtonGroup
