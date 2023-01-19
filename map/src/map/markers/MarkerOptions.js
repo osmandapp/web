@@ -6,7 +6,7 @@ const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
 const BACKGROUND_WPT_SHAPE_SQUARE = "square";
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
-const POI_ICONS_FOLDER = "poi-icons-svg";
+const POI_ICONS_FOLDER = "poi-icons-web-svg";
 
 
 const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
