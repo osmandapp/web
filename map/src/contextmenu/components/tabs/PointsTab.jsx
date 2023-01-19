@@ -29,7 +29,7 @@ const PointsTab = ({width}) => {
 
     const deletePoint = async (index) => {
         let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2) {
+        if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2 && !ctx.createTrack?.enable) {
             await deletePointByIndex(currentTrack, index);
             TracksManager.updateStat(currentTrack);
             updateTrack(currentTrack);

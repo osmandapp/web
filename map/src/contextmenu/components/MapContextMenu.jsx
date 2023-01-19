@@ -62,7 +62,7 @@ export default function MapContextMenu({drawerWidth}) {
                 if (obj) {
                     setShowContextMenu(true);
                     setTabsObj(obj);
-                    setValue(obj.defaultTab);
+                    //setValue(obj.defaultTab);
                 }
             }
         }

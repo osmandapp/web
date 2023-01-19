@@ -41,7 +41,7 @@ export default function LocalTrackItem({track, index}) {
             selectedTrack.selected = true;
             ctx.setLocalTracks([...ctx.localTracks]);
         }
-        ctx.setSelectedGpxFile(Object.assign({}, track));
+        ctx.setSelectedGpxFile(JSON.parse(JSON.stringify(track)));
     }
 
     return <div>

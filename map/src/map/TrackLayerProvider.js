@@ -18,8 +18,8 @@ function parsePoints(points, layers) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach(point => {
-        if (point.geometry?.length > 0) {
-            drawRoutePoints(points, point.geometry, coordsAll, layers);
+        if (point.geometry !== undefined) {
+            coordsAll = drawRoutePoints(points, point.geometry, coordsAll, layers);
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === 'gap' && coordsTrk.length > 0) {
@@ -68,6 +68,7 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
     if (coords.length > 0) {
         layers.push(new L.Polyline(coords, getPolylineOpt()));
     }
+    return coordsAll;
 }
 
 function parseWpt(points, layers) {
