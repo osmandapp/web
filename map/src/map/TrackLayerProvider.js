@@ -118,7 +118,7 @@ function addStartEndMarkers(points, layers) {
 
 function getPolylineOpt() {
     return {
-        color: 'blue'
+        color: '#1976d2'
     }
 }
 
