@@ -25,7 +25,7 @@ Voice navigation helps you drive your vehicle in the right direction without dis
 
 - Listen to voice prompts while navigating.
 - You can listen to the voice prompts while the device screen is *On* or *Off*.
-- If you miss a voice prompt, you can listen to it again by tapping the needed arrow in the navigation.
+- If you missed a voice prompt, you can listen to it again by tapping the needed arrow in the navigation.
 - Background navigation - you can use the device and listen to prompts in the background at the same time.
 
 

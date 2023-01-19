@@ -39,7 +39,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *Menu → Configure screen → Widgets → Top panel → Map markers* |
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets,top_widgets_panel,map_markers_bar"/>* |
 | By tapping | The visible part of the map shifts to the marker location. |
 | Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
@@ -85,7 +85,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *Menu → Configure screen → Widgets → Left / Right panel → Map markers*  |
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_markers_item"/>*  |
 | By tapping 1 | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
 | By tapping 2 | The visible part of the map shifts to the marker location (Go to marker location mode) |
 | Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
