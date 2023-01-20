@@ -2315,7 +2315,7 @@
   "restore_purchases": "Restore purchases",
   "fonts_header": "Map fonts",
   "right_side_navigation": "Right-hand traffic",
-  "driving_region_automatic": "Automatic",
+  "shared_string_automatic": "Automatic",
   "do_not_send_anonymous_app_usage": "Don't send anonymous app usage statistics",
   "do_not_send_anonymous_app_usage_desc": "OsmAnd collects info about which parts of the app you open. Your location is never sent, nor is anything you enter into the app or details of areas you view, search, or download.",
   "do_not_show_startup_messages": "Don't show startup messages",
