@@ -222,18 +222,19 @@ export default function GeneralInfoTab({width, srtm}) {
 
     return (<Box className={styles.item} minWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
-            <Grid container spacing={2}>
+            {<Grid container spacing={2}>
                 <Grid item xs={10}>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
                 </Grid>
                 <Grid item xs={2}>
-                    {!ctx.createTrack?.enable && <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
+                    {!ctx.createTrack?.enable && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                        <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
                             onClick={() => ctx.setCreateTrack({enable: true})}
                     >
                         edit
                     </Button>}
                 </Grid>
-            </Grid>
+            </Grid>}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
             {distance && <MenuItem sx={{ml: -2}}>
                 <ListItemIcon>
