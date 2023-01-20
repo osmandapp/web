@@ -132,7 +132,7 @@ In this section you can set parameters of units & formats for chosen application
 
 | Parameter | Format | Note   |
 |:------------|:---------------|:---------------|
-|**<Translate android="true" ids="driving_region"/>**| <Translate android="true" ids="driving_region_automatic"/> | According to the device location |
+|**<Translate android="true" ids="driving_region"/>**| <Translate android="true" ids="shared_string_automatic"/> | According to the device location |
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
@@ -168,7 +168,7 @@ In this section you can set parameters of units & formats for chosen application
 
 | Parameter | Format | Note |
 |:------------|:---------------|:---------------|
-|**<Translate ios="true" ids="driving_region"/>**| <Translate ios="true" ids="driving_region_automatic"/> | According to the device location |
+|**<Translate ios="true" ids="driving_region"/>**| <Translate ios="true" ids="shared_string_automatic"/> | According to the device location |
 |            | <Translate ios="true" ids="driving_region_europe_asia"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>  |
 |            | <Translate ios="true" ids="driving_region_us"/>   |  <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_mi_feet"/>  |
 |            | <Translate ios="true" ids="driving_region_canada"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>   |
