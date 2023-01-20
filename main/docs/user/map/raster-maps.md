@@ -62,39 +62,62 @@ For **iOS** OsmAnd this feature works by default.
 :::
 
 In order to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md):  
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*  
 
 
-### Select map as Main / Underlay / Overlay layer
+### Change layer parameters
+In order to mix raster map layers better, you can change layer transparency (by using a screen slider) and also you can change vector map style (hide polygons), so the underlay layers will 
+be more visible, especially useful for satellite imagery.
 
-Raster maps can be used as Map source in OsmAnd (by default, offline vector maps are enabled). Map sources are configurable in:
+
+## Select Raster maps
+
+Raster maps can be used as map sources in OsmAnd (vector maps that work offline are enabled by default).  
+You can add one or two online tiles to the base layer maps, and all three will appear on the screen. For example, you can open OsmAnd's base vector maps offline, then add a satellite view as an overlay, and place a map of bike paths below the base map as an underlay. You can set the transparency of the base map for your layer, and you can choose whether or not to display the transparency slider on the main screen.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="android_button_seq"/>  <Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_type,map_settings_online"/>*  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-You can choose one of them in the list or add yours.
+### Main  
 
-Not only can you use one map, but you can also add up to two of the online tiles to the basic layer maps to combine three of them on the screen. For instance, you can open a basic OsmAnd offline vector maps, then add a satellite view for the overlay, and put a cycling routes map underneath.
-You can set the base map transparency for your layer and whether display the transparency slider on the main screen or not.
+You can choose one of them in the list or add yours.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*  
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,map_settings_map,map_settings_type,map_settings_online"/>*  
+
+</TabItem>
+
+</Tabs>
+
+### Overlay layer 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
 ![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)  
 
@@ -102,7 +125,7 @@ You can set the base map transparency for your layer and whether display the tra
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/>*
+*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
@@ -110,10 +133,27 @@ You can set the base map transparency for your layer and whether display the tra
 
 </Tabs>
 
+### Underlay layer
 
-### Change layer parameters (transparency)
-In order to mix raster map layers better, you can change layer transparency (by using a screen slider) and also you can change vector map style (hide polygons), so the underlay layers will 
-be more visible, especially useful for satellite imagery.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
+
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/>*
+
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Hillshade / Slope
