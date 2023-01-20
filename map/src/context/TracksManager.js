@@ -1,6 +1,7 @@
 import Utils from "../util/Utils";
 import {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
+import _ from "lodash";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -13,7 +14,8 @@ function loadTracks() {
 function saveTracks(tracks) {
     if (tracks.length > 0) {
         let res = [];
-        tracks.forEach(function (track) {
+        tracks.forEach(function (t) {
+            let track = _.cloneDeep(t);
             res.push({
                 name: track.name,
                 id: track.id,

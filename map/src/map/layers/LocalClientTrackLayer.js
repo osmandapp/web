@@ -5,6 +5,7 @@ import L from "leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
 import TracksManager from "../../context/TracksManager";
 import MarkerOptions from "../markers/MarkerOptions";
+import _ from "lodash";
 
 
 export default function LocalClientTrackLayer() {
@@ -181,6 +182,7 @@ export default function LocalClientTrackLayer() {
             if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.selectedGpxFile?.index >= 0) {
                 editCurrentTrack();
             } else {
+                deleteOldLayers();
                 let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                 ctx.setCurrentObjectType(type);
                 initNewTrack();
@@ -205,16 +207,29 @@ export default function LocalClientTrackLayer() {
         ctx.selectedGpxFile.name = TracksManager.createName(ctx);
         ctx.selectedGpxFile.layers = new L.FeatureGroup();
         ctx.selectedGpxFile.layers.addTo(map);
+
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     function editCurrentTrack() {
         map.removeLayer(layers[ctx.selectedGpxFile.name].layer);
+        deleteOldLayers();
+        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        if (currentTrack) {
+            ctx.selectedGpxFile = _.cloneDeep(currentTrack);
+        }
         ctx.selectedGpxFile.layers = new L.FeatureGroup();
         let points = ctx.selectedGpxFile.tracks[0].points;
         updateLayers(points, ctx.selectedGpxFile.layers, true);
         ctx.selectedGpxFile.layers.addTo(map);
         ctx.selectedGpxFile.newPoint = points[points.length - 1];
+
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function deleteOldLayers() {
+        if (ctx.selectedGpxFile?.layers) {
+            map.removeLayer(ctx.selectedGpxFile?.layers);
+        }
     }
 }

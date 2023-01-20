@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
 
 export default function LocalTrackItem({track, index}) {
 
@@ -41,7 +42,7 @@ export default function LocalTrackItem({track, index}) {
             selectedTrack.selected = true;
             ctx.setLocalTracks([...ctx.localTracks]);
         }
-        ctx.setSelectedGpxFile(JSON.parse(JSON.stringify(track)));
+        ctx.setSelectedGpxFile(_.cloneDeep(track));
     }
 
     return <div>
