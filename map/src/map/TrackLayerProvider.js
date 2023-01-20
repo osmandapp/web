@@ -14,7 +14,7 @@ function createLayersByTrackData(data) {
     }
 }
 
-function parsePoints(points, layers) {
+function parsePoints(points, layers, draggable) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach(point => {
@@ -23,7 +23,8 @@ function parsePoints(points, layers) {
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === 'gap' && coordsTrk.length > 0) {
-                layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));
+                let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
+                layers.push(polyline);
                 coordsAll = coordsAll.concat(Object.assign([], coordsTrk));
                 coordsTrk = [];
             }
@@ -31,9 +32,11 @@ function parsePoints(points, layers) {
     })
 
     points.forEach(p => {
-        layers.push(new L.Marker((new L.LatLng(p.lat, p.lng)), {
-            icon: MarkerOptions.options.route
-        }));
+        let marker = new L.Marker((new L.LatLng(p.lat, p.lng)), {
+            icon: MarkerOptions.options.route,
+            draggable: draggable
+        });
+        layers.push(marker);
     })
 
     layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));

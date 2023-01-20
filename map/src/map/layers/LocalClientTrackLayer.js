@@ -111,8 +111,8 @@ export default function LocalClientTrackLayer() {
         let newPoint = ctx.selectedGpxFile.newPoint;
         let points = ctx.selectedGpxFile.tracks[0].points;
         let layers = ctx.selectedGpxFile.layers;
+        ctx.selectedGpxFile.addPoint = false;
         if (prevPoint) {
-            ctx.selectedGpxFile.addPoint = false;
             getProfile(newPoint, prevPoint, points);
             newPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, newPoint);
             if (!newPoint.geometry) {
@@ -126,7 +126,9 @@ export default function LocalClientTrackLayer() {
         } else {
             let layer = new L.Marker((new L.LatLng(newPoint.lat, newPoint.lng)), {
                 icon: MarkerOptions.options.route,
+                draggable: true
             })
+            addEvent([layer]);
             points.push(newPoint);
             layers.addLayer(layer);
         }
@@ -140,7 +142,8 @@ export default function LocalClientTrackLayer() {
     function updateLayers(points, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
-            TrackLayerProvider.parsePoints(points, layers);
+            TrackLayerProvider.parsePoints(points, layers, true);
+            addEvent(layers);
             if (deleteOld) {
                 trackLayers.clearLayers();
             }
@@ -148,6 +151,15 @@ export default function LocalClientTrackLayer() {
                 trackLayers.addLayer(layer);
             })
         }
+    }
+
+    function addEvent(layers) {
+        layers.forEach(layer => {
+            if (layer instanceof L.Marker) {
+                layer.on('dragstart', dragStartPoint);
+                layer.on('dragend', dragEndPoint);
+            }
+        })
     }
 
     function getProfile(newPoint, prevPoint, points) {
@@ -231,5 +243,78 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.layers) {
             map.removeLayer(ctx.selectedGpxFile?.layers);
         }
+    }
+
+    function dragStartPoint(e) {
+        let lat = e.target._latlng.lat;
+        let lng = e.target._latlng.lng;
+        let ind = ctx.selectedGpxFile.tracks[0].points.findIndex(point => point.lat === lat && point.lng === lng);
+        if (ind >= 0) {
+            ctx.selectedGpxFile.dragPoint = {
+                ind: ind,
+                lat: lat,
+                lng: lng
+            };
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
+    }
+
+    async function dragEndPoint(e) {
+        let lat = e.target._latlng.lat;
+        let lng = e.target._latlng.lng;
+
+        let trackPoints = ctx.selectedGpxFile.tracks[0].points;
+        let ind = ctx.selectedGpxFile.dragPoint.ind;
+        let currentPoint = trackPoints[ind];
+        currentPoint.lat = lat;
+        currentPoint.lng = lng;
+
+        let prevPoint = trackPoints[ind - 1];
+        let nextPoint = trackPoints[ind + 1];
+
+        if (prevPoint) {
+            currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, currentPoint);
+        }
+
+        if (nextPoint) {
+            nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, currentPoint, nextPoint);
+        }
+
+        let layers = ctx.selectedGpxFile.layers.getLayers();
+        let polylines = getPolylines(layers);
+
+        let firstPoint = ind === 0;
+        let lastPoint = ind === trackPoints.length - 1;
+
+        if (firstPoint) {
+            updatePolyline(nextPoint, ind, polylines);
+        } else if (lastPoint) {
+            updatePolyline(currentPoint, ind - 1, polylines);
+        } else {
+            updatePolyline(nextPoint, ind, polylines);
+            updatePolyline(currentPoint, ind - 1, polylines);
+        }
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function updatePolyline(point, index, polylines) {
+        let latlngs = [];
+        point.geometry.forEach(point => {
+            latlngs.push(new L.LatLng(point.lat, point.lng))
+        })
+        polylines[index].setLatLngs(latlngs);
+    }
+
+    function getPolylines(layers) {
+        let res = [];
+        layers.forEach(layer => {
+            if (layer instanceof L.Polyline) {
+                let points = layer.getLatLngs();
+                if (points.length > 0) {
+                    res.push(layer);
+                }
+            }
+        })
+        return res;
     }
 }
