@@ -99,7 +99,7 @@ In this section of the General settings menu, you can set parameters for the cur
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
 
 - _<Translate android="true" ids="choose_osmand_theme"/>_ - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
-- _<Translate android="true" ids="rotate_map_to_bearing"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- _<Translate android="true" ids="rotate_map_to"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
 - _<Translate android="true" ids="shared_string_2_5_d_view"/>_ - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - _<Translate android="true" ids="display_position"/>_ - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 - _<Translate android="true" ids="map_screen_orientation"/>_ - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
@@ -111,7 +111,7 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;*<Translate ios="true" ids="rotate_map_to_bearing"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;*<Translate ios="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
 - &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - &nbsp;*<Translate ios="true" ids="always_center_position_on_map"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.  
 
@@ -132,7 +132,7 @@ In this section you can set parameters of units & formats for chosen application
 
 | Parameter | Format | Note   |
 |:------------|:---------------|:---------------|
-|**<Translate android="true" ids="driving_region"/>**| <Translate android="true" ids="driving_region_automatic"/> | According to the device location |
+|**<Translate android="true" ids="driving_region"/>**| <Translate android="true" ids="shared_string_automatic"/> | According to the device location |
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
@@ -168,7 +168,7 @@ In this section you can set parameters of units & formats for chosen application
 
 | Parameter | Format | Note |
 |:------------|:---------------|:---------------|
-|**<Translate ios="true" ids="driving_region"/>**| <Translate ios="true" ids="driving_region_automatic"/> | According to the device location |
+|**<Translate ios="true" ids="driving_region"/>**| <Translate ios="true" ids="shared_string_automatic"/> | According to the device location |
 |            | <Translate ios="true" ids="driving_region_europe_asia"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>  |
 |            | <Translate ios="true" ids="driving_region_us"/>   |  <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_mi_feet"/>  |
 |            | <Translate ios="true" ids="driving_region_canada"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>   |

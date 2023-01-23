@@ -93,7 +93,7 @@ You can add one or two online tiles to the base layer maps, and all three will a
 
 ### Main  
 
-You can choose one of them in the list or add yours.
+You can choose a map style from the list or [add](#add-new-online-raster-map-source) your own.
 
 <Tabs groupId="operating-systems">
 
@@ -101,11 +101,15 @@ You can choose one of them in the list or add yours.
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
+![Show maps](@site/static/img/plugins/online-maps/map_source.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_settings_map,map_settings_type,map_settings_online"/>*  
+*<Translate ios="true" ids="menu,configure_map,map_settings_type"/>*  
+
+![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
 </TabItem>
 
@@ -119,15 +123,29 @@ You can choose one of them in the list or add yours.
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)  
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+
+1. *Switch on/off* the Overlay map.
+2. *Overlay map source* - you can choose a tile map to install or update.
+3. *Overlay transparency*.
+4. *Show transparency slider* - quick access to the setting.
+5. *Show map symbols* - such as text, road signs, and others.  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/>*
+*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+
+1. *Switch enable/disable* the Overlay map.
+2. *Transparency* of the Overlay map.
+3. *Show slider on the map* - quick access to the transparency setting.
+4. *Available layers* - you can choose a tile map to install or update.
+5. *Show map symbols* - such as text, road signs, and others.
+6. *Add online source*.
+7. *Import from documents*.  
 
 </TabItem>
 
@@ -141,15 +159,29 @@ You can choose one of them in the list or add yours.
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)  
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)   
+
+1. *Switch on/off* the Underlay map.
+2. *Underlay map source* - you can choose a tile map to install or update.
+3. *Base map transparency*.
+4. *Show polygons*.
+5. *Show transparency slider* - quick access to the setting.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/>*
+*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+
+1. *Switch enable/disable* the Underlay map.
+2. *Base map transparency*.
+3. *Show slider on the map* - quick access to the transparency setting.
+4. *Available layers* - you can choose a tile map to install or update.
+5. *Hide polygons*.
+6. *Add online source*.
+7. *Import from documents*.
 
 </TabItem>
 
@@ -163,6 +195,7 @@ Hillshade / Slope are raster offline maps that are displayed as a special map la
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md).  
+
 **Configure display options**:
 
 <Tabs groupId="operating-systems">
