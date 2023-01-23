@@ -50,7 +50,7 @@ Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by de
 
 To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>_
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
 
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tap on the map and choosing [Directions from](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
@@ -96,7 +96,7 @@ When the navigation is running, you can press the home button. You will get the 
 
 To start navigation, you can use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation item in the main menu:
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings"/>_
+*<Translate ios="true" ids="menu,routing_settings"/>*
 
 Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
