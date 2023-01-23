@@ -52,7 +52,7 @@ To start the navigation, you need to use [the navigation button](../widgets/map-
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>_
 
-Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tapping on the map and choosing ['Directions from'](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
+Next, you'll need to set the starting point and the destination. As for the starting point, you can choose your current location, [Favorite location](../map/point-layers-on-map.md#favorites), select a point on the map or use [an address](../search/index.md). You can also set a starting point by long tap on the map and choosing [Directions from](../map/map-context-menu.md#directions-to--from) in [Map Context menu](../map/map-context-menu.md). To navigate to a point, just press the navigation button in its context menu.
 
 ![Navigation screen select point Android](@site/static/img/navigation/route/navigation_points_android.png)
 
@@ -77,7 +77,7 @@ Tap to _<Translate android="true" ids="route_from"/>_ (your current position by 
   - &nbsp;"&#10005;" - allows to delete destination point from the points list.
   - &nbsp;"&#61;" - allows to change point order in the points list.
   - &nbsp;"&#43; Add" button - opens context menu "Add intermediate".
-  - &nbsp;"&#9776; Clear all" button - allows to clear all points.
+  - &nbsp;"&#9776; Clear all intermediate points" button - allows to clear all points.
 
 ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
@@ -94,7 +94,7 @@ When the navigation is running, you can press the home button. You will get the 
 
 <TabItem value="ios" label="iOS">
 
-To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
+To start navigation, you can use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation item in the main menu:
 
 _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings"/>_
 
@@ -140,17 +140,17 @@ When the navigation is running, you can press the home button. You will get the 
 </Tabs>
 
 
-### Navigation options
+### Navigation settings
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*
 
 Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
 
-![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation options Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
+![Navigation settings Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation  Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
 
 - &nbsp;_<Translate android="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 - &nbsp;_<Translate android="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose driving style for bicycle navigation type: _<Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>_.
@@ -170,9 +170,9 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,routing_settings,shared_string_options"/>*  
+*<Translate ios="true" ids="menu,routing_settings,shared_string_settings"/>*  
 
-![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_2.png) ![Navigation options iOS](@site/static/img/navigation/route/navigation_options_menu_ios_3.png)
+![Navigation aettings iOS](@site/static/img/navigation/route/settings_navigation_ios_1.png) ![Navigation settings iOS](@site/static/img/navigation/route/settings_navigation_ios_2.png)  
 
 - &nbsp;_<Translate ios="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
 
@@ -227,9 +227,9 @@ Tracks list.
 
 When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
 
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,simulate_navigation"/>  →  &#x2699_
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699_
 
 ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
 
@@ -248,9 +248,9 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/>_. Enable the feature and starting navigation.
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
 
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,simulate_navigation"/> → &#8230;|_
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 

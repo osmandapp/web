@@ -502,33 +502,17 @@ Functions for Favorite folder:
 
 ## Export / Import
 
+### Favorites share
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Tap on &#8942; button opens special functions menu for a chosen favorite folder.  
+A tap on &#8942; button opens special functions menu for a chosen favorite folder.  
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
-There you can choose **Share** and using a file manager save Favorites.gpx file to your device's memory or send it to your friends via messengers.  
-
-Another way to expot and import Favorites is to use Actions buttons at the bottom of the screen.  
-
-![Favorites actions android](@site/static/img/personal/favorites_actions_android.png)
-
-Actions:
-- &#43; - allows to import Favorites (favorite.gpx) from the device storage.
-- &#60; - allows to export (share) all your Favorites as "favorite.gpx" file.
-
-After each edit of Favorites OsmAnd makes a backup file.  They can be found using file manager programs.  
-
-*Android → data → net.osmand → files → backup*
-
-![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
-
-:::caution
-In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it using messengers or cloud services etc.  
-:::
+You can choose **Share** and using a file manager save Favorites.gpx file to your device's memory or send it to your friends via messengers.  
 
 </TabItem>
 
@@ -546,13 +530,76 @@ You can also use Export/Import favorite functions.
 ![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)  
 
 - <Translate ios="true" ids="fav_import_title"/> - allows to import Favorites as waypoints from GPX file (common GPS data format).  
-- <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.  To share the favorites.gpx file you can open file from Dropbox, Email, or any other source - Use Open In function.
+- <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.  To share the favorites.gpx file you can open file from Dropbox, Email, or any other source - Use 'Open In' function.
+
+</TabItem>
+
+</Tabs>
+
+### Backup / Cloud  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+After each edit of Favorites OsmAnd makes a backup file.  They can be found using file manager programs.  
+
+*Android → data → net.osmand → files → backup*
+
+![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
+
+:::caution
+In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it using messengers or cloud services etc.  
+:::
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 After each edit of Favorites OsmAnd makes a backup file.  They can be found using iPhone (iPad) *Files* program.  
 
 *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
-![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)
+![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
+
+</TabItem>
+
+</Tabs>
+
+### Local folder  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Another way to expot and import Favorites is to use Actions buttons at the bottom of the screen.  
+
+![Favorites actions android](@site/static/img/personal/favorites_actions_android.png)
+
+Actions:
+- &#43; - allows to import Favorites (favorite.gpx) from the device storage.
+- &#60; - allows to export (share) all your Favorites as "favorite.gpx" file.  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+</TabItem>
+
+</Tabs>
+
+
+### Favorites Backup 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 </TabItem>
 
