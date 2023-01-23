@@ -129,7 +129,8 @@ function getPolylineOpt() {
 
 const TrackLayerProvider = {
     createLayersByTrackData,
-    parsePoints
+    parsePoints,
+    getPolylineOpt
 };
 
 export default TrackLayerProvider;
