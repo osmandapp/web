@@ -38,6 +38,13 @@ export default function MapContextMenu({drawerWidth}) {
                 && ctx.selectedGpxFile.name !== prevTrack.name);
     }
 
+    function clearCreatedTrack() {
+        if (ctx.createTrack?.layers) {
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+        }
+    }
+
     useEffect(() => {
         if (!ctx.selectedGpxFile) {
             setPrevTrack(null);
@@ -50,6 +57,7 @@ export default function MapContextMenu({drawerWidth}) {
             } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
+                clearCreatedTrack();
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {

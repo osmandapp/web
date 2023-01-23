@@ -142,6 +142,7 @@ export default function LocalClientTrackLayer() {
             addEvent([layer]);
             points.push(newPoint);
             layers.addLayer(layer);
+            saveCreatedLayers(layer);
         }
     }
 
@@ -160,7 +161,13 @@ export default function LocalClientTrackLayer() {
 
     function saveChanges() {
         TracksManager.addDistance(ctx.selectedGpxFile);
+        saveCreatedLayers(ctx.selectedGpxFile.layers);
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function saveCreatedLayers(layers) {
+        ctx.createTrack.layers = _.cloneDeep(layers);
+        ctx.setCreateTrack({...ctx.createTrack});
     }
 
     function updateLayers(points, trackLayers, deleteOld) {
@@ -213,7 +220,7 @@ export default function LocalClientTrackLayer() {
     }
 
     useEffect(() => {
-        if (ctx.createTrack?.enable) {
+        if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.selectedGpxFile?.index >= 0) {
                 editCurrentTrack();
             } else {
@@ -224,8 +231,10 @@ export default function LocalClientTrackLayer() {
             }
             addClickOnMap();
         } else if (ctx.createTrack?.enable === false) {
-            map.removeLayer(ctx.selectedGpxFile.layers);
-            TracksManager.prepareTrack(ctx.selectedGpxFile);
+            if (ctx.createTrack.layers) {
+                map.removeLayer(ctx.createTrack.layers);
+                TracksManager.prepareTrack(ctx.selectedGpxFile);
+            }
             ctx.setCreateTrack(null);
             deleteClickOnMap();
         }

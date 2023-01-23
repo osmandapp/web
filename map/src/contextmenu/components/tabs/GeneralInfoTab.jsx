@@ -320,7 +320,8 @@ export default function GeneralInfoTab({width, srtm}) {
                         TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, setLoadingSrtm)
                             .then(() => {
                                 save();
-                                ctx.setCreateTrack({enable: false});
+                                ctx.createTrack.enable = false;
+                                ctx.setCreateTrack({...ctx.createTrack});
                             });
                     }}
             >Save</Button>}

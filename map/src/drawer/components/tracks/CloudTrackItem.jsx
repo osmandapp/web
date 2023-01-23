@@ -4,6 +4,7 @@ import React, {useContext, useState} from "react";
 import Utils from "../../../util/Utils";
 import TrackInfo from "./TrackInfo";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
 
 export default function CloudTrackItem({file}) {
 
