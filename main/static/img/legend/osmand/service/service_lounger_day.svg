@@ -1,0 +1,108 @@
+<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g transform="translate(135.000000, 2.000000) scale(1.875000 1.875000) "> 
+
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="29.5"
+     inkscape:cx="5.11007"
+     inkscape:cy="9.1135773"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4">
+    <inkscape:grid
+       type="xygrid"
+       id="grid825"
+       spacingx="1"
+       spacingy="1" />
+  </sodipodi:namedview>
+  <path
+     sodipodi:type="inkscape:offset"
+     inkscape:radius="1.0152938"
+     inkscape:original="M 14.666016 2.6660156 L 9.3339844 6.6660156 L 1.3339844 6.6660156 L 1.3339844 12 L 2.6660156 12 L 2.6660156 9.3339844 L 10 9.3339844 L 13.333984 6.6660156 L 13.333984 12 L 14.666016 12 L 14.666016 2.6660156 z "
+     style="opacity:0.8;vector-effect:none;fill:#ebe7e4;fill-opacity:1;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path2-3"
+     d="m 14.636719,1.6503906 a 1.0153954,1.0153954 0 0 0 -0.580078,0.203125 L 8.9960938,5.6503906 H 1.3339844 A 1.0153954,1.0153954 0 0 0 0.31835938,6.6660156 V 12 A 1.0153954,1.0153954 0 0 0 1.3339844,13.015625 H 2.6660156 A 1.0153954,1.0153954 0 0 0 3.6816406,12 V 10.349609 H 10 a 1.0153954,1.0153954 0 0 0 0.634766,-0.222656 L 12.318359,8.7792969 V 12 a 1.0153954,1.0153954 0 0 0 1.015625,1.015625 h 1.332032 A 1.0153954,1.0153954 0 0 0 15.681641,12 V 2.6660156 a 1.0153954,1.0153954 0 0 0 -1.044922,-1.015625 z"
+     transform="matrix(0.8,0,0,0.8,1.6000001,1.4665586)" />
+
+</g>
+
+
+<g transform="translate(141.000000, 8.000000) scale(0.375000 0.375000) "> 
+
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="6.9532167"
+     inkscape:cx="17.954825"
+     inkscape:cy="36.295195"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4">
+    <inkscape:grid
+       type="xygrid"
+       id="grid817"
+       spacingx="2"
+       spacingy="2" />
+  </sodipodi:namedview>
+  <path
+     d="M 4,20 H 28 L 44,8 V 36 H 40 V 20 L 30,28 H 8 v 8 H 4 Z"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccc" />
+
+</g>
+
+</svg>
