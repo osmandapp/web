@@ -16,7 +16,7 @@ How to interact with map using buttons and gestures, so you could pan, rotate an
 
 ### [Configure Map](./configure-map-menu.md)
 
-'Configure map' menu is a central place where you could configure map display for your needs, i.e. highlight Favorite points, Navigation markers or special Points of Interests on the map; display specific routes or 3rd party GPX files; overlay the map with relief information, satellite imagery or any other available raster map; display public transport information and change the map style.
+The 'Configure map' menu is an important item on OsmAnd's main menu where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
 ### [Vector maps (Map styles)](./vector-maps.md)
 

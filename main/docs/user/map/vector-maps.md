@@ -187,7 +187,12 @@ More information about [Nautical map view](../plugins/nautical-charts).
 
 ## Show borders
 
-Show borders of downloaded maps
+This feature gives you the ability to switch on or off the display of the vector layer of previously downloaded maps from the list of available ones. Its general purpose is to hide areas and borders of downloaded maps when viewing the main map, especially if you have a lot of them.  
+Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the "Show borders of downloaded maps" feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
+
+:::note
+The borders of the downloaded maps start displaying at zoom level 7 and are no longer displayed at zoom level 3.
+:::
 
 <Tabs groupId="operating-systems">
 

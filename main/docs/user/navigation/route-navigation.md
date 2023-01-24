@@ -79,16 +79,13 @@ Tap to _<Translate android="true" ids="route_from"/>_ (your current position by 
   - &nbsp;"&#43; Add" button - opens context menu "Add intermediate".
   - &nbsp;"&#9776; Clear all intermediate points" button - allows to clear all points.
 
-![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
+![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_2.png) ![Navigation interpoints Android](@site/static/img/navigation/route/navigation_interpoints_android_3.png)  
 
-
-As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode, tap on the "Dismiss" button.
-
+As soon as your points are selected, the app will create a route and will start guiding you after you tap "Start" button. To stop your navigation mode, tap on the "Dismiss" button.  
 
 ![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
 
-When the navigation is running, you can press the home button. You will get the message ['OsmAnd is running in the background'](../navigation/route-navigation.md#background-navigation). This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the [“Turn on screen”](../navigation/route-navigation.md#turn-on-screen) option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).
-
+When the navigation is running, you can press the home button. You will get the message ['OsmAnd is running in the background'](../navigation/route-navigation.md#background-navigation). This means that even if you turn the screen off or exit the active app window, you'll still get voice prompts. For Android versions other than 3.3, we have added the [“Turn on screen”](../navigation/route-navigation.md#turn-on-screen) option. This allows you to show the map on the lock screen during navigation. Now, this function does not request any permissions for the correct operation. You can use it to save phone power. The function is configured separately for each profile. To configure, you need to select a profile that supports navigation and go to Profile settings - General settings - Screen control and enable the Screen timeout option (move the slider to the ON state - should turn blue).  
 
 </TabItem>
 
@@ -196,8 +193,7 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 - &nbsp;_<Translate ios="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
 - &nbsp;_<Translate ios="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
 - &nbsp;_<Translate ios="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
-- &nbsp;_<Translate ios="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).
-
+- &nbsp;_<Translate ios="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).  
 
 </TabItem>
 
@@ -219,6 +215,22 @@ List of shown track on the map. Clicking by one of it opens [Follow track](../na
 
 Tracks list.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,osmand_settings"/>*
+
+</TabItem>
+
+</Tabs>
+
 ### Simulate navigation
 
 <Tabs groupId="operating-systems">
@@ -239,8 +251,7 @@ You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed
 
 When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
 
-For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](../navigation/route-navigation.md#how-to-use).
-
+For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](../navigation/route-navigation.md#how-to-use).  
 
 </TabItem>
 
@@ -287,6 +298,12 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 
 ### Details
+
+<!-- Make osmand.net urls as main for OsmAnd (check google documentation - Android App Links for osmand.net links. #1388) We have osmand.net/go, a link to share coordinates, it would be helpful if we will add support to links that can open osmand and launch the navigation screen .
+Support map url - https://osmand.net/map#15/52.3161/4.8658
+Support Route preview url
+https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658
+https://osmand.net/map?end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658 (start my location) -->
 
 <Tabs groupId="operating-systems">
 
