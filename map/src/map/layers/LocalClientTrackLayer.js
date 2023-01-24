@@ -61,9 +61,10 @@ export default function LocalClientTrackLayer() {
         }
         if (ctx.selectedGpxFile?.addPoint) {
             getNewRoute().then();
+        } else {
+            checkDragPoint();
         }
         checkUpdateLayers()
-        checkDragPoint();
     }, [ctx.selectedGpxFile]);
 
     function checkDragPoint() {
