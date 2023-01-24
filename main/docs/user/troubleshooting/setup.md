@@ -68,7 +68,7 @@ Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases
 **1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
 
 [Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
-*OsmAnd Menu → Settings → Backup & Restore → Create new account* 
+*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
 
 :::note
 Registration takes place on the platform on which the subscription was purchased.
@@ -78,7 +78,7 @@ After that, your email is a login for activation OsmAnd Pro for other platforms.
 
 **2.** Activation OsmAnd Pro:
 
-*OsmAnd Menu → Settings → Backup & Restore → I already have an account*
+*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
 
 **3.** Checking of activation:
 
