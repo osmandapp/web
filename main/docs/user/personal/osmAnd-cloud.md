@@ -158,7 +158,7 @@ At this screen you can set your login and backup data.
 
 _Menu → Settings → Backup & Restore_
 
-![Backup iOS](@site/static/img/personal/osmAnd-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmAnd-cloud/backup_1_ios.png)
+![Backup iOS](@site/static/img/personal/osmand-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_1_ios.png)
 
 
 ## Login
