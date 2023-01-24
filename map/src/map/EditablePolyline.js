@@ -98,8 +98,25 @@ export default class EditablePolyline {
         trackPoints.splice(ind, 0, newPoint);
 
         this.ctx.selectedGpxFile.layers.removeLayer(this.ctx.selectedGpxFile.layers._layers[this.ctx.selectedGpxFile.currentPolyline])
-        await this.createPolyline(trackPoints[ind - 1], trackPoints[ind]);
-        await this.createPolyline(trackPoints[ind], trackPoints[ind + 1]);
+
+        let prevPoint = trackPoints[ind - 1];
+        let currentPoint = trackPoints[ind];
+        let nextPoint = trackPoints[ind + 1];
+
+        let polylineTempCurrent = TrackLayerProvider.createTempPolyline({lat: prevPoint.lat, lng: prevPoint.lng}, currentPoint);
+        polylineTempCurrent.addTo(this.map);
+
+        let polylineTempNext = TrackLayerProvider.createTempPolyline({lat: currentPoint.lat, lng: currentPoint.lng}, nextPoint);
+        polylineTempNext.addTo(this.map);
+
+        await this.createPolyline(prevPoint, currentPoint)
+            .then(() => {
+                this.map.removeLayer(polylineTempCurrent);
+            });
+        await this.createPolyline(currentPoint, nextPoint)
+            .then(() => {
+                this.map.removeLayer(polylineTempNext);
+            });
 
         this.ctx.selectedGpxFile.addPoint = false;
         delete this.ctx.selectedGpxFile.dragPoint;
@@ -107,14 +124,9 @@ export default class EditablePolyline {
     }
 
     async createPolyline(startPoint, endPoint) {
-        let polylineTempCurrent;
         endPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, startPoint, endPoint);
-        polylineTempCurrent = TrackLayerProvider.createTempPolyline({lat: startPoint.lat, lng: startPoint.lng}, endPoint);
-        polylineTempCurrent.addTo(this.map);
-
         let polylineCurrent = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
         this.ctx.selectedGpxFile.layers.addLayer(polylineCurrent);
-        this.map.removeLayer(polylineTempCurrent);
     }
 
     mousemoveMap(e, marker, polyline) {
