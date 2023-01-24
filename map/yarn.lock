@@ -9370,6 +9370,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"leaflet-geometryutil@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "leaflet-geometryutil@npm:0.10.1"
+  dependencies:
+    leaflet: ^1.6.0
+  checksum: b44172a28e8ce6fc779ddcfa72dbaa7ef0f603a0d86f0f179970a08088938f27872e2d4852f34de23612f387a2e8bb64b21e51e77cb27135da9cb04b9590b4ae
+  languageName: node
+  linkType: hard
+
 "leaflet-hash@npm:^0.2.1":
   version: 0.2.1
   resolution: "leaflet-hash@npm:0.2.1"
@@ -10334,6 +10343,7 @@ __metadata:
     ionicons: ^6.0.2
     leaflet: ^1.8.0
     leaflet-contextmenu: ^1.4.0
+    leaflet-geometryutil: ^0.10.1
     leaflet-hash: ^0.2.1
     leaflet.awesome-markers: ^2.0.5
     lodash: ^4.17.21

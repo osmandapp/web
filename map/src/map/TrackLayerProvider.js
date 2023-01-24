@@ -122,15 +122,74 @@ function addStartEndMarkers(points, layers) {
 
 function getPolylineOpt() {
     return {
-        color: '#1976d2'
+        color: '#1976d2',
+        weight: 5,
     }
+}
+
+function getPolylineByPoints(point, polylines) {
+    let res;
+    let geo = point.geometry;
+    polylines.forEach(polyline => {
+        let layerPoints = polyline._latlngs;
+        if (layerPoints.length === geo.length) {
+            if (geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng &&
+                geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng) {
+                res = polyline;
+            }
+        }
+    })
+    return res;
+}
+
+function getPointByPolyline(layer, points) {
+    let res;
+    let layerPoints = layer._latlngs;
+    points.forEach(p => {
+        let geo = p.geometry;
+        if (geo.length === layerPoints.length) {
+            if (geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng &&
+                geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng) {
+                res = p;
+            }
+        }
+    })
+    return res;
+}
+
+function createTempPolyline(prev, next) {
+    let style = {
+        color: '#fbc73a',
+        dashArray: '5, 5',
+        dashOffset: '0'
+    }
+
+    return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], style);
+    ;
+}
+
+function getPolylines(layers) {
+    let res = [];
+    layers.forEach(layer => {
+        if (layer instanceof L.Polyline) {
+            let points = layer.getLatLngs();
+            if (points.length > 0) {
+                res.push(layer);
+            }
+        }
+    })
+    return res;
 }
 
 
 const TrackLayerProvider = {
     createLayersByTrackData,
     parsePoints,
-    getPolylineOpt
+    getPolylineOpt,
+    getPolylineByPoints,
+    getPointByPolyline,
+    createTempPolyline,
+    getPolylines
 };
 
 export default TrackLayerProvider;
