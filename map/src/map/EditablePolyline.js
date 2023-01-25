@@ -132,7 +132,7 @@ export default class EditablePolyline {
     mousemoveMap(e, marker, polyline) {
         let coordinates = this.map.mouseEventToLatLng(e.originalEvent);
         const closest = GeometryUtil.closest(this.map, polyline, coordinates);
-        if (closest.distance > polyline.options.weight / 2 + 1) {
+        if (closest?.distance > polyline.options.weight / 2 + 1) {
             if (marker._icon) {
                 marker._icon.style.display = 'none';
             }

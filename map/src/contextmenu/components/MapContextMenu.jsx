@@ -30,20 +30,11 @@ export default function MapContextMenu({drawerWidth}) {
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
 
-    function selectedFileWasChanged() {
-        if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {
-            return true;
+    useEffect(() => {
+        if (!showContextMenu) {
+            stopCreatedTrack();
         }
-        return (ctx.selectedGpxFile?.name && prevTrack?.name
-                && ctx.selectedGpxFile.name !== prevTrack.name);
-    }
-
-    function clearCreatedTrack() {
-        if (ctx.createTrack?.layers) {
-            ctx.createTrack.enable = false;
-            ctx.setCreateTrack({...ctx.createTrack});
-        }
-    }
+    },[showContextMenu])
 
     useEffect(() => {
         if (!ctx.selectedGpxFile) {
@@ -57,7 +48,7 @@ export default function MapContextMenu({drawerWidth}) {
             } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
-                clearCreatedTrack();
+                clearMapCreatedTrack();
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
@@ -75,6 +66,29 @@ export default function MapContextMenu({drawerWidth}) {
             }
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile]);
+
+    function selectedFileWasChanged() {
+        if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {
+            return true;
+        }
+        return (ctx.selectedGpxFile?.name && prevTrack?.name
+            && ctx.selectedGpxFile.name !== prevTrack.name);
+    }
+
+    function clearMapCreatedTrack() {
+        if (ctx.createTrack?.layers) {
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+        }
+    }
+
+    function stopCreatedTrack() {
+        if (ctx.createTrack) {
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+        }
+        ctx.setSelectedGpxFile(null);
+    }
 
     function closeContextMenu() {
         setShowContextMenu(false);
