@@ -72,7 +72,6 @@ export default function Render() {
         'Nuclear generator' : 'manmade/manmade_generator_source_nuclear',
         'Hydro generator' : 'manmade/manmade_generator_source_hydro',
         'Wind power generator' : 'manmade/manmade_generator_source_wind',
-        'Solar power generator' : 'manmade/manmade_no_icon',
         'Geothermal power generator' : 'manmade/manmade_generator_source_geothermal',
         'Oil power generator' : 'manmade/manmade_generator_source_oil',
         'Diesel power generator' : 'manmade/manmade_generator_source_diesel',
