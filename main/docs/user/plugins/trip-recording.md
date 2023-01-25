@@ -87,7 +87,7 @@ Start dialog opens, if the **<Translate android="true" ids="show_start_dialog"/>
 ![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 :::note
-- The **Line** icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the display of the track on the map.
+- The **Line** icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the display of the track on the map. When a track is saved, the selected appearance is saved with the track, and the next time it is turned on, it will start displaying the same way it did the previous time.  
 - **Logging interval** is used to set the frequency of the requests sent to the GPS sensor to detect and place a new point on the track route.
 - The **Settings** menu allows you to adjust the recording parameters. See [Trip recording](#recording-settings) settings for more information.
 :::

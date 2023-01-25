@@ -185,6 +185,36 @@ Nautical depth contour lines allow you to define areas of equal depth. They are 
 More information about [Nautical map view](../plugins/nautical-charts). 
 
 
+## Show borders
+
+This feature gives you the ability to switch on or off the display of the vector layer of previously downloaded maps from the list of available ones. Its general purpose is to hide areas and borders of downloaded maps when viewing the main map, especially if you have a lot of them.  
+Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the "Show borders of downloaded maps" feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
+
+:::note
+The borders of the downloaded maps start displaying at zoom level 7 and are no longer displayed at zoom level 3.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*   
+
+![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,configure_map,show_borders_of_downloaded_maps"/>*  
+
+![show-borders-ios](@site/static/img/map/show-borders-ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+
 ## Configure Map Style
 
 ### Map mode

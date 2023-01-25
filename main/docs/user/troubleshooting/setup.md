@@ -54,6 +54,37 @@ Please, note if you remove some items from your downloads the chance for free do
 
 If you already used 5(iOS) or 7(Android) possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
 
+
+## OsmAnd Pro
+
+OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
+
+### Cross-platform
+
+Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
+
+**_Steps_**:
+
+**1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
+
+[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
+*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
+
+:::note
+Registration takes place on the platform on which the subscription was purchased.
+:::
+
+After that, your email is a login for activation OsmAnd Pro for other platforms.
+
+**2.** Activation OsmAnd Pro:
+
+*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+
+**3.** Checking of activation:
+
+*OsmAnd Menu → Settings → Purchases → Restore purchases*
+
+
 ## Import files
 
 ### I have a GPX file, how do I get it into OsmAnd?
