@@ -229,10 +229,13 @@ export default function GeneralInfoTab({width, srtm}) {
                 <Grid item xs={2}>
                     {!ctx.createTrack?.enable && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                         <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                            onClick={() => ctx.setCreateTrack({enable: true})}
-                    >
-                        edit
-                    </Button>}
+                                onClick={() => ctx.setCreateTrack({
+                                    enable: true,
+                                    edit: true
+                                })}
+                        >
+                            edit
+                        </Button>}
                 </Grid>
             </Grid>}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}

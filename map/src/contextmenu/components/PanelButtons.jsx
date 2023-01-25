@@ -33,6 +33,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                             variant="contained"
                             type="button"
+                            disabled={ctx.createTrack !== null}
                             onClick={() => {
                                 ctx.selectedGpxFile.save = true;
                                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -43,6 +44,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER && <IconButton
                             variant="contained"
                             type="button"
+                            disabled={ctx.createTrack !== null}
                             onClick={() => setOpenDeleteDialog(true)}
                         >
                             <Delete fontSize="small"/>

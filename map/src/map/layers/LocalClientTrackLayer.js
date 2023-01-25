@@ -66,7 +66,7 @@ export default function LocalClientTrackLayer() {
 
     useEffect(() => {
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
-            if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.selectedGpxFile?.index >= 0) {
+            if (ctx.createTrack.edit) {
                 editCurrentTrack();
             } else {
                 deleteOldLayers();

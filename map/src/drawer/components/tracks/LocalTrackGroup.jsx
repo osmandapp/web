@@ -1,4 +1,4 @@
-import {Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
@@ -68,18 +68,29 @@ export default function LocalTrackGroup() {
                                        index={index}/>;
             })}
             <MenuItem disableRipple={true}>
-                <label htmlFor="contained-button-file">
-                    <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
-                                 onChange={fileSelected(ctx)}/>
-                    <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}>
-                        Upload
-                    </Button>
-                </label>
-                {ctx.localTracks.length !== 0 &&  <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <label htmlFor="contained-button-file">
+                            <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
+                                         onChange={fileSelected(ctx)}/>
+                            <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}>
+                                Upload
+                            </Button>
+                        </label>
+                    </Grid>
+                    <Grid item xs={6}>
+                        {<Button className={styles.button} variant="contained" component="span"
+                                 onClick={() => ctx.setCreateTrack({enable: true})}>
+                            Create
+                        </Button>}
+                    </Grid>
+                </Grid>
+            </MenuItem>
+            {ctx.localTracks.length !== 0 &&
+                <Button className={styles.button} color='warning' variant="contained" component="span" sx={{ml: 5}}
                         onClick={() => clearLocalTracks()}>
                     Clear
                 </Button>}
-            </MenuItem>
         </Collapse>
     </div>
 }
