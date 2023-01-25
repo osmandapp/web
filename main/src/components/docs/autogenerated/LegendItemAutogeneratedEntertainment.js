@@ -33,21 +33,6 @@ export default function Render() {
         'Feeding place' : 'entertainment/entertainment_feeding_place',
         'Gambling venue' : 'entertainment/entertainment_gambling',
         'Playground' : 'entertainment/entertainment_leisure_playground',
-        'Swing' : 'entertainment/entertainment_leisure_playground',
-        'Slide' : 'entertainment/entertainment_leisure_playground',
-        'Structure' : 'entertainment/entertainment_leisure_playground',
-        'Playhouse' : 'entertainment/entertainment_leisure_playground',
-        'Springy' : 'entertainment/entertainment_leisure_playground',
-        'Sandpit' : 'entertainment/entertainment_leisure_playground',
-        'Basket swing' : 'entertainment/entertainment_leisure_playground',
-        'Seesaw' : 'entertainment/entertainment_leisure_playground',
-        'Climbing frame' : 'entertainment/entertainment_leisure_playground',
-        'Zipwire' : 'entertainment/entertainment_leisure_playground',
-        'Balance beam' : 'entertainment/entertainment_leisure_playground',
-        'Roundabout' : 'entertainment/entertainment_leisure_playground',
-        'Hopscotch' : 'entertainment/entertainment_leisure_playground',
-        'Trampoline' : 'entertainment/entertainment_leisure_playground',
-        'Horizontal bar' : 'entertainment/entertainment_leisure_playground',
     }});
 
 }
