@@ -6,7 +6,7 @@ import {
 import {Menu} from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
-import {Outlet} from 'react-router-dom';
+import {Outlet, useNavigate} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu";
 

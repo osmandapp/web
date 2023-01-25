@@ -58,14 +58,15 @@ function moveableMarker(ctx, map, marker) {
 }
 
 
-const RouteLayer = () => {
+const RouteLayer = ({geocodingData}) => {
+
     const map = useMap();
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
     const url = useLocation();
 
-    const [geocodingData, setGeocodingData] = useState(null);
     const [searchParams, setSearchParams] = useState({});
+
     useEffect(() => {
         let obj = {};
         if (ctx.startPoint) {
@@ -154,58 +155,6 @@ const RouteLayer = () => {
         }
     }, [ctx.setInterPoints, ctx.interPoints]);
 
-    const whereAmI = async (e) => {
-        setGeocodingData(null);
-        const params = `lat=${e.latlng.lat.toFixed(6)}&lon=${e.latlng.lng.toFixed(6)}`;
-        const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/geocoding?${params}`, {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'}
-        });
-        if (response.ok) {
-            let data = await response.json();
-            let props = {};
-            if (data.features.length > 0) {
-                props = data.features[0]?.properties;
-            }
-            setGeocodingData({geojson: data, id: new Date().getTime(), props: props});
-        }
-    };
-
-    function addFavorite(e) {
-        ctx.addFavorite.location = e.latlng;
-        ctx.setAddFavorite({...ctx.addFavorite});
-    }
-
-    useEffect(() => {
-        if (map) {
-            // const map = mapRef.current;
-            map.contextmenu.removeAllItems();
-            map.contextmenu.addItem({
-                text: 'Set as start',
-                callback: (e) => ctx.setStartPoint(e.latlng)
-            });
-            map.contextmenu.addItem({
-                text: 'Set as end',
-                callback: (e) => ctx.setEndPoint(e.latlng)
-            });
-            map.contextmenu.addItem({
-                text: 'Add pin',
-                callback: (e) => ctx.setPinPoint(e.latlng)
-            });
-            map.contextmenu.addItem({
-                text: 'Where am I',
-                callback: whereAmI
-            });
-            map.contextmenu.addItem({
-                text: 'Add favorite',
-                callback: (e) => addFavorite(e)
-            });
-            map.contextmenu.addItem({
-                text: 'Create track',
-                callback: () => ctx.setCreateTrack({enable: true})
-            });
-        }
-    }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData]);
     const geojsonMarkerOptions = {
         radius: 8,
         fillColor: "#ff7800",

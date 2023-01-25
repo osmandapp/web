@@ -7,18 +7,24 @@ import LocalTrackItem from "./LocalTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
+import {useNavigate} from "react-router-dom";
 
 export default function LocalTrackGroup() {
 
     const styles = drawerStyles();
-
     const StyledInput = styled('input')({
         display: 'none',
     });
 
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
+
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
+
+    const openLogin = () => {
+        navigate('/map/loginForm');
+    }
 
     function clearLocalTracks() {
         ctx.setLocalTracks([]);
@@ -80,7 +86,9 @@ export default function LocalTrackGroup() {
                     </Grid>
                     <Grid item xs={6}>
                         {<Button className={styles.button} variant="contained" component="span"
-                                 onClick={() => ctx.setCreateTrack({enable: true})}>
+                                 onClick={() => {
+                                     ctx.loginUser ? ctx.setCreateTrack({enable: true}) : openLogin()
+                                 }}>
                             Create
                         </Button>}
                     </Grid>

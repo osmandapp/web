@@ -15,6 +15,7 @@ import SearchResultMenu from "./search/SearchResultMenu";
 
 
 export default function OsmAndDrawer({ mobile, toggleDrawer }) {
+
     const ctx = useContext(AppContext);
     
     // ctx.setAppFile(ctx.gpxFiles.localInfoSummary);
