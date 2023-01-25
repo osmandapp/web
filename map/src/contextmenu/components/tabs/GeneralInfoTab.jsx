@@ -353,6 +353,6 @@ export default function GeneralInfoTab({width, srtm}) {
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm)}
             >Get SRTM</Button>}
-        {loadingSrtm && <CircularProgress sx={{mb: -1, ml: 1}} size={20}/>}
+        {loadingSrtm || ctx.gpxLoading && <CircularProgress sx={{mb: -1, ml: 1}} size={20}/>}
     </Box>);
 };

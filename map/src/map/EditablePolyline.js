@@ -36,7 +36,9 @@ export default class EditablePolyline {
             });
 
             marker.on('dragend', (e) => {
-                this.dragEndNewPoint(e)
+                this.dragEndNewPoint(e, this.ctx.setGpxLoading).then(() => {
+                    this.ctx.setGpxLoading(false);
+                })
             });
 
             this.map.on('mousemove', (e) => {
@@ -79,7 +81,8 @@ export default class EditablePolyline {
         this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
     }
 
-    async dragEndNewPoint(e) {
+    async dragEndNewPoint(e,  setLoading) {
+        setLoading(true);
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
         let newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null).create()

@@ -154,7 +154,9 @@ export default function LocalClientTrackLayer() {
             let polylineTemp = TrackLayerProvider.createTempPolyline(prevPoint, newPoint);
             polylineTemp.addTo(map);
             deleteClickOnMap();
+            ctx.setGpxLoading(true);
             await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, newPoint).then(res => {
+                ctx.setGpxLoading(false);
                 newPoint.geometry = res;
                 map.removeLayer(polylineTemp);
                 if (!newPoint.geometry) {

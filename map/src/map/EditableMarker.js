@@ -26,7 +26,9 @@ export default class EditableMarker {
                 this.dragStartPoint(e);
             });
             marker.on('dragend', (e) => {
-                this.dragEndPoint(e)
+                this.dragEndPoint(e, this.ctx.setGpxLoading).then(() => {
+                    this.ctx.setGpxLoading(false)
+                })
             });
         }
         return marker;
@@ -47,7 +49,8 @@ export default class EditableMarker {
         }
     }
 
-    async dragEndPoint(e) {
+    async dragEndPoint(e, setLoading) {
+        setLoading(true);
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
 
