@@ -18,7 +18,7 @@ export default function Render() {
         'Payment terminal' : 'finance/finance_payment_terminal',
         'Payment centre' : 'finance/finance_payment_centre',
         'Money lender' : 'finance/finance_money_lender',
-        'Money transfer' : 'finance/finance_shop_yes',
+        'Money transfer' : 'finance/finance_money_transfer',
         'Bureau de change' : 'finance/finance_amenity_bureau_de_change',
         'Mobile money agent' : 'finance/finance_mobile_money_agent',
         'Ticket validator' : 'finance/finance_ticket_validator',
