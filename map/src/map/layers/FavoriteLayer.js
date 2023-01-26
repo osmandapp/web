@@ -27,7 +27,7 @@ const FavoriteLayer = () => {
                     if (file.addToMap && file.markers) {
                         file.markers.addTo(map).on('click', onClick);
                     }
-                    if (file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
+                    if (ctx.selectedGpxFile && file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
                         map.fitBounds(file.markers.getBounds());
                     }
                 }

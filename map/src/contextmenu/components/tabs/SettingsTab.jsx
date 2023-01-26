@@ -38,7 +38,6 @@ const SettingsTab = ({width}) => {
                     })}
                 >
                     {Object.entries(ctx.routeMode.modes).map(([key, vl]) =>
-
                         <MenuItem className={classes.grid} key={key} value={key}>
                             <Grid container spacing={2}>
                                 <ListItemIcon>

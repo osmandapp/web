@@ -55,6 +55,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     async function save() {
+        let type = ctx.OBJECT_TYPE_FAVORITE;
+        ctx.setCurrentObjectType(type);
         let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
         let favorite;
         if (selectedGroup) {

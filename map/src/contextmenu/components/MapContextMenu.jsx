@@ -61,7 +61,7 @@ export default function MapContextMenu({drawerWidth}) {
                 if (obj) {
                     setShowContextMenu(true);
                     setTabsObj(obj);
-                    //setValue(obj.defaultTab);
+                    setValue(obj.defaultTab);
                 }
             }
         }
@@ -86,8 +86,9 @@ export default function MapContextMenu({drawerWidth}) {
         if (ctx.createTrack) {
             ctx.createTrack.enable = false;
             ctx.setCreateTrack({...ctx.createTrack});
+            ctx.setSelectedGpxFile(null);
+            ctx.setCurrentObjectType(null)
         }
-        ctx.setSelectedGpxFile(null);
     }
 
     function closeContextMenu() {

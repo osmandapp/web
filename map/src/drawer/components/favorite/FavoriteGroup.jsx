@@ -91,6 +91,9 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 let newSelectedGpxFile = {};
                 newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
                 newSelectedGpxFile.nameGroup = group.name;
+                if (!ctx.selectedGpxFile) {
+                    ctx.selectedGpxFile = {};
+                }
                 if (ctx.selectedGpxFile.markerCurrent) {
                     newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
                 }

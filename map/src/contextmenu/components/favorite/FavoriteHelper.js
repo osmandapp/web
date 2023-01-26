@@ -3,7 +3,7 @@ import L from "leaflet";
 function updateSelectedFile(ctx, result, favoriteName, groupName, deleted) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
     let selectedGroup = ctx.favorites.groups.find(g => g.name === groupName);
-    newSelectedFile.file = selectedGroup.name !== ctx.selectedGpxFile.nameGroup ? selectedGroup.file : ctx.selectedGpxFile.file;
+    newSelectedFile.file = selectedGroup.name !== ctx.selectedGpxFile?.nameGroup ? selectedGroup.file : ctx.selectedGpxFile?.file;
     newSelectedFile.name = favoriteName;
     newSelectedFile.nameGroup = selectedGroup.name;
     newSelectedFile.editFavorite = true;

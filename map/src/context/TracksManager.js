@@ -29,6 +29,8 @@ function saveTracks(tracks) {
             })
         })
         localStorage.setItem('localTracks', JSON.stringify(res));
+    } else {
+        localStorage.clear();
     }
 }
 
@@ -269,7 +271,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
-                routeMode: start.profile,
+                routeMode: start.profile ? start.profile : ctx.routeMode.mode,
                 hasSpeed: start?.ext?.speed !== 0 || end?.ext?.speed !== 0,
                 hasRouting: start.segment !== null || end.segment !== null
             },
