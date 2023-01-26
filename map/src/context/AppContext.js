@@ -202,8 +202,13 @@ async function loadRouteModes(routeMode, setRouteMode) {
     });
     if (response.ok) {
         let data = await response.json();
+        data = filterMode(data);
         setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params, colors: getColors()});
     }
+}
+
+function filterMode(data) {
+    return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
 
 function getColors() {
