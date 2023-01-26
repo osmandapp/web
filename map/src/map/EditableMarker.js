@@ -108,6 +108,9 @@ export default class EditableMarker {
 
         if (polyline) {
             polyline.setLatLngs(latlngs);
+            polyline.setStyle({
+                color: this.ctx.routeMode.colors[this.ctx.routeMode.mode]
+            });
         }
     }
 }

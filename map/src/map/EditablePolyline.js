@@ -19,6 +19,9 @@ export default class EditablePolyline {
         let polyline = this.layer;
         if (!polyline && this.points) {
             polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt());
+            polyline.setStyle({
+                color: this.ctx.routeMode.colors[this.ctx.routeMode.mode]
+            });
         }
         if (polyline) {
             let marker = new L.Marker((new L.LatLng(null, null)), {
@@ -128,8 +131,11 @@ export default class EditablePolyline {
 
     async createPolyline(startPoint, endPoint) {
         endPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, startPoint, endPoint);
-        let polylineCurrent = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
-        this.ctx.selectedGpxFile.layers.addLayer(polylineCurrent);
+        let polyline = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
+        polyline.setStyle({
+            color: this.ctx.routeMode.colors[this.ctx.routeMode.mode]
+        });
+        this.ctx.selectedGpxFile.layers.addLayer(polyline);
     }
 
     mousemoveMap(e, marker, polyline) {

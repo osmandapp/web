@@ -165,6 +165,9 @@ export default function LocalClientTrackLayer() {
                     points.push(prevPoint);
                 } else {
                     let polyline = new EditablePolyline(map, ctx, newPoint.geometry, null).create();
+                    polyline.setStyle({
+                        color: ctx.routeMode.colors[ctx.routeMode.mode]
+                    });
                     layers.addLayer(polyline);
                 }
                 points.push(newPoint);
@@ -212,6 +215,9 @@ export default function LocalClientTrackLayer() {
                 res.push(editableMarker);
             } else if (layer instanceof L.Polyline) {
                 let editablePolyline = new EditablePolyline(map, ctx, null, layer).create();
+                editablePolyline.setStyle({
+                    color: ctx.routeMode.colors[ctx.routeMode.mode]
+                });
                 res.push(editablePolyline);
             }
         })

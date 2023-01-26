@@ -36,7 +36,7 @@ const options = {
     })
 };
 
-function getWptIcon(point, color, background, icon) {
+function getWptIcon(point, color, background, icon, folder) {
     let colorBackground = color && color !== 'null' ? color :
         (point.extensions?.color && point.extensions.color !== 'null') ? point.extensions.color : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
@@ -44,13 +44,14 @@ function getWptIcon(point, color, background, icon) {
     let svg = getSvgBackground(colorBackground, shapeBackground);
     let iconWpt = icon && icon !== 'null' ? icon :
         (point.extensions?.icon && point.extensions.icon !== 'null') ? point.extensions.icon : DEFAULT_WPT_ICON;
-
+    let iconsFolder = folder ? folder : POI_ICONS_FOLDER;
+    let part = point ? 'mx_' : '';
     if (iconWpt) {
         return L.divIcon({
             html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${iconWpt}.svg">
+                                  <img class="icon" src="/map/images/${iconsFolder}/${part}${iconWpt}.svg">
                               </div>
                               `
         })

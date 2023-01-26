@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {
-    Air, Cloud, Compress, Shower, Thermostat
-} from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
@@ -204,8 +202,21 @@ async function loadRouteModes(routeMode, setRouteMode) {
     });
     if (response.ok) {
         let data = await response.json();
-        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
+        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params, colors: getColors()});
     }
+}
+
+function getColors() {
+    return {
+        'car': '#1976d2',
+        'truck': '#2F4F4F',
+        'motorcycle': '#f8931d',
+        'bicycle': '#9053bd',
+        'boat': '#08b5ff',
+        'horsebackriding': '#7f3431',
+        'pedestrian': '#d90139',
+        'ski': '#ffacdf'
+    };
 }
 
 
@@ -372,7 +383,7 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
+                resultText = `Route ${Math.round(data.props.overall.distance / 100) / 10.0} km for ${routeMode.mode} is found.`
             }
         }
         setHeaderText(prevState => ({
