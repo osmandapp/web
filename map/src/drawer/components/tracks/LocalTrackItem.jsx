@@ -20,7 +20,7 @@ export default function LocalTrackItem({track, index}) {
 
     function cleanSelectedTrackIfNeed(currentTrack) {
         if (ctx.selectedGpxFile && ctx.selectedGpxFile.name === currentTrack.name) {
-            ctx.setSelectedGpxFile(null);
+            ctx.setSelectedGpxFile({});
         }
     }
 

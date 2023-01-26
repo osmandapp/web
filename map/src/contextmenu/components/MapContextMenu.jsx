@@ -37,7 +37,7 @@ export default function MapContextMenu({drawerWidth}) {
     },[showContextMenu])
 
     useEffect(() => {
-        if (!ctx.selectedGpxFile) {
+        if (!ctx.selectedGpxFile || ctx.selectedGpxFile === {}) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
@@ -86,7 +86,7 @@ export default function MapContextMenu({drawerWidth}) {
         if (ctx.createTrack) {
             ctx.createTrack.enable = false;
             ctx.setCreateTrack({...ctx.createTrack});
-            ctx.setSelectedGpxFile(null);
+            ctx.setSelectedGpxFile({});
             ctx.setCurrentObjectType(null)
         }
     }

@@ -20,7 +20,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
     };
 
     function cleanContextMenu() {
-        ctx.setSelectedGpxFile(null);
+        ctx.setSelectedGpxFile({});
         setDialogOpen(false);
         setShowContextMenu(false);
     }
