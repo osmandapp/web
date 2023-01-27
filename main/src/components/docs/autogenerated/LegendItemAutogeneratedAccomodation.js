@@ -20,14 +20,14 @@ export default function Render() {
         'Guest house' : 'accomodation/accomodation_tourism_guest_house',
         'Caravan site' : 'accomodation/accomodation_tourism_caravan_site',
         'Alpine hut' : 'accomodation/accomodation_tourism_alpine_hut',
-        'Wilderness hut' : 'accomodation/accomodation_wilderness_hut',
-        'Cabin' : 'accomodation/accomodation_cabin',
+        'Wilderness hut' : 'accomodation/accomodation_tourism_wilderness_hut',
+        'Cabin' : 'accomodation/accomodation_tourism_cabin',
         'Chalet' : 'accomodation/accomodation_tourism_chalet',
         'Camp site' : 'accomodation/accomodation_tourism_camp_site',
-        'Camp pitch' : 'accomodation/accomodation_camp_pitch',
-        'Lean-to' : 'accomodation/accomodation_lean_to',
+        'Camp pitch' : 'accomodation/accomodation_tourism_camp_pitch',
+        'Lean-to' : 'accomodation/accomodation_tourism_lean_to',
         'Shelter' : 'accomodation/accomodation_amenity_shelter',
-        'Refugee site' : 'accomodation/accomodation_refugee_site',
+        'Refugee site' : 'accomodation/accomodation_amenity_refugee_site',
     }});
 
 }
