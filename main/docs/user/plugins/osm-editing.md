@@ -26,7 +26,7 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
-3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](https://docs.osmand.net/docs/user/map/configure-map-menu/).
+3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
 
 
 ## Settings
@@ -95,7 +95,7 @@ You can enable the display of the OSM modifications (edits/notes/fixme tags/note
 </Tabs>
 
 :::info NOTE
-If you have an [OsmAnd Pro](../user/purchases/ios#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
 :::  
 
 ## Create / Modify POI  
@@ -151,7 +151,7 @@ The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
 
 <TabItem value="android" label="Android">
 
-To edit OSM notes (you can comment or close notes), enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
+To edit OSM notes (you can comment or close them), enable display of OSM notes on the map in the [Configure map menu](../map/configure-map-menu.md):  
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)
