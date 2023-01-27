@@ -162,7 +162,8 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-The Android version of OsmAnd can use the standard first version of rendering or the second version of OpenGL. **Version 1** is recommended for low-performance or outdated phones. **Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
+The Android version of OsmAnd can use the standard first version of rendering or the second version of OpenGL. **Version 1** is recommended for low-performance or outdated phones.  
+**Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
 The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*

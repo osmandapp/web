@@ -284,11 +284,15 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
+
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,routing_settings"/>*
 
 ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios.png)
 
@@ -297,13 +301,36 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 </Tabs>
 
 
-### Details
+### Route Details
+
+In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
+
+There are three ways to access the Route Details menu:  
+1. Go to the main *Menu → Navigation*, set the route, and press the Details button.
+2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
+3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.
+
+Section 1
+1. Main information: Total distance, Estimated travel time/Estimated time of arrival, Graph with details(link).
+2. Analyse on map (link).
+3. The features with map legend:
+   - Road type
+   - Surface
+   - Steepness
+   - Surface firmness
+   
+4. Turn-by-turn section.
+
+Slope, Road type, Surface, Smoothness, Winter and ice roads, Difficulty of horse trails, Surface firmness
+Solid, Speed and Altitude
 
 <!-- Make osmand.net urls as main for OsmAnd (check google documentation - Android App Links for osmand.net links. #1388) We have osmand.net/go, a link to share coordinates, it would be helpful if we will add support to links that can open osmand and launch the navigation screen .
 Support map url - https://osmand.net/map#15/52.3161/4.8658
 Support Route preview url
 https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658
 https://osmand.net/map?end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658 (start my location) -->
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_android.png)
 
 <Tabs groupId="operating-systems">
 
@@ -426,15 +453,13 @@ Select whether turn arrows are indicated on the route line or not.
 
 _<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>_
 
-
 &nbsp;  
 ![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
 
-  
-
-
 <!--Customize route line menu items-->
 &nbsp;  
+
+
 #### Colour
 Select a route line's colour by types.  
 
