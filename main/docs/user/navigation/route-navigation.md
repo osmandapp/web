@@ -314,6 +314,7 @@ https://osmand.net/map?end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_1_android.png)
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_details_2_android.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">

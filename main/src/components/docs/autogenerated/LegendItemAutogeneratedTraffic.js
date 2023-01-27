@@ -58,7 +58,6 @@ export default function Render() {
         'Bicycle parking (streetpod)' : 'traffic/traffic_bicycle_parking_streetpod',
         'Taxi parking' : 'traffic/traffic_amenity_taxi',
         'Motorcycle parking' : 'traffic/traffic_amenity_motorcycle_parking',
-        'Large aerodrome' : 'traffic/traffic_aeroway_aerodrome_small',
         'Aerodrome' : 'traffic/traffic_aeroway_aerodrome_small',
         'Gate number in the airport' : 'traffic/traffic_aeroway_gate',
         'Helipad' : 'traffic/traffic_aeroway_helipad',

@@ -35,7 +35,7 @@ export default function Render() {
         'Palm' : 'natural/natural_natural_tree_palm',
         'Cypress' : 'natural/natural_natural_tree_cypress',
         'Anthill' : 'natural/natural_anthill',
-        'Bird's nest' : 'natural/natural_birds_nest',
+        'Birds nest' : 'natural/natural_birds_nest',
         'Termite mound' : 'natural/natural_termite_mound',
     }});
 
