@@ -14,14 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-This plugin helps you participate in the OpenStreetMap project to create a detailed free geographical map of the world.
-
+This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.  
 
 ## Overview
- 
-[OpenStreetMap](https://www.openstreetmap.org/about) is a global community that aims to create a comprehensive map of the world and provide up-to-date open-source data to every user, and the **OpenStreetMap (OSM) editing plugin** allows you to contribute to the community.  
-With **OsmAnd** and the **OSM editing plugin**, you can easily contribute your information to OpenStreetMap.org, for example, creating or modifying POIs, adding or commenting notes, and uploading recorded GPX tracks.  
 
+[OpenStreetMap](https://www.openstreetmap.org/about) is a global community that aims to draw a comprehensive map of the world and provide up-to-date open-source data to every user. OsmAnd **OpenStreetMap (OSM) editing plugin** allows you easily contribute to OpenStreetMap: you can create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), upload recorded GPX [tracks](#upload-gps-track).  
 
 ## Setup
 
@@ -33,24 +30,6 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 
 
 ## Settings
-
-**Login settings**
-
-- Login or Sign Up [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
-- Login in OsmAnd (OAuth / password) - preferred OAuth.
-
-
-**Plugin settings**
-
-- **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
-- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
-- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
-- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
-
-:::info info
-The plugin settings are global and apply to all profiles.
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -73,41 +52,84 @@ The plugin settings are global and apply to all profiles.
 
 </Tabs>  
 
+**Login settings**
 
-## Create / Modify POI 
+- Login or Sign Up to [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
+- Login in OsmAnd (OAuth / password) - preferred OAuth.
 
-The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can add many different locations to the map, such as a new store, your favorite landmark, or your newly opened business, so people can find them.  
 
-1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
-4. Depending on the [Offline editing](#plugin-settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+**Plugin settings**
 
-**Offline modifications**  
-You can view, upload or delete POIs in *My Places → OSM Edits*. The offline modification layer can also be switched on/off. And you can export OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM). 
+- **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
+- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
+- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
+- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
+
+:::info info
+The plugin settings are global and apply to all profiles.
+:::
+
+### OSM Editing Layer  
+
+You can enable the display of the OSM modifications (edits/notes/fixme tags/note tags) as a separate layer in the [Configure map](../map/configure-map-menu.md) section of the main menu:  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-To view an OSM editing layer on a map, enable its display on the map in the [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-To view an OSM editing layer on a map, enable its display on the map in the [Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):  
 *<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
+
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::info NOTE
-You will be able to see the new POI on the OsmAnd map for one hour after adding it to your OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-:::   
+If you have an [OsmAnd Pro](../user/purchases/ios#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
+:::  
 
+## Create / Modify POI  
+
+The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can put on a map a new store, your favorite landmark, a bench, or a shelter, so people can find them.  
+
+1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
+2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
+4. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+
+#### Add tags
+
+You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the POI. Аfter entering a few characters into the search bar, the program will prompt possible tags.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Add POI tag Android 1](@site/static/img/plugins/osm-editing/add_poi_tag_andr_1.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+#### Offline modifications  
+
+You can view, upload to OSM or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
 ## Create / Modify OSM Note
 
@@ -129,7 +151,7 @@ The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
 
 <TabItem value="android" label="Android">
 
-To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
+To edit OSM notes (you can comment or close notes), enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)

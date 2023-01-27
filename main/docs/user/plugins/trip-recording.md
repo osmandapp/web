@@ -75,6 +75,9 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 
 </Tabs>
 
+:::tip Note
+For this options to work properly, we recommend that you allow OsmAnd to get the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.  
+:::
 
 ### Start a Dialog
 

@@ -60,6 +60,27 @@ Our goal is to create a fully functional map-oriented application that could be 
 
 ## Actions Guide
 
+### Permission to access the location  
+
+We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use or share your private information, so access to the precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Precise location android](@site/static/img/steps/first_start_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Precise location iOS](@site/static/img/steps/first_start_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
 ### How to download maps
 
 OsmAnd is an offline map application, so after the '<Translate android="true" ids="get_started"/>' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
@@ -113,9 +134,9 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins
 
-[Plugins](../plugins/index.md) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
+[Plugins](../plugins/index.md) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
-You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md). 
+You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md).  
 
 <Tabs groupId="operating-systems">
 
