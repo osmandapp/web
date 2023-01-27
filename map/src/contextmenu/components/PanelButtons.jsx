@@ -7,6 +7,7 @@ import SaveTrackDialog from "./SaveTrackDialog";
 import DeleteTrackDialog from "./DeleteTrackDialog";
 import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
 import _ from "lodash";
+import Utils, {getProfileIcon} from "../../util/Utils";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -24,13 +25,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
-    function getProfileIcon() {
-        let profile = _.lowerCase(ctx.routeMode.mode);
-        return <img color={ctx.routeMode.colors[ctx.routeMode.colors[profile]]}
-                    src={"/map/images/profile_icons/" + profile + ".svg"}
-                    height={25} width={25}/>
-    }
-
     return (ctx.selectedGpxFile &&
         <div>{showContextMenu &&
             <div style={{left: drawerWidth + 10}} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
@@ -44,7 +38,8 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
                                     variant="contained"
                                     type="button"
                                 >
-                                    {getProfileIcon()}
+                                    {Utils.getProfileIcon(_.lowerCase(ctx.creatingRouteMode.mode),
+                                        ctx.creatingRouteMode.colors[_.lowerCase(ctx.creatingRouteMode.mode)])}
                                 </IconButton>}
                             {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                                 variant="contained"

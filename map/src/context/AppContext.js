@@ -3,6 +3,7 @@ import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
+import _ from "lodash";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -195,16 +196,33 @@ function formatRouteMode(routeMode) {
     return routeModeStr;
 }
 
-async function loadRouteModes(routeMode, setRouteMode) {
+async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         let data = await response.json();
-        data = filterMode(data);
-        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params, colors: getColors()});
+        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
+
+        let creatingData = _.cloneDeep(data);
+        creatingData = filterMode(creatingData);
+        creatingData = addModes(creatingData);
+        setCreatingRouteMode(
+            {
+                mode: creatingRouteMode.mode,
+                modes: creatingData,
+                opts: creatingData[creatingRouteMode.mode]?.params,
+                colors: getColors()
+            }
+        )
     }
+}
+
+function addModes(data) {
+    data['line'] = {name: 'Line', params: {}};
+    data['gap'] = {name: 'Gap', params: {}};
+    return data;
 }
 
 function filterMode(data) {
@@ -220,7 +238,9 @@ function getColors() {
         'boat': '#08b5ff',
         'horsebackriding': '#7f3431',
         'pedestrian': '#d90139',
-        'ski': '#ffacdf'
+        'ski': '#ffacdf',
+        'line': '#5F9EA0',
+        'gap': '#ff8800'
     };
 }
 
@@ -336,6 +356,10 @@ export const AppContextProvider = (props) => {
         mode: modeParam, opts: {},
         modes: {'car': {name: 'Car', params: {}}}
     });
+    const [creatingRouteMode, setCreatingRouteMode] = useState({
+        mode: modeParam, opts: {},
+        modes: {'line': {name: 'Line', params: {}}}
+    });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
@@ -360,7 +384,7 @@ export const AppContextProvider = (props) => {
     const [createTrack, setCreateTrack] = useState(null);
 
     useEffect(() => {
-        loadRouteModes(routeMode, setRouteMode);
+        loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
     }, []);
 
     useEffect(() => {
@@ -440,7 +464,8 @@ export const AppContextProvider = (props) => {
         OBJECT_TYPE_CLOUD_TRACK,
         OBJECT_TYPE_LOCAL_CLIENT_TRACK,
         OBJECT_TYPE_WEATHER,
-        createTrack, setCreateTrack
+        createTrack, setCreateTrack,
+        creatingRouteMode, setCreatingRouteMode
 
     }}>
         {props.children}

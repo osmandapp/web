@@ -8,6 +8,7 @@ import {
 import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
+import Utils from "../../../util/Utils";
 
 const useStyles = makeStyles({
         grid: {
@@ -30,19 +31,18 @@ const SettingsTab = ({width}) => {
                 <Select
                     labelid="route-mode-label"
                     label="Route profile"
-                    value={ctx.routeMode.mode}
-                    onChange={(e) => ctx.setRouteMode({
-                        mode: e.target.value, modes: ctx.routeMode.modes,
-                        opts: ctx.routeMode.modes[e.target.value]?.params,
-                        colors: ctx.routeMode.colors
+                    value={ctx.creatingRouteMode.mode}
+                    onChange={(e) => ctx.setCreatingRouteMode({
+                        mode: e.target.value, modes: ctx.creatingRouteMode.modes,
+                        opts: ctx.creatingRouteMode.modes[e.target.value]?.params,
+                        colors: ctx.creatingRouteMode.colors
                     })}
                 >
-                    {Object.entries(ctx.routeMode.modes).map(([key, vl]) =>
+                    {Object.entries(ctx.creatingRouteMode.modes).map(([key, vl]) =>
                         <MenuItem className={classes.grid} key={key} value={key}>
                             <Grid container spacing={2}>
                                 <ListItemIcon>
-                                    <img color={ctx.routeMode.colors[key]}
-                                         src={"/map/images/profile_icons/" + key + ".svg"} height={25} width={25}/>
+                                    {Utils.getProfileIcon(key, ctx.creatingRouteMode.colors[key])}
                                 </ListItemIcon>
                                 <Typography>{vl.name}
                                 </Typography>

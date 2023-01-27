@@ -1,3 +1,7 @@
+import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import {Commit} from "@mui/icons-material";
+import React from "react";
+
 async function fetchUtil(url, options) {
 
     const fetchData = async () => {
@@ -104,13 +108,23 @@ function hexToArgb(hex) {
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
 
+function getProfileIcon(profile, color) {
+    if (profile === 'line') {
+        return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
+    } else {
+        return <img color={color}
+                    src={"/map/images/profile_icons/" + profile + ".svg"} height={25} width={25} alt={profile}/>
+    }
+}
+
 const Utils = {
     fetchUtil,
     fetchUtilLoad,
     getFileData,
     getDistance,
     getPointsDist,
-    hexToArgb
+    hexToArgb,
+    getProfileIcon
 };
 
 export default Utils;
