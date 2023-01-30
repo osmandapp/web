@@ -1,14 +1,14 @@
 <svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(135.000000, 2.000000) scale(1.666667 1.666667) "> 
+<g transform="translate(135.000000, 2.000000) scale(1.500000 1.500000) "> 
 
 <g clip-path="url(#clip0)">
-<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M13 1H5C2.79086 1 1 2.79086 1 5V13C1 15.2091 2.79086 17 5 17H13C15.2091 17 17 15.2091 17 13V5C17 2.79086 15.2091 1 13 1ZM5 0C2.23858 0 0 2.23858 0 5V13C0 15.7614 2.23858 18 5 18H13C15.7614 18 18 15.7614 18 13V5C18 2.23858 15.7614 0 13 0H5Z" fill="#5FB7ED"/>
-<rect opacity="0.85" x="1" y="1" width="16" height="16" rx="4" fill="#0086C7"/>
+<path opacity="0.949" d="M9.9994 1C14.9626 1 19 5.00181 19 10C19 14.9655 14.9626 19 9.9994 19C5.0374 19 1 14.9655 1 10C1 5.00181 5.0374 1 9.9994 1Z" fill="#45ABE9"/>
+<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#1578B3"/>
 </g>
 <defs>
 <clipPath id="clip0">
-<path d="M0 0H18V18H0V0Z" fill="white"/>
+<path d="M0 0H20V20H0V0Z" fill="white"/>
 </clipPath>
 </defs>
 
