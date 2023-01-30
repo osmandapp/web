@@ -91,13 +91,19 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
 }
 
 function prepareTrackData(data) {
-    return data && JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-        if (value === "***NaN***") {
-            return key === "ele" ? 99999 : NaN;
+    if (data) {
+        if (typeof data === "string") {
+            return JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                if (value === "***NaN***") {
+                    return key === "ele" ? 99999 : NaN;
+                } else {
+                    return value;
+                }
+            });
         } else {
-            return value;
+            return data;
         }
-    });
+    }
 }
 
 function orderList(items, defaultItem) {

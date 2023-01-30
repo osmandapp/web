@@ -1,5 +1,7 @@
 import L from 'leaflet';
 import MarkerOptions from "./markers/MarkerOptions";
+import _ from "lodash";
+import TracksManager from "../context/TracksManager";
 
 function createLayersByTrackData(data) {
     let layers = [];
@@ -22,10 +24,10 @@ function parsePoints(points, layers, draggable) {
             coordsAll = drawRoutePoints(points, point.geometry, coordsAll, layers);
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
-            if (point.profile === 'gap' && coordsTrk.length > 0) {
+            if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
                 let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
                 layers.push(polyline);
-                coordsAll = coordsAll.concat(Object.assign([], coordsTrk));
+                coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
                 coordsTrk = [];
             }
         }
@@ -59,7 +61,7 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
 function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
     let coords = [];
     pointsTrk.forEach(p => {
-        if (p.profile === 'gap' && coords.length > 0) {
+        if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             layers.push(new L.Polyline(coords, getPolylineOpt()));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
@@ -165,7 +167,6 @@ function createTempPolyline(prev, next) {
     }
 
     return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], style);
-    ;
 }
 
 function getPolylines(layers) {

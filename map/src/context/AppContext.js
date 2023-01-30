@@ -357,7 +357,7 @@ export const AppContextProvider = (props) => {
         modes: {'car': {name: 'Car', params: {}}}
     });
     const [creatingRouteMode, setCreatingRouteMode] = useState({
-        mode: modeParam, opts: {},
+        mode: 'line', opts: {},
         modes: {'line': {name: 'Line', params: {}}}
     });
     const [startPoint, setStartPoint] = useState(startInit);

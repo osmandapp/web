@@ -20,7 +20,7 @@ export default class EditablePolyline {
         if (!polyline && this.points) {
             polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt());
             polyline.setStyle({
-                color: this.ctx.routeMode.colors[this.ctx.routeMode.mode]
+                color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode]
             });
         }
         if (polyline) {
@@ -68,72 +68,122 @@ export default class EditablePolyline {
     dragStartNewPoint(e) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
-
         let currentLayer = this.ctx.selectedGpxFile.layers._layers[this.ctx.selectedGpxFile.currentPolyline]
-        let points = this.ctx.selectedGpxFile.tracks[0].points;
-        let nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points)
 
-        if (nextPoint) {
-            let index = _.indexOf(points, nextPoint, 0);
+        if (this.ctx.creatingRouteMode.mode === TracksManager.PROFILE_LINE) {
+            let currentLayerPoints = currentLayer._latlngs;
+            let index;
+            let trackInd;
+            currentLayer._latlngs.forEach(p => {
+                let currentInd = _.indexOf(currentLayerPoints, p, 0);
+                if (currentInd < currentLayerPoints.length - 1) {
+                    let next = currentLayerPoints[currentInd + 1];
+                    if (GeometryUtil.belongsSegment(new L.LatLng(lat, lng), new L.LatLng(p.lat, p.lng), next)) {
+                        index = currentInd + 1;
+                        this.ctx.selectedGpxFile.points.forEach(tp => {
+                            if (tp.lat === p.lat && tp.lng === p.lng) {
+                                trackInd = _.indexOf(this.ctx.selectedGpxFile.points, tp, 0);
+                            }
+                        })
+                    }
+                }
+            })
+
             this.ctx.selectedGpxFile.dragPoint = {
+                trackInd: trackInd + 1,
                 ind: index,
                 lat: lat,
                 lng: lng
             };
+        } else {
+            let points = this.ctx.selectedGpxFile.points;
+            let nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points)
+            if (nextPoint) {
+                let index = _.indexOf(points, nextPoint, 0);
+                this.ctx.selectedGpxFile.dragPoint = {
+                    ind: index,
+                    lat: lat,
+                    lng: lng
+                };
+            }
         }
+        this.ctx.selectedGpxFile.addPoint = false;
         this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
     }
 
-    async dragEndNewPoint(e,  setLoading) {
+    async dragEndNewPoint(e, setLoading) {
         setLoading(true);
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
+
         let newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null).create()
         this.ctx.selectedGpxFile.layers.addLayer(newMarker);
 
-        let trackPoints = this.ctx.selectedGpxFile.tracks[0].points;
+        let currentLayer = this.ctx.selectedGpxFile.layers._layers[this.ctx.selectedGpxFile.currentPolyline];
+        let trackPoints = this.ctx.selectedGpxFile.points;
         let ind = this.ctx.selectedGpxFile.dragPoint.ind;
 
-        let newPoint = _.cloneDeep(this.ctx.selectedGpxFile.tracks[0].points[ind]);
-        newPoint.lat = lat;
-        newPoint.lng = lng;
-        if (newPoint.geometry) {
-            delete newPoint.geometry;
+        if (this.ctx.creatingRouteMode.mode === TracksManager.PROFILE_LINE) {
+            let newPoint = {
+                lat: lat,
+                lng: lng
+            };
+            trackPoints.splice(this.ctx.selectedGpxFile.dragPoint.trackInd, 0, newPoint);
+            currentLayer._latlngs.splice(ind, 0, newPoint);
+            currentLayer.setLatLngs(currentLayer._latlngs);
+        } else {
+            let newPoint = _.cloneDeep(this.ctx.selectedGpxFile.points[ind]);
+            newPoint.lat = lat;
+            newPoint.lng = lng;
+            if (newPoint.geometry) {
+                delete newPoint.geometry;
+            }
+
+            trackPoints.splice(ind, 0, newPoint);
+
+            let prevPoint = trackPoints[ind - 1];
+            let currentPoint = trackPoints[ind];
+            let nextPoint = trackPoints[ind + 1];
+
+            this.ctx.selectedGpxFile.layers.removeLayer(currentLayer);
+
+            let polylineTempCurrent = TrackLayerProvider.createTempPolyline({
+                lat: prevPoint.lat,
+                lng: prevPoint.lng
+            }, currentPoint);
+            polylineTempCurrent.addTo(this.map);
+
+            let polylineTempNext = TrackLayerProvider.createTempPolyline({
+                lat: currentPoint.lat,
+                lng: currentPoint.lng
+            }, nextPoint);
+            polylineTempNext.addTo(this.map);
+
+            await this.createPolyline(prevPoint, currentPoint)
+                .then(() => {
+                    this.map.removeLayer(polylineTempCurrent);
+                });
+            await this.createPolyline(currentPoint, nextPoint)
+                .then(() => {
+                    this.map.removeLayer(polylineTempNext);
+                });
         }
 
-        trackPoints.splice(ind, 0, newPoint);
-
-        this.ctx.selectedGpxFile.layers.removeLayer(this.ctx.selectedGpxFile.layers._layers[this.ctx.selectedGpxFile.currentPolyline])
-
-        let prevPoint = trackPoints[ind - 1];
-        let currentPoint = trackPoints[ind];
-        let nextPoint = trackPoints[ind + 1];
-
-        let polylineTempCurrent = TrackLayerProvider.createTempPolyline({lat: prevPoint.lat, lng: prevPoint.lng}, currentPoint);
-        polylineTempCurrent.addTo(this.map);
-
-        let polylineTempNext = TrackLayerProvider.createTempPolyline({lat: currentPoint.lat, lng: currentPoint.lng}, nextPoint);
-        polylineTempNext.addTo(this.map);
-
-        await this.createPolyline(prevPoint, currentPoint)
-            .then(() => {
-                this.map.removeLayer(polylineTempCurrent);
-            });
-        await this.createPolyline(currentPoint, nextPoint)
-            .then(() => {
-                this.map.removeLayer(polylineTempNext);
-            });
-
         this.ctx.selectedGpxFile.addPoint = false;
-        delete this.ctx.selectedGpxFile.dragPoint;
+        this.ctx.selectedGpxFile.dragPoint = false;
         this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
     }
 
     async createPolyline(startPoint, endPoint) {
-        endPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, startPoint, endPoint);
-        let polyline = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
+        let polyline;
+        if (this.ctx.creatingRouteMode.mode === TracksManager.PROFILE_LINE) {
+            polyline = new EditablePolyline(this.map, this.ctx, [startPoint, endPoint], null).create();
+        } else {
+            endPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, startPoint, endPoint);
+            polyline = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
+        }
         polyline.setStyle({
-            color: this.ctx.routeMode.colors[this.ctx.routeMode.mode]
+            color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode]
         });
         this.ctx.selectedGpxFile.layers.addLayer(polyline);
     }

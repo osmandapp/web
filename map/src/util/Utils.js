@@ -1,6 +1,6 @@
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
-import {Commit} from "@mui/icons-material";
 import React from "react";
+import TracksManager from "../context/TracksManager";
 
 async function fetchUtil(url, options) {
 
@@ -109,7 +109,7 @@ function hexToArgb(hex) {
 }
 
 function getProfileIcon(profile, color) {
-    if (profile === 'line') {
+    if (profile === TracksManager.PROFILE_LINE) {
         return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
     } else {
         return <img color={color}

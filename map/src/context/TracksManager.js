@@ -6,6 +6,8 @@ import _ from "lodash";
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
+const PROFILE_LINE = 'line';
+const PROFILE_GAP = 'gap';
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -20,7 +22,7 @@ function saveTracks(tracks) {
                 name: track.name,
                 id: track.id,
                 metaData: track.metaData,
-                tracks: track.tracks,
+                tracks: track.points ? [{points: track.points}] : track.tracks,
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
@@ -383,7 +385,7 @@ function getEle(point, elevation, array) {
 async function getTrackWithAnalysis(path, ctx, setLoading) {
     setLoading(true);
     let data = {
-        tracks: ctx.selectedGpxFile.tracks,
+        tracks: ctx.selectedGpxFile.points ? [{points: ctx.selectedGpxFile.points}] : ctx.selectedGpxFile.tracks,
         wpts: ctx.selectedGpxFile.wpts,
         metaData: ctx.selectedGpxFile.metaData,
         pointsGroups: ctx.selectedGpxFile.pointsGroups,
@@ -429,7 +431,9 @@ const TracksManager = {
     addDistance,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
-    GET_ANALYSIS: GET_ANALYSIS
+    GET_ANALYSIS: GET_ANALYSIS,
+    PROFILE_LINE:PROFILE_LINE,
+    PROFILE_GAP:PROFILE_GAP
 };
 
 export default TracksManager;
