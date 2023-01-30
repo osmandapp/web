@@ -76,15 +76,15 @@ export default class EditableMarker {
         let polylineTemp = TrackLayerProvider.createTempPolyline(currentPoint, {lat: lat, lng: lng});
         polylineTemp.addTo(this.map);
 
+        currentPoint.lat = lat;
+        currentPoint.lng = lng;
+
         if (this.ctx.creatingRouteMode.mode === TracksManager.PROFILE_LINE) {
             currentPolyline._latlngs[indPointInPolyline] = currentPoint;
             currentPolyline.setLatLngs(currentPolyline._latlngs);
         } else {
             let currentPolyline;
             let nextPolyline;
-
-            currentPoint.lat = lat;
-            currentPoint.lng = lng;
 
             let prevPoint = trackPoints[ind - 1];
             let nextPoint = trackPoints[ind + 1];
