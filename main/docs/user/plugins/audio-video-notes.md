@@ -21,11 +21,11 @@ This plugin is available only for the **Android version** of OsmAnd app.
 :::
 
 
-Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../user/personal/myplaces) menu and are visible when Audio/Video Notes plugin is enabled.
+Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when Audio/Video Notes plugin is enabled.
 
-## Overview 
+## Overview  
 
-The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [Map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../user/personal/myplaces), from where it can be conveniently managed and shared.  
+The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [Map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
 
 All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.  
 
@@ -135,7 +135,7 @@ Automatically, all photo, audio, and video records are saved to: <Translate andr
 
 ###  View in My Places
 
-[My Places](../personal/myplaces.md) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path: 
+[My Places](../personal/myplaces.md) is the central storage for all notes. It allows you to view all notes listed as a list; open a specific note; and to manage the entire list of notes. To open My Places, follow the path:  
 
 **Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>
 
