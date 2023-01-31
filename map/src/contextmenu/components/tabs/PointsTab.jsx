@@ -31,13 +31,8 @@ const PointsTab = ({width}) => {
         let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
         if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2 && !ctx.createTrack?.enable) {
             await deletePointByIndex(currentTrack, index);
-            TracksManager.updateStat(currentTrack);
-            updateTrack(currentTrack);
-            TracksManager.saveTracks(ctx.localTracks);
         } else {
             await deletePointByIndex(ctx.selectedGpxFile, index);
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }
 
@@ -66,33 +61,50 @@ const PointsTab = ({width}) => {
 
     async function deletePointByIndex(currentTrack, index) {
         let lengthSum = 0;
-        for (let track of currentTrack.tracks) {
-            let firstPoint = index === 0 || index === lengthSum;
-            let lastPoint = index === (track.points.length - 1 + lengthSum);
-            if (firstPoint) {
-                if (track.points[index + 1].geometry) {
-                    track.points[index + 1].geometry = [];
+        if (currentTrack.points) {
+            deleteByIndex(currentTrack.points, index, lengthSum).then(() => {
+                    ctx.selectedGpxFile.updateLayers = true;
+                    ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 }
-                return track.points.splice(0, 1);
-            } else if (lastPoint) {
-                return track.points.splice(track.points.length - 1, 1);
-            } else {
-                for (let i = 0; i <= track.points.length - 1; i++) {
-                    if (i + lengthSum === index) {
-                        if (track.points[i].geometry) {
-                            setLoading(true);
-                            let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], track.points[i + 1]);
-                            if (newGeometry) {
-                                setLoading(false);
-                                track.points[i + 1].geometry = newGeometry;
-                            }
+            );
+        } else {
+            for (let track of currentTrack.tracks) {
+                lengthSum = deleteByIndex(track.points, index, lengthSum).then(() => {
+                    TracksManager.updateStat(currentTrack);
+                    updateTrack(currentTrack);
+                    TracksManager.saveTracks(ctx.localTracks);
+                });
+            }
+        }
+    }
+
+    async function deleteByIndex(points, index, lengthSum) {
+        let firstPoint = index === 0 || index === lengthSum;
+        let lastPoint = index === (points.length - 1 + lengthSum);
+        if (firstPoint) {
+            if (points[index + 1].geometry) {
+                points[index + 1].geometry = [];
+            }
+            return points.splice(0, 1);
+        } else if (lastPoint) {
+            return points.splice(points.length - 1, 1);
+        } else {
+            for (let i = 0; i <= points.length - 1; i++) {
+                if (i + lengthSum === index) {
+                    if (points[i].geometry) {
+                        setLoading(true);
+                        let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
+                        if (newGeometry) {
+                            setLoading(false);
+                            points[i + 1].geometry = newGeometry;
                         }
-                        return track.points.splice(i, 1);
                     }
+                    return points.splice(i, 1);
                 }
             }
-            lengthSum += track.points.length;
         }
+        lengthSum += points.length;
+        return lengthSum;
     }
 
     async function insertPointToTrack(currentTrack, index, point) {
@@ -160,6 +172,18 @@ const PointsTab = ({width}) => {
         ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
     }
 
+    function getPoints() {
+        if (ctx.selectedGpxFile) {
+            if (ctx.selectedGpxFile.points) {
+                TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points, null);
+                return ctx.selectedGpxFile.points;
+            } else {
+                TracksManager.addDistance(ctx.selectedGpxFile);
+                return TracksManager.getEditablePoints(ctx.selectedGpxFile);
+            }
+        }
+    }
+
     const PointRow = () => ({point, index}) => {
         return (
             <Draggable key={index} draggableId={index + ' row'} index={index}>
@@ -204,7 +228,7 @@ const PointsTab = ({width}) => {
                 <div ref={provided.innerRef}
                      style={{maxHeight: '35vh', overflow: 'auto'}}
                      {...provided.droppableProps}>
-                    {ctx.selectedGpxFile && TracksManager.getEditablePoints(ctx.selectedGpxFile).map((point, index) => {
+                    {getPoints().map((point, index) => {
                         return PointRow()({point: point, index: index});
                     })}
                     {provided.placeholder}

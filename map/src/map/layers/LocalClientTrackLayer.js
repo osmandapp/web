@@ -140,7 +140,7 @@ export default function LocalClientTrackLayer() {
 
     function updateTrackOnMap(track, active) {
         map.removeLayer(layers[track.name].layer);
-        track.layers.getLayers().forEach(l => {
+        track.layers?.getLayers().forEach(l => {
             map.removeLayer(l);
         })
         delete layers[track.name];
@@ -229,11 +229,18 @@ export default function LocalClientTrackLayer() {
             TrackLayerProvider.parsePoints(points, layers, true);
             layers = createEditableLayers(layers)
             if (deleteOld) {
+                trackLayers.getLayers().forEach(l => {
+                    map.removeLayer(l)
+                })
                 trackLayers.clearLayers();
             }
             layers.forEach(layer => {
                 trackLayers.addLayer(layer);
             })
+            if (deleteOld) {
+                trackLayers.addTo(map)
+            }
+
         }
     }
 

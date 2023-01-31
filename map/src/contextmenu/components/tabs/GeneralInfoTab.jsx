@@ -213,8 +213,13 @@ export default function GeneralInfoTab({width, srtm}) {
     function save() {
         let ind = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
         if (ind !== -1) {
-            ctx.selectedGpxFile.updated = true;
-            ctx.localTracks[ind] = _.cloneDeep(ctx.selectedGpxFile);
+            let updatedTrack = _.cloneDeep(ctx.selectedGpxFile);
+            delete updatedTrack.points;
+            updatedTrack.updated = true;
+
+            ctx.setSelectedGpxFile(updatedTrack);
+
+            ctx.localTracks[ind] = updatedTrack;
             ctx.setLocalTracks([...ctx.localTracks]);
         } else {
             TracksManager.addTrack(ctx, ctx.selectedGpxFile);

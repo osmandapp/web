@@ -161,32 +161,38 @@ function addDistance(track) {
     if (track.tracks) {
         track.tracks.forEach(t => {
             if (!track.hasOnlyTrk) {
-                let distanceFromStart = 0;
-                for (let point of t.points) {
-                    if (point.geometry) {
-                        if (point.geometry.length > 0) {
-                            point.geometry.forEach(trk => {
-                                let currIndex = point.geometry.indexOf(trk);
-                                if (trk.distance === 0 && currIndex !== 0) {
-                                    trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
-                                }
-                                distanceFromStart += trk.distance;
-                                point['distanceFromStart'] = distanceFromStart;
-                                point['distance'] += trk.distance;
-                            })
-                        } else {
-                            point.distanceFromStart = 0;
-                        }
-                    } else {
-                        track.hasOnlyTrk = true;
-                        t.points = Utils.getPointsDist(t.points);
-                        break;
-                    }
-                }
+                addDistanceToPoints(t.points, track);
             } else {
                 t.points = Utils.getPointsDist(t.points);
             }
         })
+    }
+}
+
+function addDistanceToPoints(points, track) {
+    let distanceFromStart = 0;
+    for (let point of points) {
+        if (point.geometry) {
+            if (point.geometry.length > 0) {
+                point.geometry.forEach(trk => {
+                    let currIndex = point.geometry.indexOf(trk);
+                    if (trk.distance === 0 && currIndex !== 0) {
+                        trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
+                    }
+                    distanceFromStart += trk.distance;
+                    point['distanceFromStart'] = distanceFromStart;
+                    point['distance'] += trk.distance;
+                })
+            } else {
+                if (track) {
+                    track.hasOnlyTrk = true;
+                }
+                point.distanceFromStart = 0;
+            }
+        } else {
+            points = Utils.getPointsDist(points);
+            break;
+        }
     }
 }
 
@@ -429,6 +435,7 @@ const TracksManager = {
     getTrackWithAnalysis,
     prepareTrack,
     addDistance,
+    addDistanceToPoints,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
