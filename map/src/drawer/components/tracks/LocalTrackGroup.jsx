@@ -27,6 +27,10 @@ export default function LocalTrackGroup() {
     }
 
     function clearLocalTracks() {
+        let selectedLocalFile = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
+        if (selectedLocalFile) {
+            ctx.setSelectedGpxFile({});
+        }
         ctx.setLocalTracks([]);
         localStorage.removeItem('localTracks');
     }

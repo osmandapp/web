@@ -255,6 +255,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                 const resJson = await respGetFiles.json();
                 ctx.setListFiles(resJson);
                 deleteLocalTrack(ctx);
+                ctx.setSelectedGpxFile({});
                 return true;
             }
         }
