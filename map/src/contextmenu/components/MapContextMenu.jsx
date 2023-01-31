@@ -8,6 +8,7 @@ import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
 import FavoritesTabList from "../FavoritesTabList";
+import _ from "lodash";
 
 const useStyles = makeStyles({
     menu: {
@@ -37,7 +38,7 @@ export default function MapContextMenu({drawerWidth}) {
     },[showContextMenu])
 
     useEffect(() => {
-        if (!ctx.selectedGpxFile || ctx.selectedGpxFile === {}) {
+        if (!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
