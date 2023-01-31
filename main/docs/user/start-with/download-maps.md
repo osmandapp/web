@@ -143,29 +143,34 @@ One way to download the map is to zoom out the World map and by short tap select
 
 **Note**: At low zoom level map selected to download will be highlighted in yellow and maps that already downloaded will be highlighted in green, deactivated maps will be highlighted in orange. 'Deactivated' maps allow to speed up program in case you have many downloaded maps.
 
-## Map Zoom in
+
+## Search
 
 
 <Tabs groupId="operating-systems">
 <TabItem value="android" label="Android">
 
-It is possible to download a map of a certain area just by zooming in on the World map. A notification "Download detailed map, to view the area" will appear at the top bar.
+It is possible to find and to download a map from the [search function](../search/index.md).
 
-![Zoom in to download map Android](@site/static/img/settings/zoom_in_download_map_android.png) 
+Just write a country or region name, and you see a map file on the finding list. Click on a country name to start downloading.
 
-**Note**: This dialog can [be turned off](../personal/global-settings.md#dialogs-and-notifications)  in _<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,dialogs_and_notifications_title"/>_
+![Search function to download map Android](@site/static/img/settings/search_2_download_map_android.png) ![Search function to download map Android](@site/static/img/settings/search_download_map_android.png) 
+
 
 </TabItem>
 <TabItem value="ios" label="iOS">
 
-It is possible to download a map of a certain area just by zooming in on the World map. A notification "Download detailed map, to view the area" will appear at the top bar.
+It is possible to find and to download a map from the [search function](../search/index.md).
 
-![Zoom in to download map iOS](@site/static/img/settings/zoom_in_download_map_ios.png) 
+Just write a country or region name, and you see a map file on the finding list. Click on a country name and start downloading process from [Map Context menu](#map-context-menu).
 
-**Note**: This dialog can [be turned off](../personal/global-settings.md#dialogs-and-notifications)  in _<Translate ios="true" ids="menu,sett_settings,osmand_settings,dialogs_and_notifications"/>_
+![Search function to download map iOS](@site/static/img/settings/search_download_map_ios.png) ![Search function to download map iOS](@site/static/img/settings/search_2_download_map_ios.png) 
 
 </TabItem>
 </Tabs>
+
+
+
 
 ## Own map (Advanced)
 
