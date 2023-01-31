@@ -182,7 +182,7 @@ export default class EditablePolyline {
             polyline = new EditablePolyline(this.map, this.ctx, endPoint.geometry, null).create();
         }
         polyline.setStyle({
-            color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode]
+            color: this.ctx.creatingRouteMode.colors[endPoint.profile]
         });
         this.ctx.selectedGpxFile.layers.addLayer(polyline);
     }

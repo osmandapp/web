@@ -39,9 +39,7 @@ export default function LocalClientTrackLayer() {
             layers[l].active = false;
         }
         Object.values(ctx.localTracks).forEach((track) => {
-            console.log(track)
             let currLayer = layers[track.name]
-            console.log(currLayer)
             if (track.selected && !currLayer) {
                 addTrackToMap(track, true, true);
             } else if (currLayer) {
@@ -168,6 +166,7 @@ export default function LocalClientTrackLayer() {
                         return p;
                     }
                 })
+                newPoint.geometry = [{lat:prevPoint.lat, lng:prevPoint.lng}, {lat:newPoint.lat, lng:newPoint.lng}]
                 if (currentPolyline) {
                     currentPolyline._latlngs.push(newPoint)
                     currentPolyline.setLatLngs(currentPolyline._latlngs);
@@ -226,7 +225,7 @@ export default function LocalClientTrackLayer() {
     function updateLayers(points, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
-            TrackLayerProvider.parsePoints(points, layers, true);
+            TrackLayerProvider.parsePoints(points, layers, true, ctx);
             layers = createEditableLayers(layers)
             if (deleteOld) {
                 trackLayers.getLayers().forEach(l => {
@@ -252,9 +251,6 @@ export default function LocalClientTrackLayer() {
                 res.push(editableMarker);
             } else if (layer instanceof L.Polyline) {
                 let editablePolyline = new EditablePolyline(map, ctx, null, layer).create();
-                editablePolyline.setStyle({
-                    color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode]
-                });
                 res.push(editablePolyline);
             }
         })
@@ -265,9 +261,6 @@ export default function LocalClientTrackLayer() {
         newPoint.profile = ctx.creatingRouteMode.mode;
         if (newPoint.profile !== prevPoint.profile) {
             prevPoint.profile = newPoint.profile;
-            if (prevPoint.profile !== TracksManager.PROFILE_LINE && !prevPoint.geometry) {
-                prevPoint.geometry = [];
-            }
             points.pop();
             points.push(prevPoint);
         }
@@ -293,7 +286,8 @@ export default function LocalClientTrackLayer() {
         let newPoint = {
             lat: e.latlng.lat,
             lng: e.latlng.lng,
-            profile: ctx.creatingRouteMode.mode
+            profile: ctx.creatingRouteMode.mode,
+            geometry: []
         };
         if (newPoint.profile !== TracksManager.PROFILE_LINE) {
             newPoint.geometry = [];

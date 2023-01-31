@@ -16,12 +16,12 @@ function createLayersByTrackData(data) {
     }
 }
 
-function parsePoints(points, layers, draggable) {
+function parsePoints(points, layers, draggable, ctx) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach(point => {
         if (point.geometry !== undefined) {
-            coordsAll = drawRoutePoints(points, point.geometry, coordsAll, layers);
+            coordsAll = drawRoutePoints(points, point, coordsAll, layers, ctx);
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -58,9 +58,9 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
+function drawRoutePoints(points, point, coordsAll, layers, ctx) {
     let coords = [];
-    pointsTrk.forEach(p => {
+    point.geometry.forEach(p => {
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             layers.push(new L.Polyline(coords, getPolylineOpt()));
             coordsAll = coordsAll.concat(Object.assign([], coords));
@@ -71,9 +71,25 @@ function drawRoutePoints(points, pointsTrk, coordsAll, layers) {
     })
     coordsAll = coordsAll.concat(Object.assign([], coords));
     if (coords.length > 0) {
-        layers.push(new L.Polyline(coords, getPolylineOpt()));
+        let polyline = new L.Polyline(coords, getPolylineOpt());
+        if (ctx) {
+            polyline.setStyle({
+                color: ctx.creatingRouteMode.colors[getProfile(point, points)]
+            });
+        }
+        layers.push(polyline);
     }
     return coordsAll;
+}
+
+function getProfile(point, points) {
+    let ind = _.indexOf(point);
+    if (ind > 0) {
+        return points[_.indexOf(point) - 1].profile;
+    } else {
+        return point.profile;
+    }
+
 }
 
 function parseWpt(points, layers) {

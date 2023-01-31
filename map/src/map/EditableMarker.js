@@ -131,7 +131,7 @@ export default class EditableMarker {
         if (polyline) {
             polyline.setLatLngs(latlngs);
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode]
+                color: this.ctx.creatingRouteMode.colors[point.profile]
             });
         }
     }
