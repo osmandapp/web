@@ -14,6 +14,7 @@ import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
 
 export default function GeneralInfoTab({width, srtm}) {
 
@@ -213,7 +214,7 @@ export default function GeneralInfoTab({width, srtm}) {
         let ind = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
         if (ind !== -1) {
             ctx.selectedGpxFile.updated = true;
-            ctx.localTracks[ind] = ctx.selectedGpxFile;
+            ctx.localTracks[ind] = _.cloneDeep(ctx.selectedGpxFile);
             ctx.setLocalTracks([...ctx.localTracks]);
         } else {
             TracksManager.addTrack(ctx, ctx.selectedGpxFile);

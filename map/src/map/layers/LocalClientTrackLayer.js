@@ -39,12 +39,15 @@ export default function LocalClientTrackLayer() {
             layers[l].active = false;
         }
         Object.values(ctx.localTracks).forEach((track) => {
+            console.log(track)
             let currLayer = layers[track.name]
+            console.log(currLayer)
             if (track.selected && !currLayer) {
                 addTrackToMap(track, true, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
                 if (track.updated) {
+                    console.log(true)
                     updateTrackOnMap(track, currLayer.active);
                 }
             }
@@ -137,6 +140,9 @@ export default function LocalClientTrackLayer() {
 
     function updateTrackOnMap(track, active) {
         map.removeLayer(layers[track.name].layer);
+        track.layers.getLayers().forEach(l => {
+            map.removeLayer(l);
+        })
         delete layers[track.name];
         addTrackToMap(track, false, active);
     }
@@ -148,7 +154,7 @@ export default function LocalClientTrackLayer() {
         let layers = ctx.selectedGpxFile.layers;
         ctx.selectedGpxFile.addPoint = false;
         if (prevPoint) {
-            newPoint.profile = ctx.creatingRouteMode.mode;
+            getProfile(newPoint, prevPoint, points);
             let marker = new EditableMarker(map, ctx, newPoint, null).create();
             layers.addLayer(marker);
             let polylineTemp = TrackLayerProvider.createTempPolyline(prevPoint, newPoint);
@@ -252,6 +258,9 @@ export default function LocalClientTrackLayer() {
         newPoint.profile = ctx.creatingRouteMode.mode;
         if (newPoint.profile !== prevPoint.profile) {
             prevPoint.profile = newPoint.profile;
+            if (prevPoint.profile !== TracksManager.PROFILE_LINE && !prevPoint.geometry) {
+                prevPoint.geometry = [];
+            }
             points.pop();
             points.push(prevPoint);
         }

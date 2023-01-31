@@ -144,8 +144,7 @@ export default class EditablePolyline {
             let prevPoint = trackPoints[ind - 1];
             let currentPoint = trackPoints[ind];
             let nextPoint = trackPoints[ind + 1];
-
-            this.ctx.selectedGpxFile.layers.removeLayer(currentLayer);
+            this.map.removeLayer(currentLayer);
 
             let polylineTempCurrent = TrackLayerProvider.createTempPolyline({
                 lat: prevPoint.lat,
