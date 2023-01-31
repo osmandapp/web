@@ -109,10 +109,12 @@ function addTrack(ctx, track) {
     ctx.localTracks.push(track);
     ctx.setLocalTracks([...ctx.localTracks]);
     openNewLocalTrack(ctx);
+    closeCloudTrack(ctx, track);
     TracksManager.saveTracks(ctx.localTracks);
 }
 
 function prepareTrack(track) {
+    track.originalName = _.cloneDeep(track.name);
     track.name = TracksManager.prepareName(track.name, true);
     track.id = track.name;
     addDistance(track);
@@ -125,6 +127,11 @@ function openNewLocalTrack(ctx) {
     selectedTrack.selected = true;
     selectedTrack.index = ctx.localTracks.length - 1;
     ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
+}
+
+function closeCloudTrack(ctx, track) {
+    ctx.gpxFiles[track.originalName].url = null;
+    ctx.setGpxFiles({...ctx.gpxFiles});
 }
 
 function getTrackPoints(track) {
@@ -440,8 +447,8 @@ const TracksManager = {
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
-    PROFILE_LINE:PROFILE_LINE,
-    PROFILE_GAP:PROFILE_GAP
+    PROFILE_LINE: PROFILE_LINE,
+    PROFILE_GAP: PROFILE_GAP
 };
 
 export default TracksManager;
