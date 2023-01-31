@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
+    Alert,
     Box,
     Button, CircularProgress,
     Divider,
@@ -31,6 +32,7 @@ export default function GeneralInfoTab({width, srtm}) {
     const [upDownHill, setUpDownHill] = useState('');
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
+    const [error, setError] = useState(false);
 
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
@@ -106,16 +108,23 @@ export default function GeneralInfoTab({width, srtm}) {
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
             setDisableButton(!disableButton);
-            let existName = ctx.localTracks.find(t => t.name === fileName);
-            if (!existName) {
+            if (validName(fileName)) {
                 let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
                 currentTrack.name = fileName;
                 ctx.selectedGpxFile.name = fileName;
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 ctx.setLocalTracks([...ctx.localTracks]);
                 TracksManager.saveTracks(ctx.localTracks);
+            } else {
+                setFileName(ctx.selectedGpxFile.name);
+                setError(true);
             }
         }
+    }
+
+    function validName(fileName) {
+        let existName = ctx.localTracks.find(t => t.name === fileName);
+        return fileName !== "" && fileName.trim().length > 0 && !existName;
     }
 
     const Description = () => ({desc}) => {
@@ -150,6 +159,9 @@ export default function GeneralInfoTab({width, srtm}) {
                             {"* " + fileName}
                         </Typography>
                     }
+                    {error && <Alert onClose={() => {
+                        setError(false)
+                    }} severity="warning">You tried to save the wrong name!</Alert>}
                 </Grid>
                 <Grid item xs={4}>
                     <Box display="flex" justifyContent="flex-end">
