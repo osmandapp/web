@@ -30,7 +30,7 @@ export default function FavoriteName({favoriteName, setFavoriteName, favoriteGro
         if (favNames.find(name => name === favoriteName)) {
             setNameAlreadyExist(true);
             setErrorName(true);
-        } else if (favoriteName === "") {
+        } else if (favoriteName === "" || !favoriteName.trim().length) {
             setErrorName(true);
         } else {
             setNameAlreadyExist(false);
