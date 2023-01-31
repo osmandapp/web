@@ -59,7 +59,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                 cleanContextMenu();
             }
         }
-
+        ctx.setSelectedGpxFile({});
     }
 
     return (
