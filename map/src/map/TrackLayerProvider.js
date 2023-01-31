@@ -84,7 +84,6 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx) {
 
 function getProfile(point, points) {
     let ind = _.indexOf(points, point, 0);
-    console.log(ind)
     if (ind > 0) {
         return points[ind - 1].profile;
     } else {
