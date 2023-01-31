@@ -280,13 +280,15 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 ## Navigation route
 
+If you have selected the engine type in the [vehicle parameters](../personal/profiles/#vehicle-parameters), the CO2 footprint data will be displayed above the graph.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
 
 </TabItem>
 
@@ -294,7 +296,7 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 *<Translate ios="true" ids="menu,routing_settings"/>*
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
 
 </TabItem>
 
@@ -324,11 +326,11 @@ There are three ways to access the Route Details menu:
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
 | Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one. |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) |
-| **Print** button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf. |
+| Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf. |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_print.png) |
 | Save as new track button. | 
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_save.png) |
-| Share buttons: *Share as GPX file* and *Share as link* |
+| Share buttons: *Share as GPX file* and *Save to OsmAnd tracks* |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png) |
 
 </TabItem>
@@ -338,15 +340,15 @@ There are three ways to access the Route Details menu:
 |  |
 |------------|
 | [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_android_main-info.png) |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png) |
 | [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png) |
 | The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png) |
 | Save as new track button. | 
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png) |
-| Share buttons: *Share as GPX file* and *Share as link* |
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png) |
+| Export button: *Export as GPX file* or *Share as link* |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png) |
 
 </TabItem>
 
@@ -379,29 +381,11 @@ This menu allows you to adapt the route line appearance. If there are some chang
 :::
 
 
-<!--This menu allows you to customize the route line appearance. You can configure the colour for different configurations such as altitude, road type, and others. Also, you can select the line's width and make turn arrows hidden or visible.  <ProFeature/>
-[Pro feature](../purchases/android.md#free-and-paid-features)-->
-
-<!--### Route Appearance
-
-:::note
-<ProFeature/> It's the Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-:::
-
-You can [customize the route line's appearance](../navigation/route-navigation.md##route-line-appearance) for any navigation profile differently. It is possible to select **_Color_** and **_Width_** for the line, **separately** for **_Day_** and **_Night_** [mode](../map/vector-maps.md#map-mode).
-
-<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,customize_route_line"/>  
-
-![Route Customization Android](@site/static/img/map/route_custom_android.png) -->
-
-
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>_  
+*<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
 ![Navigation route Android](@site/static/img/navigation/route/RLApp.png)  
 
@@ -561,110 +545,64 @@ There is OsmAnd engine for offline navigation. For choosing navigation type: [Na
 
 ## Custom routing
 
-OsmAnd allows modification _routing.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+OsmAnd allows modification _routing.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
 
-For start modification [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you need to copy it and start changing it for your needs. Please, read attentively [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25). Example of [routing.xml from OsmAnd user](https://groups.google.com/g/osmand/c/JvV7p_JJvEU). 
-
-For adding new routing.xml to OsmAnd just tap to this file and open by OsmAnd.
-
-
-For your Profile you need to choose your [Navigation type](../navigation/route-navigation.md#type-of-navigation).
+- To change the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you first need to copy it. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. [OsmAnd user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file for an example.
+- To add a new *routing.xml* file to OsmAnd, just tap on the file and open it in OsmAnd.
+- Select the [Navigation type](../navigation/route-navigation.md#type-of-navigation) for your profile.
 
 
 ## Background navigation
 
-<Tabs groupId="operating-systems">
-<TabItem value="android" label="Android">
-
-When you created your route and started navigation. You can use it in the Background. You receive voice prompts and silent notifications. This mode is important for low battery consumption.
-
-</TabItem>
-<TabItem value="ios" label="iOS">
-
-When you created your route and started navigation. You can use it in the Background. You receive voice prompts.
-This mode is important for low battery consumption.
-
-</TabItem>
-</Tabs>
+When you have created a route and started navigating. You can use it in the background. You receive voice prompts and silent notifications. This mode is important for low battery consumption.
 
 
 ### Sound
 
-<Tabs groupId="operating-systems">
-<TabItem value="android" label="Android">
-
 Set your voice prompts and listen to navigation prompts. [Voice navigation](../navigation/voice-navigation.md).
 
-</TabItem>
-<TabItem value="ios" label="iOS">
-
-Set your voice prompts and listen to navigation prompts. [Voice navigation](../navigation/voice-navigation.md).
-
-</TabItem>
-</Tabs>
 
 ### Notification
 
-<Tabs groupId="operating-systems">
-<TabItem value="android" label="Android">
+<InfoAndroidOnly/>
 
-You can see notification info in Drop-down system menu: _Turn-by-turn instructions; arrows; arrival time and time to go, current speed_.
+You can see notification info in Drop-down system menu: Turn-by-turn instructions, arrows, arrival time and time to go, current speed.
 
 ![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
 
 Active buttons on Drop-down system menu for your navigation:
-- &nbsp;_<Translate android="true" ids="stop_navigation_service"/>_ - allows to stop your navigation.
-- &nbsp;_<Translate android="true" ids="shared_string_pause"/>_ - allows to pause your navigation.
-- &nbsp;_<Translate android="true" ids="shared_string_resume"/>_ - allows to resume your navigation.
+- *<Translate android="true" ids="stop_navigation_service"/>* - allows to stop your navigation.
+- *<Translate android="true" ids="shared_string_pause"/>* - allows to pause your navigation.
+- *<Translate android="true" ids="shared_string_resume"/>* - allows to resume your navigation.
 
-</TabItem>
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-</Tabs>
 
 ### Screen control
 
-<Tabs groupId="operating-systems">
-<TabItem value="android" label="Android">
+<InfoAndroidOnly/>
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>_
+You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.  
 
-![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-You can control the device screen to save power. This mode has two general settings:  _<Translate android="true" ids="screen_timeout"/>_ and _<Translate android="true" ids="turn_screen_on"/>_.
-
-<p> </p>
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)  
 
 #### Screen timeout
 
-- &nbsp;_<Translate android="true" ids="system_screen_timeout"/>_ - the screen will go blank depending on the device settings. Enable it for using _Turn the screen off_ as per the system's screen timeout. _"Change setting"_ button opens system menu.
+- *<Translate android="true" ids="system_screen_timeout"/>* - the screen will turn off depending on the device settings. Enable it to use *Turn the screen off* according to the system screen timeout. The *"Change settings"* button opens the system menu.
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-- &nbsp;_<Translate android="true" ids="wake_time"/>_ - if "Keep screen on" is enabled the device screen applies no timeout. if the previous setting is disabled, then you can set the time after which the device screen will go blank if you do not interact with it.
+- *<Translate android="true" ids="wake_time"/>* - If the "Keep screen on" option is enabled, the device screen does not apply a timeout. If the previous option is disabled, you can set the time after which the device screen will turn off if you do not interact with it.
 
 ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 #### Turn screen on
 
-Select screen wake-up options (make sure OsmAnd is in the foreground when the device is being locked):
+Select options to wake up the screen. Make sure OsmAnd is in the foreground while the device is locked.
 
 ![turn screen on Android](@site/static/img/navigation/route/turn_screen_on_android.png)
 
-- &nbsp;_<Translate android="true" ids="turn_screen_on_proximity_sensor"/>_ - waving your hand across the screen will turn it on.
-- &nbsp;_<Translate android="true" ids="turn_screen_on_navigation_instructions"/>_ - each navigation instruction will turn the screen on.
-- &nbsp;_<Translate android="true" ids="turn_screen_on_power_button"/>_ - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-</Tabs>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
+- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
 
