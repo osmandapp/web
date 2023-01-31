@@ -21,11 +21,11 @@ This plugin is available only for the **Android version** of OsmAnd app.
 :::
 
 
-Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the "My Places" menu and are visible when Audio/Video Notes plugin is enabled.
+Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../user/personal/myplaces) menu and are visible when Audio/Video Notes plugin is enabled.
 
 ## Overview 
 
-The Audio/Video Notes plugin extends OsmAnd's functionality in storing geolocation information by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the POI context menu. The received data is automatically saved in the central storage, from where it can be conveniently managed and shared.   
+The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [Map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../user/personal/myplaces), from where it can be conveniently managed and shared.  
 
 All created audio and video notes compose the Record layer. When enabled on the map, it changes the view of the recorded data and there are more settings to manage the recordings. In the Record layer, audio and video notes are placed as POIs on the map, thus creating a user narrative visible only to the device owner.  
 
@@ -53,20 +53,20 @@ For every profile, it is possible to configure the recording settings.
 
 | Parameter | Description |
 | --- | --- |
-| **<Translate android="true" ids="multimedia_use_system_camera"/>** in <Translate android="true" ids="photo_notes"/> | If enabled, OsmAnd uses the system application to create photos.|
-| **<Translate android="true" ids="av_camera_pic_size"/>** | This establishes a size for photos to take in. The number of available options is determined with the capabilities of the device camera. If no option is selected, the app uses the size that is established in the system settings for the device camera. |
-| **<Translate android="true" ids="av_camera_focus"/>** | This establishes the method of how focus is set by the camera. The number of available options is determined with the capabilities of the device camera. Basically, there are the following three options: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; and *<Translate android="true" ids="av_camera_focus_infinity"/>*, where **autofocus** is the most popular one and establishes the automatic mode for the camera to focus by rotating the lens focus ring; **continuous** one makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep everything extraordinarily wide in focus no matter how far it is. |
-| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced on closing the camera.| 
-| **<Translate android="true" ids="av_audio_format"/>** | This provides a choice of formats for an audio file to be created in. The number of options available as well as which one is used as default are determined with the parameters of a specific device. |
-| **<Translate android="true" ids="av_audio_bitrate"/>** | This provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
-| **<Translate android="true" ids="multimedia_use_system_camera"/>** in <Translate android="true" ids="video_notes"/> | If enabled, OsmAnd uses the system application to record video. |
+| **<Translate android="true" ids="multimedia_use_system_camera"/>**  | If enabled, OsmAnd uses the system application to create photos in <Translate android="true" ids="photo_notes"/>.|
+| **<Translate android="true" ids="av_camera_pic_size"/>** | Establishes a size for photos to take in. The capabilities of the device camera determine the number of available options. If no option is selected, the app uses the size from the system settings for the device camera. |
+| **<Translate android="true" ids="av_camera_focus"/>** | Establishes the method of how camera focus is set. The number of available options is determined by the capabilities of the device camera. Basically, there are three following  options: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; and *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofocus** is the most popular one and establishes the automatic mode for the camera; **continuous** makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep objects in focus no matter how far it is. |
+| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced when the camera makes a shot. |
+| **<Translate android="true" ids="av_audio_format"/>** | Provides a choice of formats for an audio file. The number of available options as well as which one is used as default are determined with the parameters of a specific device. |
+| **<Translate android="true" ids="av_audio_bitrate"/>** | This option provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
+| **<Translate android="true" ids="multimedia_use_system_camera"/>** | If enabled, OsmAnd uses the system application to record video in <Translate android="true" ids="video_notes"/> . |
 | **<Translate android="true" ids="av_video_quality"/>** | This provides a choice of options that determine the format of the output image. The number of options available is determined with the parameters of a specific device. The default option is the *Highest quality* option.  |
-| **<Translate android="true" ids="multimedia_rec_split_title"/>** | If enabled, old video recordings will be automatically re-written and replaced with new video recordings if the storage size reaches the established size limit.  |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | If enabled, old video recordings will be automatically re-written and replaced with new video recordings if the storage size reaches the size limit.  |
 | **<Translate android="true" ids="rec_split_clip_length"/>** | This determines the upper time limit for recorded video clips. There are options with the range from 1 minute to 30 minutes.|
 | **<Translate android="true" ids="rec_split_storage_size"/>** | This establishes the size of the storage intended for recorded video. There are options with the range from 1024 MB to 62 GB. A specific range of options, as well as the default option are determined with the parameters of a specific device. A system message will remind on the storage size reaching the established limit. |
-| **<Translate android="true" ids="notes"/>** | This re-directs you directly to the [Audio/video notes in My Places](../personal/myplaces.md). This is the central storage of all Audio/video notes ever made in the app. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | This establishes the default values for all of the above settings.  |
-| **<Translate android="true" ids="copy_from_other_profile"/>** | This opens a dialog to select a profile to copy the established Audio/video note recording configuration of values from, and further to establish them for the current profile. |
+| **<Translate android="true" ids="notes"/>** | This option re-directs you to the [Audio/video notes in My Places](../personal/myplaces.md) - central storage of all Audio/video notes ever made in the app. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | You can establish the default values for all of the A/V notes settings.  |
+| **<Translate android="true" ids="copy_from_other_profile"/>** | Opens a dialog to select a profile to copy the Audio/video note recording configuration from, and establish it for the current profile. |
 
 
 ## Manage a single note
@@ -92,7 +92,7 @@ You can create a photo, video, and/or audio note in any of the following ways:
 
 #### 1. Create and tie to your current position
 
-To create a note tied to your current position, and thus, avoiding any search of a suitable point on the map to tie the note to, the <Translate android="true" ids="map_widget_av_notes"/> widget is used: tap the widget, and make the note. 
+The <Translate android="true" ids="map_widget_av_notes"/> widget is used to create a note tied to your current position, and thus, avoid any search for a suitable point for a note on the map. Simply tap on the widget, and make the note.  
 
 The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
 
@@ -101,7 +101,7 @@ The functions provided by the <Translate android="true" ids="map_widget_av_notes
 
 #### 2. Create and tie to selected geolocation
 
-To create a note tied to a selected point on the map, the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point is used, as follows:
+To create a note tied to a selected point on the map, use the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point:
 
 1. Long-tap a point on the map, and the [Context menu](../map/map-context-menu.md) opens.
 2. Tap **Actions**, and select one of the available options from the list: 

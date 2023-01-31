@@ -42,7 +42,6 @@ To start setting up an application profile:
 
 </Tabs>
 
-
 ## Profile configuration
 
 This section contains all the settings related to the appearance, navigation settings, map rendering, configure menu, and screen of a profile.  
@@ -66,7 +65,6 @@ All settings affect the selected application profile only.
 </TabItem>
 
 </Tabs>
-
 
 ### General settings
 
@@ -119,7 +117,6 @@ In this section of the General settings menu, you can set parameters for the cur
 
 </Tabs>
 
-
 #### **Units & formats**
 
 In this section you can set parameters of units & formats for chosen application profile.
@@ -140,10 +137,10 @@ In this section you can set parameters of units & formats for chosen application
 |            | <Translate android="true" ids="driving_region_japan"/>   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |**<Translate android="true" ids="unit_of_length"/>**| <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 f |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m  |
-|          | <Translate android="true" ids="si_mi_yard"/> |  0.62 ml / 1094 ya |
-|          | <Translate android="true" ids="si_nm"/> | 0.54 nml |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
 |**<Translate android="true" ids="coordinates_format"/>**| <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -199,7 +196,6 @@ In this section you can set parameters of units & formats for chosen application
 
 </Tabs>
 
-
 #### **Other**
 
 Additional settings for profile (like external devices and etc.)
@@ -216,7 +212,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - <Translate android="true" ids="tap_on_map_to_hide_interface"/> - use or not fullscreen mode of OsmAnd app on the device.
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode. 
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode.
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
 
 </TabItem>
@@ -233,10 +229,10 @@ You can enable/disable buttons and input devices for OsmAnd.
 
 ### Navigation settings
 
-In this part, there are all settings for navigation mode of a profile.
+In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile.  
 
-:::note
-This part of settings doesn't exist for "Browse map" profile.
+:::info
+There are no navigation settings in *Browse map* profile.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -244,7 +240,6 @@ This part of settings doesn't exist for "Browse map" profile.
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-
 
 ![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
 
@@ -254,18 +249,17 @@ This part of settings doesn't exist for "Browse map" profile.
 
 *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
 
-
 ![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In this section you can set [routing and navigation parameters of your profile, map during navigation and vehicle parameters](../navigation/index.md).
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
 
-<Translate android="true" ids="nav_type_hint"/> - governs how routes are calculated. These are rules for routing your profile. It means that your bicycle profile has Cycling navigation type for example. You can import the routing file from any cloud storage app by opening it in OsmAnd. More about [Routing.xml on our Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in [Navigation Options](../navigation/route-navigation.md#navigation-options).  
 
-<Translate android="true" ids="route_parameters"/> - controls which parameters will be used during routing and which parameters will be showed on the device screen. During navigation you can change some of these parameters in ["Navigation Options"](../navigation/route-navigation.md#navigation-options). Below list of parameters:
+Below, you can find the list of possible route options.  
 
 #### Navigation Type
 
@@ -333,8 +327,8 @@ In this section you can set [routing and navigation parameters of your profile, 
 | "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
 | "<Translate android="true" ids="routing_attr_allow_private_for_truck_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_for_truck_description"/>  | Track    |
 | "<Translate android="true" ids="routing_attr_height_obstacles_name"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    | 
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    | 
+|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    |
+|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    |
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    |  
 | "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
 | **_<Translate android="true" ids="recalculate_route"/>_** | allows to recalculate the route by the next cases:    |    |
@@ -377,9 +371,9 @@ In this section you can set [routing and navigation parameters of your profile, 
 | Goods vehicles restrictions |  Consider access permissions for light goods vehicles (goods)   |   Driving routing |
 | <Translate ios="true" ids="routing_attr_hazmat_category_name"/> |  <Translate ios="true" ids="transport_hazmat_no_desc"/>  |   Truck |
 | "<Translate ios="true" ids="preferred_terrain"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-|   | "<Translate ios="true" ids="shared_string_any"/>"  | <Translate ios="true" ids="route_preferred_terrain_any"/>    | 
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_flat"/>    | 
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_less_hilly"/>    | 
+|   | "<Translate ios="true" ids="shared_string_any"/>"  | <Translate ios="true" ids="route_preferred_terrain_any"/>    |
+|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_flat"/>    |
+|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_less_hilly"/>    |
 |   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_hilly"/>  |  
 | "<Translate ios="true" ids="routing_attr_height_obstacles_name"/>" |  Using elevation fluctuation for routing.  |    |
 | "<Translate ios="true" ids="routing_attr_allow_motorway_name"/>" |  using Motorways for routing  |   Cycling routing |
@@ -481,7 +475,6 @@ In this section you can set [routing and navigation parameters of your profile, 
 
 </Tabs>
 
-
 #### **Map during navigation**
 
 Parameters for 'Map during navigation' and 'Animate location change'. Change map behavior during navigation.
@@ -511,7 +504,6 @@ Parameters for 'Map during navigation' and 'Animate location change'. Change map
 </TabItem>
 
 </Tabs>
-
 
 ### Configure map
 
@@ -543,7 +535,6 @@ Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen
 
 </Tabs>
 
-
 ### Configure screen
 
 Here you can set parameters for [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) of chosen profile.
@@ -565,7 +556,6 @@ Set parameters for [Configure screen](../widgets/configure-screen.md) menu for c
 <TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,layer_map_appearance"/>
-
 
 Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
@@ -598,13 +588,11 @@ You can choose the color of the profile elements, its icon and name, also assign
 |       | "<Translate android="true" ids="select_navigation_icon"/>" |  choosing label for a profile icon while moving   |
 |       | ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_android.png) |   |
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,profile_appearance"/>
-
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -695,7 +683,7 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings"/>*
 
 ![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_android.png)
 
@@ -703,14 +691,13 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins"/>*   
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_ios.png)
 
 </TabItem>
 
 </Tabs>
-
 
 ### Trip recording
 
@@ -732,7 +719,6 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 </Tabs>
 
-
 ### Audio / Video notes
 
 <InfoAndroidOnly />  
@@ -740,7 +726,6 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.  
 
 *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,audionotes_plugin_name"/>*  
-
 
 ### OpenStreetMap editing
 
@@ -762,7 +747,6 @@ This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 </Tabs>
 
-
 ### OpenPlaceReviews
 
 <InfoAndroidOnly />  
@@ -770,7 +754,6 @@ This menu opens [the OpenStreetMap editing plugin settings](../plugins/osm-editi
 This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.  
 
 *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,open_place_reviews"/>*
-
 
 ### Accesibility
 
@@ -780,7 +763,6 @@ This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for
 
 *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>*
 
-
 ### OsmAnd development
 
 <InfoAndroidOnly />  
@@ -789,10 +771,10 @@ This menu opens [Development plugin settings](../plugins/accessibility.md) for t
 
 *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,development"/>*  
 
-
 ## Actions
 
 Actions with chosen profile:  
+
 - Export profile.
 - Copy from another profile.
 - Reset to default.
