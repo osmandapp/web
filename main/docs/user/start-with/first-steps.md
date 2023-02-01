@@ -83,13 +83,13 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 ### How to download maps
 
-OsmAnd is an offline map application, so after the '<Translate android="true" ids="get_started"/>' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
+OsmAnd is an offline map application, so after the *<Translate android="true" ids="get_started"/>* screen, you will be prompted to [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Show on the map](@site/static/img/settings/download_map1_android.png) ![Map](@site/static/img/settings/map_android.png)
+![Show on the map](@site/static/img/settings/start_screen_white_andr.png) ![Map](@site/static/img/settings/start_screen_map_andr.png)
 
 </TabItem>
 
@@ -107,7 +107,7 @@ Application is not properly functional without offline maps which are not distri
 
 :::
 
-[Read more](../start-with/download-maps.md) about download map options.
+Read more about [download map](../start-with/download-maps.md) options.
 
 ### How to manage your settings
 

@@ -17,28 +17,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Downloading maps is a necessary action for further use of maps and offline navigation. You can download maps by viewing the list of regions in the main menu or by clicking on the desired area on the map.  
 
-The application can not function normally without offline maps, which are not distributed in the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as search, [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
-
+The application can not function normally without offline maps, which are not distributed in the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as search, [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md).  
 
 ## First Screen
 
-When you first launch the app, it suggests downloading a map based on your Internet location. If you are using a VPN, this may not be detected correctly, so you can select a different map region.  
+When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
 
 :::tip Note
-World map. Old versions of OsmAnd (< 3.8) suggest to download World map, so you could browse the map on the planet level zoom. In new OsmAnd versions: small "Mini world overview map" is packaged inside the app. You can download a large "World Overview Map" which contains more detailed information about the worldwide, but it is also provided with detailed maps.
+World map. Old versions of OsmAnd (< 3.8) suggest downloading World map so you can browse the map on the planet-level zoom. In new OsmAnd versions small *Mini world overview map*"* is packaged inside the app. Afterward, you can download a large *World Overview map* which contains more detailed information about the world.  
 :::
 
 <Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
-![Download map](@site/static/img/settings/download_map.png)
+![Download map Android](@site/static/img/settings/start_screen_white_andr.png)
 
 </TabItem>
+
 <TabItem value="ios" label="iOS">
 
-![Download map](@site/static/img/settings/download_map.png)
+![Download map Ios](@site/static/img/settings/start_screen_white_ios.png)
 
 </TabItem>
+
 </Tabs>
 
 ## Main menu
