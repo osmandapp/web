@@ -8,6 +8,7 @@ import MarkerOptions from "../markers/MarkerOptions";
 import _ from "lodash";
 import EditablePolyline from "../EditablePolyline";
 import EditableMarker from "../EditableMarker";
+import Utils from "../../util/Utils";
 
 
 export default function LocalClientTrackLayer() {
@@ -45,7 +46,6 @@ export default function LocalClientTrackLayer() {
             } else if (currLayer) {
                 currLayer.active = track.selected;
                 if (track.updated) {
-                    console.log(true)
                     updateTrackOnMap(track, currLayer.active);
                 }
             }
@@ -132,7 +132,7 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.updateLayers) {
             updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.layers, true);
             ctx.selectedGpxFile.updateLayers = false;
-            saveChanges();
+            saveChanges(ctx.selectedGpxFile.points);
         }
     }
 
@@ -166,21 +166,42 @@ export default function LocalClientTrackLayer() {
                         return p;
                     }
                 })
-                newPoint.geometry = [{lat:prevPoint.lat, lng:prevPoint.lng}, {lat:newPoint.lat, lng:newPoint.lng}]
-                if (currentPolyline) {
-                    currentPolyline._latlngs.push(newPoint)
-                    currentPolyline.setLatLngs(currentPolyline._latlngs);
-                } else {
-                    let polyline = new EditablePolyline(map, ctx, [prevPoint, newPoint], null).create();
+                if (trackHasRouting()) {
+                    newPoint.geometry = Utils.getPointsDist([{
+                        lat: prevPoint.lat,
+                        lng: prevPoint.lng
+                    }, {lat: newPoint.lat, lng: newPoint.lng}]);
+                    let polyline = new EditablePolyline(map, ctx, [prevPoint, {
+                        lat: newPoint.lat,
+                        lng: newPoint.lng
+                    }], null).create();
                     polyline.setStyle({
                         color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode]
                     })
                     layers.addLayer(polyline);
+                } else {
+                    delete newPoint.geometry;
+                    if (prevPoint.geometry?.length === 0) {
+                        delete prevPoint.geometry;
+                    }
+                    if (currentPolyline) {
+                        currentPolyline._latlngs.push(newPoint)
+                        currentPolyline.setLatLngs(currentPolyline._latlngs);
+                    } else {
+                        let polyline = new EditablePolyline(map, ctx, [prevPoint, {
+                            lat: newPoint.lat,
+                            lng: newPoint.lng
+                        }], null).create();
+                        polyline.setStyle({
+                            color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode]
+                        })
+                        layers.addLayer(polyline);
+                    }
                 }
                 points.push(newPoint);
                 map.removeLayer(polylineTemp);
                 addClickOnMap();
-                saveChanges();
+                saveChanges(points);
             } else {
                 ctx.setGpxLoading(true);
                 await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, newPoint).then(res => {
@@ -198,9 +219,21 @@ export default function LocalClientTrackLayer() {
                         });
                         layers.addLayer(polyline);
                     }
-                    points.push(newPoint);
+
+                    let prevProfilePoint = points.length - 2 >= 0 ? points[points.length - 2] : null;
+
+                    if (prevProfilePoint && prevProfilePoint.profile === TracksManager.PROFILE_LINE && !points[points.length - 2].geometry) {
+                        prevPoint.geometry = deleteInfo(_.cloneDeep(points));
+                        let firstP = points[0];
+                        firstP.geometry = [];
+                        points = [firstP, prevPoint, newPoint];
+                        updateLayers(points, layers, true);
+                    } else {
+                        points.push(newPoint);
+                    }
+
                     addClickOnMap();
-                    saveChanges();
+                    saveChanges(points);
                 });
             }
         } else {
@@ -211,7 +244,23 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function saveChanges() {
+    function deleteInfo(points) {
+        points.forEach(p => {
+            delete p.profile;
+            delete p.geometry
+        })
+        return points;
+    }
+
+    function trackHasRouting() {
+        let pointWithRouting = ctx.selectedGpxFile.points.find(p =>
+            p.profile !== undefined && p.profile !== TracksManager.PROFILE_LINE
+        )
+        return !!pointWithRouting;
+    }
+
+    function saveChanges(points) {
+        ctx.selectedGpxFile.points = points;
         TracksManager.addDistance(ctx.selectedGpxFile);
         saveCreatedLayers(ctx.selectedGpxFile.layers);
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});

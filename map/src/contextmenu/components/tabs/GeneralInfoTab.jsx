@@ -89,7 +89,7 @@ export default function GeneralInfoTab({width, srtm}) {
         } else if (ctx.selectedGpxFile?.analysis?.hasElevationData) {
             setElevation("Elevation (min/avg/max): " +
                 (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
-                (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
+                (ctx.selectedGpxFile.analysis?.avgElevation)?.toFixed(1) + " / " +
                 (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
         } else {
             setElevation('');

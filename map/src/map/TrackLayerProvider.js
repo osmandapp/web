@@ -26,6 +26,11 @@ function parsePoints(points, layers, draggable, ctx) {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
                 let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
+                if (ctx) {
+                    polyline.setStyle({
+                        color: ctx.creatingRouteMode.colors[getProfile(point, points)]
+                    });
+                }
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
                 coordsTrk = [];
@@ -41,7 +46,13 @@ function parsePoints(points, layers, draggable, ctx) {
         layers.push(marker);
     })
 
-    layers.push(new L.Polyline(coordsTrk, getPolylineOpt()));
+    let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
+    if (ctx) {
+        endPolyline.setStyle({
+            color: ctx.creatingRouteMode.colors[TracksManager.PROFILE_LINE]
+        });
+    }
+    layers.push(endPolyline);
 
     return {
         coordsTrk: coordsTrk,
@@ -85,9 +96,9 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx) {
 function getProfile(point, points) {
     let ind = _.indexOf(points, point, 0);
     if (ind > 0) {
-        return points[ind - 1].profile;
+        return points[ind - 1].profile ? points[ind - 1].profile : TracksManager.PROFILE_LINE;
     } else {
-        return point.profile;
+        return point.profile ? point.profile : TracksManager.PROFILE_LINE;
     }
 
 }
@@ -148,15 +159,18 @@ function getPolylineOpt() {
 function getPolylineByPoints(point, polylines) {
     let res;
     let geo = point.geometry;
-    polylines.forEach(polyline => {
-        let layerPoints = polyline._latlngs;
-        if (layerPoints.length === geo.length) {
-            if (geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng &&
-                geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng) {
-                res = polyline;
+    if (geo) {
+        res = polylines.find(polyline => {
+            let layerPoints = polyline._latlngs;
+            if (layerPoints.length === geo.length) {
+                let matchedFirstPoint = geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng;
+                let matchedLastPoint = geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng;
+                if (matchedFirstPoint && matchedLastPoint) {
+                    return polyline;
+                }
             }
-        }
-    })
+        })
+    }
     return res;
 }
 
@@ -165,10 +179,12 @@ function getPointByPolyline(layer, points) {
     let layerPoints = layer._latlngs;
     points.forEach(p => {
         let geo = p.geometry;
-        if (geo.length === layerPoints.length) {
-            if (geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng &&
-                geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng) {
-                res = p;
+        if (geo) {
+            if (geo.length === layerPoints.length) {
+                if (geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng &&
+                    geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat && geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng) {
+                    res = p;
+                }
             }
         }
     })

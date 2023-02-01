@@ -130,8 +130,10 @@ function openNewLocalTrack(ctx) {
 }
 
 function closeCloudTrack(ctx, track) {
-    ctx.gpxFiles[track.originalName].url = null;
-    ctx.setGpxFiles({...ctx.gpxFiles});
+    if (ctx.gpxFiles[track.originalName]) {
+        ctx.gpxFiles[track.originalName].url = null;
+        ctx.setGpxFiles({...ctx.gpxFiles});
+    }
 }
 
 function getTrackPoints(track) {
@@ -183,12 +185,14 @@ function addDistanceToPoints(points, track) {
             if (point.geometry.length > 0) {
                 point.geometry.forEach(trk => {
                     let currIndex = point.geometry.indexOf(trk);
-                    if (trk.distance === 0 && currIndex !== 0) {
+                    if ((!trk.distance || trk.distance === 0) && currIndex !== 0) {
                         trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
+                    } else {
+                        trk.distance = 0;
                     }
                     distanceFromStart += trk.distance;
-                    point['distanceFromStart'] = distanceFromStart;
-                    point['distance'] += trk.distance;
+                    point.distanceFromStart = distanceFromStart;
+                    point.distance += trk.distance;
                 })
             } else {
                 if (track) {

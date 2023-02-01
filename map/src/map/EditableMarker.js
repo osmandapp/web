@@ -78,8 +78,7 @@ export default class EditableMarker {
 
         currentPoint.lat = lat;
         currentPoint.lng = lng;
-
-        if (this.ctx.creatingRouteMode.mode === TracksManager.PROFILE_LINE) {
+        if (currentPoint.profile === TracksManager.PROFILE_LINE && !currentPoint.geometry || !currentPoint.profile) {
             currentPolyline._latlngs[indPointInPolyline] = currentPoint;
             currentPolyline.setLatLngs(currentPolyline._latlngs);
         } else {
@@ -92,14 +91,26 @@ export default class EditableMarker {
             if (prevPoint) {
                 currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
                 if (prevPoint.geometry) {
-                    currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, prevPoint, currentPoint);
+                    if (prevPoint.profile === TracksManager.PROFILE_LINE) {
+                        let newGeo = _.cloneDeep(currentPoint.geometry);
+                        newGeo[newGeo.length - 1] = currentPoint;
+                        currentPoint.geometry = newGeo;
+                    } else {
+                        currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, prevPoint, currentPoint);
+                    }
                 }
             }
 
             if (nextPoint) {
                 nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
                 if (nextPoint.geometry) {
-                    nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, currentPoint, nextPoint);
+                    if (currentPoint.profile === TracksManager.PROFILE_LINE) {
+                        let newGeo = _.cloneDeep(nextPoint.geometry);
+                        newGeo[0] = currentPoint;
+                        nextPoint.geometry = newGeo;
+                    } else {
+                        nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, currentPoint, nextPoint);
+                    }
                 }
             }
 
@@ -107,12 +118,12 @@ export default class EditableMarker {
             let lastPoint = ind === trackPoints.length - 1;
 
             if (firstPoint) {
-                this.updatePolyline(nextPoint, nextPolyline);
+                this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
             } else if (lastPoint) {
-                this.updatePolyline(currentPoint, currentPolyline);
+                this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
             } else {
-                this.updatePolyline(nextPoint, nextPolyline);
-                this.updatePolyline(currentPoint, currentPolyline);
+                this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
+                this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
             }
         }
 
@@ -122,7 +133,7 @@ export default class EditableMarker {
         this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
     }
 
-    updatePolyline(point, polyline) {
+    updatePolyline(profile, point, polyline) {
         let latlngs = [];
         point.geometry.forEach(point => {
             latlngs.push(new L.LatLng(point.lat, point.lng))
@@ -131,7 +142,7 @@ export default class EditableMarker {
         if (polyline) {
             polyline.setLatLngs(latlngs);
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[point.profile]
+                color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
             });
         }
     }

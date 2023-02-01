@@ -53,7 +53,10 @@ const PointsTab = ({width}) => {
     }
 
     async function reorder(startIndex, endIndex, currentTrack) {
-        let removed = await deletePointByIndex(currentTrack, startIndex);
+        let removed;
+        removed = await deletePointByIndex(currentTrack, startIndex).then((res) => {
+            return res;
+        });
         if (removed.length > 0) {
             await insertPointToTrack(currentTrack, endIndex, removed[0]);
         }
@@ -61,97 +64,132 @@ const PointsTab = ({width}) => {
 
     async function deletePointByIndex(currentTrack, index) {
         let lengthSum = 0;
+        let res;
         if (currentTrack.points) {
-            deleteByIndex(currentTrack.points, index, lengthSum).then(() => {
+            res = await deleteByIndex(currentTrack.points, index, lengthSum).then((res) => {
                     ctx.selectedGpxFile.updateLayers = true;
                     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                    return res.deletedPoint;
                 }
             );
         } else {
             for (let track of currentTrack.tracks) {
-                lengthSum = deleteByIndex(track.points, index, lengthSum).then(() => {
+                res = await deleteByIndex(track.points, index, lengthSum).then((res) => {
                     TracksManager.updateStat(currentTrack);
                     updateTrack(currentTrack);
                     TracksManager.saveTracks(ctx.localTracks);
+                    lengthSum = res.lengthSum;
+                    if (res.deletedPoint) {
+                        return res.deletedPoint;
+                    }
                 });
             }
         }
+        return res;
     }
 
     async function deleteByIndex(points, index, lengthSum) {
+        let res = {
+            deletedPoint: null,
+            lengthSum: null
+        }
         let firstPoint = index === 0 || index === lengthSum;
         let lastPoint = index === (points.length - 1 + lengthSum);
         if (firstPoint) {
             if (points[index + 1].geometry) {
                 points[index + 1].geometry = [];
             }
-            return points.splice(0, 1);
+            res.deletedPoint = points.splice(0, 1);
+            return res;
         } else if (lastPoint) {
-            return points.splice(points.length - 1, 1);
+            res.deletedPoint = points.splice(points.length - 1, 1);
+            return res;
         } else {
             for (let i = 0; i <= points.length - 1; i++) {
                 if (i + lengthSum === index) {
                     if (points[i].geometry) {
                         setLoading(true);
-                        let newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
+                        let newGeometry;
+                        if (points[i].profile === TracksManager.PROFILE_LINE) {
+                            let currentNewGeo = points[i].geometry;
+                            currentNewGeo.pop();
+                            let nextNewGeo = points[i + 1].geometry;
+                            nextNewGeo.shift();
+                            let resGeo = currentNewGeo.concat(nextNewGeo)
+
+                            newGeometry = Utils.getPointsDist(resGeo);
+                        } else {
+                            newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
+                        }
                         if (newGeometry) {
                             setLoading(false);
                             points[i + 1].geometry = newGeometry;
                         }
                     }
-                    return points.splice(i, 1);
+                    res.deletedPoint = points.splice(i, 1);
+                    return res;
                 }
             }
         }
         lengthSum += points.length;
-        return lengthSum;
+        res.lengthSum = lengthSum;
+        return res;
     }
 
     async function insertPointToTrack(currentTrack, index, point) {
         let lengthSum = 0;
-        for (let track of currentTrack.tracks) {
-            track.points.splice(index, 0, point);
-            let firstPoint = index === 0 || index === lengthSum;
-            let lastPoint = index === (track.points.length - 1 + lengthSum);
-            for (let i = 0; i <= track.points.length; i++) {
-                if (i + lengthSum === index && point) {
-                    if (firstPoint) {
-                        if (track.points[i + 1].geometry) {
-                            setLoading(true);
-                            let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
-                            if (newGeometryFromNewPoint) {
-                                setLoading(false);
-                                track.points[i + 1].geometry = newGeometryFromNewPoint;
-                            }
-                        }
-                    } else if (lastPoint) {
-                        if (track.points[i - 1].geometry) {
-                            setLoading(true);
-                            let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
-                            if (newGeometryToNewPoint) {
-                                setLoading(false);
-                                point.geometry = newGeometryToNewPoint;
-                            }
-                        }
-                    } else {
-                        if (track.points[i + 1].geometry) {
-                            setLoading(true);
-                            let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, track.points[i - 1], point);
-                            if (newGeometryToNewPoint) {
-                                point.geometry = newGeometryToNewPoint;
-                            }
-                            let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, track.points[i + 1]);
-                            if (newGeometryFromNewPoint) {
-                                setLoading(false);
-                                track.points[i + 1].geometry = newGeometryFromNewPoint;
-                            }
+        if (currentTrack.points) {
+            await insertPoint(currentTrack.points, index, point, lengthSum)
+        } else {
+            for (let track of currentTrack.tracks) {
+                lengthSum = await insertPoint(track.points, index, point, lengthSum);
+            }
+        }
+    }
+
+    async function insertPoint(points, index, point, lengthSum) {
+        points.splice(index, 0, point);
+        let firstPoint = index === 0 || index === lengthSum;
+        let lastPoint = index === (points.length - 1 + lengthSum);
+        for (let i = 0; i <= points.length; i++) {
+            if (i + lengthSum === index && point) {
+                if (firstPoint) {
+                    if (points[i + 1].geometry) {
+                        setLoading(true);
+                        let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, points[i + 1]);
+                        if (newGeometryFromNewPoint) {
+                            setLoading(false);
+                            points[i + 1].geometry = newGeometryFromNewPoint;
                         }
                     }
-                    break;
+                } else if (lastPoint) {
+                    if (points[i - 1].geometry) {
+                        setLoading(true);
+                        let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], point);
+                        if (newGeometryToNewPoint) {
+                            setLoading(false);
+                            point.geometry = newGeometryToNewPoint;
+                        }
+                    }
+                } else {
+                    if (points[i + 1].geometry) {
+                        setLoading(true);
+                        let newGeometryToNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], point);
+                        if (newGeometryToNewPoint) {
+                            point.geometry = newGeometryToNewPoint;
+                        }
+                        let newGeometryFromNewPoint = await TracksManager.updateRouteBetweenPoints(ctx, point, points[i + 1]);
+                        if (newGeometryFromNewPoint) {
+                            setLoading(false);
+                            points[i + 1].geometry = newGeometryFromNewPoint;
+                        }
+                    }
                 }
+                break;
             }
-            lengthSum += track.points.length;
         }
+        lengthSum += points.length;
+        return lengthSum;
     }
 
 
