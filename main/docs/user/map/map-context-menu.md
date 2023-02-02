@@ -119,6 +119,7 @@ In order to gain more details about object you need to click on the "Details" bu
 
 This panel includes additional information about the object. This info could be copied to the buffer by tap on it. Additional information about object includes:
 
+- [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
 - [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
 - [Nearby POI](../map/map-context-menu.md#nearby-pois-wikipedia)
@@ -128,7 +129,6 @@ This panel includes additional information about the object. This info could be 
 - [Article image / description](../map/map-context-menu.md#article-image--description)
 - [Online photos](../map/map-context-menu.md#online-photos)
 - [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features)
-    - [Alternative names](https://wiki.openstreetmap.org/wiki/Names)
     - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
     - [Phone number](https://wiki.openstreetmap.org/wiki/Key:contact)
     - [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
@@ -136,6 +136,26 @@ This panel includes additional information about the object. This info could be 
     - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
     - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
     - etc.
+
+### Alternative names  
+
+OsmAnd displays additional names of POIs in Map context menu. First is shown the name in the [display language](../personal/global-settings.md#display-language) or from system list of preferred languages, alternative names are displayed in the drop-down menu.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Alternative names Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternative names Android](@site/static/img/map/alternative_names_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly /> 
+
+</TabItem>
+
+</Tabs>  
 
 ### Coordinates 
 In the Context menu you can find geographical coordinates of an object. If you expand this section, you will see location in various geo formats and shareable OsmAnd Link. If you click on any item it will be automatically copied to the clipboard. 
