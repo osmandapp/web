@@ -96,6 +96,10 @@ _Files → On My Phone → OsmAnd Maps_
 
 <InfoAndroidOnly/>
 
+:::warning
+When the user enables USB mass storage to share files with a computer or unmounts the SD card via the system settings, the external storage is unmounted from the device and all applications running on the external storage are immediately killed. [Read more here](https://developer.android.com/guide/topics/data/install-location).
+:::
+
 ### In order to move the OsmAnd home (maps) folder to an external SD card:
 
 -   Go to `Settings (on the start screen) --> OsmAnd Settings --> Data
