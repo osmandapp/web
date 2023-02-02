@@ -3,6 +3,7 @@ import MarkerOptions from "./markers/MarkerOptions";
 import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
+import PointManager from "../context/PointManager";
 
 export default class EditableMarker {
 
@@ -15,10 +16,24 @@ export default class EditableMarker {
 
     create() {
         let marker = this.layer;
-        if (!marker && this.point) {
-            marker = new L.Marker((new L.LatLng(this.point.lat, this.point.lng)), {
+        let point;
+        if (marker) {
+            point = marker.getLatLng();
+        } else if (this.point) {
+            point = new L.LatLng(this.point.lat, this.point.lng);
+        }
+        if (point) {
+            marker = new L.Marker(point, {
                 icon: MarkerOptions.options.route,
-                draggable: true
+                draggable: true,
+                contextmenu: true,
+                contextmenuInheritItems: false,
+                contextmenuItems: [{
+                    text: 'Delete point',
+                    callback: (e) => {
+                        this.delete(e)
+                    }
+                }]
             })
         }
 
@@ -33,6 +48,12 @@ export default class EditableMarker {
             });
         }
         return marker;
+    }
+
+    delete(e) {
+        let coord = e.relatedTarget._latlng;
+        let ind = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === coord.lat && point.lng === coord.lng);
+        PointManager.deletePoint(ind, this.ctx).then();
     }
 
     dragStartPoint(e) {

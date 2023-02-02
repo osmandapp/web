@@ -427,6 +427,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
     }
 }
 
+function updateTrack(currentTrack, ctx) {
+    currentTrack.updated = true;
+    currentTrack.tracks.forEach(track => {
+        track.points = Utils.getPointsDist(track.points);
+    })
+    ctx.setLocalTracks([...ctx.localTracks]);
+    ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
+}
 
 const TracksManager = {
     loadTracks,
@@ -448,6 +456,7 @@ const TracksManager = {
     prepareTrack,
     addDistance,
     addDistanceToPoints,
+    updateTrack,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
