@@ -57,36 +57,110 @@ Click to your login for Logout or Download backup data:
 
 ## Weather
 
-Weather is a Pro feature for OsmAnd application. But for the Web is a free feature. 
+Weather is a [Pro feature](../purchases/index.md) for OsmAnd application. But for the Web is a free feature. 
 
 Users can switch on Weather layers on the map: Temperature, Pressure, Wind, Cloud and Precipitation by left or right menus.
 
 Showing Weather forecast: Day, Week. (Forecast step is 3 hours)
 
-![View OsmAnd Web backup file](@site/static/img/web/web_weather.png)
+![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
 ## Tracks
 
+At this section you can load tracks from your device (Local) and see your tracks from OsmAnd Cloud (Pro).
+
 ### Local
 
+Each user can upload any GPX file to osmand.net/map
 
+![OsmAnd Web local GPX](@site/static/img/web/web_local_gpx.png)
+
+Edit loading tracks:
+
+![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
+
+- Info
+- Track
+- Waypoints
+- Settings
+- Elevation 
+- Speed
+- Edit Name
+- Edit
+- Download
+- Save to cloud (Pro)
+- Get SRTM
 
 ### User's tracks (Pro)
 
-Tracks from user backup. It's only for Pro users.
+After registration OsmAnd Pro. You can see your GPX tracks from OsmAnd Cloud.
+
+Tracks from user's OsmAnd cloud. It's only for Pro users.
+
+![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
+
+- track folders
+- Track info
+- Get SRTM
+- Edit
 
 ## Farorites (Pro)
 
 Favorites from user backup.
 
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
+
+- Show Favorites from Cloud
+- Delete
+- Add Favorite
+  
+### Add / Edit Favorite
+
+Tap by the right mouse button for add a new favorite point.
+
+Click to a favorite point for start it editing.
+
+![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+
+
 ## Map style
 
+Here you can change [Map style](../map/vector-maps.md) like it works in OsmAnd app.
+
+Nautical:
+
+![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
+
+
+Topo:
+
+![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 
 ## Navigation route
 
+Tap by the right mouse button for add Start and End points:
+
+![OsmAnd Web Create Route](@site/static/img/web/web_create_route.png)
+
+After adding Start and End points we receive the route.
+
+![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1.png)
+
+Here you can move start-end points, edit its by menu, change routings type:
+
+![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2.png)
 
 ## Create track (Pro)
 
+Tap by the right mouse button > Create Track.
+
+Here you can choose Navigation Profile for a building track segment, add waypoints and save a track and view track info:
+
+![OsmAnd Web Create Track](@site/static/img/web/web_create_track.png)
+
+Track Info:
+
+![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
 
 
 
