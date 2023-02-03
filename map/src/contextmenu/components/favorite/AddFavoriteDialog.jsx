@@ -55,6 +55,34 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     async function save() {
+        if (ctx.addFavorite.editTrack) {
+            saveTrackWpt();
+        } else {
+            await saveFavorite();
+        }
+    }
+
+    function saveTrackWpt() {
+        let favorite = {
+            name: favoriteName,
+            address: favoriteAddress === "" ? null : favoriteAddress,
+            desc: favoriteDescription === "" ? null : favoriteDescription,
+            color: favoriteColor,
+            background: favoriteShape,
+            icon: favoriteIcon,
+            lat: ctx.addFavorite.location.lat,
+            lon: ctx.addFavorite.location.lng
+        };
+        if (!ctx.selectedGpxFile.wpts) {
+            ctx.selectedGpxFile.wpts = [];
+        }
+        ctx.selectedGpxFile.wpts.push(favorite);
+        ctx.selectedGpxFile.updateLayers = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        closeDialog();
+    }
+
+    async function saveFavorite() {
         let type = ctx.OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
         let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
@@ -149,10 +177,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 {addDescription && <FavoriteDescription favoriteDescription={favoriteDescription}
                                                         setFavoriteDescription={setFavoriteDescription}
                                                         setClose={addDescription}/>}
-                <FavoriteGroup favoriteGroup={favoriteGroup}
-                               setFavoriteGroup={setFavoriteGroup}
-                               groups={ctx.favorites.groups}
-                               defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>
+                {!ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
+                                                              setFavoriteGroup={setFavoriteGroup}
+                                                              groups={ctx.favorites.groups}
+                                                              defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>}
                 <FavoriteIcon favoriteIcon={favoriteIcon}
                               setFavoriteIcon={setFavoriteIcon}
                               currentIconCategories={currentIconCategories}

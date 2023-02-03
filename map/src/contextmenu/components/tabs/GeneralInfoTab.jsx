@@ -233,6 +233,7 @@ export default function GeneralInfoTab({width, srtm}) {
 
             ctx.localTracks[ind] = updatedTrack;
             ctx.setLocalTracks([...ctx.localTracks]);
+            TracksManager.saveTracks(ctx.localTracks);
         } else {
             TracksManager.addTrack(ctx, ctx.selectedGpxFile);
         }

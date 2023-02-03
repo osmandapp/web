@@ -10,6 +10,12 @@ const deletePoint = async (index, ctx) => {
     }
 }
 
+function deleteWpt (ind, ctx) {
+    ctx.selectedGpxFile.wpts.splice(ind, 1);
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+}
+
 async function reorder(startIndex, endIndex, currentTrack, ctx) {
     let removed;
     removed = await deletePointByIndex(currentTrack, startIndex, ctx).then((res) => {
@@ -144,6 +150,7 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
 
 const PointManager = {
     deletePoint,
+    deleteWpt,
     reorder
 }
 

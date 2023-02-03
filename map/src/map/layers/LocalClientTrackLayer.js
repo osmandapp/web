@@ -92,6 +92,8 @@ export default function LocalClientTrackLayer() {
         }
         layer.addTo(map);
         layers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: active};
+        ctx.selectedGpxFile.layers = layer;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     function createPointMarkerOnMap() {
@@ -111,11 +113,15 @@ export default function LocalClientTrackLayer() {
     }
 
     function showSelectedPointOnMap() {
-        if (selectedPointMarker) {
-            map.removeLayer(selectedPointMarker.marker);
+        if (ctx.selectedGpxFile.showPoint.wpt) {
+            map.setView([ctx.selectedGpxFile.showPoint.layer._latlng.lat, ctx.selectedGpxFile.showPoint.layer._latlng.lng], 17);
+        } else {
+            if (selectedPointMarker) {
+                map.removeLayer(selectedPointMarker.marker);
+            }
+            let marker = createPointMarkerOnMap();
+            setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
         }
-        let marker = createPointMarkerOnMap();
-        setSelectedPointMarker({marker: marker, trackName: ctx.selectedGpxFile.name});
     }
 
     function checkDragPoint() {
@@ -130,7 +136,7 @@ export default function LocalClientTrackLayer() {
 
     function checkUpdateLayers() {
         if (ctx.selectedGpxFile?.updateLayers) {
-            updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.layers, true);
+            updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers, true);
             ctx.selectedGpxFile.updateLayers = false;
             saveChanges(ctx.selectedGpxFile.points);
         }
@@ -227,7 +233,7 @@ export default function LocalClientTrackLayer() {
                         let firstP = points[0];
                         firstP.geometry = [];
                         points = [firstP, prevPoint, newPoint];
-                        updateLayers(points, layers, true);
+                        updateLayers(points, null, layers, true);
                     } else {
                         points.push(newPoint);
                     }
@@ -271,10 +277,11 @@ export default function LocalClientTrackLayer() {
         ctx.setCreateTrack({...ctx.createTrack});
     }
 
-    function updateLayers(points, trackLayers, deleteOld) {
+    function updateLayers(points, wpts, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
             TrackLayerProvider.parsePoints(points, layers, true, ctx);
+            TrackLayerProvider.parseWpt(wpts, layers);
             layers = createEditableLayers(layers)
             if (deleteOld) {
                 trackLayers.getLayers().forEach(l => {
@@ -331,24 +338,31 @@ export default function LocalClientTrackLayer() {
     }
 
     function clickMap(e) {
-        ctx.selectedGpxFile.addPoint = true;
-        let newPoint = {
-            lat: e.latlng.lat,
-            lng: e.latlng.lng,
-            profile: ctx.creatingRouteMode.mode,
-            geometry: []
-        };
-        if (newPoint.profile !== TracksManager.PROFILE_LINE) {
-            newPoint.geometry = [];
-        }
-        if (ctx.selectedGpxFile.newPoint) {
-            let points = ctx.selectedGpxFile.points;
-            ctx.selectedGpxFile.prevPoint = points[points.length - 1];
-            if (!ctx.selectedGpxFile.prevPoint.profile) {
-                ctx.selectedGpxFile.prevPoint.profile = TracksManager.PROFILE_LINE
+        if (ctx.selectedGpxFile?.addWpt) {
+            ctx.addFavorite.location = e.latlng;
+            ctx.addFavorite.editTrack = true;
+            ctx.setAddFavorite({...ctx.addFavorite});
+            delete ctx.selectedGpxFile.addWpt;
+        } else {
+            ctx.selectedGpxFile.addPoint = true;
+            let newPoint = {
+                lat: e.latlng.lat,
+                lng: e.latlng.lng,
+                profile: ctx.creatingRouteMode.mode,
+                geometry: []
+            };
+            if (newPoint.profile !== TracksManager.PROFILE_LINE) {
+                newPoint.geometry = [];
             }
+            if (ctx.selectedGpxFile.newPoint) {
+                let points = ctx.selectedGpxFile.points;
+                ctx.selectedGpxFile.prevPoint = points[points.length - 1];
+                if (!ctx.selectedGpxFile.prevPoint.profile) {
+                    ctx.selectedGpxFile.prevPoint.profile = TracksManager.PROFILE_LINE
+                }
+            }
+            ctx.selectedGpxFile.newPoint = newPoint;
         }
-        ctx.selectedGpxFile.newPoint = newPoint;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
@@ -380,7 +394,7 @@ export default function LocalClientTrackLayer() {
             ctx.selectedGpxFile = _.cloneDeep(currentTrack);
         }
         let points = TracksManager.getEditablePoints(ctx.selectedGpxFile);
-        ctx.selectedGpxFile.layers = getLayersBySelectedTrack(points);
+        ctx.selectedGpxFile.layers = getLayersBySelectedTrack(points, ctx.selectedGpxFile.wpts);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.selectedGpxFile.points = points;
 
@@ -393,9 +407,9 @@ export default function LocalClientTrackLayer() {
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
-    function getLayersBySelectedTrack(points) {
+    function getLayersBySelectedTrack(points, wpts) {
         let layers = new L.FeatureGroup();
-        updateLayers(points, layers, true);
+        updateLayers(points, wpts, layers, true);
         layers.addTo(map);
         return layers;
     }

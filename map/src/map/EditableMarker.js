@@ -16,9 +16,11 @@ export default class EditableMarker {
 
     create() {
         let marker = this.layer;
+        let options;
         let point;
         if (marker) {
             point = marker.getLatLng();
+            options = marker.options;
         } else if (this.point) {
             point = new L.LatLng(this.point.lat, this.point.lng);
         }
@@ -33,7 +35,8 @@ export default class EditableMarker {
                     callback: (e) => {
                         this.delete(e)
                     }
-                }]
+                }],
+                ...options
             })
         }
 
@@ -53,19 +56,43 @@ export default class EditableMarker {
     delete(e) {
         let coord = e.relatedTarget._latlng;
         let ind = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === coord.lat && point.lng === coord.lng);
-        PointManager.deletePoint(ind, this.ctx).then();
+        if (ind !== -1) {
+            PointManager.deletePoint(ind, this.ctx).then();
+        } else {
+            this.deleteWpt(coord);
+        }
+    }
+
+    deleteWpt(coord) {
+        let ind = this.ctx.selectedGpxFile.wpts.findIndex(point => point.lat === coord.lat && point.lon === coord.lng);
+        if (ind !== -1) {
+            PointManager.deleteWpt(ind, this.ctx);
+        }
     }
 
     dragStartPoint(e) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
-        let ind = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === lat && point.lng === lng);
-        if (ind >= 0) {
+        let indPoint = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === lat && point.lng === lng);
+        if (indPoint !== -1) {
             this.ctx.selectedGpxFile.dragPoint = {
-                ind: ind,
+                indPoint: indPoint,
                 lat: lat,
                 lng: lng
             };
+        } else {
+            let indWpt = this.ctx.selectedGpxFile.wpts.findIndex(point => {
+                return point.lat === lat && point.lon === lng
+            });
+            if (indWpt !== -1) {
+                this.ctx.selectedGpxFile.dragPoint = {
+                    indWpt: indWpt,
+                    lat: lat,
+                    lng: lng
+                };
+            }
+        }
+        if (this.ctx.selectedGpxFile.dragPoint) {
             this.ctx.selectedGpxFile.addPoint = false;
             this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
         }
@@ -77,78 +104,88 @@ export default class EditableMarker {
         let lng = e.target._latlng.lng;
 
         let trackPoints = this.ctx.selectedGpxFile.points;
-        let ind = this.ctx.selectedGpxFile.dragPoint.ind;
-        let currentPoint = trackPoints[ind];
+        let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
+        if (indPoint) {
+            let currentPoint = trackPoints[indPoint];
+            let layers = this.ctx.selectedGpxFile.layers.getLayers();
+            let polylines = TrackLayerProvider.getPolylines(layers);
 
-        let layers = this.ctx.selectedGpxFile.layers.getLayers();
-        let polylines = TrackLayerProvider.getPolylines(layers);
-        let currentPolyline;
-        let indPointInPolyline;
-
-        polylines.forEach(p => {
-            let pp = p._latlngs;
-            let fp = pp.find(point => point.lat === currentPoint.lat && point.lng === currentPoint.lng)
-            if (fp) {
-                currentPolyline = p;
-                indPointInPolyline = _.indexOf(pp, fp, 0);
-            }
-        })
-
-        let polylineTemp = TrackLayerProvider.createTempPolyline(currentPoint, {lat: lat, lng: lng});
-        polylineTemp.addTo(this.map);
-
-        currentPoint.lat = lat;
-        currentPoint.lng = lng;
-        if (currentPoint.profile === TracksManager.PROFILE_LINE && !currentPoint.geometry || !currentPoint.profile) {
-            currentPolyline._latlngs[indPointInPolyline] = currentPoint;
-            currentPolyline.setLatLngs(currentPolyline._latlngs);
-        } else {
             let currentPolyline;
-            let nextPolyline;
+            let indPointInPolyline;
 
-            let prevPoint = trackPoints[ind - 1];
-            let nextPoint = trackPoints[ind + 1];
-
-            if (prevPoint) {
-                currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
-                if (prevPoint.geometry) {
-                    if (prevPoint.profile === TracksManager.PROFILE_LINE) {
-                        let newGeo = _.cloneDeep(currentPoint.geometry);
-                        newGeo[newGeo.length - 1] = currentPoint;
-                        currentPoint.geometry = newGeo;
-                    } else {
-                        currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, prevPoint, currentPoint);
-                    }
+            polylines.forEach(p => {
+                let pp = p._latlngs;
+                let fp = pp.find(point => point.lat === currentPoint.lat && point.lng === currentPoint.lng)
+                if (fp) {
+                    currentPolyline = p;
+                    indPointInPolyline = _.indexOf(pp, fp, 0);
                 }
-            }
+            })
 
-            if (nextPoint) {
-                nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
-                if (nextPoint.geometry) {
-                    if (currentPoint.profile === TracksManager.PROFILE_LINE) {
-                        let newGeo = _.cloneDeep(nextPoint.geometry);
-                        newGeo[0] = currentPoint;
-                        nextPoint.geometry = newGeo;
-                    } else {
-                        nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, currentPoint, nextPoint);
-                    }
-                }
-            }
+            let polylineTemp = TrackLayerProvider.createTempPolyline(currentPoint, {lat: lat, lng: lng});
+            polylineTemp.addTo(this.map);
 
-            let firstPoint = ind === 0;
-            let lastPoint = ind === trackPoints.length - 1;
+            currentPoint.lat = lat;
+            currentPoint.lng = lng;
 
-            if (firstPoint) {
-                this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
-            } else if (lastPoint) {
-                this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
+            if (currentPoint.profile === TracksManager.PROFILE_LINE && !currentPoint.geometry || !currentPoint.profile) {
+                currentPolyline._latlngs[indPointInPolyline] = currentPoint;
+                currentPolyline.setLatLngs(currentPolyline._latlngs);
             } else {
-                this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
-                this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
+                let currentPolyline;
+                let nextPolyline;
+
+                let prevPoint = trackPoints[indPoint - 1];
+                let nextPoint = trackPoints[indPoint + 1];
+
+                if (prevPoint) {
+                    currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
+                    if (prevPoint.geometry) {
+                        if (prevPoint.profile === TracksManager.PROFILE_LINE) {
+                            let newGeo = _.cloneDeep(currentPoint.geometry);
+                            newGeo[newGeo.length - 1] = currentPoint;
+                            currentPoint.geometry = newGeo;
+                        } else {
+                            currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, prevPoint, currentPoint);
+                        }
+                    }
+                }
+
+                if (nextPoint) {
+                    nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
+                    if (nextPoint.geometry) {
+                        if (currentPoint.profile === TracksManager.PROFILE_LINE) {
+                            let newGeo = _.cloneDeep(nextPoint.geometry);
+                            newGeo[0] = currentPoint;
+                            nextPoint.geometry = newGeo;
+                        } else {
+                            nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, currentPoint, nextPoint);
+                        }
+                    }
+                }
+
+                let firstPoint = indPoint === 0;
+                let lastPoint = indPoint === trackPoints.length - 1;
+
+                if (firstPoint) {
+                    this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
+                } else if (lastPoint) {
+                    this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
+                } else {
+                    this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
+                    this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
+                }
+            }
+            this.map.removeLayer(polylineTemp);
+        } else {
+            let indWpt = this.ctx.selectedGpxFile.dragPoint.indWpt;
+            if (indWpt !== -1) {
+                let currentWpt = this.ctx.selectedGpxFile.wpts[indWpt];
+                currentWpt.lat = lat;
+                currentWpt.lon = lng;
             }
         }
 
-        this.map.removeLayer(polylineTemp);
         this.ctx.selectedGpxFile.addPoint = false;
         delete this.ctx.selectedGpxFile.dragPoint;
         this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});

@@ -5,6 +5,7 @@ import React from "react";
 import {Tab} from "@mui/material";
 import PointsTab from "./components/tabs/PointsTab";
 import SettingsTab from "./components/tabs/SettingsTab";
+import WaypointsTab from "./components/tabs/WaypointsTab";
 
 export default class TrackTabList {
 
@@ -24,7 +25,8 @@ export default class TrackTabList {
 
         tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
+            tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
+            tabs.Waypoints = <WaypointsTab key='waypoints' width={this.state.graphWidth}/>;
             tabs.Settings = <SettingsTab key='settings' width={this.state.graphWidth}/>;
         }
 

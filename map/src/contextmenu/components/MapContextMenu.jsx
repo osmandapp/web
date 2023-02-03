@@ -38,7 +38,7 @@ export default function MapContextMenu({drawerWidth}) {
     },[showContextMenu])
 
     useEffect(() => {
-        if (!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) {
+        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
@@ -66,7 +66,7 @@ export default function MapContextMenu({drawerWidth}) {
                 }
             }
         }
-    }, [ctx.currentObjectType, ctx.selectedGpxFile]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint]);
 
     function selectedFileWasChanged() {
         if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {

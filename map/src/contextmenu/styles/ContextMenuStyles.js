@@ -56,11 +56,13 @@ const contextMenuStyles = makeStyles({
 
     item: {
         '& .MuiMenuItem-root': {
-            userSelect: 'text'
+            userSelect: 'text',
+            maxWidth: '800px'
         },
         '& .MuiTypography-root': {
-            marginLeft: "1px !important"
-        }
+            marginLeft: "1px !important",
+            overflow: "visible !important"
+        },
     }
 })
 

@@ -218,6 +218,7 @@ function getPolylines(layers) {
 const TrackLayerProvider = {
     createLayersByTrackData,
     parsePoints,
+    parseWpt,
     getPolylineOpt,
     getPolylineByPoints,
     getPointByPolyline,

@@ -9,6 +9,7 @@ import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
 import AppContext, {toHHMMSS} from "../../../context/AppContext"
+import _ from "lodash";
 
 
 async function displayWeather(ctx, setWeatherPoint) {
@@ -36,6 +37,7 @@ async function displayWeather(ctx, setWeatherPoint) {
     if (responseWeek.ok) {
         data.week = await responseWeek.json();
     }
+    console.log(data)
     setWeatherPoint(data);
     let type = ctx.OBJECT_TYPE_WEATHER;
     ctx.setCurrentObjectType(type);
