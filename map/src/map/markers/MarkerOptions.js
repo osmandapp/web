@@ -26,14 +26,24 @@ const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
 }
 
 const options = {
-    startIcon: MarkerIcon({bg: '#1976d2'}), //blue
-    endIcon: MarkerIcon({bg: '#ff595e'}),  //red
-    pointerIcons: MarkerIcon({bg: '#fec93b'}), //yellow
+    startIcon: MarkerIcon({bg: '#1976d2'}),
+    endIcon: MarkerIcon({bg: '#ff595e'}),
+    pointerIcons: MarkerIcon({bg: '#fec93b'}),
     route: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
         iconSize: [10, 10],
         clickable: false
-    })
+    }),
+    trackStart: L.icon({
+        iconUrl: '/map/images/map_icons/map_track_point_start.svg',
+        iconSize: [60, 60],
+        clickable: false
+    }),
+    trackEnd: L.icon({
+        iconUrl: '/map/images/map_icons/map_track_point_finish.svg',
+        iconSize: [60, 60],
+        clickable: false
+    }),
 };
 
 function getWptIcon(point, color, background, icon, folder) {

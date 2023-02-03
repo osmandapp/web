@@ -141,11 +141,11 @@ function addStartEndMarkers(points, layers) {
     if (points.length > 1) {
         let end = new L.LatLng(points[points.length - 1].lat, points[points.length - 1].lng);
         layers.push(new L.Marker(end, {
-            icon: MarkerOptions.options.endIcon,
+            icon: MarkerOptions.options.trackEnd,
         }))
     }
     layers.push(new L.Marker(start, {
-        icon: MarkerOptions.options.startIcon,
+        icon: MarkerOptions.options.trackStart,
     }))
 }
 
