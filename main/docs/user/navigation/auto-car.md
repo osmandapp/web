@@ -54,13 +54,57 @@ You need to select the profile that will be used when connecting to Android Auto
 
 <TabItem value="android" label="Android Auto">
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-1.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-1.png)
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-1.png)
+
+</TabItem>
+
+</Tabs>  
+
+
+## Settings
+
+
+
+## Navigation
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-5.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-8.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-9.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-11.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
 
 </TabItem>
 
 <TabItem value="ios" label="CarPlay"> 
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-1.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-2.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-4.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-5.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-6.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-7.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-8.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-9.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-10.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-12.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)
 
 </TabItem>
 
