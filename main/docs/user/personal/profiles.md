@@ -70,22 +70,6 @@ All settings affect the selected application profile only.
 
 This section contains settings of the cursor on the map and map view, settings of units & formats of map and profile data, settings of external input devices, and other sensors.
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2"/>*
-
-</TabItem>
-
-</Tabs>
-
 ### Appearance
 
 In this section of the General settings menu, you can set parameters for the cursor on the map and map view for the chosen profile.
@@ -94,22 +78,26 @@ In this section of the General settings menu, you can set parameters for the cur
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
+
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
 
-- _<Translate android="true" ids="choose_osmand_theme"/>_ - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
-- _<Translate android="true" ids="rotate_map_to"/>_ - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
-- _<Translate android="true" ids="shared_string_2_5_d_view"/>_ - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- _<Translate android="true" ids="display_position"/>_ - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
-- _<Translate android="true" ids="map_screen_orientation"/>_ - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
-- _<Translate android="true" ids="screen_control"/>_ - opens [the screen control menu](../navigation/route-navigation.md#turn-on-screen), where you can select parameters for your device screen during navigation for keeping device battery consumption.
+- *<Translate android="true" ids="choose_osmand_theme"/>* - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
+- *<Translate android="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- *<Translate android="true" ids="shared_string_2_5_d_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- *<Translate android="true" ids="display*position"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- *<Translate android="true" ids="map_screen_orientation"/>* - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
+- *[<Translate android="true" ids="screen_control"/>](../navigation/route-navigation/#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,map_settings_appearance"/>*
+
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;*<Translate ios="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- &nbsp;*<Translate ios="true" ids="rotate_map_to_bearing"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
 - &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - &nbsp;*<Translate ios="true" ids="always_center_position_on_map"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.  
 
@@ -204,28 +192,34 @@ Additional settings for profile (like external devices and etc.)
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
+
 You can enable/disable buttons and input devices for OsmAnd, on or off animations for navigation mode, use or not fullscreen mode, magnetic sensor, Kalman filter.
 
 ![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
 
-- <Translate android="true" ids="use_volume_buttons_as_zoom"/> - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- <Translate android="true" ids="tap_on_map_to_hide_interface"/> - use or not fullscreen mode of OsmAnd app on the device.
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations) - allows to switch on/off animation for navigation mode.
-- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
+- *<Translate android="true" ids="use_volume_buttons_as_zoom"/>* - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
+- *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - use or not fullscreen mode of OsmAnd app on the device.
+- *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
+- *<Translate android="true" ids="animate_my_location"/>* - <Translate android="true" ids="animate_my_location_desc"/> It is a smooth transition of the location on the map during navigation.
+- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,shared_string_others"/>*
+
 You can enable/disable buttons and input devices for OsmAnd.
 
-- [<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons) - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
+- *[<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
 
 </TabItem>
 
 </Tabs>
+
 
 ## Navigation settings
 
@@ -497,7 +491,7 @@ Below, you can find the list of possible route options.
 
 ### Map during navigation
 
-Parameters for 'Map during navigation' and 'Animate location change'. Change map behavior during navigation.
+Parameters for *Map during navigation* and *Animate location change*. Change map behavior during navigation.
 
 <Tabs groupId="operating-systems">
 
@@ -508,9 +502,9 @@ Parameters for 'Map during navigation' and 'Animate location change'. Change map
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 | "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> _<Translate android="true" ids="auto_zoom_none"/>_ - manually zoom. <br /> _<Translate android="true" ids="auto_zoom_farthest"/>_ - zoom is 200m.<br /> _<Translate android="true" ids="auto_zoom_far"/>_ - zoom is 100m. <br /> _<Translate android="true" ids="auto_zoom_close"/>_ - zoom is 50m. |
+| "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| **<Translate android="true" ids="animate_my_location"/>** |  Smooth location transition on the map during navigation.  |              |
+| *<Translate android="true" ids="animate_my_location"/>* |  Located in General settings, section [Other](#other).  |              |
 
 </TabItem>
 
@@ -528,6 +522,7 @@ Parameters for 'Map during navigation' and 'Animate location change'. Change map
 </TabItem>
 
 </Tabs>
+
 
 ## Configure map
 
@@ -559,6 +554,7 @@ Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen
 
 </Tabs>
 
+
 ## Configure screen
 
 Here you can set parameters for [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) of chosen profile.
@@ -588,6 +584,7 @@ Set parameters for [Configure screen](../widgets/configure-screen.md) menu for c
 </TabItem>
 
 </Tabs>
+
 
 ## Profile appearance
 
@@ -634,6 +631,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 </Tabs>
 
+
 ## UI Customization
 
 Customize the quantity of items in ["<Translate android="true" ids="shared_string_drawer"/>"](../start-with/main-menu.md#main-menu-drawer), ["<Translate android="true" ids="configure_map"/>"](../map/configure-map-menu.md) and ["<Translate android="true" ids="context_menu_actions"/>"](../map/map-context-menu.md).  
@@ -650,7 +648,7 @@ Under each menu there is the info about items quantity / active items.
 
 ![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-**Drawer**
+#### Drawer
 
 In this part of the menu you reorder or hide items from the [Drawer](../start-with/main-menu.md#main-menu-drawer).
 
@@ -665,7 +663,7 @@ In this part of the menu you reorder or hide items from the [Drawer](../start-wi
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Drawer" menu from another profile.  |
 | ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)|  
 
-**Configure map**
+#### Configure map
 
 In this part of the menu you reorder or hide items from the [Configure map](../map/configure-map-menu.md) menu.
 
@@ -680,7 +678,7 @@ In this part of the menu you reorder or hide items from the [Configure map](../m
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Configure map" menu from another profile.|
 | ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_configure_reset_copy_android.png)|  
 
-**Context menu actions**
+#### Context menu actions
 
 In this part of the menu you reorder or hide items from the [Context menu actions](../map/map-context-menu.md) menu.
 
@@ -694,6 +692,7 @@ In this part of the menu you reorder or hide items from the [Context menu action
 | "<Translate android="true" ids="reset_to_default"/>": resetting the "Context menu actions" menu to default. |
 | "<Translate android="true" ids="copy_from_other_profile"/>": coping the "Context menu actions" menu from another profile.  |
 | ![Profile Configure map menu Copy Android](@site/static/img/personal/profiles/profile_context_reset_copy_android.png)|  
+
 
 ## Plugin settings
 
