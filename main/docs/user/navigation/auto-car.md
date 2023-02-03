@@ -55,6 +55,7 @@ You need to select the profile that will be used when connecting to Android Auto
 <TabItem value="android" label="Android Auto">
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-1.png)
+
 </TabItem>
 
 <TabItem value="ios" label="CarPlay"> 
@@ -68,6 +69,110 @@ You need to select the profile that will be used when connecting to Android Auto
 
 ## Settings
 
+Navigation Menu.  
+Buttons for interacting with the map:
+- Move Map Button.
+- Current location.
+- Zoom.
+
+
+### Search
+
+The tool provides search capabilities for any use case: address search, POi search, custom search, history search, and coordinate search.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)   ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-4.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-6.png)
+
+</TabItem>
+
+</Tabs>  
+
+
+### POI
+
+You can select a POI from the list.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-5.png)
+
+</TabItem>
+
+</Tabs>  
+
+
+### Favorites
+
+Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
+You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+</TabItem>
+
+</Tabs>  
+
+
+### Markers
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+</TabItem>
+
+</Tabs>  
+
+
+### Tracks
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+</TabItem>
+
+</Tabs>  
+
+
+### Voice prompts
+
+<InfoAndroidOnly />
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
 
 
 ## Navigation
@@ -78,16 +183,12 @@ You need to select the profile that will be used when connecting to Android Auto
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-5.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-8.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-9.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-11.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
 
 </TabItem>
 
@@ -95,9 +196,7 @@ You need to select the profile that will be used when connecting to Android Auto
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-2.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-4.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-5.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-6.png)
+
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-7.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-8.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-9.png)
@@ -108,4 +207,4 @@ You need to select the profile that will be used when connecting to Android Auto
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
