@@ -1,6 +1,6 @@
-<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(141.000000, 8.000000) scale(0.375000 0.375000) "> 
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <path d="M20 32H28V40H20V32Z" fill="#39AC39"/>
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M44 32H4V28H44V32Z" fill="#39AC39" fill-opacity="0.75"/>

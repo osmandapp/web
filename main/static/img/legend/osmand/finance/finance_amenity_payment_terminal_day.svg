@@ -1,6 +1,6 @@
-<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(135.000000, 2.000000) scale(1.500000 1.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#878787"/>
@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(141.000000, 8.000000) scale(0.031034 0.031034) "> 
+<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M159.276 112.172C157.444 122.794 59.4897 541.938 59.4897 541.938L520.925 538.039L420.906 110.436L159.276 112.172Z" stroke="#ffffff" stroke-width="22.8525" stroke-linejoin="round"/>
 <path opacity="0.1" fill-rule="evenodd" clip100-rule="evenodd" d="M159.284 112.19C157.452 122.838 59.5034 543.009 59.5034 543.009L520.911 539.101L420.898 110.449L159.284 112.19Z" fill="#ffffff" stroke="#ffffff" stroke-width="22.8798" stroke-linecap="round" stroke-linejoin="round"/>

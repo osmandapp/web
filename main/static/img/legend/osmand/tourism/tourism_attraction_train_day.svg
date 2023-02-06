@@ -1,6 +1,6 @@
-<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(135.000000, 2.000000) scale(1.500000 1.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.958" d="M9.9994 1C14.9626 1 19 5.00182 19 10C19 14.9655 14.9626 19 9.9994 19C5.03739 19 1 14.9655 1 10C1 5.00182 5.03739 1 9.9994 1Z" fill="#BA9171"/>
@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(141.000000, 8.000000) scale(0.031034 0.031034) "> 
+<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <g clip100-path="url(#clip1000)">
 <path d="M362.599 331.011C351.408 331.011 342.252 340.167 342.252 351.358C342.252 362.549 351.408 371.705 362.599 371.705C373.79 371.705 382.946 362.549 382.946 351.358C382.946 340.167 373.79 331.011 362.599 331.011Z" fill="#ffffff"/>

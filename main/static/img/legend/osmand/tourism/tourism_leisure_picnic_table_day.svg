@@ -1,13 +1,13 @@
-<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(135.000000, 2.000000) scale(1.875000 1.875000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4H13V8H14V11H12.618L13.618 13H10.382L9.38197 11H6.61803L5.61803 13H2.38197L3.38197 11H2V8H3V4Z" fill="#EBE7E4" fill-opacity="0.8"/>
 
 </g>
 
 
-<g transform="translate(139.000000, 6.000000) scale(0.458333 0.458333) "> 
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M40 12H8V20H18L14 28H4V32H12L8 40H12L16 32H32L36 40H40L36 32H44V28H34L30 20H40V12ZM30 28L26 20H22L18 28H30Z" fill="#593906"/>
 

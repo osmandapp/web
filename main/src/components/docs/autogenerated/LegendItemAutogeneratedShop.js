@@ -29,7 +29,6 @@ export default function Render() {
         'Frozen food' : 'shop/shop_shop_frozen_food',
         'Greengrocer' : 'shop/shop_shop_greengrocer',
         'Honey' : 'shop/shop_shop_honey',
-        'Ice_cream' : 'shop/shop_amenity_ice_cream',
         'Mall' : 'shop/shop_shop_mall',
         'Pasta' : 'shop/shop_shop_pasta',
         'Party' : 'shop/shop_shop_party',

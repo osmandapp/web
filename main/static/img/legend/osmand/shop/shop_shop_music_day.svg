@@ -1,6 +1,6 @@
-<svg width="300" height="35" viewBox="0 0 300 35" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(135.000000, 2.000000) scale(1.500000 1.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <path opacity="0.956" d="M9.9994 1C14.9626 1 19 5.00182 19 10C19 14.9655 14.9626 19 9.9994 19C5.03739 19 1 14.9655 1 10C1 5.00182 5.03739 1 9.9994 1Z" fill="#CF87E1"/>
 <path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#BA37DD"/>
@@ -8,7 +8,7 @@
 </g>
 
 
-<g transform="translate(141.000000, 8.000000) scale(0.375000 0.375000) "> 
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <path opacity="0.2" fill-rule="evenodd" clip100-rule="evenodd" d="M44 12H4V16H44V12ZM44 20H4V24H44V20ZM4 28H44V32H4V28ZM44 36H4V40H44V36Z" fill="#ffffff"/>
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M40 8L16 12V16V32.3414C15.3744 32.1203 14.7013 32 14 32C10.6863 32 8 34.6863 8 38C8 41.3137 10.6863 44 14 44C17.3137 44 20 41.3137 20 38V15.3333L36 12.6667V28.3414C35.3744 28.1203 34.7013 28 34 28C30.6863 28 28 30.6863 28 34C28 37.3137 30.6863 40 34 40C37.3137 40 40 37.3137 40 34V12V10V8Z" fill="#ffffff"/>
