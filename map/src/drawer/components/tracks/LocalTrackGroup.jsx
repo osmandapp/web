@@ -77,11 +77,7 @@ export default function LocalTrackGroup() {
 
     const Buttons = () => {
         return (
-            <div><label htmlFor="contained-button-file">
-                <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
-                             onChange={fileSelected(ctx)}/>
-                <MenuItem>Upload</MenuItem>
-            </label>
+            <div>
                 {ctx.loginUser && <MenuItem onClick={(e) => {
                     ctx.setCreateTrack({enable: true})
                     e.stopPropagation();
@@ -133,6 +129,19 @@ export default function LocalTrackGroup() {
                                        track={track}
                                        index={index}/>;
             })}
+            <MenuItem disableRipple={true}>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <label htmlFor="contained-button-file">
+                            <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
+                                         onChange={fileSelected(ctx)}/>
+                            <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}>
+                                Upload
+                            </Button>
+                        </label>
+                    </Grid>
+                </Grid>
+            </MenuItem>
         </Collapse>
     </div>
 }

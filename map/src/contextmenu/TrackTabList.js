@@ -23,10 +23,19 @@ export default class TrackTabList {
         const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
+        let isTrack = ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK
+            || ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+
         tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
+        }
+
+        if (isTrack && ctx.selectedGpxFile.wpts?.length > 0 || ctx.createTrack) {
             tabs.Waypoints = <WaypointsTab key='waypoints' width={this.state.graphWidth}/>;
+        }
+
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Settings = <SettingsTab key='settings' width={this.state.graphWidth}/>;
         }
 
