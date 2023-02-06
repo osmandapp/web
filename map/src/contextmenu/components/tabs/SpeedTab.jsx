@@ -17,11 +17,11 @@ export default function SpeedTab({width}) {
     const graphData = useMemo(() => {
         if (data) {
             let result = [];
-            let min = data[0].ext.speed;
-            let max = data[0].ext.speed;
+            let min = data[0].ext?.speed;
+            let max = data[0].ext?.speed;
             let cumDist = 0;
             data.forEach((point) => {
-                let val = Math.round(point.ext.speed * 10) / 10;
+                let val = Math.round(point.ext?.speed * 10) / 10;
                 cumDist += point.distance;
                 let data = {
                     "Distance": Math.round(cumDist) / 1000,

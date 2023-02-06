@@ -382,6 +382,8 @@ export const AppContextProvider = (props) => {
         welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
     });
     const [createTrack, setCreateTrack] = useState(null);
+    const [gpxCollection, setGpxCollection] = useState([]);
+
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
@@ -465,7 +467,8 @@ export const AppContextProvider = (props) => {
         OBJECT_TYPE_LOCAL_CLIENT_TRACK,
         OBJECT_TYPE_WEATHER,
         createTrack, setCreateTrack,
-        creatingRouteMode, setCreatingRouteMode
+        creatingRouteMode, setCreatingRouteMode,
+        gpxCollection, setGpxCollection
 
     }}>
         {props.children}

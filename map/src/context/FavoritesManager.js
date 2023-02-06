@@ -1,6 +1,7 @@
 import {post} from "axios";
 import MarkerOptions from "../map/markers/MarkerOptions";
 import Utils from "../util/Utils";
+import TracksManager from "./TracksManager";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
@@ -95,7 +96,7 @@ function prepareTrackData(data) {
         if (typeof data === "string") {
             return JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
                 if (value === "***NaN***") {
-                    return key === "ele" ? 99999 : NaN;
+                    return key === "ele" ? TracksManager.NAN_MARKER : NaN;
                 } else {
                     return value;
                 }

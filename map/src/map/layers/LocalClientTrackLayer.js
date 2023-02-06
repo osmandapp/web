@@ -268,6 +268,7 @@ export default function LocalClientTrackLayer() {
     function saveChanges(points) {
         ctx.selectedGpxFile.points = points;
         TracksManager.addDistance(ctx.selectedGpxFile);
+        TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points, null)
         saveCreatedLayers(ctx.selectedGpxFile.layers);
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
@@ -348,6 +349,7 @@ export default function LocalClientTrackLayer() {
             let newPoint = {
                 lat: e.latlng.lat,
                 lng: e.latlng.lng,
+                ele: TracksManager.NAN_MARKER,
                 profile: ctx.creatingRouteMode.mode,
                 geometry: []
             };

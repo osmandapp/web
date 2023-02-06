@@ -1,5 +1,14 @@
-import {Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
-import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
+import {
+    Button,
+    Collapse,
+    Grid,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Typography
+} from "@mui/material";
+import {Close, ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import Actions from "./Actions";
@@ -8,6 +17,8 @@ import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
 import {useNavigate} from "react-router-dom";
+import PopperMenu from "./PopperMenu";
+
 
 export default function LocalTrackGroup() {
 
@@ -21,6 +32,12 @@ export default function LocalTrackGroup() {
 
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
+    const anchorEl = React.useRef(null);
+    const [open, setOpen] = useState(false);
+
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
 
     const openLogin = () => {
         navigate('/map/loginForm');
@@ -33,11 +50,6 @@ export default function LocalTrackGroup() {
         }
         ctx.setLocalTracks([]);
         localStorage.removeItem('localTracks');
-    }
-
-    function generateLocalTrack() {
-        let newTrack = TracksManager.generate(ctx);
-        TracksManager.addTrack(ctx, newTrack);
     }
 
     const fileSelected = () => async (e) => {
@@ -54,6 +66,38 @@ export default function LocalTrackGroup() {
         });
     }
 
+    function addToCollection() {
+        ctx.localTracks.forEach(lt => {
+            if (!ctx.gpxCollection.find(name => name === lt.name)) {
+                ctx.gpxCollection.push(lt.name);
+            }
+        })
+        ctx.setGpxCollection([...ctx.gpxCollection]);
+    }
+
+    const Buttons = () => {
+        return (
+            <div><label htmlFor="contained-button-file">
+                <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
+                             onChange={fileSelected(ctx)}/>
+                <MenuItem>Upload</MenuItem>
+            </label>
+                {ctx.loginUser && <MenuItem onClick={(e) => {
+                    ctx.setCreateTrack({enable: true})
+                    e.stopPropagation();
+                }}>Create</MenuItem>}
+                {!ctx.createTrack && <MenuItem onClick={(e) => {
+                    addToCollection()
+                    e.stopPropagation();
+                }}>To Collection</MenuItem>}
+                {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
+                    clearLocalTracks()
+                    e.stopPropagation();
+                }}>Clear</MenuItem>}
+            </div>
+        )
+    }
+
 
     return <div className={styles.drawerItem}>
         <MenuItem sx={{ml: 3}} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
@@ -68,6 +112,18 @@ export default function LocalTrackGroup() {
             <Typography variant="body2" color="textSecondary">
                 {ctx.localTracks.length > 0 ? `${ctx.localTracks.length}` : ''}
             </Typography>
+            <IconButton
+                variant="contained"
+                type="button"
+                ref={anchorEl}
+                onClick={(e) => {
+                    handleToggle();
+                    e.stopPropagation();
+                }}
+            >
+                <MoreVert fontSize="small"/>
+            </IconButton>
+            <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
@@ -77,32 +133,6 @@ export default function LocalTrackGroup() {
                                        track={track}
                                        index={index}/>;
             })}
-            <MenuItem disableRipple={true}>
-                <Grid container spacing={3}>
-                    <Grid item xs={6}>
-                        <label htmlFor="contained-button-file">
-                            <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
-                                         onChange={fileSelected(ctx)}/>
-                            <Button className={styles.button} variant="contained" component="span" sx={{ml: 3}}>
-                                Upload
-                            </Button>
-                        </label>
-                    </Grid>
-                    <Grid item xs={6}>
-                        {<Button className={styles.button} variant="contained" component="span"
-                                 onClick={() => {
-                                     ctx.loginUser ? ctx.setCreateTrack({enable: true}) : openLogin()
-                                 }}>
-                            Create
-                        </Button>}
-                    </Grid>
-                </Grid>
-            </MenuItem>
-            {ctx.localTracks.length !== 0 &&
-                <Button className={styles.button} color='warning' variant="contained" component="span" sx={{ml: 5}}
-                        onClick={() => clearLocalTracks()}>
-                    Clear
-                </Button>}
         </Collapse>
     </div>
 }

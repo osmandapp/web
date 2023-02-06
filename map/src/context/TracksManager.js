@@ -8,6 +8,7 @@ const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 const PROFILE_LINE = 'line';
 const PROFILE_GAP = 'gap';
+const NAN_MARKER = 99999;
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -91,7 +92,7 @@ async function getTrackData(file) {
         if (resp) {
             let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
                 if (value === "***NaN***") {
-                    return key === "ele" ? 99999 : NaN;
+                    return key === "ele" ? NAN_MARKER : NaN;
                 } else {
                     return value;
                 }
@@ -381,7 +382,7 @@ function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
     //value smoothing
-    while (isNaN(ele) || ele === 99999) {
+    while (isNaN(ele) || ele === NAN_MARKER) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
             if (prevP && prevP[elevation]) {
@@ -461,7 +462,8 @@ const TracksManager = {
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
     PROFILE_LINE: PROFILE_LINE,
-    PROFILE_GAP: PROFILE_GAP
+    PROFILE_GAP: PROFILE_GAP,
+    NAN_MARKER: NAN_MARKER
 };
 
 export default TracksManager;
