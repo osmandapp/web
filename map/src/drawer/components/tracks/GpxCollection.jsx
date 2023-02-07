@@ -12,6 +12,7 @@ import {Close, ExpandLess, ExpandMore, Map} from "@mui/icons-material";
 import {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import drawerStyles from "../../styles/DrawerStyles";
+import axios from "axios";
 
 const useStyles = makeStyles({
     group: {
@@ -31,7 +32,17 @@ export default function GpxCollection() {
     const [open, setOpen] = useState(false);
 
 
-    async function downloadObf() {
+    const downloadObf = async () => {
+        await axios({
+            url: `${process.env.REACT_APP_GPX_API}/mapapi/download-obf`,
+            method: 'post',
+            data: ctx.gpxCollection,
+        }).then((resp) => {
+            const url = document.createElement('a');
+            url.href = URL.createObjectURL(new Blob([resp.data]));
+            url.download = `OsmAndCollection.obf`;
+            url.click();
+        })
     }
 
     function deleteFile(index) {
@@ -75,7 +86,7 @@ export default function GpxCollection() {
                 })}
             </div>
             {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
-                    <Button className={styles.button} variant="contained" component="span" sx={{ml: 5, mt: 1}}
+                <Button className={styles.button} variant="contained" component="span" sx={{ml: 5, mt: 1}}
                         onClick={downloadObf}>
                     Get OBF
                 </Button>

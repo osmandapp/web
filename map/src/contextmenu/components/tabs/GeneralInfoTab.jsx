@@ -369,7 +369,7 @@ export default function GeneralInfoTab({width, srtm}) {
         {!ctx.createTrack && <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                                      onClick={downloadGpx}
         >Download</Button>}
-        {!ctx.createTrack &&
+        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
             <Button sx={{ml: 2}} style={{backgroundColor: '#fbc73a'}} variant="contained" component="span"
                     onClick={addToCollection}>
                 Add to Collection
