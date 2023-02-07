@@ -81,7 +81,6 @@ All values are indicated either for the whole route or only for the selected int
 **This feature doesn't exist for iOS version of OsmAnd.**
 :::  
 
-
 </TabItem>
 
 </Tabs>  
@@ -105,13 +104,9 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 | Enable | [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)|
 | Format | You can change the data display format for angular units: <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> |
 
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
 <!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
@@ -139,14 +134,13 @@ In order to display the bearing, a **target point** must be selected. If a **des
 - Relative bearing. If you stick to a relative bearing of 0 degrees and move forward, you will arrive at the destination point, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 - Magnetic bearing. If you align the compass on your boat/vehicle with the widget value and head forward, you will arrive at your destination, but not by the shortest route ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ). 
 
-
-
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
-
 
 <!-- By tapping : Changes between  Relative bearing or Magnetic bearing (with "M") -->
 
+
 ## Navigation points
+
 ### Destination
 
 Destination widget shows the distance left to the last destination point by following the calculated route. 
@@ -175,7 +169,7 @@ Intermediate Destination widget shows the distance left to the first intermediat
 
 <TabItem value="android" label="Android">  
 
-The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Translate android="true" ids="map_widget_time"/>_ to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
+The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Translate android="true" ids="map_widget_time"/>* to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
 
 ![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)
 
@@ -189,7 +183,7 @@ The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Tr
 
 <TabItem value="ios" label="iOS">  
 
-The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Translate android="true" ids="map_widget_time"/>_ to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
+The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Translate android="true" ids="map_widget_time"/>* to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
 
 ![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)
 
@@ -202,9 +196,6 @@ The widget shows _<Translate android="true" ids="access_arrival_time"/>_ or _<Tr
 
 </Tabs>  
 
-
-
-
 ### Intermediate arrival time
 
 Intermediate arrival time or Intermediate time widget shows <Translate android="true" ids="access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> of navigation to the first intermediate point. Once intermediate points is passed, the time will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
@@ -216,6 +207,7 @@ Intermediate arrival time or Intermediate time widget shows <Translate android="
 | Enable |  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_intermediate_arrival_time"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
 | On  Click | Changes between "Intermediate arrival time" to "Intermediate time" and vice versa. |  
 
+
 ## Speed limit
 
 Speed limit widget shows a speed limit for a current driving road. It works in passive and active navigation mode. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
@@ -226,6 +218,7 @@ Speed limit widget shows a speed limit for a current driving road. It works in p
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_max_speed"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
 | On  Click | - |
+
 
 ## Next turns
 
@@ -319,6 +312,7 @@ When maneuvering, the widget shows the scheme of the maneuver and the name (desi
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,map_widget_top_text"/> <br /> <Translate ios="true" ids="ios_button_seq"/> always active |
 | By tapping | - | 
 
+
 ## Approach POIs/Favorites
 
 Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street-name) and displays approaching and passing Points of interest, Waypoints of followed track, Favorites along the route. It displays name, icon of the point and 2 distances: route distance and deviation distance. **Route distance** (top) displayes how much distance needs to be covered by following route, **deviation distance** is a straight distance from the closest route point to the point itself.
@@ -335,6 +329,3 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 |------------|------------|
 | Enable  | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu"/> → Start navigation → pencil button |
 
-## Read Next
-
-[Map markers widget](../widgets/markers.md)
