@@ -1,5 +1,6 @@
 import {makeStyles} from "@material-ui/core/styles";
 import {
+    Box,
     Button,
     Collapse,
     IconButton,
@@ -8,28 +9,23 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
-import {Close, ExpandLess, ExpandMore, Map} from "@mui/icons-material";
-import {useContext, useState} from "react";
+import {Close, ExpandLess, ExpandMore, Map, MoreVert} from "@mui/icons-material";
+import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import drawerStyles from "../../styles/DrawerStyles";
 import axios from "axios";
+import PopperMenu from "./PopperMenu";
 
-const useStyles = makeStyles({
-    group: {
-        '& .MuiMenuItem-root': {
-            minHeight: '50px !important',
-            maxHeight: '50px !important',
-        }
-    }
-})
 export default function GpxCollection() {
-
-    const classes = useStyles();
-    const styles = drawerStyles();
 
     const ctx = useContext(AppContext);
 
+    const anchorEl = React.useRef(null);
+    const [openMenu, setOpenMenu] = useState(false);
     const [open, setOpen] = useState(false);
+
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
 
 
     const downloadObf = async () => {
@@ -47,6 +43,11 @@ export default function GpxCollection() {
 
     function deleteFile(index) {
         ctx.gpxCollection.splice(index, 1);
+        ctx.setGpxCollection([...ctx.gpxCollection]);
+    }
+
+    function clearCollection() {
+        ctx.gpxCollection = [];
         ctx.setGpxCollection([...ctx.gpxCollection]);
     }
 
@@ -68,8 +69,27 @@ export default function GpxCollection() {
             </MenuItem>)
     }
 
-    return <div className={classes.group}>
-        <MenuItem sx={{ml: 3}} divider onClick={() => setOpen(!open)}>
+    const Buttons = () => {
+        return (
+            <div>
+                {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
+                    <MenuItem onClick={(e) => {
+                        downloadObf();
+                        e.stopPropagation();
+                    }}>
+                        Get OBF
+                    </MenuItem>
+                }
+                {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
+                    clearCollection();
+                    e.stopPropagation();
+                }}>Clear</MenuItem>}
+            </div>
+        )
+    }
+
+    return <div>
+        <MenuItem sx={{ml: 3}} divider onClick={() => setOpenMenu(!openMenu)}>
             <ListItemIcon>
                 <Map fontSize="small"/>
             </ListItemIcon>
@@ -77,21 +97,28 @@ export default function GpxCollection() {
             <Typography variant="body2" color="textSecondary">
                 {ctx.gpxCollection.length > 0 ? `${ctx.gpxCollection.length}` : ''}
             </Typography>
+            <IconButton
+                variant="contained"
+                type="button"
+                ref={anchorEl}
+                onClick={(e) => {
+                    handleToggle();
+                    e.stopPropagation();
+                }}
+            >
+                <MoreVert fontSize="small"/>
+            </IconButton>
+            <Box>
+                <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+            </Box>
             {open ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
+        <Collapse in={openMenu} timeout="auto" unmountOnExit>
             <div style={{maxHeight: '25vh', overflow: 'auto'}}>
                 {ctx.gpxCollection.length > 0 && ctx.gpxCollection.map((point, index) => {
                     return CollectionRow()({point: point, index: index});
                 })}
             </div>
-            {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
-                <Button className={styles.button} variant="contained" component="span" sx={{ml: 5, mt: 1}}
-                        onClick={downloadObf}>
-                    Get OBF
-                </Button>
-            }
-
         </Collapse>
     </div>
 

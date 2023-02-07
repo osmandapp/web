@@ -1,4 +1,5 @@
 import {
+    Box,
     Button,
     Collapse,
     Grid,
@@ -106,7 +107,9 @@ export default function LocalTrackGroup() {
             >
                 <MoreVert fontSize="small"/>
             </IconButton>
-            <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+            <Box>
+                <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+            </Box>
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>

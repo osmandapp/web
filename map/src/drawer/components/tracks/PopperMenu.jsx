@@ -21,9 +21,12 @@ export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
         }
         setOpen(false);
     };
-
     return <Popper disablePortal={true} open={open} anchorEl={anchorEl?.current} transition
-                   style={{position: 'bottom-end !important', zIndex: 100}}>
+                   style={{
+                       zIndex: 100,
+                       left: `${anchorEl?.current?.offsetLeft}`,
+                       top: `${anchorEl?.current?.offsetTop}`
+                   }}>
 
         <Paper>
             <ClickAwayListener onClickAway={handleClose}>

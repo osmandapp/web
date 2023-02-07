@@ -1,4 +1,5 @@
 import {
+    Box,
     Collapse,
     IconButton,
     ListItemIcon,
@@ -97,7 +98,9 @@ export default function CloudTrackGroup({index, group}) {
             >
                 <MoreVert fontSize="small"/>
             </IconButton>
-            <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+            <Box>
+                <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+            </Box>
             {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={showTracks.includes(index)} timeout="auto">
