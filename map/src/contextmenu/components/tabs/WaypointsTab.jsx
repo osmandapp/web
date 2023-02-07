@@ -28,7 +28,8 @@ const useStyles = makeStyles({
             overflow: "hidden",
             textOverflow: "ellipsis",
             width: "100%",
-            paddingRight: "20px"
+            paddingRight: "20px",
+            marginLeft: "14px !important"
         }
     }
 })
@@ -64,21 +65,21 @@ export default function WaypointsTab({width}) {
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
-    function addWpt() {
-        ctx.addFavorite.location = 'e.latlng';
-        ctx.setAddFavorite({...ctx.addFavorite});
+    function addPoint() {
+        ctx.selectedGpxFile.addWpt = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     const WaypointRow = () => ({point, index}) => {
         return (
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
-                <ListItemText className={classes.text}>
+                <ListItemText>
                     <Grid container spacing={2}>
                         <Grid item xs={1}>
                             <div className={classes.icon}
                                  dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
                         </Grid>
-                        <Grid item xs={11} sx={{mt: 2}}>
+                        <Grid className={classes.text} item xs={11} sx={{mt: 2, mr: -4}}>
                             <Typography variant="inherit">
                                 {point.layer.options.title}
                             </Typography>
@@ -98,11 +99,6 @@ export default function WaypointsTab({width}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>)
-    }
-
-    function addPoint() {
-        ctx.selectedGpxFile.addWpt = true;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
 

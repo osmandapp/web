@@ -31,7 +31,7 @@ export default class TrackTabList {
             tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 
-        if (isTrack && ctx.selectedGpxFile.wpts?.length > 0 || ctx.createTrack) {
+        if (isTrack) {
             tabs.Waypoints = <WaypointsTab key='waypoints' width={this.state.graphWidth}/>;
         }
 

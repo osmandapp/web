@@ -246,13 +246,28 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
+    function saveCreatedTrack() {
+        if (ctx.selectedGpxFile.newPoint) {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, setLoadingSrtm)
+                .then(() => {
+                    save();
+                    ctx.createTrack.enable = false;
+                    ctx.setCreateTrack({...ctx.createTrack});
+                });
+        } else {
+            save();
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+        }
+    }
+
     return (<Box className={styles.item} minWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
-            {<Grid container spacing={2}>
+            {<Grid container spacing={2} sx={{ml: 0.8}}>
                 <Grid item xs={10}>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={2} sx={{mb: 2}}>
                     {!ctx.createTrack?.enable && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                         <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
                                 onClick={() => ctx.setCreateTrack({
@@ -343,16 +358,9 @@ export default function GeneralInfoTab({width, srtm}) {
                 </ListItemText>
             }
         </Typography>
-        {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+        {ctx.createTrack &&
             <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => {
-                        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, setLoadingSrtm)
-                            .then(() => {
-                                save();
-                                ctx.createTrack.enable = false;
-                                ctx.setCreateTrack({...ctx.createTrack});
-                            });
-                    }}
+                    onClick={saveCreatedTrack}
             >Save</Button>}
         {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
@@ -361,10 +369,11 @@ export default function GeneralInfoTab({width, srtm}) {
         {!ctx.createTrack && <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                                      onClick={downloadGpx}
         >Download</Button>}
-        {!ctx.createTrack && <Button sx={{ml: 2}} style={{backgroundColor: '#fbc73a'}} variant="contained" component="span"
-                onClick={addToCollection}>
-            Add to Collection
-        </Button>}
+        {!ctx.createTrack &&
+            <Button sx={{ml: 2}} style={{backgroundColor: '#fbc73a'}} variant="contained" component="span"
+                    onClick={addToCollection}>
+                Add to Collection
+            </Button>}
         {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
             <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
                     onClick={() => {
