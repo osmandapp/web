@@ -2,13 +2,13 @@ import {
     Box,
     Button,
     Collapse, Grid,
-    IconButton,
+    IconButton, LinearProgress,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography
 } from "@mui/material";
-import {Close, ExpandLess, ExpandMore, Map, MoreVert, RouteOutlined} from "@mui/icons-material";
+import {Close, ExpandLess, ExpandMore, RouteOutlined} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import axios from "axios";
@@ -23,6 +23,7 @@ export default function GpxCollection() {
     const anchorEl = React.useRef(null);
     const [openMenu, setOpenMenu] = useState(false);
     const [open, setOpen] = useState(false);
+    const [processDownload, setProcessDownload] = useState(false);
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
@@ -30,11 +31,13 @@ export default function GpxCollection() {
 
 
     const downloadObf = async () => {
+        setProcessDownload(true);
         await axios({
             url: `${process.env.REACT_APP_GPX_API}/mapapi/download-obf`,
             method: 'post',
             data: ctx.gpxCollection,
         }).then((resp) => {
+            setProcessDownload(false)
             const url = document.createElement('a');
             url.href = URL.createObjectURL(new Blob([resp.data]));
             url.download = `OsmAndCollection.obf`;
@@ -82,6 +85,7 @@ export default function GpxCollection() {
     }
 
     return <div>
+        {processDownload ? <LinearProgress/> : <></>}
         <MenuItem sx={{ml: 3}} divider onClick={() => setOpenMenu(!openMenu)}>
             <ListItemIcon>
                 <RouteOutlined fontSize="small"/>
@@ -117,7 +121,7 @@ export default function GpxCollection() {
                         {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
                             <Button sx={{ml: 3}} className={styles.button} variant="contained" component="span"
                                     onClick={downloadObf}>
-                                Create
+                                Get OBF
                             </Button>}
                     </Grid>
                 </Grid>
