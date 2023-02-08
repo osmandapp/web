@@ -24,7 +24,7 @@ The Weather Plugin provides an hourly forecast for 7 days ahead directly on the 
 
 ## Overview
 
-Interactive Weather map layers of The OsmAnd app allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days, even offline.  
+Interactive Weather map layers of The OsmAnd app allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on an interactive global map. The Weather plugin can also display weather forecast for 7 days ahead, even offline.  
 The data source for the Weather plugin is the [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) run by the United States National Weather Service (NWS) and the European Centre for Medium-Range Weather Forecasts ([ECMWF](https://www.ecmwf.int/)).  
 
 ## Setup  
@@ -37,6 +37,10 @@ To display Weather on the OsmAnd map you need to make the following settings:
 4. Display the [Weather](#display-weather-on-the-map) on the map using the Weather screen in the dashboard menu (don't forget to zoom out).  
 5. [Download](#offline-forecast) Weather forcast if you plan to use it offline.  
 6. If you want to see up-to-date weather information on an everyday basis, enable Weather [widgets](#weather-widgets).  
+
+:::caution Note  
+The Weather plugin is only available with Map rendering [Version 2](../personal/global-settings/#map-rendering-engine) (OpenGL).  
+:::
 
 ## Display Weather on the map  
 

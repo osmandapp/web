@@ -69,7 +69,11 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
 
-### Compas
+:::note
+Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).
+:::
+
+### Compass
 
 <Tabs groupId="operating-systems">
 
@@ -95,7 +99,9 @@ The compass widget indicates how the map is oriented: the red arrow or the top o
 
 ### Rotate map by bearing
 
-If rotate map by bearing (rotation by movement direction) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement the map won't be rotated. In this mode the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode. This setting can be changed via *Menu → Settings → Profile → General settings → Display position*.  
+If rotate map by bearing (rotation by [movement direction](#map-orientation-modes)) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement, the map won't be rotated.  
+In this mode, the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode.  
+Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).  
 
 ### Map Tilt and Horizon
 

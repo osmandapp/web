@@ -502,11 +502,11 @@ Functions for Favorite folder:
 
 ## Export / Import
 
-OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro) or [sent](#favorites-share) to friends using instant messaging programs.  
+OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
 
 ### Favorites Backup  
 
-After each edit of Favorites OsmAnd makes a backup file. This backups can be found using file manager programs.  
+After each edit of Favorites OsmAnd makes a backup file. These backups can be found using file manager programs.  
 
 <Tabs groupId="operating-systems">
 
@@ -519,14 +519,14 @@ To access the Favorites backup, you need to use third-party file managers.
 ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 :::caution
-In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services etc.  
+In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  
 :::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Favorites backup can be reached with iOS system *Files* program.  
+Favorites backup can be reached with the iOS system *Files* program.  
 
 *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
@@ -538,7 +538,7 @@ Favorites backup can be reached with iOS system *Files* program.
 
 ### Local folder  
 
-You can export and import Favorites using Actions buttons at the bottom of the Favorites screen. Favorites.gpx file can be send to Dropbox, Email, messengers etc.  
+You can export and import Favorites using the Actions buttons at the bottom of the Favorites screen. Favorites.gpx file can be sent to Dropbox, Email, messengers, etc.  
 Favorites also can be imported from Favorites.gpx file using *Import favorites* or *Open In OsmAnd* function.  
 
 <Tabs groupId="operating-systems">
@@ -557,8 +557,8 @@ Actions:
 
 ![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)  
 
-- <Translate ios="true" ids="fav_import_title"/> - allows to import Favorites as waypoints from GPX file (common GPS data format).  
-- <Translate ios="true" ids="fav_export_title"/> - is used to export all your favorites as Favourites.gpx file.  
+- *<Translate ios="true" ids="fav_import_title"/>* - allows to import Favorites as waypoints from GPX file (common GPS data format).  
+- *<Translate ios="true" ids="fav_export_title"/>* - is used to export all your favorites as Favourites.gpx file.  
 
 </TabItem>
 
@@ -570,7 +570,7 @@ Actions:
 
 <TabItem value="android" label="Android">
 
-A tap on &#8942; button opens special functions menu for a chosen favorite folder. You can choose **share** and send Favorites.gpx file to your device's memory or to your friends via messengers.  
+A tap on &#8942; button opens the special functions menu for a chosen favorite folder. You can choose **share** and send Favorites.gpx file to your device's memory or to your friends via messengers.  
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -578,7 +578,7 @@ A tap on &#8942; button opens special functions menu for a chosen favorite folde
 
 <TabItem value="ios" label="iOS">
 
-Tap on &#128393; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or to your friends via messengers.  
+Tap on &#128393; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or your friends via messengers.  
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
