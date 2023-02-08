@@ -115,6 +115,18 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function closeDialog() {
+        setFavoriteName('');
+        setFavoriteAddress('');
+        setFavoriteDescription('');
+        setAddAddress(false);
+        setAddDescription(false);
+        setFavoriteGroup(null);
+        setFavoriteIcon(MarkerOptions.DEFAULT_WPT_ICON);
+        setFavoriteIconCategories(null);
+        setFavoriteColor(MarkerOptions.DEFAULT_WPT_COLOR);
+        setFavoriteShape(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
+        setCurrentIconCategories(null);
+        setErrorName(false);
         ctx.addFavorite.location = null;
         ctx.setAddFavorite({...ctx.addFavorite});
         setDialogOpen(false);
