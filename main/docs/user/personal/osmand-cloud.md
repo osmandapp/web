@@ -181,7 +181,7 @@ At this screen you can set your login and backup data.
 ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_1_ios.png)
 
 
-## Changes
+<!-- ## Changes
 
 ### Local
 
@@ -191,9 +191,9 @@ At this screen you can set your login and backup data.
 
 ### Cloud backup
 
-## Backup and Restore for OsmAnd Pro
+## Backup and Restore for OsmAnd Pro -->
 
-### OsmAnd Pro
+## OsmAnd Pro
 
 OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
 
@@ -201,7 +201,7 @@ OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#
 
 Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
 
-**_Steps_**:
+***Steps***:
 
 **1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
 
