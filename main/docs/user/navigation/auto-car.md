@@ -69,16 +69,16 @@ You need to select the profile that will be used when connecting to Android Auto
 
 ## Settings
 
-All OsmAnd options directly related to navigation are available in Android Auto and CarPlay. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons#compass)* widget. The rest of the settings are focused to getting the end point for the route on the map.
+All OsmAnd options directly related to navigation are available in Android Auto and CarPlay. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons.md#compass)* widget. The rest of the settings are focused to getting the end point for the route on the map.
 
 
 ### Search
 
 With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
-- [Address search](../search/search-address) - enter the needed address in the search field.
-- [POI search](../search/search-poi) - search by Point of Interest names.
-- [Custom search](../search/custom-poi-search) - search by the categories you created.
-- [History search](../search/search-history) - displays your whole search history.
+- [Address search](../search/search-address.md) - enter the needed address in the search field.
+- [POI search](../search/search-poi.md) - search by Point of Interest names.
+- [Custom search](../search/custom-poi-search.md) - search by the categories you created.
+- [History search](../search/search-history.md) - displays your whole search history.
 - Coordinate search - suggests different formats of coordinates.
 
 <Tabs groupId="operating-systems">
@@ -100,7 +100,7 @@ With this option you can search for the necessary places on the map to navigate.
 
 ### POI
 
-You can select one needed [POI](../map/point-layers-on-map#points-of-interest-poi) from the list of available categories. 
+You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. 
 
 <Tabs groupId="operating-systems">
 
@@ -143,7 +143,7 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 ### Markers
 
-To use [markers](../user/personal/markers) in Android Auto or CarPlay for navigation, they need to be available in the *Menu → Map marker* list.
+To use [markers](../personal/markers.md#overview) in Android Auto or CarPlay for navigation, they need to be available in the *Menu → Map marker* list.
 
 <Tabs groupId="operating-systems">
 
@@ -194,13 +194,13 @@ Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play
 
 <InfoAndroidOnly />
 
-You can turn on [voice prompts](../navigation/voice-navigation).
+In the OsmAnd app, you can set up [voice prompts](../navigation/voice-navigation) individually for one selected profile or for all profiles at once. Do this before you start your route. In Android Auto, you can choose to only disable or enable all selected prompts at once.  
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
 
 ### Screen Alert widget
 
-This [widget](../widgets/nav-widgets#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.
+This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.
 
 <Tabs groupId="operating-systems">
 
