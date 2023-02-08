@@ -16,11 +16,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>  
 
+## Overview
+
 :::tip NOTE
 Android Auto and CarPlay are [paid features](../purchases/index.md).
 :::
-
-## Overview
 
 OsmAnd is available for *Android Auto* and *CarPlay* functions in your vehicle. You can connect your Android or iPhone device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
@@ -69,16 +69,17 @@ You need to select the profile that will be used when connecting to Android Auto
 
 ## Settings
 
-Navigation Menu.  
-Buttons for interacting with the map:
-- Move Map Button.
-- Current location.
-- Zoom.
+All OsmAnd options directly related to navigation are available in Android Auto and CarPlay. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons#compass)* widget. The rest of the settings are focused to getting the end point for the route on the map.
 
 
 ### Search
 
-The tool provides search capabilities for any use case: address search, POi search, custom search, history search, and coordinate search.
+With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
+- [Address search](../search/search-address) - enter the needed address in the search field.
+- [POI search](../search/search-poi) - search by Point of Interest names.
+- [Custom search](../search/custom-poi-search) - search by the categories you created.
+- [History search](../search/search-history) - displays your whole search history.
+- Coordinate search - suggests different formats of coordinates.
 
 <Tabs groupId="operating-systems">
 
@@ -99,13 +100,13 @@ The tool provides search capabilities for any use case: address search, POi sear
 
 ### POI
 
-You can select a POI from the list.
+You can select one needed [POI](../map/point-layers-on-map#points-of-interest-poi) from the list of available categories. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android Auto">
 
-
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
 
 </TabItem>
 
@@ -133,6 +134,8 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 <TabItem value="ios" label="CarPlay"> 
 
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-7.png)
+
 </TabItem>
 
 </Tabs>  
@@ -140,13 +143,19 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 ### Markers
 
+To use [markers](../user/personal/markers) in Android Auto or CarPlay for navigation, they need to be available in the *Menu → Map marker* list.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android Auto">
 
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
+
 </TabItem>
 
 <TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
 
 </TabItem>
 
@@ -155,27 +164,62 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 ### Tracks
 
+:::tip
+Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
+:::
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android Auto">
 
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
+
 </TabItem>
 
 <TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)
 
 </TabItem>
 
 </Tabs>  
 
 
+## Navigation
+
+Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
+
+
 ### Voice prompts
 
 <InfoAndroidOnly />
 
+You can turn on [voice prompts](../navigation/voice-navigation).
+
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
 
+### Screen Alert widget
 
-## Navigation
+This [widget](../widgets/nav-widgets#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-speed-limits.png)
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)
+
+</TabItem>
+
+</Tabs>  
+
+<!--
+____
 
 <Tabs groupId="operating-systems">
 
@@ -183,11 +227,11 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
+
+
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-8.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-9.png)
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
+
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-11.png)
 
 </TabItem>
@@ -195,16 +239,14 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 <TabItem value="ios" label="CarPlay"> 
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-2.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-3.png)
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-7.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-8.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-9.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-10.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)
+
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-12.png)
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)
+
 
 </TabItem>
 
 </Tabs>
+-->
