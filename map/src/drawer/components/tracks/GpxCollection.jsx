@@ -1,23 +1,24 @@
-import {makeStyles} from "@material-ui/core/styles";
 import {
     Box,
     Button,
-    Collapse,
+    Collapse, Grid,
     IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography
 } from "@mui/material";
-import {Close, ExpandLess, ExpandMore, Map, MoreVert} from "@mui/icons-material";
+import {Close, ExpandLess, ExpandMore, Map, MoreVert, RouteOutlined} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import axios from "axios";
 import PopperMenu from "./PopperMenu";
+import drawerStyles from "../../styles/DrawerStyles";
 
 export default function GpxCollection() {
 
     const ctx = useContext(AppContext);
+    const styles = drawerStyles();
 
     const anchorEl = React.useRef(null);
     const [openMenu, setOpenMenu] = useState(false);
@@ -53,9 +54,9 @@ export default function GpxCollection() {
 
     const CollectionRow = () => ({point, index}) => {
         return (
-            <MenuItem key={'filename' + index} divider>
+            <MenuItem sx={{ml: 3}} key={'filename' + index} divider>
                 <ListItemText inset>
-                    <Typography variant="inherit" noWrap>
+                    <Typography sx={{ml: -4}} variant="inherit" noWrap>
                         {point}
                     </Typography>
                 </ListItemText>
@@ -72,14 +73,6 @@ export default function GpxCollection() {
     const Buttons = () => {
         return (
             <div>
-                {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
-                    <MenuItem onClick={(e) => {
-                        downloadObf();
-                        e.stopPropagation();
-                    }}>
-                        Get OBF
-                    </MenuItem>
-                }
                 {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
                     clearCollection();
                     e.stopPropagation();
@@ -91,34 +84,44 @@ export default function GpxCollection() {
     return <div>
         <MenuItem sx={{ml: 3}} divider onClick={() => setOpenMenu(!openMenu)}>
             <ListItemIcon>
-                <Map fontSize="small"/>
+                <RouteOutlined fontSize="small"/>
             </ListItemIcon>
             <ListItemText> Gpx Collection </ListItemText>
-            <Typography variant="body2" color="textSecondary">
-                {ctx.gpxCollection.length > 0 ? `${ctx.gpxCollection.length}` : ''}
-            </Typography>
-            <IconButton
-                variant="contained"
-                type="button"
+            <Button
+                sx={{borderRadius: 28, minWidth: '30px !important'}}
+                size="small"
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
                     e.stopPropagation();
                 }}
             >
-                <MoreVert fontSize="small"/>
-            </IconButton>
+                <Typography variant="body2" color="textSecondary">
+                    {ctx.gpxCollection.length > 0 ? `${ctx.gpxCollection.length}` : ''}
+                </Typography>
+            </Button>
             <Box>
                 <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
             </Box>
             {open ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={openMenu} timeout="auto" unmountOnExit>
-            <div style={{maxHeight: '25vh', overflow: 'auto'}}>
+            <div style={{maxHeight: '23vh', overflow: 'auto'}}>
                 {ctx.gpxCollection.length > 0 && ctx.gpxCollection.map((point, index) => {
                     return CollectionRow()({point: point, index: index});
                 })}
             </div>
+            <MenuItem disableRipple={true}>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
+                            <Button sx={{ml: 3}} className={styles.button} variant="contained" component="span"
+                                    onClick={downloadObf}>
+                                Create
+                            </Button>}
+                    </Grid>
+                </Grid>
+            </MenuItem>
         </Collapse>
     </div>
 

@@ -1,13 +1,12 @@
 import {
-    Box,
+    Box, Button,
     Collapse,
-    IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography
 } from "@mui/material";
-import {ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
+import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import CloudTrackItem from "./CloudTrackItem";
 
@@ -84,20 +83,19 @@ export default function CloudTrackGroup({index, group}) {
                     {group.name}
                 </Typography>
             </ListItemText>
-            <Typography variant="body2" color="textSecondary">
-                {group.files.length > 0 ? `${group.files.length}` : ''}
-            </Typography>
-            <IconButton
-                variant="contained"
-                type="button"
+            <Button
+                sx={{borderRadius: 28, minWidth: '30px !important'}}
+                size="small"
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
                     e.stopPropagation();
                 }}
             >
-                <MoreVert fontSize="small"/>
-            </IconButton>
+                <Typography variant="body2" color="textSecondary">
+                    {group.files.length > 0 ? `${group.files.length}` : ''}
+                </Typography>
+            </Button>
             <Box>
                 <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
             </Box>

@@ -70,10 +70,6 @@ export default function LocalTrackGroup() {
     const Buttons = () => {
         return (
             <div>
-                {ctx.loginUser && <MenuItem onClick={(e) => {
-                    ctx.setCreateTrack({enable: true})
-                    e.stopPropagation();
-                }}>Create</MenuItem>}
                 {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
                     clearLocalTracks()
                     e.stopPropagation();
@@ -93,20 +89,19 @@ export default function LocalTrackGroup() {
                     Local
                 </Typography>
             </ListItemText>
-            <Typography variant="body2" color="textSecondary">
-                {ctx.localTracks.length > 0 ? `${ctx.localTracks.length}` : ''}
-            </Typography>
-            <IconButton
-                variant="contained"
-                type="button"
+            <Button
+                sx={{borderRadius:28, minWidth: '30px !important' }}
+                size="small"
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
                     e.stopPropagation();
                 }}
             >
-                <MoreVert fontSize="small"/>
-            </IconButton>
+                <Typography variant="body2" color="textSecondary">
+                    {ctx.localTracks.length > 0 ? `${ctx.localTracks.length}` : ''}
+                </Typography>
+            </Button>
             <Box>
                 <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
             </Box>
@@ -129,6 +124,14 @@ export default function LocalTrackGroup() {
                                 Upload
                             </Button>
                         </label>
+                    </Grid>
+                    <Grid item xs={6}>
+                        {<Button className={styles.button} variant="contained" component="span"
+                                 onClick={() => {
+                                     ctx.loginUser ? ctx.setCreateTrack({enable: true}) : openLogin()
+                                 }}>
+                            Create
+                        </Button>}
                     </Grid>
                 </Grid>
             </MenuItem>
