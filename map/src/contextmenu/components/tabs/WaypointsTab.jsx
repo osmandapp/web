@@ -44,7 +44,9 @@ export default function WaypointsTab({width}) {
 
     function getPoints() {
         let wpts = [];
-        ctx.selectedGpxFile.layers.getLayers().forEach(layer => {
+        let layers = ctx.selectedGpxFile.layers ? ctx.selectedGpxFile.layers.getLayers() :
+            ctx.selectedGpxFile.gpx.layers ? ctx.selectedGpxFile.gpx.layers.getLayers() : [];
+        layers.forEach(layer => {
             if (layer instanceof L.Marker) {
                 let coord = layer.getLatLng();
                 ctx.selectedGpxFile.wpts.forEach(wpt => {

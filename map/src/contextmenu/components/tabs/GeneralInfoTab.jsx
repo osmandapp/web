@@ -2,9 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import {
     Alert,
     Box,
-    Button, CircularProgress,
+    Button,
     Divider,
-    Grid,
+    Grid, IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -12,10 +12,11 @@ import {
     Typography
 } from "@mui/material";
 import AppContext, {toHHMMSS} from "../../../context/AppContext"
-import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
+import {AccessTime, AvTimer, Commit, ImportExport, MoreVert, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
 import _ from "lodash";
+import PopperMenu from "../../../drawer/components/tracks/PopperMenu";
 
 export default function GeneralInfoTab({width, srtm}) {
 
@@ -36,6 +37,13 @@ export default function GeneralInfoTab({width, srtm}) {
 
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
+    const anchorEl = React.useRef(null);
+    const [open, setOpen] = useState(false);
+
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
+
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             setFileName(ctx.selectedGpxFile.name);
@@ -47,7 +55,11 @@ export default function GeneralInfoTab({width, srtm}) {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
+            if (ctx.selectedGpxFile.points) {
+                setPoints(ctx.selectedGpxFile.points.length);
+            } else {
+                setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
+            }
         }
 
         let info = ctx.selectedGpxFile?.analysis;
@@ -154,8 +166,9 @@ export default function GeneralInfoTab({width, srtm}) {
                         onKeyDown={(e) => changeFileName(e)}
                         autoFocus={true}
                     />}
-                    {
-                        disableButton && <Typography className={styles.name} variant="inherit" maxWidth={'530px'}>
+                    {disableButton &&
+                        <Typography className={styles.name} style={{color: '#666666', fontWeight: 'bold'}}
+                                    variant="inherit" maxWidth={'530px'}>
                             {"* " + fileName}
                         </Typography>
                     }
@@ -165,14 +178,6 @@ export default function GeneralInfoTab({width, srtm}) {
                 </Grid>
                 <Grid item xs={4}>
                     <Box display="flex" justifyContent="flex-end">
-                        {!ctx.createTrack && disableButton &&
-                            <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                                    onClick={() => {
-                                        setDisableButton(false);
-                                    }}
-                            >
-                                edit name
-                            </Button>}
                         {!disableButton && <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
                                                    onClick={(e) => changeFileName(e)}>
                             save
@@ -261,22 +266,90 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
+    function addWaypoint() {
+        ctx.selectedGpxFile.addWpt = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    const Buttons = () => {
+        return (
+            <div>
+                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        ctx.selectedGpxFile.save = true;
+                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                    }}>
+                        Save to Cloud</MenuItem>}
+
+                <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    downloadGpx().then();
+                }}>
+                    Download</MenuItem>
+
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
+                    }}>
+                        Edit</MenuItem>}
+
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        addToCollection()
+                    }}>
+                        Add to Collection</MenuItem>}
+
+                {<MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, ctx.selectedGpxFile.points).then();
+                }}>
+                    Recalculate Elevation (SRTM)</MenuItem>}
+
+                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    addWaypoint()
+                }}>
+                    Add waypoint</MenuItem>}
+
+                {disableButton && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    setDisableButton(false);
+                }}>
+                    Edit name</MenuItem>}
+
+                {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    ctx.setCreateTrack({...{enable: true}})
+                }}>
+                    Clear</MenuItem>}
+            </div>
+        )
+    }
+
     return (<Box className={styles.item} minWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
-            {<Grid container spacing={2} sx={{ml: 0.8}}>
-                <Grid item xs={10}>
+            {<Grid container spacing={2}>
+                <Grid item xs={11}>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
                 </Grid>
-                <Grid item xs={2} sx={{mb: 2}}>
-                    {!ctx.createTrack?.enable && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                        <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                                onClick={() => ctx.setCreateTrack({
-                                    enable: true,
-                                    edit: true
-                                })}
-                        >
-                            edit
-                        </Button>}
+                <Grid item xs={1}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        ref={anchorEl}
+                        onClick={(e) => {
+                            handleToggle();
+                            e.stopPropagation();
+                        }}
+                    >
+                        <MoreVert fontSize="small"/>
+                    </IconButton>
+                    <Box>
+                        <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+                    </Box>
                 </Grid>
             </Grid>}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
@@ -358,40 +431,5 @@ export default function GeneralInfoTab({width, srtm}) {
                 </ListItemText>
             }
         </Typography>
-        {ctx.createTrack &&
-            <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={saveCreatedTrack}
-            >Save</Button>}
-        {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
-            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => ctx.setCreateTrack({...{enable: true}})}
-            >Clear</Button>}
-        {!ctx.createTrack && <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                                     onClick={downloadGpx}
-        >Download</Button>}
-        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
-            <Button sx={{ml: 2}} style={{backgroundColor: '#fbc73a'}} variant="contained" component="span"
-                    onClick={addToCollection}>
-                Add to Collection
-            </Button>}
-        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => {
-                        ctx.selectedGpxFile.save = true;
-                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                    }}
-            >Save to Cloud</Button>}
-        {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
-            <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span"
-                    style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => {
-                        TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
-                    }}
-            >Edit</Button>}
-        {!ctx.createTrack && !ctx.selectedGpxFile?.analysis?.srtmAnalysis &&
-            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm)}
-            >Get SRTM</Button>}
-        {loadingSrtm || ctx.gpxLoading && <CircularProgress sx={{mb: -1, ml: 1}} size={20}/>}
     </Box>);
 };

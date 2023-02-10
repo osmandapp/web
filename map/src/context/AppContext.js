@@ -221,7 +221,6 @@ async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCre
 
 function addModes(data) {
     data['line'] = {name: 'Line', params: {}};
-    data['gap'] = {name: 'Gap', params: {}};
     return data;
 }
 
@@ -383,6 +382,8 @@ export const AppContextProvider = (props) => {
     });
     const [createTrack, setCreateTrack] = useState(null);
     const [gpxCollection, setGpxCollection] = useState([]);
+    const [loadingContextMenu, setLoadingContextMenu] = useState(false);
+    const [updateContextMenu, setUpdateContextMenu] = useState(false);
 
 
     useEffect(() => {
@@ -468,7 +469,9 @@ export const AppContextProvider = (props) => {
         OBJECT_TYPE_WEATHER,
         createTrack, setCreateTrack,
         creatingRouteMode, setCreatingRouteMode,
-        gpxCollection, setGpxCollection
+        gpxCollection, setGpxCollection,
+        loadingContextMenu, setLoadingContextMenu,
+        updateContextMenu, setUpdateContextMenu
 
     }}>
         {props.children}

@@ -2,7 +2,6 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import TracksManager from "../../../context/TracksManager";
-import _ from "lodash";
 
 export default function LocalTrackItem({track, index}) {
 
@@ -36,13 +35,26 @@ export default function LocalTrackItem({track, index}) {
         let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         ctx.setCurrentObjectType(type);
         if (indexTrack !== undefined) {
-            let selectedTrack = ctx.localTracks[indexTrack];
-            track.index = indexTrack;
-            setIndexTrack(indexTrack);
-            selectedTrack.selected = true;
+            addSelectedTack();
+            startEdit();
             ctx.setLocalTracks([...ctx.localTracks]);
         }
-        ctx.setSelectedGpxFile(_.cloneDeep(track));
+    }
+
+    function addSelectedTack() {
+        let selectedTrack = ctx.localTracks[indexTrack];
+        track.index = indexTrack;
+        setIndexTrack(indexTrack);
+        selectedTrack.selected = true;
+        selectedTrack.updateLayers = false;
+        ctx.setSelectedGpxFile(selectedTrack);
+    }
+
+    function startEdit() {
+        ctx.setCreateTrack({
+            enable: true,
+            edit: true
+        })
     }
 
     return <div>

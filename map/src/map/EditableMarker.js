@@ -105,7 +105,7 @@ export default class EditableMarker {
 
         let trackPoints = this.ctx.selectedGpxFile.points;
         let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
-        if (indPoint) {
+        if (indPoint !== -1) {
             let currentPoint = trackPoints[indPoint];
             let layers = this.ctx.selectedGpxFile.layers.getLayers();
             let polylines = TrackLayerProvider.getPolylines(layers);
@@ -185,10 +185,11 @@ export default class EditableMarker {
                 currentWpt.lon = lng;
             }
         }
-
-        this.ctx.selectedGpxFile.addPoint = false;
-        delete this.ctx.selectedGpxFile.dragPoint;
-        this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
+            res.addPoint = false;
+            delete res.dragPoint;
+            this.ctx.setSelectedGpxFile({...res});
+        });
     }
 
     updatePolyline(profile, point, polyline) {

@@ -1,4 +1,4 @@
-import {Paper, AppBar, Button} from "@mui/material";
+import {Paper, AppBar, Button, CircularProgress, LinearProgress} from "@mui/material";
 import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
@@ -9,6 +9,7 @@ import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
 import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
+import TracksManager from "../../context/TracksManager";
 
 const useStyles = makeStyles({
     menu: {
@@ -46,10 +47,9 @@ export default function MapContextMenu({drawerWidth}) {
             if (!ctx.currentObjectType) {
                 setTabsObj(null);
                 setShowContextMenu(false);
-            } else if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged() || !showContextMenu) {
+            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0  || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
-                clearMapCreatedTrack();
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
@@ -66,28 +66,12 @@ export default function MapContextMenu({drawerWidth}) {
                 }
             }
         }
-    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint]);
-
-    function selectedFileWasChanged() {
-        if (ctx.selectedGpxFile.editFavorite || ctx.selectedGpxFile.update) {
-            return true;
-        }
-        return (ctx.selectedGpxFile?.name && prevTrack?.name
-            && ctx.selectedGpxFile.name !== prevTrack.name);
-    }
-
-    function clearMapCreatedTrack() {
-        if (ctx.createTrack?.layers) {
-            ctx.createTrack.enable = false;
-            ctx.setCreateTrack({...ctx.createTrack});
-        }
-    }
+    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
     function stopCreatedTrack() {
         if (ctx.createTrack) {
             ctx.createTrack.enable = false;
             ctx.setCreateTrack({...ctx.createTrack});
-            ctx.setSelectedGpxFile({});
             ctx.setCurrentObjectType(null)
         }
     }
@@ -101,6 +85,7 @@ export default function MapContextMenu({drawerWidth}) {
             <div className="leaflet-control leaflet-bar padding-container">
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
+                        {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress sx={{mb: -1, ml: 1}} size={20}/>}
                         <TabContext value={value}>
                             {Object.values(tabsObj.tabs).map((item, index) =>
                                 <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}> {item} </TabPanel>)

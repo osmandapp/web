@@ -127,6 +127,10 @@ function openNewLocalTrack(ctx) {
     let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
     selectedTrack.selected = true;
     selectedTrack.index = ctx.localTracks.length - 1;
+    ctx.setCreateTrack({
+        enable: true,
+        edit: true
+    })
     ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
 }
 
@@ -211,7 +215,7 @@ function addDistanceToPoints(points, track) {
 async function getGpxTrack(file) {
 
     let trackData = {
-        tracks: file.tracks,
+        tracks: file.points ? [{points: file.points}] : file.tracks,
         wpts: file.wpts,
         metaData: file.metaData,
         pointsGroups: file.pointsGroups,
@@ -303,9 +307,11 @@ async function updateRouteBetweenPoints(ctx, start, end) {
     );
 
     if (result) {
-        result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            return value === "***NaN***" ? NaN : value;
-        });
+        if (typeof result.data === "string") {
+            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                return value === "***NaN***" ? NaN : value;
+            });
+        }
         return result.points;
     }
 }
@@ -385,11 +391,11 @@ function getEle(point, elevation, array) {
     while (isNaN(ele) || ele === NAN_MARKER) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
-            if (prevP && prevP[elevation]) {
-                ele = prevP[elevation];
+            if (prevP && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
+                return prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
-                    ele = 0
+                    return 0;
                 } else {
                     ind++;
                 }
@@ -401,10 +407,10 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
-async function getTrackWithAnalysis(path, ctx, setLoading) {
+async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
     let data = {
-        tracks: ctx.selectedGpxFile.points ? [{points: ctx.selectedGpxFile.points}] : ctx.selectedGpxFile.tracks,
+        tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
         wpts: ctx.selectedGpxFile.wpts,
         metaData: ctx.selectedGpxFile.metaData,
         pointsGroups: ctx.selectedGpxFile.pointsGroups,
@@ -424,7 +430,10 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
             ctx.selectedGpxFile[`${t}`] = data.data[t];
         });
         ctx.selectedGpxFile.update = true;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        if (path === TracksManager.GET_SRTM_DATA) {
+            ctx.setUpdateContextMenu(true);
+        }
+        return ctx.selectedGpxFile;
     }
 }
 

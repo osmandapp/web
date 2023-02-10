@@ -154,11 +154,15 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         </IconButton>
     }
 
+    function getTitleDialog() {
+        return ctx.addFavorite.editTrack ? 'Add waypoint' : 'Add favorite';
+    }
+
     return (
         <Dialog open={dialogOpen}>
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{mb: -3}}>
-                    <DialogTitle>Add favorite</DialogTitle>
+                    <DialogTitle>{getTitleDialog()}</DialogTitle>
                 </Grid>
                 <Grid item xs={1} sx={{ml: -2, mt: 1}}>
                     {CloseDialog(setDialogOpen)}

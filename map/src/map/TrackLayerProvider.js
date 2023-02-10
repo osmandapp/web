@@ -39,11 +39,13 @@ function parsePoints(points, layers, draggable, ctx) {
     })
 
     points.forEach(p => {
-        let marker = new L.Marker((new L.LatLng(p.lat, p.lng)), {
-            icon: MarkerOptions.options.route,
-            draggable: draggable
-        });
-        layers.push(marker);
+        if (draggable || (!draggable && p.geometry !== undefined)) {
+            let marker = new L.Marker((new L.LatLng(p.lat, p.lng)), {
+                icon: MarkerOptions.options.route,
+                draggable: draggable
+            });
+            layers.push(marker);
+        }
     })
 
     let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());

@@ -29,11 +29,13 @@ export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
                    }}>
 
         <Paper>
-            <ClickAwayListener onClickAway={handleClose}>
-                <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
-                    <Buttons/>
-                </MenuList>
-            </ClickAwayListener>
+            <div style={{maxHeight: '15vh', overflow: 'auto'}}>
+                <ClickAwayListener onClickAway={handleClose}>
+                    <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
+                        <Buttons/>
+                    </MenuList>
+                </ClickAwayListener>
+            </div>
         </Paper>
 
     </Popper>
