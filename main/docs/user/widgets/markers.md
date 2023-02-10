@@ -68,7 +68,7 @@ The **Map markers** *(for Android)* widget and **Distance indication - Widgets**
 - _Distance from your current location_ to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
 - _Estimated time of arrival or ETA_ *(Only for Android)*.  
 This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
-The average speed is calculated as the sum of all speeds (received from location points) for the time interval you selected (from 15 seconds to 60 minutes) divided by the total number of these points.
+The average speed is calculated as the mean of all speed values received from location points for the time interval you selected from 15 seconds to 60 minutes.
 
 You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).   
 :::info

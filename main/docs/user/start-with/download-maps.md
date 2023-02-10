@@ -23,9 +23,6 @@ The application can not function normally without offline maps, which are not di
 
 When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
 
-:::tip Note
-World map. Old versions of OsmAnd (< 3.8) suggest downloading World map so you can browse the map on the planet-level zoom. In new OsmAnd versions small *Mini world overview map*"* is packaged inside the app. Afterward, you can download a large *World Overview map* which contains more detailed information about the world.  
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -42,6 +39,11 @@ World map. Old versions of OsmAnd (< 3.8) suggest downloading World map so you c
 </TabItem>
 
 </Tabs>
+
+
+:::tip Note
+**World overview map**. Versions of OsmAnd prior to 3.8 suggest downloading World map so you can browse the map on the planet-level zoom. In new OsmAnd versions small *Mini world overview map* is packaged inside the app. However afterward, you can download a larger *World Overview map* which contains more detailed information about the world.  
+:::
 
 ## Main menu
 
