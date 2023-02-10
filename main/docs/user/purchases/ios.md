@@ -20,9 +20,11 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 ## Difference between purchases
 
-- **Maps+** is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+#### Maps+ 
+- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-- **OsmAnd Pro** is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+#### OsmAnd Pro 
+- ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 You can add your purchases to [the Family Sharing - Apple](https://support.apple.com/en-us/HT201088).
 
