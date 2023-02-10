@@ -22,10 +22,9 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.selected) {
             if (ctx.selectedGpxFile.showPoint) {
                 showSelectedPointOnMap();
+            } else {
+                showSelectedTrackOnMap();
             }
-            // else {
-            //     showSelectedTrackOnMap();
-            // }
         }
         if (ctx.selectedGpxFile?.addPoint) {
             getNewRoute().then();
@@ -57,6 +56,10 @@ export default function LocalClientTrackLayer() {
                     map.removeLayer(selectedPointMarker.marker);
                 }
                 map.removeLayer(localLayers[l].layer);
+                if (l === ctx.selectedGpxFile.name) {
+                    map.removeLayer(ctx.selectedGpxFile.layers);
+                    ctx.setSelectedGpxFile({});
+                }
                 delete localLayers[l];
             }
         }
@@ -327,8 +330,8 @@ export default function LocalClientTrackLayer() {
         file.index = ctx.localTracks.length - 1;
         ctx.localTracks.push(file);
 
-        localLayers[file.name] = {layer: file.layers, points: points, active: true};
-        setLocalLayers({...localLayers});
+        // localLayers[file.name] = {layer: file.layers, points: points, active: true};
+        // setLocalLayers({...localLayers});
 
         ctx.setLocalTracks([...ctx.localTracks]);
     }

@@ -72,7 +72,7 @@ export default function MapContextMenu({drawerWidth}) {
         if (ctx.createTrack) {
             ctx.createTrack.enable = false;
             ctx.setCreateTrack({...ctx.createTrack});
-            ctx.setCurrentObjectType(null)
+            ctx.setCurrentObjectType(null);
         }
     }
 
