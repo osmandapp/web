@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
 
 export default function LocalTrackItem({track, index}) {
 
@@ -19,13 +20,17 @@ export default function LocalTrackItem({track, index}) {
 
     function cleanSelectedTrackIfNeed(currentTrack) {
         if (ctx.selectedGpxFile && ctx.selectedGpxFile.name === currentTrack.name) {
-            ctx.setSelectedGpxFile({});
+            if (ctx.createTrack) {
+                ctx.createTrack.enable = false;
+                ctx.createTrack.clear = true;
+                ctx.setCreateTrack({...ctx.createTrack});
+            }
         }
     }
 
     function deleteTrackFromMap() {
         let currentTrack = ctx.localTracks[track.index];
-        ctx.setCurrentObjectType(null);
+        //ctx.setCurrentObjectType(null);
         currentTrack.selected = false;
         cleanSelectedTrackIfNeed(currentTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -35,8 +40,8 @@ export default function LocalTrackItem({track, index}) {
         let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         ctx.setCurrentObjectType(type);
         if (indexTrack !== undefined) {
-            addSelectedTack();
             startEdit();
+            addSelectedTack();
             ctx.setLocalTracks([...ctx.localTracks]);
         }
     }
@@ -51,10 +56,20 @@ export default function LocalTrackItem({track, index}) {
     }
 
     function startEdit() {
-        ctx.setCreateTrack({
-            enable: true,
-            edit: true
-        })
+        if (ctx.createTrack?.enable) {
+            ctx.setCreateTrack({
+                enable: true,
+                edit: true,
+                closePrev: {
+                    file: _.cloneDeep(ctx.selectedGpxFile)
+                }
+            })
+        } else {
+            ctx.setCreateTrack({
+                enable: true,
+                edit: true
+            })
+        }
     }
 
     return <div>

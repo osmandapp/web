@@ -446,6 +446,18 @@ function updateTrack(currentTrack, ctx) {
     ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
 }
 
+function createTrack(ctx) {
+    let createState = {
+        enable: true
+    }
+    if (ctx.selectedGpxFile) {
+        createState.closePrev = {
+            file: _.cloneDeep(ctx.selectedGpxFile)
+        }
+    }
+    ctx.setCreateTrack({...createState});
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -467,6 +479,7 @@ const TracksManager = {
     addDistance,
     addDistanceToPoints,
     updateTrack,
+    createTrack,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

@@ -19,6 +19,7 @@ import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
 import {useNavigate} from "react-router-dom";
 import PopperMenu from "./PopperMenu";
+import _ from "lodash";
 
 
 export default function LocalTrackGroup() {
@@ -128,7 +129,7 @@ export default function LocalTrackGroup() {
                     <Grid item xs={6}>
                         {<Button className={styles.button} variant="contained" component="span"
                                  onClick={() => {
-                                     ctx.loginUser ? ctx.setCreateTrack({enable: true}) : openLogin()
+                                     ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin();
                                  }}>
                             Create
                         </Button>}

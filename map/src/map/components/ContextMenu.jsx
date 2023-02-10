@@ -2,6 +2,7 @@ import {useContext, useEffect} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import {useNavigate} from "react-router-dom";
+import TracksManager from "../../context/TracksManager";
 
 export default function ContextMenu({setGeocodingData}) {
 
@@ -41,7 +42,7 @@ export default function ContextMenu({setGeocodingData}) {
             map.contextmenu.addItem({
                 text: 'Create track',
                 callback: () => {
-                    ctx.loginUser ? ctx.setCreateTrack({enable: true}) : openLogin()
+                    ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin()
                 }
             });
         }
