@@ -102,7 +102,7 @@ When the user enables USB mass storage to share files with a computer or unmount
 
 ### In order to move the OsmAnd home (maps) folder to an external SD card:
 
--   Go to `Settings (on the start screen) --> OsmAnd Settings --> Data
+-   Go to `Settings (on the start screen) →  OsmAnd Settings → Data
     storage folder`
 -   Change the value to a path pointing to the external SD card, on many
     Android systems it may contain `/storage/extSdCard` or similar.
