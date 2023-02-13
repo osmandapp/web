@@ -27,11 +27,11 @@ export default class TrackTabList {
             || ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
 
         tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks?.length > 0) {
             tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 
-        if (isTrack) {
+        if (isTrack && ctx.selectedGpxFile?.wpts?.length > 0) {
             tabs.Waypoints = <WaypointsTab key='waypoints' width={this.state.graphWidth}/>;
         }
 

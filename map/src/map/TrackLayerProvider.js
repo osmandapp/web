@@ -21,7 +21,7 @@ function parsePoints(points, layers, draggable, ctx) {
     let coordsAll = [];
     points.forEach(point => {
         if (point.geometry !== undefined) {
-            coordsAll = drawRoutePoints(points, point, coordsAll, layers, ctx);
+            coordsAll = drawRoutePoints(points, point, coordsAll, layers, ctx, draggable);
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng))
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -31,6 +31,7 @@ function parsePoints(points, layers, draggable, ctx) {
                         color: ctx.creatingRouteMode.colors[getProfile(point, points)]
                     });
                 }
+                addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(_.cloneDeep(coordsTrk));
                 coordsTrk = [];
@@ -71,10 +72,11 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints(points, point, coordsAll, layers, ctx) {
+function drawRoutePoints(points, point, coordsAll, layers, ctx, draggable) {
     let coords = [];
     point.geometry.forEach(p => {
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
+            addStartEndGap(point, points, layers, draggable);
             layers.push(new L.Polyline(coords, getPolylineOpt()));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
@@ -93,6 +95,24 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx) {
         layers.push(polyline);
     }
     return coordsAll;
+}
+
+function addStartEndGap(point, allPoints, layers, editTrack) {
+    if (!editTrack) {
+        let end = new L.LatLng(point.lat, point.lng);
+        layers.push(new L.Marker(end, {
+            icon: MarkerOptions.options.trackEnd,
+            zIndexOffset: 1000
+        }))
+        let currentInd = _.indexOf(allPoints, point);
+        if (currentInd !== -1) {
+            let start = new L.LatLng(allPoints[currentInd + 1].lat, allPoints[currentInd + 1].lng);
+            layers.push(new L.Marker(start, {
+                icon: MarkerOptions.options.trackStart,
+                zIndexOffset: 1000
+            }))
+        }
+    }
 }
 
 function getProfile(point, points) {

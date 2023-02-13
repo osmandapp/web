@@ -58,6 +58,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     async function save() {
         if (ctx.addFavorite.editTrack) {
             saveTrackWpt();
+            ctx.setUpdateContextMenu(true);
         } else {
             await saveFavorite();
         }
@@ -80,7 +81,6 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.selectedGpxFile.wpts.push(favorite);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-        TracksManager.saveTracks(ctx.localTracks);
         closeDialog();
     }
 

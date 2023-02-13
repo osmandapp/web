@@ -292,6 +292,7 @@ export default function GeneralInfoTab({width, srtm}) {
                     <MenuItem onClick={(e) => {
                         e.stopPropagation();
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
+                        ctx.setUpdateContextMenu(true);
                     }}>
                         Edit</MenuItem>}
 

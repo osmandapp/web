@@ -207,6 +207,7 @@ export default function LocalClientTrackLayer() {
             }
         } else {
             addFirstPoint(newPoint, file, points);
+            ctx.setUpdateContextMenu(true);
         }
     }
 
