@@ -20,7 +20,7 @@ The web portal is a test function at this moment.
 
 As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
-Now each user can test this service:  [test.osmand.net/map](https://test.osmand.net/map/).
+Now each user can test this service:  [osmand.net/map](https://osmand.net/map/).
 
 What functions will be available except the map view:
 
@@ -38,7 +38,7 @@ What functions will be available except the map view:
 ## OsmAnd Pro sync
 
 OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription. 
-If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your email and password for [test.osmand.net/map](https://test.osmand.net/map/):
+If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your email and password for [osmand.net/map](https://osmand.net/map/):
 
 :::tip
 Read how to register your email for OsmAnd Pro service [here](../troubleshooting/setup.md#cross-platform).
@@ -79,14 +79,16 @@ Edit loading tracks:
 
 ![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
 
-- Info
-- Track
-- Waypoints
-- Settings
-- Elevation 
-- Speed
-- Edit Name
-- Edit
+Actions and screens:
+- Info: track data,
+- Track: start profile point ("Create route"),
+- Waypoints: the list of track waypoints,
+- Settings: list of Navigation Profiles for "Create route" tool,
+- Elevation: elevation graph,
+- Speed: speed graph,
+- Edit Name: change track name,
+- Edit: edit a track by "Create route" tool,
+- Elevation: elevation graph,
 - Download
 - Save to cloud (Pro)
 - Get SRTM
@@ -110,9 +112,10 @@ Favorites from user backup.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
 
-- Show Favorites from Cloud
-- Delete
-- Add Favorite
+Allowed next actions:
+- Show Favorites on the map,
+- Delete,
+- Add Favorite,
   
 ### Add / Edit Favorite
 
