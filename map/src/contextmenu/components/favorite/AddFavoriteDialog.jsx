@@ -77,11 +77,24 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         };
         if (!ctx.selectedGpxFile.wpts) {
             ctx.selectedGpxFile.wpts = [];
+            if (ctx.createTrack) {
+                createWptArrLocal();
+            }
         }
         ctx.selectedGpxFile.wpts.push(favorite);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         closeDialog();
+    }
+
+    function createWptArrLocal() {
+        let ind = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+        if (ind !== -1) {
+            if (!ctx.localTracks[ind].wpts) {
+                ctx.localTracks[ind].wpts = [];
+                ctx.setLocalTracks([...ctx.localTracks]);
+            }
+        }
     }
 
     async function saveFavorite() {

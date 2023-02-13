@@ -19,6 +19,9 @@ export default function LocalClientTrackLayer() {
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     useEffect(() => {
+        if (ctx.createTrack?.enable) {
+            TracksManager.saveTracks(ctx.localTracks);
+        }
         if (ctx.selectedGpxFile?.selected) {
             if (ctx.selectedGpxFile.showPoint) {
                 showSelectedPointOnMap();
