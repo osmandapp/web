@@ -105,7 +105,7 @@ export default class EditableMarker {
 
         let trackPoints = this.ctx.selectedGpxFile.points;
         let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
-        if (indPoint !== -1) {
+        if (indPoint && indPoint !== -1) {
             let currentPoint = trackPoints[indPoint];
             let layers = this.ctx.selectedGpxFile.layers.getLayers();
             let polylines = TrackLayerProvider.getPolylines(layers);

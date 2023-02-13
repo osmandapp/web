@@ -1,24 +1,30 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import {Box, Button, Grid, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {
+    Box,
+    IconButton,
+    ListItemAvatar,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Typography
+} from "@mui/material";
 import {makeStyles} from "@material-ui/core/styles";
 import L from "leaflet";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
+import {Cancel} from "@mui/icons-material";
+import PointManager from "../../../context/PointManager";
 
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '11px',
-            left: '22px',
-            width: '40px',
-            height: '40px'
+            top: '21px',
+            left: '20px'
         },
         "& .background": {
-            left: '-25px',
-            top: '-25px',
-            marginBottom: '-60px',
-            width: '100px',
-            height: '100px',
+            marginBottom: '-40px',
+            marginRight: '20px',
+            marginLeft: '10px',
             filter: "drop-shadow(0 0 0 gray)"
         }
     },
@@ -67,52 +73,54 @@ export default function WaypointsTab({width}) {
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
-    function addPoint() {
-        ctx.selectedGpxFile.addWpt = true;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    function getLength(point) {
+        return point.layer.options?.desc && point.layer.options.address ? 30 : 60;
     }
 
     const WaypointRow = () => ({point, index}) => {
         return (
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
-                <ListItemText>
-                    <Grid container spacing={2}>
-                        <Grid item xs={1}>
-                            <div className={classes.icon}
-                                 dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
-                        </Grid>
-                        <Grid className={classes.text} item xs={11} sx={{mt: 2, mr: -4}}>
-                            <Typography variant="inherit">
-                                {point.layer.options.title}
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                    {point.layer.options.desc && <ListItemText>
-                        <Typography component={'span'} variant="body2" style={{wordWrap: "break-word"}}>
-                            {showMore ? point.layer.options.desc : point.layer.options.desc.substring(0, 80)}
-                            {point.layer.options.desc.length > 60 &&
+                <ListItemIcon>
+                    <div className={classes.icon}
+                         dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
+                </ListItemIcon>
+                <ListItemText sx={{ml: "-35px !important"}}>
+                    <Typography variant="inherit" noWrap>
+                        {point.layer.options?.title}<br/>
+                        <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
+                            {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
+                            {point.layer.options?.desc?.length > getLength(point) &&
+                                <ListItemIcon>
+                                    {"..."}
+                                </ListItemIcon>}
+                        </Typography>
+                        {point.layer.options?.address && point.layer.options?.desc &&
+                            <ListItemIcon style={{marginLeft: "-20px", marginRight: " -20px"}}>
+                                {" • "}
+                            </ListItemIcon>}
+                        <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
+                            {showMore ? point.layer.options?.address : point.layer.options?.address?.substring(0, getLength(point))}
+                            {point.layer.options?.address?.length > getLength(point) &&
                                 <ListItemIcon onClick={() => setShowMore(!showMore)}>
                                     {showMore ? "...less" : "...more"}
                                 </ListItemIcon>}
                         </Typography>
-                    </ListItemText>}
-                    <Typography variant="caption">
-                        {point.layer.options.address}
                     </Typography>
                 </ListItemText>
+                <ListItemAvatar>
+                    <IconButton sx={{mr: 1}} onClick={(e) => {
+                        e.stopPropagation();
+                        PointManager.deleteWpt(index, ctx);
+                    }}>
+                        <Cancel fontSize="small"/>
+                    </IconButton>
+                </ListItemAvatar>
             </MenuItem>)
     }
 
 
     return (
         <Box className={styles.item} minWidth={width}>
-            {ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                <div style={{display: "flex"}}>
-                    <Button sx={{mb: 2}} variant="contained" component="span"
-                            style={{backgroundColor: '#fbc73a', marginLeft: "auto"}}
-                            onClick={() => addPoint()}
-                    >Add</Button>
-                </div>}
             <div style={{maxHeight: '35vh', overflow: 'auto'}}>
                 {ctx.selectedGpxFile.wpts && getPoints().map((point, index) => {
                     return WaypointRow()({point: point, index: index});

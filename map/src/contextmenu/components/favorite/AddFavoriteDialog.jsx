@@ -22,6 +22,7 @@ import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
+import TracksManager from "../../../context/TracksManager";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -79,6 +80,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.selectedGpxFile.wpts.push(favorite);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        TracksManager.saveTracks(ctx.localTracks);
         closeDialog();
     }
 
