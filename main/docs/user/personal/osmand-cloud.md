@@ -16,58 +16,100 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
 
 :::tip subscribe
-&nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/android#osmand-pro).  
+&nbsp;<ProFeature/> You need to subscribe to [Android OsmAnd Pro](../purchases/android.md#osmand-pro) or [iOS OsmAnd Pro](../purchases/ios.md#osmand-pro).  
 :::
 
 :::note cross-platform
-This is a cross-platform feature (Android <-> iOS OsmAnd versions).
+OsmAnd Cloud is cloud storage that is not associated with Android or iOS versions of the app but only with your Pro account.
 :::
 
+OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.  
 
-## Overview
+## test
 
-This feature helps to keep and restore your OsmAnd data. There are two variants of backing up in OsmAnd: [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) and [Local](../personal/storage.md#local-backup).
+In the Last Sync section (OsmAnd Cloud → Last Sync) from the drop-down list, tap any item to go to the Changes section.
+
+Tapping on Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.  
+
+Changes that have been uploaded from the local version to the cloud disappear from the Changes → Local tab after a few seconds.  
+
+Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud.  
+
+Resolved conflicts are removed from the list after processing, which does not take much time.  
 
 
 ## Login
 
-Allows to keep your OsmAnd data in OsmAnd Cloud and restore your data from OsmAnd Cloud. It's a cross platform feature.
+To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#osmand-pro) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*. Your Cloud account needs to be the same as the account on which the purchase was made. When you register or log in, you will receive a verification code by email to confirm it.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-When you subscrebed to [OsmAnd Pro](../purchases/android.md#free-and-paid-features), you need to make registration for *Backup & Restore* function or enter your registrated e-mail:
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
-
-![Backup registration Android](@site/static/img/personal/backup/backup_registration_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_1_android.png)
-
-A one-time password for the next step will be sent to it. 
-
-![Backup registration Android](@site/static/img/personal/backup/backup_registration_2_android.png) ![Backup registration Android](@site/static/img/personal/backup/backup_registration_3_android.png)
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-When you subscrebed to [OsmAnd Pro](../purchases/ios.md#free-and-paid-features), you need to make registration for *Backup & Restore* function or enter your registrated e-mail:
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="purchase_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
 
-*<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,register_opr_create_new_account"/> / <Translate ios="true" ids="cloud_existing_account"/> / <Translate ios="true" ids="purchase_get"/>*
-
-You need to enter the e-mail address you registered with.
-
-![Backup registration iOS](@site/static/img/personal/backup/backup_registration_ios.png) ![Backup registration iOS](@site/static/img/personal/backup/backup_registration_1_ios.png)
-
-A one-time password for the next step will be sent to it. 
-
-![Backup registration iOS](@site/static/img/personal/backup/backup_registration_2_ios.png) ![Backup registration iOS](@site/static/img/personal/backup/backup_registration_3_ios.png)
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 
 </TabItem>
 
 </Tabs>
+
+
+## Last sync
+
+*Last sync* - How long ago was the last data synchronization between this device and the cloud.  
+- Local changes.
+- Updates.
+- Conflicts.
+- Sync now - .
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
+
+</TabItem>
+
+</Tabs>  
+ 
+
+## Changes
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android Auto">
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_15.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_14.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="CarPlay"> 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_15.png)  
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Settings
@@ -117,7 +159,7 @@ Here you can start to make a backup and restore data online and local:
 </Tabs>
 
 
-### Settings tab
+### Back up data
 
 <Tabs groupId="operating-systems">
 
@@ -174,7 +216,8 @@ At this screen you can set your login and backup data.
 </Tabs>
 
 
-### Backup & Restore
+
+### Version history
 
 *Menu → Settings → Backup & Restore*
 
