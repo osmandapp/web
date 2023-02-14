@@ -26,19 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd Cloud is cloud storage that is not associated with Android or iOS versions of the app but only with your Pro account.
 :::
 
-OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.  
-
-## test
-
-In the Last Sync section (OsmAnd Cloud → Last Sync) from the drop-down list, tap any item to go to the Changes section.
-
-Tapping on Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.  
-
-Changes that have been uploaded from the local version to the cloud disappear from the Changes → Local tab after a few seconds.  
-
-Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud.  
-
-Resolved conflicts are removed from the list after processing, which does not take much time.  
+OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.     
 
 
 ## Login
@@ -68,21 +56,25 @@ To access OsmAnd Cloud registration or log in to your account, you need to have 
 
 ## Last sync
 
-*Last sync* - How long ago was the last data synchronization between this device and the cloud.  
-- Local changes.
-- Updates.
-- Conflicts.
-- Sync now - .
+**Last sync** is a drop-down menu that shows how long ago data was last synchronized between this device and the cloud.  
+- *Local changes* - shows the total number of local changes not uploaded to the cloud.
+- *Cloud changes* - the total number of changes uploaded to the cloud from other devices since the last synchronization.
+- *Conflicts* - the total number of inconsistencies between local and cloud changes.
+- *Sync now* - select this option to synchronize all selected data sections in the [Settings](#back-up-data) menu that you have changed on this device.
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android Auto">
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png) 
 
 </TabItem>
 
-<TabItem value="ios" label="CarPlay"> 
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud"/>*     
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
@@ -93,19 +85,102 @@ To access OsmAnd Cloud registration or log in to your account, you need to have 
 
 ## Changes
 
+In the [Last Sync](#last-sync) section from the drop-down list, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
+
+Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.  
+
+:::note
+Downloading changes from the cloud storage will override local changes. Accordingly, uploaded local data removes changes in the cloud version.
+:::
+
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android Auto">
+<TabItem value="android" label="Android"> 
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_15.png)  
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_14.png)  
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="CarPlay"> 
+<TabItem value="ios" label="iOS"> 
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_15.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
+
+</TabItem>
+
+</Tabs>  
+
+
+### Local
+
+You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
+Changes that have been uploaded from the local version to the cloud disappear from the *Changes → Local* tab after a few seconds.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/>* 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_5.png)  
+
+</TabItem>
+
+</Tabs>  
+
+
+### Cloud
+
+The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,shared_string_cloud"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_14-1.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,shared_string_file_cloud"/>* 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
+
+</TabItem>
+
+</Tabs>  
+
+
+### Conflicts
+
+Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud. The resolved conflicts are removed from the list after processing, which usually does not take long.
+Tapping Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-1.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 
 </TabItem>
 
@@ -114,49 +189,39 @@ To access OsmAnd Cloud registration or log in to your account, you need to have 
 
 ## Settings
 
-Android: Afer registration your *<Translate android="true" ids="backup_and_restore"/>* menu has two screens: *<Translate android="true" ids="shared_string_status"/>* and *<Translate android="true" ids="shared_string_settings"/>*
-iOS: Afer registration your *<Translate ios="true" ids="backup_and_restore"/>* menu has *Backup* section and *"<Translate ios="true" ids="shared_string_settings"/>"* button ⚙️.  
-
-
-### Status tab
+This section is for editing and managing your OsmAnd Cloud.  
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_android.png)
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_18.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
+
+</TabItem>
+
+</Tabs>  
+
+
+### test
+
 
 Here you can start to make a backup and restore data online and local:
 - "*<Translate android="true" ids="backup_now"/>*" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backing up.
 
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_1_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_2_android.png)
-
 - "*<Translate android="true" ids="backup_restore_data"/>*" button - allows to restore data on your device using existing backups, or back up data to OsmAnd Cloud.
-
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_3_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_4_android.png)
 
 - "*<Translate android="true" ids="local_backup"/>*" - allows to back up or restore data from a local file. Read about it [here](../personal/storage.md#local-backup).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_android.png)
-
-Here you can start to make a backup and restore data online and local:
-- "*<Translate android="true" ids="backup_now"/>*" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backing up.
-
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_1_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_2_android.png)
-
-- "*<Translate android="true" ids="backup_restore_data"/>*" button - allows to restore data on your device using existing backups, or back up data to OsmAnd Cloud.
-
-![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_3_android.png) ![Backup Status screen Android](@site/static/img/personal/backup/backup_status_screen_4_android.png)
-
-- "*<Translate android="true" ids="local_backup"/>*" - allows to back up or restore data from a local file. Read about it [here](../personal/storage.md#local-backup).
-
-</TabItem>
-
-</Tabs>
 
 
 ### Back up data
@@ -167,7 +232,7 @@ Here you can start to make a backup and restore data online and local:
 
 At this screen you can set your login and backup data.
 
-![Backup settings screen Android](@site/static/img/personal/backup/backup_settings_screen_android.png)
+![Backup settings screen Android](@site/static/img/personal/osmand-cloud/backup_settings_screen_android.png)
 
 - *<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
 
@@ -193,7 +258,7 @@ Click on the *"<Translate ios="true" ids="shared_string_settings"/>"* button ⚙
 
 At this screen you can set your login and backup data.
 
-![Backup settings screen ios](@site/static/img/personal/backup/backup_settings_screen_ios.png)
+![Backup settings screen ios](@site/static/img/personal/osmand-cloud/backup_settings_screen_ios.png)
 
 - *<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*. Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*.
 
@@ -216,7 +281,6 @@ At this screen you can set your login and backup data.
 </Tabs>
 
 
-
 ### Version history
 
 *Menu → Settings → Backup & Restore*
@@ -224,17 +288,30 @@ At this screen you can set your login and backup data.
 ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_1_ios.png)
 
 
-<!-- ## Changes
+### Account
+This section contains information about which of your accounts is connected to OsmAnd Cloud, as well as a logout button. To back up or restore data, you will need to log in again.    
 
-### Local
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
-### Cloud
 
-### Conflicts
+### Danger zone
 
-### Cloud backup
+<Tabs groupId="operating-systems">
 
-## Backup and Restore for OsmAnd Pro -->
+<TabItem value="android" label="Android">
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
+
+</TabItem>
+
+</Tabs>  
+
 
 ## OsmAnd Pro
 
