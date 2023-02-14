@@ -47,6 +47,7 @@ export default function WaypointsTab({width}) {
     const styles = contextMenuStyles();
 
     const [showMore, setShowMore] = useState(false);
+    const NAME_SIZE = 50;
 
     function getPoints() {
         let wpts = [];
@@ -77,6 +78,17 @@ export default function WaypointsTab({width}) {
         return point.layer.options?.desc && point.layer.options.address ? 30 : 60;
     }
 
+    function getName(point) {
+        let name = point.layer.options?.title;
+        if (name) {
+            if (name.length > NAME_SIZE) {
+                return point.layer.options?.title.substring(0, NAME_SIZE);
+            } else {
+                return name;
+            }
+        }
+    }
+
     const WaypointRow = () => ({point, index}) => {
         return (
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
@@ -86,7 +98,11 @@ export default function WaypointsTab({width}) {
                 </ListItemIcon>
                 <ListItemText sx={{ml: "-35px !important"}}>
                     <Typography variant="inherit" noWrap>
-                        {point.layer.options?.title}<br/>
+                        {getName(point)}
+                        {point.layer.options?.title?.length > NAME_SIZE &&
+                            <ListItemIcon style={{marginRight: " -25px"}}>
+                                {"..."}
+                            </ListItemIcon>}<br/>
                         <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
                             {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
                             {point.layer.options?.desc?.length > getLength(point) &&
