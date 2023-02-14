@@ -50,6 +50,7 @@ export default function LocalTrackItem({track, index}) {
         track.index = indexTrack;
         setIndexTrack(indexTrack);
         selectedTrack.selected = true;
+        ctx.selectedGpxFile.zoom = true;
         selectedTrack.updateLayers = false;
         ctx.setSelectedGpxFile(selectedTrack);
     }

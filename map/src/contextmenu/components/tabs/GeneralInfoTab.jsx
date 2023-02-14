@@ -34,6 +34,8 @@ export default function GeneralInfoTab({width, srtm}) {
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
     const [error, setError] = useState(false);
+    const [openPointAlert, setOpenPointAlert] = useState(true);
+    const [openWptAlert, setOpenWptAlert] = useState(true);
 
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
@@ -424,13 +426,10 @@ export default function GeneralInfoTab({width, srtm}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
-            {ctx.createTrack && !ctx.selectedGpxFile.newPoint &&
-                <ListItemText>
-                    <Typography variant="inherit" noWrap>
-                        Click on map...
-                    </Typography>
-                </ListItemText>
-            }
+            {openPointAlert && ctx.createTrack && !ctx.selectedGpxFile.newPoint &&
+                <Alert severity="info" onClose={() => {setOpenPointAlert(false)}}>Click on the map to add a point...</Alert>}
+            {openWptAlert && ctx.createTrack && !ctx.selectedGpxFile.wpts &&
+                <Alert severity="info" onClose={() => {setOpenWptAlert(false)}}>Use the right menu to add a waypoint...</Alert>}
         </Typography>
     </Box>);
 };

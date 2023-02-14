@@ -105,7 +105,7 @@ export default class EditableMarker {
 
         let trackPoints = this.ctx.selectedGpxFile.points;
         let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
-        if (indPoint && indPoint !== -1) {
+        if (indPoint !== undefined && indPoint !== -1) {
             let currentPoint = trackPoints[indPoint];
             let layers = this.ctx.selectedGpxFile.layers.getLayers();
             let polylines = TrackLayerProvider.getPolylines(layers);
@@ -115,8 +115,8 @@ export default class EditableMarker {
 
             polylines.forEach(p => {
                 let pp = p._latlngs;
-                let fp = pp.find(point => point.lat === currentPoint.lat && point.lng === currentPoint.lng)
-                if (fp) {
+                let fp = pp.find(point => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
+                if (fp !== -1) {
                     currentPolyline = p;
                     indPointInPolyline = _.indexOf(pp, fp, 0);
                 }
@@ -179,7 +179,7 @@ export default class EditableMarker {
             this.map.removeLayer(polylineTemp);
         } else {
             let indWpt = this.ctx.selectedGpxFile.dragPoint.indWpt;
-            if (indWpt !== -1) {
+            if (indWpt !== undefined && indWpt !== -1) {
                 let currentWpt = this.ctx.selectedGpxFile.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
