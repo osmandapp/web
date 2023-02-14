@@ -305,17 +305,17 @@ export default function GeneralInfoTab({width, srtm}) {
                     }}>
                         Add to Collection</MenuItem>}
 
-                {<MenuItem onClick={(e) => {
-                    e.stopPropagation();
-                    TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, ctx.selectedGpxFile.points).then();
-                }}>
-                    Recalculate Elevation (SRTM)</MenuItem>}
-
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     addWaypoint()
                 }}>
                     Add waypoint</MenuItem>}
+
+                {<MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, ctx.selectedGpxFile.points).then();
+                }}>
+                    Recalculate Elevation (SRTM)</MenuItem>}
 
                 {disableButton && <MenuItem onClick={(e) => {
                     e.stopPropagation();

@@ -25,9 +25,8 @@ export default function FavoriteDescription({favoriteDescription, setFavoriteDes
                 onClick={() => {
                     if (setClose) {
                         setClose(false);
-                    } else {
-                        setFavoriteDescription('');
                     }
+                    setFavoriteDescription('');
                 }}
             >
                 <Delete fontSize="small"/>

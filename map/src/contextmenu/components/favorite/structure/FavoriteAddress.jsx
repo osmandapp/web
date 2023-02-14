@@ -23,9 +23,8 @@ export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, se
                 onClick={() => {
                     if (setClose) {
                         setClose(false);
-                    } else {
-                        setFavoriteAddress('');
                     }
+                    setFavoriteAddress('');
                 }}
             >
                 <Delete fontSize="small"/>

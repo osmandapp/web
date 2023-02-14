@@ -50,6 +50,7 @@ export default function MapContextMenu({drawerWidth}) {
             } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0  || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
+                ctx.setUpdateContextMenu(false);
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {

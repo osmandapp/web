@@ -58,7 +58,6 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     async function save() {
         if (ctx.addFavorite.editTrack) {
             saveTrackWpt();
-            ctx.setUpdateContextMenu(true);
         } else {
             await saveFavorite();
         }
@@ -79,6 +78,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             ctx.selectedGpxFile.wpts = [];
             if (ctx.createTrack) {
                 createWptArrLocal();
+                ctx.setUpdateContextMenu(true);
             }
         }
         ctx.selectedGpxFile.wpts.push(favorite);
@@ -207,7 +207,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 </ListItemText>}
                 {addDescription && <FavoriteDescription favoriteDescription={favoriteDescription}
                                                         setFavoriteDescription={setFavoriteDescription}
-                                                        setClose={addDescription}/>}
+                                                        setClose={setAddDescription}/>}
                 {!ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
                                                               setFavoriteGroup={setFavoriteGroup}
                                                               groups={ctx.favorites.groups}

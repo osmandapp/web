@@ -90,12 +90,12 @@ export default function WaypointsTab({width}) {
                         <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
                             {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
                             {point.layer.options?.desc?.length > getLength(point) &&
-                                <ListItemIcon>
+                                <ListItemIcon style={{marginRight: " -25px"}}>
                                     {"..."}
                                 </ListItemIcon>}
                         </Typography>
                         {point.layer.options?.address && point.layer.options?.desc &&
-                            <ListItemIcon style={{marginLeft: "-20px", marginRight: " -20px"}}>
+                            <ListItemIcon style={{marginLeft: "5px", marginRight: " -25px"}}>
                                 {" • "}
                             </ListItemIcon>}
                         <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
