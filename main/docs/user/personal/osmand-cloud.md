@@ -212,69 +212,31 @@ This section is for editing and managing your OsmAnd Cloud.
 </Tabs>  
 
 
-### test
-
-
-Here you can start to make a backup and restore data online and local:
-- "*<Translate android="true" ids="backup_now"/>*" button - allows to make a backup of your data to OsmAnd Cloud. Info: time of last backup and wich data added after that on your device. Button is not showed if you make backup some time ago and you don't have data for backing up.
-
-- "*<Translate android="true" ids="backup_restore_data"/>*" button - allows to restore data on your device using existing backups, or back up data to OsmAnd Cloud.
-
-- "*<Translate android="true" ids="local_backup"/>*" - allows to back up or restore data from a local file. Read about it [here](../personal/storage.md#local-backup).
-
-
-
 ### Back up data
+
+*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
+*<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*.  
+
+You can select data and folders to back up.  
+1. *Settings*.
+2. *My Places*.
+3. *Resources*.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-At this screen you can set your login and backup data.
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Backup settings screen Android](@site/static/img/personal/osmand-cloud/backup_settings_screen_android.png)
-
-- *<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
-
-![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_android.png)
-
-- *<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.
-  
-![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_1_android.png)
-
-- *<Translate android="true" ids="login_account"/>* - allows to log out from your account.
-  
-- *<Translate android="true" ids="backup_danger_zone"/>*:
-  
-  - "*<Translate android="true" ids="backup_delete_all_data"/>*" button - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
-
-  - "*<Translate android="true" ids="backup_delete_old_data"/>*" button - Current versions of your data will be preserved on OsmAnd Cloud.
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_3.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Click on the *"<Translate ios="true" ids="shared_string_settings"/>"* button ⚙️ on the screen top.
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-At this screen you can set your login and backup data.
-
-![Backup settings screen ios](@site/static/img/personal/osmand-cloud/backup_settings_screen_ios.png)
-
-- *<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*. Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*.
-
-![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_ios.png) ![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_1_ios.png)
-
-- *<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.
-  
-![Backup data screen Android](@site/static/img/personal/backup/backup_data_screen_1_android.png)
-
-- *<Translate android="true" ids="login_account"/>* - allows to log out from your account.
-  
-- *<Translate android="true" ids="backup_danger_zone"/>*:
-  
-  - "*<Translate android="true" ids="backup_delete_all_data"/>*" button - All data on OsmAnd Cloud will be deleted. Local versions will stay untouched.
-
-  - "*<Translate android="true" ids="backup_delete_old_data"/>*" button - Current versions of your data will be preserved on OsmAnd Cloud.
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
 
 </TabItem>
 
@@ -283,12 +245,32 @@ At this screen you can set your login and backup data.
 
 ### Version history
 
-*Menu → Settings → Backup & Restore*
+*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
+Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. 
 
-![Backup iOS](@site/static/img/personal/osmand-cloud/backup_ios.png)  ![Backup iOS](@site/static/img/personal/osmand-cloud/backup_1_ios.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
+
+![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_1_ios.png)  
+
+</TabItem>
+
+</Tabs>  
 
 
 ### Account
+
 This section contains information about which of your accounts is connected to OsmAnd Cloud, as well as a logout button. To back up or restore data, you will need to log in again.    
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
@@ -296,15 +278,23 @@ This section contains information about which of your accounts is connected to O
 
 ### Danger zone
 
+The actions you can do in this section of the Settings menu are irreversible and therefore require special attention.  
+1. **Delete all my data** - <Translate android="true" ids="backup_delete_all_data_warning"/>
+2. **Remove old versions** - <Translate android="true" ids="backup_delete_old_data_warning"/>
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
 
