@@ -15,22 +15,24 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 :::info
-The web portal is a test function at this moment.
+The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
+
+**The layout and operation of some functions may have changed from those described in this article.**
 :::
 
 As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
-Now each user can test this service:  [osmand.net/map](https://osmand.net/map/).
+At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
 
-What functions will be available except the map view:
+What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro):
 
-1. OsmAnd Pro sync
-2. Weather
-3. Tracks
-4. Favorites
-5. Map style
-6. Navigation Route
-7. The "Plan route" tool (Track creation)
+1. [OsmAnd Pro sync](#osmand-pro-sync) (Pro)
+2. [Weather](#weather) (Free)
+3. [Tracks](#weather) (Free and Pro)
+4. [Favorites](#farorites-pro) (Pro)
+5. [Map style](#map-style) (Free)
+6. [Navigation Route](#navigation-route) (Free)
+7. The ["Create track"](#create-track-pro) tool (Pro)
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
 
@@ -38,7 +40,7 @@ What functions will be available except the map view:
 ## OsmAnd Pro sync
 
 OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription. 
-If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your email and password for [osmand.net/map](https://osmand.net/map/):
+If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your _email_ and _password_ for [osmand.net/map](https://osmand.net/map/):
 
 :::tip
 Read how to register your email for OsmAnd Pro service [here](../troubleshooting/setup.md#cross-platform).
@@ -46,12 +48,12 @@ Read how to register your email for OsmAnd Pro service [here](../troubleshooting
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)
 
-Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map.:
+Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map:
 
 ![View OsmAnd Web data](@site/static/img/web/web_data.png)
 
 
-Click to your login for Logout or Download backup data:
+Click to the login pole for _Logout_ or _Download backup data_:
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)
 
@@ -61,18 +63,20 @@ Weather is a [Pro feature](../purchases/index.md) for OsmAnd application. But fo
 
 Users can switch on Weather layers on the map: Temperature, Pressure, Wind, Cloud and Precipitation by left or right menus.
 
-Showing Weather forecast: Day, Week. (Forecast step is 3 hours)
+Showing the Weather forecast: Day, Week. (Forecast step is 3 hours)
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
 ## Tracks
 
-At this section you can load tracks from your device (Local) and see your tracks from OsmAnd Cloud (Pro).
+At this section you can:
+- loading tracks from your device (Local),
+- showing tracks from OsmAnd Cloud (Pro),
+- editing tracks.
 
 ### Local
 
-Each user can upload any GPX file to osmand.net/map
-
+Each user can upload any GPX file to _osmand.net/map_:
 ![OsmAnd Web local GPX](@site/static/img/web/web_local_gpx.png)
 
 Edit loading tracks:
@@ -89,33 +93,35 @@ Actions and screens:
 - Edit Name: change track name,
 - Edit: edit a track by "Create route" tool,
 - Elevation: elevation graph,
-- Download
-- Save to cloud (Pro)
-- Get SRTM
+- Download: downloading track,
+- Save to OsmAnd Cloud (Pro),
+- Get SRTM: added elevation data for chosen track.
 
 ### User's tracks (Pro)
 
 After registration OsmAnd Pro. You can see your GPX tracks from OsmAnd Cloud.
 
-Tracks from user's OsmAnd cloud. It's only for Pro users.
+Tracks from user's OsmAnd Cloud. It's only for **Pro users**.
 
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
 
-- track folders
-- Track info
-- Get SRTM
-- Edit
+What it contains:
+- Track folders: tracks folders from OsmAnd Cloud ("My Places > Tracks"),
+- Track info: showing track data,
+- Get SRTM: showing elevation graph of a chosen track,
+- Edit: changing name and other data for a chosen track.
 
 ## Farorites (Pro)
 
-Favorites from user backup.
+After registration OsmAnd Pro account user Favorites are showed on Favorites menu.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
 
 Allowed next actions:
 - Show Favorites on the map,
-- Delete,
-- Add Favorite,
+- Delete Favorites,
+- Add new Favorites,
+- Edit Favorites.
   
 ### Add / Edit Favorite
 
@@ -130,22 +136,23 @@ Click to a favorite point for start it editing.
 
 Here you can change [Map style](../map/vector-maps.md) like it works in OsmAnd app.
 
-Nautical:
+**Some examples:**
+
+- Nautical map style
 
 ![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
 
-
-Topo:
+- Topo map style
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 
 ## Navigation route
 
-Tap by the right mouse button for add Start and End points:
+Please, tap by the right mouse button for adding _Start_ and _End_ points:
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route.png)
 
-After adding Start and End points we receive the route.
+After adding _Start_ and _End_ points we receive the route.
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1.png)
 
@@ -155,15 +162,14 @@ Here you can move start-end points, edit its by menu, change routings type:
 
 ## Create track (Pro)
 
+We are developing Web version of our ["Plan route"](../plan-route/create-route.md) tool for OsmAnd application. Now you can try it for the Web.
+
 Tap by the right mouse button > Create Track.
 
 Here you can choose Navigation Profile for a building track segment, add waypoints and save a track and view track info:
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track.png)
 
-Track Info:
+Any actions and showing Track Info you can read at [Track section](#tracks) of this article:
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
-
-
-

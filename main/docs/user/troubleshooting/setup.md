@@ -54,7 +54,6 @@ Please, note if you remove some items from your downloads the chance for free do
 
 If you already used 5(iOS) or 7(Android) possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
 
-
 ## OsmAnd Pro
 
 OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
@@ -100,3 +99,10 @@ After that, your email is a login for activation OsmAnd Pro for other platforms.
 ### Contour lines or hillshades do not show up
 
 Read more about [Contour lines plugin](../plugins/contour-lines.md).
+
+
+## OsmAnd 4.4 (iOS)
+
+OsmAnd 4.4 for iOS devices is not available for iOS versions older than iOS 15.
+
+This means that to install OsmAnd 4.4 you need to upgrade your OS to at least iOS 15 or newer.
