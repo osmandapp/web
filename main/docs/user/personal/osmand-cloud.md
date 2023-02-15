@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 :::
 
 :::note cross-platform
-OsmAnd Cloud is cloud storage that is not associated with Android or iOS versions of the app but only with your Pro account.
+OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform, but only with your Pro account.
 :::
 
 OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.     
@@ -31,7 +31,10 @@ OsmAnd Cloud is the resource you need to save your personal settings and app dat
 
 ## Login
 
-To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#osmand-pro) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*. Your Cloud account needs to be the same as the account on which the purchase was made. When you register or log in, you will receive a verification code by email to confirm it.
+To be able to back up and restore data, it is necessary to log in.
+- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#osmand-pro) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
+- Your Cloud account needs to be the same as the account on which the purchase was made.  
+- When you register or log in, you will receive a verification code by email to confirm it.
 
 <Tabs groupId="operating-systems">
 
@@ -214,13 +217,17 @@ This section is for editing and managing your OsmAnd Cloud.
 
 ### Back up data
 
-*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
+<!--*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
 *<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*.  
 
 You can select data and folders to back up.  
-1. *Settings*.
-2. *My Places*.
-3. *Resources*.
+1. *Settings* - .
+2. *My Places* - .
+3. *Resources* - . -->
+
+:::note
+All of your maps are stored on the device that you downloaded them. The Cloud displays only the information about which cards you have and the date they were last modified. 
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -245,8 +252,8 @@ You can select data and folders to back up.
 
 ### Version history
 
-*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
-Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. 
+<!--*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
+Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. -->
 
 <Tabs groupId="operating-systems">
 
@@ -305,7 +312,9 @@ The actions you can do in this section of the Settings menu are irreversible and
 
 ## OsmAnd Pro
 
-OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
+OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version.
+
+<!-- OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features. Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  -->
 
 ### Cross-platform
 
@@ -315,19 +324,18 @@ Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases
 
 **1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
 
-[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
+<!-- Register your account:
 *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
 
-:::note
+note
 Registration takes place on the platform on which the subscription was purchased.
-:::
 
-After that, your email is a login for activation OsmAnd Pro for other platforms.
 
-**2.** Activation OsmAnd Pro:
+After that, your email is a login for activation OsmAnd Pro for other platforms. -->
 
-*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+**2.** Activation OsmAnd Pro
 
-**3.** Checking of activation:
+**3.** Checking of activation
 
-*OsmAnd Menu → Settings → Purchases → Restore purchases*
+<!-- *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+*OsmAnd Menu → Settings → Purchases → Restore purchases* -->
