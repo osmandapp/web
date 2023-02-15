@@ -35,7 +35,21 @@ export default class EditableMarker {
                     callback: (e) => {
                         this.delete(e)
                     }
-                }],
+                },
+                    {
+                        text: 'Trim before',
+                        callback: (e) => {
+                            this.trimBefore(e)
+                        }
+
+                    },
+                    {
+                        text: 'Trim after',
+                        callback: (e) => {
+                            this.trimAfter(e)
+                        }
+                    }
+                ],
                 ...options
             })
         }
@@ -61,6 +75,33 @@ export default class EditableMarker {
         } else {
             this.deleteWpt(coord);
         }
+    }
+
+    trimBefore(e) {
+        let ind = this.getPointInd(e);
+        if (ind !== -1 && ind !== 0) {
+            this.ctx.selectedGpxFile.points.splice(0, ind);
+            let geo = this.ctx.selectedGpxFile.points[0].geometry;
+            if (geo?.length > 0) {
+                this.ctx.selectedGpxFile.points[0].geometry = [];
+            }
+            this.ctx.selectedGpxFile.updateLayers = true;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+        }
+    }
+
+    trimAfter(e) {
+        let ind = this.getPointInd(e);
+        if (ind !== -1 && ind !== this.ctx.selectedGpxFile.points.length - 1) {
+            this.ctx.selectedGpxFile.points.splice(ind + 1, this.ctx.selectedGpxFile.points.length - ind);
+            this.ctx.selectedGpxFile.updateLayers = true;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+        }
+    }
+
+    getPointInd(e) {
+        let coord = e.relatedTarget._latlng;
+        return this.ctx.selectedGpxFile.points.findIndex(point => point.lat === coord.lat && point.lng === coord.lng);
     }
 
     deleteWpt(coord) {
