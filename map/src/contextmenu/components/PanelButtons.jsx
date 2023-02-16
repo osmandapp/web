@@ -8,6 +8,7 @@ import DeleteTrackDialog from "./track/DeleteTrackDialog";
 import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
 import _ from "lodash";
 import Utils, {getProfileIcon} from "../../util/Utils";
+import TracksManager from "../../context/TracksManager";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -37,6 +38,10 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu}) => {
                                 <IconButton
                                     variant="contained"
                                     type="button"
+                                    onClick={() => {
+                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                        ctx.setTrackProfileManager({...ctx.trackProfileManager});
+                                    }}
                                 >
                                     {Utils.getProfileIcon(_.lowerCase(ctx.creatingRouteMode.mode),
                                         ctx.creatingRouteMode.colors[_.lowerCase(ctx.creatingRouteMode.mode)])}

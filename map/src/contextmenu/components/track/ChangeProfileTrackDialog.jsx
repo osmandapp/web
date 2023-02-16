@@ -9,6 +9,8 @@ import TracksManager from "../../../context/TracksManager";
 import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {Close} from "@mui/icons-material";
 import _ from "lodash";
+import {makeStyles} from "@material-ui/core/styles";
+
 
 export default function ChangeProfileTrackDialog({open, close}) {
 
@@ -34,41 +36,56 @@ export default function ChangeProfileTrackDialog({open, close}) {
         }
     }, [change])
 
-    const currentState = ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE ? 'Previous' :
+    const partialEdit = ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE ? 'Previous' :
         ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER ? 'Next' : null;
 
     async function changeProfile() {
         setProcess(true);
-        if (changeOne) {
-            let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
-            let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
-            let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
-            if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                prevPoint.profile = profile.mode;
-                currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, currentPoint);
-            } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                currentPoint.profile = profile.mode;
-                nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, currentPoint, nextPoint);
-            }
-        } else if (changeAll) {
-            if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                let changePoints = ctx.selectedGpxFile.points.splice(0,ctx.trackProfileManager.pointInd + 1);
-                changePoints.forEach(point => {
-                    if (_.indexOf(changePoints, point) !== changePoints.length - 1) {
-                        point.profile = profile.mode;
-                    }
+        if (!partialEdit) {
+            ctx.selectedGpxFile.points.forEach(point => {
+                point.profile = profile.mode;
+            })
+            await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
+                ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                ctx.setCreatingRouteMode({
+                    mode: profile.mode,
+                    modes: ctx.creatingRouteMode.modes,
+                    opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
+                    colors: ctx.creatingRouteMode.colors
                 })
-                await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                    ctx.selectedGpxFile.points = points.concat(ctx.selectedGpxFile.points);
+            });
+        } else {
+            if (changeOne) {
+                let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
+                let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
+                let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
+                if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+                    prevPoint.profile = profile.mode;
+                    currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, currentPoint);
+                } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+                    currentPoint.profile = profile.mode;
+                    nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, currentPoint, nextPoint);
+                }
+            } else if (changeAll) {
+                if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+                    let changePoints = ctx.selectedGpxFile.points.splice(0, ctx.trackProfileManager.pointInd + 1);
+                    changePoints.forEach(point => {
+                        if (_.indexOf(changePoints, point) !== changePoints.length - 1) {
+                            point.profile = profile.mode;
+                        }
+                    })
+                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                        ctx.selectedGpxFile.points = points.concat(ctx.selectedGpxFile.points);
                     });
-            } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                let changePoints = ctx.selectedGpxFile.points.splice(ctx.trackProfileManager.pointInd, ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd);
-                changePoints.forEach(point => {
-                    point.profile = profile.mode;
-                })
-                await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                    ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
-                });
+                } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+                    let changePoints = ctx.selectedGpxFile.points.splice(ctx.trackProfileManager.pointInd, ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd);
+                    changePoints.forEach(point => {
+                        point.profile = profile.mode;
+                    })
+                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                        ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                    });
+                }
             }
         }
 
@@ -96,21 +113,21 @@ export default function ChangeProfileTrackDialog({open, close}) {
                 </IconButton>
             </Grid>
         </Grid>
-        {currentState && <DialogActions>
+        {partialEdit && <DialogActions>
             <ToggleButtonGroup
                 value={change}
                 exclusive
                 onChange={handleChange}
                 aria-label="text alignment">
                 <ToggleButton value="one">
-                    {currentState} segment
+                    {partialEdit} segment
                 </ToggleButton>
                 <ToggleButton value="all">
-                    All {currentState} segments
+                    All {partialEdit} segments
                 </ToggleButton>
             </ToggleButtonGroup>
         </DialogActions>}
-        <DialogContent>
+        <DialogContent sx={{minWidth: 400}}>
             <SelectTrackProfile profile={profile} setProfile={setProfile}/>
         </DialogContent>
         <DialogActions>
