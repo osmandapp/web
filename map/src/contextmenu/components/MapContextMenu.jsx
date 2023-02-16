@@ -1,4 +1,4 @@
-import {Paper, AppBar, Button, CircularProgress, LinearProgress} from "@mui/material";
+import {Paper, AppBar, Button, LinearProgress} from "@mui/material";
 import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
@@ -9,7 +9,8 @@ import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
 import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
-import TracksManager from "../../context/TracksManager";
+import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
+import PointContextMenu from "./PointContextMenu";
 
 const useStyles = makeStyles({
     menu: {
@@ -36,7 +37,7 @@ export default function MapContextMenu({drawerWidth}) {
         if (!showContextMenu) {
             stopCreatedTrack();
         }
-    },[showContextMenu])
+    }, [showContextMenu])
 
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER) {
@@ -47,7 +48,7 @@ export default function MapContextMenu({drawerWidth}) {
             if (!ctx.currentObjectType) {
                 setTabsObj(null);
                 setShowContextMenu(false);
-            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0  || !showContextMenu) {
+            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0 || !showContextMenu) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateContextMenu(false);
@@ -106,6 +107,10 @@ export default function MapContextMenu({drawerWidth}) {
                 }
             </div>
         </div>}
-        <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
+        <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu}
+                      setShowContextMenu={setShowContextMenu}/>
+        {ctx.trackProfileManager?.change &&
+            <ChangeProfileTrackDialog open={ctx.trackProfileManager?.change} close={!ctx.trackProfileManager?.change}/>}
+        {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
     </div>);
 }

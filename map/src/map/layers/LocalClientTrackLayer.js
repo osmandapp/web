@@ -195,6 +195,7 @@ export default function LocalClientTrackLayer() {
     }
 
     async function getNewRoute() {
+        ctx.setPointContextMenu({})
         let file = ctx.selectedGpxFile;
         let prevPoint = file.prevPoint;
         let newPoint = file.newPoint;

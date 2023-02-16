@@ -356,8 +356,8 @@ export const AppContextProvider = (props) => {
         modes: {'car': {name: 'Car', params: {}}}
     });
     const [creatingRouteMode, setCreatingRouteMode] = useState({
-        mode: 'line', opts: {},
-        modes: {'line': {name: 'Line', params: {}}}
+        mode: 'car', opts: {},
+        modes: {'car': {name: 'Car', params: {}}}
     });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
@@ -384,6 +384,8 @@ export const AppContextProvider = (props) => {
     const [gpxCollection, setGpxCollection] = useState([]);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
     const [updateContextMenu, setUpdateContextMenu] = useState(false);
+    const [trackProfileManager, setTrackProfileManager] = useState({});
+    const [pointContextMenu, setPointContextMenu] = useState({});
 
 
     useEffect(() => {
@@ -471,7 +473,9 @@ export const AppContextProvider = (props) => {
         creatingRouteMode, setCreatingRouteMode,
         gpxCollection, setGpxCollection,
         loadingContextMenu, setLoadingContextMenu,
-        updateContextMenu, setUpdateContextMenu
+        updateContextMenu, setUpdateContextMenu,
+        trackProfileManager, setTrackProfileManager,
+        pointContextMenu, setPointContextMenu
 
     }}>
         {props.children}

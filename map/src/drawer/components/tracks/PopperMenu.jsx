@@ -14,9 +14,8 @@ const useStyles = makeStyles({
 export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
 
     const classes = useStyles();
-
     const handleClose = (event) => {
-        if (anchorEl.current && anchorEl.current.contains(event.target)) {
+        if (anchorEl) {
             return;
         }
         setOpen(false);

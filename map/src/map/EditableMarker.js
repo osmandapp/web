@@ -4,6 +4,7 @@ import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
 import PointManager from "../context/PointManager";
+import React from "react";
 
 export default class EditableMarker {
 
@@ -28,40 +29,36 @@ export default class EditableMarker {
             marker = new L.Marker(point, {
                 icon: MarkerOptions.options.route,
                 draggable: true,
-                contextmenu: true,
-                contextmenuInheritItems: false,
-                contextmenuItems: [{
-                    text: 'Delete point',
-                    callback: (e) => {
-                        this.delete(e)
-                    }
-                },
-                    {
-                        text: 'Trim before',
-                        callback: (e) => {
-                            this.trimBefore(e)
-                        }
-
-                    },
-                    {
-                        text: 'Trim after',
-                        callback: (e) => {
-                            this.trimAfter(e)
-                        }
-                    }
-                ],
                 ...options
             })
         }
 
         if (marker) {
             marker.on('dragstart', (e) => {
+                this.ctx.setPointContextMenu({})
                 this.dragStartPoint(e);
             });
             marker.on('dragend', (e) => {
                 this.dragEndPoint(e, this.ctx.setGpxLoading).then(() => {
                     this.ctx.setGpxLoading(false)
                 })
+            });
+            marker.on('contextmenu', (e) => {
+                let coord = e.latlng;
+                this.ctx.pointContextMenu.ref = {
+                    getBoundingClientRect: {
+                        width: 0,
+                        height: 0,
+                        top: e.containerPoint.y,
+                        right: e.containerPoint.x,
+                        bottom: e.containerPoint.y,
+                        left: e.containerPoint.x,
+                    }
+                };
+                this.ctx.pointContextMenu.left = e.containerPoint.x;
+                this.ctx.pointContextMenu.top = e.containerPoint.y;
+                this.ctx.pointContextMenu.coord = coord;
+                this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
             });
         }
         return marker;
@@ -75,33 +72,6 @@ export default class EditableMarker {
         } else {
             this.deleteWpt(coord);
         }
-    }
-
-    trimBefore(e) {
-        let ind = this.getPointInd(e);
-        if (ind !== -1 && ind !== 0) {
-            this.ctx.selectedGpxFile.points.splice(0, ind);
-            let geo = this.ctx.selectedGpxFile.points[0].geometry;
-            if (geo?.length > 0) {
-                this.ctx.selectedGpxFile.points[0].geometry = [];
-            }
-            this.ctx.selectedGpxFile.updateLayers = true;
-            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
-        }
-    }
-
-    trimAfter(e) {
-        let ind = this.getPointInd(e);
-        if (ind !== -1 && ind !== this.ctx.selectedGpxFile.points.length - 1) {
-            this.ctx.selectedGpxFile.points.splice(ind + 1, this.ctx.selectedGpxFile.points.length - ind);
-            this.ctx.selectedGpxFile.updateLayers = true;
-            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
-        }
-    }
-
-    getPointInd(e) {
-        let coord = e.relatedTarget._latlng;
-        return this.ctx.selectedGpxFile.points.findIndex(point => point.lat === coord.lat && point.lng === coord.lng);
     }
 
     deleteWpt(coord) {

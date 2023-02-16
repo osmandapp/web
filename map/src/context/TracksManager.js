@@ -1,5 +1,5 @@
 import Utils from "../util/Utils";
-import {post} from "axios";
+import axios, {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
 
@@ -9,6 +9,9 @@ const GET_ANALYSIS = 'get-analysis';
 const PROFILE_LINE = 'line';
 const PROFILE_GAP = 'gap';
 const NAN_MARKER = 99999;
+const CHANGE_PROFILE_BEFORE = 'before';
+const CHANGE_PROFILE_AFTER = 'after';
+const CHANGE_PROFILE_ALL = 'all';
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
@@ -315,6 +318,23 @@ async function updateRouteBetweenPoints(ctx, start, end) {
     }
 }
 
+async function updateRoute(ctx, points) {
+    let result = await axios({
+        url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
+        method: 'post',
+        data: points,
+    });
+
+    if (result) {
+        if (typeof result.data === "string") {
+            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                return value === "***NaN***" ? NaN : value;
+            });
+        }
+        return result.points;
+    }
+}
+
 function updateStat(track) {
     addDistance(track);
     let activePoints = getEditablePoints(track);
@@ -469,6 +489,7 @@ const TracksManager = {
     saveTrack,
     getEditablePoints,
     updateRouteBetweenPoints,
+    updateRoute,
     updateStat,
     getEle,
     deleteLocalTrack,
@@ -484,7 +505,10 @@ const TracksManager = {
     GET_ANALYSIS: GET_ANALYSIS,
     PROFILE_LINE: PROFILE_LINE,
     PROFILE_GAP: PROFILE_GAP,
-    NAN_MARKER: NAN_MARKER
+    NAN_MARKER: NAN_MARKER,
+    CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
+    CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
+    CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL
 };
 
 export default TracksManager;

@@ -35,6 +35,7 @@ export default class EditablePolyline {
             });
 
             marker.on('dragstart', (e) => {
+                this.ctx.setPointContextMenu({})
                 this.dragStartNewPoint(e)
             });
 
