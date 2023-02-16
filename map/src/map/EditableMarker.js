@@ -64,23 +64,6 @@ export default class EditableMarker {
         return marker;
     }
 
-    delete(e) {
-        let coord = e.relatedTarget._latlng;
-        let ind = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === coord.lat && point.lng === coord.lng);
-        if (ind !== -1) {
-            PointManager.deletePoint(ind, this.ctx).then();
-        } else {
-            this.deleteWpt(coord);
-        }
-    }
-
-    deleteWpt(coord) {
-        let ind = this.ctx.selectedGpxFile.wpts.findIndex(point => point.lat === coord.lat && point.lon === coord.lng);
-        if (ind !== -1) {
-            PointManager.deleteWpt(ind, this.ctx);
-        }
-    }
-
     dragStartPoint(e) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;

@@ -28,55 +28,83 @@ export default function PointContextMenu({anchorEl}) {
             setPointInd(ind);
         }
     }, [anchorEl])
+
+    function deletePoint() {
+        if (pointInd !== -1) {
+            PointManager.deletePoint(pointInd, ctx).then();
+        } else {
+            deleteWpt(ctx.pointContextMenu.coord);
+        }
+    }
+
+    function deleteWpt(coord) {
+        let ind = ctx.selectedGpxFile.wpts.findIndex(point => point.lat === coord.lat && point.lon === coord.lng);
+        if (ind !== -1) {
+            PointManager.deleteWpt(ind, ctx);
+        }
+    }
+
+    function trimBefore() {
+        if (pointInd !== -1 && pointInd !== 0) {
+            ctx.selectedGpxFile.points.splice(0, pointInd);
+            let geo = ctx.selectedGpxFile.points[0].geometry;
+            if (geo?.length > 0) {
+                ctx.selectedGpxFile.points[0].geometry = [];
+            }
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
+    }
+
+    function trimAfter() {
+        if (pointInd !== -1 && pointInd !== ctx.selectedGpxFile.points.length - 1) {
+            ctx.selectedGpxFile.points.splice(pointInd + 1, ctx.selectedGpxFile.points.length - pointInd);
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
+    }
+
+    function changeProfileBefore() {
+        ctx.trackProfileManager.pointInd = pointInd;
+        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_BEFORE;
+        ctx.setTrackProfileManager({...ctx.trackProfileManager});
+    }
+
+    function changeProfileAfter() {
+        ctx.trackProfileManager.pointInd = pointInd;
+        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_AFTER;
+        ctx.setTrackProfileManager({...ctx.trackProfileManager});
+    }
+
     const Buttons = () => {
         return (
             <div>
                 {<MenuItem onClick={() => {
-                    if (pointInd !== -1) {
-                        PointManager.deletePoint(pointInd, ctx).then();
-                    } else {
-                        this.deleteWpt(ctx.pointContextMenu.coord);
-                    }
+                    deletePoint();
                     ctx.setPointContextMenu({});
                 }}>
                     Delete point</MenuItem>
                 }
                 {pointInd > 0 && <MenuItem onClick={() => {
-                    if (pointInd !== -1 && pointInd !== 0) {
-                        ctx.selectedGpxFile.points.splice(0, pointInd);
-                        let geo = ctx.selectedGpxFile.points[0].geometry;
-                        if (geo?.length > 0) {
-                            ctx.selectedGpxFile.points[0].geometry = [];
-                        }
-                        ctx.selectedGpxFile.updateLayers = true;
-                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                    }
+                    trimBefore();
                     ctx.setPointContextMenu({});
                 }}>
                     Trim before</MenuItem>
                 }
                 {pointInd < ctx.selectedGpxFile.points.length - 1 && <MenuItem onClick={() => {
-                    if (pointInd !== -1 && pointInd !== ctx.selectedGpxFile.points.length - 1) {
-                        ctx.selectedGpxFile.points.splice(pointInd + 1, ctx.selectedGpxFile.points.length - pointInd);
-                        ctx.selectedGpxFile.updateLayers = true;
-                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                    }
+                    trimAfter();
                     ctx.setPointContextMenu({});
                 }}>
                     Trim after</MenuItem>
                 }
                 {pointInd > 0 && <MenuItem onClick={() => {
-                    ctx.trackProfileManager.pointInd = pointInd;
-                    ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_BEFORE;
-                    ctx.setTrackProfileManager({...ctx.trackProfileManager});
+                    changeProfileBefore();
                     ctx.setPointContextMenu({});
                 }}>
                     Change route type before this point</MenuItem>
                 }
                 {pointInd < ctx.selectedGpxFile.points.length - 1 && <MenuItem onClick={() => {
-                    ctx.trackProfileManager.pointInd = pointInd;
-                    ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_AFTER;
-                    ctx.setTrackProfileManager({...ctx.trackProfileManager});
+                    changeProfileAfter();
                     ctx.setPointContextMenu({});
                 }}>
                     Change route type after this point</MenuItem>
