@@ -83,19 +83,21 @@ Edit loading tracks:
 
 ![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
 
-Actions and screens:
+Screens:
 - Info: track data,
-- Track: start profile point ("Create route"),
-- Waypoints: the list of track waypoints,
-- Settings: list of Navigation Profiles for "Create route" tool,
 - Elevation: elevation graph,
 - Speed: speed graph,
+
+
+
+Actions &#8942; button on Info screen:
+- Save to Cloud (Pro)
+- Download: downloading a track,
+- Add Waypoints: the list of track waypoints,
+- Recalculate Elevation (SRTM): added elevation data for chosen track,
 - Edit Name: change track name,
-- Edit: edit a track by "Create route" tool,
-- Elevation: elevation graph,
-- Download: downloading track,
-- Save to OsmAnd Cloud (Pro),
-- Get SRTM: added elevation data for chosen track.
+- Clear: delete a track.
+
 
 ### User's tracks (Pro)
 
@@ -110,7 +112,10 @@ What it contains:
 - Track info: showing track data,
 - Get SRTM: showing elevation graph of a chosen track,
 - Edit: changing name and other data for a chosen track.
-
+- Edit: edit a track by "Create route" tool,
+- Track: start profile point ("Create route"),
+- Settings: list of Navigation Profiles for "Create route" tool,
+- Speed: speed graph,
 ## Farorites (Pro)
 
 After registration OsmAnd Pro account user Favorites are showed on Favorites menu.
@@ -173,3 +178,16 @@ Here you can choose Navigation Profile for a building track segment, add waypoin
 Any actions and showing Track Info you can read at [Track section](#tracks) of this article:
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
+
+
+_____________
+
+
+:::info
+The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
+
+**The layout and operation of some functions may have changed from those described in this article.**
+:::
+
+<LinksSocial/>
+<LinksTelegram/>
