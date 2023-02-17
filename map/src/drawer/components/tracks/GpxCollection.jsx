@@ -36,10 +36,11 @@ export default function GpxCollection() {
             url: `${process.env.REACT_APP_GPX_API}/mapapi/download-obf`,
             method: 'post',
             data: ctx.gpxCollection,
+            responseType: 'blob',
         }).then((resp) => {
             setProcessDownload(false)
             const url = document.createElement('a');
-            url.href = URL.createObjectURL(new Blob([resp.data]));
+            url.href = URL.createObjectURL(resp.data);
             url.download = `OsmAndCollection.obf`;
             url.click();
         })
