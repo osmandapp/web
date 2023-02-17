@@ -17,8 +17,9 @@ import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
 import _ from "lodash";
 import PopperMenu from "../../../drawer/components/tracks/PopperMenu";
+import DeleteTrackDialog from "../track/DeleteTrackDialog";
 
-export default function GeneralInfoTab({width, srtm}) {
+export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -36,6 +37,7 @@ export default function GeneralInfoTab({width, srtm}) {
     const [error, setError] = useState(false);
     const [openPointAlert, setOpenPointAlert] = useState(true);
     const [openWptAlert, setOpenWptAlert] = useState(true);
+    const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
@@ -323,6 +325,13 @@ export default function GeneralInfoTab({width, srtm}) {
                 }}>
                     Edit name</MenuItem>}
 
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenDeleteDialog(true);
+                    }}>
+                        Delete</MenuItem>}
+
                 {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     ctx.setCreateTrack({...{enable: true}})
@@ -427,9 +436,17 @@ export default function GeneralInfoTab({width, srtm}) {
                 </ListItemText>
             </MenuItem>}
             {openPointAlert && ctx.createTrack && !ctx.selectedGpxFile.newPoint &&
-                <Alert severity="info" onClose={() => {setOpenPointAlert(false)}}>Click on the map to add a point...</Alert>}
+                <Alert severity="info" onClose={() => {
+                    setOpenPointAlert(false)
+                }}>Click on the map to add a point...</Alert>}
             {openWptAlert && ctx.createTrack && !ctx.selectedGpxFile.wpts &&
-                <Alert severity="info" onClose={() => {setOpenWptAlert(false)}}>Use the right menu to add a waypoint...</Alert>}
+                <Alert severity="info" onClose={() => {
+                    setOpenWptAlert(false)
+                }}>Use the right menu to add a waypoint...</Alert>}
         </Typography>
+        {openDeleteDialog && <DeleteTrackDialog
+            dialogOpen={openDeleteDialog}
+            setDialogOpen={setOpenDeleteDialog}
+            setShowContextMenu={setShowContextMenu}/>}
     </Box>);
 };

@@ -16,7 +16,7 @@ export default class TrackTabList {
         graphWidth: 600
     };
 
-    create(ctx) {
+    create(ctx, setShowContextMenu) {
         let tabs = {};
         let list = [];
 
@@ -26,7 +26,7 @@ export default class TrackTabList {
         let isTrack = ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK
             || ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
 
-        tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
+        tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false} setShowContextMenu={setShowContextMenu}/>;
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks?.length > 0) {
             tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
         }

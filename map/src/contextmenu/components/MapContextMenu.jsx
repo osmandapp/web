@@ -11,6 +11,7 @@ import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
+import DeleteTrackDialog from "./track/DeleteTrackDialog";
 
 const useStyles = makeStyles({
     menu: {
@@ -53,13 +54,13 @@ export default function MapContextMenu({drawerWidth}) {
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateContextMenu(false);
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
-                    obj = new TrackTabList().create(ctx);
+                    obj = new TrackTabList().create(ctx, setShowContextMenu);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
                 } else if (ctx.selectedGpxFile) {
-                    obj = new TrackTabList().create(ctx);
+                    obj = new TrackTabList().create(ctx, setShowContextMenu);
                 }
                 if (obj) {
                     setShowContextMenu(true);
