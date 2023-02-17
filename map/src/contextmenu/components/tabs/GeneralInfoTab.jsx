@@ -317,7 +317,7 @@ export default function GeneralInfoTab({width, srtm}) {
                 }}>
                     Recalculate Elevation (SRTM)</MenuItem>}
 
-                {disableButton && <MenuItem onClick={(e) => {
+                {ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && disableButton && <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     setDisableButton(false);
                 }}>
