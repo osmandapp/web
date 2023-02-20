@@ -335,11 +335,8 @@ export default function LocalClientTrackLayer() {
         TracksManager.prepareTrack(file);
         file.tracks = [{points: points}];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
-        file.index = ctx.localTracks.length - 1;
+        file.index = ctx.localTracks.length;
         ctx.localTracks.push(file);
-
-        // localLayers[file.name] = {layer: file.layers, points: points, active: true};
-        // setLocalLayers({...localLayers});
 
         ctx.setLocalTracks([...ctx.localTracks]);
     }

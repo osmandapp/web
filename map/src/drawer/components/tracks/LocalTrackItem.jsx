@@ -83,10 +83,10 @@ export default function LocalTrackItem({track, index}) {
                     </Typography>
                 </ListItemText>
             </Tooltip>
-            <Switch checked={track.selected === true}
+            <Switch checked={track.selected === true || ctx.selectedGpxFile?.name === track.name}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => {
-                        enableLayer(e.target.checked)
+                        enableLayer(e.target.checked);
                     }}/>
         </MenuItem>
     </div>
