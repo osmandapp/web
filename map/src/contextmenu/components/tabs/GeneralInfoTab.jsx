@@ -283,12 +283,14 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                         e.stopPropagation();
                         ctx.selectedGpxFile.save = true;
                         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                        setOpen(false);
                     }}>
                         Save to Cloud</MenuItem>}
 
                 <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     downloadGpx().then();
+                    setOpen(false);
                 }}>
                     Download</MenuItem>
 
@@ -297,6 +299,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                         e.stopPropagation();
                         TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
                         ctx.setUpdateContextMenu(true);
+                        setOpen(false);
                     }}>
                         Edit</MenuItem>}
 
@@ -304,24 +307,28 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                     <MenuItem onClick={(e) => {
                         e.stopPropagation();
                         addToCollection()
+                        setOpen(false);
                     }}>
                         Add to Collection</MenuItem>}
 
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     addWaypoint()
+                    setOpen(false);
                 }}>
                     Add waypoint</MenuItem>}
 
                 {<MenuItem onClick={(e) => {
                     e.stopPropagation();
                     TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, ctx.selectedGpxFile.points).then();
+                    setOpen(false);
                 }}>
                     Recalculate Elevation (SRTM)</MenuItem>}
 
                 {ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && disableButton && <MenuItem onClick={(e) => {
                     e.stopPropagation();
                     setDisableButton(false);
+                    setOpen(false);
                 }}>
                     Edit name</MenuItem>}
 
@@ -329,12 +336,14 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                     <MenuItem onClick={(e) => {
                         e.stopPropagation();
                         setOpenDeleteDialog(true);
+                        setOpen(false);
                     }}>
                         Delete</MenuItem>}
 
                 {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
                     e.stopPropagation();
-                    ctx.setCreateTrack({...{enable: true}})
+                    ctx.setCreateTrack({...{enable: true}});
+                    setOpen(false);
                 }}>
                     Clear</MenuItem>}
             </div>

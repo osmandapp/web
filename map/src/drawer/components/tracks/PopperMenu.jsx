@@ -14,10 +14,7 @@ const useStyles = makeStyles({
 export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
 
     const classes = useStyles();
-    const handleClose = (event) => {
-        if (anchorEl) {
-            return;
-        }
+    const handleClickAway = () => {
         setOpen(false);
     };
     return <Popper disablePortal={true} open={open} anchorEl={anchorEl?.current} transition
@@ -29,7 +26,7 @@ export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
 
         <Paper>
             <div style={{maxHeight: '15vh', overflow: 'auto'}}>
-                <ClickAwayListener onClickAway={handleClose}>
+                <ClickAwayListener onClickAway={handleClickAway}>
                     <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
                         <Buttons/>
                     </MenuList>
