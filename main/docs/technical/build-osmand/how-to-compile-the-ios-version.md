@@ -5,16 +5,13 @@ sidebar_position: 6
 # How to Compile the iOS Version
 
 1. First setup the **[development environment](setup-the-dev-environment.md)**.
-2. Install XCode from AppStore (Last tested 12.4)
+2. Install XCode from AppStore (Last tested 14.2)
 3. Install XCode command-line tools
   ```
   $ xcode-select --install
   ```
-  Or in case of errors try to download and install it from Apple site:
-  ```
-  https://developer.apple.com/download/more/?name=for%20Xcode
-  ```
-4. Log in into XCode account
+  Or in case of errors try to download and install it from Apple site: <https://developer.apple.com/download/all/?q=xcode>.
+4. Log in into XCode account (optional)
   In case if you don't have Apple Developer account. Open XCode and go to preferences (via top menu)
   ```
   Preferences -> Accounts 
@@ -27,20 +24,9 @@ sidebar_position: 6
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   $ brew install svn
   $ sudo gem install cocoapods
-  $ brew install cmake # tested on 3.19, 3.11
+  $ brew install cmake # tested on 3.25.2, 3.19, 3.11
   ```
-6. Patch system header files (to avoid duplicates with macros)
-  ```
-  $ CLANG_VERSION=$(ls /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/)
-  $ echo $CLANG_VERSION
-  $ sudo nano /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/{CLANG_VERSION}/include/ia32intrin.h
-  ```
-Comment out ```__bsfd```, ```__bsrd``` lines and save file.
-  ```
-  // #define _bit_scan_forward(A) __bsfd((A))
-  // #define _bit_scan_reverse(A) __bsrd((A))
-  ```
-7. Run prepare.sh to compile QT library and download external dependencies
+6. Run prepare.sh to compile QT library and download external dependencies
   ```
   $ cd ios
   $ ./prepare.sh
@@ -61,10 +47,10 @@ Comment out ```__bsfd```, ```__bsrd``` lines and save file.
   https://cmake.org/download/
   ```
   
-8. Open osmand.xcworkspace in XCode
-9. First build.
+7. Open osmand.xcworkspace in XCode
+8. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Selet as target your device or as one of IOS simulators. But don't use default 'Any IOS Device (arm64)'. Build the project (play button).
-10. Troubleshooting.
+9. Troubleshooting.
   - In case of build erros you can press in XCode: ```Product -> Clean build folder```
   - Close XCode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists). 
   - Delete XCode DerivedData folder: ``` sudo rm -R ~/Library/Developer/Xcode/DerivedData/* ```
@@ -72,10 +58,10 @@ Comment out ```__bsfd```, ```__bsrd``` lines and save file.
   - Restart your computer. (Yes, it can help). 
   - Then run `$ ./prepare.sh` and try to build the project again.
   
-11. Troubleshooting (m1 mac)
+10. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```arm64``` to **Excluded Architectures** of ```OsmAnd_projects```. 
 
-12. Debug QT (optional). If you want to see QT values in debug mode run this:
+11. Debug QT (optional). If you want to see QT values in debug mode run this:
   ```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
