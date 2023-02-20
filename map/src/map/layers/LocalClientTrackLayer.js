@@ -25,7 +25,7 @@ export default function LocalClientTrackLayer() {
         if (ctx.selectedGpxFile?.selected) {
             if (ctx.selectedGpxFile.showPoint) {
                 showSelectedPointOnMap();
-            } else if (ctx.selectedGpxFile.zoom){
+            } else if (ctx.selectedGpxFile.zoom) {
                 showSelectedTrackOnMap();
             }
         }
@@ -131,6 +131,17 @@ export default function LocalClientTrackLayer() {
         if (fitBounds) {
             map.fitBounds(layer.getBounds());
         }
+        layer.on('click', (e) => {
+            if (!_.cloneDeep(ctx.createTrack)) {
+                ctx.setCreateTrack({
+                    enable: true,
+                    edit: true
+                })
+                ctx.setSelectedGpxFile(track);
+                let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+                ctx.setCurrentObjectType(type);
+            }
+        });
         layer.addTo(map);
         localLayers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: active};
         setLocalLayers({...localLayers});
