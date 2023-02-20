@@ -86,9 +86,9 @@ export default function MapContextMenu({drawerWidth}) {
     return (<div>
         {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`}>
             <div className="leaflet-control leaflet-bar padding-container">
+                {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
-                        {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress sx={{mb: -1, ml: 1}} size={20}/>}
                         <TabContext value={value}>
                             {Object.values(tabsObj.tabs).map((item, index) =>
                                 <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}> {item} </TabPanel>)
