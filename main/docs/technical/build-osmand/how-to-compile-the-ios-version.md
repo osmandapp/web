@@ -33,7 +33,7 @@ sidebar_position: 6
   ```
   
   Error: `Xcode not set up properly. You may need to confirm the license...`.
-  Solution: switch XCodeCommandLineTools to XCode app, confirm the license and swith it back.
+  Solution: switch XCodeCommandLineTools to XCode app, confirm the license and switch it back.
   ```
   $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
   $ sudo xcodebuild -license accept
@@ -49,9 +49,9 @@ sidebar_position: 6
   
 7. Open osmand.xcworkspace in XCode
 8. First build.
-  Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Selet as target your device or as one of IOS simulators. But don't use default 'Any IOS Device (arm64)'. Build the project (play button).
+  Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of IOS simulators. But don't use default 'Any IOS Device (arm64)'. Build the project (play button).
 9. Troubleshooting.
-  - In case of build erros you can press in XCode: ```Product -> Clean build folder```
+  - In case of build errors you can press in XCode: ```Product -> Clean build folder```
   - Close XCode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists). 
   - Delete XCode DerivedData folder: ``` sudo rm -R ~/Library/Developer/Xcode/DerivedData/* ```
   - Check that all repositories are up to date and on correct branches.
