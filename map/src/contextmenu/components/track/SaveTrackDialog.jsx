@@ -36,6 +36,7 @@ export default function SaveTrackDialog() {
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
         ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
+        ctx.selectedGpxFile.clear = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     };
 

@@ -20,26 +20,15 @@ export default function LocalClientTrackLayer() {
     const [addEleTab, setAddEleTab] = useState(false);
 
     useEffect(() => {
-        if (ctx.createTrack?.enable) {
-            if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
-                ctx.setUpdateContextMenu(true);
-                setAddEleTab(true);
+        if (ctx.selectedGpxFile) {
+            checkDeleteSelected();
+            if (ctx.createTrack?.enable) {
+                saveLocal();
             }
-            TracksManager.saveTracks(ctx.localTracks);
+            checkZoom();
+            checkClickOnMapEvent();
+            checkUpdateLayers();
         }
-        if (ctx.selectedGpxFile?.selected) {
-            if (ctx.selectedGpxFile.showPoint) {
-                showSelectedPointOnMap();
-            } else if (ctx.selectedGpxFile.zoom) {
-                showSelectedTrackOnMap();
-            }
-        }
-        if (ctx.selectedGpxFile?.addPoint) {
-            getNewRoute().then();
-        } else {
-            checkDragPoint();
-        }
-        checkUpdateLayers();
     }, [ctx.selectedGpxFile]);
 
     useEffect(() => {
@@ -128,6 +117,39 @@ export default function LocalClientTrackLayer() {
     function clearCreateLayers(layers) {
         if (layers) {
             map.removeLayer(layers);
+        }
+    }
+
+    function checkDeleteSelected() {
+        if (ctx.selectedGpxFile.clear) {
+            deleteOldLayers();
+            ctx.setSelectedGpxFile({});
+        }
+    }
+
+    function checkClickOnMapEvent() {
+        if (ctx.selectedGpxFile.addPoint) {
+            getNewRoute().then();
+        } else {
+            checkDragPoint();
+        }
+    }
+
+    function saveLocal() {
+        if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
+            ctx.setUpdateContextMenu(true);
+            setAddEleTab(true);
+        }
+        TracksManager.saveTracks(ctx.localTracks);
+    }
+
+    function checkZoom() {
+        if (ctx.selectedGpxFile.selected) {
+            if (ctx.selectedGpxFile.showPoint) {
+                showSelectedPointOnMap();
+            } else if (ctx.selectedGpxFile.zoom) {
+                showSelectedTrackOnMap();
+            }
         }
     }
 

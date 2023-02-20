@@ -18,8 +18,8 @@ function loadTracks() {
 }
 
 function saveTracks(tracks) {
+    localStorage.clear();
     if (tracks.length > 0) {
-        localStorage.clear();
         let res = [];
         tracks.forEach(function (t) {
             let track = _.cloneDeep(t);
