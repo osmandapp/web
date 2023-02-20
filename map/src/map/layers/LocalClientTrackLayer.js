@@ -17,9 +17,14 @@ export default function LocalClientTrackLayer() {
 
     const [localLayers, setLocalLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
+    const [addEleTab, setAddEleTab] = useState(false);
 
     useEffect(() => {
         if (ctx.createTrack?.enable) {
+            if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
+                ctx.setUpdateContextMenu(true);
+                setAddEleTab(true);
+            }
             TracksManager.saveTracks(ctx.localTracks);
         }
         if (ctx.selectedGpxFile?.selected) {
