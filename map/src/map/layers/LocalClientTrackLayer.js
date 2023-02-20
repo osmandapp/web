@@ -344,7 +344,10 @@ export default function LocalClientTrackLayer() {
     function addFirstPoint(newPoint, file, points) {
         points.push(newPoint);
         createFirstLayers(newPoint);
-        createLocalTrack(file, points);
+        let ind = ctx.localTracks.findIndex(t => t.name === file.name);
+        if (ind === -1) {
+            createLocalTrack(file, points);
+        }
     }
 
     function createLocalTrack(file, points) {

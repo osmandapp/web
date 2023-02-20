@@ -18,7 +18,19 @@ import PointManager from "../../../context/PointManager";
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '21px',
+            top: '22px',
+            left: '20px'
+        },
+        "& .background": {
+            marginBottom: '-40px',
+            marginRight: '20px',
+            marginLeft: '10px',
+            filter: "drop-shadow(0 0 0 gray)"
+        }
+    },
+    iconOnlyName: {
+        "& .icon": {
+            top: '16px',
             left: '20px'
         },
         "& .background": {
@@ -89,40 +101,66 @@ export default function WaypointsTab({width}) {
         }
     }
 
-    const WaypointRow = () => ({point, index}) => {
-        return (
-            <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
-                <ListItemIcon>
-                    <div className={classes.icon}
-                         dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
-                </ListItemIcon>
-                <ListItemText sx={{ml: "-35px !important"}}>
-                    <Typography variant="inherit" noWrap>
-                        {getName(point)}
-                        {point.layer.options?.title?.length > NAME_SIZE &&
+    function showWithInfo(point) {
+        return <>
+            <ListItemIcon>
+                <div className={classes.icon}
+                     dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
+            </ListItemIcon>
+            <ListItemText sx={{ml: "-35px !important"}}>
+                <Typography variant="inherit" noWrap>
+                    {getName(point)}
+                    {point.layer.options?.title?.length > NAME_SIZE &&
+                        <ListItemIcon style={{marginRight: " -25px"}}>
+                            {"..."}
+                        </ListItemIcon>}<br/>
+                    <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
+                        {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
+                        {point.layer.options?.desc?.length > getLength(point) &&
                             <ListItemIcon style={{marginRight: " -25px"}}>
                                 {"..."}
-                            </ListItemIcon>}<br/>
-                        <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
-                            {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
-                            {point.layer.options?.desc?.length > getLength(point) &&
-                                <ListItemIcon style={{marginRight: " -25px"}}>
-                                    {"..."}
-                                </ListItemIcon>}
-                        </Typography>
-                        {point.layer.options?.address && point.layer.options?.desc &&
-                            <ListItemIcon style={{marginLeft: "5px", marginRight: " -25px"}}>
-                                {" • "}
                             </ListItemIcon>}
-                        <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
-                            {showMore ? point.layer.options?.address : point.layer.options?.address?.substring(0, getLength(point))}
-                            {point.layer.options?.address?.length > getLength(point) &&
-                                <ListItemIcon onClick={() => setShowMore(!showMore)}>
-                                    {showMore ? "...less" : "...more"}
-                                </ListItemIcon>}
-                        </Typography>
                     </Typography>
-                </ListItemText>
+                    {point.layer.options?.address && point.layer.options?.desc &&
+                        <ListItemIcon style={{marginLeft: "5px", marginRight: " -25px"}}>
+                            {" • "}
+                        </ListItemIcon>}
+                    <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
+                        {showMore ? point.layer.options?.address : point.layer.options?.address?.substring(0, getLength(point))}
+                        {point.layer.options?.address?.length > getLength(point) &&
+                            <ListItemIcon onClick={() => setShowMore(!showMore)}>
+                                {showMore ? "...less" : "...more"}
+                            </ListItemIcon>}
+                    </Typography>
+                </Typography>
+            </ListItemText>
+        </>
+    }
+
+    function showOnlyName(point) {
+        return <>
+            <ListItemIcon>
+                <div className={classes.iconOnlyName}
+                     dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
+            </ListItemIcon>
+            <ListItemText sx={{ml: "-35px !important"}}>
+                <Typography variant="inherit" noWrap>
+                    {getName(point)}
+                    {point.layer.options?.title?.length > NAME_SIZE &&
+                        <ListItemIcon style={{marginRight: " -25px"}}>
+                            {"..."}
+                        </ListItemIcon>}
+                </Typography>
+            </ListItemText>
+        </>
+    }
+
+    const WaypointRow = () => ({point, index}) => {
+        let hasInfo = point.layer.options?.desc !== undefined || point.layer.options?.address !== undefined
+        return (
+            <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
+                {hasInfo && showWithInfo(point)}
+                {!hasInfo && showOnlyName(point)}
                 <ListItemAvatar>
                     <IconButton sx={{mr: 1}} onClick={(e) => {
                         e.stopPropagation();

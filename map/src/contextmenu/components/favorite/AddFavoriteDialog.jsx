@@ -94,6 +94,12 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 ctx.localTracks[ind].wpts = [];
                 ctx.setLocalTracks([...ctx.localTracks]);
             }
+        } else {
+            TracksManager.prepareTrack(ctx.selectedGpxFile);
+            ctx.selectedGpxFile.wpts = [];
+            ctx.selectedGpxFile.index = ctx.localTracks.length;
+            ctx.localTracks.push(ctx.selectedGpxFile);
+            ctx.setLocalTracks([...ctx.localTracks]);
         }
     }
 

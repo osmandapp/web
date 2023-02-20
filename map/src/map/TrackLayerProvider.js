@@ -7,7 +7,9 @@ function createLayersByTrackData(data) {
     let layers = [];
     data.tracks.forEach(track => {
         let res = parsePoints(track.points, layers);
-        addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
+        if (track.points.length > 0) {
+            addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
+        }
     })
     parseWpt(data.wpts, layers);
 
