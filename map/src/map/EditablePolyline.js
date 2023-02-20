@@ -212,11 +212,21 @@ export default class EditablePolyline {
                 .then(() => {
                     this.map.removeLayer(polylineTempNext);
                 });
-        }
 
-        this.ctx.selectedGpxFile.addPoint = false;
-        this.ctx.selectedGpxFile.dragPoint = false;
-        this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+            await Promise.all([await this.createPolyline(prevPoint, currentPoint)
+                .then(() => {
+                    this.map.removeLayer(polylineTempCurrent);
+                }), await this.createPolyline(currentPoint, nextPoint)
+                .then(() => {
+                    this.map.removeLayer(polylineTempNext);
+                })]).then(() => {
+                TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
+                    this.ctx.selectedGpxFile.addPoint = false;
+                    this.ctx.selectedGpxFile.dragPoint = false;
+                    this.ctx.setSelectedGpxFile({...res});
+                });
+            })
+        }
     }
 
     async createPolyline(startPoint, endPoint) {
@@ -259,6 +269,5 @@ export default class EditablePolyline {
     saveCurrentPolyline(e) {
         this.ctx.selectedGpxFile.addPoint = false;
         this.ctx.selectedGpxFile.currentPolyline = e.target._leaflet_id;
-        this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
     }
 }

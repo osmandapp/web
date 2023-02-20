@@ -376,7 +376,7 @@ export default function LocalClientTrackLayer() {
             ctx.selectedGpxFile.wpts = wpts;
         }
         TracksManager.addDistance(ctx.selectedGpxFile);
-        TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points, null)
+        TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points)
         saveCreatedLayers(ctx.selectedGpxFile.layers);
         ctx.selectedGpxFile.zoom = false;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});

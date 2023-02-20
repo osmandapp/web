@@ -19,6 +19,7 @@ function loadTracks() {
 
 function saveTracks(tracks) {
     if (tracks.length > 0) {
+        localStorage.clear();
         let res = [];
         tracks.forEach(function (t) {
             let track = _.cloneDeep(t);
@@ -30,13 +31,10 @@ function saveTracks(tracks) {
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
-                selected: false,
-                hasOnlyTrk: track.hasOnlyTrk
+                selected: false
             })
         })
         localStorage.setItem('localTracks', JSON.stringify(res));
-    } else {
-        localStorage.clear();
     }
 }
 
@@ -177,40 +175,47 @@ function getEditablePoints(track) {
 function addDistance(track) {
     if (track.tracks) {
         track.tracks.forEach(t => {
-            if (!track.hasOnlyTrk) {
-                addDistanceToPoints(t.points, track);
-            } else {
-                t.points = Utils.getPointsDist(t.points);
-            }
+            addDistanceToPoints(t.points);
         })
     }
 }
 
-function addDistanceToPoints(points, track) {
+function addDistanceToPoints(points) {
     let distanceFromStart = 0;
+    let prevGapInd = 0;
     for (let point of points) {
         if (point.geometry) {
-            if (point.geometry.length > 0) {
-                point.geometry.forEach(trk => {
-                    let currIndex = point.geometry.indexOf(trk);
-                    if ((!trk.distance || trk.distance === 0) && currIndex !== 0) {
-                        trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
-                    } else {
-                        trk.distance = 0;
-                    }
-                    distanceFromStart += trk.distance;
-                    point.distanceFromStart = distanceFromStart;
-                    point.distance += trk.distance;
-                })
-            } else {
-                if (track) {
-                    track.hasOnlyTrk = true;
-                }
-                point.distanceFromStart = 0;
+            point.dist = 0;
+            point.geometry.forEach(p => {
+                point.dist += p.distance;
+            })
+            distanceFromStart += point.dist;
+            point.distanceFromStart = distanceFromStart;
+            if (point.geometry[point.geometry.length - 1]?.profile === TracksManager.PROFILE_GAP) {
+                distanceFromStart = 0;
             }
         } else {
-            points = Utils.getPointsDist(points);
-            break;
+            let ind = _.indexOf(points, point);
+            if (ind !== 0) {
+                let prevPoint = points[ind - 1];
+                if (prevGapInd !== ind) {
+                    point.dist = Utils.getDistance(point.lat, point.lng, prevPoint.lat, prevPoint.lng);
+                    distanceFromStart += point.dist;
+                    point.distanceFromStart = distanceFromStart;
+                } else {
+                    point.dist = 0;
+                    point.distanceFromStart = distanceFromStart;
+                }
+            } else {
+                point.dist = 0;
+                point.distanceFromStart = 0;
+            }
+            if (point.profile === TracksManager.PROFILE_GAP) {
+                let segPoints = points.slice(prevGapInd, ind);
+                prevGapInd = ind + 1;
+                Utils.getPointsDist(segPoints);
+                distanceFromStart = 0;
+            }
         }
     }
 }
@@ -337,8 +342,8 @@ async function updateRoute(ctx, points) {
 
 function updateStat(track) {
     addDistance(track);
-    let activePoints = getEditablePoints(track);
-    if (track.analysis.totalDistance) {
+    let activePoints = track.points;
+    if (track.analysis?.totalDistance) {
         track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
     }
     track.analysis.timeMoving = null;
@@ -456,15 +461,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
-function updateTrack(currentTrack, ctx) {
-    currentTrack.updated = true;
-    currentTrack.tracks.forEach(track => {
-        track.points = Utils.getPointsDist(track.points);
-    })
-    ctx.setLocalTracks([...ctx.localTracks]);
-    ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
-}
-
 function createTrack(ctx) {
     let createState = {
         enable: true
@@ -498,7 +494,6 @@ const TracksManager = {
     prepareTrack,
     addDistance,
     addDistanceToPoints,
-    updateTrack,
     createTrack,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,

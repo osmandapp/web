@@ -3,7 +3,6 @@ import MarkerOptions from "./markers/MarkerOptions";
 import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
-import PointManager from "../context/PointManager";
 import React from "react";
 
 export default class EditableMarker {
@@ -88,7 +87,6 @@ export default class EditableMarker {
         }
         if (this.ctx.selectedGpxFile.dragPoint) {
             this.ctx.selectedGpxFile.addPoint = false;
-            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
         }
     }
 

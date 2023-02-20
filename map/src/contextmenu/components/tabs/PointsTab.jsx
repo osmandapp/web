@@ -11,7 +11,6 @@ import {
 import React, {useContext, useState} from "react";
 import {Cancel, ViewHeadline} from "@mui/icons-material";
 import AppContext from "../../../context/AppContext";
-import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 import PointManager from "../../../context/PointManager";
@@ -33,12 +32,7 @@ const PointsTab = ({width}) => {
         if (!result.destination) {
             return;
         }
-        let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
-        if (currentTrack) {
-            await PointManager.reorder(result.source.index, result.destination.index, currentTrack, ctx);
-            updateTrack(currentTrack);
-            TracksManager.saveTracks(ctx.localTracks);
-        } else {
+        if (ctx.selectedGpxFile) {
             await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
             ctx.selectedGpxFile.updateLayers = true;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -54,24 +48,11 @@ const PointsTab = ({width}) => {
         ...draggableStyle
     });
 
-    function updateTrack(currentTrack) {
-        currentTrack.updated = true;
-        currentTrack.tracks.forEach(track => {
-            track.points = Utils.getPointsDist(track.points);
-        })
-        ctx.setLocalTracks([...ctx.localTracks]);
-        ctx.setSelectedGpxFile(Object.assign({}, currentTrack));
-    }
-
     function getPoints() {
-        if (ctx.selectedGpxFile) {
-            if (ctx.selectedGpxFile.points) {
-                TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points, null);
-                return ctx.selectedGpxFile.points;
-            } else {
-                TracksManager.addDistance(ctx.selectedGpxFile);
-                return TracksManager.getEditablePoints(ctx.selectedGpxFile);
-            }
+        let points = ctx.selectedGpxFile?.points;
+        if (points) {
+            TracksManager.addDistanceToPoints(points);
+            return points;
         }
     }
 

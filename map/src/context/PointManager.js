@@ -10,7 +10,7 @@ const deletePoint = async (index, ctx) => {
     }
 }
 
-function deleteWpt (ind, ctx) {
+function deleteWpt(ind, ctx) {
     ctx.selectedGpxFile.wpts.splice(ind, 1);
     ctx.selectedGpxFile.updateLayers = true;
     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -29,11 +29,12 @@ async function reorder(startIndex, endIndex, currentTrack, ctx) {
 async function insertPointToTrack(currentTrack, index, point, ctx) {
     let lengthSum = 0;
     if (currentTrack.points) {
-        await insertPoint(currentTrack.points, index, point, lengthSum, ctx)
-    } else {
-        for (let track of currentTrack.tracks) {
-            lengthSum = await insertPoint(track.points, index, point, lengthSum, ctx);
-        }
+        await insertPoint(currentTrack.points, index, point, lengthSum, ctx).then(() => {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
+                ctx.selectedGpxFile.updateLayers = true;
+                ctx.setSelectedGpxFile({...res});
+            });
+        })
     }
 }
 
@@ -80,24 +81,14 @@ async function deletePointByIndex(currentTrack, index, ctx) {
     let lengthSum = 0;
     let res;
     if (currentTrack.points) {
-        res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((res) => {
-                ctx.selectedGpxFile.updateLayers = true;
-                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                return res.deletedPoint;
+        res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then(() => {
+                TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
+                    ctx.selectedGpxFile.updateLayers = true;
+                    ctx.setSelectedGpxFile({...res});
+                    return res.deletedPoint;
+                });
             }
         );
-    } else {
-        for (let track of currentTrack.tracks) {
-            res = await deleteByIndex(track.points, index, lengthSum, ctx).then((res) => {
-                TracksManager.updateStat(currentTrack);
-                TracksManager.updateTrack(currentTrack, ctx);
-                TracksManager.saveTracks(ctx.localTracks);
-                lengthSum = res.lengthSum;
-                if (res.deletedPoint) {
-                    return res.deletedPoint;
-                }
-            });
-        }
     }
     return res;
 }
@@ -128,8 +119,7 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                         currentNewGeo.pop();
                         let nextNewGeo = points[i + 1].geometry;
                         nextNewGeo.shift();
-                        let resGeo = currentNewGeo.concat(nextNewGeo)
-
+                        let resGeo = currentNewGeo.concat(nextNewGeo);
                         newGeometry = Utils.getPointsDist(resGeo);
                     } else {
                         newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
