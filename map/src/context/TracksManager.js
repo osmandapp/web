@@ -296,14 +296,6 @@ function deleteLocalTrack(ctx) {
     return false;
 }
 
-function pointHasSpeed(point) {
-    if (point.ext) {
-        return point?.ext?.speed !== undefined && point?.ext?.speed !== 0;
-    } else {
-        return false;
-    }
-}
-
 
 async function updateRouteBetweenPoints(ctx, start, end) {
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
@@ -312,7 +304,6 @@ async function updateRouteBetweenPoints(ctx, start, end) {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
                 routeMode: start.profile ? start.profile : ctx.routeMode.mode,
-                hasSpeed: pointHasSpeed(start) || pointHasSpeed(end),
                 hasRouting: start.segment !== null || end.segment !== null
             },
             headers: {
