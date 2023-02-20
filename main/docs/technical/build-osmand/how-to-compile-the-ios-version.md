@@ -53,7 +53,7 @@ sidebar_position: 6
 9. Troubleshooting.
   - In case of build errors you can press in XCode: ```Product -> Clean build folder```
   - Close XCode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists). 
-  - Delete XCode DerivedData folder: ``` sudo rm -R ~/Library/Developer/Xcode/DerivedData/* ```
+  - Delete XCode DerivedData folder: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
   - Check that all repositories are up to date and on correct branches.
   - Restart your computer. (Yes, it can help). 
   - Then run `$ ./prepare.sh` and try to build the project again.
