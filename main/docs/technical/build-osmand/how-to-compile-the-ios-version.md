@@ -14,7 +14,7 @@ sidebar_position: 6
 4. Log in into XCode account (optional)
   In case if you don't have Apple Developer account. Open XCode and go to preferences (via top menu)
   ```
-  Preferences -> Accounts 
+  Preferences -> Accounts
   ```
   Press `+` button. You can log in with your AppleID (login and password from your iOS/macOS devices). Follow XCode instructions.
   For OsmAnd team members: send your AppleID login, so you will be added to to developers list. When you'll get email with invite message activate it.
@@ -26,7 +26,7 @@ sidebar_position: 6
   $ sudo gem install cocoapods
   $ brew install cmake # tested on 3.25.2, 3.19, 3.11
   ```
-6. Run prepare.sh to compile QT library and download external dependencies
+6. Run `prepare.sh` to compile QT library and download external dependencies
   ```
   $ cd ios
   $ ./prepare.sh
@@ -47,19 +47,19 @@ sidebar_position: 6
   https://cmake.org/download/
   ```
   
-7. Open osmand.xcworkspace in XCode
+7. Open `osmand.xcworkspace` in XCode
 8. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of IOS simulators. But don't use default 'Any IOS Device (arm64)'. Build the project (play button).
 9. Troubleshooting.
   - In case of build errors you can press in XCode: ```Product -> Clean build folder```
-  - Close XCode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists). 
+  - Close XCode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
   - Delete XCode DerivedData folder: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
   - Check that all repositories are up to date and on correct branches.
-  - Restart your computer. (Yes, it can help). 
+  - Restart your computer. (Yes, it can help).
   - Then run `$ ./prepare.sh` and try to build the project again.
   
 10. Troubleshooting (m1 mac)
-  - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```arm64``` to **Excluded Architectures** of ```OsmAnd_projects```. 
+  - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```arm64``` to **Excluded Architectures** of ```OsmAnd_projects```.
 
 11. Debug QT (optional). If you want to see QT values in debug mode run this:
   ```
