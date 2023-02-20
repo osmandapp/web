@@ -17,10 +17,7 @@ function deleteWpt(ind, ctx) {
 }
 
 async function reorder(startIndex, endIndex, currentTrack, ctx) {
-    let removed;
-    removed = await deletePointByIndex(currentTrack, startIndex, ctx).then((res) => {
-        return res;
-    });
+    let removed = await deletePointByIndex(currentTrack, startIndex, ctx);
     if (removed.length > 0) {
         await insertPointToTrack(currentTrack, endIndex, removed[0], ctx);
     }
@@ -81,12 +78,12 @@ async function deletePointByIndex(currentTrack, index, ctx) {
     let lengthSum = 0;
     let res;
     if (currentTrack.points) {
-        res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then(() => {
+        res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((result) => {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
                     ctx.selectedGpxFile.updateLayers = true;
                     ctx.setSelectedGpxFile({...res});
-                    return res.deletedPoint;
                 });
+                return result.deletedPoint;
             }
         );
     }
