@@ -29,6 +29,38 @@ OsmAnd Cloud is a cloud storage service that is not associated with the Android 
 OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.     
 
 
+## OsmAnd Pro
+
+OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version.
+
+OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
+
+### Cross-platform
+
+Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
+
+***Steps***:
+
+**1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
+
+[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
+*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
+
+:::note
+Registration takes place on the platform on which the subscription was purchased.
+:::
+
+After that, your email is a login for activation OsmAnd Pro for other platforms.
+
+**2.** Activation OsmAnd Pro:
+
+*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+
+**3.** Checking of activation:
+
+*OsmAnd Menu → Settings → Purchases → Restore purchases*
+
+
 ## Login
 
 To be able to back up and restore data, it is necessary to log in.
@@ -63,7 +95,7 @@ To be able to back up and restore data, it is necessary to log in.
 - *Local changes* - shows the total number of local changes not uploaded to the cloud.
 - *Cloud changes* - the total number of changes uploaded to the cloud from other devices since the last synchronization.
 - *Conflicts* - the total number of inconsistencies between local and cloud changes.
-- *Sync now* - select this option to synchronize all selected data sections in the [Settings](#back-up-data) menu that you have changed on this device.
+- *Sync now* - select this option to synchronize all selected data sections in the [settings](#back-up-data) menu that you have changed on this device.
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +148,7 @@ Downloading changes from the cloud storage will override local changes. Accordin
 ### Local
 
 You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
-Changes that have been uploaded from the local version to the cloud disappear from the *Changes → Local* tab after a few seconds.  
+Changes that have been uploaded from the local version to the cloud are removed after a while from the *Changes → Local* tab.  
 
 <Tabs groupId="operating-systems">
 
@@ -217,16 +249,16 @@ This section is for editing and managing your OsmAnd Cloud.
 
 ### Back up data
 
-<!--*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
+*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
 *<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*.  
 
 You can select data and folders to back up.  
-1. *Settings* - .
-2. *My Places* - .
-3. *Resources* - . -->
+1. *Settings* - This tab contains information about all your personal settings, such as general, for specific profiles, quick actions, POIs, avoid road.  
+2. *My Places* - This tab contains information about the data in the My Places menu, such as favorites, tracks, OSM note, markers, and others.
+3. *Resources* - .
 
 :::note
-All of your maps are stored on the device that you downloaded them. The Cloud displays only the information about which cards you have and the date they were last modified. 
+All of your maps are stored on the device that you downloaded them. The Cloud displays only the information about which maps you have and the date they were last modified. 
 :::
 
 <Tabs groupId="operating-systems">
@@ -252,8 +284,8 @@ All of your maps are stored on the device that you downloaded them. The Cloud di
 
 ### Version history
 
-<!--*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
-Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. -->
+*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
+Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. 
 
 <Tabs groupId="operating-systems">
 
@@ -308,34 +340,3 @@ The actions you can do in this section of the Settings menu are irreversible and
 </TabItem>
 
 </Tabs>  
-
-
-## OsmAnd Pro
-
-OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version.
-
-<!-- OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features. Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  -->
-
-### Cross-platform
-
-Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
-
-***Steps***:
-
-**1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
-
-<!-- Register your account:
-*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
-
-note
-Registration takes place on the platform on which the subscription was purchased.
-
-
-After that, your email is a login for activation OsmAnd Pro for other platforms. -->
-
-**2.** Activation OsmAnd Pro
-
-**3.** Checking of activation
-
-<!-- *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
-*OsmAnd Menu → Settings → Purchases → Restore purchases* -->
