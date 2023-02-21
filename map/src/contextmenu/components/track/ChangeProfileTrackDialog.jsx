@@ -9,11 +9,21 @@ import TracksManager from "../../../context/TracksManager";
 import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {Close} from "@mui/icons-material";
 import _ from "lodash";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+    dialog: {
+        '& .MuiDialog-paper': {
+            overflow: 'hidden'
+        }
+    }
+})
 
 
 export default function ChangeProfileTrackDialog({open}) {
 
     const ctx = useContext(AppContext);
+    const classes = useStyles();
 
     const [profile, setProfile] = useState(ctx.creatingRouteMode);
     const [changeOne, setChangeOne] = useState(false);
@@ -84,7 +94,7 @@ export default function ChangeProfileTrackDialog({open}) {
                         }
                     })
                     await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                        if (!ctx.selectedGpxFile.points[0].geometry) {
+                        if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let nextArr = createArrWithGeo([points[points.length - 1]].concat(ctx.selectedGpxFile.points));
                             ctx.selectedGpxFile.points = points.concat(nextArr);
                         } else {
@@ -97,7 +107,7 @@ export default function ChangeProfileTrackDialog({open}) {
                         point.profile = profile.mode;
                     })
                     await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                        if (!ctx.selectedGpxFile.points[0].geometry) {
+                        if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let prevArr = createArrWithGeo(ctx.selectedGpxFile.points.concat([points[0]]));
                             ctx.selectedGpxFile.points = prevArr.concat(points);
                         } else {
@@ -148,7 +158,7 @@ export default function ChangeProfileTrackDialog({open}) {
         return [p1, p2];
     }
 
-    return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog}>
+    return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
         {process ? <LinearProgress/> : <></>}
         <Grid container spacing={2}>
             <Grid item xs={11}>
@@ -164,10 +174,11 @@ export default function ChangeProfileTrackDialog({open}) {
                 </IconButton>
             </Grid>
         </Grid>
-        {partialEdit && <DialogActions style={{justifyContent: 'center'}}>
+        {partialEdit && <DialogActions style={{justifyContent: 'center', overflowY: 'hidden'}}>
             <ToggleButtonGroup
                 value={change}
                 exclusive
+                fullWidth={true}
                 onChange={handleChange}
                 aria-label="text alignment">
                 <ToggleButton value="one">
@@ -178,7 +189,7 @@ export default function ChangeProfileTrackDialog({open}) {
                 </ToggleButton>
             </ToggleButtonGroup>
         </DialogActions>}
-        <DialogContent sx={{minWidth: 400}}>
+        <DialogContent sx={{minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px'}}>
             <SelectTrackProfile profile={profile} setProfile={setProfile}/>
         </DialogContent>
         <DialogActions>
