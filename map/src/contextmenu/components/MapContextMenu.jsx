@@ -110,8 +110,7 @@ export default function MapContextMenu({drawerWidth}) {
         </div>}
         <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu}
                       setShowContextMenu={setShowContextMenu}/>
-        {ctx.trackProfileManager?.change &&
-            <ChangeProfileTrackDialog open={ctx.trackProfileManager?.change} close={!ctx.trackProfileManager?.change}/>}
+        {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
         {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
     </div>);
 }

@@ -9,10 +9,9 @@ import TracksManager from "../../../context/TracksManager";
 import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {Close} from "@mui/icons-material";
 import _ from "lodash";
-import {makeStyles} from "@material-ui/core/styles";
 
 
-export default function ChangeProfileTrackDialog({open, close}) {
+export default function ChangeProfileTrackDialog({open}) {
 
     const ctx = useContext(AppContext);
 
@@ -21,9 +20,14 @@ export default function ChangeProfileTrackDialog({open, close}) {
     const [changeAll, setChangeAll] = useState(false);
     const [change, setChange] = React.useState('one');
     const [process, setProcess] = useState(false);
+    const [dialogOpen, setDialogOpen] = useState(open);
 
     const handleChange = (event, change) => {
         setChange(change);
+    };
+
+    const toggleShowDialog = () => {
+        setDialogOpen(!dialogOpen);
     };
 
     useEffect(() => {
@@ -46,7 +50,7 @@ export default function ChangeProfileTrackDialog({open, close}) {
                 point.profile = profile.mode;
             })
             await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
-                ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                ctx.selectedGpxFile.points = points;
                 ctx.setCreatingRouteMode({
                     mode: profile.mode,
                     modes: ctx.creatingRouteMode.modes,
@@ -66,6 +70,11 @@ export default function ChangeProfileTrackDialog({open, close}) {
                     currentPoint.profile = profile.mode;
                     nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, currentPoint, nextPoint);
                 }
+                if (!ctx.selectedGpxFile.points[0].geometry) {
+                    let prevArr = createArrWithGeo(getPrevPoints());
+                    let nextArr = createArrWithGeo(getNextPoints());
+                    ctx.selectedGpxFile.points = prevArr.concat(nextArr);
+                }
             } else if (changeAll) {
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
                     let changePoints = ctx.selectedGpxFile.points.splice(0, ctx.trackProfileManager.pointInd + 1);
@@ -75,7 +84,12 @@ export default function ChangeProfileTrackDialog({open, close}) {
                         }
                     })
                     await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                        ctx.selectedGpxFile.points = points.concat(ctx.selectedGpxFile.points);
+                        if (!ctx.selectedGpxFile.points[0].geometry) {
+                            let nextArr = createArrWithGeo([points[points.length - 1]].concat(ctx.selectedGpxFile.points));
+                            ctx.selectedGpxFile.points = points.concat(nextArr);
+                        } else {
+                            ctx.selectedGpxFile.points = points.concat(ctx.selectedGpxFile.points);
+                        }
                     });
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                     let changePoints = ctx.selectedGpxFile.points.splice(ctx.trackProfileManager.pointInd, ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd);
@@ -83,7 +97,12 @@ export default function ChangeProfileTrackDialog({open, close}) {
                         point.profile = profile.mode;
                     })
                     await TracksManager.updateRoute(ctx, changePoints).then((points) => {
-                        ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                        if (!ctx.selectedGpxFile.points[0].geometry) {
+                            let prevArr = createArrWithGeo(ctx.selectedGpxFile.points.concat([points[0]]));
+                            ctx.selectedGpxFile.points = prevArr.concat(points);
+                        } else {
+                            ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                        }
                     });
                 }
             }
@@ -97,7 +116,39 @@ export default function ChangeProfileTrackDialog({open, close}) {
         });
     }
 
-    return <Dialog disableEnforceFocus open={open} onClose={close}>
+    function getPrevPoints() {
+        if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) < ctx.trackProfileManager.pointInd);
+        } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) <= ctx.trackProfileManager.pointInd);
+        }
+    }
+
+    function getNextPoints() {
+        if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) >= ctx.trackProfileManager.pointInd);
+        } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) > ctx.trackProfileManager.pointInd);
+        }
+    }
+
+    function createArrWithGeo(points) {
+        let p1 = points[0];
+        p1.geometry = p1.geometry ? p1.geometry : [];
+        p1.profile = TracksManager.PROFILE_LINE;
+        let p2 = points[points.length - 1];
+        let geo = _.cloneDeep(points);
+        geo.forEach(p => {
+            delete p.profile;
+            delete p.geometry;
+        })
+        p2.geometry = geo;
+        p2.profile = p2.profile ? p2.profile : TracksManager.PROFILE_LINE;
+
+        return [p1, p2];
+    }
+
+    return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog}>
         {process ? <LinearProgress/> : <></>}
         <Grid container spacing={2}>
             <Grid item xs={11}>
@@ -113,7 +164,7 @@ export default function ChangeProfileTrackDialog({open, close}) {
                 </IconButton>
             </Grid>
         </Grid>
-        {partialEdit && <DialogActions>
+        {partialEdit && <DialogActions style={{justifyContent: 'center'}}>
             <ToggleButtonGroup
                 value={change}
                 exclusive

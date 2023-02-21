@@ -275,7 +275,6 @@ export default function LocalClientTrackLayer() {
             }
             if (trackWithoutRouting(points)) {
                 points = addGeometryToTrack(prevPoint, newPoint, points);
-                console.log(points)
                 updateLayers(points, null, layers, true);
             } else {
                 points.push(newPoint);
