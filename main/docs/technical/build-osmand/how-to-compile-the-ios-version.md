@@ -11,6 +11,7 @@ sidebar_position: 6
   $ xcode-select --install
   ```
   Or in case of errors try to download and install it from Apple site: <https://developer.apple.com/download/all/?q=xcode>.
+  
 4. Log in into Xcode account (optional)
   In case if you don't have Apple Developer account. Open Xcode and go to preferences (via top menu)
   ```
@@ -19,6 +20,7 @@ sidebar_position: 6
   Press `+` button. You can log in with your AppleID (login and password from your iOS/macOS devices). Follow Xcode instructions.
   For OsmAnd team members: send your AppleID login, so you will be added to to developers list. When you'll get email with invite message activate it.
   Close Xcode.
+  
 5. Install command-line tools- cmake, svn, cocoapods
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
