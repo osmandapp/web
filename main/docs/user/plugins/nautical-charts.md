@@ -13,8 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 :::tip NOTE
 The Nautical map view plugin is a paid feature of the OsmAnd app.  
 :::
