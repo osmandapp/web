@@ -14,10 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 :::tip NOTE
-The Weather plugin is a paid feature of the OsmAnd app.  
+ <ProFeature/> The Weather plugin is a paid feature of the OsmAnd app.  
 :::
 
 The Weather Plugin provides an hourly forecast for 7 days ahead directly on the OsmAnd map. Weather information can also be downloaded for the online use.  
