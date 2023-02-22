@@ -26,16 +26,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform, but only with your Pro account.
 :::
 
-OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make will be synchronized.     
+OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.     
 
 
-## OsmAnd Pro
+## Cross-platform
 
 OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version.
 
 OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
-
-### Cross-platform
 
 Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
 
@@ -64,9 +62,13 @@ After that, your email is a login for activation OsmAnd Pro for other platforms.
 ## Login
 
 To be able to back up and restore data, it is necessary to log in.
-- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#osmand-pro) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
-- Your Cloud account needs to be the same as the account on which the purchase was made.  
-- When you register or log in, you will receive a verification code by email to confirm it.
+- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
+- Your Cloud account needs to be registered on the device where the purchase was made.  
+- When you register or log in, you will receive a verification code on your email to confirm it.
+
+:::note
+OsmAnd Cloud is available for one more year after your Pro subscription ends.
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -95,7 +97,7 @@ To be able to back up and restore data, it is necessary to log in.
 - *Local changes* - shows the total number of local changes not uploaded to the cloud.
 - *Cloud changes* - the total number of changes uploaded to the cloud from other devices since the last synchronization.
 - *Conflicts* - the total number of inconsistencies between local and cloud changes.
-- *Sync now* - select this option to synchronize all selected data sections in the [settings](#back-up-data) menu that you have changed on this device.
+- *Sync now* - select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device.
 
 <Tabs groupId="operating-systems">
 
@@ -118,9 +120,9 @@ To be able to back up and restore data, it is necessary to log in.
 </Tabs>  
  
 
-## Changes
+## List of changes
 
-In the [Last Sync](#last-sync) section from the drop-down list, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
+In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
 
 Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.  
 
@@ -173,7 +175,7 @@ Changes that have been uploaded from the local version to the cloud are removed 
 
 ### Cloud
 
-The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage.
+The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
 
 <Tabs groupId="operating-systems">
 
@@ -207,7 +209,7 @@ Tapping Conflicts displays information about the local and cloud versions in syn
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-1.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
 
 </TabItem>
 
@@ -247,18 +249,16 @@ This section is for editing and managing your OsmAnd Cloud.
 </Tabs>  
 
 
-### Back up data
+### Select data to back up
 
-*<Translate android="true" ids="backup_data"/>* - select data and folders to back up.
-*<Translate ios="true" ids="osmand_cloud"/>* - opens the screen where you can select data and folders to back up by clicklig on *<Translate ios="true" ids="backup_data"/>*.  
+In this menu, you can select which data and folders will be sent to the cloud.
 
-You can select data and folders to back up.  
-1. *Settings* - This tab contains information about all your personal settings, such as general, for specific profiles, quick actions, POIs, avoid road.  
-2. *My Places* - This tab contains information about the data in the My Places menu, such as favorites, tracks, OSM note, markers, and others.
-3. *Resources* - .
+1. *Settings* - This tab contains a list of information about all your personal settings, such as general, for specific profiles, quick actions, POIs, and avoid road.  
+2. *My Places* - This tab contains a list of information about the data in the My Places menu, such as favorites, tracks, OSM note, markers, and others.
+3. *Resources* - You can choose to back up resources such as favorites, routing, voice prompts, and others..
 
 :::note
-All of your maps are stored on the device that you downloaded them. The Cloud displays only the information about which maps you have and the date they were last modified. 
+All of your maps are stored on the device that you downloaded them to. And the cloud only saves information about which maps you have and the date they were last modified. 
 :::
 
 <Tabs groupId="operating-systems">
@@ -282,7 +282,9 @@ All of your maps are stored on the device that you downloaded them. The Cloud di
 </Tabs>
 
 
-### Version history
+### Manage storage
+
+This section of the menu displays information about how much of the 3.15 gigabytes of memory in Settings, My Places, and Resources are being used. You can delete changes to separate data types from OsmAnd Cloud, but in this case, this action cannot be undone.
 
 *<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
 Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. 
@@ -293,7 +295,7 @@ Here there is info about using memory by clicking *<Translate ios="true" ids="ma
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
 
 </TabItem>
 
@@ -301,7 +303,7 @@ Here there is info about using memory by clicking *<Translate ios="true" ids="ma
 
 *<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Backup data screen iOS](@site/static/img/personal/backup/backup_data_screen_1_ios.png)  
+![Backup data screen iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 
@@ -310,7 +312,7 @@ Here there is info about using memory by clicking *<Translate ios="true" ids="ma
 
 ### Account
 
-This section contains information about which of your accounts is connected to OsmAnd Cloud, as well as a logout button. To back up or restore data, you will need to log in again.    
+This section contains information about which of your accounts is connected to OsmAnd Cloud, as well as a logout button. To backup or restore data, you will need to log in again.    
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
