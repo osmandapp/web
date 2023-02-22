@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip subscribe
-&nbsp;<ProFeature/> You need to subscribe to [Android OsmAnd Pro](../purchases/android.md#osmand-pro) or [iOS OsmAnd Pro](../purchases/ios.md#osmand-pro).  
+&nbsp;<ProFeature/> You need to subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
 :::
 
 :::note cross-platform
@@ -31,32 +31,17 @@ OsmAnd Cloud is the resource you need to save your personal settings and app dat
 
 ## Cross-platform
 
-OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version.
+OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version. The cross-platform capability of this service allows you to transfer profile settings, tracks, favorites, and more between Android and iOS devices. In the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.  
 
-OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
+The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*:
 
-Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
-
-***Steps***:
-
-**1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
-
-[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
-*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
+1. Subscribe to OsmAnd Pro.
+2. Register your account on the OsmAnd server.
+3. The registered email will be your login to activate OsmAnd Pro on other platforms.  
 
 :::note
-Registration takes place on the platform on which the subscription was purchased.
-:::
-
-After that, your email is a login for activation OsmAnd Pro for other platforms.
-
-**2.** Activation OsmAnd Pro:
-
-*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
-
-**3.** Checking of activation:
-
-*OsmAnd Menu → Settings → Purchases → Restore purchases*
+OsmAnd Pro is a subscription with all the features of OsmAnd. Its main advantage is that it is **cross-platform**. This means that you can buy it in one store, for example for Android (Google Play, Amazon, Huawei AppGallery), and launch it on iOS.
+:::  
 
 
 ## Login
@@ -147,16 +132,17 @@ Downloading changes from the cloud storage will override local changes. Accordin
 </Tabs>  
 
 
-### Local
+### Local and Cloud
 
-You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
+- **Local.** You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
 Changes that have been uploaded from the local version to the cloud are removed after a while from the *Changes → Local* tab.  
+- **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
 
@@ -164,38 +150,13 @@ Changes that have been uploaded from the local version to the cloud are removed 
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/>* 
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_5.png)  
-
-</TabItem>
-
-</Tabs>  
-
-
-### Cloud
-
-The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,shared_string_cloud"/>*
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_14-1.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,shared_string_file_cloud"/>* 
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
 </TabItem>
 
-</Tabs>  
+</Tabs>   
 
 
 ### Conflicts
@@ -284,10 +245,7 @@ All of your maps are stored on the device that you downloaded them to. And the c
 
 ### Manage storage
 
-This section of the menu displays information about how much of the 3.15 gigabytes of memory in Settings, My Places, and Resources are being used. You can delete changes to separate data types from OsmAnd Cloud, but in this case, this action cannot be undone.
-
-*<Translate android="true" ids="backup_version_history"/>* - shows data what keept in <Translate android="true" ids="backup_storage_taken"/>.  
-Here there is info about using memory by clicking *<Translate ios="true" ids="manage_storage"/>*. 
+The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menu section displays information about how much of the 3.15 gigabytes of memory in *Settings*, *My Places*, and *Resources* are being used. You can delete changes to separate data types from OsmAnd Cloud, but in this case, the action cannot be undone.  
 
 <Tabs groupId="operating-systems">
 
@@ -319,7 +277,8 @@ This section contains information about which of your accounts is connected to O
 
 ### Danger zone
 
-The actions you can do in this section of the Settings menu are irreversible and therefore require special attention.  
+The actions you can do in this section of the Settings menu are irreversible and therefore require special attention.
+
 1. **Delete all my data** - <Translate android="true" ids="backup_delete_all_data_warning"/>
 2. **Remove old versions** - <Translate android="true" ids="backup_delete_old_data_warning"/>
 
