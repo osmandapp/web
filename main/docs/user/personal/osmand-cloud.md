@@ -31,12 +31,12 @@ OsmAnd Cloud is the resource you need to save your personal settings and app dat
 
 ## Cross-platform
 
-OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version. The cross-platform capability of this service allows you to transfer profile settings, tracks, favorites, and more between Android and iOS devices. In the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.  
+OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version. The cross-platform capability of Cloud allows you to transfer profile settings, tracks, favorites, and more between Android and iOS devices. And in the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.  
 
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*:
+The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
-1. Subscribe to OsmAnd Pro.
-2. Register your account on the OsmAnd server.
+1. Subscribe to OsmAnd Pro. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. Register your [account](#login) on the OsmAnd server.
 3. The registered email will be your login to activate OsmAnd Pro on other platforms.  
 
 :::note
@@ -48,11 +48,11 @@ OsmAnd Pro is a subscription with all the features of OsmAnd. Its main advantage
 
 To be able to back up and restore data, it is necessary to log in.
 - To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
-- Your Cloud account needs to be registered on the device where the purchase was made.  
+- Your Cloud account absolutely needs to be registered on the device where the purchase was made.  
 - When you register or log in, you will receive a verification code on your email to confirm it.
 
 :::note
-OsmAnd Cloud is available for one more year after your Pro subscription ends.
+Access to your OsmAnd Cloud account is available for one more year after your Pro subscription ends.
 :::
 
 <Tabs groupId="operating-systems">
@@ -215,8 +215,8 @@ This section is for editing and managing your OsmAnd Cloud.
 In this menu, you can select which data and folders will be sent to the cloud.
 
 1. *Settings* - This tab contains a list of information about all your personal settings, such as general, for specific profiles, quick actions, POIs, and avoid road.  
-2. *My Places* - This tab contains a list of information about the data in the My Places menu, such as favorites, tracks, OSM note, markers, and others.
-3. *Resources* - You can choose to back up resources such as favorites, routing, voice prompts, and others..
+2. *My Places* - This tab contains a list of information about the data in the [My Places menu](../personal/myplaces), such as favorites, tracks, OSM note, markers, and others.
+3. *Resources* - You can choose to back up resources such as favorites, routing, voice prompts, and some others.
 
 :::note
 All of your maps are stored on the device that you downloaded them to. And the cloud only saves information about which maps you have and the date they were last modified. 
