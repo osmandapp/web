@@ -177,24 +177,29 @@ export default class EditableMarker {
                 currentWpt.lon = lng;
             }
         }
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
-            res.addPoint = false;
-            delete res.dragPoint;
-            this.ctx.setSelectedGpxFile({...res});
-        });
+        if (trackPoints.length > 1) {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
+                res.addPoint = false;
+                delete res.dragPoint;
+                res.layers = this.ctx.selectedGpxFile.layers;
+                this.ctx.setSelectedGpxFile({...res});
+            });
+        }
     }
 
     updatePolyline(profile, point, polyline) {
-        let latlngs = [];
-        point.geometry.forEach(point => {
-            latlngs.push(new L.LatLng(point.lat, point.lng))
-        })
+        if (point) {
+            let latlngs = [];
+            point.geometry.forEach(point => {
+                latlngs.push(new L.LatLng(point.lat, point.lng))
+            })
 
-        if (polyline) {
-            polyline.setLatLngs(latlngs);
-            polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
-            });
+            if (polyline) {
+                polyline.setLatLngs(latlngs);
+                polyline.setStyle({
+                    color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
+                });
+            }
         }
     }
 }

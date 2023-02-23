@@ -218,8 +218,8 @@ export default function LocalClientTrackLayer() {
             if (!ctx.selectedGpxFile.layers) {
                 ctx.selectedGpxFile.layers = new L.FeatureGroup();
             }
-            updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers, true);
-            saveChanges(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts);
+            ctx.selectedGpxFile.layers = updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers, true);
+            saveChanges(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers);
         }
     }
 
@@ -281,7 +281,7 @@ export default function LocalClientTrackLayer() {
             }
             if (points.length > 0) {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(res => {
-                    saveChanges(null, null, res);
+                    saveChanges(null, null, null, res);
                 });
             }
             addClickOnMap();
@@ -332,7 +332,7 @@ export default function LocalClientTrackLayer() {
         map.removeLayer(polylineTemp);
         addClickOnMap();
         TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(res => {
-            saveChanges(null, null, res);
+            saveChanges(null, null, null, res);
         });
     }
 
@@ -405,15 +405,18 @@ export default function LocalClientTrackLayer() {
         return !!pointWithRouting;
     }
 
-    function saveChanges(points, wpts, res) {
+    function saveChanges(points, wpts, layers, res) {
         if (res) {
             ctx.selectedGpxFile = res;
         } else {
             ctx.selectedGpxFile.points = points;
             ctx.selectedGpxFile.wpts = wpts;
+            ctx.selectedGpxFile.layers = layers;
         }
         TracksManager.addDistance(ctx.selectedGpxFile);
-        TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points)
+        if (ctx.selectedGpxFile.points) {
+            TracksManager.addDistanceToPoints(ctx.selectedGpxFile.points)
+        }
         saveCreatedLayers(ctx.selectedGpxFile.layers);
         ctx.selectedGpxFile.zoom = false;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -428,14 +431,18 @@ export default function LocalClientTrackLayer() {
     function updateLayers(points, wpts, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
-            TrackLayerProvider.parsePoints(points, layers, true, ctx);
-            TrackLayerProvider.parseWpt(wpts, layers);
+            if (points?.length > 0) {
+                TrackLayerProvider.parsePoints(points, layers, true, ctx);
+            }
+            if (wpts?.length > 0) {
+                TrackLayerProvider.parseWpt(wpts, layers);
+            }
             layers = createEditableLayers(layers);
             if (deleteOld) {
                 trackLayers.getLayers().forEach(l => {
                     map.removeLayer(l)
                 })
-                trackLayers.clearLayers();
+                trackLayers = new L.FeatureGroup();;
             }
             layers.forEach(layer => {
                 trackLayers.addLayer(layer);
@@ -443,7 +450,7 @@ export default function LocalClientTrackLayer() {
             if (deleteOld) {
                 trackLayers.addTo(map);
             }
-
+            return trackLayers;
         }
     }
 
@@ -504,7 +511,8 @@ export default function LocalClientTrackLayer() {
             if (newPoint.profile !== TracksManager.PROFILE_LINE) {
                 newPoint.geometry = [];
             }
-            if (ctx.selectedGpxFile.newPoint && ctx.selectedGpxFile.points.length > 0) {
+
+            if (ctx.selectedGpxFile.newPoint && ctx.selectedGpxFile.points?.length > 0) {
                 let points = ctx.selectedGpxFile.points;
                 ctx.selectedGpxFile.prevPoint = points[points.length - 1];
                 if (!ctx.selectedGpxFile.prevPoint.profile) {
@@ -555,7 +563,7 @@ export default function LocalClientTrackLayer() {
 
     function getLayersBySelectedTrack(points, wpts) {
         let layers = new L.FeatureGroup();
-        updateLayers(points, wpts, layers, true);
+        layers = updateLayers(points, wpts, layers, true);
         layers.addTo(map);
         return layers;
     }

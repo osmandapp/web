@@ -223,6 +223,7 @@ export default class EditablePolyline {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
                     this.ctx.selectedGpxFile.addPoint = false;
                     this.ctx.selectedGpxFile.dragPoint = false;
+                    res.layers = this.ctx.selectedGpxFile.layers;
                     this.ctx.setSelectedGpxFile({...res});
                 });
             })

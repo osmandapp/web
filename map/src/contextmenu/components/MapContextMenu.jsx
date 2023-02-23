@@ -27,12 +27,16 @@ const useStyles = makeStyles({
 
 
 export default function MapContextMenu({drawerWidth}) {
+
     const ctx = useContext(AppContext);
+
     const classes = useStyles();
+
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
+    const [clearState, setClearState] = useState(false);
 
     useEffect(() => {
         if (!showContextMenu) {
@@ -64,6 +68,7 @@ export default function MapContextMenu({drawerWidth}) {
                 }
                 if (obj) {
                     setShowContextMenu(true);
+                    setClearState(false);
                     setTabsObj(obj);
                     setValue(obj.defaultTab);
                 }
@@ -81,6 +86,7 @@ export default function MapContextMenu({drawerWidth}) {
 
     function closeContextMenu() {
         setShowContextMenu(false);
+        setClearState(true);
     }
 
     return (<div>
@@ -109,7 +115,7 @@ export default function MapContextMenu({drawerWidth}) {
             </div>
         </div>}
         <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu}
-                      setShowContextMenu={setShowContextMenu}/>
+                      setShowContextMenu={setShowContextMenu} clearState={clearState}/>
         {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
         {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
     </div>);
