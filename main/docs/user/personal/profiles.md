@@ -42,6 +42,7 @@ To start setting up an application profile:
 
 </Tabs>
 
+
 ## Profile configuration
 
 This section contains all the settings related to the appearance, navigation settings, map rendering, configure menu, and screen of a profile.  
@@ -85,7 +86,7 @@ In this section of the General settings menu, you can set parameters for the cur
 - *<Translate android="true" ids="choose_osmand_theme"/>* - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter.
 - *<Translate android="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
 - *<Translate android="true" ids="shared_string_2_5_d_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- *<Translate android="true" ids="display*position"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
+- *<Translate android="true" ids="display_position"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
 - *<Translate android="true" ids="map_screen_orientation"/>* - sets the screen position for the OsmAnd application: <Translate android="true" ids="map_orientation_portrait"/>, <Translate android="true" ids="map_orientation_landscape"/>, <Translate android="true" ids="map_screen_orientation"/>.
 - *[<Translate android="true" ids="screen_control"/>](../navigation/route-navigation/#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
@@ -135,7 +136,9 @@ In this section you can set parameters of units & formats for chosen application
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
-|**<Translate android="true" ids="coordinates_format"/>**| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system)) |
+|**<Translate android="true" ids="angular_measeurement"/>**| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
 |**<Translate android="true" ids="default_speed_system"/>**| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
@@ -184,6 +187,7 @@ In this section you can set parameters of units & formats for chosen application
 
 </Tabs>
 
+
 ### Other
 
 Additional settings for profile (like external devices and etc.)
@@ -203,7 +207,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - use or not fullscreen mode of OsmAnd app on the device.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
-- *<Translate android="true" ids="animate_my_location"/>* - <Translate android="true" ids="animate_my_location_desc"/> It is a smooth transition of the location on the map during navigation.
+- *<Translate android="true" ids="animate_my_location"/>* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the "my location" position to display on the map relative to your location.  
 - *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
 
 </TabItem>
@@ -283,6 +287,7 @@ Below, you can find the list of possible route options.
 </TabItem>
 
 </Tabs>
+
 
 ### Route parameters
 
@@ -391,6 +396,7 @@ Below, you can find the list of possible route options.
 
 </Tabs>
 
+
 ### Screen alerts
 
 <Tabs groupId="operating-systems">
@@ -417,7 +423,8 @@ Below, you can find the list of possible route options.
 
 </Tabs>
 
-### Voice announcements
+
+### Voice prompts
 
 <Tabs groupId="operating-systems">
 
@@ -489,9 +496,15 @@ Below, you can find the list of possible route options.
 
 </Tabs>
 
+
+### Customise route line
+
+This option is described in detail in the article by [Route line appearance](../navigation/route-navigation#route-line-appearance)
+
+
 ### Map during navigation
 
-Parameters for *Map during navigation* and *Animate location change*. Change map behavior during navigation.
+Description of the change in map behavior during navigation.
 
 <Tabs groupId="operating-systems">
 
@@ -504,7 +517,6 @@ Parameters for *Map during navigation* and *Animate location change*. Change map
 | "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| *<Translate android="true" ids="animate_my_location"/>* |  Located in General settings, section [Other](#other).  |              |
 
 </TabItem>
 
@@ -517,11 +529,16 @@ Parameters for *Map during navigation* and *Animate location change*. Change map
 | "<Translate ios="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.   |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec. |
 | "<Translate ios="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position).  | Value: <br />  *<Translate ios="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate ios="true" ids="auto_zoom_farthest"/>* - zoom is 200m. <br /> *<Translate ios="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate ios="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | "<Translate ios="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.  | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| "<Translate ios="true" ids="animate_my_location"/>" |  Smooth location transition on the map during navigation.  |              |
 
 </TabItem>
 
 </Tabs>
+
+
+### Animate location change
+
+This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
+For Android, this item named [Animate own position](#other) is located in the "Other" section of the General Settings menu.
 
 
 ## Configure map
