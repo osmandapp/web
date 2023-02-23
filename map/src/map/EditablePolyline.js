@@ -204,15 +204,6 @@ export default class EditablePolyline {
             }, nextPoint);
             polylineTempNext.addTo(this.map);
 
-            await this.createPolyline(prevPoint, currentPoint)
-                .then(() => {
-                    this.map.removeLayer(polylineTempCurrent);
-                });
-            await this.createPolyline(currentPoint, nextPoint)
-                .then(() => {
-                    this.map.removeLayer(polylineTempNext);
-                });
-
             await Promise.all([await this.createPolyline(prevPoint, currentPoint)
                 .then(() => {
                     this.map.removeLayer(polylineTempCurrent);
