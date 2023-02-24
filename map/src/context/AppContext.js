@@ -386,6 +386,7 @@ export const AppContextProvider = (props) => {
     const [updateContextMenu, setUpdateContextMenu] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
+    const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
 
 
     useEffect(() => {
@@ -475,7 +476,8 @@ export const AppContextProvider = (props) => {
         loadingContextMenu, setLoadingContextMenu,
         updateContextMenu, setUpdateContextMenu,
         trackProfileManager, setTrackProfileManager,
-        pointContextMenu, setPointContextMenu
+        pointContextMenu, setPointContextMenu,
+        routingErrorMsg, setRoutingErrorMsg
 
     }}>
         {props.children}

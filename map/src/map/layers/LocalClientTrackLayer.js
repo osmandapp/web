@@ -241,14 +241,18 @@ export default function LocalClientTrackLayer() {
         let layers = file.layers;
         file.addPoint = false;
         if (prevPoint) {
-            deleteClickOnMap();
-            points = getProfile(newPoint, prevPoint, points);
-            createPointOnMap(newPoint, layers);
-            let polylineTemp = createTempLine(prevPoint, newPoint);
-            if (newPoint.profile === TracksManager.PROFILE_LINE) {
-                createNewRouteLine(prevPoint, newPoint, points, polylineTemp, layers);
+            if (TracksManager.isExceededMaxDist(ctx, prevPoint, newPoint)) {
+                ctx.setRoutingErrorMsg(true);
             } else {
-                await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers);
+                deleteClickOnMap();
+                points = getProfile(newPoint, prevPoint, points);
+                createPointOnMap(newPoint, layers);
+                let polylineTemp = createTempLine(prevPoint, newPoint);
+                if (newPoint.profile === TracksManager.PROFILE_LINE) {
+                    createNewRouteLine(prevPoint, newPoint, points, polylineTemp, layers);
+                } else {
+                    await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers);
+                }
             }
         } else {
             addFirstPoint(newPoint, file, points);
