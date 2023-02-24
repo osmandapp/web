@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-Android Auto and CarPlay are [paid features](../purchases/index.md).
+Android Auto and CarPlay are [paid features](../purchases/index.md) of the OsmAnd app.
 :::
 
 OsmAnd is available for *Android Auto* and *CarPlay* functions in your vehicle. You can connect your Android or iPhone device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
@@ -218,7 +218,6 @@ This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such 
 
 </Tabs>  
 
-<!--
 ____
 
 <Tabs groupId="operating-systems">
@@ -249,4 +248,3 @@ ____
 </TabItem>
 
 </Tabs>
--->
