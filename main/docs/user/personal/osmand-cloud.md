@@ -279,8 +279,8 @@ This section contains information about which of your accounts is connected to O
 
 The actions you can do in this section of the Settings menu are irreversible and therefore require special attention.
 
-1. **Delete all my data** - <Translate android="true" ids="backup_delete_all_data_warning"/>
-2. **Remove old versions** - <Translate android="true" ids="backup_delete_old_data_warning"/>
+1. **Delete all my data** - You have the option to delete all data previously uploaded to OsmAnd Cloud, including all version history. But there is no way you can restore the deleted data.
+2. **Remove old versions** - You can delete the change history for previously uploaded data. In this case, the current version of the data will be saved on the server, but you will not be able to go back to the previously made changes.
 
 <Tabs groupId="operating-systems">
 
