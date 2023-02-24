@@ -156,7 +156,9 @@ export default function LocalClientTrackLayer() {
     function addTrackToMap(track, fitBounds, active) {
         let layer = TrackLayerProvider.createLayersByTrackData(track);
         if (fitBounds) {
-            map.fitBounds(layer.getBounds());
+            if (!_.isEmpty(layer.getBounds())) {
+                map.fitBounds(layer.getBounds());
+            }
         }
         layer.on('click', (e) => {
             if (!_.cloneDeep(ctx.createTrack)) {
