@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {
-    Air, Cloud, Compress, Shower, Thermostat
-} from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
+import _ from "lodash";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -201,7 +200,7 @@ function formatRouteMode(routeMode) {
     return routeModeStr;
 }
 
-async function loadRouteModes(routeMode, setRouteMode) {
+async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
@@ -209,7 +208,43 @@ async function loadRouteModes(routeMode, setRouteMode) {
     if (response.ok) {
         let data = await response.json();
         setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
+
+        let creatingData = _.cloneDeep(data);
+        creatingData = filterMode(creatingData);
+        creatingData = addModes(creatingData);
+        setCreatingRouteMode(
+            {
+                mode: creatingRouteMode.mode,
+                modes: creatingData,
+                opts: creatingData[creatingRouteMode.mode]?.params,
+                colors: getColors()
+            }
+        )
     }
+}
+
+function addModes(data) {
+    data['line'] = {name: 'Line', params: {}};
+    return data;
+}
+
+function filterMode(data) {
+    return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
+}
+
+function getColors() {
+    return {
+        'car': '#1976d2',
+        'truck': '#2F4F4F',
+        'motorcycle': '#f8931d',
+        'bicycle': '#9053bd',
+        'boat': '#08b5ff',
+        'horsebackriding': '#7f3431',
+        'pedestrian': '#d90139',
+        'ski': '#ffacdf',
+        'line': '#5F9EA0',
+        'gap': '#ff8800'
+    };
 }
 
 
@@ -279,6 +314,12 @@ async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setSta
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
+
+    const OBJECT_TYPE_FAVORITE = 'favorite';
+    const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
+    const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
+    const OBJECT_TYPE_WEATHER = 'weather';
+
     // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, updateWeatherLayers] = useState(getLayers());
@@ -292,8 +333,8 @@ export const AppContextProvider = (props) => {
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
-    const [selectedFavoritesFile, setSelectedFavoritesFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
+    const [tracksGroups, setTracksGroups] = useState([])
     // 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
@@ -318,6 +359,10 @@ export const AppContextProvider = (props) => {
         mode: modeParam, opts: {},
         modes: {'car': {name: 'Car', params: {}}}
     });
+    const [creatingRouteMode, setCreatingRouteMode] = useState({
+        mode: 'car', opts: {},
+        modes: {'car': {name: 'Car', params: {}}}
+    });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
@@ -325,6 +370,10 @@ export const AppContextProvider = (props) => {
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
+    const [addFavorite, setAddFavorite] = useState({
+        add: false,
+        location: null
+    });
 
     const [localTracks, setLocalTracks] = useState(TracksManager.loadTracks());
     const [currentObjectType, setCurrentObjectType] = useState(null);
@@ -335,9 +384,17 @@ export const AppContextProvider = (props) => {
         route: {text: ''},
         welcome: {text: process.env.REACT_APP_WEBSITE_NAME}
     });
+    const [createTrack, setCreateTrack] = useState(null);
+    const [gpxCollection, setGpxCollection] = useState([]);
+    const [loadingContextMenu, setLoadingContextMenu] = useState(false);
+    const [updateContextMenu, setUpdateContextMenu] = useState(false);
+    const [trackProfileManager, setTrackProfileManager] = useState({});
+    const [pointContextMenu, setPointContextMenu] = useState({});
+    const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+
 
     useEffect(() => {
-        loadRouteModes(routeMode, setRouteMode);
+        loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
     }, []);
 
     useEffect(() => {
@@ -365,7 +422,7 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                resultText = `Route ${Math.round(data.props.overall.distance/100)/10.0} km for ${routeMode.mode} is found.`
+                resultText = `Route ${Math.round(data.props.overall.distance / 100) / 10.0} km for ${routeMode.mode} is found.`
             }
         }
         setHeaderText(prevState => ({
@@ -395,7 +452,6 @@ export const AppContextProvider = (props) => {
         gpxFiles, setGpxFiles,
         gpxLoading, setGpxLoading,
         selectedGpxFile, setSelectedGpxFile,
-        selectedFavoritesFile, setSelectedFavoritesFile,
         mapMarkerListener, setMapMarkerListener,
         tileURL, setTileURL, allTileURLs,
         startPoint, setStartPoint,
@@ -408,10 +464,24 @@ export const AppContextProvider = (props) => {
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
         favorites, setFavorites,
+        addFavorite, setAddFavorite,
         avoidRoads, setAvoidRoads,
         localTracks, setLocalTracks,
         currentObjectType, setCurrentObjectType,
-        headerText, setHeaderText
+        headerText, setHeaderText,
+        tracksGroups, setTracksGroups,
+        OBJECT_TYPE_FAVORITE,
+        OBJECT_TYPE_CLOUD_TRACK,
+        OBJECT_TYPE_LOCAL_CLIENT_TRACK,
+        OBJECT_TYPE_WEATHER,
+        createTrack, setCreateTrack,
+        creatingRouteMode, setCreatingRouteMode,
+        gpxCollection, setGpxCollection,
+        loadingContextMenu, setLoadingContextMenu,
+        updateContextMenu, setUpdateContextMenu,
+        trackProfileManager, setTrackProfileManager,
+        pointContextMenu, setPointContextMenu,
+        routingErrorMsg, setRoutingErrorMsg
 
     }}>
         {props.children}

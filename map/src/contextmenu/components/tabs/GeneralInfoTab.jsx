@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
+    Alert,
     Box,
     Button,
     Divider,
-    Grid,
+    Grid, IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -11,11 +12,14 @@ import {
     Typography
 } from "@mui/material";
 import AppContext, {toHHMMSS} from "../../../context/AppContext"
-import {AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
+import {AccessTime, AvTimer, Commit, ImportExport, MoreVert, RouteOutlined, Speed, Terrain} from "@mui/icons-material";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
+import PopperMenu from "../../../drawer/components/tracks/PopperMenu";
+import DeleteTrackDialog from "../track/DeleteTrackDialog";
 
-export default function GeneralInfoTab({width, srtm}) {
+export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -30,6 +34,19 @@ export default function GeneralInfoTab({width, srtm}) {
     const [upDownHill, setUpDownHill] = useState('');
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
+    const [error, setError] = useState(false);
+    const [openPointAlert, setOpenPointAlert] = useState(true);
+    const [openWptAlert, setOpenWptAlert] = useState(true);
+    const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+
+    const [loadingSrtm, setLoadingSrtm] = useState(false);
+
+    const anchorEl = React.useRef(null);
+    const [open, setOpen] = useState(false);
+
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
@@ -42,7 +59,11 @@ export default function GeneralInfoTab({width, srtm}) {
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
-            setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
+            if (ctx.selectedGpxFile.points) {
+                setPoints(ctx.selectedGpxFile.points.length);
+            } else {
+                setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
+            }
         }
 
         let info = ctx.selectedGpxFile?.analysis;
@@ -84,7 +105,7 @@ export default function GeneralInfoTab({width, srtm}) {
         } else if (ctx.selectedGpxFile?.analysis?.hasElevationData) {
             setElevation("Elevation (min/avg/max): " +
                 (ctx.selectedGpxFile.analysis?.minElevation).toFixed(1) + " / " +
-                (ctx.selectedGpxFile.analysis?.avgElevation).toFixed(1) + " / " +
+                (ctx.selectedGpxFile.analysis?.avgElevation)?.toFixed(1) + " / " +
                 (ctx.selectedGpxFile.analysis?.maxElevation).toFixed(1) + " m");
         } else {
             setElevation('');
@@ -103,16 +124,23 @@ export default function GeneralInfoTab({width, srtm}) {
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
             setDisableButton(!disableButton);
-            let existName = ctx.localTracks.find(t => t.name === fileName);
-            if (!existName) {
+            if (validName(fileName)) {
                 let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
                 currentTrack.name = fileName;
                 ctx.selectedGpxFile.name = fileName;
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 ctx.setLocalTracks([...ctx.localTracks]);
                 TracksManager.saveTracks(ctx.localTracks);
+            } else {
+                setFileName(ctx.selectedGpxFile.name);
+                setError(true);
             }
         }
+    }
+
+    function validName(fileName) {
+        let existName = ctx.localTracks.find(t => t.name === fileName);
+        return fileName !== "" && fileName.trim().length > 0 && !existName;
     }
 
     const Description = () => ({desc}) => {
@@ -131,7 +159,7 @@ export default function GeneralInfoTab({width, srtm}) {
     const EditName = () => {
         return (
             <Grid container spacing={2}>
-                <Grid item xs={11}>
+                <Grid item xs={8}>
                     {!disableButton && <TextareaAutosize
                         style={{maxWidth: '438px', width: fileName.length + "ch", resize: 'none'}}
                         className={styles.nameInput}
@@ -142,22 +170,18 @@ export default function GeneralInfoTab({width, srtm}) {
                         onKeyDown={(e) => changeFileName(e)}
                         autoFocus={true}
                     />}
-                    {
-                        disableButton && <Typography className={styles.name} variant="inherit" maxWidth={'530px'}>
-                            {fileName}
+                    {disableButton &&
+                        <Typography className={styles.name} style={{color: '#666666', fontWeight: 'bold'}}
+                                    variant="inherit" maxWidth={'530px'}>
+                            {"* " + fileName}
                         </Typography>
                     }
+                    {error && <Alert onClose={() => {
+                        setError(false)
+                    }} severity="warning">You tried to save the wrong name!</Alert>}
                 </Grid>
-                <Grid item xs={1}>
+                <Grid item xs={4}>
                     <Box display="flex" justifyContent="flex-end">
-                        {disableButton &&
-                            <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
-                                    onClick={() => {
-                                        setDisableButton(false);
-                                    }}
-                            >
-                                edit
-                            </Button>}
                         {!disableButton && <Button variant="contained" style={{backgroundColor: '#fbc73a'}}
                                                    onClick={(e) => changeFileName(e)}>
                             save
@@ -189,14 +213,22 @@ export default function GeneralInfoTab({width, srtm}) {
     }
 
     const downloadGpx = async () => {
-        let gpx = await TracksManager.getGpxTrack(ctx);
+        let gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
         if (gpx) {
             gpx = gpx.data;
             const url = document.createElement('a');
             url.href = URL.createObjectURL(new Blob([gpx]));
-            url.download = `${ctx.selectedGpxFile.name}.gpx`;
+            let name = TracksManager.prepareName(ctx.selectedGpxFile.name, ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
+            url.download = `${name}.gpx`;
             url.click()
         }
+    }
+
+    function addToCollection() {
+        if (!ctx.gpxCollection.find(name => name === ctx.selectedGpxFile.name.name)) {
+            ctx.gpxCollection.push(ctx.selectedGpxFile.name);
+        }
+        ctx.setGpxCollection([...ctx.gpxCollection]);
     }
 
     function alreadyInEditing() {
@@ -206,9 +238,141 @@ export default function GeneralInfoTab({width, srtm}) {
         }
     }
 
-    return (<Box className={styles.item} width={width}>
+    function save() {
+        let ind = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+        if (ind !== -1) {
+            let updatedTrack = _.cloneDeep(ctx.selectedGpxFile);
+            delete updatedTrack.points;
+            updatedTrack.updated = true;
+
+            ctx.setSelectedGpxFile(updatedTrack);
+
+            ctx.localTracks[ind] = updatedTrack;
+            ctx.setLocalTracks([...ctx.localTracks]);
+            TracksManager.saveTracks(ctx.localTracks);
+        } else {
+            TracksManager.addTrack(ctx, ctx.selectedGpxFile);
+        }
+    }
+
+    function saveCreatedTrack() {
+        if (ctx.selectedGpxFile.newPoint) {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, setLoadingSrtm)
+                .then(() => {
+                    save();
+                    ctx.createTrack.enable = false;
+                    ctx.setCreateTrack({...ctx.createTrack});
+                });
+        } else {
+            save();
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+        }
+    }
+
+    function addWaypoint() {
+        ctx.selectedGpxFile.addWpt = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    const Buttons = () => {
+        return (
+            <div>
+                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        ctx.selectedGpxFile.save = true;
+                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                        setOpen(false);
+                    }}>
+                        Save to Cloud</MenuItem>}
+
+                <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    downloadGpx().then();
+                    setOpen(false);
+                }}>
+                    Download</MenuItem>
+
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
+                        ctx.setUpdateContextMenu(true);
+                        setOpen(false);
+                    }}>
+                        Edit</MenuItem>}
+
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        addToCollection()
+                        setOpen(false);
+                    }}>
+                        Add to Collection</MenuItem>}
+
+                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    addWaypoint()
+                    setOpen(false);
+                }}>
+                    Add waypoint</MenuItem>}
+
+                {<MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, ctx.selectedGpxFile.points).then();
+                    setOpen(false);
+                }}>
+                    Recalculate Elevation (SRTM)</MenuItem>}
+
+                {ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && disableButton && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    setDisableButton(false);
+                    setOpen(false);
+                }}>
+                    Edit name</MenuItem>}
+
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                    <MenuItem onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenDeleteDialog(true);
+                        setOpen(false);
+                    }}>
+                        Delete</MenuItem>}
+
+                {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    ctx.setCreateTrack({...{enable: true}});
+                    setOpen(false);
+                }}>
+                    Clear</MenuItem>}
+            </div>
+        )
+    }
+
+    return (<Box className={styles.item} minWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
-            {ctx.currentObjectType === 'local_client_track' ? EditName() : NoEditName()}
+            {<Grid container spacing={2}>
+                <Grid item xs={11}>
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
+                </Grid>
+                <Grid item xs={1}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        ref={anchorEl}
+                        onClick={(e) => {
+                            handleToggle();
+                            e.stopPropagation();
+                        }}
+                    >
+                        <MoreVert fontSize="small"/>
+                    </IconButton>
+                    <Box>
+                        <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
+                    </Box>
+                </Grid>
+            </Grid>}
             {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
             {distance && <MenuItem sx={{ml: -2}}>
                 <ListItemIcon>
@@ -280,22 +444,18 @@ export default function GeneralInfoTab({width, srtm}) {
                     </Typography>
                 </ListItemText>
             </MenuItem>}
+            {openPointAlert && ctx.createTrack && !ctx.selectedGpxFile.newPoint &&
+                <Alert severity="info" onClose={() => {
+                    setOpenPointAlert(false)
+                }}>Click on the map to add a point...</Alert>}
+            {openWptAlert && ctx.createTrack && !ctx.selectedGpxFile.wpts &&
+                <Alert severity="info" onClose={() => {
+                    setOpenWptAlert(false)
+                }}>Use the right menu to add a waypoint...</Alert>}
         </Typography>
-        <Button variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                onClick={downloadGpx}
-        >Download</Button>
-        {ctx.currentObjectType === 'local_client_track' &&
-            <Button sx={{ml: 2}} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => {
-                        ctx.selectedGpxFile.save = true;
-                        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                    }}
-            >Save to Cloud</Button>}
-        {ctx.currentObjectType === 'cloud_track' &&
-            <Button sx={{ml: 2}} disabled={alreadyInEditing()} variant="contained" component="span" style={{backgroundColor: '#fbc73a'}}
-                    onClick={() => {
-                        TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
-                    }}
-            >Edit</Button>}
+        {openDeleteDialog && <DeleteTrackDialog
+            dialogOpen={openDeleteDialog}
+            setDialogOpen={setOpenDeleteDialog}
+            setShowContextMenu={setShowContextMenu}/>}
     </Box>);
 };

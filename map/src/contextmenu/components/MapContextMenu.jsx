@@ -1,13 +1,17 @@
-import {Paper, AppBar, Button} from "@mui/material";
+import {Paper, AppBar, Button, LinearProgress, Alert, Snackbar, SnackbarContent} from "@mui/material";
 import AppContext from "../../context/AppContext"
-import React, {useState, useContext, useRef, useEffect} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import L from 'leaflet';
 import {Close} from '@mui/icons-material';
 import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
+import FavoritesTabList from "../FavoritesTabList";
+import _ from "lodash";
+import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
+import PointContextMenu from "./PointContextMenu";
+import DeleteTrackDialog from "./track/DeleteTrackDialog";
 
 const useStyles = makeStyles({
     menu: {
@@ -22,7 +26,7 @@ const useStyles = makeStyles({
 })
 
 
-export default function MapContextMenu() {
+export default function MapContextMenu({drawerWidth}) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const [showContextMenu, setShowContextMenu] = useState(false);
@@ -30,57 +34,71 @@ export default function MapContextMenu() {
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
 
-    const divContainer = useRef(null);
-
     useEffect(() => {
-        if (divContainer.current) {
-            L.DomEvent.disableClickPropagation(divContainer.current);
-            L.DomEvent.disableScrollPropagation(divContainer.current);
+        if (!showContextMenu) {
+            stopCreatedTrack();
         }
-    });
-
-    function selectedFileWasChanged() {
-        return (ctx.selectedGpxFile?.name && prevTrack?.name
-                && ctx.selectedGpxFile.name !== prevTrack.name);
-    }
+    }, [showContextMenu])
 
     useEffect(() => {
-        if (!ctx.selectedGpxFile) {
+        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
         } else {
-            if (!prevTrack || Object.keys(prevTrack).length === 0 || selectedFileWasChanged()) {
-                if (ctx.currentObjectType) {
-                    setPrevTrack(ctx.selectedGpxFile);
-                    let obj;
-                    if (ctx.currentObjectType === 'cloud_track' && ctx.selectedGpxFile?.tracks) {
-                        obj = new TrackTabList().create(ctx);
-                    } else if (ctx.currentObjectType === 'weather' && ctx.weatherPoint) {
-                        obj = WeatherTabList().create(ctx);
-                    } else if (ctx.selectedGpxFile) {
-                        obj = new TrackTabList().create(ctx);
-                    }
-                    if (obj) {
-                        setShowContextMenu(true);
-                        setTabsObj(obj);
-                        setValue(obj.defaultTab);
-                    }
-                } else {
-                    setTabsObj(null);
-                    setShowContextMenu(false);
+            if (!ctx.currentObjectType) {
+                setTabsObj(null);
+                setShowContextMenu(false);
+            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0 || !showContextMenu) {
+                let obj;
+                setPrevTrack(ctx.selectedGpxFile);
+                ctx.setUpdateContextMenu(false);
+                if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
+                    obj = new TrackTabList().create(ctx, setShowContextMenu);
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
+                    obj = new WeatherTabList().create(ctx);
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
+                    obj = new FavoritesTabList().create(ctx);
+                } else if (ctx.selectedGpxFile) {
+                    obj = new TrackTabList().create(ctx, setShowContextMenu);
+                }
+                if (obj) {
+                    setShowContextMenu(true);
+                    setTabsObj(obj);
+                    setValue(obj.defaultTab);
                 }
             }
         }
-    }, [ctx.currentObjectType, ctx.selectedGpxFile]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
+
+    function stopCreatedTrack() {
+        if (ctx.createTrack) {
+            ctx.createTrack.enable = false;
+            ctx.setCreateTrack({...ctx.createTrack});
+            ctx.setCurrentObjectType(null);
+        }
+    }
 
     function closeContextMenu() {
         setShowContextMenu(false);
     }
 
+    const action = (
+        <Button key='close' onClick={() => {
+            ctx.setRoutingErrorMsg(null);
+        }}>
+            <Close sx={{color: "#ffffff"}}/>
+        </Button>
+    );
+
     return (<div>
-        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`} ref={divContainer}>
+        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`}>
             <div className="leaflet-control leaflet-bar padding-container">
+                {ctx.routingErrorMsg &&
+                    <SnackbarContent sx={{backgroundColor: "#1976d2"}}
+                                     message={`Sorry, in our beta mode max routing distance is limited to ${process.env.REACT_APP_MAX_ROUTE_DISTANCE} km.`}
+                                     action={action}/>}
+                {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
                         <TabContext value={value}>
@@ -102,6 +120,9 @@ export default function MapContextMenu() {
                 }
             </div>
         </div>}
-        <PanelButtons showContextMenu={showContextMenu} setShowContextMenu={setShowContextMenu}/>
+        <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu}
+                      setShowContextMenu={setShowContextMenu}/>
+        {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
+        {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
     </div>);
 }

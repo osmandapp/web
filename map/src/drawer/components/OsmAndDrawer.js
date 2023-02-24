@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Toolbar, Typography } from "@mui/material";
+import {Button, Toolbar, Typography} from "@mui/material";
 import {
     Divider, MenuItem, ListItemIcon, MenuList, Box, IconButton
 } from "@mui/material";
@@ -14,8 +14,8 @@ import FavoritesMenu from "./favorite/FavoritesMenu";
 import SearchResultMenu from "./search/SearchResultMenu";
 
 
-
 export default function OsmAndDrawer({ mobile, toggleDrawer }) {
+
     const ctx = useContext(AppContext);
     
     // ctx.setAppFile(ctx.gpxFiles.localInfoSummary);

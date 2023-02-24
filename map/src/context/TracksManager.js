@@ -1,43 +1,41 @@
 import Utils from "../util/Utils";
-import {MetaData, Point, Track, TrackData} from "./TrackStore";
-import {post} from "axios";
+import axios, {post} from "axios";
+import FavoritesManager from "./FavoritesManager";
+import _ from "lodash";
+
+const GPX_FILE_TYPE = 'GPX';
+const GET_SRTM_DATA = 'get-srtm-data';
+const GET_ANALYSIS = 'get-analysis';
+const PROFILE_LINE = 'line';
+const PROFILE_GAP = 'gap';
+const NAN_MARKER = 99999;
+const CHANGE_PROFILE_BEFORE = 'before';
+const CHANGE_PROFILE_AFTER = 'after';
+const CHANGE_PROFILE_ALL = 'all';
 
 function loadTracks() {
     return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
 }
 
 function saveTracks(tracks) {
+    localStorage.clear();
     if (tracks.length > 0) {
         let res = [];
-        tracks.forEach(function (track) {
+        tracks.forEach(function (t) {
+            let track = _.cloneDeep(t);
             res.push({
                 name: track.name,
                 id: track.id,
                 metaData: track.metaData,
-                tracks: track.tracks,
+                tracks: track.points ? [{points: track.points}] : track.tracks,
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
-                selected: false,
-                hasOnlyTrk: track.hasOnlyTrk
+                selected: false
             })
         })
         localStorage.setItem('localTracks', JSON.stringify(res));
     }
-}
-
-function generate(ctx) {
-    let name = createName(ctx);
-    let points = Utils.getPointsDist(createPoints());
-    let pointsArr = [];
-    points.forEach(p => pointsArr.push(new Point(p.lat, p.lng, 99999, 99999, p.distance, null, null, null, {})));
-    let tracks = [new Track(pointsArr, {})];
-    let newTrack = new TrackData(new MetaData(name, null, {}), null, tracks, null, {});
-    newTrack.name = name;
-    newTrack.analysis = [];
-    addDistance(newTrack);
-
-    return newTrack;
 }
 
 function createName(ctx) {
@@ -62,26 +60,6 @@ function createName(ctx) {
     })
 
     return name;
-}
-
-function createPoints() {
-    let points = [];
-    let prevPoint;
-    for (let i = 1; i <= 10; i++) {
-        let lat;
-        let lng;
-        if (!prevPoint) {
-            lat = Math.floor(Math.random() * (Math.floor(48.305) - Math.ceil(51.543))) + Math.ceil(51.543);
-            lng = Math.floor(Math.random() * (Math.floor(37.749) - Math.ceil(24.664))) + Math.ceil(24.664);
-        } else {
-            lat = Math.floor(Math.random() * (Math.floor(prevPoint.lat - 2) - Math.ceil(prevPoint.lat + 2))) + Math.ceil(prevPoint.lat + 2);
-            lng = Math.floor(Math.random() * (Math.floor(prevPoint.lng - 2) - Math.ceil(prevPoint.lng + 2))) + Math.ceil(prevPoint.lng + 2);
-        }
-        prevPoint = {lat: lat, lng: lng};
-        points.push({lat: lat, lng: lng})
-    }
-
-    return points;
 }
 
 function getFileName(currentFile) {
@@ -115,7 +93,7 @@ async function getTrackData(file) {
         if (resp) {
             let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
                 if (value === "***NaN***") {
-                    return key === "ele" ? 99999 : NaN;
+                    return key === "ele" ? NAN_MARKER : NaN;
                 } else {
                     return value;
                 }
@@ -128,17 +106,44 @@ async function getTrackData(file) {
     return track;
 }
 
-function updateSelectedTrack(ctx, track) {
-    ctx.setSelectedGpxFile(Object.assign({}, track));
+function addTrack(ctx, track) {
+    if (ctx.selectedGpxFile.analysis?.totalDistance / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE) {
+        ctx.setRoutingErrorMsg(true);
+    } else {
+        prepareTrack(track);
+        ctx.localTracks.push(track);
+        ctx.setLocalTracks([...ctx.localTracks]);
+        openNewLocalTrack(ctx);
+        closeCloudTrack(ctx, track);
+        TracksManager.saveTracks(ctx.localTracks);
+    }
 }
 
-function addTrack(ctx, track) {
+function prepareTrack(track) {
+    track.originalName = _.cloneDeep(track.name);
     track.name = TracksManager.prepareName(track.name, true);
     track.id = track.name;
     addDistance(track);
-    ctx.localTracks.push(track);
-    ctx.setLocalTracks([...ctx.localTracks]);
-    TracksManager.saveTracks(ctx.localTracks);
+}
+
+function openNewLocalTrack(ctx) {
+    let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+    ctx.setCurrentObjectType(type);
+    let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
+    selectedTrack.selected = true;
+    selectedTrack.index = ctx.localTracks.length - 1;
+    ctx.setCreateTrack({
+        enable: true,
+        edit: true
+    })
+    ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
+}
+
+function closeCloudTrack(ctx, track) {
+    if (ctx.gpxFiles[track.originalName]) {
+        ctx.gpxFiles[track.originalName].url = null;
+        ctx.setGpxFiles({...ctx.gpxFiles});
+    }
 }
 
 function getTrackPoints(track) {
@@ -174,47 +179,67 @@ function getEditablePoints(track) {
 function addDistance(track) {
     if (track.tracks) {
         track.tracks.forEach(t => {
-            if (!track.hasOnlyTrk) {
-                let distanceFromStart = 0;
-                for (let point of t.points) {
-                    if (point.geometry) {
-                        if (point.geometry.length > 0) {
-                            point.geometry.forEach(trk => {
-                                let currIndex = point.geometry.indexOf(trk);
-                                if (trk.distance === 0 && currIndex !== 0) {
-                                    trk.distance = Utils.getDistance(trk.lat, trk.lng, point.geometry[currIndex - 1].lat, point.geometry[currIndex - 1].lng);
-                                }
-                                distanceFromStart += trk.distance;
-                                point['distanceFromStart'] = distanceFromStart;
-                                point['distance'] += trk.distance;
-                            })
-                        } else {
-                            point.distanceFromStart = 0;
-                        }
-                    } else {
-                        track.hasOnlyTrk = true;
-                        t.points = Utils.getPointsDist(t.points);
-                        break;
-                    }
-                }
-            } else {
-                t.points = Utils.getPointsDist(t.points);
-            }
+            addDistanceToPoints(t.points);
         })
     }
 }
 
-async function getGpxTrack(ctx) {
+function addDistanceToPoints(points) {
+    let distanceFromStart = 0;
+    let prevGapInd = 0;
+    for (let point of points) {
+        if (point.geometry) {
+            point.dist = 0;
+            point.geometry.forEach(p => {
+                point.dist += p.distance;
+            })
+            distanceFromStart += point.dist;
+            point.distanceFromStart = distanceFromStart;
+            if (point.geometry[point.geometry.length - 1]?.profile === TracksManager.PROFILE_GAP) {
+                distanceFromStart = 0;
+            }
+        } else {
+            let ind = _.indexOf(points, point);
+            if (ind !== 0) {
+                let prevPoint = points[ind - 1];
+                if (prevGapInd !== ind) {
+                    point.dist = Utils.getDistance(point.lat, point.lng, prevPoint.lat, prevPoint.lng);
+                    distanceFromStart += point.dist;
+                    point.distanceFromStart = distanceFromStart;
+                } else {
+                    point.dist = 0;
+                    point.distanceFromStart = distanceFromStart;
+                }
+            } else {
+                point.dist = 0;
+                point.distanceFromStart = 0;
+            }
+            if (point.profile === TracksManager.PROFILE_GAP) {
+                let segPoints = points.slice(prevGapInd, ind);
+                prevGapInd = ind + 1;
+                Utils.getPointsDist(segPoints);
+                distanceFromStart = 0;
+            }
+        }
+    }
+}
+
+async function getGpxTrack(file) {
+
     let trackData = {
-        tracks: ctx.selectedGpxFile.tracks,
-        wpts: ctx.selectedGpxFile.wpts,
-        metaData: ctx.selectedGpxFile.metaData,
-        ext: ctx.selectedGpxFile.ext,
+        tracks: file.points ? [{points: file.points}] : file.tracks,
+        wpts: file.wpts,
+        metaData: file.metaData,
+        pointsGroups: file.pointsGroups,
+        ext: file.ext,
         analysis: null
     }
 
-    if (!trackData.metaData.name) {
-        trackData.metaData.name = ctx.selectedGpxFile.name;
+    if (!trackData.metaData?.name) {
+        if (!trackData.metaData) {
+            trackData.metaData = {};
+        }
+        trackData.metaData.name = file.name;
     }
 
     return await post(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
@@ -225,6 +250,56 @@ async function getGpxTrack(ctx) {
         });
 }
 
+async function saveTrack(ctx, currentFolder, fileName, type, file) {
+    if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
+        if (currentFolder === "Tracks") {
+            currentFolder = "";
+        } else {
+            currentFolder = currentFolder + "/";
+        }
+    }
+    if (ctx.loginUser) {
+        let gpxFile = file ? file : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+        let gpx = await getGpxTrack(gpxFile);
+        if (gpx) {
+            let convertedData = new TextEncoder().encode(gpx.data);
+            let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
+            let convertedZipped = zippedResult.buffer;
+            let oMyBlob = new Blob([convertedZipped], {type: "gpx"});
+            let data = new FormData();
+            data.append('file', oMyBlob, gpxFile.name);
+            let res;
+            res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
+                {
+                    params: {
+                        name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
+                        type: type,
+                    }
+                }
+            );
+
+            if (res) {
+                const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+                const resJson = await respGetFiles.json();
+                ctx.setListFiles(resJson);
+                deleteLocalTrack(ctx);
+                return true;
+            }
+        }
+    }
+}
+
+function deleteLocalTrack(ctx) {
+    let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    if (currentTrackIndex !== -1) {
+        ctx.localTracks.splice(currentTrackIndex, 1);
+        TracksManager.saveTracks(ctx.localTracks);
+        ctx.setLocalTracks([...ctx.localTracks]);
+        return true;
+    }
+    return false;
+}
+
 
 async function updateRouteBetweenPoints(ctx, start, end) {
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
@@ -232,8 +307,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
-                routeMode: start.profile,
-                hasSpeed: start.ext.speed !== 0 || end.ext.speed !== 0,
+                routeMode: start.profile ? start.profile : ctx.routeMode.mode,
                 hasRouting: start.segment !== null || end.segment !== null
             },
             headers: {
@@ -243,17 +317,43 @@ async function updateRouteBetweenPoints(ctx, start, end) {
     );
 
     if (result) {
-        result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            return value === "***NaN***" ? NaN : value;
-        });
+        if (typeof result.data === "string") {
+            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                return value === "***NaN***" ? NaN : value;
+            });
+        }
+        return result.points;
+    }
+}
+
+function isExceededMaxDist(ctx, start, end) {
+    let allDist = ctx.selectedGpxFile.analysis?.totalDistance ? ctx.selectedGpxFile.analysis?.totalDistance : 0;
+    return Utils.getDistance(start.lat, start.lng, end.lat, end.lng) / 1000 + allDist > process.env.REACT_APP_MAX_ROUTE_DISTANCE;
+}
+
+async function updateRoute(ctx, points) {
+    let result = await axios({
+        url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
+        method: 'post',
+        data: points,
+    });
+
+    if (result) {
+        if (typeof result.data === "string") {
+            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+                return value === "***NaN***" ? NaN : value;
+            });
+        }
         return result.points;
     }
 }
 
 function updateStat(track) {
     addDistance(track);
-    let activePoints = getEditablePoints(track);
-    track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+    let activePoints = track.points;
+    if (track.analysis?.totalDistance) {
+        track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+    }
     track.analysis.timeMoving = null;
     track.analysis.diffElevationUp = null;
     track.analysis.diffElevationDown = null;
@@ -320,14 +420,14 @@ function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
     //value smoothing
-    while (isNaN(ele) || ele === 99999) {
+    while (isNaN(ele) || ele === NAN_MARKER) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
-            if (prevP && prevP[elevation]) {
-                ele = prevP[elevation];
+            if (prevP && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
+                return prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
-                    ele = 0
+                    return 0;
                 } else {
                     ind++;
                 }
@@ -339,21 +439,80 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
+async function getTrackWithAnalysis(path, ctx, setLoading, points) {
+    setLoading(true);
+    let data = {
+        tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
+        wpts: ctx.selectedGpxFile.wpts,
+        metaData: ctx.selectedGpxFile.metaData,
+        pointsGroups: ctx.selectedGpxFile.pointsGroups,
+        ext: ctx.selectedGpxFile.ext,
+        analysis: ctx.selectedGpxFile.analysis
+    }
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    if (resp.data) {
+        setLoading(false);
+        let data = FavoritesManager.prepareTrackData(resp.data);
+        Object.keys(data.data).forEach(t => {
+            ctx.selectedGpxFile[`${t}`] = data.data[t];
+        });
+        ctx.selectedGpxFile.update = true;
+        if (path === TracksManager.GET_SRTM_DATA) {
+            ctx.setUpdateContextMenu(true);
+        }
+        return ctx.selectedGpxFile;
+    }
+}
+
+function createTrack(ctx) {
+    let createState = {
+        enable: true
+    }
+    if (ctx.selectedGpxFile) {
+        createState.closePrev = {
+            file: _.cloneDeep(ctx.selectedGpxFile)
+        }
+    }
+    ctx.setCreateTrack({...createState});
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
-    generate,
     getFileName,
     prepareName,
     getTrackData,
     addTrack,
-    updateSelectedTrack,
     getTrackPoints,
     getGpxTrack,
+    saveTrack,
     getEditablePoints,
     updateRouteBetweenPoints,
+    updateRoute,
     updateStat,
-    getEle
+    getEle,
+    deleteLocalTrack,
+    createName,
+    getTrackWithAnalysis,
+    prepareTrack,
+    addDistance,
+    addDistanceToPoints,
+    createTrack,
+    isExceededMaxDist,
+    GPX_FILE_TYPE: GPX_FILE_TYPE,
+    GET_SRTM_DATA: GET_SRTM_DATA,
+    GET_ANALYSIS: GET_ANALYSIS,
+    PROFILE_LINE: PROFILE_LINE,
+    PROFILE_GAP: PROFILE_GAP,
+    NAN_MARKER: NAN_MARKER,
+    CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
+    CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
+    CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL
 };
 
 export default TracksManager;

@@ -38,7 +38,7 @@ export default function VisibleTrackGroup({visibleTracks}) {
                 <Map fontSize="small"/>
             </ListItemIcon>
             <ListItemText> Visible </ListItemText>
-            <Typography variant="body2" color="textSecondary">
+            <Typography sx={{mr: 1.3}} variant="body2" color="textSecondary">
                 {getVisibleTracksLength() > 0 ? `${getVisibleTracksLength()}` : ''}
             </Typography>
             {visibleTracksOpen ? <ExpandLess/> : <ExpandMore/>}

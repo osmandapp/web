@@ -3,8 +3,8 @@ import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import {Button} from "@mui/material";
-import AppContext from "../../context/AppContext";
-import TracksManager from "../../context/TracksManager";
+import AppContext from "../../../context/AppContext";
+import TracksManager from "../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
 import {post} from "axios";
@@ -13,29 +13,28 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
 
     const ctx = useContext(AppContext);
 
-    const place = ctx.currentObjectType === 'cloud_track' ? 'cloud' : ctx.currentObjectType === 'local_client_track' ? 'local' : '';
+    const place = ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK ? 'cloud' : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? 'local' : '';
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
 
     function cleanContextMenu() {
-        ctx.setSelectedGpxFile(null);
         setDialogOpen(false);
         setShowContextMenu(false);
     }
 
     async function deleteCurrentTrack() {
-        if (ctx.currentObjectType === 'cloud_track' && ctx.loginUser) {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.loginUser) {
             let response = await post(`${process.env.REACT_APP_GPX_API}/mapapi/delete-file`, "",
                 {
                     params: {
                         name: ctx.selectedGpxFile.name,
-                        type: 'GPX',
+                        type: 'GPX'
                     }
                 }
-            ).then((response) => response.statusText);
-            if (response === "OK") {
+            );
+            if (response.status === 200) {
                 //delete layer
                 const newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
@@ -53,17 +52,12 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
                 cleanContextMenu();
             }
 
-        } else if (ctx.currentObjectType === 'local_client_track') {
-            let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-            if (currentTrackIndex !== -1) {
-                ctx.localTracks.splice(currentTrackIndex, 1);
-                TracksManager.saveTracks(ctx.localTracks);
-                ctx.setLocalTracks([...ctx.localTracks]);
-
+        } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+            let wasDeleted = TracksManager.deleteLocalTrack(ctx);
+            if (wasDeleted) {
                 cleanContextMenu();
             }
         }
-
     }
 
     return (

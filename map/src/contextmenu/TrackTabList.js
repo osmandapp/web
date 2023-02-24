@@ -4,6 +4,8 @@ import SpeedTab from "./components/tabs/SpeedTab";
 import React from "react";
 import {Tab} from "@mui/material";
 import PointsTab from "./components/tabs/PointsTab";
+import SettingsTab from "./components/tabs/SettingsTab";
+import WaypointsTab from "./components/tabs/WaypointsTab";
 
 export default class TrackTabList {
 
@@ -14,16 +16,27 @@ export default class TrackTabList {
         graphWidth: 600
     };
 
-    create(ctx) {
+    create(ctx, setShowContextMenu) {
         let tabs = {};
         let list = [];
 
         const hasAltitude = ctx.selectedGpxFile?.analysis?.hasElevationData;
         const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
 
-        tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false}/>;
-        if (ctx.currentObjectType !== 'cloud_track') {
-            tabs.Points = <PointsTab key='points' width={this.state.graphWidth}/>;
+        let isTrack = ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK
+            || ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+
+        tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} srtm={false} setShowContextMenu={setShowContextMenu}/>;
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks?.length > 0) {
+            tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
+        }
+
+        if (isTrack && ctx.selectedGpxFile?.wpts?.length > 0) {
+            tabs.Waypoints = <WaypointsTab key='waypoints' width={this.state.graphWidth}/>;
+        }
+
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
+            tabs.Settings = <SettingsTab key='settings' width={this.state.graphWidth}/>;
         }
 
         if (hasAltitude) {

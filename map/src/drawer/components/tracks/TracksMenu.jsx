@@ -5,6 +5,7 @@ import AppContext, {toHHMMSS} from "../../../context/AppContext"
 import CloudTrackGroup from "./CloudTrackGroup";
 import VisibleTrackGroup from "./VisibleTrackGroup";
 import LocalTrackGroup from "./LocalTrackGroup";
+import GpxCollection from "./GpxCollection";
 
 
 export default function TracksMenu() {
@@ -13,7 +14,6 @@ export default function TracksMenu() {
 
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
-    const [tracksGroups, setTracksGroups] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({localClient: [], files: []});
 
     function visibleTracksOpen() {
@@ -54,7 +54,7 @@ export default function TracksMenu() {
             }
         }
         ctx.gpxFiles.trackGroups = tg;
-        setTracksGroups(tg);
+        ctx.setTracksGroups(tg);
 
     }, [ctx.listFiles, ctx.setListFiles]);
 
@@ -135,7 +135,7 @@ export default function TracksMenu() {
             if (item.selected) {
                 tracks++;
                 if (item.points?.length > 0) {
-                    dist += item.points[item.points.length - 1].distance;
+                    dist += item.points[item.points.length - 1].dist;
                     seg += item.points.length - 1;
                 }
             }
@@ -170,11 +170,12 @@ export default function TracksMenu() {
             </Typography>
             {gpxFiles.length === 0 ? <></> : tracksGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
-        {ctx.gpxLoading ? <LinearProgress/> : <></>}
+        {ctx.gpxLoading && !ctx.createTrack ? <LinearProgress/> : <></>}
         <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
+            {ctx.gpxCollection?.length > 0 && <GpxCollection/>}
             {visibleTracksOpen() && <VisibleTrackGroup visibleTracks={visibleTracks}/>}
             <LocalTrackGroup/>
-            {tracksGroups && tracksGroups.map((group, index) => {
+            {ctx.tracksGroups && ctx.tracksGroups.map((group, index) => {
                 return <CloudTrackGroup key={group + index}
                                         index={index}
                                         group={group}/>;

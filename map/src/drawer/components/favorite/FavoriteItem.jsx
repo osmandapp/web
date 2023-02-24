@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         }
     },
     text: {
-        '& .MuiTypography-root' : {
+        '& .MuiTypography-root': {
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     }
 })
 
-export default function FavoriteItem({index, marker}) {
+export default function FavoriteItem({index, marker, group}) {
 
     const classes = useStyles();
     const styles = drawerStyles();
@@ -36,11 +36,29 @@ export default function FavoriteItem({index, marker}) {
     const ctx = useContext(AppContext);
 
     function addFavoriteToMap(marker) {
-        if (ctx.selectedFavoritesFile.markerCurrent) {
-            ctx.selectedFavoritesFile.markerPrev = ctx.selectedFavoritesFile.markerCurrent;
+        let type = ctx.OBJECT_TYPE_FAVORITE;
+        ctx.setCurrentObjectType(type);
+        let newSelectedGpxFile = {};
+        newSelectedGpxFile.markerCurrent = marker;
+        if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
+            newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
-        ctx.selectedFavoritesFile.markerCurrent = marker;
-        ctx.setSelectedFavoritesFile({...ctx.selectedFavoritesFile});
+        let file;
+        Object.keys(ctx.favorites).forEach(favorite => {
+            if (favorite === group.name) {
+                newSelectedGpxFile.nameGroup = favorite;
+                Object.values(ctx.favorites[favorite].markers._layers).forEach(m => {
+                    if (m.options.title === marker.title) {
+                        file = ctx.favorites[favorite];
+                    }
+                });
+            }
+        });
+        newSelectedGpxFile.file = file;
+        newSelectedGpxFile.file.name = ctx.favorites.groups.find(g => g.name === group.name).file.name;
+        newSelectedGpxFile.name = marker.title;
+        newSelectedGpxFile.zoom = true;
+        ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
 
 

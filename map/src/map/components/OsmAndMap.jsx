@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useContext, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl} from "react-leaflet";
 import AppContext from "../../context/AppContext";
-import MapContextMenu from "../../contextmenu/components/MapContextMenu"
 import RouteLayer from "../layers/RouteLayer"
 import WeatherLayer from "../layers/WeatherLayer"
 import 'leaflet-hash';
@@ -13,6 +12,7 @@ import FavoriteLayer from "../layers/FavoriteLayer";
 import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
+import ContextMenu from "./ContextMenu";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +44,8 @@ const OsmAndMap = () => {
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
 
+    const [geocodingData, setGeocodingData] = useState(null);
+
     const ctx = useContext(AppContext);
     let hash = null;
     const [hoverPoint, setHoverPoint] = useState(null);
@@ -69,8 +71,9 @@ const OsmAndMap = () => {
                       zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
         >
             <LocalClientTrackLayer/>
-            <RouteLayer/>
+            <RouteLayer geocodingData={geocodingData}/>
             <FavoriteLayer/>
+            <WeatherLayer/>
             <TrackLayer/>
             <TileLayer
                 ref={tileLayer}
@@ -83,9 +86,9 @@ const OsmAndMap = () => {
 
             {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
                 && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons} />}
-            <MapContextMenu/>
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
+            <ContextMenu setGeocodingData={setGeocodingData}/>
         </MapContainer>
     );
 };
