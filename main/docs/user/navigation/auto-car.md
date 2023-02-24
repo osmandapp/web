@@ -100,7 +100,7 @@ With this option you can search for the necessary places on the map to navigate.
 
 ### POI
 
-You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. 
+<!--You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. -->
 
 <Tabs groupId="operating-systems">
 
@@ -121,8 +121,8 @@ You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest
 
 ### Favorites
 
-Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
-You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system.
+<!-- Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
+You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system. -->
 
 <Tabs groupId="operating-systems">
 
@@ -184,7 +184,7 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 </Tabs>  
 
-
+<!--
 ## Navigation
 
 Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
@@ -218,6 +218,7 @@ This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such 
 
 </Tabs>  
 
+
 ____
 
 <Tabs groupId="operating-systems">
@@ -248,3 +249,4 @@ ____
 </TabItem>
 
 </Tabs>
+-->
