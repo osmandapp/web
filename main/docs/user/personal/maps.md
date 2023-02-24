@@ -14,16 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-Maps screen allows you to do basic operations over online and offline maps used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating and checking maps size.
+The Maps screen allows you to perform basic operations with online and offline maps used in OsmAnd. These are loading, deleting, renaming, clearing the cache for online maps, updating, and checking the map size.
 
 OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Storage](../personal/storage.md) and it is accessible with external tools. 
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
+_<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_menu_android.png) ![Download maps menu Android](@site/static/img/personal/maps/download_map_android.png) 
 
@@ -31,13 +30,14 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
+_<Translate ios="true" ids="menu,res_mapsres"/>_
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_menu_ios.png) ![Download maps menu iOS](@site/static/img/personal/maps/download_map_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## Map types
 
@@ -56,7 +56,9 @@ There are several map types available to download and manage:
 - [Altitude correction (Android)](../widgets/info-widgets.md#altitude) - a special map file that provides correction for geoid on Android devices (optional).
 - Other maps - maps that couldn't be attached to current maps hierarchy, typically represents deprecated and not supported maps or maps that will be available next release.
 
-**Note**: For regions like Germany consisted of many maps, you can use bulk map downloads, it is depicted as double download arrows next to the map type.
+:::note
+For regions like Germany consisted of many maps, you can use bulk map downloads, it is depicted as double download arrows next to the map type.
+:::
 
 ![Download map menu Android](@site/static/img/settings/download_map_menu_android.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu.png)
 
@@ -69,7 +71,7 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_map_menu_android.png) ![Download map menu general Android](@site/static/img/personal/maps/download_map_menu_1_android.png) 
 
@@ -77,7 +79,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
+*<Translate ios="true" ids="menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_ios.png) ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_1_ios.png)
 
@@ -90,7 +92,9 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,re
 - Search -  allows you to search maps by **Country**, **Province** or by a large **City**. 
 - Toolbar indicates how much memory is available to download and how much maps is available to download for free.
 
-**Hint**: a small Worldwide map is builtin inside OsmAnd, you don't need to download a large Worldwide map if you plan to have detailed maps for region. In case you want to have map that covers full planet including major cities, roads & rivers, you can download **_Detailed worldwide map_**.
+:::tip Hint
+There is a small world map built into OsmAnd. You don't need to download large maps of any region if you don't intend to use them. If you want a map that covers the entire planet, including major cities, roads, and rivers, you can download a ***Detailed worldwide map***.
+:::
 
 ## Local maps
 
@@ -100,7 +104,7 @@ Local maps represents all downloaded maps on device grouped by [Types](#map-type
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>*
 
 ![Maps menu Local vector Android](@site/static/img/personal/maps/maps_menu_local_vector_android.png) 
 
@@ -108,7 +112,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>_
+*<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>*
 
 ![Maps menu Local vector iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
 
@@ -141,17 +145,16 @@ It's possible to deactivate vector maps, so they will be present on the device b
 
 Local action available for the map: **<Translate android="true" ids="local_index_mi_restore"/>** / **<Translate android="true" ids="local_index_mi_backup"/>**.
 
+
 ## Update maps
 
 Every month you will be able to update OsmAnd Maps on Updates screen. Here it's possible to update all maps with one click. Standard and road-only maps are avalaible every month typically with 2 weeks delay. In case you would like to get access to Hourly updates, please check [OsmAnd Live](#osmand-live).
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>_
-
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_menu_update_android.png) 
 
@@ -163,82 +166,92 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,re
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_menu_update_ios.png)
 
- </TabItem>
+</TabItem>
 
 </Tabs>
+
 
 ## OsmAnd Live
 
 :::note
   
-<ProFeature/> You can use live updates only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro (Android)</a> and <a href="https://docs.osmand.net/docs/user/purchases/ios#free-and-paid-features">OsmAnd Live (iOS)</a> subscription.
+You can use live updates only with [OsmAnd Pro (Android)](../purchases/android.md#free-and-paid-features) and [OsmAnd Live (iOS)](../purchases/ios.md#free-and-paid-features) subscription.
 
 :::
 
 OsmAnd Live is a special feature  ([available by subscription](../purchases/index.md) or [free OSM Mappers](#free-for-osm-mappers))  that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
-Each map has independent collection  of tiny map updates, please be aware if you have overlapping map regions. In case you want to revert to initial state you can switch off updates and 'Clear cache'.
-
+Each map has an independent collection  of tiny map updates, please be careful if you have overlapping map regions. If you want to go back to the original state, you can switch off updates and 'Clear cache'.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>*  
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
-- &nbsp; _<Translate android="true" ids="shared_string_enabled"/>_ / _<Translate android="true" ids="shared_string_disabled"/>_ - switching on/off "OsmAnd live" updates function.
-- &nbsp; "&#8230; &#124;" - opening "OsmAnd live" settings of the chosen map.
-- &nbsp; _<Translate android="true" ids="update_frequency"/>_ - choosing map update frequency for the map:  <Translate android="true" ids="hourly"/>, <Translate android="true" ids="daily"/>, <Translate android="true" ids="weekly"/>.
-- &nbsp; _<Translate android="true" ids="update_now"/>_ - allows to start "OsmAnd live" of the map updating.
+- &nbsp; _<Translate android="true" ids="shared_string_enabled"/>_ / _<Translate android="true" ids="shared_string_disabled"/>_ - switches on/off the "OsmAnd live" update function.
+- &nbsp; "&#8230; &#124;" - opens the "OsmAnd live" settings of the selected map.
+- &nbsp; _<Translate android="true" ids="update_frequency"/>_ - chooses the frequency of the map update:  <Translate android="true" ids="hourly"/>, <Translate android="true" ids="daily"/>, or <Translate android="true" ids="weekly"/>.
+- &nbsp; _<Translate android="true" ids="update_now"/>_ - allows to start the "OsmAnd live" map update.
 - &nbsp; _<Translate android="true" ids="updates_size"/>_ - shows "the live updates" size.
 - &nbsp; &#x1F5D1; button - allows to delete "the live updates" map.
-- &nbsp; _<Translate android="true" ids="only_download_over_wifi"/>_ - <Translate android="true" ids="shared_string_enabled"/>/<Translate android="true" ids="shared_string_disabled"/> download "the live updates" by Wi-Fi connection.
-
+- &nbsp; _<Translate android="true" ids="only_download_over_wifi"/>_ - enables/disables downloading "live updates" by Wi-Fi connection.  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="menu,res_mapsres,res_updates,osmand_live_updates"/>
+*<Translate ios="true" ids="menu,res_mapsres,res_updates,osmand_live_updates"/>*   
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
-- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ (<Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/>) - switching on/off "OsmAnd live" updates function.
-- &nbsp; "&#43;" - adding available maps for "live updates".
-- &nbsp; "&#62;" - opening "OsmAnd live" settings of the chosen map.
-- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ - <Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/> "live updates" for the map.
-- &nbsp; _<Translate ios="true" ids="osmand_live_wifi_only"/>_ - <Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/> download "the live updates" by Wi-Fi connection.
-- &nbsp;_<Translate ios="true" ids="osmand_live_upd_frequency"/>_ - choosing map update frequency for the map:  <Translate ios="true" ids="osmand_live_hourly"/>, <Translate ios="true" ids="osmand_live_daily"/>, <Translate ios="true" ids="osmand_live_weekly"/>.
+- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ (<Translate ios="true" ids="shared_string_enable"/>/<Translate ios="true" ids="shared_string_disable"/>) - switches on/off the "OsmAnd live" updates function.
+- &nbsp; "&#43;" - adds available maps for "live updates".
+- &nbsp; "&#62;" - opens the "OsmAnd live" settings of the selected map.
+- &nbsp; _<Translate ios="true" ids="osmand_live_updates"/>_ - enables/disables "live updates" for the map.
+- &nbsp; _<Translate ios="true" ids="osmand_live_wifi_only"/>_ - enables/disables downloading "live updates" by Wi-Fi connection.
+- &nbsp; _<Translate ios="true" ids="osmand_live_upd_frequency"/>_ - chooses the frequency of the map update: Hourly, Daily, or Weekly.
 - &nbsp; _<Translate ios="true" ids="osmand_live_updates_size"/>_ - shows "the live updates" size.
-- &nbsp; _<Translate ios="true" ids="osmand_live_update_now"/>_ - allows to start "OsmAnd live" of the map updating.
+- &nbsp; _<Translate ios="true" ids="osmand_live_update_now"/>_ - allows to start the "OsmAnd live" map update.
 
 </TabItem>
 
 </Tabs>
 
-
-
 ### Update timestamps 
+
 - ```Latest OpenStreetMap update available``` XXXX-XX-XX XX:XX - represents the latest timestamp of OpenStreetMap changes processed on OsmAnd Servers and available to be downloaded.
 - ```'Region name' Updated```: Today 13:21 - represents the timestamp of the latest changes available in the downloaded map. It's always earlier or equal to the ```Latest OpenStreetMap update available```. If ```Updated timestamp``` is not changed after _<Translate android="true" ids="update_now"/>_ then it is the latest timestamp when ```'Region name'``` region was modified and processed by OsmAnd servers: there is the next timestamp - ```Incluldes OSM changes made until 2022-08-12, 12:05```.
 - ```'Next update```: Today 14:21 - represents the next timestamp when a local device will check if new updates are available.
 
 ### OsmAnd Live limitations
-- Address changes on the map & in the search are not supported yet. Address information could be updated with regular monthly updates.
-- Updated roads don't have altitude information thus the slope graphics could be affected.
-- Modified and deleted route relations are not handled correctly which could lead to display of no longer existing public transport lanes and hiking routes.
+
+- Address changes on the map and in the search are not supported yet. Address information can be updated with regular monthly updates.
+- Updated roads don't have altitude information, which may affect the slope graphs.
+- Modified and deleted route relations are not handled correctly, which may lead to displaying public transport lanes and pedestrian routes that no longer exist.  
 
 ### Free for OSM Mappers
-
-<InfoAndroidOnly />
 
 OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).
 
 1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
-2. [Log in by your OpenStreetMap username](../plugins/osm-editing.md#plugin-settings).
-3. OpenStreetMap users need to have a minimum of [**30 changes**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two-month period for accessing unlimited hourly map updates.
+2. [Log in](../plugins/osm-editing.md#settings) by your OpenStreetMap username.
+3. OpenStreetMap users need to have a minimum of [**30 changes**](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/plugins/osmedit/fragments/MappersFragment.java#L65) over the last two-month period for accessing unlimited hourly map updates.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+
+</TabItem>
+
+</Tabs>

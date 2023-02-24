@@ -61,17 +61,27 @@ Button [Analyse on map](../navigation/route-navigation.md#details)
 <Translate android="true" ids="step_by_step"/> instructions (Android)
 
 
-### Options
+### Settings
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options"/>
+<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>
 
-<p> </p>
+![Boat Navigation screen options Android](@site/static/img/navigation/boat/boat_navigation_options_android.png)  
 
-![Boat Navigation screen options Android](@site/static/img/navigation/boat/boat_navigation_options_android.png) ![Boat Navigation screen options iOS](@site/static/img/navigation/boat/boat_navigation_options_ios.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="menu,routing_settings,shared_string_settings"/>
+
+![Boat Navigation screen options iOS](@site/static/img/navigation/boat/boat_navigation_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 - &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch off/on voice prompts and to open [voice prompts settings menu](../personal/profiles.md#navigation-settings).
 - &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation.
@@ -81,7 +91,6 @@ Button [Analyse on map](../navigation/route-navigation.md#details)
 - &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens [Navigation settings menu](../personal/profiles.md#navigation-settings) of your app profile.
 - &nbsp;<Translate android="true" ids="customize_route_line"/> (Android) - [link](../map/tracks-on-map.md#route-appearance-android).
 - &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation trip.
-
 
 ## Navigation types
 

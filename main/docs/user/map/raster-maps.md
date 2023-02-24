@@ -12,23 +12,28 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-Raster maps is an extensive addition to the offline OpenStreetMap Vector maps the application uses by default. Raster maps allow to combine different map sources with Vector Maps. For example, useful Hillshade / Slope information could be displayed as a raster layer. You can display an overlay of hiking routes, live rain maps, live traffic data and an underlay of satellite imagery mixing with semi-transparent base vector map. You can also switch default maps to online web raster tiles.
+Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default maps to raster tiles on the web.
 
 ## Use cases
-There is a big variety of possible use cases cause they vary on infinite external map source possibilities. Here are some popular:
-- Satellite imagery as underlay
-- Live traffic information
-- Rain forecast as overlay
-- Rich topographic maps with hillshades / slopes
-- Active cycling / running trails as overlay
-- Live vessel information
-- Online OpenStreetMap tiles for OSM editing purposes
+
+Raster maps have a wide range of uses. Here are some of the most popular:
+- Satellite images as an underlay.
+- Real-time traffic information.
+- Rain forecast as an overlay.
+- Topographic maps with the shading of hills and slopes.
+- Active cycling and running routes as an overlay.
+- Real-time vessel information.
+- Online OpenStreetMap tiles for OSM editing.
 
 ![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
-**Note**: You can also change the main source of the map from vector maps to online tiles.
+:::tip 
+You can also change the main source of maps from vector maps to online tiles.
+:::
+
 
 ## Raster Maps
+
 Online maps in OsmAnd are raster data. Raster data is made up of pixels (also referred to as grid cells) - set of small images (tiles). In contrast to vector maps which consists of binary data like roads, points, polygons. Raster map tiles are usually regularly-spaced and square. They often look pixelated because each pixel has its own value or class.
 
 Comparison to default vector maps.
@@ -49,85 +54,139 @@ Comparison to default vector maps.
 
 
 ## How to use Raster maps 
+
 ### Enable plugin
-In order to use raster maps  in Android OsmAnd you need to enable [Online maps plugin](../plugins/index.md):
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-_ <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/> _
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
+:::note
 For **iOS** OsmAnd this feature works by default.
+:::
 
-</TabItem>
-
-</Tabs>
-
-
+In order to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md):  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*  
 
 
-
-### Select map as Main / Underlay / Overlay layer
-Raster maps can be used as Map source in OsmAnd (by default, offline vector maps are enabled). Map sources are configurable in:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-_ <Translate android="true" ids="android_button_seq"/>  <Translate android="true" ids="shared_string_menu,configure_map,layer_map"/> _
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_type,map_settings_online"/> _
-
-
-</TabItem>
-
-</Tabs>
-
-You can choose one of them in the list or add yours.
-
-Not only can you use one map, but you can also add up to two of the online tiles to the basic layer maps to combine three of them on the screen. For instance, you can open a basic OsmAnd offline vector maps, then add a satellite view for the overlay, and put a cycling routes map underneath.
-You can set the base map transparency for your layer and whether display the transparency slider on the main screen or not.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>_
-
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
-
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/> _
-
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
-
-### Change layer parameters (transparency)
+### Change layer parameters
 In order to mix raster map layers better, you can change layer transparency (by using a screen slider) and also you can change vector map style (hide polygons), so the underlay layers will 
 be more visible, especially useful for satellite imagery.
+
+
+## Select Raster maps
+
+Raster maps can be used as map sources in OsmAnd (vector maps that work offline are enabled by default).  
+You can add one or two online tiles to the base layer maps, and all three will appear on the screen. For example, you can open OsmAnd's base vector maps offline, then add a satellite view as an overlay, and place a map of bike paths below the base map as an underlay. You can set the transparency of the base map for your layer, and you can choose whether or not to display the transparency slider on the main screen.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Show maps](@site/static/img/plugins/online-maps/show-maps-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Show maps](@site/static/img/plugins/online-maps/show-maps-ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+### Main  
+
+You can choose a map style from the list or [add](#add-new-online-raster-map-source) your own.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+
+![Show maps](@site/static/img/plugins/online-maps/map_source.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_type"/>*  
+
+![Show maps](@site/static/img/plugins/online-maps/map_type.png)
+
+</TabItem>
+
+</Tabs>
+
+### Overlay layer 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
+
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+
+1. *Switch on/off* the Overlay map.
+2. *Overlay map source* - you can choose a tile map to install or update.
+3. *Overlay transparency*.
+4. *Show transparency slider* - quick access to the setting.
+5. *Show map symbols* - such as text, road signs, and others.  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_over"/>*  
+
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+
+1. *Switch enable/disable* the Overlay map.
+2. *Transparency* of the Overlay map.
+3. *Show slider on the map* - quick access to the transparency setting.
+4. *Available layers* - you can choose a tile map to install or update.
+5. *Show map symbols* - such as text, road signs, and others.
+6. *Add online source*.
+7. *Import from documents*.  
+
+</TabItem>
+
+</Tabs>
+
+### Underlay layer
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
+
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)   
+
+1. *Switch on/off* the Underlay map.
+2. *Underlay map source* - you can choose a tile map to install or update.
+3. *Base map transparency*.
+4. *Show polygons*.
+5. *Show transparency slider* - quick access to the setting.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_under"/>*
+
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+
+1. *Switch enable/disable* the Underlay map.
+2. *Base map transparency*.
+3. *Show slider on the map* - quick access to the transparency setting.
+4. *Available layers* - you can choose a tile map to install or update.
+5. *Hide polygons*.
+6. *Add online source*.
+7. *Import from documents*.
+
+</TabItem>
+
+</Tabs>
+
 
 ## Hillshade / Slope
 
@@ -135,22 +194,21 @@ Hillshade / Slope are raster offline maps that are displayed as a special map la
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md). 
+To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md).  
 
-_**Configure display options**_:
+**Configure display options**:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-_ <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/> _
-
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,shared_string_terrain"/> _
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -158,7 +216,9 @@ _ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,m
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-## Prepare / copy raster maps to device
+
+## Prepare / copy raster maps to device 
+
 There are multiple ways how to add new raster map, copy it from another device, prepare it on PC and predownloaded tiles to be used offline. For example, you can create your own map package on PC by using special software as [MOBAC, OsmAndMapCreator and etc](../../technical/map-creation/index.md). Typically raster maps are distributed as files with *.sqlitedb* extension. 
 
 Here are the main methods how to add new raster map source which is not defined in OsmAnd yet:
@@ -168,31 +228,30 @@ Here are the main methods how to add new raster map source which is not defined 
 - Create new online map source on a mobile device itself.
 - Prepare a magic URL with online map source parameters and open it with OsmAnd.
 
+
 ### Add new online raster map source
+
 To create a raster map source you need to know **the tile URL**. This is URL that can distribute tiles in Mercator Projection. Here is a tile example URL https://tile.osmand.net/hd/6/55/25.png, where is the base part https://tile.osmand.net/hd/.
 
 In order to add a new online raster map source go to:
-
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>_
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder,map_settings_add_online_source"/>_
+*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder,map_settings_add_online_source"/>*
 
 </TabItem>
 
 </Tabs>
 
-At this screen you need to add the next parameters:
-
-![Add online source](@site/static/img/plugins/online-maps/add-online-source.png)
+![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 | Parameter | Description |
 |:------------|:---------------|
@@ -204,6 +263,7 @@ At this screen you need to add the next parameters:
 |[<Translate ios="true" ids="res_source_format"/>/<Translate android="true" ids="storage_format"/>]|<Translate ios="true" ids="res_source_sqlite"/> or <Translate ios="true" ids="res_source_one_per_tile"/>|
 
 Click to "<Translate android="true" ids="shared_string_save"/>" button for adding a new online raster map to the list.
+
 
 ### Magic URL to install map source
 
@@ -222,25 +282,25 @@ http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=
 You find added Online map in the list of [Main / Underlay / Overlay layer](#select-map-as-main--underlay--overlay-layer) menu.
 
 ## Manage raster maps
+
 Raster maps can take a significant amount of disk space, so you might need to regularly check it. For large datasets, it's recommended to use 'SQLite raster source' cause it will store all tiles in 1 large file (sqlite database). 
 - [**SQ Lite format**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**Metainfo format**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 In order to change tile format you can choose <Translate android="true" ids="storage_format"/> in the edit menu of online maps:
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
-&#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+&#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,res_source_sqlite"/> / <Translate ios="true" ids="res_source_one_per_tile"/>_
+*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,res_source_sqlite"/> / <Translate ios="true" ids="res_source_one_per_tile"/>*
 
 </TabItem>
 
@@ -257,20 +317,18 @@ In order to clear map tiles cache you need to do next:
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
-&#8942; → <Translate android="true" ids="clear_tile_data"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+&#8942; → <Translate android="true" ids="clear_tile_data"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/> _
+*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
 </TabItem>
 
 </Tabs>
-
-
 
 ![Online sources list](@site/static/img/plugins/online-maps/online-sources-list.png)
 
@@ -279,65 +337,54 @@ _ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,r
 
 If you want to access raster maps offline, you might need to predownload tiles. It's possible to do on a mobile device though be aware that some services might block a large batch download. Same feature can be used to update already downloaded tiles for selected areas, otherwise OsmAnd will continue display tiles that are already stored in the cache. 
 
-**Hint**: if you want maps to automitically update tiles after some time, you can configure *expiration time*, so OsmAnd will redownload tiles once the tile is going to be displayed.
+:::tip
+If you want the maps to automatically update the tiles after some time, you can set an expiration time, then OsmAnd will reload the tiles as soon as they are displayed.
+:::
 
-
-
-> **First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer).**
+:::info
+**First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer).**
+:::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-**<Translate android="true" ids="android_button_seq"/>** you need to select the area by the size of your screen device and to do a long click on the map - <Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> → 
+For **<Translate android="true" ids="android_button_seq"/>** you need to select the area by the size of your screen device and to do a long click on the map, then *<Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> →* 
 At this screen you need to choose zoom levels → screen of downloading progress → <Translate android="true" ids="shared_string_download"/>
 
 ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
 
-
 </TabItem>
-
 
 <TabItem value="ios" label="iOS">  
     
-
-**<Translate ios="true" ids="ios_button_seq"/>** you need to do a long click on the map - <Translate ios="true" ids="actions,download_map"/> / <Translate ios="true" ids="update_map"/> → 
+For **iOS** you need to do a long tap on the map, then *<Translate ios="true" ids="actions,download_map"/> / <Translate ios="true" ids="update_map"/> →* 
 At this screen you can select the needed area, choose zoom levels. When you set all parameters you can see a number of tiles and download size. Next, click to <Translate ios="true" ids="shared_string_continue"/> → screen of downloading progress.
 
 ![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
-
 
 </TabItem>
 
 </Tabs>
 
 
-
-
 ### Change raster map parameters
-Raster maps can be used as is if tiles are already packaged inside the maps. In case raster maps are provided online, there is always a base url to be configured. There are some other basic parameters that can be modified for raster maps - [see here](#add-new-online-raster-map-source). More sophisticated parameters are encoded in the internals of [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
 
-You can change some raster map parameters inside OsmAnd itself.
+You can use the raster maps as they are if the tiles are already packaged in maps. If the raster maps are provided online, there is always a base URL that needs to be configured. There are a few more basic parameters that can be changed for raster maps, you can read about that in [this section](#add-new-online-raster-map-source) of the article. More complex parameters are encoded in the internal components of the [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>_
+*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
 </Tabs>
-
-
-
-
-
-
 

@@ -60,15 +60,36 @@ Our goal is to create a fully functional map-oriented application that could be 
 
 ## Actions Guide
 
-### How to download maps
+### Permission to access the location  
 
-OsmAnd is an offline map application, so after the '<Translate android="true" ids="get_started"/>' screen, you will be prompted to a [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later. 
+We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use or share your private information, so access to the precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Show on the map](@site/static/img/settings/download_map1_android.png) ![Map](@site/static/img/settings/map_android.png)
+![Precise location android](@site/static/img/steps/first_start_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Precise location iOS](@site/static/img/steps/first_start_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+### How to download maps
+
+OsmAnd is an offline map application, so after the *<Translate android="true" ids="get_started"/>* screen, you will be prompted to [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Show on the map](@site/static/img/settings/start_screen_white_andr.png) ![Map](@site/static/img/settings/start_screen_map_andr.png)
 
 </TabItem>
 
@@ -86,7 +107,7 @@ Application is not properly functional without offline maps which are not distri
 
 :::
 
-[Read more](../start-with/download-maps.md) about download map options.
+Read more about [download map](../start-with/download-maps.md) options.
 
 ### How to manage your settings
 
@@ -113,7 +134,9 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins
 
-[Plugins](../plugins/index.md) allow greatly to extend application functionality. Plugins could be internal (provided inside OsmAnd) or external (separate installed applications). 3rd party plugins work via [OsmAnd API](../../technical/osmand-api-sdk/index.md) and could get access to OsmAnd information, you could always review / enable / disable plugins via [Main menu](../start-with/main-menu.md) → Plugins. Each plugin could have its own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and Settings.
+[Plugins](../plugins/index.md) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
+
+You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md).  
 
 <Tabs groupId="operating-systems">
 
@@ -121,21 +144,21 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
+To enable / disable plugins go to:
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
+To enable / disable plugins go to:
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
+
 </TabItem>
 
 </Tabs>
-
-Enable / disable plugins:
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plugins"/> → &#10003;
 
 [Read more](../plugins/index.md) about OsmAnd plugins.
 

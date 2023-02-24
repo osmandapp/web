@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 11
 title:  Mapillary
 ---
 
@@ -22,13 +22,13 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings: 
    
-1. Enable the [Mapillary plugin](#enable-plugin) in the Plugins section of the main menu.    
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.    
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
 ## Map Layer
 
-Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points.  To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
+Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -58,6 +58,10 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
 
+:::note Mapillary Photo viewer
+- Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
+- Tap on an arrow to move from image to image.
+:::
 
 </TabItem>
 
@@ -65,14 +69,14 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png) 
 
+:::note Mapillary Photo viewer
+- Tap on an arrow to move from image to image.
+:::
+
 </TabItem>
 
 </Tabs>
 
-:::note Mapillary Photo viewer
-- Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
-- Tap on an arrow to move from image to image.
-:::
 
 ### Filtering the data
 
@@ -108,13 +112,13 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png) ![Mapillary plugin dialogue Android](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_android.png)
+![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png) ![Mapillary plugin  dialogue  iOS](@site/static/img/plugins/mapillary/mapillary_plugin_dialogue_ios.png)
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_plugin_context_menu_ios.png)
 
 </TabItem>
 
@@ -125,7 +129,6 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 In order to add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the Map Context menu by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -143,7 +146,7 @@ In order to add photos you will need to register in the [Mapillary application](
 
 ### Mapillary Widget
 
-The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the Configure screen [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
+The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
 
 <Tabs groupId="operating-systems">
 

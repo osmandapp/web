@@ -16,25 +16,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Tracks Context menu is menu with actions and data of GPX-track.
+The Tracks context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
 
-For opening Track Context menu:
+Track Context menu includes:
 
-<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → click to choosing track or just tap to choosing track on the map.
-
-<p> </p>
-
-There are the next tabs of Track Context menu:
-
- - [Overview](../map/track-context-menu.md#overview)
- - [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs) 
- - [Points / Waypoints](../map/track-context-menu.md#points--waypoints)
- - [Options](../map/track-context-menu.md#options)
+- [Overview](../map/track-context-menu.md#overview).
+- [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs). 
+- [Points / Waypoints](../map/track-context-menu.md#points--waypoints).
+- [Options](../map/track-context-menu.md#options).
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → click to choosing track or just tap to choosing track on the map.*  
 
 ![Track menu Android](@site/static/img/personal/tracks/menu_track_android.png)
 
@@ -42,11 +37,14 @@ There are the next tabs of Track Context menu:
 
 <TabItem value="ios" label="iOS">
 
+*Menu → My Places → Tracks → click to choosing track or just tap to choosing track on the map.*  
+
 ![Statistics screen track iOS](@site/static/img/personal/tracks/menu_track_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ## Overview
 
@@ -60,7 +58,6 @@ You can [short tap](../map/map-context-menu.md#select-route-short-tap-for-androi
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Track menu overview Android](@site/static/img/personal/tracks/track_menu_overview_android.png)
@@ -69,87 +66,39 @@ You can [short tap](../map/map-context-menu.md#select-route-short-tap-for-androi
 
 <TabItem value="ios" label="iOS">
 
- ![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+
 ### Info panel
 
-Info panel shows the track name, info about trip data, distance and direction to chosen track point from your position.
+Details are described in the information panel:
+- *The track name* - you can change it in [Options menu](../map/track-context-menu.md#options).
+- *Short description of the track* - short part from [full description](../map/track-context-menu.md#description).
+- *Direction and distance to the point on the track* - blue arrow with distance.
+- Info panel of data trip:  
+     - <Translate android="true" ids="distance"/> - showing track distance.
+     - <Translate android="true" ids="altitude_ascent"/> / <Translate android="true" ids="altitude_descent"/> - sums of ascents and descents of a trip.
+     - <Translate android="true" ids="altitude_range"/> - showing min and max altitude of a trip.
+     - <Translate android="true" ids="average_speed"/> - average speed of a trip.
+     - <Translate android="true" ids="max_speed"/> - max speed of a trip.  
+     - <Translate android="true" ids="shared_string_time_span"/> - recorded time of a trip.  
+     - <Translate android="true" ids="shared_string_time_moving"/> - sum of time during motion of a trip.  
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
 ![Full info for track Android](@site/static/img/personal/tracks/full_info_track_android.png)
-
-Next track info:
-- The track name - you can change it in [Options menu](../map/track-context-menu.md#options).
-- Short description of the track - short part from [full description](../map/track-context-menu.md#description).
-- Direction and distance to the point on the track - blue arrow with distance.
-- Info panel of data trip:
-
- <Translate android="true" ids="distance"/> - showing track distance.
-
- <Translate android="true" ids="altitude_ascent"/> / <Translate android="true" ids="altitude_descent"/> - sums of ascents and descents of a trip.
-
- <Translate android="true" ids="altitude_range"/> - showing min and max altitude of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="average_speed"/> - average speed of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="max_speed"/> - max speed of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="shared_string_time_span"/> - recorded time of a trip.
-
-<p>  </p>
-
- <Translate android="true" ids="shared_string_time_moving"/> - sum of time during motion of a trip.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Full info for track Android](@site/static/img/personal/tracks/full_info_track_ios.png)
-
-Next track info:
-- The track name - you can change it in [Options menu](../map/track-context-menu.md#options).
-- Direction and distance to the point on the track - blue arrow with distance.
-- Info panel of data trip:
-
- <Translate ios="true" ids="shared_string_distance"/> - showing track distance.
- 
-<p>  </p>
-
- <Translate ios="true" ids="gpx_ascent"/> / <Translate ios="true" ids="gpx_descent"/> - sums of ascents and descents of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_alt_range"/> - showing min and max altitude of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_average_speed"/> - average speed of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="gpx_max_speed"/> - max speed of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="total_time"/> - recorded time of a trip.
-
-<p>  </p>
-
- <Translate ios="true" ids="moving_time"/> - sum of time during motion of a trip.
 
 </TabItem>
 
@@ -161,15 +110,14 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![quick actions for track Android](@site/static/img/personal/tracks/quick_actions_track_android.png)
 
-- "Show / hide"  - track on the map
-- "Appearance" - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
-- "Edit track" - opens the track in ["Plan route" tool](../plan-route/create-route.md).
-- "Directions" - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Show / hide"* - track on the map
+- *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
+- *"Edit track"* - opens the track in ["Plan route" tool](../plan-route/create-route.md).
+- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -177,10 +125,10 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 ![quick actions for track iOS](@site/static/img/personal/tracks/quick_actions_track_ios.png)
 
-- "Show / hide"  - allows to show or not a track on the map.
-- "Appearance" - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
-- "Export" - allows to export a track.
-- "Directions" - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Show / hide"*  - allows to show or not a track on the map.
+- *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
+- *"Export"* - allows to export a track.
+- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -192,16 +140,15 @@ This part contains info about GPX file and description of a GPX track.
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Description for track Android](@site/static/img/personal/tracks/description_track_1_android.png) ![Description for track Android](@site/static/img/personal/tracks/description_track_android.png)
 
-- Image??   <!--how to add any images to descriptions?}-->
-- <Translate android="true" ids="add_description"/> - for creating description of the track.
-- <Translate android="true" ids="shared_string_edit"/> - for editing description of the track.
-- <Translate android="true" ids="context_menu_read_full"/> - for opening and reading full description.
-- <Translate android="true" ids="info_button"/> - contains info about file size, location folder, date of creation.
+- *Image*   <!--how to add any images to descriptions?}-->
+- *<Translate android="true" ids="add_description"/>* - for creating description of the track.
+- *<Translate android="true" ids="shared_string_edit"/>* - for editing description of the track.
+- *<Translate android="true" ids="context_menu_read_full"/>* - for opening and reading full description.
+- *<Translate android="true" ids="info_button"/>* - contains info about file size, location folder, date of creation.
 
 </TabItem>
 
@@ -209,12 +156,11 @@ This part contains info about GPX file and description of a GPX track.
 
 ![Description for track iOS](@site/static/img/personal/tracks/description_track_ios.png)
 
-- <Translate ios="true" ids="shared_string_info"/> - contains info about file size, location folder
+- *<Translate ios="true" ids="shared_string_info"/>* - contains info about file size, location folder
 
 </TabItem>
 
 </Tabs>
-
 
 
 ## Altitude / Speed Graphs 
@@ -222,7 +168,7 @@ This part contains info about GPX file and description of a GPX track.
 Click to the "<Translate android="true" ids="shared_string_gpx_track"/>" button opens Graph of Track Context menu. Here there are name of track, three tabs:
 - [<Translate android="true" ids="shared_string_overview"/>](../map/track-context-menu.md#overview-1)
 - [<Translate android="true" ids="altitude"/>](../map/track-context-menu.md#altitude)
-- [<Translate android="true" ids="map_widget_speed"/>](../map/track-context-menu.md#speed)
+- [Speed](../map/track-context-menu.md#speed)
 
 Graph with additional info and [<Translate android="true" ids="analyze_on_map"/>](../map/tracks-on-map.md#analyze-route-on-map-android), <Translate android="true" ids="shared_string_options"/> buttons.
 
@@ -231,7 +177,6 @@ Graph with additional info and [<Translate android="true" ids="analyze_on_map"/>
 **<Translate android="true" ids="shared_string_options"/>** button opens menu with: "Edit" opens the track in [Plan route tool](../plan-route/index.md), "Delete" allows to delete chosen track item, "Split interval" opens [Split interval function](../map/track-context-menu.md#split-interval) for the track.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -254,15 +199,14 @@ This tab opens a graph with speed / altitude info on distance, additional track 
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Track graph overview Android](@site/static/img/personal/tracks/track_graph_overview_android.png) 
 
-- <Translate android="true" ids="distance"/>
-- <Translate android="true" ids="shared_string_time_span"/>
-- <Translate android="true" ids="shared_string_start_time"/>
-- <Translate android="true" ids="shared_string_end_time"/>
+- *<Translate android="true" ids="distance"/>*.
+- *<Translate android="true" ids="shared_string_time_span"/>*.
+- *<Translate android="true" ids="shared_string_start_time"/>*.
+- *<Translate android="true" ids="shared_string_end_time"/>*.
 
 </TabItem>
 
@@ -270,11 +214,10 @@ This tab opens a graph with speed / altitude info on distance, additional track 
 
 ![Track graph overview iOS](@site/static/img/personal/tracks/track_graph_overview_ios.png) 
 
-- <Translate ios="true" ids="shared_string_distance"/> 
-- <Translate ios="true" ids="shared_string_time_span"/> 
-- <Translate ios="true" ids="shared_string_start_time"/> 
-- <Translate ios="true" ids="shared_string_end_time"/> 
-
+- *<Translate ios="true" ids="shared_string_distance"/>*. 
+- *<Translate ios="true" ids="shared_string_time_span"/>*. 
+- *<Translate ios="true" ids="shared_string_start_time"/>*. 
+- *<Translate ios="true" ids="shared_string_end_time"/>*. 
 
 </TabItem>
 
@@ -287,16 +230,17 @@ This tab opens a graph with altitude / slope info on distance, additional track 
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) 
 
-- <Translate android="true" ids="average_altitude"/>
-- <Translate android="true" ids="altitude_range"/>
-- <Translate android="true" ids="altitude_ascent"/>
-- <Translate android="true" ids="altitude_descent"/>
+- *<Translate android="true" ids="average_altitude"/>*.
+- *<Translate android="true" ids="altitude_range"/>*.
+- *<Translate android="true" ids="altitude_ascent"/>*.
+- *<Translate android="true" ids="altitude_descent"/>*.  
+
+
+<p>  </p>
 
 #### Online Elevation profile
 
@@ -304,17 +248,14 @@ This tab opens a graph with altitude / slope info on distance, additional track 
 <ProFeature/> Online SRTM feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
 :::
 
-This feature allows to calculate Elevation profile for GPX track online by the OsmAnd server:
-
-_[Track Context menu](../map/track-context-menu.md) → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
+This feature allows to calculate Elevation profile for GPX track online by the OsmAnd server:  
 
 Calculate altitude online on OsmAnd servers, based on satellite imagery and digital elevation models. Differences vs. device recorded altitude may be used as altitude correction.
 
-This feature can help to find Altitude data for any place:
+This feature can help to find Altitude data for any place:  
+_[Track Context menu](../map/track-context-menu.md) → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
 
-![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)
-![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png) 
-![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude.png) 
+![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)  ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png)   ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude.png) 
 
 </TabItem>
 
@@ -322,15 +263,14 @@ This feature can help to find Altitude data for any place:
 
 ![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
 
-- <Translate ios="true" ids="gpx_avg_altitude"/> 
-- <Translate ios="true" ids="gpx_alt_range"/> 
-- <Translate ios="true" ids="gpx_ascent"/> 
-- <Translate ios="true" ids="gpx_descent"/> 
+- *<Translate ios="true" ids="gpx_avg_altitude"/>*. 
+- *<Translate ios="true" ids="gpx_alt_range"/>*.
+- *<Translate ios="true" ids="gpx_ascent"/>*.
+- *<Translate ios="true" ids="gpx_descent"/>*.
 
 </TabItem>
 
 </Tabs>
-
 
 
 ### Speed
@@ -339,15 +279,14 @@ This tab opens a with speed info on distance, additional track data.
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_android.png) 
 
- - <Translate android="true" ids="average_speed"/>
- - <Translate android="true" ids="max_speed"/>
- - <Translate android="true" ids="moving_time"/>
- - <Translate android="true" ids="distance_moving"/>
+- *<Translate android="true" ids="average_speed"/>*.
+- *<Translate android="true" ids="max_speed"/>*.
+- *<Translate android="true" ids="moving_time"/>*.
+- *<Translate android="true" ids="distance_moving"/>*.
 
 </TabItem>
 
@@ -355,14 +294,15 @@ This tab opens a with speed info on distance, additional track data.
 
 ![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_ios.png) 
 
-- <Translate ios="true" ids="gpx_average_speed"/> 
-- <Translate ios="true" ids="gpx_max_speed"/> 
-- <Translate ios="true" ids="shared_string_time_moving"/> 
-- <Translate ios="true" ids="distance_moving"/> 
+- *<Translate ios="true" ids="gpx_average_speed"/>*. 
+- *<Translate ios="true" ids="gpx_max_speed"/>*. 
+- *<Translate ios="true" ids="shared_string_time_moving"/>*. 
+- *<Translate ios="true" ids="distance_moving"/>*. 
 
 </TabItem>
 
 </Tabs>
+
 
 ## Points / Waypoints
 
@@ -371,7 +311,6 @@ This tab opens a with speed info on distance, additional track data.
 Points / Waypoins menu in Context track menu opens list of track / folders waypoints.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -400,13 +339,13 @@ Manipulation with waypoints folder: change name and color, delete..
 
 ![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) 
 
-Actions:
-- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/> - allows to show or not group waypoints on the map.
-- &nbsp;<Translate android="true" ids="shared_string_rename"/> - allows to change Group name.
-- &nbsp;<Translate android="true" ids="change_color"/> - allows to change color for group waypoints.
-- &nbsp;<Translate android="true" ids="copy_to_map_markers"/> - allows to move group waypoints to [Map markers](../personal/markers.md).
-- &nbsp;<Translate android="true" ids="copy_to_map_favorites"/> - allows to move group waypoints to [Favorites](../personal/favorites.md).
-- &nbsp;<Translate android="true" ids="shared_string_delete"/> - allows to delete group waypoints.
+Actions:  
+- *<Translate android="true" ids="shared_string_show_on_map"/>* - allows to show or not group waypoints on the map.
+- *<Translate android="true" ids="shared_string_rename"/>* - allows to change Group name.
+- *<Translate android="true" ids="change_color"/>* - allows to change color for group waypoints.
+- *<Translate android="true" ids="copy_to_map_markers"/>* - allows to move group waypoints to [Map markers](../personal/markers.md).
+- *<Translate android="true" ids="copy_to_map_favorites"/>* - allows to move group waypoints to [Favorites](../personal/favorites.md).
+- *<Translate android="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
 
 </TabItem>
 
@@ -416,15 +355,16 @@ Actions:
 
 ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
 
-Actions:
-- <Translate ios="true" ids="map_settings_show"/> - allows to show or not group waypoints on the map.
-- <Translate ios="true" ids="fav_rename"/> - allows to change Group name.
-- <Translate ios="true" ids="change_color"/> - allows to change color for group waypoints.
-- <Translate ios="true" ids="shared_string_delete"/> - allows to delete group waypoints.
+Actions:  
+- *<Translate ios="true" ids="map_settings_show"/>* - allows to show or not group waypoints on the map.
+- *<Translate ios="true" ids="fav_rename"/>* - allows to change Group name.
+- *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
+- *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
 
 </TabItem>
 
 </Tabs>
+
 
 ## Options
 
@@ -432,42 +372,40 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
-- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/> - shows or not the track on the map.
-- &nbsp;<Translate android="true" ids="shared_string_appearance"/> - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- &nbsp;<Translate android="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
-- &nbsp;<Translate android="true" ids="join_segments"/> - allows to join gaps of the track.
-- &nbsp;<Translate android="true" ids="analyze_on_map"/> - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
-- &nbsp;<Translate android="true" ids="analyze_by_intervals"/> - [analyze the track by time or distance intervals](../map/track-context-menu.md#split-interval).
-- &nbsp;<Translate android="true" ids="shared_string_share"/> - export the chosen track.
-- &nbsp;<Translate android="true" ids="upload_to_openstreetmap"/> - [upload the chose track to OpenStreetMap](../plugins/osm-editing.md#how-to-upload-gpx-track).
-- &nbsp;<Translate android="true" ids="edit_track"/> - open the chosen track in [Plan route tool](../plan-route/create-route.md).
-- &nbsp;<Translate android="true" ids="rename_track"/> - change track name.
-- &nbsp;<Translate android="true" ids="change_folder"/> - select folder and add new one for the chosen track.
-- &nbsp;<Translate android="true" ids="shared_string_gps_filter"/> - allows [to filter points of the track](../map/track-context-menu.md#gps-filter). 
-- &nbsp;<Translate android="true" ids="shared_string_delete"/> - delete the track.
+- *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
+- *<Translate android="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
+- *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
+- *<Translate android="true" ids="analyze_by_intervals"/>* - [analyze the track by time or distance intervals](../map/track-context-menu.md#split-interval).
+- *<Translate android="true" ids="shared_string_share"/>* - export the chosen track.
+- *<Translate android="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../plugins/osm-editing.md#how-to-upload-gpx-track).
+- *<Translate android="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../plan-route/create-route.md).
+- *<Translate android="true" ids="rename_track"/>* - change track name.
+- *<Translate android="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+- *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](../map/track-context-menu.md#gps-filter). 
+- *<Translate android="true" ids="shared_string_delete"/>* - delete the track.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
- ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
-- &nbsp;<Translate ios="true" ids="map_settings_show"/> - shows or not the track on the map.
-- &nbsp;<Translate ios="true" ids="map_settings_appearance"/> - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- &nbsp;<Translate ios="true" ids="shared_string_navigation"/> - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
-- &nbsp;<Translate ios="true" ids="analyze_on_map"/> - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
-- &nbsp;<Translate ios="true" ids="shared_string_export"/> - export the chosen track.
-- &nbsp;<Translate ios="true" ids="edit_track"/> - open the chosen track in [Plan route tool](../plan-route/create-route.md).
-- &nbsp;Dublicate track - allows to make and save a copy of the track.
-- &nbsp;<Translate ios="true" ids="gpx_rename_q"/> - change track name.
-- &nbsp;<Translate ios="true" ids="plan_route_change_folder"/> - select folder and add new one for the chosen track.
-- &nbsp;<Translate ios="true" ids="shared_string_delete"/> - delete the track.
-
+- *<Translate ios="true" ids="map_settings_show"/>* - shows or not the track on the map.
+- *<Translate ios="true" ids="map_settings_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
+- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
+- *<Translate ios="true" ids="shared_string_export"/>* - export the chosen track.
+- *<Translate ios="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../plan-route/create-route.md).
+- *Dublicate track* - allows to make and save a copy of the track.
+- *<Translate ios="true" ids="gpx_rename_q"/>* - change track name.
+- *<Translate ios="true" ids="plan_route_change_folder"/>* - select folder and add new one for the chosen track.
+- *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
 
 </TabItem>
 
@@ -476,44 +414,28 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 ### Split interval
 
-A user can divide a track by intervals (distance or time) and analyze it.
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
-
-<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>
-
-<p>  </p>
-
-- Split the track  by distance or time interval
-
-![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
 <InfoAndroidOnly />
 
-</TabItem>
+A user can divide a track by intervals (distance or time) and analyze it.  
 
-</Tabs>
+Split the track  by distance or time interval.  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+
+![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+
 
 ### GPS filter
 
+<InfoAndroidOnly />
+
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points. -->
 
-This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude* and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu you can check how your changes are displayed on the graph before you save them. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.
+This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude* and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu you can check how your changes are displayed on the graph before you save them. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
 
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
->GPS filter is in the context menu options of the selected track:
+:::note
+GPS filter is in the context menu options of the selected track:
 <Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>
+:::
 
 ![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
@@ -570,25 +492,10 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
 
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>
-
-
 ## Read more
 
-[GPX tracks](../personal/tracks.md)
-
-[Tracks on the map](../map/tracks-on-map.md)
-
-[Plan route](../plan-route/index.md)
-
-[Trip Recording](../plugins/trip-recording.md)
-
-[Analyze on Map](../map/tracks-on-map.md)
+- [GPX tracks](../personal/tracks.md).
+- [Tracks on the map](../map/tracks-on-map.md).
+- [Plan route](../plan-route/index.md).
+- [Trip Recording](../plugins/trip-recording.md).
+- [Analyze on Map](../map/tracks-on-map.md).

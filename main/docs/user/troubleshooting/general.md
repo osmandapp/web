@@ -52,7 +52,7 @@ You can also follow [this guide](../search/index.md) to learn more about the sea
 
 ## Other
 
-### Problem with connecting to the GPS connection on Android
+### Problem with the GPS connection (Android)
 
 OsmAnd uses the location data determined by your device i.e. Android API.
 1. Please try different Location Source Google Play Service or Android API: OsmAnd Settings -> Location Source.

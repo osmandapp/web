@@ -26,7 +26,7 @@ Gestures are important part of the map navigation.
 |**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
 |**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
-|**Tilt** - 3D | Press with **two** fingers on the map and then swipe up or down. <br /> Android: [switch on OpenGL rendering](../plugins/development.md#plugin-settings) and restart OsmAnd. <br /> Currently we have variable tilt angle, it depends on device's screen height in pixels: Minimum - from 33 to 45 degrees. Note: Thus tablets have a smaller tilt angle than phones. |
+|**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL)  |
 
 Slide animations could be disabled with special [setting](#disable-all-animations).
 
@@ -62,42 +62,74 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 ## Map orientation & Compass
 
-![Compass widget](@site/static/img/widgets/compass_widget.png)
-
-Compass widget indicates how map is oriented on the device screen and top arrow / red arrow points where the north of map is located. It also shows the current Map orientation mode. Clicking on the compass will cycle through all Map orientation modes.
-
-### Configure visibility
-
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>
-
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map_widget_compass"/>
-
-<p> </p>
-
 ### Map orientation modes
-- **<Translate android="true" ids="rotate_map_none_opt"/>** - map is not being rotated by any external movements, and it could be rotated only by *2 pointer gesture* (2 double tap & rotate).
-- **<Translate android="true" ids="rotate_map_bearing_opt"/>** - map is being rotated by bearing, i.e. direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
-- **<Translate android="true" ids="rotate_map_compass_opt"/>** - map is being synchronized with the device compass orientation. So, [Compass widget](../widgets/map-buttons.md/#compass) will point to actual Earth North if device is held flat. In case compass sensor is not present on device, map orientation won't change.
 
-Map orientation could be changed in [Profile settings](../personal/profiles.md#appearance):
+- **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
+- **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.
+- **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
+- **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,rotate_map_to_bearing"/>
+:::note
+Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).
+:::
 
-<p> </p>
+### Compass
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,app_profiles,general_settings_2,map_settings_appearance,rotate_map_to_bearing"/>
+<Tabs groupId="operating-systems">
 
+<TabItem value="android" label="Android">
+
+*Menu → Configure screen → Buttons → Compass*  
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Menu → Configure screen → Left panel → Compass*  
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)  
+
+</TabItem>
+
+</Tabs>  
+
+The compass widget indicates how the map is oriented: the red arrow or the top of the blue arrow points towards north. It also shows the current [Map orientation mode](#map-orientation-modes). Single tap on the compass will cycle through all of the modes.  
 
 ### Rotate map by bearing
-If rotate map by bearing is enabled, then the map will be oriented, so that head looking view will be strictly above (higher) my location icon on the map. Without movement the map won't be rotated. In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode. It can be disabled by a setting 
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,always_center_position_on_map"/>
+If rotate map by bearing (rotation by [movement direction](#map-orientation-modes)) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement, the map won't be rotated.  
+In this mode, the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode.  
+Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).  
 
-<p> </p>
+### Map Tilt and Horizon
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,shared_string_settings,app_profiles,general_settings_2,always_center_position_on_map"/>
+With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Under horizon you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only few map details can be observed.  
+The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
+
+
+:::info
+Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the ["My location"](#my-location--zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
+You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
+:::
 
 ## Settings
 

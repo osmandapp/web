@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Menu represent main controls on the map.
@@ -80,7 +82,9 @@ Go to:* <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map
 
 ![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
 
-You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
+You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible if map is rotated*.
+
+![Compass widget](@site/static/img/widgets/compass_ios.png)
 
 </TabItem>
 

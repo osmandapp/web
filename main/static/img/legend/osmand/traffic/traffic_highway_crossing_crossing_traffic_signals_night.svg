@@ -1,0 +1,18 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
+
+<path d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V11C12 13.2091 10.2091 15 8 15C5.79086 15 4 13.2091 4 11V5Z" fill="#EBE7E4" fill-opacity="0.8"/>
+
+</g>
+
+
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
+
+<path d="M12 12C12 5.37258 17.3726 0 24 0C30.6274 0 36 5.37258 36 12V36C36 42.6274 30.6274 48 24 48C17.3726 48 12 42.6274 12 36V12Z" fill="black"/>
+<circle cx="24" cy="12" r="8" fill="#FF0000"/>
+<circle cx="24" cy="36" r="8" fill="#00E316"/>
+
+</g>
+
+</svg>

@@ -1,0 +1,26 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
+
+<path d="M5 6C5 4.34315 6.34315 3 8 3C9.65685 3 11 4.34315 11 6V12C11 13.6569 9.65685 15 8 15C6.34315 15 5 13.6569 5 12V6Z" fill="#EBE7E4" fill-opacity="0.8"/>
+
+</g>
+
+
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
+
+<g clip100-path="url(#clip1000)">
+<rect x="16" y="4" width="16" height="40" rx="8" fill="black"/>
+<circle cx="24" cy="12" r="4" fill="#FF0000"/>
+<circle cx="24" cy="24" r="4" fill="#FFE900"/>
+<circle cx="24" cy="36" r="4" fill="#00E316"/>
+</g>
+<defs>
+<clip100Path id="clip1000">
+<path d="M0 0H48V48H0V0Z" fill="white"/>
+</clip100Path>
+</defs>
+
+</g>
+
+</svg>
