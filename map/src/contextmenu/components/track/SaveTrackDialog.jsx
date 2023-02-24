@@ -6,7 +6,7 @@ import {
     Alert,
     Autocomplete,
     Button,
-    createFilterOptions,
+    createFilterOptions, LinearProgress,
     TextField
 } from "@mui/material";
 import AppContext from "../../../context/AppContext";
@@ -25,6 +25,7 @@ export default function SaveTrackDialog() {
     const [error, setError] = useState(false);
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
+    const [process, setProcess] = useState(false);
 
     let folders = ctx.gpxFiles.trackGroups.map(group => (
             {
@@ -35,6 +36,7 @@ export default function SaveTrackDialog() {
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
+        setProcess(false);
         ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
         ctx.selectedGpxFile.clear = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -59,6 +61,7 @@ export default function SaveTrackDialog() {
     async function saveTrack() {
         if (validName(fileName)) {
             if (!hasExistTrack(fileName, folder)) {
+                setProcess(true);
                 await TracksManager.saveTrack(ctx, getFolderName(folder), fileName, TracksManager.GPX_FILE_TYPE);
                 toggleShowDialog();
             } else {
@@ -108,6 +111,7 @@ export default function SaveTrackDialog() {
     return (
         <div>
             <Dialog open={true} onClose={toggleShowDialog}>
+                {process ? <LinearProgress/> : <></>}
                 <DialogUpdateTrack open={existTrack} onClose={!existTrack}/>
                 <DialogTitle>Save track</DialogTitle>
                 <DialogContent>
