@@ -107,16 +107,16 @@ async function getTrackData(file) {
 }
 
 function addTrack(ctx, track) {
-    if (ctx.selectedGpxFile.analysis?.totalDistance / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE) {
-        ctx.setRoutingErrorMsg(true);
-    } else {
+    //if (ctx.selectedGpxFile.analysis?.totalDistance / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE) {
+    //    ctx.setRoutingErrorMsg(true);
+   // } else {
         prepareTrack(track);
         ctx.localTracks.push(track);
         ctx.setLocalTracks([...ctx.localTracks]);
         openNewLocalTrack(ctx);
         closeCloudTrack(ctx, track);
         TracksManager.saveTracks(ctx.localTracks);
-    }
+    //}
 }
 
 function prepareTrack(track) {
