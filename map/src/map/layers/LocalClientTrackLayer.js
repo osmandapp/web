@@ -243,9 +243,10 @@ export default function LocalClientTrackLayer() {
         let layers = file.layers;
         file.addPoint = false;
         if (prevPoint) {
-            if (TracksManager.isExceededMaxDist(ctx, prevPoint, newPoint)) {
-                ctx.setRoutingErrorMsg(true);
-            } else {
+            // FIXME
+            // if (TracksManager.isExceededMaxDist(ctx, prevPoint, newPoint)) {
+            //     ctx.setRoutingErrorMsg(true);
+            // } else {
                 deleteClickOnMap();
                 points = getProfile(newPoint, prevPoint, points);
                 createPointOnMap(newPoint, layers);
@@ -255,7 +256,7 @@ export default function LocalClientTrackLayer() {
                 } else {
                     await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers);
                 }
-            }
+            // }
         } else {
             addFirstPoint(newPoint, file, points);
             ctx.setUpdateContextMenu(true);
