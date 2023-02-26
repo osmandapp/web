@@ -328,7 +328,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
 
 function isExceededMaxDist(ctx, start, end) {
     let allDist = ctx.selectedGpxFile.analysis?.totalDistance ? ctx.selectedGpxFile.analysis?.totalDistance : 0;
-    return Utils.getDistance(start.lat, start.lng, end.lat, end.lng) / 1000 + allDist > process.env.REACT_APP_MAX_ROUTE_DISTANCE;
+    return (Utils.getDistance(start.lat, start.lng, end.lat, end.lng) + allDist) / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE;
 }
 
 async function updateRoute(ctx, points) {
