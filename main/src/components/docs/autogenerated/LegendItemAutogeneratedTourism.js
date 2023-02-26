@@ -65,6 +65,7 @@ export default function Render() {
         'Historic tomb' : 'tourism/tourism_historic_tomb',
         'Charcoal pile' : 'tourism/tourism_historic_charcoal_pile',
         'Historic tank' : 'tourism/tourism_historic_tank',
+        'Historic spacecraft' : 'tourism/tourism_historic_spacecraft',
         'Historic pillory' : 'tourism/tourism_historic_pillory',
         'Historic pyramid' : 'tourism/tourism_building_pyramid_object_type_node',
         'Historic manor' : 'tourism/tourism_historic_manor',
