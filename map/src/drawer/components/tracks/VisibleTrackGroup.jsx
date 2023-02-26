@@ -51,19 +51,6 @@ export default function VisibleTrackGroup({visibleTracks}) {
             {visibleTracks.files.length > 0 && visibleTracks.files.map((track, index) => {
                 return <CloudTrackItem key={track + index} file={track}/>;
             })}
-            {visibleTracks.files.find(f => f.local) &&
-                <MenuItem disableRipple={true}>
-                    <Tooltip title={
-                        <p>
-                            For saved tracks
-                        </p>
-                    }>
-                        <Button className={classes.button} variant="contained" component="span" sx={{ml: 2}}
-                                onClick={() => window.open(`${process.env.REACT_APP_GPX_API}/gpx/download-obf`)}>
-                            Get OBF
-                        </Button>
-                    </Tooltip>
-                </MenuItem>}
         </Collapse>
     </div>
 }

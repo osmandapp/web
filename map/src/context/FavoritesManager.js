@@ -28,7 +28,7 @@ function getShapesSvg(color) {
 }
 
 async function addFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/add`, data,
+    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data,
         {
             params: {
                 fileName: fileName,
@@ -43,7 +43,7 @@ async function addFavorite(data, fileName, updatetime) {
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/delete`, data,
+    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data,
         {
             params: {
                 fileName: fileName,
@@ -58,7 +58,7 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/mapapi/fav/update`, data,
+    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data,
         {
             params: {
                 wptName: wptName,

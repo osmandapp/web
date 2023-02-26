@@ -269,7 +269,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             let data = new FormData();
             data.append('file', oMyBlob, gpxFile.name);
             let res;
-            res = await post(`${process.env.REACT_APP_GPX_API}/mapapi/upload-file`, data,
+            res = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data,
                 {
                     params: {
                         name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),

@@ -33,7 +33,7 @@ export default function GpxCollection() {
     const downloadObf = async () => {
         setProcessDownload(true);
         await axios({
-            url: `${process.env.REACT_APP_GPX_API}/mapapi/download-obf`,
+            url: `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`,
             method: 'post',
             data: ctx.gpxCollection,
             responseType: 'blob',
