@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 title:  Boat navigation
 ---
 
@@ -14,14 +14,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Boat mode for navigation can be enabled together with [the Nautical plugin](../plugins/nautical-charts.md). You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here](../personal/profiles.md).
+Boat mode for navigation can be enabled together with [the Nautical plugin]. You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here].
 
 ![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png) ![Boat Navigation screen iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)
-  
+
 ## How to use
 
-Navigation type for Boat navigation is [Boat](../navigation/boat-navigation.md#boat) by default. This type uses rivers or waterway fairways for building your route. 
-For starting naviation user need to click [navigation button](../widgets/map-buttons.md#directions) on the screen or choose ["Navigation" in the main menu](../start-with/main-menu.md#features):
+Navigation type for Boat navigation is *Boat* by default. This type uses rivers or waterway fairways for building your route.  
+For starting naviation user need to click [navigation button](../../widgets/map-buttons.md#directions) on the screen or choose ["Navigation" in the main menu](../../start-with/main-menu.md#features):
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>
 
@@ -54,7 +54,7 @@ buttons:
 
 Graph with altitude info.
 
-Button [Analyse on map](../navigation/route-navigation.md#details)
+Button [Analyse on map](../../navigation/route-navigation.md#details)
 
 <Translate ios="true" ids="routeInfo_steepness_name"/> info.
 
@@ -83,19 +83,19 @@ Button [Analyse on map](../navigation/route-navigation.md#details)
 
 </Tabs>
 
-- &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch off/on voice prompts and to open [voice prompts settings menu](../personal/profiles.md#navigation-settings).
+- &nbsp;<Translate android="true" ids="shared_string_sound"/> - allows to switch off/on voice prompts and to open [voice prompts settings menu](../../personal/profiles.md#navigation-settings).
 - &nbsp;<Translate android="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation.
 - &nbsp;<Translate android="true" ids="show_along_the_route"/> (Android) - link
 - &nbsp;<Translate android="true" ids="follow_track"/> - link
 - &nbsp;<Translate android="true" ids="temporary_conditional_routing"/> - link
-- &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens [Navigation settings menu](../personal/profiles.md#navigation-settings) of your app profile.
-- &nbsp;<Translate android="true" ids="customize_route_line"/> (Android) - [link](../map/tracks-on-map.md#route-appearance-android).
+- &nbsp;<Translate android="true" ids="routing_settings_2"/> - opens [Navigation settings menu](../../personal/profiles.md#navigation-settings) of your app profile.
+- &nbsp;<Translate android="true" ids="customize_route_line"/> (Android) - [link](../../map/tracks-on-map.md#route-appearance-android).
 - &nbsp;<Translate android="true" ids="simulate_navigation"/> - allows to simulate your navigation trip.
 
 ## Navigation types
 
 In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
-[Boat navigation type](../navigation/boat-navigation.md#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](../navigation/boat-navigation.md#direct-to-point) and [Straight-line](../navigation/boat-navigation.md#straight-line).
+[Boat navigation type](../../navigation/routing/#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](#direct-to-point) and [Straight-line](#straight-line).
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>
 
@@ -112,7 +112,6 @@ User can calculate distance for koyak trip, for example.
 
 ![Boat Navigation type Android](@site/static/img/navigation/boat/boat_navigation_type_android.png) ![Boat Navigation type iOS](@site/static/img/navigation/boat/boat_navigation_type_ios.png)
 
-
 ### Direct-to-point
 
 Next version of navigation type for boat:  **Direct-to-point**. Direct-to-point navigation is a critical and frequently used feature for marine users.
@@ -125,7 +124,7 @@ Next version of navigation type for boat:  **Direct-to-point**. Direct-to-point 
 
 <p> </p>
 
-How to make your navigation profile with your parameters read [here](../personal/profiles.md).
+How to make your navigation profile with your parameters read [here](../../personal/profiles.md).
 
 It is possible to specify the recalculation distance (by default it is OFF for this routing profile). The route will be recalculated if the distance from the route to the current location is more than selected value.
 

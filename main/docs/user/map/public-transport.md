@@ -84,5 +84,5 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 ## Read more
 
 - [Vector maps](../map/vector-maps.md) 
-- [Public transport navigation](../navigation/public-transport-navigation.md)
+- [Public transport navigation](../navigation/routing/public-transport-navigation.md)
   

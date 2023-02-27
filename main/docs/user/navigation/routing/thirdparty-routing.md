@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title:  Third-party routing (Brouter)
 ---
 
@@ -18,7 +18,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 :::note
 
-BRouter routing doesn't exist for iOS version.
+Third-party routing is availible only for Android version of the OsmAnd app.
 
 :::
 
@@ -73,7 +73,7 @@ Choose your area and start downloading.
 
 You have installed and downloaded all the necessary data for third-party routing. All of the following steps will be performed in the OsmAnd application.  
 
-4. You can choose or create a navigation profile in OsmAnd application. In *[Navigation type](../personal/profiles.md#navigation-settings)*, you choose _BRouter (offline)_: *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_external,routing_profile_broutrer"/>*
+4. You can choose or create a navigation profile in OsmAnd application. In *[Navigation type](../../personal/profiles.md#navigation-settings)*, you choose _BRouter (offline)_: *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_external,routing_profile_broutrer"/>*
 
 
 <table class="blogimage">

@@ -27,7 +27,7 @@ For native routing there are different limitations for different phones, dependi
 
 2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
 
-3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/thirdparty-routing.md).
+3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/thirdparty-routing.md).
 
 ## The calculated route does not seem correct
 

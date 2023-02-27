@@ -22,7 +22,7 @@ Data of Public route lines is from [OpenStreetMap project](http://openstreetmap.
 
 ## How to use
 
-To start the navigation in your city by public transport, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
+To start the navigation in your city by public transport, you need to use [the navigation button](../../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation"/>
 

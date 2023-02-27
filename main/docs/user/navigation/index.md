@@ -1,11 +1,22 @@
 ---
 sidebar_position: 4
+title: Navigation
 ---
 
-# Navigation
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 The navigation functionality guides you to your destinations, by displaying routes, offering turn-by-turn instructions, and optional voice guidance.
 
+### [Routing types (Profiles)](./routing/index.md)
+
+Routing type determines how the route will be calculated.  
 ### [Navigation by route](./route-navigation.md)
 
 Navigation by route
@@ -14,26 +25,233 @@ Navigation by route
 
 Navigation by track (GPX)
 
-### [Boat navigation](./boat-navigation.md)
-
-Boat navigation
-
 ### [Markers navigation](./markers-navigation.md)
 
 Straight navigation to your marker
-
-### [Public Transport navigation](./public-transport-navigation.md)
-
-Public Transport navigation is your help during trips in cities
-
-### [Voice navigation](./voice-navigation.md)
-
-Navigation instructions and announcements
 
 ### [Android Auto / CarPlay](./auto-car.md)
 
 Using a vehicle media screen for navigation by OsmAnd
 
-### [BRouter routing](./thirdparty-routing.md)
+### Navigation settings
 
-BRouter routing for offline
+You can adjust the navigation settings according to your needs.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*
+
+Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
+
+![Navigation settings Android](@site/static/img/navigation/route/navigation_options_menu_android.png) ![Navigation  Android](@site/static/img/navigation/route/navigation_options_menu_android_2.png)
+
+- &nbsp;_<Translate android="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+- &nbsp;_<Translate android="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose driving style for bicycle navigation type: _<Translate android="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate android="true" ids="routing_attr_driving_style_safety_name"/>, <Translate android="true" ids="routing_attr_driving_style_balance_name"/>, <Translate android="true" ids="routing_attr_driving_style_speed_name"/>_.
+- &nbsp;_<Translate android="true" ids="routing_attr_height_obstacles_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows [to avoid strong uphills](../personal/profiles.md#route-parameters): _<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>_.
+- &nbsp;_<Translate android="true" ids="routing_attr_allow_motorway_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to avoid or prefer motorways.
+- &nbsp;_<Translate android="true" ids="impassable_road"/>_ - allows to select a road you want [to avoid during navigation](../personal/profiles.md#route-parameters), either on the map.
+- &nbsp;<Translate android="true" ids="show_along_the_route"/> - allows to shows [POI, My Favourites](../widgets/nav-widgets.md#approach-poisfavorites), [Traffic warnings](../widgets/nav-widgets.md#alert-widget) along the route.
+- &nbsp;_<Translate android="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
+- &nbsp;_<Translate android="true" ids="routing_attr_allow_private_name"/>_ - allows to navigate to private zone.
+- &nbsp;_<Translate android="true" ids="routing_attr_short_way_name"/>_ - calculates navigation by fuel-efficient algorithm.
+- &nbsp;_<Translate android="true" ids="temporary_conditional_routing"/>_ - allows to consider temporary limitations.
+- &nbsp;_<Translate android="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
+- &nbsp;_<Translate android="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
+- &nbsp;_<Translate android="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,routing_settings,shared_string_settings"/>*  
+
+![Navigation settings iOS](@site/static/img/navigation/route/settings_navigation_ios_1.png) ![Navigation settings iOS](@site/static/img/navigation/route/settings_navigation_ios_2.png)  
+
+- &nbsp;_<Translate ios="true" ids="shared_string_sound"/>_ - allows to switch on/off navigation prompts and to open [Voice prompts](../navigation/voice-navigation.md) menu.
+
+**Route parameters:**
+
+Settings of Route parameters for Navigation profile you can find [here](../personal/profiles.md#route-parameters).
+
+- &nbsp;<Translate ios="true" ids="impassable_road"/> - allows to select a road you want to avoid during navigation, either on the map.
+- &nbsp;_<Translate ios="true" ids="routing_attr_driving_style_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose [driving style](../personal/profiles.md#route-parameters) for bicycle navigation type: _<Translate ios="true" ids="routing_attr_prefer_unpaved_name"/>, <Translate ios="true" ids="routing_attr_driving_style_safety_name"/>, <Translate ios="true" ids="routing_attr_driving_style_balance_name"/>, <Translate ios="true" ids="routing_attr_driving_style_speed_name"/>_.
+- &nbsp;_<Translate ios="true" ids="routing_attr_allow_motorway_name"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows [to avoid or prefer motorways](../personal/profiles.md#route-parameters).
+- &nbsp;_<Translate ios="true" ids="preferred_terrain"/>_ ([Navigation type](../navigation/route-navigation.md#type-of-navigation) - Cycling) - allows to choose [routes with a hilly relief profile](../personal/profiles.md#route-parameters) for bicycle navigation type: _<Translate ios="true" ids="shared_string_any"/>, <Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>, <Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>, <Translate ios="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>_.
+- &nbsp;_<Translate ios="true" ids="routing_attr_short_way_name"/>_ - calculates navigation by fuel-efficient algorithm.
+- &nbsp;_<Translate ios="true" ids="routing_attr_prefer_unpaved_name"/>_ - allows to prefer unpaved over paved roads for routing.
+- &nbsp;_Prefer hiking routes_ - allows to avoid certain routes and prefer celected routes.
+- &nbsp;_Prefer tactile paving_ - allows to avoid road types and prefer tactile paving.
+- &nbsp;_<Translate ios="true" ids="routing_attr_allow_private_name"/>_ - allows to navigate to private zone.
+- &nbsp;_Goods vehicles restrictions_ - consider access permissions for light goods vehicles (goods).
+- &nbsp;_<Translate ios="true" ids="consider_limitations_param"/>_ - allows to consider temporary limitations.
+
+**Advanced:**
+- &nbsp;_<Translate ios="true" ids="follow_track"/>_ - allows to choose a track for [navigation by it](../navigation/gpx-navigation.md).
+- &nbsp;_<Translate ios="true" ids="routing_settings_2"/>_ - opens [Navigation settings](../personal/profiles.md#navigation-settings) of app profile.
+- &nbsp;_<Translate ios="true" ids="customize_route_line"/>_ - opens menu of [Route line customization](../navigation/route-navigation.md#route-line-appearance).
+- &nbsp;_<Translate ios="true" ids="simulate_navigation"/>_ - allows [to simulate your navigation](../navigation/route-navigation.md#simulate-navigation).  
+
+</TabItem>
+
+</Tabs>
+
+### Route Details
+
+In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
+
+There are three ways to access the Route Details menu:  
+1. Go to the main *Menu → Navigation*, set the route, and press the Details button.
+2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
+3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+|  |
+|------------|
+| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_main-info.png) |
+| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_analiz.png) |
+| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
+| Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) |
+| Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_print.png) |
+| Save as new track button. | 
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_save.png) |
+| Share buttons: *Share as GPX file* and *Save to OsmAnd tracks* |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+|  |
+|------------|
+| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png) |
+| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png) |
+| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png) |
+| Save as new track button. | 
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png) |
+| Export button: *Export as GPX file* or *Share as link* |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png) |
+
+</TabItem>
+
+</Tabs>
+
+:::info
+**Share link**.  
+Each link consists of parts containing specific information. For example:  
+https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
+- *start=52.310331,4.863615*- coordinates of the start point.
+- If the coordinates are not specified, My Location is used.
+- *end=52.327645,4.863272* - coordinates of the end point.
+- *mode=pedestrian* - type of navigation, which depends on the selected profile.
+- *#15/52.3161/4.8658* - zoom level and map center coordinates.
+:::
+
+:::note
+The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
+:::  
+
+### [Notifications / Voice prompts](./voice-navigation.md)
+
+When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These modes are important to reduce battery consumption.  
+
+#### Notification
+
+<InfoAndroidOnly/>
+
+You can see notification info in Drop-down system menu: Turn-by-turn instructions, arrows, arrival time and time to go, current speed.
+
+![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
+
+Active buttons on Drop-down system menu for your navigation:
+- *<Translate android="true" ids="stop_navigation_service"/>* - allows to stop your navigation.
+- *<Translate android="true" ids="shared_string_pause"/>* - allows to pause your navigation.
+- *<Translate android="true" ids="shared_string_resume"/>* - allows to resume your navigation.
+
+#### Screen control
+
+<InfoAndroidOnly/>
+
+You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.  
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
+
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)  
+
+#### Screen timeout
+
+- *<Translate android="true" ids="system_screen_timeout"/>* - the screen will turn off depending on the device settings. Enable it to use *Turn the screen off* according to the system screen timeout. The *"Change settings"* button opens the system menu.
+
+![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
+
+- *<Translate android="true" ids="wake_time"/>* - If the "Keep screen on" option is enabled, the device screen does not apply a timeout. If the previous option is disabled, you can set the time after which the device screen will turn off if you do not interact with it.
+
+![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+
+#### Turn screen on
+
+Select options to wake up the screen. Make sure OsmAnd is in the foreground while the device is locked.
+
+![turn screen on Android](@site/static/img/navigation/route/turn_screen_on_android.png)
+
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
+- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
+
+### Simulate navigation
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699_
+
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
+
+- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](../navigation/route-navigation.md#how-to-use).  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
+
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+
+- &nbsp;_<Translate ios="true" ids="simulation_preview_mode_title"/>_ - <Translate ios="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Cancel" button](../navigation/route-navigation.md#how-to-use).
+
+</TabItem>
+
+</Tabs>

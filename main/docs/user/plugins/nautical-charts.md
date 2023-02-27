@@ -143,7 +143,7 @@ Disabling the Nautical plugin does not remove loaded nautical data, so even if y
 
 ## Nautical profile
 
-Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/boat-navigation.md).   
+Nautical map can be included in any profile. However, it is most valuable in the [Boat profile](../personal/profiles.md) and especially in [Boat navigation](../navigation/routing/boat-navigation.md).  
 
 <Tabs groupId="operating-systems">
 

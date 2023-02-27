@@ -54,7 +54,7 @@ Our goal is to create a fully functional map-oriented application that could be 
 - Start [voice guided navigation](../navigation/route-navigation.md) with screen on and off.
 - Make your tourist trip rich with offline [Wikipedia](../plugins/wikipedia.md) and [Wikivoyage](../plan-route/travel-guides.md).
 - Fully customize how [the map is displayed](../map/configure-map-menu.md) and what [widgets](../widgets/index.md) are displayed on it.
-- Navigate [by boat](../navigation/boat-navigation.md), [by a given track](../navigation/gpx-navigation.md), [by public transport](../navigation/public-transport-navigation.md) and [offroad](../navigation/markers-navigation.md).
+- Navigate [by route](../navigation/routing/boat-navigation.md), [by a given track](../navigation/gpx-navigation.md), [by public transport](../navigation/routing/public-transport-navigation.md) and [offroad](../navigation/markers-navigation.md).
 - Everything works in **Offline Mode**!
 - And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing.md).
 
