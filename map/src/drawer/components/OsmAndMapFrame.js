@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
-import {Drawer, Toolbar, Box} from "@mui/material";
+import React, {useContext, useState} from 'react';
+import {Drawer, Toolbar, Box, SnackbarContent, LinearProgress, Button} from "@mui/material";
 import {
     IconButton, AppBar
 } from "@mui/material";
-import {Menu} from '@mui/icons-material';
+import {Close, Menu} from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet, useNavigate} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu";
+import AppContext from "../../context/AppContext";
 
 const OsmAndMapFrame = () => {
+    const ctx = useContext(AppContext);
+
     const [drawerOpen, setDrawerOpen] = useState(false);
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
@@ -36,6 +39,16 @@ const OsmAndMapFrame = () => {
                         <HeaderInfo/>
                     </Toolbar>
                 </AppBar>
+                {ctx.routingErrorMsg &&
+                    <SnackbarContent sx={{backgroundColor: "#1976d2", marginTop: "3px"}}
+                                     message={ctx.routingErrorMsg}
+                                     action={
+                                         <Button key='close' onClick={() => {
+                                             ctx.setRoutingErrorMsg(null);
+                                         }}>
+                                             <Close sx={{color: "#ffffff"}}/>
+                                         </Button>
+                                     }/>}
                 <OsmAndMap/>
                 <MapContextMenu drawerWidth={drawerWidth}/>
             </Box>

@@ -1,4 +1,4 @@
-import {Paper, AppBar, Button, LinearProgress, Alert, Snackbar, SnackbarContent} from "@mui/material";
+import {Paper, AppBar, Button, LinearProgress} from "@mui/material";
 import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
@@ -11,7 +11,6 @@ import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
-import DeleteTrackDialog from "./track/DeleteTrackDialog";
 
 const useStyles = makeStyles({
     menu: {
@@ -83,21 +82,9 @@ export default function MapContextMenu({drawerWidth}) {
         setShowContextMenu(false);
     }
 
-    const action = (
-        <Button key='close' onClick={() => {
-            ctx.setRoutingErrorMsg(null);
-        }}>
-            <Close sx={{color: "#ffffff"}}/>
-        </Button>
-    );
-
     return (<div>
         {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`}>
             <div className="leaflet-control leaflet-bar padding-container">
-                {ctx.routingErrorMsg &&
-                    <SnackbarContent sx={{backgroundColor: "#1976d2"}}
-                                     message={`Sorry, in our beta mode max routing distance is limited to ${process.env.REACT_APP_MAX_ROUTE_DISTANCE} km.`}
-                                     action={action}/>}
                 {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>

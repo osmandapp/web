@@ -21,8 +21,7 @@ function saveTracks(tracks) {
     localStorage.clear();
     if (tracks.length > 0) {
         let res = [];
-        tracks.forEach(function (t) {
-            let track = _.cloneDeep(t);
+        tracks.forEach(function (track) {
             res.push({
                 name: track.name,
                 id: track.id,
@@ -107,16 +106,12 @@ async function getTrackData(file) {
 }
 
 function addTrack(ctx, track) {
-    //if (ctx.selectedGpxFile.analysis?.totalDistance / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE) {
-    //    ctx.setRoutingErrorMsg(true);
-   // } else {
         prepareTrack(track);
         ctx.localTracks.push(track);
         ctx.setLocalTracks([...ctx.localTracks]);
         openNewLocalTrack(ctx);
         closeCloudTrack(ctx, track);
         TracksManager.saveTracks(ctx.localTracks);
-    //}
 }
 
 function prepareTrack(track) {
@@ -302,6 +297,7 @@ function deleteLocalTrack(ctx) {
 
 
 async function updateRouteBetweenPoints(ctx, start, end) {
+    ctx.setRoutingErrorMsg(null);
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
@@ -321,6 +317,9 @@ async function updateRouteBetweenPoints(ctx, start, end) {
             result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
                 return value === "***NaN***" ? NaN : value;
             });
+        }
+        if (result.msg) {
+            ctx.setRoutingErrorMsg(result.msg);
         }
         return result.points;
     }
