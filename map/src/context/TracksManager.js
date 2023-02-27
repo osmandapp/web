@@ -482,6 +482,17 @@ function createGpxTracks() {
     return res;
 }
 
+function clearTrack(file, points) {
+    let emptyFile = {};
+    emptyFile.name = file.name;
+    emptyFile.points = points? points : [];
+    emptyFile.tracks = TracksManager.createGpxTracks();
+    emptyFile.layers = file.layers;
+    emptyFile.updateLayers = true;
+
+    return emptyFile;
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -505,6 +516,7 @@ const TracksManager = {
     addDistanceToPoints,
     createTrack,
     createGpxTracks,
+    clearTrack,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

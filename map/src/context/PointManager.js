@@ -89,13 +89,9 @@ async function deletePointByIndex(currentTrack, index, ctx) {
                     });
                     return result.deletedPoint;
                 } else {
-                    let emptyFile = {};
-                    emptyFile.name = ctx.selectedGpxFile.name;
-                    emptyFile.points = currentTrack.points;
-                    emptyFile.tracks = TracksManager.createGpxTracks();
-                    emptyFile.layers = ctx.selectedGpxFile.layers;
-                    emptyFile.updateLayers = true;
+                    let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, currentTrack.points);
                     ctx.setSelectedGpxFile({...emptyFile});
+                    ctx.setUpdateContextMenu(true);
                 }
             }
         );

@@ -344,7 +344,9 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
                 {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
                     e.stopPropagation();
-                    ctx.setCreateTrack({...{enable: true}});
+                    let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile);
+                    ctx.setSelectedGpxFile({...emptyFile});
+                    ctx.setUpdateContextMenu(true);
                     setOpen(false);
                 }}>
                     Clear</MenuItem>}
