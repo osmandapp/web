@@ -436,6 +436,7 @@ function getEle(point, elevation, array) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
+    let oldState = _.cloneDeep(ctx.selectedGpxFile);
     let data = {
         tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
         wpts: ctx.selectedGpxFile.wpts,
@@ -459,6 +460,11 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         ctx.selectedGpxFile.update = true;
         if (path === TracksManager.GET_SRTM_DATA) {
             ctx.setUpdateContextMenu(true);
+        } else {
+            ctx.selectedGpxFile.analysis.srtmAnalysis = false;
+            if (oldState.analysis?.srtmAnalysis) {
+                ctx.setUpdateContextMenu(true);
+            }
         }
         return ctx.selectedGpxFile;
     }
@@ -474,6 +480,23 @@ function createTrack(ctx) {
         }
     }
     ctx.setCreateTrack({...createState});
+}
+
+function createGpxTracks() {
+    let res = [];
+    res.push({points: []})
+    return res;
+}
+
+function clearTrack(file, points) {
+    let emptyFile = {};
+    emptyFile.name = file.name;
+    emptyFile.points = points? points : [];
+    emptyFile.tracks = TracksManager.createGpxTracks();
+    emptyFile.layers = file.layers;
+    emptyFile.updateLayers = true;
+
+    return emptyFile;
 }
 
 const TracksManager = {
@@ -498,6 +521,8 @@ const TracksManager = {
     addDistance,
     addDistanceToPoints,
     createTrack,
+    createGpxTracks,
+    clearTrack,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

@@ -23,6 +23,7 @@ import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
 import TracksManager from "../../../context/TracksManager";
+import _ from "lodash";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -76,12 +77,12 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         };
         if (!ctx.selectedGpxFile.wpts) {
             ctx.selectedGpxFile.wpts = [];
-            if (ctx.createTrack) {
-                createWptArrLocal();
-                ctx.setUpdateContextMenu(true);
-            }
         }
         ctx.selectedGpxFile.wpts.push(favorite);
+        if (ctx.createTrack) {
+            createWptArrLocal();
+            ctx.setUpdateContextMenu(true);
+        }
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         closeDialog();
@@ -92,15 +93,14 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         if (ind !== -1) {
             if (!ctx.localTracks[ind].wpts) {
                 ctx.localTracks[ind].wpts = [];
-                ctx.setLocalTracks([...ctx.localTracks]);
             }
+            ctx.localTracks[ind].wpts = ctx.selectedGpxFile.wpts;
         } else {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
-            ctx.selectedGpxFile.wpts = [];
             ctx.selectedGpxFile.index = ctx.localTracks.length;
             ctx.localTracks.push(ctx.selectedGpxFile);
-            ctx.setLocalTracks([...ctx.localTracks]);
         }
+        ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     async function saveFavorite() {
