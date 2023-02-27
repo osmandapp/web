@@ -21,8 +21,7 @@ function saveTracks(tracks) {
     localStorage.clear();
     if (tracks.length > 0) {
         let res = [];
-        tracks.forEach(function (t) {
-            let track = _.cloneDeep(t);
+        tracks.forEach(function (track) {
             res.push({
                 name: track.name,
                 id: track.id,
@@ -107,16 +106,12 @@ async function getTrackData(file) {
 }
 
 function addTrack(ctx, track) {
-    //if (ctx.selectedGpxFile.analysis?.totalDistance / 1000 > process.env.REACT_APP_MAX_ROUTE_DISTANCE) {
-    //    ctx.setRoutingErrorMsg(true);
-   // } else {
         prepareTrack(track);
         ctx.localTracks.push(track);
         ctx.setLocalTracks([...ctx.localTracks]);
         openNewLocalTrack(ctx);
         closeCloudTrack(ctx, track);
         TracksManager.saveTracks(ctx.localTracks);
-    //}
 }
 
 function prepareTrack(track) {
@@ -302,13 +297,15 @@ function deleteLocalTrack(ctx) {
 
 
 async function updateRouteBetweenPoints(ctx, start, end) {
+    ctx.setRoutingErrorMsg(null);
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
                 routeMode: start.profile ? start.profile : ctx.routeMode.mode,
-                hasRouting: start.segment !== null || end.segment !== null
+                hasRouting: start.segment !== null || end.segment !== null,
+                maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE
             },
             headers: {
                 'Content-Type': 'application/json'
@@ -322,13 +319,11 @@ async function updateRouteBetweenPoints(ctx, start, end) {
                 return value === "***NaN***" ? NaN : value;
             });
         }
+        if (result.msg) {
+            ctx.setRoutingErrorMsg(result.msg);
+        }
         return result.points;
     }
-}
-
-function isExceededMaxDist(ctx, start, end) {
-    let allDist = ctx.selectedGpxFile.analysis?.totalDistance ? ctx.selectedGpxFile.analysis?.totalDistance : 0;
-    return Utils.getDistance(start.lat, start.lng, end.lat, end.lng) / 1000 + allDist > process.env.REACT_APP_MAX_ROUTE_DISTANCE;
 }
 
 async function updateRoute(ctx, points) {
@@ -503,7 +498,6 @@ const TracksManager = {
     addDistance,
     addDistanceToPoints,
     createTrack,
-    isExceededMaxDist,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

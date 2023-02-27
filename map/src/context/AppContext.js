@@ -248,9 +248,9 @@ function getColors() {
 }
 
 
-async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText) {
-    // encodeURIComponent(startPoint.lat)
+async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg) {
     setRouteData(null);
+    setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';
     interPoints.forEach((i) => {
@@ -265,14 +265,19 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
     getRouteText(true, null)
+    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}${avoidRoadsUrl}`, {
+        + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         let data = await response.json();
         let props = {};
+        if (data.msg) {
+            setRoutingErrorMsg(data.msg);
+            data = data.features;
+        }
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
         }
@@ -405,7 +410,7 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText);
+            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg);
         } else {
             setHeaderText(prevState => ({
                 ...prevState,
@@ -422,7 +427,8 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                resultText = `Route ${Math.round(data.props.overall.distance / 100) / 10.0} km for ${routeMode.mode} is found.`
+                let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeMode.mode} is found.`
             }
         }
         setHeaderText(prevState => ({
