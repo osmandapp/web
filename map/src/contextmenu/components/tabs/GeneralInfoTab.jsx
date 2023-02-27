@@ -82,6 +82,8 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
         if (ctx.selectedGpxFile?.analysis?.totalDistance) {
             setDistance("Distance: " + (ctx.selectedGpxFile.analysis?.totalDistance / 1000).toFixed(1) + " km");
+        } else {
+            setDistance('');
         }
 
         if (ctx.selectedGpxFile?.analysis?.timeMoving) {

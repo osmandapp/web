@@ -476,6 +476,12 @@ function createTrack(ctx) {
     ctx.setCreateTrack({...createState});
 }
 
+function createGpxTracks() {
+    let res = [];
+    res.push({points: []})
+    return res;
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -498,6 +504,7 @@ const TracksManager = {
     addDistance,
     addDistanceToPoints,
     createTrack,
+    createGpxTracks,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
