@@ -25,6 +25,8 @@ export default function Render() {
         'Mountain rescue station' : 'emergency/emergency_emergency_mountain_rescue',
         'Avalanche transceiver' : 'emergency/emergency_amenity_avalanche_transceiver',
         'Siren' : 'emergency/emergency_emergency_siren',
+        'Lifeguard base' : 'emergency/emergency_emergency_lifeguard',
+        'Lifeguard tower' : 'emergency/emergency_emergency_lifeguard_lifeguard_tower',
     }});
 
 }
