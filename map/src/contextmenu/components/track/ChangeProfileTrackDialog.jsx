@@ -127,12 +127,17 @@ export default function ChangeProfileTrackDialog({open}) {
             }
         }
 
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, ctx.selectedGpxFile.points).then(res => {
+        if (ctx.selectedGpxFile.points.length > 0) {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, ctx.selectedGpxFile.points).then(res => {
+                ctx.setTrackProfileManager({});
+                res.updateLayers = true;
+                ctx.setSelectedGpxFile({...res});
+                setProcess(false);
+            });
+        } else {
             ctx.setTrackProfileManager({});
-            res.updateLayers = true;
-            ctx.setSelectedGpxFile({...res});
             setProcess(false);
-        });
+        }
     }
 
     function getPrevPoints() {

@@ -436,6 +436,7 @@ function getEle(point, elevation, array) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
+    let oldState = _.cloneDeep(ctx.selectedGpxFile);
     let data = {
         tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
         wpts: ctx.selectedGpxFile.wpts,
@@ -459,6 +460,11 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         ctx.selectedGpxFile.update = true;
         if (path === TracksManager.GET_SRTM_DATA) {
             ctx.setUpdateContextMenu(true);
+        } else {
+            ctx.selectedGpxFile.analysis.srtmAnalysis = false;
+            if (oldState.analysis?.srtmAnalysis) {
+                ctx.setUpdateContextMenu(true);
+            }
         }
         return ctx.selectedGpxFile;
     }
@@ -468,7 +474,6 @@ function createTrack(ctx) {
     let createState = {
         enable: true
     }
-    console.log(_.cloneDeep(ctx.selectedGpxFile))
     if (ctx.selectedGpxFile) {
         createState.closePrev = {
             file: _.cloneDeep(ctx.selectedGpxFile)
