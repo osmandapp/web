@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Android Auto and CarPlay are [paid features](../purchases/index.md) of the OsmAnd app.
 :::
 
-OsmAnd is available for *Android Auto* and *CarPlay* functions in your vehicle. You can connect your Android or iPhone device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
+OsmAnd is available for [*Android Auto*](https://www.android.com/auto) and [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your Android or iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
 <Tabs groupId="operating-systems">
 
@@ -43,12 +43,18 @@ OsmAnd is available for *Android Auto* and *CarPlay* functions in your vehicle. 
 
 ## Setup
 
-For OsmAnd to work, you need to connect your Android or iOS device to the vehicle's multimedia system. To find out how to do this, please visit the relevant websites: [**Android Auto**](https://www.android.com/auto) and [**CarPlay**](https://www.apple.com/ios/carplay/). Once connected, an icon with the logo and the title OsmAnd will appear in the application menu on the selected platform. You will then be able to start the navigation or use the OsmAnd search function in Android Auto or CarPlay.  
+First, you need to select and configure the profile to be used when connecting to Android Auto or CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).  
 
 :::note
-You need to select the profile that will be used when connecting to Android Auto or CarPlay. To do this, follow the steps here:  
-*Menu → Settings → OsmAnd Settings → CarPlay profile*
-:::  
+For quick access to the list of profiles available for connecting to CarPlay, the iOS version of the OsmAnd app has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.  
+:::
+
+For OsmAnd to work, you need to connect your Android or iOS device to the vehicle's multimedia system.  
+- Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/) and the [list for CarPlay](https://www.apple.com/ios/carplay/available-models/).
+- You need to have an OsmAnd Pro subscription. Check it here Menu → Settings → Purchases.
+- To find out how to connect and set up your device, please visit the relevant websites: [**Android Auto**](https://www.android.com/auto) and [**CarPlay**](https://www.apple.com/ios/carplay/). 
+- Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
+- You will then be able to start the navigation or use the OsmAnd search function in Android Auto or CarPlay.  
 
 <Tabs groupId="operating-systems">
 
@@ -67,9 +73,9 @@ You need to select the profile that will be used when connecting to Android Auto
 </Tabs>  
 
 
-## Settings
+## Interaction with the map
 
-All OsmAnd options directly related to navigation are available in Android Auto and CarPlay. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons.md#compass)* widget. The rest of the settings are focused to getting the end point for the route on the map.
+Most OsmAnd settings directly related to navigation are available in Android Auto and CarPlay. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons.md#compass)* widget. The rest of the settings are focused on getting the end point for the route on the map.
 
 
 ### Search
@@ -100,7 +106,7 @@ With this option you can search for the necessary places on the map to navigate.
 
 ### POI
 
-<!--You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. -->
+You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories.
 
 <Tabs groupId="operating-systems">
 
@@ -121,8 +127,8 @@ With this option you can search for the necessary places on the map to navigate.
 
 ### Favorites
 
-<!-- Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
-You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system. -->
+Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
+You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system.
 
 <Tabs groupId="operating-systems">
 
@@ -184,7 +190,7 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 </Tabs>  
 
-<!--
+
 ## Navigation
 
 Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
@@ -192,9 +198,8 @@ Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play
 
 ### Voice prompts
 
-<InfoAndroidOnly />
-
-In the OsmAnd app, you can set up [voice prompts](../navigation/voice-navigation) individually for one selected profile or for all profiles at once. Do this before you start your route. In Android Auto, you can choose to only disable or enable all selected prompts at once.  
+In the OsmAnd app, you can set up [voice prompts](../navigation/voice-navigation) individually for one selected profile or for all profiles at once. Do this before you start your route.  
+In Android Auto, you can choose to only disable or enable all selected prompts at once.  
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
 
@@ -218,7 +223,7 @@ This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such 
 
 </Tabs>  
 
-
+<!--
 ____
 
 <Tabs groupId="operating-systems">

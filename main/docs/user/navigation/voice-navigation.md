@@ -58,26 +58,17 @@ Voice prompt settings can be global and applied to all profiles.
 </Tabs>  
 
 1. **Language** - select your preferred language and voice type.
-2. **Announce** - allows to voice the following types of prompts:
-- Street names (TTS).
-- Exit number.
-- Traffic warnings.
-- Pedestrian crosswalks.
-- [Speed cameras](#speed-cameras). 
-- Tunnels.   
+2. **Announce** - allows to voice the following types of prompts: *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks, Tunnels, [Speed cameras](#speed-cameras)*. 
+ 
 :::note
 You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for this category for more convenient use of voice prompts.
 :::  
-3. **User point**:
-- Track waypoints.
-- Nearby Favorites.
-- Nearby POI.
+
+3. **User point**: *Track waypoints, Nearby Favorites, Nearby POI*.
 4. **Speed limit**:
 - Announce when exceeded - allows you to announce when you exceed the allowed speed limit.
 - Speed limit tolerance (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
-5. **Other**:
-- Announce GPS signal loss and recovery.
-- Announce route recalculation.
+5. **Other**: *Announce GPS signal loss and recovery, Announce route recalculation*.
 6. **Options**:
 - Repeat navigation instructions - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
 - [Announcement time](#announcement-time).
@@ -85,13 +76,13 @@ You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for th
 - Voice guidance output - allows you to select the loudspeaker for voice prompts: Audio multimedia/navigation, Audio notification, and Audio phone call (to interrupt Bluetooth car stereos).
 - Pause music - voice prompts stop music playback for a while.   
 
-#### Speed cameras
+### Speed cameras
 
 [Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) in some countries is prohibited by the law.  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
-#### Announcement time
+### Announcement time
 
 The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed.    
 

@@ -72,7 +72,12 @@ A simple and fast tool for creating points by specifying geographic coordinates.
 Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends. Read about [Trip recording Plugin](../plugins/trip-recording.md).  
 
 
-### Add waypoint
+### Edit via Plan Route
+
+- [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
+
+
+## Add waypoint
 
 Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
 
@@ -108,26 +113,24 @@ To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-poin
 You can also add a waypoint as a Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
 :::
 
-#### Waypoint format description
+### Display custom GPX tags
+
+### Waypoint format description
 
 OsmAnd records tracks and their included waypoints to a [GPX file format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: file > track > segments > points. Available tags and descriptions of their parameters can be found in the Recorded [GPX file section](../plugins/trip-recording.md#recorded-gpx-file) of the Trip recording plugin article.  
 
 ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  
 
-#### Waypoint and Favorites
+### Waypoint and Favorites
 
 General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).
 
-#### Waypoints folder
+### Waypoints folder
 
 You can configure available waypoint folders in the Tracks Context menu: show on map, rename, change appearance, add to markers, copy to favorites or delete. A detailed description is in this [article](../map/track-context-menu.md#waypoints-folder).
 
-### Edit via Plan Route
-
-- [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
 
 ## My Places menu
-
 
 ### Actions
 
@@ -453,6 +456,7 @@ To export a GPX file to an external storage, do the following:
 </TabItem>
 
 </Tabs>
+
 
 ## Read more
 
