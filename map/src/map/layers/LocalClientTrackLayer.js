@@ -193,7 +193,7 @@ export default function LocalClientTrackLayer() {
     }
 
     function showSelectedPointOnMap() {
-        if (ctx.selectedGpxFile.showPoint.wpt) {
+        if (ctx.selectedGpxFile.showPoint) {
             map.setView([ctx.selectedGpxFile.showPoint.layer._latlng.lat, ctx.selectedGpxFile.showPoint.layer._latlng.lng], 17);
         } else {
             if (selectedPointMarker) {

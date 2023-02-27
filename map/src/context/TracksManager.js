@@ -14,15 +14,21 @@ const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
 
 function loadTracks() {
-    return localStorage.getItem('localTracks') !== null ? JSON.parse(localStorage.getItem('localTracks')) : [];
+    let localTracks = [];
+    let names = Object.keys(localStorage);
+    names.forEach(name => {
+        if (name.includes('localTrack')) {
+            localTracks.push(JSON.parse(localStorage.getItem(name)));
+        }
+    })
+    return localTracks;
 }
 
 function saveTracks(tracks) {
     localStorage.clear();
     if (tracks.length > 0) {
-        let res = [];
         tracks.forEach(function (track) {
-            res.push({
+            let localTrack = {
                 name: track.name,
                 id: track.id,
                 metaData: track.metaData,
@@ -31,9 +37,9 @@ function saveTracks(tracks) {
                 ext: track.ext,
                 analysis: track.analysis,
                 selected: false
-            })
+            }
+            localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
         })
-        localStorage.setItem('localTracks', JSON.stringify(res));
     }
 }
 
