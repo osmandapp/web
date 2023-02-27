@@ -45,8 +45,18 @@ export default function ContextMenu({setGeocodingData}) {
                     ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin()
                 }
             });
+            if (ctx.createTrack?.enable) {
+                map.contextmenu.addItem({
+                    text: 'Add waypoint',
+                    callback: (e) => {
+                        ctx.addFavorite.location = e.latlng;
+                        ctx.addFavorite.editTrack = true;
+                        ctx.setAddFavorite({...ctx.addFavorite});
+                    }
+                });
+            }
         }
-    }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData, ctx.loginUser]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.setStartPoint, ctx.setEndPoint, ctx.pinPoint, ctx.setPinPoint, map, ctx.setRouteData, ctx.loginUser, ctx.createTrack, ctx.selectedGpxFile]);
 
     const whereAmI = async (e) => {
         setGeocodingData(null);

@@ -128,7 +128,7 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkClickOnMapEvent() {
-        if (ctx.selectedGpxFile.addPoint) {
+        if (ctx.selectedGpxFile.addPoint && !ctx.selectedGpxFile.addWpt) {
             getNewRoute().then();
         } else {
             checkDragPoint();

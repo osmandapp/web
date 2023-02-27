@@ -16,18 +16,19 @@ const CHANGE_PROFILE_ALL = 'all';
 function loadTracks() {
     let localTracks = [];
     let names = Object.keys(localStorage);
-    names.forEach(name => {
+    for (let name of names) {
         if (name.includes('localTrack')) {
-            localTracks.push(JSON.parse(localStorage.getItem(name)));
+            let ind = name.split('_')[1];
+            localTracks[ind] = JSON.parse(localStorage.getItem(name));
         }
-    })
+    }
     return localTracks;
 }
 
 function saveTracks(tracks) {
     localStorage.clear();
     if (tracks.length > 0) {
-        tracks.forEach(function (track) {
+        for (let track of tracks) {
             let localTrack = {
                 name: track.name,
                 id: track.id,
@@ -39,7 +40,7 @@ function saveTracks(tracks) {
                 selected: false
             }
             localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
-        })
+        }
     }
 }
 
@@ -112,12 +113,12 @@ async function getTrackData(file) {
 }
 
 function addTrack(ctx, track) {
-        prepareTrack(track);
-        ctx.localTracks.push(track);
-        ctx.setLocalTracks([...ctx.localTracks]);
-        openNewLocalTrack(ctx);
-        closeCloudTrack(ctx, track);
-        TracksManager.saveTracks(ctx.localTracks);
+    prepareTrack(track);
+    ctx.localTracks.push(track);
+    ctx.setLocalTracks([...ctx.localTracks]);
+    openNewLocalTrack(ctx);
+    closeCloudTrack(ctx, track);
+    TracksManager.saveTracks(ctx.localTracks);
 }
 
 function prepareTrack(track) {
@@ -497,7 +498,7 @@ function createGpxTracks() {
 function clearTrack(file, points) {
     let emptyFile = {};
     emptyFile.name = file.name;
-    emptyFile.points = points? points : [];
+    emptyFile.points = points ? points : [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
     emptyFile.updateLayers = true;
