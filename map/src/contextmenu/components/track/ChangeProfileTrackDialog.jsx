@@ -59,15 +59,24 @@ export default function ChangeProfileTrackDialog({open}) {
             ctx.selectedGpxFile.points.forEach(point => {
                 point.profile = profile.mode;
             })
-            await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
-                ctx.selectedGpxFile.points = points;
+            if (ctx.selectedGpxFile.points.length > 1) {
+                await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
+                    ctx.selectedGpxFile.points = points;
+                    ctx.setCreatingRouteMode({
+                        mode: profile.mode,
+                        modes: ctx.creatingRouteMode.modes,
+                        opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
+                        colors: ctx.creatingRouteMode.colors
+                    })
+                });
+            } else {
                 ctx.setCreatingRouteMode({
                     mode: profile.mode,
                     modes: ctx.creatingRouteMode.modes,
                     opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
                     colors: ctx.creatingRouteMode.colors
                 })
-            });
+            }
         } else {
             if (changeOne) {
                 let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
