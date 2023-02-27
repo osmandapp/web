@@ -468,6 +468,7 @@ function createTrack(ctx) {
     let createState = {
         enable: true
     }
+    console.log(_.cloneDeep(ctx.selectedGpxFile))
     if (ctx.selectedGpxFile) {
         createState.closePrev = {
             file: _.cloneDeep(ctx.selectedGpxFile)
