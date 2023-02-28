@@ -2,13 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import {
-    Alert,
-    Autocomplete,
-    Button,
-    createFilterOptions, LinearProgress,
-    TextField
-} from "@mui/material";
+import {Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField} from "@mui/material";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
@@ -19,7 +13,7 @@ export default function SaveTrackDialog() {
 
     const ctx = useContext(AppContext);
 
-    const [folder, setFolder] = useState("Tracks");
+    const [folder, setFolder] = useState(getOldGroup);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
     const [dialogOpen, setDialogOpen] = useState(ctx.selectedGpxFile.save);
     const [error, setError] = useState(false);
@@ -34,11 +28,17 @@ export default function SaveTrackDialog() {
         )
     );
 
-    const toggleShowDialog = () => {
+    function getOldGroup() {
+        return ctx.selectedGpxFile.originalName ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false) : "Tracks";
+    }
+
+    const toggleShowDialog = (clear) => {
         setDialogOpen(!dialogOpen);
         setProcess(false);
+        if (clear) {
+            ctx.selectedGpxFile.clear = true;
+        }
         ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
-        ctx.selectedGpxFile.clear = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     };
 
@@ -60,10 +60,10 @@ export default function SaveTrackDialog() {
 
     async function saveTrack() {
         if (validName(fileName)) {
+            setProcess(true);
             if (!hasExistTrack(fileName, folder)) {
-                setProcess(true);
                 await TracksManager.saveTrack(ctx, getFolderName(folder), fileName, TracksManager.GPX_FILE_TYPE);
-                toggleShowDialog();
+                toggleShowDialog(true);
             } else {
                 setExistTrack(true);
             }
@@ -84,7 +84,7 @@ export default function SaveTrackDialog() {
                 return g.name === folder;
             }
         });
-        return selectedGroup.files.find(f => TracksManager.prepareName(f.name) === fileName);
+        return selectedGroup ? selectedGroup.files.find(f => TracksManager.prepareName(f.name) === fileName) : false;
     }
 
     const DialogUpdateTrack = ({open, close}) => {
@@ -110,7 +110,7 @@ export default function SaveTrackDialog() {
 
     return (
         <div>
-            <Dialog open={true} onClose={toggleShowDialog}>
+            <Dialog open={true} onClose={() => toggleShowDialog(false)}>
                 {process ? <LinearProgress/> : <></>}
                 <DialogUpdateTrack open={existTrack} onClose={!existTrack}/>
                 <DialogTitle>Save track</DialogTitle>
@@ -175,7 +175,7 @@ export default function SaveTrackDialog() {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={toggleShowDialog}>Cancel</Button>
+                    <Button onClick={() => toggleShowDialog(false)}>Cancel</Button>
                     <Button disabled={getFolderName(folder) === null || fileName === "" || error}
                             onClick={() => saveTrack()}>
                         Save</Button>

@@ -16,18 +16,19 @@ const CHANGE_PROFILE_ALL = 'all';
 function loadTracks() {
     let localTracks = [];
     let names = Object.keys(localStorage);
-    names.forEach(name => {
+    for (let name of names) {
         if (name.includes('localTrack')) {
-            localTracks.push(JSON.parse(localStorage.getItem(name)));
+            let ind = name.split('_')[1];
+            localTracks[ind] = JSON.parse(localStorage.getItem(name));
         }
-    })
+    }
     return localTracks;
 }
 
 function saveTracks(tracks) {
     localStorage.clear();
     if (tracks.length > 0) {
-        tracks.forEach(function (track) {
+        for (let track of tracks) {
             let localTrack = {
                 name: track.name,
                 id: track.id,
@@ -36,10 +37,11 @@ function saveTracks(tracks) {
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
-                selected: false
+                selected: false,
+                originalName: track.originalName
             }
             localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
-        })
+        }
     }
 }
 
@@ -83,6 +85,17 @@ function prepareName(name, local) {
     }
 }
 
+function getGroup(name, local) {
+    name = name.replace(/.gpx/, '');
+    if (name.includes('/')) {
+        return name.split('/')[0]
+    } else if (local && name.includes(':')) {
+        return name.split(':')[0]
+    } else {
+        return "Tracks";
+    }
+}
+
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -112,12 +125,12 @@ async function getTrackData(file) {
 }
 
 function addTrack(ctx, track) {
-        prepareTrack(track);
-        ctx.localTracks.push(track);
-        ctx.setLocalTracks([...ctx.localTracks]);
-        openNewLocalTrack(ctx);
-        closeCloudTrack(ctx, track);
-        TracksManager.saveTracks(ctx.localTracks);
+    prepareTrack(track);
+    ctx.localTracks.push(track);
+    ctx.setLocalTracks([...ctx.localTracks]);
+    openNewLocalTrack(ctx);
+    closeCloudTrack(ctx, track);
+    TracksManager.saveTracks(ctx.localTracks);
 }
 
 function prepareTrack(track) {
@@ -497,7 +510,7 @@ function createGpxTracks() {
 function clearTrack(file, points) {
     let emptyFile = {};
     emptyFile.name = file.name;
-    emptyFile.points = points? points : [];
+    emptyFile.points = points ? points : [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
     emptyFile.updateLayers = true;
@@ -529,6 +542,7 @@ const TracksManager = {
     createTrack,
     createGpxTracks,
     clearTrack,
+    getGroup,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

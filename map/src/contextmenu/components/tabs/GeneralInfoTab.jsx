@@ -315,7 +315,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
                     e.stopPropagation();
-                    addWaypoint()
+                    addWaypoint();
                     setOpen(false);
                 }}>
                     Add waypoint</MenuItem>}
