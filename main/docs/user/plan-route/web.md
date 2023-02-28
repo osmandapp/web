@@ -15,23 +15,23 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+## Overview
+
+
 :::info
-The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
+The *[osmand.net](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**   
 
-**The layout and operation of some functions may have changed from those described in this article.**
-
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub page, please leave your feedback there.
-
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
-As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
+<!-- As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web.
 At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
+What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro): -->
 
-We provide access to the OsmAnd maps online, allowing users to explore the maps in a web browser without the need to install any additional software.
-With Pro Subscription you can also plan your routes, manage favorites etc.
 
-What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro) <ProFeature/>:
+The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
 
 1. [OsmAnd Pro sync](#osmand-pro-sync) <ProFeature/>
 2. [Weather](#weather) (Free)
@@ -46,8 +46,9 @@ What functions will be available except the map view for Free and for [Pro users
 
 ## OsmAnd Pro sync
 
-<ProFeature/> OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription. 
-If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your _email_ and _password_ for [osmand.net/map](https://osmand.net/map/):
+OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription.  
+If you have an [OsmAnd Pro](../purchases/index.md) you can [activate](../troubleshooting/setup.md#cross-platform) it for the web platform.
+- Just enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
 
 :::tip
 Read how to register your email for OsmAnd Pro service [here](../troubleshooting/setup.md#cross-platform).
@@ -55,14 +56,15 @@ Read how to register your email for OsmAnd Pro service [here](../troubleshooting
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)
 
-Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map:
+- Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map.
 
 ![View OsmAnd Web data](@site/static/img/web/web_data.png)
 
 
-Click to the login pole for _Logout_ or _Download backup data_:
+- Click on the login field for _Logout_ or _Download backup data_.
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)
+
 
 ## Weather
 
@@ -136,7 +138,7 @@ What it contains:
 
 ## Farorites (Pro)
 
-<ProFeature/> After registration OsmAnd Pro account user Favorites are shown on the Favorites menu.
+After registration OsmAnd Pro account user Favorites are shown on the Favorites menu.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
 
@@ -186,7 +188,7 @@ Here you can move start-end points, edit its by menu, and change routings type:
 
 ## Create track (Pro)
 
-<ProFeature/> We are developing the Web version of our ["Plan route"](../plan-route/create-route.md) tool for the OsmAnd application. Now you can try it for the Web.
+We are developing the Web version of our ["Plan route"](../plan-route/create-route.md) tool for the OsmAnd application. Now you can try it for the Web.
 
 Tap by the right mouse button > Create Track.
 
@@ -198,7 +200,7 @@ Any actions and showing Track Info you can read at [Track section](#tracks) of t
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
 
-
+<!--
 _____________
 
 
@@ -212,3 +214,4 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 <LinksSocial/>
 <LinksTelegram/>
+-->
