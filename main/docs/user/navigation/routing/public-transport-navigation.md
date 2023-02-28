@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Public Transport navigation
+title:  Public Transport routing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Public Transport navigation allows our users to work out their routes using public transport, which will certainly help one to move through the concrete jungle faster. 
+Public Transport navigation allows our users to work out their routes using public transport, which will certainly help one to move through the concrete jungle faster.  
 
 Data of Public route lines is from [OpenStreetMap project](http://openstreetmap.org/), OsmAnd uses [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for Public transport navigation.
 
@@ -53,7 +53,7 @@ Here you can open all stops list by clicking to "" button.
 
 ## Data for public transport
 
-<!-- OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](https://test.osmand.net/blog/guideline-pt). -->
+OsmAnd use New Public Transport Schema that is also called Public Transport Version 2 (PTv2) for OsmAnd Public Transport navigation algorithm. You can check your public transport [here](http://tools.geofabrik.de/osmi/). Guidelines on how to build or correct public transport routes is provided in [our blog](https://test.osmand.net/blog/guideline-pt).  
 
 ## Read more
 

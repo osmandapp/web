@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Bicycle-based (MTB, Moped)
+title:  Bicycle-based (MTB, Moped) routing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +13,3 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 <InfoIncompleteArticle/>
-
-Bicycle navigation by OsmAnd offers turn-by-turn instructions for  navigation allows our users to work out their routes using public transport, which will certainly help one to move through the concrete jungle faster. 
-
-Data of Public route lines is from [OpenStreetMap project](http://openstreetmap.org/), OsmAnd uses [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for Public transport navigation.  

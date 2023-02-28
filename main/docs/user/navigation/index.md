@@ -97,6 +97,7 @@ Settings of Route parameters for Navigation profile you can find [here](../perso
 
 </Tabs>
 
+
 ### Route Details
 
 In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
@@ -162,6 +163,30 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 :::note
 The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
 :::  
+
+#### Select engine type
+
+If you have selected the engine type in the [vehicle parameters](../personal/profiles/#vehicle-parameters), the CO2 footprint data will be displayed above the graph.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,routing_settings"/>*
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
+
+</TabItem>
+
+</Tabs>
 
 ### [Notifications / Voice prompts](./voice-navigation.md)
 

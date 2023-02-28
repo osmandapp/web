@@ -16,11 +16,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. No matter whether you drive a car, ride a horse, or go by foot.  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-ski-routing.md), or go by [foot](./routing/pedestrian-routing.md).  
 
 ## Overview
 
-Like other navigation options, *Navigation by route* can be used with different [types of routing](#routings-types) i.e. profiles. Also note, that by default, OsmAnd provides offline navigation, but you can also use [online routing engines](#online-routing).  
+Like other navigation options, *Navigation by route* can be used with different [types of routing](./routing/index.md), i.e. profiles. By default, OsmAnd provides offline navigation, but you can also use [online routing engines](./routing/online-routing.md).  
+Also note, that for correct work of the navigation, you need to grant OsmAnd permission to receive information about precise location of your device.
 
 <Tabs groupId="operating-systems">
 
@@ -38,22 +39,24 @@ Like other navigation options, *Navigation by route* can be used with different 
 
 </Tabs>
 
-## Setup
-
-1. Configure [navigation settings](#navigation-settings) according to your needs for each profile you intend to use:  
-    - set your vehicle parameters, select the engine type
-    - configure route line appearance (optional, only for Pro users)  
-    - choose whether to provide voice prompts during your route or not
-    - 
-
-
 ## How to use
 
-In order to start a navigation, you need to choose your destination point. This can be done using a search button, by a single tap on a map in a context map menu, or using [navigation options](#navigation-options).  
+1. Configure each profile you intend to use for navigation according to your needs:  
+    - set your [vehicle parameters](../../profiles/#vehicle-parameters), select the engine type
+    - configure [route line appearance](../route-line-appearance) (optional, only for Pro users)  
+    - choose whether to provide [voice prompts](../voice-navigation) during your route or not
+2. Set navigation using search or by choosing one of the [navigation options](#navigation-options):
+    - specify the destination point
+    - if needed, add intermediate destinations
+    - you can also change departure point from [current location](../map/interact-with-map#my-location--zoom)
+3. Additional [navigation settings](./index.md#navigation-settings) can be used depending on your purposes
+4. Start / stop navigation
 
 ### Navigation options  
 
-To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. You can also use *direction to/from option* in the [map context menu](../map/map-context-menu#directions-to--from) or choose navigation option in the main menu:
+In order to start a navigation, you need to choose your destination point. This can be done using a search button, by a single tap on a map in a context map menu, or using [navigation options](#navigation-options).  
+
+To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. You can also use *direction to/from option* in the [map context menu](../map/map-context-menu#directions-to--from) or choose navigation section in the main menu:  
 
 <Tabs groupId="operating-systems">
 
@@ -176,10 +179,4 @@ Tracks list.
 ## Routing features
 
 
-### Custom routing
 
-OsmAnd allows modification _routing.xml file_ for routing. It means that you can update the routing algorithm for your needs. More info about it you may find in [Technical documentation](../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
-
-- To change the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you first need to copy it. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. [OsmAnd user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file for an example.
-- To add a new *routing.xml* file to OsmAnd, just tap on the file and open it in OsmAnd.
-- Select the [Navigation type](../navigation/route-navigation.md#type-of-navigation) for your profile.

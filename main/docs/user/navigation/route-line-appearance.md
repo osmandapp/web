@@ -16,38 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. No matter whether you drive a car, ride a horse, or go by foot.  
-
-## Route appearance
-
-...
-
-### Navigation route
-
-If you have selected the engine type in the [vehicle parameters](../personal/profiles/#vehicle-parameters), the CO2 footprint data will be displayed above the graph.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
-
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,routing_settings"/>*
-
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
 
 ### Route line appearance
 
@@ -55,7 +23,7 @@ This menu allows you to adapt the route line appearance. If there are some chang
 
 :::note
   
-<ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+<ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
 
 :::
 

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 7
-title:  Horse / ski routing
+sidebar_position: 8
+title:  Straight line routing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,6 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Public Transport navigation allows our users to work out their routes using public transport, which will certainly help one to move through the concrete jungle faster. 
 
-Data of Public route lines is from [OpenStreetMap project](http://openstreetmap.org/), OsmAnd uses [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for Public transport navigation.  
+Unlike traditional routing algorithms, which use roads, trails, or other predefined routes, straight line routing calculates the shortest distance between two points on the map in a straight line. This feature can be useful for hikers, backpackers, and other outdoor enthusiasts who want to navigate off-trail or explore remote areas where traditional routes may not be available.
+
+However, it's important to note that straight line routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route.
+
