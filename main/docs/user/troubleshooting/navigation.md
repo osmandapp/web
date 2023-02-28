@@ -17,17 +17,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Route calculation
 ### Route calculation is slow 
 
-Please be aware that there are 2 offline routing engines in the app: a Java based approach and a "Native" (C++) routing. The Java based approach is used in 'Safe Mode', it is 10 times slower than native mode and it has strict memory limitations. If you experience it and you see messages 'Not enough memory to compute', please go to Settings &#8212; 'General' &#8212; 'Safe mode' and make sure the option is disabled.
+**Android**: Please be aware that there are 2 offline routing engines in the app: a Java based approach and a "Native" (C++) routing. The Java based approach is used in ['Safe Mode'](../plugins/development.md#safe), it is 10 times slower than native mode and it has strict memory limitations. If you experience it and you see messages 'Not enough memory to compute', please go to Plugins → OsmAnd development → Settings → ['Safe Mode'](../plugins/development.md#safe) and make sure the option is disabled.
 
 For native routing there are different limitations for different phones, depending on memory &amp; processor. In general, native routing should handle &lt; 300 km routes nicely. The route calculation should take between 15 sec and 4 minutes. It is prudent to not wait much longer than 4 minutes, because most likely the program will crash.
 
 ### How to calculate routes longer than 250km?
 
-1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](https://osmand.net/docs/user/navigation/route-navigation#how-to-use) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000km routes.
+1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/route-navigation.md#how-to-use) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000km routes.
 
 2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
 
-3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](https://osmand.net/docs/user/personal/profiles#navigation).
+3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/thirdparty-routing.md).
 
 ## The calculated route does not seem correct
 

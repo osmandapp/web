@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 15
 title:  OsmAnd development
 ---
 
@@ -13,163 +13,237 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
+  
+Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.  
 
 ## Overview
 
-The OsmAnd development plugin is only necessary for *developers and experienced users*. It allows you to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is not required for normal application use.
+The OsmAnd development plugin allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is designed for *developers and experienced users* and not required for daily use of the application.  
 
+## Setup  
 
-## Enable plugin
+To activate special features for developers and testers:
 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-
-**Enable** OsmAnd development plugin:
-- Tap **OsmAnd development** in the list of plugins in: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development"/>*. Or tap the triple dot to the right of the option and select *Enable*.
-- Tap the "off" button, and it will change to "on".
-- Confirm your choice in **New plugin added** screen.
-
-![Development plugin Android](@site/static/img/plugins/development/development_plugin_android.png)
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-**Enable** OsmAnd development plugin:
-- Tap **OsmAnd development** in the list of plugins in: *<Translate ios="true" ids="menu,plugins,product_title_development"/>*. Or tap the button to the right of the option and select *Ok*.
-- Tap the "Turn off" button, and it will change to "Ok".
-- Confirm your choice in **New plugin added** screen.
-
-![Development plugin iOS](@site/static/img/plugins/development/development_plugin_ios.png)
-
-
-</TabItem>
-
-</Tabs> 
-
+1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
+2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).  
+3. Enable [developer widgets](#widgets) if necessary.  
 
 ## Plugin settings
 
+:::info info  
+Development plugin settings are global and apply to all profiles.  
+:::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-To find OsmAnd development plugin, follow these steps: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development,shared_string_settings"/>*
+- *Main menu → Plugins → OsmAnd development → Settings*. 
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
-![Development Settings Android](@site/static/img/plugins/development/development_plugin_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_plugin_settings_2_andr.png)
-
-
-### Settings and info
-
-These plugin settings are global and apply to all profiles.  
-
-
-- <Translate android="true" ids="use_opengl_render"/> - <Translate android="true" ids="use_opengl_render_descr"/>  
-
-
-#### Safe:
-
-- <Translate android="true" ids="safe_mode"/> - <Translate android="true" ids="safe_mode_description"/>
-- <Translate android="true" ids="approx_safe_mode"/> - <Translate android="true" ids="approx_safe_mode_description"/>
-
-#### Navigation:
-
-- <Translate android="true" ids="simulate_your_location"/> - <Translate android="true" ids="simulate_your_location_gpx_descr"/>
-
-#### OsmAnd development:
-
-- <Translate android="true" ids="trace_rendering"/> - <Translate android="true" ids="trace_rendering_descr"/> 
-- <Translate android="true" ids="transparent_status_bar"/> - <Translate android="true" ids="transparent_status_bar_descr"/>. 
-- <Translate android="true" ids="simulate_initial_startup"/> - <Translate android="true" ids="simulate_initial_startup_descr"/>
-- <Translate android="true" ids="show_free_version_banner"/> - <Translate android="true" ids="show_free_version_banner_description"/>
-- <Translate android="true" ids="test_voice_prompts"/> - Select a voice and test by playing announcements.
-- <Translate android="true" ids="logcat_buffer"/> - <Translate android="true" ids="logcat_buffer_descr"/>.
-
-#### Info:
-
-- <Translate android="true" ids="memory_allocated_for_routing"/> - see below in this article.
-- <Translate android="true" ids="global_app_allocated_memory"/> - shows operatinal memory for Adnroid and ART (Android Runtime).
-- <Translate android="true" ids="native_app_allocated_memory"/> - shows native memory for Android and ART (Android Runtime).
-- <Translate android="true" ids="agps_info"/> - shows info about A-GPS data.
-- <Translate android="true" ids="day_night_info"/> - shows sunrise/sunset time.  
-
-
-### Memory allocated for routing  
-
-<Translate android="true" ids="memory_allocated_for_routing"/> - <Translate android="true" ids="memory_allocated_for_routing_ds"/>  
-
-- Minimum value = 64 MB.
-- Maximum value = 50% of Phone memory.
-- Default value = 256 MB.  
-
-
-![Development Settings Android](@site/static/img/plugins/development/development_plugin_memory_alloc_android.png)
-
+![Development Settings Android](@site/static/img/plugins/development/development_android_settings_1.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_android_settings_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-To find settings of OsmAnd development plugin, follow these steps: *<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development"/>*. 
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
-Here you can simulate your position by GPX-track. [Read here](../plugins/development.md#how-to-use) about GPX-track simulation.
-
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_1_ios.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
 
+:::caution NOTE
+The options listed below are only available in the Android version of OsmAnd
+:::
 
-## How to use
+### Pre-beta features
+
+- **Transparent status bar** - The map becomes visible under the status bar.  
+- **Heightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+
+### Troubleshotting
+
+- **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
+- **Rendering debug info** - Display the rendering performance (only available for version 1 rendering engine).  
+- **Logcat buffer** - Check and share detailed logs of the app.  
+
+### Application Testing
+
+- **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Test voice prompts** - Select a voice and test by playing announcements.  
+- **Show free version banner** - Display the free version banner even in the paid version.  
+
+### Internal Algorithms
+
+- **Safe mode** - Run the app in (slower) safe mode.  
+- **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.  
+
+### Memory settings
+
+- **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
+
+:::note
+Higher memory allocation may impact the performance of other apps.  
+:::
+
+## Widgets  
+
+You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#-developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
+
+:::info  Important
+OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
+:::
+
+### FPS Widget
+
+The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-- Tap to **<Translate android="true" ids="simulate_your_location"/>** in the <Translate android="true" ids="shared_string_menu,plugins_menu_group,debugging_and_development,shared_string_settings"/> → Navigation. 
+*Menu → Configure screen → Left / Right panel → Developer Widgets*  
+
+![Development widget fps 1](@site/static/img/plugins/development/ldev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*Menu → Configure screen → Right panel*  
+
+![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_fps.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+
+</TabItem>
+
+</Tabs>  
+
+### Elevation Widget  
+
+<InfoAndroidOnly />
+
+With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you can find out the elevation above sea level of the current map center. To display elevation data:
+
+- Enable *Heightmap* option in the OsmAnd Development plugin [settings](#plugin-settings)
+- [Download](../start-with/download-maps.md) heightmaps of the desired area are  
+- Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
+
+![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
+
+## Camera position Widgets (Android)  
+
+In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use [Camera position Widgets](../widgets/info-widgets.md#camera-widgets).
+
+*Menu → Configure screen → Left / Right panel → Developer Widgets*  
+
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+
+### Camera tilt
+
+![Camera tilt widget 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+
+The Camera tilt widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
+
+:::note  
+The camera tilt is changed by moving the camera (viewer) while the center point on the map (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
+At the same time, due to the imaginary movement of the viewer, the distance from the camera to the surface changes.
+:::
+
+### Camera Elevation
+
+![Camera elevation widget 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+
+The Camera Elevation widget shows the camera elevation above the surface level. Camera elevation is indicated in meters / kilometers.  
+
+### Zoom level
+
+![Zoom level widget 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+
+The Zoom level widget represents the current map zoom level.  
+
+:::note
+The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
+Each next zoom level reduces the imaginary distance to the ground by about 2 times.  
+:::
+
+### Distance to target
+
+![Distance to target widget 1](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+
+The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
+
+### Comparison with a satellite imagery
+
+![Comparison](@site/static/img/plugins/development/comparison.png)
+
+A comparison of the OsmAnd map and the earth's surface reveals the following patterns:  
+
+- Maximum distortion is observed at large zooms (6-7 zoom for camera incline 90 degrees).  
+- As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
+- Distortions begin to be observed earlier in high latitudes.
+
+The table below contains information about the tilt of the camera and the distance to the target and zoom level at which the OsmAnd map distortions become visible. If the camera continues to move away from the target, the observed distortion of the OsmAnd map will increase.  
+
+Incline |Latitude |Max Zoom |Height, km |Distortion  
+|-----|-----|-----|-----|-----|
+|90|26|6|5500|5%|
+|90|50|6|2500|5%|
+|90|66|7|1300|5%|
+|	|	|	|	|  |
+|65|26|8|1100|6.5%|
+|65|50|8|800|6.5%|
+|65|66|9|630|6.5%|
+|	|	|	|	|  |
+|45|26|9|350|7.5%|
+|45|50|9|320|7.5%|
+|45|66|8|210|7.5%|
+|	|	|	|	| |
+|20| 26|12|30|10%|
+|20| 50|11|30|10%|
+|20| 66|11|30|10%|
+
+## GPX-track simulation
+
+OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use **simulate your position** option in the OsmAnd development plugin [settings](#plugin-settings):  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+- Tap **Simulate your position**.  
 - Select a route simulation speed.
-- Select a GPX track to simulate the location of the device.  
+- Select a GPX track to simulate the location and movement of the device.  
 
-![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png)
-![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
-
+![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png) ![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-You can simulate location moving by using GPX track:
-- _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing"/>_:
+- Tap **Simulate your position**.  
+- Select a track to simulate the location and movement of the device.
+- Select movement simulation speed.
+- Tap Start buton.  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_gpx_simulation_ios.png)
-
-- Select a GPX track to simulate the location of the device _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,shared_string_gpx_track"/>_
-
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png)
-
-- Select a route simulation speed: _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,simulate_location_movement_speed"/>_  
-  - _Original_ (the location movement speed during the simulation will be equal to the speed in the selected file).
-  - _x2_ (the location movement speed during the simulation will be x2 bigger to the speed in the selected file).
-  - _x3_ (the location movement speed during the simulation will be x3 bigger to the speed in the selected file).
-  - _x4_ (the location movement speed during the simulation will be x4 bigger to the speed in the selected file).
-
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_speed_ios.png)
-
-- Star-stop of the location movement: _<Translate ios="true" ids="menu,sett_settings"/> → choosing a profile → <Translate ios="true" ids="plugins,product_title_development,simulate_routing,shared_string_start"/> / <Translate ios="true" ids="shared_string_stop"/>_ 
-
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_start_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_stop_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_simulation_ios.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
+  
 
+:::tip Note
+The location movement speed during the simulation can be equal to the recorded speed (1), or faster (x2, x3, x4).  
+:::
+  
 
+After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
+To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap on **stop** in the **simulate your position** option.
+
+:::note  
+You can also use GPX-track simulation directly from [navigation menu](../navigation/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case you can use voice promts and other navigation options.  
+:::  

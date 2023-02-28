@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
+Map Context menu provides information about selected object on the map. It can also be used to build a route to a selected location.
 
 
 ## Context menu 
@@ -119,6 +119,7 @@ In order to gain more details about object you need to click on the "Details" bu
 
 This panel includes additional information about the object. This info could be copied to the buffer by tap on it. Additional information about object includes:
 
+- [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
 - [Nearby Wikipedia articles](../map/map-context-menu.md#nearby-pois-wikipedia)
 - [Nearby POI](../map/map-context-menu.md#nearby-pois-wikipedia)
@@ -128,7 +129,6 @@ This panel includes additional information about the object. This info could be 
 - [Article image / description](../map/map-context-menu.md#article-image--description)
 - [Online photos](../map/map-context-menu.md#online-photos)
 - [OpenStreetMap Details](https://wiki.openstreetmap.org/wiki/Map_features)
-    - [Alternative names](https://wiki.openstreetmap.org/wiki/Names)
     - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
     - [Phone number](https://wiki.openstreetmap.org/wiki/Key:contact)
     - [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
@@ -136,6 +136,26 @@ This panel includes additional information about the object. This info could be 
     - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
     - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
     - etc.
+
+### Alternative names  
+
+OsmAnd displays additional names of POIs in Map context menu. First is shown the name in the [display language](../personal/global-settings.md#display-language) or from system list of preferred languages, alternative names are displayed in the drop-down menu.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Alternative names Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternative names Android](@site/static/img/map/alternative_names_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly /> 
+
+</TabItem>
+
+</Tabs>  
 
 ### Coordinates 
 In the Context menu you can find geographical coordinates of an object. If you expand this section, you will see location in various geo formats and shareable OsmAnd Link. If you click on any item it will be automatically copied to the clipboard. 
@@ -213,7 +233,11 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 ### Online photos 
 
-In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - takes the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - takes photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - takes urls from OpenStreetMap tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
+In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - shows photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
+
+:::note Online photos
+At this moment in iOS are available only images provided by the Mapillari service and Wikimedia.
+:::
 
 ![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)
 
@@ -223,7 +247,7 @@ In this section, you can view photos of the object from different web sources. S
 
 <TabItem value="android" label="Android">  
 
-[Audio / Video notes](../plugins/audio-video-notes.md) have additional information on Details Menu and buttons (Delete, Play, Show) in Context menu. 
+You can find additional information about [Audio / Video notes](../plugins/audio-video-notes.md) in Details Menu and buttons (Delete, Play, Show) in Context menu. 
 
 For Image notes in the Details Menu an image is displayed; when you click on the image it opens in the editor. There is information about the date and the time when note was made. In the Context menu, there are 'Show' and 'Delete' buttons to open an image in the editor or delete it.
  

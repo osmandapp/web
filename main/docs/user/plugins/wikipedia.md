@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title:  Wikipedia
 ---
 
@@ -14,10 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+:::tip NOTE
+The Wikipedia plugin is a paid feature of the OsmAnd app.  
+:::
 
-
-Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.
-
+Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.  
 
 ## Overview 
 
@@ -35,47 +36,14 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 
 ## Setup
 
-For Wikipedia data to be displayed on the map, you need to make the following setting: 
+To display Wikipedia data on the map, you need to make the following setting: 
 
-1. Purchase <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a> paid services if necessary.    
-2. Enable the [Wikipedia plugin](https://docs.osmand.net/docs/user/plugins/wikipedia/#purchase-and-enable-plugin) in the Plugins section of the main menu.    
-3. Download the [Wikipedia packages](https://docs.osmand.net/docs/user/plugins/wikipedia/#download-wikipedia-packages) for the required regions.  
-4. Display the [Wikipedia POIs](https://docs.osmand.net/docs/user/plugins/wikipedia/#display-wikipedia-on-the-map) on the map for the required profile.  
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.    
+2. Download the [Wikipedia packages](#download-wikipedia-packages) for the required regions.  
+3. Display the [Wikipedia POIs](#display-wikipedia-on-the-map) on the map for the required profile.  
+4. Configure preferred [languages](#wikipedia-languages) to read articles.
 
-
-
-### Purchase and enable plugin  
-
-
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">  
-
-Wikipedia plugin is a paid functionality for **Android** version, available for the [paid](../purchases/android.md#free-and-paid-features) version of the **OsmAnd+** application, or for **in-app Maps+** and **Pro** and **Maps+** subscriptions. After purchasing a subscription, Wikipedia Offline can be enabled in the Plugins menu, and then you will be able to download Wikipedia data for selected geographical regions. To enable the Wikipedia plugin, turn on the **Wikipedia** option in the Plugins section in the main menu: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_wikipedia"/>*  
-
-
-![Wikipedia plugin in Android](@site/static/img/plugins/wikipedia/Wikipedia_plugin_android2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-
-Wikipedia plugin for **iOS** is available in a **free version**. Wikipedia Offline is included in the Plugins menu and you can download Wikipedia data for selected geographical regions. To enable the plugin, turn on the **Wikipedia** option in the following application menu: *<Translate ios="true" ids="menu,plugins,product_title_wiki"/>* 
-
-
-
-![Wikipedia plugin in iOS](@site/static/img/plugins/wikipedia/Wikipedia_plugin_ios2.png)
-
-</TabItem>
-
-</Tabs>
-
-
-
-### Download Wikipedia packages 
+## Download Wikipedia packages 
 
 Wikipedia data is available for each geographic region. If it is loaded for one region and not loaded for another, in the first case you can work with Wikipedia information when viewing the region on a map, and in the other case the region will not have any Wikipedia information. Once loaded, Wikipedia data becomes available in general, as well as offline.      
 
@@ -111,7 +79,7 @@ To see what data has already been uploaded, go to: *<Translate ios="true" ids="m
 </Tabs>
 
 
-### Display Wikipedia on the map
+## Display Wikipedia on the map
 
 By loading Wikipedia data for the required regions, you can control the visibility of that data on the map. Visibility is controlled by [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia), which can be shown or hidden for all uploaded regions by a certain [profile](../personal/profiles.md), for example, a profile for driving, a profile for cycling, another profile to show public transport, etc.  
 

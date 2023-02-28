@@ -7,7 +7,7 @@ title: Docs
 
 ### 🎓 [User guide](/docs/user/)
 
-User guide about OsmAnd application describing main features & settings.
+User guide about the OsmAnd application describing main features & settings.
 
 ### 🗺️ [Map legend](/docs/user/map-legend/)
 

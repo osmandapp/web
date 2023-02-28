@@ -11,7 +11,6 @@ import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
-import DeleteTrackDialog from "./track/DeleteTrackDialog";
 
 const useStyles = makeStyles({
     menu: {

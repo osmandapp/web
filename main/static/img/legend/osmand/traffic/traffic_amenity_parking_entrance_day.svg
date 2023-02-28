@@ -1,0 +1,20 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+
+<rect opacity="0.55" x="1" y="1" width="18" height="18" rx="5" fill="white"/>
+<rect opacity="0.85" x="2" y="2" width="16" height="16" rx="4" fill="#45ABE9"/>
+
+</g>
+
+
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+
+<path opacity="0.2" d="M8 8H40V40H8V8Z" fill="#ffffff"/>
+<path d="M44 4H4V40H8V8H40V40H44V4Z" fill="#ffffff"/>
+<path fill-rule="evenodd" clip100-rule="evenodd" d="M16 12V28H20V24H28C30.2091 24 32 22.2091 32 20V16C32 13.7909 30.2091 12 28 12H16ZM20 20H28V16H20V20Z" fill="#ffffff"/>
+<path d="M24 32L12 40H20V48H28V40H36L24 32Z" fill="#ffffff"/>
+
+</g>
+
+</svg>

@@ -60,7 +60,7 @@ While you need to choose the next ways for saving your map data during the appli
 
 For the last versions of OsmAnd 4.2 (Android), [map rendering doesn't work](https://github.com/osmandapp/OsmAnd/issues/15045) for Google Pixel device. You can see the white OsmAnd screen without the map.
 The resolution of this problem is to switch on OpenGL rendering:
-_[OsmAnd menu → Plugins → OsmAnd development → Settings → Use OpenGL rendering](https://osmand.net/blog/osmand-android-4-2-released#25d-view-for-testing)_ and restart OsmAnd.
+_[OsmAnd menu → Settings → OsmAnd settings → Map rendering engine → Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine)_ and restart OsmAnd.
 
 ## Search
 ### Structured (city &#8594; street &#8594; house) address search doesn't find the house

@@ -13,75 +13,110 @@ import Translate from '@site/src/components/Translate.js';
 
 Detailed information about purchases on iOS: subscriptions vs in app, prices, paid features.
 
-## Install OsmAnd on iOS
+## Install OsmAnd
 
 You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
-## Free and Paid features
+## Difference between purchases
 
-⁂ - needed [purchase](#in-app-purchases).
+#### Maps+ 
+- ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-|    | OsmAnd Free   | OsmAnd In-App | OsmAnd Live subscription |
+#### OsmAnd Pro 
+- ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+You can add your purchases to [the Family Sharing - Apple](https://support.apple.com/en-us/HT201088).
+
+:::tip Note
+
+OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy it in App Store and you can use it for [Android versions](../purchases/android.md), [OsmAnd.net](http://osmand.net/map) and vice versa.
+
+:::
+
+
+## Prices
+
+In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
+
+|    | OsmAnd Free <br /> ![Maps+](@site/static/img/svg/osmand_maps.svg)  | In-app "Maps+" <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| Maps+ <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| OsmAnd Pro <br /> ![Pro](@site/static/img/svg/pro_icon.svg)|
+| :------------- | :------------- | :------------- | :------------- | :------------- |
+| **Purchase** | - | **One-time**,<br /> use forever | **Subscription**<br /> for 12 months | **Subscription**<br /> for 1 / 12 months |
+| **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
+| **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
+
+### Free and Paid features
+
+|    | OsmAnd Free <br /> ![Maps+](@site/static/img/svg/osmand_maps.svg) | OsmAnd Maps+ <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| OsmAnd Pro <br /> ![Pro](@site/static/img/svg/pro_icon.svg) |
 | :------------- | :------------- | :------------- | :------------- |
+|    |  _App_  |_In-App and subscription_ | _Subscription_ |
 | Ad-free access | ✔ | ✔ | ✔ |
-| Map downloads |  **5 map downloads (map update counts as download)**: <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download. | ⁂ | ∞ |
-| Maps update |  Once a month (with 15 days delay) <p> * limited to 5 downloads (map update counts as download)</p> |  ⁂ - Once a month (with 15 days delay) | Every hour (no delay) | 
-| Topo data (Contour lines and Terrain) | - | ⁂ | ✔ |
-| Nautical depths | - | ⁂ | ✔ |
-| Travel guides (Wikipedia) | - | ⁂ | ✔ |
-| Offline and online navigation with turn-by-turn directions | ✔ | ✔ | ✔ |
-| Offline instant search | ✔ | ✔ | ✔ |
-| Trip recording | ✔ | ✔ | ✔ |
-| [CarPlay](../navigation/auto-car.md) | ✔ | ✔ | ✔ |
-| Export GPX tracks | ✔ | ✔ | ✔ |
-| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) |✔ | ✔ | ✔ |
-| Import GPX/KML tracks | ✔ | ✔ | ✔ |
-| "Plan a route" tool | ✔ | ✔ | ✔ |
-| "Map markers" tool | ✔ | ✔ | ✔ |
-| Online map sources | ✔ | ✔ | ✔ |
-| SQLitedb/mbtiles Map support | ✔ | ✔ | ✔ |
-| Favorite points (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
-| Export/Import app profile | ✔ | ✔ | ✔ |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
+| [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads <br /> (map update counts as download)**:</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
+| [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
+| <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ | 
+| [Pro Features](#pro-features) | - | - | ✔ |
+| [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
+| [Travel guides (Wikipedia)](../plugins/wikipedia.md) | - | ✔ | ✔ |
+| [CarPlay](../navigation/auto-car.md) | - | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| ["Plan a route"](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
+| ["Map markers"](../personal/markers.md) tool | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 
+| [SQLitedb/mbtiles Map](../map/raster-maps.md#manage-raster-maps) support | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md) (Bookmarks, waypoints) | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-## In-App Purchases
 
-OsmAnd is a free application with in app purchases. You can access purchases menu via:
+### Pro Features
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,res_mapsres,purchases"/>
+![Pro](@site/static/img/svg/pro_icon.svg) _Pro Features_ are available for [Pro subscribes](#osmand-pro). It means you need to have [OsmAnd Pro subscription](#osmand-pro).
 
-You can add in-app purchases to [the Family Sharing - Apple](https://support.apple.com/en-us/HT201088).
+At this moment, Pro subscription has next features:
 
-Here is detailed information about all in apps with prices for US / Europe region. For other regions, prices are equivalent in local currencies.
-
-|  Purchase  | Description   | Price* |
-| :------------- | :------------- | :------------- |
-| <Translate ios="true" ids="product_title_sea_depth_contours"/> | <Translate ios="true" ids="product_desc_sea_depth_contours"/> | 2.29€ / 1.99$   |
-| <Translate ios="true" ids="product_title_wiki"/> | Offline Wikipedia articles on the map | 0€ / 0$  |
-| <Translate ios="true" ids="product_title_srtm"/> | Offline Contour lines, hillshade and slopes displayed on OsmAnd offline maps. | 9.99€ / 9.99$  |
-| | | 
-| <Translate ios="true" ids="product_title_allworld"/> | Unlimited map downloads & updates worldwide | 19.99€ / 19.99$  |
-| <Translate ios="true" ids="product_title_russia"/> | <Translate ios="true" ids="product_desc_russia"/> | 5.49€  / 4.99$ |
-| <Translate ios="true" ids="product_title_africa"/> | <Translate ios="true" ids="product_desc_africa"/> | 5.49€ / 4.99$ |
-| <Translate ios="true" ids="product_title_asia"/> | <Translate ios="true" ids="product_desc_asia"/> | 5.49€ / 4.99$ |
-| <Translate ios="true" ids="product_title_australia"/> | <Translate ios="true" ids="product_desc_australia"/> | 5.49€ / 4.99$  |
-| <Translate ios="true" ids="product_title_europe"/> | <Translate ios="true" ids="product_desc_europe"/> | 14.99€ / 14.99$ |
-| <Translate ios="true" ids="product_title_centralamerica"/> | <Translate ios="true" ids="product_desc_centralamerica"/> | 2.99€ / 2.99$  |
-| <Translate ios="true" ids="product_title_northamerica"/> | <Translate ios="true" ids="product_desc_northamerica"/> | 14.99€  / 14.99$ |
-| <Translate ios="true" ids="product_title_southamerica"/> | <Translate ios="true" ids="product_desc_southamerica"/> | 3.99€ / 3.99$ |
-
-*_Prices can be differents for world regions._
-
-## Subscription
-**OsmAnd Live** subscription includes all features could be bought via in apps + quick map updates (up to 1 hour vs normal once a month).
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,res_mapsres,maps,osmand_live_title"/>
-
-|  Period  | Price |
+|  Pro Feature  | Description   |
 | :------------- | :------------- |
-| 1 month | 1.99€  / 1.99$ |
-| 3 months | 3.99€ / 3.99$  |
-| 1 year |  9.99€ / 8.99$ |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
+| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
+| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+
+
+### How to buy
+
+Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
+
+#### OsmAnd Pro
+
+![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ subscription plan. Here you can choose [monthly or annual subscription](#prices):
+
+_<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
+
+or 
+
+_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
+
+![Pro Plan](@site/static/img/purchases/pro.png)
+
+#### Maps+
+
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
+
+_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
+
+![Maps+ Plan](@site/static/img/purchases/maps.png)
+
+
+## Legacy subscriptions (prior 4.0)
+
+New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and techncically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until the user unsubscribes (the price for them might change in the future).
 
 
 ## Restore purchases

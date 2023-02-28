@@ -19,7 +19,6 @@ import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
 import {useNavigate} from "react-router-dom";
 import PopperMenu from "./PopperMenu";
-import _ from "lodash";
 
 
 export default function LocalTrackGroup() {
@@ -51,7 +50,7 @@ export default function LocalTrackGroup() {
             ctx.setSelectedGpxFile({});
         }
         ctx.setLocalTracks([]);
-        localStorage.removeItem('localTracks');
+        localStorage.clear();
     }
 
     const fileSelected = () => async (e) => {

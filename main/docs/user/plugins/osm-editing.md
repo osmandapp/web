@@ -14,185 +14,145 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-Make contributions to OpenStreetMap.
+This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.  
+
+## Overview
+
+[OpenStreetMap](https://www.openstreetmap.org/about) is a global community that aims to draw a comprehensive map of the world and provide up-to-date open-source data to every user. OsmAnd **OpenStreetMap (OSM) editing plugin** allows you easily contribute to OpenStreetMap: you can create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), upload recorded GPX [tracks](#upload-gps-track).  
+
+## Setup
+
+To use OpenStreetMap editing plugin, you need to make the following settings:    
+
+1. Enable [Plugin](../plugins/index.md#enable--disable).  
+2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
+3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
 
 
-<Translate android="true" ids="osm_editing"/> plugin allows you to make contributions to OpenStreetMap, a global community aimed at creating a comprehensive map of the world and providing up-to date open-source data to every user.
-
-Just launch OsmAnd Maps & Navigation app and update the information about different locations.
-
-Make OSM contributions like creating or modifying OSM POI objects, opening or commenting OSM notes, and contributing recorded GPX files in OsmAnd by supplying your username and password. [OpenStreetMap](http://openstreetmap.org/) is a community driven, global public domain mapping project.
-
-
-## Enable / Disable plugin
+## Settings
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/> 
+- *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*    
 
-![OpenStretMap editing Android](@site/static/img/plugins/osm-editing/osm_plugin_android.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,plugins,product_title_osm_editing"/>
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
 
-![OpenStretMap editing](@site/static/img/plugins/osm-editing/osm_plugin_ios.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-### Plugin settings
+**Login settings**
+
+- Login or Sign Up to [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
+- Login in OsmAnd (OAuth / password) - preferred OAuth.
+
+
+**Plugin settings**
+
+- **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
+- **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
+- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
+- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
+
+:::info info
+The plugin settings are global and apply to all profiles.
+:::
+
+### OSM Editing Layer  
+
+You can enable the display of the OSM modifications (edits/notes/fixme tags/note tags) as a separate layer in the [Configure map](../map/configure-map-menu.md) section of the main menu:  
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android.png)
-
-Next settings:
-- &nbsp;_<Translate android="true" ids="login_account"/>_ - [<Translate android="true" ids="open_street_map_login_mode"/>](https://www.openstreetmap.org/login) 
-- &nbsp;_<Translate android="true" ids="offline_edition"/>_ - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
-- &nbsp;_<Translate android="true" ids="use_dev_url"/>_ - enable or disable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to testing uploading OSM Note / POI / GPX.
-- &nbsp;_<Translate android="true" ids="map_updates_for_mappers"/>_ - allows [OsmAnd live](../personal/maps.md#osmand-live) updating for mappers.
-
-![OpenStretMap editing plugin Settings OsmAnd live Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_live_android.png)
-
-- &nbsp;_<Translate android="true" ids="layer_osm_edits"/>_ - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md) 
- 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>
-
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios.png)
-
-Next settings:
-- &nbsp;_<Translate ios="true" ids="shared_string_account"/>_ - [Log in to upload new or modified changes first. Use your OSM username and password.](https://www.openstreetmap.org/login) 
-- &nbsp;_<Translate ios="true" ids="osm_offline_editing"/>_ - enable or disable offline editing. Users can make and save OSM edits and after upload its with Internet connection.
-- &nbsp;_<Translate ios="true" ids="osm_edits_title"/>_ - allows to open OSM edits menu: [Menu → My Places → OSM edits](../personal/myplaces.md) 
-
-
-</TabItem>
-
-</Tabs>
-
-## How to use
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-The plugin lets you create new objects, so-called  [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi)  on the map. New shop opened next to you? Add it to the map! Your favorite monument is missing on the map? Put it there in seconds. Also, if you're the owner of a newly-opened business, adding it to the map is a great way to let people find you.
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-The plugin lets you create new objects, so-called  [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi)  on the map. New shop opened next to you? Add it to the map! Your favorite monument is missing on the map? Put it there in seconds. Also, if you're the owner of a newly-opened business, adding it to the map is a great way to let people find you.
+*<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
+
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-### How to add / modify POI
+:::info NOTE
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
+:::  
+
+## Create / Modify POI  
+
+The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can put on a map a new store, your favorite landmark, a bench, or a shelter, so people can find them.  
+
+1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
+2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
+4. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
+
+#### Add tags
+
+You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the POI. Аfter entering a few characters into the search bar, the program will prompt possible tags.  
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
-
-[Actions in Map Context menu](../map/map-context-menu.md#actions) - [Create / Modify POI](../map/map-context-menu.md#-create--modify-poi)
-
-**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-
-To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>
+![Add POI tag Android 1](@site/static/img/plugins/osm-editing/add_poi_tag_andr_1.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Tap on the map where the new POI has to be placed. Press on [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions), then choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), add its name and other details like working hours, website, etc. You'll also have to register at [OpenStreetMap](http://openstreetmap.org/) and then provide your OSM credentials to introduce changes.
-
-[Actions in Map Context menu](../map/map-context-menu.md#actions) - [Create / Modify POI](../map/map-context-menu.md#-create--modify-poi)
-
-**Note**: you can see your new POI on OsmAnd map after one hour after added it to OSM project if you have [OsmAnd live](../personal/maps.md#osmand-live).
-
-To view OSM edits layer on the map for tapping to this edits for [openning Map Context menu](../map/map-context-menu.md#-upload-poi--osm-note):
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-### How to upload GPX track
+#### Offline modifications  
+
+You can view, upload to OSM or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
+
+## Create / Modify OSM Note
+
+The OSM Notes feature allows you to add notes to the map. In these notes you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
+You can help other users by checking their questions or issues, giving comments and then closing the resolved notes.  
+Read more about the OpenStreetMap Notes [here](https://wiki.openstreetmap.org/wiki/Notes).  
+
+To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.
+- Tap the map where the new OSM note is to be placed (or tap a not uploaded note), and select [Actions](../map/map-context-menu.md#actions).
+- If you want to add information to an existing note or not uploaded note, edit a comment, or close a note, tap the OSM note on the map and select the [required action](../map/map-context-menu.md#-comment--close-osm-note).
+- You can upload changes as soon as you are available online. You can also undo changes before they are uploaded.  
+
+:::info
+The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
+:::
+
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-openstreetmap.org/). To do that, turn the [Trip recording plugin](../plugins/trip-recording.md) on, record a track, and then click to [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md) and choose <Translate android="true" ids="upload_to_openstreetmap"/>. 
-
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
-
-At this menu:
-- &nbsp;<Translate android="true" ids="shared_string_description"/> - allows to add description to the track.
-- &nbsp;<Translate android="true" ids="gpx_tags_txt"/> - allows to add any tags for to identify your track. Tag "osmand" is tag by default, user can enter tags separted by comma.
-- &nbsp;<Translate android="true" ids="gpx_visibility_txt"/> - track visibility for OSM users:
-
- &nbsp;<Translate android="true" ids="gpx_upload_public_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_identifiable_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_trackable_visibility_descr"/>
- 
- &nbsp;<Translate android="true" ids="gpx_upload_private_visibility_descr"/>
- 
-- &nbsp;<Translate android="true" ids="login_account"/> - [OSM account](https://www.openstreetmap.org/login).
-
-
-Kindly note, that <Translate android="true" ids="osm_editing"/> has to be turned on. 
-In an hour, your track will be added to [https://www.openstreetmap.org/traces](https://www.openstreetmap.org/traces), so you can view it and other users can find it helpful, as well. 
-
-You can participate in the work on the global map. Just share the tracks you've made. They become part of the [OpenStreetMap](http://openstreetmap.org/) project. Make sure you tag objects and roads as well.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-> ```This feature is not available for iOS version. ```
-
-</TabItem>
-
-</Tabs>
-
-### How to report a mistake
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-You can also report about the mistakes on the map. All you have to do is tap on the location, choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu.md#-open-osm-note) in [Map Context menu](../map/map-context-menu.md) and then add the info about it. OSM editors would consider your comments.
-
-To view the OSM editing layer, you can switch on  [online layer - OSM notes](../map/configure-map-menu.md#map-layers) on the map:
-
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/> 
-
-You'll see all the notes in the specific area.
-
-Short tap to a note opens [Map Context menu](../map/map-context-menu.md#-comment--close-osm-note) with action buttons. You can click to OSM note and choose your comment or delete it.
+To edit OSM notes (you can comment or close them), enable display of OSM notes on the map in the [Configure map menu](../map/configure-map-menu.md):  
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)
 
@@ -200,18 +160,54 @@ Short tap to a note opens [Map Context menu](../map/map-context-menu.md#-comment
 
 <TabItem value="ios" label="iOS">
 
-You can also report about the mistakes on the map. All you have to do is tap on the location, choose [<Translate android="true" ids="context_menu_item_open_note"/>](../map/map-context-menu.md#-open-osm-note) in [Map Context menu](../map/map-context-menu.md) and then add the info about it. OSM editors would consider your comments.
-
-To view the OSM editing layer, you can switch on  [online layer - OSM notes](../map/configure-map-menu.md#map-layers) on the map:
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="menu,configure_map,osm_notes_online_layer"/>
-
-You'll see all the notes in the specific area.
-
-Short tap to a note opens [Map Context menu](../map/map-context-menu.md#-comment--close-osm-note) with action buttons. You can click to OSM note and choose your comment or delete it.
+To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
+*<Translate ios="true" ids="menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+
+## GPS Track
+
+The GPS tracks you have recorded are useful for:
+
+- **Mappers**. Tracks can be used for drawing maps of all kinds of paths.
+- **Navigation**. Based on the GPX file data you uploaded, navigation applications and special devices can calculate tracks.
+- **To share information** about the tracks and routes you recorded on [OpenStreetMap based maps](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).  
+
+:::info NOTE
+Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
+:::  
+
+<InfoAndroidOnly />
+
+
+### Upload GPS track
+
+To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
+- Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks.md).  
+- Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
+- Choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Export*.  
+
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)   
+
+**Settings:**
+- **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. This item in the settings section allows you to add any tags to identify the track. The default tag is "osmand", the user can enter additional tags separated by commas.  
+- **<Translate android="true" ids="gpx_visibility_txt"/>**. Track visibility for OSM users:  
+   - *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are not available through the public GPS API and track points are not ordered chronologically.
+   - *Identifiable* means that the track will be publicly displayed in your GPS track points and public GPS track lists, which means other users will be able to download the raw track and associate it with your username. Public timestamped track points data from the GPS API passed through the track points API will link to your original track page.
+   - *Traceable* means that the track is not displayed in public lists, but the processed track points with timestamps from it (which cannot be linked to you directly) are loaded from the public GPS API.
+   - *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps.
+- **<Translate android="true" ids="login_account"/>** - [OSM account](https://www.openstreetmap.org/login).
+
+:::info
+You can select more than one track to upload to OSM. To do this, tap the *Upload to OpenStreetMap* icon at the bottom of the screen, select tracks using the checkbox, tap *Upload* and then *Continue*.
+:::
+
+### Generate OBF file
+
+You can create an OBF file with [OsmAndMapCreator](../docs/technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) if you have a large GPX track database. This is a collection of tracks from osmand.net with the 'gpsies' tag, a collection of downloaded tracks from OpenStreetMap or your own collection. 

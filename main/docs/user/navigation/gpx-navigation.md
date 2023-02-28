@@ -22,11 +22,11 @@ The navigation by track (GPX) allows you to follow by chosen making or recorded 
 
 To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. Or choose navigation option in the main menu:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_options,follow_track"/>
+<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,follow_track"/>
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_options,gpx_navigation"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,gpx_navigation"/>
 
 <p> </p>
 
@@ -43,9 +43,9 @@ Follow track menu:
 - &nbsp;<Translate android="true" ids="nav_type_hint"/> - <Translate android="true" ids="routing_profile_straightline"/> or chosen [navigation profile](../personal/profiles.md#navigation-settings).
 
 
-### Navigation options
+### Navigation settings
 
-[Read more...](../navigation/route-navigation.md#navigation-options)
+[Read more...](../navigation/route-navigation.md#navigation-settings)
 
 ## Plan route tool
 

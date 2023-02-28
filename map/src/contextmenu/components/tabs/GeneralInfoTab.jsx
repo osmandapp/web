@@ -82,6 +82,8 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
         if (ctx.selectedGpxFile?.analysis?.totalDistance) {
             setDistance("Distance: " + (ctx.selectedGpxFile.analysis?.totalDistance / 1000).toFixed(1) + " km");
+        } else {
+            setDistance('');
         }
 
         if (ctx.selectedGpxFile?.analysis?.timeMoving) {
@@ -313,7 +315,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
                     e.stopPropagation();
-                    addWaypoint()
+                    addWaypoint();
                     setOpen(false);
                 }}>
                     Add waypoint</MenuItem>}
@@ -342,7 +344,9 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
                 {ctx.createTrack && ctx.selectedGpxFile.newPoint && <MenuItem onClick={(e) => {
                     e.stopPropagation();
-                    ctx.setCreateTrack({...{enable: true}});
+                    let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile);
+                    ctx.setSelectedGpxFile({...emptyFile});
+                    ctx.setUpdateContextMenu(true);
                     setOpen(false);
                 }}>
                     Clear</MenuItem>}

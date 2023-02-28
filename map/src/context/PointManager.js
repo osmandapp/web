@@ -79,11 +79,20 @@ async function deletePointByIndex(currentTrack, index, ctx) {
     let res;
     if (currentTrack.points) {
         res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((result) => {
-                TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
-                    ctx.selectedGpxFile.updateLayers = true;
-                    ctx.setSelectedGpxFile({...res});
-                });
-                return result.deletedPoint;
+                if (currentTrack.points.length > 0) {
+                    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
+                        ctx.selectedGpxFile.updateLayers = true;
+                        ctx.setSelectedGpxFile({...res});
+                        if (currentTrack.points.length === 1) {
+                            ctx.setUpdateContextMenu(true);
+                        }
+                    });
+                    return result.deletedPoint;
+                } else {
+                    let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, currentTrack.points);
+                    ctx.setSelectedGpxFile({...emptyFile});
+                    ctx.setUpdateContextMenu(true);
+                }
             }
         );
     }
@@ -98,7 +107,7 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
     let firstPoint = index === 0 || index === lengthSum;
     let lastPoint = index === (points.length - 1 + lengthSum);
     if (firstPoint) {
-        if (points[index + 1].geometry) {
+        if (points.length > 1 && points[index + 1].geometry) {
             points[index + 1].geometry = [];
         }
         res.deletedPoint = points.splice(0, 1);

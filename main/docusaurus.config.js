@@ -57,6 +57,7 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/docs/user/purchases', label: '💳 Purchases', position: 'left' },
           { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
 //          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
@@ -72,6 +73,10 @@ const config = {
           {
             title: 'OsmAnd',
             items: [
+              {
+                label: 'Purchases 💳',
+                to: '/docs/user/purchases',
+              },
               {
                 label: 'Docs',
                 to: '/docs/intro',

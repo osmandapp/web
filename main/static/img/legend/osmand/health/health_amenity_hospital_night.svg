@@ -1,0 +1,36 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+
+<g clip-path="url(#clip0)">
+<path opacity="0.953" d="M9.9994 1C14.9626 1 19 5.00182 19 10C19 14.9655 14.9626 19 9.9994 19C5.03739 19 1 14.9655 1 10C1 5.00182 5.03739 1 9.9994 1Z" fill="#EE6C99"/>
+<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#E72B6C"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<path d="M0 0H20V20H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+
+</g>
+
+
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+
+<g clip100-path="url(#clip1000)">
+<g opacity="0.5">
+<path fill-rule="evenodd" clip100-rule="evenodd" d="M4 16H16V44H4V16ZM8 20H12V28H8V20ZM12 32H8V40H12V32Z" fill="#ffffff"/>
+<path fill-rule="evenodd" clip100-rule="evenodd" d="M44 44H32V16H44V44ZM36 20H40V28H36V20ZM36 32H40V40H36V32Z" fill="#ffffff"/>
+<path d="M28 32H20V44H28V32Z" fill="#ffffff"/>
+</g>
+<path fill-rule="evenodd" clip100-rule="evenodd" d="M36 4H12V44H20V32H28V44H36V4ZM22 12V8H26V12H30V16H26V20H22V16H18V12H22Z" fill="#ffffff"/>
+</g>
+<defs>
+<clip100Path id="clip1000">
+<rect width="48" height="48" fill="#ffffff"/>
+</clip100Path>
+</defs>
+
+</g>
+
+</svg>

@@ -1,0 +1,18 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+
+<rect opacity="0.55" x="1" y="1" width="18" height="18" rx="5" fill="white"/>
+<rect opacity="0.85" x="2" y="2" width="16" height="16" rx="4" fill="#45ABE9"/>
+
+</g>
+
+
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+
+<path opacity="0.5" d="M24 7.30582L21.7698 3.06851L18.2302 4.93149L21.7399 11.6L24 7.30582Z" fill="white"/>
+<path fill-rule="evenodd" clip100-rule="evenodd" d="M4 44H44L26.1336 11.8404L29.7698 4.9315L26.2302 3.06851L4 44ZM32 40C26 34 24 24 24 24C24 24 22 34 16 40H32Z" fill="white"/>
+
+</g>
+
+</svg>

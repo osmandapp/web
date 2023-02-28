@@ -17,8 +17,22 @@ Main menu' is a primary list of options available to use in the application. It 
 
 The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap on the map. 
 
-![Main menu Android](@site/static/img/menu/main_menu_android.png) 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Main menu Android](@site/static/img/menu/main_menu_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 ![Main menu iOS](@site/static/img/menu/main_menu_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ## Main menu (Drawer)
 
@@ -52,16 +66,14 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 
 It is a menu where the user can reorder or hide items from the Drawer, to see hidden items from the menu, copy the list of items from the another profile and reset to default settings.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Enable
-
-<p> </p>
+*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Enable*.  
 
 ![Drawer menu items ](@site/static/img/settings/drawer_menu_correct.png)
 
 The *bin on the left* side of the item will remove the item from the main list.
 Spin up or down the *line on the right* will give an opportunity to move the item up or down along the list.
 
-The items that was moved to the bin would be moved to the section 'Hidden' below. They and can be restored by clicking the green button on the left.
+The items that have been moved to the bin are moved to the "Hidden" section. You can restore them by clicking on the green button to the left of their titles.
 
 ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
