@@ -41,23 +41,16 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
 
     useEffect(() => {
         if (clearState) {
-            clear()
+            clear();
         }
     }, [clearState])
 
-    console.log(_.cloneDeep(ctx.selectedGpxFile))
-    console.log(_.cloneDeep(state))
-    console.log(_.cloneDeep(pastStates))
-    console.log(_.cloneDeep(futureStates))
-
     useEffect(() => {
         if (ctx.selectedGpxFile && (ctx.selectedGpxFile.points?.length >= 1 || ctx.selectedGpxFile.wpts?.length >= 1)) {
-            console.log(!isEqualState(ctx.selectedGpxFile, state))
-            console.log(!hasSameState(pastStates, ctx.selectedGpxFile))
             let needUpdateState = !ctx.selectedGpxFile.updateState && !isEqualState(ctx.selectedGpxFile, state)
                 && !hasSameState(pastStates, ctx.selectedGpxFile) && !hasSameState(futureStates, ctx.selectedGpxFile);
             if (needUpdateState) {
-                state.updateState = false;
+                addFirstState();
                 setState(_.cloneDeep(ctx.selectedGpxFile));
             }
             ctx.selectedGpxFile.updateState = false;
@@ -70,6 +63,15 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
             }
         }
     }, [ctx.selectedGpxFile])
+
+    function addFirstState() {
+        if (pastStates.length === 0) {
+            state.updateState = false;
+            state.tracks = TracksManager.createGpxTracks();
+            state.points = [];
+            state.name = ctx.selectedGpxFile.name;
+        }
+    }
 
     function isEqualState(state1, state2) {
         let checkState1 = {};
@@ -93,12 +95,12 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
 
     function getState(currentState) {
         let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
-        ctx.selectedGpxFile = currentState;
-        ctx.selectedGpxFile.updateLayers = true;
-        ctx.selectedGpxFile.layers = oldLayers;
-        ctx.selectedGpxFile.updateState = true;
+        let objFromState = _.cloneDeep(currentState);
+        objFromState.updateLayers = true;
+        objFromState.layers = oldLayers;
+        objFromState.updateState = true;
 
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.setSelectedGpxFile({...objFromState});
     }
 
     return (ctx.selectedGpxFile &&

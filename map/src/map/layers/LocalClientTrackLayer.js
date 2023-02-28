@@ -220,8 +220,8 @@ export default function LocalClientTrackLayer() {
             if (!ctx.selectedGpxFile.layers) {
                 ctx.selectedGpxFile.layers = new L.FeatureGroup();
             }
-            updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers, true);
-            saveChanges(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts);
+            ctx.selectedGpxFile.layers = updateLayers(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers, true);
+            saveChanges(ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts, ctx.selectedGpxFile.layers);
         }
     }
 

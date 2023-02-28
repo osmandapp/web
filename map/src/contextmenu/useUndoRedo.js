@@ -70,7 +70,7 @@ const useUndoRedo = (initialState = {}) => {
     const undo = () => dispatch({type: UNDO});
     const redo = () => dispatch({type: REDO});
     const clear = () => dispatch({type: CLEAR});
-    const isUndoPossible = past && past.length > 1;
+    const isUndoPossible = past && past.length > 0;
     const isRedoPossible = future && future.length > 0;
 
     return {
