@@ -17,11 +17,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
 
 **The layout and operation of some functions may have changed from those described in this article.**
+
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
+
 :::
 
 As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
-At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/). We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
+At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
 
 What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro):
 
