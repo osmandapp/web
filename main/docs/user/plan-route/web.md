@@ -22,7 +22,7 @@ The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now.
 
 As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
-At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
+At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/). We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
 
 What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro):
 
@@ -63,20 +63,20 @@ Weather is a [Pro feature](../purchases/index.md) for OsmAnd application. But fo
 
 Users can switch on Weather layers on the map: Temperature, Pressure, Wind, Cloud and Precipitation by left or right menus.
 
-Showing the Weather forecast: Day, Week. (Forecast step is 3 hours)
+Showing the Weather forecast: Day, Week. (Forecast step is 3 hours).
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
 ## Tracks
 
 At this section you can:
-- loading tracks from your device (Local),
-- showing tracks from OsmAnd Cloud (Pro),
+- loading tracks from your device - [Local](#local),
+- showing tracks from [OsmAnd Cloud (Pro)](#users-tracks-pro),
 - editing tracks.
 
 ### Local
 
-Each user can upload any GPX file to _osmand.net/map_:
+Each user can upload any GPX file to [_osmand.net/map_](https://osmand.net/map):
 ![OsmAnd Web local GPX](@site/static/img/web/web_local_gpx.png)
 
 Edit loading tracks:
@@ -85,12 +85,12 @@ Edit loading tracks:
 
 Screens:
 - Info: track data,
+- Track: points list,
+- Settings: opening ["Create track"](#create-track-pro) tool,
 - Elevation: elevation graph,
-- Speed: speed graph,
+- Speed: speed graph.
 
-
-
-Actions &#8942; button on Info screen:
+Actions &#8942; button on _Info_ screen:
 - Save to Cloud (Pro)
 - Download: downloading a track,
 - Add Waypoints: the list of track waypoints,
@@ -107,32 +107,44 @@ Tracks from user's OsmAnd Cloud. It's only for **Pro users**.
 
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
 
+
 What it contains:
-- Track folders: tracks folders from OsmAnd Cloud ("My Places > Tracks"),
-- Track info: showing track data,
-- Get SRTM: showing elevation graph of a chosen track,
-- Edit: changing name and other data for a chosen track.
-- Edit: edit a track by "Create route" tool,
-- Track: start profile point ("Create route"),
-- Settings: list of Navigation Profiles for "Create route" tool,
-- Speed: speed graph,
+
+- Track folders: tracks folders from OsmAnd Cloud ("My Places > Tracks").
+
+- Screens:
+  - Info: showing track data,
+  - Elevation: elevation graph,
+  - Speed: speed graph,
+  - Settings: list of Navigation Profiles for "Create route" tool.
+
+- Actions &#8942; button on _Info_ screen:
+  - Download: download a track to PC,
+  - Get SRTM: showing elevation graph of a chosen track,
+  - Edit: changing name and other data for a chosen track.
+  - Edit: edit a track by "Create route" tool,
+  - Add to Collextion: create collection of tracks for generation of OBF-file,
+  - Recalculate Elevation (SRTM): added elevation data for chosen track,
+  - Delete: delete a track.
+
 ## Farorites (Pro)
 
-After registration OsmAnd Pro account user Favorites are showed on Favorites menu.
+After registration OsmAnd Pro account user Favorites are shown on the Favorites menu.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
 
-Allowed next actions:
+The following actions are available:
 - Show Favorites on the map,
-- Delete Favorites,
-- Add new Favorites,
-- Edit Favorites.
+- Info: shoe favorite name and description,
+- Delete Favorites.
+- [Add new Favorites](#add--edit-favorite): by tap the right mouse button on the map.
+- [Edit Favorites](#add--edit-favorite).
   
 ### Add / Edit Favorite
 
-Tap by the right mouse button for add a new favorite point.
+Tapping by the right mouse button [to add](../personal/favorites.md#edit) a new favorite point.
 
-Click to a favorite point for start it editing.
+Click on a favorite point to start editing. The editing menu looks like [the menu in OsmAnd app](../personal/favorites.md#create).
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
@@ -153,7 +165,7 @@ Here you can change [Map style](../map/vector-maps.md) like it works in OsmAnd a
 
 ## Navigation route
 
-Please, tap by the right mouse button for adding _Start_ and _End_ points:
+For starting build navigation route you should tap the right mouse button for adding _Start_ and _End_ points:
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route.png)
 
@@ -161,13 +173,13 @@ After adding _Start_ and _End_ points we receive the route.
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1.png)
 
-Here you can move start-end points, edit its by menu, change routings type:
+Here you can move start-end points, edit its by menu, and change routings type:
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2.png)
 
 ## Create track (Pro)
 
-We are developing Web version of our ["Plan route"](../plan-route/create-route.md) tool for OsmAnd application. Now you can try it for the Web.
+We are developing the Web version of our ["Plan route"](../plan-route/create-route.md) tool for the OsmAnd application. Now you can try it for the Web.
 
 Tap by the right mouse button > Create Track.
 
