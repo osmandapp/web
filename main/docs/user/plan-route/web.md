@@ -1,7 +1,6 @@
 ---
 sidebar_position: 4
 title:  Web portal
-draft: true
 ---
 
 import Tabs from '@theme/Tabs';
