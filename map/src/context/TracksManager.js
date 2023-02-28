@@ -37,7 +37,8 @@ function saveTracks(tracks) {
                 wpts: track.wpts,
                 ext: track.ext,
                 analysis: track.analysis,
-                selected: false
+                selected: false,
+                originalName: track.originalName
             }
             localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
         }
@@ -81,6 +82,17 @@ function prepareName(name, local) {
         return name.split(':')[1]
     } else {
         return name;
+    }
+}
+
+function getGroup(name, local) {
+    name = name.replace(/.gpx/, '');
+    if (name.includes('/')) {
+        return name.split('/')[0]
+    } else if (local && name.includes(':')) {
+        return name.split(':')[0]
+    } else {
+        return "Tracks";
     }
 }
 
@@ -530,6 +542,7 @@ const TracksManager = {
     createTrack,
     createGpxTracks,
     clearTrack,
+    getGroup,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
