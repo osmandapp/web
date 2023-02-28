@@ -42,9 +42,9 @@ Also note, that for correct work of the navigation, you need to grant OsmAnd per
 ## How to use
 
 1. Configure each profile you intend to use for navigation according to your needs:  
-    - set your [vehicle parameters](../../profiles/#vehicle-parameters), select the engine type
-    - configure [route line appearance](../route-line-appearance) (optional, only for Pro users)  
-    - choose whether to provide [voice prompts](../voice-navigation) during your route or not
+    - set your [vehicle parameters](../personal/profiles/#vehicle-parameters), select the engine type
+    - configure [route line appearance](./route-line-appearance) (optional, only for Pro users)  
+    - choose whether to provide [voice prompts](./voice-navigation) during your route or not
 2. Set navigation using search or by choosing one of the [navigation options](#navigation-options):
     - specify the destination point
     - if needed, add intermediate destinations
