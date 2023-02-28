@@ -201,6 +201,8 @@ _____________
 The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
 
 **The layout and operation of some functions may have changed from those described in this article.**
+
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
 :::
 
 <LinksSocial/>
