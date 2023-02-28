@@ -127,8 +127,7 @@ You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest
 
 ### Favorites
 
-Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map.
-You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu → My Places → Favourites*. If you want to use them for navigation, configure everything you need before connecting your device to the vehicle's multimedia system.
+Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using Android Auto or CarPlay you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.
 
 <Tabs groupId="operating-systems">
 
@@ -149,7 +148,7 @@ You cannot add or modify Favourites, only use the existing ones in OsmAnd *Menu 
 
 ### Markers
 
-To use [markers](../personal/markers.md#overview) in Android Auto or CarPlay for navigation, they need to be available in the *Menu → Map marker* list.
+To use [markers](../personal/markers.md#overview) in Android Auto or CarPlay for navigation, they need to be added in advance in the OsmAnd app on your device, tablet or phone, and they need to be available in the *Menu → Map marker* list.   
 
 <Tabs groupId="operating-systems">
 
@@ -198,8 +197,7 @@ Through the *Settings* menu in Android Auto or the *Navigation* menu in Car Play
 
 ### Voice prompts
 
-In the OsmAnd app, you can set up [voice prompts](../navigation/voice-navigation) individually for one selected profile or for all profiles at once. Do this before you start your route.  
-In Android Auto, you can choose to only disable or enable all selected prompts at once.  
+In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. CarPlay does not have a function to set up voice prompts. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
 
