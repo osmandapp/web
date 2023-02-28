@@ -32,9 +32,12 @@ export default function SaveTrackDialog() {
         return ctx.selectedGpxFile.originalName ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false) : "Tracks";
     }
 
-    const toggleShowDialog = () => {
+    const toggleShowDialog = (clear) => {
         setDialogOpen(!dialogOpen);
         setProcess(false);
+        if (clear) {
+            ctx.selectedGpxFile.clear = true;
+        }
         ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     };
@@ -60,7 +63,7 @@ export default function SaveTrackDialog() {
             setProcess(true);
             if (!hasExistTrack(fileName, folder)) {
                 await TracksManager.saveTrack(ctx, getFolderName(folder), fileName, TracksManager.GPX_FILE_TYPE);
-                toggleShowDialog();
+                toggleShowDialog(true);
             } else {
                 setExistTrack(true);
             }
@@ -107,7 +110,7 @@ export default function SaveTrackDialog() {
 
     return (
         <div>
-            <Dialog open={true} onClose={toggleShowDialog}>
+            <Dialog open={true} onClose={() => toggleShowDialog(false)}>
                 {process ? <LinearProgress/> : <></>}
                 <DialogUpdateTrack open={existTrack} onClose={!existTrack}/>
                 <DialogTitle>Save track</DialogTitle>
@@ -172,7 +175,7 @@ export default function SaveTrackDialog() {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={toggleShowDialog}>Cancel</Button>
+                    <Button onClick={() => toggleShowDialog(false)}>Cancel</Button>
                     <Button disabled={getFolderName(folder) === null || fileName === "" || error}
                             onClick={() => saveTrack()}>
                         Save</Button>
