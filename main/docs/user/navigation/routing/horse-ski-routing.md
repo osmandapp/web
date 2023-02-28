@@ -22,7 +22,7 @@ The ski routing feature provides users with information about ski runs, ski lift
 
 Ski routing can be particularly useful for backcountry skiers, ski mountaineers, and other winter sports enthusiasts who want to explore new areas and plan their trips in advance. With ski routing in OsmAnd, users can access detailed maps, plan routes, and navigate safely while enjoying the beauty of winter landscapes.
 
-### Horse routing reatures
+### Horse routing features
 
 Horse routing in OsmAnd is a feature that allows users to plan and navigate horseback riding routes using the OsmAnd mobile app. This feature is designed to provide equestrians with information about horse-friendly paths, bridleways, and other suitable routes for horse riding.
 

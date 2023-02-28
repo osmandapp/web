@@ -54,9 +54,11 @@ Also note, that for correct work of the navigation, you need to grant OsmAnd per
 
 ### Navigation options  
 
-In order to start a navigation, you need to choose your destination point. This can be done using a search button, by a single tap on a map in a context map menu, or using [navigation options](#navigation-options).  
+In order to start a navigation, you need to choose your destination point. This can be done using a [search](../search/index.md#overview) button or by using navigation options:
 
-To start the navigation, you need to use [the navigation button](../widgets/map-buttons.md#directions) on the map screen. You can also use *direction to/from option* in the [map context menu](../map/map-context-menu#directions-to--from) or choose navigation section in the main menu:  
+- [the navigation button](../widgets/map-buttons.md#directions) on the map screen  
+- *direction to/from* in a [map context menu](../map/map-context-menu#directions-to--from)  
+- navigation section in the main menu  
 
 <Tabs groupId="operating-systems">
 

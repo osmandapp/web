@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+title: Search
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-# Search
+### Overview
 
 The tool provides the searching features for any use-cases: address search, POi search, custom search, history search, coordinate search.
 
