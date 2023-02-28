@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Web portal
+title: OsmAnd Web portal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,13 +18,16 @@ The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now.
 
 **The layout and operation of some functions may have changed from those described in this article.**
 
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub page, please leave your feedback there.
 
 :::
 
 As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
 At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
+
+We provide access to the OsmAnd maps online, allowing users to explore the maps in a web browser without the need to install any additional software.
+With Pro Subscription you can also plan your routes, manage favorites etc.
 
 What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro):
 
@@ -65,7 +68,7 @@ Weather is a [Pro feature](../purchases/index.md) for OsmAnd application. But fo
 
 Users can switch on Weather layers on the map: Temperature, Pressure, Wind, Cloud and Precipitation by left or right menus.
 
-Showing the Weather forecast: Day, Week. (Forecast step is 3 hours).
+You can also display the Weather forecast: Day, Week. (Forecast step is 3 hours).
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
