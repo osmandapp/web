@@ -27,7 +27,7 @@ Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by de
 OsmAnd provides driving instructions for Car, Truck, Motorcycle drivers.  
 ### [Bicycle-based (MTB, Moped) routing](#bicycle-based-routing)
 
-Bicycle routing provides navigation prompts specifically for bicycle riders.  
+Bicycle routing provides navigation prompts specifically for bicycle riders and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
 
 ### [Pedestrian routing](#pedestrian-routing)
 
@@ -38,8 +38,8 @@ Public Transport navigation is your help during trips in cities.
 
 ### [Horse / ski routing](#horse-ski-routing)
 
-Ski routing in OsmAnd is a feature that allows users to plan and navigate ski tours, backcountry skiing routes, and other winter sports activities using the OsmAnd mobile app.  
-Horse routing in OsmAnd is a valuable tool that provides equestrians with the information and tools they need to plan and enjoy their horseback riding activities.  
+Ski routing allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
+Horse routing provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
 ### [Boat routing](#boat-navigation)
 
 Boat routing can be used when navigating rivers, lakes and in the open sea.
@@ -52,7 +52,7 @@ Online routing is an OsmAnd feature that allows users to plan and navigate route
 
 ### [BRouter routing](./thirdparty-routing.md)
 
-BRouter routing for offline navigation.
+BRouter app can be used for offline routing.
 
 ### Custom routing
 
