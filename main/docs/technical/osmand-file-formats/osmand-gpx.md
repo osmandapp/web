@@ -93,6 +93,18 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   </rtept>
 </rte>
 ```
+#### Important properties:
+
+* **trkpt_idx** of first **rtept** in **trkseg** is 0. So, if there are two **trkseg**s, there will be two **rtept**s with **trkpt_idx** = 0
+* **trkpt_idx** of last **rtept** in **trkseg** is equal to number of **trkpt**s in **trkseg** minus 1. For example, if **trkseg** has 12 **trkpt**s, **trkpt_idx** of last **rtept** should be 11
+* Neighbouring route **segments** of same profile are overlapping: the end of previous **segment** and start of next **segment** is the one and same **trkpt**.
+* There is exception when neighbouring route **segments** of same profile don't overlap (don't share the same **trkpt**). It happens when there is **rtept** "between" route **segment**s. End of previous route **segment** is one **trkpt**, and start of next route **segment** is another **rtept**. But these two **trkpt**s are totally equal by lat, lon and other params.
+* Route **segment** overlapping can be detected via **length** and **startTrkptIdx** (the latter is used only for convenience of human reading):
+  - If sum of **startTrkptIdx** and **length** of prevous route **segment** equals **startTrkptIdx** of next route **segment**, route **segment**s are not overlapping
+  - If sum is less by one, then route **segment**s are overlapping
+* There can be straight route **segment**s. They are marked with **id="-1"**. They can appear in two cases:
+  - It is multiprofile route, and user selected straight line
+  - User placed **rtept** too far away from closest road, so osmand made straight line between **rtept** and road
 
 #### Example:
 ```xml
