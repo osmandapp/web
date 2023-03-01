@@ -87,6 +87,7 @@ export default class EditableMarker {
         }
         if (this.ctx.selectedGpxFile.dragPoint) {
             this.ctx.selectedGpxFile.addPoint = false;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
         }
     }
 
@@ -180,7 +181,7 @@ export default class EditableMarker {
         if (trackPoints.length > 1) {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
                 res.addPoint = false;
-                delete res.dragPoint;
+                res.dragPoint = false;
                 res.layers = this.ctx.selectedGpxFile.layers;
                 this.ctx.setSelectedGpxFile({...res});
             });

@@ -143,7 +143,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                             <IconButton
                                 variant="contained"
                                 type="button"
-                                disabled={!isUndoPossible}
+                                disabled={!isUndoPossible || ctx.trackState.block}
                                 onClick={(e) => {
                                     undo();
                                     getState(pastStates[pastStates.length - 1]);

@@ -253,7 +253,7 @@ export default function LocalClientTrackLayer() {
             if (newPoint.profile === TracksManager.PROFILE_LINE) {
                 createNewRouteLine(prevPoint, newPoint, points, polylineTemp, layers);
             } else {
-                await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers);
+                await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers).then();
             }
         } else {
             addFirstPoint(newPoint, file, points);
@@ -492,12 +492,14 @@ export default function LocalClientTrackLayer() {
             delete ctx.selectedGpxFile?.dragPoint;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         } else if (ctx.selectedGpxFile?.dragPoint === undefined) {
+            ctx.trackState.block = false;
             map.getContainer().style.cursor = 'crosshair';
             map.on("click", clickMap);
         }
     }
 
     function deleteClickOnMap() {
+        ctx.trackState.block = true;
         map.getContainer().style.cursor = '';
         map.off('click');
     }

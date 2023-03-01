@@ -126,10 +126,10 @@ export default class EditablePolyline {
             };
         }
 
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, points).then(res => {
-            res.addPoint = false;
-            this.ctx.setSelectedGpxFile({...res});
-        });
+        if (this.ctx.selectedGpxFile.dragPoint) {
+            this.ctx.selectedGpxFile.addPoint = false;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+        }
     }
 
     async dragEndNewPoint(e, setLoading) {
