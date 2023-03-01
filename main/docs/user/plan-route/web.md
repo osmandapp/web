@@ -80,11 +80,12 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 
 ## Weather
 
-The [Weather plugin](../user/plugins/weather) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
+The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
 - Enable weather layers on the map: *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
 - Enable the display of the weather forecast for the day or week (the forecast step is 3 hours).  
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
+
 
 ## Tracks
 
@@ -118,7 +119,6 @@ In this section, you can:
   - *Clear* - Delete the track.  
 
 ![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
-
 
 ### User's tracks (Pro)
 
@@ -158,7 +158,6 @@ The following actions are available:
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
 
-  
 ### Add / Edit Favorite
 
 [To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
@@ -179,6 +178,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 
+
 ## Navigation route
 
 - To start building a navigation route, right-click to add the *Start* and *End* points.
@@ -192,6 +192,7 @@ In this section of the menu, you can change the map style. You can read more abo
 - In the Route block you can move the start and end points, edit them and change the type of route.
 
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2.png)
+
 
 ## Create track (Pro)
 
