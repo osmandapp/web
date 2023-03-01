@@ -175,7 +175,11 @@ export default function LocalClientTrackLayer() {
             }
         });
         layer.addTo(map);
-        localLayers[track.name] = {layer: layer, points: track.points ? track.points : TracksManager.getEditablePoints(track), active: active};
+        localLayers[track.name] = {
+            layer: layer,
+            points: track.points ? track.points : TracksManager.getEditablePoints(track),
+            active: active
+        };
         setLocalLayers({...localLayers});
     }
 
@@ -255,7 +259,7 @@ export default function LocalClientTrackLayer() {
             } else {
                 await createNewRouteWithRouting(prevPoint, newPoint, points, polylineTemp, layers).then();
             }
-        } else {
+        } else if (points.length === 0) {
             addFirstPoint(newPoint, file, points);
             ctx.setUpdateContextMenu(true);
         }
@@ -451,7 +455,7 @@ export default function LocalClientTrackLayer() {
                 trackLayers.getLayers().forEach(l => {
                     map.removeLayer(l)
                 })
-                trackLayers = new L.FeatureGroup();;
+                trackLayers = new L.FeatureGroup();
             }
             layers.forEach(layer => {
                 trackLayers.addLayer(layer);
@@ -537,10 +541,31 @@ export default function LocalClientTrackLayer() {
 
     function initNewTrack() {
         ctx.selectedGpxFile = {};
+        ctx.selectedGpxFile.name = TracksManager.createName(ctx);
         ctx.selectedGpxFile.tracks = TracksManager.createGpxTracks();
         ctx.selectedGpxFile.points = [];
-        ctx.selectedGpxFile.name = TracksManager.createName(ctx);
+        if (ctx.createTrack.latlng) {
+            createPointFromMap();
+        }
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
+    function createPointFromMap() {
+        let newPoint = {
+            lat: ctx.createTrack.latlng.lat,
+            lng: ctx.createTrack.latlng.lng,
+            ele: TracksManager.NAN_MARKER,
+            profile: ctx.creatingRouteMode.mode,
+            geometry: []
+        };
+        if (newPoint.profile !== TracksManager.PROFILE_LINE) {
+            newPoint.geometry = [];
+        }
+        ctx.selectedGpxFile.newPoint = newPoint;
+        ctx.selectedGpxFile.points.push(newPoint);
+        createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points);
+        ctx.selectedGpxFile.updateLayers = true;
+        ctx.selectedGpxFile.addPoint = true;
     }
 
     function editCurrentTrack() {

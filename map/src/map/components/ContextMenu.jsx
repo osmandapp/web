@@ -41,8 +41,8 @@ export default function ContextMenu({setGeocodingData}) {
             });
             map.contextmenu.addItem({
                 text: 'Create track',
-                callback: () => {
-                    ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin()
+                callback: (e) => {
+                    ctx.loginUser ? TracksManager.createTrack(ctx, e.latlng) : openLogin()
                 }
             });
             if (ctx.createTrack?.enable) {

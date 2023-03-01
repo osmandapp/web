@@ -506,9 +506,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
-function createTrack(ctx) {
+function createTrack(ctx, latlng) {
     let createState = {
         enable: true
+    }
+    if (latlng) {
+        createState.latlng = latlng;
     }
     if (ctx.selectedGpxFile) {
         createState.closePrev = {
