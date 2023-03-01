@@ -16,13 +16,62 @@ You can participate in testing OsmAnd beta build thru Google Play.
 
 ## What's new
 
-* Fixed issues with displaing Vegan places,
-* Show [localized names](https://github.com/osmandapp/OsmAnd/issues/9300) in POI info panel,
-* Added Nautical miles/feet unit of lenght,
-* Speed/Slope for track analyze,
-* Per-app language preferences, Android 13,
-* Share route via link,
-* Start screen – Redesign,
-* Modified "Tracks" menu (Configrue scree menu > Tracks).
+
+* Improved ["Tracks" menu](#tracks-menu) in "Configure Map",
+* Context menu now [displays localized names](#localized-poi-names) for POI,
+* Added option to share route by link,
+* Added "Nautical miles/feet" unit of length,
+* Map orientation added new fixed mode,
+* Simplified start screen,
+* Added "Speed/Slope" graph for track analysis,
+* App language selection moved to system settings on Android 13,
+* Fixed issues with [displaying Vegan places](https://github.com/osmandapp/OsmAnd/issues/15426),
+* Fixed location position in [split screen mode](https://github.com/osmandapp/OsmAnd/issues/16456) in Android Auto.
 
 
+### Tracks menu
+
+"Tracks" menu has a new design and more simple UX. It's easy to choose a needed track for showing it on the map, change appearance (&#8942; more than one track) or make an import (&#8942;):
+
+_OsmAnd menu > Configure map > Tracks_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_menu.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_menu_1.png').default} alt="tracks"/></td>
+    </tr>
+</table> 
+
+### Localized POI names
+
+Added localized POI names for [Map context menu](../user/map/map-context-menu.md#alternative-names). Click to the POI name for open the full name list.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/map/alternative_names_andr_1.png').default} alt="POI names"/></td>
+    <td><img src={require('@site/static/img/map/alternative_names_andr.png').default} alt="POI names"/></td>
+    </tr>
+</table> 
+
+### Route link
+
+After route creation in OsmAnd you can generate and send a link.
+
+_Navigation context menu > Details > Share button_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_1.png').default} alt="tracks"/></td>
+    </tr>
+</table> 
+
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_2.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_3.png').default} alt="tracks"/></td>
+    </tr>
+</table> 
+
+Route link for example:  [https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590](https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590)
