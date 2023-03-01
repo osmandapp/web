@@ -183,6 +183,9 @@ export default class EditablePolyline {
             newPoint.lng = lng;
             if (newPoint.geometry) {
                 delete newPoint.geometry;
+                if (newPoint.profile === TracksManager.PROFILE_GAP) {
+                    newPoint.profile = _.cloneDeep(this.ctx.selectedGpxFile.points[ind - 1].profile);
+                }
             }
 
             trackPoints.splice(ind, 0, newPoint);
@@ -204,7 +207,8 @@ export default class EditablePolyline {
             }, nextPoint);
             polylineTempNext.addTo(this.map);
 
-            await Promise.all([await this.createPolyline(prevPoint, currentPoint)
+            await Promise.all(
+                [await this.createPolyline(prevPoint, currentPoint)
                 .then(() => {
                     this.map.removeLayer(polylineTempCurrent);
                 }), await this.createPolyline(currentPoint, nextPoint)

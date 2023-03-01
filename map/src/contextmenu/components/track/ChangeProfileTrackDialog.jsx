@@ -57,7 +57,9 @@ export default function ChangeProfileTrackDialog({open}) {
         setProcess(true);
         if (!partialEdit) {
             ctx.selectedGpxFile.points.forEach(point => {
-                point.profile = profile.mode;
+                if (point.profile !== TracksManager.PROFILE_GAP) {
+                    point.profile = profile.mode;
+                }
             })
             if (ctx.selectedGpxFile.points.length > 1) {
                 await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
@@ -98,7 +100,7 @@ export default function ChangeProfileTrackDialog({open}) {
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
                     let changePoints = ctx.selectedGpxFile.points.splice(0, ctx.trackProfileManager.pointInd + 1);
                     changePoints.forEach(point => {
-                        if (_.indexOf(changePoints, point) !== changePoints.length - 1) {
+                        if (_.indexOf(changePoints, point) !== changePoints.length - 1 && point.profile !== TracksManager.PROFILE_GAP) {
                             point.profile = profile.mode;
                         }
                     })

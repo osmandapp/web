@@ -154,6 +154,9 @@ export default function LocalClientTrackLayer() {
     }
 
     function addTrackToMap(track, fitBounds, active) {
+        if (track.points) {
+            track.tracks = [{points: track.points}];
+        }
         let layer = TrackLayerProvider.createLayersByTrackData(track);
         if (fitBounds) {
             if (!_.isEmpty(layer.getBounds())) {
@@ -172,7 +175,7 @@ export default function LocalClientTrackLayer() {
             }
         });
         layer.addTo(map);
-        localLayers[track.name] = {layer: layer, points: TracksManager.getEditablePoints(track), active: active};
+        localLayers[track.name] = {layer: layer, points: track.points ? track.points : TracksManager.getEditablePoints(track), active: active};
         setLocalLayers({...localLayers});
     }
 

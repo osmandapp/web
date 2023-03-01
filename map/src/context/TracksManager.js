@@ -274,6 +274,9 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
     }
     if (ctx.loginUser) {
         let gpxFile = file ? file : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+        if (gpxFile.points) {
+            gpxFile.tracks = [{points: gpxFile.points}];
+        }
         let gpx = await getGpxTrack(gpxFile);
         if (gpx) {
             let convertedData = new TextEncoder().encode(gpx.data);
@@ -341,6 +344,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
         if (result.msg) {
             ctx.setRoutingErrorMsg(result.msg);
         }
+        updateGapProfileOneSegment(end, result.points);
         return result.points;
     }
 }
@@ -358,7 +362,20 @@ async function updateRoute(ctx, points) {
                 return value === "***NaN***" ? NaN : value;
             });
         }
+        updateGapProfileAllSegments(result.points);
         return result.points;
+    }
+}
+
+function updateGapProfileAllSegments(points) {
+    points.forEach(p => {
+        updateGapProfileOneSegment(p, p.geometry);
+    })
+}
+
+function updateGapProfileOneSegment(routPoint, points) {
+    if (routPoint.profile === PROFILE_GAP) {
+        points[points.length - 1].profile = PROFILE_GAP;
     }
 }
 

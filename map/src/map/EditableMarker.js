@@ -130,7 +130,7 @@ export default class EditableMarker {
                 let prevPoint = trackPoints[indPoint - 1];
                 let nextPoint = trackPoints[indPoint + 1];
 
-                if (prevPoint) {
+                if (prevPoint && prevPoint.profile !== TracksManager.PROFILE_GAP) {
                     currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
@@ -143,7 +143,7 @@ export default class EditableMarker {
                     }
                 }
 
-                if (nextPoint) {
+                if (nextPoint && currentPoint.profile !== TracksManager.PROFILE_GAP) {
                     nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
