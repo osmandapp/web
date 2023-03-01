@@ -19,11 +19,11 @@ You can participate in testing OsmAnd beta build thru Google Play.
 
 * Improved ["Tracks" menu](#tracks-menu) in "Configure Map",
 * Context menu now [displays localized names](#localized-poi-names) for POI,
-* Added option to share route by link,
-* Added "Nautical miles/feet" unit of length,
-* Map orientation added new fixed mode,
+* Added option to share [route by link](#route-link),
+* Map orientation added new fixed mode and Display position,
 * Simplified start screen,
 * Added "Speed/Slope" graph for track analysis,
+* Added "Nautical miles/feet" unit of length,
 * App language selection moved to system settings on Android 13,
 * Fixed issues with [displaying Vegan places](https://github.com/osmandapp/OsmAnd/issues/15426),
 * Fixed location position in [split screen mode](https://github.com/osmandapp/OsmAnd/issues/16456) in Android Auto.
@@ -75,3 +75,33 @@ _Navigation context menu > Details > Share button_
 </table> 
 
 Route link for example:  [https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590](https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590)
+
+
+### Display position
+
+["Display position"](../user/map/interact-with-map.md#map-orientation--compass):
+
+_Menu → Configure profile → General settings → Display position_
+
+Here you can choose three variants of your location on the screen map:
+
+- Center,
+- Bottom,
+- Automatic: bottom for movement direction, center for all others.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/display_position.png').default} alt="tracks"/></td>
+    </tr>
+</table> 
+
+### Speed/Slope graph
+
+Added more modes for [Analyze track on the map](../user/map/tracks-on-map.md#analyze-track-on-map)
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_graph.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/track_graph_1.png').default} alt="tracks"/></td>
+    </tr>
+</table> 
