@@ -31,7 +31,7 @@ Voice navigation helps you drive your vehicle in the right direction without dis
 
 ## Settings of voice prompts
 
-You can enable voice prompts in the [Navigation](../navigation/route-navigation.md#navigation-options) section by tapping on Settings, and also turn them on and configure them in the Main menu section of the selected profile.   
+You can enable voice prompts in the [Navigation](../navigation/route-navigation.md#navigation-options) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.   
 
 :::info info
 Voice prompt settings can be global and applied to all profiles.
@@ -58,23 +58,37 @@ Voice prompt settings can be global and applied to all profiles.
 </Tabs>  
 
 1. **Language** - select your preferred language and voice type.
-2. **Announce** - allows to voice the following types of prompts: *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks, Tunnels, [Speed cameras](#speed-cameras)*. 
+2. **Announcement group** - allows to voice the following types of prompts: 
+    - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks, Tunnels.*
+    - *[Speed cameras](#speed-cameras)*. 
  
 :::note
 You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for this category for more convenient use of voice prompts.
 :::  
 
-3. **User point**: *Track waypoints, Nearby Favorites, Nearby POI*.
-4. **Speed limit**:
-- Announce when exceeded - allows you to announce when you exceed the allowed speed limit.
-- Speed limit tolerance (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
-5. **Other**: *Announce GPS signal loss and recovery, Announce route recalculation*.
+3. **User points group**: 
+    - *Track waypoints, Nearby Favorites, Nearby POI*.
+4. **Speed limit group**:
+    - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
+    - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
+5. **Other**: 
+    - *Announce GPS signal loss and recovery, Announce route recalculation*.
 6. **Options**:
-- Repeat navigation instructions - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
-- [Announcement time](#announcement-time).
+    - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
+    - *[Announcement time](#announcement-time)*.
 7. **Output**:
-- Voice guidance output - allows you to select the loudspeaker for voice prompts: Audio multimedia/navigation, Audio notification, and Audio phone call (to interrupt Bluetooth car stereos).
-- Pause music - voice prompts stop music playback for a while.   
+    - *[Voice guidance output](#voice-guidance-output)*.
+    - *Pause music* - voice prompts stop music playback for a while.   
+
+
+### Voice guidance output 
+
+This setting allows you to select the loudspeaker for voice prompts.  
+   - Media/navigation audio.
+   - Notification audio.
+   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car)).
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 ### Speed cameras
 
@@ -84,7 +98,14 @@ You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for th
 
 ### Announcement time
 
-The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed.    
+The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. You can choose how soon you want to receive the arrival announcement, see the table. And for more information, see the article [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).      
+
+**<Translate android="true" ids="arrival_distance" />** | Distance multiplier
+--- | --- 
+**<Translate android="true" ids="arrival_distance_factor_early" />** | 1.5
+**<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
+**<Translate android="true" ids="arrival_distance_factor_late" />** | 0.5
+**<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
@@ -110,6 +131,8 @@ You can download voice prompts from two different sets from the list.
 If you choose TTS voice, you need to have an appropriate [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. They are partly included in Android, and iOS or can be installed separately. Go to [the settings of your Android (device)](https://support.google.com/accessibility/android/answer/6006983), find the section *Language and keyboard*, Text-to-speech or similar. Select or install the engine, then also set up support for the language you want, this can be an additional setting or a small download.  
 
 Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
+
+Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
 
 
 ## Testing of voice prompts

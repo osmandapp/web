@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Web portal
+title: OsmAnd Web portal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,38 +11,44 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+
+## Overview
 
 
 :::info
-The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
+The *[osmand.net](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**   
 
-**The layout and operation of some functions may have changed from those described in this article.**
-
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
-
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
-As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web. 
 
+<!-- As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web.
 At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
+What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro): -->
 
-What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro):
 
-1. [OsmAnd Pro sync](#osmand-pro-sync) (Pro)
+The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
+
+1. [OsmAnd Pro sync](#osmand-pro-sync) <ProFeature/>
 2. [Weather](#weather) (Free)
-3. [Tracks](#weather) (Free and Pro)
-4. [Favorites](#farorites-pro) (Pro)
+3. [Tracks](#weather) (Free and <ProFeature/>)
+4. [Favorites](#farorites-pro) <ProFeature/>
 5. [Map style](#map-style) (Free)
 6. [Navigation Route](#navigation-route) (Free)
-7. The ["Create track"](#create-track-pro) tool (Pro)
+7. The ["Create track"](#create-track-pro) tool <ProFeature/>
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
 
 
 ## OsmAnd Pro sync
 
-OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription. 
-If you have [OsmAnd Pro](../purchases/index.md) subscription you can make [activation](../troubleshooting/setup.md#cross-platform) for the web platform. Just input your _email_ and _password_ for [osmand.net/map](https://osmand.net/map/):
+OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription.  
+If you have an [OsmAnd Pro](../purchases/index.md) you can [activate](../troubleshooting/setup.md#cross-platform) it for the web platform.
+- Just enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
 
 :::tip
 Read how to register your email for OsmAnd Pro service [here](../troubleshooting/setup.md#cross-platform).
@@ -50,14 +56,15 @@ Read how to register your email for OsmAnd Pro service [here](../troubleshooting
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)
 
-Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map:
+- Your data (Tracks and Favorites) will be appeared on the menu. You can show its on the map.
 
 ![View OsmAnd Web data](@site/static/img/web/web_data.png)
 
 
-Click to the login pole for _Logout_ or _Download backup data_:
+- Click on the login field for _Logout_ or _Download backup data_.
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)
+
 
 ## Weather
 
@@ -65,7 +72,7 @@ Weather is a [Pro feature](../purchases/index.md) for OsmAnd application. But fo
 
 Users can switch on Weather layers on the map: Temperature, Pressure, Wind, Cloud and Precipitation by left or right menus.
 
-Showing the Weather forecast: Day, Week. (Forecast step is 3 hours).
+You can also display the Weather forecast: Day, Week. (Forecast step is 3 hours).
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
@@ -73,7 +80,7 @@ Showing the Weather forecast: Day, Week. (Forecast step is 3 hours).
 
 At this section you can:
 - loading tracks from your device - [Local](#local),
-- showing tracks from [OsmAnd Cloud (Pro)](#users-tracks-pro),
+- showing tracks from [OsmAnd Cloud (Pro)](#users-tracks-pro) <ProFeature/>,
 - editing tracks.
 
 ### Local
@@ -81,7 +88,7 @@ At this section you can:
 Each user can upload any GPX file to [_osmand.net/map_](https://osmand.net/map):
 ![OsmAnd Web local GPX](@site/static/img/web/web_local_gpx.png)
 
-Edit loading tracks:
+Edit uploaded tracks:
 
 ![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
 
@@ -103,9 +110,9 @@ Actions &#8942; button on _Info_ screen:
 
 ### User's tracks (Pro)
 
-After registration OsmAnd Pro. You can see your GPX tracks from OsmAnd Cloud.
+Tracks from user's OsmAnd Cloud. It's only for **Pro users** <ProFeature/>.
 
-Tracks from user's OsmAnd Cloud. It's only for **Pro users**.
+After signin in to OsmAnd Cloud, your GPX tracks will be available.
 
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
 
@@ -193,7 +200,7 @@ Any actions and showing Track Info you can read at [Track section](#tracks) of t
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
 
-
+<!--
 _____________
 
 
@@ -207,3 +214,4 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 <LinksSocial/>
 <LinksTelegram/>
+-->
