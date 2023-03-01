@@ -103,86 +103,6 @@ Access to your OsmAnd Cloud account is available for one more year after your Pr
 </TabItem>
 
 </Tabs>  
- 
-
-## List of changes
-
-In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
-
-Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.  
-
-:::note
-Downloading changes from the cloud storage will override local changes. Accordingly, uploaded local data removes changes in the cloud version.
-:::
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
-
-</TabItem>
-
-</Tabs>  
-
-
-### Local and Cloud
-
-- **Local.** You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
-Changes that have been uploaded from the local version to the cloud are removed after a while from the *Changes → Local* tab.  
-- **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
-
-</TabItem>
-
-</Tabs>   
-
-
-### Conflicts
-
-Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud. The resolved conflicts are removed from the list after processing, which usually does not take long.
-Tapping Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
-
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
-
-</TabItem>
-
-</Tabs>  
 
 
 ## Settings
@@ -297,6 +217,87 @@ The actions you can do in this section of the Settings menu are irreversible and
 *<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
+
+</TabItem>
+
+</Tabs>  
+
+ 
+
+## List of changes
+
+In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
+
+Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.  
+
+:::note
+Downloading changes from the cloud storage will override local changes. Accordingly, uploaded local data removes changes in the cloud version.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
+
+</TabItem>
+
+</Tabs>  
+
+
+### Local and Cloud
+
+- **Local.** You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
+Changes that have been uploaded from the local version to the cloud are removed after a while from the *Changes → Local* tab.  
+- **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
+
+</TabItem>
+
+</Tabs>   
+
+
+### Conflicts
+
+Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud. The resolved conflicts are removed from the list after processing, which usually does not take long.
+Tapping Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 
 </TabItem>
 
