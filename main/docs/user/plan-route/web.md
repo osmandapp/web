@@ -33,6 +33,17 @@ What functions will be available except the map view for Free and for [Pro users
 
 The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
 
+Features | Versions
+|--- |--- |
+| [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
+| [Weather](#weather) | Free |
+| [Tracks](#weather) | Free and <ProFeature/> |
+| [Favorites](#farorites-pro) | <ProFeature/> | 
+| [Map style](#map-style) | Free |
+| [Navigation Route](#navigation-route) | Free |
+| [Create track](#create-track-pro) | <ProFeature/> |  
+
+<!--
 1. [OsmAnd Pro sync](#osmand-pro-sync) <ProFeature/>
 2. [Weather](#weather) (Free)
 3. [Tracks](#weather) (Free and <ProFeature/>)
@@ -40,6 +51,7 @@ The following features are available for users of the Free version of OsmAnd and
 5. [Map style](#map-style) (Free)
 6. [Navigation Route](#navigation-route) (Free)
 7. The ["Create track"](#create-track-pro) tool <ProFeature/>
+-->
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
 
@@ -47,12 +59,13 @@ The following features are available for users of the Free version of OsmAnd and
 ## OsmAnd Pro sync
 
 OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription.  
-If you have an [OsmAnd Pro](../purchases/index.md) you can [activate](../troubleshooting/setup.md#cross-platform) it for the web platform.
-- Just enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
+The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
-:::tip
-Read how to register your email for OsmAnd Pro service [here](../troubleshooting/setup.md#cross-platform).
-:::
+1. Subscribe to OsmAnd Pro. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. Register your [account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server.
+3. The registered email will be your login to activate OsmAnd Pro on the web platform. 
+
+- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).  
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)
 
