@@ -20,7 +20,8 @@ You can participate in testing OsmAnd beta build thru Google Play.
 * Improved ["Tracks" menu](#tracks-menu) in "Configure Map",
 * Context menu now [displays localized names](#localized-poi-names) for POI,
 * Added option to share [route by link](#route-link),
-* Map orientation added new fixed mode and Display position,
+* Map orientation added new fixed mode,
+* Added "Display position" menu,
 * Simplified start screen,
 * Added "Speed/Slope" graph for track analysis,
 * Added "Nautical miles/feet" unit of length,
@@ -77,6 +78,18 @@ _Navigation context menu > Details > Share button_
 Route link for example:  [https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590](https://osmand.net/map?start=50.212845%2C19.831682&end=50.141838%2C19.883652&mode=pedestrian#10/49.816523/19.846590)
 
 
+### Map orientation 
+
+Added new fixed mode for [Map orientation](../user/map/interact-with-map.md#map-orientation-modes):
+
+- Manually rotates (fixed)
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/map-orientation.png').default} alt="map orientation"/></td>
+    </tr>
+</table> 
+
 ### Display position
 
 ["Display position"](../user/map/interact-with-map.md#map-orientation--compass):
@@ -95,9 +108,12 @@ Here you can choose three variants of your location on the screen map:
     </tr>
 </table> 
 
+### Simplified Start screen
+
+Restructure the Start screen. Now there is opportutity OsmAnd cloud open.
 ### Speed/Slope graph
 
-Added more modes for [Analyze track on the map](../user/map/tracks-on-map.md#analyze-track-on-map)
+Added more moded for [Analyze track on the map](../user/map/tracks-on-map.md#analyze-track-on-map)
 
 <table class="blogimage">
   <tr>
@@ -105,3 +121,18 @@ Added more modes for [Analyze track on the map](../user/map/tracks-on-map.md#ana
     <td><img src={require('@site/blog/2023-03-01-android-4-4/track_graph_1.png').default} alt="tracks"/></td>
     </tr>
 </table> 
+
+### Nautical miles and feet
+
+### App language for Android 13
+
+### Bugs fixs
+
+#### Android Auto
+
+- the [issue](https://github.com/osmandapp/OsmAnd/issues/16041): movement direction map orientation is flipped and jiggles.
+- 
+
+#### Vegan places POIs
+
+Fixed the [issue](https://github.com/osmandapp/OsmAnd/issues/15426): Most vegan places don't show.
