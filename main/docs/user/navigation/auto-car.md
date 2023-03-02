@@ -51,7 +51,7 @@ For quick access to the list of profiles available for connecting to CarPlay, th
 
 For OsmAnd to work, you need to connect your Android or iOS device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/) and the [list for CarPlay](https://www.apple.com/ios/carplay/available-models/).
-- You need to have an OsmAnd Pro subscription. Check it here Menu → Settings → Purchases.
+- You need to have an OsmAnd Pro subscription. Check it here *Menu → Settings → Purchases*.
 - To find out how to connect and set up your device, please visit the relevant websites: [**Android Auto**](https://www.android.com/auto) and [**CarPlay**](https://www.apple.com/ios/carplay/). 
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in Android Auto or CarPlay.  
@@ -173,6 +173,8 @@ To use [markers](../personal/markers.md#overview) in Android Auto or CarPlay for
 Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
 :::
 
+From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in Android Auto, CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.  
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android Auto">
@@ -203,7 +205,8 @@ In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separa
 
 ### Screen Alert widget
 
-This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.
+This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
+You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.
 
 <Tabs groupId="operating-systems">
 
