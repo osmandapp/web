@@ -50,6 +50,13 @@ To be able to back up and restore data, it is necessary to log in.
 - To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
 - Your Cloud account absolutely needs to be registered on the device where the purchase was made.  
 - When you register or log in, you will receive a verification code on your email to confirm it.
+- To sign in to OsmAnd Cloud on other devices, use your Cloud account.    
+
+:::tip
+If you have problems with the registration of your account:
+- Check if you are registering on the device on which the purchase was made.
+- You need to have an active Internet connection.
+:::  
 
 :::note
 Access to your OsmAnd Cloud account is available for one more year after your Pro subscription ends.
@@ -82,7 +89,11 @@ Access to your OsmAnd Cloud account is available for one more year after your Pr
 - *Local changes* - shows the total number of local changes not uploaded to the cloud.
 - *Cloud changes* - the total number of changes uploaded to the cloud from other devices since the last synchronization.
 - *Conflicts* - the total number of inconsistencies between local and cloud changes.
-- *Sync now* - select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device.
+- *Sync now* - select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device and in the cloud.  
+
+:::tip
+Sync now combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. Conflicts are not synchronized in this way.
+:::
 
 <Tabs groupId="operating-systems">
 
