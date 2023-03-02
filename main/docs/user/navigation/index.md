@@ -13,12 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-## OsmAnd Navigation section documentation
+## Documentation of Navigation section
 
-Navigation features help you get to your destination by displaying routes, offering turn-by-turn directions, and additional voice prompts.  
+OsmAnd Navigation features help you get to your destination by displaying routes, offering turn-by-turn directions, and additional voice prompts.  
 List of articles:
 
-- [Routing types (Profiles)](./routing/index.md) - Routing type determines how the route will be calculated.  
+- [Routing types (Profiles)](./routing/) - Routing type determines how the route will be calculated.  
 - [Navigation by route](./route-navigation.md).
 - [Navigation by track](./gpx-navigation.md).
 - [Markers navigation](./markers-navigation.md) - Straight navigation to your marker.
