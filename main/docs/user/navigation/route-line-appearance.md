@@ -17,16 +17,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-### Route line appearance
+## Overview
 
-This menu allows you to adapt the route line appearance. If there are some changes to your route, you can customize them using this menu. Its could be like, changes in elevation while driving, next significant uphill or downhill, ice, unpaved roads, autobahns, etc.  In the items of this menu you will be able to change all these parameters by colour or just apply any colour and transparency to the line. Besides, if necessary, you can change the width of the line and the display of the angle at turns.  
+This menu allows you to adjust the appearance of the route line to a variety of changes. These can be changes in elevation while driving, the next significant uphill or downhill, ice, unpaved roads, autobahns, and others. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
 
 :::note
-  
 <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
-
 :::
-
 
 <Tabs groupId="operating-systems">
 
@@ -36,18 +33,37 @@ This menu allows you to adapt the route line appearance. If there are some chang
 
 ![Navigation route Android](@site/static/img/navigation/route/RLApp.png)  
 
+</TabItem>
 
-#### Colour
+<TabItem value="ios" label="iOS">  
 
-Select a route line's colour by types.  
+*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>*
+
+![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
+
+</TabItem>
+
+</Tabs>  
+
+<!--Customize route line menu items-->
+
+
+
+## Color
+
+Select a route line's color by types.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colours. You can see a full description of the colours by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
+|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
-| &nbsp;*"Custom"* – It allows you to show the line in any preferred colour and transparency. You can select different settings for the day map and separately for the night map. |  
+| &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the colour doesn't represent the absolute height value.    |  
+| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
@@ -64,55 +80,19 @@ Select a route line's colour by types.
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |  
 
-
-#### Width  
-
-Select a route line's width.
-
-|  |
-|------------|
-|*"<Translate ios="true" id="map_settings_style"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
-![map style](@site/static/img/navigation/route/map_st.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
-|*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
-![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
-|*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
-![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
-
-
-
-&nbsp;  
-#### Turn Arrows  
-Select whether turn arrows are indicated on the route line or not. 
-
-|  |
-|------------|
-|![Altitude](@site/static/img/navigation/route/turn_arr.png) ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)|
-|![Altitude](@site/static/img/navigation/route/turn_arr_off_and.png) ![Altitude](@site/static/img/navigation/route/turn_arr_off_map_and.png)|
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-_<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>_
-
-&nbsp;  
-![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
-
-<!--Customize route line menu items-->
-&nbsp;  
-
-
-#### Colour
-Select a route line's colour by types.  
-
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colours. You can see a full description of the colours by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
+|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
-| &nbsp;*"Custom"* – It allows you to show the line in any preferred colour and transparency. You can select different settings for the day map and separately for the night map. |  
+| &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the colour doesn't represent the absolute height value. |  
+| &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the color doesn't represent the absolute height value. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
+
 <!--
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
@@ -129,11 +109,31 @@ Select a route line's colour by types.
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  | -->
 
+</TabItem>
+
+</Tabs>  
 
 
-&nbsp;  
-#### Width
+## Width  
+
 Select a route line's width.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+|  |
+|------------|
+|*"<Translate ios="true" id="map_settings_style"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
+![map style](@site/static/img/navigation/route/map_st.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
+|*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
+![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
+|*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
+![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
 
 |  |
 |------------|
@@ -142,18 +142,34 @@ Select a route line's width.
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
 ![width](@site/static/img/navigation/route/width_ios.png)   ![width](@site/static/img/navigation/route/width_med.png)|
 |*"Custom"* – It allows you to show the line in some preferred width. Select the width using the slider.|
-![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)|  
+![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)| 
 
+</TabItem>
 
-&nbsp;  
-#### Turn Arrows
+</Tabs>  
+
+ 
+## Turn Arrows  
+
 Select whether turn arrows are indicated on the route line or not. 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+|  |
+|------------|
+|![Altitude](@site/static/img/navigation/route/turn_arr.png) ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)|
+|![Altitude](@site/static/img/navigation/route/turn_arr_off_and.png) ![Altitude](@site/static/img/navigation/route/turn_arr_off_map_and.png)|
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
 
 |  |
 |------------|
 |![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png) ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_map.png)|
-|![turn_arr_on_ios](@site/static/img/navigation/route/turn_arr_on_ios.png) ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png)|
-___
+|![turn_arr_on_ios](@site/static/img/navigation/route/turn_arr_on_ios.png) ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png) |
 
 <!-- ![customise route line 1](@site/static/img/navigation/route/customise_route_line-1.png) -->
 
