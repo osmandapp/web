@@ -26,7 +26,7 @@ Car routing takes into account factors such as road types, speed limits, and oth
 
 Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle height, weight, and width restrictions, as well as information about road types and inclines that may be difficult for trucks to navigate. This helps truck drivers find the most suitable and efficient routes to their destinations, while avoiding roads that may be unsafe or inaccessible for their vehicles.
 
-#### Motobicke routing features
+#### Motobike routing features
 
 Moto routing is designed for motorbike riders and takes into account factors such as winding roads, scenic routes, and other features that may be appealing to motorcycle enthusiasts. It also takes into account the unique needs of motorbike riders, such as the ability to filter through traffic and the importance of avoiding roads with poor road conditions.
 
