@@ -24,12 +24,13 @@ List of articles:
 - [Markers navigation](./markers-navigation.md) - Straight navigation to your marker.
 - [Voice navigation](./voice-navigation.md).
 - [Android Auto / CarPlay](./auto-car.md) - Using a vehicle media screen for navigation by OsmAnd.
-- [Route line appearance](./route-line-appearance.md).
+- Route line appearance.
 
 
 ## Common settings
 
 This section describes the general settings available for all types of navigation in OsmAnd.
+
 
 ### Navigation settings
 
