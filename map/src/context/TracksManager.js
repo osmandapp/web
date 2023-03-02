@@ -53,7 +53,12 @@ function saveTracks(tracks, ctx) {
     if (tooBig) {
         ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
     } else {
-        localStorage.clear();
+        let names = Object.keys(localStorage);
+        for (let name of names) {
+            if (name.includes('localTrack')) {
+                localStorage.removeItem(name);
+            }
+        }
         for (let data in locals) {
             localStorage.setItem(data, locals[data]);
         }

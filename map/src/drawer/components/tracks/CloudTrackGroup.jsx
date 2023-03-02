@@ -59,7 +59,7 @@ export default function CloudTrackGroup({index, group}) {
     const Buttons = () => {
         return (
             <div>
-                {!ctx.createTrack && <MenuItem onClick={(e) => {
+                {<MenuItem onClick={(e) => {
                     addToCollection()
                     e.stopPropagation();
                 }}>To Collection</MenuItem>}
@@ -102,12 +102,14 @@ export default function CloudTrackGroup({index, group}) {
             {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={showTracks.includes(index)} timeout="auto">
-            <Actions files={group.files}
-                     setSortFiles={setSortFiles}/>
-            {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
-                return <CloudTrackItem key={file + index}
-                                       file={file}/>
-            })}
+            <div style={{maxHeight: '41vh', overflow: 'auto'}}>
+                <Actions files={group.files}
+                         setSortFiles={setSortFiles}/>
+                {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
+                    return <CloudTrackItem key={file + index}
+                                           file={file}/>
+                })}
+            </div>
         </Collapse>
     </div>
 

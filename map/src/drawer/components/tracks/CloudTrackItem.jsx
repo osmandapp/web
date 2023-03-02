@@ -1,10 +1,9 @@
 import AppContext from "../../../context/AppContext";
-import {Alert, Button, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
+import {Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import React, {useContext, useState} from "react";
 import Utils from "../../../util/Utils";
 import TrackInfo from "./TrackInfo";
 import TracksManager from "../../../context/TracksManager";
-import _ from "lodash";
 
 export default function CloudTrackItem({file}) {
 
@@ -41,7 +40,8 @@ export default function CloudTrackItem({file}) {
                 'url': url,
                 'clienttimems': file.clienttimems,
                 'updatetimems': file.updatetimems,
-                'name': file.name};
+                'name': file.name,
+                'type': "GPX"};
             let f = await Utils.getFileData(newGpxFiles[file.name]);
             const gpxfile = new File([f], file.name, {
                 type: "text/plain",

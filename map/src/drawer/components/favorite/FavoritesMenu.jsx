@@ -14,12 +14,10 @@ import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
 import FavoritesManager from "../../../context/FavoritesManager";
 
-export default function FavoritesMenu() {
+export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enableGroups, setEnableGroups}) {
     const ctx = useContext(AppContext);
 
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
-    const [enableGroups, setEnableGroups] = useState([]);
-    const [favoritesGroups, setFavoritesGroups] = useState([]);
     const [openFavoritesGroups, setOpenFavoritesGroups] = useState([]);
 
     //create groups
