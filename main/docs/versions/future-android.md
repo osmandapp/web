@@ -126,11 +126,16 @@ Added more moded for [Analyze track on the map](../user/map/tracks-on-map.md#ana
 
 ### App language for Android 13
 
+### Redesign Simulate location
+
+[Simulate location](https://github.com/osmandapp/OsmAnd-Issues/issues/878)
+
 ### Bugs fixs
 
 #### Android Auto
 
 - the [issue](https://github.com/osmandapp/OsmAnd/issues/16041): movement direction map orientation is flipped and jiggles.
+- split-screen [issue](https://github.com/osmandapp/OsmAnd/issues/16456)
 - 
 
 #### Vegan places POIs
