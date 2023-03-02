@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title:  Third-party routing (Brouter)
+title:  Brouter
 ---
 
 import Tabs from '@theme/Tabs';

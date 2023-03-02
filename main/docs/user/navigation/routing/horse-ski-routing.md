@@ -14,9 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-### Ski routing features
-
 Horse and ski routing features in OsmAnd are designed to help riders navigate efficiently, safely, and enjoyably, by providing tailored directions that take into account the unique needs and preferences of each rider.
+
+
+### Ski routing features
 
 The ski routing feature provides users with information about ski runs, ski lifts, and other important points of interest on the map. It also allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. The routing algorithm takes into account the elevation, slope angle, and other terrain features to provide users with the most suitable route based on their preferences.
 
