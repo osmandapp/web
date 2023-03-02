@@ -228,7 +228,7 @@ function getColors() {
         'pedestrian': '#d90139',
         'ski': '#ffacdf',
         'line': '#5F9EA0',
-        'gap': '#ff8800'
+        'moped': '#3e690e'
     };
 }
 
@@ -275,7 +275,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
 async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints) {
     let formData = new FormData();
     formData.append('file', routeTrackFile);
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${formatRouteMode(routeMode)}`, {
+    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
         method: 'POST',
         body: formData
     });
