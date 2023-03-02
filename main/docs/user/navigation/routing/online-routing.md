@@ -28,6 +28,6 @@ Online routing in OsmAnd can be used for a wide range of activities, including d
 
 The [Navigation settings](../../personal/profiles.md#navigation-settings) for the car, bike and scooter profiles have the following online routing tools for OsmAnd:
 
-- *[Online routing](../../personal/profiles.md#navigation)* uses online providers services: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.
+- *[Online routing](../../personal/profiles.md#navigation)* uses online providers services: [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.
 
 - _[Third-party routing](../routing/brouter.md)_.
