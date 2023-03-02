@@ -50,7 +50,7 @@ Straight line routing (or "point-to-point" navigation) is a feature that allows 
 
 Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 
-### [BRouter routing](./thirdparty-routing.md)
+### [BRouter routing](./brouter.md)
 
 BRouter app can be used for offline routing.
 

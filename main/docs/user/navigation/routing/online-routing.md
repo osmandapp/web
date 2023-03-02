@@ -28,4 +28,4 @@ In the [navigation settings](../../personal/profiles.md#navigation) for the car 
 
 - _[Online routing](../../personal/profiles.md#navigation)_ uses online providers services: ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), GPX.
 
-- _[Third-party routing](../routing/thirdparty-routing.md)_.
+- _[Third-party routing](../routing/brouter.md)_.
