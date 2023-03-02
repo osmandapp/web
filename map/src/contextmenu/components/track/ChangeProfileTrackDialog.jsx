@@ -206,7 +206,7 @@ export default function ChangeProfileTrackDialog({open}) {
             </ToggleButtonGroup>
         </DialogActions>}
         <DialogContent sx={{minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px'}}>
-            <SelectTrackProfile profile={profile} setProfile={setProfile}/>
+            <SelectTrackProfile profile={profile} setProfile={setProfile} label={"Route profile"}/>
         </DialogContent>
         <DialogActions>
             <Button onClick={() => ctx.setTrackProfileManager({})}>Cancel</Button>

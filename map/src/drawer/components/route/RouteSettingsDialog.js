@@ -41,28 +41,35 @@ const onCheckBox = (key, opts, setOpts) => (e) => {
 }
 
 
-export default function RouteSettingsDialog({ setOpenSettings }) {
+export default function RouteSettingsDialog({ setOpenSettings, profile, setProfile, useDev}) {
     const ctx = useContext(AppContext);
-    const [opts, setOpts] = useState(ctx.routeMode.opts);
+    const [opts, setOpts] = useState(profile.opts);
     const handleClose = () => {
         setOpenSettings(false);
         setOpts(ctx.routeMode.opts);
     };
     const handleAccept = () => {
         setOpenSettings(false);
-        let newRouteMode = Object.assign({}, ctx.routeMode);
+        let newRouteMode = Object.assign({}, profile);
         newRouteMode.opts = opts;
-        ctx.setRouteMode(newRouteMode);
+        setProfile(newRouteMode);
     };
     section = '';
+
+    function checkDevSection(opt) {
+        if (!useDev) {
+            return opt.section !== 'Development'
+        } else return true;
+    }
+
     return (
         <Dialog open={true} onClose={handleClose}>
             <DialogTitle>Additional Route Settings</DialogTitle>
             <DialogContent>
                 {Object.entries(opts).map(([key, opt]) =>
-                    <>
-                        {checkSection(opt.section) && <DialogContentText>{section}</DialogContentText>}
-                        <Tooltip key={'tool_' + key} title={opt.description} >
+                <>
+                        {checkSection(opt.section) && checkDevSection(opt) && <DialogContentText key={key}>{section}</DialogContentText>}
+                        {checkDevSection(opt) && <Tooltip key={'tool_' + key} title={opt.description} >
                             {opt.type === 'boolean' ?
                                 <FormControlLabel key={key} label={opt.label} control={
                                     <Checkbox key={'check_' + key} checked={opt.value}
@@ -70,7 +77,7 @@ export default function RouteSettingsDialog({ setOpenSettings }) {
                                 }>
                                 </FormControlLabel>
                                 :
-                                <FormControl sx={{ m: 2, minWidth: 100}}>
+                                <FormControl sx={{ m: 1, minWidth: 100}}>
                                     <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
                                     <Select
                                         labelId={'routing-param-' + opt.key}
@@ -83,7 +90,7 @@ export default function RouteSettingsDialog({ setOpenSettings }) {
                                     </Select>
                                 </FormControl>
                             }
-                        </Tooltip>
+                        </Tooltip>}
                     </>
                 )}
 

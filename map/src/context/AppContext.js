@@ -117,7 +117,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading) 
             const res = await response.json();
             res.loginUser = loginUser;
             res.totalUniqueZipSize = 0;
-            res.uniqueFiles.forEach( (f) => {
+            res.uniqueFiles.forEach((f) => {
                 res.totalUniqueZipSize += f.zipSize;
             });
             res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
@@ -183,21 +183,6 @@ function getWeatherDate() {
     weatherDateObj.setUTCMinutes(0);
     weatherDateObj.setUTCSeconds(0);
     return weatherDateObj;
-}
-
-
-function formatRouteMode(routeMode) {
-    let routeModeStr = routeMode.mode;
-    Object.keys(routeMode.opts).forEach(o => {
-        if (routeMode.opts[o]?.value === true) {
-            routeModeStr += ',' + o;
-        } else if (routeMode.opts[o]?.value === false) {
-            // skip
-        } else {
-            routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
-        }
-    });
-    return routeModeStr;
 }
 
 async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
@@ -267,7 +252,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     getRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });

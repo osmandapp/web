@@ -14,17 +14,17 @@ const useStyles = makeStyles({
     }
 )
 
-export default function SelectTrackProfile({profile, setProfile}) {
+export default function SelectTrackProfile({profile, setProfile, label}) {
 
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
     return <MenuItem className={classes.grid} key='routeprofile' sx={{ml: 1, mr: 2}}>
         <FormControl fullWidth>
-            <InputLabel id="route-mode-label">Route profile</InputLabel>
+            <InputLabel id="route-mode-label">{label}</InputLabel>
             <Select
                 labelid="route-mode-label"
-                label="Route profile"
+                label={label}
                 value={profile.mode}
                 onChange={(e) => setProfile({
                     mode: e.target.value,

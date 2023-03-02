@@ -317,15 +317,30 @@ function deleteLocalTrack(ctx) {
     return false;
 }
 
+function formatRouteMode(routeMode) {
+    let routeModeStr = routeMode.mode;
+    Object.keys(routeMode.opts).forEach(o => {
+        if (routeMode.opts[o]?.value === true) {
+            routeModeStr += ',' + o;
+        } else if (routeMode.opts[o]?.value === false) {
+            // skip
+        } else {
+            routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
+        }
+    });
+    return routeModeStr;
+}
+
 
 async function updateRouteBetweenPoints(ctx, start, end) {
     ctx.setRoutingErrorMsg(null);
+    let routeMode = formatRouteMode(ctx.creatingRouteMode)
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
-                routeMode: start.profile ? start.profile : ctx.routeMode.mode,
+                routeMode: routeMode,
                 hasRouting: start.segment !== null || end.segment !== null,
                 maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE
             },
@@ -563,6 +578,7 @@ const TracksManager = {
     createGpxTracks,
     clearTrack,
     getGroup,
+    formatRouteMode,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
