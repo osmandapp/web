@@ -18,7 +18,14 @@ import ContextMenu from "./ContextMenu";
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
-        height: "100%"
+        height: "100%",
+        '& .leaflet-control-layers': {
+            border: "0px !important"
+        },
+        '& .leaflet-control-layers-toggle': {
+            width: "0px !important",
+            height: "0px !important"
+        }
     },
 }));
 
@@ -68,7 +75,8 @@ const OsmAndMap = () => {
 
     return (
         <MapContainer center={position} zoom={5} className={classes.root} minZoom={1} maxZoom={20}
-                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]} editable={true}
+                      zoomControl={false} whenReady={whenReadyHandler} contextmenu={true} contextmenuItems={[]}
+                      editable={true}
         >
             <LocalClientTrackLayer/>
             <RouteLayer geocodingData={geocodingData}/>
@@ -85,7 +93,7 @@ const OsmAndMap = () => {
             />
 
             {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons} />}
+                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons}/>}
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
             <ContextMenu setGeocodingData={setGeocodingData}/>

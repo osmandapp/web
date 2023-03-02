@@ -19,22 +19,13 @@ function getWeatherTime(weatherDateObj) {
     return weatherDateObj.getUTCFullYear() + '' + m + '' + d + "_" + h + "00";
 }
 
-const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
-    const ind = layers.findIndex(l => l.name === event.name);
-    if (ind >= 0 && layers[ind].checked !== enable) {
-        let newlayers = [...layers];
-        newlayers[ind].checked = enable;
-        updateLayers(newlayers);
-    }
-}
-
 const WeatherLayer = () => {
     const map = useMap();
     const ctx = useContext(AppContext);
-    useEffect(() => {        
+    useEffect(() => {
         if (map) {
             const enableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, true);
-            const disableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, true);
+            const disableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, false);
             map.on('overlayadd', enableFunc);
             map.on('overlayremove', disableFunc);
             return () => {
@@ -43,6 +34,15 @@ const WeatherLayer = () => {
             };
         }
     }, [map, ctx.weatherLayers, ctx.updateWeatherLayers])
+
+    const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
+        const ind = layers.findIndex(l => l.name === event.name);
+        if (ind >= 0) {
+            let newlayers = [...layers];
+            newlayers[ind].checked = enable;
+            updateLayers(newlayers);
+        }
+    }
 
     useEffect(() => {
         if (map) {
@@ -56,7 +56,7 @@ const WeatherLayer = () => {
     }, [ctx.weatherDate]);
 
     return <>
-        <LayersControl position="topright" collapsed={false}>
+        <LayersControl>
             {ctx.weatherLayers.map((item) => (
                 <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key}>
                     <TileLayer
