@@ -25,8 +25,10 @@ function loadTracks() {
     return localTracks;
 }
 
-function saveTracks(tracks) {
-    localStorage.clear();
+function saveTracks(tracks, ctx) {
+    let tracksSize = 0;
+    let locals = {}
+    let tooBig = false;
     if (tracks.length > 0) {
         for (let track of tracks) {
             let localTrack = {
@@ -40,9 +42,23 @@ function saveTracks(tracks) {
                 selected: false,
                 originalName: track.originalName
             }
-            localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
+            tracksSize += JSON.stringify(localTrack).length;
+            if (tracksSize > 5000000) {
+                tooBig = true;
+                break;
+            }
+            locals['localTrack_' + _.indexOf(tracks, track)] = JSON.stringify(localTrack);
         }
     }
+    if (tooBig) {
+        ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+    } else {
+        localStorage.clear();
+        for (let data in locals) {
+            localStorage.setItem(data, locals[data]);
+        }
+    }
+
 }
 
 function createName(ctx) {
@@ -130,7 +146,7 @@ function addTrack(ctx, track) {
     ctx.setLocalTracks([...ctx.localTracks]);
     openNewLocalTrack(ctx);
     closeCloudTrack(ctx, track);
-    TracksManager.saveTracks(ctx.localTracks);
+    TracksManager.saveTracks(ctx.localTracks, ctx);
 }
 
 function prepareTrack(track) {
@@ -310,7 +326,7 @@ function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
         ctx.localTracks.splice(currentTrackIndex, 1);
-        TracksManager.saveTracks(ctx.localTracks);
+        TracksManager.saveTracks(ctx.localTracks, ctx);
         ctx.setLocalTracks([...ctx.localTracks]);
         return true;
     }

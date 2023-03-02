@@ -109,7 +109,7 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks);
+            TracksManager.saveTracks(ctx.localTracks, ctx);
             ctx.setLocalTracks([...ctx.localTracks]);
         }
     }
@@ -140,7 +140,7 @@ export default function LocalClientTrackLayer() {
             ctx.setUpdateContextMenu(true);
             setAddEleTab(true);
         }
-        TracksManager.saveTracks(ctx.localTracks);
+        TracksManager.saveTracks(ctx.localTracks, ctx);
     }
 
     function checkZoom() {

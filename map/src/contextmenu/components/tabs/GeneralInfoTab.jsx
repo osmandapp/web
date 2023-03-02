@@ -132,7 +132,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                 ctx.selectedGpxFile.name = fileName;
                 ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                 ctx.setLocalTracks([...ctx.localTracks]);
-                TracksManager.saveTracks(ctx.localTracks);
+                TracksManager.saveTracks(ctx.localTracks, ctx);
             } else {
                 setFileName(ctx.selectedGpxFile.name);
                 setError(true);
@@ -251,7 +251,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
 
             ctx.localTracks[ind] = updatedTrack;
             ctx.setLocalTracks([...ctx.localTracks]);
-            TracksManager.saveTracks(ctx.localTracks);
+            TracksManager.saveTracks(ctx.localTracks, ctx);
         } else {
             TracksManager.addTrack(ctx, ctx.selectedGpxFile);
         }
