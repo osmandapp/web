@@ -22,31 +22,31 @@ The following profiles are available by default: *Driving, Cycling, Walking, Tru
 Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.
 :::
 
-### [Car-based (Truck, Motorcycle, Car) routing](./car-based-routing)
+### [Car-based (Truck, Motorcycle, Car) routing](./car-based-routing.md)
 
 OsmAnd provides driving instructions for Car, Truck, Motorcycle drivers.  
-### [Bicycle-based (MTB, Moped) routing](./bicycle-based-routing)
+### [Bicycle-based (MTB, Moped) routing](./bicycle-based-routing.md)
 
 Bicycle routing provides navigation prompts specifically for bicycle riders and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
 
-### [Pedestrian routing](./pedestrian-routing)
+### [Pedestrian routing](./pedestrian-routing.md)
 
 Pedestrian routing can be used not only for walking in the city, but also during hiking trips.
 ### [Public Transport routing](./public-transport-navigation.md)
 
 Public Transport navigation is your help during trips in cities.
 
-### [Horse / ski routing](./horse-ski-routing)
+### [Horse / ski routing](./horse-ski-routing.md)
 
 Ski routing allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
 Horse routing provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
-### [Boat routing](./boat-navigation)
+### [Boat routing](./boat-navigation.md)
 
 Boat routing can be used when navigating rivers, lakes and in the open sea.
-### [Straight line](./straight-line-routing) 
+### [Straight line](./straight-line-routing.md) 
 
 Straight line routing (or "point-to-point" navigation) is a feature that allows users to navigate between two points on a map using a straight line path.  
-### [Online routing](./online-routing)
+### [Online routing](./online-routing.md)
 
 Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 
