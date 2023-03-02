@@ -12,26 +12,24 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-The navigation functionality guides you to your destinations, by displaying routes, offering turn-by-turn instructions, and optional voice guidance.
 
-### [Routing types (Profiles)](./routing/index.md)
+## OsmAnd Navigation section documentation
 
-Routing type determines how the route will be calculated.  
-### [Navigation by route](./route-navigation.md)
+Navigation features help you get to your destination by displaying routes, offering turn-by-turn directions, and additional voice prompts.  
+List of articles:
 
-Navigation by route
+- [Routing types (Profiles)](./routing/index.md) - Routing type determines how the route will be calculated.  
+- [Navigation by route](./route-navigation.md).
+- [Navigation by track](./gpx-navigation.md).
+- [Markers navigation](./markers-navigation.md) - Straight navigation to your marker.
+- [Voice navigation](./voice-navigation.md).
+- [Android Auto / CarPlay](./auto-car.md) - Using a vehicle media screen for navigation by OsmAnd.
+- [Route line appearance](./route-line-appearance.md).
 
-### [Navigation by track](./gpx-navigation.md)
 
-Navigation by track (GPX)
+## Common settings
 
-### [Markers navigation](./markers-navigation.md)
-
-Straight navigation to your marker
-
-### [Android Auto / CarPlay](./auto-car.md)
-
-Using a vehicle media screen for navigation by OsmAnd
+This section describes the general settings available for all types of navigation in OsmAnd.
 
 ### Navigation settings
 
@@ -188,52 +186,6 @@ If you have selected the engine type in the [vehicle parameters](../personal/pro
 
 </Tabs>
 
-### [Notifications / Voice prompts](./voice-navigation.md)
-
-When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These modes are important to reduce battery consumption.  
-
-#### Notification
-
-<InfoAndroidOnly/>
-
-You can see notification info in Drop-down system menu: Turn-by-turn instructions, arrows, arrival time and time to go, current speed.
-
-![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
-
-Active buttons on Drop-down system menu for your navigation:
-- *<Translate android="true" ids="stop_navigation_service"/>* - allows to stop your navigation.
-- *<Translate android="true" ids="shared_string_pause"/>* - allows to pause your navigation.
-- *<Translate android="true" ids="shared_string_resume"/>* - allows to resume your navigation.
-
-#### Screen control
-
-<InfoAndroidOnly/>
-
-You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.  
-
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
-
-![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)  
-
-#### Screen timeout
-
-- *<Translate android="true" ids="system_screen_timeout"/>* - the screen will turn off depending on the device settings. Enable it to use *Turn the screen off* according to the system screen timeout. The *"Change settings"* button opens the system menu.
-
-![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
-
-- *<Translate android="true" ids="wake_time"/>* - If the "Keep screen on" option is enabled, the device screen does not apply a timeout. If the previous option is disabled, you can set the time after which the device screen will turn off if you do not interact with it.
-
-![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
-
-#### Turn screen on
-
-Select options to wake up the screen. Make sure OsmAnd is in the foreground while the device is locked.
-
-![turn screen on Android](@site/static/img/navigation/route/turn_screen_on_android.png)
-
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
-- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
-- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
 
 ### Simulate navigation
 
