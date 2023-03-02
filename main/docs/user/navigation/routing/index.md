@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Types of routing  
 
-Routing type determines how the route will be calculated. The OsmAnd app uses different routing types for hiking, cycling and, for example, boat trips. The navigation rules are contained in [routing.xml](../docs/technical/osmand-file-formats/osmand-routing-xml.md) file and used for offline routing. Routing type change automaticly, when you change profile. You can also create your [own routing.xml file](#custom-routing) and use it for navigation (only for advanced OsmAnd users!).  
+Routing type determines how the route will be calculated. The OsmAnd app uses different routing types for hiking, cycling and, for example, boat trips. The navigation rules are contained in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) file and used for offline routing. Routing type change automaticly, when you change profile. You can also create your [own routing.xml file](#custom-routing) and use it for navigation (only for advanced OsmAnd users!).  
 
 The following profiles are available by default: *Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding*.  
 
