@@ -17,19 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-
 :::info
 The *[osmand.net](https://osmand.net/map/)* site is currently being developed and tested.  
 **Therefore, the layout and operation of some functions on the site may be different from those described in this article.**   
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
-
-
-<!-- As we wrote in our ["2023 New Year resolutions"](https://osmand.net/blog/ny-resolutions-2023#web) we are developing OsmAnd Web.
-At this moment each user can test this service:  [osmand.net/map](https://osmand.net/map/).
-What functions will be available except the map view for Free and for [Pro users](../purchases/android.md#osmand-pro): -->
-
 
 The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
 
@@ -41,17 +34,8 @@ Features | Versions
 | [Favorites](#farorites-pro) | <ProFeature/> | 
 | [Map style](#map-style) | Free |
 | [Navigation Route](#navigation-route) | Free |
-| [Create track](#create-track-pro) | <ProFeature/> |  
+| [Create track](#create-track-pro) | <ProFeature/> |   
 
-<!--
-1. [OsmAnd Pro sync](#osmand-pro-sync) <ProFeature/>
-2. [Weather](#weather) (Free)
-3. [Tracks](#weather) (Free and <ProFeature/>)
-4. [Favorites](#farorites-pro) <ProFeature/>
-5. [Map style](#map-style) (Free)
-6. [Navigation Route](#navigation-route) (Free)
-7. The ["Create track"](#create-track-pro) tool <ProFeature/>
--->
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
 
@@ -69,7 +53,7 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
 
-- Your data, such as tracks and favorites, will appear in the menu after logging in. They are available for display on the map.  
+- Your data, such as tracks and favorites, will appear in the menu after you log in. They are available for display on the map.  
 
 ![View OsmAnd Web data](@site/static/img/web/web_data.png)  
 
@@ -187,11 +171,11 @@ In this section of the menu, you can change the map style. You can read more abo
 
 - After adding the start and end points, we get the route.
 
-![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1.png)
+![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1-1.png)
 
 - In the Route block you can move the start and end points, edit them and change the type of route.
 
-![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2.png)
+![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2-1.png)
 
 
 ## Create track (Pro)
@@ -205,18 +189,3 @@ You can view any actions and display track information in the [Track section](#t
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
 
-<!--
-_____________
-
-
-:::info
-The web [_'osmand/map'_](https://osmand.net/map/) is developed and tested now. 
-
-**The layout and operation of some functions may have changed from those described in this article.**
-
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub, please leave your feedback there.
-:::
-
-<LinksSocial/>
-<LinksTelegram/>
--->
