@@ -15,30 +15,18 @@ const useUndoRedo = (initialState = {}) => {
 
         switch (action.type) {
             case SET_STATE:
-                ctx.setTrackState({
-                    pastStates: [...past, present],
-                    futureStates: []
-                })
                 return {
                     past: [...past, present],
                     present: action.data,
                     future: []
                 };
             case UNDO:
-                ctx.setTrackState({
-                    pastStates: past.slice(0, past.length - 1),
-                    futureStates: [present, ...future]
-                })
                 return {
                     past: past.slice(0, past.length - 1),
                     present: past[past.length - 1],
                     future: [present, ...future]
                 };
             case REDO:
-                ctx.setTrackState({
-                    pastStates: [...past, present],
-                    futureStates: future.slice(1)
-                })
                 return {
                     past: [...past, present],
                     present: future[0],

@@ -64,6 +64,13 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         }
     }, [ctx.selectedGpxFile])
 
+    useEffect(() => {
+        ctx.setTrackState({
+            pastStates: pastStates,
+            futureStates: futureStates
+        })
+    },[state])
+
     function addFirstState() {
         if (pastStates.length === 0) {
             state.updateState = false;
