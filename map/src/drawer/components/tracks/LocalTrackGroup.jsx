@@ -90,7 +90,7 @@ export default function LocalTrackGroup() {
                 </Typography>
             </ListItemText>
             <Button
-                sx={{borderRadius:28, minWidth: '30px !important' }}
+                sx={{borderRadius: 28, minWidth: '30px !important'}}
                 size="small"
                 ref={anchorEl}
                 onClick={(e) => {
@@ -108,12 +108,14 @@ export default function LocalTrackGroup() {
             {localGpxOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
-            <Actions files={ctx.localTracks} setSortFiles={setSortFiles}/>
-            {ctx.localTracks.length > 0 && ctx.localTracks.map((track, index) => {
-                return <LocalTrackItem key={'track' + index}
-                                       track={track}
-                                       index={index}/>;
-            })}
+            <div style={{maxHeight: '41vh', overflow: 'auto'}}>
+                <Actions files={ctx.localTracks} setSortFiles={setSortFiles}/>
+                {ctx.localTracks.length > 0 && ctx.localTracks.map((track, index) => {
+                    return <LocalTrackItem key={'track' + index}
+                                           track={track}
+                                           index={index}/>;
+                })}
+            </div>
             <MenuItem disableRipple={true}>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>

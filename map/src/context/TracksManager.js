@@ -25,8 +25,10 @@ function loadTracks() {
     return localTracks;
 }
 
-function saveTracks(tracks) {
-    localStorage.clear();
+function saveTracks(tracks, ctx) {
+    let tracksSize = 0;
+    let locals = {}
+    let tooBig = false;
     if (tracks.length > 0) {
         for (let track of tracks) {
             let localTrack = {
@@ -40,9 +42,28 @@ function saveTracks(tracks) {
                 selected: false,
                 originalName: track.originalName
             }
-            localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
+            tracksSize += JSON.stringify(localTrack).length;
+            if (tracksSize > 5000000) {
+                tooBig = true;
+                break;
+            }
+            locals['localTrack_' + _.indexOf(tracks, track)] = JSON.stringify(localTrack);
         }
     }
+    if (tooBig) {
+        ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+    } else {
+        let names = Object.keys(localStorage);
+        for (let name of names) {
+            if (name.includes('localTrack')) {
+                localStorage.removeItem(name);
+            }
+        }
+        for (let data in locals) {
+            localStorage.setItem(data, locals[data]);
+        }
+    }
+
 }
 
 function createName(ctx) {
@@ -130,7 +151,7 @@ function addTrack(ctx, track) {
     ctx.setLocalTracks([...ctx.localTracks]);
     openNewLocalTrack(ctx);
     closeCloudTrack(ctx, track);
-    TracksManager.saveTracks(ctx.localTracks);
+    TracksManager.saveTracks(ctx.localTracks, ctx);
 }
 
 function prepareTrack(track) {
@@ -274,6 +295,9 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
     }
     if (ctx.loginUser) {
         let gpxFile = file ? file : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+        if (gpxFile.points) {
+            gpxFile.tracks = [{points: gpxFile.points}];
+        }
         let gpx = await getGpxTrack(gpxFile);
         if (gpx) {
             let convertedData = new TextEncoder().encode(gpx.data);
@@ -307,22 +331,37 @@ function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
         ctx.localTracks.splice(currentTrackIndex, 1);
-        TracksManager.saveTracks(ctx.localTracks);
+        TracksManager.saveTracks(ctx.localTracks, ctx);
         ctx.setLocalTracks([...ctx.localTracks]);
         return true;
     }
     return false;
 }
 
+function formatRouteMode(routeMode) {
+    let routeModeStr = routeMode.mode;
+    Object.keys(routeMode.opts).forEach(o => {
+        if (routeMode.opts[o]?.value === true) {
+            routeModeStr += ',' + o;
+        } else if (routeMode.opts[o]?.value === false) {
+            // skip
+        } else {
+            routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
+        }
+    });
+    return routeModeStr;
+}
+
 
 async function updateRouteBetweenPoints(ctx, start, end) {
     ctx.setRoutingErrorMsg(null);
+    let routeMode = formatRouteMode(ctx.creatingRouteMode)
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
                 end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
-                routeMode: start.profile ? start.profile : ctx.routeMode.mode,
+                routeMode: routeMode,
                 hasRouting: start.segment !== null || end.segment !== null,
                 maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE
             },
@@ -341,6 +380,7 @@ async function updateRouteBetweenPoints(ctx, start, end) {
         if (result.msg) {
             ctx.setRoutingErrorMsg(result.msg);
         }
+        updateGapProfileOneSegment(end, result.points);
         return result.points;
     }
 }
@@ -358,7 +398,20 @@ async function updateRoute(ctx, points) {
                 return value === "***NaN***" ? NaN : value;
             });
         }
+        updateGapProfileAllSegments(result.points);
         return result.points;
+    }
+}
+
+function updateGapProfileAllSegments(points) {
+    points.forEach(p => {
+        updateGapProfileOneSegment(p, p.geometry);
+    })
+}
+
+function updateGapProfileOneSegment(routPoint, points) {
+    if (routPoint.profile === PROFILE_GAP) {
+        points[points.length - 1].profile = PROFILE_GAP;
     }
 }
 
@@ -489,9 +542,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
-function createTrack(ctx) {
+function createTrack(ctx, latlng) {
     let createState = {
         enable: true
+    }
+    if (latlng) {
+        createState.latlng = latlng;
     }
     if (ctx.selectedGpxFile) {
         createState.closePrev = {
@@ -543,6 +599,7 @@ const TracksManager = {
     createGpxTracks,
     clearTrack,
     getGroup,
+    formatRouteMode,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

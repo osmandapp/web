@@ -126,10 +126,10 @@ export default class EditablePolyline {
             };
         }
 
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, points).then(res => {
-            res.addPoint = false;
-            this.ctx.setSelectedGpxFile({...res});
-        });
+        if (this.ctx.selectedGpxFile.dragPoint) {
+            this.ctx.selectedGpxFile.addPoint = false;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
+        }
     }
 
     async dragEndNewPoint(e, setLoading) {
@@ -183,6 +183,9 @@ export default class EditablePolyline {
             newPoint.lng = lng;
             if (newPoint.geometry) {
                 delete newPoint.geometry;
+                if (newPoint.profile === TracksManager.PROFILE_GAP) {
+                    newPoint.profile = _.cloneDeep(this.ctx.selectedGpxFile.points[ind - 1].profile);
+                }
             }
 
             trackPoints.splice(ind, 0, newPoint);
@@ -204,7 +207,8 @@ export default class EditablePolyline {
             }, nextPoint);
             polylineTempNext.addTo(this.map);
 
-            await Promise.all([await this.createPolyline(prevPoint, currentPoint)
+            await Promise.all(
+                [await this.createPolyline(prevPoint, currentPoint)
                 .then(() => {
                     this.map.removeLayer(polylineTempCurrent);
                 }), await this.createPolyline(currentPoint, nextPoint)
@@ -214,6 +218,7 @@ export default class EditablePolyline {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
                     this.ctx.selectedGpxFile.addPoint = false;
                     this.ctx.selectedGpxFile.dragPoint = false;
+                    res.layers = this.ctx.selectedGpxFile.layers;
                     this.ctx.setSelectedGpxFile({...res});
                 });
             })

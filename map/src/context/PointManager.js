@@ -17,7 +17,13 @@ function deleteWpt(ind, ctx) {
 }
 
 async function reorder(startIndex, endIndex, currentTrack, ctx) {
-    let removed = await deletePointByIndex(currentTrack, startIndex, ctx);
+    let lengthSum = 0;
+    let removed = await deleteByIndex(currentTrack.points, startIndex, lengthSum, ctx).then((result) => {
+            if (currentTrack.points.length > 0) {
+                return result.deletedPoint;
+            }
+        }
+    );
     if (removed.length > 0) {
         await insertPointToTrack(currentTrack, endIndex, removed[0], ctx);
     }

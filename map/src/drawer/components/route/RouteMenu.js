@@ -64,7 +64,9 @@ export default function RouteMenu() {
         return <></>;
     }
     return <>
-        {openSettings && <RouteSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings}/>}
+        {openSettings &&
+            <RouteSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} profile={ctx.routeMode}
+                                 setProfile={ctx.setRouteMode} useDev={true}/>}
         <MenuItem key='routeTop' sx={{ mb: 1 }} onClick={(e) => setOpen(!open)}>
             <ListItemIcon>
                 <Directions fontSize="small" />
@@ -73,7 +75,7 @@ export default function RouteMenu() {
             {open ? <ExpandLess /> : <ExpandMore />}
         </MenuItem>
 
-        <Collapse in={open} timeout="auto" unmountOnExit>        
+        <Collapse in={open} timeout="auto" unmountOnExit>
             <MenuItem key='routeprofile' sx={{ ml: 1, mr: 2 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="route-mode-label">Route profile</InputLabel>
@@ -81,11 +83,11 @@ export default function RouteMenu() {
                         labelid="route-mode-label"
                         label="Route profile"
                         value={ctx.routeMode.mode}
-                        onChange={(e) => ctx.setRouteMode({ 
+                        onChange={(e) => ctx.setRouteMode({
                             mode: e.target.value, modes: ctx.routeMode.modes,
                             opts: ctx.routeMode.modes[e.target.value]?.params})}
                     >
-                        {Object.entries(ctx.routeMode.modes).map(([key, vl]) => 
+                        {Object.entries(ctx.routeMode.modes).map(([key, vl]) =>
                             <MenuItem key={key} value={key}>{vl.name}</MenuItem>
                         )}
                     </Select>
@@ -101,7 +103,7 @@ export default function RouteMenu() {
             {!ctx.routeTrackFile && ctx.startPoint && <MenuItem key='start' sx={{ ml: 2, mr: 2, mt: 1 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="start-point-label">Start point</InputLabel>
-                    <Input 
+                    <Input
                         labelid="start-point-label"
                         label="Start"
                         value={formatLatLon(ctx.startPoint)} >
@@ -167,9 +169,9 @@ export default function RouteMenu() {
                         value={ctx.routeTrackFile.name} >
                     </Input>
                 </FormControl>
-                <IconButton sx={{ ml: 1 }} onClick={() => { 
-                    ctx.setRouteTrackFile(null); 
-                    ctx.setRouteData(null); 
+                <IconButton sx={{ ml: 1 }} onClick={() => {
+                    ctx.setRouteTrackFile(null);
+                    ctx.setRouteData(null);
                     ctx.setEndPoint(null);
                     ctx.setStartPoint(null);
                     }} >
@@ -178,14 +180,14 @@ export default function RouteMenu() {
             </MenuItem>}
             <MenuItem key='uploadroute' disableRipple={true}>
                 <label htmlFor="contained-button-file" >
-                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-file" type="file" 
+                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-file" type="file"
                         onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])} />
                     <Button variant="contained" component="span" sx={{ ml: 3 }}>
                         Select Track
                     </Button>
                 </label>
             </MenuItem>
-      
+
         </Collapse>
     </>;
 

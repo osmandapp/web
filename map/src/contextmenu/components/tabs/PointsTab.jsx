@@ -34,8 +34,6 @@ const PointsTab = ({width}) => {
         }
         if (ctx.selectedGpxFile) {
             await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
         setLoading(false);
     }

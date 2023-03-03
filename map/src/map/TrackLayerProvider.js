@@ -79,7 +79,8 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx, draggable) {
     point.geometry.forEach(p => {
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
-            layers.push(new L.Polyline(coords, getPolylineOpt()));
+            coords.push(new L.LatLng(p.lat, p.lng))
+            layers.push(createPolyline(coords, ctx, point, points));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -88,15 +89,19 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx, draggable) {
     })
     coordsAll = coordsAll.concat(Object.assign([], coords));
     if (coords.length > 0) {
-        let polyline = new L.Polyline(coords, getPolylineOpt());
-        if (ctx) {
-            polyline.setStyle({
-                color: ctx.creatingRouteMode.colors[getProfile(point, points)]
-            });
-        }
-        layers.push(polyline);
+        layers.push(createPolyline(coords, ctx, point, points));
     }
     return coordsAll;
+}
+
+function createPolyline(coords, ctx, point, points) {
+    let polyline = new L.Polyline(coords, getPolylineOpt());
+    if (ctx) {
+        polyline.setStyle({
+            color: ctx.creatingRouteMode.colors[getProfile(point, points)]
+        });
+    }
+    return polyline;
 }
 
 function addStartEndGap(point, allPoints, layers, editTrack) {

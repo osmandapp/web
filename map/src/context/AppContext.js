@@ -117,7 +117,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading) 
             const res = await response.json();
             res.loginUser = loginUser;
             res.totalUniqueZipSize = 0;
-            res.uniqueFiles.forEach( (f) => {
+            res.uniqueFiles.forEach((f) => {
                 res.totalUniqueZipSize += f.zipSize;
             });
             res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
@@ -185,21 +185,6 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-
-function formatRouteMode(routeMode) {
-    let routeModeStr = routeMode.mode;
-    Object.keys(routeMode.opts).forEach(o => {
-        if (routeMode.opts[o]?.value === true) {
-            routeModeStr += ',' + o;
-        } else if (routeMode.opts[o]?.value === false) {
-            // skip
-        } else {
-            routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
-        }
-    });
-    return routeModeStr;
-}
-
 async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
@@ -243,7 +228,7 @@ function getColors() {
         'pedestrian': '#d90139',
         'ski': '#ffacdf',
         'line': '#5F9EA0',
-        'gap': '#ff8800'
+        'moped': '#3e690e'
     };
 }
 
@@ -267,7 +252,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     getRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -290,7 +275,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
 async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints) {
     let formData = new FormData();
     formData.append('file', routeTrackFile);
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${formatRouteMode(routeMode)}`, {
+    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
         method: 'POST',
         body: formData
     });
@@ -396,6 +381,10 @@ export const AppContextProvider = (props) => {
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+    const [trackState, setTrackState] = useState({
+        pastStates: [],
+        futureStates: []
+    });
 
 
     useEffect(() => {
@@ -486,8 +475,9 @@ export const AppContextProvider = (props) => {
         loadingContextMenu, setLoadingContextMenu,
         updateContextMenu, setUpdateContextMenu,
         trackProfileManager, setTrackProfileManager,
+        routingErrorMsg, setRoutingErrorMsg,
         pointContextMenu, setPointContextMenu,
-        routingErrorMsg, setRoutingErrorMsg
+        trackState, setTrackState
 
     }}>
         {props.children}

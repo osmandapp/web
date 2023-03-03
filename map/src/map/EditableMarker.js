@@ -87,6 +87,7 @@ export default class EditableMarker {
         }
         if (this.ctx.selectedGpxFile.dragPoint) {
             this.ctx.selectedGpxFile.addPoint = false;
+            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
         }
     }
 
@@ -130,7 +131,7 @@ export default class EditableMarker {
                 let prevPoint = trackPoints[indPoint - 1];
                 let nextPoint = trackPoints[indPoint + 1];
 
-                if (prevPoint) {
+                if (prevPoint && prevPoint.profile !== TracksManager.PROFILE_GAP) {
                     currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
@@ -143,7 +144,7 @@ export default class EditableMarker {
                     }
                 }
 
-                if (nextPoint) {
+                if (nextPoint && currentPoint.profile !== TracksManager.PROFILE_GAP) {
                     nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
@@ -177,24 +178,29 @@ export default class EditableMarker {
                 currentWpt.lon = lng;
             }
         }
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
-            res.addPoint = false;
-            delete res.dragPoint;
-            this.ctx.setSelectedGpxFile({...res});
-        });
+        if (trackPoints.length > 1) {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
+                res.addPoint = false;
+                res.dragPoint = false;
+                res.layers = this.ctx.selectedGpxFile.layers;
+                this.ctx.setSelectedGpxFile({...res});
+            });
+        }
     }
 
     updatePolyline(profile, point, polyline) {
-        let latlngs = [];
-        point.geometry.forEach(point => {
-            latlngs.push(new L.LatLng(point.lat, point.lng))
-        })
+        if (point) {
+            let latlngs = [];
+            point.geometry.forEach(point => {
+                latlngs.push(new L.LatLng(point.lat, point.lng))
+            })
 
-        if (polyline) {
-            polyline.setLatLngs(latlngs);
-            polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
-            });
+            if (polyline) {
+                polyline.setLatLngs(latlngs);
+                polyline.setStyle({
+                    color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
+                });
+            }
         }
     }
 }
