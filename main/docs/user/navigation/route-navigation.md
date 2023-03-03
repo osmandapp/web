@@ -20,7 +20,7 @@ The Navigation by route option provides you with simple step-by-step instruction
 
 ## Overview
 
-Like other navigation options, *Navigation by route* can be used with different [types of routing](./routing/index.md), i.e. profiles. By default, OsmAnd provides offline navigation, but you can also use [online routing engines](./routing/online-routing.md).  
+Like other navigation options, *Navigation by route* can be used with different [types of routing](./routing/index.md), i.e., profiles. By default, OsmAnd provides offline navigation, but you can also use [online routing engines](./routing/online-routing.md).  
 Also note, that for correct work of the navigation, you need to grant OsmAnd permission to receive information about [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
 
 <Tabs groupId="operating-systems">
@@ -58,7 +58,7 @@ To use offline navigation, you first need to [download maps](../start-with/downl
 
 ## Navigation menu  
 
-There are 3 ways to reach navigation menu:
+There are 3 ways to reach the navigation menu:
 
 - [the navigation button](../widgets/map-buttons.md#directions) on the map screen  
 - *direction to/from* in a [map context menu](../map/map-context-menu#directions-to--from)  
@@ -84,7 +84,7 @@ There are 3 ways to reach navigation menu:
 - &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-destination)
 - &nbsp;_<Translate android="true" ids="search_button"/>_ - opens [the search menu](../search/index.md)
 - &nbsp;_<Translate android="true" ids="shared_string_address"/>_ - opens [address search menu](../search/search-address.md)
-- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map to chose destinatino point by tapping on the map
+- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map to chose destination point by tapping on the map
 - &nbsp;_<Translate android="true" ids="shared_string_favorites"/>_ - allows to use [Favorite](../personal/favorites.md) as destination
 - &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose one of the [map markers](../personal/markers.md) for a destination point
 - &nbsp;"&#8595;&#8593;"_Swap Starting point and Destination_ - allows to swap Start <-> Finish points
@@ -92,15 +92,15 @@ There are 3 ways to reach navigation menu:
 
 ## Choose starting point
 
-As for the starting point, you can choose your current location, location of a [Favorite point](../map/point-layers-on-map.md#favorites), select a point on the map or use [search](../search/index.md). You can also set a starting point in [Map Context menu](../map/map-context-menu.md) by choosing [directions from](../map/map-context-menu.md#directions-to--from) function.  
+As for the starting point, you can choose your current location, location of a [Favorite point](../map/point-layers-on-map.md#favorites), select a point on the map or use [search](../search/index.md). You can also set a starting point in [Map Context menu](../map/map-context-menu.md) by selecting the [directions from](../map/map-context-menu.md#directions-to--from) function.  
 
 ## Set destination
 
-The most important thing to start navigation is to determine your destination. Destination point can be found using a [search](../search/index.md#overview) function, or simply by scrolling a map. You can also set destination point in [navigation menu](#navigation-menu).  
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [search](../search/index.md#overview) function, or simply by scrolling a map. You can also set destination point in [navigation menu](#navigation-menu).  
 
 #### Home - Work points
 
-_Home_ and _Work_ tabs (or [Special points](../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in navigation menu.  
+_Home_ and _Work_ tabs (or [Special points](../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu.  
 
 #### Previous route
 
@@ -153,11 +153,11 @@ If you choose "Sort" (Android) or "Options" (iOS) in the destinations points lis
 
 </Tabs>
 
-In this menu you can find additional options for managing destinations points:
+In this menu, you can find additional options for managing destinations points:
 -  *<Translate android="true" ids="intermediate_items_sort_by_distance"/>* - OsmAnd will offer the shortest route between all your destinations, but the order of visiting еруь can be changed. Starting point and final destination won't be touched.
--  *<Translate android="true" ids="switch_start_finish"/>* - starting point and final destination will be swaped.  
+-  *<Translate android="true" ids="switch_start_finish"/>* - starting point and final destination will be swapped.  
 -  *<Translate android="true" ids="reverse_all_points"/>* (only Android) - all points will be put in the reverse direction.
--  *<Translate android="true" ids="add_intermediate_point"/>* (or add *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
+-  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
 -  *<Translate android="true" ids="clear_all_intermediates"/>* - all the intermediate destinations will be removed from the map.
 
 ## Start / stop navigation
@@ -189,5 +189,5 @@ Even if you turn off the screen or exit the OsmAnd app window, you'll still get 
 :::
 
 :::tip
-To save phone's battery, you can use [“Turn on screen”](..//personal/profiles.md#appearance) option. Pressing the device power button will show OsmAnd on the top of the lock screen of your phone during navigation.  
+To save the phone's battery, you can use [“Turn on screen”](..//personal/profiles.md#appearance) option. Pressing the device power button will show OsmAnd on the top of the lock screen of your phone during navigation.  
 :::
