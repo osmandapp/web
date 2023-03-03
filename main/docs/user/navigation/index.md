@@ -190,6 +190,11 @@ If you have selected the engine type in the [vehicle parameters](../personal/pro
 
 ### Simulate navigation
 
+Simulate navigation function allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
+- Planning. You can see how long it may take to complete the entire route or its single segment.
+- Familiarization. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
+- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
