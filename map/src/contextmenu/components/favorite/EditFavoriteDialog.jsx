@@ -91,7 +91,7 @@ export default function EditFavoriteDialog({
         } else {
             ctx.favorites[selectedGroupName] = FavoriteHelper.updateGroupObj(ctx.favorites[selectedGroupName], result.newGroupResp);
         }
-        FavoriteHelper.updateSelectedFile(ctx, null, favoriteName, selectedGroupName, false);
+        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites,null, favoriteName, selectedGroupName, false);
         ctx.setFavorites({...ctx.favorites});
     }
 

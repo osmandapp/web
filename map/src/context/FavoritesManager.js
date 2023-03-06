@@ -135,6 +135,30 @@ function getColorGroup(ctx, groupName) {
     }
 }
 
+function createGroup(file) {
+    file.folder = file.name.split(".")[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
+    let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
+    return {
+        name: file.folder,
+        updatetimems: file.updatetimems,
+        file: file,
+        pointsGroups: pointsGroups,
+        hidden: isHidden(pointsGroups, file.folder)
+    }
+}
+
+function isHidden(pointsGroups, name) {
+    let group = pointsGroups[name];
+    if (group) {
+        for (let point of group.points) {
+            if (point.ext.extensions.hidden === "true") {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
@@ -143,6 +167,7 @@ const FavoritesManager = {
     getShapesSvg,
     orderList,
     getColorGroup,
+    createGroup,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,

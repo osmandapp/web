@@ -20,7 +20,6 @@ export default function OsmAndDrawer({mobile, toggleDrawer}) {
 
     const ctx = useContext(AppContext);
     const [visibleTracks, setVisibleTracks] = useState({local: [], cloud: [], favorites: []});
-    const [favoritesGroups, setFavoritesGroups] = useState([]);
     const [enableFavGroups, setEnableFavGroups] = useState([]);
 
     function visibleTracksOpen() {
@@ -179,9 +178,7 @@ export default function OsmAndDrawer({mobile, toggleDrawer}) {
                                                       enableFavGroups={enableFavGroups}
                                                       setEnableFavGroups={setEnableFavGroups}/>}
                 <TracksMenu/>
-                <FavoritesMenu favoritesGroups={favoritesGroups}
-                               setFavoritesGroups={setFavoritesGroups}
-                               enableGroups={enableFavGroups}
+                <FavoritesMenu enableGroups={enableFavGroups}
                                setEnableGroups={setEnableFavGroups}/>
                 <MapStyle/>
                 <RouteMenu/>

@@ -1,15 +1,18 @@
-import {Box, Grid, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
-import {Folder} from "@mui/icons-material";
-import React from "react";
+import {Box, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
+import {Add, Folder} from "@mui/icons-material";
+import React, {useState} from "react";
 import FavoritesManager from "../../../../context/FavoritesManager";
 import Utils from "../../../../util/Utils";
+import AddNewGroupDialog from "../AddNewGroupDialog";
 
 export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
+
+    const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
 
     let groupList = FavoritesManager.orderList(groups, defaultGroup);
 
     const FavoriteGroupItem = (group) => {
-        let g = group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];
+        let g = group.pointsGroups && group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];
         let colorGroup;
         if (g && g.color) {
             colorGroup = Utils.hexToArgb(g.color);
@@ -47,6 +50,44 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
         </Box>
     }
 
+    const AddNewGroup = () => {
+        return <ListItem key={'newGroup'} component="div" disablePadding>
+            <ListItemButton
+                onClick={() => setAddGroupDialogOpen(true)}
+            >
+                <Box
+                    sx={{
+                        width: 110,
+                        height: 50,
+                        border: 1,
+                        borderColor: "#c1c1c1",
+                        paddingLeft: 1
+                    }}>
+                    <Grid container>
+                        <Grid item container xs={10} sx={{mt: -0.5}}>
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                onClick={() => setAddGroupDialogOpen(true)}
+                            >
+                                <Add fontSize="small"/>
+                            </IconButton>
+                        </Grid>
+                        <Grid item container xs={10} sx={{mt: -1}}>
+                            <ListItemText>
+                                <Typography variant="inherit" noWrap>
+                                    Add new
+                                </Typography>
+                            </ListItemText>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </ListItemButton>
+        </ListItem>
+
+    }
+
+
     return (<>
             <ListItemText>
                 <Typography variant="inherit" noWrap>
@@ -61,7 +102,7 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
                     overflowX: "scroll",
                 }}
             >
-                {groupList?.map((group, index) => {
+                {groupList.length > 0 && groupList?.map((group, index) => {
                     return <ListItem key={index} component="div" disablePadding>
                         <ListItemButton
                             selected={favoriteGroup === group || (favoriteGroup === null && group.name === defaultGroup)}
@@ -71,8 +112,11 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
                         </ListItemButton>
                     </ListItem>;
                 })}
-
+                <AddNewGroup/>
             </Box>
+            <AddNewGroupDialog dialogOpen={addGroupDialogOpen}
+                               setDialogOpen={setAddGroupDialogOpen}
+                               setFavoriteGroup={setFavoriteGroup}/>
         </>
     );
 }

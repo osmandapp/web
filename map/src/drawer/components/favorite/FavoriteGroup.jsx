@@ -115,10 +115,10 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 }
                 markerList.push(marker);
             });
-            setMarkers(markerList);
         } else if (favoritesPointsOpen && markers.length === 0) {
             getFavoritesWithoutLayers().then();
         }
+        setMarkers(markerList);
     }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
 
     async function getFavoritesWithoutLayers() {

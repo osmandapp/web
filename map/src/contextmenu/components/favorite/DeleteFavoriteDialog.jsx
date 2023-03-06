@@ -27,8 +27,8 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
                     ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems)
                 if (result) {
                     ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(ctx.favorites[ctx.selectedGpxFile.nameGroup], result);
-                    FavoriteHelper.updateSelectedGroup(ctx.favorites, ctx.selectedGpxFile.nameGroup, result);
-                    FavoriteHelper.updateSelectedFile(ctx, result, ctx.selectedGpxFile.markerCurrent.title, ctx.selectedGpxFile.nameGroup, true);
+                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, ctx.selectedGpxFile.nameGroup, result);
+                    FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, result, ctx.selectedGpxFile.markerCurrent.title, ctx.selectedGpxFile.nameGroup, true);
                     ctx.setFavorites({...ctx.favorites});
                     closeContextMenu();
                     break;

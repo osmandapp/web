@@ -14,7 +14,7 @@ import Utils from "../../../util/Utils";
 import TracksManager from "../../../context/TracksManager";
 import FavoritesManager from "../../../context/FavoritesManager";
 
-export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enableGroups, setEnableGroups}) {
+export default function FavoritesMenu({enableGroups, setEnableGroups}) {
     const ctx = useContext(AppContext);
 
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
@@ -27,58 +27,36 @@ export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enab
             return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
         });
         files.sort((a, b) => a.name.localeCompare(b.name))
-        let groups = [];
-        const newFavoritesFiles = Object.assign({}, ctx.favorites);
-        if (!newFavoritesFiles.groups) {
-            newFavoritesFiles.groups = [];
-        }
+        const newFavoritesFiles = {
+            groups: []
+        };
         files.forEach(file => {
-            file.folder = file.name.split(".")[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
-            let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
-            let group = {
-                name: file.folder,
-                updatetimems: file.updatetimems,
-                file: file,
-                pointsGroups: pointsGroups,
-                hidden: isHidden(pointsGroups, file.folder)
-            }
+            let group = FavoritesManager.createGroup(file)
             newFavoritesFiles.groups.push(group);
-            ctx.setFavorites(newFavoritesFiles);
-            groups.push(group);
         })
-        let resGroups = FavoritesManager.orderList(groups, FavoritesManager.DEFAULT_GROUP_NAME);
-        setFavoritesGroups(resGroups);
+        newFavoritesFiles.groups = FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME);
+        ctx.setFavorites(newFavoritesFiles);
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        let res = [];
-        favoritesGroups.forEach(g => {
-            if (g.hidden !== true) {
-                res.push(g);
-            }
-        })
-        setOpenFavoritesGroups(res);
-    }, [favoritesGroups]);
-
-    function isHidden(pointsGroups, name) {
-        let group = pointsGroups[name];
-        if (group) {
-            for (let point of group.points) {
-                if (point.ext.extensions.hidden === "true") {
-                    return true;
+        if (ctx.favorites.groups) {
+            let res = [];
+            ctx.favorites.groups.forEach(g => {
+                if (g.hidden !== true) {
+                    res.push(g);
                 }
-            }
+            })
+            setOpenFavoritesGroups(res);
         }
-        return false;
-    }
+    }, [ctx.favorites]);
 
     useEffect(() => {
         let enableAllGroups = enableGroups.length === openFavoritesGroups.length;
-        let disableAllGroups = enableGroups.length === 0 && favoritesGroups.length !== 0;
+        let disableAllGroups = enableGroups.length === 0 && ctx.favorites.groups?.length !== 0;
         if (enableAllGroups) {
-            createAllLayers(ctx, true, favoritesGroups).then();
+            createAllLayers(ctx, true, ctx.favorites.groups).then();
         } else if (disableAllGroups) {
-            deleteAllLayers(ctx, favoritesGroups);
+            deleteAllLayers(ctx, ctx.favorites.groups);
         }
     }, [enableGroups, setEnableGroups]);
 
@@ -97,6 +75,7 @@ export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enab
         });
         ctx.setFavorites(newFavoritesFiles);
     }
+
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
             for (const g of openFavoritesGroups) {
@@ -114,7 +93,7 @@ export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enab
                     newFavoritesFiles[g.name].addToMap = addToMap;
                 }
             }
-            setFavoritesGroups(FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME));
+            newFavoritesFiles.groups = FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME);
         }
     }
 
@@ -141,15 +120,15 @@ export default function FavoritesMenu({favoritesGroups, setFavoritesGroups, enab
             </ListItemIcon>
             <ListItemText> Favorites </ListItemText>
             <Typography variant="body2" color="textSecondary">
-                {favoritesGroups && favoritesGroups.length > 0 ? `${favoritesGroups.length}` : ''}
+                {ctx.favorites.groups && ctx.favorites.groups.length > 0 ? `${ctx.favorites.groups.length}` : ''}
             </Typography>
-            {favoritesGroups?.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
+            {ctx.favorites.groups?.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
-            {favoritesGroups?.length !== 0 &&
+            {ctx.favorites.groups?.length !== 0 &&
                 <FavoriteAllGroups setEnableGroups={setEnableGroups}
                                    favoritesGroups={openFavoritesGroups}/>}
-            {favoritesGroups && favoritesGroups.map((group, index) => {
+            {ctx.favorites.groups && ctx.favorites.groups.map((group, index) => {
                 return <FavoriteGroup key={group + index}
                                       index={index}
                                       group={group}
