@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Voice navigation
+title:  Voice navigation / Notifications
 ---
 
 import Tabs from '@theme/Tabs';
@@ -155,7 +155,7 @@ Select options to wake up the screen. Make sure OsmAnd is in the foreground whil
 
 - *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
-- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.  
 
 
 ## Download voice prompts
