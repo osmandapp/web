@@ -4,10 +4,10 @@ sidebar_position: 4
 
 # Android 4.4 (March 2023)
 
-OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
+OsmAnd produces multiple Ready-To-Use builds every day, allowing you to track new features and participate in the OsmAnd contributions (translation process).
 
 ## Join Beta
-You can participate in testing OsmAnd beta build thru Google Play. 
+You can participate in testing the OsmAnd beta build through Google Play. 
 
 <div class="button-row">
   <a class="button button--active" href="https://play.google.com/apps/testing/net.osmand.plus">OsmAnd+</a>
@@ -17,27 +17,27 @@ You can participate in testing OsmAnd beta build thru Google Play.
 ## What's new
 
 
-* Improved ["Tracks" menu](#tracks-menu) in "Configure Map",
-* Context menu now [displays localized names](#localized-poi-names) for POI,
-* Added option to share [route by link](#route-link),
-* [Map orientation](#map-orientation) added new fixed mode,
-* Added ["Display position"](#display-position) menu,
-* Simplified [start screen](#simplified-start-screen),
-* Added ["Speed/Slope" graph](#speedslope-graph) for track analysis,
-* Added ["Nautical miles/feet"](#nautical-miles-and-feet) unit of length,
-* [App language](#app-language-for-android-13) selection moved to system settings on Android 13,
-* [Simulate location](#redesign-simulate-location) redesign,
+* Improved the ["Tracks" menu](#tracks-menu) in "Configure Map".
+* Context menu now [displays localized names](#localized-poi-names) for POI.
+* Added the option to share [route by link](#route-link).
+* A new fixed mode was added to the [Map orientation](#map-orientation).
+* Added ["Display position"](#display-position) menu.
+* Simplified [start screen](#simplified-start-screen).
+* Added ["Speed/Slope" graph](#speedslope-graph) for track analysis.
+* Added ["Nautical miles/feet"](#nautical-miles-and-feet) unit of length.
+* The [App language](#app-language-for-android-13) selection was moved to the system settings on Android 13.
+* [Simulate location](#redesign-simulate-location) redesign.
 * [**Bugs fixs:**](#bugs-fixs)
-  * Fixed [bugs with Android Auto](#android-auto),
+  * Fixed [bugs with Android Auto](#android-auto).
   * Fixed issues with [displaying Vegan places](#vegan-places-pois).
 
 
 
 ### Tracks menu
 
-"Tracks" menu has a new design and more simple UX. It's easy to choose a needed track for showing it on the map, change appearance (&#8942; more than one track) or make an import (&#8942;):
+The "Tracks" menu has a new design and a simpler UX. It's easy to choose the needed track to display it on the map, change appearance (&#8942; more than one track) or import (&#8942;):  
 
-_OsmAnd menu > Configure map > Tracks_
+_OsmAnd menu → Configure map → Tracks_
 
 <table class="blogimage">
   <tr>
@@ -48,7 +48,7 @@ _OsmAnd menu > Configure map > Tracks_
 
 ### Localized POI names
 
-Added localized POI names for [Map context menu](../user/map/map-context-menu.md#alternative-names). Click on the POI name to open the full name list.
+Added localized POI names for [Map context menu](../user/map/map-context-menu.md#alternative-names). Tap the POI name to open the full list of names.  
 
 <table class="blogimage">
   <tr>
@@ -59,9 +59,9 @@ Added localized POI names for [Map context menu](../user/map/map-context-menu.md
 
 ### Route link
 
-After route creation in OsmAnd you can generate and send a link.
+You can generate and send a link after creating a route in OsmAnd app.
 
-_Navigation context menu > Details > Share button_
+_Navigation context menu → Details → Share button_
 
 <table class="blogimage">
   <tr>
@@ -83,9 +83,9 @@ Route link for example:  [https://osmand.net/map?start=50.212845%2C19.831682&end
 
 ### Map orientation 
 
-Added new fixed mode for [Map orientation](../user/map/interact-with-map.md#map-orientation-modes):
+Added a new fixed mode for [Map orientation](../user/map/interact-with-map.md#map-orientation-modes):
 
-- _Manually rotated (fixed)_ 
+- _Manually rotated (fixed)_. 
 
 <table class="blogimage">
   <tr>
@@ -99,11 +99,11 @@ Added the new settings for [_"Display position"_](../user/map/interact-with-map.
 
 _Menu → Configure profile → [General settings](../user/personal/profiles.md#appearance)→ Display position_
 
-Here you can choose three variants of your location on the screen map:
+You can choose three options to display your location on the screen map here:
 
-- _Center_: use center screen position for the cursor (["My location"](../user/map/interact-with-map.md#my-location--zoom)),
-- _Bottom_: use bottom screen position for the cursor (["My location"](../user/map/interact-with-map.md#my-location--zoom)),
-- _Automatic_: bottom for movement direction, center for all others.
+- _Center_: use the center position of the screen for the cursor (["My location"](../user/map/interact-with-map.md#my-location--zoom)).
+- _Bottom_: use the bottom screen position for the cursor (["My location"](../user/map/interact-with-map.md#my-location--zoom)).
+- _Automatic_: at the bottom for the direction of movement, in the center for everyone else.
 
 <table class="blogimage">
   <tr>
@@ -113,7 +113,7 @@ Here you can choose three variants of your location on the screen map:
 
 ### Simplified Start screen
 
-Restructure the Start screen. Now there is an opportunity to open OsmAnd Cloud.
+We changed the structure of the Start screen. It is now available to open OsmAnd Cloud.
 
 <table class="blogimage">
   <tr>
@@ -121,7 +121,7 @@ Restructure the Start screen. Now there is an opportunity to open OsmAnd Cloud.
     </tr>
 </table> 
 
-### Speed/Slope graph
+### Slope/Speed graph
 
 Added _Slope/Speed_ mode for [Analyze track on the map](../user/map/tracks-on-map.md#analyze-track-on-map).
 
@@ -140,7 +140,7 @@ Added ["Nautical miles/feet"](../user/personal/profiles.md#units--formats) for U
 
 Added support for OsmAnd language preferences (Android 13):
 
-_App info (OsmAnd) > App languages_
+_App info (OsmAnd) → App languages_
 
 ### Redesign Simulate location
 
@@ -156,11 +156,11 @@ We redesigned ["Simulate your position"](../user/plugins/development.md#plugin-s
 
 #### Android Auto
 
-- the [issue](https://github.com/osmandapp/OsmAnd/issues/16041): movement direction map orientation is flipped and jiggles,
-- the split-screen [issue](https://github.com/osmandapp/OsmAnd/issues/16456),
-- fixed crash with [GPX selection](https://github.com/orgs/osmandapp/projects/19/views/4?pane=issue&itemId=18983833),
-- the issue with the [Navigation info panel](https://github.com/osmandapp/OsmAnd/pull/16244),
-- added support Android Auto map mode: Day, Night, Automatic.
+- The [issue](https://github.com/osmandapp/OsmAnd/issues/16041): "Movement direction map orientation is flipped and jiggles".
+- The split-screen [issue](https://github.com/osmandapp/OsmAnd/issues/16456).
+- Fixed crash with [GPX selection](https://github.com/orgs/osmandapp/projects/19/views/4?pane=issue&itemId=18983833).
+- The issue with the [Navigation info panel](https://github.com/osmandapp/OsmAnd/pull/16244).
+- Added support Android Auto map mode: Day, Night, Automatic.
 
 #### Vegan places POIs
 

@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## Join Beta
 
-iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo). They don't have description and could have continuous versioning. They supposed to be stable and ready to use.
+iOS beta builds (TestFlight) are usually provided weekly (after the team sprint demo). They don't contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
@@ -14,14 +14,14 @@ iOS beta builds(TestFlight) usually are provided weekly (after team sprint demo)
 
 ## What's new
 
- - Dynamic type support, text size inside OsmAnd will change accordingly to text size in iOS,
- - Min iOS version is set to 15,
- - History screen: _Settings > OsmAnd settings > History_,
- - OpenStreetMap: added uploading tracks and authorization using OAuth, 
- - Voice prompts added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian,
- - Added legal warning about using speed camera alerts,
- - CarPlay: added history, redo of tracks and favorites list,
- - Map orientation: added manually rotated mode, 
- - Added stroke for ruler on the map,
- - UI fixes for RTL languages,
- - Accessibility added content labelling for map buttons.
+ - Dynamic type support: the text size inside OsmAnd will change according to the text size in iOS.
+ - The minimum iOS version is set to version 15.
+ - History screen: *Settings → OsmAnd Settings → History*.
+ - OpenStreetMap: added track upload and authorization with OAuth.
+ - Voice prompts: added support for new languages such as Catalan, Ukrainian, Bulgarian, Indonesian, and Slovenian.
+ - Added legal warning about the use of speed camera warnings.
+ - CarPlay: added history, track redo and favorites list.
+ - Map Orientation: added manual rotation mode.
+ - Added a stroke for the ruler on the map.
+ - User interface fixes for RTL languages.
+ - Accessibility: added content labeling for map buttons.
