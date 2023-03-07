@@ -16,10 +16,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Receive voice prompts while navigating: turn-by-turn instructions, alerts, and additional information.  
 
+## Voice navigation
 
-## How to use
+<!-- Receive voice prompts while navigating: turn-by-turn instructions, alerts, and additional information.  -->
 
 Voice navigation helps you drive your vehicle in the right direction without distracting you from the road. It is also convenient for walking or hiking.
 
@@ -109,14 +109,43 @@ The announcement time of the different voice prompts depends on the type of prom
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
+## Options of voice prompts
 
-## Notifications / Voice prompts
+### Download voice prompts
 
-When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These modes are important to reduce battery consumption.  
+<InfoAndroidOnly />  
 
-### Notification
+You can download voice prompts from two different sets from the list.  
+- The first type, these are the recommended ones:  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
+
+![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+
+- The second type is recorded voice prompts, with an incomplete set of features:  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+
+![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+
+### TTS (text-to-speech)
+
+If you choose TTS voice, you need to have an appropriate [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. They are partly included in Android, and iOS or can be installed separately. Go to [the settings of your Android (device)](https://support.google.com/accessibility/android/answer/6006983), find the section *Language and keyboard*, Text-to-speech or similar. Select or install the engine, then also set up support for the language you want, this can be an additional setting or a small download.  
+
+Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
+
+Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
+
+### Testing of voice prompts
+
+<InfoAndroidOnly />  
+
+For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
+
+
+## Notifications
 
 <InfoAndroidOnly/>
+
+When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These modes are important to reduce battery consumption. 
 
 You can see notification info in Drop-down system menu: Turn-by-turn instructions, arrows, arrival time and time to go, current speed.
 
@@ -127,7 +156,8 @@ Active buttons on Drop-down system menu for your navigation:
 - *<Translate android="true" ids="shared_string_pause"/>* - allows to pause your navigation.
 - *<Translate android="true" ids="shared_string_resume"/>* - allows to resume your navigation.
 
-### Screen control
+
+## Screen control
 
 <InfoAndroidOnly/>
 
@@ -156,36 +186,4 @@ Select options to wake up the screen. Make sure OsmAnd is in the foreground whil
 - *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
 - *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.  
-
-
-## Download voice prompts
-
-<InfoAndroidOnly />  
-
-You can download voice prompts from two different sets from the list.  
-- The first type, these are the recommended ones:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
-
-![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
-
-- The second type is recorded voice prompts, with an incomplete set of features:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
-
-![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
-
-
-## TTS (text-to-speech)
-
-If you choose TTS voice, you need to have an appropriate [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. They are partly included in Android, and iOS or can be installed separately. Go to [the settings of your Android (device)](https://support.google.com/accessibility/android/answer/6006983), find the section *Language and keyboard*, Text-to-speech or similar. Select or install the engine, then also set up support for the language you want, this can be an additional setting or a small download.  
-
-Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
-
-Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
-
-
-## Testing of voice prompts
-
-<InfoAndroidOnly />  
-
-For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).
 
