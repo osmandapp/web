@@ -1,23 +1,29 @@
 import {Box, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
 import {Add, Folder} from "@mui/icons-material";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import FavoritesManager from "../../../../context/FavoritesManager";
 import Utils from "../../../../util/Utils";
 import AddNewGroupDialog from "../AddNewGroupDialog";
+import _ from "lodash";
+import AppContext from "../../../../context/AppContext";
 
 export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, defaultGroup}) {
 
-    const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
+    const ctx = useContext(AppContext);
 
-    let groupList = FavoritesManager.orderList(groups, defaultGroup);
+    const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
+    console.log( groups)
+    console.log(favoriteGroup)
+    let groupList = FavoritesManager.orderList(_.values(groups), defaultGroup);
 
     const FavoriteGroupItem = (group) => {
-        let g = group.pointsGroups && group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name];
+        let g = group.pointsGroups ? group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? "" : group.name] : group;
         let colorGroup;
         if (g && g.color) {
             colorGroup = Utils.hexToArgb(g.color);
         }
-        let size = g && g.points.length;
+        console.log(g)
+        let size = g && g.points?.length;
         return <Box
             sx={{
                 width: 110,
@@ -42,7 +48,7 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
                 <Grid item container xs={10}>
                     <ListItemText>
                         <Typography variant="inherit" noWrap>
-                            {group.name}
+                            {group.name === ""  && !ctx.addFavorite.editTrack ? FavoritesManager.DEFAULT_GROUP_NAME : group.name}
                         </Typography>
                     </ListItemText>
                 </Grid>
@@ -87,6 +93,11 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
 
     }
 
+    function selectGroup(group) {
+        let defaultGroupName = ctx.addFavorite.editTrack ? '' : defaultGroup;
+        return favoriteGroup === group || (favoriteGroup === null && group.name === defaultGroupName)
+    }
+
 
     return (<>
             <ListItemText>
@@ -105,7 +116,7 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
                 {groupList.length > 0 && groupList?.map((group, index) => {
                     return <ListItem key={index} component="div" disablePadding>
                         <ListItemButton
-                            selected={favoriteGroup === group || (favoriteGroup === null && group.name === defaultGroup)}
+                            selected={selectGroup(group)}
                             onClick={() => setFavoriteGroup(group)}
                         >
                             {FavoriteGroupItem(group)}

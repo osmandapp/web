@@ -37,6 +37,7 @@ function saveTracks(tracks, ctx) {
                 metaData: track.metaData,
                 tracks: track.points ? [{points: track.points}] : track.tracks,
                 wpts: track.wpts,
+                pointsGroups: track.pointsGroups,
                 ext: track.ext,
                 analysis: track.analysis,
                 selected: false,

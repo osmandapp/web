@@ -64,6 +64,12 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function saveTrackWpt() {
+        let selectedGroup = favoriteGroup;
+        if (!selectedGroup) {
+            selectedGroup = {
+                name: FavoritesManager.DEFAULT_GROUP_NAME,
+            }
+        }
         let favorite = {
             name: favoriteName,
             address: favoriteAddress === "" ? null : favoriteAddress,
@@ -71,6 +77,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             color: favoriteColor,
             background: favoriteShape,
             icon: favoriteIcon,
+            category: getCategoryName(selectedGroup),
             lat: ctx.addFavorite.location.lat,
             lon: ctx.addFavorite.location.lng
         };
@@ -81,6 +88,20 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         if (ctx.createTrack) {
             createWptArrLocal();
             ctx.setUpdateContextMenu(true);
+        }
+        if (favorite.category === null) {
+            if (!ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS]) {
+                ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS] = {
+                    name: FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS,
+                    iconName: MarkerOptions.DEFAULT_WPT_ICON,
+                    backgroundType: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                    color: MarkerOptions.DEFAULT_WPT_COLOR,
+                    points: []
+                };
+            }
+            ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS].points.push(favorite)
+        } else {
+            ctx.selectedGpxFile.pointsGroups[favorite.category].points.push(favorite)
         }
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -226,6 +247,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                                                               setFavoriteGroup={setFavoriteGroup}
                                                               groups={ctx.favorites.groups}
                                                               defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>}
+                {ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
+                                                             setFavoriteGroup={setFavoriteGroup}
+                                                             groups={ctx.selectedGpxFile.pointsGroups}
+                                                             defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>}
                 <FavoriteIcon favoriteIcon={favoriteIcon}
                               setFavoriteIcon={setFavoriteIcon}
                               currentIconCategories={currentIconCategories}

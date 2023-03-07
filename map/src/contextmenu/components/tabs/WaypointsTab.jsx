@@ -114,6 +114,13 @@ export default function WaypointsTab({width}) {
                         <ListItemIcon style={{marginRight: " -25px"}}>
                             {"..."}
                         </ListItemIcon>}<br/>
+                    <Typography component={'span'} variant="caption">
+                        {point.wpt.category}
+                    </Typography>
+                    {point.wpt.category && (point.layer.options?.address || point.layer.options?.desc) &&
+                        <ListItemIcon style={{marginLeft: "5px", marginRight: " -25px"}}>
+                            {" • "}
+                        </ListItemIcon>}
                     <Typography component={'span'} variant="caption" style={{wordWrap: "break-word"}}>
                         {showMore ? point.layer.options?.desc : point.layer.options?.desc?.substring(0, getLength(point))}
                         {point.layer.options?.desc?.length > getLength(point) &&
@@ -156,7 +163,7 @@ export default function WaypointsTab({width}) {
     }
 
     const WaypointRow = () => ({point, index}) => {
-        let hasInfo = point.layer.options?.desc !== undefined || point.layer.options?.address !== undefined
+        let hasInfo = point.layer.options?.desc !== undefined || point.layer.options?.address !== undefined || point.wpt.category
         return (
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
                 {hasInfo && showWithInfo(point)}

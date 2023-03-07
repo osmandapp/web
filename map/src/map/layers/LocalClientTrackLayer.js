@@ -543,6 +543,7 @@ export default function LocalClientTrackLayer() {
         ctx.selectedGpxFile = {};
         ctx.selectedGpxFile.name = TracksManager.createName(ctx);
         ctx.selectedGpxFile.tracks = TracksManager.createGpxTracks();
+        ctx.selectedGpxFile.pointsGroups = {};
         ctx.selectedGpxFile.points = [];
         if (ctx.createTrack.latlng) {
             createPointFromMap();

@@ -42,19 +42,31 @@ export default function AddNewGroupDialog({dialogOpen, setDialogOpen, setFavorit
     }
 
     async function save() {
-        let pointsGroups = {};
-        pointsGroups[groupName] = {
-            name: groupName,
-            iconName: groupIcon,
-            backgroundType: groupShape,
-            color: groupColor
-        };
+        if (ctx.addFavorite.editTrack) {
+            saveTrackWptGroup();
+        } else {
+            await saveFavoriteGroup();
+        }
+    }
+
+    function saveTrackWptGroup() {
+        let pointsGroups = createGroup();
+        if (!ctx.selectedGpxFile.pointsGroups) {
+            ctx.selectedGpxFile.pointsGroups = {}
+        }
+        ctx.selectedGpxFile.pointsGroups[groupName] = pointsGroups[groupName];
+        setFavoriteGroup(ctx.selectedGpxFile.pointsGroups[groupName]);
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        setDialogOpen(false);
+    }
+
+    async function saveFavoriteGroup() {
 
         let data = {
-            pointsGroups: pointsGroups,
+            pointsGroups: createGroup(),
         }
 
-        if (pointsGroups[groupName]) {
+        if (data.pointsGroups[groupName]) {
             let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data,
                 {
                     params: {
@@ -70,7 +82,18 @@ export default function AddNewGroupDialog({dialogOpen, setDialogOpen, setFavorit
                 setDialogOpen(false);
             }
         }
+    }
 
+    function createGroup() {
+        let pointsGroups = {};
+        pointsGroups[groupName] = {
+            name: groupName,
+            iconName: groupIcon,
+            backgroundType: groupShape,
+            color: groupColor,
+            points: []
+        };
+        return pointsGroups;
     }
 
     const CloseDialog = (dialogOpen) => {
