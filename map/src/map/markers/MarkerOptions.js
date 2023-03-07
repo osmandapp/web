@@ -77,10 +77,14 @@ function getWptIcon(point, color, background, icon, folder) {
     }
 }
 
+function isStrangeShape(shape) {
+    return shape !== BACKGROUND_WPT_SHAPE_CIRCLE && shape !== BACKGROUND_WPT_SHAPE_OCTAGON && shape !== BACKGROUND_WPT_SHAPE_SQUARE;
+}
+
 function getSvgBackground(colorBackground, shape) {
     let svg;
     if (shape) {
-        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE) {
+        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
             svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
                         </svg>`
@@ -110,9 +114,9 @@ const MarkerOptions = {
     BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,
-    DEFAULT_WPT_ICON:DEFAULT_WPT_ICON,
-    DEFAULT_WPT_COLOR:DEFAULT_WPT_COLOR,
-    POI_ICONS_FOLDER:POI_ICONS_FOLDER
+    DEFAULT_WPT_ICON: DEFAULT_WPT_ICON,
+    DEFAULT_WPT_COLOR: DEFAULT_WPT_COLOR,
+    POI_ICONS_FOLDER: POI_ICONS_FOLDER
 };
 
 export default MarkerOptions;
