@@ -25,6 +25,16 @@ The following profiles are available by default: *Driving, Cycling, Walking, Tru
 :::
 
 
+## Custom routing
+
+You can modify _routing.xml file_ for your own needs. It means that you can update the routing algorithm according to your preferences.  
+More info about this possibility you may find in [Technical documentation](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
+
+- To change the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you first need to copy it. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. [OsmAnd user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file for an example.
+- To add a new *routing.xml* file to OsmAnd, just tap on the file and choose to open it in the OsmAnd app.
+- Select the [Navigation type](../../navigation/route-navigation.md#type-of-navigation) for your profile.
+
+
 ## Documentation of Routing types section
 
 - [Car-based (Truck, Motorcycle, Car) routing](./car-based-routing.md) - OsmAnd provides driving instructions for  drivers of Cars, Trucks and Motorcycles.  
@@ -38,14 +48,4 @@ Horse routing provides equestrians with tools they need to plan and enjoy their 
 - [Online routing](./online-routing.md) - Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 - [BRouter routing](./brouter.md) - BRouter app can be used for offline routing.
 - [Custom routing](#custom-routing).
-
-
-### Custom routing
-
-You can modify _routing.xml file_ for your own needs. It means that you can update the routing algorithm according to your preferences.  
-More info about this possibility you may find in [Technical documentation](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
-
-- To change the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file, you first need to copy it. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. [OsmAnd user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file for an example.
-- To add a new *routing.xml* file to OsmAnd, just tap on the file and choose to open it in the OsmAnd app.
-- Select the [Navigation type](../../navigation/route-navigation.md#type-of-navigation) for your profile.
 
