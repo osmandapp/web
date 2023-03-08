@@ -159,6 +159,14 @@ function isHidden(pointsGroups, name) {
     return false;
 }
 
+function createDefaultWptGroup(wptGroup) {
+    if (!wptGroup) {
+        return {
+            name: FavoritesManager.DEFAULT_GROUP_NAME,
+        }
+    }
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
@@ -168,6 +176,7 @@ const FavoritesManager = {
     orderList,
     getColorGroup,
     createGroup,
+    createDefaultWptGroup,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,

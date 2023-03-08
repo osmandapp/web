@@ -12,8 +12,7 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
     const ctx = useContext(AppContext);
 
     const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
-    console.log( groups)
-    console.log(favoriteGroup)
+
     let groupList = FavoritesManager.orderList(_.values(groups), defaultGroup);
 
     const FavoriteGroupItem = (group) => {
@@ -22,7 +21,6 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
         if (g && g.color) {
             colorGroup = Utils.hexToArgb(g.color);
         }
-        console.log(g)
         let size = g && g.points?.length;
         return <Box
             sx={{
@@ -94,7 +92,7 @@ export default function FavoriteGroup({favoriteGroup, setFavoriteGroup, groups, 
     }
 
     function selectGroup(group) {
-        let defaultGroupName = ctx.addFavorite.editTrack ? '' : defaultGroup;
+        let defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
         return favoriteGroup === group || (favoriteGroup === null && group.name === defaultGroupName)
     }
 

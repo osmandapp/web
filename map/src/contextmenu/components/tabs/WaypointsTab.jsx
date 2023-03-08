@@ -182,11 +182,9 @@ export default function WaypointsTab({width}) {
 
     return (
         <Box className={styles.item} minWidth={width}>
-            <div style={{maxHeight: '35vh', overflow: 'auto'}}>
-                {ctx.selectedGpxFile.wpts && getPoints().map((point, index) => {
-                    return WaypointRow()({point: point, index: index});
-                })}
-            </div>
+            {ctx.selectedGpxFile.wpts && getPoints().map((point, index) => {
+                return WaypointRow()({point: point, index: index});
+            })}
         </Box>
     )
 }

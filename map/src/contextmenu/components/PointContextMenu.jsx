@@ -1,9 +1,11 @@
-import {ClickAwayListener, MenuItem, MenuList, Paper, Popper} from "@mui/material";
+import {ClickAwayListener, Grid, IconButton, MenuItem, MenuList, Paper, Popper} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
 import TracksManager from "../../context/TracksManager";
 import AppContext from "../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
 import PointManager from "../../context/PointManager";
+import EditFavoriteDialog from "./favorite/EditFavoriteDialog";
+import {Close} from "@mui/icons-material";
 
 const useStyles = makeStyles({
     drawerItem: {
@@ -21,11 +23,22 @@ export default function PointContextMenu({anchorEl}) {
 
     const [open, setOpen] = useState(false);
     const [pointInd, setPointInd] = useState(-1);
+    const [wptInd, setWptInd] = useState(-1);
+    const [editDialogOpen, setEditDialogOpen] = useState(false);
 
     useEffect(() => {
         if (anchorEl) {
             let ind = ctx.selectedGpxFile.points.findIndex(point => point.lat === ctx.pointContextMenu.coord.lat && point.lng === ctx.pointContextMenu.coord.lng);
-            setPointInd(ind);
+            if (ind !== -1) {
+                setWptInd(-1);
+                setPointInd(ind);
+            } else {
+                let ind = ctx.selectedGpxFile.wpts.findIndex(point => point.lat === ctx.pointContextMenu.coord.lat && point.lon === ctx.pointContextMenu.coord.lng);
+                if (ind !== -1) {
+                    setPointInd(-1);
+                    setWptInd(ind);
+                }
+            }
         }
     }, [anchorEl])
 
@@ -181,6 +194,25 @@ export default function PointContextMenu({anchorEl}) {
             </div>
         )
     }
+
+    const WptButtons = () => {
+        return (
+            <div>
+                {<MenuItem onClick={() => {
+                    deletePoint();
+                    ctx.setPointContextMenu({});
+                }}>
+                    Delete wpt</MenuItem>}
+                {<MenuItem onClick={() => {
+                    setEditDialogOpen(true);
+                }}>
+                    Edit wpt</MenuItem>
+                }
+            </div>
+        )
+    }
+
+
     const handleClose = () => {
         if (anchorEl) {
             return;
@@ -188,23 +220,49 @@ export default function PointContextMenu({anchorEl}) {
         setOpen(false);
     };
 
-    return <Popper open={anchorEl !== undefined} anchorEl={anchorEl} transition
-                   style={{
-                       zIndex: 1000,
-                       left: ctx.pointContextMenu?.left + 330,
-                       top: ctx.pointContextMenu?.top + 50
-                   }}
-    >
 
-        <Paper>
-            <div style={{maxHeight: '15vh', overflow: 'auto'}}>
-                <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
-                        <Buttons/>
-                    </MenuList>
-                </ClickAwayListener>
-            </div>
-        </Paper>
-
-    </Popper>
+    return <>
+        <Popper open={anchorEl !== undefined} anchorEl={anchorEl} transition
+                style={{
+                    zIndex: 1000,
+                    left: ctx.pointContextMenu?.left + 330,
+                    top: ctx.pointContextMenu?.top + 50
+                }}
+        >
+            <Grid container spacing={2}>
+                <Grid item xs={10}>
+                    <Paper>
+                        <div style={{maxHeight: '15vh', overflow: 'auto'}}>
+                            <ClickAwayListener onClickAway={handleClose}>
+                                <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
+                                    {pointInd !== -1 && wptInd === -1 && <Buttons/>}
+                                    {wptInd !== -1 && pointInd === -1 && <WptButtons/>}
+                                </MenuList>
+                            </ClickAwayListener>
+                        </div>
+                    </Paper>
+                </Grid>
+                <Grid item xs={2}>
+                    <IconButton sx={{
+                        backgroundColor: "white",
+                        padding: "3px !important",
+                        ml: -4,
+                        mt: -1,
+                        "&:hover": {backgroundColor: "white"}
+                    }}
+                                variant="contained"
+                                type="button"
+                                onClick={() => ctx.setPointContextMenu({})}
+                    >
+                        <Close sx={{fontSize: "0.8rem !important"}} fontSize="small"/>
+                    </IconButton>
+                </Grid>
+            </Grid>
+        </Popper>
+        {editDialogOpen && <EditFavoriteDialog
+            favorite={ctx.selectedGpxFile.wpts[wptInd]}
+            editFavoritesDialogOpen={editDialogOpen}
+            setEditFavoritesDialogOpen={setEditDialogOpen}
+        />}
+    </>
 }

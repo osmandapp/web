@@ -60,6 +60,43 @@ export default function EditFavoriteDialog({
     }
 
     async function save() {
+        if (ctx.addFavorite.editTrack) {
+            saveTrackWpt();
+        } else {
+            await saveFavorite();
+        }
+    }
+
+    function saveTrackWpt() {
+        let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
+        let currentWpt = getCurrentWpt(selectedGroupName);
+        let ind = ctx.selectedGpxFile.wpts.findIndex(wpt => wpt === currentWpt);
+        if (ind !== -1) {
+            let selectedGroup = FavoritesManager.createDefaultWptGroup(favoriteGroup);
+            ctx.selectedGpxFile.wpts[ind] = {
+                name: favoriteName,
+                address: favoriteAddress === "" ? null : favoriteAddress,
+                desc: favoriteDescription === "" ? null : favoriteDescription,
+                color: favoriteColor,
+                background: favoriteShape,
+                icon: favoriteIcon,
+                category: getCategoryName(selectedGroup),
+                lat: favorite.lat,
+                lon: favorite.lon
+            }
+        }
+
+        ctx.selectedGpxFile.updateLayers = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.setPointContextMenu({});
+        setEditFavoritesDialogOpen(false);
+    }
+
+    function getCategoryName(selectedGroup) {
+        return selectedGroup.name !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroup.name : null;
+    }
+
+    async function saveFavorite() {
         let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
         let currentWpt = getCurrentWpt(selectedGroupName);
         let ind = ctx.selectedGpxFile.file.wpts.findIndex(wpt => wpt === currentWpt);
@@ -91,13 +128,14 @@ export default function EditFavoriteDialog({
         } else {
             ctx.favorites[selectedGroupName] = FavoriteHelper.updateGroupObj(ctx.favorites[selectedGroupName], result.newGroupResp);
         }
-        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites,null, favoriteName, selectedGroupName, false);
+        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, null, favoriteName, selectedGroupName, false);
         ctx.setFavorites({...ctx.favorites});
     }
 
     function getCurrentWpt(selectedGroupName) {
         let res = null;
-        ctx.selectedGpxFile.file.wpts.forEach(wpt => {
+        let wpts = ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file.wpts : ctx.selectedGpxFile.wpts;
+        wpts.forEach(wpt => {
             if (wpt.name === favorite.name) {
                 wpt.name = favoriteName;
                 wpt.address = getAddress();
@@ -156,10 +194,14 @@ export default function EditFavoriteDialog({
                 <FavoriteDescription favoriteDescription={favoriteDescription}
                                      setFavoriteDescription={setFavoriteDescription}
                                      setClose={null}/>
-                <FavoriteGroup favoriteGroup={favoriteGroup}
-                               setFavoriteGroup={setFavoriteGroup}
-                               groups={ctx.favorites.groups}
-                               defaultGroup={favorite.category}/>
+                {!ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
+                                                              setFavoriteGroup={setFavoriteGroup}
+                                                              groups={ctx.favorites.groups}
+                                                              defaultGroup={favorite.category}/>}
+                {ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
+                                                             setFavoriteGroup={setFavoriteGroup}
+                                                             groups={ctx.selectedGpxFile.pointsGroups}
+                                                             defaultGroup={favorite.category}/>}
                 <FavoriteIcon favoriteIcon={favoriteIcon}
                               setFavoriteIcon={setFavoriteIcon}
                               currentIconCategories={currentIconCategories}

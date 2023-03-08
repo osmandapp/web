@@ -95,9 +95,11 @@ export default function MapContextMenu({drawerWidth}) {
                 {tabsObj && tabsObj.tabList.length > 0 &&
                     <Paper>
                         <TabContext value={value}>
+                            <div style={{maxHeight: '25vh', overflow: 'auto'}}>
                             {Object.values(tabsObj.tabs).map((item, index) =>
                                 <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}> {item} </TabPanel>)
                             }
+                            </div>
                             <AppBar position="static" color="default">
                                 <div style={{display: 'inherit'}}>
                                     <Button key='close' onClick={() => {

@@ -589,6 +589,9 @@ export default function LocalClientTrackLayer() {
         ctx.creatingRouteMode.mode = ctx.selectedGpxFile.newPoint?.profile ? ctx.selectedGpxFile.newPoint?.profile : TracksManager.PROFILE_LINE;
         ctx.setCreatingRouteMode({...ctx.creatingRouteMode});
 
+        ctx.addFavorite.editTrack = true;
+        ctx.setAddFavorite({...ctx.addFavorite});
+
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
