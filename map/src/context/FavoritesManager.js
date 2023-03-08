@@ -164,6 +164,8 @@ function createDefaultWptGroup(wptGroup) {
         return {
             name: FavoritesManager.DEFAULT_GROUP_NAME,
         }
+    } else {
+        return wptGroup;
     }
 }
 
