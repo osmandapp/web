@@ -15,10 +15,10 @@ export default function TracksMenu() {
 
     const [gpxFiles, setGpxFiles] = useState([]);
     const [tracksGroupsOpen, setTracksGroupsOpen] = useState(false);
-    const [visibleTracks, setVisibleTracks] = useState({local: [], cloud: [], favorites: []});
+    const [visibleTracks, setVisibleTracks] = useState({local: [], cloud: []});
 
     function visibleTracksOpen() {
-        return visibleTracks.local.length > 0 || visibleTracks.cloud.length > 0 || visibleTracks.favorites.length > 0;
+        return visibleTracks.local.length > 0 || visibleTracks.cloud.length > 0;
     }
 
     useEffect(() => {
@@ -49,40 +49,41 @@ export default function TracksMenu() {
 
     //get gpx files and create groups
     useEffect(() => {
-        let tg = [];
-        let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
-            ctx.listFiles.uniqueFiles).filter((item) => {
-            return (item.type === 'gpx' || item.type === 'GPX')
-                && (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX');
-        });
-        files.forEach(f => {
-            f.folder = f.name.includes('/') ? f.name.split('/')[0] : 'Tracks';
-        });
-        setGpxFiles(files);
+        if (!_.isEmpty(ctx.listFiles)) {
+            let tg = [];
+            let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
+                ctx.listFiles.uniqueFiles).filter((item) => {
+                return (item.type === 'gpx' || item.type === 'GPX')
+                    && (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX');
+            });
+            files.forEach(f => {
+                f.folder = f.name.includes('/') ? f.name.split('/')[0] : 'Tracks';
+            });
+            setGpxFiles(files);
 
-        files.forEach(f => {
-            let group = tg.find(g => {
-                return g.name === f.folder;
-            })
-            if (group) {
-                group.files.push(f);
-            } else {
-                tg.push({name: f.folder, files: [f]});
-            }
-        });
+            files.forEach(f => {
+                let group = tg.find(g => {
+                    return g.name === f.folder;
+                })
+                if (group) {
+                    group.files.push(f);
+                } else {
+                    tg.push({name: f.folder, files: [f]});
+                }
+            });
 
-        if (tg.length > 0) {
-            let defGroup = tg.find(g => {
-                return g.name === 'Tracks';
-            })
-            if (defGroup) {
-                tg.splice(tg.indexOf(defGroup), 1);
-                tg.unshift(defGroup);
+            if (tg.length > 0) {
+                let defGroup = tg.find(g => {
+                    return g.name === 'Tracks';
+                })
+                if (defGroup) {
+                    tg.splice(tg.indexOf(defGroup), 1);
+                    tg.unshift(defGroup);
+                }
             }
+            ctx.gpxFiles.trackGroups = tg;
+            ctx.setTracksGroups(tg);
         }
-        ctx.gpxFiles.trackGroups = tg;
-        ctx.setTracksGroups(tg);
-
     }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {

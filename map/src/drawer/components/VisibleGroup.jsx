@@ -1,6 +1,6 @@
 import {Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import {ExpandLess, ExpandMore, Visibility} from "@mui/icons-material";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import CloudTrackItem from "./tracks/CloudTrackItem";
 import {makeStyles} from "@material-ui/core/styles";
 import LocalTrackItem from "./tracks/LocalTrackItem";
@@ -39,9 +39,6 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
         if (visibleTracks.cloud && visibleTracks.cloud.length > 0) {
             length += visibleTracks.cloud.length;
         }
-        if (visibleTracks.favorites && visibleTracks.favorites.length > 0) {
-            length += visibleTracks.favorites.length;
-        }
         return length;
     }
 
@@ -71,22 +68,40 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
                 ctx.gpxCollection.push(file.name);
             }
         })
-        visibleTracks.favorites.forEach(file => {
-            if (!ctx.gpxCollection.find(name => name === file.name)) {
-                ctx.gpxCollection.push(file.name);
-            }
-        })
         ctx.setGpxCollection([...ctx.gpxCollection]);
     }
 
     function clear() {
         let empty = {
             local: [],
-            cloud: [],
-            favorites: []
+            cloud: []
         }
         setVisibleTracks({...empty});
     }
+
+    useEffect(() => {
+        let savedVisible = localStorage.getItem('visible');
+        if (savedVisible) {
+            localStorage.removeItem('visible');
+        }
+        let localNames = [];
+        let cloudNames = [];
+        visibleTracks.local.forEach(f => {
+            if (f.selected) {
+                localNames.push(f.name);
+            }
+        })
+        visibleTracks.cloud.forEach(f => {
+            if (f.url) {
+                cloudNames.push(f.name)
+            }
+        })
+
+        localStorage.setItem('visible', JSON.stringify({
+            local: localNames,
+            cloud: cloudNames,
+        }));
+    }, [visibleTracks]);
 
 
     return <div>
@@ -121,7 +136,7 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
                 {visibleTracks.local.length > 0 && visibleTracks.local.map((track, index) => {
                     return <LocalTrackItem className={classes.item} key={track + index}
                                            track={track}
-                                           index={index}/>;
+                                           index={track.index}/>;
                 })}
                 {visibleTracks.cloud.length > 0 && <Typography variant="body2" sx={{ml: 4}}>
                     Cloud Tracks
@@ -131,9 +146,6 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
                                            key={track + index}
                                            file={track}/>;
                 })}
-                {visibleTracks.favorites.length > 0 && <Typography variant="body2" sx={{ml: 4}}>
-                    Favorites
-                </Typography>}
             </div>
         </Collapse>
     </div>

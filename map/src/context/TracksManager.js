@@ -22,6 +22,17 @@ function loadTracks() {
             localTracks[ind] = JSON.parse(localStorage.getItem(name));
         }
     }
+    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+    if (savedVisible?.local) {
+        savedVisible.local.forEach(name => {
+            localTracks.forEach(f => {
+                if (f.name === name) {
+                    f.selected = true;
+                    f.index = _.indexOf(localTracks, f);
+                }
+            })
+        })
+    }
     return localTracks;
 }
 
@@ -575,6 +586,14 @@ function clearTrack(file, points) {
     return emptyFile;
 }
 
+function getTracks(allFiles) {
+    return (!allFiles || !allFiles.uniqueFiles ? [] :
+        allFiles.uniqueFiles).filter((item) => {
+        return (item.type === 'gpx' || item.type === 'GPX')
+            && (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX');
+    });
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -601,6 +620,7 @@ const TracksManager = {
     clearTrack,
     getGroup,
     formatRouteMode,
+    getTracks,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
