@@ -1,12 +1,11 @@
-import {Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography} from "@mui/material";
-import {ExpandLess, ExpandMore, Map, Visibility} from "@mui/icons-material";
-import React, {useContext, useEffect, useState} from "react";
+import {Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {ExpandLess, ExpandMore, Visibility} from "@mui/icons-material";
+import React, {useContext, useState} from "react";
 import CloudTrackItem from "./tracks/CloudTrackItem";
 import {makeStyles} from "@material-ui/core/styles";
 import LocalTrackItem from "./tracks/LocalTrackItem";
 import PopperMenu from "./tracks/PopperMenu";
 import AppContext from "../../context/AppContext";
-import FavoriteGroup from "./favorite/FavoriteGroup";
 
 const useStyles = makeStyles({
     group: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
 })
 
 
-export default function VisibleGroup({visibleTracks, setVisibleTracks, enableFavGroups, setEnableFavGroups}) {
+export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
 
     const ctx = useContext(AppContext);
 
@@ -91,7 +90,7 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks, enableFav
 
 
     return <div>
-        <MenuItem className={classes.group} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
+        <MenuItem sx={{ml: 3}} className={classes.group} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
             <ListItemIcon>
                 <Visibility fontSize="small"/>
             </ListItemIcon>
@@ -135,13 +134,6 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks, enableFav
                 {visibleTracks.favorites.length > 0 && <Typography variant="body2" sx={{ml: 4}}>
                     Favorites
                 </Typography>}
-                {visibleTracks.favorites.length > 0 && visibleTracks.favorites.map((group, index) => {
-                    return <FavoriteGroup key={group + index}
-                                          index={index}
-                                          group={group}
-                                          enableGroups={enableFavGroups}
-                                          setEnableGroups={setEnableFavGroups}/>;
-                })}
             </div>
         </Collapse>
     </div>
