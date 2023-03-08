@@ -27,7 +27,7 @@ List of articles:
 - Route line appearance.
 
 
-## Common settings
+## General options
 
 This section describes the general settings available for all types of navigation in OsmAnd.
 
