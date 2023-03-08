@@ -21,4 +21,42 @@ Pedestrian routing refers to the process of finding the best route for a pedestr
 ### Pedestrian routing features
 
 Pedestrian routing helps people to get around on foot safely and efficiently. It can also be particularly useful in urban areas, where pedestrians may face a variety of obstacles when trying to get from one place to another.  
-By using pedestrian routing, OsmAnd can provide users with accurate and detailed directions that are optimized for walking, helping to make their journeys safer and more enjoyable.
+By using pedestrian routing, OsmAnd can provide users with accurate and detailed directions that are optimized for walking, helping to make their journeys safer and more enjoyable.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Truck routing settings Android 1](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_1.png) ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Truck routing settings iOS 1](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_1.png) ![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+Pedestrian routing can be configured according to your needs in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Walking profile (*Settings - Profiles - Walking - Navigation settings - Route parameters*).  
+
+<details><summary> Use elevation data </summary>
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Use elevation data iOS](@site/static/img/navigation/routing/routing_pedestrian_elevation_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+</details>
