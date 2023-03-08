@@ -144,10 +144,10 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkZoom() {
-        if (ctx.selectedGpxFile.showPoint) {
-            showSelectedPointOnMap();
-        } else if (ctx.selectedGpxFile.selected && ctx.selectedGpxFile.zoom) {
+        if (ctx.selectedGpxFile.selected && ctx.selectedGpxFile.zoom) {
             showSelectedTrackOnMap();
+        } else if (ctx.selectedGpxFile.showPoint) {
+            showSelectedPointOnMap();
         }
     }
 
@@ -199,7 +199,6 @@ export default function LocalClientTrackLayer() {
 
     function showSelectedPointOnMap() {
         if (ctx.selectedGpxFile.showPoint) {
-            console.log(ctx.selectedGpxFile.showPoint)
             map.setView([ctx.selectedGpxFile.showPoint.layer._latlng.lat, ctx.selectedGpxFile.showPoint.layer._latlng.lng], 17);
         } else {
             if (selectedPointMarker) {
