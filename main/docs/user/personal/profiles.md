@@ -227,7 +227,7 @@ You can enable/disable buttons and input devices for OsmAnd.
 
 ## Navigation settings
 
-You can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile in this [article](../navigation/index.md/#navigation-settings).  
+In the [Navigation article](../navigation/#navigation-settings), you can read about all the navigation settings (types, parameters, voice prompts or map view while driving) that you can set for the profile.   
 
 :::info
 There are no navigation settings in *Browse map* profile.  
@@ -253,44 +253,14 @@ There are no navigation settings in *Browse map* profile.
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
-
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in [Navigation Options](../navigation/route-navigation.md#navigation-options).   
-
-### Navigation Type
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-### Route parameters
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/> → Route parameters*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-### Screen alerts
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-### Voice prompts
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-### Vehicle parameters
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-### Customise route line
-
-This option is described in detail in the article by [Route line appearance](../navigation/route-line-appearance.md)
-
-### Map during navigation
-
-- Android: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-- iOS: *<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
+- [Navigation Type](../navigation/#navigation-type)
+- [Route parameters](../navigation/#route-parameters)
+- [Screen alerts](../navigation/#screen-alerts)
+- [Voice prompts](../navigation/#voice-prompts)
+- [Vehicle parameters](../navigation/#vehicle-parameters)
+- [Customise route line](../navigation/#customise-route-line)
+- [Map during navigation](../navigation/#map-during-navigation)
+- [Animate location change](#animate-location-change)
 
 ### Animate location change
 
