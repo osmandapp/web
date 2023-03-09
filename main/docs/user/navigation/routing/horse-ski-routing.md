@@ -22,24 +22,8 @@ Ski routing can be particularly useful for backcountry skiers, ski mountaineers,
 
 ### Ski routing settings
 
-The ski routing (or skiing profile) only availible after [Ski map view plugin](../../plugins/plugins/ski-maps) is activated. Ski routing provides users with information about ski runs, ski lifts, and other important points of interest on the map. It also allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. The routing algorithm takes into account the elevation, slope angle, and other terrain features to provide users with the most suitable route based on their preferences. How to configure Ski routing according to your needs you can read in [this article](../../plugins/ski-maps.md#ski-map-style), some information can be found in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Skiing profile (*Settings - Profiles - Walking - Navigation settings - Route parameters*).  
+The ski routing (or skiing profile) only availible after [Ski map view plugin] is activated. Ski routing provides users with information about ski runs, ski lifts, and other important points of interest on the map. It also allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. The routing algorithm takes into account the elevation, slope angle, and other terrain features to provide users with the most suitable route based on their preferences. How to configure Ski routing according to your needs you can read in [this article], some information can be found in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Skiing profile (*Settings - Profiles - Walking - Navigation settings - Route parameters*).  
 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Truck routing settings Android 1](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_1.png) ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Truck routing settings iOS 1](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_1.png) ![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_2.png)
-
-</TabItem>
-
-</Tabs>
 
 ## Horseback routing
 
