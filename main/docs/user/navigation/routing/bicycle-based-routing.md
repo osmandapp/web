@@ -15,12 +15,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-### Overview
+## Overview
 
 Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists, as well as other factors such as elevation differences and pedestrian traffic. The features of riding a city bike are also good for navigate routes for riding a [moped](#moped-routing-settings) and can be useful for [mountain biking](#mtb-routing-settings).
 
 
-### Bicycle routing settings
+## Bicycle routing settings
 
 Bicycle routing is especially important because it is designed to help cyclists plan and navigate routes that are optimal for their needs. For example, cyclists may want to avoid busy roads or steep climbs, and instead, choose quieter routes with less traffic and gentler slopes. OsmAnd's bicycle routing feature allows cyclists to input a start and end point, and then generates a route that takes into account their preferences and local geography.  
 
@@ -63,7 +63,8 @@ Bicycle routing can be configured according to your needs in [Navigation setting
 | "<Translate android="true" ids="routing_attr_height_obstacles_name"/>" |  Allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    |
 |   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    |
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    |  
+|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    | 
+| "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |  
 
 </TabItem>
 
@@ -114,16 +115,40 @@ Bicycle routing can be configured according to your needs in [Navigation setting
 </Tabs>
 
 
-### Moped routing settings
+## Moped routing settings
 
 <InfoAndroidOnly/>
 
 Moped routing allows drivers to build an optimal route, taking into account the specifics of driving a vehicle such as a moped or scooter. The routing process considers various factors for safe, comfortable, and legal movement on roads or bicycle paths.
 
-![Moped routing settings](@site/static/img/navigation/routing/Bicycle-based_Moped_andr-1.png)
+![Moped routing settings](@site/static/img/navigation/routing/Bicycle-based_Moped_andr-1.png)  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| "<Translate android="true" ids="impassable_road"/>" |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_borders_name"/>"    |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_footways_name"/>"     |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>"    |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_sett_name"/>"|              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_toll_name"/>"|              |
+|                 |   "<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>"|               |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_motorway_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_ice_roads_fords_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_train_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_subway_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_ferries_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_tram_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_bus_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
+|                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
+| "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    | 
+| "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
 
 
-### MTB routing settings
+## MTB routing settings
 
 The MTB (mountain biking) routing feature in the OsmAnd app is similar to bicycle routing, but specifically designed for off-road riding on rough terrain. It takes into account factors such as unpaved roads, gravel paths, and steep slopes, and helps riders find the safest and most enjoyable routes for their mountain biking adventures.
 
