@@ -122,7 +122,7 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 </Tabs>  
 
-### Elevation Widget  
+### Elevation: map center Widget  
 
 <InfoAndroidOnly />
 

@@ -16,18 +16,40 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Horse and ski routing features in OsmAnd are designed to help riders navigate efficiently, safely, and enjoyably, by providing tailored directions that take into account the unique needs and preferences of each rider.
 
+## Ski routing
 
-### Ski routing features
+Ski routing can be particularly useful for backcountry skiers, ski mountaineers, and other winter sports enthusiasts who want to explore new areas and plan their trips in advance. With ski routing in OsmAnd, users can access detailed maps, plan routes, and navigate safely while enjoying the beauty of winter landscapes.  
 
-The ski routing feature provides users with information about ski runs, ski lifts, and other important points of interest on the map. It also allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. The routing algorithm takes into account the elevation, slope angle, and other terrain features to provide users with the most suitable route based on their preferences.
+### Ski routing settings
 
-Ski routing can be particularly useful for backcountry skiers, ski mountaineers, and other winter sports enthusiasts who want to explore new areas and plan their trips in advance. With ski routing in OsmAnd, users can access detailed maps, plan routes, and navigate safely while enjoying the beauty of winter landscapes.
+The ski routing (or skiing profile) only availible after [Ski map view plugin](../../plugins/plugins/ski-maps) is activated. Ski routing provides users with information about ski runs, ski lifts, and other important points of interest on the map. It also allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. The routing algorithm takes into account the elevation, slope angle, and other terrain features to provide users with the most suitable route based on their preferences. How to configure Ski routing according to your needs you can read in [this article](../../plugins/ski-maps.md#ski-map-style), some information can be found in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Skiing profile (*Settings - Profiles - Walking - Navigation settings - Route parameters*).  
 
-### Horse routing features
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Truck routing settings Android 1](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_1.png) ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_pedestrian_settings_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Truck routing settings iOS 1](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_1.png) ![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+## Horseback routing
+
+Horse routing can be useful for horse riders who want to explore new areas and plan their rides in advance. With horse routing in OsmAnd, users can access detailed maps, plan routes, and navigate safely while enjoying the beauty of nature.  
+
+
+### Horseback routing settings
 
 Horse routing in OsmAnd is a feature that allows users to plan and navigate horseback riding routes using the OsmAnd mobile app. This feature is designed to provide equestrians with information about horse-friendly paths, bridleways, and other suitable routes for horse riding.
 
 The horse routing feature takes into account the width of the path, the surface type, and other factors that can affect the safety and comfort of the horse and rider. It also provides information about horse-friendly accommodations, such as stables, watering points, and other facilities that may be necessary during a long ride.
 
-Horse routing can be useful for horse riders who want to explore new areas and plan their rides in advance. With horse routing in OsmAnd, users can access detailed maps, plan routes, and navigate safely while enjoying the beauty of nature.
 

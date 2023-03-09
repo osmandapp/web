@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Pedestrian routing refers to the process of finding the best route for a pedestrian to travel from one location to another, taking into account factors such as pedestrian-only areas, sidewalks, crosswalks, and pedestrian-friendly intersections. It may also consider other factors such as stairs, elevators (may be useful for wheelchair accessibility).
 
-### Pedestrian routing features
+### Pedestrian routing settings
 
 Pedestrian routing helps people to get around on foot safely and efficiently. It can also be particularly useful in urban areas, where pedestrians may face a variety of obstacles when trying to get from one place to another.  
 By using pedestrian routing, OsmAnd can provide users with accurate and detailed directions that are optimized for walking, helping to make their journeys safer and more enjoyable.  
