@@ -18,8 +18,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Boat mode for navigation can be enabled together with the [Nautical plugin](../../plugins/nautical-charts.md). You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here](../../personal/profiles.md).
 
-![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png) ![Boat Navigation screen iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)  
-
 In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
 [Boat navigation type](../../navigation/routing/#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](#direct-to-point) and [Straight-line](#straight-line).   
 
