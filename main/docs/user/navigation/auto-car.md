@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-Android Auto is [paid features](../purchases/index.md) of the OsmAnd app.
+Android Auto is [paid feature](../purchases/android.md#free-and-paid-features) of the OsmAnd app.
 :::
 
 OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android or iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
@@ -33,7 +33,7 @@ First, you need to select and configure the profile to be used when connecting t
 
 For OsmAnd to work, you need to connect your Android device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
-- You need to have an OsmAnd Pro subscription. Check it here *Menu → Settings → Purchases*.
+- You need to have an OsmAnd Pro, OsmAnd+ or Maps+ subscription. Check it here *Menu → Settings → Purchases*.
 - To find out how to connect and set up your device, please visit the [**Android Auto**](https://www.android.com/auto) websites. 
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in Android Auto.   
