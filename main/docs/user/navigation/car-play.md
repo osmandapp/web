@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-CarPlay is [paid features](../purchases/index.md) of the OsmAnd app.
+CarPlay is [paid feature](../purchases/ios.md#free-and-paid-features) of the OsmAnd app.
 :::
 
 OsmAnd is available for [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
