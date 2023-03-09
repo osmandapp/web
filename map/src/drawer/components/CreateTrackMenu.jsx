@@ -27,12 +27,13 @@ export default function CreateTrackMenu() {
             {open ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
-            {openInfo && <Alert onClose={() => {
+            {openInfo && <Alert sx={{mb: 1}}
+                onClose={() => {
                 setOpenInfo(false)
             }} severity="info">Click on button and start creating new track...</Alert>}
             <Grid container spacing={3}>
                 <Grid item xs={5}>
-                    <Button sx={{ml: 2, mt: 1}} className={styles.button} variant="contained" component="span"
+                    <Button sx={{ml: 4}} className={styles.button} variant="contained" component="span"
                             onClick={() => {
                                 ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin();
                             }}>
@@ -41,7 +42,7 @@ export default function CreateTrackMenu() {
                 </Grid>
                 <Grid item xs={5}>
                     <IconButton
-                        sx={{mt: 1}}
+                        sx={{ml: 2}}
                         variant="contained"
                         type="button"
                         onClick={() => setOpenInfo(!openInfo)}
