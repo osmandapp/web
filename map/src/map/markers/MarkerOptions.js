@@ -27,6 +27,7 @@ const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
 
 const options = {
     startIcon: MarkerIcon({bg: '#1976d2'}),
+    interIcon: MarkerIcon({bg: '#f6791b'}),
     endIcon: MarkerIcon({bg: '#ff595e'}),
     pointerIcons: MarkerIcon({bg: '#fec93b'}),
     route: L.icon({
