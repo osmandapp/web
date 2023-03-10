@@ -16,12 +16,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-ski-routing.md), or [walk](./routing/pedestrian-routing.md).  
 
 ## Overview
 
-Like other navigation options, *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). By default, OsmAnd provides offline navigation, but you can also use [online routing engines](./routing/online-routing.md).  
-Also note, that for correct work of the navigation, you need to give OsmAnd permission to receive information about [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-ski-routing.md), or [walk](./routing/pedestrian-routing.md).  
+By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./routing/online-routing.md).  
+
+:::tip
+For correct work of the navigation, you need to give OsmAnd permission to receive information about [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -43,7 +46,7 @@ Also note, that for correct work of the navigation, you need to give OsmAnd perm
 
 To use the offline navigation, you first need to [download maps](../start-with/download-maps.md) of the region you plan to navigate through. Once the maps are downloaded, follow these steps to set up navigation:  
 
-1. Configure each profile you intend to use for navigation according to your needs:  
+1. Configure profiles you intend to use for navigation according to your needs:  
 
     - Set your [vehicle parameters](../personal/profiles/#vehicle-parameters) (important for truck drivers), select the [engine type](../navigation/#select-engine-type) (optional).
     - Configure [route line appearance](./route-line-appearance) (optional, only for Pro users).  
@@ -132,7 +135,7 @@ The most important thing to start navigation is to determine your destination. T
 - &nbsp;"&#43; Add" - opens context menu "Add intermediate".
 - &nbsp;"&#9776; Clear all" - allows to clear all intermediate points.
 
-If you choose "Sort" (Android) or "Options" (iOS) in the destinations points list, you will reach special options to adjust the order of navigation to intermediate points
+If you choose "Sort" (Android) or "Options" (iOS) in the destinations points list, you will reach special options to adjust the order of navigation to intermediate points.
 
 <Tabs groupId="operating-systems">
 
@@ -151,7 +154,7 @@ If you choose "Sort" (Android) or "Options" (iOS) in the destinations points lis
 </Tabs>
 
 In this menu, you can find additional options for managing destinations points:
--  *<Translate android="true" ids="intermediate_items_sort_by_distance"/>* - OsmAnd will offer the shortest route between all your destinations, though the order of visiting can be changed. Starting point and final destination won't be touched.
+-  *<Translate android="true" ids="intermediate_items_sort_by_distance"/>* - OsmAnd will offer the shortest route between all your destinations, however, the order of the visit can be edited. The starting point and the final destination will not be changed.
 -  *<Translate android="true" ids="switch_start_finish"/>* - starting point and final destination will be swapped.  
 -  *<Translate android="true" ids="reverse_all_points"/>* (only Android) - all points will be put in the reverse direction.
 -  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
@@ -159,10 +162,10 @@ In this menu, you can find additional options for managing destinations points:
 
 ### Start / stop navigation
 
-As soon as your destination point is selected, the app will create a route to it. To start navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
+Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
 :::note
-After the route is created, in ["Details" section](../navigation/index.md#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.
+After the route is created, in the ["Details" section](../navigation/index.md#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -182,9 +185,9 @@ After the route is created, in ["Details" section](../navigation/index.md#route-
 </Tabs>
 
 :::note
-Even if you turn off the screen or exit the OsmAnd app window, you'll still get voice prompts.  
+Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
 :::
 
 :::tip
-To save the phone's battery, you can use [“Turn on screen”](..//personal/profiles.md#appearance) option. Pressing the device power button will show OsmAnd on the top of the lock screen of your phone during navigation.  
+To save your device battery, while navigation you can use [“Screen control”](./voice-navigation#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 :::
