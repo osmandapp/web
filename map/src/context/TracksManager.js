@@ -594,6 +594,13 @@ function getTracks(allFiles) {
     });
 }
 
+function getFavoriteGroups(allFiles) {
+    return (!allFiles || !allFiles.uniqueFiles ? [] :
+        allFiles.uniqueFiles).filter((item) => {
+        return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
+    });
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks,
@@ -621,6 +628,7 @@ const TracksManager = {
     getGroup,
     formatRouteMode,
     getTracks,
+    getFavoriteGroups,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

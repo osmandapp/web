@@ -20,27 +20,12 @@ export default function FavoritesMenu() {
     const [favoriteGroupsOpen, setFavoriteGroupsOpen] = useState(false);
     const [openFavoritesGroups, setOpenFavoritesGroups] = useState([]);
     const [enableGroups, setEnableGroups] = useState([]);
+    const [once, setOnce] = useState(false);
 
-    //create groups
-    useEffect(() => {
-        let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] :
-            ctx.listFiles.uniqueFiles).filter((item) => {
-            return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
-        });
-        files.sort((a, b) => a.name.localeCompare(b.name))
-        const newFavoritesFiles = {
-            groups: []
-        };
-        files.forEach(file => {
-            let group = FavoritesManager.createGroup(file)
-            newFavoritesFiles.groups.push(group);
-        })
-        newFavoritesFiles.groups = FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME);
-        ctx.setFavorites(newFavoritesFiles);
-    }, [ctx.listFiles, ctx.setListFiles]);
 
     useEffect(() => {
-        if (ctx.favorites.groups) {
+        if (ctx.favorites.groups && !once) {
+            setOnce(true)
             let res = [];
             ctx.favorites.groups.forEach(g => {
                 if (g.hidden !== true) {
@@ -48,6 +33,17 @@ export default function FavoritesMenu() {
                 }
             })
             setOpenFavoritesGroups(res);
+            let ng = []
+            Object.keys(ctx.favorites).forEach(group => {
+                if (ctx.favorites[group].url && ctx.favorites[group].addToMap && !enableGroups.find(g => g.name === group)) {
+                    let g = ctx.favorites.groups.find(g => g.name === group)
+                    if (g) {
+                        ng.push(g)
+                    }
+                }
+            })
+            let r = enableGroups.concat(ng)
+            setEnableGroups([...r]);
         }
     }, [ctx.favorites]);
 
@@ -68,6 +64,10 @@ export default function FavoritesMenu() {
     }
 
     function deleteAllLayers(ctx, groups) {
+        let savedVisible = localStorage.getItem(FavoritesManager.FAVORITE_LOCAL_STORAGE);
+        if (savedVisible) {
+            localStorage.removeItem(FavoritesManager.FAVORITE_LOCAL_STORAGE);
+        }
         const newFavoritesFiles = Object.assign({}, ctx.favorites);
         groups.forEach(group => {
             if (newFavoritesFiles[group.name]) {
@@ -79,7 +79,9 @@ export default function FavoritesMenu() {
 
     async function addAllFavorites(newFavoritesFiles, addToMap, groups) {
         if (groups) {
+            let openGroups = [];
             for (const g of openFavoritesGroups) {
+                openGroups.push(g.name);
                 if (!ctx.favorites[g.name]?.url) {
                     let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(g.file.type)}&name=${encodeURIComponent(g.file.name)}`;
                     newFavoritesFiles[g.name] = {
@@ -95,6 +97,7 @@ export default function FavoritesMenu() {
                 }
             }
             newFavoritesFiles.groups = FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME);
+            localStorage.setItem(FavoritesManager.FAVORITE_LOCAL_STORAGE, JSON.stringify(openGroups));
         }
     }
 

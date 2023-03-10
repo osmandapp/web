@@ -10,6 +10,7 @@ const FAVORITE_GROUP_FOLDER = "/map/images/poi_categories";
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = "favorites-";
 const DEFAULT_GROUP_NAME_POINTS_GROUPS = "";
+const FAVORITE_LOCAL_STORAGE = 'visibleFav';
 const colors = ['#10c0f0', '#1010a0', '#eecc22', '#88e030', '#eeee10', '#00842b', '#ff5020', '#8e2512', '#e044bb', '#000001', '#d00d0d', '#a71de1'];
 const shapes = [MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE, MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON, MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE];
 
@@ -186,6 +187,7 @@ const FavoritesManager = {
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    FAVORITE_LOCAL_STORAGE: FAVORITE_LOCAL_STORAGE,
     colors: colors,
     shapes: shapes
 }

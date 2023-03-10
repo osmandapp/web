@@ -77,6 +77,12 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
             delete ctx.selectedGpxFile.markerCurrent;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
+
+        let savedVisibleFav = JSON.parse(localStorage.getItem(FavoritesManager.FAVORITE_LOCAL_STORAGE));
+        if (savedVisibleFav) {
+            savedVisibleFav = savedVisibleFav.filter(name => name !== group.name);
+            localStorage.setItem(FavoritesManager.FAVORITE_LOCAL_STORAGE, JSON.stringify(savedVisibleFav));
+        }
     }
 
     async function addGroupToMap(setProgressVisible, addToMap) {
@@ -100,6 +106,14 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 ctx.setSelectedGpxFile(newSelectedGpxFile);
                 ctx.setFavorites({...newFavoriteFiles});
             }
+        }
+
+        let savedVisibleFav = JSON.parse(localStorage.getItem('visibleFav'));
+        if (savedVisibleFav) {
+            savedVisibleFav.push(group.name);
+            localStorage.setItem('visibleFav', JSON.stringify(savedVisibleFav));
+        } else {
+            localStorage.setItem('visibleFav', JSON.stringify([group.name]));
         }
         setProgressVisible(false);
     }
