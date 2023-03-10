@@ -38,7 +38,7 @@ Car routing takes into account road types, speed limits, and other driving restr
 
 </Tabs>
 
-Car routing can be configured according to your needs in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Driving profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*). 
+Car routing can be configured according to your needs in [Navigation section](../../navigation/#navigation-settings) of settings of the Driving profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*). 
 
 <details><summary> Goods delivery option </summary>
 
@@ -80,7 +80,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 </Tabs>
 
-Truck routing can be configured according to your needs in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Truck profile (*Settings - Profiles - Truck - Navigation settings - Route parameters*).  
+Truck routing can be configured according to your needs in [Navigation section](../../personal/profiles.md#navigation-settings) of settings of the Truck profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*).  
 
 <details><summary> Transporting of hazardous materials option </summary>
 
@@ -122,4 +122,4 @@ Moto routing is designed for motorbike riders and takes into account the unique 
 
 </Tabs>
 
-Motorcycle routing can be configured according to your needs in [Navigation settings](../../personal/profiles.md#navigation-settings) of the Motorcycle profile (*Settings - Profiles - Motorcycle - Navigation settings - Route parameters*).  
+Motorcycle routing can be configured according to your needs in [Navigation section](../../personal/profiles.md#navigation-settings) of the settings of the Motorcycle profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*).  

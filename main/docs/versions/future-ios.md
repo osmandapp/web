@@ -14,14 +14,17 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 ## What's new
 
- - Dynamic type support: the text size inside OsmAnd will change according to the text size in iOS.
- - The minimum iOS version is set to version 15.
- - History screen: *Settings → OsmAnd Settings → History*.
- - OpenStreetMap: added track upload and authorization with OAuth.
- - Voice prompts: added support for new languages such as Catalan, Ukrainian, Bulgarian, Indonesian, and Slovenian.
- - Added legal warning about the use of speed camera warnings.
- - CarPlay: added history, track redo and favorites list.
- - Map Orientation: added manual rotation mode.
- - Added a stroke for the ruler on the map.
- - User interface fixes for RTL languages.
- - Accessibility: added content labeling for map buttons.
+ - Wikipedia: added ability to view images, updated reader UI;
+ - Favorites: added search;
+ - CarPlay: added history, reorganized tracks and favorites list;
+ - Hiking routes: added ability to select routes on the map for viewing additional information or navigation;
+ - OpenStreetMap: added ability to upload tracks;
+ - Voice prompts: added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian;
+ - Added legal warning about using speed camera alerts;
+ - Improved privacy: added options to disable history logging;
+ - Improved visibility of the map ruler;
+ - UI improvements for RTL languages;
+ - Accessibility: added content labelling for map buttons;
+ - Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS;
+ - Map orientation: added manually rotated mode;
+ - Minimum iOS version is increased to 15.0 
