@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Voice navigation / Notifications
+title:  Voice prompts / Notifications
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,12 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
 
-## Voice navigation
+When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These features are important for reducing battery consumption as well as navigating safely and comfortably on a route.
+
+
+## Voice prompts
 
 <!-- Receive voice prompts while navigating: turn-by-turn instructions, alerts, and additional information.  -->
 
-Voice navigation helps you drive your vehicle in the right direction without distracting you from the road. It is also convenient for walking or hiking.
+Voice prompts help you drive your vehicle in the right direction without distracting you from the road. It is also convenient for walking or hiking.
 
 - Listen to voice prompts while navigating.
 - You can listen to the voice prompts while the device screen is *On* or *Off*.
@@ -57,7 +61,7 @@ Voice prompt settings can be global and applied to all profiles.
 
 </Tabs>  
 
-1. **Language** - select your preferred language and voice type.
+1. **[Language](#language)** - select preferred language and type.
 2. **Announcement group** - allows to voice the following types of prompts: 
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks, Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
@@ -80,6 +84,9 @@ You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for th
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.   
 
+### Language
+
+TTS and Recorded
 
 ### Voice guidance output 
 
@@ -143,11 +150,7 @@ For testing Voice prompts, you need to activate [OsmAnd development plugin](../p
 
 ## Notifications
 
-<InfoAndroidOnly/>
-
-When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These modes are important to reduce battery consumption. 
-
-You can see notification info in Drop-down system menu: Turn-by-turn instructions, arrows, arrival time and time to go, current speed.
+Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 
 ![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
 
@@ -169,21 +172,23 @@ You can control the screen of your device to save power. This mode has two gener
 
 ### Screen timeout
 
-- *<Translate android="true" ids="system_screen_timeout"/>* - the screen will turn off depending on the device settings. Enable it to use *Turn the screen off* according to the system screen timeout. The *"Change settings"* button opens the system menu.
+- *<Translate android="true" ids="system_screen_timeout"/>* - The screen turns off depending on the system settings of your device. The "Change Settings" button provides quick access to the system menu such as "Display and Brightness" where you can adjust the screen timeout.
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-- *<Translate android="true" ids="wake_time"/>* - If the "Keep screen on" option is enabled, the device screen does not apply a timeout. If the previous option is disabled, you can set the time after which the device screen will turn off if you do not interact with it.
+- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
 
 ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### Turn screen on
 
-Select options to wake up the screen. Make sure OsmAnd is in the foreground while the device is locked.
+<Translate android="true" ids="turn_screen_on_descr"/>   
 
-![turn screen on Android](@site/static/img/navigation/route/turn_screen_on_android.png)
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - if you run your hand over the screen, it will turn on.
-- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - each navigation instruction causes the screen to turn on.
-- *<Translate android="true" ids="turn_screen_on_power_button"/>* - pressing the device power button will turn the screen on with OsmAnd on top of the lock screen.  
+![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/> 
+ 
 

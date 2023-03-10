@@ -24,9 +24,7 @@ CarPlay is [paid feature](../purchases/ios.md#free-and-paid-features) of the Osm
 
 OsmAnd is available for [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/ios-carplay.png)
-
-
+<!--
 ## Setup
 
 First, you need to select and configure the profile to be used when connecting to Android Auto or CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).  
@@ -38,7 +36,7 @@ For quick access to the list of profiles available for connecting to CarPlay, th
 For OsmAnd to work, you need to connect your iOS device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for CarPlay](https://www.apple.com/ios/carplay/available-models/).
 - You need to have an OsmAnd Pro subscription. Check it here *Menu → Settings → Purchases*.
-- To find out how to connect and set up your device, please visit the [**CarPlay**](https://www.apple.com/ios/carplay/) websites. 
+- To find out how to connect and set up your device, please visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) websites. 
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
 
@@ -93,7 +91,7 @@ From the list of tracks available in *Menu → My Places → [Tracks](../persona
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)
 
-
+-->
 ## Navigation
 
 Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
@@ -109,15 +107,18 @@ In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separa
 This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
 You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)  
 
 
-<!--
+## Volume control
 
+By default, all prompts remain at a constant full volume, separate from simultaneous audio playback. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to Setup → Voice → Voice volume on the vehicle's multimedia system screen. 
+If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri or Google Assistant during a call. Hold down the button on the steering wheel that turns on Siri or Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
+
+__________________
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-2.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-8.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-9.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-10.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-12.png)
 
--->

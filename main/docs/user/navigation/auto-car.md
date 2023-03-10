@@ -34,7 +34,7 @@ First, you need to select and configure the profile to be used when connecting t
 For OsmAnd to work, you need to connect your Android device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
 - You need to have an OsmAnd Pro, OsmAnd+ or Maps+ subscription. Check it here *Menu → Settings → Purchases*.
-- To find out how to connect and set up your device, please visit the [**Android Auto**](https://www.android.com/auto) websites. 
+- To find out how to connect and set up your device, please visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites. 
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in Android Auto.   
 
@@ -109,7 +109,9 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-speed-limits.png)
 
-<!--
+
+## Volume control
+
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
@@ -117,4 +119,3 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-9.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-11.png)
 
--->
