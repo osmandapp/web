@@ -136,11 +136,17 @@ export default function LocalClientTrackLayer() {
     }
 
     function saveLocal() {
-        if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
-            ctx.setUpdateContextMenu(true);
-            setAddEleTab(true);
+        if (!ctx.selectedGpxFile.addPoint) {
+            if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
+                ctx.setUpdateContextMenu(true);
+                setAddEleTab(true);
+            }
+            TracksManager.saveTracks(ctx.localTracks, ctx);
+            if (!ctx.selectedGpxFile.updateLayers && !ctx.selectedGpxFile.dragPoint) {
+                ctx.trackState.update = true;
+                ctx.setTrackState({...ctx.trackState});
+            }
         }
-        TracksManager.saveTracks(ctx.localTracks, ctx);
     }
 
     function checkZoom() {

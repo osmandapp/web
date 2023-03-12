@@ -26,6 +26,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [useSavedState, setUseSavedState] = useState(false);
 
     const {
         state,
@@ -46,34 +47,30 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     }, [clearState])
 
     useEffect(() => {
-        if (ctx.selectedGpxFile && (ctx.selectedGpxFile.points?.length >= 1 || ctx.selectedGpxFile.wpts?.length >= 1)) {
-            let needUpdateState = !ctx.selectedGpxFile.updateState && !isEqualState(ctx.selectedGpxFile, state)
-                && !hasSameState(pastStates, ctx.selectedGpxFile) && !hasSameState(futureStates, ctx.selectedGpxFile);
-            if (needUpdateState) {
-                addFirstState();
-                setState(_.cloneDeep(ctx.selectedGpxFile));
-            }
-            ctx.selectedGpxFile.updateState = false;
-            if (hasSameState(pastStates, ctx.selectedGpxFile)) {
-                pastStates.forEach(s => {
-                    if (isEqualState(s, ctx.selectedGpxFile)) {
-                        pastStates.splice(_.indexOf(pastStates, s), 1);
-                    }
-                })
-            }
+        if (useSavedState) {
+            ctx.trackState.block = false;
+            getState(state);
         }
-    }, [ctx.selectedGpxFile])
+    }, [state])
+
 
     useEffect(() => {
-        ctx.setTrackState({
-            pastStates: pastStates,
-            futureStates: futureStates
-        })
-    },[state])
+        console.log(useSavedState)
+        if (!useSavedState) {
+            if (ctx.trackState.update) {
+                addFirstState();
+                setState(_.cloneDeep(ctx.selectedGpxFile));
+                ctx.trackState.update = false;
+                ctx.setTrackState({...ctx.trackState});
+            }
+        } else {
+            setUseSavedState(false)
+        }
+    }, [ctx.trackState])
+
 
     function addFirstState() {
         if (pastStates.length === 0) {
-            state.updateState = false;
             state.tracks = TracksManager.createGpxTracks();
             state.points = [];
             state.name = ctx.selectedGpxFile.name;
@@ -105,8 +102,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         let objFromState = _.cloneDeep(currentState);
         objFromState.updateLayers = true;
         objFromState.layers = oldLayers;
-        objFromState.updateState = true;
-
+        setUseSavedState(true);
         ctx.setSelectedGpxFile({...objFromState});
     }
 
@@ -153,7 +149,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                 disabled={!isUndoPossible || ctx.trackState.block}
                                 onClick={(e) => {
                                     undo();
-                                    getState(pastStates[pastStates.length - 1]);
+                                    setUseSavedState(true);
                                     e.stopPropagation();
                                 }}
                             >
@@ -165,7 +161,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                 disabled={!isRedoPossible}
                                 onClick={(e) => {
                                     redo();
-                                    getState(futureStates[0]);
+                                    setUseSavedState(true);
                                     e.stopPropagation();
                                 }}
                             >
