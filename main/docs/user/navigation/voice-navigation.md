@@ -18,27 +18,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-When you have created a route and started navigating, you can receive voice prompts and silent notifications in the background. These features are important for reducing battery consumption as well as navigating safely and comfortably on a route.
+Voice prompts and text notifications are features used to help you while navigating a selected route. With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different types of routes, where saving battery power is important.  
 
 
 ## Voice prompts
 
-<!-- Receive voice prompts while navigating: turn-by-turn instructions, alerts, and additional information.  -->
+:::note
+<Translate android="true" ids="voice_announces_info"/>
+:::  
 
-Voice prompts help you drive your vehicle in the right direction without distracting you from the road. It is also convenient for walking or hiking.
-
-- Listen to voice prompts while navigating.
-- You can listen to the voice prompts while the device screen is *On* or *Off*.
-- If you missed a voice prompt, you can listen to it again by tapping the needed arrow in the navigation.
-- Background navigation - you can use the device and listen to prompts in the background at the same time.
+Voice prompts help you move in the right direction without distracting you from the road, or help you enjoy the surroundings while walking or hiking. While using OsmAnd, you can use other apps on your device or keep the screen turned off, listening in the background for prompts about what's ahead of you on the route.  
 
 
 ## Settings of voice prompts
 
-You can enable voice prompts in the [Navigation](../navigation/route-navigation.md#navigation-options) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.   
+OsmAnd offers different types of settings for voice prompts to help you navigate your route.  
+You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.   
 
-:::info info
-Voice prompt settings can be global and applied to all profiles.
+:::info For Android version
+You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
 :::
 
 <Tabs groupId="operating-systems">
@@ -80,13 +78,40 @@ You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for th
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
     - *[Announcement time](#announcement-time)*.
-7. **Output**:
+7. **Output** (for Android version):
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.   
 
 ### Language
 
-TTS and Recorded
+You can select your preferred language and type of voice guidance for voice prompts from the list.
+- *<Translate android="true" ids="tts_title"/>* (for Android) - <Translate android="true" ids="tts_description"/>
+- *<Translate android="true" ids="shared_string_recorded"/>* (for Android) - <Translate android="true" ids="recorded_description"/>
+
+:::note
+Not all listed languages may be supported by the TTS engine. You can change the voice and playback speed only in the system settings of the device.
+:::  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces,language"/>*
+
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+
+</TabItem>
+
+</Tabs>  
+
 
 ### Voice guidance output 
 
@@ -117,6 +142,10 @@ The announcement time of the different voice prompts depends on the type of prom
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
 ## Options of voice prompts
+
+:::tip
+If you missed a voice prompt, you can listen to it again. To do this, tap the current turn arrow on the application screen.
+:::
 
 ### Download voice prompts
 

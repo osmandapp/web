@@ -24,7 +24,8 @@ CarPlay is [paid feature](../purchases/ios.md#free-and-paid-features) of the Osm
 
 OsmAnd is available for [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
-<!--
+
+
 ## Setup
 
 First, you need to select and configure the profile to be used when connecting to Android Auto or CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).  
@@ -62,7 +63,7 @@ With this option you can search for the necessary places on the map to navigate.
 
 ### POI
 
-You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories.  
+You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. POI is a type of points that are highlighted on the map by special icons provided in the application settings, and sorted into groups.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-5.png)
 
@@ -89,9 +90,12 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.   
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)
-
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)  
+<!--
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-1.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-2.png)
 -->
+
+
 ## Navigation
 
 Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
@@ -112,13 +116,15 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 
 ## Volume control
 
-By default, all prompts remain at a constant full volume, separate from simultaneous audio playback. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to Setup → Voice → Voice volume on the vehicle's multimedia system screen. 
+In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
 If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri or Google Assistant during a call. Hold down the button on the steering wheel that turns on Siri or Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
 
+
+<!--
 __________________
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-2.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-8.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-9.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-10.png)
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-12.png)
-
+-->
