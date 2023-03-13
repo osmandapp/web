@@ -70,7 +70,51 @@ Added the search bar for Favorites menu: menu > My Places > Favorites > Pull dow
 
 ### CarPlay updates
 
-- added history, 
-- reorganized tracks and favorites list,
-- device display with navigation info.
+- added search history and the recent route in the menu:
 
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_1.png').default} alt="CarPlay"/></td>
+    </tr>
+ </table> 
+
+- reorganized tracks and favorites list (items visible in the list - 24 items):
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_2.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_3.png').default} alt="CarPlay"/></td>
+    </tr>
+ </table> 
+
+- device display with navigation info:
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_4.png').default} alt="CarPlay"/></td>
+    </tr>
+ </table> 
+
+
+
+
+### Hiking routes
+
+Added ability to select routes on the map for viewing additional information or navigation. Just tap on the hiking routes on the map.
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_1.png').default} alt="Hiking"/></td>
+    </tr>
+ </table> 
+
+Availabel to start navigation by track or download it.
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_2.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_3.png').default} alt="Hiking"/></td>
+    </tr>
+ </table> 
