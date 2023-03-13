@@ -55,7 +55,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
 
 
     useEffect(() => {
-        console.log(useSavedState)
         if (!useSavedState) {
             if (ctx.trackState.update) {
                 addFirstState();
