@@ -32,8 +32,9 @@ Voice prompts help you move in the right direction without distracting you from 
 
 ## Settings of voice prompts
 
-OsmAnd offers different types of settings for voice prompts to help you navigate your route.  
-You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.   
+OsmAnd offers different types of settings for voice prompts to help you follow your route. You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
+
+<!-- You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile. [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md)   -->
 
 :::info For Android version
 You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
@@ -60,21 +61,21 @@ You can set up voice prompts for the selected profile or for all available profi
 </Tabs>  
 
 1. **[Language](#language)** - select preferred language and type.
-2. **Announcement group** - allows to voice the following types of prompts: 
-    - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks, Tunnels.*
+2. **Announcement group** - allows you to voice the following types of prompts: 
+    - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
  
 :::note
-You can enable the [Alert widget](../widgets/nav-widgets.md#alert-widget) for this category for more convenient use of voice prompts.
+You can turn on the **[Alert widget](../widgets/nav-widgets.md#alert-widget)** for added convenience when using the voice prompts of an *Announcement group*.
 :::  
 
 3. **User points group**: 
-    - *Track waypoints, Nearby Favorites, Nearby POI*.
+    - *Track waypoints, Nearby Favorites* and *Nearby POI*.
 4. **Speed limit group**:
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
 5. **Other**: 
-    - *Announce GPS signal loss and recovery, Announce route recalculation*.
+    - *Announce GPS signal loss and recovery* and *Announce route recalculation*.
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
     - *[Announcement time](#announcement-time)*.
@@ -124,7 +125,8 @@ This setting allows you to select the loudspeaker for voice prompts.
 
 ### Speed cameras
 
-[Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) in some countries is prohibited by the law.  
+[Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
+In some countries or regions, it is illegal to use speed camera warning apps. You need to make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall**, and all data related to speed cameras: warnings, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
@@ -132,7 +134,7 @@ This setting allows you to select the loudspeaker for voice prompts.
 
 The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. You can choose how soon you want to receive the arrival announcement, see the table. And for more information, see the article [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).      
 
-**<Translate android="true" ids="arrival_distance" />** | Distance multiplier
+**<Translate android="true" ids="arrival_distance"/>** | Distance multiplier
 --- | --- 
 **<Translate android="true" ids="arrival_distance_factor_early" />** | 1.5
 **<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
