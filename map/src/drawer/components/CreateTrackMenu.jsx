@@ -11,12 +11,10 @@ export default function CreateTrackMenu() {
     const ctx = useContext(AppContext);
 
     const styles = drawerStyles();
-    const navigate = useNavigate();
+
     const [open, setOpen] = useState(false);
     const [openInfo, setOpenInfo] = useState(false);
-    const openLogin = () => {
-        navigate('/map/loginForm');
-    }
+
 
     return <>
         <MenuItem key='routeTop' sx={{mb: 1}} onClick={() => setOpen(!open)}>
@@ -34,9 +32,7 @@ export default function CreateTrackMenu() {
             <Grid container spacing={3}>
                 <Grid item xs={5}>
                     <Button sx={{ml: 4}} className={styles.button} variant="contained" component="span"
-                            onClick={() => {
-                                ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin();
-                            }}>
+                            onClick={() => TracksManager.createTrack(ctx)}>
                         Create
                     </Button>
                 </Grid>
