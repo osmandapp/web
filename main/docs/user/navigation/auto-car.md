@@ -112,10 +112,11 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 
 ## Volume control
 
-
+<!--
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-8.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-9.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-11.png)
+-->
 
