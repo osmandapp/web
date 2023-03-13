@@ -117,8 +117,12 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 ## Volume control
 
 In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
-If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri or Google Assistant during a call. Hold down the button on the steering wheel that turns on Siri or Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
+If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri during a call. Hold down the button on the steering wheel that turns on Siri, and during the call, adjust the volume using the dashboard or steering wheel.  
 
+
+## Multifunction dashboard
+
+The Car Play dashboard will soon be able to display and use the OsmAnd navigation app at the same time as music, messages or other notification apps.
 
 <!--
 __________________

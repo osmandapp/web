@@ -112,6 +112,16 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 
 ## Volume control
 
+In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
+
+## Split-screen
+
+The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps.  
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
+
+
 <!--
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)
