@@ -6,7 +6,7 @@ const BACKGROUND_WPT_SHAPE_OCTAGON = "octagon";
 const BACKGROUND_WPT_SHAPE_SQUARE = "square";
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
-const POI_ICONS_FOLDER = "poi-icons-web-svg";
+const POI_ICONS_FOLDER = "poi-icons-svg";
 
 
 const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
@@ -27,11 +27,12 @@ const MarkerIcon = ({iconType = 'default-marker', bg = 'blue'}) => {
 
 const options = {
     startIcon: MarkerIcon({bg: '#1976d2'}),
+    interIcon: MarkerIcon({bg: '#f6791b'}),
     endIcon: MarkerIcon({bg: '#ff595e'}),
     pointerIcons: MarkerIcon({bg: '#fec93b'}),
     route: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
-        iconSize: [10, 10],
+        iconSize: [13, 13],
         clickable: false
     }),
     trackStart: L.icon({
@@ -77,10 +78,14 @@ function getWptIcon(point, color, background, icon, folder) {
     }
 }
 
+function isStrangeShape(shape) {
+    return shape !== BACKGROUND_WPT_SHAPE_CIRCLE && shape !== BACKGROUND_WPT_SHAPE_OCTAGON && shape !== BACKGROUND_WPT_SHAPE_SQUARE;
+}
+
 function getSvgBackground(colorBackground, shape) {
     let svg;
     if (shape) {
-        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE) {
+        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
             svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
                         </svg>`
@@ -110,9 +115,9 @@ const MarkerOptions = {
     BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,
-    DEFAULT_WPT_ICON:DEFAULT_WPT_ICON,
-    DEFAULT_WPT_COLOR:DEFAULT_WPT_COLOR,
-    POI_ICONS_FOLDER:POI_ICONS_FOLDER
+    DEFAULT_WPT_ICON: DEFAULT_WPT_ICON,
+    DEFAULT_WPT_COLOR: DEFAULT_WPT_COLOR,
+    POI_ICONS_FOLDER: POI_ICONS_FOLDER
 };
 
 export default MarkerOptions;

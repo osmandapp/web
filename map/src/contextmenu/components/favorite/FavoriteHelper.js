@@ -1,8 +1,9 @@
 import L from "leaflet";
+import FavoritesManager from "../../../context/FavoritesManager";
 
-function updateSelectedFile(ctx, result, favoriteName, groupName, deleted) {
+function updateSelectedFile(ctx, favorites, result, favoriteName, groupName, deleted) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
-    let selectedGroup = ctx.favorites.groups.find(g => g.name === groupName);
+    let selectedGroup = favorites.groups.find(g => g.name === groupName);
     newSelectedFile.file = selectedGroup.name !== ctx.selectedGpxFile?.nameGroup ? selectedGroup.file : ctx.selectedGpxFile?.file;
     newSelectedFile.name = favoriteName;
     newSelectedFile.nameGroup = selectedGroup.name;
@@ -19,11 +20,27 @@ function updateSelectedFile(ctx, result, favoriteName, groupName, deleted) {
 }
 
 function updateSelectedGroup(favorites, selectedGroupName, result) {
-    favorites.groups.forEach(g => {
-        if (g.name === selectedGroupName && result.data) {
-            updateGroupData(g, result);
-        }
-    })
+    let group = favorites.groups?.find(g => (g.name === selectedGroupName && result.data));
+    if (group) {
+        updateGroupData(group, result);
+    } else {
+        let file = {};
+        Object.keys(result.data).forEach(d => {
+            file[`${d}`] = result.data[d];
+        });
+        file.folder = selectedGroupName;
+        file.name = selectedGroupName + '.gpx';
+        file.type = FavoritesManager.FAVORITE_FILE_TYPE;
+        let newGroup = {
+            name: file.folder,
+            updatetimems: result.updatetimems,
+            file: file,
+            pointsGroups: result.data.pointsGroups,
+            hidden: false
+        };
+        favorites.groups.push(newGroup)
+    }
+    return favorites;
 }
 
 function updateGroupData(object, result) {

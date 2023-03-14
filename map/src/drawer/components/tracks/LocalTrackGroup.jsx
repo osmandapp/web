@@ -29,7 +29,6 @@ export default function LocalTrackGroup() {
     });
 
     const ctx = useContext(AppContext);
-    const navigate = useNavigate();
 
     const [localGpxOpen, setLocalGpxOpen] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
@@ -39,10 +38,6 @@ export default function LocalTrackGroup() {
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
-
-    const openLogin = () => {
-        navigate('/map/loginForm');
-    }
 
     function clearLocalTracks() {
         let selectedLocalFile = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
@@ -129,9 +124,7 @@ export default function LocalTrackGroup() {
                     </Grid>
                     <Grid item xs={6}>
                         {<Button className={styles.button} variant="contained" component="span"
-                                 onClick={() => {
-                                     ctx.loginUser ? TracksManager.createTrack(ctx) : openLogin();
-                                 }}>
+                                 onClick={() => TracksManager.createTrack(ctx)}>
                             Create
                         </Button>}
                     </Grid>

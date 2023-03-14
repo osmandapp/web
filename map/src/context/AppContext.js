@@ -4,6 +4,7 @@ import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
 import _ from "lodash";
+import FavoritesManager from "./FavoritesManager";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -107,32 +108,126 @@ export const getGpxTime = (f) => {
     return 0;
 }
 
-async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading) {
+async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
             setListFiles({});
         } else {
             setGpxLoading(true);
             const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-            const res = await response.json();
-            res.loginUser = loginUser;
-            res.totalUniqueZipSize = 0;
-            res.uniqueFiles.forEach((f) => {
-                res.totalUniqueZipSize += f.zipSize;
-            });
-            res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
-                let ftime = getGpxTime(f);
-                let stime = getGpxTime(s);
-                if (ftime !== stime) {
-                    return ftime > stime ? -1 : 1;
+            await response.json().then((res) => {
+                if (res) {
+                    res.loginUser = loginUser;
+                    res.totalUniqueZipSize = 0;
+                    res.uniqueFiles.forEach((f) => {
+                        res.totalUniqueZipSize += f.zipSize;
+                    });
+                    res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
+                        let ftime = getGpxTime(f);
+                        let stime = getGpxTime(s);
+                        if (ftime !== stime) {
+                            return ftime > stime ? -1 : 1;
+                        }
+                        return 0;
+                    });
+                    setListFiles(res);
+                    setGpxLoading(false);
+
+                    addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
+                    addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
                 }
-                return 0;
             });
-            // res.uniqueFiles = res.uniqueFiles.slice(0, 300);
-            setListFiles(res);
-            setGpxLoading(false);
         }
     }
+}
+
+async function addOpenedFavoriteGroups(files, setFavorites) {
+
+    files.sort((a, b) => a.name.localeCompare(b.name))
+    let newFavoritesFiles = {
+        groups: []
+    };
+    files.forEach(file => {
+        let group = FavoritesManager.createGroup(file)
+        newFavoritesFiles.groups.push(group);
+    })
+    newFavoritesFiles.groups = FavoritesManager.orderList(newFavoritesFiles.groups, FavoritesManager.DEFAULT_GROUP_NAME);
+
+    let savedVisible = JSON.parse(localStorage.getItem(FavoritesManager.FAVORITE_LOCAL_STORAGE));
+
+    if (savedVisible) {
+        for (const name of savedVisible) {
+            for (const f of newFavoritesFiles.groups) {
+                if (f.name === name) {
+                    let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(f.file.type)}&name=${encodeURIComponent(f.file.name)}`;
+                    newFavoritesFiles[f.name] = {
+                        'url': url,
+                        'clienttimems': f.file.clienttimems,
+                        'updatetimems': f.file.updatetimems,
+                        'name': f.file.name,
+                        'addToMap': true
+                    };
+                    let res = await Utils.getFileData(newFavoritesFiles[f.name]);
+                    if (res) {
+                        const favoriteFile = new File([res], f.file.name, {
+                            type: "text/plain",
+                        });
+                        let favorites = await TracksManager.getTrackData(favoriteFile);
+                        if (favorites) {
+                            favorites.name = f.file.name;
+                        }
+                        Object.keys(favorites).forEach(t => {
+                            newFavoritesFiles[f.name][`${t}`] = favorites[t];
+                        });
+                    }
+                }
+            }
+        }
+    }
+    setFavorites(newFavoritesFiles);
+}
+
+async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
+    const promises = [];
+    const newGpxFiles = Object.assign({}, gpxFiles);
+
+    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+    let selectedFiles = [];
+    if (savedVisible?.cloud) {
+        savedVisible.cloud.forEach(name => {
+            files.forEach(f => {
+                if (f.name === name) {
+                    selectedFiles.push(_.indexOf(files, f));
+                }
+            })
+        })
+    }
+
+    for (let ind of selectedFiles) {
+        let file = files[ind];
+        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+        newGpxFiles[file.name] = {
+            'url': url,
+            'clienttimems': file.clienttimems,
+            'updatetimems': file.updatetimems,
+            'name': file.name,
+            'type': "GPX"
+        };
+        let f = await Utils.getFileData(newGpxFiles[file.name]);
+        const gpxfile = new File([f], file.name, {
+            type: "text/plain",
+        });
+
+        promises.push(TracksManager.getTrackData(gpxfile).then((track) => {
+            track.name = file.name;
+            Object.keys(track).forEach(t => {
+                newGpxFiles[file.name][`${t}`] = track[t];
+            });
+        }))
+    }
+    await Promise.all(promises).then(() => {
+        setGpxFiles(newGpxFiles)
+    })
 }
 
 async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, listFiles, setListFiles) {
@@ -435,7 +530,7 @@ export const AppContextProvider = (props) => {
         // eslint-disable-next-line
     }, [loginUser]);
     useEffect(() => {
-        loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading);
+        loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
         // eslint-disable-next-line
     }, [loginUser]);
     return <AppContext.Provider value={{
