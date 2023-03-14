@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title:  Straight line routing
+title:  Straight line routing (Aircraft)
 ---
 
 import Tabs from '@theme/Tabs';

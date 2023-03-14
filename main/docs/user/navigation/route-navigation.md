@@ -191,3 +191,200 @@ Even if you turn off the screen or exit the OsmAnd app, you'll still get voice p
 :::tip
 To save your device battery, while navigation you can use [“Screen control”](./voice-navigation#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 :::
+
+
+
+
+## Settings
+
+In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile.  
+
+:::info
+There are no navigation settings in *Browse map* profile.  
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>* 
+
+![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+
+![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
+
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in [Navigation Options](../navigation/route-navigation.md#navigation-options).  
+
+Below, you can find the list of possible route options.  
+
+
+Please read check route parameters for the corresponding navigation type.
+
+
+### Route parameters
+
+Configure routing type and its parameters.
+
+### Route recalculation
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        |   |
+| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | If enabled, your route will be recalculated if you move to the starting point.  |   |
+
+
+
+
+### Simulate navigation
+
+Simulate navigation function allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
+- Planning. You can see how long it may take to complete the entire route or its single segment.
+- Familiarization. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
+- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699_
+
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
+
+- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](../navigation/route-navigation.md#how-to-use).  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
+
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
+
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+
+- &nbsp;_<Translate ios="true" ids="simulation_preview_mode_title"/>_ - <Translate ios="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
+
+When you click on ["Start" button](../navigation/route-navigation.md#how-to-use), your simulation of navigation will start. 
+
+For stop the simulation of navigation you need to click on ["Navigation" button → "Cancel" button](../navigation/route-navigation.md#how-to-use).
+
+</TabItem>
+
+</Tabs>
+
+## Route Details
+
+In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
+
+There are three ways to access the Route Details menu:  
+1. Go to the main *Menu → Navigation*, set the route, and press the Details button.
+2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
+3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+|  |
+|------------|
+| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_main-info.png) |
+| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_analiz.png) |
+| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
+| Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) |
+| Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf. |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_print.png) |
+| Save as new track button. | 
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_save.png) |
+| Share buttons: *Share as GPX file* and *Save to OsmAnd tracks* |
+| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+|  |
+|------------|
+| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png) |
+| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png) |
+| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png) |
+| Save as new track button. | 
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png) |
+| Export button: *Export as GPX file* or *Share as link* |
+| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png) |
+
+</TabItem>
+
+</Tabs>
+
+:::info
+**Share link**.  
+Each link consists of parts containing specific information. For example:  
+https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
+- *start=52.310331,4.863615*- coordinates of the start point.
+- If the coordinates are not specified, My Location is used.
+- *end=52.327645,4.863272* - coordinates of the end point.
+- *mode=pedestrian* - type of navigation, which depends on the selected profile.
+- *#15/52.3161/4.8658* - zoom level and map center coordinates.
+:::
+
+:::note
+The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
+:::  
+
+#### Select engine type
+
+If you have selected the engine type in the [vehicle parameters](../personal/profiles/#vehicle-parameters), the CO2 footprint data will be displayed above the graph.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,routing_settings"/>*
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
+
+</TabItem>
+
+</Tabs>
+

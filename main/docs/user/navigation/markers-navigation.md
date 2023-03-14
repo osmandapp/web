@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title:  Markers navigation
+sidebar_position: 3
+title:  Navigation by markers
 ---
 
 import Tabs from '@theme/Tabs';

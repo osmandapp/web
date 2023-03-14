@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title:  Direct-to-point routing
+title:  Direct-to-point routing (Boat)
 ---
 
 import Tabs from '@theme/Tabs';
