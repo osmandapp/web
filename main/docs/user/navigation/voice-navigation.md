@@ -32,9 +32,11 @@ Voice prompts help you move in the right direction without distracting you from 
 
 ## Settings of voice prompts
 
-OsmAnd offers different types of settings for voice prompts to help you follow your route. You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
-
-<!-- You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile. [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md)   -->
+OsmAnd offers different types of settings for voice prompts to help you follow your route.  
+To set up voice prompts, you need to go to the appropriate section of the application:
+- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
+- You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
+- You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 :::info For Android version
 You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
@@ -44,7 +46,8 @@ You can set up voice prompts for the selected profile or for all available profi
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
+- *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
@@ -69,8 +72,8 @@ You can set up voice prompts for the selected profile or for all available profi
 You can turn on the **[Alert widget](../widgets/nav-widgets.md#alert-widget)** for added convenience when using the voice prompts of an *Announcement group*.
 :::  
 
-3. **User points group**: 
-    - *Track waypoints, Nearby Favorites* and *Nearby POI*.
+3. **[User points group](#user-points-group)**:
+    - *Track waypoints, Nearby Favorites* and *Nearby POI*.  
 4. **Speed limit group**:
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
@@ -113,6 +116,14 @@ Not all listed languages may be supported by the TTS engine. You can change the 
 
 </Tabs>  
 
+### User points group
+
+In this group you can set whether the voice prompts for the pre-set and added [Waypoints](../personal/tracks.md#add-waypoint), [Favorites](../personal/favorites.md) or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
+
+| Prompt type | Response time | Response distance in meters | Limit |
+| - | - | - | - | 
+| Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
+| Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
 
 ### Voice guidance output 
 
@@ -132,7 +143,7 @@ In some countries or regions, it is illegal to use speed camera warning apps. Yo
 
 ### Announcement time
 
-The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. You can choose how soon you want to receive the arrival announcement, see the table. And for more information, see the article [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).      
+The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. You can choose how soon you want to receive the arrival announcement, see the table. And for more information, see the [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).      
 
 **<Translate android="true" ids="arrival_distance"/>** | Distance multiplier
 --- | --- 
@@ -142,6 +153,7 @@ The announcement time of the different voice prompts depends on the type of prom
 **<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+
 
 ## Options of voice prompts
 
@@ -223,3 +235,38 @@ You can control the screen of your device to save power. This mode has two gener
 - *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/> 
  
 
+## Fix voice navigation problems
+
+When you navigate to a place, you can hear voice directions. Learn how to fix voice navigation problems on your mobile devices.
+
+- Step 1: Turn on your device’s volume.
+    - Make sure that your phone or tablet’s volume is on and not muted. After you start navigation, turn up your volume.
+- Step 2: Make sure voice is turned on in the Maps app.
+    - On your Android phone or tablet, open the Google Maps app Maps.
+    - Start navigation.
+    - At the top right, you should see Sound Sound. If you don’t see this, tap Mute Mute and then Sound Sound. Google Maps should start talking.
+- Step 3: Turn up the volume in the Maps app.
+    - On your Android phone or tablet, open the Google Maps app Maps.
+    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings and then Voice level.
+    - Choose Louder.
+- Step 4: Choose which speakers to use.  
+    - On your phone or tablet, turn on Bluetooth.
+    - Pair your phone or tablet to your car.
+    - Set the source for your car's audio system to Bluetooth.
+    - On your Android phone or tablet, open the Google Maps app Maps.
+    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.  
+    - Choose an option:  
+        - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
+        - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.  
+
+:::note
+For Android version 9.13 and up, you can play a test sound. To play a test sound, open the Google Maps app Maps and then your profile picture or initial Account Circle and then Settings Settings and then Navigation settings and then Play test sound. You'll hear "This is what it will sound like when navigating with Google Maps."  
+If you want to charge your phone or tablet, use a charging-only USB cable or a power adapter. Connect it to an outlet or cigarette lighter.
+:::
+
+- Step 5: Download voice directions.
+    - Sometimes voice directions aren’t downloaded or must be updated on your phone or tablet. When this happens, you’ll hear a chime instead of voice directions.
+        - Make sure you're connected to the internet. If you have a strong internet connection, voice directions will download faster.
+        - Get directions.
+        - Use the Google Maps app as you normally would. Voice directions are downloaded while you have the Maps app open.
+        - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.
