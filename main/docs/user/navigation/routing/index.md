@@ -54,35 +54,6 @@ Select roads on map to avoid
 
 Consider temporary limitations
 
-### Vehicle parameters
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
-
-</TabItem>
-
-</Tabs>
-
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| **<Translate android="true" ids="vehicle_parameters"/>** | List of car parameters that can affect the route.   |   |
-|     | **<Translate android="true" ids="default_speed_setting_title"/>**  | - Used as a speed to estimate [arrival time](../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. <br/> - Used to determine how late/early voice announcements should be pronounced - [details](../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). <br/> - Affects speed formatting [Unit of speed](#general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  <br/> - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
-|     | <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
-|     | <Translate android="true" ids="routing_attr_motor_type_name"/>  | <Translate android="true" ids="routing_attr_motor_type_description"/> Available types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid.* |
-
-
 ### Customize offline routing
 
 You can modify _routing.xml file_ for your own needs. It means that you can update the routing algorithm according to your preferences.  
@@ -114,4 +85,48 @@ More info about this possibility you may find in [Technical documentation](../..
 - [Online routing](./online-routing.md) - Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 - [BRouter routing](./brouter.md) - BRouter app can be used for offline routing.
 
+
+
+## Vehicle parameters
+
+
+### Default speed
+
+- Used as a speed to estimate [arrival time](../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. 
+- Used to determine how late/early voice announcements should be pronounced 
+- [details](../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). 
+- Affects speed formatting [Unit of speed](#general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
+- For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
+
+### Min/max speed (Road speeds)
+
+
+### Fuel used by motor	
+
+<Translate android="true" ids="routing_attr_motor_type_description"/> Available types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid.* 
+
+### Size parameters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+
+</TabItem>
+
+</Tabs>
+
+| Parameter | Description | 
+|:------------|:---------------|
+| <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
+| <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
+| <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
+| <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
 
