@@ -58,7 +58,7 @@ To use the offline navigation, you first need to [download maps](../start-with/d
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../map/interact-with-map#my-location--zoom) to the required one.
   
-3. Additional [navigation settings](./index.md#navigation-settings) can be used depending on your purposes (avoid roads).
+3. Additional [navigation settings](./index.md#navigation-settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 
 4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](./index.md#simulate-navigation) (with this function you can test your route before actually traveling along it).
 
