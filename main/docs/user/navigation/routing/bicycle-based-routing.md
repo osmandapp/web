@@ -37,34 +37,13 @@ Bicycle routing can be configured according to your needs in [Navigation setting
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
-| "<Translate android="true" ids="routing_attr_driving_style_name"/>"   |  Select a driving target to get a shorter, faster, safer, or unpaved route. | "<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate android="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate android="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
-| "<Translate android="true" ids="impassable_road"/>" |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_borders_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_footways_name"/>"     |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_sett_name"/>"|              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_toll_name"/>"|              |
-|                 |   "<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>"|               |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_motorway_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_ice_roads_fords_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_train_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_subway_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_ferries_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_tram_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_bus_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
-| "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
-| "<Translate android="true" ids="routing_attr_allow_motorway_name"/>" |  <Translate android="true" ids="routing_attr_allow_motorway_description"/>  | Cycling |
-| "<Translate android="true" ids="routing_attr_height_obstacles_name"/>" |  Allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | Routing could avoid strong uphills.    |
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | Routing could avoid strong uphills.    |
-|   | "<Translate android="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | Routing could avoid strong uphills.    | 
-| "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |  
+| *<Translate android="true" ids="fast_route_mode"/>* |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
+| *<Translate android="true" ids="routing_attr_driving_style_name"/>*   |  Select a driving target to get a shorter, faster, safer, or unpaved route. | *<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>*: prefer unpaved over paved roads for routing. <br />  *<Translate android="true" ids="routing_attr_driving_style_safety_name"/>*: prefer safer roads for routing. <br /> *<Translate android="true" ids="routing_attr_driving_style_balance_name"/>*: prefer faster way for routing. <br />  *<Translate android="true" ids="routing_attr_driving_style_speed_name"/>*: prefer shorter way for routing. <br />     |
+| *<Translate android="true" ids="impassable_road"/>* |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
+| *<Translate android="true" ids="routing_attr_allow_motorway_name"/>* |  <Translate android="true" ids="routing_attr_allow_motorway_description"/>  | Cycling |
+| *<Translate android="true" ids="routing_attr_height_obstacles_name"/>* |  Allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |  
 
 </TabItem>
 
@@ -77,38 +56,16 @@ Bicycle routing can be configured according to your needs in [Navigation setting
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| "<Translate ios="true" ids="recalculate_route"/>" |  <Translate ios="true" ids="route_recalculation_descr"/>    |              |
-| "<Translate ios="true" ids="recalculate_wrong_dir"/>"  |  The route will be recalculated if you are moving to the start point.   |              |
-| "<Translate android="true" ids="fast_route_mode"/>" |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
-| "<Translate ios="true" ids="routing_attr_driving_style_name"/>"   |  Select driving puprose to get shorter, faster, safer or unpaved route. | "<Translate ios="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>": prefer unpaved over paved roads for routing. <br />  "<Translate ios="true" ids="routing_attr_driving_style_safety_name"/>": prefer safer roads for routing. <br /> "<Translate ios="true" ids="routing_attr_driving_style_balance_name"/>": prefer faster way for routing. <br />  "<Translate ios="true" ids="routing_attr_driving_style_speed_name"/>": prefer shorter way for routing. <br />     |
-| "<Translate ios="true" ids="impassable_road"/>" |  Avoid certain routes and road types for routing:    |   Navigation types and notes           |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_borders_name"/>"    |              |
-|                 |  "Avoid footways"    |              |
-|                 |  "Avoid tunnels"    |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_sett_name"/>"|              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_toll_name"/>"|              |
-|                 |  "Avoid low emissions zones"    |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_shuttle_train_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_motorway_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_ice_roads_fords_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_train_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_subway_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_ferries_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_tram_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_bus_name"/>" |              |
-|                 |  "<Translate ios="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
-|                 |  Avoid 4WD roads | Avoid roads only suitable for 4WD only vehicles  |
-| "<Translate ios="true" ids="preferred_terrain"/>" |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-|   | "<Translate ios="true" ids="shared_string_any"/>"  | <Translate ios="true" ids="route_preferred_terrain_any"/>    |
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_more_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_flat"/>    |
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_plains_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_less_hilly"/>    |
-|   | "<Translate ios="true" ids="routing_attr_relief_smoothness_factor_hills_name"/>"  | <Translate ios="true" ids="route_preferred_terrain_hilly"/>  |  
-| "<Translate ios="true" ids="routing_attr_allow_motorway_name"/>" |  using Motorways for routing  |   Cycling routing |
-| "<Translate ios="true" ids="routing_attr_allow_private_name"/>" |  Ignore the Private Access restriction for routing  |    |
-| "<Translate ios="true" ids="consider_limitations_param"/>" |  Using temporaty limitations for routing from OpenStreetMap data  |    |
-| "<Translate ios="true" ids="road_speeds"/>" |  Setting the minimum and the maximum travel speed for all roads in the route.  |    |
+| *<Translate ios="true" ids="recalculate_route"/>* |  <Translate ios="true" ids="route_recalculation_descr"/>    |              |
+| *<Translate ios="true" ids="recalculate_wrong_dir"/>*  |  The route will be recalculated if you are moving to the start point.   |              |
+| *<Translate android="true" ids="fast_route_mode"/>* |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
+| *<Translate ios="true" ids="routing_attr_driving_style_name"/>*   |  Select driving puprose to get shorter, faster, safer or unpaved route. | *<Translate ios="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>*: prefer unpaved over paved roads for routing. <br />  *<Translate ios="true" ids="routing_attr_driving_style_safety_name"/>*: prefer safer roads for routing. <br /> *<Translate ios="true" ids="routing_attr_driving_style_balance_name"/>*: prefer faster way for routing. <br />  *<Translate ios="true" ids="routing_attr_driving_style_speed_name"/>*: prefer shorter way for routing. <br />     |
+| *<Translate ios="true" ids="impassable_road"/>* |  Avoid certain routes and road types for routing:    |   Navigation types and notes           |
+| *<Translate ios="true" ids="preferred_terrain"/>* |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |  
+| *<Translate ios="true" ids="routing_attr_allow_motorway_name"/>* |  using Motorways for routing  |   Cycling routing |
+| *<Translate ios="true" ids="routing_attr_allow_private_name"/>* |  Ignore the Private Access restriction for routing  |    |
+| *<Translate ios="true" ids="consider_limitations_param"/>* |  Using temporaty limitations for routing from OpenStreetMap data  |    |
+| *<Translate ios="true" ids="road_speeds"/>* |  Setting the minimum and the maximum travel speed for all roads in the route.  |    |
 
 </TabItem>
 
@@ -125,27 +82,9 @@ Moped routing allows drivers to build an optimal route, taking into account the 
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| "<Translate android="true" ids="impassable_road"/>" |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_stairs_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_borders_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_footways_name"/>"     |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>"    |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_sett_name"/>"|              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_toll_name"/>"|              |
-|                 |   "<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>"|               |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_motorway_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_ice_roads_fords_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_train_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_subway_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_ferries_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_tram_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_bus_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_share_taxi_name"/>" |              |
-|                 |  "<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>" | "<Translate android="true" ids="routing_attr_avoid_4wd_only_description"/>"             |
-| "<Translate android="true" ids="routing_attr_allow_private_name"/>" |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    | 
-| "<Translate android="true" ids="temporary_conditional_routing"/>" |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
+| *<Translate android="true" ids="impassable_road"/>* |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    | 
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |
 
 
 ## MTB routing settings
