@@ -34,8 +34,10 @@ Voice prompts help you move in the right direction without distracting you from 
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route.  
 To set up voice prompts, you need to go to the appropriate section of the application:
-- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
+
 - You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
+- - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
+- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
 - You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 :::info For Android version
@@ -55,7 +57,8 @@ You can set up voice prompts for the selected profile or for all available profi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
