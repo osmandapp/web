@@ -141,7 +141,9 @@ export default function LocalClientTrackLayer() {
                 ctx.setUpdateContextMenu(true);
                 setAddEleTab(true);
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx);
+            if (ctx.localTracks.length > 0) {
+                TracksManager.saveTracks(ctx.localTracks, ctx);
+            }
         }
     }
 
