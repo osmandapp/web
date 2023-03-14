@@ -210,7 +210,11 @@ export default function ChangeProfileTrackDialog({open}) {
         </DialogContent>
         <DialogActions>
             <Button onClick={() => ctx.setTrackProfileManager({})}>Cancel</Button>
-            <Button onClick={changeProfile}>Change</Button>
+            <Button onClick={() => {
+                changeProfile().then(() => {
+                    ctx.trackState.update = true;
+                    ctx.setTrackState({...ctx.trackState});
+                })}}>Change</Button>
         </DialogActions>
     </Dialog>
 }

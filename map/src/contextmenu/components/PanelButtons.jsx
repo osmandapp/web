@@ -62,8 +62,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                 ctx.trackState.update = false;
                 ctx.setTrackState({...ctx.trackState});
             }
-        } else {
-            setUseSavedState(false)
         }
     }, [ctx.trackState])
 
@@ -76,32 +74,12 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         }
     }
 
-    function isEqualState(state1, state2) {
-        let checkState1 = {};
-        checkState1.points = _.cloneDeep(state1.points);
-        checkState1.wpts = _.cloneDeep(state1.wpts);
-
-        let checkState2 = {};
-        checkState2.points = _.cloneDeep(state2.points);
-        checkState2.wpts = _.cloneDeep(state2.wpts);
-
-        if (state1.updateState !== undefined && state2.updateState !== undefined) {
-            checkState1.updateState = _.cloneDeep(state1.updateState);
-            checkState2.updateState = _.cloneDeep(state2.updateState);
-        }
-        return _.isEqual(checkState1, checkState2);
-    }
-
-    function hasSameState(states, state1) {
-        return !!states.find(s => isEqualState(s, state1));
-    }
-
     function getState(currentState) {
         let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
         let objFromState = _.cloneDeep(currentState);
         objFromState.updateLayers = true;
         objFromState.layers = oldLayers;
-        setUseSavedState(true);
+        setUseSavedState(false)
         ctx.setSelectedGpxFile({...objFromState});
     }
 

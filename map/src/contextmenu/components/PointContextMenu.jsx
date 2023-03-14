@@ -44,7 +44,10 @@ export default function PointContextMenu({anchorEl}) {
 
     function deletePoint() {
         if (pointInd !== -1) {
-            PointManager.deletePoint(pointInd, ctx).then();
+            PointManager.deletePoint(pointInd, ctx).then(() => {
+                ctx.trackState.update = true;
+                ctx.setTrackState({...ctx.trackState});
+            });
         } else {
             deleteWpt(ctx.pointContextMenu.coord);
         }
@@ -66,6 +69,8 @@ export default function PointContextMenu({anchorEl}) {
             }
             ctx.selectedGpxFile.updateLayers = true;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+            ctx.trackState.update = true;
+            ctx.setTrackState({...ctx.trackState});
         }
     }
 
@@ -74,6 +79,8 @@ export default function PointContextMenu({anchorEl}) {
             ctx.selectedGpxFile.points.splice(pointInd + 1, ctx.selectedGpxFile.points.length - pointInd);
             ctx.selectedGpxFile.updateLayers = true;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+            ctx.trackState.update = true;
+            ctx.setTrackState({...ctx.trackState});
         }
     }
 
@@ -115,6 +122,8 @@ export default function PointContextMenu({anchorEl}) {
         ctx.selectedGpxFile.points[ind].profile = TracksManager.PROFILE_GAP;
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.trackState.update = true;
+        ctx.setTrackState({...ctx.trackState});
     }
 
     async function join(point1, point2) {
@@ -123,6 +132,8 @@ export default function PointContextMenu({anchorEl}) {
         delete point1.geometry[point1.geometry.length - 1].profile;
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.trackState.update = true;
+        ctx.setTrackState({...ctx.trackState});
     }
 
     function isGap(pointInd) {

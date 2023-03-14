@@ -220,6 +220,10 @@ export default class EditablePolyline {
                     this.ctx.selectedGpxFile.dragPoint = false;
                     res.layers = this.ctx.selectedGpxFile.layers;
                     this.ctx.setSelectedGpxFile({...res});
+
+                    this.ctx.trackState.update = true;
+                    this.ctx.trackState.block = false;
+                    this.ctx.setTrackState({...this.ctx.trackState});
                 });
             })
         }

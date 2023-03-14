@@ -142,10 +142,6 @@ export default function LocalClientTrackLayer() {
                 setAddEleTab(true);
             }
             TracksManager.saveTracks(ctx.localTracks, ctx);
-            if (!ctx.selectedGpxFile.updateLayers && !ctx.selectedGpxFile.dragPoint) {
-                ctx.trackState.update = true;
-                ctx.setTrackState({...ctx.trackState});
-            }
         }
     }
 
@@ -299,9 +295,11 @@ export default function LocalClientTrackLayer() {
                         ctx.setUpdateContextMenu(true);
                     }
                     saveChanges(null, null, null, res);
+                    ctx.trackState.update = true;
+                    ctx.setTrackState({...ctx.trackState});
+                    addClickOnMap();
                 });
             }
-            addClickOnMap();
         });
     }
 
@@ -571,6 +569,8 @@ export default function LocalClientTrackLayer() {
         createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.selectedGpxFile.addPoint = true;
+        ctx.trackState.update = true;
+        ctx.setTrackState({...ctx.trackState});
     }
 
     function editCurrentTrack() {

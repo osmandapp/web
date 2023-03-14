@@ -37,45 +37,35 @@ function loadTracks() {
 }
 
 function saveTracks(tracks, ctx) {
-    let tracksSize = 0;
-    let locals = {}
-    let tooBig = false;
-    if (tracks.length > 0) {
-        for (let track of tracks) {
-            let localTrack = {
-                name: track.name,
-                id: track.id,
-                metaData: track.metaData,
-                tracks: track.points ? [{points: track.points}] : track.tracks,
-                wpts: track.wpts,
-                pointsGroups: track.pointsGroups,
-                ext: track.ext,
-                analysis: track.analysis,
-                selected: false,
-                originalName: track.originalName
-            }
-            tracksSize += JSON.stringify(localTrack).length;
-            if (tracksSize > 5000000) {
-                tooBig = true;
-                break;
-            }
-            locals['localTrack_' + _.indexOf(tracks, track)] = JSON.stringify(localTrack);
-        }
-    }
-    if (tooBig) {
-        ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+    let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    let track;
+    if (currentTrackIndex !== -1) {
+        track = tracks[currentTrackIndex];
     } else {
-        let names = Object.keys(localStorage);
-        for (let name of names) {
-            if (name.includes('localTrack')) {
-                localStorage.removeItem(name);
-            }
-        }
-        for (let data in locals) {
-            localStorage.setItem(data, locals[data]);
-        }
+        track = tracks[tracks.length - 1];
+    }
+    let localTrack = {
+        name: track.name,
+        id: track.id,
+        metaData: track.metaData,
+        tracks: track.points ? [{points: track.points}] : track.tracks,
+        wpts: track.wpts,
+        pointsGroups: track.pointsGroups,
+        ext: track.ext,
+        analysis: track.analysis,
+        selected: false,
+        originalName: track.originalName
     }
 
+    let tracksSize = JSON.stringify(localTrack).length;
+    let totalSize = JSON.parse(localStorage.getItem('dataSize'));
+    if (tracksSize + totalSize > 5000000) {
+        ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+    } else {
+        localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
+        totalSize += tracksSize
+        localStorage.setItem('dataSize', totalSize);
+    }
 }
 
 function createName(ctx) {
@@ -366,7 +356,6 @@ function formatRouteMode(routeMode) {
 
 
 async function updateRouteBetweenPoints(ctx, start, end) {
-    ctx.setRoutingErrorMsg(null);
     let routeMode = formatRouteMode(ctx.creatingRouteMode)
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {

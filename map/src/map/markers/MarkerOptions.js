@@ -32,7 +32,7 @@ const options = {
     pointerIcons: MarkerIcon({bg: '#fec93b'}),
     route: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
-        iconSize: [10, 10],
+        iconSize: [13, 13],
         clickable: false
     }),
     trackStart: L.icon({

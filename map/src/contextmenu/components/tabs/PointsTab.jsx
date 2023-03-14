@@ -81,7 +81,10 @@ const PointsTab = ({width}) => {
                         <ListItemAvatar>
                             <IconButton x={{mr: 1}} onClick={(e) => {
                                 e.stopPropagation();
-                                PointManager.deletePoint(index, ctx).then();
+                                PointManager.deletePoint(index, ctx).then(() => {
+                                    ctx.trackState.update = true;
+                                    ctx.setTrackState({...ctx.trackState});
+                                });
                             }}>
                                 <Cancel fontSize="small"/>
                             </IconButton>

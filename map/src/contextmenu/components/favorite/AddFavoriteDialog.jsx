@@ -103,6 +103,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         }
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        if (ctx.createTrack) {
+            ctx.trackState.update = true;
+            ctx.setTrackState({...ctx.trackState});
+        }
         closeDialog();
     }
 
