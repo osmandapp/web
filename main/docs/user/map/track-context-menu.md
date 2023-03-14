@@ -378,16 +378,28 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
 - *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- *<Translate android="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+
+
 - *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
 - *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
 - *<Translate android="true" ids="analyze_by_intervals"/>* - [analyze the track by time or distance intervals](../map/track-context-menu.md#split-interval).
+
+
 - *<Translate android="true" ids="shared_string_share"/>* - export the chosen track.
 - *<Translate android="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../plugins/osm-editing.md#how-to-upload-gpx-track).
+
+
 - *<Translate android="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../plan-route/create-route.md).
 - *<Translate android="true" ids="rename_track"/>* - change track name.
 - *<Translate android="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
-- *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](../map/track-context-menu.md#gps-filter). 
+
+
+- *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](../map/track-context-menu.md#gps-filter).
+- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](../map/track-context-menu.md#online-elevation-profile), attach your track to the roads or calculate it online.
+- *<Translate android="true" ids="simulate_your_location"/>* - [simulate your position](../plugins/development.md#gpx-track-simulation) using a GPX track.
+
+
 - *<Translate android="true" ids="shared_string_delete"/>* - delete the track.
 
 </TabItem>
@@ -396,16 +408,27 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
-- *<Translate ios="true" ids="map_settings_show"/>* - shows or not the track on the map.
-- *<Translate ios="true" ids="map_settings_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
+- *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
+- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
 - *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
-- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
-- *<Translate ios="true" ids="shared_string_export"/>* - export the chosen track.
+
+
+- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map).
+
+
+- *<Translate ios="true" ids="shared_string_share"/>* - export the chosen track.
+- *<Translate ios="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../plugins/osm-editing.md#how-to-upload-gpx-track)
+
+
 - *<Translate ios="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../plan-route/create-route.md).
 - *Dublicate track* - allows to make and save a copy of the track.
-- *<Translate ios="true" ids="gpx_rename_q"/>* - change track name.
-- *<Translate ios="true" ids="plan_route_change_folder"/>* - select folder and add new one for the chosen track.
+
+
+- *<Translate ios="true" ids="rename_track"/>* - change track name.
+- *<Translate ios="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+
 - *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
+
 
 </TabItem>
 
