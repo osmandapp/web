@@ -26,7 +26,7 @@ OsmAnd uses its own routing algorithm and resources (see the [Online routing](./
 [BRouter](http://brouter.de/) uses pre-calculated routes, which allows you to build a route very quickly in offline mode. You can read how to install and use it in the BRouter [readme.txt](http://brouter.de/brouter/readme.txt).
 
 
-## How to use
+## How to configure
 
 A guide to installing BRouter and including it in OsmAnd routing.
 
@@ -79,9 +79,9 @@ A guide to installing BRouter and including it in OsmAnd routing.
     </tr>
 </table> 
 
-### Sample
+## How to use
 
-By configuring the Brouter we can compare the speed of the pre-calculation of the BRouter routing data with the internal OsmAnd routing.
+After configuring the Brouter we can compare the speed of the pre-calculation of the BRouter routing data with the internal OsmAnd routing.
 
 We choose two random points in the Netherlands and start the calculation of the trip. To do this, we set a balanced driving style without using altitude data for the base profile. The calculation time for this trip is 14.5 sec for our internal OsmAnd route. The time for the Brouter navigation routing profile is less than 1 second.
 
