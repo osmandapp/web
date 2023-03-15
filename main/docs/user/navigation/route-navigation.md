@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-ski-routing.md), or [walk](./routing/pedestrian-routing.md).  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-routing.md), [ski](./routing/ski-routing.md) or [walk](./routing/pedestrian-routing.md).  
 By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./routing/online-routing.md).  
 
 :::tip
@@ -48,9 +48,9 @@ To use the offline navigation, you first need to [download maps](../start-with/d
 
 1. Configure profiles you intend to use for navigation according to your needs:  
 
-    - Set your [vehicle parameters](../personal/profiles/#vehicle-parameters) (important for truck drivers), select the [engine type](../navigation/#select-engine-type) (optional).
-    - Configure [route line appearance](./route-line-appearance) (optional, only for Pro users).  
-    - Choose whether to provide [notifications](./voice-navigation) during your route or not. If you need voice prompts, [configure](./voice-navigation.md#settings-of-voice-prompts) them.
+    - Set your [vehicle parameters](../personal/profiles.md/#vehicle-parameters) (important for truck drivers), select the [engine type](../navigation/index.md#select-engine-type) (optional).
+    - Configure [route line appearance](./map-during-navigation.md#route-line-appearance) (optional, only for Pro users).  
+    - Choose whether to provide [notifications](./voice-navigation.md) during your route or not. If you need voice prompts, [configure](./voice-navigation.md#settings-of-voice-prompts) them.
  
 2. Go to the [Navigation menu](#navigation-menu):
     - Specify the [destination point](#set-destination).
