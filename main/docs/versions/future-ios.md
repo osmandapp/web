@@ -23,6 +23,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
  * Improved privacy: added options to disable history logging;
  * Map orientation: added manually rotated mode;
  * Improved visibility of the map ruler;
+ * Widgets updates
  * **More**:
    * Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS;
    * Added legal warning about using speed camera alerts;
@@ -102,6 +103,9 @@ Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull do
  </table> 
 
 
+- showing the map on CarPlay Dashboard.
+
+
 
 
 ### Hiking routes
@@ -178,19 +182,36 @@ Improved visibility of the map ruler:
     </tr>
   </table> 
 
+
+### Widgets updates
+
+Added [_Coordinates: map center_](../user/widgets/info-widgets.md#coordinates-widget) widget, [_Developer widgets_](../user/widgets/info-widgets.md#-developer-widgets), and [_Sunset and sunrise_](../user/widgets/info-widgets.md#sunset-and-sunrise-widgets) widgets:
+
+_Menu → Configure screen_
+
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_cc.png').default} alt="Coordinate widgets"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_d.png').default} alt="Developer widgets"/></td>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_ss.png').default} alt="sunset and sunrise widgets"/></td>
+    </tr>
+  </table> 
+
+
 ### More
 
-#### Dynamic type
+#### Dynamic type fot text
 
 Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS.
 
 #### Speed camera alerts
 
-Added legal warning about using speed camera alerts.
+Added legal warning about using [speed camera alerts](../user/navigation/map-during-navigation.md).
 
 #### Voice prompts
 
-Added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian.
+Added [support for new languages](../user/navigation/voice-navigation.md): Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian.
 
 #### UI improvements
 
@@ -198,5 +219,13 @@ UI improvements for RTL languages.
 
 #### Accessibility
 
-Added content labelling for map buttons.
+Added [content labelling](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html) for map buttons.
+
+#### New Profile
+
+Added the ["Moped"](../user/navigation/routing/moped-routing.md) profile.
+
+#### Tracks
+
+Tracks start to be visible on the map from 200 km zoom, even if they more then 3000 km long.
 
