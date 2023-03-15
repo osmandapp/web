@@ -36,9 +36,10 @@ OsmAnd offers different types of settings for voice prompts to help you follow y
 To set up voice prompts, you need to go to the appropriate section of the application:
 
 - You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
-- - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 - You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
-- You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
+
+You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 :::info For Android version
 You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
@@ -57,14 +58,18 @@ You can set up voice prompts for the selected profile or for all available profi
 
 <TabItem value="ios" label="iOS">
 
-- *<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
 </Tabs>  
+
+:::tip
+If you missed a voice prompt, you can listen to it again. To do this, tap the current turn arrow on the application screen.
+:::
 
 1. **[Language](#language)** - select preferred language and type.
 2. **Announcement group** - allows you to voice the following types of prompts: 
@@ -111,7 +116,7 @@ Not all listed languages may be supported by the TTS engine. You can change the 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,sett_settings,routing_settings_2,voice_announces,language"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
@@ -153,16 +158,12 @@ The announcement time of the different voice prompts depends on the type of prom
 **<Translate android="true" ids="arrival_distance_factor_early" />** | 1.5
 **<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
 **<Translate android="true" ids="arrival_distance_factor_late" />** | 0.5
-**<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25  
+**<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25   
 
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
 
 
 ## Options of voice prompts
-
-:::tip
-If you missed a voice prompt, you can listen to it again. To do this, tap the current turn arrow on the application screen.
-:::
 
 ### Download voice prompts
 
@@ -187,56 +188,34 @@ Check if your Android TTS is working properly by using the "Listen to example" o
 
 Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
 
+### List of available TTS languages
+
+There are currently a total of 45 languages:  
+**А** Arabic  
+**B** Belarusian, Bulgarian  
+**C** Catalan, Chinese, Chinese(Hong Kong), Chinese(Traditional), Croatian, Czech   
+**D**  
+**E**  
+**F**  
+**G**  
+**H**  
+**I**  
+**J**  
+**K**  
+**L**  
+**N**  
+**P**  
+**R**  
+**S** Sardinian, Serbian (cyrillic), Slovak, Slovenian, Spanish, Spanish (Argentina), Swahili, Swedish   
+**T** Turkish  
+**U** Ukrainian  
+
 ### Testing of voice prompts
 
 <InfoAndroidOnly />  
 
 For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
 
-
-## Notifications
-
-Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
-
-![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
-
-Active buttons on Drop-down system menu for your navigation:
-- *<Translate android="true" ids="stop_navigation_service"/>* - allows to stop your navigation.
-- *<Translate android="true" ids="shared_string_pause"/>* - allows to pause your navigation.
-- *<Translate android="true" ids="shared_string_resume"/>* - allows to resume your navigation.
-
-
-## Screen control
-
-<InfoAndroidOnly/>
-
-You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.  
-
-*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
-
-![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)  
-
-### Screen timeout
-
-- *<Translate android="true" ids="system_screen_timeout"/>* - The screen turns off depending on the system settings of your device. The "Change Settings" button provides quick access to the system menu such as "Display and Brightness" where you can adjust the screen timeout.
-
-![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
-
-- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
-
-![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
-
-### Turn screen on
-
-<Translate android="true" ids="turn_screen_on_descr"/>   
-
-
-![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
-
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - <Translate android="true" ids="turn_screen_on_sensor_descr"/>
-- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/> 
- 
 
 ## Fix voice navigation problems
 
@@ -272,4 +251,49 @@ If you want to charge your phone or tablet, use a charging-only USB cable or a p
         - Make sure you're connected to the internet. If you have a strong internet connection, voice directions will download faster.
         - Get directions.
         - Use the Google Maps app as you normally would. Voice directions are downloaded while you have the Maps app open.
-        - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.
+        - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.  
+
+
+## Notifications
+
+Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
+
+![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png) 
+
+Active buttons on the Drop-down system menu for your navigation:
+- *<Translate android="true" ids="stop_navigation_service"/>* - allows stopping your navigation.
+- *<Translate android="true" ids="shared_string_pause"/>* - allows pausing your navigation.
+- *<Translate android="true" ids="shared_string_resume"/>* - allows resuming your navigation.
+
+
+## Screen control
+
+<InfoAndroidOnly/>
+
+You can control the screen of your device to save power. This mode has two general settings: *<Translate android="true" ids="screen_timeout"/>* and *<Translate android="true" ids="turn_screen_on"/>*.  
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
+
+![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)  
+
+### Screen timeout
+
+- *<Translate android="true" ids="system_screen_timeout"/>* - The screen turns off depending on the system settings of your device. The "Change Settings" button provides quick access to the system menu such as "Display and Brightness" where you can adjust the screen timeout.
+
+![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
+
+- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+
+![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+
+### Turn screen on
+
+<Translate android="true" ids="turn_screen_on_descr"/>   
+
+
+![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/> 
+
