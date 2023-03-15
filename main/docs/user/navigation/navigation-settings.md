@@ -35,9 +35,9 @@ Links to Map during navigation
 
 ### Default speed
 
-- Used as a speed to estimate [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. 
+- Used as a speed to estimate [arrival time](./../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 1) pedestrian, boat, ski, airplain, ... profiles 2) roads without speed limits (can affect routing) 3) user generated or imported tracks. 
 - Used to determine how late/early voice announcements should be pronounced 
-- [details](../../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). 
+- [details](./../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds). 
 - Affects speed formatting Unit of speed (Add link - general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
 - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. |
 
