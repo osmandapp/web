@@ -17,9 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview
+## Overview <!-- Add links!!! -->
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-routing.md), [ski](./routing/ski-routing.md) or [walk](./routing/pedestrian-routing.md).  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a car<!-- Add links!!! -->, ride a horse<!-- Add links!!! -->, ski or walk.  
 By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./routing/online-routing.md).  
 
 :::tip
@@ -48,8 +48,8 @@ To use the offline navigation, you first need to [download maps](../start-with/d
 
 1. Configure profiles you intend to use for navigation according to your needs:  
 
-    - Set your [vehicle parameters](../personal/profiles.md/#vehicle-parameters) (important for truck drivers), select the [engine type](../navigation/index.md#select-engine-type) (optional).
-    - Configure [route line appearance](./map-during-navigation.md#route-line-appearance) (optional, only for Pro users).  
+    - Set your vehicle parameters<!-- Add link!!! --> (important for truck drivers), select the engine type<!-- Add link!!! --> (optional).
+    - Configure route line appearance<!-- Add link!!! --> (optional, only for Pro users).  
     - Choose whether to provide [notifications](./voice-navigation.md) during your route or not. If you need voice prompts, [configure](./voice-navigation.md#settings-of-voice-prompts) them.
  
 2. Go to the [Navigation menu](#navigation-menu):
@@ -189,7 +189,7 @@ Even if you turn off the screen or exit the OsmAnd app, you'll still get voice p
 :::
 
 :::tip
-To save your device battery, while navigation you can use [“Screen control”](./voice-navigation#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
+To save your device battery, while navigation you can use [“Screen control”](./voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 :::
 
 
@@ -225,7 +225,7 @@ There are no navigation settings in *Browse map* profile.
 
 - &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
 
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in [Navigation Options](../navigation/route-navigation.md#navigation-options).  
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in Navigation Options<!-- Add link!!! -->.  
 
 Below, you can find the list of possible route options.  
 
@@ -366,7 +366,7 @@ The display of some details depends on the availability of map section informati
 
 #### Select engine type
 
-If you have selected the engine type in the [vehicle parameters](../personal/profiles/#vehicle-parameters), the CO2 footprint data will be displayed above the graph.
+If you have selected the engine type in the vehicle parameters<!-- Add link!!! -->, the CO2 footprint data will be displayed above the graph.
 
 <Tabs groupId="operating-systems">
 
