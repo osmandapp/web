@@ -18,12 +18,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 OsmAnd Navigation features help you get to your destination by displaying routes, offering turn-by-turn directions, and additional voice prompts.  
 List of articles:
 
-- [Routing types (Profiles)](./routing/) - Routing type determines how the route will be calculated.  
-- [Navigation by route](./route-navigation.md).
-- [Navigation by track](./gpx-navigation.md).
-- [Markers navigation](./markers-navigation.md) - Straight navigation to your marker.
-- [Voice navigation](./voice-navigation.md).
-- [Android Auto / CarPlay](./auto-car.md) - Using a vehicle media screen for navigation by OsmAnd.
+- Routing types (Profiles) - Routing type determines how the route will be calculated.  
+- Navigation by route.
+- Navigation by track.
+- Markers navigation - Straight navigation to your marker.
+- Voice navigation.
+- Android Auto. 
+- CarPlay - Using a vehicle media screen for navigation by OsmAnd.
 - Route line appearance.
 
 
