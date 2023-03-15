@@ -33,11 +33,11 @@ Voice prompts help you move in the right direction without distracting you from 
 ## Settings of voice prompts
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route.  
-To set up voice prompts, you need to go to the appropriate section of the application:
+<!-- To set up voice prompts, you need to go to the appropriate section of the application:
 
 - You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
-- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
+- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  -->
 
 You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
@@ -188,7 +188,7 @@ Check if your Android TTS is working properly by using the "Listen to example" o
 
 Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
 
-### List of available TTS languages
+<!--  List of available TTS languages
 
 There are currently a total of 45 languages:  
 **А** Arabic  
@@ -208,7 +208,7 @@ There are currently a total of 45 languages:
 **R**  
 **S** Sardinian, Serbian (cyrillic), Slovak, Slovenian, Spanish, Spanish (Argentina), Swahili, Swedish   
 **T** Turkish  
-**U** Ukrainian  
+**U** Ukrainian  -->
 
 ### Testing of voice prompts
 
@@ -217,7 +217,7 @@ There are currently a total of 45 languages:
 For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
 
 
-## Fix voice navigation problems
+<!--  Fix voice navigation problems
 
 When you navigate to a place, you can hear voice directions. Learn how to fix voice navigation problems on your mobile devices.
 
@@ -252,7 +252,7 @@ If you want to charge your phone or tablet, use a charging-only USB cable or a p
         - Get directions.
         - Use the Google Maps app as you normally would. Voice directions are downloaded while you have the Maps app open.
         - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.  
-
+-->
 
 ## Notifications
 
@@ -282,7 +282,7 @@ You can control the screen of your device to save power. This mode has two gener
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+- *<Translate android="true" ids="wake_time"/>* - If "Keep Screen On" is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
 
 ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
