@@ -241,7 +241,7 @@ const RouteLayer = ({geocodingData}) => {
             <Marker position={ctx.startPoint} icon={MarkerOptions.options.startIcon}
                     ref={startPointRef} draggable={true} eventHandlers={startEventHandlers}/>}
         {ctx.interPoints.map((it, ind) =>
-            <Marker key={'mark' + ind} data-index={ind} position={it} icon={MarkerOptions.options.startIcon}
+            <Marker key={'mark' + ind} data-index={ind} position={it} icon={MarkerOptions.options.interIcon}
                     draggable={true} eventHandlers={intermediatEventHandlers}/>)}
         {ctx.endPoint && <Marker position={ctx.endPoint} icon={MarkerOptions.options.endIcon}
                                  ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}

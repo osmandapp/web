@@ -136,20 +136,22 @@ export default function LocalClientTrackLayer() {
     }
 
     function saveLocal() {
-        if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
-            ctx.setUpdateContextMenu(true);
-            setAddEleTab(true);
+        if (!ctx.selectedGpxFile.addPoint) {
+            if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
+                ctx.setUpdateContextMenu(true);
+                setAddEleTab(true);
+            }
+            if (ctx.localTracks.length > 0) {
+                TracksManager.saveTracks(ctx.localTracks, ctx);
+            }
         }
-        TracksManager.saveTracks(ctx.localTracks, ctx);
     }
 
     function checkZoom() {
-        if (ctx.selectedGpxFile.selected) {
-            if (ctx.selectedGpxFile.showPoint) {
-                showSelectedPointOnMap();
-            } else if (ctx.selectedGpxFile.zoom) {
-                showSelectedTrackOnMap();
-            }
+        if (ctx.selectedGpxFile.selected && ctx.selectedGpxFile.zoom) {
+            showSelectedTrackOnMap();
+        } else if (ctx.selectedGpxFile.showPoint) {
+            showSelectedPointOnMap();
         }
     }
 
@@ -295,9 +297,11 @@ export default function LocalClientTrackLayer() {
                         ctx.setUpdateContextMenu(true);
                     }
                     saveChanges(null, null, null, res);
+                    ctx.trackState.update = true;
+                    ctx.setTrackState({...ctx.trackState});
+                    addClickOnMap();
                 });
             }
-            addClickOnMap();
         });
     }
 
@@ -543,6 +547,7 @@ export default function LocalClientTrackLayer() {
         ctx.selectedGpxFile = {};
         ctx.selectedGpxFile.name = TracksManager.createName(ctx);
         ctx.selectedGpxFile.tracks = TracksManager.createGpxTracks();
+        ctx.selectedGpxFile.pointsGroups = {};
         ctx.selectedGpxFile.points = [];
         if (ctx.createTrack.latlng) {
             createPointFromMap();
@@ -566,6 +571,8 @@ export default function LocalClientTrackLayer() {
         createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points);
         ctx.selectedGpxFile.updateLayers = true;
         ctx.selectedGpxFile.addPoint = true;
+        ctx.trackState.update = true;
+        ctx.setTrackState({...ctx.trackState});
     }
 
     function editCurrentTrack() {
@@ -587,6 +594,9 @@ export default function LocalClientTrackLayer() {
 
         ctx.creatingRouteMode.mode = ctx.selectedGpxFile.newPoint?.profile ? ctx.selectedGpxFile.newPoint?.profile : TracksManager.PROFILE_LINE;
         ctx.setCreatingRouteMode({...ctx.creatingRouteMode});
+
+        ctx.addFavorite.editTrack = true;
+        ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }

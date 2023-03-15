@@ -184,6 +184,8 @@ export default class EditableMarker {
                 res.dragPoint = false;
                 res.layers = this.ctx.selectedGpxFile.layers;
                 this.ctx.setSelectedGpxFile({...res});
+                this.ctx.trackState.update = true;
+                this.ctx.setTrackState({...this.ctx.trackState});
             });
         }
     }

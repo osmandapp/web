@@ -36,6 +36,8 @@ async function insertPointToTrack(currentTrack, index, point, ctx) {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
                 ctx.selectedGpxFile.updateLayers = true;
                 ctx.setSelectedGpxFile({...res});
+                ctx.trackState.update = true;
+                ctx.setTrackState({...ctx.trackState});
             });
         })
     }

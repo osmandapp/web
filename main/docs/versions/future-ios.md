@@ -14,21 +14,26 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 ## What's new
 
+ * Minimum iOS version is increased to 15.0
  * Wikipedia: added ability to view images, updated reader UI;
  * Favorites: added search;
  * CarPlay: added history, reorganized tracks and favorites list;
  * Hiking routes: added ability to select routes on the map for viewing additional information or navigation;
  * OpenStreetMap: added ability to upload tracks;
- * Voice prompts: added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian;
- * Added legal warning about using speed camera alerts;
  * Improved privacy: added options to disable history logging;
- * Improved visibility of the map ruler;
- * UI improvements for RTL languages;
- * Accessibility: added content labelling for map buttons;
- * Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS;
  * Map orientation: added manually rotated mode;
- * Minimum iOS version is increased to 15.0 
+ * Improved visibility of the map ruler;
+ * **More**:
+   * Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS;
+   * Added legal warning about using speed camera alerts;
+   * Voice prompts: added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian;
+   * UI improvements for RTL languages;
+   * Accessibility: added content labelling for map buttons;
 
+
+### Minimum iOS version
+
+Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 version before OsmAnd installation.
 
 ### Wikipedia updates
 
@@ -58,7 +63,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 ### Search for Favorites
 
-Added the search bar for Favorites menu: menu > My Places > Favorites > Pull down
+Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull down_
 
   <table class="blogimage">
    <tr>
@@ -101,20 +106,97 @@ Added the search bar for Favorites menu: menu > My Places > Favorites > Pull dow
 
 ### Hiking routes
 
-Added ability to select routes on the map for viewing additional information or navigation. Just tap on the hiking routes on the map.
+Added ability to select routes on the map for viewing additional information or starting navigation by the chosen route. Just tap on hiking routes on the map to open the Track Context menu:
 
   <table class="blogimage">
    <tr>
     <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking.png').default} alt="Hiking"/></td>
     <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_1.png').default} alt="Hiking"/></td>
     </tr>
- </table> 
+  </table> 
 
-Availabel to start navigation by track or download it.
+Available to start navigation by a track or download it.
 
   <table class="blogimage">
    <tr>
     <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_2.png').default} alt="Hiking"/></td>
     <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_3.png').default} alt="Hiking"/></td>
     </tr>
- </table> 
+  </table> 
+
+
+### Update OpenStreetMap Plugin
+
+Added ability to upload GPS tracks to [OpenStreetMap project](https://www.openstreetmap.org/traces):
+
+Track Context menu > Actions > [Upload to OpenStreetMap](../user/map/track-context-menu.md#options)
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/openstreetmap.png').default} alt="OSM"/></td>
+    </tr>
+  </table> 
+
+### Improved privacy
+
+Added options to disable history logging:
+
+_Menu > Settings > OsmAnd settings > History_
+
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/history.png').default} alt="History"/></td>
+    </tr>
+  </table> 
+
+
+### Map orientation update
+
+Added manually rotated mode:
+
+_Menu > Settings > App Profile > General settings > Map orientation > Manually rotated (fixed)_
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/map_orient.png').default} alt="Map orientation"/></td>
+    </tr>
+  </table> 
+
+
+### Map ruler update
+
+
+Improved visibility of the map ruler:
+
+ - Decrease top/bottom padding for text label.
+ - Added Stroke for the ruler.
+
+  <table class="blogimage">
+   <tr>
+    <td><img src={require('@site/blog/2023-03-13-ios-4-4/map_ruler.png').default} alt="Map Ruler"/></td>
+    </tr>
+  </table> 
+
+### More
+
+#### Dynamic type
+
+Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS.
+
+#### Speed camera alerts
+
+Added legal warning about using speed camera alerts.
+
+#### Voice prompts
+
+Added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian.
+
+#### UI improvements
+
+UI improvements for RTL languages.
+
+#### Accessibility
+
+Added content labelling for map buttons.
+

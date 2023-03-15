@@ -14,6 +14,12 @@ import AppContext from "../../../context/AppContext";
 import axios from "axios";
 import PopperMenu from "./PopperMenu";
 import drawerStyles from "../../styles/DrawerStyles";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import TracksManager from "../../../context/TracksManager";
+import DialogActions from "@mui/material/DialogActions";
+import {Dialog} from "@material-ui/core";
 
 export default function GpxCollection() {
 
@@ -24,13 +30,17 @@ export default function GpxCollection() {
     const [openMenu, setOpenMenu] = useState(false);
     const [open, setOpen] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
 
-
-    const downloadObf = async () => {
+    const toggleShowDialog = () => {
+        setOpenDialog(!openDialog);
+    };
+    
+    const downloadObf = async (name) => {
         setProcessDownload(true);
         await axios({
             url: `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`,
@@ -41,7 +51,7 @@ export default function GpxCollection() {
             setProcessDownload(false)
             const url = document.createElement('a');
             url.href = URL.createObjectURL(resp.data);
-            url.download = `OsmAndCollection.obf`;
+            url.download = name;
             url.click();
         })
     }
@@ -121,13 +131,34 @@ export default function GpxCollection() {
                     <Grid item xs={6}>
                         {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
                             <Button sx={{ml: 3}} className={styles.button} variant="contained" component="span"
-                                    onClick={downloadObf}>
+                                    onClick={() => setOpenDialog(true)}>
                                 Get OBF
                             </Button>}
                     </Grid>
                 </Grid>
             </MenuItem>
         </Collapse>
+        <Dialog open={openDialog} onClose={toggleShowDialog}>
+            <DialogTitle>Get OBF</DialogTitle>
+            <DialogContent>
+                <DialogContentText>
+                    {`You can download simple obf (.obf) or travelbook (.travel.obf).`}
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={toggleShowDialog}>Cancel</Button>
+                <Button onClick={() => {
+                    downloadObf(`OsmAndCollection.obf`).then();
+                    setOpenDialog(false);
+                }}>
+                    Obf</Button>
+                <Button onClick={() => {
+                    downloadObf(`OsmAndCollection.travel.obf`).then();
+                    setOpenDialog(false);
+                }}>
+                    Travel obf</Button>
+            </DialogActions>
+        </Dialog>
     </div>
 
 }

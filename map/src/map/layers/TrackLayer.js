@@ -6,6 +6,13 @@ import TrackLayerProvider from "../TrackLayerProvider";
 
 async function addTrackToMap(ctx, file, map) {
     let layer = TrackLayerProvider.createLayersByTrackData(file);
+    layer.on('click', (e) => {
+        ctx.setSelectedGpxFile(Object.assign({}, file));
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
+            let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+            ctx.setCurrentObjectType(type);
+        }
+    });
     file.gpx = layer;
     map.fitBounds(layer.getBounds());
     layer.addTo(map);

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 11
-title:  Route line appearance
+sidebar_position: 4
+title:  Map during Navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,13 +11,82 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 
-## Overview
+
+## Map during navigation
+
+Description of the change in map behavior during navigation.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
+| "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| "<Translate ios="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.   |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec. |
+| "<Translate ios="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position).  | Value: <br />  *<Translate ios="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate ios="true" ids="auto_zoom_farthest"/>* - zoom is 200m. <br /> *<Translate ios="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate ios="true" ids="auto_zoom_close"/>* - zoom is 50m. |
+| "<Translate ios="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.  | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+
+</TabItem>
+
+</Tabs>
+
+
+## Animate location change
+
+This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
+For Android, this item named [Animate own position](#other) is located in the "Other" section of the General Settings menu.
+
+
+## Show POI along the route
+
+
+
+## Screen alerts
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="screen_alerts"/>** | Show or not show notifications on the screen as a widget. Alerts appear at the bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate ios="true" ids="screen_alerts"/>** | Show or not show notifications on the screen as a widget.  | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+
+</TabItem>
+
+</Tabs>
+
+
+## Route line appearance
 
 This menu allows you to adjust the appearance of the route line to a variety of changes. These can be changes in elevation while driving, the next significant uphill or downhill, ice, unpaved roads, autobahns, and others. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
 
@@ -49,7 +118,7 @@ This menu allows you to adjust the appearance of the route line to a variety of 
 
 
 
-## Color
+### Color
 
 Select a route line's color by types.  
 
@@ -114,7 +183,7 @@ Select a route line's color by types.
 </Tabs>  
 
 
-## Width  
+### Width  
 
 Select a route line's width.
 
@@ -149,7 +218,7 @@ Select a route line's width.
 </Tabs>  
 
  
-## Turn Arrows  
+### Turn Arrows  
 
 Select whether turn arrows are indicated on the route line or not. 
 

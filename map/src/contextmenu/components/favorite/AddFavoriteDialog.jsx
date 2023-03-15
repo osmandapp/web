@@ -23,7 +23,6 @@ import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
 import TracksManager from "../../../context/TracksManager";
-import _ from "lodash";
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -65,6 +64,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function saveTrackWpt() {
+        let selectedGroup = FavoritesManager.createDefaultWptGroup(favoriteGroup);
         let favorite = {
             name: favoriteName,
             address: favoriteAddress === "" ? null : favoriteAddress,
@@ -72,29 +72,55 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             color: favoriteColor,
             background: favoriteShape,
             icon: favoriteIcon,
+            category: getCategoryName(selectedGroup),
             lat: ctx.addFavorite.location.lat,
             lon: ctx.addFavorite.location.lng
         };
         if (!ctx.selectedGpxFile.wpts) {
             ctx.selectedGpxFile.wpts = [];
         }
+        if (!ctx.selectedGpxFile.pointsGroups) {
+            ctx.selectedGpxFile.pointsGroups = {};
+        }
         ctx.selectedGpxFile.wpts.push(favorite);
         if (ctx.createTrack) {
-            createWptArrLocal();
+            prepareLocalTrack();
             ctx.setUpdateContextMenu(true);
+        }
+        if (favorite.category === null) {
+            if (!ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS]) {
+                ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS] = {
+                    name: FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS,
+                    iconName: MarkerOptions.DEFAULT_WPT_ICON,
+                    backgroundType: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                    color: MarkerOptions.DEFAULT_WPT_COLOR,
+                    points: []
+                };
+            }
+            ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS].points.push(favorite)
+        } else {
+            ctx.selectedGpxFile.pointsGroups[favorite.category].points.push(favorite)
         }
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        if (ctx.createTrack) {
+            ctx.trackState.update = true;
+            ctx.setTrackState({...ctx.trackState});
+        }
         closeDialog();
     }
 
-    function createWptArrLocal() {
+    function prepareLocalTrack() {
         let ind = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
         if (ind !== -1) {
             if (!ctx.localTracks[ind].wpts) {
                 ctx.localTracks[ind].wpts = [];
             }
+            if (!ctx.localTracks[ind].pointsGroups) {
+                ctx.localTracks[ind].pointsGroups = {};
+            }
             ctx.localTracks[ind].wpts = ctx.selectedGpxFile.wpts;
+            ctx.localTracks[ind].pointsGroups = ctx.selectedGpxFile.pointsGroups;
         } else {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
             ctx.selectedGpxFile.index = ctx.localTracks.length;
@@ -106,7 +132,16 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     async function saveFavorite() {
         let type = ctx.OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
-        let selectedGroup = favoriteGroup === null ? ctx.favorites.groups.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
+        let selectedGroup = favoriteGroup === null ? ctx.favorites.groups?.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
+        if (!selectedGroup) {
+            selectedGroup = {
+                name: FavoritesManager.DEFAULT_GROUP_NAME,
+                file: {
+                    name: FavoritesManager.DEFAULT_GROUP_NAME + ".gpx",
+                    type: FavoritesManager.FAVORITE_FILE_TYPE
+                }
+            }
+        }
         let favorite;
         if (selectedGroup) {
             favorite = {
@@ -117,8 +152,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                 background: favoriteShape,
                 icon: favoriteIcon,
                 category: getCategoryName(selectedGroup),
-                lat: ctx.addFavorite.location.lat,
-                lon: ctx.addFavorite.location.lng
+                lat: ctx.addFavorite.location.lat.toFixed(7),
+                lon: ctx.addFavorite.location.lng.toFixed(7)
             };
         }
         let result = await FavoritesManager.addFavorite(
@@ -126,7 +161,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             selectedGroup.file.name,
             selectedGroup.updatetimems)
         if (result) {
-            updateGroupMarkers(result, selectedGroup);
+            updateGroupMarkers(result, selectedGroup).then();
             closeDialog();
         }
     }
@@ -153,14 +188,14 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         setDialogOpen(false);
     }
 
-    function updateGroupMarkers(result, selectedGroup) {
+    async function updateGroupMarkers(result, selectedGroup) {
         if (!ctx.favorites[selectedGroup.name]) {
             ctx.favorites[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
             ctx.favorites[selectedGroup.name] = FavoriteHelper.updateGroupObj(ctx.favorites[selectedGroup.name], result)
         }
-        FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
-        FavoriteHelper.updateSelectedFile(ctx, result, favoriteName, selectedGroup.name, false);
+        ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
+        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, result, favoriteName, selectedGroup.name, false);
         ctx.setFavorites({...ctx.favorites});
         setFavoriteGroup(ctx.favorites[selectedGroup.name]);
     }
@@ -218,6 +253,10 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
                                                               setFavoriteGroup={setFavoriteGroup}
                                                               groups={ctx.favorites.groups}
                                                               defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}/>}
+                {ctx.addFavorite.editTrack && <FavoriteGroup favoriteGroup={favoriteGroup}
+                                                             setFavoriteGroup={setFavoriteGroup}
+                                                             groups={ctx.selectedGpxFile.pointsGroups}
+                                                             defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS}/>}
                 <FavoriteIcon favoriteIcon={favoriteIcon}
                               setFavoriteIcon={setFavoriteIcon}
                               currentIconCategories={currentIconCategories}

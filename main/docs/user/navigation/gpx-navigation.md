@@ -24,11 +24,8 @@ To start the navigation, you need to use [the navigation button](../widgets/map-
 
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,follow_track"/>
 
-<p> </p>
 
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,gpx_navigation"/>
-
-<p> </p>
 
 or by choosing [displayed track](../navigation/route-navigation.md#displayed-tracks) in Navigation menu.
 
