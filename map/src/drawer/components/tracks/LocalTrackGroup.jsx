@@ -3,13 +3,12 @@ import {
     Button,
     Collapse,
     Grid,
-    IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography
 } from "@mui/material";
-import {Close, ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
+import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import Actions from "./Actions";
@@ -17,7 +16,6 @@ import LocalTrackItem from "./LocalTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
-import {useNavigate} from "react-router-dom";
 import PopperMenu from "./PopperMenu";
 
 

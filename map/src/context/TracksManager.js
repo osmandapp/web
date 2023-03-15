@@ -12,6 +12,8 @@ const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
+const LOCAL_TRACK_KEY = 'localTrack_';
+const DATA_SIZE_KEY = 'dataSize';
 
 function loadTracks() {
     let localTracks = [];
@@ -36,7 +38,7 @@ function loadTracks() {
     return localTracks;
 }
 
-function saveTracks(tracks, ctx) {
+function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     let track;
     if (currentTrackIndex !== -1) {
@@ -58,13 +60,46 @@ function saveTracks(tracks, ctx) {
     }
 
     let tracksSize = JSON.stringify(localTrack).length;
-    let totalSize = JSON.parse(localStorage.getItem('dataSize'));
+    let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
     if (tracksSize + totalSize > 5000000) {
         ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
     } else {
-        localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
-        totalSize += tracksSize
-        localStorage.setItem('dataSize', totalSize);
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), JSON.stringify(localTrack));
+        totalSize += tracksSize;
+        localStorage.setItem(DATA_SIZE_KEY, totalSize);
+    }
+}
+
+function updateLocalTracks(tracks) {
+    deleteLocalTracks();
+    let totalSize = 0;
+    for (let track of tracks) {
+        let localTrack = {
+            name: track.name,
+            id: track.id,
+            metaData: track.metaData,
+            tracks: track.points ? [{points: track.points}] : track.tracks,
+            wpts: track.wpts,
+            pointsGroups: track.pointsGroups,
+            ext: track.ext,
+            analysis: track.analysis,
+            selected: false,
+            originalName: track.originalName
+        }
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), JSON.stringify(localTrack));
+
+        let tracksSize = JSON.stringify(localTrack).length;
+        totalSize += tracksSize;
+    }
+    localStorage.setItem(DATA_SIZE_KEY, totalSize);
+}
+
+function deleteLocalTracks() {
+    let keys = Object.keys(localStorage);
+    for (let k of keys) {
+        if (k.includes(LOCAL_TRACK_KEY)) {
+            localStorage.removeItem(k);
+        }
     }
 }
 
@@ -332,8 +367,11 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
+        localStorage.removeItem('localTrack_' + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
-        TracksManager.saveTracks(ctx.localTracks, ctx);
+        if (ctx.localTracks.length > 0) {
+            updateLocalTracks(ctx.localTracks);
+        }
         ctx.setLocalTracks([...ctx.localTracks]);
         return true;
     }
@@ -592,7 +630,7 @@ function getFavoriteGroups(allFiles) {
 
 const TracksManager = {
     loadTracks,
-    saveTracks,
+    saveTracks: saveLocalTrack,
     getFileName,
     prepareName,
     getTrackData,
