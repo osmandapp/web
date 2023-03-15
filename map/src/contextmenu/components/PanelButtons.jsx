@@ -1,4 +1,4 @@
-import {ButtonGroup, IconButton, Paper} from "@mui/material";
+import {ButtonGroup, IconButton, Paper, Tooltip} from "@mui/material";
 import {Close, Delete, Folder, Redo, Undo} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
@@ -13,7 +13,7 @@ import useUndoRedo from "../useUndoRedo";
 
 const useStyles = makeStyles({
     buttongroup: {
-        top: '20%',
+        top: '30vh',
         width: '10px',
         height: '10px',
     }
@@ -92,34 +92,42 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                             orientation="vertical"
                             color="primary">
                             {ctx.createTrack &&
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => {
-                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                        ctx.setTrackProfileManager({...ctx.trackProfileManager});
-                                    }}
-                                >
-                                    {Utils.getProfileIcon(_.lowerCase(ctx.creatingRouteMode.mode),
-                                        ctx.creatingRouteMode.colors[_.lowerCase(ctx.creatingRouteMode.mode)])}
-                                </IconButton>}
-                            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
-                                variant="contained"
-                                type="button"
-                                onClick={() => {
-                                    ctx.selectedGpxFile.save = true;
-                                    ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-                                }}
-                            >
-                                <Folder fontSize="small"/>
-                            </IconButton>}
-                            {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER && <IconButton
-                                variant="contained"
-                                type="button"
-                                onClick={() => setOpenDeleteDialog(true)}
-                            >
-                                <Delete fontSize="small"/>
-                            </IconButton>}
+                                <Tooltip title="Change profile" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => {
+                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                            ctx.setTrackProfileManager({...ctx.trackProfileManager});
+                                        }}
+                                    >
+                                        {Utils.getProfileIcon(_.lowerCase(ctx.creatingRouteMode.mode),
+                                            ctx.creatingRouteMode.colors[_.lowerCase(ctx.creatingRouteMode.mode)])}
+                                    </IconButton>
+                                </Tooltip>}
+                            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                                <Tooltip title="Save" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => {
+                                            ctx.selectedGpxFile.save = true;
+                                            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                                        }}
+                                    >
+                                        <Folder fontSize="small"/>
+                                    </IconButton>
+                                </Tooltip>}
+                            {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
+                                <Tooltip title="Delete" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => setOpenDeleteDialog(true)}
+                                    >
+                                        <Delete fontSize="small"/>
+                                    </IconButton>
+                                </Tooltip>}
                             <IconButton
                                 variant="contained"
                                 type="button"

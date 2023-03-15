@@ -10,6 +10,7 @@ import {Outlet, useNavigate} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
 import MapContextMenu from "../../contextmenu/components/MapContextMenu";
 import AppContext from "../../context/AppContext";
+import GeneralPanelButtons from "./GeneralPanelButtons";
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
@@ -51,6 +52,7 @@ const OsmAndMapFrame = () => {
                                      }/>}
                 <OsmAndMap/>
                 <MapContextMenu drawerWidth={drawerWidth}/>
+                <GeneralPanelButtons drawerWidth={drawerWidth}/>
             </Box>
             <Drawer
                 //  container={container}
