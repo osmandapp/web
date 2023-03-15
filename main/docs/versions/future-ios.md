@@ -227,5 +227,8 @@ Added the ["Moped"](../user/navigation/routing/moped-routing.md) profile.
 
 #### Tracks
 
-Tracks start to be visible on the map from 200 km zoom, even if they more then 3000 km long.
+- Tracks start to [be visible on the map](https://github.com/osmandapp/OsmAnd-Issues/issues/1167) from 200 km zoom, even if they more then 3000 km long.
+- [Currently recorded track](https://github.com/osmandapp/OsmAnd-Issues/issues/1601) appear in the menu after recording stops.
+- Import of [Garmin GPX Tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/2640): Track Extensions are attributed to the wrong Track.
+
 
