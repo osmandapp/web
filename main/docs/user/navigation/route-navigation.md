@@ -42,7 +42,7 @@ For correct work of the navigation, you need to give OsmAnd permission to receiv
 
 </Tabs>
 
-## How to use
+## Set destinations
 
 To use the offline navigation, you first need to [download maps](../start-with/download-maps.md) of the region you plan to navigate through. Once the maps are downloaded, follow these steps to set up navigation:  
 
@@ -98,11 +98,12 @@ There are 3 ways to reach the navigation menu:
 - &nbsp;"&#8595;&#8593;" _Swap Starting point and Destination_ - allows to swap *Start* and *Finish* points.
 - &nbsp;"&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
 
+
 ### Choose starting point
 
 As for the starting point, you can choose your current location, location of a [Favorite point](../map/point-layers-on-map.md#favorites), select a point on the map or use [Search](../search/index.md). You can also set a starting point in [Map Context menu](../map/map-context-menu.md) by selecting the [Directions from](../map/map-context-menu.md#directions-to--from) function.  
 
-### Set destination
+### Set target point
 
 The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../search/index.md#overview) function, or simply on a map. You can also set destination point in the [Navigation menu](#navigation-menu). You can also set destination using special options in [Navigation menu](#navigation-menu):  
 
@@ -160,7 +161,10 @@ In this menu, you can find additional options for managing destinations points:
 -  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
 -  *<Translate android="true" ids="clear_all_intermediates"/>* - all the intermediate destinations will be removed from the map.
 
-### Start / stop navigation
+### Use Home / Work points
+
+
+## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
@@ -193,6 +197,7 @@ To save your device battery, while navigation you can use [“Screen control”]
 :::
 
 
+### Pause / resume navigation
 
 
 ## Settings
@@ -233,7 +238,7 @@ Below, you can find the list of possible route options.
 Please read check route parameters for the corresponding navigation type.
 
 
-### Route parameters
+### Navigation type / route parameters
 
 Configure routing type and its parameters.
 

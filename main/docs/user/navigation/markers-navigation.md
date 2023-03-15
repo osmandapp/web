@@ -31,6 +31,26 @@ Arrow, line and widget show object location and distance to it.
 ![Navigation marker Android](@site/static/img/navigation/marker/navigation_marker_android.png) ![Navigation marker iOS](@site/static/img/navigation/marker/navigation_marker_ios.png)
 
 
+## Select markers
+
+### Add favorite group 
+
+### Add GPX
+
+### Add manually
+
+## Navigation list
+
+### Sort markers
+
+
+## Pass markers
+
+### Mark as passed
+
+### Next marker
+
+
 ## Read more
 
 - [About Map markers](../personal/markers.md).
