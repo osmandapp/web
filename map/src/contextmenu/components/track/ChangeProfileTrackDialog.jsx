@@ -104,7 +104,7 @@ export default function ChangeProfileTrackDialog({open}) {
                             point.profile = profile.mode;
                         }
                     })
-                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                    await TracksManager.updateRoute(changePoints).then((points) => {
                         if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let nextArr = createArrWithGeo([points[points.length - 1]].concat(ctx.selectedGpxFile.points));
                             ctx.selectedGpxFile.points = points.concat(nextArr);
@@ -117,7 +117,7 @@ export default function ChangeProfileTrackDialog({open}) {
                     changePoints.forEach(point => {
                         point.profile = profile.mode;
                     })
-                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                    await TracksManager.updateRoute(changePoints).then((points) => {
                         if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let prevArr = createArrWithGeo(ctx.selectedGpxFile.points.concat([points[0]]));
                             ctx.selectedGpxFile.points = prevArr.concat(points);

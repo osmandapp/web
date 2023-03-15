@@ -41,8 +41,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                 <Paper>
                     <ButtonGroup
                         orientation="vertical"
-                        color="primary"
-                        sx={{width: 40.5}}>
+                        color="primary">
                         <Tooltip title="Create track" arrow placement="right">
                             <IconButton variant="contained"
                                         type="button"
@@ -55,8 +54,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                 <StyledInput accept=".gpx" id="contained-button-file" multiple type="file"
                                              onChange={fileSelected(ctx)}/>
                                 <IconButton variant="contained"
-                                            component="span"
-                                            sx={{ml: 0.3}}>
+                                            component="span">
                                     <Upload fontSize="small"/>
                                 </IconButton>
                             </label>

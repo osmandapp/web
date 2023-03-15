@@ -22,7 +22,7 @@ export default function LocalClientTrackLayer() {
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             checkDeleteSelected();
-            if (ctx.createTrack?.enable) {
+            if (ctx.createTrack?.enable && ctx.selectedGpxFile?.points) {
                 saveLocal();
             }
             checkZoom();

@@ -15,7 +15,6 @@ export default function LocalTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        TracksManager.saveTracks(ctx.localTracks, ctx);
     }
 
     function cleanSelectedTrackIfNeed(currentTrack) {

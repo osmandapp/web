@@ -90,7 +90,8 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                     <Paper>
                         <ButtonGroup
                             orientation="vertical"
-                            color="primary">
+                            color="primary"
+                            sx={{maxWidth: 36}}>
                             {ctx.createTrack &&
                                 <Tooltip title="Change profile" arrow placement="right">
                                     <IconButton
@@ -128,7 +129,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                         <Delete fontSize="small"/>
                                     </IconButton>
                                 </Tooltip>}
-                            <IconButton
+                            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                                 variant="contained"
                                 type="button"
                                 disabled={!isUndoPossible || ctx.trackState.block}
@@ -139,8 +140,8 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                 }}
                             >
                                 <Undo fontSize="small"/>
-                            </IconButton>
-                            <IconButton
+                            </IconButton>}
+                            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                                 variant="contained"
                                 type="button"
                                 disabled={!isRedoPossible}
@@ -151,7 +152,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                 }}
                             >
                                 <Redo fontSize="small"/>
-                            </IconButton>
+                            </IconButton>}
                             <IconButton
                                 variant="contained"
                                 type="button"

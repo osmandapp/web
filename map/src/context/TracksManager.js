@@ -15,26 +15,38 @@ const CHANGE_PROFILE_ALL = 'all';
 const LOCAL_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
 
-function loadTracks() {
+async function loadTracks(setLoading) {
     let localTracks = [];
     let names = Object.keys(localStorage);
+    setLoading(true);
+    const promises = [];
     for (let name of names) {
-        if (name.includes('localTrack')) {
+        if (name.includes(LOCAL_TRACK_KEY)) {
             let ind = name.split('_')[1];
             localTracks[ind] = JSON.parse(localStorage.getItem(name));
+            if (localTracks[ind].tracks[0]?.points?.length > 0) {
+                promises.push(await TracksManager.updateRoute(localTracks[ind].tracks[0].points).then((points) => {
+                    localTracks[ind].tracks[0].points = points;
+                    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+                    if (savedVisible?.local) {
+                        savedVisible.local.forEach(name => {
+                            localTracks.forEach(f => {
+                                if (f.name === name) {
+                                    f.selected = true;
+                                    f.index = _.indexOf(localTracks, f);
+                                }
+                            })
+                        })
+                    }
+                }));
+            }
         }
     }
-    let savedVisible = JSON.parse(localStorage.getItem('visible'));
-    if (savedVisible?.local) {
-        savedVisible.local.forEach(name => {
-            localTracks.forEach(f => {
-                if (f.name === name) {
-                    f.selected = true;
-                    f.index = _.indexOf(localTracks, f);
-                }
-            })
-        })
-    }
+
+    await Promise.all(promises).then(() => {
+        setLoading(false);
+        return localTracks;
+    })
     return localTracks;
 }
 
@@ -50,7 +62,7 @@ function saveLocalTrack(tracks, ctx) {
         name: track.name,
         id: track.id,
         metaData: track.metaData,
-        tracks: track.points ? [{points: track.points}] : track.tracks,
+        tracks: preparePoints(_.cloneDeep(track)),
         wpts: track.wpts,
         pointsGroups: track.pointsGroups,
         ext: track.ext,
@@ -58,15 +70,47 @@ function saveLocalTrack(tracks, ctx) {
         selected: false,
         originalName: track.originalName
     }
-
-    let tracksSize = JSON.stringify(localTrack).length;
+    let trackStr = JSON.stringify(localTrack);
+    let tracksSize = trackStr.length;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
-    if (tracksSize + totalSize > 5000000) {
+    if (!totalSize) {
+        totalSize = 0;
+    }
+
+    let oldSize = 0;
+    if (currentTrackIndex !== -1) {
+        let old = localStorage.getItem(LOCAL_TRACK_KEY + currentTrackIndex);
+        if (old) {
+            oldSize = old.length;
+        }
+    }
+    if (((oldSize === 0 && (tracksSize + totalSize)) || ((totalSize - oldSize) + tracksSize)) > 5000000) {
         ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
     } else {
-        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), JSON.stringify(localTrack));
-        totalSize += tracksSize;
+        ctx.setRoutingErrorMsg(null)
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
+        totalSize = totalSize - oldSize + tracksSize;
         localStorage.setItem(DATA_SIZE_KEY, totalSize);
+    }
+}
+
+function preparePoints(track) {
+    if (track.points) {
+        track.points.forEach(p => {
+            if (p.geometry?.length > 0) {
+                delete p.geometry
+            }
+        })
+        return [{points: track.points}];
+    } else {
+        track.tracks.forEach(t => {
+            t.points.forEach(p => {
+                if (p.geometry?.length > 0) {
+                    delete p.geometry
+                }
+            })
+        })
+        return track.tracks;
     }
 }
 
@@ -78,7 +122,7 @@ function updateLocalTracks(tracks) {
             name: track.name,
             id: track.id,
             metaData: track.metaData,
-            tracks: track.points ? [{points: track.points}] : track.tracks,
+            tracks: preparePoints(_.cloneDeep(track)),
             wpts: track.wpts,
             pointsGroups: track.pointsGroups,
             ext: track.ext,
@@ -86,9 +130,10 @@ function updateLocalTracks(tracks) {
             selected: false,
             originalName: track.originalName
         }
-        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), JSON.stringify(localTrack));
+        let trackStr = JSON.stringify(localTrack);
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
 
-        let tracksSize = JSON.stringify(localTrack).length;
+        let tracksSize = trackStr.length;
         totalSize += tracksSize;
     }
     localStorage.setItem(DATA_SIZE_KEY, totalSize);
@@ -188,7 +233,6 @@ function addTrack(ctx, track) {
     ctx.setLocalTracks([...ctx.localTracks]);
     openNewLocalTrack(ctx);
     closeCloudTrack(ctx, track);
-    TracksManager.saveTracks(ctx.localTracks, ctx);
 }
 
 function prepareTrack(track) {
@@ -424,13 +468,15 @@ async function updateRouteBetweenPoints(ctx, start, end) {
     }
 }
 
-async function updateRoute(ctx, points) {
-    let result = await axios({
-        url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
-        method: 'post',
-        data: points,
-    });
-
+async function updateRoute(points) {
+    let result;
+    if (points?.length > 0) {
+        result = await axios({
+            url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
+            method: 'post',
+            data: points,
+        });
+    }
     if (result) {
         if (typeof result.data === "string") {
             result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {

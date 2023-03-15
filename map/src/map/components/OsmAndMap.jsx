@@ -25,8 +25,30 @@ const useStyles = makeStyles((theme) => ({
         '& .leaflet-control-layers-toggle': {
             width: "0px !important",
             height: "0px !important"
-        }
-    },
+        },
+        '& .leaflet-bar': {
+            border: '4px !important',
+        },
+        '& .leaflet-bar a': {
+            width: "36px !important",
+            color: "#757575",
+            border: '4px !important'
+        },
+        '& .leaflet-bar a:first-child': {
+            borderTopLeftRadius: '4px !important',
+            borderTopRightRadius: '4px !important'
+        },
+        '& .leaflet-bar a:last-child': {
+            borderBottomLeftRadius: '4px !important',
+            borderBottomRightRadius: '4px !important'
+        },
+        '& .leaflet-control': {
+            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
+            transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+            color: 'black',
+            borderRadius: '4px'
+        },
+    }
 }));
 
 // initial location on map
