@@ -42,7 +42,7 @@ where output.zip - name of result file
 ```unzip file.zip -d destination_folder```  
 
 * Find tombstones folder:  
-```cd FS/data/tomstones```  
+```cd FS/data/tombstones```
 Where you find files like *tombstone_00* *tombstone_01* with raw text format. Just send them to email: crash@osmand.net
 
 
