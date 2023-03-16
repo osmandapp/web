@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # iOS 4.4 (March 2023)
 
-## Join Beta
+ Join Beta
 
 iOS beta builds (TestFlight) are usually provided weekly (after the team sprint demo). They don't contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
 
@@ -12,11 +12,10 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
 </div>
 
-## What's new
+
+**What's new**
 
 - [iOS 4.4 (March 2023)](#ios-44-march-2023)
-  - [Join Beta](#join-beta)
-  - [What's new](#whats-new)
     - [Minimum iOS version](#minimum-ios-version)
     - [Wikipedia updates](#wikipedia-updates)
     - [Search for Favorites](#search-for-favorites)
@@ -69,7 +68,7 @@ Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 versi
 
 ### Search for Favorites
 
-Added the search bar for Favorites menu: _Menu → My Places → Favorites → Pull down_
+Added the search bar for [Favorites menu](../user/personal/favorites.md): _Menu → My Places → Favorites → Pull down_
 
   <table class="blogimage">
    <tr>
@@ -90,7 +89,7 @@ Added the search bar for Favorites menu: _Menu → My Places → Favorites → P
     </tr>
  </table> 
 
-- reorganized tracks and favorites list (items visible in the list - 24 items by newest order):
+- reorganized tracks and favorites list (items visible in the list - 24 items by order newest):
 
   <table class="blogimage">
    <tr>
@@ -113,7 +112,7 @@ Added the search bar for Favorites menu: _Menu → My Places → Favorites → P
 
 ### Hiking routes
 
-Added ability to select routes on the map for viewing additional information or starting navigation by the chosen route. Just tap on hiking routes on the map to open the Track Context menu:
+Added ability to [select routes on the map](../user/map/vector-maps.md#routes) for viewing additional information or starting navigation by the chosen route. Just tap on hiking routes on the map to open the Track Context menu:
 
   <table class="blogimage">
    <tr>
@@ -122,7 +121,7 @@ Added ability to select routes on the map for viewing additional information or 
     </tr>
   </table> 
 
-Available to start navigation by a track or download it.
+Available to start [navigation by a track](../user/navigation/gpx-navigation.md) or download it.
 
   <table class="blogimage">
    <tr>
@@ -146,7 +145,7 @@ Track Context menu → Actions → [Upload to OpenStreetMap](../user/map/track-c
 
 ### Improved privacy
 
-Added options to disable history logging:
+Added options to [disable history](../user/personal/global-settings.md#history) logging:
 
 _Menu → Settings → OsmAnd settings → History_
 
@@ -160,7 +159,7 @@ _Menu → Settings → OsmAnd settings → History_
 
 ### Map orientation update
 
-Added manually rotated mode:
+Added [manually rotated mode](../user/map/interact-with-map.md#map-orientation-modes):
 
 _Menu → Settings → App Profile → General settings → Map orientation → Manually rotated (fixed)_
 
@@ -173,8 +172,7 @@ _Menu → Settings → App Profile → General settings → Map orientation → 
 
 ### Map ruler update
 
-
-Improved visibility of the map ruler:
+Improved visibility of [the map ruler](../user/widgets/radius-ruler.md#ruler):
 
  - Decrease top/bottom padding for text label.
  - Added Stroke for the ruler.
