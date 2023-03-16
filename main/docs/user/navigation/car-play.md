@@ -41,7 +41,7 @@ For OsmAnd to work, you need to connect your iOS device to the vehicle's multime
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-1.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen.png)
  
 
 ## Interaction with the map
@@ -65,14 +65,14 @@ With this option you can search for the necessary places on the map to navigate.
 
 You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. POI is a type of points that are highlighted on the map by special icons provided in the application settings, and sorted into groups.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-5.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi-rest.png)
 
 
 ### Favorites
 
 Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using CarPlay you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-7.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites-last-modified.png)
 
 
 ### Markers
@@ -90,15 +90,19 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.   
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-11.png)  
-<!--
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-1.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-2.png)
--->
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-1.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-2.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-treck-rec.png) 
+
+
+### History
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-history.png)
 
 
 ## Navigation
 
-Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.
+Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.  
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-navigation.png)
 
 
 ### Voice prompts
@@ -114,6 +118,11 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-13.png)  
 
 
+## 2.5D view
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D.png)  
+
+
 ## Volume control
 
 In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
@@ -122,7 +131,21 @@ If this method does not work, there is another option. To adjust the notificatio
 
 ## Multifunction dashboard
 
-The Car Play dashboard will soon be able to display and use the OsmAnd navigation app at the same time as music, messages or other notification apps.
+The Car Play dashboard will soon be able to display and use the OsmAnd navigation app at the same time as music, messages or other notification apps.  
+
+
+## Fixes issues with voice control
+
+Choose which speakers to use.
+- On your phone or tablet, turn on Bluetooth.
+- Pair your phone or tablet to your car.
+- Set the source for your car's audio system to Bluetooth.
+    - On your Android phone or tablet, open the Google Maps app Maps.
+    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.
+    - Choose an option:
+       - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
+       - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.
+
 
 <!--
 __________________
