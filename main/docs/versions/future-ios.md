@@ -14,22 +14,27 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 ## What's new
 
- * Minimum iOS version is increased to 15.0
- * Wikipedia: added ability to view images, updated reader UI;
- * Favorites: added search;
- * CarPlay: added history, reorganized tracks and favorites list;
- * Hiking routes: added ability to select routes on the map for viewing additional information or navigation;
- * OpenStreetMap: added ability to upload tracks;
- * Improved privacy: added options to disable history logging;
- * Map orientation: added manually rotated mode;
- * Improved visibility of the map ruler;
- * Widgets updates
- * **More**:
-   * Added "Dynamic type" support, text size in OsmAnd will change accordingly to text size in iOS;
-   * Added legal warning about using speed camera alerts;
-   * Voice prompts: added support for new languages: Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian;
-   * UI improvements for RTL languages;
-   * Accessibility: added content labelling for map buttons;
+- [iOS 4.4 (March 2023)](#ios-44-march-2023)
+  - [Join Beta](#join-beta)
+  - [What's new](#whats-new)
+    - [Minimum iOS version](#minimum-ios-version)
+    - [Wikipedia updates](#wikipedia-updates)
+    - [Search for Favorites](#search-for-favorites)
+    - [CarPlay updates](#carplay-updates)
+    - [Hiking routes](#hiking-routes)
+    - [Update OpenStreetMap Plugin](#update-openstreetmap-plugin)
+    - [Improved privacy](#improved-privacy)
+    - [Map orientation update](#map-orientation-update)
+    - [Map ruler update](#map-ruler-update)
+    - [Widgets updates](#widgets-updates)
+    - [More](#more)
+      - [Dynamic type fot text](#dynamic-type-fot-text)
+      - [Speed camera alerts](#speed-camera-alerts)
+      - [Voice prompts](#voice-prompts)
+      - [UI improvements](#ui-improvements)
+      - [Accessibility](#accessibility)
+      - [New Profile](#new-profile)
+      - [Tracks](#tracks)
 
 
 ### Minimum iOS version
@@ -38,9 +43,9 @@ Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 versi
 
 ### Wikipedia updates
 
- - Plugin settings is profile dependent:
+ - The [Plugin Wikipedia](../user/plugins/wikipedia.md) settings is profile dependent:
 
-  Menu > Settings > App Profiles > Plugins > Wikipedia
+  _Menu → Settings → App Profiles → Plugins → Wikipedia_
 
   Here you can choose languages in which Wikipedia articles will appear on the map. Choose download or not images and set cache size for images.
 
@@ -64,7 +69,7 @@ Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 versi
 
 ### Search for Favorites
 
-Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull down_
+Added the search bar for Favorites menu: _Menu → My Places → Favorites → Pull down_
 
   <table class="blogimage">
    <tr>
@@ -76,7 +81,7 @@ Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull do
 
 ### CarPlay updates
 
-- added search history and the recent route in the menu:
+- added search history and the recent route in [the menu](../user/navigation/car-play.md):
 
   <table class="blogimage">
    <tr>
@@ -85,7 +90,7 @@ Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull do
     </tr>
  </table> 
 
-- reorganized tracks and favorites list (items visible in the list - 24 items):
+- reorganized tracks and favorites list (items visible in the list - 24 items by newest order):
 
   <table class="blogimage">
    <tr>
@@ -104,8 +109,6 @@ Added the search bar for Favorites menu: _Menu > My Places > Favorites > Pull do
 
 
 - showing the map on CarPlay Dashboard.
-
-
 
 
 ### Hiking routes
@@ -133,7 +136,7 @@ Available to start navigation by a track or download it.
 
 Added ability to upload GPS tracks to [OpenStreetMap project](https://www.openstreetmap.org/traces):
 
-Track Context menu > Actions > [Upload to OpenStreetMap](../user/map/track-context-menu.md#options)
+Track Context menu → Actions → [Upload to OpenStreetMap](../user/map/track-context-menu.md#options)
 
   <table class="blogimage">
    <tr>
@@ -145,7 +148,7 @@ Track Context menu > Actions > [Upload to OpenStreetMap](../user/map/track-conte
 
 Added options to disable history logging:
 
-_Menu > Settings > OsmAnd settings > History_
+_Menu → Settings → OsmAnd settings → History_
 
 
   <table class="blogimage">
@@ -159,7 +162,7 @@ _Menu > Settings > OsmAnd settings > History_
 
 Added manually rotated mode:
 
-_Menu > Settings > App Profile > General settings > Map orientation > Manually rotated (fixed)_
+_Menu → Settings → App Profile → General settings → Map orientation → Manually rotated (fixed)_
 
   <table class="blogimage">
    <tr>
