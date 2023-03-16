@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while navigating a selected route. With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different types of routes, where saving battery power is important.  
+Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/route-navigation). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different types of routes, where saving battery power is important.  
 
 
 ## Voice prompts
@@ -33,11 +33,11 @@ Voice prompts help you move in the right direction without distracting you from 
 ## Settings of voice prompts
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route.  
-<!-- To set up voice prompts, you need to go to the appropriate section of the application:
+To set up voice prompts, you need to go to the appropriate section of the application:
 
 - You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
-- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  -->
+- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
 
 You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
@@ -188,27 +188,30 @@ Check if your Android TTS is working properly by using the "Listen to example" o
 
 Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
 
-<!--  List of available TTS languages
+### List of available TTS
 
-There are currently a total of 45 languages:  
-**А** Arabic  
-**B** Belarusian, Bulgarian  
-**C** Catalan, Chinese, Chinese(Hong Kong), Chinese(Traditional), Croatian, Czech   
-**D**  
-**E**  
-**F**  
-**G**  
-**H**  
-**I**  
-**J**  
-**K**  
-**L**  
-**N**  
-**P**  
-**R**  
-**S** Sardinian, Serbian (cyrillic), Slovak, Slovenian, Spanish, Spanish (Argentina), Swahili, Swedish   
-**T** Turkish  
-**U** Ukrainian  -->
+There are currently a total of 45 languages.  
+
+| | |
+| --- | --- |
+| **А** | Arabic |
+| **B** | Belarusian, Bulgarian |
+| **C** | Catalan, Chinese, Chinese(Hong Kong), Chinese(Traditional), Croatian, Czech |  
+| **D** | Danish, Dutch |
+| **E** | English, English(United Kingdom), Estonian | 
+| **F** | Finnish, French |
+| **G** | German, German(casual), Greek, Guarani | 
+| **H** | Hindi, Hungarian, Hungarian(formal) | 
+| **I** | Indonesian, Italian |
+| **J** | Japanese | 
+| **K** | Korean  |
+| **L** | Latvian |
+| **N** | Norwegian Bokmal  |
+| **P** | Persian, Polish, Portuguese, Portuguese(Brazil) |  
+| **R** | Romanian, Russian  |
+| **S** | Sardinian, Serbian (cyrillic), Slovak, Slovenian, Spanish, Spanish (Argentina), Swahili, Swedish  | 
+| **T** | Turkish  |
+| **U** | Ukrainian  |
 
 ### Testing of voice prompts
 
@@ -217,7 +220,7 @@ There are currently a total of 45 languages:
 For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
 
 
-<!--  Fix voice navigation problems
+## Fixes issues with voice prompts
 
 When you navigate to a place, you can hear voice directions. Learn how to fix voice navigation problems on your mobile devices.
 
@@ -252,7 +255,7 @@ If you want to charge your phone or tablet, use a charging-only USB cable or a p
         - Get directions.
         - Use the Google Maps app as you normally would. Voice directions are downloaded while you have the Maps app open.
         - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.  
--->
+
 
 ## Notifications
 
@@ -263,7 +266,11 @@ Once you start a route, you can view the information in the drop-down system men
 Active buttons on the Drop-down system menu for your navigation:
 - *<Translate android="true" ids="stop_navigation_service"/>* - allows stopping your navigation.
 - *<Translate android="true" ids="shared_string_pause"/>* - allows pausing your navigation.
-- *<Translate android="true" ids="shared_string_resume"/>* - allows resuming your navigation.
+- *<Translate android="true" ids="shared_string_resume"/>* - allows resuming your navigation.  
+
+#### Configure notifications 
+
+You can change the notification settings for the OsmAnd app in the system settings of your device. Notifications can be displayed on the lock screen, the home screen, in the drop-down menu, or at the top of the app. Read about how notification control is implemented on Android in this [article](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). For iOS - [here](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
 
 ## Screen control
@@ -282,7 +289,7 @@ You can control the screen of your device to save power. This mode has two gener
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-- *<Translate android="true" ids="wake_time"/>* - If "Keep Screen On" is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
 
 ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
