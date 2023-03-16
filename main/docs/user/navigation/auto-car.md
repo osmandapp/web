@@ -122,6 +122,20 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the screen 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
 
 
+## Fixes issues with voice control
+
+Choose which speakers to use.
+- On your phone or tablet, turn on Bluetooth.
+- Pair your phone or tablet to your car.
+- Set the source for your car's audio system to Bluetooth.
+    - On your Android phone or tablet, open the Google Maps app Maps.
+    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.
+    - Choose an option:
+       - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
+       - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.
+
+
+
 <!--
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-2.png)
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-3.png)

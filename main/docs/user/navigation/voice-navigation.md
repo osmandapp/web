@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/route-navigation). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different types of routes, where saving battery power is important.  
+Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/route-navigation). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../navigation/route-navigation.md/), where saving battery power is important.  
 
 
 ## Voice prompts
@@ -32,14 +32,12 @@ Voice prompts help you move in the right direction without distracting you from 
 
 ## Settings of voice prompts
 
-OsmAnd offers different types of settings for voice prompts to help you follow your route.  
-To set up voice prompts, you need to go to the appropriate section of the application:
+OsmAnd offers different types of settings for voice prompts to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 
-- You can enable voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping *Settings*. Alternatively, you can turn on and configure voice prompts in the Main menu section of the selected profile.
-- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
-- You can enable or disable the sound for them in *Menu → Navigation → "Settings" icon → Sound* or in the menu of the selected profile *Configure profile* using the On/Off button.  
+- You can activate voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping Settings. You can also enable and configure voice prompts in Configure profile, Navigation settings. 
+- You can turn the sound for voice prompts On or Off in *Menu → Navigation → "On/Off" button* or *Menu → Navigation → "Settings" icon → Sound*.
 
-You can read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
+Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 :::info For Android version
 You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
@@ -67,10 +65,6 @@ You can set up voice prompts for the selected profile or for all available profi
 
 </Tabs>  
 
-:::tip
-If you missed a voice prompt, you can listen to it again. To do this, tap the current turn arrow on the application screen.
-:::
-
 1. **[Language](#language)** - select preferred language and type.
 2. **Announcement group** - allows you to voice the following types of prompts: 
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
@@ -88,8 +82,8 @@ You can turn on the **[Alert widget](../widgets/nav-widgets.md#alert-widget)** f
 5. **Other**: 
     - *Announce GPS signal loss and recovery* and *Announce route recalculation*.
 6. **Options**:
-    - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min) or manually only [(tap arrow)](../widgets/nav-widgets.md#next-turns).
-    - *[Announcement time](#announcement-time)*.
+    - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../widgets/nav-widgets.md#next-turns) on the application screen.
+    - *[Announcement time](#announcement-time)*.  
 7. **Output** (for Android version):
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.   
@@ -133,15 +127,6 @@ In this group you can set whether the voice prompts for the pre-set and added [W
 | Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
 | Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
 
-### Voice guidance output 
-
-This setting allows you to select the loudspeaker for voice prompts.  
-   - Media/navigation audio.
-   - Notification audio.
-   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car)).
-
-![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
-
 ### Speed cameras
 
 [Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
@@ -151,16 +136,19 @@ In some countries or regions, it is illegal to use speed camera warning apps. Yo
 
 ### Announcement time
 
-The announcement time of the different voice prompts depends on the type of prompt, the current navigation speed and the default navigation speed. You can choose how soon you want to receive the arrival announcement, see the table. And for more information, see the [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).      
-
-**<Translate android="true" ids="arrival_distance"/>** | Distance multiplier
---- | --- 
-**<Translate android="true" ids="arrival_distance_factor_early" />** | 1.5
-**<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
-**<Translate android="true" ids="arrival_distance_factor_late" />** | 0.5
-**<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25   
+The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
+In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
+
+### Voice guidance output
+
+To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
+   - Media/navigation audio.
+   - Notification audio.
+   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car)).
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 
 ## Options of voice prompts
@@ -222,39 +210,12 @@ For testing Voice prompts, you need to activate [OsmAnd development plugin](../p
 
 ## Fixes issues with voice prompts
 
-When you navigate to a place, you can hear voice directions. Learn how to fix voice navigation problems on your mobile devices.
+When using voice prompts, you may have issues with their playback. Here are some solutions to fix these issues.  
 
-- Step 1: Turn on your device’s volume.
-    - Make sure that your phone or tablet’s volume is on and not muted. After you start navigation, turn up your volume.
-- Step 2: Make sure voice is turned on in the Maps app.
-    - On your Android phone or tablet, open the Google Maps app Maps.
-    - Start navigation.
-    - At the top right, you should see Sound Sound. If you don’t see this, tap Mute Mute and then Sound Sound. Google Maps should start talking.
-- Step 3: Turn up the volume in the Maps app.
-    - On your Android phone or tablet, open the Google Maps app Maps.
-    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings and then Voice level.
-    - Choose Louder.
-- Step 4: Choose which speakers to use.  
-    - On your phone or tablet, turn on Bluetooth.
-    - Pair your phone or tablet to your car.
-    - Set the source for your car's audio system to Bluetooth.
-    - On your Android phone or tablet, open the Google Maps app Maps.
-    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.  
-    - Choose an option:  
-        - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
-        - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.  
-
-:::note
-For Android version 9.13 and up, you can play a test sound. To play a test sound, open the Google Maps app Maps and then your profile picture or initial Account Circle and then Settings Settings and then Navigation settings and then Play test sound. You'll hear "This is what it will sound like when navigating with Google Maps."  
-If you want to charge your phone or tablet, use a charging-only USB cable or a power adapter. Connect it to an outlet or cigarette lighter.
-:::
-
-- Step 5: Download voice directions.
-    - Sometimes voice directions aren’t downloaded or must be updated on your phone or tablet. When this happens, you’ll hear a chime instead of voice directions.
-        - Make sure you're connected to the internet. If you have a strong internet connection, voice directions will download faster.
-        - Get directions.
-        - Use the Google Maps app as you normally would. Voice directions are downloaded while you have the Maps app open.
-        - When the voice directions download is complete, you'll hear directions instead of chimes when navigating to a place.  
+1. Make sure that the volume of your device is on and not off. Once you start navigating, increase the volume.
+2. Make sure that the sound is turned on during navigation.  You can turn the sound on or off in Menu → Navigation → On/Off button or Menu → Navigation → Settings icon → Sound.  
+3. Select which [speakers](#voice-guidance-output) to use. 
+4. Check which [voice guidance](#language) are selected. 
 
 
 ## Notifications
@@ -268,7 +229,7 @@ Active buttons on the Drop-down system menu for your navigation:
 - *<Translate android="true" ids="shared_string_pause"/>* - allows pausing your navigation.
 - *<Translate android="true" ids="shared_string_resume"/>* - allows resuming your navigation.  
 
-#### Configure notifications 
+### Configure notifications 
 
 You can change the notification settings for the OsmAnd app in the system settings of your device. Notifications can be displayed on the lock screen, the home screen, in the drop-down menu, or at the top of the app. Read about how notification control is implemented on Android in this [article](https://support.google.com/android/answer/9079661?hl=en#zippy=%2Cturn-notifications-on-or-off-for-certain-apps%2Cclear-notifications). For iOS - [here](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.).
 
@@ -289,7 +250,7 @@ You can control the screen of your device to save power. This mode has two gener
 
 ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-- *<Translate android="true" ids="wake_time"/>* - If Keep Screen On is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+- *<Translate android="true" ids="wake_time"/>* - If "Keep Screen On" is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
 
 ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
