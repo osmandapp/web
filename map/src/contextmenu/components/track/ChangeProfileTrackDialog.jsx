@@ -62,7 +62,7 @@ export default function ChangeProfileTrackDialog({open}) {
                 }
             })
             if (ctx.selectedGpxFile.points.length > 1) {
-                await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
+                await TracksManager.updateRoute(ctx.selectedGpxFile.points).then((points) => {
                     ctx.selectedGpxFile.points = points;
                     ctx.setCreatingRouteMode({
                         mode: profile.mode,
