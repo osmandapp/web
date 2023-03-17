@@ -108,7 +108,7 @@ export default function PoiLayer() {
             let coord = poi.geometry.coordinates;
             let marker = new L.Marker((new L.LatLng(coord[1], coord[0])), {
                 title: poi.properties.name,
-                icon: getPoiIcon(poi.properties.type, poi.properties.color),
+                icon: getPoiIcon(poi.properties.type, poi.properties.subType, poi.properties.color),
                 type: poi.properties.type,
                 subType: poi.properties.subType,
                 operator: poi.properties.operator,
@@ -127,13 +127,17 @@ export default function PoiLayer() {
         }
     }
 
-    function getPoiIcon(type, color) {
+    function getPoiIcon(type, subType, color) {
         let colorBackground = color && color !== 'null' ? color : DEFAULT_POI_COLOR;
         colorBackground = Utils.hexToArgb(colorBackground);
         let svg = MarkerOptions.getSvgBackground(colorBackground, DEFAULT_SHAPE_COLOR);
-        let iconWpt = type;
         let iconsFolder = MarkerOptions.POI_ICONS_FOLDER;
         let part = 'mx_';
+        let iconWpt = subType;
+        let exist = imageExist(`/map/images/${iconsFolder}/${part}${iconWpt}.svg`);
+        if (!exist) {
+            iconWpt = type;
+        }
         if (iconWpt) {
             return L.divIcon({
                 html: `
@@ -145,5 +149,12 @@ export default function PoiLayer() {
                               `
             })
         }
+    }
+
+    function imageExist(url)
+    {
+        let img = new Image();
+        img.src = url;
+        return img.height != 0;
     }
 }
