@@ -88,6 +88,16 @@ For OsmAnd to work, you need to connect your iOS device to the vehicle's multime
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen.png)  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point.png)
+
+
+## Start navigation
+
+<!-- 
+1. [Setup](#setup)
+2. Settings in the app
+3. Navigation Menu. 
+4. Selecting an end point
+-->
  
 
 ## Interaction with the map
