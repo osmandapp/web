@@ -155,6 +155,6 @@ export default function PoiLayer() {
     {
         let img = new Image();
         img.src = url;
-        return img.height != 0;
+        return img.height !== 0;
     }
 }
