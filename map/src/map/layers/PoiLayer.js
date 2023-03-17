@@ -38,6 +38,8 @@ export default function PoiLayer() {
     function getRadiusByZoom(zoom) {
         if (zoom < 15) {
             return 3000;
+        } else if (zoom < 16) {
+            return 1000;
         } else if (zoom < 17) {
             return 500;
         } else if (zoom < 18) {
@@ -58,7 +60,7 @@ export default function PoiLayer() {
     });
 
     useEffect(() => {
-        if ((zoom > 15 || move) && ctx.showPoi) {
+        if ((zoom || move) && ctx.showPoi) {
             getPoi().then((res) => {
                 if (res) {
                     if (poiList?.new?.layer) {
