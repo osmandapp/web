@@ -39,9 +39,15 @@ export default function MapContextMenu({drawerWidth}) {
 
     useEffect(() => {
         if (!showContextMenu) {
-            stopCreatedTrack();
+            stopCreatedTrack(false);
         }
     }, [showContextMenu])
+
+    useEffect(() => {
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
+            stopCreatedTrack(true);
+        }
+    }, [ctx.currentObjectType])
 
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER) {
@@ -75,11 +81,15 @@ export default function MapContextMenu({drawerWidth}) {
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
-    function stopCreatedTrack() {
+    function stopCreatedTrack(deletePrev) {
         if (ctx.createTrack) {
             ctx.createTrack.enable = false;
+            if (deletePrev) {
+                ctx.createTrack.deletePrev = deletePrev;
+            }
             ctx.setCreateTrack({...ctx.createTrack});
-            ctx.setCurrentObjectType(null);
+            ctx.addFavorite.editTrack = false;
+            ctx.setAddFavorite({...ctx.addFavorite});
         }
     }
 

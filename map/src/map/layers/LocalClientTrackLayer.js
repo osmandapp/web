@@ -88,7 +88,13 @@ export default function LocalClientTrackLayer() {
             } else {
                 clearCreateLayers(ctx.createTrack.layers);
             }
-            saveResult(ctx.selectedGpxFile, false);
+            let savedFile;
+            if (ctx.createTrack.deletePrev) {
+                savedFile = ctx.selectedGpxFile.prevState;
+            } else {
+                savedFile = ctx.selectedGpxFile;
+            }
+            saveResult(savedFile, false);
             ctx.setCreateTrack(null);
             deleteClickOnMap();
         }
@@ -167,7 +173,7 @@ export default function LocalClientTrackLayer() {
                 }
             }
             layer.on('click', (e) => {
-                if (!_.cloneDeep(ctx.createTrack)) {
+                if (!ctx.createTrack || !ctx.createTrack.enable) {
                     ctx.setCreateTrack({
                         enable: true,
                         edit: true
@@ -175,6 +181,7 @@ export default function LocalClientTrackLayer() {
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);
+                    ctx.setUpdateContextMenu(true);
                 }
             });
             layer.addTo(map);
