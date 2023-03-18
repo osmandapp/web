@@ -60,9 +60,22 @@ export default function LocalTrackGroup() {
         });
     }
 
+    function addToCollection() {
+        ctx.localTracks.forEach(file => {
+            if (!ctx.gpxCollection.find(name => name === file.name)) {
+                ctx.gpxCollection.push(file.name);
+            }
+        })
+        ctx.setGpxCollection([...ctx.gpxCollection]);
+    }
+
     const Buttons = () => {
         return (
             <div>
+                {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
+                    addToCollection()
+                    e.stopPropagation();
+                }}>To Collection</MenuItem>}
                 {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
                     clearLocalTracks()
                     e.stopPropagation();
@@ -88,6 +101,7 @@ export default function LocalTrackGroup() {
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
+                    ctx.setOpenedPopper(anchorEl);
                     e.stopPropagation();
                 }}
             >

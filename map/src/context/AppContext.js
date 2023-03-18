@@ -481,6 +481,7 @@ export const AppContextProvider = (props) => {
         pastStates: [],
         futureStates: []
     });
+    const [openedPopper, setOpenedPopper] = useState(null);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -580,6 +581,7 @@ export const AppContextProvider = (props) => {
         pointContextMenu, setPointContextMenu,
         trackState, setTrackState,
         localTracksLoading, setLocalTracksLoading,
+        openedPopper, setOpenedPopper
     }}>
         {props.children}
     </AppContext.Provider>;
