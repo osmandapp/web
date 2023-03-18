@@ -160,29 +160,31 @@ export default function LocalClientTrackLayer() {
             track.tracks = [{points: track.points}];
         }
         let layer = TrackLayerProvider.createLayersByTrackData(track);
-        if (fitBounds) {
-            if (!_.isEmpty(layer.getBounds())) {
-                map.fitBounds(layer.getBounds());
+        if (layer) {
+            if (fitBounds) {
+                if (!_.isEmpty(layer.getBounds())) {
+                    map.fitBounds(layer.getBounds());
+                }
             }
+            layer.on('click', (e) => {
+                if (!_.cloneDeep(ctx.createTrack)) {
+                    ctx.setCreateTrack({
+                        enable: true,
+                        edit: true
+                    })
+                    ctx.setSelectedGpxFile(track);
+                    let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+                    ctx.setCurrentObjectType(type);
+                }
+            });
+            layer.addTo(map);
+            localLayers[track.name] = {
+                layer: layer,
+                points: track.points ? track.points : TracksManager.getEditablePoints(track),
+                active: active
+            };
+            setLocalLayers({...localLayers});
         }
-        layer.on('click', (e) => {
-            if (!_.cloneDeep(ctx.createTrack)) {
-                ctx.setCreateTrack({
-                    enable: true,
-                    edit: true
-                })
-                ctx.setSelectedGpxFile(track);
-                let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
-                ctx.setCurrentObjectType(type);
-            }
-        });
-        layer.addTo(map);
-        localLayers[track.name] = {
-            layer: layer,
-            points: track.points ? track.points : TracksManager.getEditablePoints(track),
-            active: active
-        };
-        setLocalLayers({...localLayers});
     }
 
     function createPointMarkerOnMap() {

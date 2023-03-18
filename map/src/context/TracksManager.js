@@ -284,7 +284,7 @@ function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach(track => {
-            track.points.forEach(point => {
+            track.points?.forEach(point => {
                 points.push(point);
             })
         })
