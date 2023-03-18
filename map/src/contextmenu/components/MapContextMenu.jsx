@@ -11,7 +11,6 @@ import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
-import PoiTabList from "../PoiTabList";
 
 const useStyles = makeStyles({
     menu: {
@@ -63,8 +62,6 @@ export default function MapContextMenu({drawerWidth}) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
-                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
-                    obj = new PoiTabList().create(ctx);
                 } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx, setShowContextMenu);
                 }

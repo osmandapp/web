@@ -119,7 +119,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                         <Folder fontSize="small"/>
                                     </IconButton>
                                 </Tooltip>}
-                            {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER && ctx.currentObjectType !== ctx.OBJECT_TYPE_POI &&
+                            {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                                 <Tooltip title="Delete" arrow placement="right">
                                     <IconButton
                                         variant="contained"

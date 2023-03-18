@@ -13,7 +13,6 @@ import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
 import ContextMenu from "./ContextMenu";
-import PoiLayer from "../layers/PoiLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -102,7 +101,6 @@ const OsmAndMap = () => {
                       editable={true}
         >
             <LocalClientTrackLayer/>
-            <PoiLayer/>
             <RouteLayer geocodingData={geocodingData}/>
             <FavoriteLayer/>
             <WeatherLayer/>

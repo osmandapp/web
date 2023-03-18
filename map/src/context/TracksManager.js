@@ -489,9 +489,11 @@ async function updateRoute(points) {
 }
 
 function updateGapProfileAllSegments(points) {
-    points.forEach(p => {
-        updateGapProfileOneSegment(p, p.geometry);
-    })
+    if (points) {
+        points.forEach(p => {
+            updateGapProfileOneSegment(p, p.geometry);
+        })
+    }
 }
 
 function updateGapProfileOneSegment(routPoint, points) {

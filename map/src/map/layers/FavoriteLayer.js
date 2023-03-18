@@ -55,6 +55,7 @@ const FavoriteLayer = () => {
     function onClick(e) {
         let type = ctx.OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
+        ctx.selectedGpxFile = {};
         ctx.selectedGpxFile.markerCurrent = {
             title: e.sourceTarget.options.title,
             icon: e.sourceTarget.options.icon.options.html,

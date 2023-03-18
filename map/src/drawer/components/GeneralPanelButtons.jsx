@@ -59,13 +59,6 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        <Tooltip title="Poi icons" arrow placement="right">
-                            <IconButton variant="contained"
-                                        type="button"
-                                        onClick={() => ctx.setShowPoi(!ctx.showPoi)}>
-                                <MapsUgc fontSize="small"/>
-                            </IconButton>
-                        </Tooltip>
                     </ButtonGroup>
                 </Paper>
             </div>

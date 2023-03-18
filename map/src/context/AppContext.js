@@ -404,7 +404,6 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
     const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
     const OBJECT_TYPE_WEATHER = 'weather';
-    const OBJECT_TYPE_POI = 'poi';
 
     // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
@@ -482,7 +481,6 @@ export const AppContextProvider = (props) => {
         pastStates: [],
         futureStates: []
     });
-    const [showPoi, setShowPoi] = useState(false);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -572,7 +570,6 @@ export const AppContextProvider = (props) => {
         OBJECT_TYPE_CLOUD_TRACK,
         OBJECT_TYPE_LOCAL_CLIENT_TRACK,
         OBJECT_TYPE_WEATHER,
-        OBJECT_TYPE_POI,
         createTrack, setCreateTrack,
         creatingRouteMode, setCreatingRouteMode,
         gpxCollection, setGpxCollection,
@@ -583,8 +580,6 @@ export const AppContextProvider = (props) => {
         pointContextMenu, setPointContextMenu,
         trackState, setTrackState,
         localTracksLoading, setLocalTracksLoading,
-        showPoi, setShowPoi
-
     }}>
         {props.children}
     </AppContext.Provider>;
