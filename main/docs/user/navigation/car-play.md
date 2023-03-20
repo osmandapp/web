@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-To be able to use the iOS version of the OsmAnd app in CarPlay, you must purchase a [paid subscription]((../purchases/ios.md#free-and-paid-features)).
+To be able to use the iOS version of the OsmAnd app in CarPlay, you must purchase a [paid subscription](../purchases/ios#free-and-paid-features).
 :::
 
 OsmAnd is available for [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
