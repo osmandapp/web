@@ -230,7 +230,7 @@ You can add or delete the **<Translate android="true" ids="map_widget_parking"/>
 <TabItem value="ios" label="iOS">
 
 You can add or delete the **<Translate ios="true" ids="product_title_parking"/> widget** by following this path:  
-*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,product_title_parking"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,product_title_parking"/>*
 
 
 ![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)

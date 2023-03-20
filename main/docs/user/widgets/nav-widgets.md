@@ -113,8 +113,8 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>|
-| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/> |  
+| Enable | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>|
+| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/> |  
 
 </TabItem>
 
@@ -149,7 +149,7 @@ Destination widget shows the distance left to the last destination point by foll
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,route_descr_destination"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_distance"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,route_descr_destination"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_distance"/>|
 | By tapping | Moves the map to a destination point. |    
 
 ### Intermediate destination
@@ -160,7 +160,7 @@ Intermediate Destination widget shows the distance left to the first intermediat
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_intermediate_distance"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_intermediate_distance"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_intermediate_distance"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_intermediate_distance"/>|
 | By tapping | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
 
 ### Arrival time or Time to go
@@ -189,7 +189,7 @@ The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Tr
 
 | | |
 |------------|------------|
-| Enable |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
+| Enable |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
 | By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
 
 </TabItem>
@@ -204,7 +204,7 @@ Intermediate arrival time or Intermediate time widget shows <Translate android="
 
 | | |
 |------------|------------|
-| Enable |  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,access_intermediate_arrival_time"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
+| Enable |  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,access_intermediate_arrival_time"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
 | On  Click | Changes between "Intermediate arrival time" to "Intermediate time" and vice versa. |  
 
 
@@ -216,7 +216,7 @@ Speed limit widget shows a speed limit for a current driving road. It works in p
 
 | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_max_speed"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_max_speed"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
 | On  Click | - |
 
 
@@ -228,7 +228,7 @@ The widget shows information about your next turn with a picture of maneuver and
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_next_turn"/>, <Translate android="true" ids="map_widget_next_turn_small"/>, <Translate android="true" ids="map_widget_next_next_turn"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map_widget_next_turn"/>, <Translate ios="true" ids="map_widget_next_turn_small"/>, <Translate ios="true" ids="map_widget_next_next_turn"/>|
+| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_next_turn"/>, <Translate android="true" ids="map_widget_next_turn_small"/>, <Translate android="true" ids="map_widget_next_next_turn"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_next_turn"/>, <Translate ios="true" ids="map_widget_next_turn_small"/>, <Translate ios="true" ids="map_widget_next_next_turn"/>|
 | On  Click | Speaks out next maneuver and distance to it, if voice guidance is turned on |
 
 
@@ -250,7 +250,7 @@ Lanes widget shows the current road lanes layout and highlights lanes to drive w
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,show_lanes"/> |
-|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,show_lanes"/> |
+|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,show_lanes"/> |
 | On  Click | - |
 
 Display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre.
@@ -274,7 +274,7 @@ Most of alerts are displayed and announced within 15 seconds, same as [Passing w
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>|
-|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2,screen_alerts"/>|
+|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,routing_settings_2,screen_alerts"/>|
 
 ### Alert types 
 
@@ -327,5 +327,5 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 
 | |
 |------------|------------|
-| Enable  | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu"/> → Start navigation → pencil button |
+| Enable  | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button |
 

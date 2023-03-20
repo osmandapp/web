@@ -30,7 +30,7 @@ _<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="menu,res_mapsres"/>_
+_<Translate ios="true" ids="shared_string_menu,res_mapsres"/>_
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_menu_ios.png) ![Download maps menu iOS](@site/static/img/personal/maps/download_map_ios.png)
 
@@ -79,7 +79,7 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,res_mapsres"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_ios.png) ![Download map menu general iOS](@site/static/img/personal/maps/download_map_menu_1_ios.png)
 
@@ -112,7 +112,7 @@ Local maps represents all downloaded maps on device grouped by [Types](#map-type
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
 ![Maps menu Local vector iOS](@site/static/img/personal/maps/maps_menu_local_vector_ios.png)
 
@@ -162,7 +162,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres,res_updates"/>_
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres,res_updates"/>_
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_menu_update_ios.png)
 
@@ -203,7 +203,7 @@ Each map has an independent collection  of tiny map updates, please be careful i
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,res_mapsres,res_updates,osmand_live_updates"/>*   
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,res_updates,osmand_live_updates"/>*   
 
 ![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 

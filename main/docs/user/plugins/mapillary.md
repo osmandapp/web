@@ -50,7 +50,7 @@ Map layer of street-level imagery is displayed on the OsmAnd map as rows of conn
 
 ### Enable Layer
 
-To display street-level imagery on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md) section of Main menu: *<Translate ids="menu,configure_map,street_level_imagery"/>*.  
+To display street-level imagery on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md) section of Main menu: *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 <Tabs groupId="operating-systems">
 
@@ -80,7 +80,7 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ### Filtering the data
 
-You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="menu,configure_map,street_level_imagery"/>*→ &#8230; . 
+You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; . 
 
 <Tabs groupId="operating-systems">
 
@@ -165,7 +165,7 @@ or *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widg
 <TabItem value="ios" label="iOS">
 
 To enable/disable widget demonstration on the main screen go to 
-*<Translate ios="true" ids="menu,layer_map_appearance,shared_string_widgets,mapillary"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,mapillary"/>*
 
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_widget_disable_ios.png) ![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 

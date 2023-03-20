@@ -29,7 +29,7 @@ OsmAnd provides the ability to export data to a specific format using apps avail
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,actions"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions"/>*     
 
 ![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png) 
 
@@ -54,7 +54,7 @@ In the Actions section of the Profile Configuration menu, you can use such a fun
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,actions,export_profile"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions,export_profile"/>*     
 
 ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_ios.png)
 
@@ -83,7 +83,7 @@ Click to OSF-file.
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*     
 
 ![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png)  
 
@@ -133,13 +133,13 @@ B. You can click the SQLiteDb-file on your email, cloud, or messenger, download 
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,actions,export_profile"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions,export_profile"/>*  
 
 A. <Translate ios="true" ids="shared_string_import,quick_action_map_source_title,shared_string_continue,shared_string_import_complete,gpx_finish"/>  
 
 ![Import package iOS](@site/static/img/plugins/online-maps/import-package-ios.png)  
 
-B. <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder,import_from_docs"/>  
+B. <Translate ios="true" ids="shared_string_menu,map_settings_map,map_settings_overunder,import_from_docs"/>  
 
 C. You can click the SQLiteDb-file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.  
 

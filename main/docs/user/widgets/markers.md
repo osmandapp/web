@@ -52,10 +52,10 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>* |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>* |
 | By tapping | The visible part of the map shifts to the marker location. |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
-| Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
+| Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
 
 </TabItem>
 
@@ -99,9 +99,9 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
 | By tapping | The visible part of the map shifts to the marker location. |
-| Distance format  | *<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
+| Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Configuring the appearance of map markers is available in both the Android and i
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
+*<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>* 
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 

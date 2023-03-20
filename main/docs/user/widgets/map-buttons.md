@@ -78,7 +78,7 @@ You can choose in the widget menu how the compass is displayed: *Always visible*
 
 <TabItem value="ios" label="iOS">  
 
-Go to:* <Translate ios="true" ids="menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
+Go to:* <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
 

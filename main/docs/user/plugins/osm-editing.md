@@ -44,7 +44,7 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
@@ -86,7 +86,7 @@ You can enable the display of the OSM modifications (edits/notes/fixme tags/note
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,configure_map,osm_edits_offline_layer"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
 
 ![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -161,7 +161,7 @@ To edit OSM notes (you can comment or close them), enable display of OSM notes o
 <TabItem value="ios" label="iOS">
 
 To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
-*<Translate ios="true" ids="menu,configure_map,osm_notes_online_layer"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 

@@ -10,6 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
 Quick Action Widget is a configurable quick access button on the map with selected actions accessible 'just in 2 clicks'.
@@ -20,13 +21,22 @@ Quick Action Widget is a configurable quick access button on the map with select
 
 In order to use the Quick Actions button you need to enable this widget first.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">  
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,configure_screen_quick_action"/>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>_
 
-<p> </p>
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>_
+
+</TabItem>
+
+</Tabs>
+
 
 By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long tap on it. 
 
@@ -38,26 +48,63 @@ By default the Quick action button will appear on the right corner (above the zo
 
 To open Quick action menu just press on the button.
 
-|**Android**  | **iOS** |
-|------------|------------|
-| ![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png) | ![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png) |
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ## Edit actions list
 
 ### Add new action
 
 There are 2 ways to add items to the Quick actions list: 
-- Menu → Configure screen → Quick action → &#8230;&#124; → Add action(+) 
+- _Menu → Configure screen → Quick action → &#8230;&#124; → Add action(+)_ 
 
-|**Android**  | **iOS** |
-|------------|------------|
-| ![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_android_add.png) | ![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_ios_add.png) |
+<Tabs groupId="operating-systems">
 
-- Click "Quick action" button → "Quick action" menu → Add action
+<TabItem value="android" label="Android">  
 
-|**Android**  | **iOS** |
-|------------|------------|
-| ![Quick action widget_android_add2](@site/static/img/widgets/quick_action_widget_android_add2.png) | ![Quick action widget_ios_add2](@site/static/img/widgets/quick_action_widget_ios_add2.png) |
+![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_android_add.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_ios_add.png)
+
+</TabItem>
+
+</Tabs>
+
+- Click _"Quick action" button → "Quick action" menu → Add action_
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Quick action widget_android_add2](@site/static/img/widgets/quick_action_widget_android_add2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Quick action widget_ios_add2](@site/static/img/widgets/quick_action_widget_ios_add2.png)
+
+</TabItem>
+
+</Tabs>
 
 First you need to select [type of the action](#quick-actions-types) and then you could change its name and parameters ([See below](#quick-actions-types) which parameters could be configured for each action type). Every action should have a unique name.
 
@@ -65,19 +112,30 @@ First you need to select [type of the action](#quick-actions-types) and then you
 
 Quick action panel has only **6 slots** for actions per screen. However you could have multiple screens and actions are grouped by the specified order. In order to change the order of items:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
+<Tabs groupId="operating-systems">
 
-<Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long tap on 'Add action' → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
+<TabItem value="android" label="Android">  
 
-<p> </p>
-
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,configure_screen_quick_action"/> → Click Edit (Pencil icon) → Hold & Drag selected action up and down by the icon (three vertical lines) in the list → Done
+- <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
 
 <p> </p>
 
-|**Android**  | **iOS** |
-|------------|------------|
-| ![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png) | ![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png) |
+- <Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long tap on 'Add action' → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
+
+![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Edit (Pencil icon) → Hold & Drag selected action up and down by the icon (three vertical lines) in the list → Done
+
+![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png) 
+
+</TabItem>
+
+</Tabs>
+
 
 ### Edit / Remove action
 
@@ -89,19 +147,26 @@ There are several ways how to access Quick Action to edit or delete it:
 
  - Delete via "Edit actions" list
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete
 
-<p> </p>
+<Tabs groupId="operating-systems">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions → Delete
+<TabItem value="android" label="Android">  
 
-<p> </p>
- 
- &nbsp;
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
 
-|**Android**  | **iOS** |
-|:------------|:------------| 
-| ![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png) | ![Quick action widget_ios_del](@site/static/img/widgets/quick_action_widget_ios_del.png) |
+![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions → Delete_
+
+![Quick action widget_ios_del](@site/static/img/widgets/quick_action_widget_ios_del.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Quick action types
@@ -126,10 +191,10 @@ There are several ways how to access Quick Action to edit or delete it:
 | <Translate ios="true" ids="show_hide_gpx"/> | Show or hide the last visible tracks on the map. |
 | <Translate ios="true" ids="toggle_poi"/> | Enable or disable POI layer with selected categories. <br /> - **POI Categories**: allows to select multiple categories <br /> Note: Action will replace previously selected categories, if POI layer was active before.   |
 | [<Translate ios="true" ids="toggle_public_transport"/>](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first click): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
-| [<Translate ios="true" ids="change_map_source"/>](../map/raster-maps.md) | Create a list of map sources and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with maps list <br /> - **Do not show an interim dialog**: map sources will be changed by defined  order. <br /> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br /> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br /> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
-| [<Translate ios="true" ids="change_map_overlay"/>](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
-| [<Translate ios="true" ids="change_map_underlay"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above)  |
-| [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="change_map_source"/>** (see above) |
+| [<Translate ios="true" ids="quick_action_map_source_title"/>](../map/raster-maps.md) | Create a list of map sources and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with maps list <br /> - **Do not show an interim dialog**: map sources will be changed by defined  order. <br /> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br /> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br /> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
+| [<Translate ios="true" ids="map_settings_over"/>](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
+| [<Translate ios="true" ids="map_settings_under"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above)  |
+| [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary.md) | Display or hide Mapillary layer on the map |
 | <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide contour lines on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide terrain layer on the map |

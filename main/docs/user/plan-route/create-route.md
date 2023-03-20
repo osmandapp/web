@@ -31,7 +31,7 @@ The 'Plan route' can be switched on:
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plan_route"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plan_route"/>
 
 <p> </p>
 
@@ -130,7 +130,7 @@ Description: [Click to graph](../plan-route/create-route.md#actions-of-points-li
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plan_route,plan_route_create_new_route"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plan_route,plan_route_create_new_route"/>
 
 ### Drawing a line
 
@@ -232,7 +232,7 @@ In 'Options' menu you can make the next actions with your route:
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plan_route,plan_route_open_existing_track"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>
 
 <p> </p>
 
@@ -258,7 +258,7 @@ For using this option you need to open your track by 'Plan route' tool:
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,plan_route,plan_route_open_existing_track"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>
 
 <p> </p>
 

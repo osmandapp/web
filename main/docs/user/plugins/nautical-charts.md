@@ -80,7 +80,7 @@ To change the current map style to Nautical, you need to make the following sett
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
 ![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
@@ -120,7 +120,7 @@ All depth numbers on the Nautical Charts are indicated in meters.
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,res_mapsres,region_nautical"/>*  
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
 
 ![Nautical plugin maps view iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -157,7 +157,7 @@ Nautical map can be included in any profile. However, it is most valuable in the
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*    
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
@@ -215,7 +215,7 @@ You can help OsmAnd app increase the Depth contours database by adding your info
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*    
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
@@ -249,7 +249,7 @@ For more details on the classification of the surface details and the rendering 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*     
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*     
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 

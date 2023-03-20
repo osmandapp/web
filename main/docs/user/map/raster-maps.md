@@ -107,7 +107,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_type"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type"/>*  
 
 ![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
@@ -135,7 +135,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_over"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
@@ -171,7 +171,7 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_overunder,map_settings_under"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
@@ -208,7 +208,7 @@ To download and install Hillshade / Slope Maps, you need to [purchase](../purcha
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,shared_string_terrain"/>*
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -245,7 +245,7 @@ In order to add a new online raster map source go to:
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_settings_map,map_settings_overunder,map_settings_add_online_source"/>*
+*<Translate ios="true" ids="shared_string_menu,map_settings_map,map_settings_overunder,map_settings_add_online_source"/>*
 
 </TabItem>
 
@@ -300,7 +300,7 @@ In order to change tile format you can choose <Translate android="true" ids="sto
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,res_source_sqlite"/> / <Translate ios="true" ids="res_source_one_per_tile"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,res_source_sqlite"/> / <Translate ios="true" ids="res_source_one_per_tile"/>*
 
 </TabItem>
 
@@ -324,7 +324,7 @@ In order to clear map tiles cache you need to do next:
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
 </TabItem>
 
@@ -382,7 +382,7 @@ You can use the raster maps as they are if the tiles are already packaged in map
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

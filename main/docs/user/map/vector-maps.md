@@ -37,7 +37,7 @@ OsmAnd offers you many map styles and data layers that fit by default. Let's tak
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_offline"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_offline"/>*  
 
 </TabItem>
 
@@ -143,7 +143,7 @@ Contour lines are available for all map styles and modes and could be configured
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,product_title_srtm"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,product_title_srtm"/>* 
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Nautical depth contour lines allow you to define areas of equal depth. They are 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
@@ -203,7 +203,7 @@ Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmA
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,show_borders_of_downloaded_maps"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*  
 
 ![show-borders-ios](@site/static/img/map/show-borders-ios.png) 
 
@@ -228,7 +228,7 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_mode"/>*
 
 </TabItem>
 
@@ -253,7 +253,7 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 <TabItem value="ios" label="iOS">   
   
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,res_details"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>* 
 
 </TabItem>
 
@@ -299,7 +299,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,rendering_category_routes"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/routs_ios.png)
 
@@ -356,7 +356,7 @@ When navigating in cities, you need to see public transport in more contrast, as
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_transport"/>*    
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_transport"/>*    
 
 </TabItem>
 
@@ -387,7 +387,7 @@ Sometimes we need to hide objects on the map for better vision. For example to h
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_hide"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_hide"/>* 
 
 </TabItem>
 
@@ -420,7 +420,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_attr_roadStyle_name"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
@@ -451,7 +451,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_text_size"/>*   
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_settings_text_size"/>*   
 
 </TabItem>
 
@@ -480,7 +480,7 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 <TabItem value="ios" label="iOS">  
 
 You can choose this setting by long-click to "+" or "-" button on the screen or:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,map_settings_map_magnifier"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_settings_map_magnifier"/>* 
 
 </TabItem>
 
@@ -509,7 +509,7 @@ This setting allows using of any language for names on the map. If names don't h
 This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="sett_lang_show_trans"/>" switcher): 
 
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,sett_lang"/>*:
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,sett_lang"/>*:
 - &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
 - &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - showing the local language for names additionally for chosen language name.
 - &nbsp;"<Translate ios="true" ids="sett_lang_show_trans"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.

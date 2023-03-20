@@ -53,7 +53,7 @@ Enable / disable POI layer on the map:
 
 <p> </p>
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,poi_overlay"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>
 
 <p> </p>
 

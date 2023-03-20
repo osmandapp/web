@@ -113,7 +113,7 @@ In this menu you can customize the markers you have added. Sort, group, view his
 
 Tapping the menu item (<Translate ios="true" ids="map_markers"/>) opens a list of all markers on the map and the history of previously added markers.
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_markers"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_markers"/>*  
 
 ![Map markers menu iOS](@site/static/img/personal/markers/map_markers_menu_ios.png)
 
@@ -209,7 +209,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
 - <Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
 - <Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
 - <Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
@@ -222,7 +222,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
 
 </TabItem>
 
@@ -254,7 +254,7 @@ In the Android version, there are additional settings for [configuring the widge
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,map_markers,appearance_on_map"/>* 
+*<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>* 
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-01.png)  ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 
@@ -394,7 +394,7 @@ _Estimated arrival time (ETA)_ widget you can choose the time interval: Specify 
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/add_marker_widgets_ios.png)
 
