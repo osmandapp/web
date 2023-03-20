@@ -76,7 +76,7 @@ Check Winter and Ski in Map style:
 <TabItem value="ios" label="iOS">
 
 Check Winter and Ski in Styles for offline maps:  
-*<Translate ios="true" ids="menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
  
 ![Enable Winter style in iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Ski maps plugin map style iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
@@ -147,7 +147,7 @@ To select Skiing profile follow this path:
 <TabItem value="ios" label="iOS">  
 
 To select Skiing profile follow this path:  
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*    
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
@@ -233,7 +233,7 @@ To check on the map whether or not a particular piste is groomed, you need to en
 
 To check on the map whether or not a particular piste is groomed, you need to enable **<Translate ios="true" ids="rendering_attr_pisteGrooming_name"/>** option in the **<Translate ios="true" ids="rendering_category_details"/>** list opened from the [Configure map](../map/configure-map-menu.md) menu, as follows:  
 
-*<Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_details,rendering_attr_pisteGrooming_name"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_details,rendering_attr_pisteGrooming_name"/>* 
 
 ![Enable grooming in iOS](@site/static/img/plugins/ski-maps/ios_details_grooming.png) ![Grooming displayed in iOS](@site/static/img/plugins/ski-maps/ios_grooming_enabled.png)
 
@@ -266,7 +266,7 @@ To find out which pistes outside the ski resort you can navigate, you need to en
 
 To find out which pistes outside the ski resort you can navigate, you need to enable **<Translate ios="true" ids="rendering_attr_pisteRoutes_name"/>** option in the **<Translate ios="true" ids="rendering_category_routes"/>** list, opened from the [Configure map](../map/configure-map-menu.md) menu, as follows:  
 
-*<Translate ios="true" ids="menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes,rendering_attr_pisteRoutes_name"/>*
 
 ![Routes disabled in iOS](@site/static/img/plugins/ski-maps/ios_no_routes.png) ![Routes enabled in iOS](@site/static/img/plugins/ski-maps/ios_yes_routes.png)
 
@@ -300,9 +300,9 @@ Both options are in [Configure map](../map/configure-map-menu.md) menu.
 
 You can find both options in the [Configure map](../map/configure-map-menu.md) menu.  
 
-- To enable the **Night mode** scroll down the list: *<Translate ios="true" ids="menu,configure_map,map_settings_style,map_mode"/>*  
+- To enable the **Night mode** scroll down the list: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_mode"/>*  
 
-- To enable the **Street Lighting** open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate ios="true" ids="menu,configure_map,res_details,rendering_attr_streetLighting_name"/>*
+- To enable the **Street Lighting** open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate ios="true" ids="shared_string_menu,configure_map,res_details,rendering_attr_streetLighting_name"/>*
 
 
 ![Enabling Night mode and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Night and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)

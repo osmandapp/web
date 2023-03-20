@@ -97,11 +97,11 @@ Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see
 
 ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
-_<Translate ios="true" ids="menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
+_<Translate ios="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
 
 or 
 
-_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
+_<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
 
 ![Pro Plan](@site/static/img/purchases/pro.png)
 
@@ -109,7 +109,7 @@ _<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_
 
 ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
 
-_<Translate ios="true" ids="menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
+_<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Click to the list of Maps+ features → Continue with Maps+_
 
 ![Maps+ Plan](@site/static/img/purchases/maps.png)
 
@@ -126,7 +126,7 @@ Use the same Apple ID to restore your purchases.
 - Log in to the same Apple App Store account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
 - Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Open OsmAnd Maps with an active Internet connection.
-- To restore purchases follow these steps: *<Translate ios="true" ids="menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
+- To restore purchases follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 

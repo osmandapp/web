@@ -81,7 +81,7 @@ Screens:
 
 You can download new maps and manage already downloaded maps through the Main Menu:
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,res_mapsres"/>_
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres"/>_
 
 
 **This screen has certain features**

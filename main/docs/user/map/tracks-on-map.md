@@ -53,7 +53,7 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,configure_map,tracks"/> → Choosing tracks for displayed from the list.*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,tracks"/> → Choosing tracks for displayed from the list.*  
 
 ![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png) 
 
@@ -76,7 +76,7 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.*  
+*<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.*  
 
 ![Tracks menu iOS](@site/static/img/map/tracks_myplaces_ios.png)
 
@@ -209,7 +209,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,map_settings_style,rendering_category_routes"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_routes"/>
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
 

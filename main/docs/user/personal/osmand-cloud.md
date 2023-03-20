@@ -74,7 +74,7 @@ Access to your OsmAnd Cloud account is available for one more year after your Pr
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="purchase_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="purchase_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
 
 ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 
@@ -107,7 +107,7 @@ Sync now combines the *Upload all* and *Download all* buttons in the Changes men
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*     
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
@@ -132,7 +132,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
 
@@ -165,7 +165,7 @@ All of your maps are stored on the device that you downloaded them to. And the c
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
 
@@ -190,7 +190,7 @@ The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
 ![Backup data screen iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
@@ -225,7 +225,7 @@ The actions you can do in this section of the Settings menu are irreversible and
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
 
@@ -280,7 +280,7 @@ Changes that have been uploaded from the local version to the cloud are removed 
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
@@ -306,7 +306,7 @@ Tapping Conflicts displays information about the local and cloud versions in syn
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 

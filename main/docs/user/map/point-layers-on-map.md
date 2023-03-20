@@ -78,7 +78,7 @@ By default, Favorites and point of interests (POIs) are displayed without names,
 
 Enable / disable points of interest of **selected** type on the map:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,configure_map,poi_overlay"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
 
 
 ### POI Types
@@ -98,7 +98,7 @@ Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](.
 
 Hide POIs from map style:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*   
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,rendering_category_hide"/>*    
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,configure_map,rendering_category_hide"/>*    
 
 [Read more](../map/vector-maps.md#hide).
 
@@ -109,7 +109,7 @@ Hide POIs from map style:
 
 Follow the path to the available markers and their settings:  
 Android: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*  
-iOS: *<Translate ios="true" ids="menu,map_markers"/>*    
+iOS: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*    
 
 ![Map markers Android](@site/static/img/map/map_markers_android.png) ![Map markers iOS](@site/static/img/map/map_markers_ios.png)   
 You can read more about markers appearance in this [article](../personal/markers#appearance-on-the-map).
@@ -143,7 +143,7 @@ Read more about [search](../search/index.md).
 
 Enable / disable Street-level imagery on the map:   
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,street_level_imagery"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,configure_map,street_level_imagery"/>*  
 
 Requires [Mapillary plugin](../plugins/mapillary.md).
 
@@ -165,7 +165,7 @@ OsmAnd has special Point of Interests indicated with 'W' logo and Wikipedia arti
 
 Enable / disable wikipedia articles on the map and filter by language:   
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,local_indexes_cat_wiki"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,poi_overlay,res_wiki"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,configure_map,poi_overlay,res_wiki"/>*  
 
 [Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
@@ -190,7 +190,7 @@ OSM edit points are user's made POIs for adding its for [OpenStreetMap project](
 
 Enable / disable OSM edits on the map:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,osm_edits_title"/>*   
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,configure_map,osm_edits_title"/>*   
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
@@ -203,7 +203,7 @@ OSM note points are user's made POIs for reporting issue about map data in [Open
 
 Enable / disable OSM notes on the map:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*    
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,configure_map,osm_notes_online_layer"/>*    
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,configure_map,osm_notes_online_layer"/>*    
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
 

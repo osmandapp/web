@@ -34,7 +34,7 @@ To start setting up an application profile:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>*
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles"/>*
 
 ![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
@@ -94,7 +94,7 @@ In this section of the General settings menu, you can set parameters for the cur
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,map_settings_appearance"/>*
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,general_settings_2,map_settings_appearance"/>*
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
@@ -214,7 +214,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,shared_string_others"/>*
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,general_settings_2,shared_string_others"/>*
 
 You can enable/disable buttons and input devices for OsmAnd.
 
@@ -245,7 +245,7 @@ There are no navigation settings in *Browse map* profile.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,routing_settings_2"/>*  
 
 ![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
@@ -288,7 +288,7 @@ Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,configure_map"/>*  
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,configure_map"/>*  
 
 Set parameters for [Configure map](../map/configure-map-menu.md) menu for chosen profile.
 
@@ -319,7 +319,7 @@ Set parameters for [Configure screen](../widgets/configure-screen.md) menu for c
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,layer_map_appearance"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,layer_map_appearance"/>
 
 Set parameters for [Configure screen](../widgets/configure-screen.md) menu for chosen profile.
 
@@ -357,7 +357,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,sett_settings,app_profiles,profile_appearance"/>
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,profile_appearance"/>
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -458,7 +458,7 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins"/>*
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,plugins"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_ios.png)
 
@@ -480,7 +480,7 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,plugins,track_recording"/>*
+*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,plugins,track_recording"/>*
 
 </TabItem>
 
@@ -510,7 +510,7 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 

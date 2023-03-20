@@ -84,7 +84,7 @@ To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific ar
 
 <TabItem value="ios" label="iOS">
 
-- Go to: *<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>*  
+- Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*  
 - Choose a country.
 - Download packages from sections:  
     - The *<Translate ios="true" ids="res_region_map"/>*  section provides available map packages for the entire country. Download them if necessary.  
@@ -160,7 +160,7 @@ To enable contour lines layer go to [*<Translate android="true" ids="shared_stri
 <TabItem value="ios" label="iOS">
 
 
-To enable contour lines layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
+To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
@@ -209,7 +209,7 @@ To enable Hillshade layer go to [*<Translate android="true" ids="shared_string_m
 <TabItem value="ios" label="iOS">
 
 
-To enable Hillshade layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
+To enable Hillshade layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.  
 
 
 ![Hillshade, or Slope options](@site/static/img/plugins/contour-lines/hillshade_ios.png) 
@@ -266,7 +266,7 @@ To enable slope layer go to [*<Translate android="true" ids="shared_string_menu,
 
 <TabItem value="ios" label="iOS">
 
-To enable slope layer go to [*<Translate ios="true" ids="menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
+To enable slope layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_overunder"/>* section, find *<Translate ios="true" ids="map_settings_overunder"/>* and toggle on the **Terrain** option. Tap it, to open the context menu and select one of the options: either **Hillshade**, or **Slope**.      
 
 ![Terrain menu slopes iOS](@site/static/img/plugins/contour-lines/slope_ios.png) 
     

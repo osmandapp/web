@@ -155,7 +155,7 @@ At the bottom of the screen are four Actions buttons.
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,menu_my_places,tracks"/>_
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/>_
 
 Clicking to choosing track opens [Track Context menu](../map/track-context-menu.md) for any actions with it.
 
@@ -294,7 +294,7 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*
+*<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*
 
 ![My Places with tracks in iOS](@site/static/img/plugins/trip-recording/view_all_tr_ios.png)
 
@@ -323,11 +323,11 @@ To display a track on the map another way, open the [**My Places**](../plugins/t
 
 <TabItem value="ios" label="iOS">
 
-For a specific profile, to display a track on the map, open **Configure map** and tap **Tracks**. Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the **Configure map** menu: *<Translate ios="true" ids="menu,configure_map,tracks"/>*.
+For a specific profile, to display a track on the map, open **Configure map** and tap **Tracks**. Then from the opened dialog, check the needed track. To hide a track, either uncheck it from the list of tracks, or toggle off the Tracks option in the **Configure map** menu: *<Translate ios="true" ids="shared_string_menu,configure_map,tracks"/>*.
 
 ![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Select a track to display in iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png)
 
-To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.    
+To display a track on the map another way, open the [**My Places**](../plugins/trip-recording.md#view-all-tracks) menu and then **Tracks**. The *Tracks on map* folder displays the tracks already selected. In the *Rec*, *Import* and *Tracks* folders, you can select one or more tracks to display on the map by first tapping the three dots in the upper right corner and then tapping the Show on Map icon on the bottom menu of the screen. Go to: *<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*.    
 
 ![Show tracks on the map in iOS](@site/static/img/plugins/trip-recording/show_ios.png)  
 
@@ -420,7 +420,7 @@ To move a track to another folder inside My Places, you can use [Context menu of
 
 <TabItem value="ios" label="iOS">
 
-Default folder in My Places for saved new tracks: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+Default folder in My Places for saved new tracks: *<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*.
 
 You can then move the track to any other preferred folder in My Places and/or export the GPX file to an external storage device.   
 

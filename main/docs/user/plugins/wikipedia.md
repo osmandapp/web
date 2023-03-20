@@ -67,10 +67,10 @@ To see what data has already been uploaded, go to: *<Translate android="true" id
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, you can open Wikipedia data to download by region as follows: 
-1. Go to: *<Translate ios="true" ids="menu,res_mapsres,res_worldwide"/>*  
+1. Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*  
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages.  
 
-To see what data has already been uploaded, go to: *<Translate ios="true" ids="menu,res_mapsres,download_tab_local"/>*  
+To see what data has already been uploaded, go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
 ![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png) 
 
@@ -103,7 +103,7 @@ In the **Android** version, to show/hide Wikipedia POIs, do the following:
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, to show/hide Wikipedia POIs, do the following:  
-1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
+1. Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/>*  
 2. Select a Profile, and look for the *<Translate ios="true" ids="map_settings_show"/>* section in the menu.  
 3. Toggle *<Translate ios="true" ids="res_wiki"/>* on.   
 
@@ -207,7 +207,7 @@ In the **Android** version, to set the preferred language for the Wikipedia data
 <TabItem value="ios" label="iOS">
 
 In the **iOS** version, to set the preferred language for the Wikipedia data, do the following:  
-1. Go to: *<Translate ios="true" ids="menu,configure_map"/>*  
+1. Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/>*  
 2. Select a profile and find the *<Translate ios="true" ids="map_settings_show"/>* section of settings.  
 3. Tap *<Translate ios="true" ids="res_wiki"/>*, if needed, toggle *<Translate ios="true" ids="shared_string_enabled"/>* on, and then tap *<Translate ios="true" ids="language"/>*.  
 4. Check the preferred language(-s) in the opened list.  

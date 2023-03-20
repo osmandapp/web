@@ -59,7 +59,7 @@ _ <Translate android="true" ids="android_button_seq"/> <Translate android="true"
 
 <TabItem value="ios" label="iOS">  
 
-_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,map_settings_map,map_settings_overunder"/> _
+_ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,map_settings_overunder"/> _
 
 ![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 

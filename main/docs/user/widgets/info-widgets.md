@@ -87,7 +87,7 @@ This widget shows current time from your device.
 | | |
 |------------|------------|
 | Enable |  *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-|  | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
+|  | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
 | By tapping | No changes. |
 | Format | Time & Format is configured by device settings. |
 
@@ -103,7 +103,7 @@ Speed widget shows your current speed detected by GPS-sensor.
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/> |
 | By tapping  | No changes.|
 | Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
-|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
+|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
 
 ## Average speed widget  
@@ -174,9 +174,9 @@ The widget shows the geographic coordinates of the current geolocation.
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
 | By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
+| Format | <Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
 
@@ -247,7 +247,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/> |
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/> |
 | By tapping | Starts / Stop track recording |
 
 </TabItem>
@@ -325,7 +325,7 @@ This is a Parking plugin widget that shows distance from your screen center to t
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_parking"/> |
 | By tapping | Moves map view to the parking position |
 | Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
-|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
 
 
 ## * Mapillary widget

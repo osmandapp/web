@@ -68,7 +68,7 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 <TabItem value="ios" label="iOS">
 
 - Use the [Distance/Start-Stop widget](#distance-start-stop).
-- Use the **<Translate ios="true" ids="track_recording_name"/>** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*.
+- Use the **<Translate ios="true" ids="track_recording_name"/>** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*.
 
 </TabItem>
 
@@ -177,7 +177,7 @@ Here you can find more helpful information about [Tracks context menu](../map/tr
 
 ### Show on the map
 
-You can choose which tracks are displayed on the map and which are not. To do this, you can use the option *Add to map* in *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*, or use *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> tab*.  
+You can choose which tracks are displayed on the map and which are not. To do this, you can use the option *Add to map* in *<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*, or use *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> tab*.  
 
 <Tabs groupId="operating-systems">
 
@@ -264,10 +264,10 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 | **Minimum accuracy** | This filter allows you to record only points measured with a minimum \"accuracy\" indication (in meters/feet, as reported by Android for your chipset). Accuracy is the proximity of measurements to the true position, and is not directly related to precision, which is the scatter of repeated measurements. *Side effect*: As a result of filtering by accuracy, points may be entirely missing for e.g. below bridges, under trees, between high buildings, or with certain weather conditions. *Recommendation*: It is hard to predict what will be recorded and what not, it may be best to turn this filter off. *Remark*: If GPS had been off immediately before a recording, the first point measured may have a decreased accuracy,so in our code we may want to wait a second or so before recording a point (or record the best of 3 consecutive points, etc.), but this is not yet implemented. |
 | **Minimum speed** | This is a low-speed cut-off filter to not record points below a certain speed. This may make recorded tracks look smoother when viewed on the map. *Side effect*: Your track will be missing all sections where the minimum speed criterion was not met (e.g. where you push your bike up a steep hill). Also, there will be no information about periods at rest, like breaks. This has effects on any analysis or post-processing, like when trying to determine the total length of your trip, time in motion, or your average speed. *Recommendation*: Try using the motion detection via the logging minimum displacement filter (B) first, it may produce better results, and you will lose less data. If your tracks remain noisy at low speeds, try non-zero values here. Please note that some measurements may not report any speed value at all (some network-based methods), in which case you would not record anything. *Remark*: speed > 0 check: Most GPS chipsets report a speed value only if the algorithm determines you are in motion, and none if you are not. Hence using the > 0 setting in this filter in a sense uses the motion detection of the GPS chipset. But even if not filtered here at recording time, we still use this feature in our GPX analysis to determine the Distance corrected, i.e. the value displayed in that field is the distance recorded while in motion. |
 | **Include heading** | If enabled, the heading is saved into the GPX file for every point. The heading is the direction to where the front panel of the vehicle/device points to. It is determined with the angle between the direction where the front panel points to and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
-| **Auto-record track** | If enabled, the track is automatically recorded during navigation and auto-saved in *<Translate ios="true" ids="menu,menu_my_places,tracks"/> tab*. *Note: Trip recording uses the battery energy and continues to run in the background when the screen is closed.* |
+| **Auto-record track** | If enabled, the track is automatically recorded during navigation and auto-saved in *<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> tab*. *Note: Trip recording uses the battery energy and continues to run in the background when the screen is closed.* |
 | **Logging interval during navigation** | It is the frequency of the requests to detect the location with subsequent logging of location points into the track, which is started to be recorded automatically via the enabled **Auto-record track** option. 5 seconds is the default option. Available are the options in the range from 0 seconds to 5 minutes. |
 | **Auto-split recordings after gap** | If enabled, a new segment will automatically start after a 6-minute gap; a new track will automatically start after a 2-hour gap; and a new file will automatically start when the date has changed. The gap is determined as the absence of any point being recorded. Points can, or cannot be detected, **and** not recorded. It might happen due to a number of reasons as well as the current configuration of the Trip recording functionality. For example, the GPS signal is weak because of the current weather conditions and therefore, the location is not detected and not recorded. Or, the speed of the movement gets below the threshold, and thus, the location is actually detected, but not recorded. Such gaps in recorded data can be used to generate a new segment on the same track, or a new track in the same file, or a new GPX file within one recording identified as single start/stop actions performed once at a time. |
-| **Tracks** | This is a quick re-direction to the folder: <Translate ios="true" ids="menu,my_places,tracks"/> tab. |
+| **Tracks** | This is a quick re-direction to the folder: <Translate ios="true" ids="shared_string_menu,my_places,tracks"/> tab. |
 | **Reset plugin settings to default** | You can reset all profile settings to the default ones that you had when you installed the application. |   
 
 </TabItem>
@@ -303,7 +303,7 @@ You can delete or add the Distance/Start-Stop widget and [other widgets](../plug
 <TabItem value="ios" label="iOS">
 
 You can delete or add Distance/Start-Stop widget, by following:  
-*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
 
@@ -344,7 +344,7 @@ If the option *Show Startup Dialog* is disabled in the Trip Recording Plugin set
 <TabItem value="ios" label="iOS">  
 
 To open **Distance/Start-Stop** widget options follow:  
-*<Translate ios="true" ids="menu,layer_map_appearance,map_widget_right,track_recording"/>*    
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>*    
 
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  
 
