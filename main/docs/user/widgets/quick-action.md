@@ -13,19 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
-
-
 Quick Action Widget is a configurable quick access button on the map with selected actions accessible 'just in 2 clicks'.
 
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
