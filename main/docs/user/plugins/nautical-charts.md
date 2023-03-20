@@ -157,7 +157,7 @@ Nautical map can be included in any profile. However, it is most valuable in the
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles"/>*    
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 

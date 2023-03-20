@@ -209,7 +209,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
 - <Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
 - <Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
 - <Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
@@ -222,7 +222,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
 
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="map_settings_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
 
 </TabItem>
 

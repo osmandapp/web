@@ -33,7 +33,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,sett_settings,osmand_settings"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings"/>*  
 
 ![Profiles General Settings iOS](@site/static/img/personal/profiles/general_settings_ios.png)
 
@@ -92,7 +92,7 @@ Read about Android Auto [here](../navigation/auto-car.md)
 
 **<Translate ios="true" ids="carplay_profile"/>** - this profile will be used while it is connected to [CarPlay](https://support.apple.com/en-gb/HT205634).
 
-*<Translate ios="true" ids="shared_string_menu,sett_settings,carplay_profile"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*
 
 ![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
@@ -117,7 +117,7 @@ Display language is the setting of the language of the entire application, pop-u
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,sett_settings"/> → OsmAnd maps → Language*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings"/> → OsmAnd maps → Language*
 
 ![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 

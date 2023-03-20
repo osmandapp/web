@@ -147,7 +147,7 @@ To select Skiing profile follow this path:
 <TabItem value="ios" label="iOS">  
 
 To select Skiing profile follow this path:  
-*<Translate ios="true" ids="shared_string_menu,sett_settings,app_profiles"/>*    
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
