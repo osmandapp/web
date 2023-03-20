@@ -46,7 +46,24 @@ Links to Map during navigation
 
 ### Fuel used by motor	
 
-<Translate android="true" ids="routing_attr_motor_type_description"/> Available types: Petrol, Diesel, LPG, CNG, Electric, Hybrid. 
+If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](./route-navigation.md#route-details).
+Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
+
+</TabItem>
+
+</Tabs>
 
 ### Size parameters
 

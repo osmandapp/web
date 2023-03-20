@@ -17,9 +17,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-## Overview <!-- Add links!!! -->
+## Overview
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a car<!-- Add links!!! -->, ride a horse<!-- Add links!!! -->, ski or walk.  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](./index.md), *Navigation by route* can be used with different [types of routing](./routing/index.md) (or profiles). No matter whether you drive a [car](./routing/car-based-routing.md), ride a [horse](./routing/horse-routing.md), [ski](./routing/ski-routing.md) or [walk](./routing/pedestrian-routing.md).  
 By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./routing/online-routing.md).  
 
 :::tip
@@ -48,21 +48,21 @@ To use the offline navigation, you first need to [download maps](../start-with/d
 
 1. Configure profiles you intend to use for navigation according to your needs:  
 
-    - Set your vehicle parameters<!-- Add link!!! --> (important for truck drivers), select the engine type<!-- Add link!!! --> (optional).
-    - Configure route line appearance<!-- Add link!!! --> (optional, only for Pro users).  
+    - Set your [vehicle parameters](./navigation-settings#size-parameters) (important for truck drivers), select the [engine type](./navigation-settings#fuel-used-by-motor) (optional).
+    - Configure [route line appearance](./map-during-navigation#route-line-appearance) (optional, only for Pro users).  
     - Choose whether to provide [notifications](./voice-navigation.md) during your route or not. If you need voice prompts, [configure](./voice-navigation.md#settings-of-voice-prompts) them.
  
 2. Go to the [Navigation menu](#navigation-menu):
-    - Specify the [destination point](#set-destination).
-    - You can switch between different [routing types](./routing/index.md) to get the best result.
+    - Specify the [destination point](#set-target-point).
+    - You can switch between different [routing types](./routing/index.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../map/interact-with-map#my-location--zoom) to the required one.
   
-3. Additional [navigation settings](./index.md#navigation-settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
+3. Additional [navigation settings](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 
-4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](./index.md#simulate-navigation) (with this function you can test your route before actually traveling along it).
+4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulate-navigation) (with this function you can test your route before actually traveling along it).
 
-5. [Stop](#start--stop-navigation) navigation.
+5. While on the route you can [Pause/Resume](#pause--resume-navigation) navigation and [Stop](#start--stop-navigation) it.
 
 ### Navigation menu  
 
@@ -70,19 +70,19 @@ There are 3 ways to reach the navigation menu:
 
 - [The navigation button](../widgets/map-buttons.md#directions) on the map screen.  
 - *Direction to/from* in a [map context menu](../map/map-context-menu#directions-to--from).  
-- Navigation section in the main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation menu Android 1](@site/static/img/navigation/route/navigation_by_route_menu_andr_1.png) ![Navigation menu Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+![Navigation menu Android 1](@site/static/img/navigation/route/navigation_by_route_menu_andr_1.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation menu iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png) ![Navigation menu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
+![Navigation menu iOS 1](@site/static/img/navigation/route/navigation_by_route_menu_ios_2.png)  
 
 </TabItem>
 
@@ -90,26 +90,47 @@ There are 3 ways to reach the navigation menu:
 
 - &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows you to choose where your route will start. The default value is [my curent location](../map/interact-with-map.md#my-location--zoom), though you can set a different one.
 - &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-destination).
-- &nbsp;_<Translate android="true" ids="search_button"/>_ - opens [the search menu](../search/index.md).
-- &nbsp;_<Translate android="true" ids="shared_string_address"/>_ - opens [address search menu](../search/search-address.md).
-- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map to choose a destination point by tapping on the map.
-- &nbsp;_<Translate android="true" ids="shared_string_favorites"/>_ - allows to use [Favorite](../personal/favorites.md) as a destination.
-- &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose one of the [Map markers](../personal/markers.md) as a destination point.
-- &nbsp;"&#8595;&#8593;" _Swap Starting point and Destination_ - allows to swap *Start* and *Finish* points.
 - &nbsp;"&#43;" - allows to add [intermediate points](../widgets/nav-widgets.md#intermediate-destination) for navigation.
+- &nbsp;"&#8595;&#8593;" - allows to swap *Start* and *Finish* points.
+- &nbsp;"&#128266;" - can be used to switch off [Voice prompts](./voice-navigation.md).
+- &nbsp;_<Translate android="true" ids="shared_string_settings"/>&#x2699_ - leads to menu where you can quickly adjust some of the [Navigation settings](#settings).
 
+In Navigation menu you can set your destination using:
+- Special favories points [**Home / Work**](#use-home--work-points).
+- Previous route or History.
 
+Cansel button at the bottom of the screen leads back to the main screen. [Start button](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
+  
 ### Choose starting point
 
 As for the starting point, you can choose your current location, location of a [Favorite point](../map/point-layers-on-map.md#favorites), select a point on the map or use [Search](../search/index.md). You can also set a starting point in [Map Context menu](../map/map-context-menu.md) by selecting the [Directions from](../map/map-context-menu.md#directions-to--from) function.  
 
 ### Set target point
 
-The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../search/index.md#overview) function, or simply on a map. You can also set destination point in the [Navigation menu](#navigation-menu). You can also set destination using special options in [Navigation menu](#navigation-menu):  
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../search/index.md#overview) function, or simply on a map. You can also set target point in the [Navigation menu](#navigation-menu):  
 
-- Home - Work points - _Home_ and _Work_ tabs (or [Special points](../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu.  
-- Previous route - Last route which you built for navigation.
-- History - Tracks list.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation menu Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation menu iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
+
+</TabItem>
+
+</Tabs>
+
+- &nbsp;_<Translate android="true" ids="search_button"/>_ - opens [the search menu](../search/index.md).
+- &nbsp;_<Translate android="true" ids="shared_string_address"/>_ - opens [address search menu](../search/search-address.md).
+- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map to choose a destination point by tapping on the map.
+- &nbsp;_<Translate android="true" ids="shared_string_favorites"/>_ - allows to use [Favorite](../personal/favorites.md) as a destination.
+- &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose one of the [Map markers](../personal/markers.md) as a destination point.
+- &nbsp;"&#8595;&#8593;" _Swap Starting point and Destination_ - allows to swap *Start* and *Finish* points.
+
 
 ### Intermediate destinations
 
@@ -163,13 +184,14 @@ In this menu, you can find additional options for managing destinations points:
 
 ### Use Home / Work points
 
+_Home_ and _Work_ tabs (or [Special points](../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu.  
 
 ## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
 :::note
-After the route is created, in the ["Details" section](../navigation/index.md#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+After the route is created, in the ["Details" section](#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -204,6 +226,10 @@ To save your device battery, while navigation you can use [“Screen control”]
 
 In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile.  
 
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.  
+- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
+
 :::info
 There are no navigation settings in *Browse map* profile.  
 :::
@@ -212,15 +238,11 @@ There are no navigation settings in *Browse map* profile.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>* 
-
 ![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
 
 ![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
 
@@ -230,13 +252,9 @@ There are no navigation settings in *Browse map* profile.
 
 - &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
 
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing and which parameters will be shown on the device screen. During navigation, you can change some of these parameters in Navigation Options<!-- Add link!!! -->.  
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation).
 
-Below, you can find the list of possible route options.  
-
-
-Please read check route parameters for the corresponding navigation type.
-
+Please read about route parameters for the corresponding navigation type.
 
 ### Navigation type / route parameters
 
@@ -361,35 +379,10 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *start=52.310331,4.863615*- coordinates of the start point.
 - If the coordinates are not specified, My Location is used.
 - *end=52.327645,4.863272* - coordinates of the end point.
-- *mode=pedestrian* - type of navigation, which depends on the selected profile.
+- *mode=pedestrian* - type of [routing](../navigation/routing/index.md), which depends on the selected profile.
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 :::
 
 :::note
 The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
 :::  
-
-#### Select engine type
-
-If you have selected the engine type in the vehicle parameters<!-- Add link!!! -->, the CO2 footprint data will be displayed above the graph.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*
-
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="menu,routing_settings"/>*
-
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
-
-</TabItem>
-
-</Tabs>
-

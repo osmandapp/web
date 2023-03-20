@@ -16,111 +16,94 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-[Car](#car-routing-features), [truck](#truck-routing-features), and [motorcycle](#motorcycle-routing-features) routing features are designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. This can help drivers save time, fuel, and avoid hazards on the road.
+Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. Right routing settings can help drivers save time, and fuel, and avoid hazards on the road.  
 
-## Route parameters - Car
+:::info
+The rooting mechanism for ground vehicles differs only in a few settings. Common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their particularities.  
+:::
 
-Car routing takes into account road types, speed limits, and other driving restrictions (one-way streets, ban on turns, etc.). It is designed to help drivers find the most efficient and direct routes to their destinations. It also helps avoid roads that are not suitable for cars, such as narrow roads or roads with weight restrictions.  
-Car routing can be configured according to your needs in [Navigation settings](../../navigation/#navigation-settings) of the Driving profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*).  
+Routing can be configured according to your needs in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the corresponding profile (Driving, Truck, Motorcycle):  
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2,route_parameters"/>*.  
+  
+You can also tune car-based routing rules while building navigation to your destination:
+- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
+
+## Common parameters - Car
+
+Car routing is designed to help drivers find the most efficient and direct routes to their destinations. It takes into account common driving restrictions (one-way streets, ban on turns, pedestrian zones) and also helps avoid roads that are not suitable for cars, such as narrow roads or roads with weight limitations.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Car routing settings Android 1](@site/static/img/navigation/routing/routing_car_settings_andr_1.png) ![Car routing settings Android 2](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Car routing settings Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Car routing settings iOS 1](@site/static/img/navigation/routing/routing_car_settings_ios_1.png) ![Car routing settings iOS 2](@site/static/img/navigation/routing/routing_car_settings_ios_2.png)
-
+![Car routing settings iOS 1](@site/static/img/navigation/routing/routing_car_settings_ios_2.png)
 
 </TabItem>
 
 </Tabs>
-
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation. You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road types from the list.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_avoid_roads_andr.png) </details>       | <ul><li><Translate android="true" ids="routing_attr_avoid_toll_name"/></li><li><Translate android="true" ids="routing_attr_avoid_unpaved_name"/></li><li><Translate android="true" ids="routing_attr_avoid_borders_name"/></li><li><Translate android="true" ids="routing_attr_avoid_ice_roads_fords_name"/></li><li><Translate android="true" ids="routing_attr_avoid_ferries_name"/></li><li><Translate android="true" ids="routing_attr_avoid_motorway_name"/></li><li><Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/></li><li><Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/></li><li><Translate android="true" ids="routing_attr_avoid_tunnels_name"/></li><li><Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>(only suitable for 4WD vehicles)</li></ul>|
-| *<Translate android="true" ids="prefer_in_routing_title"/>* |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> |   |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
-| *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>*  |  <details><summary> Roads, that are closed for goods delivery will be avoided. </summary>![Goods delivery Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| This option applies only for vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use [Truck profile](#truck-routing-settings).   |
-| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> |  |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* |  You can use temporaty limitations from OpenStreetMap for routing.  |    |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation. You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road types from the list.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_avoid_roads_andr.png) </details>       | <ul><li>[<Translate android="true" ids="routing_attr_avoid_toll_name"/>](https://wiki.openstreetmap.org/wiki/Key:toll)</li><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Avoid crossing a border into another country)</li><li>Avoid [ice roads](https://wiki.openstreetmap.org/wiki/Key:ice_road) (seasonal roads in cold regions that are laid upon frozen water) and [fords](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (parts of a highway where a waterway runs over it) </li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (a type of water transportation, that carries  vehicles across bodies of water)</li><li>[<Translate android="true" ids="routing_attr_avoid_motorway_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway)</li><li>[<Translate android="true" ids="routing_attr_avoid_low_emission_zone_name"/>](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone)</li><li>[<Translate android="true" ids="routing_attr_avoid_shuttle_train_name"/>](https://wiki.openstreetmap.org/wiki/Proposed_features/shuttle_train) (car-carrying trains, that connect two places not easily accessible to each other by road)</li><li>[<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[<Translate android="true" ids="routing_attr_avoid_4wd_only_name"/>](https://wiki.openstreetmap.org/wiki/Key:4wd_only) (only suitable for 4WD vehicles)</li></ul>|
+| *<Translate android="true" ids="prefer_in_routing_title"/>* |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> | For car routing it is assumed, that the surface of roads is [paved](https://wiki.openstreetmap.org/wiki/Key:surface), unless otherwise specified. |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Ignore private access restrictions for routing.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
+| *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>*  |  <details><summary> Roads, that are closed for goods delivery, will be avoided. </summary>![Goods delivery Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| This option applies only to vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use the [Truck profile](#truck-routing-settings).   |
+| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | In most cases, the shortest route will be suggested. Often this route can take longer than if the setting was disabled |
+
+The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](./index.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.  
+
+*[<Translate android="true" ids="default_speed_setting_title"/>](../navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../navigation-settings.md#default-speed)* (iOS) are used to determine whether the road can be used for routing.  
+
+In the [development section](../routing/index.md#development-settings) of Route parameters, you can configure routing settings that are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+## Route parameters - Truck
+
+Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle [height, weight, and width restrictions](../navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (see table below). All other routing settings are identical to [car routing](#route-parameters---car).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_settings_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_truck_settings_ios_2.png)
+
+</TabItem>
+
+</Tabs>
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* |  Enable to calculate the fastest route or disable for fuel-saving route.   |              |
-| *<Translate ios="true" ids="impassable_road"/>* | <details><summary> Select roads you want to avoid during navigation. You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose a type(s) from the list.  </summary>![Avoid roads iOs](@site/static/img/navigation/routing/car_avoid_roads_ios.png) </details>    | <ul><li><Translate ios="true" ids="routing_attr_avoid_toll_name"/></li><li><Translate ios="true" ids="routing_attr_avoid_low_emission_zone_description"/></li><li><Translate ios="true" ids="routing_attr_avoid_unpaved_name"/></li><li><Translate ios="true" ids="routing_attr_avoid_ferries_name"/></li><li>Avoid 4WD roads (only suitable for 4WD vehicles)</li><li><Translate ios="true" ids="routing_attr_avoid_tunnels_description"/></li><li><Translate ios="true" ids="routing_attr_avoid_borders_name"/></li><li><Translate ios="true" ids="routing_attr_avoid_shuttle_train_name"/></li><li><Translate ios="true" ids="routing_attr_avoid_ice_roads_fords_name"/></li><li><Translate ios="true" ids="routing_attr_avoid_motorway_name"/></li></ul>|
-| *<Translate ios="true" ids="routing_attr_allow_private_name"/>* |  Ignore private access restrictions for routing.  |    |
-| *<Translate ios="true" ids="routing_attr_goods_restrictions_name"/>*  |  <details><summary> Roads, that are closed for goods delivery will be avoided. </summary>![Goods delivery iOS](@site/static/img/navigation/routing/goods_delivery_ios.png) </details>| This option applies only for vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use [Truck profile](#truck-routing-settings).   |
-| *<Translate ios="true" ids="prefer_in_routing_title"/>* |  <details><summary> <Translate ios="true" ids="routing_attr_driving_style_prefer_unpaved_description"/>  </summary>![Prefere iOS](@site/static/img/navigation/routing/car_prefer_ios.png) </details> |    |
-| *<Translate ios="true" ids="consider_limitations_param"/>* |  You can use temporaty limitations from OpenStreetMap for routing.  |    |
-| *<Translate ios="true" ids="road_speeds"/>* |  You can set the minimum and the maximum travel speeds for all roads in the route.  |    |
-
-
-## Route parameters - Truck 
-
-Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle height, weight, and width restrictions, as well as information about road types and inclines that may be difficult for trucks to navigate. This helps truck drivers find the most suitable and efficient routes to their destinations, while avoiding roads that may be unsafe or inaccessible for their vehicles.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Truck routing settings Android 1](@site/static/img/navigation/routing/routing_truck_settings_andr_1.png) ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_settings_andr_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Truck routing settings iOS 1](@site/static/img/navigation/routing/routing_truck_settings_ios_1.png) ![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_truck_settings_ios_2.png)
-
-</TabItem>
-
-</Tabs>
-
-Truck routing can be configured according to your needs in [Navigation section](../../personal/profiles.md#navigation-settings) of settings of the Truck profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*).  
-
-<details><summary> Transporting of hazardous materials option </summary>
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Transporting of hazardous materials Android](@site/static/img/navigation/routing/hazards_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Transporting of hazardous materials iOS](@site/static/img/navigation/routing/hazards_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-</details>
+|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> The transportation of hazardous materials on certain roads or tunnels may be prohibited by local authorities </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/hazards_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
+|*<Translate android="true" ids="routing_attr_hazmat_category_name"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. You can also consider them on the route. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/truck_hazmat_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the USA restrictions.  |
 
 ## Route parameters - Motorcycle
 
-Moto routing is designed for motorbike riders and takes into account the unique needs of motorbike riders, such as the ability to filter through traffic and the importance of avoiding roads with poor road conditions. into account factors such as winding roads, scenic routes, and other features that may be appealing to motorcycle enthusiasts. It also takes 
+Motorcycle routing is designed to create the best possible route for motorcycle riders, taking into account their preferences (for example, you can prefer or avoid roads with poor road conditions).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Motobicke routing settings Android 1](@site/static/img/navigation/routing/routing_moto_settings_andr_1.png) ![Motobicke routing settings Android 2](@site/static/img/navigation/routing/routing_moto_settings_andr_2.png)
+![Motorbicke routing settings Android 2](@site/static/img/navigation/routing/routing_moto_settings_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Motobicke routing settings iOS 1](@site/static/img/navigation/routing/routing_moto_settings_ios_1.png) ![Motobicke routing settings iOS 2](@site/static/img/navigation/routing/routing_moto_settings_ios_2.png)
+![Motorbicke routing settings iOS 2](@site/static/img/navigation/routing/routing_moto_settings_ios_2.png)
 
 </TabItem>
 
-</Tabs>o
-
-Motorcycle routing can be configured according to your needs in [Navigation section](../../personal/profiles.md#navigation-settings) of the settings of the Motorcycle profile (*Settings - Profiles - Driving - Navigation settings - Route parameters*).  
+</Tabs>
