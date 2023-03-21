@@ -24,7 +24,7 @@ To be able to use the iOS version of the OsmAnd app in CarPlay, you must purchas
 
 OsmAnd is available for [*CarPlay*](https://www.apple.com/ios/carplay/) functions in your vehicle. You can connect your iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
-<!--
+
 _____  
 CarPlay is software developed by Apple that allows iPhone owners to use some functions of their phone on the screen of a car connected to the CarPlay system.
 
@@ -41,7 +41,7 @@ To use CarPlay and the navigation apps on your vehicle's screen, follow these st
 5. To create a route, you must enter a destination on the CarPlay screen or in the app.
 6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
 7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.
--->
+
 
 
 ## Setup
@@ -52,7 +52,7 @@ First, you need to select and configure the profile to be used when connecting t
 For quick access to the list of profiles available for connecting to CarPlay, the iOS version of the OsmAnd app has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.  
 :::
 
-<!--
+
 ____  
 To use CarPlay and the navigation apps on your vehicle's screen, follow these steps:
 
@@ -65,7 +65,7 @@ To use CarPlay and the navigation apps on your vehicle's screen, follow these st
 7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station. 
 
 
-
+______  
 To use CarPlay in a vehicle compatible with this system, follow these steps:
 
 1. Connect your iPhone to the car multimedia system using a Lightning cable or wirelessly via Wi-Fi or Bluetooth. The first connection may require permission to use CarPlay on the iPhone.
@@ -78,7 +78,7 @@ To use a navigation application such as Apple Maps, select it from the CarPlay m
 
 Please note that an Internet connection may be required to use the navigation apps in CarPlay. If Internet access on your iPhone is limited, you can use applications such as Google Maps or Waze, which allow you to preload maps and routes and use them without the Internet.  
 
--->
+______  
 
 For OsmAnd to work, you need to connect your iOS device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for CarPlay](https://www.apple.com/ios/carplay/available-models/).
@@ -90,6 +90,10 @@ For OsmAnd to work, you need to connect your iOS device to the vehicle's multime
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen.png)  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point.png)
+
+:::note
+All categories for route endpoint selection, [History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
+:::
 
 
 ## Start navigation
@@ -110,9 +114,9 @@ Most OsmAnd settings directly related to navigation are available in CarPlay. In
 
 ## User points group 
 
-You can select preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md) or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point.  
+You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md) or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point.  
 - Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites).  
-- In the folder list that opens, select the needed one. A list of 12 or 24 folders is available, the number depends on your vehicle's multimedia system. 
+- In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
     -  The *Last modified* folder contains a list of recent destinations.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
 - The list of points within folders is also sorted by date of addition or change. Each point has: a name or coordinates, an icon, whose shape, color and icon are set by default or chosen by you, as well as the distance from the point of the current location to it.  
@@ -125,7 +129,7 @@ While driving, selected points can be announced when you approach or pass them. 
 
 You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories. POI is a type of points that are highlighted on the map by special icons provided in the application settings, and sorted into groups.  
 
-<!--
+
 ___  
 To navigate to a POI (point of interest) in CarPlay, follow these simple steps:
 
@@ -136,7 +140,7 @@ To navigate to a POI (point of interest) in CarPlay, follow these simple steps:
 5. The app will begin calculating the route and showing directions on the screen. Depending on the settings of your navigation app and your vehicle, you may receive voice instructions to guide you to your destination.
 6. If you want to change your route or navigation settings, you can use the on-screen buttons or voice search to make changes.
 7. When you approach your POI, the app can suggest a parking spot, if there is one.
-8. When you arrive at the location, the app will notify you that you have reached your POI.  -->
+8. When you arrive at the location, the app will notify you that you have reached your POI. 
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi-rest.png)    
 
@@ -152,7 +156,7 @@ To use [markers](../personal/markers.md#overview) in CarPlay for navigation, the
 
 Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using CarPlay you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
 
-<!--
+
 List item quantity on CarPlay limited from 12 or 24 items.
 
 Currently when selecting Favourites or Tracks on CarPlay we show all points and tracks as one list divided by group name, so only 12 or 24 first items are visible.
@@ -167,7 +171,7 @@ Favorites
  Favorite icon:
  Show proper icon with shape, colour, icon if we can
  If not, show selected icon with proper colour  
--->
+
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites-last-modified.png)  
 
@@ -180,19 +184,22 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.   
 
-<!--
+
 Show folders list
  Taping on folder > open folder with the list of included tracks
 
  We need to show folders first, so we can show first 12 or 24 folders and the same amount on favourites points or tracks in each folder.
 
--->
+
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-mod.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-rec.png) 
 
 
 
 ## History
+
+Option to choose navigation point from History  
+ Tap open screen with search history and last route sorted by last used  
 
 [Search History](../search/search-history.md)  
 
