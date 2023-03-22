@@ -29,12 +29,10 @@ To use CarPlay and the OsmAnd app on your vehicle's screen, follow these steps:
 1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, it probably does. Check the [list](https://www.apple.com/ios/carplay/available-models/) of car models with CarPlay support.  
 2. Connect your device to your vehicle's multimedia system using a Lightning cable or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
 3. Once connected, the CarPlay interface will automatically appear on your car screen with all available apps.
+4. To use OsmAnd, select it on the CarPlay screen.   
 
 
-_____
-
-
-4. To use OsmAnd, select it on the CarPlay screen. A map is displayed with routes and destinations marked on it.
+<!--
 5. To create a route, you must enter a destination on the CarPlay screen or in the app.
 6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
 7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.  
@@ -43,15 +41,12 @@ _____
 4. Once you've selected a location, press Start or Go to start your route.
 5. As you drive, the vehicle screen will display detailed route instructions, including turns, distances, and arrival times.
 6. If you want to change your route or select a different location, you can use Siri voice commands or press the appropriate buttons on the screen.
-7. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.   
-
-
-Note that you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can preload or create routes and use them without the Internet.
+7. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.   -->
 
 
 ## Setup
 
-First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).  
+First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md).    
 
 :::note
 For quick access to the list of profiles available for connecting to CarPlay, the iOS version of the OsmAnd app has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.  
@@ -63,6 +58,10 @@ For OsmAnd to work, you need to connect your iOS device to the vehicle's multime
 - To find out how to connect and set up your device, please visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) websites. 
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
+
+
+
+Note that you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can preload or create routes and use them without the Internet.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen.png)  
 
@@ -194,7 +193,15 @@ Through the *Navigation* menu in Car Play, you can select the end point of the r
 In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. CarPlay does not have a function to set up voice prompts.  
 
 
-### Notifications
+### Announce incoming text messages
+
+You can change the notification settings for the OsmAnd app in the system settings of your device. Tap CarPlay, then select one of the following items:
+
+- *Announce New Messages*.
+- *Silence New Messages*.
+- *Remember Previous Setting*.
+
+You can also enable or disable Announce messages directly in CarPlay. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios). 
 
 
 ### Screen Alert widget
@@ -205,7 +212,9 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert.png)  
 
 
-### 2.5D view
+### Map appearance
+
+You can change the viewing angle for the 2.5D view of the map on your vehicle's multimedia system screen.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D.png)    
 
