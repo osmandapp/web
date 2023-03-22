@@ -47,7 +47,6 @@ Offline OsmAnd routing is based on OpenStreetMap data and provides variety of ro
 
 [Select roads](../../map/map-context-menu.md#avoid-road) on map to avoid
 
-
 ### Avoid temporary closures
 
 Consider temporary limitations
@@ -64,12 +63,12 @@ More info about this possibility you may find in [Technical documentation](../..
 ### Development settings
 
 | Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | You can use OsmAnd Live updates for navigation.  |  Enable / disable for testing purpose use of Live updates for routing |
-| *<Translate android="true" ids="use_two_phase_routing"/>  | You can use <Translate android="true" ids="complex_routing_descr"/> |   |
-| *<Translate android="true" ids="use_fast_recalculation"/> | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   |
+|:------------|:---------------|
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use OsmAnd Live updates while routing. Note, that we recommend to use this option for testing purposes only. |   
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | You can use <Translate android="true" ids="complex_routing_descr"/> |  
+| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |  
 
-## Direct to point 
+## Direct to point
 
 - *[Straight line routing](./straight-line-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which is recalculated if location is far away from straight line.  
 - *[Direct-to-point routing](./direct-to-point-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing.
