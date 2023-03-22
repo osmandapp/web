@@ -26,10 +26,14 @@ You can participate in testing the OsmAnd beta build through Google Play.
 * Added ["Speed/Slope" graph](#speedslope-graph) for track analysis.
 * Added ["Nautical miles/feet"](#nautical-miles-and-feet) unit of length.
 * The [App language](#app-language-for-android-13) selection was moved to the system settings on Android 13.
+* Added possibility to download online tiles used as "Overlay" or "Underlay" maps.
+* Added support of imperial measurement units for "Vehicle parameters".
+* New Moped profile.
 * [Simulate location](#redesign-simulate-location) redesign.
 * [**Bugs fixs:**](#bugs-fixs)
   * Fixed [bugs with Android Auto](#android-auto).
   * Fixed issues with [displaying Vegan places](#vegan-places-pois).
+  * Fixed map gestures for tilt, zoom and rotation.
 
 
 

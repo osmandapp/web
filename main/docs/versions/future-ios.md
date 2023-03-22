@@ -34,6 +34,9 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
       - [Accessibility](#accessibility)
       - [New Profile](#new-profile)
       - [Tracks](#tracks)
+      - [Moped profile](#moped-profile)
+      - [External keyboards](#external-keyboards)
+      - [OsmAnd Cloud updates](#osmand-cloud-updates)
 
 
 ### Minimum iOS version
@@ -231,5 +234,16 @@ Added the ["Moped"](../user/navigation/routing/moped-routing.md) profile.
 - Tracks start to [be visible on the map](https://github.com/osmandapp/OsmAnd-Issues/issues/1167) from 200 km zoom, even if they more then 3000 km long.
 - [Currently recorded track](https://github.com/osmandapp/OsmAnd-Issues/issues/1601) appear in the menu after recording stops.
 - Import of [Garmin GPX Tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/2640): Track Extensions are attributed to the wrong Track.
+
+#### Moped profile
+
+Added new Moped profile.
+
+#### External keyboards
+
+Improved support of external keyboards, added support for basic actions.
+#### OsmAnd Cloud updates
+
+OsmAnd Cloud bug fixes and UI improvements.
 
 

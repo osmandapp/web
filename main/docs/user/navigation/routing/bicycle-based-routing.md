@@ -17,63 +17,44 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists, as well as other factors such as elevation differences and pedestrian traffic. The features of riding a city bike are also good for navigate routes for riding a [moped](#moped-routing-settings) and can be useful for [mountain biking](#mtb-routing-settings).
+Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists, as well as other factors such as elevation differences and, for example, pedestrian crosswalks. Bicycle routing can also be useful for [mountain biking](#mtb-routing-settings).
 
+You can configure *Bicycle routing* in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the *Cycling profile*.
 
-## Bicycle routing settings
+## Route parameters - Bicycle
 
-Bicycle routing is especially important because it is designed to help cyclists plan and navigate routes that are optimal for their needs. For example, cyclists may want to avoid busy roads or steep climbs, and instead, choose quieter routes with less traffic and gentler slopes. OsmAnd's bicycle routing feature allows cyclists to input a start and end point, and then generates a route that takes into account their preferences and local geography.  
-
-Bicycle routing can be configured according to your needs in [Navigation settings](../../navigation/#navigation-settings) of the Bicycle profile.
+OsmAnd's bicycle routing features allows cyclists to input a start and end point, and then generate a route that takes into account their preferences and local geography.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-*Menu → Configure profile → Navigation settings → Route parameters*
-
-![Bicycle routing settings](@site/static/img/navigation/routing/Bicycle-based_bicycle_andr-4.png)  
-
-
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
-| *<Translate android="true" ids="routing_attr_driving_style_name"/>*   |  Select a driving target to get a shorter, faster, safer, or unpaved route. | *<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>*: prefer unpaved over paved roads for routing. <br />  *<Translate android="true" ids="routing_attr_driving_style_safety_name"/>*: prefer safer roads for routing. <br /> *<Translate android="true" ids="routing_attr_driving_style_balance_name"/>*: prefer faster way for routing. <br />  *<Translate android="true" ids="routing_attr_driving_style_speed_name"/>*: prefer shorter way for routing. <br />     |
-| *<Translate android="true" ids="impassable_road"/>* |  Avoid certain routes and road types for routing:    |  Each navigation type has its own set of avoiding.  |
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  <Translate android="true" ids="routing_attr_allow_private_description"/>  |    |
-| *<Translate android="true" ids="routing_attr_allow_motorway_name"/>* |  <Translate android="true" ids="routing_attr_allow_motorway_description"/>  | Cycling |
-| *<Translate android="true" ids="routing_attr_height_obstacles_name"/>* |  Allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* |  <Translate android="true" ids="temporary_conditional_routing_descr"/>. Data from OpenStreetMap. |    |  
+![Bicycle routing settings](@site/static/img/navigation/routing/Bicycle-based_bicycle_andr-4.png)    
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*Menu → Settings → App profiles → Navigation settings → Route parameters*
-
 ![Bicycle routing settings iOS](@site/static/img/navigation/routing/Bicycle-based_bicycle__ios_1.png)  
-
-
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate ios="true" ids="recalculate_route"/>* |  <Translate ios="true" ids="route_recalculation_descr"/>    |              |
-| *<Translate ios="true" ids="recalculate_wrong_dir"/>*  |  The route will be recalculated if you are moving to the start point.   |              |
-| *<Translate android="true" ids="fast_route_mode"/>* |  <Translate android="true" ids="fast_route_mode_descr"/>    |              |
-| *<Translate ios="true" ids="routing_attr_driving_style_name"/>*   |  Select driving puprose to get shorter, faster, safer or unpaved route. | *<Translate ios="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>*: prefer unpaved over paved roads for routing. <br />  *<Translate ios="true" ids="routing_attr_driving_style_safety_name"/>*: prefer safer roads for routing. <br /> *<Translate ios="true" ids="routing_attr_driving_style_balance_name"/>*: prefer faster way for routing. <br />  *<Translate ios="true" ids="routing_attr_driving_style_speed_name"/>*: prefer shorter way for routing. <br />     |
-| *<Translate ios="true" ids="impassable_road"/>* |  Avoid certain routes and road types for routing:    |   Navigation types and notes           |
-| *<Translate ios="true" ids="preferred_terrain"/>* |  allows choosing relief parameters for the routing. The routing could avoid strong uphills:   |   Cycling routing |  
-| *<Translate ios="true" ids="routing_attr_allow_motorway_name"/>* |  using Motorways for routing  |   Cycling routing |
-| *<Translate ios="true" ids="routing_attr_allow_private_name"/>* |  Ignore the Private Access restriction for routing  |    |
-| *<Translate ios="true" ids="consider_limitations_param"/>* |  Using temporaty limitations for routing from OpenStreetMap data  |    |
-| *<Translate ios="true" ids="road_speeds"/>* |  Setting the minimum and the maximum travel speed for all roads in the route.  |    |
 
 </TabItem>
 
 </Tabs>
 
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+|*<Translate android="true" ids="fast_route_mode"/>*  |  The routing mechanism will choose more direct and, accordingly, faster roads.  | Despite the increase in the speed of movement, the distance traveled also increases at the same time. This leads to an increase in muscle effort. |
+| *<Translate android="true" ids="routing_attr_driving_style_name"/>* (Android) *Driving&nbsp;style* (iOS) | <details><summary> You can choose your riding style for a better routing. </summary> ![Riding style cycling Android](@site/static/img/navigation/routing/style_cycling_andr.png)  </details>  | <ul><li> [<Translate android="true" ids="routing_attr_driving_style_safety_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway#Examples) </li><li> [<Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface#Unpaved) </li><li>  <Translate android="true" ids="routing_attr_driving_style_balance_name"/> </li><li>  <Translate android="true" ids="routing_attr_driving_style_speed_name"/> </li></ul>  |
+| *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road type(s) from the list:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Avoid crossing a border into another country)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (a type of water transportation, that carries  vehicles across bodies of water)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (parts of a highway where a waterway runs over it) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel)</li><li>[No cobblestone](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone) or [sett](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Ignore private access restrictions for routing.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Preferred&nbsp;terrain* (iOS) | <details><summary> Elevation data will be used in route calculation: penalties for roads with another elevation profile will be set. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | This preference can help avoid steep hills or vice versa, prefer them. Using this option may be very helpful in pedestrian routing. |
 
+The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](./index.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.  
 
-## MTB routing settings
+*[<Translate android="true" ids="default_speed_setting_title"/>](../navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../navigation-settings.md#default-speed)* (iOS) are used to determine whether the road can be used for routing.  
 
-The MTB (mountain biking) routing feature in the OsmAnd app is similar to bicycle routing, but specifically designed for off-road riding on rough terrain. It takes into account factors such as unpaved roads, gravel paths, and steep slopes, and helps riders find the safest and most enjoyable routes for their mountain biking adventures.
+In the [development section](../routing/index.md#development-settings) of Route parameters, you can configure routing settings that are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
+## MTB routing particularities
+
+The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note, that there are some penalties for using [MTB routes](../../map/vector-maps.md#routes), and therefore they are less likely to be offeredfor for cycling to home or to work.  

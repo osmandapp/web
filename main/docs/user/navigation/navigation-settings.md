@@ -16,7 +16,21 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Navigation Type / Route Parameters
 
-Links to Route parameters
+For each profile (except *Browse map*) can be chosen routing type.
+
+Route parameters can be reached through:
+
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2,route_parameters"/>*.  
+  
+You can also tune routing rules while building navigation to your destination:
+- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
+
+:::note
+The most important routing parameters can also be found in *Navigation menu* in settings section:
+- *Navigation button → <Translate android="true" ids="shared_string_settings"/>*  
+-  *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*
+:::
 
 ## Voice Prompts
 
@@ -44,7 +58,7 @@ Links to Map during navigation
 ### Min/max speed (Road speeds)
 
 
-### Fuel used by motor	
+### Fuel used by motor
 
 If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](./route-navigation.md#route-details).
 Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
@@ -89,5 +103,4 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 | <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
 | <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
 | <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
-
 
