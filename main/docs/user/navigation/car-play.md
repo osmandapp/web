@@ -145,23 +145,20 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.   
 
-
+<!--
 Show folders list
  Taping on folder > open folder with the list of included tracks
 
  We need to show folders first, so we can show first 12 or 24 folders and the same amount on favourites points or tracks in each folder.
 
-
+-->
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-mod.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-rec.png) 
 
 
-
 ## History
 
-Option to choose navigation point from History  
- Tap open screen with search history and last route sorted by last used  
-
+Ability to select a navigation point from the history. Tapping opens a screen with the search history and the last route, sorted by the last use of the destination endpoints.  
 [Search History](../search/search-history.md)  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-history.png)  
