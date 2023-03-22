@@ -429,9 +429,12 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 
 ### Camera widgets  
 
-<InfoAndroidOnly />
 
 Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widget](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Camera position widgets](@site/static/img/widgets/camera_position_widgets.png)
 
@@ -439,3 +442,20 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
 | By tapping | No changes.|  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_ios.png)
+
+
+| | |
+|------------|------------|
+| Enable | Menu → Configure screen → Right panel → Developer widgets |
+| By tapping | No changes.|  
+
+</TabItem>
+
+</Tabs>
+ 

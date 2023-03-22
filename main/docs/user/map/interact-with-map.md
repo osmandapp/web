@@ -143,13 +143,16 @@ You can disable all map animations during map change (gestures and buttons) in S
 
 - ** Use Magnetic sensor** - smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till:  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>
 
-## External input device buttons (Android)
+## External input device buttons
 
 Select an external control device, such as a keyboard or WunderLINQ.
 
-**<Translate android="true" ids="android_button_seq"/>** <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
+<Tabs groupId="operating-systems">
 
+<TabItem value="android" label="Android">
 
+<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
+  
 > Note: the keyboard works with the setting disabled too. 
 
 | Key | Device | Action |
@@ -172,3 +175,29 @@ Select an external control device, such as a keyboard or WunderLINQ.
 |**ESC**| Wunderlinq  | Opens Wunderlinq dashboard |
 
 > You can check other details in [the code](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
+
+> Note: the keyboard works with the setting disabled too. 
+
+| Key | Device | Action |
+|:------------|:---------------|:---------------|
+|**C**| Keyboard   |"[My location](../map/interact-with-map.md#my-location--zoom)" |
+|**D**| Keyboard   |"[Map orientation](../map/interact-with-map.md#map-orientation-modes)"  |
+|**&#8593; **| Keyboard   | Move up  |
+|**&#8595; **| Keyboard   | Move down  |
+|**&#8592; **| Keyboard   | Move left  |
+|**&#8594; **| Keyboard   | Move right  |
+|**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722; **| Keyboard  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
+
+
+</TabItem>
+
+</Tabs>  
+
