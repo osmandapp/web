@@ -137,7 +137,7 @@ In some countries or regions, it is illegal to use speed camera warning apps. Yo
 ### Announcement time
 
 The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
-In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](https://osmand.net/docs/technical/algorithms/voice-prompt-triggering).  
+In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](../../technical/algorithms/voice-prompt-triggering.md).  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
 
@@ -208,7 +208,10 @@ There are currently a total of 45 languages.
 For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
 
 
-## Fixes issues with voice prompts
+## The most common issues
+<!-- 
+Troubleshooting  
+Fixes issues with voice prompts -->
 
 When using voice prompts, you may have issues with their playback. Here are some solutions to fix these issues.  
 
