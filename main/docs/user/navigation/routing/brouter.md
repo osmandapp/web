@@ -55,27 +55,27 @@ A guide to installing BRouter and including it in OsmAnd routing.
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/navigation/third/prof19a.jpg').default} alt="BRouter"/></td>
-        <td><img src={require('@site/static/img/navigation/third/prof19b.jpg').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-start-1.png').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-start.png').default} alt="BRouter"/></td>
     </tr>
 </table> 
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/navigation/third/prof19c.jpg').default} alt="BRouter"/></td>
-        <td><img src={require('@site/static/img/navigation/third/prof19d.jpg').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-downl.png').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-update.png').default} alt="BRouter"/></td>
     </tr>
 </table> 
 
    - You have installed and downloaded all the necessary data for third-party routing. All of the following steps will be performed in the OsmAnd application.  
 
-**4.** You can choose or create a navigation profile in OsmAnd application. In *[Navigation type](../../personal/profiles.md#navigation-settings)*, you choose _BRouter (offline)_: *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_external,routing_profile_broutrer"/>*
+**4.** You can choose or create a navigation profile in OsmAnd application. In *[Navigation type](../../personal/profiles.md#navigation-settings)*, you choose _BRouter (offline)_: *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>*
 
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/navigation/third/prof20.jpg').default} alt="BRouter"/></td>
-        <td><img src={require('@site/static/img/navigation/third/prof20a.jpg').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-2.png').default} alt="BRouter"/></td>
+        <td><img src={require('@site/static/img/navigation/third/brouter-3.png').default} alt="BRouter"/></td>
     </tr>
 </table> 
 
