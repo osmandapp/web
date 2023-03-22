@@ -22,50 +22,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [paid subscription](../purchases/ios#free-and-paid-features).
 :::
 
-Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [*CarPlay*](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
+Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [CarPlay](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
 
 To use CarPlay and the OsmAnd app on your vehicle's screen, follow these steps:
 
-1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, it probably does. Check the [list](https://www.apple.com/ios/carplay/available-models/) of car models with CarPlay support.  
+1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014,and the iOS version is older than 7.1, it probably does. Check the [list of car models](https://www.apple.com/ios/carplay/available-models/) with CarPlay support.  
 2. Connect your device to your vehicle's multimedia system using a Lightning cable or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
-3. Once connected, the CarPlay interface will automatically appear on your car screen with all available apps.
+3. Once connected, the CarPlay interface will automatically appear on your car screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.
 4. To use OsmAnd, select it on the CarPlay screen.   
-
-
-<!--
-5. To create a route, you must enter a destination on the CarPlay screen or in the app.
-6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
-7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.  
-
-
-4. Once you've selected a location, press Start or Go to start your route.
-5. As you drive, the vehicle screen will display detailed route instructions, including turns, distances, and arrival times.
-6. If you want to change your route or select a different location, you can use Siri voice commands or press the appropriate buttons on the screen.
-7. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.   -->
 
 
 ## Setup
 
-First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md).    
+First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md). For quick access to the list of profiles available for connecting to CarPlay OsmAnd has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.   
 
-:::note
-For quick access to the list of profiles available for connecting to CarPlay, the iOS version of the OsmAnd app has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.  
-:::  
-
-For OsmAnd to work, you need to connect your iOS device to the vehicle's multimedia system.  
-- Not all vehicles support device connection capability. Check the [list for CarPlay](https://www.apple.com/ios/carplay/available-models/).
-- You need to have an OsmAnd paid subscription. Check it here *Menu → Settings → Purchases*.
-- To find out how to connect and set up your device, please visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) websites. 
-- Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
-- You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
-
-
+1. For OsmAnd to work, [connect your iOS device](#overview) to the vehicle's multimedia system. To find out how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) websites. 
+2. You need to have one of [OsmAnd Paid subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
+3. Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
+4. You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
+5. To create a route, you must enter a destination on the CarPlay screen or in the app.
+6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
+7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.  
+8. Once you've selected a location, press Start or Go to start your route.
+9. As you drive, the vehicle screen will display detailed route instructions, including turns, distances, and arrival times.
+10. If you want to change your route or select a different location, you can use Siri voice commands or press the appropriate buttons on the screen.
+11. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.  
 
 Note that you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can preload or create routes and use them without the Internet.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen.png)  
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 
 ## Start navigation
@@ -77,10 +62,9 @@ Note that you may need an Internet connection to use OsmAnd in CarPlay. If your 
 
 :::note
 All categories for route endpoint selection, [History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
-:::
+:::  
 
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start-2.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start(1).png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start-2(1).png)  
 
 
 ### Interaction with the map
@@ -221,7 +205,11 @@ You can change the viewing angle for the 2.5D view of the map on your vehicle's 
 The Car Play dashboard will soon be able to display and use the OsmAnd navigation app at the same time as music, messages or other notification apps.  
 
 
-## Fixes issues with voice control
+## Most common issues 
+<!--
+Troubleshooting
+Fixes issues with voice control
+-->
 
 Sometimes CarPlay won't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in CarPlay. Here are some of the factors that affect CarPlay's performance and possible solutions.  
 
