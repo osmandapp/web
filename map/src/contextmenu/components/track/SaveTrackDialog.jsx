@@ -21,7 +21,7 @@ export default function SaveTrackDialog() {
     const [existTrack, setExistTrack] = useState(false);
     const [process, setProcess] = useState(false);
 
-    let folders = ctx.gpxFiles.trackGroups.map(group => (
+    let folders = ctx.gpxFiles.trackGroups?.map(group => (
             {
                 title: group.name
             }

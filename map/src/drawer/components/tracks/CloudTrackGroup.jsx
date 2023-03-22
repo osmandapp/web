@@ -89,6 +89,7 @@ export default function CloudTrackGroup({index, group}) {
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
+                    ctx.setOpenedPopper(anchorEl);
                     e.stopPropagation();
                 }}
             >

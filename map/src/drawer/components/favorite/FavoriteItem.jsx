@@ -58,6 +58,8 @@ export default function FavoriteItem({index, marker, group}) {
         newSelectedGpxFile.file.name = ctx.favorites.groups.find(g => g.name === group.name).file.name;
         newSelectedGpxFile.name = marker.title;
         newSelectedGpxFile.zoom = true;
+        newSelectedGpxFile.prevState = ctx.selectedGpxFile;
+        ctx.setUpdateContextMenu(true);
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
 

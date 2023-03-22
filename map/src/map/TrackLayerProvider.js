@@ -6,8 +6,8 @@ import TracksManager from "../context/TracksManager";
 function createLayersByTrackData(data) {
     let layers = [];
     data.tracks.forEach(track => {
-        let res = parsePoints(track.points, layers);
-        if (track.points.length > 0) {
+        if (track.points?.length > 0) {
+            let res = parsePoints(track.points, layers);
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     })

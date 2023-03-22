@@ -1,7 +1,6 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import TracksManager from "../../../context/TracksManager";
 import _ from "lodash";
 
 export default function LocalTrackItem({track, index}) {
@@ -15,7 +14,6 @@ export default function LocalTrackItem({track, index}) {
         } else {
             addTrackToMap();
         }
-        TracksManager.saveTracks(ctx.localTracks, ctx);
     }
 
     function cleanSelectedTrackIfNeed(currentTrack) {
@@ -50,9 +48,10 @@ export default function LocalTrackItem({track, index}) {
         track.index = indexTrack;
         setIndexTrack(indexTrack);
         selectedTrack.selected = true;
-        ctx.selectedGpxFile.zoom = true;
-        selectedTrack.updateLayers = false;
+        selectedTrack.zoom = true;
+        selectedTrack.updateLayers = true;
         ctx.setSelectedGpxFile(selectedTrack);
+        ctx.setUpdateContextMenu(true);
     }
 
     function startEdit() {

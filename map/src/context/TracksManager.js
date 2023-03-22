@@ -12,31 +12,45 @@ const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
+const LOCAL_TRACK_KEY = 'localTrack_';
+const DATA_SIZE_KEY = 'dataSize';
 
-function loadTracks() {
+async function loadTracks(setLoading) {
     let localTracks = [];
     let names = Object.keys(localStorage);
+    setLoading(true);
+    const promises = [];
     for (let name of names) {
-        if (name.includes('localTrack')) {
+        if (name.includes(LOCAL_TRACK_KEY)) {
             let ind = name.split('_')[1];
             localTracks[ind] = JSON.parse(localStorage.getItem(name));
+            if (localTracks[ind].tracks[0]?.points?.length > 0) {
+                promises.push(await TracksManager.updateRoute(localTracks[ind].tracks[0].points).then((points) => {
+                    localTracks[ind].tracks[0].points = points;
+                    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+                    if (savedVisible?.local) {
+                        savedVisible.local.forEach(name => {
+                            localTracks.forEach(f => {
+                                if (f.name === name) {
+                                    f.selected = true;
+                                    f.index = _.indexOf(localTracks, f);
+                                }
+                            })
+                        })
+                    }
+                }));
+            }
         }
     }
-    let savedVisible = JSON.parse(localStorage.getItem('visible'));
-    if (savedVisible?.local) {
-        savedVisible.local.forEach(name => {
-            localTracks.forEach(f => {
-                if (f.name === name) {
-                    f.selected = true;
-                    f.index = _.indexOf(localTracks, f);
-                }
-            })
-        })
-    }
+
+    await Promise.all(promises).then(() => {
+        setLoading(false);
+        return localTracks;
+    })
     return localTracks;
 }
 
-function saveTracks(tracks, ctx) {
+function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     let track;
     if (currentTrackIndex !== -1) {
@@ -48,7 +62,7 @@ function saveTracks(tracks, ctx) {
         name: track.name,
         id: track.id,
         metaData: track.metaData,
-        tracks: track.points ? [{points: track.points}] : track.tracks,
+        tracks: preparePoints(_.cloneDeep(track)),
         wpts: track.wpts,
         pointsGroups: track.pointsGroups,
         ext: track.ext,
@@ -56,15 +70,81 @@ function saveTracks(tracks, ctx) {
         selected: false,
         originalName: track.originalName
     }
+    let trackStr = JSON.stringify(localTrack);
+    let tracksSize = trackStr.length;
+    let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
+    if (!totalSize) {
+        totalSize = 0;
+    }
 
-    let tracksSize = JSON.stringify(localTrack).length;
-    let totalSize = JSON.parse(localStorage.getItem('dataSize'));
-    if (tracksSize + totalSize > 5000000) {
+    let oldSize = 0;
+    if (currentTrackIndex !== -1) {
+        let old = localStorage.getItem(LOCAL_TRACK_KEY + currentTrackIndex);
+        if (old) {
+            oldSize = old.length;
+        }
+    }
+    if (((oldSize === 0 && (tracksSize + totalSize)) || ((totalSize - oldSize) + tracksSize)) > 5000000) {
         ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
     } else {
-        localStorage.setItem('localTrack_' + _.indexOf(tracks, track), JSON.stringify(localTrack));
-        totalSize += tracksSize
-        localStorage.setItem('dataSize', totalSize);
+        ctx.setRoutingErrorMsg(null)
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
+        totalSize = totalSize - oldSize + tracksSize;
+        localStorage.setItem(DATA_SIZE_KEY, totalSize);
+    }
+}
+
+function preparePoints(track) {
+    if (track.points) {
+        track.points.forEach(p => {
+            if (p.geometry?.length > 0) {
+                delete p.geometry
+            }
+        })
+        return [{points: track.points}];
+    } else {
+        track.tracks.forEach(t => {
+            t.points.forEach(p => {
+                if (p.geometry?.length > 0) {
+                    delete p.geometry
+                }
+            })
+        })
+        return track.tracks;
+    }
+}
+
+function updateLocalTracks(tracks) {
+    deleteLocalTracks();
+    let totalSize = 0;
+    for (let track of tracks) {
+        let localTrack = {
+            name: track.name,
+            id: track.id,
+            metaData: track.metaData,
+            tracks: preparePoints(_.cloneDeep(track)),
+            wpts: track.wpts,
+            pointsGroups: track.pointsGroups,
+            ext: track.ext,
+            analysis: track.analysis,
+            selected: false,
+            originalName: track.originalName
+        }
+        let trackStr = JSON.stringify(localTrack);
+        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
+
+        let tracksSize = trackStr.length;
+        totalSize += tracksSize;
+    }
+    localStorage.setItem(DATA_SIZE_KEY, totalSize);
+}
+
+function deleteLocalTracks() {
+    let keys = Object.keys(localStorage);
+    for (let k of keys) {
+        if (k.includes(LOCAL_TRACK_KEY)) {
+            localStorage.removeItem(k);
+        }
     }
 }
 
@@ -153,7 +233,6 @@ function addTrack(ctx, track) {
     ctx.setLocalTracks([...ctx.localTracks]);
     openNewLocalTrack(ctx);
     closeCloudTrack(ctx, track);
-    TracksManager.saveTracks(ctx.localTracks, ctx);
 }
 
 function prepareTrack(track) {
@@ -205,7 +284,7 @@ function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach(track => {
-            track.points.forEach(point => {
+            track.points?.forEach(point => {
                 points.push(point);
             })
         })
@@ -332,8 +411,11 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
+        localStorage.removeItem('localTrack_' + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
-        TracksManager.saveTracks(ctx.localTracks, ctx);
+        if (ctx.localTracks.length > 0) {
+            updateLocalTracks(ctx.localTracks);
+        }
         ctx.setLocalTracks([...ctx.localTracks]);
         return true;
     }
@@ -386,13 +468,15 @@ async function updateRouteBetweenPoints(ctx, start, end) {
     }
 }
 
-async function updateRoute(ctx, points) {
-    let result = await axios({
-        url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
-        method: 'post',
-        data: points,
-    });
-
+async function updateRoute(points) {
+    let result;
+    if (points?.length > 0) {
+        result = await axios({
+            url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
+            method: 'post',
+            data: points,
+        });
+    }
     if (result) {
         if (typeof result.data === "string") {
             result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
@@ -405,9 +489,11 @@ async function updateRoute(ctx, points) {
 }
 
 function updateGapProfileAllSegments(points) {
-    points.forEach(p => {
-        updateGapProfileOneSegment(p, p.geometry);
-    })
+    if (points) {
+        points.forEach(p => {
+            updateGapProfileOneSegment(p, p.geometry);
+        })
+    }
 }
 
 function updateGapProfileOneSegment(routPoint, points) {
@@ -592,7 +678,7 @@ function getFavoriteGroups(allFiles) {
 
 const TracksManager = {
     loadTracks,
-    saveTracks,
+    saveTracks: saveLocalTrack,
     getFileName,
     prepareName,
     getTrackData,
