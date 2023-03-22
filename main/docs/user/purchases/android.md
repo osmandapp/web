@@ -102,9 +102,9 @@ The table shows all the features that are included in the paid and free packages
 
 ### Pro Features
 
-Pro Features are available for Pro subscribes. It means you need to have [OsmAnd Pro subscription](../purchases/android.md#prices).
+Pro Features are available for [OsmAnd Pro subscription](#prices).
 
-At this moment, Pro subscription has next features:
+At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |

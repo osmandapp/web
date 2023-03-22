@@ -56,33 +56,32 @@ If you already used 5(iOS) or 7(Android) possibilities for free downloads, you c
 
 ## OsmAnd Pro
 
-OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one Android store (Google Play, Amazon, Huawei AppGallery), and launched for iOS, for example.  
+OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one of the Android stores (Google Play, Amazon, Huawei AppGallery), and launched on iOS, for example.  
 
 ### Cross-platform
 
-Cross-platfrom allows to use OsmAnd Pro for all platfroms [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
+The cross-platform feature allows you to use OsmAnd Pro on all platforms at the same time: [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
 
 **_Steps_**:
 
-**1.** When you subscribed to OsmAnd Pro, you should register your email in OsmAnd server for identification for other platforms.
+**1.** After you have purchased an OsmAnd Pro subscription, you should register your email on the OsmAnd server for identification on other platforms.
 
 [Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
 *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
 
 :::note
-Registration takes place on the platform on which the subscription was purchased.
+Registration must take place on the platform on which the subscription was purchased.
 :::
 
-After that, your email is a login for activation OsmAnd Pro for other platforms.
+After that, your email address can be used as a login to activate OsmAnd Pro on other platforms.
 
-**2.** Activation OsmAnd Pro:
+**2.** OsmAnd Pro Activation:
 
 *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
 
-**3.** Checking of activation:
+**3.** Activation check:
 
 *OsmAnd Menu → Settings → Purchases → Restore purchases*
-
 
 ## Import files
 

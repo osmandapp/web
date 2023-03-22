@@ -77,9 +77,9 @@ In the list, there is information about prices of OsmAnd product for the US and 
 
 ### Pro Features
 
-![Pro](@site/static/img/svg/pro_icon.svg) _Pro Features_ are available for [Pro subscribes](#osmand-pro). It means you need to have [OsmAnd Pro subscription](#osmand-pro).
+![Pro](@site/static/img/svg/pro_icon.svg) _Pro Features_ are available for [OsmAnd Pro subscription](#prices). It means you need to have [OsmAnd Pro subscription](#osmand-pro).
 
-At this moment, Pro subscription has next features:
+At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
@@ -87,7 +87,6 @@ At this moment, Pro subscription has next features:
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
-
 
 ### How to buy
 
