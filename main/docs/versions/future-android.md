@@ -33,7 +33,8 @@ You can participate in testing the OsmAnd beta build through Google Play.
 * [**Bugs fixs:**](#bugs-fixs)
   * Fixed [bugs with Android Auto](#android-auto).
   * Fixed issues with [displaying Vegan places](#vegan-places-pois).
-  * Fixed map gestures for tilt, zoom and rotation.
+  * Fixed [map gestures](#map-gestures).
+  * Fixed [Australian roads shields](#australian-roads-shields).
 
 
 
@@ -169,3 +170,12 @@ We redesigned ["Simulate your position"](../user/plugins/development.md#plugin-s
 #### Vegan places POIs
 
 Fixed the [issue](https://github.com/osmandapp/OsmAnd/issues/15426): "Most vegan places don't show".
+
+
+#### Map gestures
+
+Fixed [map gestures](https://github.com/osmandapp/OsmAnd/issues/15931) for tilt, zoom and rotation: 
+
+#### Australian roads shields
+
+Fixed [Australian roads shields](https://github.com/osmandapp/OsmAnd/issues/16568).
