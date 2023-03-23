@@ -39,16 +39,9 @@ First, you need to select and configure the profile to be used when connecting t
 1. For OsmAnd to work, [connect your iOS device](#overview) to the vehicle's multimedia system. To find out how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) websites. 
 2. You need to have one of [OsmAnd Paid subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
 3. Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
-4. You will then be able to start the navigation or use the OsmAnd search function in CarPlay.  
-5. To create a route, you must enter a destination on the CarPlay screen or in the app.
-6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
-7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.  
-8. Once you've selected a location, press Start or Go to start your route.
-9. As you drive, the vehicle screen will display detailed route instructions, including turns, distances, and arrival times.
-10. If you want to change your route or select a different location, you can use Siri voice commands or press the appropriate buttons on the screen.
-11. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.  
+4. You will then be able to start the navigation or use the OsmAnd search function in CarPlay.    
 
-Note that you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can preload or create routes and use them without the Internet.  
+Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
@@ -57,8 +50,16 @@ Note that you may need an Internet connection to use OsmAnd in CarPlay. If your 
 
 1. [Setup](#setup)
 2. Settings in the app
+    - You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.
 3. Navigation Menu. 
 4. Selecting an end point  
+5. To create a route, you must enter a destination on the CarPlay screen or in the app.
+6. The navigation app provides information about your current position on the map, driving directions, distance to the next turn, and arrival time at your destination.
+7. You can use voice prompts to listen to route guidance, report problems on the road, and find the nearest gas station.  
+8. Once you've selected a location, press Start or Go to start your route.
+9. As you drive, the vehicle screen will display detailed route instructions, including turns, distances, and arrival times.
+10. If you want to change your route or select a different location, you can use Siri voice commands or press the appropriate buttons on the screen.
+11. After completing a route, you can disconnect CarPlay by disconnecting your iPhone from the vehicle's multimedia system.
 
 :::note
 All categories for route endpoint selection, [History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
@@ -71,10 +72,10 @@ All categories for route endpoint selection, [History](#history), [POIs](#poi-ca
 
 Most OsmAnd settings directly related to navigation are available in CarPlay. Interaction with the map is limited to *My Location* and *Zoom*.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
 
-## User points group 
+## Select a route endpoint 
 
 You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md) or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point.  
 - Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites).  
@@ -101,14 +102,14 @@ To navigate to a POI (point of interest) in CarPlay, follow these simple steps:
 6. When you approach your POI, the app can suggest a parking spot, if there is one.
 7. When you arrive at the location, the app will notify you that you have reached your POI. 
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi-rest.png)    
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi(1).png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi-rest(1).png)    
 
 
 ### Map markers
 
 To use [markers](../personal/markers.md#overview) in CarPlay for navigation, they need to be added in advance in the OsmAnd app on your device, tablet or phone, and they need to be available in the *Menu → Map marker* list.   
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-markers.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 
 ### Favorites
@@ -117,11 +118,10 @@ Favorites is one of the functions of OsmAnd that allows the user to make a kind 
 
 Open folder with the list of included favourites.  
 
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites-last-modified(1).png)  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites-last-modified.png)  
 
-
-## Tracks
+### Tracks
 
 :::tip
 Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
@@ -129,26 +129,19 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in CarPlay or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.   
 
-<!--
-Show folders list
- Taping on folder > open folder with the list of included tracks
+Show folders list. Taping on folder than open folder with the list of included tracks.
 
- We need to show folders first, so we can show first 12 or 24 folders and the same amount on favourites points or tracks in each folder.
-
--->
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks.png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-mod.png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-rec.png) 
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-mod(1).png)   ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-rec(1).png) 
 
 
-## History
+### History
 
-Ability to select a navigation point from the history. Tapping opens a screen with the search history and the last route, sorted by the last use of the destination endpoints.  
-[Search History](../search/search-history.md)  
+Ability to select a navigation point from the history. Tapping opens a screen with the search history and the last route, sorted by the last use of the destination endpoints. [Search History](../search/search-history.md)    
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-history.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-history(1).png)  
 
 
-## Address search
+### Address search
 
 With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
 - [Address search](../search/search-address.md) - enter the needed address in the search field.
@@ -157,7 +150,7 @@ With this option you can search for the necessary places on the map to navigate.
 - [History search](../search/search-history.md) - displays your whole search history.
 - Coordinate search - suggests different formats of coordinates.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)
 
 
 ## Additional features
@@ -166,12 +159,12 @@ With this option you can search for the necessary places on the map to navigate.
 
 Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 
 ### Voice prompts
 
-In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. CarPlay does not have a function to set up voice prompts.  
+In OsmAnd, you can configure voice prompts for the selected profile. Do this before starting a route on your device, tablet, or phone. For how to do this, see the article [Voice prompts / Notifications](../navigation/voice-navigation.md). To see recommended settings for CarPlay, click here.  
 
 
 ### Announce incoming text messages
@@ -190,14 +183,14 @@ You can also enable or disable Announce messages directly in CarPlay. Read about
 This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
 You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 
 ### Map appearance
 
 You can change the viewing angle for the 2.5D view of the map on your vehicle's multimedia system screen.  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D.png)    
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)    
 
 
 ### Multifunction dashboard
@@ -212,6 +205,24 @@ Fixes issues with voice control
 -->
 
 Sometimes CarPlay won't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in CarPlay. Here are some of the factors that affect CarPlay's performance and possible solutions.  
+
+1. Restart Your Phone
+We'll start with the most obvious remedy for many smartphone-related issues: a restart. Restarting your phone can tackle various issues, including connection, in-app, and operating system errors. So, the easiest initial step to take when your Apple CarPlay isn't working is to reboot your device.
+2. Make Sure CarPlay Is Enabled on Your iPhone
+If you can't get Apple CarPlay started in your vehicle, it might be because the feature has not yet been enabled on your iPhone. To do this:  
+   - First, head to your phone's settings, and then head to General.
+   - Then, go to the CarPlay section in your General Settings, and head to My Cars. Here, you can configure or re-configure your vehicle by forgetting it and connecting to it again.
+3. Make Sure Your Bluetooth Is Connected
+4. Check Your USB Cable
+5. Regularly Update Your Operating System
+6. Check with Apple to be sure CarPlay is supported in your area. 
+    - Make sure that your car supports CarPlay, as well! If your car isn't on Apple's list, check with the manufacturer to be sure.
+    - Update the software on your iPhone to the latest version of iOS. 
+    - Restart your car and reboot your iPhone.
+    - If you have a wired CarPlay connection, check your owner's manual to be sure you're using the correct port. You can also try replacing the USB cable with a new one to see if the issue is a faulty cable. 
+    - If you use a VPN on your iPhone, it may interfere with CarPlay. Try turning your VPN off to see if that gets CarPlay working for you. 
+
+
 
 Choose which speakers to use.
 - On your phone or tablet, turn on Bluetooth.
