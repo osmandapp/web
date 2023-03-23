@@ -280,7 +280,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
     const Buttons = () => {
         return (
             <div>
-                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                     <MenuItem onClick={(e) => {
                         e.stopPropagation();
                         ctx.selectedGpxFile.save = true;
@@ -305,13 +305,12 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                     }}>
                         Edit</MenuItem>}
 
-                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
-                    <MenuItem onClick={(e) => {
-                        e.stopPropagation();
-                        addToCollection()
-                        setOpen(false);
-                    }}>
-                        Add to Collection</MenuItem>}
+                <MenuItem onClick={(e) => {
+                    e.stopPropagation();
+                    addToCollection()
+                    setOpen(false);
+                }}>
+                    Add to Collection</MenuItem>
 
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <MenuItem onClick={(e) => {
                     e.stopPropagation();
@@ -367,6 +366,7 @@ export default function GeneralInfoTab({width, srtm, setShowContextMenu}) {
                         ref={anchorEl}
                         onClick={(e) => {
                             handleToggle();
+                            ctx.setOpenedPopper(anchorEl);
                             e.stopPropagation();
                         }}
                     >

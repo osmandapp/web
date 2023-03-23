@@ -11,6 +11,7 @@ async function addTrackToMap(ctx, file, map) {
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
             ctx.setCurrentObjectType(type);
+            ctx.setUpdateContextMenu(true);
         }
     });
     file.gpx = layer;

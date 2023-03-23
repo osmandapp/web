@@ -3,13 +3,12 @@ import {
     Button,
     Collapse,
     Grid,
-    IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography
 } from "@mui/material";
-import {Close, ExpandLess, ExpandMore, Folder, MoreVert} from "@mui/icons-material";
+import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import Actions from "./Actions";
@@ -17,7 +16,6 @@ import LocalTrackItem from "./LocalTrackItem";
 import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
-import {useNavigate} from "react-router-dom";
 import PopperMenu from "./PopperMenu";
 
 
@@ -62,9 +60,22 @@ export default function LocalTrackGroup() {
         });
     }
 
+    function addToCollection() {
+        ctx.localTracks.forEach(file => {
+            if (!ctx.gpxCollection.find(name => name === file.name)) {
+                ctx.gpxCollection.push(file.name);
+            }
+        })
+        ctx.setGpxCollection([...ctx.gpxCollection]);
+    }
+
     const Buttons = () => {
         return (
             <div>
+                {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
+                    addToCollection()
+                    e.stopPropagation();
+                }}>To Collection</MenuItem>}
                 {ctx.localTracks.length !== 0 && <MenuItem onClick={(e) => {
                     clearLocalTracks()
                     e.stopPropagation();
@@ -90,6 +101,7 @@ export default function LocalTrackGroup() {
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
+                    ctx.setOpenedPopper(anchorEl);
                     e.stopPropagation();
                 }}
             >

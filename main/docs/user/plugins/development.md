@@ -15,6 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
   
+  
 Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.  
 
 ## Overview
@@ -62,33 +63,108 @@ The options listed below are only available in the Android version of OsmAnd
 
 ### Pre-beta features
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 - **Transparent status bar** - The map becomes visible under the status bar.  
 - **Heightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+- **Use 3D relief heightmaps** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+
+</TabItem>
+
+</Tabs> 
+
 ### Troubleshotting
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 - **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
 - **Rendering debug info** - Display the rendering performance (only available for version 1 rendering engine).  
 - **Logcat buffer** - Check and share detailed logs of the app.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+- **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
+
+</TabItem>
+
+</Tabs>  
+
+
+
 ### Application Testing
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 - **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
 - **Test voice prompts** - Select a voice and test by playing announcements.  
 - **Show free version banner** - Display the free version banner even in the paid version.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>  
+
+
+
 ### Internal Algorithms
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 - **Safe mode** - Run the app in (slower) safe mode.  
 - **Safe GPX approximation** - Perform the GPX approximation using slower Android instead of native code.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>  
+
 ### Memory settings
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
 
 - **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
 :::note
 Higher memory allocation may impact the performance of other apps.  
 :::
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>  
+
 
 ## Widgets  
 
@@ -124,7 +200,7 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 ### Elevation: map center Widget  
 
-<InfoAndroidOnly />
+<InfoAndroidOnly/>
 
 With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you can find out the elevation above sea level of the current map center. To display elevation data:
 
@@ -132,15 +208,35 @@ With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you ca
 - [Download](../start-with/download-maps.md) heightmaps of the desired area are  
 - Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
 
+
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
 
-## Camera position Widgets (Android)  
+## Camera position Widgets
 
 In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use [Camera position Widgets](../widgets/info-widgets.md#camera-widgets).
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 
 *Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*Menu → Configure screen →  Right panel*  
+
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+
 
 ### Camera tilt
 

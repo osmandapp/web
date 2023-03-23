@@ -130,17 +130,11 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
         </MenuItem>
         <Collapse in={visibleTracksOpen} timeout="auto" unmountOnExit>
             <div style={{maxHeight: '41vh', overflow: 'auto'}}>
-                {visibleTracks.local.length > 0 && <Typography variant="body2" sx={{ml: 4}}>
-                    Local Tracks
-                </Typography>}
                 {visibleTracks.local.length > 0 && visibleTracks.local.map((track, index) => {
                     return <LocalTrackItem className={classes.item} key={track + index}
                                            track={track}
                                            index={track.index}/>;
                 })}
-                {visibleTracks.cloud.length > 0 && <Typography variant="body2" sx={{ml: 4}}>
-                    Cloud Tracks
-                </Typography>}
                 {visibleTracks.cloud.length > 0 && visibleTracks.cloud.map((track, index) => {
                     return <CloudTrackItem className={classes.item}
                                            key={track + index}

@@ -1,6 +1,7 @@
 import {ClickAwayListener, MenuList, Paper, Popper} from "@mui/material";
 import {makeStyles} from "@material-ui/core/styles";
-import React from "react";
+import React, {useContext, useEffect} from "react";
+import AppContext from "../../../context/AppContext";
 
 const useStyles = makeStyles({
     drawerItem: {
@@ -14,9 +15,17 @@ const useStyles = makeStyles({
 export default function PopperMenu({anchorEl, open, setOpen, Buttons}) {
 
     const classes = useStyles();
+    const ctx = useContext(AppContext);
     const handleClickAway = () => {
         setOpen(false);
     };
+
+    useEffect(() => {
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpen(false);
+        }
+    }, [ctx.openedPopper]);
+
     return <Popper disablePortal={true} open={open} anchorEl={anchorEl?.current} transition
                    style={{
                        zIndex: 100,

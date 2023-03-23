@@ -410,6 +410,7 @@ export const AppContextProvider = (props) => {
     const [weatherLayers, updateWeatherLayers] = useState(getLayers());
     const [weatherDate, setWeatherDate] = useState(getWeatherDate());
     const [gpxLoading, setGpxLoading] = useState(false);
+    const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
     const [userEmail, setUserEmail] = useCookie('email', '');
     // server state of login
@@ -460,7 +461,7 @@ export const AppContextProvider = (props) => {
         location: null
     });
 
-    const [localTracks, setLocalTracks] = useState(TracksManager.loadTracks());
+    const [localTracks, setLocalTracks] = useState([]);
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: {text: ''},
@@ -480,7 +481,13 @@ export const AppContextProvider = (props) => {
         pastStates: [],
         futureStates: []
     });
+    const [openedPopper, setOpenedPopper] = useState(null);
 
+    useEffect(() => {
+        TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
+            setLocalTracks(tracks);
+        })
+    }, [])
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
@@ -572,8 +579,9 @@ export const AppContextProvider = (props) => {
         trackProfileManager, setTrackProfileManager,
         routingErrorMsg, setRoutingErrorMsg,
         pointContextMenu, setPointContextMenu,
-        trackState, setTrackState
-
+        trackState, setTrackState,
+        localTracksLoading, setLocalTracksLoading,
+        openedPopper, setOpenedPopper
     }}>
         {props.children}
     </AppContext.Provider>;

@@ -39,7 +39,7 @@ export default function GpxCollection() {
     const toggleShowDialog = () => {
         setOpenDialog(!openDialog);
     };
-    
+
     const downloadObf = async (name) => {
         setProcessDownload(true);
         await axios({
@@ -108,6 +108,7 @@ export default function GpxCollection() {
                 ref={anchorEl}
                 onClick={(e) => {
                     handleToggle();
+                    ctx.setOpenedPopper(anchorEl);
                     e.stopPropagation();
                 }}
             >
@@ -129,20 +130,23 @@ export default function GpxCollection() {
             <MenuItem disableRipple={true}>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        {!ctx.createTrack && ctx.gpxCollection.length > 0 &&
+                        {ctx.gpxCollection.length > 0 &&
                             <Button sx={{ml: 3}} className={styles.button} variant="contained" component="span"
                                     onClick={() => setOpenDialog(true)}>
-                                Get OBF
+                                Get Map
                             </Button>}
                     </Grid>
                 </Grid>
             </MenuItem>
         </Collapse>
         <Dialog open={openDialog} onClose={toggleShowDialog}>
-            <DialogTitle>Get OBF</DialogTitle>
+            <DialogTitle>Get Map</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {`You can download simple obf (.obf) or travelbook (.travel.obf).`}
+                    {` You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.`}
+                </DialogContentText>
+                <DialogContentText>
+                    {` Also on Android you can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.`}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

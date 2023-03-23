@@ -1,16 +1,23 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import AppContext from "../../context/AppContext";
 import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
 import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
 import FavoritesManager from "../../context/FavoritesManager";
+import _ from "lodash";
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
 
     const [openAddDialog, setOpenAddDialog] = useState(false);
+
+    const selectedGpxFileRef = useRef(ctx.selectedGpxFile);
+
+    useEffect(() => {
+        selectedGpxFileRef.current = ctx.selectedGpxFile
+    },[ctx.selectedGpxFile])
 
     //add favorites groups
     useEffect(() => {
@@ -55,6 +62,8 @@ const FavoriteLayer = () => {
     function onClick(e) {
         let type = ctx.OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
+        ctx.selectedGpxFile = {};
+        ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
         ctx.selectedGpxFile.markerCurrent = {
             title: e.sourceTarget.options.title,
             icon: e.sourceTarget.options.icon.options.html,
@@ -64,6 +73,7 @@ const FavoriteLayer = () => {
         ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category ? e.sourceTarget.options.category : FavoritesManager.DEFAULT_GROUP_NAME;
         ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.setUpdateContextMenu(true);
     }
 
     function updateSelectedFavoriteOnMap(file) {

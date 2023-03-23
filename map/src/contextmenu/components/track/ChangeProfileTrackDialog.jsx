@@ -56,28 +56,27 @@ export default function ChangeProfileTrackDialog({open}) {
     async function changeProfile() {
         setProcess(true);
         if (!partialEdit) {
-            ctx.selectedGpxFile.points.forEach(point => {
-                if (point.profile !== TracksManager.PROFILE_GAP) {
-                    point.profile = profile.mode;
-                }
-            })
-            if (ctx.selectedGpxFile.points.length > 1) {
-                await TracksManager.updateRoute(ctx, ctx.selectedGpxFile.points).then((points) => {
-                    ctx.selectedGpxFile.points = points;
-                    ctx.setCreatingRouteMode({
-                        mode: profile.mode,
-                        modes: ctx.creatingRouteMode.modes,
-                        opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
-                        colors: ctx.creatingRouteMode.colors
-                    })
-                });
-            } else {
-                ctx.setCreatingRouteMode({
-                    mode: profile.mode,
-                    modes: ctx.creatingRouteMode.modes,
-                    opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
-                    colors: ctx.creatingRouteMode.colors
+            if (changeAll) {
+                ctx.selectedGpxFile.points.forEach(point => {
+                    if (point.profile !== TracksManager.PROFILE_GAP) {
+                        point.profile = profile.mode;
+                    }
                 })
+                if (ctx.selectedGpxFile.points.length > 1) {
+                    await TracksManager.updateRoute(ctx.selectedGpxFile.points).then((points) => {
+                        ctx.selectedGpxFile.points = points;
+                        ctx.setCreatingRouteMode({
+                            mode: profile.mode,
+                            modes: ctx.creatingRouteMode.modes,
+                            opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
+                            colors: ctx.creatingRouteMode.colors
+                        })
+                    });
+                } else {
+                    updateGlobalProfileState();
+                }
+            } else {
+                updateGlobalProfileState();
             }
         } else {
             if (changeOne) {
@@ -104,7 +103,7 @@ export default function ChangeProfileTrackDialog({open}) {
                             point.profile = profile.mode;
                         }
                     })
-                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                    await TracksManager.updateRoute(changePoints).then((points) => {
                         if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let nextArr = createArrWithGeo([points[points.length - 1]].concat(ctx.selectedGpxFile.points));
                             ctx.selectedGpxFile.points = points.concat(nextArr);
@@ -117,7 +116,7 @@ export default function ChangeProfileTrackDialog({open}) {
                     changePoints.forEach(point => {
                         point.profile = profile.mode;
                     })
-                    await TracksManager.updateRoute(ctx, changePoints).then((points) => {
+                    await TracksManager.updateRoute(changePoints).then((points) => {
                         if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
                             let prevArr = createArrWithGeo(ctx.selectedGpxFile.points.concat([points[0]]));
                             ctx.selectedGpxFile.points = prevArr.concat(points);
@@ -174,6 +173,15 @@ export default function ChangeProfileTrackDialog({open}) {
         return [p1, p2];
     }
 
+    function updateGlobalProfileState() {
+        ctx.setCreatingRouteMode({
+            mode: profile.mode,
+            modes: ctx.creatingRouteMode.modes,
+            opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
+            colors: ctx.creatingRouteMode.colors
+        })
+    }
+
     return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
         {process ? <LinearProgress/> : <></>}
         <Grid container spacing={2}>
@@ -205,6 +213,21 @@ export default function ChangeProfileTrackDialog({open}) {
                 </ToggleButton>
             </ToggleButtonGroup>
         </DialogActions>}
+        {!partialEdit && <DialogActions style={{justifyContent: 'center', overflowY: 'hidden'}}>
+            <ToggleButtonGroup
+                value={change}
+                exclusive
+                fullWidth={true}
+                onChange={handleChange}
+                aria-label="text alignment">
+                <ToggleButton value="one">
+                    Next segments
+                </ToggleButton>
+                <ToggleButton value="all">
+                    All segments
+                </ToggleButton>
+            </ToggleButtonGroup>
+        </DialogActions>}
         <DialogContent sx={{minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px'}}>
             <SelectTrackProfile profile={profile} setProfile={setProfile} label={"Route profile"}/>
         </DialogContent>
@@ -214,7 +237,8 @@ export default function ChangeProfileTrackDialog({open}) {
                 changeProfile().then(() => {
                     ctx.trackState.update = true;
                     ctx.setTrackState({...ctx.trackState});
-                })}}>Change</Button>
+                })
+            }}>Change</Button>
         </DialogActions>
     </Dialog>
 }
