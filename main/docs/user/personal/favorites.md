@@ -199,7 +199,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,menu_my_places,favorites"/>_
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>_
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 

@@ -45,15 +45,23 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8230; → Choosing tracks for display from the list and setting track appearance.*    
+Here you can select tracks to display them on the map.
+
+*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/>*:   
 
 ![Tracks menu Android](@site/static/img/map/tracks_menu_android.png) 
+
+_Import_ and _[Change appearance](#track-appearance)_ for chosen tracks:
+
+*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>, <Translate android="true" ids="shared_string_import"/>*  
+
+![Tracks menu Android](@site/static/img/map/tracks_menu_import_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,tracks"/> → Choosing tracks for displayed from the list.*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/> → Choosing tracks for displayed from the list.*  
 
 ![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png) 
 
@@ -76,7 +84,7 @@ There are two options to display [Tracks](../personal/tracks.md) on the map: via
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,menu_my_places,tracks"/> → &#8250; → <Translate ios="true" ids="map_settings_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → **&#8250;** → <Translate ios="true" ids="recording_context_menu_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.*  
 
 ![Tracks menu iOS](@site/static/img/map/tracks_myplaces_ios.png)
 
@@ -130,13 +138,13 @@ There are three ways to access the Track Appearance menu:
 
 |  |   
 |----------|
-|**"<Translate ios="true" ids="gpx_dir_arrows"/>"** - Adds direction information (in the form of arrows) on the track. |
+|**"<Translate ios="true" ids="gpx_direction_arrows"/>"** - Adds direction information (in the form of arrows) on the track. |
 |![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
 |**"<Translate ios="true" ids="track_show_start_finish_icons"/>"** - You can choose whether or not to show icons for the start and finish of track segments. |
 |![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
-|**"<Translate ios="true" ids="fav_color"/>"** -  Allows you to display the track line in any color and transparency you prefer, or choose a coloring according to the map legend. If the necessary data on the segments of the track is missing such segments are displayed in gray. |
-| 1. <Translate ios="true" ids="fav_color"/>: *<Translate ios="true" ids="track_coloring_solid"/>*, *<Translate ios="true" ids="altitude"/>* and *<Translate ios="true" ids="gpx_speed"/>* are free color settings. |
-| 2. <ProFeature/> &nbsp;<Translate ios="true" ids="fav_color"/>: *<Translate ios="true" ids="gpx_slope"/>*, *<Translate ios="true" ids="routeInfo_roadClass_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_smoothness_name"/>*, *<Translate ios="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the article "Navigation by route" in the section [Route line appearance](../navigation/route-navigation#colour). |
+|**"<Translate ios="true" ids="shared_string_color"/>"** -  Allows you to display the track line in any color and transparency you prefer, or choose a coloring according to the map legend. If the necessary data on the segments of the track is missing such segments are displayed in gray. |
+| 1. <Translate ios="true" ids="shared_string_color"/>: *<Translate ios="true" ids="track_coloring_solid"/>*, *<Translate ios="true" ids="altitude"/>* and *<Translate ios="true" ids="shared_string_speed"/>* are free color settings. |
+| 2. <ProFeature/> &nbsp;<Translate ios="true" ids="shared_string_color"/>: *<Translate ios="true" ids="shared_string_slope"/>*, *<Translate ios="true" ids="routeInfo_roadClass_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_smoothness_name"/>*, *<Translate ios="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the article "Navigation by route" in the section [Route line appearance](../navigation/route-navigation#colour). |
 | ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png) |
 |**"<Translate ios="true" ids="shared_string_width"/>"** - You can choose the width of the line according to the width of the road or if you want to highlight the route line more on the map, *<Translate ios="true" ids="rendering_value_thin_name"/>, <Translate ios="true" ids="rendering_value_medium_name"/>* and *<Translate ios="true" ids="rendering_value_bold_name"/>*. In *<Translate ios="true" ids="shared_string_custom"/>* you can select your preferred line width with the slider. |
 |![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
@@ -199,7 +207,7 @@ Navigation route is a solid line prepared by [Route Preparation process](../navi
 
 OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are selectable by [clicking on the route shield](./tracks-on-map.md#save-as-a-track) or with the right configuration of a visible set of routes, it's possible to follow the route by color & shields.  You can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>_
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
 
@@ -209,7 +217,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_routes"/>
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>_
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
 
@@ -222,30 +230,107 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 ### Save as a Track
 
-<InfoAndroidOnly />  
 
 [Hiking / Cycling / Travel routes](../map/vector-maps.md#routes) are clickable. Just tap **the route symbol**, get full route information and download the GPX file for the selected route. (Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol).)
 
 Clicking on a shield ([OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)) proposes to choose the nearest routes.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Routes on the ground](@site/static/img/map/routes-4.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking.png)
+
+</TabItem>
+
+</Tabs>
+
+
 
 Choosing the route opens [Track Context menu](../map/track-context-menu.md):
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Routes on the ground](@site/static/img/map/routes-5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking_1.png)
+
+</TabItem>
+
+</Tabs>
+
 
 You can view the route, and its relief, download it as a GPX-file, edit it with "Plan route" tool and even start navigation along it:
 - look at Route info (Distance, Uphill, Downhill, Altitude range, Route name, Network, Operator, etc.). 
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Routes on the ground](@site/static/img/map/routes-6.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking_5.png)
+
+</TabItem>
+
+</Tabs>
 
 - looking at Altitude Graph, Analyze on map, Share like GPX-file and etc.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Routes on the ground](@site/static/img/map/routes-7.png)
 
-- download the route like GPX-file by clicking to "Download" button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking_2.png)
+
+</TabItem>
+
+</Tabs>
+
+- download the route like GPX-file: 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+by clicking to "Download" button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
 
 ![Routes on the ground](@site/static/img/map/routes-8.png) ![Routes on the ground](@site/static/img/map/routes-9.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+by clicking to "Save" button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
+
+![Routes on the ground](@site/static/img/map/hiking_1.png) ![Routes on the ground](@site/static/img/map/hiking_3.png)
+
+</TabItem>
+
+</Tabs>
+
 
 
 ## Read more

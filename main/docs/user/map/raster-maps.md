@@ -10,6 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
 Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default maps to raster tiles on the web.
@@ -196,7 +197,7 @@ Hillshade / Slope are raster offline maps that are displayed as a special map la
 
 To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md).  
 
-**Configure display options**:
+### Configure display options
 
 <Tabs groupId="operating-systems">
 
@@ -208,7 +209,7 @@ To download and install Hillshade / Slope Maps, you need to [purchase](../purcha
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,map_settings_map,shared_string_terrain"/>*
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
 
 </TabItem>
 
@@ -245,7 +246,7 @@ In order to add a new online raster map source go to:
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,map_settings_map,map_settings_overunder,map_settings_add_online_source"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
 </TabItem>
 
@@ -255,12 +256,12 @@ In order to add a new online raster map source go to:
 
 | Parameter | Description |
 |:------------|:---------------|
-|[<Translate ios="true" ids="fav_name"/>]|<Translate ios="true" ids="res_online_name_descr"/>|
-|[<Translate ios="true" ids="res_url"/>]|<Translate ios="true" ids="res_online_url_descr"/>|
-|[<Translate ios="true" ids="res_zoom_levels"/>]|<Translate ios="true" ids="res_zoom_levels_desc"/>|
+|[<Translate ios="true" ids="shared_string_name"/>]|<Translate ios="true" ids="res_online_name_descr"/>|
+|[<Translate ios="true" ids="edit_tilesource_url_to_load"/>]|<Translate ios="true" ids="res_online_url_descr"/>|
+|[<Translate ios="true" ids="shared_string_zoom_levels"/>]|<Translate ios="true" ids="res_zoom_levels_desc"/>|
 |[<Translate ios="true" ids="res_expire_time"/>]|<Translate ios="true" ids="res_expire_time_desc"/>|
-|[<Translate ios="true" ids="res_mercator"/>]|<Translate ios="true" ids="res_pseudo_mercator"/> or <Translate ios="true" ids="res_elliptic_mercator"/>|
-|[<Translate ios="true" ids="res_source_format"/>/<Translate android="true" ids="storage_format"/>]|<Translate ios="true" ids="res_source_sqlite"/> or <Translate ios="true" ids="res_source_one_per_tile"/>|
+|[<Translate ios="true" ids="res_mercator"/>]|<Translate ios="true" ids="pseudo_mercator_projection"/> or <Translate ios="true" ids="edit_tilesource_elliptic_tile"/>|
+|[<Translate ios="true" ids="res_source_format"/>/<Translate android="true" ids="storage_format"/>]|<Translate ios="true" ids="sqlite_db_file"/> or <Translate ios="true" ids="one_image_per_tile"/>|
 
 Click to "<Translate android="true" ids="shared_string_save"/>" button for adding a new online raster map to the list.
 
@@ -300,7 +301,7 @@ In order to change tile format you can choose <Translate android="true" ids="sto
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,res_source_sqlite"/> / <Translate ios="true" ids="res_source_one_per_tile"/>*
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
 
 </TabItem>
 
@@ -341,13 +342,14 @@ If you want to access raster maps offline, you might need to predownload tiles. 
 If you want the maps to automatically update the tiles after some time, you can set an expiration time, then OsmAnd will reload the tiles as soon as they are displayed.
 :::
 
-:::info
-**First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer).**
-:::
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+
+:::info
+**First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer), [Overlay](#overlay-layer)/[Underlay](#underlay-layer)**
+:::
 
 For **<Translate android="true" ids="android_button_seq"/>** you need to select the area by the size of your screen device and to do a long click on the map, then *<Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> →* 
 At this screen you need to choose zoom levels → screen of downloading progress → <Translate android="true" ids="shared_string_download"/>
@@ -357,11 +359,17 @@ At this screen you need to choose zoom levels → screen of downloading progress
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-    
-For **iOS** you need to do a long tap on the map, then *<Translate ios="true" ids="actions,download_map"/> / <Translate ios="true" ids="update_map"/> →* 
+
+
+:::info
+**First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer).**
+:::
+
+For **<Translate ios="true" ids="ios_button_seq"/>** you need to do a long tap on the map, then *<Translate ios="true" ids="shared_string_actions,shared_string_download_map"/> / <Translate ios="true" ids="update_tile"/> →* 
 At this screen you can select the needed area, choose zoom levels. When you set all parameters you can see a number of tiles and download size. Next, click to <Translate ios="true" ids="shared_string_continue"/> → screen of downloading progress.
 
 ![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+
 
 </TabItem>
 

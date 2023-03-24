@@ -356,7 +356,7 @@ Actions:
 ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
 
 Actions:  
-- *<Translate ios="true" ids="map_settings_show"/>* - allows to show or not group waypoints on the map.
+- *<Translate ios="true" ids="recording_context_menu_show"/>* - allows to show or not group waypoints on the map.
 - *<Translate ios="true" ids="fav_rename"/>* - allows to change Group name.
 - *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
 - *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.

@@ -139,7 +139,7 @@ A. <Translate ios="true" ids="shared_string_import,quick_action_map_source_title
 
 ![Import package iOS](@site/static/img/plugins/online-maps/import-package-ios.png)  
 
-B. <Translate ios="true" ids="shared_string_menu,map_settings_map,map_settings_overunder,import_from_docs"/>  
+B. <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,import_from_docs"/>  
 
 C. You can click the SQLiteDb-file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.  
 
