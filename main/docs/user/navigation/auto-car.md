@@ -24,7 +24,7 @@ To use the Android version of the OsmAnd app in Android Auto, you have to purcha
 
 OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android or iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/osmand_android_auto.png)  
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-overview.png)  
 
 
 ## Setup
@@ -38,7 +38,7 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 - Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
 - You will then be able to start the navigation or use the OsmAnd search function in Android Auto.   
 
-![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-1.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-setup.png)
 
 
 ## Start navigation
@@ -51,6 +51,11 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 :::note
 All categories for route endpoint selection, [History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
 :::
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-start.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-stop.png)
+
+
+## Select a route endpoint
 
 
 ### Interaction with the map
@@ -89,10 +94,10 @@ To use [markers](../personal/markers.md#overview) in Android Auto for navigation
 
 Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using Android Auto you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-5.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-favrites.png)
 
 
-## Tracks
+### Tracks
 
 :::tip
 Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
@@ -103,13 +108,13 @@ From the list of tracks available in *Menu → My Places → [Tracks](../persona
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
 
 
-## History
+### History
 
 Ability to select a navigation point from the history. Tapping opens a screen with the search history and the last route, sorted by the last use of the destination endpoints.   
 [Search History](../search/search-history.md)  
 
 
-## Search
+### Search
 
 With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
 - [Address search](../search/search-address.md) - enter the needed address in the search field.
@@ -132,7 +137,7 @@ Through the *Settings* menu in Android Auto you can select the end point of the 
 
 In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-4.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-voice.png)
 
 
 ### Announce incoming text messages
@@ -157,6 +162,8 @@ You can set them up by going to *<Translate android="true" ids="shared_string_me
 ### Map appearance
 
 You can change the viewing angle for the 2.5D view of the map on your vehicle's multimedia system screen.  
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)  
 
 
 ### Split-screen
