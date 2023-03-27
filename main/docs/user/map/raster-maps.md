@@ -347,9 +347,11 @@ If you want the maps to automatically update the tiles after some time, you can 
 <TabItem value="android" label="Android">  
 
 
+
 :::info
 **First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer), [Overlay](#overlay-layer)/[Underlay](#underlay-layer)**
 :::
+
 
 For **<Translate android="true" ids="android_button_seq"/>** you need to select the area by the size of your screen device and to do a long click on the map, then *<Translate android="true" ids="shared_string_menu,shared_string_actions,shared_string_download_map"/> / <Translate android="true" ids="update_tile"/> →* 
 At this screen you need to choose zoom levels → screen of downloading progress → <Translate android="true" ids="shared_string_download"/>
