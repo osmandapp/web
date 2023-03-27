@@ -37,6 +37,7 @@ export default function Render() {
         'Bollard' : 'barrier/barrier_barrier_bollard',
         'Border control' : 'barrier/barrier_barrier_border_control',
         'Motorcycle barrier' : 'barrier/barrier_barrier_motorcycle_barrier',
+        'Coupure barrier' : 'barrier/barrier_barrier_coupure',
         'Main entrance' : 'barrier/barrier_entrance_main',
         'Entrance' : 'barrier/barrier_entrance_yes',
         'Exit' : 'barrier/barrier_entrance_exit',

@@ -26,9 +26,9 @@ You can participate in testing the OsmAnd beta build through Google Play.
 * Added ["Speed/Slope" graph](#speedslope-graph) for track analysis.
 * Added ["Nautical miles/feet"](#nautical-miles-and-feet) unit of length.
 * The [App language](#app-language-for-android-13) selection was moved to the system settings on Android 13.
-* Added possibility to download online tiles used as "Overlay" or "Underlay" maps.
-* Added support of imperial measurement units for "Vehicle parameters".
-* New Moped profile.
+* [Downloading online tiles](#downloand-overlayunderlay-maps) used as "Overlay" or "Underlay" maps.
+* [Imperial measurement](#imperial-measurement) units for "Vehicle parameters".
+* [Moped profile](#moped-profile).
 * [Simulate location](#redesign-simulate-location) redesign.
 * [**Bugs fixs:**](#bugs-fixs)
   * Fixed [bugs with Android Auto](#android-auto).
@@ -146,6 +146,32 @@ Added ["Nautical miles/feet"](../user/personal/profiles.md#units--formats) for U
 Added support for OsmAnd language preferences (Android 13):
 
 _App info (OsmAnd) → App languages_
+
+### Downloand Overlay/Underlay maps
+
+Added possibility to download online tiles used as "Overlay" or "Underlay" maps:
+
+_[Map Context menu](https://osmand.net/docs/user/map/map-context-menu#update--download-online-maps) → Actions → Download map_
+
+[Download/update tiles menu](https://osmand.net/docs/user/map/raster-maps#download--update-tiles) will be opened.
+
+### Imperial measurement
+
+Added support of imperial measurement units for "Vehicle parameters".
+
+Open _Menu → Settings → Profile → General settings → Driving region → USA_
+
+Now, you can choose inches for Vehicle parameters: _Menu → Settings → Profile → General settings → Navigation settings → Vehicle parameters_
+
+### Moped profile.
+
+Added new profile - Moped. It use a "moped" routing profile, have a bicycle as a parent, and be disabled by default.
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/blog/2023-03-01-android-4-4/moped.png').default} alt="Moped profile"/></td>
+    </tr>
+</table> 
 
 ### Redesign Simulate location
 

@@ -480,7 +480,7 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 <TabItem value="ios" label="iOS">  
 
 You can choose this setting by long-click to "+" or "-" button on the screen or:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_settings_map_magnifier"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,configure_map_magnifier"/>* 
 
 </TabItem>
 

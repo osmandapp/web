@@ -264,11 +264,8 @@ Configure routing type and its parameters.
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        |   |
-| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | If enabled, your route will be recalculated if you move to the starting point.  |   |
-
-
-
+| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        | If [Voice prompts](./voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
+| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 ### Simulate navigation
 
