@@ -41,7 +41,7 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 ![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-setup.png)
 
 
-## Start navigation
+### Start navigation
 
 1. [Setup](#setup)
 2. Settings in the app
@@ -52,15 +52,15 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 All categories for route endpoint selection, [History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
 :::
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-start.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-stop.png)
-
-
-## Select a route endpoint
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-start.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-stop.png)  
 
 
 ### Interaction with the map
 
 Most OsmAnd settings directly related to navigation are available in Android Auto. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons.md#compass)* widget. The rest of the settings are focused on getting the end point for the route on the map.
+
+
+## Select a route endpoint
 
 ## User points group 
 
