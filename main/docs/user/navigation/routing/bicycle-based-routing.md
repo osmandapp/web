@@ -29,13 +29,13 @@ OsmAnd's bicycle routing features allows cyclists to input a start and end point
 
 <TabItem value="android" label="Android">  
 
-![Bicycle routing settings](@site/static/img/navigation/routing/Bicycle-based_bicycle_andr-4.png)    
+![Bicycle routing settings](@site/static/img/navigation/routing/cycling_routing_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bicycle routing settings iOS](@site/static/img/navigation/routing/Bicycle-based_bicycle__ios_1.png)  
+![Bicycle routing settings iOS](@site/static/img/navigation/routing/cycling_routing_ios.png)  
 
 </TabItem>
 

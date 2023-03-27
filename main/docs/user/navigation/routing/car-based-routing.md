@@ -37,7 +37,7 @@ Car routing is designed to help drivers find the most efficient and direct route
 
 <TabItem value="ios" label="iOS">
 
-![Car routing settings iOS 1](@site/static/img/navigation/routing/routing_car_settings_ios_2.png)
+![Car routing settings iOS 1](@site/static/img/navigation/routing/car_routing_ios.png)
 
 </TabItem>
 
@@ -71,7 +71,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 <TabItem value="ios" label="iOS">
 
-![Truck routing settings iOS 2](@site/static/img/navigation/routing/routing_truck_settings_ios_2.png)
+![Truck routing settings iOS 2](@site/static/img/navigation/routing/truck_routing_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> The transportation of hazardous materials on certain roads or tunnels may be prohibited by local authorities </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/hazards_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
+|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> The transportation of hazardous materials on certain roads or tunnels may be prohibited by local authorities. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/hazards_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
 |*<Translate android="true" ids="routing_attr_hazmat_category_name"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. You can also consider them on the route. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/truck_hazmat_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the USA restrictions.  |
 
 ## Route parameters - Motorcycle
@@ -96,7 +96,7 @@ Motorcycle routing is designed to create the best possible route for motorcycle 
 
 <TabItem value="ios" label="iOS">
 
-![Motorbicke routing settings iOS 2](@site/static/img/navigation/routing/routing_moto_settings_ios_2.png)
+![Motorbicke routing settings iOS 2](@site/static/img/navigation/routing/motorcycle_routing_ios.png)
 
 </TabItem>
 
