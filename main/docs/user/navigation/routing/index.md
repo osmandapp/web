@@ -15,12 +15,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview  
 
-The routing type determines how the route will be calculated. The OsmAnd app uses different routing types for hiking, cycling, skiing or boating routes. 
+The routing type determines how the route will be calculated. The OsmAnd app uses different routing types for hiking, cycling, skiing or boating routes. Each profile has a specific type of routing assigned to it, which, however, you can change according to your needs: *<Translate android="true" ids="shared_string_menu,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/>, <Translate android="true" ids="app_mode_car"/>, <Translate android="true" ids="app_mode_pedestrian"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 The following profiles (with their own routing types) are available by default: *Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding*.  
 
 :::note  
-*Truck, Motorcycle, Moped, Aircraft and Horseback* riding profiles are switched off by default. You need to activate these profiles.
+*Truck, Motorcycle, Moped, Aircraft and Horseback* riding profiles are switched off by default. You need to activate these profiles.  
+*Direct-to-point* navigation type doesn't have its own profile.
 :::
 
 | Category | Description | Note |

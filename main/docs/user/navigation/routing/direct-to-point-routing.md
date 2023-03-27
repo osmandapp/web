@@ -16,157 +16,39 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Boat mode for navigation can be enabled together with the [Nautical plugin](../../plugins/nautical-charts.md). You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here](../../personal/profiles.md).
+Direct-to-point routing in OsmAnd is a useful feature that allows you to navigate directly to a specific point on the map without having to follow a pre-defined route or road network. This feature can be used by boat skippers,
+outdoor enthusiasts, or by emergency services during rescue operations. Overall, direct-to-point routing is a flexible and versatile feature that can be used in a variety of situations where traditional routing methods may not be appropriate or effective.
 
-In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
-[Boat navigation type](../../navigation/routing/#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](#direct-to-point) and [Straight-line](#straight-line).   
+:::note
+*Direct-to-point* routing type is not linked to any profile and can be used with different ones.
+This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../route-navigation.md#route-details) section is empty).  
+:::
 
-## Preferred profile
+![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
-Boat navigation type (by default for Boat app profiles) uses rivers, waterway fairway for routing. 
-User can calculate distance for koyak trip, for example.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-*<Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*   
-
-![Boat Navigation type Android](@site/static/img/navigation/boat/boat_navigation_type_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>(<Translate ios="true" ids="app_mode_boat"/>) → <Translate ios="true" ids="sett_settings,routing_settings_2,nav_type_title"/>*  
-
-![Boat Navigation type iOS](@site/static/img/navigation/boat/boat_navigation_type_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-
-## How to use
-
-Navigation type for Boat navigation is *Boat* by default. This type uses rivers or waterway fairways for building your route.  
-For starting naviation user need to click [navigation button](../../widgets/map-buttons.md#directions) on the screen or choose ["Navigation" in the main menu](../../start-with/main-menu.md#features).  
-
-User need to choose start-finish points on a river, for example. 
+The point on the line is a virtual point, that has the same distance to the destination as the current location  (it is not a projection of the current location on the line!). So it is easy to measure the progress, and it is possible to use measurement tool to get correct distance.
+## Route parameters - Direct-to-point
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android"> 
+<TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*  
-
-![Boat Navigation screen points Android](@site/static/img/navigation/boat/boat_navigation_points_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,routing_settings"/>*
-
-![Boat Navigation screen points iOS](@site/static/img/navigation/boat/boat_navigation_points_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-
-### Details
-
-User need to choose start-finish points on a river, for example. 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,rendering_category_details"/>*  
-
-![Boat Navigation screen details Android](@site/static/img/navigation/boat/boat_navigation_details_android.png)  
-
-1. Buttons:
-- &#128438; - allows to save and print your route like data table.
-- <Translate android="true" ids="save_as_new_track"/> - allows to save as new track.
-- <Translate ios="true" ids="shared_string_export"/> or share - allows to export or share.
-2. Graph with altitude info.
-3. Button [Analyse on map](../../navigation/route-navigation.md#details)
-4. <Translate ios="true" ids="routeInfo_steepness_name"/> info.
-5. <Translate android="true" ids="step_by_step"/> instructions  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,routing_settings,res_details"/>*
-
-![Boat Navigation screen details iOS](@site/static/img/navigation/boat/boat_navigation_details_ios.png)  
-
-1. <Translate ios="true" ids="shared_string_export"/> or share - allows to export or share.
-2. Graph with altitude info.
-3. Button [Analyse on map](../../navigation/route-navigation.md#details)
-4. <Translate ios="true" ids="routeInfo_steepness_name"/> info.
-
-</TabItem>
-
-</Tabs> 
-
-
-### Settings
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*  
-
-![Boat Navigation screen options Android](@site/static/img/navigation/boat/boat_navigation_options_android.png)  
-
-- *<Translate android="true" ids="shared_string_sound"/>* - allows to switch off/on voice prompts and to open [voice prompts settings menu](../../personal/profiles.md#navigation-settings).
-- *<Translate android="true" ids="impassable_road"/>* - allows to select a road you want to avoid during navigation.
-- *<Translate android="true" ids="show_along_the_route"/>* - link
-- *<Translate android="true" ids="follow_track"/>* - link
-- *<Translate android="true" ids="temporary_conditional_routing"/>* - link
-- *<Translate android="true" ids="routing_settings_2"/>* - opens [Navigation settings menu](../../personal/profiles.md#navigation-settings) of your app profile.
-- *<Translate android="true" ids="customize_route_line"/>* - [link](../../map/tracks-on-map.md#route-appearance-android).
-- *<Translate android="true" ids="simulate_navigation"/>* - allows to simulate your navigation trip.
+![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_andr.png)    
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,routing_settings,shared_string_settings"/>*  
-
-![Boat Navigation screen options iOS](@site/static/img/navigation/boat/boat_navigation_settings_ios.png)  
-
-- *<Translate android="true" ids="shared_string_sound"/>* - allows to switch off/on voice prompts and to open [voice prompts settings menu](../../personal/profiles.md#navigation-settings).
-- *<Translate android="true" ids="impassable_road"/>* - allows to select a road you want to avoid during navigation.
-- *<Translate android="true" ids="follow_track"/>* - link
-- *<Translate android="true" ids="temporary_conditional_routing"/>* - link
-- *<Translate android="true" ids="routing_settings_2"/>* - opens [Navigation settings menu](../../personal/profiles.md#navigation-settings) of your app profile.
-- *<Translate android="true" ids="simulate_navigation"/>* - allows to simulate your navigation trip.
+![Direct-to-point routing settings iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
+You can activate *Direct-topoint* routing in the desired profile: 
+- *<Translate android="true" ids="shared_string_menu,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
-## Direct-to-point for boat
-
-**1.** Next version of navigation type for boat:  **Direct-to-point**. Direct-to-point navigation is a critical and frequently used feature for marine users.  
-How to make your navigation profile with your parameters read [here](../../personal/profiles.md).  
-
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,nav_type_hint,routing_profile_direct_to"/>*
-- *<Translate ios="true" ids="menu,sett_settings,app_profiles"/>(<Translate ios="true" ids="app_mode_boat"/>) → <Translate ios="true" ids="sett_settings,routing_settings_2,nav_type_title,nav_type_direct_to"/>*
-
-**2.** It is possible to specify the recalculation distance (by default it is OFF for this routing profile). The route will be recalculated if the distance from the route to the current location is more than selected value.
-
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,route_parameters,route_recalculation_dist_title"/>*
-- *<Translate ios="true" ids="menu,sett_settings,app_profiles"/>(<Translate ios="true" ids="app_mode_boat"/>) → <Translate ios="true" ids="sett_settings,routing_settings_2,route_parameters,recalculate_route"/>*  
-
-**3.** Also, you can see a point projection that represents the distance to the end point on the line. The point on the line is a virtual point to show the distance (it is not a projection on the line) but a point that has the same distance as current location to the finish point. So it is easy to measure the progress and it is possible to use measurements tool to get correct distance.
-
-![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
-
+Routing settings:  
+- In the [Recalculate route section](../route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options. Default value - route will be recalculated in case of 0&nbsp;meters deviation. This means that the route will not be recalculated.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../navigation-settings.md#default-speed)* (iOS) should be set according to your vehicle parameters. Otherwise, the default speed of the selected profile will be used.
+- In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.  
