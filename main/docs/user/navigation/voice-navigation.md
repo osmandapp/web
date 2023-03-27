@@ -151,7 +151,7 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 
-## Options of voice prompts
+## Additional details about voice prompts
 
 ### Download voice prompts
 
@@ -208,7 +208,7 @@ There are currently a total of 45 languages.
 For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
 
 
-## The most common issues
+## Common problems with voice prompts
 <!-- 
 Troubleshooting  
 Fixes issues with voice prompts -->
@@ -221,7 +221,7 @@ When using voice prompts, you may have issues with their playback. Here are some
 4. Check which [voice guidance](#language) are selected. 
 
 
-## Notifications
+## Text Notifications
 
 Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 
