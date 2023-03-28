@@ -17,6 +17,13 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.4 
+Release date: 03/2023
+
+
+<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.12-4312.apk" />
+
+
 ### Version 4.3 
 Release date: 12/2022
 

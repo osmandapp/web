@@ -14,6 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+## Overview
+
+This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-location-change), the display of [POIs along the route](#show-poi-along-the-route), the use of [screen alerts](#screen-alerts), the[appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../navigation/route-navigation.md#settings).
 
 
 ## Map during navigation
@@ -36,7 +39,7 @@ Description of the change in map behavior during navigation.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -58,7 +61,6 @@ For Android, this item named [Animate own position](#other) is located in the "O
 ## Show POI along the route
 
 
-
 ## Screen alerts
 
 <Tabs groupId="operating-systems">
@@ -75,7 +77,7 @@ For Android, this item named [Animate own position](#other) is located in the "O
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,sett_settings,app_profiles,routing_settings_2"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -106,7 +108,7 @@ This menu allows you to adjust the appearance of the route line to a variety of 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,shared_string_settings,app_profiles,routing_settings_2,customize_route_line"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
 
@@ -114,8 +116,8 @@ This menu allows you to adjust the appearance of the route line to a variety of 
 
 </Tabs>  
 
-<!--Customize route line menu items-->
 
+### Customize route line menu items
 
 
 ### Color
@@ -161,8 +163,6 @@ Select a route line's color by types.
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
 | &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the color doesn't represent the absolute height value. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-
-<!--
 |*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../map/vector-maps.md#road-style)|
@@ -176,7 +176,7 @@ Select a route line's color by types.
 | *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
-![Altitude](@site/static/img/navigation/route/firmness.png)  | -->
+![Altitude](@site/static/img/navigation/route/firmness.png)  | 
 
 </TabItem>
 
