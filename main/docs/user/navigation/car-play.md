@@ -26,7 +26,7 @@ Driving a vehicle and using your phone or tablet at the same time is usually for
 
 To use CarPlay and the OsmAnd app on your vehicle's screen, follow these steps:
 
-1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, and the iOS version is older than 7.1, it probably does. Check the [list of car models](https://www.apple.com/ios/carplay/available-models/) with CarPlay support.  
+1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, and the iOS version of your device is older than 7.1, it probably does. Check the [list of car models](https://www.apple.com/ios/carplay/available-models/) with CarPlay support.  
 2. Connect your device to your vehicle's multimedia system using a Lightning cable or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
 3. Once connected, the CarPlay interface will automatically appear on your car screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.
 4. To use OsmAnd, select it on the CarPlay screen.   
@@ -82,6 +82,10 @@ You can select previously preset and added [Markers](../personal/markers.md#sett
 
 :::note
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
+:::
+
+:::note
+Through the **Navigation** menu in Car Play, you can select the end point of the route, *without any ability to add intermediate destinations*.  
 :::
 
 
@@ -156,13 +160,6 @@ With this option you can search for the necessary places on the map to navigate.
 
 
 ## Additional features
-
-### Menu Navigation
-
-Through the *Navigation* menu in Car Play, you can select the end point of the route, without any ability to add intermediate destinations.  
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
-
 
 ### Voice prompts
 

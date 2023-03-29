@@ -35,8 +35,6 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
 - You need to have an OsmAnd Pro, OsmAnd+ or Maps+ subscription. Check it here *Menu → Settings → Purchases*.
 - To find out how to connect and set up your device, please visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites. 
-- Once connected, an icon with the OsmAnd logo and name will appear among the available programs in the menu on the selected platform.
-- You will then be able to start the navigation or use the OsmAnd search function in Android Auto.   
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-setup.png)
 
@@ -68,6 +66,10 @@ You can select previously preset and added [Markers](../personal/markers.md#sett
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
 :::
 
+:::note
+Through the **Settings** menu in Android Auto you can select the end point of the route, *without any ability to add intermediate destinations*.
+:::
+
 
 ### History
 
@@ -76,7 +78,13 @@ In the History category, you can select a destination from a list of endpoints. 
 
 ### POI
 
-You can select one needed [POI](../map/point-layers-on-map.md#points-of-interest-poi) from the list of available categories.  
+POIs (points of interest) are a type of points that are highlighted on the map by special icons provided in the [OsmAnd settings](../map/point-layers-on-map.md#points-of-interest-poi) and sorted into groups. 
+
+To build a route to a POI in Android Auto, follow these steps:
+
+1. Select the needed POI from the list of available categories or enter the name of the POI using [Search](#search). 
+2. OsmAnd calculates the route and displays it on the CarPlay screen. Tap **Start** button to start navigating to that location. 
+3. Depending on your OsmAnd app settings and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to your destination.
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
 
@@ -118,12 +126,7 @@ With this option you can search for the necessary places on the map to navigate.
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)   ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
 
 
-## Additional features
-
-### Menu navigation
-
-Through the *Settings* menu in Android Auto you can select the end point of the route, without any ability to add intermediate destinations.
-
+## Additional options
 
 ### Voice prompts
 
@@ -141,22 +144,30 @@ When you connect the app to Android Auto, the [map mode](../map/vector-maps.md#m
 
 ### Screen Alert widget
 
-This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
-You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.  
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different visual appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* in the app, not in Android Auto. For a detailed description of the types of alerts, see [this article](../widgets/nav-widgets.md#alert-types).    
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-alert.png)
 
 
 ### Map appearance
 
-You can change the viewing angle for the [2.5D view](../personal/profiles.md#appearance) of the map on your vehicle's multimedia system screen.  
+The screen of your vehicle's multimedia system can display 2D and 3D views of the OsmAnd map.  You can activate, deactivate and set up *[2.5 D view](../personal/profiles.md#appearance)* in the application *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*. Do this before connecting to Android Auto.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)  
 
 
 ### Split-screen
 
-The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps.  
+The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps. Set up the display on the phone connected to Android Auto.  
+
+<!-- The Multi window display feature can also be enabled and disabled from the Window Shade.
+1. From a Home screen, tap Apps
+2. Tap Settings.
+3. Tap Multi window.
+4. Tap the Multi window switch
+5. Return to the home screen. 
+
+https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 -->
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
 
