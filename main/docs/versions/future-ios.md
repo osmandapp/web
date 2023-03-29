@@ -55,8 +55,8 @@ Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 versi
   
  <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/wiki_ios.png').default} alt="Wiki"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/wiki_ios_1.png').default} alt="Wiki"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/wiki_ios.png').default} alt="Wiki"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/wiki_ios_1.png').default} alt="Wiki"/></td>
     </tr>
  </table> 
  
@@ -64,8 +64,8 @@ Minimum iOS version is increased to 15.0. Please, upgrade your iOS to 15.0 versi
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/wiki_ios_2.png').default} alt="Wiki"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/wiki_ios_3.png').default} alt="Wiki"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/wiki_ios_2.png').default} alt="Wiki"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/wiki_ios_3.png').default} alt="Wiki"/></td>
     </tr>
  </table> 
 
@@ -75,8 +75,8 @@ Added the search bar for [Favorites menu](../user/personal/favorites.md): _Menu 
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/favorites_search.png').default} alt="Favorites"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/favorites_search_1.png').default} alt="Favorites"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/favorites_search.png').default} alt="Favorites"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/favorites_search_1.png').default} alt="Favorites"/></td>
     </tr>
  </table> 
 
@@ -87,8 +87,8 @@ Added the search bar for [Favorites menu](../user/personal/favorites.md): _Menu 
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play.png').default} alt="CarPlay"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_1.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/car_play.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/car_play_1.png').default} alt="CarPlay"/></td>
     </tr>
  </table> 
 
@@ -96,8 +96,8 @@ Added the search bar for [Favorites menu](../user/personal/favorites.md): _Menu 
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_2.png').default} alt="CarPlay"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_3.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/car_play_2.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/car_play_3.png').default} alt="CarPlay"/></td>
     </tr>
  </table> 
 
@@ -105,7 +105,7 @@ Added the search bar for [Favorites menu](../user/personal/favorites.md): _Menu 
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/car_play_4.png').default} alt="CarPlay"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/car_play_4.png').default} alt="CarPlay"/></td>
     </tr>
  </table> 
 
@@ -119,8 +119,8 @@ Added ability to [select routes on the map](../user/map/vector-maps.md#routes) f
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking.png').default} alt="Hiking"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_1.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/hiking.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/hiking_1.png').default} alt="Hiking"/></td>
     </tr>
   </table> 
 
@@ -128,8 +128,8 @@ Available to start [navigation by a track](../user/navigation/gpx-navigation.md)
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_2.png').default} alt="Hiking"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/hiking_3.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/hiking_2.png').default} alt="Hiking"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/hiking_3.png').default} alt="Hiking"/></td>
     </tr>
   </table> 
 
@@ -142,7 +142,7 @@ Track Context menu → Actions → [Upload to OpenStreetMap](../user/map/track-c
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/openstreetmap.png').default} alt="OSM"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/openstreetmap.png').default} alt="OSM"/></td>
     </tr>
   </table> 
 
@@ -155,7 +155,7 @@ _Menu → Settings → OsmAnd settings → History_
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/history.png').default} alt="History"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/history.png').default} alt="History"/></td>
     </tr>
   </table> 
 
@@ -168,7 +168,7 @@ _Menu → Settings → App Profile → General settings → Map orientation → 
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/map_orient.png').default} alt="Map orientation"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/map_orient.png').default} alt="Map orientation"/></td>
     </tr>
   </table> 
 
@@ -182,7 +182,7 @@ Improved visibility of [the map ruler](../user/widgets/radius-ruler.md#ruler):
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/map_ruler.png').default} alt="Map Ruler"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/map_ruler.png').default} alt="Map Ruler"/></td>
     </tr>
   </table> 
 
@@ -196,9 +196,9 @@ _Menu → Configure screen_
 
   <table class="blogimage">
    <tr>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_cc.png').default} alt="Coordinate widgets"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_d.png').default} alt="Developer widgets"/></td>
-    <td><img src={require('@site/blog/2023-03-13-ios-4-4/widget_ss.png').default} alt="sunset and sunrise widgets"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/widget_cc.png').default} alt="Coordinate widgets"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/widget_d.png').default} alt="Developer widgets"/></td>
+    <td><img src={require('@site/blog/2023-03-30-ios-4-4/widget_ss.png').default} alt="sunset and sunrise widgets"/></td>
     </tr>
   </table> 
 
