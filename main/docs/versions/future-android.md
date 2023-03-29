@@ -46,8 +46,8 @@ _OsmAnd menu → Configure map → Tracks_
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_menu.png').default} alt="tracks"/></td>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_menu_1.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/tracks_menu.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/tracks_menu_1.png').default} alt="tracks"/></td>
     </tr>
 </table> 
 
@@ -70,16 +70,16 @@ _Navigation context menu → Details → Share button_
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link.png').default} alt="tracks"/></td>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_1.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/nav_link.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/nav_link_1.png').default} alt="tracks"/></td>
     </tr>
 </table> 
 
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_2.png').default} alt="tracks"/></td>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/nav_link_3.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/nav_link_2.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/nav_link_3.png').default} alt="tracks"/></td>
     </tr>
 </table> 
 
@@ -94,7 +94,7 @@ Added a new fixed mode for [Map orientation](../user/map/interact-with-map.md#ma
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/map-orientation.png').default} alt="map orientation"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/map-orientation.png').default} alt="map orientation"/></td>
     </tr>
 </table> 
 
@@ -112,7 +112,7 @@ You can choose three options to display your location on the screen map here:
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/display_position.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/display_position.png').default} alt="tracks"/></td>
     </tr>
 </table> 
 
@@ -122,7 +122,7 @@ We changed the structure of the Start screen. It is now available to open OsmAnd
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/start_screen.png').default} alt="start screen"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/start_screen.png').default} alt="start screen"/></td>
     </tr>
 </table> 
 
@@ -132,8 +132,8 @@ Added _Slope/Speed_ mode for [Analyze track on the map](../user/map/tracks-on-ma
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/tracks_graph.png').default} alt="tracks"/></td>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/track_graph_1.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/tracks_graph.png').default} alt="tracks"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/track_graph_1.png').default} alt="tracks"/></td>
     </tr>
 </table> 
 
@@ -169,7 +169,7 @@ Added new profile - Moped. It use a "moped" routing profile, have a bicycle as a
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/moped.png').default} alt="Moped profile"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/moped.png').default} alt="Moped profile"/></td>
     </tr>
 </table> 
 
@@ -179,7 +179,7 @@ We redesigned ["Simulate your position"](../user/plugins/development.md#plugin-s
 
 <table class="blogimage">
   <tr>
-    <td><img src={require('@site/blog/2023-03-01-android-4-4/simulate_location.png').default} alt="simulate your location"/></td>
+    <td><img src={require('@site/blog/2023-03-29-android-4-4/simulate_location.png').default} alt="simulate your location"/></td>
     </tr>
 </table> 
 
