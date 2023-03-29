@@ -34,7 +34,7 @@ Pedestrian routing can be useful not only in urban areas, where pedestrians may 
 
 <TabItem value="ios" label="iOS">
 
-![Pedestrian routing settings iOS 2](@site/static/img/navigation/routing/routing_pedestrian_settings_ios_2.png)
+![Pedestrian routing settings iOS 2](@site/static/img/navigation/routing/pedestrian_routing_ios.png)
 
 </TabItem>
 

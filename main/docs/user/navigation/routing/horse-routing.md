@@ -27,7 +27,7 @@ Horse routing is designed to provide equestrians with information about horse-fr
 
 <TabItem value="android" label="Android">  
 
-![Horse routing settings Android 1](@site/static/img/navigation/routing/horse_routing_android.png) 
+![Horse routing settings Android 1](@site/static/img/navigation/routing/horseback_routing_andr.png) 
 
 </TabItem>
 
@@ -46,8 +46,8 @@ Horse routing is designed to provide equestrians with information about horse-fr
 | *<Translate android="true" ids="routing_attr_allow_gate_name"/>* |  <Translate android="true" ids="routing_attr_allow_gate_description"/>. | Gate is a kind of a [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier), that blocks movement, however, it can be opened by a rider. |
 |  *<Translate android="true" ids="routing_attr_carriage_restrictions_name"/>*  |  <Translate android="true" ids="routing_attr_carriage_restrictions_description"/>.  | In some countries, [horse-drawn carriages](https://wiki.openstreetmap.org/wiki/Key:carriage) are not permitted on motorways, they are only allowed on a very small number of other roads.   |
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Ignore private access restrictions for routing.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
-| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  |    |
-| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  |    |
+| *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Only streets specially designated for horses will be used for routing.   |
+| *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Only ways specially designated for horses will be used for routing.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. |
 
 Other routing settings:  

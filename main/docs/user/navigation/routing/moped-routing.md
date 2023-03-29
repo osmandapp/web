@@ -29,13 +29,13 @@ The moped's rooting settings are not too overloaded and consist of just a few se
 
 <TabItem value="android" label="Android">  
 
-![Moped routing settings Android](@site/static/img/navigation/routing/moped_routing_android.png)  
+![Moped routing settings Android](@site/static/img/navigation/routing/moped_routing_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Moped routing settings iOS](@site/static/img/navigation/routing/moped_routing_android.png)  
+![Moped routing settings iOS](@site/static/img/navigation/routing/moped_routing_ios.png)  
 
 </TabItem>
 

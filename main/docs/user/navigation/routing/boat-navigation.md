@@ -16,9 +16,27 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Boat mode for navigation can be enabled together with the [Nautical plugin](../../plugins/nautical-charts.md). You can build your trip on rivers or waterway fairway. You can read more about navigation profiles [here](../../personal/profiles.md).
+Boat routing can be a valuable tool for anyone who enjoys boating or sailing, regardless of whether you are a water sports enthusiast or a professional sailor..
 
-![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png) ![Boat Navigation screen iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)  
+:::note
+Boat routing is usualy used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)). Boat routing can also be used with other profiles.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
+
+![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Boat Navigation screen iOS](@site/static/img/navigation/boat/boat_navigation_ios.png)  
+
+</TabItem>
+
+</Tabs> 
 
 In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
 [Boat navigation type](../../navigation/routing/#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](#direct-to-point) and [Straight-line](#straight-line).  
@@ -132,42 +150,32 @@ User need to choose start-finish points on a river, for example.
 
 </Tabs> 
 
-
-### Settings
+### Route parameters - Boat
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*  
 
-![Boat Navigation screen options Android](@site/static/img/navigation/boat/boat_navigation_options_android.png)  
-
-- *<Translate android="true" ids="shared_string_sound"/>* - allows to switch off/on voice prompts and to open [voice prompts settings menu](../../personal/profiles.md#navigation-settings).
-- *<Translate android="true" ids="impassable_road"/>* - allows to select a road you want to avoid during navigation.
-- *<Translate android="true" ids="show_along_the_route"/>* - link
-- *<Translate android="true" ids="follow_track"/>* - link
-- *<Translate android="true" ids="temporary_conditional_routing"/>* - link
-- *<Translate android="true" ids="routing_settings_2"/>* - opens [Navigation settings menu](../../personal/profiles.md#navigation-settings) of your app profile.
-- *<Translate android="true" ids="customize_route_line"/>* - [link](../../map/tracks-on-map.md#route-appearance-android).
-- *<Translate android="true" ids="simulate_navigation"/>* - allows to simulate your navigation trip.
+![Boat routing settings Android](@site/static/img/navigation/routing/boat_routing_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="menu,routing_settings,shared_string_settings"/>*  
-
-![Boat Navigation screen options iOS](@site/static/img/navigation/boat/boat_navigation_settings_ios.png)  
-
-- *<Translate android="true" ids="shared_string_sound"/>* - allows to switch off/on voice prompts and to open [voice prompts settings menu](../../personal/profiles.md#navigation-settings).
-- *<Translate android="true" ids="impassable_road"/>* - allows to select a road you want to avoid during navigation.
-- *<Translate android="true" ids="follow_track"/>* - link
-- *<Translate android="true" ids="temporary_conditional_routing"/>* - link
-- *<Translate android="true" ids="routing_settings_2"/>* - opens [Navigation settings menu](../../personal/profiles.md#navigation-settings) of your app profile.
-- *<Translate android="true" ids="simulate_navigation"/>* - allows to simulate your navigation trip.
+![Boat routing settings iOS](@site/static/img/navigation/routing/boat_routing_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Allows to use streams and drains for boat navigation. This option may be useful for smaller boats such as canoes, kayaks, rafts, rowboats. |  [Streams](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) are naturally-forming waterways that is too narrow to be called a river. [Drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) are artificial waterways, typically lined with concrete or similar, used to carry superfluous water like storm water or grey-discharge.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Allows to use intermittent waterways for boat navigation.  | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
+
+Other routing settings:  
+- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](./index.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.  
+- In the [Recalculate route section](../route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../navigation-settings.md#default-speed)* (iOS) should be set according to your boat parameters. They are used to determine whether the waterway can be used for routing.
+- In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.

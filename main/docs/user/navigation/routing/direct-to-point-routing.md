@@ -33,7 +33,7 @@ The point on the line is a virtual point, that has the same distance to the dest
 
 <TabItem value="android" label="Android">  
 
-![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_andr.png)    
+![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_routing_andr.png)
 
 </TabItem>
 

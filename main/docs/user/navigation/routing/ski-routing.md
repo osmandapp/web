@@ -32,7 +32,7 @@ The ski routing (and skiing profile) only availible when [Ski map view plugin](.
 
 <TabItem value="android" label="Android">  
 
-![Ski routing settings Android 1](@site/static/img/navigation/routing/skiing_routing_android_1.png) ![Ski routing settings Android 2](@site/static/img/navigation/routing/skiing_routing_android_2.png)
+![Ski routing settings Android 1](@site/static/img/navigation/routing/skiing_routing_1_andr.png) ![Ski routing settings Android 2](@site/static/img/navigation/routing/skiing_routing_2_andr.png)
 
 </TabItem>
 

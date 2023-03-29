@@ -30,7 +30,7 @@ Straight line routing does not take into account any obstacles or barriers that 
 
 <TabItem value="android" label="Android">  
 
-![Straight line routing settings Android 1](@site/static/img/navigation/routing/straight_line_andr.png) 
+![Straight line routing settings Android 1](@site/static/img/navigation/routing/aircraft_routing_andr.png) 
 
 </TabItem>
 
