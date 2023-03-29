@@ -29,6 +29,9 @@ This type of routing does not take into account any obstacles or barriers that m
 The point on the line is a virtual point, that has the same distance to the destination as the current location  (it is not a projection of the current location on the line!). So it is easy to measure the progress, and it is possible to use measurement tool to get correct distance.
 ## Route parameters - Direct-to-point
 
+You can activate *Direct-to-point* routing in the desired profile: 
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -44,9 +47,6 @@ The point on the line is a virtual point, that has the same distance to the dest
 </TabItem>
 
 </Tabs>
-
-You can activate *Direct-topoint* routing in the desired profile: 
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 Routing settings:  
 - In the [Recalculate route section](../route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options. Default value - route will be recalculated in case of 0&nbsp;meters deviation. This means that the route will not be recalculated.

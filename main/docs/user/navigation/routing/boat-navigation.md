@@ -16,11 +16,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Boat routing can be a valuable tool for anyone who enjoys boating or sailing, regardless of whether you are a water sports enthusiast or a professional sailor..
-
-:::note
-Boat routing is usualy used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)). Boat routing can also be used with other profiles.
-:::
+Boat routing can be a valuable tool for anyone who enjoys boating or sailing, regardless of whether you are a water sports enthusiast or a professional sailor. It can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
+The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
 
 <Tabs groupId="operating-systems">
 
@@ -36,121 +33,15 @@ Boat routing is usualy used with boat profile (the last one enabled together wit
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
 
-In OsmAnd users can choose boat navigation types. It's a need for different use cases. 
-[Boat navigation type](../../navigation/routing/#boat) is by default for Boat profile. Advanced users can choose additional two navigation types for boat navigation: [Direct-to-point](#direct-to-point) and [Straight-line](#straight-line).  
+## Route parameters - Boat
+
+Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the Boat profile.  
 
 :::note
-Professional sailors are required to have official maps, but this extension can help you a lot on a small voyage or be a supplement to the official nautical charts.
+Typically, *Boat routing* is used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)).  However, it is possible to use boat routing with other profiles as well, and different [rooting types](#other-routing-types-for-boat) can also be employed within the boat profile.  
 :::
-
-## Boat profile
-
-Boat navigation type (by default for Boat app profiles) uses rivers, waterway fairway for routing. 
-User can calculate distance for koyak trip, for example.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-*<Translate android="true" ids="shared_string_menu,configure_profile"/>(<Translate android="true" ids="app_mode_boat"/>) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*   
-
-![Boat Navigation type Android](@site/static/img/navigation/boat/boat_navigation_type_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,sett_settings,app_profiles"/>(<Translate ios="true" ids="app_mode_boat"/>) → <Translate ios="true" ids="sett_settings,routing_settings_2,nav_type_title"/>*  
-
-![Boat Navigation type iOS](@site/static/img/navigation/boat/boat_navigation_type_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-### Direct-to-point
-
-Version of navigation type for boat:  **Direct-to-point**. Direct-to-point navigation is a critical and frequently used feature for marine users.  
-How to make your navigation profile with your parameters read [here](../../personal/profiles.md).  
-
-![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
-
-### Straight line
-
-The next navigation type is **Straight line**.
-
-![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
-
-
-## How to use
-
-Navigation type for Boat navigation is *Boat* by default. This type uses rivers or waterway fairways for building your route.  
-For starting naviation user need to click [navigation button](../../widgets/map-buttons.md#directions) on the screen or choose ["Navigation" in the main menu](../../start-with/main-menu.md#features).  
-
-User need to choose start-finish points on a river, for example. 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>*  
-
-![Boat Navigation screen points Android](@site/static/img/navigation/boat/boat_navigation_points_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,routing_settings"/>*
-
-![Boat Navigation screen points iOS](@site/static/img/navigation/boat/boat_navigation_points_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-
-### Details
-
-User need to choose start-finish points on a river, for example. 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
-
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,rendering_category_details"/>*  
-
-![Boat Navigation screen details Android](@site/static/img/navigation/boat/boat_navigation_details_android.png)  
-
-1. Buttons:
-- &#128438; - allows to save and print your route like data table.
-- <Translate android="true" ids="save_as_new_track"/> - allows to save as new track.
-- <Translate ios="true" ids="shared_string_export"/> or share - allows to export or share.
-2. Graph with altitude info.
-3. Button [Analyse on map](../../navigation/route-navigation.md#details)
-4. <Translate ios="true" ids="routeInfo_steepness_name"/> info.
-5. <Translate android="true" ids="step_by_step"/> instructions  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="menu,routing_settings,res_details"/>*
-
-![Boat Navigation screen details iOS](@site/static/img/navigation/boat/boat_navigation_details_ios.png)  
-
-1. <Translate ios="true" ids="shared_string_export"/> or share - allows to export or share.
-2. Graph with altitude info.
-3. Button [Analyse on map](../../navigation/route-navigation.md#details)
-4. <Translate ios="true" ids="routeInfo_steepness_name"/> info.
-
-</TabItem>
-
-</Tabs> 
-
-### Route parameters - Boat
 
 <Tabs groupId="operating-systems">
 
@@ -179,3 +70,31 @@ Other routing settings:
 - In the [Recalculate route section](../route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
 - *[<Translate android="true" ids="default_speed_setting_title"/>](../navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../navigation-settings.md#default-speed)* (iOS) should be set according to your boat parameters. They are used to determine whether the waterway can be used for routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+## Other routing types for Boat
+
+[Boat routing](#route-parameters---boat) type is a default routing engine for Boat profile. Though you can choose another one navigation type, which are also suitable for boat navigation:  
+- [Direct-to-point](#direct-to-point)
+- [Straight-line](#straight-line)  
+
+Other routing types for the boat profile can be activated using the following path:
+
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
+
+
+:::note
+It's important to note, that the *Direct-to-point* routing and *Straight line* routings types should only be used in open water where there are no obstacles or hazards to navigation. If you are navigating in a waterway with a specific channel or route, you should use the boat routing type in OsmAnd, which will guide you through the correct navigational channels and avoid shallow areas or other hazards.
+:::
+
+#### Direct-to point routing for Boat
+
+The [Direct-to-point routing type](./direct-to-point-routing.md) can be used with the boat profile when you want to navigate your boat in open water without following any specific route or waterway. This routing type allows you to set a destination point and OsmAnd will calculate a direct path to that point from your current location. This type of routing doesn't take into account the characteristics of your boat such as minimum and maximum speeds, heght and width. Your route will not be recalculated in case of deviation.
+
+![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
+
+#### Straight line routing for Boat
+
+The [Straight line routing type](./straight-line-routing) can be used with the boat profile when you want to navigate your boat in open water, but prefer to follow a straight line to your destination point, rather than a curved route. This can be useful when navigating to a distant point, that is visible on the horizon, for example.
+
+![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+
