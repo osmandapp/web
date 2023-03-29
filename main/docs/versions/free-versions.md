@@ -19,9 +19,23 @@ Direct links to free OsmAnd versions.
 
 ### Version 4.4 
 Release date: 03/2023
+* Improved "Tracks" menu in "Configure Map"
+* Context menu now displays localized names for POI
+* Added option to share route by link
+* Added "Nautical miles/feet" unit of length
+* Map orientation added new fixed mode
+* Simplified start screen
+* Fixed location position in split screen mode in Android Auto
+* Added "Speed/Slope" graph for track analysis
+* App language selection moved to system settings on Android 13
+* Fixed issues with displaying Vegan places
+* Added possibility to download online tiles used as "Overlay" or "Underlay" maps
+* Added support of imperial measurement units for "Vehicle parameters"
+* New Moped profile
+* "Display position" added new option "Automatic"
+* Fixed map gestures for tilt, zoom and rotation
 
-
-<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.12-4312.apk" />
+<DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.5-4405.apk" />
 
 
 ### Version 4.3 
