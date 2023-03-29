@@ -14,7 +14,6 @@ import Poll from '@site/src/components/home/Poll';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
 
 ## Overview
 
