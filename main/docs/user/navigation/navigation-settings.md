@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Navigation Type / Route Parameters
 
-For each profile (except *Browse map*) can be chosen routing type.
+For each profile (except *Browse map*) can be chosen [routing type](../navigation/route-navigation.md#navigation-type--route-parameters).
 
 Route parameters can be reached through:
 
@@ -34,6 +34,30 @@ The most important routing parameters can also be found in *Navigation menu* in 
 -  *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*
 :::
 
+:::info
+There are no navigation settings in *Browse map* profile.  
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
+
+- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
+
 
 ## Voice Prompts
 
@@ -47,7 +71,23 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 ## Map during navigation 
 
-Links to Map during navigation
+You can find out how the map behavior changes during navigation in OsmAnd app in the article [Map during Navigation](../navigation/map-during-navigation.md).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Navigation screen Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Vehicle parameters
