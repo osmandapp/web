@@ -46,6 +46,10 @@ export default function Render() {
         'Swing gate' : 'barrier/barrier_barrier_swing_gate',
         'Turnstile' : 'barrier/barrier_barrier_turnstile',
         'Wedge' : 'barrier/barrier_barrier_wedge',
+        'Wicket gate' : 'barrier/barrier_barrier_wicket_gate',
+        'Bar' : 'barrier/barrier_barrier_bar',
+        'Tyres' : 'barrier/barrier_barrier_tyres',
+        'Board' : 'barrier/barrier_barrier_barrier_board',
     }});
 
 }

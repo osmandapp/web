@@ -74,7 +74,7 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 <TabItem value="ios" label="iOS">
 
-![Precise location iOS](@site/static/img/steps/first_start_ios.png)
+![Precise location iOS](@site/static/img/steps/first_start_ios.png) ![Precise location iOS](@site/static/img/steps/first_start_ios_1.png)
 
 </TabItem>
 

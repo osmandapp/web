@@ -21,7 +21,9 @@ The application can not function normally without offline maps, which are not di
 
 ## First Screen
 
-When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
+When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.   
+
+Next, you can restore you data from [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
 <Tabs groupId="operating-systems">

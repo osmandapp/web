@@ -168,8 +168,8 @@ This option allows you to interactively review track information using graphs an
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/track_analyze_on_map_android.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png) 
 
-- **Graph data**: Altitude / Slope / Speed (if data is available in the track).
-- **Graph dimension**: Distance / Time.
+- **Graph data Y-axis**: Altitude / Slope / Speed (if data is available in the track).
+- **Graph dimension X-axis**: Distance / Time / Time of day.
 - **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
 - **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
 - **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.  
@@ -188,8 +188,6 @@ This option allows you to interactively review track information using graphs an
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 4 Android](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
 ![Track menu analyze on map 1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1_android.png) ![Track menu analyze on map 1.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1.1_android.png)
 ![Track menu analyze on map 2 Android](@site/static/img/personal/tracks/track_analyze_on_map_2_android.png) ![Track menu analyze on map 2.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_2.1_android.png)
-![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
-
 
 
 ## Navigation Route
