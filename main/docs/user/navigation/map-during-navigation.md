@@ -23,7 +23,7 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 ## Map during navigation
 
-Description of the change in map behavior during navigation.
+The table describes changes in map behavior during navigation.  
 
 <Tabs groupId="operating-systems">
 
@@ -31,28 +31,22 @@ Description of the change in map behavior during navigation.
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
-| "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| "<Translate android="true" ids="approximate_bearing"/>"  |  Deriving the bearing from the navigation route being followed.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| "<Translate ios="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.   |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec. |
-| "<Translate ios="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position).  | Value: <br />  *<Translate ios="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate ios="true" ids="auto_zoom_farthest"/>* - zoom is 200m. <br /> *<Translate ios="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate ios="true" ids="auto_zoom_close"/>* - zoom is 50m. |
-| "<Translate ios="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.  | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-
 </TabItem>
 
 </Tabs>
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
+| *"<Translate android="true" ids="snap_to_road"/>"*  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Deriving the bearing from the navigation route being followed.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
 
 
 ## Animate location change
@@ -72,23 +66,20 @@ For Android, this item named [Animate own position](#other) is located in the "O
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Show or not show notifications on the screen as a widget. Alerts appear at the bottom left during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| **<Translate ios="true" ids="screen_alerts"/>** | Show or not show notifications on the screen as a widget.  | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
-
 </TabItem>
 
 </Tabs>
+
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="screen_alerts"/>** | Displays notifications on the screen as a widget. Notifications appear in the bottom left corner during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Route line appearance
@@ -96,7 +87,7 @@ For Android, this item named [Animate own position](#other) is located in the "O
 This menu allows you to adjust the appearance of the route line to a variety of changes. These can be changes in elevation while driving, the next significant uphill or downhill, ice, unpaved roads, autobahns, and others. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
 
 :::note
-<ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
+ <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
 :::
 
 <Tabs groupId="operating-systems">
@@ -196,7 +187,7 @@ Select a route line's width.
 
 |  |
 |------------|
-|*"<Translate ios="true" id="map_settings_style"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
+|*"<Translate android="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
 ![map style](@site/static/img/navigation/route/map_st.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
 ![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
@@ -209,7 +200,7 @@ Select a route line's width.
 
 |  |
 |------------|
-|*"<Translate ios="true" id="map_settings_style"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
+|*"<Translate ios="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
 ![map style](@site/static/img/navigation/route/width_ms_ios.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
 ![width](@site/static/img/navigation/route/width_ios.png)   ![width](@site/static/img/navigation/route/width_med.png)|
@@ -229,6 +220,8 @@ Select whether turn arrows are indicated on the route line or not.
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+
 |  |
 |------------|
 |![Altitude](@site/static/img/navigation/route/turn_arr.png) ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)|
@@ -237,6 +230,8 @@ Select whether turn arrows are indicated on the route line or not.
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
 |  |
 |------------|

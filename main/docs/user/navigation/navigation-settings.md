@@ -16,6 +16,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
+For a comfortable navigation experience, you need to customize the OsmAnd app to meet your needs and the parameters of your vehicle. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you optimize your route on the road.
+
 ## Navigation Type / Route Parameters
 
 For each profile (except *Browse map*) can be chosen [routing type](../navigation/route-navigation.md#navigation-type--route-parameters).
@@ -93,7 +95,7 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 ## Vehicle parameters
 
 
-### Default speed
+### Default speed / Road speeds 
 
 - Used as a speed to estimate [arrival time](./../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 
     - pedestrian, boat, ski, airplain, ... profiles, 
