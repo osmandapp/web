@@ -36,6 +36,7 @@ Description of the change in map behavior during navigation.
 | "<Translate android="true" ids="choose_auto_follow_route"/>" |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | "<Translate android="true" ids="auto_zoom_map"/>"  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | "<Translate android="true" ids="snap_to_road"/>"  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
+| "<Translate android="true" ids="approximate_bearing"/>"  |  Deriving the bearing from the navigation route being followed.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
 
 </TabItem>
 

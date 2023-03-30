@@ -86,7 +86,7 @@ In this section of the General settings menu, you can set parameters for the cur
 - *<Translate android="true" ids="choose_osmand_theme"/>* - sets a day or night theme for the application. This setting doesn't change ["Map mode"](../map/vector-maps.md#map-mode) parameter:
   - *<Translate android="true" ids="dark_theme"/>*,
   - *<Translate android="true" ids="light_theme"/>*,
-  - *<Translate android="true" ids="system_default_theme"/>*.
+  - *<Translate android="true" ids="system_default_theme"/>* - using system theme.
 - *<Translate android="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes):
   - *<Translate android="true" ids="rotate_map_north_opt"/>*,
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*,

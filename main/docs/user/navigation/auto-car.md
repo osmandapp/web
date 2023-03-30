@@ -172,6 +172,15 @@ https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 --
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
 
 
+## Issues
+
+1. Android Auto: movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/map-during-navigation.md#map-during-navigation) option:
+
+ - Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
+ - Placed in Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/map-during-navigation.md#map-during-navigation).
+
+
+
 <!--
 Fixes issues with voice control
 
