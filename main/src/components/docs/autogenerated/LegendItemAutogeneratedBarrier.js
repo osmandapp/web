@@ -14,7 +14,9 @@ export default function Render() {
 
     return LegendItem({itemsMap: {
         'Bar' : 'barrier/barrier_barrier_bar',
+        'Bar' : 'barrier/barrier_barrier_bar',
         'Block' : 'barrier/barrier_barrier_block',
+        'Board' : 'barrier/barrier_barrier_barrier_board',
         'Bollard' : 'barrier/barrier_barrier_bollard',
         'Border control' : 'barrier/barrier_barrier_border_control',
         'Bump gate' : 'barrier/barrier_barrier_bump_gate',
@@ -44,12 +46,11 @@ export default function Render() {
         'Stile' : 'barrier/barrier_barrier_stile',
         'Sump buster' : 'barrier/barrier_barrier_sump_buster',
         'Swing gate' : 'barrier/barrier_barrier_swing_gate',
+        'Tank trap' : 'barrier/barrier_barrier_tank_trap',
         'Turnstile' : 'barrier/barrier_barrier_turnstile',
+        'Tyres' : 'barrier/barrier_barrier_tyres',
         'Wedge' : 'barrier/barrier_barrier_wedge',
         'Wicket gate' : 'barrier/barrier_barrier_wicket_gate',
-        'Bar' : 'barrier/barrier_barrier_bar',
-        'Tyres' : 'barrier/barrier_barrier_tyres',
-        'Board' : 'barrier/barrier_barrier_barrier_board',
     }});
 
 }
