@@ -14,19 +14,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.  
-
 ## Overview
 
-[OpenStreetMap](https://www.openstreetmap.org/about) is a global community that aims to draw a comprehensive map of the world and provide up-to-date open-source data to every user. OsmAnd **OpenStreetMap (OSM) editing plugin** allows you easily contribute to OpenStreetMap: you can create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), upload recorded GPX [tracks](#upload-gps-track).  
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is a global community that aims to create a detailed free geographical map of the world and provide up-to-date open-source data to every user, and the OpenStreetMap editing plugin allows you to contribute to the community.  
+
+With OsmAnd and the OSM editing plugin, you can easily contribute your own information to OpenStreetMap.org, such as to create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), and upload recorded GPX [tracks](#upload-gps-track).
 
 ## Setup
 
 To use OpenStreetMap editing plugin, you need to make the following settings:    
 
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
-2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
-3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
+2. Set OpenStreetMap editing  in any [profile](../personal/profiles.md).
+3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
 
 
 ## Settings
@@ -44,7 +44,8 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
+- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*   
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*   
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
@@ -63,16 +64,25 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 - **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
 - **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
 - **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
-- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
+- [**<Translate android="true" ids="map_updates_for_mappers"/>**](#free-live-updates-for-mappers). 
+- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [*Menu → My Places → OSM edits*](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.  
+
+:::note
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps.md#osmand-live) are enabled.
+:::  
 
 :::info info
 The plugin settings are global and apply to all profiles.
-:::
+:::  
+
+### Free live updates for mappers
+
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org, which is at least 30 confirmed changes in the last two months, you get free hourly, monthly, or unlimited map updates. With the Live updates feature, updates can be available in just 15 minutes, unlike standard updates, which can take up to one hour. 
+
 
 ### OSM Editing Layer  
 
-You can enable the display of the OSM modifications (edits/notes/fixme tags/note tags) as a separate layer in the [Configure map](../map/configure-map-menu.md) section of the main menu:  
+You can enable or disable as a separate layer the display of OSM modifications, such as OSM notes (online), OSM edits, Fixme tags, Note tags, Icons at low zooms, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
 
 <Tabs groupId="operating-systems">
 
@@ -94,9 +104,6 @@ You can enable the display of the OSM modifications (edits/notes/fixme tags/note
 
 </Tabs>
 
-:::info NOTE
-If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
-:::  
 
 ## Create / Modify POI  
 
