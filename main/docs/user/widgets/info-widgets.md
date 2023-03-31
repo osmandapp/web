@@ -206,9 +206,12 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## Sunset and sunrise widgets
 
-<InfoAndroidOnly />
-
 Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time ("time left") until the expected sunset/sunrise (also for the center of the map). In both cases "time" or "time left" is indicated by the device time.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
 
@@ -216,6 +219,22 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
 | By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets_ios.png)
+
+| | |
+|------------|------------|
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/> |
+| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
+
+
+</TabItem>
+
+</Tabs>
 
 
 ## * Trip recording widgets  
