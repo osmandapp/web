@@ -233,9 +233,28 @@ To open Proxy settings, follow these steps: *<Translate android="true" ids="shar
 
 <TabItem value="ios" label="iOS">  
 
+#### Send anonymous data
+
 *<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
 
 ![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
+
+
+#### History
+
+*<Translate ios="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/route-navigation.md#history) and [Map markers history](../personal/markers.md#history).  
+To open History settings, follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+
+Available interactions:  
+
+Inside action:
+- Enable/disable history.
+
+Actions:
+- Export - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
+- Delete all history.  
+
+![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios_2.png)
 
 </TabItem>
 
