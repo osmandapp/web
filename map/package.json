@@ -46,7 +46,8 @@
     "build:staging": "env-cmd -f .env.staging react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "generate:poiicons": "ls public/images/poi-icons-svg | jq -R -s -c 'split(\"\\n\")[:-1]'\n\n > src/generated/poiicons.json"
   },
   "eslintConfig": {
     "extends": [

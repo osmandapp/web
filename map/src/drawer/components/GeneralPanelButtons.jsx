@@ -1,7 +1,7 @@
 import {ButtonGroup, IconButton, Paper, Tooltip} from "@mui/material";
 import TracksManager from "../../context/TracksManager";
 import {Create, MapsUgc, Upload} from "@mui/icons-material";
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {styled} from "@mui/material/styles";
@@ -58,6 +58,13 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                     <Upload fontSize="small"/>
                                 </IconButton>
                             </label>
+                        </Tooltip>
+                        <Tooltip title="Poi icons" arrow placement="right">
+                            <IconButton variant="contained"
+                                        type="button"
+                                        onClick={() => ctx.setShowPoi(!ctx.showPoi)}>
+                                <MapsUgc fontSize="small"/>
+                            </IconButton>
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
