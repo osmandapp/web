@@ -64,10 +64,33 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 ### Map orientation modes
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+
+![Compass widget](@site/static/img/map/map_orientation_android.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+
+![Compass widget](@site/static/img/map/map_orientation_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+
 - **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
+
+
 
 :::note
 Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).

@@ -168,15 +168,17 @@ Icons with a green background show the latitude and longitude of the point in th
 
 <TabItem value="ios" label="iOS">
 
-The widget shows the geographic coordinates of the current geolocation.
 
-![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios.png)
+- *Coordinates widget* - shows the geographic coordinates of current geolocation.
+- *Coordinates: map center* - shows the geographic coordinates of the current map center.
+
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel,coordinates_widget_current_location"/> and <Translate ios="true" ids="coordinates_widget_map_center"/> |
 | By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
+| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
 
