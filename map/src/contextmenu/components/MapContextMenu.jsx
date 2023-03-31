@@ -69,10 +69,10 @@ export default function MapContextMenu({drawerWidth}) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
+                    obj = new PoiTabList().create();
                 } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx, setShowContextMenu);
-                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
-                    obj = new PoiTabList().create(ctx);
                 }
                 if (obj) {
                     setShowContextMenu(true);
