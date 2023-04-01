@@ -6,6 +6,7 @@ import L from "leaflet";
 import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
+import {get} from "axios";
 
 export default function PoiLayer() {
 
@@ -14,8 +15,8 @@ export default function PoiLayer() {
     const [zoom, setZoom] = useState(null);
     const [move, setMove] = useState(false);
     const [poiList, setPoiList] = useState({
-        new: {},
-        prev: {}
+        layer: null,
+        prevLayer: null
     });
 
     const DEFAULT_POI_COLOR = '#f8931d';
@@ -24,70 +25,81 @@ export default function PoiLayer() {
 
     async function getPoi() {
         let latlng = map.getCenter();
-        const params = `lat=${latlng.lat.toFixed(6)}&lon=${latlng.lng.toFixed(6)}&zoom=${zoom}&radius=${getRadiusByZoom(zoom)}`;
-        const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/get-poi?${params}`, {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'}
-        });
-        if (response.ok) {
-            let data = await response.json();
-            if (data.features.length > 0) {
-                return data.features;
+        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/get-poi?`,
+            {
+                params: {
+                    lat: latlng.lat.toFixed(6),
+                    lon: latlng.lng.toFixed(6),
+                    zoom: zoom,
+                    radius: getRadiusByZoom(zoom),
+                }
             }
+        );
+        if (response.data) {
+            return response.data.features;
         }
     }
 
     function getRadiusByZoom(zoom) {
-        if (zoom < 15) {
-            return 3000;
-        } else if (zoom < 16) {
-            return 1000;
-        } else if (zoom < 17) {
-            return 500;
-        } else if (zoom < 18) {
-            return 200;
-        } else if (zoom < 19) {
-            return 100;
-        } else {
-            return 50;
+        switch (true) {
+            case (zoom < 15):
+                return 3000;
+            case (zoom === 15):
+                return 1000;
+            case (zoom === 16):
+                return 500;
+            case (zoom === 17):
+                return 200;
+            case (zoom === 18):
+                return 100;
+            default:
+                return 50;
         }
     }
 
-    map.on('zoomend', function () {
-        setZoom(map.getZoom());
-    });
+    useEffect(() => {
+        if (map) {
+            map.on('zoomend', () => {
+                setZoom(map.getZoom());
+            });
 
-    map.on("dragend", function (e) {
-        setMove(true);
-    });
+            map.on("dragend", () => {
+                setMove(true);
+            });
+        }
+    }, [map])
 
     useEffect(() => {
         if ((zoom || move) && ctx.showPoi) {
             getPoi().then((res) => {
                 if (res) {
-                    if (poiList?.new?.layer) {
-                        poiList.prev = _.cloneDeep(poiList.new.layer);
-                    }
-                    poiList.new.pois = res;
-                    poiList.new.layer = createPoiLayer(poiList.new.pois);
-                    setPoiList({...poiList});
+                    setPoiList(
+                        {
+                            ...poiList,
+                            ...(poiList.layer && {prevLayer: _.cloneDeep(poiList.layer)}),
+                            layer: createPoiLayer(res)
+                        });
                 }
             });
         } else {
-            if (poiList?.new?.layer) {
-                poiList.prev = _.cloneDeep(poiList.new.layer);
-                poiList.new.layer = null;
-                setPoiList({...poiList});
+            if (poiList.layer) {
+                setPoiList(
+                    {
+                        ...poiList,
+                        prevLayer: _.cloneDeep(poiList.layer),
+                        layer: null
+                    }
+                );
             }
         }
     }, [zoom, move, ctx.showPoi])
 
     useEffect(() => {
-        if (poiList?.new?.layer) {
-            poiList?.new?.layer.addTo(map).on('click', onClick);
+        if (poiList.layer) {
+            poiList.layer.addTo(map).on('click', onClick);
         }
-        if (poiList.prev) {
-            map.removeLayer(poiList.prev);
+        if (poiList.prevLayer) {
+            map.removeLayer(poiList.prevLayer);
         }
         setMove(false);
     }, [poiList])
@@ -95,20 +107,19 @@ export default function PoiLayer() {
     function onClick(e) {
         const type = ctx.OBJECT_TYPE_POI;
         ctx.setCurrentObjectType(type);
-        ctx.selectedGpxFile = {};
-        ctx.selectedGpxFile.poi = {
+
+        const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng
         }
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile, poi});
         ctx.setUpdateContextMenu(true);
     }
 
-    function createPoiLayer(poiList) {
-        let layers = [];
-        poiList.forEach(poi => {
+    function createPoiLayer(poiList = []) {
+        const layers = poiList.map(poi => {
             const coord = poi.geometry.coordinates;
-            const marker = new L.Marker((new L.LatLng(coord[1], coord[0])), {
+            return new L.Marker((new L.LatLng(coord[1], coord[0])), {
                 title: poi.properties.name,
                 icon: getPoiIcon(poi),
                 type: poi.properties.type,
@@ -125,10 +136,9 @@ export default function PoiLayer() {
                 facebook: poi.properties.facebook,
                 instagram: poi.properties.instagram
             });
-            layers.push(marker);
         })
 
-        if (layers.length > 0) {
+        if (layers.length) {
             return new L.FeatureGroup(layers);
         }
     }

@@ -3,6 +3,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import AppContext from "../../../context/AppContext";
+import _ from "lodash";
 import {
     AccessTime,
     AlternateEmail,
@@ -38,121 +39,126 @@ export default function PoiInfoTab({width}) {
     const ctx = useContext(AppContext);
 
     const [poi, setPoi] = useState({});
+    const [poiData, setPoiData] = useState({});
 
     useEffect(() => {
-        if (ctx.selectedGpxFile.poi) {
+        const currentPoi = ctx.selectedGpxFile.poi;
+        if (currentPoi && !_.isEqual(currentPoi, poiData)) {
+            setPoiData(currentPoi);
+            const {options: poiOptions, latlng} = currentPoi;
             setPoi({
-                name: ctx.selectedGpxFile.poi.options.title ? ctx.selectedGpxFile.poi.options.title : ctx.selectedGpxFile.poi.options.poiType,
-                icon: ctx.selectedGpxFile.poi.options.icon.options.html,
-                latlon: ctx.selectedGpxFile.poi.latlng,
-                subType: ctx.selectedGpxFile.poi.options.subType,
-                poiType: ctx.selectedGpxFile.poi.options.typeOsmValue,
-                operator: ctx.selectedGpxFile.poi.options.operator,
-                website: ctx.selectedGpxFile.poi.options.website,
-                opening_hours: ctx.selectedGpxFile.poi.options.opening_hours,
-                email: ctx.selectedGpxFile.poi.options.email,
-                phone: ctx.selectedGpxFile.poi.options.phone,
-                facebook: ctx.selectedGpxFile.poi.options.facebook,
-                instagram: ctx.selectedGpxFile.poi.options.instagram
+                name: poiOptions.title ? poiOptions.title : poiOptions.poiType,
+                icon: poiOptions.icon.options.html,
+                latlon: latlng,
+                subType: poiOptions.subType,
+                poiType: poiOptions.typeOsmValue,
+                operator: poiOptions.operator,
+                website: poiOptions.website,
+                opening_hours: poiOptions.opening_hours,
+                email: poiOptions.email,
+                phone: poiOptions.phone,
+                facebook: poiOptions.facebook,
+                instagram: poiOptions.instagram
             })
         }
     }, [ctx.selectedGpxFile])
 
-    return (<Box className={styles.item} minWidth={width}>
-        <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
-            <Grid container spacing={2}>
-                <Grid className={styles.name} item xs={10}>
-                    <Typography className={styles.name} variant="inherit">
-                        {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
-                    </Typography>
+    return (
+        <Box className={styles.item} minWidth={width}>
+            <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
+                <Grid container spacing={2}>
+                    <Grid className={styles.name} item xs={10}>
+                        <Typography className={styles.name} variant="inherit">
+                            {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
+                        </Typography>
+                    </Grid>
+                    <Grid className={styles.name} item xs={2}>
+                        <div className={classes.icon}
+                             dangerouslySetInnerHTML={{__html: poi.icon + ''}}/>
+                    </Grid>
                 </Grid>
-                <Grid className={styles.name} item xs={2}>
-                    <div className={classes.icon}
-                         dangerouslySetInnerHTML={{__html: poi.icon + ''}}/>
+                <Grid container sx={{mt: -6}}>
+                    {poi.latlon && <MenuItem sx={{ml: -2, mt: -1}}>
+                        <ListItemIcon>
+                            <MyLocation fontSize="small"/>
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                                {poi.latlon.lat.toFixed(6) + "  " + poi.latlon.lng.toFixed(6)}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>}
                 </Grid>
-            </Grid>
-            <Grid container sx={{mt: -6}}>
-                {poi.latlon && <MenuItem sx={{ml: -2, mt: -1}}>
+                {poi.operator && <MenuItem sx={{ml: -2, mt: -1}}>
                     <ListItemIcon>
-                        <MyLocation fontSize="small"/>
+                        <BusinessCenter fontSize="small"/>
                     </ListItemIcon>
                     <ListItemText>
                         <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                            {poi.latlon.lat.toFixed(6) + "  " + poi.latlon.lng.toFixed(6)}
+                            {poi.operator}
                         </Typography>
                     </ListItemText>
                 </MenuItem>}
-            </Grid>
-            {poi.operator && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <BusinessCenter fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.operator}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.opening_hours && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <AccessTime fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.opening_hours}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.website && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <Language fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.website}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.email && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <AlternateEmail fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.email}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.phone && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <Phone fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.phone}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.facebook && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <ContactPage fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.facebook}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-            {poi.instagram && <MenuItem sx={{ml: -2, mt: -1}}>
-                <ListItemIcon>
-                    <ContactPage fontSize="small"/>
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                        {poi.instagram}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>}
-        </Typography>
-    </Box>)
+                {poi.opening_hours && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <AccessTime fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.opening_hours}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.website && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <Language fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.website}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.email && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <AlternateEmail fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.email}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.phone && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <Phone fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.phone}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.facebook && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <ContactPage fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.facebook}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.instagram && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <ContactPage fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            {poi.instagram}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+            </Typography>
+        </Box>);
 }
