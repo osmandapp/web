@@ -272,7 +272,9 @@ Tap on &#128269; buttons opens search menu for Favorites. Tap on a chosen point 
 
 <TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly/>
+Moving the screen down opens the search menu for Favorites: _Menu → My Places → Favorites → Pull down_. Tap on a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
+
+![Searching menu Favorite iOS](@site/static/img/personal/searching_favorites_menu_ios.png) ![Searching menu Favorite iOS](@site/static/img/personal/searching_favorites_menu_2_ios.png)
 
 </TabItem>
 

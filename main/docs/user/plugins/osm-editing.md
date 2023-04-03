@@ -189,10 +189,13 @@ The GPS tracks you have recorded are useful for:
 Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
 :::  
 
-<InfoAndroidOnly />
-
 
 ### Upload GPS track
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
 - Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks.md).  
@@ -200,6 +203,23 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 - Choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Export*.  
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
+- Select the required track from [*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*](../personal/tracks.md) → &#8230; → upload track icon(belowed menu).  
+- Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
+- Choose *<Translate ios="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Upload*.  
+
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+
 
 **Settings:**
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
