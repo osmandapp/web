@@ -168,15 +168,17 @@ Icons with a green background show the latitude and longitude of the point in th
 
 <TabItem value="ios" label="iOS">
 
-The widget shows the geographic coordinates of the current geolocation.
 
-![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios.png)
+- *Coordinates widget* - shows the geographic coordinates of current geolocation.
+- *Coordinates: map center* - shows the geographic coordinates of the current map center.
+
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,coordinates_widget"/> |
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel,coordinates_widget_current_location"/> and <Translate ios="true" ids="coordinates_widget_map_center"/> |
 | By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,coords_format"/> |
+| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
 
@@ -204,9 +206,12 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## Sunset and sunrise widgets
 
-<InfoAndroidOnly />
-
 Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time ("time left") until the expected sunset/sunrise (also for the center of the map). In both cases "time" or "time left" is indicated by the device time.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
 
@@ -214,6 +219,22 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 |------------|------------|
 | Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
 | By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets_ios.png)
+
+| | |
+|------------|------------|
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/> |
+| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
+
+
+</TabItem>
+
+</Tabs>
 
 
 ## * Trip recording widgets  

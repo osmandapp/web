@@ -104,8 +104,8 @@ In the **Android** version, to show/hide Wikipedia POIs, do the following:
 
 In the **iOS** version, to show/hide Wikipedia POIs, do the following:  
 1. Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/>*  
-2. Select a Profile, and look for the *<Translate ios="true" ids="map_settings_show"/>* section in the menu.  
-3. Toggle *<Translate ios="true" ids="res_wiki"/>* on.   
+2. Select a Profile, and look for the *<Translate ios="true" ids="shared_string_show_on_map"/>* section in the menu.  
+3. Toggle *<Translate ios="true" ids="download_wikipedia_maps"/>* on.   
 
 ![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png) 
 
@@ -148,7 +148,7 @@ In the **iOS** version, to open [Search](../search/index.md), the Search icon in
 
 ![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
 
-To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate ios="true" ids="shared_string_search,categories,res_wiki"/>*
+To search by the Wikipedia [category](../search/search-poi.md#poi-search), select: *<Translate ios="true" ids="shared_string_search,categories,download_wikipedia_maps"/>*
 
 ![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
@@ -208,9 +208,15 @@ In the **Android** version, to set the preferred language for the Wikipedia data
 
 In the **iOS** version, to set the preferred language for the Wikipedia data, do the following:  
 1. Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/>*  
-2. Select a profile and find the *<Translate ios="true" ids="map_settings_show"/>* section of settings.  
-3. Tap *<Translate ios="true" ids="res_wiki"/>*, if needed, toggle *<Translate ios="true" ids="shared_string_enabled"/>* on, and then tap *<Translate ios="true" ids="language"/>*.  
-4. Check the preferred language(-s) in the opened list.  
+2. Select a profile and find the *<Translate ios="true" ids="shared_string_show_on_map"/>* section of settings.  
+3. Tap *<Translate ios="true" ids="download_wikipedia_maps"/>*, if needed, toggle *<Translate ios="true" ids="shared_string_enabled"/>* on, and then tap *<Translate ios="true" ids="shared_string_language"/>*.  
+4. Check _All languages_ or the preferred language(-s) in the opened list.  
+
+Or
+
+_Menu → Settings → App Profiles → Plugins → Wikipedia_
+
+Here you can choose languages in which Wikipedia articles will appear on the map. Choose download or not images and set cache size for images.
 
 
 ![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png) 
@@ -250,6 +256,47 @@ In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-
 
 </TabItem>
 
+</Tabs>
 
+
+## Images
+
+
+<Tabs groupId="operating-systems">
+
+
+<TabItem value="android" label="Android">
+
+Opening _[Wikipedia article](#display-wikipedia-on-the-map) → &#8942; → Options_. Here you can choose download images or not:
+ - On, 
+ - Off, 
+ - Only Wi-Fi.
+
+
+![Switching images](@site/static/img/plugins/wikipedia/images_android.png) 
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+Downloading images options:
+
+1. _Menu → Settings → App Profiles → Plugins → Wikipedia → Download images_:
+    - Don't download
+    - Over Wi-Fi only
+    - Over any network
+  
+![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+2. Opening _[Wikipedia article](#display-wikipedia-on-the-map) → Image icon_:
+    - Don't download
+    - Over Wi-Fi only
+    - Over any network
+    - Download only now
+   
+![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+
+
+</TabItem>
 
 </Tabs>
