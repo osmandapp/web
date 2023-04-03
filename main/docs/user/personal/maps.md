@@ -234,7 +234,7 @@ Each map has an independent collection  of tiny map updates, please be careful i
 
 ### Free for OSM Mappers
 
-OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).
+Live updates and unlimited map downloads are available for [OpenStreetMap](https://openstreetmap.org/) contributors.
 
 1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
 2. [Log in](../plugins/osm-editing.md#settings) by your OpenStreetMap username.
