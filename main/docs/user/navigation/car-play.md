@@ -24,7 +24,7 @@ To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [pai
 
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [CarPlay](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
 
-To use CarPlay and the OsmAnd app on your vehicle's screen, follow these steps:
+To use CarPlay on your vehicle's screen, follow these steps:
 
 1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, and the iOS version of your device is older than 7.1, it probably does. Check the [list of car models](https://www.apple.com/ios/carplay/available-models/) with CarPlay support.  
 2. Connect your device to your vehicle's multimedia system using a Lightning cable or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
@@ -71,14 +71,14 @@ Most OsmAnd settings directly related to navigation are available in CarPlay. In
 
 ## Select a route endpoint 
 
-You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/), or select a destination from the [route history](#history).   
-- Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
+You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the Search, or select a destination from the route history.   
+1. Select the necessary category from the user points: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
 - In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
     -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
 - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), as well as the distance from the point of the current location to it.
-- Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
-- Select [Address Search](#search) to enter a destination from the available search categories. 
+2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
+3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 :::note
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
