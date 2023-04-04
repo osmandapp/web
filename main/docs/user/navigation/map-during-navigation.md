@@ -97,7 +97,7 @@ Enable / disable points of interest of **selected** type on the map:
 
 ## Route line appearance
 
-The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
+The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles. You can change all of these parameters by style or manually select the color and transparency of the line in the items in this setting. In addition, the setting provides the opportunity to change the width of the route line and the angle display on the turns.  
 
 :::note
  <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
