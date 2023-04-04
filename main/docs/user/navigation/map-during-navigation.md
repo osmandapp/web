@@ -54,8 +54,21 @@ The table describes changes in map behavior during navigation.
 This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
 For Android, this item named [Animate own position](#other) is located in the "Other" section of the General Settings menu.
 
+**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/custom-poi-search.md) and select it to display POI on the map.
+**Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).  
+
 
 ## Show POI along the route
+
+[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+
+![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+
+Enable / disable points of interest of **selected** type on the map:  
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
+
+[Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi).
 
 
 ## Screen alerts
@@ -84,7 +97,7 @@ For Android, this item named [Animate own position](#other) is located in the "O
 
 ## Route line appearance
 
-This menu allows you to adjust the appearance of the route line to a variety of changes. These can be changes in elevation while driving, the next significant uphill or downhill, ice, unpaved roads, autobahns, and others. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
+The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles. In the items on this menu, you can change all these parameters by color or choose the color and transparency of the line. In addition, you can change the line width and angle display on turns.  
 
 :::note
  <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
@@ -111,12 +124,9 @@ This menu allows you to adjust the appearance of the route line to a variety of 
 </Tabs>  
 
 
-### Customize route line menu items
-
-
 ### Color
 
-Select a route line's color by types.  
+Changes the shades of the colors of the route lines, and their overall coloring changes depending on the selected type from the suggested OsmAnd, according to the Map Legend, or becomes the color and transparency that you set manually.    
 
 <Tabs groupId="operating-systems">
 
@@ -124,7 +134,7 @@ Select a route line's color by types.
 
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
+|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles). |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom.png) |
