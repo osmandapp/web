@@ -29,6 +29,7 @@ export default function Render() {
         'Conference centre' : 'entertainment/entertainment_amenity_conference_centre',
         'Harbour' : 'entertainment/entertainment_harbour_yes',
         'Marina' : 'entertainment/entertainment_leisure_marina',
+        'Toy lirary' : 'entertainment/entertainment_amenity_toy_library',
         'Public bookcase' : 'entertainment/entertainment_amenity_public_bookcase',
         'Feeding place' : 'entertainment/entertainment_amenity_feeding_place',
         'Gambling venue' : 'entertainment/entertainment_amenity_gambling',
