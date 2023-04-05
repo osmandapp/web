@@ -20,14 +20,14 @@ The routing type determines how the route will be calculated. The OsmAnd app use
 The following profiles (with their own routing types) are available by default: *Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding*.  
 
 :::note  
-*Truck, Motorcycle, Moped, Aircraft and Horseback* riding profiles are switched off by default. You need to activate these profiles.  
+*Truck, Motorcycle, Moped, Aircraft and Horseback riding* profiles are switched off by default. You need to activate these profiles.  
 *Direct-to-point* navigation type doesn't have its own profile.
 :::
 
 | Category | Description | Note |
 |:------------|:---------------|:---------------|
-| OsmAnd <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: <!-- Add links!!! --> <Translate android="true" ids="app_mode_boat"/>, <Translate android="true" ids="rendering_value_bicycle_name"/>, <Translate android="true" ids="routing_profile_direct_to"/>, <Translate android="true" ids="rendering_value_car_name"/>, <Translate android="true" ids="rendering_value_pedestrian_name"/>, <Translate android="true" ids="app_mode_public_transport"/>, <Translate android="true" ids="routing_profile_ski"/>, <Translate android="true" ids="routing_profile_straightline"/>, <Translate android="true" ids="horseback_riding"/>.            |
-| <Translate android="true" ids="shared_string_online"/> (Android) |  Online routing builds the route servers' resources online by the Internet connection. | Available only on **Android**. You can configure [online routing](./online-routing.md) provider to build a route from various online routing engines such as [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX.  |
+| OsmAnd <Translate android="true" ids="shared_string_offline"/> |  Offline routing uses sources of the device and calculation the route by using data of OsmAnd offline maps.  |  Navigation types ([OsmAnd routing](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)) by default: [<Translate android="true" ids="app_mode_boat"/>](./boat-navigation.md), [<Translate android="true" ids="rendering_value_bicycle_name"/>](./bicycle-based-routing.md), [<Translate android="true" ids="rendering_value_car_name"/>](./car-based-routing.md), [<Translate android="true" ids="routing_profile_direct_to"/>](./direct-to-point-routing.md), [<Translate android="true" ids="horseback_riding"/>](./horse-routing.md), [Moped](./moped-routing.md), [Motorcycle](./car-based-routing.md#route-parameters---motorcycle), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](./pedestrian-routing.md), [<Translate android="true" ids="app_mode_public_transport"/>](./public-transport-navigation.md), [<Translate android="true" ids="routing_profile_ski"/>](./ski-routing.md), [<Translate android="true" ids="routing_profile_straightline"/>](./straight-line-routing.md), [Truck](car-based-routing#route-parameters---truck) .            |
+| <Translate android="true" ids="shared_string_online"/> (Android) |  Online routing builds the route servers' resources online by the Internet connection. | Available only on **Android**. You can configure [online routing](./online-routing.md) to build a route from various online routing engines such as [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX.  |
 | <Translate android="true" ids="routing_profile_broutrer"/>  |  Offline routing provided by [BRouter app](https://brouter.de/)  | Available only on **Android**. The full description read [here](./brouter.md).   |
 
 ## Offline OsmAnd Routing
@@ -72,9 +72,9 @@ More info about this possibility you may find in [Technical documentation](../..
 ## Direct to point
 
 - *[Straight line routing](./straight-line-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which is recalculated if location is far away from straight line.  
-- *[Direct-to-point routing](./direct-to-point-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing.
+- *[Direct-to-point routing](./direct-to-point-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
-## Other Routing types 
+## Other Routing types
 
 - *[Online routing](./online-routing.md)* - Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 - *[BRouter routing](./brouter.md)* - BRouter app can be used for offline routing.

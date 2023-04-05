@@ -258,7 +258,7 @@ Please read about route parameters for the corresponding navigation type.
 
 ### Navigation type / route parameters
 
-Configure routing type and its parameters.
+How to configure routing type and routing's parameters are described in the [Navigation settings article](./navigation-settings.md#navigation-type--route-parameters).
 
 ### Route recalculation
 
