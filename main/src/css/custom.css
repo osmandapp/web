@@ -104,6 +104,7 @@ table.blogimage {
   border-style: none;
   border: 1px solid #F2F2F2;
 }
+
 [data-theme='dark'] table.blogimage {
   width: 100%;
   background-color: #252628;
@@ -111,6 +112,8 @@ table.blogimage {
   border-style: none;
   border: 1px solid #343434;
 }
+
+
 
 table.blogimage tr {
   border-style: none;
@@ -143,6 +146,15 @@ ul.no-bullets {
   padding: 0;
 }
 
+.promobutton {
+  width: 100%;
+  height: auto;
+  background-color: #ff8800;
+  border-radius: 5px;
+  border-style: none;
+  padding: 4%;
+}
+
 .button-row {
   display: flex;
   column-gap: 20px;
@@ -161,6 +173,23 @@ ul.no-bullets {
   border-style: none;
   color: #ffffff;
   padding: 6px 12px 6px 12px;
+}
+
+.button--black {
+  background-color: rgb(0, 0, 0);
+  border-style: none;
+  color: #ffffff;
+  padding: 12px 24px 12px 24px;
+  font-weight: bold;
+}
+
+.button--black:hover {
+  background-color: rgb(42, 42, 42);
+  border-style: none;
+  color: #ffffff;
+  padding: 12px 24px 12px 24px;
+  text-decoration-line: none;
+  font-weight: bold;
 }
 
 .emoji {
