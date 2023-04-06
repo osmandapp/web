@@ -200,7 +200,7 @@ Back up or restore data (it has restrictions for unpaid users. you can't back up
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,local_backup,restore_from_file"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,local_backup,restore_from_file"/>*
 
 ![Backup local iOS](@site/static/img/personal/backup/backup_local_2_ios.png) ![Backup local iOS](@site/static/img/personal/backup/backup_local_3_ios.png)  
 

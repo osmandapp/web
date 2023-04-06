@@ -156,7 +156,7 @@ This part contains info about GPX file and description of a GPX track.
 
 ![Description for track iOS](@site/static/img/personal/tracks/description_track_ios.png)
 
-- *<Translate ios="true" ids="shared_string_info"/>* - contains info about file size, location folder
+- *<Translate ios="true" ids="info_button"/>* - contains info about file size, location folder
 
 </TabItem>
 
@@ -263,10 +263,10 @@ _[Track Context menu](../map/track-context-menu.md) → <Translate android="true
 
 ![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
 
-- *<Translate ios="true" ids="gpx_avg_altitude"/>*. 
-- *<Translate ios="true" ids="gpx_alt_range"/>*.
-- *<Translate ios="true" ids="gpx_ascent"/>*.
-- *<Translate ios="true" ids="gpx_descent"/>*.
+- *<Translate ios="true" ids="average_altitude"/>*. 
+- *<Translate ios="true" ids="altitude_range"/>*.
+- *<Translate ios="true" ids="altitude_ascent"/>*.
+- *<Translate ios="true" ids="altitude_descent"/>*.
 
 </TabItem>
 
@@ -294,7 +294,7 @@ This tab opens a with speed info on distance, additional track data.
 
 ![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_ios.png) 
 
-- *<Translate ios="true" ids="gpx_average_speed"/>*. 
+- *<Translate ios="true" ids="map_widget_average_speed"/>*. 
 - *<Translate ios="true" ids="gpx_max_speed"/>*. 
 - *<Translate ios="true" ids="shared_string_time_moving"/>*. 
 - *<Translate ios="true" ids="distance_moving"/>*. 
@@ -357,7 +357,7 @@ Actions:
 
 Actions:  
 - *<Translate ios="true" ids="recording_context_menu_show"/>* - allows to show or not group waypoints on the map.
-- *<Translate ios="true" ids="fav_rename"/>* - allows to change Group name.
+- *<Translate ios="true" ids="shared_string_rename"/>* - allows to change Group name.
 - *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
 - *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
 
@@ -426,6 +426,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate ios="true" ids="rename_track"/>* - change track name.
 - *<Translate ios="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+
 
 - *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
 

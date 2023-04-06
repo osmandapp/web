@@ -84,6 +84,7 @@ At the moment, the Pro subscription has the following features:
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | allowing to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
 | [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
@@ -96,7 +97,7 @@ Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see
 
 ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
-_<Translate ios="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,purchase_get"/> → Continue with OsmAnd Pro_
+_<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continue with OsmAnd Pro_
 
 or 
 

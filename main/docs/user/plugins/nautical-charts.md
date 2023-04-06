@@ -215,7 +215,7 @@ You can help OsmAnd app increase the Depth contours database by adding your info
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*    
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*    
 
 ![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
@@ -249,7 +249,7 @@ For more details on the classification of the surface details and the rendering 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*     
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*     
 
 ![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 

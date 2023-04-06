@@ -143,7 +143,7 @@ Contour lines are available for all map styles and modes and could be configured
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,product_title_srtm"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>* 
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Nautical depth contour lines allow you to define areas of equal depth. They are 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
 
@@ -228,7 +228,7 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_mode"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
 
 </TabItem>
 
@@ -253,7 +253,7 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 <TabItem value="ios" label="iOS">   
   
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,res_details"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>* 
 
 </TabItem>
 
@@ -356,7 +356,7 @@ When navigating in cities, you need to see public transport in more contrast, as
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_transport"/>*    
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*    
 
 </TabItem>
 
@@ -387,7 +387,7 @@ Sometimes we need to hide objects on the map for better vision. For example to h
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_category_hide"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>* 
 
 </TabItem>
 
@@ -400,7 +400,7 @@ Sometimes we need to hide objects on the map for better vision. For example to h
 |<Translate android="true" ids="rendering_attr_hideBuildings_name"/>|Hide all polygons of buildings. |
 |<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>|Hide all polygons of water (seas, lakes, reservoirs etc.)  |
 |<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>|Hide house numbers on the map.  |
-|<Translate android="true" ids="rendering_attr_hideProposed_name"/>|Hide proposed objects, those objects which are planned for a building, but only have a project (projected roads, crossroads, buildings etc.)  |
+|<Translate android="true" ids="rendering_attr_showProposed_name"/>|Hide proposed objects, those objects which are planned for a building, but only have a project (projected roads, crossroads, buildings etc.)  |
 |<Translate android="true" ids="rendering_attr_hideIcons_name"/>|Hide POI icons from the map. But labels of these POI will be on the map. |
 |<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>|Hide POI labels from the map. But icons of these POI will be on the map.  |
 |<Translate android="true" ids="rendering_attr_hideUnderground_name"/>| Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non useful objects.  |
@@ -420,7 +420,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,rendering_attr_roadStyle_name"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
 
 </TabItem>
 
@@ -451,7 +451,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_settings_text_size"/>*   
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*   
 
 </TabItem>
 
@@ -480,7 +480,7 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 <TabItem value="ios" label="iOS">  
 
 You can choose this setting by long-click to "+" or "-" button on the screen or:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,configure_map_magnifier"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>* 
 
 </TabItem>
 
@@ -506,13 +506,13 @@ This setting allows using of any language for names on the map. If names don't h
 
 <TabItem value="ios" label="iOS">  
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="sett_lang_show_trans"/>" switcher): 
+This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="translit_names"/>" switcher): 
 
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,sett_lang"/>*:
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_locale"/>*:
 - &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
 - &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - showing the local language for names additionally for chosen language name.
-- &nbsp;"<Translate ios="true" ids="sett_lang_show_trans"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
+- &nbsp;"<Translate ios="true" ids="translit_names"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
 
 </TabItem>
 

@@ -52,7 +52,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 <p> </p>
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
 
 <p> </p>
 

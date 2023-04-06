@@ -73,7 +73,7 @@ Access to your OsmAnd Cloud account is available for one more year after your Pr
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="purchase_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
 
 ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 

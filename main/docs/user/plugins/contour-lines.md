@@ -160,7 +160,7 @@ To enable contour lines layer go to [*<Translate android="true" ids="shared_stri
 <TabItem value="ios" label="iOS">
 
 
-To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="product_title_srtm"/>** and toggle on.   
+To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="srtm_plugin_name"/>** and toggle on.   
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 

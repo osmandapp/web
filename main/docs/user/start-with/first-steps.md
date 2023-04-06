@@ -80,7 +80,6 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 </Tabs>
 
-
 ### How to download maps
 
 OsmAnd is an offline map application, so after the *<Translate android="true" ids="get_started"/>* screen, you will be prompted to [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later.  
@@ -154,7 +153,7 @@ To enable / disable plugins go to:
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
 To enable / disable plugins go to:
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins"/> → &#10003;
+<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
 
 </TabItem>
 

@@ -497,7 +497,7 @@ Please refer to [full instruction](../map/raster-maps.md#download--update-tiles)
 <TabItem value="ios" label="iOS">  
 
 To update or download online maps (tiles) at specific location, you can use object context menu:  
-**iOS**: *<Translate ios="true" ids="download_map"/>* and *<Translate ios="true" ids="update_map"/>*.   
+**iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.   
 Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).  
 
 ![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)

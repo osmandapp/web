@@ -478,7 +478,7 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_ios.png)
 
@@ -500,7 +500,7 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins,track_recording"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,track_recording"/>*
 
 </TabItem>
 
@@ -530,7 +530,7 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins,product_title_osm_editing"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,product_title_osm_editing"/>*  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
