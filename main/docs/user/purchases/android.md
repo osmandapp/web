@@ -63,8 +63,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
-| **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
-| **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
+| **Price EUR** | 0€ | 29.99€  |  9.99€   |  2.99€ / 29.99€   |
+| **Price USD** | 0$ | 29.99$  |  9.99$   |  2.99$ / 29.99$   |
 
 ### Free and Paid features
 
