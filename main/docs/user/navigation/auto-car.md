@@ -22,7 +22,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 To use the Android version of the OsmAnd app in Android Auto, you have to purchase a [paid subscription](../purchases/ios#free-and-paid-features).
 :::
 
-OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android or iOS device to the vehicle's multimedia system screen and use OsmAnd to navigate.  
+OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android to the vehicle's multimedia system screen and use OsmAnd to navigate.  
+Driving a car and using your phone or tablet at the same time is usually forbidden by law for safety reasons. Android Auto brings an adapted version of the OsmAnd app to the display of your car's multimedia system, making it easier and safer to access the app's navigation functions.
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-overview.png)  
 
@@ -33,7 +34,7 @@ First, you need to select and configure the profile to be used when connecting t
 
 For OsmAnd to work, you need to connect your Android device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
-- You need to have an OsmAnd Pro, OsmAnd+ or Maps+ subscription. Check it here *Menu → Settings → Purchases*.
+- You need to have an "OsmAnd Pro", "OsmAnd+" or "Maps+" subscription. Check it here *Menu → Settings → Purchases*.
 - To find out how to connect and set up your device, please visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites. 
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/android-auto-setup.png)
@@ -54,13 +55,13 @@ Most OsmAnd settings directly related to navigation are available in Android Aut
 ## Select a route endpoint
 
 You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/), or select a destination from the [route history](#history).   
-- Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
+1. Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
 - In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
     -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
 - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), as well as the distance from the point of the current location to it.
-- Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
-- Select [Address Search](#search) to enter a destination from the available search categories. 
+2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
+3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 :::note
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
@@ -89,11 +90,12 @@ To build a route to a POI in Android Auto, follow these steps:
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
 
 
-### Markers
+<!-- Markers
 
 To use [markers](../personal/markers.md#overview) in Android Auto for navigation, they need to be added in advance in the OsmAnd app on your device, tablet or phone, and they need to be available in the *Menu → Map marker* list.     
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
+-->
 
 
 ### Favorites
@@ -111,12 +113,13 @@ Do not choose tracks that are obviously far away from your current location. It 
 
 From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in Android Auto or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-6.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-tracks.png)
 
 
 ### Search
 
-With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
+With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories. 
+
 - [Address search](../search/search-address.md) - enter the needed address in the search field.
 - [POI search](../search/search-poi.md) - search by Point of Interest names.
 - [Custom search](../search/custom-poi-search.md) - search by the categories you created.
@@ -126,7 +129,10 @@ With this option you can search for the necessary places on the map to navigate.
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)   ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
 
 
-## Additional options
+## Additional features
+
+Additional features help you customize the display and operation of OsmAnd in Android Auto to suit your personal needs.  
+
 
 ### Voice prompts
 
@@ -174,11 +180,16 @@ https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 --
 
 ## Issues
 
-1. Android Auto: movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/map-during-navigation.md#map-during-navigation) option:
+ Android Auto: movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/map-during-navigation.md#map-during-navigation) option:
 
  - Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
  - Placed in Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/map-during-navigation.md#map-during-navigation).
 
+
+## Volume control issue
+
+In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
 
 
 <!--
@@ -194,13 +205,9 @@ Choose which speakers to use.
        - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
        - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.
 
-
-
-Volume control issue
-
-In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
-If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
-
 -->
+
+
+
 
 
