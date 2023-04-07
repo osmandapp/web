@@ -205,7 +205,7 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 #### History
 
-*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/route-navigation.md#history) and [Map markers history](../personal/markers.md#history).  
+*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), Navigation history and [Map markers history](../personal/markers.md#history).  
 To open History settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 Available interactions:  

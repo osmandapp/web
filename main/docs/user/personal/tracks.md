@@ -463,5 +463,5 @@ To export a GPX file to an external storage, do the following:
 - [Show track on Map](../map/tracks-on-map.md)
 - [Analyze on Map](../map/tracks-on-map.md)
 - [Track Context menu](../map/track-context-menu.md)
-- [Navigation by track](../navigation/gpx-navigation.md)
+- [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Trip recording](../plugins/trip-recording.md)

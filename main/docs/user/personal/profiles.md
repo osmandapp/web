@@ -101,7 +101,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="map_orientation_portrait"/>*, 
   - *<Translate android="true" ids="map_orientation_landscape"/>*, 
   - *<Translate android="true" ids="map_screen_orientation"/>*.
-- *[<Translate android="true" ids="screen_control"/>](../navigation/route-navigation/#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
+- *[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
 </TabItem>
 

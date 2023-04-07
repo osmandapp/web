@@ -396,7 +396,7 @@ Before it you might need to do the following, otherwise, OsmAnd will work in the
 Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
 
 Before it you might need to do the following, otherwise, OsmAnd will work in the background:
-- [Cancel navigation](../navigation/route-navigation.md)
+- [Cancel navigation](../navigation/setup/route-navigation.md)
 - [Stop map downloading and updating](../start-with/download-maps.md)
 - [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
 - [Stop audio/video note recording](../plugins/audio-video-notes.md)

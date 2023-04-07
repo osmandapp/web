@@ -87,7 +87,7 @@ At the moment, the Pro subscription has the following features:
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | allowing to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 
 ### How to buy
 
