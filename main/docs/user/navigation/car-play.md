@@ -80,7 +80,7 @@ You can select previously preset and added [Markers](../personal/markers.md#sett
 3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 :::note
-While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](./guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::
 
 :::note

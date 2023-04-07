@@ -85,7 +85,7 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 ## Screen alerts
 
-[Screen alerts](../map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
+[Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
 
 <Tabs groupId="operating-systems">
 
@@ -105,12 +105,12 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |  
+| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../../widgets/nav-widgets.md#alert-widget)   |  
 
 
 ## Map during navigation 
 
-You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../navigation/guidance/map-during-navigation.md).  
+You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../guidance/map-during-navigation.md).  
 
 <Tabs groupId="operating-systems">
 
@@ -134,12 +134,12 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 ### Default speed / Road speeds 
 
-- Used as a speed to estimate [arrival time](./../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 
+- Used as a speed to estimate [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 
     - pedestrian, boat, ski, airplain, ... profiles, 
     - roads without speed limits (can affect routing), 
     - user generated or imported tracks. 
 - Used to determine how late/early voice announcements should be pronounced 
-- [Details of Base Profile Default Speeds](./../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds) . 
+- [Details of Base Profile Default Speeds](../../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds) . 
 - Affects speed formatting Unit of speed (Add link - general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
 - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. 
 
@@ -148,7 +148,7 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 ### Fuel used by motor
 
-If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../navigation/setup/route-details.md).
+If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../setup/route-details.md).
 Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 <Tabs groupId="operating-systems">

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/setup/route-navigation.md). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../navigation/routing/), where saving battery power is important.  
+Voice prompts and text notifications are features used to help you while [navigating a selected route](../setup/route-navigation.md). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../routing/index.md), where saving battery power is important.  
 
 
 ## Voice prompts
@@ -34,10 +34,10 @@ Voice prompts help you move in the right direction without distracting you from 
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 
-- You can activate voice prompts in the [Navigation](../navigation/guidance/navigation-settings.md) section by tapping Settings. You can also enable and configure voice prompts in Configure profile, Navigation settings. 
+- You can activate voice prompts in the [Navigation](../guidance/navigation-settings.md) section by tapping Settings. You can also enable and configure voice prompts in Configure profile, Navigation settings. 
 - You can turn the sound for voice prompts On or Off in *Menu → Navigation → "On/Off" button* or *Menu → Navigation → "Settings" icon → Sound*.
 
-Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
+Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 :::info For Android version
 You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
@@ -71,7 +71,7 @@ You can set up voice prompts for the selected profile or for all available profi
     - *[Speed cameras](#speed-cameras)*. 
  
 :::note
-You can turn on the **[Alert widget](../widgets/nav-widgets.md#alert-widget)** for added convenience when using the voice prompts of an *Announcement group*.
+You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** for added convenience when using the voice prompts of an *Announcement group*.
 :::  
 
 3. **[User points group](#user-points-group)**:
@@ -82,7 +82,7 @@ You can turn on the **[Alert widget](../widgets/nav-widgets.md#alert-widget)** f
 5. **Other**: 
     - *Announce GPS signal loss and recovery* and *Announce route recalculation*.
 6. **Options**:
-    - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../widgets/nav-widgets.md#next-turns) on the application screen.
+    - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
     - *[Announcement time](#announcement-time)*.  
 7. **Output** (for Android version):
     - *[Voice guidance output](#voice-guidance-output)*.
@@ -120,7 +120,7 @@ Not all listed languages may be supported by the TTS engine. You can change the 
 
 ### User points group
 
-In this group you can set whether the voice prompts for the pre-set and added [Waypoints](../personal/tracks.md#add-waypoint), [Favorites](../personal/favorites.md) or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
+In this group you can set whether the voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
 
 | Prompt type | Response time | Response distance in meters | Limit |
 | - | - | - | - | 
@@ -129,7 +129,7 @@ In this group you can set whether the voice prompts for the pre-set and added [W
 
 ### Speed cameras
 
-[Speed cameras alerts](../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
+[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
 In some countries or regions, it is illegal to use speed camera warning apps. You need to make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall**, and all data related to speed cameras: warnings, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
@@ -137,7 +137,7 @@ In some countries or regions, it is illegal to use speed camera warning apps. Yo
 ### Announcement time
 
 The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
-In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](../../technical/algorithms/voice-prompt-triggering.md).  
+In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](../../../technical/algorithms/voice-prompt-triggering.md).  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
 
@@ -146,7 +146,7 @@ In the *Time and Distance Intervals* drop-down list, you can view detailed infor
 To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
    - Media/navigation audio.
    - Notification audio.
-   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car.md)).
+   - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
 
 ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
@@ -174,7 +174,7 @@ If you choose TTS-voice, you need to have a [text-to-speech](https://en.wikipedi
 
 Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
 
-Additional information can be found in the [Troubleshooting](../troubleshooting/navigation#voice-navigation) section.  
+Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation#voice-navigation) section.  
 
 ### List of available TTS
 
@@ -205,7 +205,7 @@ There are currently a total of 45 languages.
 
 <InfoAndroidOnly />  
 
-For testing Voice prompts, you need to activate [OsmAnd development plugin](../plugins/development.md) and start the function ["Test voice prompts"](../plugins/development/#application-testing).  
+For testing Voice prompts, you need to activate [OsmAnd development plugin](../../plugins/development.md) and start the function ["Test voice prompts"](../../plugins/development.md#application-testing).  
 
 
 ## Common problems with voice prompts
