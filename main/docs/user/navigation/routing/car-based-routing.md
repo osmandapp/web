@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. Right routing settings can help drivers save time, and fuel, and avoid hazards on the road.  
+Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. The right routing settings can help drivers save time, and fuel, and avoid hazards on the road.  
 
 :::info
 The routing mechanism for ground vehicles differs only in a few settings. Common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their particularities.  

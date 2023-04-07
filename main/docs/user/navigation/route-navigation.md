@@ -186,6 +186,22 @@ In this menu, you can find additional options for managing destinations points:
 
 _Home_ and _Work_ tabs (or [Special points](../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu.  
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Special favorites Android](@site/static/img/navigation/route/special_favorite_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Special favorites iOS](@site/static/img/navigation/route/special_favorite_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 ## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  

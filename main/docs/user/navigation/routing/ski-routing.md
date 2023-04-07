@@ -22,7 +22,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 The ski routing (and skiing profile) only availible when [Ski map view plugin](../../plugins/ski-maps.md) is activated.  
 :::
 
-*Ski routing* can be configured according to your needs in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the *Skiing profile*.  
+*Ski routing* can be configured according to your needs in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
 ## Route parameters - Ski
 

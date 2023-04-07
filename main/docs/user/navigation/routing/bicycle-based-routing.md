@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists, as well as other factors such as elevation differences and, for example, pedestrian crosswalks. Bicycle routing can also be useful for [mountain biking](#mtb-routing-settings).
 
-You can configure *Bicycle routing* in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the *Cycling profile*.
+You can configure *Bicycle routing* in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.
 
 ## Route parameters - Bicycle
 

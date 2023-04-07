@@ -26,6 +26,8 @@ Straight line routing does not take into account any obstacles or barriers that 
 
 ## Route parameters - Straight line
 
+*Straight line* routing can be configured according to your needs in the [Route parameters section](../../navigation/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
