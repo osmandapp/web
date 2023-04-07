@@ -393,7 +393,7 @@ It is also possible to select 'From' Destination first via Map context menu (<Tr
 
 **Note**: if you click "Start navigation" - 'From' point will be discarded as application enters in Navigation mode. In order to preserve a route, don't click "Start navigation" and [swipe down](#hide-context-menu)  "Route preparation" menu.
 
-Read more about [navigation](../navigation/route-navigation.md).
+Read more about [navigation](../navigation/setup/route-navigation.md).
 
 ### Search nearby
 
@@ -443,7 +443,7 @@ It is possible to add avoid roads at specific location, so selected roads will b
 
 **Note**: avoid roads are global and used for all navigation profiles (except online routing). 
 
-Read more about [navigation](../navigation/route-navigation.md).
+Read more about [navigation](../navigation/setup/route-navigation.md).
 
 ### Change object position
 

@@ -106,7 +106,7 @@ Details are described in the information panel:
 
 ### Quick actions
 
-Buttons panel with the next action: Show/Hide a track on the map, opening [Appearance](../map/tracks-on-map.md#track-appearance) menu of a track, Export / [Plan route](../plan-route/create-route.md), [Navigation](../navigation/gpx-navigation.md).
+Buttons panel with the next action: Show/Hide a track on the map, opening [Appearance](../map/tracks-on-map.md#track-appearance) menu of a track, Export / [Plan route](../plan-route/create-route.md), [Navigation](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -117,7 +117,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 - *"Show / hide"* - track on the map
 - *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
 - *"Edit track"* - opens the track in ["Plan route" tool](../plan-route/create-route.md).
-- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Directions"* - opens the track for ["Follow track"](../navigation/setup/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -128,7 +128,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 - *"Show / hide"*  - allows to show or not a track on the map.
 - *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
 - *"Export"* - allows to export a track.
-- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Directions"* - opens the track for ["Follow track"](../navigation/setup/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -378,7 +378,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
 - *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
 - *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
@@ -410,7 +410,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
 - *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
 - *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map).
