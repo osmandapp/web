@@ -32,11 +32,11 @@ There are three ways to access the Route Details menu:
 
 |  |
 |------------|
-| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_main-info.png) |
-| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| [Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_analiz.png) |
-| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| The features with [map legend](../../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
 | Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one. |
 | ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) |
@@ -53,11 +53,11 @@ There are three ways to access the Route Details menu:
 
 |  |
 |------------|
-| [Main information](../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
+| [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png) |
-| [Analyse](../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
+| [Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png) |
-| The features with [map legend](../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
+| The features with [map legend](../../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png) |
 | Save as new track button. | 
 | ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png) |
@@ -75,7 +75,7 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *start=52.310331,4.863615*- coordinates of the start point.
 - If the coordinates are not specified, My Location is used.
 - *end=52.327645,4.863272* - coordinates of the end point.
-- *mode=pedestrian* - type of [routing](../navigation/routing/index.md), which depends on the selected profile.
+- *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 :::
 
