@@ -48,7 +48,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 
 1. Configure profiles you intend to use for navigation according to your needs:  
 
-    - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](./navigation-settings#fuel-used-by-motor) (optional).
+    - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (optional).
     - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for Pro users).  
     - Choose whether to provide [notifications](../guidance/voice-navigation.md) during your route or not. If you need voice prompts, [configure](../guidance/voice-navigation.md#settings-of-voice-prompts) them.
  
@@ -69,7 +69,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 There are 3 ways to reach the navigation menu:
 
 - [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Direction to/from* in a [map context menu](../map/map-context-menu#directions-to--from).  
+- *Direction to/from* in a [map context menu](../../map/map-context-menu#directions-to--from).  
 - Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
