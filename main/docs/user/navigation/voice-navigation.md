@@ -168,9 +168,9 @@ You can download voice prompts from two different sets from the list.
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
-### TTS (text-to-speech)
+### TTS (Text-to-Speech)
 
-If you choose TTS voice, you need to have an appropriate [text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) in your operating system. They are partly included in Android, and iOS or can be installed separately. Go to [the settings of your Android (device)](https://support.google.com/accessibility/android/answer/6006983), find the section *Language and keyboard*, Text-to-speech or similar. Select or install the engine, then also set up support for the language you want, this can be an additional setting or a small download.  
+If you choose TTS-voice, you need to have a [text-to-speech](https://en.wikipedia.org/wiki/Speech_synthesis) converter directly in your operating system. These are partially included in Android and iOS or can be installed separately. Go to your device's settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select or install it, then also set up support for the language you want, this may be an additional setting or require you to download an additional file.  
 
 Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
 
