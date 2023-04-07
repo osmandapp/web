@@ -18,6 +18,36 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 For a comfortable navigation experience, you need to customize the OsmAnd app to meet your needs and the parameters of your vehicle. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you optimize your route on the road.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+## Navigation Type
+
+<Translate android="true" ids="select_nav_profile_dialog_message"/>  
+
+#### Offline navigation type
+
+![Navigation Type](@site/static/img/navigation/navigation_type.png)  
+
+#### Online navigation type
+
+For information about routing online, see this [article](../navigation/routing/online-routing.md). 
+  
+
+
 ## Route Parameters
 
 For each profile (except *Browse map*) can be chosen [routing type](../navigation/route-navigation.md#navigation-type--route-parameters).
@@ -40,43 +70,19 @@ The most important routing parameters can also be found in *Navigation menu* in 
 There are no navigation settings in *Browse map* profile.  
 :::
 
-<Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
-
-![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 - **<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
 
 - **<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
 
 
-## Navigation Type
-
-<Translate android="true" ids="select_nav_profile_dialog_message"/>  
-
-#### Offline navigation type
-
-![Navigation Type](@site/static/img/navigation/navigation_type.png)  
-
-#### Online navigation type
-
-For information about routing online, see this [article](../navigation/routing/online-routing.md). 
-  
 
 ## Voice Prompts
 
-Voice prompts is feature used to help you while [navigating a selected route](../navigation/route-navigation). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../navigation/route-navigation.md/), where saving battery power is important. Read more in the article [Voice prompts / Notifications](../navigation/voice-navigation.md).  
+Main article -  **[Voice prompts / Notifications](../navigation/voice-navigation.md)**.  
+
+Voice prompts is feature used to help you while [navigating a selected route](../navigation/route-navigation). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../navigation/route-navigation.md/), where saving battery power is important. 
 
 
 ## Screen alerts

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title:  Map during Navigation
+sidebar_position: 1
+title: Configure map screen
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,7 +49,7 @@ During navigation, the location, distance from the surface, and map view will ch
 | *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
 
 
-## Animate location change
+### Animate my location
 
 This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
 For Android, this item named [Animate own position](#other) is located in the "Other" section of the General Settings menu.
@@ -58,7 +58,9 @@ For Android, this item named [Animate own position](#other) is located in the "O
 **Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).  
 
 
-## Show POI along the route
+## Show Points along the route
+
+You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**, **Track points**.
 
 [Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point. 
 
@@ -71,7 +73,7 @@ Enable / disable points of interest of **selected** type on the map:
 <!-- [Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi). -->
 
 
-## Screen alerts
+## Screen Alerts
 
 <Tabs groupId="operating-systems">
 
