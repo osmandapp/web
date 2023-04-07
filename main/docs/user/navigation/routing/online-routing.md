@@ -23,7 +23,7 @@ Online routing is a powerful tool that can help users save time and navigate mor
 ![Online routing Android](@site/static/img/navigation/routing/online_routing_andr.png)
 ## Route parameters - Online routing
 
-*Online routing* can be enabled in [Navigation type](../../navigation/navigation-settings.md#overview) section of the Navigation settings of the selected *Profile*. In OsmAnd there are two predefined *online routing engines* ([ZLZK](https://zlzk.biz/) and [OSM DE](https://routing.openstreetmap.de)), that provide three *Online routing* types : *Bicycle, Car, On foot*.  
+*Online routing* can be enabled in [Navigation type](../guidance/navigation-settings.md#overview) section of the Navigation settings of the selected *Profile*. In OsmAnd there are two predefined *online routing engines* ([ZLZK](https://zlzk.biz/) and [OSM DE](https://routing.openstreetmap.de)), that provide three *Online routing* types : *Bicycle, Car, On foot*.  
 
 :::note
 Online routing types are designed for *Driving, Cycling, Walking* profiles, although they can also be used with other OsmAnd profiles (Truck, Motorcycle, Skiing, Horseback riding). They are provided “as is", so you can't customize them according to your needs using different navigation options.  
