@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../navigation/setup/route-navigation.md#settings).
+This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
 ## Map during navigation
@@ -46,7 +46,7 @@ During navigation, the location, distance from the surface, and map view will ch
 | *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time until the map view is synchronized with your current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | *"<Translate android="true" ids="snap_to_road"/>"*  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues) is flipped and juggles.   |
+| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../auto-car.md#issues) is flipped and juggles.   |
 
 
 ### Animate my location
@@ -54,15 +54,15 @@ During navigation, the location, distance from the surface, and map view will ch
 This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
 For Android, this item named **Animate own position** is located in the "Other" section of the General Settings menu.
 
-**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/custom-poi-search.md) and select it to display POI on the map.
-**Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).  
+**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/custom-poi-search.md) and select it to display POI on the map.
+**Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
 ## Show Points along the route
 
 You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**, **Track points**.
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point. 
+[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point. 
 
 Enable / disable points of interest of **selected** type on the map:  
 - *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*  
@@ -93,7 +93,7 @@ Enable / disable points of interest of **selected** type on the map:
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Route line appearance
@@ -135,23 +135,23 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 
 |  |
 |------------|
-| *<Translate android="true" id="map_widget_renderer"/>* – The map style is used with the default colors. For a full description of the colors, go to [Default Map styles](../map/vector-maps.md#default-map-styles). |  
+| *<Translate android="true" id="map_widget_renderer"/>* – The map style is used with the default colors. For a full description of the colors, go to [Default Map styles](../../map/vector-maps.md#default-map-styles). |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | *Custom* - Allows you to display the line in any preferred color and transparency. You can choose different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom.png) |
 | *<Translate android="true" id="altitude"/>* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-|*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description in the article Contour lines and Terrain plugin, point [Slope map](../plugins/contour-lines.md#slope-map). |
+|*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description in the article Contour lines and Terrain plugin, point [Slope map](../../plugins/contour-lines.md#slope-map). |
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../map/vector-maps.md#road-style)|
+|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../map-legend/osmand.md#surface-smoothness)|
+|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Surface.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../map-legend/osmand.md#surface-smoothness)|
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Smoothness.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../map/vector-maps.md#winter-and-ski)|
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
 ![Altitude](@site/static/img/navigation/route/Winter.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |  
@@ -162,23 +162,23 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles) |  
+|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../../map/vector-maps.md#default-map-styles) |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 | &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
 | &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the color doesn't represent the absolute height value. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
+|*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../../plugins/contour-lines.md#slope-map)|
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../map/vector-maps.md#road-style)|
+|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../map-legend/osmand.md#surface-smoothness)|
+|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Surface.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../map-legend/osmand.md#surface-smoothness)|
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Smoothness.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../map/vector-maps.md#winter-and-ski)|
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
 ![Altitude](@site/static/img/navigation/route/Winter.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../map-legend/osmand.md#surface-smoothness)| 
+| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
 | *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  | 
@@ -198,7 +198,7 @@ Select a route line's width.
 
 |  |
 |------------|
-|*"<Translate android="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
+|*"<Translate android="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../../map/vector-maps.md#default-map-styles)  |
 ![map style](@site/static/img/navigation/route/map_st.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
 ![width](@site/static/img/navigation/route/width.png)   ![width](@site/static/img/navigation/route/width_med.png)|
@@ -211,7 +211,7 @@ Select a route line's width.
 
 |  |
 |------------|
-|*"<Translate ios="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  |
+|*"<Translate ios="true" id="map_widget_renderer"/>"* – It's used with default width. You can see a full description of the map style by clicking there [Map style](../../map/vector-maps.md#default-map-styles)  |
 ![map style](@site/static/img/navigation/route/width_ms_ios.png)   ![map stule](@site/static/img/navigation/route/map_st_2.png) |
 |*"Thin width / Medium width / Bold width"* – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly. |
 ![width](@site/static/img/navigation/route/width_ios.png)   ![width](@site/static/img/navigation/route/width_med.png)|
