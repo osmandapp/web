@@ -79,7 +79,7 @@ If you have issues with the TTS voice guidance:
 
 -   First check if you have a TTS engine installed on your Android device which supports the language you want (i.e. offers it for selection in its options). To do this, find and select the language you want in the Android (not OsmAnd) settings, often located under "Language and Input / Text-to-speech options".
 -   Then use the test button usually provided there to "Listen to an example". You should hear a test announcement in the correct language and pronunciation.
--   Once this works, finally go to OsmAnd's [General settings / Voice guidance and there select the corresponding TTS language](../navigation/voice-navigation.md#settings-of-voice-prompts).
+-   Once this works, finally go to OsmAnd's [General settings / Voice guidance and there select the corresponding TTS language](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts).
 	(Please note that the language list OsmAnd initially displays can be extended by tapping the "Install more..." option.)
 
 It is a known issue that many pre-installed TTS engines may not support less widely spoken languages (even though the number of languages supported is growing). You can always try to find a 3rd party TTS engine

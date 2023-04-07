@@ -161,7 +161,7 @@ Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It
 
 By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
  
-The options described here are available in the [Skiing navigation](../navigation/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing.    
+The options described here are available in the [Skiing navigation](../navigation/setup/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing.    
 
 
 :::info NOTE

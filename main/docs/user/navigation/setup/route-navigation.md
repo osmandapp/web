@@ -202,6 +202,8 @@ _Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-
 
 </Tabs>
 
+### Previous route / History
+
 ## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
