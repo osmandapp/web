@@ -19,14 +19,14 @@ OsmAnd Navigation features help you get to your destination by displaying routes
 List of articles:
 
 - [Routing types](./routing/index.md)
-- [Navigation by route](./route-navigation.md)
-- [Navigation by track](./gpx-navigation.md)
-- [Markers navigation](./markers-navigation.md)
-- [Voice navigation](./voice-navigation.md)
+- [Navigation by route](./setup/route-navigation.md)
+- [Navigation by track](./setup/gpx-navigation.md)
+- [Markers navigation](./setup/markers-navigation.md)
+- [Voice navigation](./guidance/voice-navigation.md)
 - [Android Auto](./auto-car.md)
 - [CarPlay](./car-play.md)
-- [Map during navigation](./map-during-navigation.md)
-- [Navigation settings](./navigation-settings.md)
+- [Map during navigation](./guidance/map-during-navigation.md)
+- [Navigation settings](./guidance/navigation-settings.md)
 
 
 You can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile in this [article](../navigation/index.md/#navigation-settings).  

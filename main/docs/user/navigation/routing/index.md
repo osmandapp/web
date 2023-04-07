@@ -50,15 +50,8 @@ Offline OsmAnd routing is based on OpenStreetMap data and provides variety of ro
 
 ### Avoid temporary closures
 
-*Consider temporary limitations* option allows to take into account temporary road restrictions or closures when calculating routes. They may include things like road construction, special events, or road closures due to accidents or weather conditions. These limitations may not be reflected in the standard map data used by OsmAnd, so enabling this option allows the app to provide more accurate and up-to-date routing information.
-
-When this option is enabled, OsmAnd will attempt to retrieve information about temporary road restrictions from various sources, such as traffic reports, road authorities, or user reports. It will then use this information to adjust the route calculation accordingly, taking into account any relevant temporary limitations.
-
-Note that enabling this option may increase the amount of data used by the app and may also affect the speed of route calculation. However, if you are driving in an area where temporary road restrictions are likely, enabling this option can help you avoid unexpected detours or delays.
-
-Consider temporary limitations
-
-https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions
+*Consider temporary limitations* option allows to take into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, weather conditions, . Enabling this option can help you avoid unexpected detours or delays. In the same time in some cases this information may be outdated.
+In OpenStreetMap data these information is usually marked with tag *[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions). 
 
 ### Customize offline routing
 
