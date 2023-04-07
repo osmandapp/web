@@ -46,7 +46,7 @@ First, you need to select and configure the profile to be used when connecting t
 
 ## Start navigation
 
-1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the CarPlay screen or in the [app](../navigation/route-navigation/).
+1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the CarPlay screen or in the [OsmAnd app](../navigation/setup/route-navigation.md).
 2. You can use [voice prompts](#voice-prompts) to listen for directions or messages about issues on the road.  
 3. After you select a location, press **Start** to follow the route.
 4. As you drive, the vehicle screen will display OsmAnd information about your current location on the map, driving directions, distance to the next turn, and arrival time at your destination.
@@ -150,7 +150,7 @@ With this option, you can search for the necessary places on the map to navigate
 
 ### Voice prompts
 
-In OsmAnd, you can configure voice prompts for the selected profile. Do this before you start your route on your device, tablet, or phone, as you will not be able to do this on your vehicle screen. For how to do this, see the article [Voice prompts / Notifications](../navigation/voice-navigation.md). To see recommended settings for CarPlay, click here.  
+In OsmAnd, you can configure voice prompts for the selected profile. Do this before you start your route on your device, tablet, or phone, as you will not be able to do this on your vehicle screen. For how to do this, see the article [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md). To see recommended settings for CarPlay, click here.  
 
 
 ### Announce incoming text messages

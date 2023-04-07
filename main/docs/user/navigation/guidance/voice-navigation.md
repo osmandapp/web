@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/route-navigation). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../navigation/route-navigation.md/), where saving battery power is important.  
+Voice prompts and text notifications are features used to help you while [navigating a selected route](../navigation/setup/route-navigation.md). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../navigation/routing/), where saving battery power is important.  
 
 
 ## Voice prompts
@@ -34,7 +34,7 @@ Voice prompts help you move in the right direction without distracting you from 
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 
-- You can activate voice prompts in the [Navigation](../navigation/#navigation-settings) section by tapping Settings. You can also enable and configure voice prompts in Configure profile, Navigation settings. 
+- You can activate voice prompts in the [Navigation](../navigation/guidance/navigation-settings.md) section by tapping Settings. You can also enable and configure voice prompts in Configure profile, Navigation settings. 
 - You can turn the sound for voice prompts On or Off in *Menu → Navigation → "On/Off" button* or *Menu → Navigation → "Settings" icon → Sound*.
 
 Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../technical/algorithms/voice-prompt-triggering.md) documentation.  
@@ -146,7 +146,7 @@ In the *Time and Distance Intervals* drop-down list, you can view detailed infor
 To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
    - Media/navigation audio.
    - Notification audio.
-   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car)).
+   - Phone call audio (to interrupt Bluetooth [car stereos](../navigation/auto-car.md)).
 
 ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 

@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-To use the Android version of the OsmAnd app in Android Auto, you have to purchase a [paid subscription](../purchases/ios#free-and-paid-features).
+To use the Android version of the OsmAnd app in Android Auto, you have to purchase a [paid subscription](../purchases/android.md#free-and-paid-features).
 :::
 
 OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android to the vehicle's multimedia system screen and use OsmAnd to navigate.  
@@ -54,7 +54,7 @@ Most OsmAnd settings directly related to navigation are available in Android Aut
 
 ## Select a route endpoint
 
-You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/), or select a destination from the [route history](#history).   
+You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the search, or select a destination from the route history.   
 1. Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
 - In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
     -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
@@ -64,7 +64,7 @@ You can select previously preset and added [Markers](../personal/markers.md#sett
 3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 :::note
-While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::
 
 :::note
@@ -136,7 +136,7 @@ Additional features help you customize the display and operation of OsmAnd in An
 
 ### Voice prompts
 
-In OsmAnd, you can set up [voice prompts](../navigation/voice-navigation) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
+In OsmAnd, you can set up [voice prompts](../navigation/guidance/voice-navigation.md) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-voice.png)
 
@@ -180,10 +180,10 @@ https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 --
 
 ## Issues
 
- Android Auto: movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/map-during-navigation.md#map-during-navigation) option:
+Movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/guidance/map-during-navigation.md#map-during-navigation) option:
 
- - Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
- - Placed in Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/map-during-navigation.md#map-during-navigation).
+- Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
+- Placed in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md)*.
 
 
 ## Volume control issue
