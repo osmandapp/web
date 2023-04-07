@@ -74,7 +74,6 @@ There are no navigation settings in *Browse map* profile.
 For information about routing online, see this [article](../navigation/routing/online-routing.md). 
   
 
-
 ## Voice Prompts
 
 Voice prompts is feature used to help you while [navigating a selected route](../navigation/route-navigation). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../navigation/route-navigation.md/), where saving battery power is important. Read more in the article [Voice prompts / Notifications](../navigation/voice-navigation.md).  
@@ -83,6 +82,26 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 ## Screen alerts
 
 [Screen alerts](../navigation/map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+
+</TabItem>
+
+</Tabs>
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |  
 
 
 ## Map during navigation 
@@ -120,7 +139,7 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 - Affects speed formatting Unit of speed (Add link - general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
 - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. 
 
-### Min/max speed (Road speeds)
+#### Min/max speed (Road speeds)
 
 
 ### Fuel used by motor
