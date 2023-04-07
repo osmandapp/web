@@ -44,12 +44,12 @@ For a comfortable navigation experience, you need to customize the OsmAnd app to
 
 #### Online navigation type
 
-For information about routing online, see this [article](../navigation/routing/online-routing.md). 
+For information about routing online, see this [article](../routing/online-routing.md). 
   
 
 ## Route Parameters
 
-For each profile (except *Browse map*) can be chosen [routing type](../navigation/routing.md/).
+For each profile (except *Browse map*) can be chosen [routing type](../routing/index.md).
 
 Route parameters can be reached through:
 
@@ -78,14 +78,14 @@ There are no navigation settings in *Browse map* profile.
 
 ## Voice Prompts
 
-Main article -  **[Voice prompts / Notifications](../navigation/guidance/voice-navigation.md)**.  
+Main article -  **[Voice prompts / Notifications](./voice-navigation.md)**.  
 
-Voice prompts is feature used to help you while [navigating a selected route](../navigation/setup/route-navigation.md). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../navigation/routing.md/), where saving battery power is important. 
+Voice prompts is feature used to help you while [navigating a selected route](../setup/route-navigation.md). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../routing/index.md), where saving battery power is important. 
 
 
 ## Screen alerts
 
-[Screen alerts](../navigation/guidance/map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
+[Screen alerts](../map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
 
 <Tabs groupId="operating-systems">
 
