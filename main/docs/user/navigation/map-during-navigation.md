@@ -18,18 +18,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-location-change), the display of [POIs along the route](#show-poi-along-the-route), the use of [screen alerts](#screen-alerts), the[appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../navigation/route-navigation.md#settings).
+This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-location-change), the display of [POIs along the route](#show-poi-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../navigation/route-navigation.md#settings).
 
 
 ## Map during navigation
 
-The table describes changes in map behavior during navigation.  
+During navigation, the location, distance from the surface, and map view will change depending on the settings. Before starting a route, check in the corresponding menu of the OsmAnd app how the map will behave.    
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
@@ -43,10 +43,10 @@ The table describes changes in map behavior during navigation.
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time before the map view is synchronized with the current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time until the map view is synchronized with your current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
 | *"<Translate android="true" ids="snap_to_road"/>"*  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Deriving the bearing from the navigation route being followed.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
+| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../navigation/auto-car.md#issues)) is flipped and juggles.   |
 
 
 ## Animate location change
@@ -60,15 +60,15 @@ For Android, this item named [Animate own position](#other) is located in the "O
 
 ## Show POI along the route
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../map/map-context-menu.md) that appears on a [short tap](../map/map-context-menu.md#select-an-object-short-tap) on the point. 
+
+Enable / disable points of interest of **selected** type on the map:  
+- *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*  
+- *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
 
-Enable / disable points of interest of **selected** type on the map:  
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
-
-[Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi).
+<!-- [Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi). -->
 
 
 ## Screen alerts
@@ -89,10 +89,9 @@ Enable / disable points of interest of **selected** type on the map:
 
 </Tabs>
 
-
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Displays notifications on the screen as a widget. Notifications appear in the bottom left corner during navigation. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
+| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Route line appearance
@@ -134,13 +133,13 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../map/vector-maps.md#default-map-styles). |  
+| *<Translate android="true" id="map_widget_renderer"/>* – The map style is used with the default colors. For a full description of the colors, go to [Default Map styles](../map/vector-maps.md#default-map-styles). |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
-| &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
+| *Custom* - Allows you to display the line in any preferred color and transparency. You can choose different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
+| *<Translate android="true" id="altitude"/>* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../plugins/contour-lines.md#slope-map)|
+|*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description in the article Contour lines and Terrain plugin, point [Slope map](../plugins/contour-lines.md#slope-map). |
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |

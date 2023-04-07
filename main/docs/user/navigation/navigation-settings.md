@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 For a comfortable navigation experience, you need to customize the OsmAnd app to meet your needs and the parameters of your vehicle. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you optimize your route on the road.
 
-## Navigation Type / Route Parameters
+## Route Parameters
 
 For each profile (except *Browse map*) can be chosen [routing type](../navigation/route-navigation.md#navigation-type--route-parameters).
 
@@ -56,9 +56,23 @@ There are no navigation settings in *Browse map* profile.
 
 </Tabs>
 
-- &nbsp;**<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
+- **<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
 
-- &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
+- **<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
+
+
+## Navigation Type
+
+<Translate android="true" ids="select_nav_profile_dialog_message"/>  
+
+#### Offline navigation type
+
+![Navigation Type](@site/static/img/navigation/navigation_type.png)  
+
+#### Online navigation type
+
+For information about routing online, see this [article](../navigation/routing/online-routing.md). 
+  
 
 
 ## Voice Prompts
