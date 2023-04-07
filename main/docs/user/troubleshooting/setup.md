@@ -14,6 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+
 ## Initial setup 
 
 ### How to recover data?
@@ -22,6 +23,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - The easiest way is to export profile with all needed information. Menu → Settings → Export → select data that you want to export.
 - Also, you can backup all your data from the previous device if you copy the folder specified in Settings → OsmAnd Settings → Data storage folder (by default it's Android/data/net.osmand.plus). Then, simply paste all the contents of this folder back to the Data storage folder directory.
+
 
 ## Purchases
 
@@ -83,16 +85,17 @@ After that, your email address can be used as a login to activate OsmAnd Pro on 
 
 *OsmAnd Menu → Settings → Purchases → Restore purchases*
 
+
 ## Import files
 
 ### I have a GPX file, how do I get it into OsmAnd?
 
 - &nbsp;Android
-    - &nbsp;You can [download and open it](../navigation/gpx-navigation.md) via File Browser or Dropbox and select OsmAnd as a target application
-    - &nbsp;You can put it in OsmAnd home folder: osmand/tracks/(optional\_sub-folder)/your\_file.gpx
+    - &nbsp;You can [download and open it](../navigation/setup/gpx-navigation.md) using File Browser or Dropbox and select OsmAnd as a target application.
+    - &nbsp;You can put it in OsmAnd home folder: osmand/tracks/(optional\_sub-folder)/your\_file.gpx.
     
 - &nbsp;iOS
-    - &nbsp;To open [a GPX file in OsmAnd](../navigation/gpx-navigation.md), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
+    - &nbsp;To open [a GPX file in OsmAnd](../navigation/setup/gpx-navigation.md), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
 
 
 ### Contour lines or hillshades do not show up

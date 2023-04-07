@@ -124,7 +124,7 @@ Added ability to [select routes on the map](../user/map/vector-maps.md#routes) f
     </tr>
   </table> 
 
-Available to start [navigation by a track](../user/navigation/gpx-navigation.md) or download it.
+Available to start [navigation by a track](../user/navigation/setup/gpx-navigation.md) or download it.
 
   <table class="blogimage">
    <tr>
@@ -211,11 +211,11 @@ Added "Dynamic type" support, text size in OsmAnd will change accordingly to tex
 
 #### Speed camera alerts
 
-Added legal warning about using [speed camera alerts](../user/navigation/map-during-navigation.md).
+Added legal warning about using [speed camera alerts](../user/navigation/guidance/voice-navigation.md#speed-cameras).
 
 #### Voice prompts
 
-Added [support for new languages](../user/navigation/voice-navigation.md): Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian.
+Added [support for new languages](../user/navigation/guidance/voice-navigation.md): Catalan, Ukrainian, Bulgarian, Indonesian, Slovenian.
 
 #### UI improvements
 

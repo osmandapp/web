@@ -23,7 +23,7 @@ For native routing there are different limitations for different phones, dependi
 
 ### How to calculate routes longer than 250km?
 
-1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/route-navigation.md#how-to-use) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000km routes.
+1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000km routes.
 
 2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
 
@@ -63,8 +63,8 @@ properly".
 We suggest that recorded voices should only be a fallback if you **really** like a particular voice, or if you cannot find a TTS engine supporting your language. Many 'recorded' voices have significant shortcomings like gaps and unnatural intonation, and some phrases may be missing entirely, where for a maintenance like adding new commands we could not get access to the original speakers any more.
 
 Read more about Voice prompts:
-- [Voice guidance](../navigation/voice-navigation.md)
-- [Adjusting voice prompts](../navigation/voice-navigation.md#settings-of-voice-prompts)
+- [Voice guidance](../navigation/guidance/voice-navigation.md)
+- [Adjusting voice prompts](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts)
 - [TTS does not function properly](../troubleshooting/navigation.md#tts-does-not-function-properly)
 
 ### TTS does not function properly
