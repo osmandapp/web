@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
+## Overview
 
 Welcome to OsmAnd! Explore how to download maps, how to configure the application, how to use map and build a route, how to start navigation and how to search points of interest. Get acquainted with key points of OsmAnd Privacy policy and required Permissions.
 
@@ -32,6 +32,7 @@ Welcome to OsmAnd! Explore how to download maps, how to configure the applicatio
 
 </Tabs>
 
+
 ## Install OsmAnd
 OsmAnd is a mobile application for Maps and Navigation available for **Android** and **iOS**. You can download it on most popular Markets.
 
@@ -45,16 +46,17 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 
 [Read more](../purchases/index.md) about OsmAnd versions and Purchases.  
 
+
 ## Welcome to OsmAnd!
 
 Our goal is to create a fully functional map-oriented application that could be used offline & online for various purposes. The application is full of features, so you don't need to switch between different apps and you will have everything at your fingertips:
 - Browse Worldwide Map with lots of details displayed with [many map styles](../map/vector-maps.md).
 - Display,  [search](../search/search-poi.md) and save various [Points of interest](../map/point-layers-on-map.md).
 - [Plan a route](../plan-route/create-route.md) by car, bicycle, foot and combine into multi modal routes.
-- Start [voice guided navigation](../navigation/route-navigation.md) with screen on and off.
+- Start [voice guided navigation](../navigation/guidance/voice-navigation.md) with screen on and off.
 - Make your tourist trip rich with offline [Wikipedia](../plugins/wikipedia.md) and [Wikivoyage](../plan-route/travel-guides.md).
 - Fully customize how [the map is displayed](../map/configure-map-menu.md) and what [widgets](../widgets/index.md) are displayed on it.
-- Navigate [by route](../navigation/routing/boat-navigation.md), [by a given track](../navigation/gpx-navigation.md), [by public transport](../navigation/routing/public-transport-navigation.md) and [offroad](../navigation/markers-navigation.md).
+- Navigate [by route](../navigation/setup/route-navigation.md), [by a given track](../navigation/setup/gpx-navigation.md), [by public transport](../navigation/routing/public-transport-navigation.md) and [offroad](../navigation/setup/markers-navigation.md).
 - Everything works in **Offline Mode**!
 - And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing.md).
 
@@ -252,7 +254,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 ### How to plan a route
 
-[Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks.md), [edited](../map/tracks-on-map.md) or [used by navigation](../navigation/gpx-navigation.md) later.
+[Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks.md), [edited](../map/tracks-on-map.md) or [used by navigation](../navigation/setup/gpx-navigation.md) later.
 
 <Tabs groupId="operating-systems">
 
@@ -378,7 +380,7 @@ There are two available variants of how to close OsmAnd.
 1. Close an app by swiping it up and off the screen. For vertically listed apps, swipe left or right.
 
 Before it you might need to do the following, otherwise, OsmAnd will work in the background:
-- [Dismiss navigation](../navigation/route-navigation.md)
+- [Dismiss navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
 - [Stop map downloading and updating](../start-with/download-maps.md)
 - [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
 - [Stop audio/video note recording](../plugins/audio-video-notes.md)
@@ -403,6 +405,7 @@ Before it you might need to do the following, otherwise, OsmAnd will work in the
 
 </Tabs>
 
+
 ## App shortcuts
 
 [App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
@@ -412,9 +415,11 @@ Tapping to the action icon allows starting this action immediately.
 
 ![Shortcuts](@site/static/img/shortcuts/shortcuts1.png) ![Shortcuts](@site/static/img/shortcuts/shortcuts2.png)
 
+
 ## Privacy
 
 It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy focused application. In order to preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction, geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy). 
+
 
 ## Permissions
 
@@ -422,7 +427,7 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 
 **Essential**:
 - **Internet** - initial download / update offline maps. Also could be needed to access online features such as [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online photos](../map/map-context-menu.md#online-photos) or [Online maps](../map/raster-maps.md).
-- **GPS** / **GSM Network** - determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location--zoom) or when you [start navigation](../navigation/route-navigation.md).
+- **GPS** / **GSM Network** - determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location--zoom) or when you [start navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optional**:
 - **Camera/voice recording** (Android) - only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
