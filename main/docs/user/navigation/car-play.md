@@ -148,6 +148,7 @@ With this option, you can search for the necessary places on the map to navigate
 
 ## Additional features
 
+
 ### Voice prompts
 
 In OsmAnd, you can configure voice prompts for the selected profile. Do this before you start your route on your device, tablet, or phone, as you will not be able to do this on your vehicle screen. For how to do this, see the article [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md). To see recommended settings for CarPlay, click here.  
