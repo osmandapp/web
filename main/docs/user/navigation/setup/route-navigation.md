@@ -131,7 +131,6 @@ The most important thing to start navigation is to determine your destination. T
 - &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
 - &nbsp;"&#8595;&#8593;" _Swap Starting point and Destination_ - allows to swap *Start* and *Finish* points.
 
-
 ### Intermediate destinations
 
 <Tabs groupId="operating-systems">
@@ -204,6 +203,24 @@ _Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-
 
 ### Previous route / History
 
+If recording [Navigation History](../../personal/global-settings.md#history) is enabled, you can use previous route or destinations from history list for navigation. This option can be useful for quick access to frequently used routes. Items in the history list are sorted by most recent use, starting with the newest.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Previous route Android](@site/static/img/navigation/route/previous_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Previous route  iOS](@site/static/img/navigation/route/previous_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
 ## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
@@ -236,10 +253,6 @@ Even if you turn off the screen or exit the OsmAnd app, you'll still get voice p
 To save your device battery, while navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 :::
 
-
-### Pause / resume navigation
-
-
 ## Settings
 
 In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile.  
@@ -251,7 +264,6 @@ In this section, you can read about all the navigation settings (routing, vehicl
 :::info
 There are no navigation settings in *Browse map* profile.  
 :::
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -276,7 +288,7 @@ Please read about route parameters for the corresponding navigation type.
 
 ### Navigation settings
 
-How to configure routing type and routing's parameters are described in the [Navigation settings article](../guidance/navigation-settings.md#navigation-type--route-parameters).
+How to configure [routing type](../routing/index.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
 
 ### Route recalculation
 
@@ -318,9 +330,9 @@ For stop the simulation of navigation you need to click on ["Navigation" button 
 
 When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
 
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
+You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
 
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
