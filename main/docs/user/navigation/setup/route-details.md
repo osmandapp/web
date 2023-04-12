@@ -17,6 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
+<!--
 ## Overview
 
 In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
@@ -392,8 +393,10 @@ All values are indicated either for the whole route or only for the selected int
 
 
 
-## Info for del
+Info for del
+-->
 
+## Details
 
 <Tabs groupId="operating-systems">
 
