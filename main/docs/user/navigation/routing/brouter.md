@@ -80,6 +80,7 @@ A guide to installing BRouter and including it in OsmAnd routing.
     </tr>
 </table> 
 
+
 ## How to use
 
 Comparison of BRouter with the internal routing of the Osmand application.
@@ -89,11 +90,11 @@ After configuring the BRouter we can compare the speed of the pre-calculation of
 We choose two random points in the Netherlands and start the calculation of the trip. To do this, we set a balanced driving style without using altitude data for the base profile. The calculation time for this trip is 14.5 sec for our internal OsmAnd route. The time for the BRouter navigation routing profile is less than 1 second.
 
 :::note Note 1
-You should be aware that *BRouter* routing is very fast, but cannot be changed and/or configured. For OsmAnd offline routing, you can select any parameters and restrictions offline with fresh Openstreetmap data.
+You should be aware that *BRouter* routing is very fast, but cannot be changed and/or configured. For OsmAnd offline routing, you can select any parameters and restrictions offline with fresh OpenStreetMap data.
 :::
 
 :::note Note 2
-For information about BRouter routing, you can read [this page](http://www.brouter.de/brouter/algorithm.html) on the BRouter website.  
+For more information you can visit official [Brouter website](http://www.brouter.de/brouter/algorithm.html).  
 :::
 
 <table class="blogimage">
