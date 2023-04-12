@@ -153,6 +153,7 @@ ul.no-bullets {
   border-radius: 5px;
   border-style: none;
   padding: 4%;
+  text-align: center;
 }
 
 .button-row {
