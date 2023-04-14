@@ -17,18 +17,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-<!--
+
 ## Overview
 
-In the OsmAnd app, you can find detailed information about the whole route, analyze it on the map, add or delete information on route segments, print the route plan, save the route and share it.
-
-The OsmAnd app is an indispensable assistant for fans of travel and outdoor activities. With its help, you can not only find the best route, but also study all its details. In this article, we will look at how to use the OsmAnd app to analyze and customize your route as well as save and share information about it. Whether you're planning a hike, a bike ride, or a car trip, the OsmAnd app will help make your journey more comfortable and safer.
-
-With the "Route Details" function, you can get detailed information about the route you are going to take. With the OsmAnd app, you can not only build a route, but also get all the information you need about it.
-
-In the OsmAnd app, you can find detailed information about the entire route, including distance, travel time, road and turnaround information. You can also analyze the route on the map, add or delete information about route segments, print a route plan, save the route and share it with others.
-
-With this functionality you will always be aware of the route details and can plan your journey more efficiently. Our app is a great helper for all those who love to travel and find new places.
+The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your journey more efficiently.  
 
 
 ## Setup

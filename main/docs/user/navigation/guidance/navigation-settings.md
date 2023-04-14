@@ -34,6 +34,7 @@ For a comfortable navigation experience, you need to customize the OsmAnd app to
 
 </Tabs>
 
+
 ## Navigation Type
 
 <Translate android="true" ids="select_nav_profile_dialog_message"/>  
@@ -75,7 +76,6 @@ There are no navigation settings in *Browse map* profile.
 - **<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
 
 
-
 ## Voice Prompts
 
 Main article -  **[Voice prompts / Notifications](./voice-navigation.md)**.  
@@ -85,7 +85,10 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 ## Screen alerts
 
-[Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
+<!--
+[Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd does not have a goal to represent 100% identical road signs but to indicate some similarities. -->
+
+[Screen alerts](./map-during-navigation.md#screen-alerts) combine several types of alerts that appear in the lower left corner while you are navigating. You can turn certain alerts on and off, such as warnings for traffic, crosswalks, speed cameras, and tunnels. The types of alerts have different visual appearance, which depends on the driving region and can be configured in *Settings → General Settings*. OsmAnd does not strive to present 100% identical road signs, but points out some similarities.
 
 <Tabs groupId="operating-systems">
 
@@ -166,6 +169,7 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 </TabItem>
 
 </Tabs>
+
 
 ### Size parameters
 
