@@ -20,14 +20,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your journey more efficiently.  
+The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
-## Setup
+## Access to route details
 
-In OsmAnd you have the opportunity to get detailed information about your route. It is not located directly in the main menu.
+<!-- Setup -->
 
-There are three ways to access the Route Details menu.  
+The route information from the Details section of the navigation menu of the app is only available when the track has already been calculated. You can use them before you start your trip, to improve your planning, and during your trip.  
+
+There are three ways to access the Route Details menu.   
 
 1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
 2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
@@ -36,9 +38,7 @@ There are three ways to access the Route Details menu.
 
 ## Details
 
-Depending on the resolution of certain settings, terrain and road information, and the selected routing type, your route details may or may not be fully displayed.
-
-The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your subscription.  
 
 
 ### Main information / Altitude Graph
@@ -60,6 +60,51 @@ The display of some details depends on the availability of map section informati
 </TabItem>
 
 </Tabs>
+
+#### Elevation info
+
+
+The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
+
+
+- The widget can be turned on/off by following this path:
+<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
+
+![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+
+
+#### Interactions with the graph
+
+* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
+* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+
+#### What's in
+When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
+
+All values are indicated either for the whole route or only for the selected interval by scaling the graph.
+
+
+- ***Location Pin***. The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
+
+![point](@site/static/img/widgets/sch_1-1.png)
+
+- ***Additional information***. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
+
+![data](@site/static/img/widgets/sch_1-2.png)  
+
+The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).
+- *"Uphill"* – shows the sum of the all distances with increasing altitude from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
+![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)
+
+
+- *"Downhill"* – shows the sum of the all distances with decreasing altitude ffrom your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
+![downhill scheme](@site/static/img/widgets/sch_downhill_1.png)  ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)
+
+- ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
+    - *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
+    ![grade scheme](@site/static/img/widgets/sch_grade_1.png)  ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
+
 
 
 ### Analyse on map
@@ -133,14 +178,7 @@ The features with [map legend](../../map-legend/osmand.md#routes):
 
 Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
 
-The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.
-
-![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_next_turn"/>, <Translate android="true" ids="map_widget_next_turn_small"/>, <Translate android="true" ids="map_widget_next_next_turn"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_next_turn"/>, <Translate ios="true" ids="map_widget_next_turn_small"/>, <Translate ios="true" ids="map_widget_next_next_turn"/>|
-| On  Click | Speaks out next maneuver and distance to it, if voice guidance is turned on |
+The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
 
 
 Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
@@ -343,52 +381,9 @@ There are three ways to access the Track Appearance menu:
 
 </Tabs> 
 
+___
 
-## Elevation info
-
-
-The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
-
-
-- The widget can be turned on/off by following this path:
-<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
-
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
-
-
-### Interactions with the graph
-* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
-* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
-
-
-### What's in
-When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
-
-All values are indicated either for the whole route or only for the selected interval by scaling the graph.
-
-|  |
-|------------|
-| ***Location Pin*** |
-| The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph. |
-| ![point](@site/static/img/widgets/sch_1-1.png)|
-| ***Additional information*** |
-| The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph. |
-|  ![data](@site/static/img/widgets/sch_1-2.png)|
-|The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).|
-| *"Uphill"* – shows the sum of the all distances with increasing altitude from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
-| *"Downhill"* – shows the sum of the all distances with decreasing altitude ffrom your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
-|***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
-| *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
-
-
-
-Info for del
--->
-
-## Details
+## Info for del
 
 <Tabs groupId="operating-systems">
 
