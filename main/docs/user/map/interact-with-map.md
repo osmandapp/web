@@ -23,8 +23,8 @@ Gestures are important part of the map navigation.
 |:------------|:---------------|
 |**Move**| Press on the map with **one** finger and move around |
 |**Slide**| Swipe the map with **one** finger |
-|**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
-|**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
+|**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe down   <br /> Pinch with **two** fingers |
+|**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe up   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
 |**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL)  |
 
