@@ -203,7 +203,7 @@ _Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-
 
 ### Previous route / History
 
-If recording [Navigation History](../../personal/global-settings.md#history) is enabled, you can use previous route or destinations from history list for navigation. This option can be useful for quick access to frequently used routes. Items in the history list are sorted by most recent use, starting with the newest.  
+If  [Navigation History](../../personal/global-settings.md#history) recording is enabled, you can use previous route or destinations from history list for navigation. This option can be useful for quick access to frequently used routes. Items in the history list are sorted by most recent use, starting with the newest.  
 
 <Tabs groupId="operating-systems">
 
