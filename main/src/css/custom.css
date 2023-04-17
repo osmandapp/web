@@ -209,3 +209,8 @@ ul.no-bullets {
 .navbar__search { 
   padding-left: 16px;
 }
+
+.my-page-wrapper {
+  display: flex;
+  justify-content: center;
+}
