@@ -17,7 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 
 
-
 ## Overview
 
 The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
@@ -28,7 +27,6 @@ The OsmAnd allows you to find the best route and explore all of its details. The
 <!-- Setup -->
 
 The route information from the Details section of the navigation menu of the app is only available when the track has already been calculated. You can use them before you start your trip, to improve your planning, and during your trip.  
-
 There are three ways to access the Route Details menu.   
 
 1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
@@ -38,10 +36,36 @@ There are three ways to access the Route Details menu.
 
 ## Details
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your subscription.  
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
 
 
-### Main information / Altitude Graph
+### Main information / Graph
+
+The main block with the graph contains the following information:
+
+1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
+2. *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
+3. [The graph](#the-graph).
+4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
+5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
+
+
+#### The graph
+
+The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+
+##### Interactions with the graph
+
+The graph can be scaled.
+
+- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+:::note  
+The graph can be scaled.   
+- You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
+- If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
+:::
 
 [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
 
@@ -61,8 +85,8 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 </Tabs>
 
-#### Elevation info
 
+#### Elevation info
 
 The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
@@ -71,12 +95,6 @@ The details shows a graph with the elevation and slope of your navigation route 
 <Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
 
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
-
-
-#### Interactions with the graph
-
-* *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
-* *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
 #### What's in
@@ -107,7 +125,7 @@ The ***Uphill*** and ***Downhill*** values are the sums of the distances from yo
 
 
 
-### Analyse on map
+#### Analyse on map
 
 A graph with altitude / slope info on distance, additional track data.
 
@@ -317,69 +335,6 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 
 
-### Track Appearance
-
-:::tip note
-
-<ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-
-:::
-
-In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
-
-There are three ways to access the Track Appearance menu:
-- Go to the My Places menu and tap on any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../map/track-context-menu#overview) in the Overview section.
-- Tap the needed track on the map and select the Appearance icon in the Overview section.
-- Select Appearance from the [track recording context menu](../plugins/trip-recording#сurrent-track-recording).   
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
-
-|  |   
-|----------|
-|**"<Translate android="true" ids="gpx_split_interval"/>"** - <Translate android="true" ids="gpx_split_interval_descr"/> |
-|![Track menu Appearance Split interval Android](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval Android](@site/static/img/map/track_appearance_menu_split_interval_android-2.png)| 
-|**"<Translate android="true" ids="gpx_direction_arrows"/>"** - Adds direction information (in the form of arrows) on the track. |
-|![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
-|**"<Translate android="true" ids="track_show_start_finish_icons"/>"** - You can choose whether or not to show icons for the start and finish of track segments. |
-|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
-|**"<Translate android="true" ids="shared_string_color"/>"** -  Allows you to display the track line in any color and transparency you prefer, or choose a coloring according to the map legend. If the necessary data on the segments of the track is missing such segments are displayed in gray. |
-| 1. *<Translate android="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. |
-| 2. <ProFeature/> &nbsp;*<Translate android="true" ids="shared_string_color"/>:* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the article "Configure map screen" in the section [Route line appearance](../navigation/guidance/map-during-navigation#route-line-appearance#colour). |
-| ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android-4.png) |
-|**"<Translate android="true" ids="select_track_width"/>"** - You can choose the width of the line according to the width of the road or if you want to highlight the route line more on the map, *<Translate android="true" ids="rendering_value_thin_name"/>, <Translate android="true" ids="rendering_value_medium_name"/>* and *<Translate android="true" ids="rendering_value_bold_name"/>*. In *<Translate android="true" ids="shared_string_custom"/>* you can select your preferred line width with the slider. |
-|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
-| **"<Translate android="true" ids="reset_to_original"/>"** - Resets all your settings to defaults. |
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
-
-|  |   
-|----------|
-|**"<Translate ios="true" ids="gpx_direction_arrows"/>"** - Adds direction information (in the form of arrows) on the track. |
-|![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
-|**"<Translate ios="true" ids="track_show_start_finish_icons"/>"** - You can choose whether or not to show icons for the start and finish of track segments. |
-|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
-|**"<Translate ios="true" ids="shared_string_color"/>"** -  Allows you to display the track line in any color and transparency you prefer, or choose a coloring according to the map legend. If the necessary data on the segments of the track is missing such segments are displayed in gray. |
-| 1. <Translate ios="true" ids="shared_string_color"/>: *<Translate ios="true" ids="track_coloring_solid"/>*, *<Translate ios="true" ids="altitude"/>* and *<Translate ios="true" ids="shared_string_speed"/>* are free color settings. |
-| 2. <ProFeature/> &nbsp;<Translate ios="true" ids="shared_string_color"/>: *<Translate ios="true" ids="shared_string_slope"/>*, *<Translate ios="true" ids="routeInfo_roadClass_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_smoothness_name"/>*, *<Translate ios="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate ios="true" ids="routeInfo_surface_name"/>*, *<Translate ios="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the article "Configure map screen" in the section [Route line appearance](../navigation/guidance/map-during-navigation.md#colour). |
-| ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png) |
-|**"<Translate ios="true" ids="shared_string_width"/>"** - You can choose the width of the line according to the width of the road or if you want to highlight the route line more on the map, *<Translate ios="true" ids="rendering_value_thin_name"/>, <Translate ios="true" ids="rendering_value_medium_name"/>* and *<Translate ios="true" ids="rendering_value_bold_name"/>*. In *<Translate ios="true" ids="shared_string_custom"/>* you can select your preferred line width with the slider. |
-|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
-|**"<Translate ios="true" ids="gpx_split_interval"/>"** - <Translate ios="true" ids="gpx_split_interval_descr"/> |
-|![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)| 
-| **"<Translate ios="true" ids="gpx_join_gaps"/>"** - <Translate ios="true" ids="gpx_join_gaps_descr"/> |
-| **"<Translate ios="true" ids="reset_to_original"/>"** - Resets all your settings to defaults. |
-
-</TabItem>
-
-</Tabs> 
 
 ___
 
