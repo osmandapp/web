@@ -54,6 +54,8 @@ The main block with the graph contains the following information:
 
 The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
 
+[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
+
 ##### Interactions with the graph
 
 The graph can be scaled.
@@ -61,13 +63,8 @@ The graph can be scaled.
 - *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
 - *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
-:::note  
-The graph can be scaled.   
-- You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
-- If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
-:::
 
-[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
+
 
 <Tabs groupId="operating-systems">
 
@@ -91,10 +88,9 @@ The graph can be scaled.
 The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
 
-- The widget can be turned on/off by following this path:
+The widget can be turned on/off by following this path:
 <Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
 
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 #### What's in
@@ -110,14 +106,6 @@ All values are indicated either for the whole route or only for the selected int
 - ***Additional information***. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
 
 ![data](@site/static/img/widgets/sch_1-2.png)  
-
-The ***Uphill*** and ***Downhill*** values are the sums of the distances from your location point to the end of the visible graph. If there is no location point on the graph, then it is the sum of the entire visible graph on the screen (this can happen when you change the scale and the location goes outside the graph).
-- *"Uphill"* – shows the sum of the all distances with increasing altitude from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
-![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)
-
-
-- *"Downhill"* – shows the sum of the all distances with decreasing altitude ffrom your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
-![downhill scheme](@site/static/img/widgets/sch_downhill_1.png)  ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)
 
 - ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
     - *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
@@ -335,7 +323,7 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 
 
-
+<!--
 ___
 
 ## Info for del
@@ -396,3 +384,5 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 :::note
 The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
 :::  
+
+-->
