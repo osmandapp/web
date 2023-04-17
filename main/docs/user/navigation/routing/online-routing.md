@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 <InfoIncompleteArticle/>
 
@@ -18,7 +20,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Online routing is a powerful tool that can help users save time and navigate more efficiently. However, it's important to note that online routing relies on internet connectivity, and may not be available in areas with poor or no network coverage. Additionally, users should always exercise caution and use their judgment when following any route suggested by an online routing service.  
+Online routing is a powerful tool that can help users save time and navigate more efficiently. However, it is important to note that online routing relies on internet connectivity, and may not be available in areas with poor network coverage. Additionally, users should always exercise caution and use their judgment when following any route suggested by an online routing service.  
 
 ![Online routing Android](@site/static/img/navigation/routing/online_routing_andr.png)
 ## Route parameters - Online routing
@@ -31,7 +33,7 @@ Online routing types are designed for *Driving, Cycling, Walking* profiles, alth
 
 ### Custom Online routing
 
-In addition to the preset types of online routing, it is possible to configure additional online routing engines.  
+In addition to the preset online routing types, you can configure other online routing mechanisms.  
 Tap on the **+ Add online routing engine** button and choose one of the proposed online routing types ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org), Generic GPX). Select the appropriate vehicle and test routing before saving your changes.  
 
 ![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)  
