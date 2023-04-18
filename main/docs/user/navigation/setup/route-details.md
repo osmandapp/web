@@ -111,7 +111,7 @@ The graph can be scaled.
 </Tabs>
 
 
-## Analyse on map
+### Analyse on map
 
 A graph with altitude / slope info on distance, additional track data.
 
@@ -321,7 +321,7 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 
 
-<!--
+
 ___
 
 ## Info for del
@@ -383,4 +383,4 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
 :::  
 
--->
+

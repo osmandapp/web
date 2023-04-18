@@ -60,6 +60,20 @@ For Android, this item named **Animate own position** is located in the "Other" 
 
 ## Show points along the route
 
+In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, due to the features of the operating systems and design of OsmAnd.  
+
+- *Android*
+    - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
+    - [Build your route](../setup/route-navigation.md#set-destinations).
+    - Tap on the [Settings](../setup/route-navigation.md#settings) menu.
+
+- *iOS* 
+    - *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_waypoints"/>*
+    - [Build your route](../setup/route-navigation.md#set-destinations). 
+    - Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) of the route. Only this item has settings for selecting points to display along the route.
+    - Tap *Edit* next to the Intermediate destination to open the Waypoints settings menu.
+
+
 You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**.
 
 ![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)
@@ -68,7 +82,7 @@ You can choose to show along the route **POI**, **Favorites**, **Traffic Warning
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,routing_settings_2"/>*  
 
 </TabItem>
 
@@ -80,7 +94,7 @@ You can choose to show along the route **POI**, **Favorites**, **Traffic Warning
 
 </Tabs>
 
-
+### Points of interest (POI)
 
 [Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point. 
 
@@ -89,6 +103,12 @@ Enable / disable points of interest of **selected** type on the map:
 - *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+
+
+### My Favorites
+
+
+### Traffic warnings
 
 
 
