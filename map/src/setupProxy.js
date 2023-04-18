@@ -14,6 +14,7 @@ module.exports = function (app) {
     });
     app.use('/mapapi/', proxy);
     app.use('/routing/', proxy);
+    app.use('/search/', proxy);
     app.use('/gpx/', proxy);
     app.use('/tile/', proxy);
     app.use('/weather-api/', proxy);

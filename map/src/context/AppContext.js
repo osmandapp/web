@@ -5,6 +5,7 @@ import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
+import PoiManager from "./PoiManager";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -483,13 +484,20 @@ export const AppContextProvider = (props) => {
         futureStates: []
     });
     const [openedPopper, setOpenedPopper] = useState(null);
-    const [showPoi, setShowPoi] = useState(false);
+    const [showPoiCategories, setShowPoiCategories] = useState([]);
+    const [poiCategory, setPoiCategories] = useState(null);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
         })
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        PoiManager.getPoiCategories(setLocalTracksLoading).then((categories) => {
+            setPoiCategories(categories);
+        })
+    }, []);
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
@@ -585,7 +593,8 @@ export const AppContextProvider = (props) => {
         trackState, setTrackState,
         localTracksLoading, setLocalTracksLoading,
         openedPopper, setOpenedPopper,
-        showPoi, setShowPoi
+        showPoiCategories, setShowPoiCategories,
+        poiCategory, setPoiCategories
     }}>
         {props.children}
     </AppContext.Provider>;

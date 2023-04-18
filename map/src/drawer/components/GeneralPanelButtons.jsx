@@ -1,10 +1,11 @@
 import {ButtonGroup, IconButton, Paper, Tooltip} from "@mui/material";
 import TracksManager from "../../context/TracksManager";
-import {Create, MapsUgc, Upload} from "@mui/icons-material";
+import {Create, Info, Upload} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {styled} from "@mui/material/styles";
+import PoiTypesDialog from "../PoiTypesDialog";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -20,6 +21,8 @@ export default function GeneralPanelButtons({drawerWidth}) {
     const StyledInput = styled('input')({
         display: 'none',
     });
+
+    const [openPoiDialog, setOpenPoiDialog] = useState(false);
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
@@ -62,12 +65,18 @@ export default function GeneralPanelButtons({drawerWidth}) {
                         <Tooltip title="Poi icons" arrow placement="right">
                             <IconButton variant="contained"
                                         type="button"
-                                        onClick={() => ctx.setShowPoi(!ctx.showPoi)}>
-                                <MapsUgc fontSize="small"/>
+                                        onClick={() => {
+                                            setOpenPoiDialog(true);
+                                            ctx.setCurrentObjectType(ctx.OBJECT_TYPE_POI);
+                                        }}>
+                                <Info fontSize="small"/>
                             </IconButton>
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
             </div>
+            {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI
+                && <PoiTypesDialog dialogOpen={openPoiDialog}
+                                   setDialogOpen={setOpenPoiDialog}/>}
         </div>);
 }

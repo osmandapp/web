@@ -6,12 +6,16 @@ import L from "leaflet";
 import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
-import {get} from "axios";
+import {post} from "axios";
+import PoiManager from "../../context/PoiManager";
+import "leaflet.markercluster";
 
 export default function PoiLayer() {
 
     const ctx = useContext(AppContext);
     const map = useMap();
+    const [prevZoom, setPrevZoom] = useState(null);
+    const [prevTypesLength, setPrevTypesLength] = useState(null);
     const [zoom, setZoom] = useState(null);
     const [move, setMove] = useState(false);
     const [poiList, setPoiList] = useState({
@@ -19,41 +23,19 @@ export default function PoiLayer() {
         prevLayer: null
     });
 
-    const DEFAULT_POI_COLOR = '#f8931d';
-    const DEFAULT_SHAPE_COLOR = 'circle';
-    const DEFAULT_POI_ICON = "craft_default";
-
     async function getPoi() {
         let latlng = map.getCenter();
-        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/get-poi?`,
+        const categories = ctx.showPoiCategories;
+        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi?`, categories,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),
-                    lon: latlng.lng.toFixed(6),
-                    zoom: zoom,
-                    radius: getRadiusByZoom(zoom),
+                    lon: latlng.lng.toFixed(6)
                 }
             }
         );
         if (response.data) {
             return response.data.features;
-        }
-    }
-
-    function getRadiusByZoom(zoom) {
-        switch (true) {
-            case (zoom < 15):
-                return 3000;
-            case (zoom === 15):
-                return 1000;
-            case (zoom === 16):
-                return 500;
-            case (zoom === 17):
-                return 200;
-            case (zoom === 18):
-                return 100;
-            default:
-                return 50;
         }
     }
 
@@ -69,33 +51,45 @@ export default function PoiLayer() {
         }
     }, [map])
 
+    function typesChanged() {
+        return (!_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length);
+    }
+
     useEffect(() => {
-        if ((zoom || move) && ctx.showPoi) {
-            getPoi().then((res) => {
-                if (res) {
-                    setPoiList(
-                        {
-                            ...poiList,
-                            ...(poiList.layer && {prevLayer: _.cloneDeep(poiList.layer)}),
+        let ignore = false;
+
+        async function getPoiList() {
+            if (((zoom !== prevZoom) || move || typesChanged()) && !_.isEmpty(ctx.showPoiCategories)) {
+                setPrevZoom(_.cloneDeep(zoom));
+                setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
+                await getPoi().then((res) => {
+                    if (res && !ignore) {
+                        const newPoiList = {
+                            prevLayer: _.cloneDeep(poiList.layer),
                             layer: createPoiLayer(res)
-                        });
-                }
-            });
-        } else {
-            if (poiList.layer) {
-                setPoiList(
-                    {
-                        ...poiList,
+                        }
+                        setPoiList(newPoiList);
+                    }
+                });
+            } else {
+                if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
+                    const newPoiList = {
                         prevLayer: _.cloneDeep(poiList.layer),
                         layer: null
                     }
-                );
+                    setPoiList(newPoiList);
+                }
             }
         }
-    }, [zoom, move, ctx.showPoi])
+
+        getPoiList();
+        return () => {
+            ignore = true;
+        }
+    }, [zoom, move, ctx.showPoiCategories])
 
     useEffect(() => {
-        if (poiList.layer) {
+        if (poiList.layer && !map.hasLayer(poiList.layer)) {
             poiList.layer.addTo(map).on('click', onClick);
         }
         if (poiList.prevLayer) {
@@ -145,9 +139,9 @@ export default function PoiLayer() {
 
     function getPoiIcon(poi) {
         const color = poi.properties.color;
-        let colorBackground = color && color !== 'null' ? color : DEFAULT_POI_COLOR;
+        let colorBackground = color && color !== 'null' ? color : PoiManager.DEFAULT_POI_COLOR;
         colorBackground = Utils.hexToArgb(colorBackground);
-        const svg = MarkerOptions.getSvgBackground(colorBackground, DEFAULT_SHAPE_COLOR);
+        const svg = MarkerOptions.getSvgBackground(colorBackground, PoiManager.DEFAULT_SHAPE_COLOR);
         const iconWpt = getIconNameForPoiType(poi);
         if (iconWpt) {
             return L.divIcon({
@@ -175,7 +169,7 @@ export default function PoiLayer() {
             } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
                 return iconName;
             } else {
-                return DEFAULT_POI_ICON;
+                return PoiManager.DEFAULT_POI_ICON;
             }
         }
     }

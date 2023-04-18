@@ -19,7 +19,7 @@
     "env-cmd": "^10.1.0",
     "http-proxy-middleware": "^2.0.6",
     "ionicons": "^6.0.2",
-    "leaflet": "^1.8.0",
+    "leaflet": "^1.9.3",
     "leaflet-contextmenu": "^1.4.0",
     "leaflet-geometryutil": "^0.10.1",
     "leaflet-hash": "^0.2.1",
