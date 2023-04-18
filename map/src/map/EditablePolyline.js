@@ -48,10 +48,6 @@ export default class EditablePolyline {
             this.map.on('mousemove', (e) => {
                 this.mousemoveMap(e, marker, polyline);
             });
-
-            this.map.on('zoomend', () => {
-                this.zoomendMap(polyline);
-            });
         }
         return polyline;
     }

@@ -180,8 +180,7 @@ function addStartEndMarkers(points, layers) {
 
 function getPolylineOpt() {
     return {
-        color: '#1976d2',
-        weight: 5,
+        color: '#1976d2'
     }
 }
 
