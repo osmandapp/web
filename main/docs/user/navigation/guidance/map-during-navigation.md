@@ -58,11 +58,29 @@ For Android, this item named **Animate own position** is located in the "Other" 
 **Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
-## Show Points along the route
+## Show points along the route
+
+You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**.
 
 ![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)
 
-You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**, **Track points**.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+
+</TabItem>
+
+</Tabs>
+
+
 
 [Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point. 
 

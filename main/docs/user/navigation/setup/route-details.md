@@ -39,7 +39,7 @@ There are three ways to access the Route Details menu.
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
 
 
-### Main information / Graph
+## Main information / Graph
 
 The main block with the graph contains the following information:
 
@@ -50,37 +50,11 @@ The main block with the graph contains the following information:
 5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
 
 
-#### The graph
+### The graph
 
 The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
 
 [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
-
-##### Interactions with the graph
-
-The graph can be scaled.
-
-- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
-- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
-
-
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Route details Android](@site/static/img/navigation/route/navigation_route_android_main-info.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Route details iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png)
-
-</TabItem>
-
-</Tabs>
 
 
 #### Elevation info
@@ -90,8 +64,6 @@ The details shows a graph with the elevation and slope of your navigation route 
 
 The widget can be turned on/off by following this path:
 <Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
-
-
 
 #### What's in
 When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
@@ -113,7 +85,33 @@ All values are indicated either for the whole route or only for the selected int
 
 
 
-#### Analyse on map
+
+### Interactions with the graph
+
+The graph can be scaled.
+
+- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Route details Android](@site/static/img/navigation/route/navigation_route_android_main-info.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Route details iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png)
+
+</TabItem>
+
+</Tabs>
+
+
+## Analyse on map
 
 A graph with altitude / slope info on distance, additional track data.
 
@@ -149,7 +147,7 @@ This option allows you to interactively review track information using graphs an
 </Tabs>
 
 
-### The features with map legend
+## The features with map legend
 
 The features with [map legend](../../map-legend/osmand.md#routes):  
 
@@ -180,7 +178,7 @@ The features with [map legend](../../map-legend/osmand.md#routes):
 </Tabs>
 
 
-### Turn-by-turn information
+## Turn-by-turn information
 
 Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
 
@@ -213,7 +211,7 @@ Trigger display time, color is related to the voice navigation prompts and relat
 </Tabs>
 
 
-### Routing file operation buttons
+## Routing file operation buttons
 
 <Tabs groupId="operating-systems">
 
@@ -232,7 +230,7 @@ Trigger display time, color is related to the voice navigation prompts and relat
 </Tabs>
 
 
-#### Print information
+### Print information
 
 Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf.
 
@@ -253,7 +251,7 @@ Print button - You can print a turn-by-turn description of the route with the to
 </Tabs>
 
 
-#### Save information
+### Save information
 
 <Tabs groupId="operating-systems">
 
@@ -276,7 +274,7 @@ Export button: *Export as GPX file* or *Share as link*
 </Tabs>
 
 
-#### Share information
+### Share information
 
 <Tabs groupId="operating-systems">
 
