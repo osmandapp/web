@@ -122,13 +122,13 @@ A graph with altitude / slope info on distance, additional track data.
 - *Uphill*
 - *Downhill*
 
-This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the *track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the *track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
 - **Graph data Y-axis**: Altitude / Slope / Speed (if data is available in the track).
 - **Graph dimension X-axis**: Distance / Time / Time of day.
 - **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
-- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
-- **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.  
+- **Scale**: scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
+- **Follow My location**: click button [My Location](../../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.  
 
 <Tabs groupId="operating-systems">
 
@@ -189,9 +189,9 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 | Distance |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 
-| Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
-| Approaching| [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
-| Distant | [Prepare to turn](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds |   
+| Close by | [Turn now](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
+| Approaching| [Turn in X m](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
+| Distant | [Prepare to turn](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds |   
 
 
 <Tabs groupId="operating-systems">
