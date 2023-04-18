@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 })
 
 
-export default function MapContextMenu({drawerWidth}) {
+export default function InformationBlock({drawerWidth}) {
 
     const ctx = useContext(AppContext);
 

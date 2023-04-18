@@ -8,7 +8,7 @@ import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet, useNavigate} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
-import MapContextMenu from "../../contextmenu/components/MapContextMenu";
+import InformationBlock from "../../contextmenu/components/InformationBlock";
 import AppContext from "../../context/AppContext";
 import GeneralPanelButtons from "./GeneralPanelButtons";
 
@@ -51,7 +51,7 @@ const OsmAndMapFrame = () => {
                                          </Button>
                                      }/>}
                 <OsmAndMap/>
-                <MapContextMenu drawerWidth={drawerWidth}/>
+                <InformationBlock drawerWidth={drawerWidth}/>
                 <GeneralPanelButtons drawerWidth={drawerWidth}/>
             </Box>
             <Drawer
