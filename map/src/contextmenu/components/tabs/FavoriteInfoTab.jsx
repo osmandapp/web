@@ -12,13 +12,13 @@ import FavoritesManager from "../../../context/FavoritesManager";
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '28px',
-            left: '542px',
+            top: '21px',
+            left: '552px',
             width: '40px',
             height: '40px'
         },
         "& .background": {
-            left: '-25px',
+            left: '10px',
             top: '-25px',
             width: '100px',
             height: '100px',
@@ -89,7 +89,7 @@ const FavoriteInfoTab = ({width}) => {
     }
 
     return (<Box className={styles.item} minWidth={width}>
-        <Typography className={styles.info} variant="subtitle1" color="inherit">
+        <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={10}>
                     <Typography className={styles.name} variant="inherit">
