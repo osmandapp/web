@@ -13,9 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
+## Overview
+
 Navigational widgets are enabled during navigation to display information such as distance, arrival or left time, next turns, bearing, current street name, lanes information, max speed, approaching alerts, POIs, waypoints.
 
 ![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
+
 
 ## Active and passive navigation
 
@@ -297,20 +300,20 @@ Alert types have different visuals that depends on **<Translate android="true" i
 
 ## Street name
 
-Street name widget shows **current street name** with straight location arrow or **next street name** with the maneuver has to be completed. Street name typically consists of highway shield, [name](https://wiki.openstreetmap.org/wiki/Key:name), [ref](https://wiki.openstreetmap.org/wiki/Key:ref), [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switch between the current street name and the next street name happens when you approach the maneuver location (~20 seconds), same as '[Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior)' voice prompt.
+The Street name widget shows **the current street name** with a straight arrow or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt "[Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior)".
 
-When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
+- When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
 ![Street name POIs widget_2](@site/static/img/widgets/street_name_widget_2.png)
 
-When maneuvering, the widget shows the scheme of the maneuver and the name (designation) of the street (road) where to turn.
+- When you change direction, the widget shows the scheme of the maneuver and the name (designation) of the street (road) to which you need to turn.  
 
 ![Street name POIs widget](@site/static/img/widgets/street_name_widget.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,map_widget_top_text"/> <br /> <Translate ios="true" ids="ios_button_seq"/> always active |
-| By tapping | - | 
+| Enable | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,map_widget_top_text"/> <br /> *<Translate ios="true" ids="ios_button_seq"/>:* - always active |
+| By tapping | Open *Map Context menu* | 
 
 
 ## Approach POIs/Favorites
