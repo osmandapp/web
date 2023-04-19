@@ -60,7 +60,11 @@ For Android, this item named **Animate own position** is located in the "Other" 
 
 ## Show points along the route
 
-In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, due to the features of the operating systems and design of OsmAnd.  
+The *Show along the route* setting allows you to configure additional parameters for your route and is necessary for the operation of widgets such as [Street name](../../widgets/nav-widgets.md/#street-name) and [Alert widget](../../widgets/nav-widgets.md#alert-widget). The parameters imply displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) on the route.  
+
+The ability to set different distances (up to 5 km, or 3.11 mi) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
+
+In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, which are determined by the features of the operating systems and design of OsmAnd.  
 
 - *Android*
     - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
@@ -74,40 +78,53 @@ In the Navigation section when creating a route you can set the types of points 
     - Tap *Edit* next to the Intermediate destination to open the Waypoints settings menu.
 
 
-You can choose to show along the route **POI**, **Favorites**, **Traffic Warnings**.
-
-![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,routing_settings_2"/>*  
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+
 
 </TabItem>
 
 </Tabs>
 
-#### Points of interest (POI)
+![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)
 
 
+### Points of interest (POI)
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point.  
+[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) <!-- are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point.  -->
+
+[Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi).
+
+![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)   
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 ![points along the route](@site/static/img/navigation/show-points-along-1-ios.png)  
 
-![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+</TabItem>
+
+</Tabs>
 
 
-#### My Favorites
+
+### My Favorites
 
 In the list that opens, you will see all the previously added [Favourite](../../personal/favorites.md#favorite-point) points that are close to the created route. As with POIs, you can select the distance within which these points will be located.  
 
@@ -116,7 +133,7 @@ If you [turn off the display of Favourites on the map](../../map/configure-map-m
 Each point contains a name, a group, the distance from the current location point to the Favourite directly on the route line, and information about how far to the right or left the point is from the line and the direction of the route.
 
 
-#### Traffic warnings
+### Traffic warnings
 
 Traffic warnings do not appear directly on the map, like POIs or My Favorites. **To turn on** this item and see the warnings, you need to enable and configure the [Alerts widget](../../widgets/nav-widgets.md#alert-widget) first.
 
@@ -129,9 +146,6 @@ POIs, Favorite, and Traffic warnings are not displayed in the list for the route
 :::tip
 It is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
 :::
-
-
-<!-- [Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi). -->
 
 
 ## Screen Alerts
