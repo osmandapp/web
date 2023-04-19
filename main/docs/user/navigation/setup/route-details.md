@@ -33,8 +33,7 @@ There are three ways to access the Route Details menu.
 2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
 3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
 
-<!-- Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
---> 
+<!-- Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).   --> 
 
 <Tabs groupId="operating-systems">
 
@@ -54,16 +53,13 @@ There are three ways to access the Route Details menu.
 
 ## Distance / time / CO2
 
-<!-- 
-
-The main block with the graph contains the following information:
+<!-- The main block with the graph contains the following information:
 
 1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
 2. *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
 3. [The graph](#the-graph).
 4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
-5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
--->
+5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  -->
 
 
 ## Elevation info (graph)
