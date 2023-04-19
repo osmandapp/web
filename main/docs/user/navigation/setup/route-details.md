@@ -49,51 +49,6 @@ The main block with the graph contains the following information:
 4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
 5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
 
-
-### The graph
-
-The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
-
-[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
-
-
-#### Elevation info
-
-The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
-
-
-The widget can be turned on/off by following this path:
-<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
-
-#### What's in
-When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
-
-All values are indicated either for the whole route or only for the selected interval by scaling the graph.
-
-
-- ***Location Pin***. The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
-
-![point](@site/static/img/widgets/sch_1-1.png)
-
-- ***Additional information***. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
-
-![data](@site/static/img/widgets/sch_1-2.png)  
-
-- ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
-    - *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
-    ![grade scheme](@site/static/img/widgets/sch_grade_1.png)  ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
-
-
-
-
-### Interactions with the graph
-
-The graph can be scaled.
-
-- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
-- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
-
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -109,6 +64,32 @@ The graph can be scaled.
 </TabItem>
 
 </Tabs>
+
+
+### Interactions with the graph
+
+The graph can be scaled.
+
+- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+
+### The graph
+
+The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+
+[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
+
+
+#### Elevation info
+
+The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
+
+All values are indicated either for the whole route or only for the selected interval by scaling the graph.
+
+- ***Location Pin***. The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
+- ***Additional information***. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
+- ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. *Grade* shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
 
 
 ### Analyse on map
@@ -182,10 +163,10 @@ The features with [map legend](../../map-legend/osmand.md#routes):
 
 Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
 
-The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
+<!-- The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
 
 
-Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
+Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation. -->
 
 | Distance |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 
@@ -217,13 +198,13 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png)   
+
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png)
+
 
 </TabItem>
 
@@ -321,7 +302,7 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.
 
 
-
+<!--
 ___
 
 ## Info for del
@@ -383,4 +364,4 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
 :::  
 
-
+-->
