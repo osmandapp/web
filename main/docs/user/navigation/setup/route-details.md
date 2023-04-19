@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
-## Access to route details
+### How to open
 
 <!-- Setup -->
 
@@ -33,21 +33,11 @@ There are three ways to access the Route Details menu.
 2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
 3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
 
-
+<!-- 
 ## Details
 
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
-
-
-## Main information / Graph
-
-The main block with the graph contains the following information:
-
-1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
-2. *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
-3. [The graph](#the-graph).
-4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
-5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
+--> 
 
 <Tabs groupId="operating-systems">
 
@@ -65,23 +55,38 @@ The main block with the graph contains the following information:
 
 </Tabs>
 
+## Distance / time / CO2
 
-### Interactions with the graph
+<!-- 
+## Main information / Graph
 
+The main block with the graph contains the following information:
+
+1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
+2. *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
+3. [The graph](#the-graph).
+4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
+5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  
+-->
+
+
+## Elevation info (graph)
+
+<!-- The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS). -->
 The graph can be scaled.
 
 - *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
 - *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
-### The graph
+#### The graph ?
 
 The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
 
 [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
 
 
-#### Elevation info
+#### Elevation info ?
 
 The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
@@ -92,7 +97,7 @@ All values are indicated either for the whole route or only for the selected int
 - ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. *Grade* shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
 
 
-### Analyse on map
+## Analyse on map
 
 A graph with altitude / slope info on distance, additional track data.
 
@@ -128,7 +133,7 @@ This option allows you to interactively review track information using graphs an
 </Tabs>
 
 
-## The features with map legend
+## Road attributes
 
 The features with [map legend](../../map-legend/osmand.md#routes):  
 
@@ -192,7 +197,7 @@ Trigger display time, color is related to the voice navigation prompts and relat
 </Tabs>
 
 
-## Routing file operation buttons
+## Actions
 
 <Tabs groupId="operating-systems">
 
@@ -211,7 +216,7 @@ Trigger display time, color is related to the voice navigation prompts and relat
 </Tabs>
 
 
-### Print information
+### Print
 
 Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf.
 
@@ -232,7 +237,7 @@ Print button - You can print a turn-by-turn description of the route with the to
 </Tabs>
 
 
-### Save information
+### Save / Export
 
 <Tabs groupId="operating-systems">
 
@@ -255,7 +260,7 @@ Export button: *Export as GPX file* or *Share as link*
 </Tabs>
 
 
-### Share information
+### Share
 
 <Tabs groupId="operating-systems">
 
