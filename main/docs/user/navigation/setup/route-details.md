@@ -65,7 +65,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  -->
 
 
-## Elevation info (graph)
+## Elevation info
 
 <!-- The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS). -->
 The graph can be scaled.
@@ -74,7 +74,7 @@ The graph can be scaled.
 - *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
-#### The graph ?
+### The graph
 
 The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
 
