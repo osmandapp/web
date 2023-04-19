@@ -58,11 +58,12 @@ For Android, this item named **Animate own position** is located in the "Other" 
 **Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
+
 ## Show points along the route
 
 The *Show along the route* setting allows you to configure additional parameters for your route and is necessary for the operation of widgets such as [Street name](../../widgets/nav-widgets.md/#street-name) and [Alert widget](../../widgets/nav-widgets.md#alert-widget). The parameters imply displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) on the route.  
 
-The ability to set different distances (up to 5 km, or 3.11 mi) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
+The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
 
 In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, which are determined by the features of the operating systems and design of OsmAnd.  
 
