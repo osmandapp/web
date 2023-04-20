@@ -23,7 +23,7 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 ## Map during navigation
 
-During navigation, the location, distance from the surface, and map view will change depending on the settings. Before starting a route, check in the corresponding menu of the OsmAnd app how the map will behave.    
+During navigation, the location, distance from the surface, and map view change depending on the settings. Before you start a route, you need to check whether the settings correspond to the way you want the OsmAnd map to behave while you are driving.   
 
 <Tabs groupId="operating-systems">
 
@@ -43,10 +43,10 @@ During navigation, the location, distance from the surface, and map view will ch
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time until the map view is synchronized with your current position after moving.  |  Value: <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | Value: <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 50m. |
+| *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time until the map view is synced with your current position after moving.  |  *Value:* <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
 | *"<Translate android="true" ids="snap_to_road"/>"*  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option can be turned on for case when movement direction map orientation ([Android Auto using](../auto-car.md#issues) is flipped and juggles.   |
+| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
 
 
 ### Animate my location
@@ -83,69 +83,51 @@ In the Navigation section when creating a route you can set the types of points 
 
 <TabItem value="android" label="Android">
 
-
+![points along the route](@site/static/img/navigation/show-points-along-3-andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
+![points along the route](@site/static/img/navigation/show-points-along-3-ios.png)  
 
 </TabItem>
 
 </Tabs>
-
-![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)
 
 
 ### Points of interest (POI)
 
-[Points of interest (POI)](https://wiki.openstreetmap.org/wiki/Map_features#Amenity) <!-- are specific points highlighted with an icon on the map. They represent interesting or useful places & objects and they are part of [Vector Maps](../../map/vector-maps.md). Most prominent points of interest are displayed on the map automatically, though you could select specific type of POI (i.e. Restaurants) and they will be all highlighted on the map within an **orange circle** (from zoom level 9). You can find detailed information about point of interest in the [Context menu](../../map/map-context-menu.md) that appears on a [short tap](../../map/map-context-menu.md#select-an-object-short-tap) on the point.  -->
+The POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) are associated with the **Show along the route** setting. In fact, this is an additional setting for displaying POIs on the map, which is directly related to the created route.  
 
-[Additional Information](https://www.osmand.net/docs/user/map/point-layers-on-map#points-of-interest-poi).
+When you specify to display certain POIs in the *Configure map*, they are all displayed on the maps you have downloaded, regardless of whether you have selected categories or, if you do not care which category, selected the nearest POIs. Their number and identification change depending on the zoom. The *Show along the route* setting shows the same category as in the *POI overlay*, but you see the *whole list* of the selected POIs at once, starting from the point of the current location at the set distance within your route.  
+
+You can remove unnecessary POIs from the list or edit them in the [Сontext menu](../../map/map-context-menu.md) by tapping one of them. The list contains the selected [POI types](../../map/point-layers-on-map.md#poi-types) and brief information about each, the type icon, the name, the distance from the current location point to the POI along the route, and indications of which side of the route in a straight line and how far away the POI is.  
 
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)   
 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![points along the route](@site/static/img/navigation/show-points-along-1-andr.png)  ![points along the route](@site/static/img/navigation/show-points-along-2-andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![points along the route](@site/static/img/navigation/show-points-along-1-ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-
-
 ### My Favorites
 
-In the list that opens, you will see all the previously added [Favourite](../../personal/favorites.md#favorite-point) points that are close to the created route. As with POIs, you can select the distance within which these points will be located.  
+In the open list, you will see all the previously added [Favourite](../../personal/favorites.md#favorite-point) points close to the created route. As with POIs, you can select the distance within which these points will be located.  
 
 If you [turn off the display of Favourites on the map](../../map/configure-map-menu.md), they will not disappear from the list. They will also be displayed in the [widget](../../widgets/nav-widgets.md#street-name) and announced when you approach them. You can add Favourite Points to the map while navigating a route. To update the list you need to turn off/on My Favourites.  
 
-Each point contains a name, a group, the distance from the current location point to the Favourite directly on the route line, and information about how far to the right or left the point is from the line and the direction of the route.
+Each point contains a name or coordinates, a group, the distance from the current location point to the Favourite directly on the route line, and information about how far to the right or left the point is from the line and the direction of the route.
 
 
 ### Traffic warnings
 
 Traffic warnings do not appear directly on the map, like POIs or My Favorites. **To turn on** this item and see the warnings, you need to enable and configure the [Alerts widget](../../widgets/nav-widgets.md#alert-widget) first.
 
-Choosing to display traffic warnings along your route will allow you to see the entire list just before you start your route, which is useful when planning your trip. The list can be edited. You can delete unnecessary warnings right in the list, or you can tap the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
+Choosing to display traffic warnings along your route will allow you to see the entire list just before you start your route, which is useful when planning your trip. The list can be edited. You can delete unnecessary warnings in the list or tap the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
 
 :::note
 POIs, Favorite, and Traffic warnings are not displayed in the list for the route you have traveled.
 :::
 
 :::tip
-It is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
+For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
 :::
 
 
