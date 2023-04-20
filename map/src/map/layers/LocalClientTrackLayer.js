@@ -66,7 +66,7 @@ export default function LocalClientTrackLayer() {
 
 
     useEffect(() => {
-        if (ctx.createTrack?.closePrev) {
+        if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
@@ -89,7 +89,7 @@ export default function LocalClientTrackLayer() {
                 clearCreateLayers(ctx.createTrack.layers);
             }
             let savedFile;
-            if (ctx.createTrack.deletePrev) {
+            if (ctx.createTrack.deletePrev && ctx.selectedGpxFile.prevState) {
                 savedFile = ctx.selectedGpxFile.prevState;
             } else {
                 savedFile = ctx.selectedGpxFile;
