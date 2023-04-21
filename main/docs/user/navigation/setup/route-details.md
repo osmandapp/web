@@ -24,8 +24,6 @@ The OsmAnd allows you to find the best route and explore all of its details. The
 
 ### How to open
 
-<!-- Setup -->
-
 The route information from the Details section of the navigation menu of the app is only available when the track has already been calculated. You can use them before you start your trip, to improve your planning, and during your trip.  
 There are three ways to access the Route Details menu.   
 
@@ -33,9 +31,9 @@ There are three ways to access the Route Details menu.
 2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
 3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
 
-<!-- 
+?
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
--->
+?
 
 
 <Tabs groupId="operating-systems">
@@ -56,27 +54,33 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 ## Distance / time / CO2
 
-<!-- The main block with the graph contains the following information:
+*Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.
+
+The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
+
+
+## Elevation info
+
+?
+The main block with the graph contains the following information:
 
 1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
 2. *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
 3. [The graph](#the-graph).
 4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
-5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.  -->
+5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.
 
-
-## Elevation info
-
-<!-- The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS). -->
-The graph can be scaled.
-
-- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
-- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+?
 
 
 ### The graph
 
 The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+
+#### The graph can be scaled.
+
+- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
 
@@ -130,11 +134,11 @@ This option allows you to interactively review track information using graphs an
 
 ## Road attributes
 
-The features with [map legend](../../map-legend/osmand.md#routes):  
+To find out how particular road attributes are displayed on the map, see [this section](../../map-legend/osmand.md#routes) of the documentation.    
 
-- *Road type*
-- *Surface*
-- *Steepness*
+- [**Road type**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads) - The type of road is determined based on its functional purpose and characteristics, such as the number of lanes, speed limits, load capacity, the presence of pedestrian and bicycle paths, roadsides, and other parameters. Different types of roads may have different restrictions and traffic rules. For example, main [highways](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) usually have a high speed limit and can be divided into lanes, and [local roads](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) can have a low speed limit and one lane in each direction.
+- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface) - Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose. For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be used to create a road surface. 
+- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines) - This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down in relation to the horizon and is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.
 - *Surface firmness*
 - *Slope* 
 - *Smoothness* 
@@ -163,76 +167,39 @@ The features with [map legend](../../map-legend/osmand.md#routes):
 
 Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
 
-<!-- The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
+The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
 
 
-Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation. -->
+Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
 
-| Distance |  Prompt type | Color | ~ Trigger Time | 
+| Distance |  Prompt type | Color | Approximate Trigger Time | 
 |-----|----|-------|------| 
 | Close by | [Turn now](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
 | Approaching| [Turn in X m](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
 | Distant | [Prepare to turn](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds |   
 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-
-</TabItem>
-
-</Tabs>
 
 
 ## Actions
 
-<Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">
-
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-
-
-</TabItem>
-
-</Tabs>
 
 
 ### Print
 
-Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf.
+<infoAndroidOnly />
 
-<Tabs groupId="operating-systems">
+The **Print** button feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
 
-<TabItem value="android" label="Android">
+A printed route description provides detailed step-by-step instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
+The ability **to print** or save turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
+![route details](@site/static/img/navigation/route/route_details_print-2.png)
 
 
-
-</TabItem>
-
-</Tabs>
-
-
-### Save / Export
+### Save / Export / Share
 
 <Tabs groupId="operating-systems">
 
@@ -254,28 +221,6 @@ Export button: *Export as GPX file* or *Share as link*
 
 </Tabs>
 
-
-### Share
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-Share buttons: *Share as GPX file* and *Save to OsmAnd tracks*  
-
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png)   
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Export button: *Export as GPX file* or *Share as link*  
-
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png)
-
-</TabItem>
-
-</Tabs>
 
 - **Share as file**
 
