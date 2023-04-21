@@ -16,8 +16,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-*The Navigation by track* (GPX) option allows you to follow a pre-defined route (or track) on the map. It can be particularly helpful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are moving in an organized group, this feature can help each member of the group have the same information about the route as the others.  
-*Navigation by track* option can also be used in the everyday life. You can reuse previously [recorded track](../../plugins/trip-recording.md) or share it with your relatives or frends instead of explaining to them the route. You can also use for navigation [routes on the OsmAnd map](../../../../blog/routes/). How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the vector maps article.  
+*The Navigation by track* (GPX) option allows you to follow a predefined route (or track) on the map. It can be particularly helpful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are moving in an organized group, this feature can help each member of the group have the same information about the route as the others.  
+*Navigation by track* option can also be used in the everyday life. You can reuse previously [recorded track](../../plugins/trip-recording.md) or share it with your relatives or friends instead of explaining to them the route. You can also use for navigation [routes on the OsmAnd map](../../../../blog/routes/). How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the vector maps article.  
 
 <Tabs groupId="operating-systems">
 
@@ -45,7 +45,7 @@ GPX usually contains a sequence of points (waypoints) that define a route. It ca
 In OsmAnd, GPX file can be created using:
 
 - ["Plan a route"](../../plan-route/create-route.md) tool.
-- [Create a route -> Save](./route-details.md).  
+- [Create a route -> Save](./route-details.md#save--export).  
 - [Trip (track) recording](../../plugins/trip-recording.md) plugin.
 - [Web portal](../../plan-route/web.md#tracks) (Pro subscription required).
 

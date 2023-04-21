@@ -165,11 +165,16 @@ Actions:
 
 ![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_android.png) ![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_add_android.png) 
 
-You can import groups from favorites or track waypoints.
+You can import *Markers* to *[Map markers list](#list)* from one or more favorites groups or track waypoints. Tap '**&#43;**' button, then choose:
+- &nbsp;<Translate android="true" ids="favourites_group"/>  - import *Markers* from Favorites.
+- &nbsp;<Translate android="true" ids="shared_string_gpx_waypoints"/>  - import *Markers* from track waypoints.
 
-Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
-- <Translate android="true" ids="favourites_group"/>  - from Favorites.
-- <Translate android="true" ids="shared_string_gpx_waypoints"/>  - from track waypoints.
+*Markers* from track waypoints can also be created in *Groups tab* by turning switch on.  
+
+:::note
+Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
+:::
+
 
 </TabItem>
 
@@ -419,7 +424,7 @@ You can read how to configure the appearance of the markers in [this section](#a
 
 You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
 
-Click to '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
+Tap '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
