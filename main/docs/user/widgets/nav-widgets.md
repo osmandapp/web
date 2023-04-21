@@ -277,7 +277,7 @@ Most of alerts are displayed and announced within 15 seconds, same as [Passing w
 | | |
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>|
-|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,routing_settings_2,screen_alerts"/>|
+|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>|
 
 ### Alert types 
 
