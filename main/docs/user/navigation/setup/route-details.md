@@ -31,9 +31,8 @@ There are three ways to access the Route Details menu.
 2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
 3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
 
-?
+<!-- ? -->
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
-?
 
 
 <Tabs groupId="operating-systems">
@@ -52,16 +51,21 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 </Tabs>
 
+
 ## Distance / time / CO2
+
+CO2 - https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-used-by-motor
 
 *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.
 
-The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
+The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).  
+
+![Route details](@site/static/img/navigation/route/route_details_distance.png)  
 
 
 ## Elevation info
 
-?
+<!-- ? -->
 The main block with the graph contains the following information:
 
 1. The total distance of your route in the selected [units](../../personal/profiles.md#units--formats).
@@ -70,22 +74,8 @@ The main block with the graph contains the following information:
 4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
 5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.
 
-?
 
-
-### The graph
-
-The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
-
-#### The graph can be scaled.
-
-- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
-- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
-
-[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
-
-
-#### Elevation info ?
+#### Elevation info
 
 The details shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
@@ -94,6 +84,19 @@ All values are indicated either for the whole route or only for the selected int
 - ***Location Pin***. The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
 - ***Additional information***. The right side of the widget contains data about the highest altitude and slope, the average value for both and the lowest altitude and slope on the selected route section visible on the graph.  
 - ***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. *Grade* shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen.  
+
+
+### The graph
+
+The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+
+
+#### The graph can be scaled.
+
+- *Zoom in/out*. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movement](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location.  
+- *Place a point on the graph*. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
+
+[Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*.   
 
 
 ## Analyse on map
@@ -165,9 +168,11 @@ To find out how particular road attributes are displayed on the map, see [this s
 
 ## Turn-by-turn information
 
+Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn information is usually displayed in widgets (links), provides safe and effective real-time navigation, and allows the driver to navigate the road.  
+
 Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
 
-The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
+The setting shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
 
 
 Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
@@ -183,7 +188,12 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 ## Actions
 
+The route details navigation section has several buttons that allow you to perform certain actions with the route information.  
 
+- The [*Print*](#print) button allows you to print the route information.
+- The *Save* button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
+- The *Export* button allows you to export route information in various formats, such as [GPX](../../../technical/osmand-file-formats/osmand-gpx.md) or [KML](../../../technical/osmand-file-formats/osmand-kml.md), for use in other applications or on other devices.
+- The *Share* button gives you the opportunity to share information about your route with other users via social networks, messengers, or other applications.
 
 
 ### Print
@@ -192,7 +202,7 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 The **Print** button feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
 
-A printed route description provides detailed step-by-step instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
+A printed route description provides detailed turn-by-turn instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
 The ability **to print** or save turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
@@ -221,8 +231,10 @@ Export button: *Export as GPX file* or *Share as link*
 
 </Tabs>
 
+#### Save as a new track
 
-- **Share as file**
+
+#### **Share as file**
 
 in gpx https://www.osmand.net/docs/user/plugins/trip-recording#recorded-gpx-file
 
@@ -236,7 +248,7 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 OsmAnd GPX
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx/
 
-- **Share link**
+#### **Share link**
 
 Each link consists of parts containing specific information. For example:  
 https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
