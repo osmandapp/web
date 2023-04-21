@@ -52,12 +52,12 @@ Either way, follow these steps to set *Marker navigation*:
 4. [Select a marker](#select-markers) as your destination or use *Markers* to create a route in [**Plan a route** tool](../../personal/markers.md#plan-route-for-markers).
    
 :::note
-When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen. 
-You can use these two options for navigation to the marker without actiually starting navigation in a classical way. This use case of *Map markers* is similar to the *[direct-to-point](../routing/direct-to-point-routing.md)* routing type.
+When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen.  
+You can use these two options for navigation to the marker without actiually starting navigation in a classical way. This use case of *Map markers* is similar to the *[straight line](../routing/straight-line-routing.md)* routing type.
 :::
 
 ## Select markers
-Once a marker is added to the map, you can select it as your [destination](./route-navigation.md/#set-destinations) while [Preparing your route](./route-navigation.md). OsmAnd can also provide simplified [direct-to-point](../routing/direct-to-point-routing.md) navigation guidance to *Map marker* without starting navigtion. A *Marker* can be picked up:
+Once a marker is added to the map, you can select it as your [destination](./route-navigation.md/#set-destinations) while [Preparing your route](./route-navigation.md). OsmAnd can also provide simplified [straight line](../routing/straight-line-routing.md) navigation guidance to *Map marker* without starting navigtion. A *Marker* can be picked up:
 
 - In [Navigation menu](./route-navigation.md/#navigation-menu).  
 - Using *[Map markers list](../../personal/markers.md#list)*.
