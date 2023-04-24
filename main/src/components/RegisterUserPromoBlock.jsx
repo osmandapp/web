@@ -13,7 +13,7 @@ export default function RegisterUserPromoBlock({promoName}) {
     const [msg, setMsg] = useState('');
 
     async function registerEmail() {
-        await post(host + `/promo/add-user`, '',
+        await post(host + `/api/promo-add-user`, '',
             {
                 params: {
                     name: promoName,
@@ -21,7 +21,7 @@ export default function RegisterUserPromoBlock({promoName}) {
                 }
             }
         )
-            .then(resp => setMsg(`Subscription expiration date: ${resp.data}`))
+            .then(resp => setMsg(`You should receive an email confirming that your promo subscription is activated up to ${resp.data}. Please login with this email on your device or on https://osmand.net/map/.`))
             .catch(error => setMsg(error.response.data));
 
     }
