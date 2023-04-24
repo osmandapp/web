@@ -60,6 +60,11 @@ CO2 - https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-
 
 The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).  
 
+- *Average altitude*
+- *Altitude range*
+- *Uphill*
+- *Downhill*
+
 ![Route details](@site/static/img/navigation/route/route_details_distance.png)  
 
 
@@ -105,11 +110,6 @@ A graph with altitude / slope info on distance, additional track data.
 
 [Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map.  
 
-- *Average altitude*
-- *Altitude range*
-- *Uphill*
-- *Downhill*
-
 This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the *track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
 - **Graph data Y-axis**: Altitude / Slope / Speed (if data is available in the track).
@@ -142,12 +142,11 @@ To find out how particular road attributes are displayed on the map, see [this s
 - [**Road type**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads) - The type of road is determined based on its functional purpose and characteristics, such as the number of lanes, speed limits, load capacity, the presence of pedestrian and bicycle paths, roadsides, and other parameters. Different types of roads may have different restrictions and traffic rules. For example, main [highways](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) usually have a high speed limit and can be divided into lanes, and [local roads](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) can have a low speed limit and one lane in each direction.
 - [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface) - Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose. For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be used to create a road surface. 
 - [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines) - This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down in relation to the horizon and is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.
-- *Surface firmness*
-- *Slope* 
-- *Smoothness* 
-- *Winter and ice roads*
-- *Difficulty of horse trails*
-- *Speed and Altitude* 
+- [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype) - It is the ability of the road surface to recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.
+- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline) 
+- [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness) 
+- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads) - Color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).
+- [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding)
 
 <Tabs groupId="operating-systems">
 
@@ -188,15 +187,15 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 ## Actions
 
-The route details navigation section has several buttons that allow you to perform certain actions with the route information.  
+The route details navigation section has options that allow you to perform certain actions with the route information.  
 
-- The [*Print*](#print) button allows you to print the route information.
-- The *Save* button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
-- The *Export* button allows you to export route information in various formats, such as [GPX](../../../technical/osmand-file-formats/osmand-gpx.md) or [KML](../../../technical/osmand-file-formats/osmand-kml.md), for use in other applications or on other devices.
-- The *Share* button gives you the opportunity to share information about your route with other users via social networks, messengers, or other applications.
+- The [**Print**](#print) button is only available in the Android version of the OsmAnd app. It allows you to print or save turn-by-turn route information.
+- The **Save** button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
+- The [**Export**](#export-button-for-ios) button combines several actions for the iOS version of the OsmAnd app. The main one is to export route information in [GPX format](../../../technical/osmand-file-formats/osmand-gpx.md), for use in other applications or on other devices.
+- The **Share** button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
 
 
-### Print
+### Print for Android
 
 <infoAndroidOnly />
 
@@ -204,7 +203,7 @@ The **Print** button feature of a turn-by-turn route description can be useful i
 
 A printed route description provides detailed turn-by-turn instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
-The ability **to print** or save turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
+The ability **to print** or **save** turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
 ![route details](@site/static/img/navigation/route/route_details_print-2.png)
 
@@ -215,15 +214,11 @@ The ability **to print** or save turn-by-turn information **in pdf format** is e
 
 <TabItem value="android" label="Android">
 
-Share buttons: *Share as GPX file* and *Save to OsmAnd tracks*  
-
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png)   
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-Export button: *Export as GPX file* or *Share as link*  
 
 ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png)
 
@@ -231,10 +226,36 @@ Export button: *Export as GPX file* or *Share as link*
 
 </Tabs>
 
+#### Export button for iOS
+
+Tapping the **Export** button opens a screen with possible actions.
+
+1. Information about what you are exporting. The name of the route for export is created automatically, it is *current date*, the format is *GPS Exchange Format (GPX)* and the *expected file size* is specified.
+2. You can [*share a route*](#share-as-file) with your contacts or share with programs that are installed and support this feature.
+3. Сopy the route file.
+4. *Save to OsmAnd Tracks* opens the [*Save as a new track*](#save-as-a-new-track) menu.
+5. *Save to files* the current route on your device for later use.
+
 #### Save as a new track
 
+<Tabs groupId="operating-systems">
 
-#### **Share as file**
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_save.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png)
+
+</TabItem>
+
+</Tabs>
+
+
+#### Share as file
 
 in gpx https://www.osmand.net/docs/user/plugins/trip-recording#recorded-gpx-file
 
@@ -248,7 +269,7 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 OsmAnd GPX
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx/
 
-#### **Share link**
+#### Share link for Android
 
 Each link consists of parts containing specific information. For example:  
 https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
@@ -256,10 +277,11 @@ https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pede
 - If the coordinates are not specified, My Location is used.
 - *end=52.327645,4.863272* - coordinates of the end point.
 - *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
-- *#15/52.3161/4.8658* - zoom level and map center coordinates.
+- *#15/52.3161/4.8658* - zoom level and map center coordinates.  
 
 
-<!--
+
+
 ___
 
 ## Info for del
