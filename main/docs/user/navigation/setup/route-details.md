@@ -34,6 +34,7 @@ There are three ways to access the Route Details menu.
 <!-- ? -->
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
 
+? [Main information](../../map/track-context-menu.md#altitude--speed-graphs)
 
 <Tabs groupId="operating-systems">
 
@@ -147,6 +148,7 @@ To find out how particular road attributes are displayed on the map, see [this s
 - [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness) 
 - [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads) - Color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).
 - [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding)
+- **Speed and Altitude** 
 
 <Tabs groupId="operating-systems">
 
@@ -189,13 +191,13 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 The route details navigation section has options that allow you to perform certain actions with the route information.  
 
-- The [**Print**](#print) button is only available in the Android version of the OsmAnd app. It allows you to print or save turn-by-turn route information.
-- The **Save** button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
-- The [**Export**](#export-button-for-ios) button combines several actions for the iOS version of the OsmAnd app. The main one is to export route information in [GPX format](../../../technical/osmand-file-formats/osmand-gpx.md), for use in other applications or on other devices.
-- The **Share** button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
+- [**Print**](#print) button is only available in the Android version of the OsmAnd app. It allows you to print or save turn-by-turn route information.
+- **Save** button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
+- [**Export**](#export-button-for-ios) button combines several actions for the iOS version of the OsmAnd app. The main one is to export route information in [GPX format](../../../technical/osmand-file-formats/osmand-gpx.md), for use in other applications or on other devices.
+- **Share** button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
 
 
-### Print for Android
+### Print (for Android)
 
 <infoAndroidOnly />
 
@@ -269,78 +271,17 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 OsmAnd GPX
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx/
 
-#### Share link for Android
+#### Share link (for Android)
 
-Each link consists of parts containing specific information. For example:  
-https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
+You can share a route link using the apps installed on your device. Or copy the link and use the route in the [OsmAnd web portal](../../plan-route/web.md).   
+
+*Use this link as an example:*  
+https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.  
+
+Each link consists of parts containing specific information.  
 - *start=52.310331,4.863615*- coordinates of the start point.
 - If the coordinates are not specified, My Location is used.
 - *end=52.327645,4.863272* - coordinates of the end point.
 - *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
 - *#15/52.3161/4.8658* - zoom level and map center coordinates.  
 
-
-
-
-___
-
-## Info for del
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-|  |
-|------------|
-| [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_main-info.png) |
-| [Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_analiz.png) |
-| The features with [map legend](../../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png) |
-| Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one. |
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) |
-| Print button - You can print a turn-by-turn description of the route with the total distance and estimated travel time, or save it as a pdf. |
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_print.png) |
-| Save as new track button. | 
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_save.png) |
-| Share buttons: *Share as GPX file* and *Save to OsmAnd tracks* |
-| ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png) |
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-|  |
-|------------|
-| [Main information](../../map/track-context-menu.md#altitude--speed-graphs): *Total distance, Estimated travel time/Estimated time of arrival, Graph with details*. | 
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png) |
-| [Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map. |
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_analiz.png) |
-| The features with [map legend](../../map-legend/osmand.md#routes): *Road type, Surface, Steepness, Surface firmness, Slope, Smoothness, Winter and ice roads, Difficulty of horse trails, Speed and Altitude*. |
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png) |
-| Save as new track button. | 
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_save.png) |
-| Export button: *Export as GPX file* or *Share as link* |
-| ![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png) |
-
-</TabItem>
-
-</Tabs>
-
-:::info
-**Share link**.  
-Each link consists of parts containing specific information. For example:  
-https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.
-- *start=52.310331,4.863615*- coordinates of the start point.
-- If the coordinates are not specified, My Location is used.
-- *end=52.327645,4.863272* - coordinates of the end point.
-- *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
-- *#15/52.3161/4.8658* - zoom level and map center coordinates.
-:::
-
-:::note
-The display of some details depends on the availability of map section information, GPS data, subscriptions, or a profile setting.
-:::  
-
--->
