@@ -46,12 +46,18 @@ Offline OsmAnd routing is based on OpenStreetMap data and provides variety of ro
 
 ### Avoid specific roads
 
-[Select roads](../../map/map-context-menu.md#avoid-road) on map to avoid
+There are two possible ways to select what roads to avoid during route calculation:
+- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/voice-navigation.md). For example, see Avoid roads in Route parameters for [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type.
+- You can also select specific roads that will not be used for routing. This can be done using the [Avoid roads](../../map/map-context-menu.md#avoid-road) option through the [Map context menu](../../map/map-context-menu.md).
+
+:::note
+The Avoid specific roads function incorrectly works whith [Navigation by track](../setup/gpx-navigation.md) option and doesn't impact simplified [Markers navigation](../setup/markers-navigation.md#how-to-use).
+:::
 
 ### Avoid temporary closures
 
-*Consider temporary limitations* option allows to take into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, weather conditions, . Enabling this option can help you avoid unexpected detours or delays. In the same time in some cases this information may be outdated.
-In OpenStreetMap data these information is usually marked with tag *[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions). 
+*Consider temporary limitations* option allows taking into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, road repairs, natural disasters). Enabling this option can help you avoid unexpected detours or delays. Please note that sometimes this information may be outdated.
+In OpenStreetMap, this information is usually marked with the tag '*[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions)*'.  
 
 ### Customize offline routing
 

@@ -13,7 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 <InfoAndroidOnly />
@@ -23,6 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Online routing is a powerful tool that can help users save time and navigate more efficiently. However, it is important to note that online routing relies on internet connectivity, and may not be available in areas with poor network coverage. Additionally, users should always exercise caution and use their judgment when following any route suggested by an online routing service.  
 
 ![Online routing Android](@site/static/img/navigation/routing/online_routing_andr.png)
+
 ## Route parameters - Online routing
 
 *Online routing* can be enabled in [Navigation type](../guidance/navigation-settings.md#overview) section of the Navigation settings of the selected *Profile*. In OsmAnd there are two predefined *online routing engines* ([ZLZK](https://zlzk.biz/) and [OSM DE](https://routing.openstreetmap.de)), that provide three *Online routing* types : *Bicycle, Car, and On foot*.  
@@ -44,4 +44,6 @@ You can read about the differences between online routing engines in [OSMwiki](h
 
 #### Custom Online GPX routing
 
-at the request of the start of the finish, a track arrives back from the server, osmand quickly builds a route along it and this is tied to the roads on our maps so that lanes, turns and restrictions are taken from our maps
+Online server builds a route using your starting point and destination. After receiving the track from the server, OsmaAnd builds a route using *[Attach to the road's](../setup/gpx-navigation.md#attach-to-roads)* function. So routing information will be taken from our offline maps, and more precise guidance along the route will be provided.  
+
+![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_1.png) ![Custom GPX routing Android 1](@site/static/img/navigation/routing/online_routing_gpx_2.png)
