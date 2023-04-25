@@ -48,22 +48,16 @@ There are three ways to access the Route Details menu.
 2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
 3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The availability of map section information, GPS data, terrain, and road information also affects the display of a number of details. Your [subscription](../../purchases/index.md) affects which [road attributes](#road-attributes) will be calculated and displayed in Details.   
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The availability of map section information, GPS data, terrain, and road information also affects the display of a number of details.    
 
 
 ## Distance / time / CO2
 
+- The *Total distance* is calculated taking into account all intermediate sections of the course. 
 
-CO2 - https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-used-by-motor
+- *Estimated travel time* and *Estimated arrival time* values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
 
-*Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.
-
-The information block with: 
-
-- *Average altitude*
-- *Altitude range* 
-- *Uphill* (or *Ascent* in iOS)
-- *Downhill* (or *Descent* in iOS)
+- In order to see information about [*CO2 footprint data*](../../navigation/guidance/navigation-settings.md#fuel-used-by-motor), you need to select the engine type in the vehicle parameters [*Fuel-efficient way*](../../navigation/routing/car-based-routing.md).
 
 
 <Tabs groupId="operating-systems">
@@ -94,6 +88,13 @@ The main block with the graph contains the following information:
 4. The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).
 5. [*Analyse on map*](#analyse-on-map) (*Analyse* in iOS) button.
 
+The information block with: 
+
+- *Average altitude*
+- *Altitude range* 
+- *Uphill* (or *Ascent* in iOS)
+- *Downhill* (or *Descent* in iOS)
+
 
 #### Elevation info
 
@@ -121,17 +122,14 @@ The graphs which are built while recording the current track, show visually the 
 
 ## Analyse on map
 
-A graph with altitude / slope info on distance, additional track data.
+This [option](../../map/tracks-on-map.md#analyze-track-on-map) allows you to view track information with additional graph and map data.  
 
-[Analyse](../../map/tracks-on-map.md#analyze-track-on-map) on map - This option allows you to interactively view track information with graphs and a map.  
-
-This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the *track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
-
-- **Graph data Y-axis**: Altitude / Slope / Speed (if data is available in the track).
-- **Graph dimension X-axis**: Distance / Time / Time of day.
-- **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
-- **Scale**: scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
-- **Follow My location**: click button [My Location](../../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.  
+- **Graph data on the Y-axis**. Altitude / Slope / Speed (if data is available in the track).
+- **X-axis graph dimension**. Distance / Time / Time of day.
+- **Tap/Slide**. Tap the Graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
+- **Scale**. Scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
+- **Follow My location**. Tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. The *scale of the graph* remains unchanged, and the *information on the bars* is fixed at the 1/4 mark on the left. As you move, the graph will shift from left to right, displaying information ahead of your path.  
+ 
 
 <Tabs groupId="operating-systems">
 
@@ -158,10 +156,11 @@ To find out how particular road attributes are displayed on the map, see [this s
 - [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface) - Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose. For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be used to create a road surface. 
 - [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines) - This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down in relation to the horizon and is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.
 - [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype) - It is the ability of the road surface to recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.
-- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline) 
-- [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness) 
-- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads) - Color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).
-- [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding)
+- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline) - Shows what percentage of slopes there are on your route.  
+- [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness) - Applies to all types of paths and areas, such as highways, parking lots, beaches, trails, and indicates the usability of the route. Gives information that you can drive without significant risk of damage, such as vehicle undercarriage, or injury, such as by falling.
+- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads) - Shows the color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).
+- [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding) - This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).
+
 - **Speed and Altitude** 
 
 <Tabs groupId="operating-systems">
@@ -183,20 +182,9 @@ To find out how particular road attributes are displayed on the map, see [this s
 
 ## Turn-by-turn information
 
-Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn information is usually displayed in widgets (links), provides safe and effective real-time navigation, and allows the driver to navigate the road.  
+Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn information is best displayed in the [Next turns](../../widgets/nav-widgets.md#next-turns) and [Lanes](../../widgets/nav-widgets.md#lanes) widgets, and it provides safe and efficient real-time navigation, and allows the driver to better navigate the road.
 
-Turn-by-turn information - You can view the details of separate sections of the route by tapping the needed one.
-
-The setting shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.  
-
-
-Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
-
-| Distance |  Prompt type | Color | Approximate Trigger Time | 
-|-----|----|-------|------| 
-| Close by | [Turn now](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
-| Approaching| [Turn in X m](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
-| Distant | [Prepare to turn](../../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds |   
+To view detailed information about specific sections of the route or to make necessary changes, you need to tap this section in the list. The map will zoom in to it and a [Context menu](../../map/map-context-menu.md) will open.  
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
 
@@ -240,6 +228,8 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 ### Save / Export / Share
 
+In the Android and iOS versions of the OsmAnd app, you can do such actions as save and share with the created route. These functions are very useful if the route you set is frequently used, may be useful to you or someone else in the future, you want to use it on another device, for example with [OsmAnd Cloud](../../personal/osmand-cloud.md).
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -257,7 +247,7 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 </Tabs>
 
 
-#### Export button for iOS
+#### Export button (for iOS)
 
 Tapping the **Export** button opens a screen with possible actions.
 
@@ -269,6 +259,12 @@ Tapping the **Export** button opens a screen with possible actions.
 
 
 #### Save as a new track
+
+Use this function to save your current route. 
+- Set a name for your track.
+- Select a folder or create a new one where you want to put your track.
+- You can turn on the display of your track on the map right away. 
+- You can change the parameters of your track after you save it in the [*My Places*](../../personal/tracks.md#manage-tracks) menu.
 
 <Tabs groupId="operating-systems">
 
@@ -289,17 +285,14 @@ Tapping the **Export** button opens a screen with possible actions.
 
 #### Share as file
 
-in gpx https://www.osmand.net/docs/user/plugins/trip-recording#recorded-gpx-file
+You have the ability to share your current track using the apps installed on your device. By default, the track is named "route". The track is recorded in [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: ***file > track > segments > points***.
 
-OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: *file > track > segments > points*.
-
-- One point has a number of attributes: coordinates, speed, altitude, heading.
+- One point has a number of attributes: *coordinates, speed, altitude, heading*.
 - Points are grouped into tracks.
 - The next point after the gap makes up a new segment.
 - Both segments and tracks are shown with the Start and Finish icons on the map.
 
-OsmAnd GPX
-The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx/
+You can read more in the [OsmAnd File GPX Format](../../../technical/osmand-file-formats/osmand-gpx.md) article.
 
 
 #### Share link (for Android)
