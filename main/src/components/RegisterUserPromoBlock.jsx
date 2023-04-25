@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {post} from "axios";
 
 
-export default function RegisterUserPromoBlock({promoName}) {
+export default function RegisterUserPromoBlock({promoKey}) {
 
     const host = 'https://osmand.net'
     //const host = 'http://localhost:8080'
@@ -16,8 +16,8 @@ export default function RegisterUserPromoBlock({promoName}) {
         await post(host + `/api/promo-add-user`, '',
             {
                 params: {
-                    name: promoName,
-                    email: email
+                    promoKey: promoKey,
+                    userEmail: email
                 }
             }
         )
