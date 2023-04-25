@@ -22,20 +22,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
-### How to open
-
-The route information from the Details section of the navigation menu of the app is only available when the track has already been calculated. You can use them before you start your trip, to improve your planning, and during your trip.  
-There are three ways to access the Route Details menu.   
-
-1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
-2. Tap the Navigation icon on the map screen, set the route, and tap the Details button.
-3. Go to the My Places menu, tap any available track in the list *Menu → My Places → Tracks*, select the Navigation icon in the track context menu in the Overview, and tap Details.  
-
-<!-- ? -->
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The display of a number of details is also affected by the availability of map section information, GPS data, terrain and road information, and your [subscription](../../purchases/index.md).  
-
-? [Main information](../../map/track-context-menu.md#altitude--speed-graphs)
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -53,20 +39,48 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 </Tabs>
 
 
+### How to open
+
+The route information from the Details section of the navigation menu of the app is only available when the track has already been calculated. You can use them before you start your trip, to improve your planning, and during your trip.  
+There are three ways to access the Route Details menu.   
+
+1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
+2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
+3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
+
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), route details may not be fully displayed. The availability of map section information, GPS data, terrain, and road information also affects the display of a number of details. Your [subscription](../../purchases/index.md) affects which [road attributes](#road-attributes) will be calculated and displayed in Details.   
+
+
 ## Distance / time / CO2
+
 
 CO2 - https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-used-by-motor
 
 *Estimated travel time* and *Estimated arrival time*. These values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.
 
-The information block with *Average altitude*, *Altitude range*, *Uphill* (or *Ascent* in iOS), *Downhill* (or *Descent* in iOS).  
+The information block with: 
 
 - *Average altitude*
-- *Altitude range*
-- *Uphill*
-- *Downhill*
+- *Altitude range* 
+- *Uphill* (or *Ascent* in iOS)
+- *Downhill* (or *Descent* in iOS)
 
-![Route details](@site/static/img/navigation/route/route_details_distance.png)  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr.png)    ![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Elevation info
@@ -154,13 +168,13 @@ To find out how particular road attributes are displayed on the map, see [this s
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_features.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_steepness.png)   
+![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_features.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
 </TabItem>
 
@@ -189,17 +203,31 @@ Trigger display time, color is related to the voice navigation prompts and relat
 
 ## Actions
 
-The route details navigation section has options that allow you to perform certain actions with the route information.  
+The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
 - [**Print**](#print) button is only available in the Android version of the OsmAnd app. It allows you to print or save turn-by-turn route information.
-- **Save** button allows you to save the route information [as a new track](#save-as-a-new-track) for later use.
+- [**Save**]((#save-as-a-new-track)) button allows you to save the route information **as a new track** for later use.
 - [**Export**](#export-button-for-ios) button combines several actions for the iOS version of the OsmAnd app. The main one is to export route information in [GPX format](../../../technical/osmand-file-formats/osmand-gpx.md), for use in other applications or on other devices.
-- **Share** button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
+- [**Share**](#share-as-file) button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios_share.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ### Print (for Android)
-
-<infoAndroidOnly />
 
 The **Print** button feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
 
@@ -216,7 +244,7 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)   ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png)   
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)    ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share2.png)  
 
 </TabItem>
 
@@ -228,6 +256,7 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 </Tabs>
 
+
 #### Export button for iOS
 
 Tapping the **Export** button opens a screen with possible actions.
@@ -237,6 +266,7 @@ Tapping the **Export** button opens a screen with possible actions.
 3. Сopy the route file.
 4. *Save to OsmAnd Tracks* opens the [*Save as a new track*](#save-as-a-new-track) menu.
 5. *Save to files* the current route on your device for later use.
+
 
 #### Save as a new track
 
@@ -271,17 +301,18 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 OsmAnd GPX
 The OsmAnd's GPX file format conforms to the GPX 1.1 specification with additional data written as extensions. There are several sections of such data https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx/
 
+
 #### Share link (for Android)
 
 You can share a route link using the apps installed on your device. Or copy the link and use the route in the [OsmAnd web portal](../../plan-route/web.md).   
 
-*Use this link as an example:*  
+- *Use this link as an example:*  
 https://osmand.net/map?start=52.310331,4.863615&end=52.327645,4.863272&mode=pedestrian#15/52.3161/4.8658.  
 
-Each link consists of parts containing specific information.  
-- *start=52.310331,4.863615*- coordinates of the start point.
-- If the coordinates are not specified, My Location is used.
-- *end=52.327645,4.863272* - coordinates of the end point.
-- *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
-- *#15/52.3161/4.8658* - zoom level and map center coordinates.  
+   Each link consists of parts containing specific information.  
+   - *start=52.310331,4.863615*- coordinates of the *Start point*.
+   - If the coordinates are not specified, *My Location* is used.
+   - *end=52.327645,4.863272* - coordinates of the *End point*.
+   - *mode=pedestrian* - type of [routing](../../navigation/routing/index.md), which depends on the selected profile.
+   - *#15/52.3161/4.8658* - zoom level and map center coordinates.  
 
