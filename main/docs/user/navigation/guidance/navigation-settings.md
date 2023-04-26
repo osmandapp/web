@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-For a comfortable navigation experience, you need to customize the OsmAnd app to meet your needs and the parameters of your vehicle. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you optimize your route on the road.
+For a comfortable navigation experience, you need to configure the OsmAnd app according to your needs and vehicle configuration. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you improve your route on the road.
 
 <Tabs groupId="operating-systems">
 
@@ -33,6 +33,21 @@ For a comfortable navigation experience, you need to customize the OsmAnd app to
 </TabItem>
 
 </Tabs>
+
+
+### How to open
+
+In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile. 
+
+There are three ways to access the Navigation settings menu. 
+
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2"/>*.  
+- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
+
+:::info
+There are no navigation settings in *Browse map* profile.  
+:::
 
 
 ## Navigation Type
@@ -85,8 +100,8 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 ## Screen alerts
 
-<!--
-[Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd does not have a goal to represent 100% identical road signs but to indicate some similarities. -->
+
+<!-- [Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd does not have a goal to represent 100% identical road signs but to indicate some similarities. -->
 
 [Screen alerts](./map-during-navigation.md#screen-alerts) combine several types of alerts that appear in the lower left corner while you are navigating. You can turn certain alerts on and off, such as warnings for traffic, crosswalks, speed cameras, and tunnels. The types of alerts have different visual appearance, which depends on the driving region and can be configured in *Settings → General Settings*. OsmAnd does not strive to present 100% identical road signs, but points out some similarities.
 
@@ -151,24 +166,24 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 ### Fuel used by motor
 
-If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../setup/route-details.md).
-Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android-2.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_ios-2.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../setup/route-details.md).
+Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 
 ### Size parameters
