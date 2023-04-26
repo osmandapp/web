@@ -234,7 +234,7 @@ To view detailed information about specific sections of the route or to make nec
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
 - [**Print**](#print) button is only available in the Android version of the OsmAnd app. It allows you to print or save turn-by-turn route information.
-- [**Save**]((#save-as-a-new-track)) button allows you to save the route information **as a new track** for later use.
+- [**Save**](#save-as-a-new-track) button allows you to save the route information **as a new track** for later use.
 - [**Export**](#export-button-for-ios) button combines several actions for the iOS version of the OsmAnd app. The main one is to export route information in [GPX format](../../../technical/osmand-file-formats/osmand-gpx.md), for use in other applications or on other devices.
 - [**Share**](#share-as-file) button gives you the opportunity to share information about your route with other users using social networks, messengers, or other applications.
 
