@@ -22,13 +22,13 @@ For a comfortable navigation experience, you need to configure the OsmAnd app ac
 
 <TabItem value="android" label="Android">
 
-![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Navigation Settings iOS](@site/static/img/personal/profiles/profile_navigation_settings_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation//navigation_settings_overview_ios.png)
 
 </TabItem>
 
@@ -91,6 +91,9 @@ There are no navigation settings in *Browse map* profile.
 - **<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
 
 
+### How to open
+
+
 ## Voice Prompts
 
 Main article -  **[Voice prompts / Notifications](./voice-navigation.md)**.  
@@ -137,7 +140,7 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 ![Navigation screen Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png)
 
 </TabItem>
-
+ 
 <TabItem value="ios" label="iOS">
 
 ![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png)
@@ -145,6 +148,10 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 </TabItem>
 
 </Tabs>
+
+## Animate own position
+
+https://osmand.net/docs/user/navigation/guidance/map-during-navigation#animate-my-location
 
 
 ## Vehicle parameters
@@ -188,6 +195,9 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 ### Size parameters
 
+Measurement parameters
+in the selected [units](../../personal/profiles.md#units--formats)
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -204,10 +214,12 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 </Tabs>
 
-| Parameter | Description | 
-|:------------|:---------------|
-| <Translate android="true" ids="routing_attr_weight_name"/>   | <Translate android="true" ids="weight_limit_description"/>   |
-| <Translate android="true" ids="routing_attr_height_name"/>  | <Translate android="true" ids="height_limit_description"/>   |
-| <Translate android="true" ids="routing_attr_length_name"/>  | <Translate android="true" ids="lenght_limit_description"/>   |
-| <Translate android="true" ids="routing_attr_width_name"/> | <Translate android="true" ids="width_limit_description"/>   |
+1. **<Translate android="true" ids="routing_attr_weight_name"/> limit** - <Translate android="true" ids="weight_limit_description"/>    
+
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_size2_andr.png)  
+
+2. **<Translate android="true" ids="routing_attr_height_name"/> limit** - <Translate android="true" ids="height_limit_description"/>    
+3. **<Translate android="true" ids="routing_attr_length_name"/> limit** - <Translate android="true" ids="lenght_limit_description"/>    
+4. **<Translate android="true" ids="routing_attr_width_name"/> limit** - <Translate android="true" ids="width_limit_description"/>  
+
 
