@@ -14,9 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+
 ## Overview
 
 For a comfortable navigation experience, you need to configure the OsmAnd app according to your needs and vehicle configuration. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you improve your route on the road.
+
 
 <Tabs groupId="operating-systems">
 
@@ -195,8 +197,14 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 ### Size parameters
 
-Measurement parameters
-in the selected [units](../../personal/profiles.md#units--formats)
+Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
+
+- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
+- The vehicle parameters can be set manually.
+- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
+- You can choose vehicle parameters from a ready-made list of sizes.
+- Do not set the size, *None*, means that no restrictions on the selected parameter will be applied.
+
 
 <Tabs groupId="operating-systems">
 
@@ -214,12 +222,39 @@ in the selected [units](../../personal/profiles.md#units--formats)
 
 </Tabs>
 
-1. **<Translate android="true" ids="routing_attr_weight_name"/> limit** - <Translate android="true" ids="weight_limit_description"/>    
+#### [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight)  
 
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_size2_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_weight_andr.png)   
 
-2. **<Translate android="true" ids="routing_attr_height_name"/> limit** - <Translate android="true" ids="height_limit_description"/>    
-3. **<Translate android="true" ids="routing_attr_length_name"/> limit** - <Translate android="true" ids="lenght_limit_description"/>    
-4. **<Translate android="true" ids="routing_attr_width_name"/> limit** - <Translate android="true" ids="width_limit_description"/>  
+Some possible vehicle weight limits may include:  
+1. Limiting the maximum weight of a vehicle that can travel on a road or bridge.
+2. Weight limits per vehicle axle can be especially important for trucks and buses.
+3. Weight limits for vehicles traveling on certain road segments, such as those with low-capacity bridges or tunnels.
+4. Weight limits for vehicles traveling in certain areas of cities or parks.
+5. Weight limits for vehicles moving in certain conditions, such as high temperatures, rain, or snowy roads.
+
+All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's weight exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
+
+
+#### [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight)  
+
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_height_andr.png)  
+
+Some possible restrictions on vehicle height may include:  
+1. Limiting the maximum height of a vehicle that can travel on a road, under a bridge, or through a tunnel.
+2. Height limits for vehicles traveling in certain areas of cities or parks.
+3. Height restrictions for vehicles traveling on certain sections of roads, such as where there are low-height bridges or overpasses.
+4. Height restrictions for vehicles traveling in certain conditions, such as high temperatures, rain, or snow-covered roads.  
+
+
+#### [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength)   
+
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_length_andr.png)   
+
+
+
+#### [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth)  
+
+![Navigation Settings Android](@site/static/img/navigation//navigation_settings_width_andr.png)   
 
 
