@@ -41,25 +41,42 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Map markers* can serve as [destinations](./route-navigation.md/#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
 - In some situations (especially for short routes, for example, during off-road competitions), due to the possibility to display the direction of movement and distance to markers on the map, they can serve as waypoints without setting the navigation mode.  
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+ ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_2.png) ![Difference marker navigation Android](@site/static/img/navigation/marker/markers_ex_andr_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Difference marker navigation iOS 2](@site/static/img/navigation/marker/markers_ex_ios_2.png) ![Difference marker navigation iOS 1](@site/static/img/navigation/marker/markers_ex_ios_1.png) 
+
+</TabItem>
+
+</Tabs>
+
 Either way, follow these steps to set *Marker navigation*:
 
 1. Create markers. Find the desired object(s) on the map, tap it, and choose the *[Marker button](../../personal/markers.md#add-marker-on-the-map)* in the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)*. You can also make markers from [favorites](#add-favorite-group) or [GPX tracks](#add-gpx).
 
-2. Customise *Map markers view* if you would like to use Markers without starting Navigation. Enable **Arrows on the map** and **Direction line** options in the *[Appearance](../../personal/markers.md#appearance-on-the-map)* section of *[Map markers menu](../../personal/markers.md#map-markers-menu).
+2. Customise *Map markers view* if you would like to use Markers without starting Navigation. Enable **Arrows on the map** and **Direction line** options in the *[Appearance](../../personal/markers.md#appearance-on-the-map)* section of *[Map markers menu](../../personal/markers.md#map-markers-menu)*.
 
 3.  Add *[Markers widgets](../../personal/markers.md#marker-widgets)* in *[Configure screen menu](../../widgets/configure-screen.md)* (optional).
 
-4. [Select a marker](#select-markers) as your destination or use *Markers* to create a route in [**Plan a route** tool](../../personal/markers.md#plan-route-for-markers).
+4. [Select a marker](#select-markers) as your destination or use *Markers* to create a route in [**Plan a route**](../../personal/markers.md#plan-route-for-markers) tool.
    
 :::note
 When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen.  
-You can use these two options for navigation to the marker without actiually starting navigation in a classical way. This use case of *Map markers* is similar to the *[straight line](../routing/straight-line-routing.md)* routing type.
+These two options can be used for navigation to the marker without actiually starting navigation in a classical way. This use case is similar to the *[straight line](../routing/straight-line-routing.md)* routing type.
 :::
 
 ## Select markers
-Once a marker is added to the map, you can select it as your [destination](./route-navigation.md/#set-destinations) while [Preparing your route](./route-navigation.md). OsmAnd can also provide simplified [straight line](../routing/straight-line-routing.md) navigation guidance to *Map marker* without starting navigtion. A *Marker* can be picked up:
 
-- In [Navigation menu](./route-navigation.md/#navigation-menu).  
+Once a marker is added to the map, you can select it as your [destination](./route-navigation.md/#set-destinations) while [Preparing your route](./route-navigation.md). A *Marker* can be picked up:
+
+- In [Navigation menu](./route-navigation.md#set-target-point).  
 - Using *[Map markers list](../../personal/markers.md#list)*.
 - By tap on a *[Marker widget](../../widgets/markers.md)*.
 - With single tap on a marker on the map.
@@ -96,7 +113,7 @@ Only tracks with waypoints can be added to the *Map markers list*. The track you
 
 ### Add manually
 
-*Markers* can also be added to the map manualy. How to do that is described in [*Map context menu*](../../map/map-context-menu.md#add--edit-marker) article. Also see 
+*Markers* can also be added to the map manualy. How to do that is described in [*Map context menu*](../../map/map-context-menu.md#add--edit-marker) article.
 
 ## Navigation list
 
@@ -122,7 +139,7 @@ In other cases *Markers* can be used for navigation one by one from *[Map marker
 
 ### Sort markers
 
-Pressing on a left corner (Android) or right corner (iOS) of a *Map marker* in *[Map markers list](../../personal/markers.md#list)* and moving it up or down, you can change its order in this folder (this is a drag-and-drop function, while moving a marker card you will see a line indicating where the marker will be moved to).
+Pressing on a left corner (Android) or right corner (iOS) of a *Map marker* in *[Map markers list](../../personal/markers.md#list)* and moving it up or down, you can change its order in this folder (this is a drag-and-drop function, while moving a marker card you will see a line indicating where the marker will be).
 
 <Tabs groupId="operating-systems">
 
