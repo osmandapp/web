@@ -23,13 +23,13 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 ## Map during navigation
 
-During navigation, the location, distance from the surface, and map view change depending on the settings. Before you start a route, you need to check whether the settings correspond to the way you want the OsmAnd map to behave while you are driving.   
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
+
+![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
 </TabItem>
 
@@ -37,9 +37,17 @@ During navigation, the location, distance from the surface, and map view change 
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
+![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+
 </TabItem>
 
 </Tabs>
+
+
+The map during navigation serves as a visual tool for positioning, route planning, and orientation when navigating. You use the map to determine your current location as well as where you want to go. To do this, he can use zooming, drag and rotate the map to get a better view of his surroundings and determine the best route. The map can also display information about roads, streets, buildings, and other objects to help the user find his way easily.  
+
+During navigation, the location, distance from the surface, and map view change depending on the settings. Before you start a route, you need to check whether the settings correspond to the way you want the OsmAnd map to behave while you are driving.   
+
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
@@ -61,27 +69,15 @@ For Android, this item named **Animate own position** is located in the "Other" 
 
 ## Show points along the route
 
-The *Show along the route* setting allows you to configure additional parameters for your route and is necessary for the operation of widgets such as [Street name](../../widgets/nav-widgets.md/#street-name) and [Alert widget](../../widgets/nav-widgets.md#alert-widget). The parameters imply displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) on the route.  
-
-The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
-
 In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, which are determined by the features of the operating systems and design of OsmAnd.  
-
-- *Android*
-    - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
-    - [Build your route](../setup/route-navigation.md#set-destinations).
-    - Tap on the [Settings](../setup/route-navigation.md#settings) menu.
-
-- *iOS* 
-    - *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_waypoints"/>*
-    - [Build your route](../setup/route-navigation.md#set-destinations). 
-    - Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) of the route. Only this item has settings for selecting points to display along the route.
-    - Tap *Edit* next to the Intermediate destination to open the Waypoints settings menu.
-
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
+- [Build your route](../setup/route-navigation.md#set-destinations).
+- Tap on the [Settings](../setup/route-navigation.md#settings) menu.
 
 ![points along the route](@site/static/img/navigation/show-points-along-3-andr.png) 
 
@@ -89,11 +85,20 @@ In the Navigation section when creating a route you can set the types of points 
 
 <TabItem value="ios" label="iOS">
 
+- *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_waypoints"/>*
+- [Build your route](../setup/route-navigation.md#set-destinations). 
+- Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) of the route. Only this item has settings for selecting points to display along the route.
+- Tap *Edit* next to the Intermediate destination to open the Waypoints settings menu.
+
 ![points along the route](@site/static/img/navigation/show-points-along-3-ios.png)  
 
 </TabItem>
 
 </Tabs>
+
+The *Show along the route* setting allows you to configure additional parameters for your route and is necessary for the operation of widgets such as [Street name](../../widgets/nav-widgets.md/#street-name) and [Alert widget](../../widgets/nav-widgets.md#alert-widget). The parameters imply displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) on the route.  
+
+The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
 
 
 ### Points of interest (POI)
