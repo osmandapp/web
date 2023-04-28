@@ -24,13 +24,13 @@ For a comfortable navigation experience, you need to configure the OsmAnd app ac
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_overview_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation//navigation_settings_overview_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
 
 </TabItem>
 
@@ -133,25 +133,28 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 ## Map during navigation 
 
-The map is used during navigation to determine your location, plan your route, and navigate your way around. During navigation, you can view the map with auto-center, move it around, and zoom in and out to see the desired area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in real-time and displays up-to-date information about traffic conditions, traffic jams, and other factors that can affect route planning.
-
-You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../guidance/map-during-navigation.md).  
-
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Navigation screen Android 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png)
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
- 
+
 <TabItem value="ios" label="iOS">
 
-![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png)
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 </TabItem>
 
 </Tabs>
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-2_andr.png)  
+
+The map is used during navigation to determine your location, plan your route, and navigate your way around. During navigation, you can view the map with auto-center, move it around, and zoom in and out to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in real-time and displays up-to-date information that can affect route planning.
+
+You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../guidance/map-during-navigation.md).  
+
 
 ## Animate own position
 
@@ -201,24 +204,16 @@ Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.
 
 CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO2 emitted by an engine depends on the type of fuel and its combustion efficiency.  
 
-- Internal combustion engines, such as gasoline and diesel engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, gasoline engines emit less CO2 than diesel engines due to more efficient combustion.
-- Liquefied natural gas (LPG) and compressed natural gas (CNG) are also used to run internal combustion engines. They are considered more environmentally friendly than gasoline or diesel because they emit less CO2 when burned. 
+- Internal combustion engines, such as patrol and diesel engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, patrol engines emit less CO2 than diesel engines due to more efficient combustion.
+- Liquefied natural gas (LPG) and compressed natural gas (CNG) are also used to run internal combustion engines. They are considered more environmentally friendly than patrol or diesel because they emit less CO2 when burned. 
 - When electric motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
 - Hybrid cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
 
+:::note
+The *Fuel used by motor* setting is only available in navigation types such as [Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md).
+:::
 
 ### Size parameters
-
-
-
-Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
-
-- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
-- The vehicle parameters can be set manually.
-- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
-- You can choose vehicle parameters from a ready-made list of sizes.
-- Do not set the size, *None*, means that no restrictions on the selected parameter will be applied.
-
 
 <Tabs groupId="operating-systems">
 
@@ -226,7 +221,7 @@ Vehicle parameters affect navigation and route construction because they determi
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes_andr.png) 
 
 </TabItem>
 
@@ -234,9 +229,40 @@ Vehicle parameters affect navigation and route construction because they determi
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes_ios.png) 
+
 </TabItem>
 
 </Tabs>
+
+Vehicle parameters affect navigation and route construction because they determine the availability of roads, bridges, ferries, dams, and other infrastructure. If the height, width, length, or weight of a vehicle exceeds the permissible values for certain road sections, the OsmAnd navigation system will find an alternative route to avoid obstacles along the way.  
+
+- The units of measurement will correspond to the settings selected in *General settings → [Units & formats](../../personal/profiles.md#units--formats)*.
+- The vehicle parameters can be set manually.
+- If you manually select the vehicle measurement parameter, the application will offer you the closest value from the ready-made list. This is necessary to avoid errors and build the route more correctly.
+- You can choose vehicle parameters from a ready-made list of sizes.
+- Do not set the size, *None*, means that no restrictions on the selected parameter will be applied.  
+
+#### Limits
+
+**1.** [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> The Weight parametr is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).   
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)   
+
+**2.**  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> The Height parametr is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.       
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+
+**3.** [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> The Length parametr is only available in navigation types such as [*Car, Truck*, and *Motorcycle*](../../navigation/routing/car-based-routing.md).   
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)   
+
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parametr is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.     
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)     
+
 
 Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
 
@@ -246,22 +272,4 @@ Limits on vehicle parameters can be important for navigation and road safety. So
 4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
 
 All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
-
-
-- [**<Translate android="true" ids="routing_attr_weight_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/>    
-
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_weight_andr.png)   
-
--  [**<Translate android="true" ids="routing_attr_height_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/>    
-
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_height_andr.png)  
-
-- [**<Translate android="true" ids="routing_attr_length_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/>   
-
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_length_andr.png)   
-
-- [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/>    
-
-![Navigation Settings Android](@site/static/img/navigation//navigation_settings_width_andr.png)   
-
 
