@@ -160,7 +160,35 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 This setting is located in different places in the OsmAnd app for the Android version and for the iOS version. Android - in the menu *General Settings → Other*. iOS - in the *Navigation settings*. For more information, see the article *Configure map screen*, section [Animate my location](../../navigation/guidance/map-during-navigation.md#animate-my-location).  
 
-![Navigation Settings Android](@site/static/img/navigation//navigaton_settings_animate-own-position_ios.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png)  
+
+
+## Customize route line
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+
+With the Customise Route Line setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the color, the width of the line, and the display of the turn arrows on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Configure map screen* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+
 
 
 ## Vehicle parameters
@@ -200,17 +228,17 @@ This setting is located in different places in the OsmAnd app for the Android ve
 
 
 If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../setup/route-details.md).
-Available six fuel types: *Petrol, Diesel, LPG, CNG, Electric, Hybrid*.  
+Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric, Hybrid***.  
 
 CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO2 emitted by an engine depends on the type of fuel and its combustion efficiency.  
 
-- Internal combustion engines, such as patrol and diesel engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, patrol engines emit less CO2 than diesel engines due to more efficient combustion.
-- Liquefied natural gas (LPG) and compressed natural gas (CNG) are also used to run internal combustion engines. They are considered more environmentally friendly than patrol or diesel because they emit less CO2 when burned. 
-- When electric motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
-- Hybrid cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
+- Internal combustion engines, such as ***patrol*** and ***diesel*** engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, patrol engines emit less CO2 than diesel engines due to more efficient combustion.
+- Liquefied ***natural gas (LPG)*** and ***compressed natural gas (CNG)*** are also used to run internal combustion engines. They are considered more environmentally friendly than patrol or diesel because they emit less CO2 when burned. 
+- When ***electric*** motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
+- ***Hybrid*** cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
 
 :::note
-The *Fuel used by motor* setting is only available in navigation types such as [Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md).
+The *Fuel used by motor* setting is only available in navigation types such as *[Car, Motorcycle, and Truck](../../navigation/routing/car-based-routing.md)*.
 :::
 
 ### Size parameters
