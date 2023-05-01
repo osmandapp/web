@@ -41,7 +41,7 @@ _OsmAnd Menu > Ustawienia > OsmAnd Cloud > Mam już konto_
 5. Ponownie uruchomić OsmAnd
 
 :::tip Note
-Przeczytaj pełną informację o Cross-platform i logowaniu [tutaj](https://osmand.net/docs/user/personal/osmand-cloud.md#cross-platform).
+Przeczytaj pełną informację o Cross-platform i logowaniu [tutaj](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
 :::
 
 Linki ADVportal: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
@@ -72,7 +72,7 @@ Your steps:
 5. Restart OsmAnd appear
 
 :::tip Note
-Read full info about Cross-platform and Login [here](https://osmand.net/docs/user/personal/osmand-cloud.md#cross-platform).
+Read full info about Cross-platform and Login [here](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
 :::
 
 ADVportal links: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
