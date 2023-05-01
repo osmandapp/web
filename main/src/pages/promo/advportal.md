@@ -26,7 +26,7 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 Twoje kroki:
 
-1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](../../../docs/legal/terms-of-use.md) i [Regulaminem OsmAnd](../../../docs/legal/terms-of-use.md)).
+1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](../help-online/privacy-policy.md) i [Regulaminem OsmAnd](../help-online/terms-of-use.md)).
 
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
@@ -41,7 +41,7 @@ _OsmAnd Menu > Ustawienia > OsmAnd Cloud > Mam już konto_
 5. Ponownie uruchomić OsmAnd
 
 :::tip Note
-Read full info about Cross-platform and Login [here](../../../docs/user/personal/osmand-cloud.md#cross-platform).
+Read full info about Cross-platform and Login [here](../docs/user/personal/osmand-cloud.md#cross-platform).
 :::
 
 Linki ADVportal: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
@@ -54,11 +54,11 @@ ______________________________
 Hello funs of two wheels!
 
 OsmAnd and [ADVportal](https://www.advportal.pl/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
-You can use all OsmAnd features for [all platforms](../../../docs/user/personal/osmand-cloud.md#cross-platform): iOS, Android and Web.
+You can use all OsmAnd features for [all platforms](../docs/user/personal/osmand-cloud.md#cross-platform): iOS, Android and Web.
 
 
 Your steps:
-1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any infor, please, read [OsmAnd Privacy Policy](../../../docs/legal/terms-of-use.md) and [Terms of Use](../../../docs/legal/terms-of-use.md)).
+1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any infor, please, read [OsmAnd Privacy Policy](../help-online/privacy-policy.md) and [Terms of Use](../help-online/terms-of-use.md)).
    
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
