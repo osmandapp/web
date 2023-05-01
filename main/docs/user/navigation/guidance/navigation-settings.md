@@ -98,17 +98,35 @@ There are no navigation settings in *Browse map* profile.
 
 ## Voice Prompts
 
-Main article -  **[Voice prompts / Notifications](./voice-navigation.md)**.  
+<Tabs groupId="operating-systems">
 
-Voice prompts is feature used to help you while [navigating a selected route](../setup/route-navigation.md). With its help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and safe movement on the route. And also their use significantly reduces battery consumption, which can be useful for different [types of routes](../routing/index.md), where saving battery power is important. 
+<TabItem value="android" label="Android">
+
+- *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
+- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
+
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+A detailed description of the voice prompts settings is written in the first part of the article *[Voice prompts / Notifications](./voice-navigation.md)*.  
+
+Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
+*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety and reduce the time it takes to navigate in unfamiliar terrain, and can be useful for different [types of routes](../routing/index.md).
 
 
 ## Screen alerts
-
-
-<!-- [Screen alerts](./map-during-navigation.md#screen-alerts) combines multiple type of alerts that are displayed in the lower left corner during navigation. There are options to turn on and off specific alerts such as: Traffic warnings, Pedestrian crosswalks, Speed cameras, Tunnels. Alert types have different visuals that depends on Driving region which could be configured in *Settings → General settings*. OsmAnd does not have a goal to represent 100% identical road signs but to indicate some similarities. -->
-
-[Screen alerts](./map-during-navigation.md#screen-alerts) combine several types of alerts that appear in the lower left corner while you are navigating. You can turn certain alerts on and off, such as warnings for traffic, crosswalks, speed cameras, and tunnels. The types of alerts have different visual appearance, which depends on the driving region and can be configured in *Settings → General Settings*. OsmAnd does not strive to present 100% identical road signs, but points out some similarities.
 
 <Tabs groupId="operating-systems">
 
@@ -116,19 +134,30 @@ Voice prompts is feature used to help you while [navigating a selected route](..
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
+![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_andr.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
+![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_ios.png)
+
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Notifications, such as traffic warnings or speed limits, will appear on the screen as a widget. They appear in the bottom left corner while you are navigating. | [Types of alert widgets](../../widgets/nav-widgets.md#alert-widget)   |  
+This navigation setting allows you to enable the [*Alerts Widget*](../../widgets/nav-widgets.md#alert-widget) and select which alerts you want to see on the app screen while navigating. When you approach one of the available types of obstacles on the road, notifications appear in the lower-left corner of the map. If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip. The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
+The behavior of *Screen Alerts* is also affected by the [*Show points along the route*](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
+
+You can turn alerts on and off such as:
+- [**Traffic warnings**](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)
+- [**Pedestrian crossings**](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)
+- [**Speed cameras**](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera). For more information about the Speed cameras setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
+- [**Tunnels**](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)
+
+The types of warnings have the different visual appearance, which depends on the driving region. OsmAnd does not aspire to present 100% identical road signs but indicates some similarities.  
 
 
 ## Map during navigation 
