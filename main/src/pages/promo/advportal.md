@@ -58,7 +58,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 
 Your steps:
-1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any infor, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)).
+1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)).
    
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
