@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
-![Configure map screen](@site/static/img/promo/sotmus/sotmus.png)
+![Configure map screen](@site/static/img/promo/sotmus/sotmus_1.png)
 
 ## Get OsmAnd Pro free for 3 months 
 
