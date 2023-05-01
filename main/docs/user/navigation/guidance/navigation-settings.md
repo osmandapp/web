@@ -186,12 +186,37 @@ This setting is located in different places in the OsmAnd app for the Android ve
 
 </Tabs>  
 
-
 With the Customise Route Line setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the color, the width of the line, and the display of the turn arrows on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Configure map screen* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
-
 ## Vehicle parameters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+For optimal route calculation in OsmAnd, you should consider the following vehicle parameters:
+1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, taking into account the speed limits on different road segments.
+2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
+3. Define the [*size and weight parameters*](#size-parameters) of your vihicle, which can help the app to calculate the optimal route and avoid obtacles on the road due to restrictions.
+
+Correctly setting the parameters in the OsmAnd app will help you avoid problems when navigating a route, choose the most suitable one according to the type of vehicle and road restrictions, and calculate the time for your trip.
 
 
 ### Default speed / Road speeds 
@@ -205,7 +230,12 @@ With the Customise Route Line setting you can choose the appearance of the route
 - Affects speed formatting Unit of speed (Add link - general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
 - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. 
 
-#### Min/max speed (Road speeds)
+
+#### Default speed
+
+#### Road speeds
+
+Min and Max speed
 
 
 ### Fuel used by motor
@@ -249,7 +279,7 @@ The *Fuel used by motor* setting is only available in navigation types such as *
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes_andr.png) 
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png) 
 
 </TabItem>
 
@@ -257,7 +287,7 @@ The *Fuel used by motor* setting is only available in navigation types such as *
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes_ios.png) 
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png) 
 
 </TabItem>
 
@@ -294,9 +324,9 @@ Vehicle parameters affect navigation and route construction because they determi
 
 Limits on vehicle parameters can be important for navigation and road safety. Some of these restrictions may include:  
 
-1. Restrictions on vehicles moving in certain areas of cities or parks.  
+1. Restrictions on vehicles moving in certain urban areas.  
 2. Restrictions on the movement of vehicles on certain sections of road, such as where there are bridges, tunnels with limited space, low elevation overpasses, complex turns, or other structures.  
-3. Weight limits per vehicle axle can be especially important for trucks and buses.
+3. Weight limits per vehicle axle can be especially important for trucks.
 4. Restrictions for vehicles moving in certain conditions, such as high temperatures, wet or snowy roads, at night, or in weather conditions with limited visibility.
 
 All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
