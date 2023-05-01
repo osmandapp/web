@@ -26,7 +26,7 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 Twoje kroki:
 
-1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](../help-online/privacy-policy.md) i [Regulaminem OsmAnd](../help-online/terms-of-use.md)).
+1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności]([../help-online/privacy-policy](https://osmand.net/docs/legal/privacy-policy)) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
 
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
@@ -41,7 +41,7 @@ _OsmAnd Menu > Ustawienia > OsmAnd Cloud > Mam już konto_
 5. Ponownie uruchomić OsmAnd
 
 :::tip Note
-Read full info about Cross-platform and Login [here](../docs/user/personal/osmand-cloud.md#cross-platform).
+Przeczytaj pełną informację o Cross-platform i logowaniu [tutaj](https://osmand.net/docs/user/personal/osmand-cloud.md#cross-platform).
 :::
 
 Linki ADVportal: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
@@ -58,7 +58,7 @@ You can use all OsmAnd features for [all platforms](../docs/user/personal/osmand
 
 
 Your steps:
-1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any infor, please, read [OsmAnd Privacy Policy](../help-online/privacy-policy.md) and [Terms of Use](../help-online/terms-of-use.md)).
+1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any infor, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)).
    
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
@@ -72,7 +72,7 @@ Your steps:
 5. Restart OsmAnd appear
 
 :::tip Note
-Przeczytaj pełną informację o Cross-platform i logowaniu [tutaj](../../../docs/user/personal/osmand-cloud.md#cross-platform).
+Read full info about Cross-platform and Login [here](https://osmand.net/docs/user/personal/osmand-cloud.md#cross-platform).
 :::
 
 ADVportal links: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
