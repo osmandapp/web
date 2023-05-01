@@ -22,11 +22,11 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 Witajcie fani dwóch kółek!
 
-OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam subskrypcje OsmAnd Pro na 1 rok. Możecie korzystać z wszystkich funkcji OsmAnd [na wszystkich platformachs](../../../docs/user/personal/osmand-cloud.md#cross-platform): iOS, Android, Web.
+OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam subskrypcje OsmAnd Pro na 1 rok. Możecie korzystać z wszystkich funkcji OsmAnd [na wszystkich platformachs](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android, Web.
 
 Twoje kroki:
 
-1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności]([../help-online/privacy-policy](https://osmand.net/docs/legal/privacy-policy)) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
+1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
 
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
@@ -54,7 +54,7 @@ ______________________________
 Hello funs of two wheels!
 
 OsmAnd and [ADVportal](https://www.advportal.pl/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
-You can use all OsmAnd features for [all platforms](../docs/user/personal/osmand-cloud.md#cross-platform): iOS, Android and Web.
+You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 
 Your steps:
