@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-For a comfortable navigation experience, you need to configure the OsmAnd app according to your needs and vehicle configuration. The Navigation settings contain information about basic route settings, voice prompts, screen alerts, the map during navigation, and vehicle settings to help you improve your route on the road.  
+For successful navigation with the OsmAnd app, it's important to properly configure the appropriate settings according to your needs and depending on your mode of travel, whether it's by car, on foot, horseback riding, or skiing. This article describes the basic route parametrs, [voice prompts](#voice-prompts), [screen alerts](#screen-alerts), [map behavior during navigation](#map-during-navigation), [animation of your own position](#animate-own-position), and the [appearance of route lines](#customize-route-line). In addition, vehicle settings are also detailed, such as [default speed](#default-speed) and [maximum/minimum speed](#road-speeds), [engine type](#fuel-used-by-motor) for CO2 calculation, and [size / weight](#size-parameters), which can also affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without too much effort or delay.
 
 <Tabs groupId="operating-systems">
 
@@ -38,16 +38,16 @@ For a comfortable navigation experience, you need to configure the OsmAnd app ac
 
 ### How to open
 
-In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile. 
+This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Configure map screen](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).
 
 There are three ways to access the Navigation settings menu. 
 
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2"/>*.  
-- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
-- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
+- Go to the main *Menu → Settings*, select the required *Profile*, and tap *Navigation settings*.
+- Tap the *Navigation* icon on the map screen, than select the *Settings icon → Navigation settings*.
+- Go to the main *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
 
 :::info
-There are no navigation settings in *Browse map* profile.  
+The default *Browse map* profile has no settings for navigation.  
 :::
 
 
