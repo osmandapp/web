@@ -273,14 +273,14 @@ There are no navigation settings in *Browse map* profile.
 
 </Tabs>
 
-- [Navigation Type](../navigation/#navigation-type)
-- [Route parameters](../navigation/#route-parameters)
-- [Screen alerts](../navigation/#screen-alerts)
-- [Voice prompts](../navigation/#voice-prompts)
-- [Vehicle parameters](../navigation/#vehicle-parameters)
-- [Customise route line](../navigation/#customise-route-line)
-- [Map during navigation](../navigation/#map-during-navigation)
-- [Animate location change](#animate-location-change)
+- [Routing Types](../navigation/routing/index.md)
+- [Route parameters](../navigation/routing/online-routing.md)
+- [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts)
+- [Voice prompts](../navigation/guidance/voice-navigation.md)
+- [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters)
+- [Customise route line](../navigation/guidance/map-during-navigation.md#route-line-appearance)
+- [Map during navigation](../navigation/guidance/map-during-navigation.md)
+- [Animate location change](../navigation/guidance/navigation-settings.md#animate-own-position)
 
 ### Animate location change
 

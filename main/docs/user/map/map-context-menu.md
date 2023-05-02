@@ -419,59 +419,24 @@ Read more about [search](../search/index.md) functionality.
 
 ### Avoid road
 
-Using Map context menu, you can add a specific road to the list of non-used for routing roads. That will affect [Route preparation](../navigation/setup/route-navigation.md), Osmand will not use this road for routing.  
+Using Map context menu, you can add a specific road to the list of non-used for routing roads. That will affect [Route preparation](../navigation/setup/route-navigation.md).  
+To delete previosly selected roads from *[Avoid roads list](../navigation/routing/osmand-routing.md#avoid-roads-menu)* tap on a sign, choose *Remove* (**Android**) or *Dismiss* (**iOS**).
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Avoid road on the map Android](@site/static/img/map/action_avoid_android.png)
+![Avoid road on the map Android](@site/static/img/map/action_avoid_android.png) ![Dismiss avoided road Android](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_1.png)
+![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_1.png) ![Dismiss avoided road iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
 </Tabs>
-
-When more than one road to avoid is selected, you will see *Avoid roads menu*.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Avoid road on the map](@site/static/img/map/action_avoid_roads_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_2.png)
-
-</TabItem>
-
-</Tabs>
-
-Roads can be deleted from *Avoid roads list* using *Avoid roads menu* (indicated above) or *Map context menu*: choose *Remove* (**Android**) or *Dismiss* (**iOS**).
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Dismiss avoided road Android](@site/static/img/map/action_avoid_delete_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Dismiss avoided road iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
-
-</TabItem>
-
-</Tabs>  
 
 :::note
 Avoid roads function is global and affects all *[Routing types](../navigation/routing/index.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  

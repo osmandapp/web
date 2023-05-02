@@ -21,7 +21,7 @@ OsmAnd provides the ability to export data to a specific format using apps avail
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,shared_string_actions"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions"/>*  
 
 ![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)
 
@@ -29,7 +29,7 @@ OsmAnd provides the ability to export data to a specific format using apps avail
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions"/>*     
 
 ![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png) 
 
@@ -46,7 +46,7 @@ In the Actions section of the Profile Configuration menu, you can use such a fun
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile,shared_string_actions,export_profile"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,shared_string_export"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_android.png) 
 
@@ -54,7 +54,7 @@ In the Actions section of the Profile Configuration menu, you can use such a fun
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions,export_profile"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,shared_string_export"/>*     
 
 ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_ios.png)
 
@@ -65,13 +65,13 @@ In the Actions section of the Profile Configuration menu, you can use such a fun
 
 ## Import
 
-Click to OSF-file.
+Tap on OSF-file or use action button:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_import"/>*  
 
 ![Profiles Actions Import Android](@site/static/img/personal/profiles/profile_actions_import_android.png)  
 
@@ -83,7 +83,7 @@ Click to OSF-file.
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_import"/>*     
 
 ![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png)  
 
