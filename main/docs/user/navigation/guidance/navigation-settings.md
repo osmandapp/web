@@ -61,7 +61,7 @@ The default *Browse map* profile has no settings for navigation.
 
 #### Online navigation type
 
-For information about routing online, see this [article](../routing/online-routing.md). 
+For more information about routing online, see this [article](../routing/online-routing.md). 
   
 
 ## Route Parameters
