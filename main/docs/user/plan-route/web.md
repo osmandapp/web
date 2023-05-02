@@ -129,7 +129,7 @@ The following features are available:
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
 
 
-## Farorites (Pro)
+## Favorites (Pro)
 
 After registering an OsmAnd Pro account, the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
