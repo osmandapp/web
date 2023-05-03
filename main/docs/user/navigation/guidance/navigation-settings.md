@@ -108,17 +108,7 @@ You can also tune routing rules while building navigation to your destination:
 - *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
 
-All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation:
-*[Car routing (Truck, Motorcycle)](./car-based-routing.md)*  
-*[Bicycle  routing (MTB)](./bicycle-based-routing.md)*    
-*[Pedestrian routing](./pedestrian-routing.md)*  
-*[Moped routing](./moped-routing.md)*  
-*[Public Transport routing](./public-transport-navigation.md)*  
-*[Horseback routing](./horse-routing.md)*    
-*[Skiing routing](./ski-routing.md)*    
-*[Boat routing](./boat-navigation.md)*  
-*[Straight line routing](./straight-line-routing.md)*  
-*[Direct-to-point routing](./direct-to-point-routing.md)*  
+All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation: *[Car routing (Truck, Motorcycle)](./car-based-routing.md)*, *[Bicycle  routing (MTB)](./bicycle-based-routing.md)*, *[Pedestrian routing](./pedestrian-routing.md)*, *[Moped routing](./moped-routing.md)*, *[Public Transport routing](./public-transport-navigation.md)*, *[Horseback routing](./horse-routing.md)*, *[Skiing routing](./ski-routing.md)*, *[Boat routing](./boat-navigation.md)*, *[Straight line routing](./straight-line-routing.md)*, *[Direct-to-point routing](./direct-to-point-routing.md)*.  
 
 
 ### Route recalculation
@@ -143,13 +133,13 @@ All route parameters depend on the [navigation type](#navigation-type) and are d
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
-| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
+| <ul><li>*<Translate android="true" ids="route_recalculation_dist_title"/>*(Android version) </li><li> *Recalculate route in case of deviation*(iOS version) </li></ul> | <Translate android="true" ids="select_distance_route_will_recalc"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
+| <li> *<Translate android="true" ids="in_case_of_reverse_direction"/>* </li>  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 
 ### Development settings
 
-For the Android version of the OsmAnd app, there are three parameters for advanced users - Development section.  
+For the Android version of the OsmAnd app, there are three parameters for advanced users in the Development section.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|
@@ -328,8 +318,6 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 #### Default speed
 
 #### Road speeds
-
-Min and Max speed
 
 
 ### Fuel used by motor
