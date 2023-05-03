@@ -3,6 +3,13 @@ import MarkerOptions from "./markers/MarkerOptions";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
 
+const TEMP_LINE_STYLE = {
+    color: '#fbc73a',
+    dashArray: '5, 5',
+    dashOffset: '0',
+    name:"temp"
+}
+
 function createLayersByTrackData(data) {
     let layers = [];
     data.tracks.forEach(track => {
@@ -202,6 +209,23 @@ function getPolylineByPoints(point, polylines) {
     return res;
 }
 
+function getPolylineByStartEnd(startPoint, endPoint, polylines) {
+    return polylines.find(polyline => {
+        const layerPoints = polyline._latlngs;
+        if (TracksManager.isEqualPoints(layerPoints[0], startPoint) && TracksManager.isEqualPoints(layerPoints[layerPoints.length - 1], endPoint)) {
+            return polyline;
+        }
+    })
+}
+
+function updatePolylineToTemp(startPoint, endPoint, polyline) {
+    let polylineTemp = createTempPolyline(startPoint, endPoint);
+    polyline.setLatLngs(polylineTemp._latlngs);
+    polyline.setStyle(TEMP_LINE_STYLE);
+    polyline.point = endPoint;
+    return polyline;
+}
+
 function getPointByPolyline(layer, points) {
     let res;
     let layerPoints = layer._latlngs;
@@ -220,13 +244,7 @@ function getPointByPolyline(layer, points) {
 }
 
 function createTempPolyline(prev, next) {
-    let style = {
-        color: '#fbc73a',
-        dashArray: '5, 5',
-        dashOffset: '0'
-    }
-
-    return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], style);
+    return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], TEMP_LINE_STYLE);
 }
 
 function getPolylines(layers) {
@@ -242,6 +260,18 @@ function getPolylines(layers) {
     return res;
 }
 
+function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
+    const point2 = oldEndPoint ? oldEndPoint : endPoint;
+    let polyline = getPolylineByPoints(_.cloneDeep(point2), polylines);
+    if (!polyline) {
+        const point1 = oldStartPoint ? oldStartPoint : startPoint;
+        polyline = getPolylineByStartEnd(point1, point2, polylines);
+    }
+    polyline = updatePolylineToTemp(startPoint, endPoint, polyline)
+
+    return polyline;
+}
+
 
 const TrackLayerProvider = {
     createLayersByTrackData,
@@ -251,7 +281,9 @@ const TrackLayerProvider = {
     getPolylineByPoints,
     getPointByPolyline,
     createTempPolyline,
-    getPolylines
+    getPolylines,
+    updatePolyline,
+    TEMP_LINE_STYLE: TEMP_LINE_STYLE
 };
 
 export default TrackLayerProvider;

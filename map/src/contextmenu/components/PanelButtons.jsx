@@ -79,8 +79,10 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         let objFromState = _.cloneDeep(currentState);
         objFromState.updateLayers = true;
         objFromState.layers = oldLayers;
+        objFromState = TracksManager.getRoutingFromCash(objFromState, ctx);
         setUseSavedState(false)
         ctx.setSelectedGpxFile({...objFromState});
+        ctx.setUpdateContextMenu(true);
     }
 
     return (ctx.selectedGpxFile &&

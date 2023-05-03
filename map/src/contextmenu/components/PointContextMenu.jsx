@@ -6,6 +6,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import PointManager from "../../context/PointManager";
 import EditFavoriteDialog from "./favorite/EditFavoriteDialog";
 import {Close} from "@mui/icons-material";
+import _ from "lodash";
 
 const useStyles = makeStyles({
     drawerItem: {
@@ -178,14 +179,16 @@ export default function PointContextMenu({anchorEl}) {
                 }}>
                     Change route type after this point</MenuItem>
                 }
-                {pointInd >= 2 && pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isPointAfterGap(pointInd - 1) &&
+                {pointInd >= 2 && pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isPointAfterGap(pointInd - 1)
+                    && !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry) &&
                     <MenuItem onClick={() => {
                         splitBefore();
                         ctx.setPointContextMenu({});
                     }}>
                         Split before</MenuItem>
                 }
-                {pointInd >= 1 && pointInd < ctx.selectedGpxFile.points.length - 2 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isGap(pointInd + 1) &&
+                {pointInd >= 1 && pointInd < ctx.selectedGpxFile.points.length - 2 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isGap(pointInd + 1)
+                    && !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry) &&
                     <MenuItem onClick={() => {
                         splitAfter();
                         ctx.setPointContextMenu({});

@@ -2,6 +2,8 @@ import Utils from "../util/Utils";
 import axios, {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
+import L from "leaflet";
+import TrackLayerProvider from "../map/TrackLayerProvider";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -437,8 +439,8 @@ function formatRouteMode(routeMode) {
 }
 
 
-async function updateRouteBetweenPoints(ctx, start, end) {
-    let routeMode = formatRouteMode(ctx.creatingRouteMode)
+async function updateRouteBetweenPoints(ctx, start, end, settings) {
+    let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
@@ -676,6 +678,40 @@ function getFavoriteGroups(allFiles) {
     });
 }
 
+function createRoutingKey(startPoint, endPoint, routeMode) {
+    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${endPoint.lng},${formatRouteMode(routeMode)}`;
+}
+
+function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
+    const routingKey = TracksManager.createRoutingKey(startPoint, endPoint, ctx.creatingRouteMode);
+    const routingList = routingCashRef ? routingCashRef.current : ctx.routingCash;
+    routingList[routingKey] = {
+        startPoint: startPoint,
+        endPoint: endPoint,
+        routeMode: ctx.creatingRouteMode,
+        tempLine: tempLine,
+        geometry: null
+    }
+    ctx.setRoutingCash({...routingList});
+}
+
+function isEqualPoints(point1, point2) {
+    return point1.lat === point2.lat && point1.lng === point2.lng;
+}
+
+function getRoutingFromCash(track, ctx) {
+    for (let i = 0; i < track.points.length - 1; i++) {
+        const start = track.points[i];
+        const end = track.points[i + 1];
+        const routingKey = TracksManager.createRoutingKey(start, end, end.routeMode);
+        const geoCash = ctx.routingCash[routingKey]?.geometry;
+        if (geoCash) {
+            end.geometry = geoCash;
+        }
+    }
+    return track;
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
@@ -704,6 +740,10 @@ const TracksManager = {
     formatRouteMode,
     getTracks,
     getFavoriteGroups,
+    createRoutingKey,
+    addRoutingToCash,
+    isEqualPoints,
+    getRoutingFromCash,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

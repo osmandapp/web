@@ -10,6 +10,7 @@ import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGrou
 import {Close} from "@mui/icons-material";
 import _ from "lodash";
 import {makeStyles} from "@material-ui/core/styles";
+import TrackLayerProvider from "../../../map/TrackLayerProvider";
 
 const useStyles = makeStyles({
     dialog: {
@@ -54,25 +55,23 @@ export default function ChangeProfileTrackDialog({open}) {
         ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER ? 'Next' : null;
 
     async function changeProfile() {
-        setProcess(true);
+        let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
         if (!partialEdit) {
             if (changeAll) {
-                ctx.selectedGpxFile.points.forEach(point => {
-                    if (point.profile !== TracksManager.PROFILE_GAP) {
-                        point.profile = profile.mode;
-                    }
-                })
                 if (ctx.selectedGpxFile.points.length > 1) {
-                    await TracksManager.updateRoute(ctx.selectedGpxFile.points).then((points) => {
-                        ctx.selectedGpxFile.points = points;
-                        ctx.setCreatingRouteMode({
-                            mode: profile.mode,
-                            modes: ctx.creatingRouteMode.modes,
-                            opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
-                            colors: ctx.creatingRouteMode.colors
-                        })
-                    });
+                    for (let i = 0; i < ctx.selectedGpxFile.points.length - 1; i++) {
+                        const start = ctx.selectedGpxFile.points[i];
+                        const end = ctx.selectedGpxFile.points[i + 1];
+                        if (start.profile !== TracksManager.PROFILE_GAP) {
+                            start.routeMode = profile;
+                            start.profile = profile.mode;
+                            let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
+                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                        }
+                    }
                 } else {
+                    ctx.selectedGpxFile.points[0].routeMode = profile;
+                    ctx.selectedGpxFile.points[0].profile = profile.mode;
                     updateGlobalProfileState();
                 }
             } else {
@@ -85,59 +84,40 @@ export default function ChangeProfileTrackDialog({open}) {
                 let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
                     prevPoint.profile = profile.mode;
-                    currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, prevPoint, currentPoint);
+                    prevPoint.routeMode = profile;
+                    let currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, prevPoint, currentPoint);
+                    TracksManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, ctx);
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                     currentPoint.profile = profile.mode;
-                    nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(ctx, currentPoint, nextPoint);
-                }
-                if (!ctx.selectedGpxFile.points[0].geometry) {
-                    let prevArr = createArrWithGeo(getPrevPoints());
-                    let nextArr = createArrWithGeo(getNextPoints());
-                    ctx.selectedGpxFile.points = prevArr.concat(nextArr);
+                    currentPoint.routeMode = profile;
+                    let currentPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, currentPoint, nextPoint);
+                    TracksManager.addRoutingToCash(currentPoint, nextPoint, currentPolyline, ctx);
                 }
             } else if (changeAll) {
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                    let changePoints = ctx.selectedGpxFile.points.splice(0, ctx.trackProfileManager.pointInd + 1);
-                    changePoints.forEach(point => {
-                        if (_.indexOf(changePoints, point) !== changePoints.length - 1 && point.profile !== TracksManager.PROFILE_GAP) {
-                            point.profile = profile.mode;
+                    for (let i = 0; i < ctx.trackProfileManager.pointInd; i++) {
+                        const start = ctx.selectedGpxFile.points[i];
+                        const end = ctx.selectedGpxFile.points[i + 1];
+                        if (start.profile !== TracksManager.PROFILE_GAP) {
+                            start.routeMode = profile;
+                            start.profile = profile.mode;
+                            let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
+                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
                         }
-                    })
-                    await TracksManager.updateRoute(changePoints).then((points) => {
-                        if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
-                            let nextArr = createArrWithGeo([points[points.length - 1]].concat(ctx.selectedGpxFile.points));
-                            ctx.selectedGpxFile.points = points.concat(nextArr);
-                        } else {
-                            ctx.selectedGpxFile.points = points.concat(ctx.selectedGpxFile.points);
-                        }
-                    });
+                    }
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                    let changePoints = ctx.selectedGpxFile.points.splice(ctx.trackProfileManager.pointInd, ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd);
-                    changePoints.forEach(point => {
-                        point.profile = profile.mode;
-                    })
-                    await TracksManager.updateRoute(changePoints).then((points) => {
-                        if (ctx.selectedGpxFile.points.length > 0 && !ctx.selectedGpxFile.points[0].geometry) {
-                            let prevArr = createArrWithGeo(ctx.selectedGpxFile.points.concat([points[0]]));
-                            ctx.selectedGpxFile.points = prevArr.concat(points);
-                        } else {
-                            ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.concat(points);
+                    for (let i = ctx.trackProfileManager.pointInd; i < ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd + 1; i++) {
+                        const start = ctx.selectedGpxFile.points[i];
+                        const end = ctx.selectedGpxFile.points[i + 1];
+                        if (start.profile !== TracksManager.PROFILE_GAP) {
+                            start.routeMode = profile;
+                            start.profile = profile.mode;
+                            let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
+                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
                         }
-                    });
+                    }
                 }
             }
-        }
-
-        if (ctx.selectedGpxFile.points.length > 0) {
-            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, ctx.selectedGpxFile.points).then(res => {
-                ctx.setTrackProfileManager({});
-                res.updateLayers = true;
-                ctx.setSelectedGpxFile({...res});
-                setProcess(false);
-            });
-        } else {
-            ctx.setTrackProfileManager({});
-            setProcess(false);
         }
     }
 
@@ -235,6 +215,7 @@ export default function ChangeProfileTrackDialog({open}) {
             <Button onClick={() => ctx.setTrackProfileManager({})}>Cancel</Button>
             <Button onClick={() => {
                 changeProfile().then(() => {
+                    ctx.setTrackProfileManager({});
                     ctx.trackState.update = true;
                     ctx.setTrackState({...ctx.trackState});
                 })

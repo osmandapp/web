@@ -482,6 +482,7 @@ export const AppContextProvider = (props) => {
         futureStates: []
     });
     const [openedPopper, setOpenedPopper] = useState(null);
+    const [routingCash, setRoutingCash] = useState([]);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -581,7 +582,8 @@ export const AppContextProvider = (props) => {
         pointContextMenu, setPointContextMenu,
         trackState, setTrackState,
         localTracksLoading, setLocalTracksLoading,
-        openedPopper, setOpenedPopper
+        openedPopper, setOpenedPopper,
+        routingCash, setRoutingCash
     }}>
         {props.children}
     </AppContext.Provider>;

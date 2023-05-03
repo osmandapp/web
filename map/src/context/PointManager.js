@@ -1,5 +1,6 @@
 import TracksManager from "./TracksManager";
 import Utils from "../util/Utils";
+import TrackLayerProvider from "../map/TrackLayerProvider";
 
 const deletePoint = async (index, ctx) => {
     let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
@@ -135,11 +136,22 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                         nextNewGeo.shift();
                         let resGeo = currentNewGeo.concat(nextNewGeo);
                         newGeometry = Utils.getPointsDist(resGeo);
-                    } else {
-                        newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
-                    }
-                    if (newGeometry) {
                         points[i + 1].geometry = newGeometry;
+                    } else {
+                        let tempLine = TrackLayerProvider.createTempPolyline(points[i - 1], points[i + 1]);
+                        tempLine.point = points[i + 1];
+                        ctx.selectedGpxFile.layers.addLayer(tempLine);
+                        ctx.selectedGpxFile.updateLayers = true;
+                        TracksManager.addRoutingToCash(points[i - 1], points[i + 1], tempLine, ctx);
+                        points[i + 1].geometry = [];
+                        let layer = ctx.selectedGpxFile.layers.getLayers().find(l => {
+                            if (l.point === points[i + 1]) {
+                                return l;
+                            }
+                        })
+                        if (layer) {
+                            layer.point = 'null';
+                        }
                     }
                 }
                 res.deletedPoint = points.splice(i, 1);
