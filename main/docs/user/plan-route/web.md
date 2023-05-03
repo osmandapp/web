@@ -97,12 +97,31 @@ In this section, you can:
   Actions &#8942; button on the *Info* screen:
   - *Save to Cloud* button (Pro feature).
   - *Download* the track.
+  - *Add to Collections* - adding chosen track to the *GPX Collection* section.
   - *Add Waypoints* - List of waypoints on the track.
   - *Recalculate Elevation (SRTM)* - Add elevation data for the selected track.
   - *Edit Name* - Change the name of the track.
   - *Clear* - Delete the track.  
 
 ![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
+
+### Visible
+
+Here there is a list of visible tracks on the map.
+
+Switch on / off tracks for showing or not its on the map.
+
+### GPX Collection
+
+After adding chosen tracks to the *GPX Collection* section. You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+
+[OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+
+You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
+
+[Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+Also on Android you can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
 
 ### User's tracks (Pro)
 
@@ -180,7 +199,8 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Create track (Pro)
 
-A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create Route*.  
+A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create Route*.  Or you can use the *Create track* button (right side: *Pencil* and *Upload* buttons).
+
 Here you can select a navigation profile to build a section of the route, add waypoints, save the route and view information about it.  
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track.png)
