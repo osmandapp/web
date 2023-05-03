@@ -108,7 +108,7 @@ You can also tune routing rules while building navigation to your destination:
 - *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
 
-All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation: *[Car routing (Truck, Motorcycle)](./car-based-routing.md)*, *[Bicycle  routing (MTB)](./bicycle-based-routing.md)*, *[Pedestrian routing](./pedestrian-routing.md)*, *[Moped routing](./moped-routing.md)*, *[Public Transport routing](./public-transport-navigation.md)*, *[Horseback routing](./horse-routing.md)*, *[Skiing routing](./ski-routing.md)*, *[Boat routing](./boat-navigation.md)*, *[Straight line routing](./straight-line-routing.md)*, *[Direct-to-point routing](./direct-to-point-routing.md)*.  
+All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation: *[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Boat routing](../routing/boat-navigation.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*.  
 
 
 ### Route recalculation
