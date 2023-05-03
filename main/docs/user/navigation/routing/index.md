@@ -20,7 +20,7 @@ The routing type determines how the route will be calculated. The OsmAnd app use
 The following profiles (with their own routing types) are available by default: *Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding*.  
 
 :::note  
-**Truck, Motorcycle, Moped, Aircraft and Horseback riding** profiles are switched off by default. You need to activate these profiles.  
+**Truck, Motorcycle, Moped, Aircraft and Horseback riding** profiles are switched off by default. In order to use these profiles, you need to activate them. You need to activate these profiles.  
 **Direct-to-point** navigation type doesn't have its own profile.
 :::
 

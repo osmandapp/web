@@ -52,7 +52,7 @@ Avoid roads function is global and affects all *[Routing types](../routing/index
 :::
 
 There are two possible ways to choose which roads to avoid when calculating a route:
-- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/voice-navigation.md). A description of this setting is provided in the articles about [Routing types](../routing/index.md). For example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
+- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/voice-navigation.md). Description of this setting is provided in the articles about [Routing types](../routing/index.md) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
 - You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *Map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
 :::note
@@ -102,8 +102,7 @@ When you select a road to avoid using *Map context menu* or *Avoid roads menu*, 
 
 </Tabs>
 
-
-### Export / Import 
+### Export / Import
 
 Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an .osf file to a different locations. Select the roads you want to export in the suggested list.
 
@@ -125,7 +124,7 @@ Depending on your device settings and available applications, your whole list of
 
 </Tabs>
 
-You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in .osf file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose (marking a road with a tick in the list) to import all data or only few roads to avoid.  
+You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in .osf file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
 
 <Tabs groupId="operating-systems">
 
