@@ -332,7 +332,7 @@ export default function LocalClientTrackLayer() {
                         currentLine.setLatLngs(polyline._latlngs);
                         currentLine.options.name = undefined;
                         currentLine.setStyle({
-                            color: segmentObj.startPoint.routeMode.colors[segmentObj.startPoint.routeMode.mode],
+                            color: ctx.creatingRouteMode.colors[segmentObj.startPoint.profile],
                             dashArray: null
                         });
 

@@ -703,10 +703,12 @@ function getRoutingFromCash(track, ctx) {
     for (let i = 0; i < track.points.length - 1; i++) {
         const start = track.points[i];
         const end = track.points[i + 1];
-        const routingKey = TracksManager.createRoutingKey(start, end, end.routeMode);
-        const geoCash = ctx.routingCash[routingKey]?.geometry;
-        if (geoCash) {
-            end.geometry = geoCash;
+        if (end.routeMode) {
+            const routingKey = TracksManager.createRoutingKey(start, end, end.routeMode);
+            const geoCash = ctx.routingCash[routingKey]?.geometry;
+            if (geoCash) {
+                end.geometry = geoCash;
+            }
         }
     }
     return track;
