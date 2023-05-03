@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-For successful navigation with the OsmAnd app, it's important to properly configure the appropriate settings according to your needs and depending on your mode of travel, whether it's by car, on foot, horseback riding, or skiing. This article describes the basic route parametrs, [voice prompts](#voice-prompts), [screen alerts](#screen-alerts), [map behavior during navigation](#map-during-navigation), [animation of your own position](#animate-own-position), and the [appearance of route lines](#customize-route-line). In addition, vehicle settings are also detailed, such as [default speed](#default-speed) and [maximum/minimum speed](#road-speeds), [engine type](#fuel-used-by-motor) for CO2 calculation, and [size / weight](#size-parameters), which can also affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without too much effort or delay.
+For successful navigation with the OsmAnd app, it's important to properly configure the appropriate settings according to your needs and depending on your mode of travel, whether it's by car, on foot, horseback riding, or skiing. This article describes the basic route parametrs, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). In addition, vehicle settings are also detailed, such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can also affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without too much effort or delay.
 
 <Tabs groupId="operating-systems">
 
@@ -53,46 +53,111 @@ The default *Browse map* profile has no settings for navigation.
 
 ## Navigation Type
 
-<Translate android="true" ids="select_nav_profile_dialog_message"/>  
+<Tabs groupId="operating-systems">
 
-#### Offline navigation type
+<TabItem value="android" label="Android">
 
-![Navigation Type](@site/static/img/navigation/navigation_type.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)   
 
-#### Online navigation type
+</TabItem>
 
-For more information about routing online, see this [article](../routing/online-routing.md). 
-  
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_type_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. Choosing the type of navigation can depend on how you travel and whether you have an Internet connection.  
+
+**Online navigation** basically uses a special routing engine or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for *Android version* of the app.  
+
+**Offline navigation**, on the other hand, does not require internet access and offers a wider selection of [navigation types](../routing/index.md) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
+
+The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
+
 
 ## Route Parameters
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-parameters_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings iOS](@site/static/img/navigation/routing/cycling_routing_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation).   
 For each profile (except *Browse map*) can be chosen [routing type](../routing/index.md).
 
 Route parameters can be reached through:
 
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2,route_parameters"/>*.  
-  
+
+The most important routing parameters can also be found in *Navigation menu* in settings section:  
 You can also tune routing rules while building navigation to your destination:
 - *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
 
-:::note
-The most important routing parameters can also be found in *Navigation menu* in settings section:
-- *Navigation button → <Translate android="true" ids="shared_string_settings"/>*  
--  *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>*
-:::
-
-:::info
-There are no navigation settings in *Browse map* profile.  
-:::
-
-
-- **<Translate android="true" ids="nav_type_hint"/>** determines how routes are calculated. For example, your bicycle profile has a Cycling navigation type, which set the routing rules. You can import these roules (as routing.xml file) in OsmAnd. More about routing you can read on our [GitHub](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing) page.&nbsp;  
-
-- **<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation). 
+All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation:
+*[Car routing (Truck, Motorcycle)](./car-based-routing.md)*  
+*[Bicycle  routing (MTB)](./bicycle-based-routing.md)*    
+*[Pedestrian routing](./pedestrian-routing.md)*  
+*[Moped routing](./moped-routing.md)*  
+*[Public Transport routing](./public-transport-navigation.md)*  
+*[Horseback routing](./horse-routing.md)*    
+*[Skiing routing](./ski-routing.md)*    
+*[Boat routing](./boat-navigation.md)*  
+*[Straight line routing](./straight-line-routing.md)*  
+*[Direct-to-point routing](./direct-to-point-routing.md)*  
 
 
-### How to open
+### Route recalculation
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation1_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation2_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation1_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation2_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+| Parameter | Description | Note |
+|:------------|:---------------|:---------------|
+| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
+| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
+
+
+### Development settings
+
+For the Android version of the OsmAnd app, there are three parameters for advanced users - Development section.  
+
+| Parameter | Description | Note |
+|:------------|:---------------|
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use OsmAnd Live updates while routing. Note, that we recommend to use this option for testing purposes only. |   
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | You can use <Translate android="true" ids="complex_routing_descr"/> |  
+| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   
+
+
 
 
 ## Voice Prompts
@@ -122,6 +187,7 @@ There are no navigation settings in *Browse map* profile.
 A detailed description of the voice prompts settings is written in the first part of the article *[Voice prompts / Notifications](./voice-navigation.md)*.  
 
 Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
+
 *Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety and reduce the time it takes to navigate in unfamiliar terrain, and can be useful for different [types of routes](../routing/index.md).
 
 
