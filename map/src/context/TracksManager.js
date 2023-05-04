@@ -2,8 +2,7 @@ import Utils from "../util/Utils";
 import axios, {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
-import L from "leaflet";
-import TrackLayerProvider from "../map/TrackLayerProvider";
+
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -16,31 +15,33 @@ const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
 const LOCAL_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
+const VISIBLE_FLAG = 'visible';
 
 async function loadTracks(setLoading) {
     let localTracks = [];
     let names = Object.keys(localStorage);
     setLoading(true);
     const promises = [];
+
     for (let name of names) {
         if (name.includes(LOCAL_TRACK_KEY)) {
             let ind = name.split('_')[1];
             localTracks[ind] = JSON.parse(localStorage.getItem(name));
-            if (localTracks[ind].tracks[0]?.points?.length > 0) {
-                promises.push(await TracksManager.updateRoute(localTracks[ind].tracks[0].points).then((points) => {
-                    localTracks[ind].tracks[0].points = points;
-                    let savedVisible = JSON.parse(localStorage.getItem('visible'));
-                    if (savedVisible?.local) {
-                        savedVisible.local.forEach(name => {
-                            localTracks.forEach(f => {
-                                if (f.name === name) {
-                                    f.selected = true;
-                                    f.index = _.indexOf(localTracks, f);
-                                }
-                            })
-                        })
-                    }
-                }));
+        }
+    }
+
+    let savedVisible = JSON.parse(localStorage.getItem(VISIBLE_FLAG));
+    if (savedVisible?.local) {
+        for (const name of savedVisible.local) {
+            for (const f of localTracks) {
+                if (f.name === name) {
+                    f.selected = true;
+                    f.hasGeo = true;
+                    f.index = _.indexOf(localTracks, f);
+                    promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
+                        f.tracks[0].points = points;
+                    }));
+                }
             }
         }
     }
