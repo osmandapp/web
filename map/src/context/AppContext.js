@@ -191,7 +191,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
-    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     let selectedFiles = [];
     if (savedVisible?.cloud) {
         savedVisible.cloud.forEach(name => {

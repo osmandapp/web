@@ -15,7 +15,8 @@ const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
 const LOCAL_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
-const VISIBLE_FLAG = 'visible';
+const TRACK_VISIBLE_FLAG = 'visible';
+const HOURS_24_MS = 86400000;
 
 async function loadTracks(setLoading) {
     let localTracks = [];
@@ -30,17 +31,21 @@ async function loadTracks(setLoading) {
         }
     }
 
-    let savedVisible = JSON.parse(localStorage.getItem(VISIBLE_FLAG));
+    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible?.local) {
-        for (const name of savedVisible.local) {
+        for (const local of savedVisible.local) {
             for (const f of localTracks) {
-                if (f.name === name) {
-                    f.selected = true;
-                    f.hasGeo = true;
-                    f.index = _.indexOf(localTracks, f);
-                    promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
-                        f.tracks[0].points = points;
-                    }));
+                if (f.name === local.name) {
+                    if (Date.now() - local.addTime < HOURS_24_MS)  {
+                        f.selected = true;
+                        f.hasGeo = true;
+                        f.index = _.indexOf(localTracks, f);
+                        promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
+                            f.tracks[0].points = points;
+                        }));
+                    } else {
+                        f.selected = false;
+                    }
                 }
             }
         }
@@ -755,7 +760,8 @@ const TracksManager = {
     NAN_MARKER: NAN_MARKER,
     CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
-    CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL
+    CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
+    TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG
 };
 
 export default TracksManager;

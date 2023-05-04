@@ -6,6 +6,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import LocalTrackItem from "./tracks/LocalTrackItem";
 import PopperMenu from "./tracks/PopperMenu";
 import AppContext from "../../context/AppContext";
+import TracksManager from "../../context/TracksManager";
 
 const useStyles = makeStyles({
     group: {
@@ -80,15 +81,19 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
     }
 
     useEffect(() => {
-        let savedVisible = localStorage.getItem('visible');
+        let savedVisible = localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG);
         if (savedVisible) {
-            localStorage.removeItem('visible');
+            localStorage.removeItem(TracksManager.TRACK_VISIBLE_FLAG);
         }
         let localNames = [];
         let cloudNames = [];
         visibleTracks.local.forEach(f => {
             if (f.selected) {
-                localNames.push(f.name);
+                localNames.push(
+                    {
+                        name: f.name,
+                        addTime: Date.now()
+                    });
             }
         })
         visibleTracks.cloud.forEach(f => {
@@ -97,7 +102,7 @@ export default function VisibleGroup({visibleTracks, setVisibleTracks}) {
             }
         })
 
-        localStorage.setItem('visible', JSON.stringify({
+        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify({
             local: localNames,
             cloud: cloudNames,
         }));
