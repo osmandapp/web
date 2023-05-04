@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
@@ -35,11 +36,11 @@ Offline OsmAnd routing is based on OpenStreetMap data and provides variety of ro
 
 ## Customize offline routing
 
-You can modify the routing algorithm according to your needs. This can be done by updating the *routing.xml file*:  
+You can modify the OsmAnd routing algorithm according to your needs. This can be done by updating the *routing.xml file*:  
 
-- Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file on your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. See OsmAnd [user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file as an example.
-- After you made changings, a new *routing.xml* file can be added to OsmAnd by tapping it and selecting open it in the OsmAnd app.
-- Select the [Navigation type](../../navigation/setup/route-navigation.md#type-of-navigation) for your profile.
+- Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file on your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. Check out OsmAnd [user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file as an example.
+- After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
+- Select the modified [Navigation type](../../navigation/setup/route-navigation.md#type-of-navigation) for your profile.
 
 :::note
 More info about this possibility you can find in [Technical documentation](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
@@ -146,15 +147,21 @@ You can [import](../../personal/import-export.md#import) roads to avoid during r
 The most convenient way to synchronize roads to avoid between your devices is to use [OsmAnd Cloud](../../personal/osmand-cloud.md) (Pro subscription required).
 :::
 
-## Avoid temporary closures
+## Consider temporary limitations
 
 *Consider temporary limitations* option allows taking into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, road repairs, natural disasters). Enabling this option can help you avoid unexpected detours or delays. Please note that sometimes this information may be outdated.
 In OpenStreetMap, this information is usually marked with the tag '*[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions)*'.  
 
 ## Development settings
 
-| Parameter | Description | Note |
+<InfoAndroidOnly />
+
+:::note
+*Development section* of the Route parameters settings only visible when [Development plugin](../../plugins/development.md) is turned on.
+:::
+
+| Parameter | Description |
 |:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use OsmAnd Live updates while routing. Note, that we recommend to use this option for testing purposes only. |   
-| *<Translate android="true" ids="use_two_phase_routing"/>*  | You can use <Translate android="true" ids="complex_routing_descr"/> |  
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use [OsmAnd Live updates](../../personal/maps.md#osmand-live) while routing. Note, that we recommend to use this option for testing purposes only. |   
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation.|  
 | *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |  

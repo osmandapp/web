@@ -18,10 +18,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Public transport navigation in the OsmAnd app allows you to work out the routes using public transport, which will certainly help you get around the "concrete jungle" faster.
 
-Data on public transport routes are taken from the [OpenStreetMap](http://openstreetmap.org/) project, OsmAnd uses the [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for navigation.  
+Data on public transport routes is taken from the [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd uses the [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for navigation.  
 
 :::note
-Public transport navigaiton in OsmAnd has testing variant. While you can build and view your route without full navigation function.
+Public transport routing is in the testing phase. For now, you can build and view your route without the full navigation function.
 :::
 
 <Tabs groupId="operating-systems">
@@ -71,7 +71,7 @@ To start navigating around the city by public transport, use [the navigation but
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="menu,routing_settings"/>*  
+*<Translate ios="true" ids="shared_string_menu,routing_settings"/>*  
 
 **1.** You need to choose Public transport navigation profile, start an destination points.  
 

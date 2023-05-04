@@ -37,6 +37,10 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 
 ## Route parameters - Boat
 
+:::note
+By default, *Boat profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
+
 Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
 :::note

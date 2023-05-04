@@ -59,6 +59,10 @@ Other routing settings:
 
 ## Route parameters - Truck
 
+:::note
+By default, *Tuck profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
+
 Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (see table below). All other routing settings are identical to [car routing](#route-parameters---car).  
 
 <Tabs groupId="operating-systems">
@@ -83,6 +87,10 @@ Truck routing is similar to car routing, but is designed specifically for driver
 |*<Translate android="true" ids="routing_attr_hazmat_category_name"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. You can also consider them on the route. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/truck_hazmat_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the USA restrictions.  |
 
 ## Route parameters - Motorcycle
+
+:::note
+By default, *Motorcycle profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
 
 Motorcycle routing is designed to create the best possible route for motorcycle riders, taking into account their preferences (for example, you can prefer or avoid roads with poor road conditions).
 

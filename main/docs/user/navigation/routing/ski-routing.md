@@ -26,6 +26,10 @@ The ski routing (and skiing profile) only availible when [Ski map view plugin](.
 
 ## Route parameters - Ski
 
+:::note
+By default, *Ski profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
+
 *Ski routing* settings allows users to plan their routes by selecting the desired difficulty level and the type of terrain they want to explore. There are various options for safe, comfortable, and enjoyable movement on pistes or during a freeride.  
 
 <Tabs groupId="operating-systems">

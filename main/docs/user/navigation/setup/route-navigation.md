@@ -226,7 +226,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
 :::note
-After the route is created, in the ["Details" section](#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+After the route is created, in the ["Details" section](../setup/route-details.md) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 :::
 
 <Tabs groupId="operating-systems">

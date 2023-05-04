@@ -21,7 +21,7 @@ outdoor enthusiasts, or by emergency services during rescue operations. Overall,
 
 :::note
 *Direct-to-point* routing type is not linked to any profile and can be used with different ones.
-This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-navigation.md#route-details) section is empty).  
+This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
 :::
 
 ![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
