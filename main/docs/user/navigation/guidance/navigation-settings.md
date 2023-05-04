@@ -96,22 +96,15 @@ The navigation type determines which rules are used to calculate routes. If you 
 
 </Tabs>  
 
-**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation).   
-For each profile (except *Browse map*) can be chosen [routing type](../routing/index.md).
+**<Translate android="true" ids="route_parameters"/>** are settings that determine how the application will calculate a route to reach a destination, considering factors such as type of transport, routing priorities, route conditions, route complexity, and user preferences.   
 
-Route parameters can be reached through:
+For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/index.md). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
 
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2,route_parameters"/>*.  
-
-The most important routing parameters can also be found in *Navigation menu* in settings section:  
-You can also tune routing rules while building navigation to your destination:
-- *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2,route_parameters"/>* 
-- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*.
-
-All route parameters depend on the [navigation type](#navigation-type) and are described in detail in the corresponding sections of the documentation: *[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Boat routing](../routing/boat-navigation.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*.  
+All route parameters are described in detail in the corresponding sections of the documentation:  
+*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Boat routing](../routing/boat-navigation.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Online routing](./online-routing.md)*, *[BRouter routing](./brouter.md)*.  
 
 
-### Route recalculation
+### Recalculate route
 
 <Tabs groupId="operating-systems">
 
@@ -131,23 +124,25 @@ All route parameters depend on the [navigation type](#navigation-type) and are d
 
 </Tabs>  
 
+The **Recalculation route** parameter is a setting that allows you to automatically change the suggested route if you deviate from it or if you drive in the opposite direction. In both cases, this setting helps you keep your direction and get to your destination without wasting time searching for a new route manually.
+
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| <ul><li>*<Translate android="true" ids="route_recalculation_dist_title"/>*(Android version) </li><li> *Recalculate route in case of deviation*(iOS version) </li></ul> | <Translate android="true" ids="select_distance_route_will_recalc"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
-| <li> *<Translate android="true" ids="in_case_of_reverse_direction"/>* </li>  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
+|  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 
 ### Development settings
 
-For the Android version of the OsmAnd app, there are three parameters for advanced users in the Development section.  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_andr.png)
+
+The three parameters for advanced users in the **Development** section are only available for the *Android version* of the app and only if you have enabled the [*Development plugin*](../../plugins/development.md).  
 
 | Parameter | Description | Note |
 |:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use OsmAnd Live updates while routing. Note, that we recommend to use this option for testing purposes only. |   
-| *<Translate android="true" ids="use_two_phase_routing"/>*  | You can use <Translate android="true" ids="complex_routing_descr"/> |  
+| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use [OsmAnd Live updates](../../personal/maps.md#osmand-live) while routing. Note, that we recommend to use this option for testing purposes only. |   
+| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation. |  
 | *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |   
-
-
 
 
 ## Voice Prompts
@@ -233,9 +228,9 @@ The types of warnings have the different visual appearance, which depends on the
 
 </Tabs>
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-2_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-3_andr.png)  
 
-The map is used during navigation to determine your location, plan your route, and navigate your way around. During navigation, you can view the map with auto-center, move it around, and zoom in and out to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in real-time and displays up-to-date information that can affect route planning.
+The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
 
 You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../guidance/map-during-navigation.md).  
 
@@ -248,7 +243,6 @@ This setting is located in different places in the OsmAnd app for the Android ve
 
 
 ## Customize route line
-
 
 <Tabs groupId="operating-systems">
 
@@ -270,7 +264,7 @@ This setting is located in different places in the OsmAnd app for the Android ve
 
 </Tabs>  
 
-With the Customise Route Line setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the color, the width of the line, and the display of the turn arrows on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Configure map screen* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+With the **Customise Route Line** setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Configure map screen* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Vehicle parameters
@@ -296,7 +290,7 @@ With the Customise Route Line setting you can choose the appearance of the route
 </Tabs>  
 
 For optimal route calculation in OsmAnd, you should consider the following vehicle parameters:
-1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, taking into account the speed limits on different road segments.
+1. Set the [*Default Speed* or *Road Speeds*](#default-speed--road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
 3. Define the [*size and weight parameters*](#size-parameters) of your vihicle, which can help the app to calculate the optimal route and avoid obtacles on the road due to restrictions.
 
