@@ -1,11 +1,11 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg8" style="fill:none">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg8" style="fill:none">
 
-<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
 <g id="g836"><path d="M10 0a10 10 0 1 1-.02 19.98A10 10 0 0 1 10 0z" id="path2" style="opacity:.953;fill:#65af9d;fill-opacity:1"/><path d="M10 19a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 1a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" id="path4" style="clip-rule:evenodd;opacity:.95;fill:#404040;fill-rule:evenodd"/></g><defs id="defs11"><clipPath id="clip0"><path d="M0 0h20v20H0V0z" fill="#fff" id="path8"/></clipPath></defs>
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
 <path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none" d="M44 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 12v-5a1 1 0 1 0 2 0V7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v5z" id="path8-3"/><path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none" d="M32 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 12v-5a1 1 0 1 0 2 0V7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v5z" id="path8-6-5"/><path id="path2" d="M6 22h20v12H6z" style="fill:#fff;fill-opacity:1;stroke:none"/><path id="path4" d="M12 38h8v4h-8z" style="fill:#fff;fill-opacity:1;stroke:none"/><path id="path6" d="M40 26a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" style="fill:#fff;fill-opacity:1;stroke:none"/><path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none" d="M4 18a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h24a2 2 0 0 0 2-2V20a2 2 0 0 0-2-2zm2 4v12h20V22z" id="path10"/><path style="fill:#fff;fill-opacity:1;stroke:none" d="M8 42h16v4H8z" id="path12"/><path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none" d="M34 20c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v24a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2zm4 4a2 2 0 1 1 4 0v4a2 2 0 1 1-4 0z" id="path14"/>
 </g>
 

@@ -25,7 +25,7 @@ export default function LegendItem({itemsMap, columns = 3}) {
     <div className="container row">
       <Tabs groupId="map-legend">
         <TabItem value="dayMode" label="Day mode">
-          <table>
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th className="col-3" style={{ display: 'none' }} />
@@ -41,11 +41,11 @@ export default function LegendItem({itemsMap, columns = 3}) {
                 {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
                 </tr>
                 <tr key={ind * 2 + 1} className={styles.legendDay}>
-                  {itemArray.length > 0 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_day.svg')} 
+                  {itemArray.length > 0 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_day.svg')}
                     alt={itemArray[0][0] + " Day"} /></td>}
-                  {itemArray.length > 1 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_day.svg')}
+                  {itemArray.length > 1 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_day.svg')}
                     alt={itemArray[1][0] + " Day"} /></td>}
-                  {itemArray.length > 2 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_day.svg')}
+                  {itemArray.length > 2 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_day.svg')}
                     alt={itemArray[2][0] + " Day"} /></td>}
                 </tr>
               </>
