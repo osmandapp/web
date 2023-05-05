@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Plan route
+title:  Plan a route
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-The **Plan route** tool is a powerful feature of OsmAnd allows you to measure distances on the map, create GPX tracks or add new segments to your own ones, to snap your track to the nearest available road with one of your navigation profiles. Of course, it works offline and available for Android and iOS versions of OsmAnd.
+The Plan a route tool is a powerful feature of OsmAnd that allows you to measure distances on the map, create GPX tracks or add new segments to your own, and tie your track to the nearest available road using one of the navigation profiles. The program works offline and is available for OsmAnd Android and iOS versions.
+
+A route is a set of sections between points. Threads can be straight lines or routes of selected navigation profiles. The sum of all these points and lines is the route, which can be saved, imported, or changed.
+
+The **Plan a route** tool is a powerful feature of OsmAnd allows you to measure distances on the map, create GPX tracks or add new segments to your own ones, to snap your track to the nearest available road with one of your navigation profiles. Of course, it works offline and available for Android and iOS versions of OsmAnd.
 
 The route is many strings between points. Strings can be straight lines or routes of chosen navigation profiles. The sum of all these points and strings is a route, that can be saved, imported, or modified.  
 
@@ -25,13 +29,13 @@ The route is many strings between points. Strings can be straight lines or route
 
 <TabItem value="android" label="Android">
 
-![Plan route android](@site/static/img/plan-route/plan-route-android.png)
+![Plan a route android](@site/static/img/plan-route/plan-route-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios](@site/static/img/plan-route/plan-route-ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan-route-ios.png)
 
 </TabItem>
 
@@ -46,7 +50,7 @@ The route is many strings between points. Strings can be straight lines or route
 
 *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Plan route android_menu](@site/static/img/plan-route/plan-route-android-menu.png)
+![Plan a route android_menu](@site/static/img/plan-route/plan-route-android-menu.png)
 
 </TabItem>
 
@@ -54,13 +58,13 @@ The route is many strings between points. Strings can be straight lines or route
 
 *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Plan route ios_menu](@site/static/img/plan-route/plan-route-ios-menu.png)
+![Plan a route ios_menu](@site/static/img/plan-route/plan-route-ios-menu.png)
 
 </TabItem>
 
 </Tabs>  
 
-The *Plan route* can be switched on:
+The *Plan a route* can be switched on:
 
 - **Main menu**
 
@@ -68,10 +72,10 @@ The *Plan route* can be switched on:
 
 *<Translate android="true" ids="shared_string_options,edit_track"/>* or to click to *<Translate android="true" ids="edit_track"/>* on the context menu screen:  
 
-![Plan route android_contextmenu](@site/static/img/plan-route/plan-route-android-contextmenu.png)
+![Plan a route android_contextmenu](@site/static/img/plan-route/plan-route-android-contextmenu.png)
 
 
-## Plan route 
+## Plan a route 
 
 
 ### Main menu
@@ -80,19 +84,19 @@ The *Plan route* can be switched on:
 
 <TabItem value="android" label="Android">
 
-![Plan route android_choosemenu](@site/static/img/plan-route/plan-route-android-choose-menu.png)
+![Plan a route android_choosemenu](@site/static/img/plan-route/plan-route-android-choose-menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios_choosemenu](@site/static/img/plan-route/plan-route-ios-choosemenu.png)
+![Plan a route ios_choosemenu](@site/static/img/plan-route/plan-route-ios-choosemenu.png)
 
 </TabItem>
 
 </Tabs>  
 
-In the tool, you can create a new GPX route or open and modify the existing track. When you open *Plan route* tool menu you find the next buttons:
+In the tool, you can create a new GPX route or open and modify the existing track. When you open *Plan a route* tool menu you find the next buttons:
 - **<Translate android="true" ids="plan_route_create_new_route"/>** - create a new GPX route.
 - **<Translate android="true" ids="plan_route_open_existing_track"/>** - open existing GPX track from OsmAnd track folder.
 - **<Translate android="true" ids="plan_route_import_track"/>** - import GPX track from your device storage (Android).
@@ -105,13 +109,13 @@ In the tool, you can create a new GPX route or open and modify the existing trac
 
 <TabItem value="android" label="Android">
 
-![Plan route android-screen](@site/static/img/plan-route/plan-route-android-screen.png)
+![Plan a route android-screen](@site/static/img/plan-route/plan-route-android-screen.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios-screen](@site/static/img/plan-route/plan-route-ios-screen.png)
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-ios-screen.png)
 
 </TabItem>
 
@@ -151,13 +155,13 @@ At the main screen of the tool there are the next elements:
 
 <TabItem value="android" label="Android">
 
-![Plan route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
 
 </TabItem>
 
@@ -175,7 +179,7 @@ The Route line shows an [automatically-generated road or straight route](../plan
 **4.** Straight-line from last shaping point and target point.
 
 
-### Points list and Graph
+### Points list
 
 For opening *Points* list and Graph:  
 
@@ -187,13 +191,13 @@ For opening *Points* list and Graph:
 
 <TabItem value="android" label="Android">
 
-![Plan route android-pointslist](@site/static/img/plan-route/plan-route-pointslist-android.png)
+![Plan a route android-pointslist](@site/static/img/plan-route/plan-route-pointslist-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios-pointslist](@site/static/img/plan-route/plan-route-pointslist-ios.png)
+![Plan a route ios-pointslist](@site/static/img/plan-route/plan-route-pointslist-ios.png)
 
 </TabItem>
 
@@ -201,14 +205,17 @@ For opening *Points* list and Graph:
 
 Description:  Each point has information about distance and azimuth for a new making route, and additional altitude, and the speed information for recorded GPX track. In [*Points* list](../plan-route/create-route.md#main-screen) we can delete points (click to *Delete* button near chosen point) or change the order of it (move a line of chosen point to up or below). Clicking to a point opens [*Point* menu](../plan-route/create-route.md#actions-of-point-menu). 
 
-**2.Click to "Graph" button.** (Android)
 
-![Plan route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
+### Graph
+
+Click to "Graph" button. (Android)
+
+![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
 
 Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
 
 
-### Actions in Points list menu
+### Points Context menu
 
 Actions in the *Point* menu (by clicking to a point in [Points list](../plan-route/create-route.md#points-list-and-graph)):
 
@@ -243,7 +250,7 @@ Actions in the *Point* menu (by clicking to a point in [Points list](../plan-rou
 Choose how to draw:
 - By default **straight line** - only plain line stretches between shaping points:
 
-![Plan route straight_line](@site/static/img/plan-route/plan-route-straight-line.png)
+![Plan a route straight_line](@site/static/img/plan-route/plan-route-straight-line.png)
 
 The straight line is useful for simple distance measurement, azimuth info or for areas not covered by routing data (off-road and off-path areas).
 
@@ -257,7 +264,7 @@ The straight line is useful for simple distance measurement, azimuth info or for
 - Click on [*Profile* button](../plan-route/create-route.md#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
 - Click to [*Add* button](../plan-route/create-route.md#main-screen) for adding shaping points or just click on the screen.
 
-![Plan route app_button](@site/static/img/plan-route/plan-route-app-button.png)
+![Plan a route app_button](@site/static/img/plan-route/plan-route-app-button.png)
 
 For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on [*Profile* button](../plan-route/create-route.md#main-screen):
 
@@ -265,7 +272,7 @@ For Android we can modify routing parameters for chosen app profile by clicking 
 
 - Choose two or more application profiles for creating a route. Click to [*Profile* button](../plan-route/create-route.md#main-screen):
 
-![Plan route app_choosing](@site/static/img/plan-route/plan-route-app-choosing.png) 
+![Plan a route app_choosing](@site/static/img/plan-route/plan-route-app-choosing.png) 
 
 Choose how to connect the points, by a straight line, or calculate a route between them as specified:
 
@@ -280,7 +287,7 @@ When you use two or more application profiles for your route:
 
 ### How to save a route
 
-![Plan route android-save](@site/static/img/plan-route/plan-route-animation.gif)  
+![Plan a route android-save](@site/static/img/plan-route/plan-route-animation.gif)  
 
 Tap [Done button](../plan-route/create-route.md#main-screen) to save your route like the GPX file.  
 
@@ -294,13 +301,13 @@ Find your track in *My Places* menu:
 
 <TabItem value="android" label="Android">
 
-![Plan route android-options](@site/static/img/plan-route/plan-route-options-android.png)
+![Plan a route android-options](@site/static/img/plan-route/plan-route-options-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route ios-options](@site/static/img/plan-route/plan-route-options-ios.png)
+![Plan a route ios-options](@site/static/img/plan-route/plan-route-options-ios.png)
 
 </TabItem>
 
@@ -331,7 +338,7 @@ In Options menu you can make the next actions with your route:
 
 *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track,plan_route_import_track"/>*
 
-![Plan route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
@@ -339,13 +346,13 @@ In Options menu you can make the next actions with your route:
 
 *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
 
-![Plan route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-*Plan route* tool allows modifying existing GPX track. You can make any actions with your tracks.  
+*Plan a route* tool allows modifying existing GPX track. You can make any actions with your tracks.  
 
 [Open any GPX track](../plan-route/create-route.md#modify-gpx-track) for modifying it:  
 
@@ -358,7 +365,7 @@ For [Graph (Android)](../plan-route/create-route.md#points-list-and-graph) you c
 In [Options menu](../plan-route/create-route.md#options-menu) is available all actions for GPX track too: add a new segment, reverse route, directions, etc.
 
 
-### Snap to roads
+### Attach to roads
 
 <Tabs groupId="operating-systems">
 
@@ -367,7 +374,7 @@ In [Options menu](../plan-route/create-route.md#options-menu) is available all a
 - *<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/>*
 - *<Translate android="true" ids="plan_route_import_track"/>*
 
-![Plan route snap-road-android](@site/static/img/plan-route/plan-route-snap-android.gif)
+![Plan a route snap-road-android](@site/static/img/plan-route/plan-route-snap-android.gif)
 
 </TabItem>
 
@@ -375,26 +382,23 @@ In [Options menu](../plan-route/create-route.md#options-menu) is available all a
 
 *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
 
-![Plan route snap-road-ios](@site/static/img/plan-route/plan-route-snap-ios.gif)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan-route-snap-ios.gif)
 
 </TabItem>
 
 </Tabs>  
 
-For example, you have recorded tracks. *Plan route* tool allows snapping your track to the nearest allowed road with one of your application profiles.
+For example, you have recorded tracks. *Plan a route* tool allows snapping your track to the nearest allowed road with one of your application profiles.
 
-For using this option you need to open your track by *Plan route* tool:  
+For using this option you need to open your track by *Plan a route* tool:  
 
 Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click [Profile button](../plan-route/create-route.md#main-screen) or choose in [Options menu](../plan-route/create-route.md#options-menu) → <translate android="true" ids="route_between_points"/>. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
 
 After calculating the new route you click [*Done* button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
 
+## Useful links
 
-## Travel Guides
+- [Travel Guides](../plan-route/travel-guides.md)  
 
-[Travel guides](../plan-route/travel-guides.md)
-
-## Coordinate input
-
-[Coordinate input](../plan-route/coordinate-input.md)
+- [Coordinate input](../plan-route/coordinate-input.md)
 
