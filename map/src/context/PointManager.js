@@ -15,6 +15,8 @@ function deleteWpt(ind, ctx) {
     ctx.selectedGpxFile.wpts.splice(ind, 1);
     ctx.selectedGpxFile.updateLayers = true;
     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+
+    TracksManager.updateState(ctx);
 }
 
 async function reorder(startIndex, endIndex, currentTrack, ctx) {
@@ -37,8 +39,8 @@ async function insertPointToTrack(currentTrack, index, point, ctx) {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
                 ctx.selectedGpxFile.updateLayers = true;
                 ctx.setSelectedGpxFile({...res});
-                ctx.trackState.update = true;
-                ctx.setTrackState({...ctx.trackState});
+
+                TracksManager.updateState(ctx);
             });
         })
     }

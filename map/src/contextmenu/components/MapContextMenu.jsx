@@ -73,13 +73,21 @@ export default function MapContextMenu({drawerWidth}) {
                 }
                 if (obj) {
                     setShowContextMenu(true);
-                    setClearState(false);
+                    clearStateIfObjChange();
                     setTabsObj(obj);
                     setValue(obj.defaultTab);
                 }
             }
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
+
+    function clearStateIfObjChange() {
+        if (prevTrack && prevTrack.name !== ctx.selectedGpxFile.name && prevTrack.points?.length !== ctx.selectedGpxFile?.points.length) {
+            setClearState(true);
+        } else {
+            setClearState(false);
+        }
+    }
 
     function stopCreatedTrack(deletePrev) {
         if (ctx.createTrack) {

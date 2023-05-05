@@ -720,6 +720,11 @@ function getRoutingFromCash(track, ctx) {
     return track;
 }
 
+function updateState(ctx) {
+    ctx.trackState.update = true;
+    ctx.setTrackState({...ctx.trackState});
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
@@ -752,6 +757,7 @@ const TracksManager = {
     addRoutingToCash,
     isEqualPoints,
     getRoutingFromCash,
+    updateState,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

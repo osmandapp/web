@@ -57,22 +57,12 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     useEffect(() => {
         if (!useSavedState) {
             if (ctx.trackState.update) {
-                addFirstState();
                 setState(_.cloneDeep(ctx.selectedGpxFile));
                 ctx.trackState.update = false;
                 ctx.setTrackState({...ctx.trackState});
             }
         }
     }, [ctx.trackState])
-
-
-    function addFirstState() {
-        if (pastStates.length === 0) {
-            state.tracks = TracksManager.createGpxTracks();
-            state.points = [];
-            state.name = ctx.selectedGpxFile.name;
-        }
-    }
 
     function getState(currentState) {
         let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
@@ -134,7 +124,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                             {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                                 variant="contained"
                                 type="button"
-                                disabled={!isUndoPossible || ctx.trackState.block}
+                                disabled={!isUndoPossible || ctx.trackState.block || (pastStates.length === 1 && _.isEmpty(pastStates[0]))}
                                 onClick={(e) => {
                                     undo();
                                     setUseSavedState(true);

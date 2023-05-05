@@ -82,8 +82,7 @@ const PointsTab = ({width}) => {
                             <IconButton x={{mr: 1}} onClick={(e) => {
                                 e.stopPropagation();
                                 PointManager.deletePoint(index, ctx).then(() => {
-                                    ctx.trackState.update = true;
-                                    ctx.setTrackState({...ctx.trackState});
+                                    TracksManager.updateState(ctx);
                                 });
                             }}>
                                 <Cancel fontSize="small"/>

@@ -45,13 +45,15 @@ export default class EditableMarker {
             marker.on('contextmenu', (e) => {
                 let coord = e.latlng;
                 this.ctx.pointContextMenu.ref = {
-                    getBoundingClientRect: {
-                        width: 0,
-                        height: 0,
-                        top: e.containerPoint.y,
-                        right: e.containerPoint.x,
-                        bottom: e.containerPoint.y,
-                        left: e.containerPoint.x,
+                    getBoundingClientRect() {
+                        return {
+                            width: 0,
+                            height: 0,
+                            top: e.containerPoint.y,
+                            right: e.containerPoint.x,
+                            bottom: e.containerPoint.y,
+                            left: e.containerPoint.x,
+                        }
                     }
                 };
                 this.ctx.pointContextMenu.left = e.containerPoint.x;
@@ -74,7 +76,7 @@ export default class EditableMarker {
                 lng: lng
             };
         } else {
-            let indWpt = this.ctx.selectedGpxFile.wpts.findIndex(point => {
+            let indWpt = this.ctx.selectedGpxFile?.wpts.findIndex(point => {
                 return point.lat === lat && point.lon === lng
             });
             if (indWpt !== -1) {

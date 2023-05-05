@@ -573,7 +573,7 @@ export default function LocalClientTrackLayer() {
             let points = trackRef.current.points;
             let layers = trackRef.current.layers;
             let prevPoint = trackRef.current.prevPoint;
-            if (isNewPoint(newPoint)) {
+            if (isNewPoint(trackRef, newPoint)) {
                 newPoint.routeMode = routeModeRef.current;
                 if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(points)) {
                     points = addGeometryToTrack(newPoint, points);
@@ -603,7 +603,7 @@ export default function LocalClientTrackLayer() {
             }
         }
         ctx.setSelectedGpxFile({...trackRef.current});
-        updateState();
+        TracksManager.updateState(ctx);
     }
 
     function getPrevPoint(points) {
@@ -614,8 +614,8 @@ export default function LocalClientTrackLayer() {
         return prevPoint;
     }
 
-    function isNewPoint(newPoint) {
-        return !ctx.selectedGpxFile.points.find((p) => isEqualPoints(p, newPoint));
+    function isNewPoint(trackRef, newPoint) {
+        return !trackRef.current.points.find((p) => isEqualPoints(p, newPoint));
     }
 
     function createNewPoint(e, routeModeRef) {
@@ -654,12 +654,8 @@ export default function LocalClientTrackLayer() {
         ctx.selectedGpxFile.updateLayers = true;
         ctx.selectedGpxFile.addPoint = true;
         ctx.setUpdateContextMenu(true);
-        updateState();
-    }
 
-    function updateState() {
-        ctx.trackState.update = true;
-        ctx.setTrackState({...ctx.trackState});
+        TracksManager.updateState(ctx);
     }
 
     function editCurrentTrack() {
@@ -686,6 +682,8 @@ export default function LocalClientTrackLayer() {
         ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+
+        TracksManager.updateState(ctx);
     }
 
     function getLayersBySelectedTrack(points, wpts) {
