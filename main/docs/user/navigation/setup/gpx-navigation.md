@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
@@ -135,8 +136,31 @@ Also you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing
 
 ### Attach to roads
 
-When your track is chosen as a "destination point", you could find the "Attach to the roads" option in the [*Navigation menu*](../setup/route-navigation.md#navigation-menu) or the [*Follow track menu*](#follow-track-menu). If you press this button, your track will be opened in the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool and associated to allowed roads according to the chosen profile. 
-After your track is attached to the OsmAnd map in [Route details section](../setup/route-details.md) you will find more precise information about it and [Voice instructions](#guidance) will be more detailed.
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the "Attach to the roads" option in the [*Navigation menu*](../setup/route-navigation.md#navigation-menu) (only in the **Android** version of the app) or in the [*Follow track menu*](#follow-track-menu) (both Android and iOs versions). If you tap this option,  the ['Plan a route'](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Attach to the roads 1](@site/static/img/navigation/gpx/attach_roads_gpx_andr_1.png) ![Attach to the roads 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attach to the roads 1 ios](@site/static/img/navigation/gpx/attach_roads_gpx_ios_1.png)
+
+</TabItem>
+
+</Tabs>
+
+- Threshold distance (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
+- When you change the profile, OsmAnd automatically reattaches your track to the allowed for this profile roads.
+If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **'Apply'** is active, and the track can be used for navigation.
+
+:::note
+After attaching your track to the roads in [Route details section](../setup/route-details.md), you will find more precise information about your route and [Voice instructions](#guidance) will be more detailed.
+:::
 
 ## Guidance
 
