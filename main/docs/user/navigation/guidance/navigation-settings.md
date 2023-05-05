@@ -101,7 +101,7 @@ The navigation type determines which rules are used to calculate routes. If you 
 For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/index.md). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
 
 All route parameters are described in detail in the corresponding sections of the documentation:  
-*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Boat routing](../routing/boat-navigation.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Online routing](../routing/online-routing.md)*, *[BRouter routing](../routing/brouter.md)*.  
+*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Boat routing](../routing/boat-navigation.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Online routing](../routing/online-routing.md)*, *[BRouter routing](../routing /brouter.md)*.  
 
 
 ### Recalculate route
@@ -299,6 +299,24 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 ### Default speed / Road speeds 
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+The *Default speed* is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+
 - Used as a speed to estimate [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 
     - pedestrian, boat, ski, airplain, ... profiles, 
     - roads without speed limits (can affect routing), 
@@ -309,9 +327,16 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 - For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. 
 
 
-#### Default speed
+#### Default speed 
+
+For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the "Walking", "Horseback riding" and "Cycling" profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h. 
 
 #### Road speeds
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
+
+**Maximum speed** - Sets the minimum travel speed for all roads in the route. Raises priority for roads with recommended speeds less than the minimum.  
+**Minimum speed** - Sets the maximum travel speed for all roads in the route. Lowers the priority for roads with a possible speed higher than the maximum.
 
 
 ### Fuel used by motor
