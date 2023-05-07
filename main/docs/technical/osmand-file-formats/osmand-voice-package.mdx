@@ -7,23 +7,25 @@ import IncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 <IncompleteArticle/>
 
-OsmAnd supports 2 type of voice packages: **Text-To-Speech** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) available on App Stores or preinstalled and **Recorded Voice packages** (which include recorded voices).
+OsmAnd supports two types of voice packages:
+- **Text-To-Speech** (https://developer.android.com/reference/android/speech/tts/TextToSpeech) available on App Stores or preinstalled
+- **Recorded Voice packages** , which include recorded voices.
 
-If you couldn't find the voice package you need, please follow examples and create your own voice package. Examples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
+If you could not find the voice package you need, please follow the following examples and create your own voice package. Examples - https://github.com/osmandapp/OsmAnd-resources/tree/master/voice, German package [de_0.voice.zip](https://download.osmand.net/download?standard=yes&file=de_0.voice.zip), English package [en_0.voice.zip](https://download.osmand.net/download?standard=yes&file=en_0.voice.zip).
 
-### Difference between TTS and Recorded pckages
+### Difference between TTS and Recorded packages
 
-- Text To Speech engine supports Street Name, Refs, POI names pronouncation
-- All Text to Speech supported packages bundled and updated with an application
-- Recorded Packages needs to be installed and updated manually (though configuration file could be updated with app update)
-- Recorded Packages may not support some correct forms and support is limited
-- Recorded Packages don't require any proprietary TTS engine to be installed
+- a Text-To-Speech engine supports Street Name, Refs, POI names pronouncation
+- all Text-To-Speech supported packages bundled and updated with an application
+- a Recorded Package needs to be installed and updated manually (although the configuration file could be updated with app update)
+- a Recorded Package may not support some correct forms, and support is limited
+- a Recorded Package does not require any proprietary TTS engine to be installed
 
 ### Package Structure
 
-Voice package usually is distributed as .voice.zip, where zip contains 1 folder with [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (main **configuration** file) and sound files if they are present. 
+Voice package usually is distributed as .voice.zip, where the zip contains one folder with [lang_tts.js](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/de/de_tts.js) (main **configuration** file), and sound files if they are present. 
 
-Configuration files are written in JavaScript language. All configuration files are by default TTS-packages, even if there is no TTS present yet to support the language. And later the configuration is extended by mapping 'dictionary phrases' to 'recorded file names'.
+The configuration files are written in JavaScript language. All configuration files are by default TTS-packages, even if there is no TTS present yet to support the language. And later the configuration is extended by mapping 'dictionary phrases' to 'recorded file names'.
 
 ```
 function populateDictionary(tts) {
@@ -49,9 +51,11 @@ function route_recalc(dist, seconds) {
 
 ### Generation custom package
 
-Please checkout [resources project](https://github.com/osmandapp/OsmAnd-resources/) and use the same folder structure as [German package](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - simply make copy. Once it's done you can change, run [generation script](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) and specify needed arguments. Help is inside the script.
+Please check the [project resources](https://github.com/osmandapp/OsmAnd-resources/) and use the same folder structure as the [German package](https://github.com/osmandapp/OsmAnd-resources/tree/master/voice/de) - simply make copy. Once it's done you can change, run the [generation script](https://github.com/osmandapp/OsmAnd-resources/blob/master/voice/gen_voice.sh#L4) and specify the required arguments. Help is inside the script.
 
 ### Testing voice package (Android)
 
-For testing it's possible to use Navigation or Navigation simulation or handy version of [Development plugin](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts-android) which simulates different voice commands to be tested.
-
+For testing it is possible to use :
+- the Navigation
+- the Navigation simulation,
+- or the handy version of [Development plugin](/docs/user/navigation/guidance/voice-navigation#testing-of-voice-prompts-android), which simulates different voice commands to be tested.
