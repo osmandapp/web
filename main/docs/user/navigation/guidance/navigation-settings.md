@@ -309,34 +309,30 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)   ![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-The *Default speed* is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the "Walking", "Horseback riding" and "Cycling" profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
+Speed settings are used to determine when [voice announcements](../guidance/voice-navigation.md) are activated. 
 
-- Used as a speed to estimate [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed could not be determined by map data: 
-    - pedestrian, boat, ski, airplain, ... profiles, 
-    - roads without speed limits (can affect routing), 
-    - user generated or imported tracks. 
-- Used to determine how late/early voice announcements should be pronounced 
-- [Details of Base Profile Default Speeds](../../../technical/algorithms/voice-prompt-triggering.md#base-profile-default-speeds) . 
-- Affects speed formatting Unit of speed (Add link - general-settings). [For absolute speed](https://github.com/osmandapp/OsmAnd/issues/14338) >= 10 m/s - 1 digit formatting, < 10 m/s - 2 digit.  
-- For Walking, Horseback Riding and Cycling profiles the speed is set in small steps of 0.1 km/h, for other profiles in steps of 1 km/h. 
+These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when the speed cannot be determined from the map data:
+- for the selected profile;
+- if the used roads have no speed limits, which can also affect the routing;
+- if user generated or imported tracks are selected.   
 
 
 #### Default speed 
 
-For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the "Walking", "Horseback riding" and "Cycling" profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h. 
+The *Default speed* is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+
 
 #### Road speeds
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
-
-**Maximum speed** - Sets the minimum travel speed for all roads in the route. Raises priority for roads with recommended speeds less than the minimum.  
-**Minimum speed** - Sets the maximum travel speed for all roads in the route. Lowers the priority for roads with a possible speed higher than the maximum.
+The **Minimum speed** setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
+The **Maximum speed** setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
 
 
 ### Fuel used by motor
