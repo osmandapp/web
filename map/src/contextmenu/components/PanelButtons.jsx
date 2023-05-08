@@ -10,6 +10,7 @@ import _ from "lodash";
 import Utils, {getProfileIcon} from "../../util/Utils";
 import TracksManager from "../../context/TracksManager";
 import useUndoRedo from "../useUndoRedo";
+import RoutingManager from "../../context/RoutingManager";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -65,14 +66,20 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     }, [ctx.trackState])
 
     function getState(currentState) {
+        getTrack(currentState);
+        setUseSavedState(false);
+        ctx.setUpdateContextMenu(true);
+    }
+
+    function getTrack(currentState) {
         let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
         let objFromState = _.cloneDeep(currentState);
         objFromState.updateLayers = true;
         objFromState.layers = oldLayers;
-        objFromState = TracksManager.getRoutingFromCash(objFromState, ctx);
-        setUseSavedState(false)
+        objFromState.getRouting = true;
+
         ctx.setSelectedGpxFile({...objFromState});
-        ctx.setUpdateContextMenu(true);
+
     }
 
     return (ctx.selectedGpxFile &&

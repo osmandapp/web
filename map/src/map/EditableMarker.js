@@ -4,14 +4,16 @@ import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
 import React from "react";
+import RoutingManager from "../context/RoutingManager";
 
 export default class EditableMarker {
 
-    constructor(map, ctx, point, layer) {
+    constructor(map, ctx, point, layer, track) {
         this.map = map;
         this.ctx = ctx;
         this.point = point;
         this.layer = layer;
+        this.track = track;
     }
 
     create() {
@@ -33,54 +35,56 @@ export default class EditableMarker {
         }
 
         if (marker) {
-            marker.on('dragstart', (e) => {
-                this.ctx.setPointContextMenu({})
-                this.dragStartPoint(e);
-            });
-            marker.on('dragend', (e) => {
-                this.dragEndPoint(e, this.ctx.setGpxLoading).then(() => {
-                    this.ctx.setGpxLoading(false)
-                })
-            });
-            marker.on('contextmenu', (e) => {
-                let coord = e.latlng;
-                this.ctx.pointContextMenu.ref = {
-                    getBoundingClientRect() {
-                        return {
-                            width: 0,
-                            height: 0,
-                            top: e.containerPoint.y,
-                            right: e.containerPoint.x,
-                            bottom: e.containerPoint.y,
-                            left: e.containerPoint.x,
-                        }
-                    }
-                };
-                this.ctx.pointContextMenu.left = e.containerPoint.x;
-                this.ctx.pointContextMenu.top = e.containerPoint.y;
-                this.ctx.pointContextMenu.coord = coord;
-                this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
-            });
+            this.addEvents(marker, this.track);
         }
         return marker;
     }
 
-    dragStartPoint(e) {
+    addEvents(marker, track) {
+        marker.on('dragstart', (e) => {
+            this.ctx.setPointContextMenu({});
+            this.dragStartPoint(e, track);
+        });
+        marker.on('dragend', (e) => this.dragEndPoint(e, track));
+        marker.on('contextmenu', (e) => this.createPointContextMenu(e));
+    }
+
+    createPointContextMenu(e) {
+        let coord = e.latlng;
+        this.ctx.pointContextMenu.ref = {
+            getBoundingClientRect() {
+                return {
+                    width: 0,
+                    height: 0,
+                    top: e.containerPoint.y,
+                    right: e.containerPoint.x,
+                    bottom: e.containerPoint.y,
+                    left: e.containerPoint.x,
+                }
+            }
+        };
+        this.ctx.pointContextMenu.left = e.containerPoint.x;
+        this.ctx.pointContextMenu.top = e.containerPoint.y;
+        this.ctx.pointContextMenu.coord = coord;
+        this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
+    }
+
+    dragStartPoint(e, track) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
-        let indPoint = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === lat && point.lng === lng);
+        let indPoint = track.points.findIndex(point => point.lat === lat && point.lng === lng);
         if (indPoint !== -1) {
-            this.ctx.selectedGpxFile.dragPoint = {
+            track.dragPoint = {
                 indPoint: indPoint,
                 lat: lat,
                 lng: lng
             };
         } else {
-            let indWpt = this.ctx.selectedGpxFile?.wpts.findIndex(point => {
+            let indWpt = track?.wpts.findIndex(point => {
                 return point.lat === lat && point.lon === lng
             });
             if (indWpt !== -1) {
-                this.ctx.selectedGpxFile.dragPoint = {
+                track.dragPoint = {
                     indWpt: indWpt,
                     lat: lat,
                     lng: lng
@@ -89,16 +93,16 @@ export default class EditableMarker {
         }
     }
 
-    async dragEndPoint(e, setLoading) {
-        setLoading(true);
+    dragEndPoint(e, track) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
 
-        let trackPoints = this.ctx.selectedGpxFile.points;
-        let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
+        let trackPoints = track.points;
+        let indPoint = track.dragPoint.indPoint;
+        let segments = [];
         if (indPoint !== undefined && indPoint !== -1) {
             let currentPoint = trackPoints[indPoint];
-            let layers = this.ctx.selectedGpxFile.layers.getLayers();
+            let layers = track.layers.getLayers();
             let polylines = TrackLayerProvider.getPolylines(layers);
 
             let currentPolyline;
@@ -136,7 +140,7 @@ export default class EditableMarker {
                             currentPoint.geometry = newGeo;
                         } else {
                             currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, null, oldPoint);
-                            TracksManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, this.ctx);
+                            segments = RoutingManager.addSegmentToRouting(prevPoint, currentPoint, oldPoint, currentPolyline, segments);
                         }
                     }
                 }
@@ -149,19 +153,20 @@ export default class EditableMarker {
                             nextPoint.geometry = newGeo;
                         } else {
                             nextPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, oldPoint, null);
-                            TracksManager.addRoutingToCash(currentPoint, nextPoint, nextPolyline, this.ctx);
+                            segments = RoutingManager.addSegmentToRouting(currentPoint, nextPoint, oldPoint, nextPolyline, segments);
                         }
                     }
                 }
             }
         } else {
-            let indWpt = this.ctx.selectedGpxFile.dragPoint.indWpt;
+            let indWpt = track.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
-                let currentWpt = this.ctx.selectedGpxFile.wpts[indWpt];
+                let currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
             }
         }
+        this.ctx.setRoutingNewSegments([...segments])
         this.ctx.trackState.update = true;
         this.ctx.setTrackState({...this.ctx.trackState});
     }

@@ -1,6 +1,7 @@
 import TracksManager from "./TracksManager";
 import Utils from "../util/Utils";
 import TrackLayerProvider from "../map/TrackLayerProvider";
+import RoutingManager from "./RoutingManager";
 
 const deletePoint = async (index, ctx) => {
     let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
@@ -141,19 +142,13 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                         points[i + 1].geometry = newGeometry;
                     } else {
                         let tempLine = TrackLayerProvider.createTempPolyline(points[i - 1], points[i + 1]);
+                        deleteOldTempLayer(ctx, points[i + 1]);
                         tempLine.point = points[i + 1];
                         ctx.selectedGpxFile.layers.addLayer(tempLine);
                         ctx.selectedGpxFile.updateLayers = true;
-                        TracksManager.addRoutingToCash(points[i - 1], points[i + 1], tempLine, ctx);
+                        RoutingManager.validateRoutingCash(points[i], ctx);
+                        RoutingManager.addRoutingToCash(points[i - 1], points[i + 1], tempLine, ctx);
                         points[i + 1].geometry = [];
-                        let layer = ctx.selectedGpxFile.layers.getLayers().find(l => {
-                            if (l.point === points[i + 1]) {
-                                return l;
-                            }
-                        })
-                        if (layer) {
-                            layer.point = 'null';
-                        }
                     }
                 }
                 res.deletedPoint = points.splice(i, 1);
@@ -164,6 +159,17 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
     lengthSum += points.length;
     res.lengthSum = lengthSum;
     return res;
+}
+
+function deleteOldTempLayer(ctx, point) {
+    let layer = ctx.selectedGpxFile.layers.getLayers().find(l => {
+        if (l.point === point) {
+            return l;
+        }
+    })
+    if (layer) {
+        layer.point = 'null';
+    }
 }
 
 const PointManager = {

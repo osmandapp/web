@@ -2,12 +2,14 @@ import L from 'leaflet';
 import MarkerOptions from "./markers/MarkerOptions";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
+import EditablePolyline from "./EditablePolyline";
 
+const TEMP_LAYER_FLAG = 'temp';
 const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
     dashOffset: '0',
-    name:"temp"
+    name: TEMP_LAYER_FLAG
 }
 
 function createLayersByTrackData(data) {
@@ -243,10 +245,6 @@ function getPointByPolyline(layer, points) {
     return res;
 }
 
-function createTempPolyline(prev, next) {
-    return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], TEMP_LINE_STYLE);
-}
-
 function getPolylines(layers) {
     let res = [];
     layers.forEach(layer => {
@@ -262,7 +260,7 @@ function getPolylines(layers) {
 
 function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
     const point2 = oldEndPoint ? oldEndPoint : endPoint;
-    let polyline = getPolylineByPoints(_.cloneDeep(point2), polylines);
+    let polyline = getPolylineByPoints(point2, polylines);
     if (!polyline) {
         const point1 = oldStartPoint ? oldStartPoint : startPoint;
         polyline = getPolylineByStartEnd(point1, point2, polylines);
@@ -270,6 +268,22 @@ function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPo
     polyline = updatePolylineToTemp(startPoint, endPoint, polyline)
 
     return polyline;
+}
+
+function createTempPolyline(start, end) {
+    const startPoint = new L.LatLng(start.lat, start.lng);
+    const endPoint = new L.LatLng(end.lat, end.lng);
+    return new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
+}
+
+function createEditableTempLPolyline(start, end, map, ctx) {
+    const startPoint = new L.LatLng(start.lat, start.lng);
+    const endPoint = new L.LatLng(end.lat, end.lng);
+    let polylineTemp = new EditablePolyline(map, ctx, [startPoint, endPoint], null, ctx.selectedGpxFile, TrackLayerProvider.TEMP_LINE_STYLE).create();
+    polylineTemp.point = end;
+    polylineTemp.options.name = TEMP_LAYER_FLAG;
+
+    return polylineTemp;
 }
 
 
@@ -283,6 +297,7 @@ const TrackLayerProvider = {
     createTempPolyline,
     getPolylines,
     updatePolyline,
+    createEditableTempLPolyline,
     TEMP_LINE_STYLE: TEMP_LINE_STYLE
 };
 

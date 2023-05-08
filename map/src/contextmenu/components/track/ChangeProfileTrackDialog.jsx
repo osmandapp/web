@@ -11,6 +11,7 @@ import {Close} from "@mui/icons-material";
 import _ from "lodash";
 import {makeStyles} from "@material-ui/core/styles";
 import TrackLayerProvider from "../../../map/TrackLayerProvider";
+import RoutingManager from "../../../context/RoutingManager";
 
 const useStyles = makeStyles({
     dialog: {
@@ -66,7 +67,7 @@ export default function ChangeProfileTrackDialog({open}) {
                             start.routeMode = profile;
                             start.profile = profile.mode;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
                         }
                     }
                 } else {
@@ -86,12 +87,12 @@ export default function ChangeProfileTrackDialog({open}) {
                     prevPoint.profile = profile.mode;
                     prevPoint.routeMode = profile;
                     let currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, prevPoint, currentPoint);
-                    TracksManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, ctx);
+                    RoutingManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, ctx);
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                     currentPoint.profile = profile.mode;
                     currentPoint.routeMode = profile;
                     let currentPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, currentPoint, nextPoint);
-                    TracksManager.addRoutingToCash(currentPoint, nextPoint, currentPolyline, ctx);
+                    RoutingManager.addRoutingToCash(currentPoint, nextPoint, currentPolyline, ctx);
                 }
             } else if (changeAll) {
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
@@ -102,7 +103,7 @@ export default function ChangeProfileTrackDialog({open}) {
                             start.routeMode = profile;
                             start.profile = profile.mode;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
                         }
                     }
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
@@ -113,7 +114,7 @@ export default function ChangeProfileTrackDialog({open}) {
                             start.routeMode = profile;
                             start.profile = profile.mode;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            TracksManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
                         }
                     }
                 }
