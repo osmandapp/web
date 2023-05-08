@@ -1,6 +1,6 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#D17E4A"/>
@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path opacity="0.985122" d="M426.867 51.6808C415.203 56.0425 399.222 62.5306 393.233 62.5306C387.244 62.5306 382.383 57.6699 382.383 51.6808C382.383 45.6918 387.244 40.8311 393.233 40.8311C398.941 41.0502 415.539 47.7957 426.867 51.6808Z" fill="#ffffff" stroke="#ffffff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
 <path opacity="0.985122" d="M416.383 51.6808C428.046 56.0425 444.028 62.5306 450.017 62.5306C456.006 62.5306 460.867 57.6699 460.867 51.6808C460.867 45.6918 456.006 40.8311 450.017 40.8311C444.309 41.0502 427.711 47.7957 416.383 51.6808Z" fill="#ffffff" stroke="#ffffff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>

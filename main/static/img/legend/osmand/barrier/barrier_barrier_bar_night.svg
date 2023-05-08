@@ -1,13 +1,13 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
 
  <path transform="matrix(.8 0 0 .8 1.6 1.7334)" d="m1.334 4.0195a1.3142 1.3142 0 0 0-1.3145 1.3145v1.332a1.3142 1.3142 0 0 0 1.3145 1.3145h0.017578v4.0195a1.3142 1.3142 0 0 0 1.3145 1.3145h1.334a1.3142 1.3142 0 0 0 1.3145-1.3145v-4.0195h5.3711v4.0195a1.3142 1.3142 0 0 0 1.3145 1.3145h1.334a1.3142 1.3142 0 0 0 1.3145-1.3145v-4.0195h0.01758a1.3142 1.3142 0 0 0 1.3145-1.3145v-1.332a1.3142 1.3142 0 0 0-1.3145-1.3145z" fill="#ebe7e4" opacity=".8" stop-color="#000000" stroke-width="1.5625" style="-inkscape-stroke:none;font-variation-settings:normal"/>
 
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M4 16H44V20H4V16Z" fill="#444444"/>
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M12 20V36H8V20H12Z" fill="#444444" fill-opacity="0.7"/>
