@@ -17,25 +17,21 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-The Plan a route tool is a powerful feature of OsmAnd that allows you to measure distances on the map, create GPX tracks or add new segments to your own, and tie your track to the nearest available road using one of the navigation profiles. The program works offline and is available for OsmAnd Android and iOS versions.
+The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to create new routes as GPX tracks, edit and add new segments to already saved tracks, measure distances on the map, and link track segments to the nearest available road using different navigation profiles. The function is designed to work in offline mode.
 
-A route is a set of sections between points. Threads can be straight lines or routes of selected navigation profiles. The sum of all these points and lines is the route, which can be saved, imported, or changed.
-
-The **Plan a route** tool is a powerful feature of OsmAnd allows you to measure distances on the map, create GPX tracks or add new segments to your own ones, to snap your track to the nearest available road with one of your navigation profiles. Of course, it works offline and available for Android and iOS versions of OsmAnd.
-
-The route is many strings between points. Strings can be straight lines or routes of chosen navigation profiles. The sum of all these points and strings is a route, that can be saved, imported, or modified.  
+A route consists of a set of segments between specified points. The segments can be either straight lines or routes adapted to the selected profile. The route can be saved, imported, edited, and used for navigation.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan-route-android.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan-route-ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.png)
 
 </TabItem>
 
