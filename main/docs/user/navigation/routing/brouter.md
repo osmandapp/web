@@ -78,11 +78,23 @@ Follow this guide to installing and configuring the third-party *BRouter Offline
         <td><img src={require('@site/static/img/navigation/third/prof18.png').default} alt="BRouter"/></td>
         <td><img src={require('@site/static/img/navigation/third/prof18a.png').default} alt="BRouter"/></td>
     </tr>
+</table>  
+
+**4.** If you have already loaded any segments previously, they will be displayed on the BRouter map. The segments have four states:  
+- *"Green"* square - Selected new segment to download.
+- *"Blue"* square - The segment with updated data.
+- *"Grey"* square - The segment is already downloaded but requires updating.
+- *"Yellow"* square - The segment is being updated.
+
+<table class="blogimage">
+    <tr>
+    <img src={require('@site/static/img/navigation/third/brouter-downl2.png').default} alt="BRouter"/>
+    </tr>
 </table> 
 
-**4.** When you have loaded the required map segments with BRouter and selected a routing profile in it, all the next settings of this type of navigation are made in the OsmAnd application.   
+**5.** When you have loaded the required map segments with BRouter and selected a routing profile in it, all the next settings of this type of navigation are made in the OsmAnd application.   
 
-**5.** Use the *BRouter (offline)* routing type with any [profile](../../personal/profiles.md) in the OsmAnd app. To do this, go to the main *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>*  
+**6.** Use the *BRouter (offline)* routing type with any [profile](../../personal/profiles.md) in the OsmAnd app. To do this, go to the main *<Translate android="true" ids="shared_string_menu,configure_profile,navigation_profile,nav_type_hint,shared_string_offline,shared_string_external,routing_profile_broutrer"/>*  
 
 <table class="blogimage">
     <tr>
