@@ -1,11 +1,11 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
 <g id="g836"><path d="M10 0a10 10 0 1 1-.02 19.98A10 10 0 0 1 10 0z" id="path2" style="opacity:.953;fill:#65af9d;fill-opacity:1"/><path d="M10 19a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 1a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" id="path4" style="clip-rule:evenodd;opacity:.95;fill:#404040;fill-rule:evenodd"/></g><defs id="defs11"><clipPath id="clip0"><path d="M0 0h20v20H0V0z" fill="#fff" id="path8"/></clipPath></defs>
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <g clip100-path="url(#clip1000)">
 <path d="M29.7373 25.697L24 30L22.7168 35.1329C22.2618 36.9527 21.0344 38.4828 19.3567 39.3216L19.2906 39.3547C18.4419 39.7791 17.506 40 16.5571 40C11.8311 40 8 36.1688 8 31.4429C8 30.494 8.22093 29.5581 8.64528 28.7094L8.67835 28.6433C9.51721 26.9656 11.0473 25.7382 12.8671 25.2832L18 24L22.3029 18.2627C23.1986 17.0685 24.9444 16.9444 26 18L30 22C31.0556 23.0556 30.9315 24.8014 29.7373 25.697Z" fill="#ffffff" fill-opacity="0.4"/>
