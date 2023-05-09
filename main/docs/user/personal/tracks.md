@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 Track on the map is user [recorded trip](../plugins/trip-recording.md) or [plan route](../plan-route/create-route.md) with makred points on it or not. OsmAnd track file has [gpx-format](../plugins/trip-recording.md#gpx-file-details).
 
 You can add / create tracks to / in OsmAnd in these ways: 
@@ -23,7 +25,7 @@ You can add / create tracks to / in OsmAnd in these ways:
 - Create in the application using [Plan route](../plan-route/index.md) tool.
 - Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
-All tracks in the application are stored in the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md).
+All tracks in the application are stored in the *[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.
 
 Abilities to manage tracks in OsmAnd:
 - Enable and disable tracks on the map.
@@ -138,7 +140,7 @@ You can configure available waypoint folders in the Tracks Context menu: show on
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>_  
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*  
 
 At the bottom of the screen are four Actions buttons.
 
@@ -155,7 +157,7 @@ At the bottom of the screen are four Actions buttons.
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>_
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 Clicking to choosing track opens [Track Context menu](../map/track-context-menu.md) for any actions with it.
 
@@ -338,18 +340,9 @@ To display a track on the map another way, open the [**My Places**](../plugins/t
 
 ### Options of context menu
 
- When a track is displayed on the map, tapping on it, the [track context menu](../map/track-context-menu.md) appears. For detailed information about each available option, refer to the respective section of the current documentation. Here is an overview of the options:
-
-- Basic info to show the distance, ascending and descending areas, description and quick action buttons, such as whether to show the track on the map, its appearance, points and if to place the track for navigation.
-- Graphs for analysis of altitude and speed.
-- Tab for any overview and/or updates of points and waypoints.
-- And other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc. 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
 
 ![Context menu of a track in Android](@site/static/img/plugins/trip-recording/opt_ofcont_menu_andr.png)
 
@@ -357,13 +350,20 @@ When you tap the track directly on the map, the [track context menu](../map/trac
 
 <TabItem value="ios" label="iOS">
 
-When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
-
 ![Context menu of a track in iOS](@site/static/img/plugins/trip-recording/opt_ofcont_menu_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
+
+When a track is displayed on the map, tapping on it, the [track context menu](../map/track-context-menu.md) appears. For detailed information about each available option, refer to the respective section of the current documentation. Here is an overview of the options:
+
+- Basic info to show the distance, ascending and descending areas, description and quick action buttons, such as whether to show the track on the map, its appearance, points and if to place the track for navigation.
+- Graphs for analysis of altitude and speed.
+- Tab for any overview and/or updates of points and waypoints.
+- And other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, etc.  
+
+When you tap the track directly on the map, the [track context menu](../map/track-context-menu.md) appears, providing a [basic overview of the track](../map/track-context-menu.md#overview) as well as more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit the track with the [Plan route tool](../plan-route/create-route.md#opening-plan-route), in the context menu open the track in this tool and edit it: delete or add points, cut the track before or after a certain point. For more information, refer to [Track Context Menu](../map/track-context-menu.md).  
 
 
 ### Change folder
