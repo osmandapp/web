@@ -26,6 +26,10 @@ export default function RegisterUserPromoBlock({promoKey}) {
 
     }
 
+    function isValidEmail() {
+        return email !== null && email.length >=3 && email.length < 320;
+    }
+
     return <Box
         component="form"
         width='600px'
@@ -57,6 +61,7 @@ export default function RegisterUserPromoBlock({promoKey}) {
                 <Button variant="contained"
                         disableElevation
                         sx={{mt: "8px", height: "40px"}}
+                        disabled={!isValidEmail()}
                         onClick={registerEmail}>
                     Send
                 </Button>
