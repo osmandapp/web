@@ -16,14 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 The Tracks context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
 
 Track Context menu includes:
 
-- [Overview](../map/track-context-menu.md#overview).
-- [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs). 
-- [Points / Waypoints](../map/track-context-menu.md#points--waypoints).
-- [Options](../map/track-context-menu.md#options).
+- [Overview tab](../map/track-context-menu.md#overview).
+- [Altitude / Speed Graphs tab](../map/track-context-menu.md#altitude--speed-graphs). 
+- [Points / Waypoints tab](../map/track-context-menu.md#points--waypoints).
+- [Options tab](../map/track-context-menu.md#options).
 
 <Tabs groupId="operating-systems">
 
@@ -46,9 +48,9 @@ Track Context menu includes:
 </Tabs>
 
 
-## Overview
+## Overview tab
 
-In Overview user can find track data info and make actions with viewing of the chosen track:
+In Overview tab user can find track data info and make actions with viewing of the chosen track:
 
 - [Info panel](../map/track-context-menu.md#info-panel) - shows track info: distance, speed, ascent/descent...
 - [Quick actions](../map/track-context-menu.md#quick-actions) - action buttons for the chosen track.
