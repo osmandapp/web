@@ -144,6 +144,25 @@ When you use two or more application profiles for your route:
 - For iOS all segments have [color of last using application profile](../plan-route/create-route.md#route-line) for calculated route.
 
 
+#### Route between points
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png)
+
+</TabItem>
+
+</Tabs>   
+
+
 ### How to save a route
 
 ![Plan a route android-save](@site/static/img/plan-route/plan-route-animation.gif)  
@@ -250,28 +269,44 @@ Description:  Each point has information about distance and azimuth for a new ma
 
 ### Points Context menu
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+
+</TabItem>
+
+</Tabs>   
+
 Actions in the *Point* menu (by clicking to a point in [Points list](../plan-route/create-route.md#points-list-and-graph)):
 
-| | |
-|------------|------------|
-| **1.Click to a point from *Points* list**: | Open *Point* menu| 
-|**Actions in *Point* menu:** |   |
-|1. Point info | Showed Number of point, Distance, Speed, Altitude of point. |
-|2. <Translate ios="true" ids="move_point"/>|  <Translate ios="true" ids="move_point_descr"/> |
-|3. <Translate ios="true" ids="add_after"/>| Move map to add points after a chosen point.  |
-|4. <Translate ios="true" ids="add_before"/>|  Move map to add points before a chosen point.  |
-|5. <Translate ios="true" ids="trim_before"/>| The trim route before a chosen point.  |
-|6. <Translate ios="true" ids="trim_after"/>| The trim route after a chosen point. |
-| 7. <Translate ios="true" ids="split_before"/>|  Split route before a chosen point.   |
-|8. <Translate ios="true" ids="split_after"/>| Split route after a chosen point. |
-| 9. <Translate ios="true" ids="change_route_type_before"/>| Change route type (application profile) before a chosen point. |
-|10. <Translate ios="true" ids="change_route_type_after"/>| Change route type (application profile) after a chosen point.  |
-|11. <Translate ios="true" ids="delete_point"/>| Delete chosen point from the route.  |  
+
+**1.Click to a point from *Points* list**:  Open *Point* menu  
+**Actions in *Point* menu:**  
+
+1. Point info  Showed Number of point, Distance, Speed, Altitude of point. 
+2. <Translate ios="true" ids="move_point"/> - <Translate ios="true" ids="move_point_descr"/> 
+3. <Translate ios="true" ids="add_point_after"/> - Move map to add points after a chosen point.  
+4. <Translate ios="true" ids="add_point_before"/> - Move map to add points before a chosen point.  
+5. <Translate ios="true" ids="trim_before"/> - The trim route before a chosen point.  
+6. <Translate ios="true" ids="trim_after"/> - The trim route after a chosen point. 
+7. <Translate ios="true" ids="split_before"/> - Split route before a chosen point.   
+8. <Translate ios="true" ids="split_after"/> - Split route after a chosen point. 
+9. <Translate ios="true" ids="change_route_type_before"/> - Change route type (application profile) before a chosen point. 
+10. <Translate ios="true" ids="change_route_type_after"/> - Change route type (application profile) after a chosen point.  
+11. <Translate ios="true" ids="delete_point"/> - Delete chosen point from the route.    
 
 
-### Graph
+### Graph (Android only)
 
-Click to "Graph" button. (Android)
+Click to "Graph" button. 
 
 ![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
 
@@ -379,9 +414,4 @@ Next, choose the needed application profile for snapping your track to the neare
 
 After calculating the new route you click [*Done* button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
 
-## Useful links
-
-- [Travel Guides](../plan-route/travel-guides.md)  
-
-- [Coordinate input](../plan-route/coordinate-input.md)
 
