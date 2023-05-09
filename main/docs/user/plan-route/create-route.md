@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to create new routes as GPX tracks, edit and add new segments to already saved tracks, measure distances on the map, and link track segments to the nearest available road using different navigation profiles. The function is designed to work in offline mode.
+The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to create new routes as GPX tracks, edit and add new segments to already saved tracks, measure distances on the map, and link track segments to the nearest available road using different navigation profiles. The feature is designed to work in offline mode.
 
 A route consists of a set of segments between specified points. The segments can be either straight lines or routes adapted to the selected profile. The route can be saved, imported, edited, and used for navigation.
 
@@ -40,196 +40,59 @@ A route consists of a set of segments between specified points. The segments can
 
 ### How to open
 
-<Tabs groupId="operating-systems">
+As **Plan a route** is one of the main feature of the OsmAnd app, you can find it directly in main Menu. The tool is also available in the context menu of any track, whether it is a previously created, recorded, or imported track.  
+There are four ways to access the *Plan a route* tool.
 
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
-
-![Plan a route android_menu](@site/static/img/plan-route/plan-route-android-menu.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
-
-![Plan a route ios_menu](@site/static/img/plan-route/plan-route-ios-menu.png)
-
-</TabItem>
-
-</Tabs>  
-
-The *Plan a route* can be switched on:
-
-- **Main menu**
-
-- **Track context menu** (Android)
-
-*<Translate android="true" ids="shared_string_options,edit_track"/>* or to click to *<Translate android="true" ids="edit_track"/>* on the context menu screen:  
-
-![Plan a route android_contextmenu](@site/static/img/plan-route/plan-route-android-contextmenu.png)
-
-
-## Plan a route 
-
-
-### Main menu
+1. Go to the main *Menu → Plan a route*.
+2. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Options* (or *Actions* for iOS) tab in the [track context menu](../map/track-context-menu.md), and in the opened menu find *Edit track*.
+3. In the [track context menu](../map/track-context-menu.md) select *Track tab → Options → Edit*. 
+4. (Android only) Go to the *Menu → My Places → Tracks*, tap any available track, select the *Edit* icon in the *Overview* tab.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Plan a route android_choosemenu](@site/static/img/plan-route/plan-route-android-choose-menu.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios_choosemenu](@site/static/img/plan-route/plan-route-ios-choosemenu.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_track_menu_options_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
 
-In the tool, you can create a new GPX route or open and modify the existing track. When you open *Plan a route* tool menu you find the next buttons:
-- **<Translate android="true" ids="plan_route_create_new_route"/>** - create a new GPX route.
-- **<Translate android="true" ids="plan_route_open_existing_track"/>** - open existing GPX track from OsmAnd track folder.
-- **<Translate android="true" ids="plan_route_import_track"/>** - import GPX track from your device storage (Android).
-- **<Translate android="true" ids="plan_route_last_edited"/>** - choose GPX track from last modified.
- 
 
-### Main screen
+## Plan a route actions
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-screen](@site/static/img/plan-route/plan-route-android-screen.png)
+*<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_create_new_route"/>*  
+
+![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-ios-screen.png)
+*<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_create_new_route"/>*  
+
+![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
 </Tabs>   
 
-At the main screen of the tool there are the next elements:   
+In case you chose *Plan a route* in the main menu, you can select the following actions in the opened screen:
 
-**1.** [*<Translate android="true" ids="shared_string_options"/>*](../plan-route/create-route.md#options-menu) menu.
-
-**2.** *<Translate android="true" ids="shared_string_add"/>* button for shaping points.
-
-**3.** Back/forward - move along planning process steps.
-
-**4.** [Points list and Graph (Android) list](../plan-route/create-route.md#points-list-and-graph).
-
-**5.** *Profile* button for choosing [application profile](../personal/profiles.md).
-
-**6.** *Done* button - finish and save GPX route.
-
-**7.** Name of GPX route by default (Android).
-
-**8.** *Close* button - exit from the tool with saving GPX route or no saving.
-
-**9.** Widgets (Android) - [Configure map
-](../widgets/map-buttons.md#configure-map), [Search](../widgets/map-buttons.md#search), [Compass](../widgets/map-buttons.md#compass).
-
-**10.** Widgets (Android) - [Informational widgets
-](../widgets/info-widgets.md), [Navigational widgets
-](../widgets/nav-widgets.md).
-
-**11.** Widgets - [My Location & Zoom](../widgets/map-buttons.md#my-location--zoom).
-
-
-### Route line
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-The Route line shows an [automatically-generated road or straight route](../plan-route/create-route.md#creating-a-route) which you can save like a GPX track.
-
-
-**1.** Profile icon (Android). It*s mean that this segment was built by this profile routing.
-
-**2.** Shaping points - basic points building the route.
-
-**3.** Calculated route segment between shaping points. Colors of your chosen application profiles (Android) or last chosen application profile (iOS).
-
-**4.** Straight-line from last shaping point and target point.
-
-
-### Points list
-
-For opening *Points* list and Graph:  
-
-**1.Click to [*Points* list](../plan-route/create-route#main-screen).** (Android)
-
-**1.Click to the open icon &#710 on [*Points* list](../plan-route/create-route#main-screen).** (iOS)
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android-pointslist](@site/static/img/plan-route/plan-route-pointslist-android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-pointslist](@site/static/img/plan-route/plan-route-pointslist-ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-Description:  Each point has information about distance and azimuth for a new making route, and additional altitude, and the speed information for recorded GPX track. In [*Points* list](../plan-route/create-route.md#main-screen) we can delete points (click to *Delete* button near chosen point) or change the order of it (move a line of chosen point to up or below). Clicking to a point opens [*Point* menu](../plan-route/create-route.md#actions-of-point-menu). 
-
-
-### Graph
-
-Click to "Graph" button. (Android)
-
-![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
-
-Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
-
-
-### Points Context menu
-
-Actions in the *Point* menu (by clicking to a point in [Points list](../plan-route/create-route.md#points-list-and-graph)):
-
-| | |
-|------------|------------|
-| **1.Click to a point from *Points* list**: | Open *Point* menu| 
-|**Actions in *Point* menu:** |   |
-|1. Point info | Showed Number of point, Distance, Speed, Altitude of point. |
-|2. <Translate ios="true" ids="move_point"/>|  <Translate ios="true" ids="move_point_descr"/> |
-|3. <Translate ios="true" ids="add_after"/>| Move map to add points after a chosen point.  |
-|4. <Translate ios="true" ids="add_before"/>|  Move map to add points before a chosen point.  |
-|5. <Translate ios="true" ids="trim_before"/>| The trim route before a chosen point.  |
-|6. <Translate ios="true" ids="trim_after"/>| The trim route after a chosen point. |
-| 7. <Translate ios="true" ids="split_before"/>|  Split route before a chosen point.   |
-|8. <Translate ios="true" ids="split_after"/>| Split route after a chosen point. |
-| 9. <Translate ios="true" ids="change_route_type_before"/>| Change route type (application profile) before a chosen point. |
-|10. <Translate ios="true" ids="change_route_type_after"/>| Change route type (application profile) after a chosen point.  |
-|11. <Translate ios="true" ids="delete_point"/>| Delete chosen point from the route.  |
+- [*Create new route*](#create-new-route) - Select the section of the map on your screen where you want to start ctreating a GPS route. Points are created using the pointer in the center of the visible map and the *Add point* button. Or you can tap anywhere on the map, and a Point will be placed automaticlly. In the [*point context menu*](#points-context-menu) you can change its location.
+- **<Translate android="true" ids="plan_route_open_existing_track"/>** - open existing GPX track from OsmAnd track folder.
+- **<Translate android="true" ids="plan_route_import_track"/>** - import GPX track from your device storage (Android).
+- **<Translate android="true" ids="plan_route_last_edited"/>** - choose GPX track from last modified.
 
 
 ## Create new route
@@ -289,6 +152,130 @@ Tap [Done button](../plan-route/create-route.md#main-screen) to save your route 
 
 Find your track in *My Places* menu:
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,show_gpx"/>*
+
+
+### Create/Edit route
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android-screen](@site/static/img/plan-route/plan-route-android-screen.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-ios-screen.png)
+
+</TabItem>
+
+</Tabs>   
+
+At the main screen of the tool there are the next elements:   
+
+1. [*<Translate android="true" ids="shared_string_options"/>*](../plan-route/create-route.md#options-menu) menu.
+2. *<Translate android="true" ids="shared_string_add"/>* button for shaping points.
+3. Back/forward - move along planning process steps.
+4. [Points list and Graph (Android) list](../plan-route/create-route.md#points-list-and-graph).
+5. *Profile* button for choosing [application profile](../personal/profiles.md).
+6. *Done* button - finish and save GPX route.
+7. Name of GPX route by default (Android).
+8. *Close* button - exit from the tool with saving GPX route or no saving.
+9. Widgets (Android) - [Configure map
+](../widgets/map-buttons.md#configure-map), [Search](../widgets/map-buttons.md#search), [Compass](../widgets/map-buttons.md#compass).
+10. Widgets (Android) - [Informational widgets
+](../widgets/info-widgets.md), [Navigational widgets
+](../widgets/nav-widgets.md).
+11. Widgets - [My Location & Zoom](../widgets/map-buttons.md#my-location--zoom).
+
+
+## Route line
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+The Route line shows an [automatically-generated road or straight route](../plan-route/create-route.md#creating-a-route) which you can save like a GPX track.
+
+
+**1.** Profile icon (Android). It*s mean that this segment was built by this profile routing.
+
+**2.** Shaping points - basic points building the route.
+
+**3.** Calculated route segment between shaping points. Colors of your chosen application profiles (Android) or last chosen application profile (iOS).
+
+**4.** Straight-line from last shaping point and target point.
+
+
+## Points list
+
+For opening *Points* list and Graph:  
+
+**1.Click to [*Points* list](../plan-route/create-route#main-screen).** (Android)
+
+**1.Click to the open icon &#710 on [*Points* list](../plan-route/create-route#main-screen).** (iOS)
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android-pointslist](@site/static/img/plan-route/plan-route-pointslist-android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios-pointslist](@site/static/img/plan-route/plan-route-pointslist-ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+Description:  Each point has information about distance and azimuth for a new making route, and additional altitude, and the speed information for recorded GPX track. In [*Points* list](../plan-route/create-route.md#main-screen) we can delete points (click to *Delete* button near chosen point) or change the order of it (move a line of chosen point to up or below). Clicking to a point opens [*Point* menu](../plan-route/create-route.md#actions-of-point-menu).  
+
+
+
+### Points Context menu
+
+Actions in the *Point* menu (by clicking to a point in [Points list](../plan-route/create-route.md#points-list-and-graph)):
+
+| | |
+|------------|------------|
+| **1.Click to a point from *Points* list**: | Open *Point* menu| 
+|**Actions in *Point* menu:** |   |
+|1. Point info | Showed Number of point, Distance, Speed, Altitude of point. |
+|2. <Translate ios="true" ids="move_point"/>|  <Translate ios="true" ids="move_point_descr"/> |
+|3. <Translate ios="true" ids="add_after"/>| Move map to add points after a chosen point.  |
+|4. <Translate ios="true" ids="add_before"/>|  Move map to add points before a chosen point.  |
+|5. <Translate ios="true" ids="trim_before"/>| The trim route before a chosen point.  |
+|6. <Translate ios="true" ids="trim_after"/>| The trim route after a chosen point. |
+| 7. <Translate ios="true" ids="split_before"/>|  Split route before a chosen point.   |
+|8. <Translate ios="true" ids="split_after"/>| Split route after a chosen point. |
+| 9. <Translate ios="true" ids="change_route_type_before"/>| Change route type (application profile) before a chosen point. |
+|10. <Translate ios="true" ids="change_route_type_after"/>| Change route type (application profile) after a chosen point.  |
+|11. <Translate ios="true" ids="delete_point"/>| Delete chosen point from the route.  |  
+
+
+### Graph
+
+Click to "Graph" button. (Android)
+
+![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
+
+Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
 
 
 ## Menu Options
