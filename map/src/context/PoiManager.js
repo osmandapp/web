@@ -9,7 +9,7 @@ async function getPoiCategories() {
     if (categories?.length > 0) {
         return categories;
     } else {
-        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-categories`);
+        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`);
         if (response.data) {
             localStorage.setItem(POI_CATEGORIES, JSON.stringify(response.data))
             return response.data;

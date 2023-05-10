@@ -33,7 +33,7 @@ export default function PoiLayer() {
             latBboxPoint2: bbox.getSouthWest().lat,
             lngBboxPoint2: bbox.getSouthWest().lng,
         };
-        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi?`, data,
+        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi?`, data,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),
