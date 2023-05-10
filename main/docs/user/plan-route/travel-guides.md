@@ -11,10 +11,13 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-Travel Guides (Android): enjoy offline guides for basically any destination.
+<InfoAndroidOnly />
+
+## Overview
 
 Travel guides help you in your trips, you can see interesting places on the map and read info about it.
 
@@ -174,51 +177,7 @@ Besides the city guides, you can read about regions or countries, and even scrol
 ## Building Travel book 
 
 
-Custom Travel - creating your one-of-a-kind travel guide
 
-Custom Travel tool helps you create your own travel guide and use it via OsmAnd Travel feature. Basically, you can use the text from any source (from Wikipedia to your friend's blog) and pair it with a GPX track.
-
- 
-### Prepare the files
-
-To start, please prepare your files. Save your track with '.GPX' extension and the text file as '.html'. In order to create your custom database successfully, the names of the GPX file and the html have to be identical. For example, 'Milan.gpx' and 'Milan.html'.
-
-The GPX tracks can be downloaded from the internet or you can create one (using OsmAnd or any online GPX creation tool).
-
-For example, you can use Brouter, or a simialr one.
-
-Add the points you'd like to visit into your route and then save that route as a GPX track. .
-
-Preparing your GPX track in OsmAnd is also possible, you can read about it here: Plan a route.
-
-Choosing the source for your guide's text is completely up to you. It can be an article in a travel blog, a Wikipedia page, etc. Simply copy the text, then paste it into a text editor and save it with an 'HTML' extension. Make sure to make the name of the GPX track and the HTML file identical.
-
-### Launch the tool
-
-[Download OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip)
-Linux.
-
-Download MapCreator and extract the files from the archive.
-Start your console and open the MapCreator folder.
-
-Example: `cd /home/user/OsmAndMapCreator-main/`
-
-Run ./utilites.sh travel-guide-creator
-When asked to provide the path, please paste the path to the folder where you have your files prepared.
-
-Example: `cd /home/user/MyCustomGuides/`
-
-We do not recommend locating your files in the 'TravelGuideCreator' folder itself. Kindly see the 'Read me' file for step-by-step commands.
-
-Windows. Open utilities.bat file.
-
-### Import files
-
-Your file should be created in seconds. By default, it will be named 'travel_guide.sqlite', but you can rename it as you want making sure to save it with 'sqlite' file extension. For example, 'Milan_weekend_tour.sqlite'. After that, please transfer it to your device. Specifically, to the folder where OsmAnd travel guides are stored. You can check the path to that folder in 'OsmAnd > Settings > General > Data storage folder > Manually specified. Please copy the file there using any mobile file manager or by connecting your phone to computer. Restart the app.
-
-### Use your guide
-
-After you start the app, please go to 'Travel' menu. Press Options > 'Travel book' to select your database as a source. After that, you'll be able to use search normally in order to view the articles. You'll find all the points from your GPX track in 'Points' menu. Please use 'Show on map' button to view your points on the map. You can bookmark any article to have a quicker access to it.
 
 
 ## Useful links

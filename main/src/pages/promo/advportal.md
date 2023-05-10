@@ -26,19 +26,50 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 Twoje kroki:
 
-1. Wprowadź swój e-mail do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
+1. **Wprowadź swój e-mail** do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
 
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
-2. Po tym otrzymasz email od OsmAnd o rejestracji.
+<p> </p>
 
-3. W następnym kroku należy aktywować OsmAnd na swoim urządzeniu:
+**Po tym otrzymasz** email od OsmAnd o rejestracji:
+
+![Confirmation](@site/static/img/promo/advportal/confirmation.png)
+
+
+2. **W następnym kroku** należy aktywować **OsmAnd Pro** na swoim urządzeniu:
 
 _OsmAnd Menu > Ustawienia > OsmAnd Cloud > Mam już konto_
 
-4. Otrzymasz na swój email kod czterocyfrowy do wpisania.
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_1.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_2.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
 
-5. Ponownie uruchomić OsmAnd
+3. Otrzymasz na swój email **kod czterocyfrowy** do wpisania.
+
+![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
+
+Wprowadź ten kod w aplikacji OsmAnd:
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_4.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_5.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+4. Uruchom ponownie OsmAnd i sprawdź aktywację Osmand Pro:
+   
+_OsmAnd Menu > Ustawienia > Zakupy > Przywróć zakupy_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_6.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
 
 :::tip Note
 Przeczytaj pełną informację o Cross-platform i logowaniu [tutaj](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
@@ -57,19 +88,55 @@ OsmAnd and [ADVportal](https://www.advportal.pl/) introduce and present you OsmA
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 
-Your steps:
-1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)).
+**Your steps**:
+
+1. **Input your e-mail** for registration it on OsmAnd server (OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)):
    
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
+<p> </p>
 
-2. After that, you receive an email from OsmAnd about registration.
-3. Next step you should activate OsmAnd on your device:
+**You receive the next list** to your email from OsmAnd about registration:
+
+![Confirmation](@site/static/img/promo/advportal/confirmation.png)
+
+
+2. **Next step**, you should activate **OsmAnd Pro** on your device:
     
     _OsmAnd Menu > Settings > OsmAnd Cloud > I already have an account_
 
-4. You receive four-digit code in your email for input.
-5. Restart OsmAnd appear
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_1.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_2.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+
+3. You receive **four-digit code** in your email for input.
+
+![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
+
+Input this code in OsmAnd app:
+
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_4.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_5.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+
+4. Restart OsmAnd appear and check your Osmand Pro activation:
+
+_OsmAnd Menu > Settings > Purchases > Restore purchases_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_6.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
 
 :::tip Note
 Read full info about Cross-platform and Login [here](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
