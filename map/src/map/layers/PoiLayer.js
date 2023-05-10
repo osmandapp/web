@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useState, useRef} from "react";
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import _ from "lodash";
@@ -24,7 +24,7 @@ export default function PoiLayer() {
     });
     const [prevController, setPrevController] = useState(false);
 
-    async function getPoi(controller) {
+    async function getPoi(controller, zoom) {
         let latlng = map.getCenter();
         let bbox = map.getBounds();
         const data = {
@@ -65,6 +65,18 @@ export default function PoiLayer() {
         return (!_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length);
     }
 
+    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom) => {
+        await getPoi(controller, zoom).then((res) => {
+            if (res && !ignore) {
+                const newPoiList = {
+                    prevLayer: _.cloneDeep(poiList.layer),
+                    layer: createPoiLayer(res)
+                }
+                setPoiList(newPoiList);
+            }
+        })
+    }, 1000)).current;
+
     useEffect(() => {
         let ignore = false;
         let controller = new AbortController();
@@ -77,15 +89,8 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                _.debounce(await getPoi(controller).then((res) => {
-                    if (res && !ignore) {
-                        const newPoiList = {
-                            prevLayer: _.cloneDeep(poiList.layer),
-                            layer: createPoiLayer(res)
-                        }
-                        setPoiList(newPoiList);
-                    }
-                }), 1000);
+                
+                debouncedGetPoi(controller, ignore, zoom);
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
