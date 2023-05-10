@@ -6,7 +6,7 @@ import L from "leaflet";
 import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
-import {post} from "axios";
+import axios from 'axios';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
 
@@ -22,8 +22,9 @@ export default function PoiLayer() {
         layer: null,
         prevLayer: null
     });
+    const [prevController, setPrevController] = useState(false);
 
-    async function getPoi() {
+    async function getPoi(controller) {
         let latlng = map.getCenter();
         let bbox = map.getBounds();
         const data = {
@@ -33,15 +34,17 @@ export default function PoiLayer() {
             latBboxPoint2: bbox.getSouthWest().lat,
             lngBboxPoint2: bbox.getSouthWest().lng,
         };
-        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi?`, data,
+        let response = await axios.post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, data,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),
-                    lon: latlng.lng.toFixed(6)
-                }
+                    lon: latlng.lng.toFixed(6),
+                    zoom: zoom
+                },
+                signal: controller.signal
             }
-        );
-        if (response.data) {
+        ).catch(function (thrown) {});
+        if (response?.data) {
             return response.data.features;
         }
     }
@@ -64,12 +67,17 @@ export default function PoiLayer() {
 
     useEffect(() => {
         let ignore = false;
+        let controller = new AbortController();
 
         async function getPoiList() {
             if (((zoom !== prevZoom) || move || typesChanged()) && !_.isEmpty(ctx.showPoiCategories)) {
+                if (prevController) {
+                    prevController.abort();
+                }
+                setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                await getPoi().then((res) => {
+                _.debounce(await getPoi(controller).then((res) => {
                     if (res && !ignore) {
                         const newPoiList = {
                             prevLayer: _.cloneDeep(poiList.layer),
@@ -77,7 +85,7 @@ export default function PoiLayer() {
                         }
                         setPoiList(newPoiList);
                     }
-                });
+                }), 1000);
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
