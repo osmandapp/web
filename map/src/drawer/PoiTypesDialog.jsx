@@ -54,10 +54,12 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     };
 
     function showPoiCategoriesOnMap() {
-        const categories = ctx.showPoiCategories;
-        categories.push(selectedPoiCategory);
-        ctx.setShowPoiCategories([...categories]);
-        setDialogOpen(false);
+        if (selectedPoiCategory) {
+            const categories = ctx.showPoiCategories;
+            categories.push(selectedPoiCategory);
+            ctx.setShowPoiCategories([...categories]);
+            setDialogOpen(false);
+        }
     }
 
     function getPoiTypes() {

@@ -25,8 +25,15 @@ export default function PoiLayer() {
 
     async function getPoi() {
         let latlng = map.getCenter();
-        const categories = ctx.showPoiCategories;
-        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi?`, categories,
+        let bbox = map.getBounds();
+        const data = {
+            categories: ctx.showPoiCategories,
+            latBboxPoint1: bbox.getNorthEast().lat,
+            lngBboxPoint1: bbox.getNorthEast().lng,
+            latBboxPoint2: bbox.getSouthWest().lat,
+            lngBboxPoint2: bbox.getSouthWest().lng,
+        };
+        let response = await post(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi?`, data,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),
