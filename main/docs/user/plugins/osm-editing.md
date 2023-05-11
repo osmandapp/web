@@ -12,8 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 [OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is a global community that aims to create a detailed free geographical map of the world and provide up-to-date open-source data to every user, and the OpenStreetMap editing plugin allows you to contribute to the community.  
@@ -75,9 +73,25 @@ If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, 
 The plugin settings are global and apply to all profiles.
 :::  
 
-### Free live updates for mappers
+### Free map updates for mappers
 
-The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org, which is at least 30 confirmed changes in the last two months, you get free hourly, monthly, or unlimited map updates. With the Live updates feature, updates can be available in just 15 minutes, unlike standard updates, which can take up to one hour. 
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. So you could enjoy free hourly map updates, unlike standard monhtly map updates. 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ### OSM Editing Layer  

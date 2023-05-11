@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: OsmAnd Web portal
+title: Web Route planner
 ---
 
 import Tabs from '@theme/Tabs';
