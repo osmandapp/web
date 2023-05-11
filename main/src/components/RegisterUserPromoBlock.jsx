@@ -30,6 +30,13 @@ export default function RegisterUserPromoBlock({promoKey}) {
         return email !== null && email.length >=3 && email.length < 320;
     }
 
+    const handleKeyDown = (e) => {
+        if (e.code === "Enter") {
+            e.preventDefault();
+            registerEmail().then();
+        }
+    };
+
     return <Box
         component="form"
         width='600px'
@@ -54,6 +61,7 @@ export default function RegisterUserPromoBlock({promoKey}) {
                     helperText={emailError ? emailError : msg}
                     error={emailError.length > 0}
                     value={email ? email : ''}
+                    onKeyDown={handleKeyDown}
                 >
                 </TextField>
             </Grid>
