@@ -49,7 +49,7 @@ export default function Home() {
         </script>
         <noscript>
           <img height="1" width="1" style={{display: "none"}}
-            src={`https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1`} />
+            src={`https://www.facebook.com/tr?id=1141023373959636&ev=PageView&noscript=1`} />
         </noscript>    
       </main>
     </Layout>
