@@ -242,10 +242,14 @@ In Options menu you can make the next actions with your route:
 </Tabs>  
 
 - Text What is a Point
-- How to create points
+- [How to create points](#how-to-create-points)
 - How to swap and delete points in a list
 - [Graph](#graph)
 
+### How to create points
+
+***Add point*** - Adds a point at the location of the *Pointer* in the center of the visible part of the map.  
+Move your finger on the map (gesture link). A straight dotted line will be visible from the last (first) point. the next point will always be located in the center of the screen. to add a point, tap Add Point. To add a point that is not a pointer, tap anywhere on the screen. you can use the action arrows to cancel or return canceled actions.  
 
 ### Point Context menu
 
@@ -327,20 +331,23 @@ The Route line shows an [automatically-generated road or straight route](../plan
 
 ### How to draw a route
 
+By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link).  
+
 - Click on [*Profile* button](../plan-route/create-route.md#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
 - Click to [*Add* button](../plan-route/create-route.md#main-screen) for adding shaping points or just click on the screen.
 
 ![Plan a route app_button](@site/static/img/plan-route/plan-route-app-button.png)
 
-For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on [*Profile* button](../plan-route/create-route.md#main-screen):
-
-![app-settings](@site/static/img/plan-route/plan-route-app-set.png)
-
 - Choose two or more application profiles for creating a route. Click to [*Profile* button](../plan-route/create-route.md#main-screen):
 
-![Plan a route app_choosing](@site/static/img/plan-route/plan-route-app-choosing.png) 
 
 ### Menu Settings
+
+![Plan a route android](@site/static/img/plan-route/plan_route_menu_settings_andr.png)
+
+[Route parameters](../navigation/routing/osmand-routing.md)  
+For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on [*Profile* button](../plan-route/create-route.md#main-screen).  
+
 
 Choose how to connect the points, by a straight line, or calculate a route between them as specified:
 
@@ -352,16 +359,38 @@ When you use two or more application profiles for your route:
 - For Android each segment has [a profile icon and color](../plan-route/create-route.md#route-line) of the application profile which using for calculated route between shaping points.
 - For iOS all segments have [color of last using application profile](../plan-route/create-route.md#route-line) for calculated route.
 
+#### Use elevation data
+
+![Plan a route android](@site/static/img/plan-route/plan_route_menu_settings_use_elevation_data_andr.png)
+
 
 ## Create new route
 
 To create a new route (track) in GPX format, use the main function of the Plan a Route tool. Unlike recording the current track with a plugin (name), pre-creating a route has many advantages. You can add as many points as you want to the route, delete and move them, change route types by segments, and get detailed information about the route (internal link). It is also the easiest and fastest way to measure the distance between points.  
 
+By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link).  
+
+
 ### Graph
+
+Click to "Graph" button. 
+
+![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
+
+Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
 
 ### Navigation
 
+[Navigate by track](../navigation/setup/gpx-navigation.md)
+
 ### Save new track
+
+![Plan a route android-save](@site/static/img/plan-route/plan-route-animation.gif)  
+
+Tap [Done button](../plan-route/create-route.md#main-screen) to save your route like the GPX file.  
+
+Find your track in *My Places* menu:
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,show_gpx"/>*
 
 ### Attach to the roads
 
