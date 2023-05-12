@@ -26,7 +26,7 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 **Twoje kroki**:
 
-1. **Wprowadź swój e-mail** do rejestracji na serwerze OsmAnd (OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use)).
+1. **Wprowadź swój e-mail** do rejestracji:
 
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
@@ -34,6 +34,8 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 2. **Pełna insrtrukcja** jest [tutaj](https://osmand.net/promo/instruction#polska-wersija).
 
+
+OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use).
 
 Linki ADVportal: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
 
@@ -49,13 +51,15 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 **Your steps**:
 
-1. **Input your e-mail** for registration it on OsmAnd server (OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)):
+1. **Input your e-mail** for registration:
    
 <RegisterUserPromoBlock  promoKey='advportal'/>
 
 <p> </p>
 
 2. **Full manual** is [HERE](https://osmand.net/promo/instruction#english-version).
+
+OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
 ADVportal links: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
 
