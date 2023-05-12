@@ -28,7 +28,7 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 1. **Wprowadź swój e-mail** do rejestracji:
 
-<RegisterUserPromoBlock  promoKey='advportal'/>
+<RegisterUserPromoBlock  promoKey='test-2'/>
 
 <p> </p>
 
@@ -53,7 +53,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='advportal'/>
+<RegisterUserPromoBlock  promoKey='test-2'/>
 
 <p> </p>
 
