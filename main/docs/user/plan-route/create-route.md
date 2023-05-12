@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to create new routes as GPX tracks, edit and add new segments to already saved tracks, measure distances on the map, and link track segments to the nearest available road using different navigation profiles. The feature is designed to work in offline mode.
+The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to create new routes as GPS tracks, edit and add new segments to already saved tracks, measure distances on the map, and link track segments to the nearest available road using different navigation profiles. The feature is designed to work in offline mode.
 
 A route consists of a set of segments between specified points. The segments can be either straight lines or routes adapted to the selected profile. The route can be saved, imported, edited, and used for navigation.
 
@@ -90,7 +90,7 @@ There are four ways to access the *Plan a route* tool.
 
 In case you chose **Plan a route** in the main *Menu*, you can select the following actions in the opened screen:
 
-- [*Create new route*](#create-new-route) - Select the section of the map on your screen where you want to start ctreating a GPS route. Points are created using the pointer in the center of the visible map and the *Add point* button. Or you can tap anywhere on the map, and a Point will be placed automaticlly. In the [*point context menu*](#points-context-menu) you can change its location.
+- [*Create new route*](#create-new-route) - Select the section of the map on your screen where you want to start ctreating a GPS route. Points are created using the pointer in the center of the visible map and the *Add point* button. Or you can tap anywhere on the map, and a Point will be placed automaticlly. In the [*point context menu*](#point-context-menu) you can change its location.
 - *<Translate android="true" ids="plan_route_open_existing_track"/>* - The list of all GPX tracks available to the application opens. In this menu, you can select tracks from the existing [folders](../personal/tracks.md#my-places-menu) and use the sort option for more convenience.  
 - *<Translate android="true" ids="plan_route_last_edited"/>* - This is a list of the last 5 GPX tracks used in the app, for quick access.
 - *<Translate android="true" ids="plan_route_import_track"/>* - (Android only) With this option, you can choose to import the GPX track on your device or in connected cloud storage. For iOS, the [*Import Tracks*](../personal/tracks.md#import-track) option is available in the *Menu → My Places → Tracks → Actions*. 
@@ -117,94 +117,21 @@ In case you chose **Plan a route** in the main *Menu*, you can select the follow
 In Options menu you can make the next actions with your route:  
 
 - [*<Translate android="true" ids="route_between_points"/>*](#route-between-points) - Showing chosen application profile (The straight line by default). Click to this action is equal *Profile* button(link)  with opening application profile menu(link). 
-- *<Translate android="true" ids="plan_route_add_new_segment"/>* (Android) or *<Translate ios="true" ids="gpx_start_new_segment"/>* (iOS) - Drawing new segments of the route which not connect with the previous segment. 
-- [*<Translate android="true" ids="shared_string_save_changes"/>*](#save-changes) - Save your route like GPX track and continue to create the next segment. 
+- [*<Translate ios="true" ids="gpx_start_new_segment"/>*](#start-new-segment) (iOS) or *<Translate android="true" ids="plan_route_add_new_segment"/>* (Android) - Draws new route segments that do not connect to the previous segment. 
+- *<Translate android="true" ids="shared_string_save_changes"/>* - If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
 - [*<Translate android="true" ids="save_as_new_track"/>*](#save-as-new-track) - Save your route like GPX track.
 - [*<Translate android="true" ids="add_to_a_track"/>*](#add-to-a-track) - Add your route to a track from your track folder and save the new track. 
 - [*<Translate android="true" ids="shared_string_navigation"/>*](#navigation) - Start navigation from your position to the finish point using a drawn route.
-- *<Translate android="true" ids="reverse_route"/>* - Change the direction of a drawn route. 
+- *<Translate android="true" ids="reverse_route"/>* - You swap the Start point of the route and the last added point. The route segment settings do not change when Reverse is applied. 
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-to-the-roads) - text.
-- [*<Translate android="true" ids="attach_to_the_roads"/>*](../map/track-context-menu.md#gps-filter) - Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?**
-- *<Translate android="true" ids="shared_string_clear_all"/>* - It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.  
-
-
-### Route between points
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png)
-
-</TabItem>
-
-</Tabs>   
-
-
-### Save changes
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-
-### Save as new track
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs> 
-
-
-### Add to a track
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs> 
+- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/track-context-menu.md#gps-filter) - Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?**
+- ***<Translate android="true" ids="shared_string_clear_all"/>*** - It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.  
 
 
 ### Navigation
+
+[Navigate by track](../navigation/setup/gpx-navigation.md)
+
 
 <Tabs groupId="operating-systems">
 
@@ -244,7 +171,7 @@ In Options menu you can make the next actions with your route:
 - Text What is a Point
 - [How to create points](#how-to-create-points)
 - How to swap and delete points in a list
-- [Graph](#graph)
+
 
 ### How to create points
 
@@ -283,10 +210,28 @@ Tap a point from *Points list* or on the map to open Point Contecst menu
 10. *<Translate ios="true" ids="change_route_type_after"/>* - Change route type (application profile) after a chosen point.  
 11. *<Translate ios="true" ids="delete_point"/>* - Delete chosen point from the route.  
 
+#### Change route type before/after this point
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
+
+</TabItem>
+
+</Tabs>    
+
 
 ## Straight Lines
 
-### How to draw a line (distance measurement)
+### Distance measurement
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)  
 
@@ -302,6 +247,55 @@ Click to *Add* button for adding shaping points or just click on the screen.
 
 
 ## Segments
+
+### Route between points
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png)
+
+</TabItem>
+
+</Tabs>   
+
+This setting can be accessed in several ways:
+- From the *Options* menu → *Route between points*.
+- Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
+- In the *Point Context menu → Change route type before/after*.  
+
+With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the profiles that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.  
+
+
+### Start new segment
+
+Allows you to start creating a new route segment away from the previous segment.  
+
+A segment is a section of a route between two points that have already been calculated for a given routing type.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
 
 ### Route line
 
@@ -379,11 +373,8 @@ Click to "Graph" button.
 
 Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
 
-### Navigation
 
-[Navigate by track](../navigation/setup/gpx-navigation.md)
-
-### Save new track
+### Save as new track
 
 ![Plan a route android-save](@site/static/img/plan-route/plan-route-animation.gif)  
 
@@ -391,6 +382,9 @@ Tap [Done button](../plan-route/create-route.md#main-screen) to save your route 
 
 Find your track in *My Places* menu:
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,show_gpx"/>*
+
+And  *Save as new track* menu Options.
+
 
 ### Attach to the roads
 
@@ -424,6 +418,9 @@ Next, choose the needed application profile for snapping your track to the neare
 After calculating the new route you click [*Done* button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
 
 
+### GPS filter
+
+
 ## Modify GPX track
 
 <Tabs groupId="operating-systems">
@@ -453,7 +450,30 @@ After calculating the new route you click [*Done* button](../plan-route/create-r
 In [Points list](../plan-route/create-route.md#points-list-and-graph), there is information about the number  of points and a track distance.  
 You can make all actions with points in [Points list](../plan-route/create-route.md#points-list-and-graph) and [Point menu](../plan-route/create-route.md#actions-of-point-menu): delete, change order, move and etc.  
 For [Graph (Android)](../plan-route/create-route.md#points-list-and-graph) you can see the actual information for a GPX track: Altitude, Slope, Speed.  
-In [Options menu](../plan-route/create-route.md#options-menu) is available all actions for GPX track too: add a new segment, reverse route, directions, etc.
+In [Options menu](../plan-route/create-route.md#options-menu) is available all actions for GPX track too: add a new segment, reverse route, directions, etc.  
+
+
+### Add to a track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Select the track file to add a new segment.
+
+Currently recording track.
 
 
 ## User case
