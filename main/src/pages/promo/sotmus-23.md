@@ -14,30 +14,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
-![Configure map screen](@site/static/img/promo/sotmus/sotmus_1.png)
+![SOTM](@site/static/img/promo/sotmus/sotmus_1.png)
 
 ## Get OsmAnd Pro free for 3 months 
 
-Each participant of SotM US 2023 can receive OsmAnd Pro subscription:
+Each participant of SotM US 2023 can receive OsmAnd Pro subscription.
 
-1. Input your e-mail for registration it on OsmAnd server (OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use)).
-   
+Please, input your e-mail for registration:
+
 <RegisterUserPromoBlock  promoKey='sotmus2023'/>
 
+**Full manual** is [HERE](https://osmand.net/promo/instruction#english-version).
 
-2. After that, you receive an email from OsmAnd about registration.
-3. Next step you should activate OsmAnd on your device:
-    
-    _OsmAnd Menu > Settings > OsmAnd Cloud > I already have an account_
+OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-4. You receive four-digit code in your email for input.
-5. Restart OsmAnd appear
-
-:::tip Note
-Read full info about Cross-platform and Login [here](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
-:::
-
-_________________________________
+_________________
 
 
 <LinksSocial/>

@@ -399,7 +399,7 @@ For example, you have recorded tracks. *Plan a route* tool allows snapping your 
 
 For using this option you need to open your track by *Plan a route* tool:  
 
-Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click [Profile button](../plan-route/create-route.md#main-screen) or choose in [Options menu](../plan-route/create-route.md#options-menu) → <translate android="true" ids="route_between_points"/>. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
+Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click [Profile button](../plan-route/create-route.md#main-screen) or choose in _[Options menu](../plan-route/create-route.md#options-menu) → <Translate android="true" ids="route_between_points"/>_. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
 
 After calculating the new route you click [*Done* button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
 
@@ -468,10 +468,12 @@ Select the track file to add a new segment.
 Currently recording track.
 
 
+
+<!--
 ## User case
 
 
-<!--
+
 ______  
 
 ## Information
