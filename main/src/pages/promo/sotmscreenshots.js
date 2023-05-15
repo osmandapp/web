@@ -49,7 +49,18 @@ export default function SotmScreenshots({ altSectionClass }) {
   return (
     <section className={clsx('section', altSectionClass)}>
       <div className='container'>
-       
+        <div className='row'>
+          <h1 className='index-title padding-horiz--md text--left col col--4'>Pro features</h1>
+          <div className='col col--4' />
+          <div className='col col--4' >
+            <ul className="tabs tabs--block">
+              <li className={clsx({"tabs__item": true, "flex-1": true, "tabs__item--active": android })} 
+                  onClick={() => setAndroid(true)}>Android</li>
+              <li className={clsx({ "tabs__item": true, "flex-1": true, "tabs__item--active": !android })} 
+                  onClick={() => setAndroid(false)}>iOS</li>
+            </ul>
+          </div>
+        </div>
         <Carousel responsive={responsive} autoPlay={false}
           itemClass="carousel-item-padding-10-px" className='padding-vert--md padding-horiz--md'>
           {(android ? imagesAndroid : imagesIOs).map((e) => {
@@ -57,6 +68,7 @@ export default function SotmScreenshots({ altSectionClass }) {
               <img src={require('@site/src/pages/promo/' + e).default} />
             </div>
           })} 
+
         </Carousel>
       </div>
     </section>
