@@ -13,6 +13,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
+import SotmScreenshots from './sotmscreenshots.js';
+
+<SotmScreenshots />
+
 
 ![SOTM](@site/static/img/promo/sotmus/sotmus_1.png)
 
