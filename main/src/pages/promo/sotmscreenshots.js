@@ -43,9 +43,6 @@ export default function SotmScreenshots({ altSectionClass }) {
     "ios-5s.png",
     "ios-6s.png",
     "ios-7s.png",
-    "ios-8s.png",
-    "ios-9s.png",
-    "ios-10s.png",
   ];
   const [android, setAndroid] = useState(true);
 
