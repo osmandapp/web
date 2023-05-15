@@ -213,19 +213,21 @@ Using functionality of the [Plan a route](../../plan-route/create-route.md#point
 *Markers* can be helpful if you want to keep track of your progress on a route or if you want to be notified when you approach the designated place (only when *Markes* serve as waypoints and *[Voice guidance](../guidance/voice-navigation.md)* is enabled).
 ### Mark as passed
 
-*Marker* can be marked as passed (Android) or dismissed (iOS) through the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)*. After that, *Marker* gets into the [History](../../personal/markers.md#history) folder, although it can be restored if needed.
+A *Marker* can be marked as passed (Android) or dismissed (iOS) through the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* (first screenshot).  
+When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active (second screenshot). By single tap on this switch, a *Marker* becomes inactive, and navigation is built to the next one from the [list](#navigation-list).  
+After the *Marker* is been dismissed, it gets into the [History](../../personal/markers.md#history) folder, from where it can be restored if needed.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Pass Marker Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) 
+![Pass Marker Android 1](@site/static/img/navigation/marker/pass_markers_andr_1.png) ![Pass Marker Android 2](@site/static/img/navigation/marker/pass_markers_andr_2.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pass Marker iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) 
+![Pass Marker iOS 1](@site/static/img/navigation/marker/pass_markers_ios_1.png) ![Pass Marker iOS 2](@site/static/img/navigation/marker/pass_markers_ios_2.png) 
 
 </TabItem>
 

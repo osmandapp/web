@@ -19,142 +19,132 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Travel guides help you in your trips, you can see interesting places on the map and read info about it.
+Virtual travel guides inside OsmAnd offer valuable insights, recommendations, and tips for users. They also allow tourists to access comprehensive navigation information to attractions directly within the app.  
+OsmAndt travel guides are based on data from [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer writers create up-to-date articles. Wikivoyage information includes the main facts about a place, transport, landmarks, shopping spots, etc. Plan to visit London, Shanghai, or planning a visit to the Grand Canyon? Your guide is inside OsmAnd to help you!
 
 ![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
 
-## Travel Guides data
-
-The guides are based on [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer writers create articles with real and up-to-date information. Such information includes the main facts about a place, transport, landmarks, shopping spots, etc. Going to London, Shanghai or planning a visit to the Grand Canyon? Your guide is there to help you.
-
-Wikivoyage data has GPX format in OsmAnd and keep in [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md) → <Translate android="true" ids="icon_group_travel"/> after [downloading](../plan-route/travel-guides.md#download) it. Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map.md#track-points) only.
-
-![Travel guides folder General](@site/static/img/guides/travel_guides_folder_android.png)
-
-GPX-files (Travel guides) have info about points number of Travel guide file. 
-
-About actions of this GPX-files (Travel guides) read [here](../personal/tracks.md#my-places-android).
-
-Orange color - visible on the map. Or <Translate android="true" ids="shared_string_visible"/> folder.
+:::note
+Besides the country, region or city guides, you can also find guides to the sites from movies, books, computer games, as well as places of memory of great people, etc.  
+There are special guides like the list of UNESCO Global Geoparks Network or the list of the world's largest and most complicated international airports.  
+:::
 
 ## How to use
 
-To start using the feature, please go to:
+- [Download](#download-travel-guides) *Travel guides*.
+- Browse [articles](#travel-guide-article) about a country, region, city, attractions.
+- [Bookmark](#bookmarks) articles to read them later.
+- Chose [points](#points) from articles to visit and add them to the OsmAnd map.
+- [Build a route](../navigation/setup/route-navigation.md) to chosen touristic attractions.
 
-<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/>
- 
-Make sure [to download the travel guide file](../plan-route/travel-guides.md#download) to be able to use the feature.
-  
-Now all your guides are saved on device and you can look up any information, even if you're abroad or out of a mobile network area.
+### Download Travel guides
 
-As soon as the file is downloaded, you can start using the guides. Just go to [Travel guides list](../plan-route/travel-guides.md#search-field-and-travel-guides-list): <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/>, and enter the name of the city into [the search field](../plan-route/travel-guides.md#search-field-and-travel-guides-list). 
+Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,welmode_download_maps,shared_string_travel_guides"/>*). Articles are grouped by regions: Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America, so you don't need to download travel books for a separate city or country.  
+After necessary regions are saved on your device, you can browse through articles using OsmAnd even if you're abroad or out of a mobile network area!  
 
-**Note:** 
+![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
 
-As soon as you open the article, you'll see the information conveniently arranged by topic. The information often includes topics like 'Understand' with the details about local culture and habits, 'Talk', 'Get in', 'Get Around', 'See' that covers main places of interest, 'Buy' with the recommended shopping spots, 'Sleep', 'Drink', and 'Go next' suggesting the locations you may be interested in after visiting the current one. You can also press 'Bookmark' to have a quick access to this article later. All such articles will be saved in your 'Bookmarked articles' list.
+### Main screen
 
-The articles are sharable. Just press Share button in the upper-right corner and send it to your friend. That person will be able to open your link in OsmAnd directly if they have the app on their device.
+The *Travel guides* main screen consists of two general parts: the [search field](#travel-guides-search) and the travel guides list (or *<Translate android="true" ids="popular_destinations"/>*).
+When you open it (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. Tap on the item from the list opens the [Travel guide article](../plan-route/travel-guides.md#travel-guide-article). At the bottom of the screen is a switch to the [Bookmarks tab](#bookmarks).  
 
-### Download 
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1.png)
 
-<Translate android="true" ids="shared_string_menu,welmode_download_maps,shared_string_travel_guides"/>
+#### Travel guides search
 
-<p> </p>
-
-![Travel guides download menu](@site/static/img/guides/travel_guides_download_android.png)
-
-**Note:** Wikivoyage is divided by regions - Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, South America.
-
-### Search field and travel guides list
-
-In <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_travel_guides"/> there are two general part: the search field and travel guides list (<Translate android="true" ids="popular_destinations"/>).
-
-![Travel guides menu](@site/static/img/guides/travel_guides_menu_android.png)
-
-In the top of <Translate android="true" ids="shared_string_travel_guides"/> menu there is the search field. You fill it by needed city name:
+Search field is located at the top of the <Translate android="true" ids="shared_string_travel_guides"/> main screen. If you start typing the first letters of a country, city, or famous place, a list of articles will appear under the search field. By touching the needed one, you can start reading.  
 
 ![Travel guides search menu](@site/static/img/guides/travel_guides_search_android.png)
 
-In Result field:
-- &nbsp;Travel guides with info about article languages.
+:::note
+- Available languages are listed next to each article.
+- For deleting search history you need to use [<Translate android="true" ids="shared_string_options"/> button](../plan-route/travel-guides.md#options).
+:::
 
-Clicking to chosen Travel guide name opens [Travel guide article menu](../plan-route/travel-guides.md#travel-guide-article).
+<!-- 
+- Search is complete only when you hit &#128269; or space in the end of the word. - doesn't work as it should be
+-->
 
-**Note:** for deleting search history you need to use [<Translate android="true" ids="shared_string_options"/> button](../plan-route/travel-guides.md#options)
+#### Travel guides list
 
-Below the seacrh field there is Travel guides list - <Translate android="true" ids="popular_destinations"/>. It shows the first 30 nearest travel guides article on the area of your screen device (not location) or <Translate android="true" ids="saved_articles"/>. For open <Translate android="true" ids="saved_articles"/> or <Translate android="true" ids="popular_destinations"/> you need to use <Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/> buttons below.
+The travel guide list shows 30 first articles about destinations adjacent to the center of the screen (not the location). By touching the field with the title and a short description of the article, you can view its full text. If you tap the *[Bookmark](#bookmarks) button*, the article will be saved for reading later.  
+At the bottom of the screen, there are two tabs: *<Translate android="true" ids="shared_string_explore"/>* and *<Translate android="true" ids="saved_articles"/>*. By single tap on a tab, you can switch between them.
 
 ![Travel guides explore menu](@site/static/img/guides/travel_guides_explore_android.png) ![Travel guides bookmarked](@site/static/img/guides/travel_guides_bookmarked_android.png)
 
-Article buttons:
 - &nbsp;<Translate android="true" ids="shared_string_read"/> - opens [Travel guide article](../plan-route/travel-guides.md#travel-guide-article).
 - &nbsp;<Translate android="true" ids="shared_string_bookmark"/> - moves chosen article to <Translate android="true" ids="saved_articles"/>.
-- &nbsp;<Translate android="true" ids="shared_string_bookmark"/> - removes chosen article from <Translate android="true" ids="saved_articles"/>.
+- &nbsp;<Translate android="true" ids="shared_string_remove"/> - removes chosen article from <Translate android="true" ids="saved_articles"/>.
 
 ### Options
 
-You can also choose if you'd like to download the images or not, clear image cache or delete the search history. To do that, please press the <Translate android="true" ids="shared_string_options"/> button in the upper-right corner of the screen.
+In this menu you can customize the appearance of articles when working offline. Please note, that *[downloaded](#download-travel-guides)* travel guides do not contain pictures. Images appear only when viewing articles with an active Internet connection.  
+In the menu, you can choose whether or not to save pictures in the articles you've viewed so that you can use them when you offline. You can also clear images cash or delete search history (works only with search inside *Travel guides*).
 
 ![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png) 
 
-- &nbsp;<Translate android="true" ids="wikivoyage_download_pics"/> - article images can be downloaded for offline use. 
-- &nbsp;<Translate android="true" ids="images_cache"/> - allows to clear image cache.
-- &nbsp;<Translate android="true" ids="delete_search_history"/> - allows to clear [search history](../plan-route/travel-guides.md#search-field-and-travel-guides-list).
+- &nbsp;<Translate android="true" ids="wikivoyage_download_pics"/> - images within articles can be downloaded for offline use.  
+- &nbsp;<Translate android="true" ids="images_cache"/> - clears the images cache to free up memory.
+- &nbsp;<Translate android="true" ids="delete_search_history"/> - clears [search history](#travel-guides-search).
 
-### Travel guide article
+## Travel guide article
 
-Clicking to <Translate android="true" ids="shared_string_read"/> button in [travel guides list](../plan-route/travel-guides.md#search-field-and-travel-guides-list) or <Translate android="true" ids="context_menu_read_full"/> button in [Description menu](../map/track-context-menu.md#description) opens Travel guide article.
+You can open an article from the proposed variants on the Travel guides *[Main screen](#main-screen)* or using the *[Search](#travel-guides-search)* option. If you have added touristic attractions, called *[Points](#points)* from *Travel guide article* to the OsmAnd map, you can also tap *Read full* button in a waypoint [description section](../map/track-context-menu.md#description-and-info).  
+As soon as you open the article, you'll see the information conveniently arranged by topic.  
 
 ![Travel guides article menu](@site/static/img/guides/travel_guides_article_android.png) 
 
-The articles are available in different languages. By default, the language you're using in OsmAnd will be also picked for Travel guides. But if you'd like, you can view your article in a different one. To do that, press the translation button next to the name of the article, you can choose available languages for this article:
+<!-- 
+Add image -->
 
-![Travel guides article translation menu](@site/static/img/guides/travel_guides_article_translation_android.png) 
+- At the top of the screen, next to the name of the article, there is a button to change its language. The system language is used by default.
+- Using &#8942; button you can share article with friends. The link opens in the OsmAnd app.
+- Tap on a navigation panel opens *Travel guides Navigation menu*.
 
-Each article in [Wikivoyage](https://en.wikipedia.org/wiki/Wikivoyage) has the same structure of content, where there are introduction part (images and description of turist object) and next chapters:
-- &nbsp;"Understand" - full description.
-- &nbsp;"Get in" - how to get in to this area, place and etc and how much to cost this route.
-- &nbsp;"See" - list of seesight places (museums, historical places...) with full description: how much to cost tickets, when to open, links to website, phones.
-- &nbsp;"Do" - descrption any places for pastime.
-- &nbsp;"Buy" - descrption any places for shoping.
-- &nbsp;"Eat" - descrption any places for eating (divided by budget: budget, mid-range, splurge).
-- &nbsp;"Drink" - descrption any bars and cafes.
-- &nbsp;"Sleep" - descrption any hotels (divided by budget: budget, mid-range, splurge). 
-- &nbsp;"Go next" - proposal the next nearest places from Wikivoyage.
+At the bottom of the screen there are buttons:
+- [Contents](#table-of-contents) - opens table of contents of the article.
+- [Points](#points) - shows the tourist attractions related to the article on the map.
+- [Bookmark](#bookmarks) - allows you to add an article to bookmarks for later reading.  
 
-For opening a chapter you need to use "&#8744;" button.
+### Table of contents
 
-In Wikivoyage articles there are info about prices, contacts info, web links and etc. Almost each part has next buttons: button "Wikipedia" allows to open [Wikipedia POI (online or offline)](../plugins/wikipedia.md), button "Open on map" allows to show [the Point of the object on the map](../plan-route/travel-guides.md#points).
-
-![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full_android.png) ![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full1_android.png) 
-
-Below the screen next buttons:
-- &nbsp;"Contents" - allows to opens Contents menu of an Wikivoyage article. Clicking to a name content moves to chosen an article part.
+Most *Travel guide articles* have the same content structure, with an introduction (images and a description of the tourist site) and subsequent chapters:
 
 ![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
-- &nbsp;"Points" - allows to add on the map article [Points](../plan-route/travel-guides.md#points) and to open [Track Context menu](../map/track-context-menu.md) of chosen article.
-
-![Travel guides points menu](@site/static/img/guides/travel_guides_points_android.png)
+- &nbsp;*Understand* - details about local culture and habits.
+- &nbsp;*Get in* - how to get to this area, place, etc. and how much will this route cost.
+- &nbsp;*See* - a list of attractions (museums, historical sites...) with full descriptions: how much tickets cost, when they open, links to the site, phone numbers.
+- &nbsp;*Do* - places to spend time.
+- &nbsp;*Buy* - sites to shop.
+- &nbsp;*Eat* - catering facilities (divided by budget: budget, mid-range, splurge).
+- &nbsp;*Drink* - bars and cafes.
+- &nbsp;*Sleep* - accommodations divided by budget (budget, mid-range, splurge).
+- &nbsp;*Go next* - closest places from Wikivoyage.
 
 ### Points
 
+*Travel guide articles* often contain tourist attractions grouped by topic. They are available in the *Points* menu at the bottom of the article. By single tap on a *Points* button all attractions related to the article will be shown on the OsmAnd map. You'll see food locations, airports, railway stations, shops, main historical attractions, accommodation options, etc. They will also be added to the map and can be managed as a *[Track](../personal/tracks.md)*.
 
-Articles often contain points grouped by topic. They are available in the 'Points' menu at the bottom of the article. You'll see food locations, airports, railway stations, places to shop, main historical attractions, accommodation options, etc.
+![Travel guides points on the map  menu](@site/static/img/guides/travel_guides_track_points_map_android.png)  
+<!-- 
+Add image -->
 
-![Travel guides points on the map  menu](@site/static/img/guides/travel_guides_track_points_map_android.png)
+:::info
+*Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints).  
+:::
 
-Wikivoyage guide file is [GPX-file with waypoints](../map/point-layers-on-map.md#track-points). Waypoints are Points (places) from Wikivoyage article on the map. 
+#### Points as a track on the map
 
-When you click to "Points" button on the [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) or you show your [GPX-file of Wikivoyage on the map](../personal/tracks.md#my-places-android).
-
-When you open [Track Context menu](../map/track-context-menu.md) of GPX-file (Travel guide article), you find next general info of Travel guide article:
-- &nbsp;In ["Overview"](../map/track-context-menu.md#overview), you can read short description or open [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) by clicking "Read full" button. Button "Edit"allows you to correct article.
+After you have added *Points* from *Travel guide article* to the map, you can work with them as with a *[Track](../personal/tracks.md)*. In [Track Context menu](../map/track-context-menu.md) of a GPX-file, you can find general info from article to which this track belongs:
 
 ![Travel guides points overview menu](@site/static/img/guides/travel_guides_points_overview_android.png)
 
+<!-- 
+Add image -->
+- &nbsp;In *[Overview](../map/track-context-menu.md#overview)*, you can read short description or open [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) by tap *Read full* button. *Edit* allows you to correct article.
 - &nbsp;In ["Track"](../map/track-context-menu.md#altitude--speed-graphs) there is not any info (Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map.md#track-points) only).
-
 - &nbsp;In ["Points"](../map/track-context-menu.md#points--waypoints), you see folders with points by named [Contents (Buy, Do, Drink...)](../plan-route/travel-guides.md#travel-guide-article). Each category of Contents has own color and icon.
 
 Here you find short description of points (places), number of points on each folder.
@@ -170,16 +160,34 @@ Clicking to chosen point opens this point on the map with and [Map Context menu]
 - &nbsp;In ["Options"](../map/track-context-menu.md#options), you can make any actions with your Travel guide file (GPX-track).
 
 
-## Other guides
 
-Besides the city guides, you can read about regions or countries, and even scroll through special guides like the list of UNESCO Global Geoparks Network or even a phrasebook of a country you're visiting. To see more exciting articles, please see the 'Explore' tab of the travel guides menu.
+[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md) → <Translate android="true" ids="icon_group_travel"/> after [downloading](../plan-route/travel-guides.md#download) it. Travel guides: GPX-tracks with [waypoints](../map/point-layers-on-map.md#track-points) only.
 
-## Building Travel book 
-
+![Travel guides folder General](@site/static/img/guides/travel_guides_folder_android.png)
 
 
+### Bookmarks
 
+<!--
+Add image
+-->
 
-## Useful links
+## Combine with Wikipedia
 
-[Wikipedia plugin](../plugins/wikipedia.md)
+In *Travel guides articles* you can find useful information about tourist attraction (contact information, web links, prices, etc.). Many articles have button *Wikipedia*, that allows to open *[Wikipedia article](../plugins/wikipedia.md)* (online or offline) about place of interest.
+
+![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full_android.png) ![Travel guides article description full menu](@site/static/img/guides/travel_guides_article_description_full1_android.png) 
+
+In some cases (for example, in bookmarks tab) OsmAnd will suggest to download Wikipedia map layer, so you can read related articles offline.
+
+<!--
+Add image
+-->
+
+:::info NOTE
+Please note, that the Wikipedia plugin is a paid feature of the OsmAnd app.
+:::
+
+## Custom Travel guide
+
+We recommend to add new articles or edit them on [Wikivoyage](https://en.wikivoyage.org/). About every 6 months we update Travel guides and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
