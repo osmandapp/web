@@ -11,7 +11,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
+import SotmScreenshots from './carusel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
 ![Configure map screen](@site/static/img/promo/advportal/advportal.png)
@@ -62,7 +62,9 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
 ADVportal links: [ADVportal.pl](https://www.advportal.pl/), [Facebook](https://www.facebook.com/ADVportalpl/), [Youtube](https://www.youtube.com/@advportal), [Instagram](https://www.instagram.com/advportal/)
+________________________________
 
+<SotmScreenshots />
 _________________________________
 
 

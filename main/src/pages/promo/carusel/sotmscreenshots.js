@@ -33,6 +33,9 @@ export default function SotmScreenshots({ altSectionClass }) {
     "2.png",
     "3.png",
     "4.png",
+    "5.png",
+    "6.png",
+    "7.png",
    
   ];
   let imagesIOs = [
@@ -42,7 +45,6 @@ export default function SotmScreenshots({ altSectionClass }) {
     "ios-4s.png",
     "ios-5s.png",
     "ios-6s.png",
-    "ios-7s.png",
   ];
   const [android, setAndroid] = useState(true);
 
@@ -50,7 +52,7 @@ export default function SotmScreenshots({ altSectionClass }) {
     <section className={clsx('section', altSectionClass)}>
       <div className='container'>
         <div className='row'>
-          <h1 className='index-title padding-horiz--md text--left col col--4'>Pro features</h1>
+          <h3 className='index-title padding-horiz--md text--left col col--4'>Pro features</h3>
           <div className='col col--4' />
           <div className='col col--4' >
             <ul className="tabs tabs--block">
@@ -65,7 +67,7 @@ export default function SotmScreenshots({ altSectionClass }) {
           itemClass="carousel-item-padding-10-px" className='padding-vert--md padding-horiz--md'>
           {(android ? imagesAndroid : imagesIOs).map((e) => {
             return <div key={e}>
-              <img src={require('@site/src/pages/promo/' + e).default} />
+              <img src={require('@site/src/pages/promo/carusel/' + e).default} />
             </div>
           })} 
 

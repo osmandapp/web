@@ -44,12 +44,12 @@ export default function Home() {
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1141023373959636');
+        fbq('init', '1534725223604368');
         fbq('track', 'PageView');`}
         </script>
         <noscript>
           <img height="1" width="1" style={{display: "none"}}
-            src={`https://www.facebook.com/tr?id=1141023373959636&ev=PageView&noscript=1`} />
+            src={`https://www.facebook.com/tr?id=1534725223604368&ev=PageView&noscript=1`} />
         </noscript>    
       </main>
     </Layout>
