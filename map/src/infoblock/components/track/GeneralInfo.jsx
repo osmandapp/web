@@ -318,7 +318,8 @@ export default function GeneralInfo({width, setOpenDeleteDialog}) {
             </Typography>
         </>)
     }
-    console.log(ctx.selectedGpxFile)
+
+
     return (
         <Box minWidth={width} maxWidth={width}>
             <Typography className={styles.info} variant="subtitle1" color="inherit">

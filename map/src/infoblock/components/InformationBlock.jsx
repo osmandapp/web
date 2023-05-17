@@ -3,10 +3,10 @@ import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import {Close} from '@mui/icons-material';
-import TrackTabList from "../TrackTabList";
-import WeatherTabList from "../WeatherTabList";
+import TrackTabList from "./tabs/TrackTabList";
+import WeatherTabList from "./tabs/WeatherTabList";
 import PanelButtons from "./PanelButtons";
-import FavoritesTabList from "../FavoritesTabList";
+import FavoritesTabList from "./tabs/FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/dialogs/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";

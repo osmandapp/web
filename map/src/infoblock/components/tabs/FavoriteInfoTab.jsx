@@ -12,10 +12,10 @@ import FavoritesManager from "../../../context/FavoritesManager";
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '28px',
-            left: '542px',
             width: '40px',
-            height: '40px'
+            height: '40px',
+            top: '20px',
+            left: '21px'
         },
         "& .background": {
             left: '-25px',
@@ -96,7 +96,7 @@ const FavoriteInfoTab = ({width}) => {
                         {favorite.name}
                     </Typography>
                 </Grid>
-                {favorite?.marker && <Grid className={styles.name} item xs={2}>
+                {favorite?.marker && <Grid sx={{position:"relative"}} className={styles.name} item xs={2}>
                     <div className={classes.icon}
                          dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker, favorite?.color, favorite?.background, favorite?.icon).options.html + ''}}/>
                 </Grid>}

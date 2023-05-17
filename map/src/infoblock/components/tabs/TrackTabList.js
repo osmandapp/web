@@ -1,9 +1,9 @@
-import GeneralInfoTab from "./components/tabs/GeneralInfoTab";
+import GeneralInfoTab from "./GeneralInfoTab";
 import React from "react";
 import {Tab} from "@mui/material";
-import PointsTab from "./components/tabs/PointsTab";
-import SettingsTab from "./components/tabs/SettingsTab";
-import WaypointsTab from "./components/tabs/WaypointsTab";
+import PointsTab from "./PointsTab";
+import SettingsTab from "./SettingsTab";
+import WaypointsTab from "./WaypointsTab";
 
 export default class TrackTabList {
 
