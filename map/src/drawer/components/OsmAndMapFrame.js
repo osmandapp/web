@@ -8,7 +8,7 @@ import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
-import InformationBlock from "../../informationblock/components/InformationBlock";
+import InformationBlock from "../../infoblock/components/InformationBlock";
 import AppContext from "../../context/AppContext";
 import GeneralPanelButtons from "./GeneralPanelButtons";
 
