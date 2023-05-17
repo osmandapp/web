@@ -67,7 +67,7 @@ export default function SotmScreenshots({ altSectionClass }) {
           itemClass="carousel-item-padding-10-px" className='padding-vert--md padding-horiz--md'>
           {(android ? imagesAndroid : imagesIOs).map((e) => {
             return <div key={e}>
-              <img src={require('@site/src/pages/promo/carusel/' + e).default} />
+              <img src={require('@site/src/pages/promo/carousel/' + e).default} />
             </div>
           })} 
 
