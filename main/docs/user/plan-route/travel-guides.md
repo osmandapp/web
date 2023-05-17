@@ -168,3 +168,6 @@ Please note, that the [Wikipedia plugin](../plugins/wikipedia.md) is a paid feat
 ## Custom Travel guides
 
 We recommend to add new articles or edit them on [Wikivoyage](https://en.wikivoyage.org/). About every 6 months we update Travel guides and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
+
+
+### View on Configure Map
