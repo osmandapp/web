@@ -1,35 +1,20 @@
-import {Paper, AppBar, Button, LinearProgress} from "@mui/material";
+import {AppBar, Button, LinearProgress, Box} from "@mui/material";
 import AppContext from "../../context/AppContext"
 import React, {useState, useContext, useEffect} from "react";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
 import {Close} from '@mui/icons-material';
-import {makeStyles} from "@material-ui/core/styles";
 import TrackTabList from "../TrackTabList";
 import WeatherTabList from "../WeatherTabList";
 import PanelButtons from "./PanelButtons";
 import FavoritesTabList from "../FavoritesTabList";
 import _ from "lodash";
-import ChangeProfileTrackDialog from "./track/ChangeProfileTrackDialog";
+import ChangeProfileTrackDialog from "./track/dialogs/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
 
-const useStyles = makeStyles({
-    menu: {
-        bottom: '10%',
-        left: '30%',
-        width: '800px',
-        height: "auto",
-    },
-    centerStyle: {
-        left: '30%'
-    }
-})
 
-
-export default function MapContextMenu({drawerWidth}) {
+export default function InformationBlock({hideContextMenu, drawerWidth}) {
 
     const ctx = useContext(AppContext);
-
-    const classes = useStyles();
 
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
@@ -82,7 +67,7 @@ export default function MapContextMenu({drawerWidth}) {
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
     function clearStateIfObjChange() {
-        if (prevTrack && prevTrack.name !== ctx.selectedGpxFile.name && prevTrack.points?.length !== ctx.selectedGpxFile?.points.length) {
+        if (prevTrack && prevTrack.name !== ctx.selectedGpxFile.name && prevTrack.points?.length !== ctx.selectedGpxFile?.points?.length) {
             setClearState(true);
         } else {
             setClearState(false);
@@ -104,20 +89,19 @@ export default function MapContextMenu({drawerWidth}) {
     function closeContextMenu() {
         setShowContextMenu(false);
         setClearState(true);
+        ctx.setCurrentObjectType(null);
     }
 
-    return (<div>
-        {showContextMenu && <div className={`${classes.centerStyle} ${'leaflet-bottom'}`}>
-            <div className="leaflet-control leaflet-bar padding-container">
-                {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
-                {tabsObj && tabsObj.tabList.length > 0 &&
-                    <Paper>
+
+    return <>{showContextMenu && !hideContextMenu &&
+        <>
+            <Box
+                anchor={'right'}
+                sx={{alignContent: "flex-end",}}>
+                <div>
+                    {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
+                    {tabsObj && tabsObj.tabList.length > 0 &&
                         <TabContext value={value}>
-                            <div style={{maxHeight: '25vh', overflow: 'auto'}}>
-                            {Object.values(tabsObj.tabs).map((item, index) =>
-                                <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}> {item} </TabPanel>)
-                            }
-                            </div>
                             <AppBar position="static" color="default">
                                 <div style={{display: 'inherit'}}>
                                     <Button key='close' onClick={() => {
@@ -125,17 +109,33 @@ export default function MapContextMenu({drawerWidth}) {
                                     }}>
                                         <Close/>
                                     </Button>
-                                    <TabList onChange={(e, newValue) => setValue(newValue)} children={tabsObj.tabList}/>
+                                    <TabList
+                                        onChange={(e, newValue) => setValue(newValue)}
+                                        children={tabsObj.tabList}
+                                    />
                                 </div>
                             </AppBar>
+                            <div>
+                                {Object.values(tabsObj.tabs).map((item, index) =>
+                                    <TabPanel
+                                        value={item.key + ''}
+                                        key={'tabpanel:' + item.key}>
+                                        {item}
+                                    </TabPanel>)
+                                }
+                            </div>
                         </TabContext>
-                    </Paper>
-                }
-            </div>
-        </div>}
-        <PanelButtons drawerWidth={drawerWidth} showContextMenu={showContextMenu}
-                      setShowContextMenu={setShowContextMenu} clearState={clearState}/>
+                    }
+                </div>
+            </Box>
+            <PanelButtons
+                drawerWidth={drawerWidth}
+                showContextMenu={showContextMenu}
+                setShowContextMenu={setShowContextMenu}
+                clearState={clearState}/>
+        </>
+    }
         {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
         {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
-    </div>);
+    </>
 }

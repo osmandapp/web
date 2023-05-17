@@ -1,5 +1,5 @@
 import {
-    Box,
+    Box, Button,
     IconButton,
     LinearProgress,
     ListItemAvatar,
@@ -14,11 +14,13 @@ import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 import PointManager from "../../../context/PointManager";
+import contextMenuStyles from "../../styles/ContextMenuStyles";
 
 
 const PointsTab = ({width}) => {
 
     const ctx = useContext(AppContext);
+    const styles = contextMenuStyles();
 
     const [loading, setLoading] = useState(false);
 
@@ -93,22 +95,39 @@ const PointsTab = ({width}) => {
             </Draggable>)
     }
 
-    return (<DragDropContext onDragEnd={onDragEnd}><Box minWidth={width}>
-        {loading ? <LinearProgress/> : <></>}
-        <Droppable droppableId="droppable-1">
-            {(provided) => (
-                <div ref={provided.innerRef}
-                     style={{maxHeight: '35vh', overflow: 'auto'}}
-                     {...provided.droppableProps}>
-                    {getPoints().map((point, index) => {
-                        return PointRow()({point: point, index: index});
-                    })}
-                    {provided.placeholder}
-                </div>
-            )}
-        </Droppable>
-    </Box>
-    </DragDropContext>);
+    return (
+        <>
+            {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+                <Button
+                    variant="contained"
+                    className={styles.button}
+                    onClick={() => {
+                        let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile);
+                        ctx.setSelectedGpxFile({...emptyFile});
+                        ctx.setUpdateContextMenu(true);
+                    }}>
+                    Clear
+                </Button>
+            }
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Box sx={{mt: 2}} minWidth={width}>
+                    {loading ? <LinearProgress/> : <></>}
+                    <Droppable droppableId="droppable-1">
+                        {(provided) => (
+                            <div ref={provided.innerRef}
+                                 style={{maxHeight: '63vh', overflow: 'auto'}}
+                                 {...provided.droppableProps}
+                            >
+                                {getPoints().map((point, index) => {
+                                    return PointRow()({point: point, index: index});
+                                })}
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
+                </Box>
+            </DragDropContext>
+        </>);
 };
 
 export default PointsTab;

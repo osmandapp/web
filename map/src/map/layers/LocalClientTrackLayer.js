@@ -18,7 +18,6 @@ export default function LocalClientTrackLayer() {
 
     const [localLayers, setLocalLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
-    const [addEleTab, setAddEleTab] = useState(false);
     const [queueForRouting, setQueueForRouting] = useState({
         isProcessing: false,
         objs: []
@@ -120,7 +119,7 @@ export default function LocalClientTrackLayer() {
                 clearCreateLayers(ctx.createTrack.layers);
             }
             let savedFile;
-            if (ctx.createTrack.deletePrev) {
+            if (ctx.createTrack.deletePrev && ctx.selectedGpxFile.prevState) {
                 savedFile = ctx.selectedGpxFile.prevState;
             } else {
                 savedFile = ctx.selectedGpxFile;
@@ -182,10 +181,6 @@ export default function LocalClientTrackLayer() {
 
     function saveLocal() {
         if (!ctx.selectedGpxFile.addPoint) {
-            if (ctx.selectedGpxFile?.analysis?.hasElevationData && !addEleTab) {
-                ctx.setUpdateContextMenu(true);
-                setAddEleTab(true);
-            }
             if (ctx.localTracks.length > 0) {
                 TracksManager.saveTracks(ctx.localTracks, ctx);
             }
@@ -357,9 +352,6 @@ export default function LocalClientTrackLayer() {
 
                     let oldState = _.cloneDeep(ctx.selectedGpxFile);
                     TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, newFile.points).then(res => {
-                        if (oldState.analysis?.hasElevationData !== res.analysis?.hasElevationData) {
-                            ctx.setUpdateContextMenu(true);
-                        }
                         saveChanges(null, null, null, res);
                         setQueueForRouting((prev) => ({
                             isProcessing: false,

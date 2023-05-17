@@ -2,16 +2,16 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import {Dialog} from "@material-ui/core";
 import React, {useContext, useEffect, useState} from "react";
-import SelectTrackProfile from "./SelectTrackProfile";
+import SelectTrackProfile from "../SelectTrackProfile";
 import DialogActions from "@mui/material/DialogActions";
-import AppContext from "../../../context/AppContext";
-import TracksManager from "../../../context/TracksManager";
+import AppContext from "../../../../context/AppContext";
+import TracksManager from "../../../../context/TracksManager";
 import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {Close} from "@mui/icons-material";
 import _ from "lodash";
 import {makeStyles} from "@material-ui/core/styles";
-import TrackLayerProvider from "../../../map/TrackLayerProvider";
-import RoutingManager from "../../../context/RoutingManager";
+import TrackLayerProvider from "../../../../map/TrackLayerProvider";
+import RoutingManager from "../../../../context/RoutingManager";
 
 const useStyles = makeStyles({
     dialog: {

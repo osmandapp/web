@@ -85,7 +85,6 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.selectedGpxFile.wpts.push(favorite);
         if (ctx.createTrack) {
             prepareLocalTrack();
-            ctx.setUpdateContextMenu(true);
         }
         if (favorite.category === null) {
             if (!ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS]) {
