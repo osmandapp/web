@@ -348,9 +348,6 @@ export default function LocalClientTrackLayer() {
                             objs: prev.objs,
                         }));
                     }
-
-
-                    let oldState = _.cloneDeep(ctx.selectedGpxFile);
                     TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, newFile.points).then(res => {
                         saveChanges(null, null, null, res);
                         setQueueForRouting((prev) => ({

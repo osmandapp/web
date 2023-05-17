@@ -323,7 +323,8 @@ function getColors() {
         'pedestrian': '#d90139',
         'ski': '#ffacdf',
         'line': '#5F9EA0',
-        'moped': '#3e690e'
+        'moped': '#3e690e',
+        'train': '#a56b6f'
     };
 }
 
