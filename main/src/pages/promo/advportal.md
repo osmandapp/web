@@ -11,7 +11,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-import SotmScreenshots from './carusel/sotmscreenshots.js';
+import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
 ![Configure map screen](@site/static/img/promo/advportal/advportal.png)
@@ -32,7 +32,7 @@ OsmAnd i [ADVportal](https://www.advportal.pl/) przedstawiają i prezentują Wam
 
 <p> </p>
 
-2. **Pełna insrtrukcja** jest [tutaj](https://osmand.net/promo/instruction#polska-wersija).
+2. **Pełna insrtrukcja** jest [tutaj](https://osmand.net/promo/manual#polska-wersija).
 
 
 OsmAnd nie zbiera żadnych informacji, proszę zapoznać się z [Polityką Prywatności](https://osmand.net/docs/legal/privacy-policy) i [Regulaminem OsmAnd](https://osmand.net/docs/legal/terms-of-use).
@@ -57,7 +57,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 <p> </p>
 
-2. **Full manual** is [HERE](https://osmand.net/promo/instruction#english-version).
+2. **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 

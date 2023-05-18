@@ -47,12 +47,12 @@ Besides the country, region or city guides, you can also find guides to the site
 There are special guides like the list of UNESCO Global Geoparks Network or the list of the world's largest and most complicated international airports.  
 :::
 
-## Main features
+## Browse Articles
 
 The *Travel guides* main screen consists of two general parts: the [search field](#travel-guides-search) and the travel guides list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmarks-tabs)*. By single tap on a tab, you can switch between them.  
 When you open *Travel Guides* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. Tap on the item from the list opens the [Travel guide article](../plan-route/travel-guides.md#travel-guide-article). At the bottom of the screen is a switch to the [Bookmarks tab](#bookmarks).  
 
-### Explore and Bookmarks tabs
+### Explore and Bookmark
 
 On the *Explore tab (or <Translate android="true" ids="popular_destinations"/>)* are listed 30 first articles about destinations adjacent to the center of the screen (not the location). By touching the field with the title and a short description of the article, you can view its full text.  
 If you tap the *Bookmark button*, the article will be saved for reading later and can be accessed in the Bookmarks tab. In the *Bookmarked Articles* tab, articles are arranged as they are saved. The newest ones are at the top.  
@@ -90,7 +90,7 @@ In the Options menu, you can choose whether or not to save pictures in the artic
 - &nbsp;<Translate android="true" ids="images_cache"/> - clears the images cache to free up memory.
 - &nbsp;<Translate android="true" ids="delete_search_history"/> - clears [search history](#travel-guides-search).
 
-## Article
+## Travel Article
 
 You can open an article from the proposed variants on the *[Explore tab](#explore-and-bookmarks-tabs)* or using the *[Search](#search)* option.  
 If you have added touristic attractions, called *[Points](#points)* from *Travel guide article* to the OsmAnd map, you can also open an article using *Read full* button in a waypoint [description section](../map/track-context-menu.md#description-and-info).  
@@ -147,6 +147,10 @@ Most *Travel guide articles* have the same content structure, with an introducti
 *Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). In *[Track Context menu](../map/track-context-menu.md)* of a GPX-file, you can find general information from article to which this track belongs.  
 :::
 
+### Manage as GPX Track
+
+You can save Travel Article as GPX and later Share with HTML content, View on Map and use to navigate by markers.
+
 ## Combine with Wikipedia
 
 In *Travel guides articles* you can find useful information about tourist attractions (contact information, web links, prices, etc.). Many articles have button *Wikipedia*, that allows to open *[Wikipedia article](../plugins/wikipedia.md)* (online or offline) about place of interest.
@@ -164,3 +168,6 @@ Please note, that the [Wikipedia plugin](../plugins/wikipedia.md) is a paid feat
 ## Custom Travel guides
 
 We recommend to add new articles or edit them on [Wikivoyage](https://en.wikivoyage.org/). About every 6 months we update Travel guides and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
+
+
+### View on Configure Map

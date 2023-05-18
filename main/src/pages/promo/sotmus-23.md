@@ -12,13 +12,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
-import SotmScreenshots from './carusel/sotmscreenshots.js';
+import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
 ![SOTM](@site/static/img/promo/sotmus/sotmus_1.png)
 
-## Get OsmAnd Pro free for 3 months 
+# Get OsmAnd Pro free for 3 months 
 
 Each participant of SotM US 2023 can receive OsmAnd Pro subscription.
 
@@ -26,7 +26,7 @@ Please, input your e-mail for registration:
 
 <RegisterUserPromoBlock  promoKey='sotmus2023'/>
 
-**Full manual** is [HERE](https://osmand.net/promo/instruction#english-version).
+**Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
 <SotmScreenshots />
 
