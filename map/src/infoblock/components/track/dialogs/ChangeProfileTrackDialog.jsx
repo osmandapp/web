@@ -73,11 +73,9 @@ export default function ChangeProfileTrackDialog({open}) {
                 } else {
                     ctx.selectedGpxFile.points[0].routeMode = profile;
                     ctx.selectedGpxFile.points[0].profile = profile.mode;
-                    updateGlobalProfileState();
                 }
-            } else {
-                updateGlobalProfileState();
             }
+            updateGlobalProfileState();
         } else {
             if (changeOne) {
                 let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
