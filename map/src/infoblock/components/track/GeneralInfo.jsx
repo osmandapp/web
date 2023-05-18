@@ -400,6 +400,7 @@ export default function GeneralInfo({width, setOpenDescDialog}) {
                     <ListItemText>
                         <Typography sx={{ml: 1}} variant="body2" noWrap>
                             {`Points: ${points}`}
+                            {ctx.processRouting ? <CircularProgress size={13} sx={{ml: 1}}/> : <></>}
                         </Typography>
                     </ListItemText>
                 </MenuItem>}

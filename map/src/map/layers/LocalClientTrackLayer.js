@@ -314,7 +314,6 @@ export default function LocalClientTrackLayer() {
             const segmentObj = queueForRouting.objs[0].obj;
             const segmentKey = queueForRouting.objs[0].key;
             const newFile = ctx.selectedGpxFile;
-
             Promise.resolve(TracksManager.updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.routeMode)
                 .then(res => {
                     if (!res) {
@@ -355,6 +354,7 @@ export default function LocalClientTrackLayer() {
                             objs: prev.objs,
                         }));
                         ctx.setSelectedGpxFile({...res});
+                        ctx.setProcessRouting(false);
                     });
                 })
             );

@@ -486,6 +486,7 @@ export const AppContextProvider = (props) => {
 
     const [routingCash, setRoutingCash] = useState([]);
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
+    const [processRouting, setProcessRouting] = useState(false);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -587,7 +588,8 @@ export const AppContextProvider = (props) => {
         localTracksLoading, setLocalTracksLoading,
         openedPopper, setOpenedPopper,
         routingCash, setRoutingCash,
-        routingNewSegments, setRoutingNewSegments
+        routingNewSegments, setRoutingNewSegments,
+        processRouting, setProcessRouting
     }}>
         {props.children}
     </AppContext.Provider>;

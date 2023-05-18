@@ -446,6 +446,7 @@ function formatRouteMode(routeMode) {
 
 
 async function updateRouteBetweenPoints(ctx, start, end, settings) {
+    ctx.setProcessRouting(true);
     let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
     let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
