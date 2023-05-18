@@ -39,7 +39,6 @@ export default function GeneralInfo({width, setOpenDescDialog}) {
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
     const [elevationSRTM, setElevationSRTM] = useState('');
-    const [error, setError] = useState(false);
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
 
@@ -156,7 +155,6 @@ export default function GeneralInfo({width, setOpenDescDialog}) {
                 TracksManager.saveTracks(ctx.localTracks, ctx);
             } else {
                 setFileName(ctx.selectedGpxFile.name);
-                setError(true);
             }
         }
     }
