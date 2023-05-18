@@ -5,7 +5,7 @@ import TracksManager from "../../../context/TracksManager";
 import {
     Box,
     Button, CircularProgress,
-    Divider, Grid,
+    Divider,
     IconButton, Link,
     ListItemIcon,
     ListItemText, MenuItem,
@@ -23,13 +23,12 @@ import {
     RouteOutlined, Speed,
     Terrain
 } from "@mui/icons-material";
-import _ from "lodash";
 
-export default function GeneralInfo({width, setOpenDeleteDialog}) {
+export default function GeneralInfo({width, setOpenDescDialog}) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
-    const [showMore, setShowMore] = useState(false);
+    
     const [disableButton, setDisableButton] = useState(true);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
     const [points, setPoints] = useState(0);
@@ -167,17 +166,19 @@ export default function GeneralInfo({width, setOpenDeleteDialog}) {
         return fileName !== "" && fileName.trim().length > 0 && !existName;
     }
 
+    function getDesc(desc) {
+        return desc.length > 140 ? `${desc.substring(0, 140)} ...` : desc;
+    }
     const Description = () => ({desc}) => {
         return (<ListItemText>
-                <Typography component={'span'} variant="inherit">
-                    {showMore ? desc : desc.substring(0, 140)}
-                    {desc.length > 70 &&
-                        <ListItemIcon
-                            onClick={() => setShowMore(!showMore)}>
-                            {showMore ? "...less" : "...more"}
-                        </ListItemIcon>}
+                <Typography
+                    onClick={() => setOpenDescDialog(true)}
+                    variant="inherit"
+                    sx={{fontSize: "0.875rem"}}
+                >
+                    <div dangerouslySetInnerHTML={{ __html: `${getDesc(desc)}` }}/>
                 </Typography>
-                <Divider light/>
+                <Divider sx={{mt: "6px", mb: "12px"}} light/>
             </ListItemText>
         )
     }
@@ -327,7 +328,20 @@ export default function GeneralInfo({width, setOpenDeleteDialog}) {
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
                 </div>
                 <div>
-                    {ctx.selectedGpxFile?.metaData?.desc && Description()({desc: ctx.selectedGpxFile?.metaData?.desc})}
+                    {ctx.selectedGpxFile?.metaData?.desc
+                        ? Description()({desc: ctx.selectedGpxFile?.metaData?.desc})
+                        : <>
+                            <Link href="#"
+                                color="inherit"
+                                sx={{fontSize: "0.875rem"}}
+                                onClick={() => {
+                                    setOpenDescDialog(true);
+                                }}
+                        >
+                                • Add description
+                            </Link>
+                            <Divider sx={{mt: "6px", mb: "12px"}} light/>
+                        </>}
                 </div>
                 {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                     <Button
