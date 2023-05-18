@@ -480,9 +480,10 @@ Currently recording track.
 
 ### Graph
 
-Click to "Graph" button. 
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_2_andr.png)
 
-![Plan a route android-graph](@site/static/img/plan-route/plan-route-graph-android.png)
+Detailed route information in [Altitude/Slope graph](../navigation/setup/route-details.md#the-graph) format and [Road attributes](../navigation/setup/route-details.md#road-attributes) can be viewed in the *Graph tab* in the Android version of the OsmAnd app. To view this information in the iOS version of the app, use the menu *[Options](#menu-options) → Navigation → Details*.
+
 
 Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
 
@@ -493,28 +494,24 @@ Description: [Click to graph](../plan-route/create-route.md#actions-of-points-li
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-android](@site/static/img/plan-route/plan-route-snap-android.gif)
+![Plan a route snap-road-android](@site/static/img/plan-route/plan-route-snap-android.gif)  ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan-route-snap-ios.gif)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan-route-snap-ios.gif)   ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Attach to the roads is used mainly for tracks not created in OsmAnd.  
+The *Plan a route* tool in the OsmAnd app automatically calculates a track, attaching its sections to the nearest permitted road, depending on the routing type selected. The **Attach to the roads** feature is necessary for imported tracks, especially if they have been created with other applications, but also for large existing tracks where the routing types at different sections need to be changed and the track needs to be recalculated.  
 
-https://osmand.net/docs/user/navigation/setup/gpx-navigation#follow-track-menu
+Additional conditions for opening the Attach to roads menu:
+- If no routing data is available in the GPX track or a straight line is selected.
+- No internet connection or location data.
+- *Attach to the roads* may not be activated if the *Plan a route* tool has already automatically linked GPX track points to the nearest road points.
 
-For example, you have recorded tracks. *Plan a route* tool allows snapping your track to the nearest allowed road with one of your application profiles.
-
-For using this option you need to open your track by *Plan a route* tool:  
-
-Next, choose the needed application profile for snapping your track to the nearest road. For this, you need to click [Profile button](../plan-route/create-route.md#main-screen) or choose in _[Options menu](../plan-route/create-route.md#options-menu) → <Translate android="true" ids="route_between_points"/>_. For Android, you can set <translate android="true" ids="threshold_distance"/> parameter.
-
-After calculating the new route you click [*Done* button](../plan-route/create-route.md#main-screen) for saving the new GPX track which snapping to roads.
-
+For more information about attaching the track to the road, see the Navigation section, the article [Navigate by track](../navigation/setup/gpx-navigation.md#follow-track-menu).
 
