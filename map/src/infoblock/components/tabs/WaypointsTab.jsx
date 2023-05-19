@@ -16,6 +16,7 @@ import {Cancel} from "@mui/icons-material";
 import PointManager from "../../../context/PointManager";
 import TracksManager from "../../../context/TracksManager";
 import wptTabStyle from "../../styles/WptTabStyle";
+import _ from "lodash";
 
 
 export default function WaypointsTab({width}) {
@@ -29,10 +30,21 @@ export default function WaypointsTab({width}) {
     const [openWptAlert, setOpenWptAlert] = useState(true);
     const NAME_SIZE = 50;
 
+    function getLayers() {
+        if (ctx.selectedGpxFile?.layers) {
+            if (!_.isEmpty(ctx.selectedGpxFile.layers)) {
+                return ctx.selectedGpxFile.layers.getLayers();
+            }
+            if (ctx.selectedGpxFile?.gpx?.layers) {
+                return ctx.selectedGpxFile.gpx.layers.getLayers();
+            }
+        }
+        return [];
+    }
+
     function getPoints() {
         let wpts = [];
-        let layers = ctx.selectedGpxFile.layers ? ctx.selectedGpxFile.layers.getLayers() :
-            ctx.selectedGpxFile.gpx.getLayers() ? ctx.selectedGpxFile.gpx.getLayers() : [];
+        let layers = getLayers();
         layers.forEach(layer => {
             if (layer instanceof L.Marker) {
                 let coord = layer.getLatLng();

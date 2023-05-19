@@ -671,11 +671,11 @@ export default function LocalClientTrackLayer() {
         ctx.selectedGpxFile.newPoint = points[points.length - 1];
         ctx.selectedGpxFile.update = false;
 
-        ctx.creatingRouteMode.mode = ctx.selectedGpxFile.newPoint?.profile ? ctx.selectedGpxFile.newPoint?.profile : TracksManager.PROFILE_LINE;
+        ctx.creatingRouteMode.mode = ctx.selectedGpxFile.newPoint?.profile ? ctx.selectedGpxFile.newPoint?.profile : TracksManager.PROFILE_CAR;
         ctx.setCreatingRouteMode({...ctx.creatingRouteMode});
 
-        ctx.addFavorite.editTrack = true;
-        ctx.setAddFavorite({...ctx.addFavorite});
+        // ctx.addFavorite.editTrack = true;
+        // ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
 

@@ -64,6 +64,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function saveTrackWpt() {
+        delete ctx.addFavorite.editTrack;
+        ctx.setAddFavorite({...ctx.addFavorite});
         let selectedGroup = FavoritesManager.createDefaultWptGroup(favoriteGroup);
         let favorite = {
             name: favoriteName,
@@ -162,6 +164,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         if (result) {
             updateGroupMarkers(result, selectedGroup).then();
             closeDialog();
+            ctx.setUpdateContextMenu(true);
         }
     }
 

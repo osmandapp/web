@@ -8,6 +8,7 @@ const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 const PROFILE_LINE = 'line';
+const PROFILE_CAR = 'car';
 const PROFILE_GAP = 'gap';
 const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
@@ -40,9 +41,11 @@ async function loadTracks(setLoading) {
                         f.selected = true;
                         f.hasGeo = true;
                         f.index = _.indexOf(localTracks, f);
-                        promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
-                            f.tracks[0].points = points;
-                        }));
+                        if (f.tracks[0]?.points) {
+                            promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
+                                f.tracks[0].points = points;
+                            }));
+                        }
                     } else {
                         f.selected = false;
                     }
@@ -113,11 +116,13 @@ function preparePoints(track) {
     } else {
         if (track.tracks) {
             track.tracks.forEach(t => {
-                t.points.forEach(p => {
-                    if (p.geometry?.length > 0) {
-                        delete p.geometry
-                    }
-                })
+                if (t.points) {
+                    t.points.forEach(p => {
+                        if (p.geometry?.length > 0) {
+                            delete p.geometry
+                        }
+                    })
+                }
             })
             return track.tracks;
         }
@@ -276,15 +281,17 @@ function getTrackPoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach(track => {
-            track.points.forEach(point => {
-                if (point.geometry) {
-                    point.geometry.forEach(trk => {
-                        points.push(trk);
-                    })
-                } else {
-                    points.push(point);
-                }
-            })
+            if (track.points) {
+                track.points.forEach(point => {
+                    if (point.geometry) {
+                        point.geometry.forEach(trk => {
+                            points.push(trk);
+                        })
+                    } else {
+                        points.push(point);
+                    }
+                })
+            }
         })
     }
     return points;
@@ -726,6 +733,7 @@ const TracksManager = {
     GET_ANALYSIS: GET_ANALYSIS,
     PROFILE_LINE: PROFILE_LINE,
     PROFILE_GAP: PROFILE_GAP,
+    PROFILE_CAR: PROFILE_CAR,
     NAN_MARKER: NAN_MARKER,
     CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
