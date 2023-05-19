@@ -41,7 +41,7 @@ async function loadTracks(setLoading) {
                         f.selected = true;
                         f.hasGeo = true;
                         f.index = _.indexOf(localTracks, f);
-                        if (f.tracks[0]?.points) {
+                        if (f.tracks && f.tracks[0]?.points && !_.isEmpty(f.tracks[0]?.points)) {
                             promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
                                 f.tracks[0].points = points;
                             }));
@@ -53,11 +53,14 @@ async function loadTracks(setLoading) {
             }
         }
     }
-
-    await Promise.all(promises).then(() => {
+    if (promises.length > 0) {
+        await Promise.all(promises).then(() => {
+            setLoading(false);
+            return localTracks;
+        })
+    } else {
         setLoading(false);
-        return localTracks;
-    })
+    }
     return localTracks;
 }
 

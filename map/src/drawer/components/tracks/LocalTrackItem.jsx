@@ -53,14 +53,20 @@ export default function LocalTrackItem({track, index}) {
                         selectedTrack.points = points;
                         selectedTrack.hasGeo = true;
                     }
-                    updateLocalTrack(selectedTrack);
-                    updateTrackInfoBlock();
+                    update(selectedTrack);
                 })
+            } else {
+                setLoading(false);
+                update(selectedTrack);
             }
         } else {
-            updateLocalTrack(selectedTrack);
-            updateTrackInfoBlock();
+            update(selectedTrack);
         }
+    }
+
+    function update(track) {
+        updateLocalTrack(track);
+        updateTrackInfoBlock();
     }
 
     function updateLocalTrack(selectedTrack) {

@@ -68,7 +68,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     function getState(currentState) {
         getTrack(currentState);
         setUseSavedState(false);
-        ctx.setUpdateContextMenu(true);
     }
 
     function getTrack(currentState) {

@@ -94,7 +94,7 @@ export default function WaypointsTab({width}) {
                      dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
             </ListItemIcon>
             <ListItemText sx={{ml: "-35px !important"}}>
-                <Typography variant="inherit" noWrap>
+                <Typography component={'span'} variant="inherit" noWrap>
                     {getName(point)}
                     {point.layer.options?.title?.length > NAME_SIZE &&
                         <ListItemIcon style={{marginRight: " -25px"}}>
@@ -152,6 +152,13 @@ export default function WaypointsTab({width}) {
         return wpt.layer.options?.desc !== undefined || wpt.layer.options?.address !== undefined || wpt.wpt.category;
     }
 
+    function deleteAllWpts() {
+        ctx.selectedGpxFile.wpts = [];
+        ctx.selectedGpxFile.updateLayers = true;
+        TracksManager.updateState(ctx);
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
     const WaypointRow = () => ({point, index}) => {
         return (
             <MenuItem key={'marker' + index} divider
@@ -173,20 +180,16 @@ export default function WaypointsTab({width}) {
 
 
     return (<>
-            {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+            {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) &&
                 <Button
                     variant="contained"
                     className={stylesMenu.button}
-                    onClick={() => {
-                        let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile);
-                        ctx.setSelectedGpxFile({...emptyFile});
-                        ctx.setUpdateContextMenu(true);
-                    }}>
+                    onClick={() => deleteAllWpts()}>
                     Clear
                 </Button>}
 
 
-            {openWptAlert && ctx.createTrack && !ctx.selectedGpxFile.wpts &&
+            {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)) &&
                 <Alert
                     sx={{mt: 2}}
                     severity="info"
