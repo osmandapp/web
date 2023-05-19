@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# iOS 4.5 (June 2023)
+# iOS 4.4.5 (June 2023)
 
  Join Beta
 
@@ -15,12 +15,17 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 **What's new**
 
-* Added "Elevation: map center" widget.
-* Added "Trip recording" widgets.
-* Added Train profile.
-
+* Added widget "Elevation: map center".
+* Added widgets "Track recording: Duration, Uphill, Downhill".
+* Added new "Train" profile.
+* External keyboard: added support for new keys.
+* Added option to disable announcing for deviation from the route.
+* Added search for Favorites, Tracks, and OSM Edits.
+* CarPlay: history includes points that were used in navigation.
+* Emoji can now be used as favorites or waypoint name.
+* Track appearance: added ability to set any custom color.
+  
 * **Bugs fixs:**
-  * Fixed import of custom routing.xml
-
-
+  * Fixed issues with the import of custom routing and rendering files.
+  * Fixed transition between offline Wikipedia articles.
 
