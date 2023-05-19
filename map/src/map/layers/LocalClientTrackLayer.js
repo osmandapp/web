@@ -330,8 +330,8 @@ export default function LocalClientTrackLayer() {
 
                     ctx.routingCash[segmentKey].geometry = res;
                     segmentObj.endPoint.geometry = res;
-                    const startInd = newFile.points.findIndex(p => isEqualPoints(p, segmentObj.startPoint));
-                    if (startInd !== -1 && isEqualPoints(newFile.points[startInd + 1], segmentObj.endPoint)) {
+                    const startInd = newFile.points?.findIndex(p => isEqualPoints(p, segmentObj.startPoint));
+                    if (newFile.points && startInd !== -1 && isEqualPoints(newFile.points[startInd + 1], segmentObj.endPoint)) {
                         newFile.points[startInd + 1].geometry = _.cloneDeep(res);
                         let currentLine = segmentObj.tempLine;
                         let polyline = new EditablePolyline(map, ctx, res, null, ctx.selectedGpxFile).create();
@@ -346,16 +346,17 @@ export default function LocalClientTrackLayer() {
                             isProcessing: false,
                             objs: prev.objs,
                         }));
+
+                        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, newFile.points).then(res => {
+                            saveChanges(null, null, null, res);
+                            setQueueForRouting((prev) => ({
+                                isProcessing: false,
+                                objs: prev.objs,
+                            }));
+                            ctx.setSelectedGpxFile({...res});
+                            ctx.setProcessRouting(false);
+                        });
                     }
-                    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, newFile.points).then(res => {
-                        saveChanges(null, null, null, res);
-                        setQueueForRouting((prev) => ({
-                            isProcessing: false,
-                            objs: prev.objs,
-                        }));
-                        ctx.setSelectedGpxFile({...res});
-                        ctx.setProcessRouting(false);
-                    });
                 })
             );
             const newObjs = queueForRouting.objs.slice(1);

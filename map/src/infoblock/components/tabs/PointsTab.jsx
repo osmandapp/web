@@ -1,4 +1,5 @@
 import {
+    Alert,
     Box, Button,
     IconButton,
     LinearProgress,
@@ -15,6 +16,7 @@ import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 import PointManager from "../../../context/PointManager";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
+import _ from "lodash";
 
 
 const PointsTab = ({width}) => {
@@ -23,6 +25,7 @@ const PointsTab = ({width}) => {
     const styles = contextMenuStyles();
 
     const [loading, setLoading] = useState(false);
+    const [openPointAlert, setOpenPointAlert] = useState(true);
 
     function showPointOnMap(point) {
         ctx.selectedGpxFile.showPoint = point;
@@ -53,6 +56,20 @@ const PointsTab = ({width}) => {
         if (points) {
             TracksManager.addDistanceToPoints(points);
             return points;
+        }
+    }
+
+    function deleteAllPoints() {
+        if (ctx.selectedGpxFile) {
+            if (ctx.selectedGpxFile.points) {
+                ctx.selectedGpxFile.points = [];
+            }
+            if (ctx.selectedGpxFile.tracks) {
+                ctx.selectedGpxFile.tracks = [];
+            }
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.selectedGpxFile.analysis = null;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
         }
     }
 
@@ -97,19 +114,23 @@ const PointsTab = ({width}) => {
 
     return (
         <>
-            {ctx.createTrack && ctx.selectedGpxFile.newPoint &&
+            {openPointAlert && ctx.createTrack && (!ctx.selectedGpxFile?.points || _.isEmpty(ctx.selectedGpxFile?.points))
+                && (!ctx.selectedGpxFile?.tracks || _.isEmpty(ctx.selectedGpxFile?.tracks[0]?.points)) &&
+                <Alert severity="info"
+                       sx={{mt: 2}}
+                       onClose={() =>
+                       {setOpenPointAlert(false)}}
+                >Click on the map to add a point...
+                </Alert>}
+            {ctx.createTrack && ctx.selectedGpxFile?.points?.length > 0 &&
                 <Button
                     variant="contained"
                     className={styles.button}
-                    onClick={() => {
-                        let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile);
-                        ctx.setSelectedGpxFile({...emptyFile});
-                        ctx.setUpdateContextMenu(true);
-                    }}>
+                    onClick={() => deleteAllPoints()}>
                     Clear
                 </Button>
             }
-            <DragDropContext onDragEnd={onDragEnd}>
+            {ctx.selectedGpxFile?.points && <DragDropContext onDragEnd={onDragEnd}>
                 <Box sx={{mt: 2}} minWidth={width}>
                     {loading ? <LinearProgress/> : <></>}
                     <Droppable droppableId="droppable-1">
@@ -126,7 +147,7 @@ const PointsTab = ({width}) => {
                         )}
                     </Droppable>
                 </Box>
-            </DragDropContext>
+            </DragDropContext>}
         </>);
 };
 

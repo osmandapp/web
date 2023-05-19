@@ -43,16 +43,20 @@ export default function LocalTrackItem({track, index}) {
 
     async function addSelectedTack() {
         let selectedTrack = ctx.localTracks[indexTrack];
-        if (!selectedTrack.hasGeo) {
+        if (!selectedTrack.hasGeo && selectedTrack.tracks) {
             setLoading(true);
-            await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
-                setLoading(false);
-                selectedTrack.tracks[0].points = points;
-                selectedTrack.points = points;
-                selectedTrack.hasGeo = true;
-                updateLocalTrack(selectedTrack);
-                updateTrackInfoBlock();
-            })
+            if (!_.isEmpty(selectedTrack.tracks[0]?.points)) {
+                await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
+                    setLoading(false);
+                    if (points && !_.isEmpty(points)) {
+                        selectedTrack.tracks[0].points = points;
+                        selectedTrack.points = points;
+                        selectedTrack.hasGeo = true;
+                    }
+                    updateLocalTrack(selectedTrack);
+                    updateTrackInfoBlock();
+                })
+            }
         } else {
             updateLocalTrack(selectedTrack);
             updateTrackInfoBlock();

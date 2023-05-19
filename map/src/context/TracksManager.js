@@ -103,7 +103,7 @@ function saveLocalTrack(tracks, ctx) {
 }
 
 function preparePoints(track) {
-    if (track.points) {
+    if (!_.isEmpty(track.points)) {
         track.points.forEach(p => {
             if (p.geometry?.length > 0) {
                 delete p.geometry
@@ -111,14 +111,16 @@ function preparePoints(track) {
         })
         return [{points: track.points}];
     } else {
-        track.tracks.forEach(t => {
-            t.points.forEach(p => {
-                if (p.geometry?.length > 0) {
-                    delete p.geometry
-                }
+        if (track.tracks) {
+            track.tracks.forEach(t => {
+                t.points.forEach(p => {
+                    if (p.geometry?.length > 0) {
+                        delete p.geometry
+                    }
+                })
             })
-        })
-        return track.tracks;
+            return track.tracks;
+        }
     }
 }
 
@@ -303,7 +305,9 @@ function getEditablePoints(track) {
 function addDistance(track) {
     if (track.tracks) {
         track.tracks.forEach(t => {
-            addDistanceToPoints(t.points);
+            if (!_.isEmpty(t.points)) {
+                addDistanceToPoints(t.points);
+            }
         })
     }
 }
@@ -349,7 +353,6 @@ function addDistanceToPoints(points) {
 }
 
 async function getGpxTrack(file) {
-
     let trackData = {
         tracks: file.points ? [{points: file.points}] : file.tracks,
         wpts: file.wpts,

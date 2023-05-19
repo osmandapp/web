@@ -38,7 +38,7 @@ const GpxGraphProvider = ({width}) => {
     }, [ctx.selectedGpxFile]);
 
     const graphData = useMemo(() => {
-        if (data?.data) {
+        if (!_.isEmpty(data?.data)) {
             let elevation = data.ele ? "ele" : null;
             let elevationSRTM = data.srtm ? "srtmEle" : null;
             let points = data.data;

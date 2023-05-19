@@ -18,13 +18,11 @@ export default class TrackTabList {
         let tabs = {};
         let list = [];
 
-        const hasSpeed = ctx.selectedGpxFile?.analysis?.hasSpeedData;
-
         let isTrack = ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK
             || ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
 
         tabs.Info = <GeneralInfoTab key='general' width={this.state.graphWidth} setShowContextMenu={setShowContextMenu}/>;
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks?.length > 0) {
+        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Track = <PointsTab key='points' width={this.state.graphWidth}/>;
         }
 
