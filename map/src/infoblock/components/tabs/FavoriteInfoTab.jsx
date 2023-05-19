@@ -88,7 +88,7 @@ const FavoriteInfoTab = ({width}) => {
         return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
     }
 
-    return (<Box className={styles.item} minWidth={width}>
+    return (<Box className={styles.item} maxWidth={width}>
         <Typography className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={10}>

@@ -28,7 +28,7 @@ export default function WaypointsTab({width}) {
 
     const [showMore, setShowMore] = useState(false);
     const [openWptAlert, setOpenWptAlert] = useState(true);
-    const NAME_SIZE = 50;
+    const NAME_SIZE = 30;
 
     function getLayers() {
         if (ctx.selectedGpxFile?.layers) {
@@ -67,7 +67,7 @@ export default function WaypointsTab({width}) {
     }
 
     function getLength(point) {
-        return point.layer.options?.desc && point.layer.options.address ? 30 : 60;
+        return point.layer.options?.desc && point.layer.options.address ? 15 : 30;
     }
 
     function getName(point) {

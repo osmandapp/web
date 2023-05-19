@@ -97,7 +97,8 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
         <>
             <Box
                 anchor={'right'}
-                sx={{alignContent: "flex-end",}}>
+                sx={{alignContent: "flex-end", height: '100vh', overflow: 'auto', width: '800px !important'}}
+                >
                 <div>
                     {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
                     {tabsObj && tabsObj.tabList.length > 0 &&

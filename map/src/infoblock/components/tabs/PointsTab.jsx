@@ -136,7 +136,6 @@ const PointsTab = ({width}) => {
                     <Droppable droppableId="droppable-1">
                         {(provided) => (
                             <div ref={provided.innerRef}
-                                 style={{maxHeight: '63vh', overflow: 'auto'}}
                                  {...provided.droppableProps}
                             >
                                 {getPoints().map((point, index) => {
