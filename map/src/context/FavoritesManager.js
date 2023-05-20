@@ -123,16 +123,24 @@ function orderList(items, defaultItem) {
     return list.concat(hiddenList);
 }
 
-function getColorGroup(ctx, groupName) {
-    let currentGroup = ctx.favorites.groups.find(g => g.name === groupName);
+function getColorGroup(ctx, groupName, wpt) {
+    let color;
     if (groupName === DEFAULT_GROUP_NAME) {
         groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
     }
-    if (currentGroup && currentGroup.pointsGroups[groupName]) {
-        let color = currentGroup.pointsGroups[groupName].color;
-        if (color) {
-            return Utils.hexToArgb(color);
+    if (wpt) {
+        const currentGroup = ctx.selectedGpxFile?.pointsGroups[groupName];
+        if (currentGroup) {
+            color = currentGroup.color;
         }
+    } else {
+        const currentGroup = ctx.favorites.groups.find(g => g.name === groupName);
+        if (currentGroup && currentGroup.pointsGroups[groupName]) {
+            color = currentGroup.pointsGroups[groupName].color;
+        }
+    }
+    if (color) {
+        return Utils.hexToArgb(color);
     }
 }
 

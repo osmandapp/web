@@ -9,14 +9,30 @@ import React, {useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
+import PointManager from "../../../context/PointManager";
 
-export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
+export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
 
     const ctx = useContext(AppContext);
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
+
+    async function deleteWpt() {
+        if (ctx.addFavorite.editTrack) {
+            if (ctx.selectedWpt) {
+                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
+                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
+                const ind = ctx.selectedGpxFile.wpts.findIndex(wpt => wpt.lat === lat && wpt.lon === lng);
+                PointManager.deleteWpt(ind, ctx);
+                setDialogOpen(false);
+                ctx.setSelectedWpt(null);
+            }
+        } else {
+            deleteFavorite().then();
+        }
+    }
 
     async function deleteFavorite() {
         for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
@@ -42,16 +58,26 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.setCurrentObjectType(null);
     }
 
+    function getTitleDialog() {
+        return ctx.addFavorite.editTrack ? 'Delete waypoint' : 'Delete favorite';
+    }
+
+    function getQuestionDialog() {
+        return ctx.addFavorite.editTrack
+            ? `Are you sure you want to delete ${wpt.name}?`
+            : `Are you sure you want to delete ${TracksManager.prepareName(ctx.selectedGpxFile.markerCurrent.title)}?`;
+    }
+
     return (
         <Dialog open={true} onClose={toggleShowDialog}>
-            <DialogTitle>Delete favorite</DialogTitle>
+            <DialogTitle>{getTitleDialog()}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {`Are you sure you want to delete ${TracksManager.prepareName(ctx.selectedGpxFile.markerCurrent.title)}?`}
+                    {getQuestionDialog()}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => deleteFavorite()}>
+                <Button onClick={() => deleteWpt()}>
                     Delete</Button>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
             </DialogActions>

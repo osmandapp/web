@@ -167,9 +167,9 @@ function parseWpt(points, layers) {
         if (point.address) {
             opt.address = point.address;
         }
-
+        opt.draggable = false;
+        opt.wpt = true;
         let marker = new L.Marker(new L.LatLng(lat, lon), opt);
-
         layers.push(marker);
     })
 }

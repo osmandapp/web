@@ -10,6 +10,7 @@ import EditablePolyline from "../EditablePolyline";
 import EditableMarker from "../EditableMarker";
 import Utils from "../../util/Utils";
 import RoutingManager from "../../context/RoutingManager";
+import WptMapDialog from "../components/WptMapDialog";
 
 
 export default function LocalClientTrackLayer() {
@@ -709,4 +710,6 @@ export default function LocalClientTrackLayer() {
             })
         }
     }, [ctx.routingNewSegments])
+
+    return <WptMapDialog/>
 }

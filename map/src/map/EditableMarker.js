@@ -46,7 +46,13 @@ export default class EditableMarker {
             this.dragStartPoint(e, track);
         });
         marker.on('dragend', (e) => this.dragEndPoint(e, track));
-        marker.on('contextmenu', (e) => this.createPointContextMenu(e));
+        marker.on('contextmenu', (e) => this.createPointContextMenu(e))
+        marker.on('click', (e) => {
+            e.originalEvent.stopPropagation();
+            if (e.target.options.wpt) {
+                this.ctx.setSelectedWpt(e);
+            }
+        });
     }
 
     createPointContextMenu(e) {

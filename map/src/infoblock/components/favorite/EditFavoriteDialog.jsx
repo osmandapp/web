@@ -72,7 +72,6 @@ export default function EditFavoriteDialog({
         let currentWpt = getCurrentWpt(selectedGroupName);
         let ind = ctx.selectedGpxFile.wpts.findIndex(wpt => wpt === currentWpt);
         if (ind !== -1) {
-            let selectedGroup = FavoritesManager.createDefaultWptGroup(favoriteGroup);
             ctx.selectedGpxFile.wpts[ind] = {
                 name: favoriteName,
                 address: favoriteAddress === "" ? null : favoriteAddress,
@@ -80,7 +79,7 @@ export default function EditFavoriteDialog({
                 color: favoriteColor,
                 background: favoriteShape,
                 icon: favoriteIcon,
-                category: getCategoryName(selectedGroup),
+                category: getCategoryName(selectedGroupName),
                 lat: favorite.lat,
                 lon: favorite.lon
             }
@@ -92,8 +91,8 @@ export default function EditFavoriteDialog({
         setEditFavoritesDialogOpen(false);
     }
 
-    function getCategoryName(selectedGroup) {
-        return selectedGroup.name !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroup.name : null;
+    function getCategoryName(selectedGroupName) {
+        return selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
     }
 
     async function saveFavorite() {
@@ -172,11 +171,16 @@ export default function EditFavoriteDialog({
         </IconButton>
     }
 
+    function getTitleDialog() {
+        return ctx.addFavorite.editTrack ? 'Edit waypoint' : 'Edit favorite';
+    }
+
+
     return (
         <Dialog open={true}>
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{mb: -3}}>
-                    <DialogTitle>Edit favorite</DialogTitle>
+                    <DialogTitle>{getTitleDialog()}</DialogTitle>
                 </Grid>
                 <Grid item xs={1} sx={{ml: -2, mt: 1}}>
                     {CloseDialog(setEditFavoritesDialogOpen)}
@@ -231,7 +235,8 @@ export default function EditFavoriteDialog({
                         {deleteFavoritesDialogOpen
                             && <DeleteFavoriteDialog
                                 dialogOpen={deleteFavoritesDialogOpen}
-                                setDialogOpen={setDeleteFavoritesDialogOpen}/>}
+                                setDialogOpen={setDeleteFavoritesDialogOpen}
+                                wpt={favorite}/>}
                         <Button disabled={errorName} onClick={() => save()}>
                             Save</Button>
                     </Grid>
