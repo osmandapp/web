@@ -7,6 +7,7 @@ import React from "react";
 import RoutingManager from "../context/RoutingManager";
 
 export default class EditableMarker {
+    stopclick;
 
     constructor(map, ctx, point, layer, track) {
         this.map = map;
@@ -45,12 +46,22 @@ export default class EditableMarker {
             this.ctx.setPointContextMenu({});
             this.dragStartPoint(e, track);
         });
-        marker.on('dragend', (e) => this.dragEndPoint(e, track));
+        marker.on('dragend', (e) => {
+            this.dragEndPoint(e, track)
+            if (e.target.options.wpt) {
+                e.target.dragging.disable();
+                this.stopclick = true;
+            }
+        });
         marker.on('contextmenu', (e) => this.createPointContextMenu(e))
         marker.on('click', (e) => {
             e.originalEvent.stopPropagation();
             if (e.target.options.wpt) {
-                this.ctx.setSelectedWpt(e);
+                if (this.stopclick) {
+                    this.stopclick = false;
+                } else {
+                    this.ctx.setSelectedWpt(e);
+                }
             }
         });
     }

@@ -62,7 +62,7 @@ export default function WaypointsTab({width}) {
     }
 
     function showPoint(point) {
-        ctx.setSelectedWpt(point.wpt);
+        ctx.setSelectedWpt(point);
         ctx.selectedGpxFile.showPoint = point;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }

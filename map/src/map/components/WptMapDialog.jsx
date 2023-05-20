@@ -4,7 +4,7 @@ import {
     Button,
     Divider,
     Grid,
-    IconButton,
+    IconButton, Link,
     ListItemIcon,
     ListItemText, MenuItem,
     Typography
@@ -19,7 +19,6 @@ import contextMenuStyles from "../../infoblock/styles/ContextMenuStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import EditFavoriteDialog from "../../infoblock/components/favorite/EditFavoriteDialog";
 import DeleteFavoriteDialog from "../../infoblock/components/favorite/DeleteFavoriteDialog";
-import _ from "lodash";
 
 const useStyles = makeStyles({
     icon: {
@@ -66,12 +65,22 @@ export default function WptMapDialog() {
         if (ctx.selectedWpt) {
             ctx.addFavorite.editTrack = true;
             ctx.setAddFavorite({...ctx.addFavorite});
-            const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
-            const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
+            const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
+            const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.wpt.lon;
             const currentWpt = ctx.selectedGpxFile.wpts.find(wpt => wpt.lat === lat && wpt.lon === lng);
             setWpt(currentWpt);
         }
     }, [ctx.selectedWpt, ctx.selectedGpxFile]);
+
+    function enableWptDragging() {
+        if (ctx.selectedWpt) {
+            let marker = ctx.selectedWpt.target ? ctx.selectedWpt.target : ctx.selectedWpt.layer;
+            if (marker) {
+                marker.dragging.enable();
+                ctx.setSelectedWpt(null);
+            }
+        }
+    }
 
 
     return (<>
@@ -135,6 +144,10 @@ export default function WptMapDialog() {
                     </Typography>
                 </DialogContent>
                 <DialogActions>
+                    <Link sx={{marginRight: "auto", fontSize: "10pt", ml: 2}} href="#" color="inherit"
+                          onClick={enableWptDragging}>
+                        Move this waypoint
+                    </Link>
                     <Button variant="contained"
                             component="span"
                             sx={{backgroundColor: '#ff595e !important'}}

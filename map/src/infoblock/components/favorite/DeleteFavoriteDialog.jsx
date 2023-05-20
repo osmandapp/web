@@ -22,8 +22,8 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
     async function deleteWpt() {
         if (ctx.addFavorite.editTrack) {
             if (ctx.selectedWpt) {
-                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
-                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
+                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
+                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.wpt.lon;
                 const ind = ctx.selectedGpxFile.wpts.findIndex(wpt => wpt.lat === lat && wpt.lon === lng);
                 PointManager.deleteWpt(ind, ctx);
                 setDialogOpen(false);
