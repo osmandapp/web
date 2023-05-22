@@ -4,14 +4,17 @@ import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
 import React from "react";
+import RoutingManager from "../context/RoutingManager";
 
 export default class EditableMarker {
+    stopclick;
 
-    constructor(map, ctx, point, layer) {
+    constructor(map, ctx, point, layer, track) {
         this.map = map;
         this.ctx = ctx;
         this.point = point;
         this.layer = layer;
+        this.track = track;
     }
 
     create() {
@@ -33,74 +36,90 @@ export default class EditableMarker {
         }
 
         if (marker) {
-            marker.on('dragstart', (e) => {
-                this.ctx.setPointContextMenu({})
-                this.dragStartPoint(e);
-            });
-            marker.on('dragend', (e) => {
-                this.dragEndPoint(e, this.ctx.setGpxLoading).then(() => {
-                    this.ctx.setGpxLoading(false)
-                })
-            });
-            marker.on('contextmenu', (e) => {
-                let coord = e.latlng;
-                this.ctx.pointContextMenu.ref = {
-                    getBoundingClientRect: {
-                        width: 0,
-                        height: 0,
-                        top: e.containerPoint.y,
-                        right: e.containerPoint.x,
-                        bottom: e.containerPoint.y,
-                        left: e.containerPoint.x,
-                    }
-                };
-                this.ctx.pointContextMenu.left = e.containerPoint.x;
-                this.ctx.pointContextMenu.top = e.containerPoint.y;
-                this.ctx.pointContextMenu.coord = coord;
-                this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
-            });
+            this.addEvents(marker, this.track);
         }
         return marker;
     }
 
-    dragStartPoint(e) {
+    addEvents(marker, track) {
+        marker.on('dragstart', (e) => {
+            this.ctx.setPointContextMenu({});
+            this.dragStartPoint(e, track);
+        });
+        marker.on('dragend', (e) => {
+            this.dragEndPoint(e, track)
+            if (e.target.options.wpt) {
+                e.target.dragging.disable();
+                this.stopclick = true;
+            }
+        });
+        marker.on('contextmenu', (e) => this.createPointContextMenu(e))
+        marker.on('click', (e) => {
+            e.originalEvent.stopPropagation();
+            if (e.target.options.wpt) {
+                if (this.stopclick) {
+                    this.stopclick = false;
+                } else {
+                    this.ctx.setSelectedWpt(e);
+                }
+            }
+        });
+    }
+
+    createPointContextMenu(e) {
+        let coord = e.latlng;
+        this.ctx.pointContextMenu.ref = {
+            getBoundingClientRect() {
+                return {
+                    width: 0,
+                    height: 0,
+                    top: e.containerPoint.y,
+                    right: e.containerPoint.x,
+                    bottom: e.containerPoint.y,
+                    left: e.containerPoint.x,
+                }
+            }
+        };
+        this.ctx.pointContextMenu.left = e.containerPoint.x;
+        this.ctx.pointContextMenu.top = e.containerPoint.y;
+        this.ctx.pointContextMenu.coord = coord;
+        this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
+    }
+
+    dragStartPoint(e, track) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
-        let indPoint = this.ctx.selectedGpxFile.points.findIndex(point => point.lat === lat && point.lng === lng);
+        let indPoint = track.points.findIndex(point => point.lat === lat && point.lng === lng);
         if (indPoint !== -1) {
-            this.ctx.selectedGpxFile.dragPoint = {
+            track.dragPoint = {
                 indPoint: indPoint,
                 lat: lat,
                 lng: lng
             };
         } else {
-            let indWpt = this.ctx.selectedGpxFile.wpts.findIndex(point => {
+            let indWpt = track?.wpts.findIndex(point => {
                 return point.lat === lat && point.lon === lng
             });
             if (indWpt !== -1) {
-                this.ctx.selectedGpxFile.dragPoint = {
+                track.dragPoint = {
                     indWpt: indWpt,
                     lat: lat,
                     lng: lng
                 };
             }
         }
-        if (this.ctx.selectedGpxFile.dragPoint) {
-            this.ctx.selectedGpxFile.addPoint = false;
-            this.ctx.setSelectedGpxFile({...this.ctx.selectedGpxFile});
-        }
     }
 
-    async dragEndPoint(e, setLoading) {
-        setLoading(true);
+    dragEndPoint(e, track) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
 
-        let trackPoints = this.ctx.selectedGpxFile.points;
-        let indPoint = this.ctx.selectedGpxFile.dragPoint.indPoint;
+        let trackPoints = track.points;
+        let indPoint = track.dragPoint.indPoint;
+        let segments = [];
         if (indPoint !== undefined && indPoint !== -1) {
             let currentPoint = trackPoints[indPoint];
-            let layers = this.ctx.selectedGpxFile.layers.getLayers();
+            let layers = track.layers.getLayers();
             let polylines = TrackLayerProvider.getPolylines(layers);
 
             let currentPolyline;
@@ -115,8 +134,7 @@ export default class EditableMarker {
                 }
             })
 
-            let polylineTemp = TrackLayerProvider.createTempPolyline(currentPoint, {lat: lat, lng: lng});
-            polylineTemp.addTo(this.map);
+            const oldPoint = _.cloneDeep(currentPoint);
 
             currentPoint.lat = lat;
             currentPoint.lng = lng;
@@ -132,77 +150,41 @@ export default class EditableMarker {
                 let nextPoint = trackPoints[indPoint + 1];
 
                 if (prevPoint && prevPoint.profile !== TracksManager.PROFILE_GAP) {
-                    currentPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(currentPoint), polylines);
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
                             let newGeo = _.cloneDeep(currentPoint.geometry);
                             newGeo[newGeo.length - 1] = currentPoint;
                             currentPoint.geometry = newGeo;
                         } else {
-                            currentPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, prevPoint, currentPoint);
+                            currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, null, oldPoint);
+                            segments = RoutingManager.addSegmentToRouting(prevPoint, currentPoint, oldPoint, currentPolyline, segments);
                         }
                     }
                 }
 
                 if (nextPoint && currentPoint.profile !== TracksManager.PROFILE_GAP) {
-                    nextPolyline = TrackLayerProvider.getPolylineByPoints(_.cloneDeep(nextPoint), polylines);
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
                             let newGeo = _.cloneDeep(nextPoint.geometry);
                             newGeo[0] = currentPoint;
                             nextPoint.geometry = newGeo;
                         } else {
-                            nextPoint.geometry = await TracksManager.updateRouteBetweenPoints(this.ctx, currentPoint, nextPoint);
+                            nextPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, oldPoint, null);
+                            segments = RoutingManager.addSegmentToRouting(currentPoint, nextPoint, oldPoint, nextPolyline, segments);
                         }
                     }
                 }
-
-                let firstPoint = indPoint === 0;
-                let lastPoint = indPoint === trackPoints.length - 1;
-
-                if (firstPoint) {
-                    this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
-                } else if (lastPoint) {
-                    this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
-                } else {
-                    this.updatePolyline(currentPoint.profile, nextPoint, nextPolyline);
-                    this.updatePolyline(prevPoint.profile, currentPoint, currentPolyline);
-                }
             }
-            this.map.removeLayer(polylineTemp);
         } else {
-            let indWpt = this.ctx.selectedGpxFile.dragPoint.indWpt;
+            let indWpt = track.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
-                let currentWpt = this.ctx.selectedGpxFile.wpts[indWpt];
+                let currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
             }
         }
-        if (trackPoints.length > 1) {
-            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, this.ctx, this.ctx.setLoadingContextMenu, trackPoints).then(res => {
-                res.addPoint = false;
-                res.dragPoint = false;
-                res.layers = this.ctx.selectedGpxFile.layers;
-                this.ctx.setSelectedGpxFile({...res});
-                this.ctx.trackState.update = true;
-                this.ctx.setTrackState({...this.ctx.trackState});
-            });
-        }
-    }
-
-    updatePolyline(profile, point, polyline) {
-        if (point) {
-            let latlngs = [];
-            point.geometry.forEach(point => {
-                latlngs.push(new L.LatLng(point.lat, point.lng))
-            })
-
-            if (polyline) {
-                polyline.setLatLngs(latlngs);
-                polyline.setStyle({
-                    color: this.ctx.creatingRouteMode.colors[profile ? profile : TracksManager.PROFILE_LINE]
-                });
-            }
-        }
+        this.ctx.setRoutingNewSegments([...segments])
+        this.ctx.trackState.update = true;
+        this.ctx.setTrackState({...this.ctx.trackState});
     }
 }

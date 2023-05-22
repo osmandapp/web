@@ -1,13 +1,13 @@
 import {Tab} from "@mui/material";
 import React from "react";
-import FavoriteInfoTab from "./components/tabs/FavoriteInfoTab";
+import FavoriteInfoTab from "./FavoriteInfoTab";
 
 export default class FavoritesTabList {
     state = {
         tabs: null,
         tabList: [],
         defaultTab: 'favInfo',
-        graphWidth: 600
+        graphWidth: 400
     };
 
     create() {

@@ -64,6 +64,8 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     function saveTrackWpt() {
+        delete ctx.addFavorite.editTrack;
+        ctx.setAddFavorite({...ctx.addFavorite});
         let selectedGroup = FavoritesManager.createDefaultWptGroup(favoriteGroup);
         let favorite = {
             name: favoriteName,
@@ -85,7 +87,6 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
         ctx.selectedGpxFile.wpts.push(favorite);
         if (ctx.createTrack) {
             prepareLocalTrack();
-            ctx.setUpdateContextMenu(true);
         }
         if (favorite.category === null) {
             if (!ctx.selectedGpxFile.pointsGroups[FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS]) {
@@ -164,6 +165,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             ctx.setUpdateContextMenu(true);
             updateGroupMarkers(result, selectedGroup).then();
             closeDialog();
+            ctx.setUpdateContextMenu(true);
         }
     }
 

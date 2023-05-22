@@ -12,13 +12,13 @@ import FavoritesManager from "../../../context/FavoritesManager";
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '21px',
-            left: '552px',
             width: '40px',
-            height: '40px'
+            height: '40px',
+            top: '20px',
+            left: '21px'
         },
         "& .background": {
-            left: '10px',
+            left: '-25px',
             top: '-25px',
             width: '100px',
             height: '100px',
@@ -88,22 +88,22 @@ const FavoriteInfoTab = ({width}) => {
         return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
     }
 
-    return (<Box className={styles.item} minWidth={width}>
-        <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
+    return (<Box className={styles.item} maxWidth={width}>
+        <Typography className={styles.info} variant="subtitle1" color="inherit">
             <Grid container spacing={2}>
                 <Grid className={styles.name} item xs={10}>
                     <Typography className={styles.name} variant="inherit">
                         {favorite.name}
                     </Typography>
                 </Grid>
-                {favorite?.marker && <Grid className={styles.name} item xs={2}>
+                {favorite?.marker && <Grid sx={{position:"relative"}} className={styles.name} item xs={2}>
                     <div className={classes.icon}
                          dangerouslySetInnerHTML={{__html: MarkerOptions.getWptIcon(favorite?.marker, favorite?.color, favorite?.background, favorite?.icon).options.html + ''}}/>
                 </Grid>}
             </Grid>
             <Grid container sx={{mt: -9}}>
                 <ListItemIcon
-                    style={{color: favorite.category && FavoritesManager.getColorGroup(ctx, favorite.category)}}>
+                    style={{color: favorite.category && FavoritesManager.getColorGroup(ctx, favorite.category, false)}}>
                     <Folder fontSize="small"/>
                 </ListItemIcon>
                 <ListItemText>

@@ -1,4 +1,4 @@
-import WeatherForecast from "./components/WeatherForecast";
+import WeatherForecast from "../WeatherForecast";
 import React from "react";
 import {Tab} from "@mui/material";
 
@@ -7,7 +7,7 @@ export default class WeatherTabList {
         tabs: null,
         tabList: [],
         defaultTab: 'weatherday',
-        graphWidth: 600
+        graphWidth: 400
     };
 
     create(ctx) {

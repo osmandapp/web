@@ -1,5 +1,6 @@
 import {
-    Box,
+    Alert,
+    Box, Button,
     IconButton,
     LinearProgress,
     ListItemAvatar,
@@ -14,13 +15,17 @@ import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import {DragDropContext, Draggable, Droppable} from "@hello-pangea/dnd";
 import PointManager from "../../../context/PointManager";
+import contextMenuStyles from "../../styles/ContextMenuStyles";
+import _ from "lodash";
 
 
 const PointsTab = ({width}) => {
 
     const ctx = useContext(AppContext);
+    const styles = contextMenuStyles();
 
     const [loading, setLoading] = useState(false);
+    const [openPointAlert, setOpenPointAlert] = useState(true);
 
     function showPointOnMap(point) {
         ctx.selectedGpxFile.showPoint = point;
@@ -54,6 +59,20 @@ const PointsTab = ({width}) => {
         }
     }
 
+    function deleteAllPoints() {
+        if (ctx.selectedGpxFile) {
+            if (ctx.selectedGpxFile.points) {
+                ctx.selectedGpxFile.points = [];
+            }
+            if (ctx.selectedGpxFile.tracks) {
+                ctx.selectedGpxFile.tracks = [];
+            }
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.selectedGpxFile.analysis = null;
+            ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        }
+    }
+
     const PointRow = () => ({point, index}) => {
         return (
             <Draggable key={index} draggableId={index + ' row'} index={index}>
@@ -82,8 +101,7 @@ const PointsTab = ({width}) => {
                             <IconButton x={{mr: 1}} onClick={(e) => {
                                 e.stopPropagation();
                                 PointManager.deletePoint(index, ctx).then(() => {
-                                    ctx.trackState.update = true;
-                                    ctx.setTrackState({...ctx.trackState});
+                                    TracksManager.updateState(ctx);
                                 });
                             }}>
                                 <Cancel fontSize="small"/>
@@ -94,22 +112,42 @@ const PointsTab = ({width}) => {
             </Draggable>)
     }
 
-    return (<DragDropContext onDragEnd={onDragEnd}><Box minWidth={width}>
-        {loading ? <LinearProgress/> : <></>}
-        <Droppable droppableId="droppable-1">
-            {(provided) => (
-                <div ref={provided.innerRef}
-                     style={{maxHeight: '35vh', overflow: 'auto'}}
-                     {...provided.droppableProps}>
-                    {getPoints().map((point, index) => {
-                        return PointRow()({point: point, index: index});
-                    })}
-                    {provided.placeholder}
-                </div>
-            )}
-        </Droppable>
-    </Box>
-    </DragDropContext>);
+    return (
+        <>
+            {openPointAlert && ctx.createTrack && (!ctx.selectedGpxFile?.points || _.isEmpty(ctx.selectedGpxFile?.points))
+                && (!ctx.selectedGpxFile?.tracks || _.isEmpty(ctx.selectedGpxFile?.tracks[0]?.points)) &&
+                <Alert severity="info"
+                       sx={{mt: 2}}
+                       onClose={() =>
+                       {setOpenPointAlert(false)}}
+                >Click on the map to add a point...
+                </Alert>}
+            {ctx.createTrack && ctx.selectedGpxFile?.points?.length > 0 &&
+                <Button
+                    variant="contained"
+                    className={styles.button}
+                    onClick={() => deleteAllPoints()}>
+                    Clear
+                </Button>
+            }
+            {ctx.selectedGpxFile?.points && <DragDropContext onDragEnd={onDragEnd}>
+                <Box sx={{mt: 2}} minWidth={width}>
+                    {loading ? <LinearProgress/> : <></>}
+                    <Droppable droppableId="droppable-1">
+                        {(provided) => (
+                            <div ref={provided.innerRef}
+                                 {...provided.droppableProps}
+                            >
+                                {getPoints().map((point, index) => {
+                                    return PointRow()({point: point, index: index});
+                                })}
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
+                </Box>
+            </DragDropContext>}
+        </>);
 };
 
 export default PointsTab;

@@ -18,7 +18,7 @@ export default function HeaderInfo() {
     }, [ctx.headerText, ctx.setHeaderText]);
 
 
-    return <Box>
+    return <Box sx={{flexGrow: 1}}>
         <Typography variant="h6" color="inherit" style={{display: 'inline'}}>
             <SearchInfo/>
             {text}

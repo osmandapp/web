@@ -1,7 +1,8 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {
-    Box,
+    Alert,
+    Box, Button,
     IconButton,
     ListItemAvatar,
     ListItemIcon,
@@ -9,62 +10,41 @@ import {
     MenuItem,
     Typography
 } from "@mui/material";
-import {makeStyles} from "@material-ui/core/styles";
 import L from "leaflet";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
 import {Cancel} from "@mui/icons-material";
 import PointManager from "../../../context/PointManager";
+import TracksManager from "../../../context/TracksManager";
+import wptTabStyle from "../../styles/WptTabStyle";
+import _ from "lodash";
 
-const useStyles = makeStyles({
-    icon: {
-        "& .icon": {
-            top: '22px',
-            left: '20px'
-        },
-        "& .background": {
-            marginBottom: '-40px',
-            marginRight: '20px',
-            marginLeft: '10px',
-            filter: "drop-shadow(0 0 0 gray)"
-        }
-    },
-    iconOnlyName: {
-        "& .icon": {
-            top: '16px',
-            left: '20px'
-        },
-        "& .background": {
-            marginBottom: '-40px',
-            marginRight: '20px',
-            marginLeft: '10px',
-            filter: "drop-shadow(0 0 0 gray)"
-        }
-    },
-    text: {
-        '& .MuiTypography-root': {
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            width: "100%",
-            paddingRight: "20px",
-            marginLeft: "14px !important"
-        }
-    }
-})
+
 export default function WaypointsTab({width}) {
 
     const ctx = useContext(AppContext);
 
-    const classes = useStyles();
-    const styles = contextMenuStyles();
+    const stylesWpt = wptTabStyle();
+    const stylesMenu = contextMenuStyles();
 
     const [showMore, setShowMore] = useState(false);
-    const NAME_SIZE = 50;
+    const [openWptAlert, setOpenWptAlert] = useState(true);
+    const NAME_SIZE = 30;
+
+    function getLayers() {
+        if (ctx.selectedGpxFile?.layers) {
+            if (!_.isEmpty(ctx.selectedGpxFile.layers)) {
+                return ctx.selectedGpxFile.layers.getLayers();
+            }
+            if (ctx.selectedGpxFile?.gpx?.layers) {
+                return ctx.selectedGpxFile.gpx.layers.getLayers();
+            }
+        }
+        return [];
+    }
 
     function getPoints() {
         let wpts = [];
-        let layers = ctx.selectedGpxFile.layers ? ctx.selectedGpxFile.layers.getLayers() :
-            ctx.selectedGpxFile.gpx.getLayers() ? ctx.selectedGpxFile.gpx.getLayers() : [];
+        let layers = getLayers();
         layers.forEach(layer => {
             if (layer instanceof L.Marker) {
                 let coord = layer.getLatLng();
@@ -82,12 +62,13 @@ export default function WaypointsTab({width}) {
     }
 
     function showPoint(point) {
+        ctx.setSelectedWpt(point);
         ctx.selectedGpxFile.showPoint = point;
         ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
     }
 
     function getLength(point) {
-        return point.layer.options?.desc && point.layer.options.address ? 30 : 60;
+        return point.layer.options?.desc && point.layer.options.address ? 15 : 30;
     }
 
     function getName(point) {
@@ -101,14 +82,20 @@ export default function WaypointsTab({width}) {
         }
     }
 
+    // TODO
+    function addWaypoint() {
+        ctx.selectedGpxFile.addWpt = true;
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
     function showWithInfo(point) {
         return <>
             <ListItemIcon>
-                <div className={classes.icon}
+                <div className={stylesWpt.icon}
                      dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
             </ListItemIcon>
             <ListItemText sx={{ml: "-35px !important"}}>
-                <Typography variant="inherit" noWrap>
+                <Typography component={'span'} variant="inherit" noWrap>
                     {getName(point)}
                     {point.layer.options?.title?.length > NAME_SIZE &&
                         <ListItemIcon style={{marginRight: " -25px"}}>
@@ -147,7 +134,7 @@ export default function WaypointsTab({width}) {
     function showOnlyName(point) {
         return <>
             <ListItemIcon>
-                <div className={classes.iconOnlyName}
+                <div className={stylesWpt.iconOnlyName}
                      dangerouslySetInnerHTML={{__html: point.layer.options.icon.options.html + ''}}/>
             </ListItemIcon>
             <ListItemText sx={{ml: "-35px !important"}}>
@@ -162,17 +149,30 @@ export default function WaypointsTab({width}) {
         </>
     }
 
+    function hasInfo(wpt) {
+        return wpt.layer.options?.desc !== undefined || wpt.layer.options?.address !== undefined || wpt.wpt.category;
+    }
+
+    function deleteAllWpts() {
+        ctx.selectedGpxFile.wpts = [];
+        ctx.selectedGpxFile.updateLayers = true;
+        TracksManager.updateState(ctx);
+        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    }
+
     const WaypointRow = () => ({point, index}) => {
-        let hasInfo = point.layer.options?.desc !== undefined || point.layer.options?.address !== undefined || point.wpt.category
         return (
-            <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
-                {hasInfo && showWithInfo(point)}
-                {!hasInfo && showOnlyName(point)}
+            <MenuItem key={'marker' + index} divider
+                      onClick={() => showPoint(point)}
+            >
+                {hasInfo(point) ? showWithInfo(point) : showOnlyName(point)}
                 <ListItemAvatar>
-                    <IconButton sx={{mr: 1}} onClick={(e) => {
-                        e.stopPropagation();
-                        PointManager.deleteWpt(index, ctx);
-                    }}>
+                    <IconButton sx={{mr: 1}}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    PointManager.deleteWpt(index, ctx);
+                                }
+                    }>
                         <Cancel fontSize="small"/>
                     </IconButton>
                 </ListItemAvatar>
@@ -180,11 +180,34 @@ export default function WaypointsTab({width}) {
     }
 
 
-    return (
-        <Box className={styles.item} minWidth={width}>
-            {ctx.selectedGpxFile.wpts && getPoints().map((point, index) => {
-                return WaypointRow()({point: point, index: index});
-            })}
-        </Box>
+    return (<>
+            {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) &&
+                <Button
+                    variant="contained"
+                    className={stylesMenu.button}
+                    onClick={() => deleteAllWpts()}>
+                    Clear
+                </Button>}
+
+
+            {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)) &&
+                <Alert
+                    sx={{mt: 2}}
+                    severity="info"
+                    onClose={() => {
+                        setOpenWptAlert(false)
+                    }
+                    }>
+                    Use the right menu to add a waypoint...
+                </Alert>
+            }
+            <Box
+                className={stylesMenu.item}
+                minWidth={width}>
+                {ctx.selectedGpxFile.wpts && getPoints().map((point, index) => {
+                    return WaypointRow()({point: point, index: index});
+                })}
+            </Box>
+        </>
     )
 }

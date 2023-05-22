@@ -53,7 +53,6 @@ const contextMenuStyles = makeStyles({
         lineHeight: "normal",
         overflowWrap: 'break-word'
     },
-
     item: {
         '& .MuiMenuItem-root': {
             userSelect: 'text',
@@ -63,6 +62,18 @@ const contextMenuStyles = makeStyles({
             marginLeft: "1px !important",
             overflow: "visible !important"
         },
+    },
+    button: {
+        backgroundColor: '#fbc73a !important',
+        fontSize: "12px !important",
+        minWidth: "20px !important",
+        padding: "3px 5px !important",
+        marginLeft: "5px !important"
+    },
+    topic: {
+        fontFamily: "Arial",
+        fontSize: 25,
+        color: 'black'
     }
 })
 

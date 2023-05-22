@@ -3,13 +3,14 @@ import {Close, Delete, Folder, Redo, Undo} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import AppContext from "../../context/AppContext";
-import SaveTrackDialog from "./track/SaveTrackDialog";
-import DeleteTrackDialog from "./track/DeleteTrackDialog";
+import SaveTrackDialog from "./track/dialogs/SaveTrackDialog";
+import DeleteTrackDialog from "./track/dialogs/DeleteTrackDialog";
 import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
 import _ from "lodash";
 import Utils, {getProfileIcon} from "../../util/Utils";
 import TracksManager from "../../context/TracksManager";
 import useUndoRedo from "../useUndoRedo";
+import RoutingManager from "../../context/RoutingManager";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -57,7 +58,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
     useEffect(() => {
         if (!useSavedState) {
             if (ctx.trackState.update) {
-                addFirstState();
                 setState(_.cloneDeep(ctx.selectedGpxFile));
                 ctx.trackState.update = false;
                 ctx.setTrackState({...ctx.trackState});
@@ -65,22 +65,20 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         }
     }, [ctx.trackState])
 
-
-    function addFirstState() {
-        if (pastStates.length === 0) {
-            state.tracks = TracksManager.createGpxTracks();
-            state.points = [];
-            state.name = ctx.selectedGpxFile.name;
-        }
+    function getState(currentState) {
+        getTrack(currentState);
+        setUseSavedState(false);
     }
 
-    function getState(currentState) {
+    function getTrack(currentState) {
         let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
         let objFromState = _.cloneDeep(currentState);
         objFromState.updateLayers = true;
         objFromState.layers = oldLayers;
-        setUseSavedState(false)
+        objFromState.getRouting = true;
+
         ctx.setSelectedGpxFile({...objFromState});
+
     }
 
     return (ctx.selectedGpxFile &&
@@ -132,7 +130,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                             {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <IconButton
                                 variant="contained"
                                 type="button"
-                                disabled={!isUndoPossible || ctx.trackState.block}
+                                disabled={!isUndoPossible || ctx.trackState.block || (pastStates.length === 1 && _.isEmpty(pastStates[0]))}
                                 onClick={(e) => {
                                     undo();
                                     setUseSavedState(true);

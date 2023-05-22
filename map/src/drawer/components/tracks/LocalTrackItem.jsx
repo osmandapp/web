@@ -1,12 +1,14 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
+import {LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import _ from "lodash";
+import TracksManager from "../../../context/TracksManager";
 
 export default function LocalTrackItem({track, index}) {
 
     const ctx = useContext(AppContext);
     const [indexTrack, setIndexTrack] = useState(index);
+    const [loading, setLoading] = useState(false);
 
     function enableLayer(visible) {
         if (!visible) {
@@ -34,23 +36,52 @@ export default function LocalTrackItem({track, index}) {
     }
 
     function addTrackToMap() {
-        let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
-        ctx.setCurrentObjectType(type);
         if (indexTrack !== undefined) {
-            startEdit();
-            addSelectedTack();
-            ctx.setLocalTracks([...ctx.localTracks]);
+            addSelectedTack().then(() => startEdit());
         }
     }
 
-    function addSelectedTack() {
+    async function addSelectedTack() {
         let selectedTrack = ctx.localTracks[indexTrack];
+        if (!selectedTrack.hasGeo && selectedTrack.tracks) {
+            setLoading(true);
+            if (!_.isEmpty(selectedTrack.tracks[0]?.points)) {
+                await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
+                    setLoading(false);
+                    if (points && !_.isEmpty(points)) {
+                        selectedTrack.tracks[0].points = points;
+                        selectedTrack.points = points;
+                        selectedTrack.hasGeo = true;
+                    }
+                    update(selectedTrack);
+                })
+            } else {
+                setLoading(false);
+                update(selectedTrack);
+            }
+        } else {
+            update(selectedTrack);
+        }
+    }
+
+    function update(track) {
+        updateLocalTrack(track);
+        updateTrackInfoBlock();
+    }
+
+    function updateLocalTrack(selectedTrack) {
         track.index = indexTrack;
         setIndexTrack(indexTrack);
         selectedTrack.selected = true;
         selectedTrack.zoom = true;
         selectedTrack.updateLayers = true;
         ctx.setSelectedGpxFile(selectedTrack);
+        ctx.setLocalTracks([...ctx.localTracks]);
+    }
+
+    function updateTrackInfoBlock() {
+        let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+        ctx.setCurrentObjectType(type);
         ctx.setUpdateContextMenu(true);
     }
 
@@ -88,5 +119,6 @@ export default function LocalTrackItem({track, index}) {
                         enableLayer(e.target.checked);
                     }}/>
         </MenuItem>
+        {loading ? <LinearProgress/> : <></>}
     </div>
 }

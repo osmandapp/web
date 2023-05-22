@@ -3,8 +3,8 @@ import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import {Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField} from "@mui/material";
-import AppContext from "../../../context/AppContext";
-import TracksManager from "../../../context/TracksManager";
+import AppContext from "../../../../context/AppContext";
+import TracksManager from "../../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
 

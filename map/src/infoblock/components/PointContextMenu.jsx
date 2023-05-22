@@ -4,8 +4,8 @@ import TracksManager from "../../context/TracksManager";
 import AppContext from "../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
 import PointManager from "../../context/PointManager";
-import EditFavoriteDialog from "./favorite/EditFavoriteDialog";
 import {Close} from "@mui/icons-material";
+import _ from "lodash";
 
 const useStyles = makeStyles({
     drawerItem: {
@@ -23,21 +23,12 @@ export default function PointContextMenu({anchorEl}) {
 
     const [open, setOpen] = useState(false);
     const [pointInd, setPointInd] = useState(-1);
-    const [wptInd, setWptInd] = useState(-1);
-    const [editDialogOpen, setEditDialogOpen] = useState(false);
 
     useEffect(() => {
         if (anchorEl) {
             let ind = ctx.selectedGpxFile.points.findIndex(point => point.lat === ctx.pointContextMenu.coord.lat && point.lng === ctx.pointContextMenu.coord.lng);
             if (ind !== -1) {
-                setWptInd(-1);
                 setPointInd(ind);
-            } else {
-                let ind = ctx.selectedGpxFile.wpts.findIndex(point => point.lat === ctx.pointContextMenu.coord.lat && point.lon === ctx.pointContextMenu.coord.lng);
-                if (ind !== -1) {
-                    setPointInd(-1);
-                    setWptInd(ind);
-                }
             }
         }
     }, [anchorEl])
@@ -178,14 +169,16 @@ export default function PointContextMenu({anchorEl}) {
                 }}>
                     Change route type after this point</MenuItem>
                 }
-                {pointInd >= 2 && pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isPointAfterGap(pointInd - 1) &&
+                {pointInd >= 2 && pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isPointAfterGap(pointInd - 1)
+                    && !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry) &&
                     <MenuItem onClick={() => {
                         splitBefore();
                         ctx.setPointContextMenu({});
                     }}>
                         Split before</MenuItem>
                 }
-                {pointInd >= 1 && pointInd < ctx.selectedGpxFile.points.length - 2 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isGap(pointInd + 1) &&
+                {pointInd >= 1 && pointInd < ctx.selectedGpxFile.points.length - 2 && !isGap(pointInd) && !isPointAfterGap(pointInd) && !isGap(pointInd + 1)
+                    && !_.isEmpty(ctx.selectedGpxFile.points[pointInd].geometry) &&
                     <MenuItem onClick={() => {
                         splitAfter();
                         ctx.setPointContextMenu({});
@@ -206,24 +199,6 @@ export default function PointContextMenu({anchorEl}) {
         )
     }
 
-    const WptButtons = () => {
-        return (
-            <div>
-                {<MenuItem onClick={() => {
-                    deletePoint();
-                    ctx.setPointContextMenu({});
-                }}>
-                    Delete wpt</MenuItem>}
-                {<MenuItem onClick={() => {
-                    setEditDialogOpen(true);
-                }}>
-                    Edit wpt</MenuItem>
-                }
-            </div>
-        )
-    }
-
-
     const handleClose = () => {
         if (anchorEl) {
             return;
@@ -233,7 +208,7 @@ export default function PointContextMenu({anchorEl}) {
 
 
     return <>
-        <Popper open={anchorEl !== undefined} anchorEl={anchorEl} transition
+        { pointInd !== -1 && <Popper open={anchorEl !== undefined} anchorEl={anchorEl} transition
                 style={{
                     zIndex: 1000,
                     left: ctx.pointContextMenu?.left + 330,
@@ -246,8 +221,7 @@ export default function PointContextMenu({anchorEl}) {
                         <div style={{maxHeight: '15vh', overflow: 'auto'}}>
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MenuList className={classes.drawerItem} autoFocusItem={open} id="menu-list-grow">
-                                    {pointInd !== -1 && wptInd === -1 && <Buttons/>}
-                                    {wptInd !== -1 && pointInd === -1 && <WptButtons/>}
+                                    <Buttons/>
                                 </MenuList>
                             </ClickAwayListener>
                         </div>
@@ -269,11 +243,6 @@ export default function PointContextMenu({anchorEl}) {
                     </IconButton>
                 </Grid>
             </Grid>
-        </Popper>
-        {editDialogOpen && <EditFavoriteDialog
-            favorite={ctx.selectedGpxFile.wpts[wptInd]}
-            editFavoritesDialogOpen={editDialogOpen}
-            setEditFavoritesDialogOpen={setEditDialogOpen}
-        />}
+        </Popper>}
     </>
 }
