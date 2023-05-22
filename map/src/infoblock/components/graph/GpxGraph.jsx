@@ -48,28 +48,28 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                         type="number"
                         tickCount={9}
                         tick={{fontSize: 10}}/>
-                    {minEle && maxEle && <YAxis
+                    <YAxis
                         yAxisId="left"
                         dataKey={yAxis}
                         type="number"
                         tickCount={6}
                         domain={[minEle, maxEle]}
-                        tick={{fontSize: 10}}/>}
-                    {minEle && maxEle && <YAxis
+                        tick={{fontSize: 10}}/>
+                    <YAxis
                         yAxisId="left"
                         dataKey="ElevationSRTM"
                         type="number"
                         tickCount={6}
                         domain={[minEle, maxEle]}
-                        tick={{fontSize: 10}}/>}
-                    {minSpeed !== null && maxSpeed !== null && <YAxis
+                        tick={{fontSize: 10}}/>
+                    <YAxis
                         yAxisId="right"
                         orientation="right"
                         dataKey="Speed"
                         type="number"
                         tickCount={6}
                         domain={[minSpeed, maxSpeed]}
-                        tick={{fontSize: 10}}/>}
+                        tick={{fontSize: 10}}/>
                     <Legend
                         style={{fontSize: 10}}/>
                     <Tooltip/>
@@ -89,13 +89,12 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                         fillOpacity={1}
                         fill="url(#colorElSRTM)"
                     />
-                    {minSpeed !== null && maxSpeed !== null &&
-                        <Line
-                            yAxisId="right"
-                            dataKey="Speed"
-                            dot={false}
-                            stroke="#ffacde"
-                        />}
+                    <Line
+                        yAxisId="right"
+                        dataKey="Speed"
+                        dot={false}
+                        stroke="#ffacde"
+                    />
                 </ComposedChart>
             </Typography>
         </>

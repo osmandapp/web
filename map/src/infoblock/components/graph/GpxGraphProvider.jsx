@@ -55,8 +55,17 @@ const GpxGraphProvider = ({width}) => {
                 if (elevation) {
                     ele = TracksManager.getEle(point, elevation, points).toFixed(2);
                     ele = Math.round(ele * 10) / 10;
-                    minEle = Math.min(ele, minEle);
-                    maxEle = Math.max(ele, maxEle);
+                    if (minEle === TracksManager.NAN_MARKER) {
+                        minEle = ele;
+                    } else {
+                        minEle = Math.min(ele, minEle);
+                    }
+
+                    if (maxEle === TracksManager.NAN_MARKER) {
+                        maxEle = ele;
+                    } else {
+                        maxEle = Math.max(ele, maxEle);
+                    }
                 }
                 if (elevationSRTM) {
                     eleSRTM = TracksManager.getEle(point, elevationSRTM, points).toFixed(2);
@@ -67,9 +76,13 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
                 if (data.speed) {
-                    speed = Math.round(point.ext?.speed * 10) / 10;
-                    minSpeed = Math.min(speed, minSpeed);
-                    maxSpeed = Math.max(speed, maxSpeed);
+                    if (point.ext?.speed) {
+                        speed = Math.round(point.ext?.speed * 10) / 10;
+                        minSpeed = Math.min(speed, minSpeed);
+                        maxSpeed = Math.max(speed, maxSpeed);
+                    } else {
+                        speed = 0;
+                    }
                 }
 
                 sumDist += point.distance;

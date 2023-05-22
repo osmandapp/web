@@ -35,15 +35,18 @@ async function loadTracks(setLoading) {
     let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible?.local) {
         for (const local of savedVisible.local) {
-            for (const f of localTracks) {
+            for (let f of localTracks) {
                 if (f.name === local.name) {
-                    if (Date.now() - local.addTime < HOURS_24_MS)  {
+                    if (Date.now() - local.addTime < HOURS_24_MS) {
                         f.selected = true;
                         f.hasGeo = true;
                         f.index = _.indexOf(localTracks, f);
                         if (f.tracks && f.tracks[0]?.points && !_.isEmpty(f.tracks[0]?.points)) {
                             promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
                                 f.tracks[0].points = points;
+                                TracksManager.getLocalTrackAnalysis(f).then(res => {
+                                    f = res;
+                                });
                             }));
                         }
                     } else {
@@ -80,7 +83,6 @@ function saveLocalTrack(tracks, ctx) {
         wpts: track.wpts,
         pointsGroups: track.pointsGroups,
         ext: track.ext,
-        analysis: track.analysis,
         selected: false,
         originalName: track.originalName
     }
@@ -286,12 +288,11 @@ function getTrackPoints(track) {
         track.tracks.forEach(track => {
             if (track.points) {
                 track.points.forEach(point => {
+                    points.push(point);
                     if (point.geometry) {
                         point.geometry.forEach(trk => {
                             points.push(trk);
                         })
-                    } else {
-                        points.push(point);
                     }
                 })
             }
@@ -647,6 +648,27 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
+async function getLocalTrackAnalysis(f) {
+    let data = {
+        tracks: f.tracks,
+        metaData: f.metaData,
+        ext: f.ext
+    }
+    let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    if (resp.data) {
+        let data = FavoritesManager.prepareTrackData(resp.data);
+        Object.keys(data.data).forEach(t => {
+            f[`${t}`] = data.data[t];
+        });
+        return f;
+    }
+}
+
 function createTrack(ctx, latlng) {
     let createState = {
         enable: true
@@ -733,6 +755,7 @@ const TracksManager = {
     getFavoriteGroups,
     isEqualPoints,
     updateState,
+    getLocalTrackAnalysis,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
