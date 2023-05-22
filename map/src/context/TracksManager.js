@@ -617,11 +617,11 @@ function getEle(point, elevation, array) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
+    const wpts = _.cloneDeep(ctx.selectedGpxFile.wpts);
+    const pointsGroups = _.cloneDeep(ctx.selectedGpxFile.pointsGroups);
     let data = {
         tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
-        wpts: ctx.selectedGpxFile.wpts,
         metaData: ctx.selectedGpxFile.metaData,
-        pointsGroups: ctx.selectedGpxFile.pointsGroups,
         ext: ctx.selectedGpxFile.ext,
         analysis: ctx.selectedGpxFile.analysis
     }
@@ -641,6 +641,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         if (path !== TracksManager.GET_SRTM_DATA) {
             ctx.selectedGpxFile.analysis.srtmAnalysis = false;
         }
+        ctx.selectedGpxFile.wpts = wpts;
+        ctx.selectedGpxFile.pointsGroups = pointsGroups;
         return ctx.selectedGpxFile;
     }
 }
