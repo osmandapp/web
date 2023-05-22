@@ -23,6 +23,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *Moped routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 ## Route parameters - Moped
 
+:::note
+By default, *Moped profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
+
 The moped's rooting settings are very simple and consist of just a few options.
 
 <Tabs groupId="operating-systems">
@@ -47,7 +51,7 @@ The moped's rooting settings are very simple and consist of just a few options.
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
 
 Other routing settings:  
-- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](./index.md#avoid-temporary-closures)* option. Note that in some cases, the information from OSM may be outdated. 
+- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#avoid-temporary-closures)* option. Note that in some cases, the information from OSM may be outdated. 
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
 - *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed)* (iOS) should be set according to your vehicle parameters. They are used to determine whether the road can be used for routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.

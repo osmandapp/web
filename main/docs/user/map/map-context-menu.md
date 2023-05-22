@@ -419,31 +419,28 @@ Read more about [search](../search/index.md) functionality.
 
 ### Avoid road
 
+Using Map context menu, you can add a specific road to the list of non-used for routing roads. That will affect [Route preparation](../navigation/setup/route-navigation.md).  
+To delete previosly selected roads from *[Avoid roads list](../navigation/routing/osmand-routing.md#avoid-roads-menu)* tap on a sign, choose *Remove* (**Android**) or *Dismiss* (**iOS**).
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Avoid action Android](@site/static/img/map/action_avoid_android.png)
+![Avoid road on the map Android](@site/static/img/map/action_avoid_android.png) ![Dismiss avoided road Android](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">
 
-![Avoid roads map](@site/static/img/map/action_avoid_roads_list_android.png)
+![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_1.png) ![Dismiss avoided road iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
- 
-
-It is possible to add avoid roads at specific location, so selected roads will be avoided during the route planning. 
-
-![Avoid delete action Android](@site/static/img/map/context_menu_avoid_roads.png) ![Avoid roads list Android](@site/static/img/map/action_avoid_delete_android.png) 
-
-**Note**: avoid roads are global and used for all navigation profiles (except online routing). 
-
-Read more about [navigation](../navigation/setup/route-navigation.md).
+:::note
+Avoid roads function is global and affects all *[Routing types](../navigation/routing/index.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
+:::
 
 ### Change object position
 

@@ -52,12 +52,16 @@ Car routing is designed to help drivers find the most efficient and direct route
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | In most cases, the shortest route will be suggested. Often this route can take longer than if the setting was disabled |
 
 Other routing settings:
-- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](./index.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.
+- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed)* (iOS) should be set according to your vehicle parameters. They are used to determine whether the road can be used for routing.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your vehicle parameters. They are used to determine whether the road can be used for routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
 ## Route parameters - Truck
+
+:::note
+By default, *Tuck profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
 
 Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (see table below). All other routing settings are identical to [car routing](#route-parameters---car).  
 
@@ -83,6 +87,10 @@ Truck routing is similar to car routing, but is designed specifically for driver
 |*<Translate android="true" ids="routing_attr_hazmat_category_name"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. You can also consider them on the route. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/truck_hazmat_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the USA restrictions.  |
 
 ## Route parameters - Motorcycle
+
+:::note
+By default, *Motorcycle profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
 
 Motorcycle routing is designed to create the best possible route for motorcycle riders, taking into account their preferences (for example, you can prefer or avoid roads with poor road conditions).
 

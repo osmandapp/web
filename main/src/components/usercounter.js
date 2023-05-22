@@ -7,7 +7,8 @@ function Counter() {
   useEffect(() => {
     function handleScroll() {
       const element = document.getElementById("counter");
-      const position = element.getBoundingClientRect().top;
+      if (element !== null) {
+              const position = element.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
       if (position < windowHeight && !finishedCounting) {
@@ -24,6 +25,7 @@ function Counter() {
         }, 30);
       }
     }
+  }
 
     window.addEventListener("scroll", handleScroll);
 

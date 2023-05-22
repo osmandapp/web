@@ -20,11 +20,13 @@ Unlike traditional routing algorithms, which use roads, trails, or predefined ro
 
 ![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
-:::note
-Straight line routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-navigation.md#route-details) section is empty).  
-:::
+Straight line routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
 
 ## Route parameters - Straight line
+
+:::note
+Straight line routing is linked to *Aircraft profile*. By default, this profile is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+:::
 
 *Straight line* routing can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
@@ -50,5 +52,5 @@ Straight line routing does not take into account any obstacles or barriers that 
 
 Other routing settings:  
 - In the [Recalculate route](../setup/route-navigation.md#route-recalculation) options, the distance at which the route will be recalculated for the Straight line routing is set to 500 meters by default.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed)* (iOS) can also be set for *Straight line* routing. Default value is 720 km/h.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) can also be set for *Straight line* routing. Default value is 720 km/h.
 - In the [Development section](../routing/index.md#development-settings) of Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.

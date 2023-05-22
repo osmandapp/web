@@ -1,6 +1,6 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.949" d="M9.9994 1C14.9626 1 19 5.00181 19 10C19 14.9655 14.9626 19 9.9994 19C5.0374 19 1 14.9655 1 10C1 5.00181 5.0374 1 9.9994 1Z" fill="#45ABE9"/>
@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M4 12C4 9.79086 5.79086 8 8 8H40C42.2091 8 44 9.79086 44 12V28C44 30.2091 42.2091 32 40 32H32H16H8C5.79086 32 4 30.2091 4 28V12ZM10 12H12V26H18V12H20V26H26V12H28V26H34V12H36V26H40V28H8V26H10V12Z" fill="#ffffff"/>
 <path d="M8 32C5.79086 32 4 33.7909 4 36C4 38.2091 5.79086 40 8 40C9.86384 40 11.4299 38.7252 11.874 37H8C7.44772 37 7 36.5523 7 36C7 35.4477 7.44772 35 8 35H11.874C11.4299 33.2748 9.86384 32 8 32Z" fill="#ffffff"/>

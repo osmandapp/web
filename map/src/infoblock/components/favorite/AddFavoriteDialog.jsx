@@ -131,8 +131,6 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }
 
     async function saveFavorite() {
-        let type = ctx.OBJECT_TYPE_FAVORITE;
-        ctx.setCurrentObjectType(type);
         let selectedGroup = favoriteGroup === null ? ctx.favorites.groups?.find(g => g.name === FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup;
         if (!selectedGroup) {
             selectedGroup = {
@@ -162,6 +160,9 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
             selectedGroup.file.name,
             selectedGroup.updatetimems)
         if (result) {
+            let type = ctx.OBJECT_TYPE_FAVORITE;
+            ctx.setCurrentObjectType(type);
+            ctx.setUpdateContextMenu(true);
             updateGroupMarkers(result, selectedGroup).then();
             closeDialog();
             ctx.setUpdateContextMenu(true);

@@ -97,7 +97,7 @@ export default function LocalClientTrackLayer() {
 
 
     useEffect(() => {
-        if (ctx.createTrack?.closePrev) {
+        if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;

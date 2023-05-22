@@ -35,7 +35,7 @@ Release date: 03/2023
 * "Display position" added new option "Automatic"
 * Fixed map gestures for tilt, zoom and rotation
 
-<DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.6-4406.apk" />
+<DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7-4407.apk" />
 
 
 ### Version 4.3 

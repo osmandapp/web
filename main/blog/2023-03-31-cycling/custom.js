@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-export default function Screenshots({ altSectionClass }) {
+export default function CyclingShots({ altSectionClass }) {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -29,16 +29,11 @@ export default function Screenshots({ altSectionClass }) {
     }
   };
   let imagesAndroid = [
-    "promo-1s.png",
-    "promo-2s.png",
-    "promo-3s.png",
-    "promo-4s.png",
-    "promo-5s.png",
-    "promo-6s.png",
-    "promo-7s.png",
-    "promo-8s.png",
-    "promo-9s.png",
-    "promo-10s.png"
+    "prpo1.png",
+    "prpo2.png",
+    "prpo3.png",
+    "prpo4.png",
+   
   ];
   let imagesIOs = [
     "ios-1s.png",
@@ -62,7 +57,7 @@ export default function Screenshots({ altSectionClass }) {
           itemClass="carousel-item-padding-10-px" className='padding-vert--md padding-horiz--md'>
           {(android ? imagesAndroid : imagesIOs).map((e) => {
             return <div key={e}>
-              <img src={require('@site/static/img/promo/' + e).default} />
+              <img src={require('@site/blog/2023-03-31-cycling/' + e).default} />
             </div>
           })}
 

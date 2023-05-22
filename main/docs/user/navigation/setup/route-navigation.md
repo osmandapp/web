@@ -226,7 +226,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
 :::note
-After the route is created, in the ["Details" section](#route-details) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+After the route is created, in the ["Details" section](../setup/route-details.md) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -340,9 +340,9 @@ You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed
 - &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
 - &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
 
-When you click on ["Start" button](#how-to-use), your simulation of navigation will start. 
+When you click on [*Start* button](#start--stop-navigation), your simulation of navigation will start.  
 
-For stop the simulation of navigation you need to click on ["Navigation" button → "Cancel" button](#how-to-use).
+To stop the simulation of navigation, you need to tap [*Navigation* button → *Cancel*](#start--stop-navigation).
 
 </TabItem>
 

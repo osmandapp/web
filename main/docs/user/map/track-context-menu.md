@@ -16,14 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 The Tracks context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
 
 Track Context menu includes:
 
-- [Overview](../map/track-context-menu.md#overview).
-- [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs). 
-- [Points / Waypoints](../map/track-context-menu.md#points--waypoints).
-- [Options](../map/track-context-menu.md#options).
+- [Overview tab](../map/track-context-menu.md#overview).
+- [Altitude / Speed Graphs tab](../map/track-context-menu.md#altitude--speed-graphs). 
+- [Points / Waypoints tab](../map/track-context-menu.md#points--waypoints).
+- [Options tab](../map/track-context-menu.md#options).
 
 <Tabs groupId="operating-systems">
 
@@ -46,9 +48,9 @@ Track Context menu includes:
 </Tabs>
 
 
-## Overview
+## Overview tab
 
-In Overview user can find track data info and make actions with viewing of the chosen track:
+In Overview tab user can find track data info and make actions with viewing of the chosen track:
 
 - [Info panel](../map/track-context-menu.md#info-panel) - shows track info: distance, speed, ascent/descent...
 - [Quick actions](../map/track-context-menu.md#quick-actions) - action buttons for the chosen track.
@@ -454,7 +456,7 @@ Split the track  by distance or time interval.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points. -->
 
-This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude* and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu you can check how your changes are displayed on the graph before you save them. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
+This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude*, and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu, you can check how your changes are displayed on the graph before you save them. You can also *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
 
 :::note
 GPS filter is in the context menu options of the selected track:
@@ -470,31 +472,30 @@ GPS filter is in the context menu options of the selected track:
 - "My track location" button allows to move the map to your track.-->
 
 The Android GPS Filter app page includes:  
-* A map with a saved track and an extra button *My track location* (it aligns a track to the center of a map)
-* Buttons *Refresh* and *Menu* at the top (*Menu* opens *Action* field at the bottom of the page)
-* Blocks *Filter*, *Statistics*, *Action*
+- A map with a saved track and an extra button *My track location* (it aligns a track to the center of a map).
+- Buttons *Refresh* and *Menu* at the top (*Menu* opens *Action* field at the bottom of the page).
+- Blocks *Filter*, *Statistics*, *Action*.  
 
-&nbsp;  
+
 #### **Filter** Menu
 
 In this menu, you can change some parameters of your track with filters such as, *Smoothing*, *Speed*, *Altitude*, *GPS precision*. The menu is divided into a Points part and an Actions part.
 
-| **_Points_** | 
+| ***Points*** | 
 |:------------|
 |This part shows the number of points after filtering and the total number of points on the selected track before filters were used.| 
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
-| **_Actions_** | 
-|*"Smoothing"* – Sets the threshold distance between points. <!--Track points not at least this distance away from the last visible point will be hidden.--> All points on the track, that are at a distance from each other less than the distance selected by the filter, will be hidden. Track points are counted from the last visible point. Note, that high thresholds can oversimplify the track geometry.| 
+| ***Actions*** | 
+|*Smoothing* – Sets the threshold distance between points. <!--Track points not at least this distance away from the last visible point will be hidden.--> All points on the track, that are at a distance from each other less than the distance selected by the filter, will be hidden. Track points are counted from the last visible point. Note, that high thresholds can oversimplify the track geometry.| 
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
-|*"Speed"* – Only the track points that correspond to the selected speed interval will be displayed on the graph and on the map, the others will be hidden.| 
+|*Speed* – Only the track points that correspond to the selected speed interval will be displayed on the graph and on the map, the others will be hidden.| 
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) | 
-|*"Altitude"* – Only the track points that correspond to the selected altitude interval will be displayed on the graph and on the map, the others will be hidden.| 
+|*Altitude* – Only the track points that correspond to the selected altitude interval will be displayed on the graph and on the map, the others will be hidden.| 
 |![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) | 
-|*"GPS precision"* – Sets the maximum permissible value for HDOP. Points with a higher value will be hidden.| 
-|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) | 
+|*GPS precision* – Sets the maximum permissible value for HDOP. Points with a higher value will be hidden.| 
+|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
-
-&nbsp;  
+ 
 #### **Statistics**
 
 Statistics tab displays information about **modified** track i.e. without filtered values. It's displayed within stat blocks and graph data.
@@ -502,9 +503,9 @@ Statistics tab displays information about **modified** track i.e. without filter
 - The *Data* part shows statistics similar to the Filter menu.  
 - The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
 
-![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)  
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)   
 
-&nbsp;  
+
 #### **Actions**
 
 Actions list is available on the bottom of **Filter** or **Statistics** tab. OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.

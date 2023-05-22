@@ -11,13 +11,14 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 ## Overview
 
-*The Navigation by track* (GPX) option allows you to follow a pre-defined route (or track) on the map. It can be particularly helpful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are moving in an organized group, this feature can help each member of the group have the same information about the route as the others.  
-*Navigation by track* option can also be used in the everyday life. You can reuse previously [recorded track](../../plugins/trip-recording.md) or share it with your relatives or frends instead of explaining to them the route. You can also use for navigation [routes on the OsmAnd map](../../../../blog/routes/). How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the vector maps article.  
+*The Navigation by track* (GPX) option allows you to follow a predefined route (or track) on the map. It can be particularly helpful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are moving in an organized group, this feature can help each member of the group have the same information about the route as the others.  
+*Navigation by track* option can also be used in the everyday life. You can reuse previously [recorded track](../../plugins/trip-recording.md) or share it with your relatives or friends instead of explaining to them the route. You can also use for navigation [routes on the OsmAnd map](../../../../blog/routes/). How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the vector maps article.  
 
 <Tabs groupId="operating-systems">
 
@@ -45,7 +46,7 @@ GPX usually contains a sequence of points (waypoints) that define a route. It ca
 In OsmAnd, GPX file can be created using:
 
 - ["Plan a route"](../../plan-route/create-route.md) tool.
-- [Create a route -> Save](./route-details.md).  
+- [Create a route -> Save](./route-details.md#save--export).  
 - [Trip (track) recording](../../plugins/trip-recording.md) plugin.
 - [Web portal](../../plan-route/web.md#tracks) (Pro subscription required).
 
@@ -135,8 +136,31 @@ Also you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing
 
 ### Attach to roads
 
-When your track is chosen as a "destination point", you could find the "Attach to the roads" option in the [*Navigation menu*](../setup/route-navigation.md#navigation-menu) or the [*Follow track menu*](#follow-track-menu). If you press this button, your track will be opened in the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool and associated to allowed roads according to the chosen profile. 
-After your track is attached to the OsmAnd map in [Route details section](../setup/route-details.md) you will find more precise information about it and [Voice instructions](#guidance) will be more detailed.
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the "Attach to the roads" option in the [*Navigation menu*](../setup/route-navigation.md#navigation-menu) (only in the **Android** version of the app) or in the [*Follow track menu*](#follow-track-menu) (both Android and iOs versions). If you tap this option,  the ['Plan a route'](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Attach to the roads 1](@site/static/img/navigation/gpx/attach_roads_gpx_andr_1.png) ![Attach to the roads 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Attach to the roads 1 ios](@site/static/img/navigation/gpx/attach_roads_gpx_ios_1.png)
+
+</TabItem>
+
+</Tabs>
+
+- Threshold distance (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
+- When you change the profile, OsmAnd automatically reattaches your track to the allowed for this profile roads.
+If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **'Apply'** is active, and the track can be used for navigation.
+
+:::note
+After attaching your track to the roads in [Route details section](../setup/route-details.md), you will find more precise information about your route and [Voice instructions](#guidance) will be more detailed.
+:::
 
 ## Guidance
 

@@ -5,7 +5,8 @@ import boxStyles from './Box.module.css';
 
 
 export default function Poll({id}) {
-    let pollHost = "https://osmand.net";
+    // let pollHost = "https://osmand.net";
+    let pollHost = "";
     const [title, setTitle] = useState('OsmAnd Poll');
     const [pollId, setPollId] = useState('');
     const [answers, setAnswers] = useState([]);
