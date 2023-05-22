@@ -246,7 +246,7 @@ export default function LocalClientTrackLayer() {
     }
 
     function showSelectedPointOnMap() {
-        if (ctx.selectedGpxFile.showPoint) {
+        if (ctx.selectedGpxFile?.showPoint?.layer) {
             map.setView([ctx.selectedGpxFile.showPoint.layer._latlng.lat, ctx.selectedGpxFile.showPoint.layer._latlng.lng], 17);
         } else {
             if (selectedPointMarker) {
