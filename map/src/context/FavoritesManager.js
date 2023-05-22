@@ -2,6 +2,7 @@ import {post} from "axios";
 import MarkerOptions from "../map/markers/MarkerOptions";
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
+import _ from "lodash";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
@@ -129,7 +130,8 @@ function getColorGroup(ctx, groupName, wpt) {
         groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
     }
     if (wpt) {
-        const currentGroup = ctx.selectedGpxFile?.pointsGroups[groupName];
+        const currentGroup = ctx.selectedGpxFile?.pointsGroups
+            && !_.isEmpty(ctx.selectedGpxFile?.pointsGroups) && ctx.selectedGpxFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
