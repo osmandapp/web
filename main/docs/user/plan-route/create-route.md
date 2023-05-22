@@ -190,19 +190,15 @@ Overview data available only on roads, calculate a route using [*Route between p
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_menu_settings_andr.png)
 
-[Route parameters](../navigation/routing/osmand-routing.md)  
-For Android we can modify routing parameters for chosen app profile by clicking to settings icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) on [*Profile* button](../plan-route/create-route.md#main-screen).  
+The setting icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) is available for all profiles except *Straight Line*. The menu contains most of the available options from the *[Settings](../navigation/setup/route-navigation.md#settings)* navigation menu, and both the routing options for a specific profile and the general ones described in the *[Route Parameters](../navigation/routing/osmand-routing.md)* section, such as *Riding style*, *Avoid roads…*, *[Use elevation data](#use-elevation-data)*, *Use motorways*, *Consider temporary limitations*.  
+
+In this menu, you have access to the *[Navigation settings](../navigation/guidance/navigation-settings.md) as well, which are designed to help you when using the *[Navigation](#navigation-with-plan-a-route)* in the *Menu Options*.
 
 
-Choose how to connect the points, by a straight line, or calculate a route between them as specified:
 
-<Translate android="true" ids="whole_track"/> - <Translate android="true" ids="route_between_points_whole_track_button_desc"/>
 
-<Translate android="true" ids="next_segment"/> - <Translate android="true" ids="route_between_points_next_segment_button_desc"/>  
 
-When you use two or more application profiles for your route:
-- For Android each segment has [a profile icon and color](../plan-route/create-route.md#route-line) of the application profile which using for calculated route between shaping points.
-- For iOS all segments have [color of last using application profile](../plan-route/create-route.md#route-line) for calculated route.
+
 
 #### Use elevation data
 
@@ -385,9 +381,18 @@ This setting can be accessed in several ways:
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
-With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the profiles that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.  
+With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the profiles that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.   
+
+Choose how to connect the points, by a straight line, or calculate a route between them as specified:  
+
 - *Whole track* - The whole track will be recalculated using the selected profile.
 - *Next segment* - Only the next segment will be recalculated using the selected profile.  
+
+__  
+When using two or more app profiles for a route:
+- For Android, each segment has a profile icon and the colour of the application profile used to calculate the route between the formation points.
+- For iOS, all segments have the colour of the last used app profile for route calculation.
+
 
 **Recalculate routes**
 
@@ -513,6 +518,11 @@ Description: [Click to graph](../plan-route/create-route.md#actions-of-points-li
 </TabItem>
 
 </Tabs>  
+
+When you open a track in *Plan a route*, if the parameters with which this route was recorded or created do not match the current ones, the tool can offer you two options to recalculate the route. Continue to connect the points with a straight line or attach it to the nearest available road.  
+The current parameter status, the route type shown by an icon in the screen's bottom left corner, will be undefined and indicated by a question mark. It is the one you need to press to access these settings.  
+
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_attach_andr.png)  
 
 The *Plan a route* tool in the OsmAnd app automatically calculates a track, attaching its sections to the nearest permitted road, depending on the routing type selected. The **Attach to the roads** feature is necessary for imported tracks, especially if they have been created with other applications, but also for large existing tracks where the routing types at different sections need to be changed and the track needs to be recalculated.  
 
