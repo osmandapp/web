@@ -41,5 +41,5 @@ You can participate in testing the OsmAnd beta build through Google Play.
   * Fix for Per-app language selection in Android 13.
   * Accessibility: fixed issue with map UI that was visible for screen readers on all screens.
   * Fixed map gestures for tilt, zoom and rotation.
-  * Fixed location position in split screen mode in Android Auto
-  * Fixed issues with displaying Vegan places
+  * Fixed location position in split screen mode in Android Auto.
+  * Fixed issues with displaying Vegan places.
