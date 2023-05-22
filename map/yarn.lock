@@ -3221,16 +3221,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/draft-js@npm:^0.11.5":
-  version: 0.11.10
-  resolution: "@types/draft-js@npm:0.11.10"
-  dependencies:
-    "@types/react": "*"
-    immutable: ~3.7.4
-  checksum: 28b96dcaa928956fc2637988eba355142a7be7a9c61ba4d82d14dca32bd95d999abe528ddaa87a29b1c11a17941d2f61dfa42138238e7b4ac08aa62a626b727a
-  languageName: node
-  linkType: hard
-
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -4977,7 +4967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5, classnames@npm:^2.2.6, classnames@npm:^2.3.1":
+"classnames@npm:^2.2.5, classnames@npm:^2.2.6":
   version: 2.3.2
   resolution: "classnames@npm:2.3.2"
   checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
@@ -7952,13 +7942,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immutable@npm:^3.8.2":
-  version: 3.8.2
-  resolution: "immutable@npm:3.8.2"
-  checksum: 41909b386950ff84ca3cfca77c74cfc87d225a914e98e6c57996fa81a328da61a7c32216d6d5abad40f54747ffdc5c4b02b102e6ad1a504c1752efde8041f964
-  languageName: node
-  linkType: hard
-
 "immutable@npm:~3.7.4":
   version: 3.7.6
   resolution: "immutable@npm:3.7.6"
@@ -10058,24 +10041,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-rte@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "mui-rte@npm:2.0.1"
-  dependencies:
-    "@types/draft-js": ^0.11.5
-    classnames: ^2.3.1
-    draft-js: ^0.11.7
-    immutable: ^3.8.2
-  peerDependencies:
-    "@mui/icons-material": ^5.0.0
-    "@mui/material": ^5.0.0
-    "@mui/styles": ^5.0.0
-    react: ^17.0.0
-    react-dom: ^17.0.0
-  checksum: 60a69a721743cc653fdaa3179d0452385592dfcb947acb13156a39abfc701ffc36413bfbe825c1c114a4051f532ca3b827e53c4d3e1fcab8c674c9e7d608a4f7
-  languageName: node
-  linkType: hard
-
 "multicast-dns@npm:^7.2.5":
   version: 7.2.5
   resolution: "multicast-dns@npm:7.2.5"
@@ -10517,7 +10482,6 @@ __metadata:
     leaflet-hash: ^0.2.1
     leaflet.awesome-markers: ^2.0.5
     lodash: ^4.17.21
-    mui-rte: ^2.0.1
     pako: ^2.0.4
     patch-package: ^6.4.7
     postinstall-postinstall: ^2.1.0
