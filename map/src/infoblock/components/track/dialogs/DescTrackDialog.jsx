@@ -63,6 +63,9 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
     function saveImg(newUrl) {
         if (ctx.selectedGpxFile?.metaData) {
             setLink(newUrl);
+            if (!ctx.selectedGpxFile.metaData) {
+                ctx.selectedGpxFile.metaData = {};
+            }
             ctx.selectedGpxFile.metaData.link = newUrl;
             saveState();
         }
@@ -75,6 +78,9 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
                     convertToRaw(state.getCurrentContent())
                 );
                 setDescription(newDesc);
+                if (!ctx.selectedGpxFile.metaData) {
+                    ctx.selectedGpxFile.metaData = {};
+                }
                 ctx.selectedGpxFile.metaData.desc = newDesc;
                 saveState();
             }
