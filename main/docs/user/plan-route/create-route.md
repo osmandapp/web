@@ -184,22 +184,15 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_menu_settings_andr.png)
 
-The setting icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) is available for all profiles except *Straight Line*. The menu contains most of the available options from the *[Settings](../navigation/setup/route-navigation.md#settings)* navigation menu, and both the routing options for a specific profile and the general ones described in the *[Route Parameters](../navigation/routing/osmand-routing.md)* section, such as *Riding style*, *Avoid roads…*, *[Use elevation data](#use-elevation-data)*, *Use motorways*, *Consider temporary limitations*.  
+The setting icon ![icon-settings](@site/static/img/plan-route/icon-settings.png) is available for all profiles except *Straight Line*. The menu contains most of the available options from the *[Settings](../navigation/setup/route-navigation.md#settings)* navigation menu, and both the routing options for a specific profile and the general ones described in the *[Route Parameters](../navigation/routing/osmand-routing.md)* section, such as *Riding style*, *Avoid roads…*, *Use elevation data*, *Use motorways*, *Consider temporary limitations*.  
 
 In this menu, you have access to the *[Navigation settings](../navigation/guidance/navigation-settings.md)* as well, which are designed to help you when using the *[Navigation](#navigation-with-plan-a-route)* in the *Menu Options*. And [Customise route line appearance setting](../navigation/guidance/map-during-navigation.md#route-line-appearance) that applies to the whole route and is not visible in *Plan a route*, but during navigation.  
 
 
-#### Use elevation data
-
-![Plan a route android](@site/static/img/plan-route/plan_route_menu_settings_use_elevation_data_andr.png)  
-
-The predicted travel time will take into account the effect of altitude. Route preferences such as flat, hilly, and less hilly can help avoid steep climbs.  
-
-
 ### Types of Save 
 
-After you have added at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks.md#my-places-menu)*.   
-There are four ways: 
+After [you have added](#add-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks.md#my-places-menu)*.   
+There are four ways to save: 
 - [Quick](#quick-save) 
 - [Save as new](#save-as-new-track)
 - [Save the changes](#save-changes)
@@ -223,6 +216,17 @@ There are four ways:
 </TabItem>
 
 </Tabs>  
+
+With this option you can save any track without even modifying it.  
+
+- Add at least one point to the map or open a previously created track.
+- Go to the menu *Options → Save as a new track*.
+- Write a name for the track, and select a folder from the list.
+- Enable displaying the track on the map, if required.
+- You can use the *Simplified track* feature if you want to delete all previously recorded waypoints from the track and save the route line only.  
+- After you tap the *Save* button, a dialogue opens informing you that the track has been saved and suggesting the next steps. You can [*open the track*](../personal/tracks.md#options-of-context-menu), *share* it, reopen the Plan a route to [*create a new route*](#create-new-route), or *Exit*.  
+
+You can optionally change the name and folder later in *Menu → My Places → Tracks tab*. For more information about this and about displaying the track on the map, see the article [Tracks](../personal/tracks.md#manage-tracks).  
 
 
 #### Quick save
@@ -280,10 +284,7 @@ Changes are saved during the planning process and, unlike a *Quick save*, **Plan
 
 </Tabs> 
 
-Select the track file to add a new segment.
-
-Currently recording track.
-
+When creating a new track or editing an existing one, you can use this option to attach it as a [separate segment](#start-new-segment) to a track from the list of available tracks. Changes to a selected track *cannot be undone*. It can only be re-opened in the *Plan a route* for editing.
 
 
 ## Points
@@ -312,7 +313,7 @@ Currently recording track.
 
 #### Add points
 
-***Add point*** - Adds a point at the location of the *Pointer* in the center of the visible part of the map.  
+Adds a point at the location of the *Pointer* in the center of the visible part of the map.  
 Move your finger on the map (gesture link). A straight dotted line will be visible from the last (first) point. the next point will always be located in the center of the screen. to add a point, tap Add Point. To add a point that is not a pointer, tap anywhere on the screen. you can use the action arrows to cancel or return canceled actions.    
 
 
@@ -367,7 +368,7 @@ Tap a point from *Points list* or on the map to open Point Contecst menu
 
 </Tabs>   
 
-This setting can be accessed in several ways:
+*Route between points* can be accessed in several ways:  
 1. From the *Options* menu → *Route between points*.
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
@@ -376,11 +377,6 @@ With this option, you can choose how points are connected for the whole track or
 
 - *Whole track* - The whole track will be recalculated using the selected profile.
 - *Next segment* - Only the next segment will be recalculated using the selected profile.  
-
-__  
-When using two or more app profiles for a route:
-- For Android, each segment has a profile icon and the colour of the application profile used to calculate the route between the formation points.
-- For iOS, all segments have the colour of the last used app profile for route calculation.
 
 **Recalculate routes** - You can use route recalculation without changing the profile type. The profile icon shown on the planned route in the tool will not change, but the route type will match the selected one. You may need this to find alternative routes.  
 
@@ -409,24 +405,22 @@ The setting provides information about the distance from this point to the begin
 
 ## Segments
 
-text
+A segment is a section of a road, the distance between two points. The whole route consists of a set of segments you have set up, connected to each other or spaced apart from each other. 
 
 #### Start new segment
 
 Allows you to start creating a new route segment away from the previous segment.  
-
 A segment is a section of a route between two points that have already been calculated for a given routing type.
 
 #### Route calculation
+
+![Plan a route app_button](@site/static/img/plan-route/plan-route-app-button.png)  
 
 By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link).  
 
 - Click on [*Profile* button](../plan-route/create-route.md#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
 - Click to [*Add* button](../plan-route/create-route.md#main-screen) for adding shaping points or just click on the screen.
-
-![Plan a route app_button](@site/static/img/plan-route/plan-route-app-button.png)
-
-- Choose two or more application profiles for creating a route. Click to [*Profile* button](../plan-route/create-route.md#main-screen):
+- Choose two or more application profiles for creating a route. Click to [*Profile* button](../plan-route/create-route.md#main-screen).
 
 
 #### Route line
@@ -483,10 +477,9 @@ The *Plan a route* tool provides a function such as starting navigation directly
 
 Detailed route information in [Altitude/Slope graph](../navigation/setup/route-details.md#the-graph) format and [Road attributes](../navigation/setup/route-details.md#road-attributes) can be viewed in the *Graph tab* in the Android version of the OsmAnd app. To view this information in the iOS version of the app, use the menu *[Options](#menu-options) → Navigation → Details*.  
 
-[**Attach to the roads**](#attach-to-the-roads) - <Translate android="true" ids="track_attach_to_the_roads_descr"/>  
-**Calculate online** - <Translate android="true" ids="calculate_online_altitude_descr"/>  
-
-Description: [Click to graph](../plan-route/create-route.md#actions-of-points-list-and-graph) shows information about point and its location on the route. View of the graph of a route with Overview, Altitude, Slope, Road type, Surface, Steepness.  
+To get elevation data when you open or import a track, you may need to select a route calculation mode.  
+- [*Attach to the roads*](#attach-to-the-roads) - The track will be attached to roads using offline maps and the track geometry can be changed.  
+- **Calculate online** - Calculates the altitude above sea level online on the OsmAnd servers based on satellite images and digital elevation models. The difference with the altitude recorded by the device can be used as an elevation correction.    
 
 
 ### Attach to the roads
