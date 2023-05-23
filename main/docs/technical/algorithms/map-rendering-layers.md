@@ -26,7 +26,8 @@ Other layers are instance in the plugins.
 | --------------------------------- | ---------------: |------|-----------------------|
 | MapTileLayer (underlay)           | -50 000          | Map  | Raster tiles underlay |
 | MapTileLayer (main layer)         |   5 000          | Map  | Map raster tiles |
-| TerrainLayer                      |  60 000          | Map  | [Contour lines, hillshades and slopes](/docs/user/plugins/contour-lines) |
+| CountourLinesLayer                |   6 000          | Map  | Doesn't have own layer class. Managed by main MapTileLayer |
+| TerrainLayer                      |  60 000          | Map  | [Hillshades and slopes](/docs/user/plugins/contour-lines) |
 | MapTileLayer (overlay)            |  70 000          | Map  | Raster tiles overlay  |
 
 ### Android. Symbols layers
