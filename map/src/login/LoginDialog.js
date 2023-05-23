@@ -1,17 +1,19 @@
-import React, { useState, useContext } from 'react';
-import { Button, Checkbox, TextField, FormControlLabel } from '@mui/material/';
+import React, {useState, useContext} from 'react';
+import {Button, Checkbox, TextField, FormControlLabel} from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Utils from "../util/Utils";
+import {Box, Grid, IconButton, Link} from "@mui/material";
+import {Close} from "@mui/icons-material";
+import {post} from "axios";
 
 
 async function isRequestOk(response, setEmailError) {
-    // console.log(response.ok)
     if (!response.ok) {
         let message = await response.text();
         if (message) {
@@ -24,9 +26,6 @@ async function isRequestOk(response, setEmailError) {
         setEmailError(message);
         return null;
     }
-    // let message = await response.text();
-    // console.log(message);
-    // const res = JSON.parse(message);
     const res = await response.json();
     if (res.status !== 'ok') {
         const message = `Unknown error has occured: ${JSON.stringify(res)}`;
@@ -39,8 +38,8 @@ async function isRequestOk(response, setEmailError) {
 async function userRegister(username, setEmailError, setState) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({'username': username})
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('register-verify');
@@ -51,8 +50,8 @@ async function userRegister(username, setEmailError, setState) {
 async function userActivate(ctx, username, pwd, token, setEmailError, handleClose) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username, 'password': pwd, 'token' : token })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({'username': username, 'password': pwd, 'token': token})
     });
     if (await isRequestOk(response, setEmailError)) {
         ctx.setLoginUser(username);
@@ -65,8 +64,8 @@ async function userActivate(ctx, username, pwd, token, setEmailError, handleClos
 async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({'username': username})
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('login');
@@ -79,10 +78,9 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
 async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username, 'password': pwd })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({'username': username, 'password': pwd})
     });
-    // console.log(response)
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
         ctx.setLoginUser(username);
@@ -92,13 +90,26 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
 
 
 export default function LoginDialog() {
+
     const ctx = useContext(AppContext);
+
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
     const [emailError, setEmailError] = useState('');
     const [state, setState] = useState('login'); // login, register, register-verify
+    const [openDangerousArea, setOpenDangerousArea] = useState(false);
+    const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
+    const [userEmailConfirmDelete, setUserEmailConfirmDelete] = useState(null);
+
     const navigate = useNavigate();
+
+    const toggleOpenDangerousArea = () => {
+        setOpenDangerousArea(!openDangerousArea);
+        setDeleteAccountFlag(false);
+        setEmailError('');
+    };
+
     const handleClose = () => {
         setEmailError('');
         setPwd('');
@@ -106,7 +117,7 @@ export default function LoginDialog() {
         navigate('/map/');
     };
     const handleLogin = () => {
-        if ( state === 'register' ) {
+        if (state === 'register') {
             userRegister(userEmail, setEmailError, setState);
         } else if (state === 'register-verify') {
             userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose);
@@ -114,30 +125,127 @@ export default function LoginDialog() {
             userLogin(ctx, userEmail, pwd, setEmailError, handleClose);
         }
     }
-    
+
+    function isValidEmail(email) {
+        return email !== null && email.length >= 3 && email.length < 320;
+    }
+
+    async function deleteAccount(email) {
+        if (isValidEmail(email)) {
+            const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, email,
+                {
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    }
+                }).catch((error) => setEmailError(error.response.data));
+
+            if (resp?.status === 200) {
+                setEmailError('');
+                setState('login');
+                ctx.setLoginUser(null);
+                handleClose();
+                toggleOpenDangerousArea();
+            }
+        } else {
+            setEmailError("Please enter valid email");
+        }
+    }
+
     if (ctx.loginUser) {
         return (
             <Dialog open={true} onClose={handleClose}>
                 <DialogTitle>{ctx.loginUser}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        You logged in as {ctx.loginUser}.<br />
+                        You logged in as {ctx.loginUser}.<br/>
                         {!ctx.listFiles || !ctx.listFiles.userid ? <></> :
-                        <span>
-                            Total files: {ctx.listFiles.totalFiles} ({ctx.listFiles.totalFileVersions} including versions).<br />
+                            <span>
+                            Total files: {ctx.listFiles.totalFiles} ({ctx.listFiles.totalFileVersions} including versions).<br/>
                             Total files size: {(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB,
                             cloud storage used: {(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.
-                            <br /><br />
-                            <a href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`} target="_blank" >Download backup ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB</a>
+                            <br/><br/>
+                            <Link sx={{fontSize: "10pt"}}
+                                  href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`}
+                                  target="_blank">Download backup ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB</Link>
                         </span>
                         }
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
+                    <Link sx={{marginRight: "auto", fontSize: "10pt", ml: 2, color: '#ff595e'}}
+                          href="#"
+                          color="inherit"
+                          onClick={toggleOpenDangerousArea}>
+                        Dangerous area
+                    </Link>
                     <Button onClick={handleClose}>Close</Button>
                     <Button onClick={(e) => userLogout(ctx, userEmail, setEmailError, handleClose, setState)}>
                         Logout</Button>
                 </DialogActions>
+                {openDangerousArea && <Box
+                    sx={{mb: 2}}>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        sx={{backgroundColor: '#ff595e !important', ml: 2}}
+                        onClick={() => setDeleteAccountFlag(true)}>
+                        Delete your account
+                    </Button>
+                    {deleteAccountFlag &&
+                        <Dialog open={true} onClose={() => setDeleteAccountFlag(false)}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={11} sx={{mb: -3}}>
+                                    <DialogTitle>Are you sure you want to do this?</DialogTitle>
+                                </Grid>
+                                <Grid item xs={1} sx={{ml: -2, mt: 1}}>
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => {
+                                            setEmailError('');
+                                            setDeleteAccountFlag(false);
+                                        }}
+                                    >
+                                        <Close fontSize="small"/>
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                            <DialogContent>
+                                <DialogContentText>
+                                    We will immediately delete all of your files from cloud. All paid features will be
+                                    disabled.
+                                </DialogContentText>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    onChange={(e) => {
+                                        if (emailError !== '') {
+                                            setEmailError('')
+                                        }
+                                        setUserEmailConfirmDelete(e.target.value);
+                                    }}
+                                    id="username-delete"
+                                    label="Your email address"
+                                    type="email"
+                                    fullWidth
+                                    variant="standard"
+                                    helperText={emailError ? emailError : ''}
+                                    error={emailError.length > 0}
+                                    value={userEmailConfirmDelete ? userEmailConfirmDelete : ''}
+                                >
+                                </TextField>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button
+                                    variant="contained"
+                                    component="span"
+                                    sx={{backgroundColor: '#ff595e !important', ml: 2}}
+                                    onClick={() => deleteAccount(userEmailConfirmDelete)}>
+                                    Delete this account
+                                </Button>
+                            </DialogActions>
+                        </Dialog>}
+                </Box>}
             </Dialog>);
 
     }
@@ -199,8 +307,8 @@ export default function LoginDialog() {
                 {state === 'register-verify' ? <></> :
                     <FormControlLabel control={
                         <Checkbox checked={state === 'register'} onChange={(e) =>
-                            setState(state === 'login' ? 'register' : 'login')} />}
-                        label="Don't have the password or forgot it?" />
+                            setState(state === 'login' ? 'register' : 'login')}/>}
+                                      label="Don't have the password or forgot it?"/>
                 }
 
             </DialogContent>
@@ -208,7 +316,7 @@ export default function LoginDialog() {
                 <Button onClick={handleClose}>Cancel</Button>
                 <Button onClick={handleLogin}>{
                     state === 'register' ? 'Register' : (
-                        state === 'register-verify' ? 'Activate' : 'Login' 
+                        state === 'register-verify' ? 'Activate' : 'Login'
                     )}</Button>
             </DialogActions>
         </Dialog>
