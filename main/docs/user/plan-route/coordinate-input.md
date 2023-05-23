@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Coordinate input
+title:  Coordinates input
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,101 +11,96 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-A simple and fast tool for creating points by specifying geographic coordinates.
+<InfoAndroidOnly />
 
-If you have coordinates of your places you can create this points on the map by just coordinates input in OsmAnd.
+## Overview
 
-> ```Coordinate input for **iOS** is not supported while.```
+*Coordinates Input* is a simple and easy-to-use tool for creating waypoints by specifying their geographic location. This feature can be useful for navigating to certain places, that you know only by their coordinates: added points can be saved as a GPX track and used later for [GPX navigation](../navigation/setup/gpx-navigation.md) or [navigation by markers](../navigation/setup/markers-navigation.md#add-gpx).  
 
-## Actions
+![Coordinates input overview](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png) 
 
-<Tabs groupId="operating-systems">
+## How to use
 
-<TabItem value="android" label="Android">
+You can create waypoints from *[Map markers](../personal/markers.md#map-markers-menu)* menu or from [My places](../personal/myplaces.md) (see screenshots). Please, follow these paths to reach the coordinate input option:
+  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
+  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-Points are set as waypoints in [My places menu](../personal/tracks.md). For starting creation of Points by coordinate input:
+![Coordinate input how to find](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Coordinate input how to find](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png) 
 
-[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md) → ["earth" button](../personal/tracks.md#my-places) on the bottom of the screen.
+After you have opened the coordinate input screen:
 
-|This action opens **"<Translate android="true" ids="coord_input_edit_point"/>" menu**: |   
-|------------|
-|![Coordinate input Actions Android](@site/static/img/personal/tracks/coordinate_input_android.png) | 
+- &nbsp;Make sure that the correct [units of measurement](#coordinates-format) are used. If no, change coordinates format in [Options](#options) menu.  
+- &nbsp;Enter the coordinates of the point using [template](#add-a-point). After you press *[Add](#add-a-point)* button, your point will be added to the *[points list](#points-list)*. If &nbsp;needed, you can input additional points.  
+- &nbsp;Save your point(s) as a *[Track](../personal/tracks.md)* using *[Options menu](#options)* or &#8592; *(Back)* button.  
 
-**The "Edit point" menu contains:**
-
-|**_The template for adding a point by coordinates_** | 
-|------------|
-|![Coordinate input menu Android](@site/static/img/personal/tracks/coordinate_input_menu_android.png) ![Coordinate input menu Android](@site/static/img/personal/tracks/coordinate_input_menu_1_android.png)|
-|- ["<Translate android="true" ids="shared_string_options"/>" menu](../plan-route/coordinate-input.md#options) - opening the menu of options and choosing of coordinate format.|
-|- <Translate android="true" ids="navigate_point_latitude"/> and <Translate android="true" ids="navigate_point_longitude"/> line - allows to input latitude and longitude in the selected format (D - degrees, M - minutes, S - seconds). You can change coordinates format in ["<Translate android="true" ids="shared_string_options"/>" menu](../plan-route/coordinate-input.md#options).|
-|- <Translate android="true" ids="navigate_point_latitude"/> and <Translate android="true" ids="navigate_point_longitude"/> buttons - allows to change "South <-> North" and "West <-> East" for coordinates input.|
-|- "Point name" line - allows adding a point name or use a name by default.|
-|- "Clearing" ("X") buttons - allow to reset data for inputting coordinates.|
-
-
-|**_The Points list_** - shows added points: name, distance and direction to this point.| 
-|------------|
-|![Coordinate input point list Android](@site/static/img/personal/tracks/coordinate_input_point_list_android.png)|
-|- "&#8285;" button opens the action menu for Editing or Deleting chosen point. Tapping to a point opens the editing action of this point.|
-
-
-|**_Keyboard with additional buttons_** - allows to input corrdinate data. | 
-|------------|
-|![Coordinate input Add point Android](@site/static/img/personal/tracks/coordinate_input_add_point_android.png) |
-|- "<Translate android="true" ids="shared_string_add"/>" button - allows adding a new point after input of coordinates.|
-|- "<Translate android="true" ids="shared_string_cancel"/>" button - reset all adding data.|
-|- Keyboard buttons - allow to input data, delete it, jump to the next coordinate value, hide the keyboard. In [Options](../plan-route/coordinate-input.md#options) you can change the keyboard to system keyboard for input coordinate. |
-
-|**_Back "&#8592;" button_**  - allows to open the action "<Translate android="true" ids="coord_input_save_as_track"/>" for your adding points.| 
-|------------|
-|Here you can input a track name or stay name by default. Click to "<Translate android="true" ids="shared_string_save"/>" button for saving added points like a new track. You find saving track in [My places menu](../personal/myplaces.md): <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/> → "<Translate android="true" ids="map_markers_item"/>" folder. The action "<Translate android="true" ids="coord_input_save_as_track"/>" is in [Options menu](../plan-route/coordinate-input.md#options) too.|
-|![Coordinate input Add point Android](@site/static/img/personal/tracks/coordinate_input_save_track_android.png) ![Coordinate input Add point Android](@site/static/img/personal/tracks/coordinate_input_save_track_1_android.png)|
-
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Coordinate input for **iOS** is not supported while.
-
-</TabItem>
-
-</Tabs>
+:::note
+The results of creating points by coordinates - a *[GPX track](../personal/tracks.md)* with waypoints - can be found in the [My places menu](../personal/myplaces.md) (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/> folder*).
+:::
 
 ## Options
 
-<Tabs groupId="operating-systems">
+Using options menu you can save added point(s) as a track, activate advanced input options (system keyboard and two digits longitude), or change coordinates format.
 
-<TabItem value="android" label="Android">
+![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)
 
-|Tapping to "<Translate android="true" ids="shared_string_options"/>" button opens **<Translate android="true" ids="shared_string_options"/> menu** with next actions: | 
-|------------|
-|![Coordinate input Options menu Android](@site/static/img/personal/tracks/coordinate_input_options_menu_android.png)|
-|- <Translate android="true" ids="coord_input_save_as_track"/> - allows to open "<Translate android="true" ids="coord_input_save_as_track"/>" action for your adding points. Here you can input a track name or stay name by default. Click to "<Translate android="true" ids="shared_string_save"/>" button for saving added points like a new track. You find saving track in [My places menu](../personal/myplaces.md): <Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/> → "<Translate android="true" ids="map_markers_item"/>" folder. The action "<Translate android="true" ids="coord_input_save_as_track"/>" is in [Actions](../plan-route/coordinate-input.md#actions) too.  |
-| - <Translate android="true" ids="use_system_keyboard"/> - allows to use [system keyboard for input coordinate](../plan-route/coordinate-input.md#actions). |
-|- <Translate android="true" ids="use_two_digits_longitude"/> - allows entering longitude data with two digits only. For example, when using longitude input in the range of 0 ° to 99 °.|
-| - <Translate android="true" ids="coordinates_format"/> - allows changing the coordinate format for inputting. |
+- &nbsp;*<Translate android="true" ids="coord_input_save_as_track"/>* - opens a dialog box that allows you to save the created point (or points) as a GPX track. You can change the name of&nbsp;the track or leave it as default.
+- &nbsp;*<Translate android="true" ids="use_system_keyboard"/>* - allows you to use the Android system keyboard to enter coordinates.
+- &nbsp;*<Translate android="true" ids="use_two_digits_longitude"/>* - enables to enter longitude data with only two digits. This can be useful for longitudes from 0° to 99° (for example, in Europe).
+- &nbsp;*<Translate android="true" ids="coordinates_format"/>* - allows changing the coordinate format for inputting.  
 
+### Coordinates format
 
+When you enter coordinates, it is important to ensure that the appropriate units of measurement are used. We support decimal degrees&nbsp;(DD), degrees and minutes, or degrees, minutes and seconds&nbsp;(DMS).  
 
 |Coordinates format| Example |
 |:------|:------|
-|<Translate android="true" ids="dd_mm_mmm_format"/> | 23°27.215′|
-|<Translate android="true" ids="dd_mm_mmmm_format"/> | 23°27.2152′|
 |<Translate android="true" ids="dd_ddddd_format"/> |23.48125°|
 |<Translate android="true" ids="dd_dddddd_format"/> | 23.481251°|
+|<Translate android="true" ids="dd_mm_mmm_format"/> | 23°27.215′|
+|<Translate android="true" ids="dd_mm_mmmm_format"/> | 23°27.2152′|
 |<Translate android="true" ids="dd_mm_ss_format"/> | 23°27′30″|
 
-</TabItem>
+## Add a point
 
-<TabItem value="ios" label="iOS">
+After selecting the correct units, you are ready to enter the coordinates of future waypoints.  
+The coordinate input screen consists of the following elements:
 
-> ```Coordinate input for **iOS** is not supported while.```
+![Coordinate input menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_add_point.png) 
 
-</TabItem>
+- &nbsp;*<Translate android="true" ids="shared_string_options"/>* - opens *[Options](#options)* menu (described above).
+- &nbsp;*<Translate android="true" ids="navigate_point_latitude"/> / <Translate android="true" ids="navigate_point_longitude"/>* - is used to input data in the selected format (D - degrees, M - minutes, S - seconds). You can change coordinates format in *[<Translate android="true" ids="shared_string_options"/> menu](#options)*.
+- &nbsp;*<Translate android="true" ids="navigate_point_latitude"/> and <Translate android="true" ids="navigate_point_longitude"/>* semiglobe buttons - allows to change sides of the horizon: *South - North* and *West - East*.
+- &nbsp;*Point name* field - You can leave the default name or make up your own.  
+- &nbsp;*X* button - clears the input field of the corresponding line.  
 
-</Tabs>
+### Short keyboard
 
+To enter data, you can use the short keyboard (default) or the system (Android) keyboard. To change the input method go to *[Options](#options)* menu. After entering the latitude and longitude, you can add the point to the *[list](#points-list)* using *+Add* button.
+
+![Coordinate input Add point Android](@site/static/img/plan-route/coordinates_input/coordinates_input_keyboard.png)  
+
+- *<Translate android="true" ids="shared_string_add"/>* button - allows to save a point inside *[Points list](#points-list)*.
+- *<Translate android="true" ids="shared_string_clear"/>* button - resets all entered data.
+- &#9032; - allows you to jump to the next value.
+- Keyboard buttons - allow to input data, delete it, jump to the next coordinate value, hide the keyboard. 
+
+### Points list
+
+Shows already created points: name, distance and direction to this point.
+
+![Coordinate input save point Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_1.png) ![Coordinate input save point Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_points_list_2.png)
+
+The ⁝ button opens an action menu for editing or deleting the selected point. 
+When you click on a point, it becomes possible to change its coordinates. Press the *Apply* button to save the changes.
+## Save as track
+
+To save your points as a track, tap on a *Back* ( &#8592; ) button or use *[Options](#options)* menu.
+
+![Coordinate input save point Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Coordinate input save point Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+
+In the pop-up menu, you can enter your own track name or save it by default. Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
+You will find your track in [My places menu](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).
