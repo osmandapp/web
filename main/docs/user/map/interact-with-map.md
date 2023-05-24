@@ -23,8 +23,8 @@ Gestures are important part of the map navigation.
 |:------------|:---------------|
 |**Move**| Press on the map with **one** finger and move around |
 |**Slide**| Swipe the map with **one** finger |
-|**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe up   <br /> Pinch with **two** fingers |
-|**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe down   <br />  Pinch with **two** fingers |
+|**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe down   <br /> Pinch with **two** fingers |
+|**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe up   <br />  Pinch with **two** fingers |
 |**Rotate**| Press with **two** fingers on the map and rotate |
 |**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL)  |
 
@@ -52,7 +52,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 <p> </p>
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
 
 <p> </p>
 
@@ -64,10 +64,33 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 ### Map orientation modes
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+
+![Compass widget](@site/static/img/map/map_orientation_android.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+
+![Compass widget](@site/static/img/map/map_orientation_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+
 - **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
+
+
 
 :::note
 Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).

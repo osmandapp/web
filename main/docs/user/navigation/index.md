@@ -15,18 +15,36 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Navigation articles
 
-OsmAnd Navigation features help you get to your destination by displaying routes, offering turn-by-turn directions, and additional voice prompts.  
-List of articles:
+OsmAnd Navigation tool is designed to help you to build a route the way you would like it to be, offering a fully customizable map screen, turn-by-turn directions, additional voice prompts, or other notifications. It is an especially useful tool for travelers who want to explore new places without relying on an internet connection.
 
-- [Routing types](./routing/index.md)
-- [Navigation by route](./route-navigation.md)
-- [Navigation by track](./gpx-navigation.md)
-- [Markers navigation](./markers-navigation.md)
-- [Voice navigation](./voice-navigation.md)
+In the **Set up a route** section, you can read basics about how to start navigation:
+
+- [Route preparation](./setup/route-navigation.md)
+- [Navigation by track](./setup/gpx-navigation.md)
+- [Navigation by markers](./setup/markers-navigation.md)
+- [Route details](./setup/route-details.md)
+
+In the **[Route parameters](./routing/index.md)** section, you can read about different routing types, online and offline. This section also describes routing rules, that determine how your route will be calculated. Common route parameters are described in the [index article](./routing/index.md). Other articles describe the features of certain rooting types.
+- [Car routing (Truck, Motorcycle)](./routing/car-based-routing.md)
+- [Bicycle routing (MTB)](./routing/bicycle-based-routing.md)
+- [Moped routing](./routing/moped-routing.md)
+- [Pedestrian routing](./routing/pedestrian-routing.md)
+- [Public Transport routing](./routing/public-transport-navigation.md)
+- [Horseback routing](./routing/horse-routing.md)
+- [Ski routing](./routing/ski-routing.md)
+- [Boat routing](./routing/boat-navigation.md)
+- [Direct-to-point routing (Boat)](./routing/direct-to-point-routing.md)
+- [Straight line routing (Aircraft)](./routing/straight-line-routing.md)
+- [Online routing](./routing/online-routing.md)
+- [BRouter](./routing/brouter.md)
+
+In **Navigation guidance**, you can find all the needed information about how to customize the Navigation tool in Osmand.
+
+- [Configure map screen](./guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](./guidance/map-during-navigation.md)
+- [Navigation settings](./guidance/navigation-settings.md)
+
+And also two special use cases of Navigation tool:
+
 - [Android Auto](./auto-car.md)
 - [CarPlay](./car-play.md)
-- [Map during navigation](./map-during-navigation.md)
-- [Navigation settings](./navigation-settings.md)
-
-
-You can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile in this [article](../navigation/index.md/#navigation-settings).  

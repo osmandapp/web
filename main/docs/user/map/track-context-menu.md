@@ -16,14 +16,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 The Tracks context menu provides information about the track in the form of text, graphics, or a list of points. It also allows you to add information, make changes, edit, and perform various other actions with the track.
 
 Track Context menu includes:
 
-- [Overview](../map/track-context-menu.md#overview).
-- [Altitude / Speed Graphs](../map/track-context-menu.md#altitude--speed-graphs). 
-- [Points / Waypoints](../map/track-context-menu.md#points--waypoints).
-- [Options](../map/track-context-menu.md#options).
+- [Overview tab](../map/track-context-menu.md#overview).
+- [Altitude / Speed Graphs tab](../map/track-context-menu.md#altitude--speed-graphs). 
+- [Points / Waypoints tab](../map/track-context-menu.md#points--waypoints).
+- [Options tab](../map/track-context-menu.md#options).
 
 <Tabs groupId="operating-systems">
 
@@ -46,9 +48,9 @@ Track Context menu includes:
 </Tabs>
 
 
-## Overview
+## Overview tab
 
-In Overview user can find track data info and make actions with viewing of the chosen track:
+In Overview tab user can find track data info and make actions with viewing of the chosen track:
 
 - [Info panel](../map/track-context-menu.md#info-panel) - shows track info: distance, speed, ascent/descent...
 - [Quick actions](../map/track-context-menu.md#quick-actions) - action buttons for the chosen track.
@@ -106,7 +108,7 @@ Details are described in the information panel:
 
 ### Quick actions
 
-Buttons panel with the next action: Show/Hide a track on the map, opening [Appearance](../map/tracks-on-map.md#track-appearance) menu of a track, Export / [Plan route](../plan-route/create-route.md), [Navigation](../navigation/gpx-navigation.md).
+Buttons panel with the next action: Show/Hide a track on the map, opening [Appearance](../map/tracks-on-map.md#track-appearance) menu of a track, Export / [Plan route](../plan-route/create-route.md), [Navigation](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -117,7 +119,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 - *"Show / hide"* - track on the map
 - *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
 - *"Edit track"* - opens the track in ["Plan route" tool](../plan-route/create-route.md).
-- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Directions"* - opens the track for ["Follow track"](../navigation/setup/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -128,7 +130,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 - *"Show / hide"*  - allows to show or not a track on the map.
 - *"Appearance"* - opens [Appearance](../map/tracks-on-map.md#track-appearance) menu of the track.
 - *"Export"* - allows to export a track.
-- *"Directions"* - opens the track for ["Follow track"](../navigation/gpx-navigation.md) option in Navigation.
+- *"Directions"* - opens the track for ["Follow track"](../navigation/setup/gpx-navigation.md) option in Navigation.
 
 </TabItem>
 
@@ -156,7 +158,7 @@ This part contains info about GPX file and description of a GPX track.
 
 ![Description for track iOS](@site/static/img/personal/tracks/description_track_ios.png)
 
-- *<Translate ios="true" ids="shared_string_info"/>* - contains info about file size, location folder
+- *<Translate ios="true" ids="info_button"/>* - contains info about file size, location folder
 
 </TabItem>
 
@@ -263,10 +265,10 @@ _[Track Context menu](../map/track-context-menu.md) → <Translate android="true
 
 ![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
 
-- *<Translate ios="true" ids="gpx_avg_altitude"/>*. 
-- *<Translate ios="true" ids="gpx_alt_range"/>*.
-- *<Translate ios="true" ids="gpx_ascent"/>*.
-- *<Translate ios="true" ids="gpx_descent"/>*.
+- *<Translate ios="true" ids="average_altitude"/>*. 
+- *<Translate ios="true" ids="altitude_range"/>*.
+- *<Translate ios="true" ids="altitude_ascent"/>*.
+- *<Translate ios="true" ids="altitude_descent"/>*.
 
 </TabItem>
 
@@ -294,7 +296,7 @@ This tab opens a with speed info on distance, additional track data.
 
 ![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_ios.png) 
 
-- *<Translate ios="true" ids="gpx_average_speed"/>*. 
+- *<Translate ios="true" ids="map_widget_average_speed"/>*. 
 - *<Translate ios="true" ids="gpx_max_speed"/>*. 
 - *<Translate ios="true" ids="shared_string_time_moving"/>*. 
 - *<Translate ios="true" ids="distance_moving"/>*. 
@@ -357,7 +359,7 @@ Actions:
 
 Actions:  
 - *<Translate ios="true" ids="recording_context_menu_show"/>* - allows to show or not group waypoints on the map.
-- *<Translate ios="true" ids="fav_rename"/>* - allows to change Group name.
+- *<Translate ios="true" ids="shared_string_rename"/>* - allows to change Group name.
 - *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
 - *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
 
@@ -378,7 +380,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
 - *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
 - *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
@@ -410,7 +412,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
 - *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
-- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/gpx-navigation.md).
+- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
 - *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map).
@@ -426,6 +428,7 @@ Menu "Options" allows to make manipulation with the chosen track, to opens it in
 
 - *<Translate ios="true" ids="rename_track"/>* - change track name.
 - *<Translate ios="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+
 
 - *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
 
@@ -453,7 +456,7 @@ Split the track  by distance or time interval.
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, Min GPS Precision for saving new track without excluded points. -->
 
-This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude* and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu you can check how your changes are displayed on the graph before you save them. You can also do *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
+This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude*, and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu, you can check how your changes are displayed on the graph before you save them. You can also *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
 
 :::note
 GPS filter is in the context menu options of the selected track:
@@ -469,31 +472,30 @@ GPS filter is in the context menu options of the selected track:
 - "My track location" button allows to move the map to your track.-->
 
 The Android GPS Filter app page includes:  
-* A map with a saved track and an extra button *My track location* (it aligns a track to the center of a map)
-* Buttons *Refresh* and *Menu* at the top (*Menu* opens *Action* field at the bottom of the page)
-* Blocks *Filter*, *Statistics*, *Action*
+- A map with a saved track and an extra button *My track location* (it aligns a track to the center of a map).
+- Buttons *Refresh* and *Menu* at the top (*Menu* opens *Action* field at the bottom of the page).
+- Blocks *Filter*, *Statistics*, *Action*.  
 
-&nbsp;  
+
 #### **Filter** Menu
 
 In this menu, you can change some parameters of your track with filters such as, *Smoothing*, *Speed*, *Altitude*, *GPS precision*. The menu is divided into a Points part and an Actions part.
 
-| **_Points_** | 
+| ***Points*** | 
 |:------------|
 |This part shows the number of points after filtering and the total number of points on the selected track before filters were used.| 
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
-| **_Actions_** | 
-|*"Smoothing"* – Sets the threshold distance between points. <!--Track points not at least this distance away from the last visible point will be hidden.--> All points on the track, that are at a distance from each other less than the distance selected by the filter, will be hidden. Track points are counted from the last visible point. Note, that high thresholds can oversimplify the track geometry.| 
+| ***Actions*** | 
+|*Smoothing* – Sets the threshold distance between points. <!--Track points not at least this distance away from the last visible point will be hidden.--> All points on the track, that are at a distance from each other less than the distance selected by the filter, will be hidden. Track points are counted from the last visible point. Note, that high thresholds can oversimplify the track geometry.| 
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
-|*"Speed"* – Only the track points that correspond to the selected speed interval will be displayed on the graph and on the map, the others will be hidden.| 
+|*Speed* – Only the track points that correspond to the selected speed interval will be displayed on the graph and on the map, the others will be hidden.| 
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) | 
-|*"Altitude"* – Only the track points that correspond to the selected altitude interval will be displayed on the graph and on the map, the others will be hidden.| 
+|*Altitude* – Only the track points that correspond to the selected altitude interval will be displayed on the graph and on the map, the others will be hidden.| 
 |![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) | 
-|*"GPS precision"* – Sets the maximum permissible value for HDOP. Points with a higher value will be hidden.| 
-|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) | 
+|*GPS precision* – Sets the maximum permissible value for HDOP. Points with a higher value will be hidden.| 
+|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
-
-&nbsp;  
+ 
 #### **Statistics**
 
 Statistics tab displays information about **modified** track i.e. without filtered values. It's displayed within stat blocks and graph data.
@@ -501,9 +503,9 @@ Statistics tab displays information about **modified** track i.e. without filter
 - The *Data* part shows statistics similar to the Filter menu.  
 - The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
 
-![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)  
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)   
 
-&nbsp;  
+
 #### **Actions**
 
 Actions list is available on the bottom of **Filter** or **Statistics** tab. OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.

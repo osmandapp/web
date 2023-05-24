@@ -12,21 +12,19 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
-This plugin will help you participate in the OpenStreetMap project to create a detailed free geographical map of the world.  
-
 ## Overview
 
-[OpenStreetMap](https://www.openstreetmap.org/about) is a global community that aims to draw a comprehensive map of the world and provide up-to-date open-source data to every user. OsmAnd **OpenStreetMap (OSM) editing plugin** allows you easily contribute to OpenStreetMap: you can create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), upload recorded GPX [tracks](#upload-gps-track).  
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is a global community that aims to create a detailed free geographical map of the world and provide up-to-date open-source data to every user, and the OpenStreetMap editing plugin allows you to contribute to the community.  
+
+With OsmAnd and the OSM editing plugin, you can easily contribute your own information to OpenStreetMap.org, such as to create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), and upload recorded GPX [tracks](#upload-gps-track).
 
 ## Setup
 
 To use OpenStreetMap editing plugin, you need to make the following settings:    
 
 1. Enable [Plugin](../plugins/index.md#enable--disable).  
-2. Set OpenStreetMap editing for the required [profile](../personal/profiles.md).
-3. Enable the display of *OSM notes (online)* and/or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
+2. Set OpenStreetMap editing  in any [profile](../personal/profiles.md).
+3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
 
 
 ## Settings
@@ -44,7 +42,8 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,plugins,product_title_osm_editing"/>*   
+- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*   
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*   
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
@@ -63,16 +62,41 @@ To use OpenStreetMap editing plugin, you need to make the following settings:
 - **Login to OpenStreetMap**. Log in to upload new or modified changes. Use the OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). 
 - **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded upon request, If the setting is disabled, the changes are uploaded immediately (*Upload* button).
 - **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd Development plugin* is enabled.
-- **<Translate android="true" ids="map_updates_for_mappers"/>**. This setting allows you to check if [OsmAnd live](../personal/maps.md#free-for-osm-mappers) is available to you as an active mapper. If you actively contribute to OpenStreetMap.org (at least 30 changes in the last two months), you may be eligible for hourly, monthly and unlimited map updates.  
-- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [Menu → My Places → OSM edits](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list. 
+- [**<Translate android="true" ids="map_updates_for_mappers"/>**](#free-live-updates-for-mappers). 
+- **<Translate android="true" ids="layer_osm_edits"/>**. Press it to open [*Menu → My Places → OSM edits*](../personal/myplaces.md). This tab lists your unedited OSM notes. The available actions with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.  
+
+:::note
+If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, changes made to OSM will appear on your OsmAnd map within one hour. Make sure that [Live updates](../personal/maps.md#osmand-live) are enabled.
+:::  
 
 :::info info
 The plugin settings are global and apply to all profiles.
-:::
+:::  
+
+### Free map updates for mappers
+
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. So you could enjoy free hourly map updates, unlike standard monhtly map updates. 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### OSM Editing Layer  
 
-You can enable the display of the OSM modifications (edits/notes/fixme tags/note tags) as a separate layer in the [Configure map](../map/configure-map-menu.md) section of the main menu:  
+You can enable or disable as a separate layer the display of OSM modifications, such as OSM notes (online), OSM edits, Fixme tags, Note tags, Icons at low zooms, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
 
 <Tabs groupId="operating-systems">
 
@@ -94,9 +118,6 @@ You can enable the display of the OSM modifications (edits/notes/fixme tags/note
 
 </Tabs>
 
-:::info NOTE
-If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, the changes made to OSM will be displayed on the OsmAdn map in an hour. Make sure that [live updates](../personal/maps.md#osmand-live) are enabled.  
-:::  
 
 ## Create / Modify POI  
 
@@ -182,10 +203,13 @@ The GPS tracks you have recorded are useful for:
 Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) in an hour, where they will be available for viewing, searching, and using by you and other users.
 :::  
 
-<InfoAndroidOnly />
-
 
 ### Upload GPS track
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
 - Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks.md).  
@@ -193,6 +217,23 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 - Choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Export*.  
 
 ![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
+- Select the required track from [*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*](../personal/tracks.md) → &#8230; → upload track icon(belowed menu).  
+- Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
+- Choose *<Translate ios="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Upload*.  
+
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+
 
 **Settings:**
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  

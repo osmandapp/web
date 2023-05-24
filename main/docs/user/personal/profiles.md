@@ -101,7 +101,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="map_orientation_portrait"/>*, 
   - *<Translate android="true" ids="map_orientation_landscape"/>*, 
   - *<Translate android="true" ids="map_screen_orientation"/>*.
-- *[<Translate android="true" ids="screen_control"/>](../navigation/route-navigation/#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
+- *[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
 </TabItem>
 
@@ -273,14 +273,14 @@ There are no navigation settings in *Browse map* profile.
 
 </Tabs>
 
-- [Navigation Type](../navigation/#navigation-type)
-- [Route parameters](../navigation/#route-parameters)
-- [Screen alerts](../navigation/#screen-alerts)
-- [Voice prompts](../navigation/#voice-prompts)
-- [Vehicle parameters](../navigation/#vehicle-parameters)
-- [Customise route line](../navigation/#customise-route-line)
-- [Map during navigation](../navigation/#map-during-navigation)
-- [Animate location change](#animate-location-change)
+- [Routing Types](../navigation/routing/index.md)
+- [Route parameters](../navigation/routing/online-routing.md)
+- [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts)
+- [Voice prompts](../navigation/guidance/voice-navigation.md)
+- [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters)
+- [Customise route line](../navigation/guidance/map-during-navigation.md#route-line-appearance)
+- [Map during navigation](../navigation/guidance/map-during-navigation.md)
+- [Animate location change](../navigation/guidance/navigation-settings.md#animate-own-position)
 
 ### Animate location change
 
@@ -478,7 +478,7 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
 ![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_ios.png)
 
@@ -500,7 +500,7 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins,track_recording"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,track_recording"/>*
 
 </TabItem>
 
@@ -530,7 +530,7 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins,product_title_osm_editing"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,product_title_osm_editing"/>*  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 

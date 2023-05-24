@@ -63,8 +63,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase** | - | **One-time**, use forever | **Subscription** for 12 months | **Subscription** for 1 / 12 months |
-| **Price EUR** | 0€ | 24.99€  |  9.99€   |  2.99€ / 29.99€   |
-| **Price USD** | 0$ | 24.99$  |  9.99$   |  2.99$ / 29.99$   |
+| **Price EUR** | 0€ | 29.99€  |  9.99€   |  2.99€ / 29.99€   |
+| **Price USD** | 0$ | 29.99$  |  9.99$   |  2.99$ / 29.99$   |
 
 ### Free and Paid features
 
@@ -109,9 +109,10 @@ At the moment, the Pro subscription has the following features:
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | allowing to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/route-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 | [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection) |
 

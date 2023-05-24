@@ -50,8 +50,6 @@ The following setting makes the OsmAnd Ski Map appear on the screen:
 3. If needed, [combine maps](#combine-maps).  
   
 
-
-
 ### Set Winter and Ski map style  
 
 Winter and Ski map style highlights trails, ski touring routes, sledding trails and information related to winter and skiing.  
@@ -128,7 +126,7 @@ The Ski map viewer plugin is a separate application, and disabling its display d
 
 ## Skiing profile
 
-Winter and Ski map style can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default. The Skiing profile is very comfortable for the [Skiing navigation](../navigation/route-navigation.md).   
+Winter and Ski map style can be enabled in any profile. But it is most valuable in the [Skiing profile](../personal/profiles.md), where it is set by default. The Skiing profile is very comfortable for the [Skiing navigation](../navigation/routing/ski-routing.md).   
 
 
 <Tabs groupId="operating-systems">
@@ -163,7 +161,7 @@ Use the [Ski map legend](../../user/map-legend/ski-map.md) for any reference. It
 
 By reading the map, you can find out the details that are important to you, such as the difficulty of a particular trail, the type of trail, whether grooming is done, and whether the trail is lit at night.
  
-The options described here are available in the [Skiing navigation](../navigation/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing.    
+The options described here are available in the [Skiing navigation](../navigation/setup/route-navigation.md). The **Skiing navigation** sets the individual route options which apply only to skiing.    
 
 
 :::info NOTE

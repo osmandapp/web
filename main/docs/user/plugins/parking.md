@@ -157,7 +157,7 @@ In addition, the widget shows the distance from your current location or the cen
 
 ### Navigating to a Waypoint
 
-The Parking spot can be used for navigation when the geolocation is unknown and/or simply to find the best course when navigating to your vehicle's parking location. To connect a Parking spot to the [Navigation](../navigation/route-navigation) function, do one of the following:  
+The Parking spot can be used for navigation when the geolocation is unknown and/or simply to find the best course when navigating to your vehicle's parking location. To connect a Parking spot to the [Navigation](../navigation/routing/car-based-routing.md) function, do one of the following:  
 - To show the route from your current position to the Parking spot, tap Navigation icon menu, select the profile, tap Set destination, and among the available options look for **Parking**.  
 - To show the route from your current position to the Parking spot with using widget, tap **Parking widget**, tap Parking spot, select **Navigation**, select the profile. 
    

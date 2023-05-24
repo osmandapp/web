@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         top: '10vh',
         width: '10px',
         height: '10px',
+
     }
 })
 export default function GeneralPanelButtons({drawerWidth}) {

@@ -19,7 +19,7 @@ The 'Configure map' menu is an important item on OsmAnd's main menu where you ca
 | ![Configure map_android](@site/static/img/map/configure-map-android.png) | ![Configure map_ios](@site/static/img/map/configure-map-ios.png) |
 
 The **<Translate android="true" ids="configure_map"/>** menu is divided into two categories:
-- [Map style parameters](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (or **<Translate ios="true" ids="map_settings_style"/>**) is a group of settings that allow you to change the way the main map is displayed.  
+- [Map style parameters](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (or **<Translate ios="true" ids="map_widget_renderer"/>**) is a group of settings that allow you to change the way the main map is displayed.  
 - [Map layers](#map-layers). These layers allow you to place information on top of (or underneath) the main map layer, but do not change the display of the map itself.  
 
 **Notes:** 

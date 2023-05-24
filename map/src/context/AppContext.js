@@ -192,7 +192,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
-    let savedVisible = JSON.parse(localStorage.getItem('visible'));
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     let selectedFiles = [];
     if (savedVisible?.cloud) {
         savedVisible.cloud.forEach(name => {
@@ -324,7 +324,8 @@ function getColors() {
         'pedestrian': '#d90139',
         'ski': '#ffacdf',
         'line': '#5F9EA0',
-        'moped': '#3e690e'
+        'moped': '#3e690e',
+        'train': '#a56b6f'
     };
 }
 
@@ -487,6 +488,11 @@ export const AppContextProvider = (props) => {
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
 
+    const [routingCash, setRoutingCash] = useState([]);
+    const [routingNewSegments, setRoutingNewSegments] = useState([]);
+    const [processRouting, setProcessRouting] = useState(false);
+    const [selectedWpt, setSelectedWpt] = useState(null);
+
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
@@ -593,6 +599,10 @@ export const AppContextProvider = (props) => {
         trackState, setTrackState,
         localTracksLoading, setLocalTracksLoading,
         openedPopper, setOpenedPopper,
+        routingCash, setRoutingCash,
+        routingNewSegments, setRoutingNewSegments,
+        processRouting, setProcessRouting,
+        selectedWpt, setSelectedWpt,
         showPoiCategories, setShowPoiCategories,
         poiCategory, setPoiCategories
     }}>

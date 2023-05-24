@@ -1,14 +1,14 @@
 import React, {useContext, useState} from 'react';
-import {Drawer, Toolbar, Box, SnackbarContent, LinearProgress, Button} from "@mui/material";
+import {Drawer, Toolbar, Box, SnackbarContent, Button} from "@mui/material";
 import {
     IconButton, AppBar
 } from "@mui/material";
-import {Close, Menu} from '@mui/icons-material';
+import {Close, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu} from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
-import {Outlet, useNavigate} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import HeaderInfo from "./header/HeaderInfo";
-import InformationBlock from "../../contextmenu/components/InformationBlock";
+import InformationBlock from "../../infoblock/components/InformationBlock";
 import AppContext from "../../context/AppContext";
 import GeneralPanelButtons from "./GeneralPanelButtons";
 
@@ -16,54 +16,74 @@ const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [hideContextMenu, setHideContextMenu] = useState(false);
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
+
+    const toggleContextMenu = () => {
+        setHideContextMenu(!hideContextMenu);
+    };
+
+
     const drawerWidth = 320;
 
     return (
         <>
-            <Box sx={{
-                width: {sm: `calc(100% - ${drawerWidth}px)`},
-                ml: {sm: `${drawerWidth}px`},
-                height: "100vh",
-                display: "flex",
-                flexDirection: "column",
-            }}>
-                <AppBar position="static">
-                    <Toolbar variant="dense">
-                        <IconButton onClick={toggleDrawer}
-                                    edge="start"
-                                    sx={{mr: 2, display: {sm: "none"}}}>
-                            <Menu/>
-                        </IconButton>
-                        <HeaderInfo/>
-                    </Toolbar>
-                </AppBar>
-                {ctx.routingErrorMsg &&
-                    <SnackbarContent sx={{backgroundColor: "#1976d2", marginTop: "3px"}}
-                                     message={ctx.routingErrorMsg}
-                                     action={
-                                         <Button key='close' onClick={() => {
-                                             ctx.setRoutingErrorMsg(null);
-                                         }}>
-                                             <Close sx={{color: "#ffffff"}}/>
-                                         </Button>
-                                     }/>}
-                <OsmAndMap/>
-                <InformationBlock drawerWidth={drawerWidth}/>
-                <GeneralPanelButtons drawerWidth={drawerWidth}/>
-            </Box>
+            <div style={{display: 'flex', flexDirection: "row"}}>
+                <Box
+                    sx={{
+                        width: {sm: `calc(100%)`, xs: `calc(100%)`},
+                        ml: {md: `${drawerWidth}px`},
+                        height: "100vh",
+                        display: "flex",
+                        flexDirection: "column",
+                    }}>
+                    <Box sx={{flexGrow: 1}}>
+                    <AppBar position="static">
+                            <Toolbar variant="dense">
+                                <IconButton onClick={toggleDrawer}
+                                            edge="start"
+                                            sx={{mr: 2, display: {md: "none"}}}>
+                                    <Menu/>
+                                </IconButton>
+                                <HeaderInfo/>
+                                {ctx.currentObjectType && hideContextMenu &&
+                                    <IconButton onClick={toggleContextMenu}
+                                                edge="start"
+                                                sx={{ml: 2, display: {xl: "none"}}}>
+                                        <KeyboardDoubleArrowLeft/>
+                                    </IconButton>}
+                                {ctx.currentObjectType && !hideContextMenu &&
+                                    <IconButton onClick={toggleContextMenu}
+                                                edge="start"
+                                                sx={{ml: 2, display: {xl: "none"}}}>
+                                        <KeyboardDoubleArrowRight/>
+                                    </IconButton>}
+                            </Toolbar>
+                    </AppBar>
+                    </Box>
+                    {ctx.routingErrorMsg &&
+                        <SnackbarContent sx={{backgroundColor: "#1976d2", marginTop: "3px"}}
+                                         message={ctx.routingErrorMsg}
+                                         action={
+                                             <Button key='close' onClick={() => {
+                                                 ctx.setRoutingErrorMsg(null);
+                                             }}>
+                                                 <Close sx={{color: "#ffffff"}}/>
+                                             </Button>
+                                         }/>}
+                    <OsmAndMap/>
+                    <GeneralPanelButtons drawerWidth={drawerWidth}/>
+                </Box>
+                <InformationBlock hideContextMenu={hideContextMenu} drawerWidth={drawerWidth}/>
+            </div>
             <Drawer
-                //  container={container}
                 variant="temporary"
                 open={drawerOpen}
                 onClose={toggleDrawer}
-                ModalProps={{
-                    keepMounted: true, // Better open performance on mobile.
-                }}
                 sx={{
-                    display: {xs: 'block', sm: 'none'},
+                    display: {xs: 'block', md: 'none'},
                     '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                 }}
             >
@@ -72,7 +92,7 @@ const OsmAndMapFrame = () => {
             <Drawer
                 variant="permanent"
                 sx={{
-                    display: {xs: 'none', sm: 'block'},
+                    display: {xs: 'none', md: 'block'},
                     '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                 }}
                 open>

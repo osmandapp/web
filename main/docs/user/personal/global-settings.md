@@ -180,7 +180,7 @@ OsmAnd allows you to choose whether or not to share your activity in the app, th
 <TabItem value="android" label="Android"> 
 
 
-#### Analytics
+### Analytics
 
 *<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [OsmAnd privacy and security](https://osmand.net/help-online/privacy-policy).  
 To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
@@ -188,7 +188,7 @@ To open Analytics settings, follow these steps: *<Translate android="true" ids="
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
 
 
-#### Identifiers
+### Identifiers
 
 A UUID (Unique User Identifier) is generated for each installation of the OsmAnd application and sent to the servers during map loading. A random UUID is used to download offline maps from OsmAnd servers to control rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads. The UUID changes every 3 months.  
 
@@ -203,9 +203,9 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 <!--Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month. UUID is rotated every 3 months so there is no user profile built for a longer history.-->
 
 
-#### History
+### History
 
-*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/route-navigation.md#history) and [Map markers history](../personal/markers.md#history).  
+*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), Navigation history and [Map markers history](../personal/markers.md#history).  
 To open History settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
 Available interactions:  
@@ -222,7 +222,7 @@ Actions
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
 
 
-#### Proxy
+### Proxy
 
 *<Translate android="true" ids="proxy_pref_title"/>* - this setting allows to configure';// an [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
 To open Proxy settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
@@ -233,9 +233,28 @@ To open Proxy settings, follow these steps: *<Translate android="true" ids="shar
 
 <TabItem value="ios" label="iOS">  
 
+### Send anonymous data
+
 *<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
 
 ![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
+
+
+### History
+
+*<Translate ios="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/setup/route-navigation.md#previous-route--history) and [Map markers history](../personal/markers.md#history).  
+To open History settings, follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+
+Available interactions:  
+
+Inside action:
+- Enable/disable history.
+
+Actions:
+- Export - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
+- Delete all history.  
+
+![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios_2.png)
 
 </TabItem>
 

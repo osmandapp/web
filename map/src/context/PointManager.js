@@ -1,5 +1,7 @@
 import TracksManager from "./TracksManager";
 import Utils from "../util/Utils";
+import TrackLayerProvider from "../map/TrackLayerProvider";
+import RoutingManager from "./RoutingManager";
 
 const deletePoint = async (index, ctx) => {
     let currentTrack = ctx.localTracks.find(t => t.name === ctx.selectedGpxFile.name);
@@ -14,6 +16,8 @@ function deleteWpt(ind, ctx) {
     ctx.selectedGpxFile.wpts.splice(ind, 1);
     ctx.selectedGpxFile.updateLayers = true;
     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+
+    TracksManager.updateState(ctx);
 }
 
 async function reorder(startIndex, endIndex, currentTrack, ctx) {
@@ -36,8 +40,8 @@ async function insertPointToTrack(currentTrack, index, point, ctx) {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, currentTrack.points).then(res => {
                 ctx.selectedGpxFile.updateLayers = true;
                 ctx.setSelectedGpxFile({...res});
-                ctx.trackState.update = true;
-                ctx.setTrackState({...ctx.trackState});
+
+                TracksManager.updateState(ctx);
             });
         })
     }
@@ -135,11 +139,16 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                         nextNewGeo.shift();
                         let resGeo = currentNewGeo.concat(nextNewGeo);
                         newGeometry = Utils.getPointsDist(resGeo);
-                    } else {
-                        newGeometry = await TracksManager.updateRouteBetweenPoints(ctx, points[i - 1], points[i + 1]);
-                    }
-                    if (newGeometry) {
                         points[i + 1].geometry = newGeometry;
+                    } else {
+                        let tempLine = TrackLayerProvider.createTempPolyline(points[i - 1], points[i + 1]);
+                        deleteOldTempLayer(ctx, points[i + 1]);
+                        tempLine.point = points[i + 1];
+                        ctx.selectedGpxFile.layers.addLayer(tempLine);
+                        ctx.selectedGpxFile.updateLayers = true;
+                        RoutingManager.validateRoutingCash(points[i], ctx);
+                        RoutingManager.addRoutingToCash(points[i - 1], points[i + 1], tempLine, ctx);
+                        points[i + 1].geometry = [];
                     }
                 }
                 res.deletedPoint = points.splice(i, 1);
@@ -150,6 +159,17 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
     lengthSum += points.length;
     res.lengthSum = lengthSum;
     return res;
+}
+
+function deleteOldTempLayer(ctx, point) {
+    let layer = ctx.selectedGpxFile.layers.getLayers().find(l => {
+        if (l.point === point) {
+            return l;
+        }
+    })
+    if (layer) {
+        layer.point = 'null';
+    }
 }
 
 const PointManager = {

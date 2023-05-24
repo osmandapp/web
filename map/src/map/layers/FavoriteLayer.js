@@ -3,7 +3,7 @@ import AppContext from "../../context/AppContext";
 import "../../assets/css/gpx.css";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
-import AddFavoriteDialog from "../../contextmenu/components/favorite/AddFavoriteDialog";
+import AddFavoriteDialog from "../../infoblock/components/favorite/AddFavoriteDialog";
 import FavoritesManager from "../../context/FavoritesManager";
 import _ from "lodash";
 

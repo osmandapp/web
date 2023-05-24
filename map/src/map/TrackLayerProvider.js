@@ -2,10 +2,19 @@ import L from 'leaflet';
 import MarkerOptions from "./markers/MarkerOptions";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
+import EditablePolyline from "./EditablePolyline";
+
+const TEMP_LAYER_FLAG = 'temp';
+const TEMP_LINE_STYLE = {
+    color: '#fbc73a',
+    dashArray: '5, 5',
+    dashOffset: '0',
+    name: TEMP_LAYER_FLAG
+}
 
 function createLayersByTrackData(data) {
     let layers = [];
-    data.tracks.forEach(track => {
+    data.tracks?.forEach(track => {
         if (track.points?.length > 0) {
             let res = parsePoints(track.points, layers);
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
@@ -158,9 +167,9 @@ function parseWpt(points, layers) {
         if (point.address) {
             opt.address = point.address;
         }
-
+        opt.draggable = false;
+        opt.wpt = true;
         let marker = new L.Marker(new L.LatLng(lat, lon), opt);
-
         layers.push(marker);
     })
 }
@@ -180,8 +189,7 @@ function addStartEndMarkers(points, layers) {
 
 function getPolylineOpt() {
     return {
-        color: '#1976d2',
-        weight: 5,
+        color: '#1976d2'
     }
 }
 
@@ -203,6 +211,23 @@ function getPolylineByPoints(point, polylines) {
     return res;
 }
 
+function getPolylineByStartEnd(startPoint, endPoint, polylines) {
+    return polylines.find(polyline => {
+        const layerPoints = polyline._latlngs;
+        if (TracksManager.isEqualPoints(layerPoints[0], startPoint) && TracksManager.isEqualPoints(layerPoints[layerPoints.length - 1], endPoint)) {
+            return polyline;
+        }
+    })
+}
+
+function updatePolylineToTemp(startPoint, endPoint, polyline) {
+    let polylineTemp = createTempPolyline(startPoint, endPoint);
+    polyline.setLatLngs(polylineTemp._latlngs);
+    polyline.setStyle(TEMP_LINE_STYLE);
+    polyline.point = endPoint;
+    return polyline;
+}
+
 function getPointByPolyline(layer, points) {
     let res;
     let layerPoints = layer._latlngs;
@@ -220,16 +245,6 @@ function getPointByPolyline(layer, points) {
     return res;
 }
 
-function createTempPolyline(prev, next) {
-    let style = {
-        color: '#fbc73a',
-        dashArray: '5, 5',
-        dashOffset: '0'
-    }
-
-    return new L.Polyline([new L.LatLng(prev.lat, prev.lng), new L.LatLng(next.lat, next.lng)], style);
-}
-
 function getPolylines(layers) {
     let res = [];
     layers.forEach(layer => {
@@ -243,6 +258,34 @@ function getPolylines(layers) {
     return res;
 }
 
+function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
+    const point2 = oldEndPoint ? oldEndPoint : endPoint;
+    let polyline = getPolylineByPoints(point2, polylines);
+    if (!polyline) {
+        const point1 = oldStartPoint ? oldStartPoint : startPoint;
+        polyline = getPolylineByStartEnd(point1, point2, polylines);
+    }
+    polyline = updatePolylineToTemp(startPoint, endPoint, polyline)
+
+    return polyline;
+}
+
+function createTempPolyline(start, end) {
+    const startPoint = new L.LatLng(start.lat, start.lng);
+    const endPoint = new L.LatLng(end.lat, end.lng);
+    return new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
+}
+
+function createEditableTempLPolyline(start, end, map, ctx) {
+    const startPoint = new L.LatLng(start.lat, start.lng);
+    const endPoint = new L.LatLng(end.lat, end.lng);
+    let polylineTemp = new EditablePolyline(map, ctx, [startPoint, endPoint], null, ctx.selectedGpxFile, TrackLayerProvider.TEMP_LINE_STYLE).create();
+    polylineTemp.point = end;
+    polylineTemp.options.name = TEMP_LAYER_FLAG;
+
+    return polylineTemp;
+}
+
 
 const TrackLayerProvider = {
     createLayersByTrackData,
@@ -252,7 +295,10 @@ const TrackLayerProvider = {
     getPolylineByPoints,
     getPointByPolyline,
     createTempPolyline,
-    getPolylines
+    getPolylines,
+    updatePolyline,
+    createEditableTempLPolyline,
+    TEMP_LINE_STYLE: TEMP_LINE_STYLE
 };
 
 export default TrackLayerProvider;

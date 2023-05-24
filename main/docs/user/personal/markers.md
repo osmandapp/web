@@ -165,11 +165,16 @@ Actions:
 
 ![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_android.png) ![Map markers Groups Android](@site/static/img/personal/markers/map_markers_groups_add_android.png) 
 
-You can import groups from favorites or track waypoints.
+You can import *Markers* to *[Map markers list](#list)* from one or more favorites groups or track waypoints. Tap '**&#43;**' button, then choose:
+- &nbsp;<Translate android="true" ids="favourites_group"/>  - import *Markers* from Favorites.
+- &nbsp;<Translate android="true" ids="shared_string_gpx_waypoints"/>  - import *Markers* from track waypoints.
 
-Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
-- <Translate android="true" ids="favourites_group"/>  - from Favorites.
-- <Translate android="true" ids="shared_string_gpx_waypoints"/>  - from track waypoints.
+*Markers* from track waypoints can also be created in *Groups tab* by turning switch on.  
+
+:::note
+Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
+:::
+
 
 </TabItem>
 
@@ -201,7 +206,7 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 </Tabs>
 
 
-### More 
+### More
 
 <Tabs groupId="operating-systems">
 
@@ -209,25 +214,22 @@ Click to '&#43;' Button.  <Translate android="true" ids="favourites_group"/> :
 
 ![Map markers More Android](@site/static/img/personal/markers/map_markers_more_android.png) 
 
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/>   - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
-- <Translate android="true" ids="sort_by"/> - sort Makrers in [List](../personal/markers.md#list-android).
-- <Translate android="true" ids="coordinate_input"/> - add Markers by [input coorditanes (like for Tracks)](../personal/tracks.md#coordinate-input-android)
-- <Translate android="true" ids="plan_route"/> - build route [for navigation using chosen markers](../navigation/markers-navigation.md).
-- <Translate android="true" ids="marker_save_as_track"/> - save active markers like file GPX.
-- <Translate android="true" ids="move_all_to_history"/> - deactivate all markers and move its to [History](../personal/markers.md#history).
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Map markers Appearance iOS](@site/static/img/personal/markers/map_markers_appearance_ios.png) 
-
-- <Translate android="true" ids="appearance_on_the_map"/>  or <Translate ios="true" ids="shared_string_appearance"/> - [settings for Map markers](../personal/markers.md#appearance-on-the-map).
+<InfoAndroidOnly />
 
 </TabItem>
 
 </Tabs>
 
+- &nbsp;_<Translate android="true" ids="sort_by"/>_ -  Makrers can be sort in [List](#list) by name, proximity, adding time.
+- &nbsp;_<Translate android="true" ids="appearance_on_the_map"/>_  or <Translate ios="true" ids="shared_string_appearance"/>   - [settings for Map markers](#appearance-on-the-map).
+- &nbsp;_<Translate android="true" ids="coordinate_input"/>_ - add Markers by [coorditanes input](../plan-route/coordinate-input.md).
+- &nbsp;_<Translate android="true" ids="plan_route"/>_ - build route [for navigation](../navigation/setup/markers-navigation.md) using chosen markers.
+- &nbsp;_<Translate android="true" ids="marker_save_as_track"/>_ - save active markers in a GPX file.
+- &nbsp;_<Translate android="true" ids="move_all_to_history"/>_ - deactivate all markers and move them to [History](#history).
 
 ## Appearance on the map
 
@@ -422,7 +424,7 @@ You can read how to configure the appearance of the markers in [this section](#a
 
 You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
 
-Click to '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
+Tap '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 

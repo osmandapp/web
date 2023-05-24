@@ -1,6 +1,6 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#878787"/>
@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
+<g transform="translate(8.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M167.279 335.454C167.279 335.454 134.009 533.564 279.839 533.132C283.398 533.284 286.782 533.327 290 533.286C293.218 533.327 296.602 533.284 300.161 533.132C445.991 533.564 412.72 335.454 412.72 335.454L290 335.846L167.279 335.454Z" fill="#ffffff" stroke="#ffffff" stroke-width="12.3895" stroke-linecap="round" stroke-linejoin="round"/>
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M396.5 377.59C396.5 377.59 430.48 357.668 457.345 357.668C484.21 357.668 496.53 390.1 495.959 411.875C495.387 433.65 474.81 486.93 374.779 487.856C274.749 488.783 397.072 377.59 396.5 377.59Z" stroke="#ffffff" stroke-width="30.3555"/>

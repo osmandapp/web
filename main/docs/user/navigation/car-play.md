@@ -24,30 +24,29 @@ To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [pai
 
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [CarPlay](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
 
-To use CarPlay and the OsmAnd app on your vehicle's screen, follow these steps:
+To use CarPlay on your vehicle's screen, follow these steps:
 
-1. Make sure your iOS device is compatible with CarPlay and your car supports this technology, usually if the car was released after 2014, and the iOS version of your device is older than 7.1, it probably does. Check the [list of car models](https://www.apple.com/ios/carplay/available-models/) with CarPlay support.  
-2. Connect your device to your vehicle's multimedia system using a Lightning cable or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
-3. Once connected, the CarPlay interface will automatically appear on your car screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.
-4. To use OsmAnd, select it on the CarPlay screen.   
+1. CarPlay is not available in all countries. Make sure it is supported in your [country or region](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) and that CarPlay is supported in your [vehicle model](https://www.apple.com/ios/carplay/available-models/).
+2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle's multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
+3. Once connected, the CarPlay interface will automatically appear on your vehicle screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.
 
 
 ## Setup
 
-First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md). For quick access to the list of profiles available for connecting to CarPlay OsmAnd has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*.   
+First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md). For quick access to the list of profiles available for connecting to CarPlay OsmAnd has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*. Also.  
 
-- Also for OsmAnd to work, [connect your iOS device](#overview) to the vehicle's multimedia system. To find out more about how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) website. 
+- For OsmAnd to work, [connect your iOS device](#overview) to the vehicle's multimedia system. To find out more about how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) website. 
 - You need to have one of [OsmAnd Paid subscriptions](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
 - Once connected, you can set a destination and start OsmAnd navigation in CarPlay.  
 
-Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  
+<!-- Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  -->
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 
 ## Start navigation
 
-1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the CarPlay screen or in the [app](../navigation/route-navigation/).
+1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the CarPlay screen or in the [OsmAnd app](../navigation/setup/route-navigation.md).
 2. You can use [voice prompts](#voice-prompts) to listen for directions or messages about issues on the road.  
 3. After you select a location, press **Start** to follow the route.
 4. As you drive, the vehicle screen will display OsmAnd information about your current location on the map, driving directions, distance to the next turn, and arrival time at your destination.
@@ -71,17 +70,17 @@ Most OsmAnd settings directly related to navigation are available in CarPlay. In
 
 ## Select a route endpoint 
 
-You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/), or select a destination from the [route history](#history).   
-- Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
+You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the Search, or select a destination from the route history.   
+1. Select the necessary category from the user points: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
 - In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
     -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
 - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), as well as the distance from the point of the current location to it.
-- Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
-- Select [Address Search](#search) to enter a destination from the available search categories. 
+2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
+3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 :::note
-While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/voice-navigation) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](./guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::
 
 :::note
@@ -109,10 +108,6 @@ To build a route to a POI in CarPlay, follow these steps:
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi(1).png)  
 
-A folder with the list of included POIs.  
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi-rest(1).png)    
-
 
 ### Map markers
 
@@ -123,33 +118,25 @@ To use [markers](../personal/markers.md#overview) in CarPlay for navigation, the
 
 ### Favorites
 
-Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using CarPlay you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
+Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using CarPlay you cannot add or modify Favorites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
-
-A folder with a list of recently modified favorites.    
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites-last-modified(1).png)  
 
 
 ### Tracks
 
 :::tip
-Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
+It is better not to choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
 :::
 
 From the list of tracks available in the OsmAnd app in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in the CarPlay list or on the device connected to the vehicle's multimedia system. The route will either build up to the start of the track or display the current direction along the track.   
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-A folder with a list of recently modified tracks.  
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks-mod(1).png)   
-
 
 ### Search
 
-With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
+With this option, you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
 - [Address search](../search/search-address.md) - enter the needed address in the search field.
 - [POI search](../search/search-poi.md) - search by Point of Interest names.
 - [Custom search](../search/custom-poi-search.md) - search by the categories you created.
@@ -161,9 +148,10 @@ With this option you can search for the necessary places on the map to navigate.
 
 ## Additional features
 
+
 ### Voice prompts
 
-In OsmAnd, you can configure voice prompts for the selected profile. Do this before starting a route on your device, tablet, or phone. For how to do this, see the article [Voice prompts / Notifications](../navigation/voice-navigation.md). To see recommended settings for CarPlay, click here.  
+In OsmAnd, you can configure voice prompts for the selected profile. Do this before you start your route on your device, tablet, or phone, as you will not be able to do this on your vehicle screen. For how to do this, see the article [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md). To see recommended settings for CarPlay, click here.  
 
 
 ### Announce incoming text messages

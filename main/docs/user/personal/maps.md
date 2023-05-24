@@ -51,7 +51,7 @@ There are several map types available to download and manage:
 - [Wikipedia](../plugins/wikipedia.md) - a vector map that provides Geo located Articles as POIs from [Wikipedia](https://wikipedia.org/).
 - [Travel guides / Wikivoyage](../plan-route/travel-guides.md) - a vector map that has a collection of Articles (Text as HTML + GPX file) for example [Wikivoyage](https://www.wikivoyage.org/).
 - [Nautical maps](../plugins/nautical-charts.md) - a vector map that provide sea depth elevation as points or as lines.
-- [Voice packages](../navigation/voice-navigation.md) - a voice package that provides sounds and configuration how to guide you in the navigation mode.
+- [Voice packages](../navigation/guidance/voice-navigation.md) - a voice package that provides sounds and configuration how to guide you in the navigation mode.
 - [Map fonts (Android)](../map/vector-maps.md#map-fonts-android) - additional fonts files used to render text on the map.
 - [Altitude correction (Android)](../widgets/info-widgets.md#altitude) - a special map file that provides correction for geoid on Android devices (optional).
 - Other maps - maps that couldn't be attached to current maps hierarchy, typically represents deprecated and not supported maps or maps that will be available next release.
@@ -234,7 +234,7 @@ Each map has an independent collection  of tiny map updates, please be careful i
 
 ### Free for OSM Mappers
 
-OsmAnd Live is available for OpenStreetMap mappers which [contribute OSM](https://learnosm.org/).
+Live updates and unlimited map downloads are available for [OpenStreetMap](https://openstreetmap.org/) contributors.
 
 1. Switch on [OpenStreetMap editing plugin](../plugins/osm-editing.md) in OsmAnd.
 2. [Log in](../plugins/osm-editing.md#settings) by your OpenStreetMap username.

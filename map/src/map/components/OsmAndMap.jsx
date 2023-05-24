@@ -82,12 +82,15 @@ const OsmAndMap = () => {
 
     const whenReadyHandler = event => {
         const {target: map} = event;
-        hash = new L.Hash(map);
-        map.attributionControl.setPrefix('');
-        mapRef.current = map;
-        if (!ctx.mapMarkerListener) {
-            ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
+        if (map) {
+            hash = new L.Hash(map);
+            map.attributionControl.setPrefix('');
+            mapRef.current = map;
+            if (!ctx.mapMarkerListener) {
+                ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
+            }
         }
+
     }
 
     useEffect(() => {
