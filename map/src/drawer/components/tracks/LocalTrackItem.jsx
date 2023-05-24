@@ -42,23 +42,31 @@ export default function LocalTrackItem({track, index}) {
     }
 
     async function addSelectedTack() {
+        const promises = [];
         let selectedTrack = ctx.localTracks[indexTrack];
-        if (!selectedTrack.hasGeo && selectedTrack.tracks) {
+        if (selectedTrack.hasGeo && !selectedTrack.getGeo) {
             setLoading(true);
-            if (!_.isEmpty(selectedTrack.tracks[0]?.points)) {
-                await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
-                    setLoading(false);
-                    if (points && !_.isEmpty(points)) {
-                        selectedTrack.tracks[0].points = points;
-                        selectedTrack.points = points;
-                        selectedTrack.hasGeo = true;
-                    }
-                    update(selectedTrack);
-                })
-            } else {
+            await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
                 setLoading(false);
+                selectedTrack.getGeo = true;
+                if (points && !_.isEmpty(points)) {
+                    selectedTrack.tracks[0].points = points;
+                    selectedTrack.points = points;
+                }
+                promises.push(TracksManager.getLocalTrackAnalysis(selectedTrack).then(res => {
+                    selectedTrack = res;
+                }));
+            })
+        } else {
+            promises.push(TracksManager.getLocalTrackAnalysis(selectedTrack).then(res => {
+                selectedTrack = res;
+            }));
+        }
+
+        if (promises.length > 0) {
+            await Promise.all(promises).then(() => {
                 update(selectedTrack);
-            }
+            })
         } else {
             update(selectedTrack);
         }

@@ -39,14 +39,17 @@ async function loadTracks(setLoading) {
                 if (f.name === local.name) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
                         f.selected = true;
-                        f.hasGeo = true;
                         f.index = _.indexOf(localTracks, f);
-                        if (f.tracks && f.tracks[0]?.points && !_.isEmpty(f.tracks[0]?.points)) {
+                        if (f.hasGeo) {
                             promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
                                 f.tracks[0].points = points;
                                 TracksManager.getLocalTrackAnalysis(f).then(res => {
                                     f = res;
                                 });
+                            }));
+                        } else {
+                            promises.push(await TracksManager.getLocalTrackAnalysis(f).then(res => {
+                                f = res;
                             }));
                         }
                     } else {
@@ -75,16 +78,18 @@ function saveLocalTrack(tracks, ctx) {
     } else {
         track = tracks[tracks.length - 1];
     }
+    const prepareTrack = preparePoints(_.cloneDeep(track));
     let localTrack = {
         name: track.name,
         id: track.id,
         metaData: track.metaData,
-        tracks: preparePoints(_.cloneDeep(track)),
+        tracks: prepareTrack.track,
         wpts: track.wpts,
         pointsGroups: track.pointsGroups,
         ext: track.ext,
         selected: false,
-        originalName: track.originalName
+        originalName: track.originalName,
+        hasGeo: prepareTrack.hasGeo
     }
     let trackStr = JSON.stringify(localTrack);
     let tracksSize = trackStr.length;
@@ -111,25 +116,34 @@ function saveLocalTrack(tracks, ctx) {
 }
 
 function preparePoints(track) {
+    let hasGeo = false;
     if (!_.isEmpty(track.points)) {
         track.points.forEach(p => {
             if (p.geometry?.length > 0) {
-                delete p.geometry
+                hasGeo = true;
+                delete p.geometry;
             }
         })
-        return [{points: track.points}];
+        return {
+            track:[{points: track.points}],
+            hasGeo: hasGeo
+        };
     } else {
         if (track.tracks) {
             track.tracks.forEach(t => {
                 if (t.points) {
                     t.points.forEach(p => {
                         if (p.geometry?.length > 0) {
-                            delete p.geometry
+                            hasGeo = true;
+                            delete p.geometry;
                         }
                     })
                 }
             })
-            return track.tracks;
+            return {
+                track: track.tracks,
+                hasGeo: hasGeo
+            };
         }
     }
 }
@@ -138,17 +152,19 @@ function updateLocalTracks(tracks) {
     deleteLocalTracks();
     let totalSize = 0;
     for (let track of tracks) {
+        const prepareTrack = preparePoints(_.cloneDeep(track));
         let localTrack = {
             name: track.name,
             id: track.id,
             metaData: track.metaData,
-            tracks: preparePoints(_.cloneDeep(track)),
+            tracks: prepareTrack.track,
             wpts: track.wpts,
             pointsGroups: track.pointsGroups,
             ext: track.ext,
             analysis: track.analysis,
             selected: false,
-            originalName: track.originalName
+            originalName: track.originalName,
+            hasGeo: prepareTrack.hasGeo
         }
         let trackStr = JSON.stringify(localTrack);
         localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
@@ -256,10 +272,34 @@ function addTrack(ctx, track) {
 }
 
 function prepareTrack(track) {
+    track.hasGeo = hasGeo(track);
     track.originalName = _.cloneDeep(track.name);
     track.name = TracksManager.prepareName(track.name, true);
     track.id = track.name;
     addDistance(track);
+}
+
+function hasGeo(track) {
+    if (!_.isEmpty(track.points)) {
+        track.points.forEach(p => {
+            if (p.geometry?.length > 0) {
+                return true;
+            }
+        })
+    } else {
+        if (track.tracks) {
+            track.tracks.forEach(t => {
+                if (t.points) {
+                    t.points.forEach(p => {
+                        if (p.geometry?.length > 0) {
+                            return true;
+                        }
+                    })
+                }
+            })
+        }
+    }
+    return false;
 }
 
 function openNewLocalTrack(ctx) {
@@ -288,11 +328,12 @@ function getTrackPoints(track) {
         track.tracks.forEach(track => {
             if (track.points) {
                 track.points.forEach(point => {
-                    points.push(point);
                     if (point.geometry) {
                         point.geometry.forEach(trk => {
                             points.push(trk);
                         })
+                    } else {
+                        points.push(point);
                     }
                 })
             }
@@ -437,6 +478,8 @@ function deleteLocalTrack(ctx) {
         ctx.localTracks.splice(currentTrackIndex, 1);
         if (ctx.localTracks.length > 0) {
             updateLocalTracks(ctx.localTracks);
+        } else {
+            localStorage.removeItem(DATA_SIZE_KEY);
         }
         ctx.setLocalTracks([...ctx.localTracks]);
         return true;
