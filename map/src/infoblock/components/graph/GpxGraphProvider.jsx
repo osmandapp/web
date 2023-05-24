@@ -77,11 +77,9 @@ const GpxGraphProvider = ({width}) => {
                 }
                 if (data.speed) {
                     if (point.ext?.speed) {
-                        speed = Math.round(point.ext?.speed * 10) / 10;
+                        speed = ((Math.round(point.ext?.speed * 10) / 10) * 3.6).toFixed(2);
                         minSpeed = Math.min(speed, minSpeed);
                         maxSpeed = Math.max(speed, maxSpeed);
-                    } else {
-                        speed = 0;
                     }
                 }
 
