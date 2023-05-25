@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Button, Checkbox, TextField, FormControlLabel} from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -8,9 +8,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
 import {useNavigate} from "react-router-dom";
 import Utils from "../util/Utils";
-import {Box, Grid, IconButton, Link} from "@mui/material";
+import {Box, Divider, Grid, IconButton, Link, ListItemText, MenuItem, Typography} from "@mui/material";
 import {Close} from "@mui/icons-material";
-import {post} from "axios";
+import {post, get} from "axios";
+import {makeStyles} from "@material-ui/core/styles";
 
 
 async function isRequestOk(response, setEmailError) {
@@ -88,10 +89,15 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     }
 }
 
+const useStyles = makeStyles(() => ({
+    paper: {minWidth: "100vh"},
+}));
+
 
 export default function LoginDialog() {
 
     const ctx = useContext(AppContext);
+    const classes = useStyles();
 
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
@@ -101,6 +107,7 @@ export default function LoginDialog() {
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [userEmailConfirmDelete, setUserEmailConfirmDelete] = useState(null);
+    const [accountInfo, setAccountInfo] = useState(null);
 
     const navigate = useNavigate();
 
@@ -123,6 +130,19 @@ export default function LoginDialog() {
             userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose);
         } else {
             userLogin(ctx, userEmail, pwd, setEmailError, handleClose);
+        }
+    }
+
+    useEffect(() => {
+        if (ctx.loginUser && ctx.loginUser !== '') {
+            getAccountInfo().then();
+        }
+    }, [ctx.loginUser]);
+
+    async function getAccountInfo() {
+        const resp = await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
+        if (resp.data) {
+            setAccountInfo(resp.data.info);
         }
     }
 
@@ -153,22 +173,73 @@ export default function LoginDialog() {
 
     if (ctx.loginUser) {
         return (
-            <Dialog open={true} onClose={handleClose}>
+            <Dialog classes={{paper: classes.paper}} open={true} onClose={handleClose}>
                 <DialogTitle>{ctx.loginUser}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        You logged in as {ctx.loginUser}.<br/>
+                        <Divider/>
                         {!ctx.listFiles || !ctx.listFiles.userid ? <></> :
-                            <span>
-                            Total files: {ctx.listFiles.totalFiles} ({ctx.listFiles.totalFileVersions} including versions).<br/>
-                            Total files size: {(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB,
-                            cloud storage used: {(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.
-                            <br/><br/>
-                            <Link sx={{fontSize: "10pt"}}
-                                  href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`}
-                                  target="_blank">Download backup ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB</Link>
-                        </span>
+                            <div>
+                                <Typography variant="h6" noWrap>
+                                    {`Files info:`}
+                                </Typography>
+                                <MenuItem>
+                                    <ListItemText>
+                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions).`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Total files size: ${(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Cloud storage used: ${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <Link sx={{fontSize: "10pt"}}
+                                      href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`}
+                                      target="_blank">Download backup
+                                    ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB
+                                </Link>
+                            </div>
                         }
+                        <Divider sx={{mt: 1}}/>
+                        {accountInfo && <div>
+                            <Typography variant="h6" noWrap>
+                                {`Account info:`}
+                            </Typography>
+                            <MenuItem>
+                                <ListItemText>
+                                    <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        {`Subscription: ${accountInfo.account}`}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                            {accountInfo.startTime && accountInfo.expireTime && <>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Start time: ${accountInfo.startTime}`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Expire time: ${accountInfo.expireTime}`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                            </>}
+                        </div>}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
