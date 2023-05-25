@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the entire route, including distance, travel time, surface type, elevation differences, and turn information. You can also analyze the route on the map, find out information about track segments, print the route plan, save the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
+The OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the whole route, including distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyse-on-map) the route on the map, find out information about track segments, [print](#print-for-android) the route plan, [save](#save--export--share) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems">
@@ -73,7 +73,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - *Estimated travel time* and *Estimated arrival time* values are calculated from the average speed based on the previously selected [settings](../setup/route-navigation.md) and the actual time of day.  
 
-- In order to see information about [*CO2 footprint data*](../../navigation/guidance/navigation-settings.md#fuel-used-by-motor), you need to select the engine type in the vehicle parameters [*Fuel-efficient way*](../../navigation/routing/car-based-routing.md).
+- In order to see information about [*CO2 footprint data*](../../navigation/guidance/navigation-settings.md#fuel-used-by-motor), you need to select the engine type in the vehicle parameters.  
 
 
 ## Elevation info
