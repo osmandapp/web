@@ -112,6 +112,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
             setListFiles({});
+            setFavorites({});
         } else {
             setGpxLoading(true);
             const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});

@@ -83,6 +83,10 @@ export default function TracksMenu() {
             }
             ctx.gpxFiles.trackGroups = tg;
             ctx.setTracksGroups(tg);
+        } else {
+            setGpxFiles([]);
+            ctx.setTracksGroups([]);
+            setVisibleTracks({local: [], cloud: []});
         }
     }, [ctx.listFiles, ctx.setListFiles]);
 

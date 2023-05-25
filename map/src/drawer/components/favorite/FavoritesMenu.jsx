@@ -44,6 +44,10 @@ export default function FavoritesMenu() {
             })
             let r = enableGroups.concat(ng)
             setEnableGroups([...r]);
+        } else {
+            if (!ctx.favorites?.groups) {
+                setOpenFavoritesGroups([]);
+            }
         }
     }, [ctx.favorites]);
 
@@ -117,6 +121,7 @@ export default function FavoritesMenu() {
         }
     }
 
+
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => setFavoriteGroupsOpen(!favoriteGroupsOpen)}>
             <ListItemIcon>
@@ -126,12 +131,11 @@ export default function FavoritesMenu() {
             <Typography variant="body2" color="textSecondary">
                 {ctx.favorites.groups && ctx.favorites.groups.length > 0 ? `${ctx.favorites.groups.length}` : ''}
             </Typography>
-            {ctx.favorites.groups?.length === 0 ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
+            {(!ctx.favorites.groups || ctx.favorites.groups?.length === 0) ? <></> : favoriteGroupsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         <Collapse in={favoriteGroupsOpen} timeout="auto" unmountOnExit>
-            {ctx.favorites.groups?.length !== 0 &&
-                <FavoriteAllGroups setEnableGroups={setEnableGroups}
-                                   favoritesGroups={openFavoritesGroups}/>}
+            <FavoriteAllGroups setEnableGroups={setEnableGroups}
+                               favoritesGroups={openFavoritesGroups}/>
             {ctx.favorites.groups && ctx.favorites.groups.map((group, index) => {
                 return <FavoriteGroup key={group + index}
                                       index={index}
