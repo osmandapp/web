@@ -46,8 +46,12 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     const classes = useStyles();
     const styles = drawerStyles();
 
+    const MIN_SIZE_SEARCH_VALUE = 2;
+
     const [selectedPoiCategory, setSelectedPoiCategory] = useState(null);
-    const [poiTypes, setPoiTypes] = useState(getPoiTypes());
+    const [poiTypesResult, setPoiTypesResult] = useState([]);
+    const [searchText, setSearchText] = useState(null);
+    const [searchOptions, setSearchOptions] = useState([]);
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -95,6 +99,35 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }
 
+    async function searchPoiCategory(value) {
+        if (value.length >= MIN_SIZE_SEARCH_VALUE) {
+            const searchResult = await PoiManager.searchPoiCategories(value);
+            if (searchResult) {
+                setPoiTypesResult(searchResult);
+                setSearchOptions(Object.keys(poiTypesResult));
+            }
+        } else {
+            setPoiTypesResult(null);
+        }
+    }
+
+    function getIcon(option) {
+        if (poiTypesResult[option]) {
+            option = poiTypesResult[option];
+            return PoiManager.getIconNameForPoiType(option.keyName, option.osmTag, option.osmValue, option.iconName);
+        }
+        return option;
+    }
+
+    function getPoiTypesByCategory(newValue) {
+        const category = newValue?.toLowerCase();
+        if (ctx.poiCategory[category]) {
+            console.log(ctx.poiCategory[category])
+            setPoiTypesResult(ctx.poiCategory[category]);
+            setSearchOptions(ctx.poiCategory[category]);
+        }
+    }
+
     return (
         <Dialog open={dialogOpen} onClose={toggleShowDialog}>
             <Grid container spacing={2}>
@@ -118,12 +151,27 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                             value={selectedPoiCategory}
                             onChange={(event, newValue) => {
                                 setSelectedPoiCategory(newValue);
+                                getPoiTypesByCategory(newValue);
                             }}
+                            renderInput={params => (
+                                <TextField
+                                    value={searchText}
+                                    onChange={e => {
+                                        setSearchText(e.target.value);
+                                        searchPoiCategory(e.target.value).then();
+                                    }}
+                                    {...params}
+                                    label="label"
+                                    variant="outlined"
+                                    fullWidth
+
+                                />
+                            )}
                             selectOnFocus
                             clearOnBlur
                             handleHomeEndKeys
                             id="category"
-                            options={Object.keys(poiTypes)}
+                            options={searchOptions}
                             renderOption={(props, option) =>
                                 <div className={styles.drawerItem}>
                                     <MenuItem key={option + "menu"} {...props}>
@@ -134,16 +182,12 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                                     <circle cx="24" cy="24" r="12" fill="#f8931d"/>
                                                 </svg>
                                                 <img className="icon"
-                                                     src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${poiTypes[option]}.svg`}/>
+                                                     src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
                                             </div>
                                         </ListItemIcon>
                                         {option}
                                     </MenuItem>
                                 </div>}
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}/>
-                            )}
                         />
                     </Grid>
                     <Grid item xs={2}>
@@ -163,7 +207,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                 </Grid>
                 <Grid container spacing={2}>
                     {Object.keys(ctx.poiCategory).map((item, key) =>
-                        <Grid item  key={key + "column"} xs={6} className={styles.drawerItem}>
+                        <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
                                           setSelectedPoiCategory(item)
