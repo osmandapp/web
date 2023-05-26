@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-*Coordinates Input* is a simple and easy-to-use tool for creating waypoints by specifying their geographic location. This feature can be useful for navigating to certain places, that you know only by their coordinates: added points can be saved as a GPX track and used later for [GPX navigation](../navigation/setup/gpx-navigation.md) or [navigation by markers](../navigation/setup/markers-navigation.md#add-gpx).  
+*Coordinates Input* is a simple and easy-to-use tool for creating waypoints by specifying their geographic location. This feature can be useful for navigating to certain places, that you know only by their coordinates: added points can be [saved](#save-as-track) as a GPX track and used later for [GPX navigation](../navigation/setup/gpx-navigation.md) or [navigation by markers](../navigation/setup/markers-navigation.md#add-gpx).  
 
 ![Coordinates input overview](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png) 
 
@@ -43,7 +43,7 @@ The results of creating points by coordinates - a *[GPX track](../personal/track
 
 ## Options
 
-Using options menu you can save added point(s) as a track, activate advanced input options (system keyboard and two digits longitude), or change coordinates format.
+Using options menu you can [save](#save-as-track) added point(s) as a track, activate advanced input options (system keyboard and two digits longitude), or change coordinates format.
 
 ![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)
 
