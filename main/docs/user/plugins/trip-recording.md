@@ -294,7 +294,7 @@ The [Distance/Start-Stop widget](../widgets/info-widgets.md#-trip-recording-widg
 <TabItem value="android" label="Android">
 
 You can delete or add the Distance/Start-Stop widget and [other widgets](../plugins/trip-recording#duration-uphill-downhill) by following:  
-*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,shared_string_trip_recording"/>*.  
+*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left"/>/<Translate android="true" ids="map_widget_right,shared_string_trip_recording"/>*.  
 
 ![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
 
@@ -302,7 +302,7 @@ You can delete or add the Distance/Start-Stop widget and [other widgets](../plug
 
 <TabItem value="ios" label="iOS">
 
-You can delete or add Distance/Start-Stop widget, by following:  
+You can delete or add widgets (Track recording - Distance, Track recording - Duration, Track recording - Uphill, Track recording - Downhill), by following:  
 *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>*, toggle on/off.  
 
 ![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_widg_ios.png)
@@ -320,8 +320,9 @@ You can delete or add Distance/Start-Stop widget, by following:
 <TabItem value="android" label="Android">  
  
 
-To open **Trip recording widgets** options follow:  
-*Menu → Configure screen → Widgets → Left / Right panel → Trip recording*     
+To open **Trip recording widgets** options follow: 
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left"/>/<Translate android="true" ids="map_widget_right,shared_string_trip_recording"/>, <Translate android="true" ids="map_widget_trip_recording_distance"/>*  
 
 ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_and_1-1.png) 
 ![Finish recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_2.png)    
@@ -344,9 +345,9 @@ If the option *Show Startup Dialog* is disabled in the Trip Recording Plugin set
 <TabItem value="ios" label="iOS">  
 
 To open **Distance/Start-Stop** widget options follow:  
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>*    
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording,map_widget_trip_recording_distance"/>*    
 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png)  
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png) 
 
 The widget shows the distance of the currently recorded trip. It is added automatically with the Trip recording enabled, but you can hide the widget in Configure screen menu. If the *Show start dialog* is disabled in the Trip recording Plugin settings and the widget is active, then tapping on it opens the Trip recording dialog, anyway.  
 
@@ -360,6 +361,8 @@ The widget shows the distance of the currently recorded trip. It is added automa
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android"> 
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left"/>/<Translate android="true" ids="map_widget_right,shared_string_trip_recording"/>, <Translate android="true" ids="map_widget_trip_recording_duration"/>, <Translate android="true" ids="map_widget_trip_recording_uphill"/>, <Translate android="true" ids="map_widget_trip_recording_downhill"/>*
 
 | | 
 |------------|
@@ -378,8 +381,19 @@ If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you d
 
 <TabItem value="ios" label="iOS">  
 
-:::caution Android only
-Duration, Uphill, and Downhill widgets are currently not available for the iOS version of the OsmAnd app.
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>, <Translate ios="true" ids="map_widget_trip_recording_duration"/>, <Translate ios="true" ids="map_widget_trip_recording_uphill"/>, <Translate ios="true" ids="map_widget_trip_recording_downhill"/>*  
+
+| | 
+|------------|
+|**Duration**: shows the time, in hours and minutes, of the current trip recording. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Uphill**: shows the sum of all the climbs of the current trip recording. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)| 
+|**Downhill**: shows the sum of all descents of the current trip recording. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|   
+ 
+:::note
+If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.
 :::
 
 </TabItem>

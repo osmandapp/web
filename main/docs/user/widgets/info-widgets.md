@@ -60,23 +60,42 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
 
 ### * Elevation: map center
 
-<InfoAndroidOnly />  
-
 To display Elevation widget among *Altitude widgets*:
 - enable the [Development plugin](../plugins/development.md)
 - switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
-  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
-  
-:::caution
-Elevation widget will display information only when the hightmaps of the required area are downloaded.  
-:::
 
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png) 
+
+| | |
+|------------|------------|
+| Enable | Menu → Configure screen → Right panel → Elevation: map center | 
+| By tapping | No changes. |
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+
+</TabItem>
+
+</Tabs>  
+    
+
+:::caution
+Elevation widget will display information only when the hightmaps of the required area are downloaded.  
+:::
 
 ## Current time
 

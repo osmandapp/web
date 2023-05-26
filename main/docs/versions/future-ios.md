@@ -29,3 +29,4 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
   * Fixed issues with the import of custom routing and rendering files.
   * Fixed transition between offline Wikipedia articles.
 
+The previous release notes for OsmAnd 4.4 you can read [here](https://osmand.net/blog/osmand-ios-4-4-released).
