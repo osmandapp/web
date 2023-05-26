@@ -94,14 +94,14 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*,
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*.
 - *<Translate android="true" ids="shared_string_2_5_d_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- *<Translate android="true" ids="display_position"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
-  - *<Translate android="true" ids="shared_string_automatic"/>* - depends on Map orientation: bottom for movement direction, center for all others.
-  - *<Translate android="true" ids="position_on_map_center"/>*
-  - *<Translate android="true" ids="position_on_map_bottom"/>*
+- *<Translate android="true" ids="display_position"/>* - allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+  - *<Translate android="true" ids="position_on_map_center"/>* - the cursor will always be in the center of the screen.
+  - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate android="true" ids="shared_string_automatic"/>* - places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 - *<Translate android="true" ids="map_screen_orientation"/>* - sets the screen position for the OsmAnd application: 
-  - *<Translate android="true" ids="map_orientation_portrait"/>*, 
-  - *<Translate android="true" ids="map_orientation_landscape"/>*, 
-  - *<Translate android="true" ids="map_screen_orientation"/>*.
+  - *<Translate android="true" ids="map_orientation_portrait"/>* 
+  - *<Translate android="true" ids="map_orientation_landscape"/>* 
+  - *<Translate android="true" ids="map_screen_orientation"/>*
 - *[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
 </TabItem>
@@ -118,10 +118,10 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate ios="true" ids="rotate_map_compass_opt"/>*,
   - *<Translate ios="true" ids="rotate_map_none_manually"/>*.
 - &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- &nbsp;*<Translate ios="true" ids="position_on_map"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode:
-  - *<Translate ios="true" ids="shared_string_automatic"/>* - depends on Map orientation: bottom for movement direction, center for all others.
-  - *<Translate ios="true" ids="position_on_map_center"/>*
-  - *<Translate ios="true" ids="position_on_map_bottom"/>*
+- &nbsp;*<Translate ios="true" ids="position_on_map"/>* - allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+  - *<Translate ios="true" ids="position_on_map_center"/>* - the cursor will always be in the center of the screen.
+  - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate ios="true" ids="shared_string_automatic"/>* - places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 
 </TabItem>
 
