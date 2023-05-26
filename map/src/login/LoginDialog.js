@@ -186,7 +186,7 @@ export default function LoginDialog() {
                                 <MenuItem>
                                     <ListItemText>
                                         <Typography sx={{ml: 1}} variant="body2" noWrap>
-                                            {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions).`}
+                                            {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions)`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
@@ -200,7 +200,7 @@ export default function LoginDialog() {
                                 <MenuItem sx={{mt: -1}}>
                                     <ListItemText>
                                         <Typography sx={{ml: 1}} variant="body2" noWrap>
-                                            {`Cloud storage used: ${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.`}
+                                            {`Cloud storage used: ${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
@@ -219,7 +219,8 @@ export default function LoginDialog() {
                             <MenuItem>
                                 <ListItemText>
                                     <Typography sx={{ml: 1}} variant="body2" noWrap>
-                                        {`Subscription: ${accountInfo.account}`}
+                                        {`Subscription: ${accountInfo.account} `}
+                                        {accountInfo.type && `(type: ${accountInfo.type})`}
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
