@@ -126,6 +126,10 @@ const config = {
               {
                 label: 'Telegram Channel',
                 href: 'https://t.me/OsmAnd_News',
+              },
+              {
+                label: 'Matrix',
+                href: 'https://matrix.to/#/#osmand:hacklab.fi',
               }, 
             ],
           },
