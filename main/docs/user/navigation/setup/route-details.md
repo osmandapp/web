@@ -156,9 +156,15 @@ All values are specified either for the entire route or only for the selected in
 
 </Tabs>  
 
-This [option](../../map/tracks-on-map.md#analyze-track-on-map) allows you to view track information with additional graph and map data.  
+This [tool](../../map/tracks-on-map.md#analyze-track-on-map) allows you to view track information with additional graph and map data.  
 
-- *Graph data on the Y-axis*. Shows Altitude, or Slope, or Speed, if these data are available in the track.
+- *Graph data on the Y-axis*. Displays the different types of data, if any in the track information. 
+   - *Altitude*
+   - *Slope*
+   - *Speed*
+   - *Altitude/Slope*
+   - *Altitude/Speed*
+   - *Slope/Speed*
 - *X-axis graph dimension*. Shows Distance, or Time, or Time of day.
 - *Tap and Slide*. Tap the Graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
 - *Scale*. Scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 

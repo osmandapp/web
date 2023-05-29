@@ -127,12 +127,15 @@ In this group you can set whether the voice prompts for the pre-set and added [W
 | Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
 | Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
 
+
 ### Speed cameras
 
-[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
-In some countries or regions, it is illegal to use speed camera warning apps. You need to make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall**, and all data related to speed cameras: warnings, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
+[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.   
+  
+In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+
 
 ### Announcement time
 

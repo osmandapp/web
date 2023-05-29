@@ -48,7 +48,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 
 The map style parameters depend on the main map style displayed on the map. You can read more about this in the [Map Styles article](../map/vector-maps).  
    - [Map style](../map/vector-maps.md#default-map-styles) - OsmAnd (City), Topo, Nautical, and others.
-   - [Map mode](../map/vector-maps.md#map-mode) - select to view the map or start navigating.
+   - [Map mode](../map/vector-maps.md#map-mode) - select to view and navigate how the map appears depending on the time of day.
    - [Map magnifier](../map/vector-maps.md#map-magnifier) - to display the map in more or less detail.
    - [Text size](../map/vector-maps.md#text-size) - allows you to increase or decrease the size of the text on the map.
    - [Map language](../map/vector-maps.md#map-language) - select preferred language displayed on the map.

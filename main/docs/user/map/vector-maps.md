@@ -216,8 +216,8 @@ Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmA
 
 ### Map mode
 
-During day and night, you need to use mode for the map. [Map styles](#default-map-styles) have night and day mode styles. In this menu, you find the time of sunrise and sunset.  
- 
+The map is displayed according to the day or night mode selected from the list. And by default and for all new users, the [map style](#default-map-styles) corresponds to the light or dark theme selected in the system settings of your device.
+
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">   
@@ -236,10 +236,10 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 |Parameter          |Description        
 |:------------|:---------------|
-|**<Translate android="true" ids="daynight_mode_auto"/>**|Automated day/night view switching. |
-|**<Translate android="true" ids="daynight_mode_day"/>**|Switching on day mode only.|
-|**<Translate android="true" ids="daynight_mode_night"/>**|Switching on night mode only.|
-|**<Translate android="true" ids="daynight_mode_sensor"/>**|Using a light sensor for day/night mode.|
+|**<Translate android="true" ids="daynight_mode_auto"/>**| Switches between day and night modes based on sunset and sunrise data at your location.  |
+|**<Translate android="true" ids="daynight_mode_day"/>**| The map view is always displayed in daytime mode. Light theme. |
+|**<Translate android="true" ids="daynight_mode_night"/>**| The map view is always displayed in night mode. Dark theme. |
+|**<Translate android="true" ids="daynight_mode_sensor"/>**| The light sensor is used for day and night modes. |
 
 ### Details  
 
@@ -253,7 +253,7 @@ During day and night, you need to use mode for the map. [Map styles](#default-ma
 
 <TabItem value="ios" label="iOS">   
   
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>*  
 
 </TabItem>
 

@@ -241,14 +241,11 @@ To check on the map whether or not a particular piste is groomed, you need to en
 </Tabs>
 
 
-
 ### Ski slope routes
 
 With the Skiing profile, the Ski navigation and the [Winter and ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes](../map/vector-maps.md#routes) routes show all types of pistes that the Ski navigation can use to build navigation routes along. Such Ski slopes routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
 
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -273,35 +270,27 @@ To find out which pistes outside the ski resort you can navigate, you need to en
 </Tabs>
 
 
+### Night and lighting   
 
-### Night and lighting  
-
-**Winter and ski** style can be used with the [Night mode](../map/vector-maps.md#map-mode). A comfortable choice for those who prefer dark colors, or darkening the screen at night, as well as for those who practice night skiing. Together with the Night mode, OsmAnd Ski Maps also can show which pistes have lighting with [Street Lighting](../map/vector-maps.md#details) option.  
- 
-
-<Tabs groupId="operating-systems">
-
-
-<TabItem value="android" label="Android">
+**Winter and ski** style can be used with the [Night or Sunrise/sunset mode](../map/vector-maps.md#map-mode). A comfortable choice for those who prefer dark colors, or darkening the screen at night, as well as for those who practice night skiing. Together with the Night mode, OsmAnd Ski Maps also can show which pistes have lighting with [Street Lighting](../map/vector-maps.md#details) option.  
 
 Both options are in [Configure map](../map/configure-map-menu.md) menu.  
 
-- To enable the **Night mode** option scroll down the list: *<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
+- To enable the ***Night mode*** option scroll down the list   
+*<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- To enable the **Street Lighting** option open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
+- To enable the ***Street Lighting*** option open **<Translate android="true" ids="rendering_category_details"/>** list and switch on option  
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Enable Night mode and Lighting in Android](@site/static/img/plugins/ski-maps/and_night_and_lighting1.png) ![Night and lighting in Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-You can find both options in the [Configure map](../map/configure-map-menu.md) menu.  
-
-- To enable the **Night mode** scroll down the list: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,map_mode"/>*  
-
-- To enable the **Street Lighting** open **<Translate android="true" ids="rendering_category_details"/>** list and toggle on option: *<Translate ios="true" ids="shared_string_menu,configure_map,res_details,rendering_attr_streetLighting_name"/>*
-
 
 ![Enabling Night mode and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Night and Lighting in iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
 

@@ -167,7 +167,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 </Tabs>   
 
 - [*<Translate android="true" ids="route_between_points"/>*](#route-between-points) - Shows the chosen application profile (The straight line by default). Click to this action is equal *Profile* button(link)  with opening application profile menu(link). 
-- [*<Translate ios="true" ids="gpx_start_new_segment"/>*](#start-new-segment) (iOS) or *<Translate android="true" ids="plan_route_add_new_segment"/>* (Android) - Draws new route segments that do not connect to the previous segment. 
+- *<Translate ios="true" ids="gpx_start_new_segment"/>* (iOS) or *<Translate android="true" ids="plan_route_add_new_segment"/>* (Android) - Draws new route segments that do not connect to the previous segment. 
 - [*<Translate android="true" ids="shared_string_save_changes"/>*](#save-changes) - If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
 - [*<Translate android="true" ids="save_as_new_track"/>*](#save-as-new-track) - Saves your route like GPX track.
 - [*<Translate android="true" ids="add_to_a_track"/>*](#add-to-a-track) - Add your route to a track from your track folder and save the new track. 
@@ -305,12 +305,12 @@ When creating a new track or editing an existing one, you can use this option to
 
 </Tabs>  
 
-In order to measure a distance or plan a journey, you need to establish landmarks on the map, namely points to plot a route. 
+In order to measure a distance or plan a trip, you need to establish landmarks on the map, namely points to plot a route. 
 
+<!--
 - Text What is a Point
 - [How to create points](#how-to-create-points)
-- How to swap and delete points in a list
-- By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link).
+- By default, the routing type will match the previously selected profile, tap on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link). -->
 
 
 #### Add points
@@ -322,6 +322,7 @@ Swipe your [finger across the map](../map/interact-with-map.md#gestures). A stra
 #### List of Points
 
 The distance to the first point on a straight line
+- To swap and delete points in a list
 
 
 ### Point Context menu
@@ -345,19 +346,27 @@ The distance to the first point on a straight line
 Each point on your route has its own context menu. It shows the *sequence number* of the point, the *distance from the start of the route*, the function to move it on the map and remove it, and a set of actions with sections of the route before and after this point. To edit, tap the required point in the [list of points](#list-of-points) or directly on the map.     
 
 - ***Information about the point***. The number of the point in the list. And the distance to the first point based on the routing type set, the distance may change when recalculated to the new type if the *Route between points* parameter is changed.  
-- ***<Translate ios="true" ids="move_point"/>*** - Allows you to change the position of a point on the map. Move the map using gestures to change the location of the point. The point indicator will be in the centre of the visible part of the map. 
-- ***<Translate ios="true" ids="add_point_after"/>*** - Move the map to add an additional point after the selected point. You can add as many points as you need until you tap cancel or apply.
-- ***<Translate ios="true" ids="add_point_before"/>*** - Move the map to add as many points as necessary after the selected point on the segment between this point and the next one.
+
+- ***<Translate ios="true" ids="move_point"/>*** - Allows you to change the position of a point on the map. Move the map using gestures to change the location of the point. The point indicator will be in the centre of the visible part of the map.  
+
+- ***<Translate ios="true" ids="add_point_after"/>*** - Move the map to add an additional point after the selected point. You can add as many points as you need until you tap cancel or apply.  
+
+- ***<Translate ios="true" ids="add_point_before"/>*** - Move the map to add as many points as necessary after the selected point on the segment between this point and the next one.  
+
 - ***<Translate ios="true" ids="trim_before"/>*** - You can trim the whole section of the route, points and segments, from its start to the selected point. The distance to be trimmed is indicated under the option name.  
 
-- ***<Translate ios="true" ids="trim_after"/>*** - You can trim a route, points and segments, from the last point added to the selected point. The distance to be trimmed is indicated under the option name. 
+- ***<Translate ios="true" ids="trim_after"/>*** - You can trim a route, points and segments, from the last point added to the selected point. The distance to be trimmed is indicated under the option name.  
 
 - ***<Translate ios="true" ids="plan_route_split_before"/>*** - Allows to split the route before the selected point into separate unconnected segments.   
 
-- ***<Translate ios="true" ids="plan_route_split_after"/>*** - Allows to split the route after the selected point into separate unconnected segments. 
-- ***<Translate ios="true" ids="join_segments"/>*** - The last point on one of the split segments and the next in the list of points on the other segment have this connection setting.
-- [*<Translate ios="true" ids="change_route_type_before"/>*](#change-route-type) - You can change the connection mode, the routing type configured on the available profile, between points on the previous segment, or for all segments from the start of the route to the selected point.
-- [*<Translate ios="true" ids="change_route_type_after"/>*](#change-route-type) - You can change the routing type between points on the next segment or for all segments from the selected point to the last added point.
+- ***<Translate ios="true" ids="plan_route_split_after"/>*** - Allows to split the route after the selected point into separate unconnected segments.  
+
+- ***<Translate ios="true" ids="join_segments"/>*** - The last point on one of the split segments and the next in the list of points on the other segment have this connection setting.  
+
+- [*<Translate ios="true" ids="change_route_type_before"/>*](#change-route-type) - You can change the connection mode, the routing type configured on the available profile, between points on the previous segment, or for all segments from the start of the route to the selected point.  
+
+- [*<Translate ios="true" ids="change_route_type_after"/>*](#change-route-type) - You can change the routing type between points on the next segment or for all segments from the selected point to the last added point.  
+
 - ***<Translate ios="true" ids="delete_point"/>*** - Remove the selected point from the route. Similar to deleting a point in a list.    
 
 
@@ -418,22 +427,18 @@ The setting provides information about the distance from this point to the begin
 
 A segment is a section of a road, the distance between two points. The whole route consists of a set of segments you have set up, connected to each other or spaced apart from each other. 
 
-
-#### Start new segment
-
-Allows you to start creating a new route segment away from the previous segment.  
-A segment is a section of a route between two points that have already been calculated for a given routing type.
+- Segments can be connected to each other: adding points also adds a new segment, you can use the [Join segments](#menu-options) option for previously separated segments or the [Add to a track](#add-to-a-track) feature.
+- Segments can be separate, unconnected sections of track. To create one, use the [Start new segment](#menu-options) option or select the [Split](#point-context-menu) feature from the Point context menu.
 
 
 #### Route calculation
 
-![Plan a route app_button](@site/static/img/plan-route/plan-route-app-button.png)  
+![Plan a route app_button](@site/static/img/plan-route/plan_route_route-calculation_andr.png)  
 
-By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link).  
+By default the routing type corresponds to the previously selected profile, click on the profile icon in the bottom left corner of the screen to select how the application should calculate the route for segments when connecting points. The available profile can be [configured](../personal/profiles.md) separately.  
 
-- Click on [*Profile* button](../plan-route/create-route.md#main-screen) for choosing an application profile. The route will be calculated between points by routing of your profile.
-- Click to [*Add* button](../plan-route/create-route.md#main-screen) for adding shaping points or just click on the screen.
-- Choose two or more application profiles for creating a route. Click to [*Profile* button](../plan-route/create-route.md#main-screen).
+The route is calculated automatically and you can see the **progress line** between the map area on the screen and the functional part of the tool below. Or you will have to set it up manually using the [Attach to the roads](#attach-to-the-roads) feature.
+
 
 
 #### Route line
@@ -454,12 +459,12 @@ By default, the routing type will match the previously selected profile, click o
 
 </Tabs>  
 
-The Route line shows an automatically-generated road or straight route which you can save like a GPX track.  
+The route line in the *Plan a route* tool is displayed as an already configured and calculated path or as a straight line. It consists of several components.    
 
-1. Profile icon (Android). It*s mean that this segment was built by this profile routing.
-2. Shaping points - basic points building the route.
-3. Calculated route segment between shaping points. Colors of your chosen application profiles (Android) or last chosen application profile (iOS).
-4. Straight-line from last shaping point and target point.
+1. *Profile icon* on a section between points. Indicates that the section has been built using this routing profile.
+2. *Shaping Points*. These are the basis points for the construction of the route.
+3. *Calculated segment* of route between the shaping points. 
+4. *Straight dotted line* from the last point of shaping to the visible center of the map on the screen.
 
 
 ## Navigation with Plan a route
@@ -480,9 +485,14 @@ The Route line shows an automatically-generated road or straight route which you
 
 </Tabs> 
 
-The *Plan a route* tool provides a function such as starting navigation directly during the planning process.   
-[Navigate by track](../navigation/setup/gpx-navigation.md)  
 
+The *Plan a route* tool provides a feature such as starting navigation directly during the planning process. To do this, you need to open the [Options](#menu-options) menu and select ***Navigation***.    
+
+Navigation opens the [Navigate by track](../navigation/setup/gpx-navigation.md) function with the start from the first point in the list. The track can be from an [existing list or imported](#modify-gpx-track). In this case, its name will correspond to the previously selected one, and the navigation will be built taking into account all the changes made in the current route planning.  
+You can start navigating on the route you have just created. In this case, the name of the route will be in the form of a date, as in the case of a [quick save](#quick-save).  
+
+You should note that if a route you have created or changed has not been saved, all data will be lost when you close the navigation. To avoid this, you can save the route by tapping it in the navigation field and selecting edit.
+  
 
 ### Graph
 

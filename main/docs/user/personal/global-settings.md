@@ -335,8 +335,6 @@ OsmAnd can warn you about speed cameras, but only if the laws in your country pe
 
 ### Uninstall speed camera
 
-<InfoAndroidOnly />
-
 This setting allows you to activate or deactivate the speed camera POI ([speed camera alert widget](../widgets/nav-widgets.md#alert-widget)). In some countries or regions, using speed camera warning apps is illegal. You need to make a choice depending on the laws in your country. Select *Keep active* and you will receive speed camera alerts. Select *Delete* and all data related to speed cameras: alerts, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
  
 ![General Settings Cameras Android](@site/static/img/personal/profiles/speed_cam_andr.png)
