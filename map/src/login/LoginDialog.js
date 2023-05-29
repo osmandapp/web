@@ -34,7 +34,6 @@ export default function LoginDialog() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [changeEmailFlag, setChangeEmailFlag] = useState(false);
     const [accountInfo, setAccountInfo] = useState(null);
-    const [newEmailConfirmed, setNewEmailConfirmed] = useState(null);
 
     const navigate = useNavigate();
 
@@ -199,9 +198,6 @@ export default function LoginDialog() {
                 state === 'register-verify' ? 'Verify your email' : 'Login'
             )}</DialogTitle>
             <DialogContent>
-                {newEmailConfirmed && <Typography variant="inherit" noWrap>
-                    {"Login with new email"}
-                </Typography>}
                 <DialogContentText>
                     {state === 'register-verify' ?
                         `Please check your email, enter new strong password and enter verification code` :
