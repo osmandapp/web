@@ -31,9 +31,15 @@ export default function ChangeEmailDialog({setChangeEmailFlag, emailError, setEm
                 }
             })
         } else if (!code && newEmail) {
-            AccountManager.sendCode(newEmail, setEmailError).then((sent) => {
-                if (sent) {
-                    setCodeConfirmed(false);
+            AccountManager.getUser(newEmail).then((user) => {
+                if (user) {
+                    setEmailError(`User with this email already exist`);
+                } else {
+                    AccountManager.sendCode(newEmail, setEmailError).then((sent) => {
+                        if (sent) {
+                            setCodeConfirmed(false);
+                        }
+                    });
                 }
             });
         } else if (code && newEmail) {

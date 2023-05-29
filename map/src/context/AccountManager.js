@@ -1,4 +1,4 @@
-import {post} from "axios";
+import {post, get} from "axios";
 import Utils from "../util/Utils";
 
 
@@ -108,7 +108,7 @@ async function sendCode(email, setEmailError) {
                 'Content-Type': 'text/plain'
             }
         }).catch((error) => {
-            setEmailError(error.response.data)
+            setEmailError(error.response.data);
     });
     if (resp?.status === 200) {
         return true;
@@ -121,7 +121,7 @@ async function confirmCode(email, code, setEmailError) {
             headers: {
                 'Content-Type': 'text/plain'
             }
-        }).catch((error) => setEmailError(error.response.data));;
+        }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
     }
@@ -133,9 +133,28 @@ async function changeEmail(email, setEmailError) {
             headers: {
                 'Content-Type': 'text/plain'
             }
-        }).catch((error) => setEmailError(error.response.data));;
+        }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
+    }
+}
+
+async function getUser(email, setEmailError) {
+    const resp = await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/get-user`,
+        {
+            params: {
+                email: email
+            },
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        }).catch((error) => {
+        if (setEmailError) {
+            setEmailError(error.response.data);
+        }
+    });
+    if (resp?.status === 200) {
+        return resp.data;
     }
 }
 
@@ -147,7 +166,8 @@ const AccountManager = {
     userLogout,
     sendCode,
     confirmCode,
-    changeEmail
+    changeEmail,
+    getUser
 }
 
 export default AccountManager;
