@@ -83,10 +83,10 @@ export default function WaypointsTab({width}) {
     }
 
     // TODO
-    function addWaypoint() {
-        ctx.selectedGpxFile.addWpt = true;
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-    }
+    // function addWaypoint() {
+    //     ctx.selectedGpxFile.addWpt = true;
+    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    // }
 
     function showWithInfo(point) {
         return <>

@@ -229,7 +229,7 @@ export default class EditablePolyline {
 
             track.addPoint = false;
             track.dragPoint = false;
-            this.ctx.setSelectedGpxFile({... track});
+            this.ctx.setSelectedGpxFile({...track});
 
             this.ctx.setRoutingNewSegments([...segments])
 

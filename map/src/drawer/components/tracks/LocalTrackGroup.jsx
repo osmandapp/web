@@ -17,6 +17,7 @@ import {styled} from "@mui/material/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import TracksManager from "../../../context/TracksManager";
 import PopperMenu from "./PopperMenu";
+import _ from "lodash";
 
 
 export default function LocalTrackGroup() {
@@ -117,7 +118,12 @@ export default function LocalTrackGroup() {
         <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
             <div style={{maxHeight: '41vh', overflow: 'auto'}}>
                 <Actions files={ctx.localTracks} setSortFiles={setSortFiles}/>
-                {ctx.localTracks.length > 0 && ctx.localTracks.map((track, index) => {
+                {!_.isEmpty(sortFiles) && sortFiles.map((track, index) => {
+                    return <LocalTrackItem key={'track' + index}
+                                           track={track}
+                                           index={index}/>;
+                })}
+                {_.isEmpty(sortFiles) && ctx.localTracks.length > 0 && ctx.localTracks.map((track, index) => {
                     return <LocalTrackItem key={'track' + index}
                                            track={track}
                                            index={index}/>;

@@ -377,6 +377,7 @@ export default function LocalClientTrackLayer() {
             if (lastPoint.lat === prevPoint.lat || lastPoint.lng === prevPoint.lng) {
                 return p;
             }
+            return null;
         })
         if (trackHasRouting()) {
             newPoint.geometry = Utils.getPointsDist([{

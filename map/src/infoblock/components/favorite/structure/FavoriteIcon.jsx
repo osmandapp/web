@@ -43,7 +43,7 @@ export default function FavoriteIcon({favoriteIcon, setFavoriteIcon, currentIcon
                                   </svg>
                                   <img class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${icon}.svg">
                               </div>
-                              ` + ''
+                              `
                              }}/>
                     </ListItemButton>
                 </ListItem>
@@ -51,7 +51,7 @@ export default function FavoriteIcon({favoriteIcon, setFavoriteIcon, currentIcon
         </Box>
     }
 
-    favoriteIconCategories && Object.entries(favoriteIconCategories.categories).map((category, index) => {
+    favoriteIconCategories && Object.entries(favoriteIconCategories.categories).forEach(category => {
         tabs[category[0]] = <ListIcons
             key={category[0]}
             icons={category[1].icons}/>;
@@ -67,6 +67,7 @@ export default function FavoriteIcon({favoriteIcon, setFavoriteIcon, currentIcon
         if (item !== currentIconCategories && item !== FavoritesManager.DEFAULT_TAB_ICONS) {
             return <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>
         }
+        return null;
     }));
 
     list.length > 0 && currentIconCategories && list.unshift(<Tab

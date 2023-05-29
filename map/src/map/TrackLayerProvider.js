@@ -206,6 +206,7 @@ function getPolylineByPoints(point, polylines) {
                     return polyline;
                 }
             }
+            return null;
         })
     }
     return res;
@@ -217,6 +218,7 @@ function getPolylineByStartEnd(startPoint, endPoint, polylines) {
         if (TracksManager.isEqualPoints(layerPoints[0], startPoint) && TracksManager.isEqualPoints(layerPoints[layerPoints.length - 1], endPoint)) {
             return polyline;
         }
+        return null;
     })
 }
 

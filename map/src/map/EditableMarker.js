@@ -3,7 +3,6 @@ import MarkerOptions from "./markers/MarkerOptions";
 import TrackLayerProvider from "./TrackLayerProvider";
 import _ from "lodash";
 import TracksManager from "../context/TracksManager";
-import React from "react";
 import RoutingManager from "../context/RoutingManager";
 
 export default class EditableMarker {
@@ -139,7 +138,7 @@ export default class EditableMarker {
             currentPoint.lat = lat;
             currentPoint.lng = lng;
 
-            if (currentPoint.profile === TracksManager.PROFILE_LINE && !currentPoint.geometry || !currentPoint.profile) {
+            if (currentPoint.profile === TracksManager.PROFILE_LINE && (!currentPoint.geometry || !currentPoint.profile)) {
                 currentPolyline._latlngs[indPointInPolyline] = currentPoint;
                 currentPolyline.setLatLngs(currentPolyline._latlngs);
             } else {

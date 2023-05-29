@@ -3,7 +3,7 @@ import {styled} from '@mui/material/styles';
 import {Settings, RemoveCircle} from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
-    FormControl, InputLabel, Input, Select, Button, Typography, Link, Autocomplete
+    FormControl, InputLabel, Input, Select, Button, Typography, Link
 } from "@mui/material";
 import {
     ExpandLess, ExpandMore, Directions
