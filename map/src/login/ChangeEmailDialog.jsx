@@ -37,16 +37,10 @@ export default function ChangeEmailDialog({setChangeEmailFlag, emailError, setEm
                 }
             });
         } else if (code && newEmail) {
-            AccountManager.confirmCode(newEmail, code, setEmailError).then((confirm) => {
-                if (confirm) {
-                    setCode(null);
-                    setCodeConfirmed(true);
-                    AccountManager.changeEmail(newEmail, setEmailError).then((changed) => {
-                        if (changed) {
-                            ctx.setUserEmail(newEmail);
-                            ctx.setLoginUser(null);
-                        }
-                    })
+            AccountManager.changeEmail(newEmail, code, setEmailError).then((changed) => {
+                if (changed) {
+                    ctx.setUserEmail(newEmail);
+                    ctx.setLoginUser(null);
                 }
             })
         }

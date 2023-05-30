@@ -127,13 +127,18 @@ async function confirmCode(email, code, setEmailError) {
     }
 }
 
-async function changeEmail(email, setEmailError) {
-    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, email,
+async function changeEmail(email, token, setEmailError) {
+    const data = {
+        username: email,
+        password: null,
+        token: token
+    }
+    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data,
         {
             headers: {
-                'Content-Type': 'text/plain'
+                'Content-Type': 'application/json'
             }
-        }).catch((error) => setEmailError(error.response.data));;
+        }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
     }
