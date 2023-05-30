@@ -166,6 +166,7 @@ function deleteOldTempLayer(ctx, point) {
         if (l.point === point) {
             return l;
         }
+        return null;
     })
     if (layer) {
         layer.point = 'null';

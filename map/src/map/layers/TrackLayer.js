@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import {useContext, useEffect} from 'react';
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";

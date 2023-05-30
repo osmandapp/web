@@ -80,11 +80,11 @@ You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)*
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
 5. **Other**: 
-    - *Announce GPS signal loss and recovery* and *Announce route recalculation*.
+    - *Announce GPS signal loss and recovery*, *Announce route recalculation*, *Announce deviation from the route*.
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
     - *[Announcement time](#announcement-time)*.  
-7. **Output** (for Android version):
+7. **Output** (<u>for Android version</u>):
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.   
 

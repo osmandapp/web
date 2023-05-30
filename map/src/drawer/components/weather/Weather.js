@@ -8,7 +8,7 @@ import {
 import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
-import AppContext, {toHHMMSS} from "../../../context/AppContext"
+import AppContext from "../../../context/AppContext"
 
 
 async function displayWeather(ctx, setWeatherPoint) {
