@@ -14,10 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.
-
-
 ## Overview
+
+Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.  
 
 Trip recording plugin is used to create new tracks, display recorded tracks on the map and work with existing records. It helps you analyze data such as speed, ascents, descents, or terrain features during your trip. The route can be recorded while navigating or simply on the go.
 
@@ -68,7 +67,7 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 <TabItem value="ios" label="iOS">
 
 - Use the [Distance/Start-Stop widget](#distance-start-stop).
-- Use the **<Translate ios="true" ids="track_recording_name"/>** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate ios="true" ids="shared_string_menu,menu_my_places,shared_string_gpx_tracks"/> tab*.
+- Use the **<Translate ios="true" ids="shared_string_currently_recording_track"/>** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*.
 
 </TabItem>
 
@@ -77,6 +76,7 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 :::tip Note
 For this options to work properly, we recommend that you allow OsmAnd to get the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.  
 :::
+
 
 ### Start a Dialog
 
@@ -111,8 +111,9 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 </Tabs>
 
-:::info TROUBLESHOOTING  
-For more information about troubleshooting, read [Track recording](../troubleshooting/track-recording-issues)  
+:::warning TROUBLESHOOTING  
+Your *iOS device* may temporarily **suspend or stop apps** from running in the background.  
+For more information about all troubleshooting, read the [*Track recording*](../troubleshooting/track-recording-issues) in the appropriate documentation section. 
 :::
 
 
@@ -177,7 +178,7 @@ Here you can find more helpful information about [Tracks context menu](../map/tr
 
 ### Show on the map
 
-You can choose which tracks are displayed on the map and which are not. To do this, you can use the option *Add to map* in *<Translate ios="true" ids="shared_string_menu,menu_my_places,shared_string_gpx_tracks"/> tab*, or use *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> tab*.  
+You can choose which tracks are displayed on the map and which are not. To do this, you can use the option *Show on map* or *Visible on map* in *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*, or use *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_gpx_files"/>*.  
 
 <Tabs groupId="operating-systems">
 

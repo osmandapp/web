@@ -103,33 +103,28 @@ Read about Android Auto [here](../navigation/auto-car.md)
 
 ### Display language
 
-The display language (language of menus, pop-up prompts, internal text messages, and names on the map at zoom levels 2-6) for Android and iOS devices can be set through the system settings menu. You can keep the same language that is installed on your device, or select any other language from the list.  
+Display language is the setting of the language of the entire application, pop-up prompts, internal text, messages, etc. For Android system this can be done in the application, for iOS system - through the iOS settings. You can use the language installed on your device or select any other language from the list. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*Android Settings  → OsmAnd → Language*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*
 
-![Change Language Android](@site/static/img/personal/profiles/map_language_andr_1.png) ![Change Language Android 2](@site/static/img/personal/profiles/map_language_andr_2.png)
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*iOS Settings  → OsmAnd maps → Language*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings"/> → OsmAnd maps → Language*
 
-![Change Language iOS](@site/static/img/personal/profiles/map_language_ios_1.png) ![Change Language iOS 2](@site/static/img/personal/profiles/map_language_ios_2.png)
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-:::note
-- Names on the map at zoom levels 7-20 (inclusive) is set via the Сonfigure Map menu inside the OsmAnd app (see [Map language](../map/vector-maps.md#map-language) article).
-- In versions of the OsmAnd prior to 4.4. (Android)  you can change display language inside the app in the Settings menu:  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*.
-:::
 
 ### Data storage folder
 
