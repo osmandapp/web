@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-Common issues with track recording: Noise, gaps, and inaccuracies
+Common issues with track recording: Noise, gaps, and inaccuracies.
 
 This article addresses issues with GPX track recording which have been observed over time in different Android versions. **'Background'** means to simply refer to the OsmAnd app not being displayed in the foreground, in particular when the device screen is off (which is different from the Android-internal definition of 'background').
 
@@ -54,8 +54,17 @@ For outdoor use (screen brightness), map rendering (CPU limit), and track record
 * Update OsmAnd to 3.9 or higher. Different Android versions apply different strategies to reduce power consumption [by killing apps running in the background](https://dontkillmyapp.com/). New versions of OsmAnd therefore deploy a Foreground service during navigation or while recording a trip, visible in the Android notification bar. This should keep the app active on most systems, at least under Android 8+ (Issues [\#5255](https://github.com/osmandapp/Osmand/issues/5255), [\#5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
 ### In Android, try these steps
-* On some systems it may be sufficient to just exempt the OsmAnd app from power optimization, your mileage may vary: In your **Android's** Power or Power Savings setting, white-list OsmAnd to not being optimized: In **Android's** 'Apps', 'Applications', or 'App Manager' settings, find OsmAnd and tap it. You may find a line item regarding 'Power Savings' or 'Power Consumption': Tap it and exempt OsmAnd from power optimization measures. ([Issue \#5255](https://github.com/osmandapp/Osmand/issues/5255))
-* Disable the Android Power Saving on your device, this often helps for older Android versions
+
+* On some systems it may be sufficient to just exempt the OsmAnd app from power optimization, your mileage may vary: In your **Android's** Power or Power Savings setting, white-list OsmAnd to not being optimized: In **Android's** 'Apps', 'Applications', or 'App Manager' settings, find OsmAnd and tap it. You may find a line item regarding 'Power Savings' or 'Power Consumption': Tap it and exempt OsmAnd from power optimization measures. ([Issue \#5255](https://github.com/osmandapp/Osmand/issues/5255)).
+* Disable the Android Power Saving on your device, this often helps for older Android versions.
+
+### In iOS
+
+An iOS device may sometimes temporarily suspend or stop apps from running in the background. The system does this automatically when it reassigns processes. The OsmAnd app cannot fix or affect the system in such cases.   
+
+When track recording is active and you lock the device, the recording stops. And a gap or straight line appears in this recording in the part where the screen was turned off. To fix this, you can edit your track with the [Plan a route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
+
+You can read more information [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 
 ### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25)
 
