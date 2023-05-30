@@ -80,30 +80,30 @@ export default function LoginDialog() {
             <Dialog classes={{paper: classes.paper}} open={true} onClose={handleClose}>
                 <DialogTitle sx={{color: '#f8931d'}}>{ctx.loginUser}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
+                    <DialogContentText component={'span'}>
                         <Divider/>
                         {!ctx.listFiles || !ctx.listFiles.userid ? <></> :
-                            <div>
-                                <Typography variant="h6" noWrap>
+                            <>
+                                <Typography component={'span'} variant="h6" noWrap>
                                     {`Files info:`}
                                 </Typography>
                                 <MenuItem>
                                     <ListItemText>
-                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                             {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions)`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
                                 <MenuItem sx={{mt: -1}}>
                                     <ListItemText>
-                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                             {`Total files size: ${(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
                                 <MenuItem sx={{mt: -1}}>
                                     <ListItemText>
-                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                             {`Cloud storage used: ${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`}
                                         </Typography>
                                     </ListItemText>
@@ -113,16 +113,16 @@ export default function LoginDialog() {
                                       target="_blank">Download backup
                                     ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB
                                 </Link>
-                            </div>
+                            </>
                         }
                         <Divider sx={{mt: 1}}/>
-                        {accountInfo && <div>
-                            <Typography variant="h6" noWrap>
+                        {accountInfo && <>
+                            <Typography component={'span'} variant="h6" noWrap>
                                 {`Account info:`}
                             </Typography>
                             <MenuItem>
                                 <ListItemText>
-                                    <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                    <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                         {`Subscription: ${accountInfo.account} `}
                                         {accountInfo.type && `(type: ${accountInfo.type})`}
                                     </Typography>
@@ -131,20 +131,20 @@ export default function LoginDialog() {
                             {accountInfo.startTime && accountInfo.expireTime && <>
                                 <MenuItem sx={{mt: -1}}>
                                     <ListItemText>
-                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                             {`Start time: ${accountInfo.startTime}`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
                                 <MenuItem sx={{mt: -1}}>
                                     <ListItemText>
-                                        <Typography sx={{ml: 1}} variant="body2" noWrap>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
                                             {`Expire time: ${accountInfo.expireTime}`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
                             </>}
-                        </div>}
+                        </>}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -166,7 +166,10 @@ export default function LoginDialog() {
                         variant="contained"
                         component="span"
                         sx={{backgroundColor: '#ff595e !important', ml: 3}}
-                        onClick={() => setDeleteAccountFlag(true)}>
+                        onClick={() => {
+                            setDeleteAccountFlag(true);
+                            AccountManager.sendCode(ctx.loginUser).then();
+                        }}>
                         Delete your account
                     </Button>
                     <Link sx={{marginRight: "auto", fontSize: "10pt", ml: 2, color: '#ff595e'}}
@@ -178,16 +181,8 @@ export default function LoginDialog() {
                           }}>
                         Change email
                     </Link>
-                    {deleteAccountFlag && <DeleteAccountDialog handleClose={handleClose}
-                                                               setDeleteAccountFlag={setDeleteAccountFlag}
-                                                               emailError={emailError}
-                                                               setEmailError={setEmailError}
-                                                               setState={setState}
-                                                               toggleOpenDangerousArea={toggleOpenDangerousArea}/>}
-                    {changeEmailFlag && <ChangeEmailDialog setChangeEmailFlag={setChangeEmailFlag}
-                                                           emailError={emailError}
-                                                           setEmailError={setEmailError}
-                                                           ctx={ctx}/>}
+                    {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag}/>}
+                    {changeEmailFlag && <ChangeEmailDialog setChangeEmailFlag={setChangeEmailFlag}/>}
                 </Box>}
             </Dialog>);
 
