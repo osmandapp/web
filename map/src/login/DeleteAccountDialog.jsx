@@ -9,11 +9,14 @@ import React, {useContext, useState} from "react";
 import AccountManager from "../context/AccountManager";
 import AppContext from "../context/AppContext";
 
-export default function DeleteAccountDialog({setDeleteAccountFlag, emailError, setEmailError, setState, handleClose, toggleOpenDangerousArea}) {
+export default function DeleteAccountDialog({setDeleteAccountFlag}) {
 
     const ctx = useContext(AppContext);
 
-    const [userEmailConfirmDelete, setUserEmailConfirmDelete] = useState(null);
+    const [userEmail, setUserEmail] = useState(null);
+    const [code, setCode] = useState(null);
+    const [emailError, setEmailError] = useState('');
+
 
     return <Dialog open={true} onClose={() => setDeleteAccountFlag(false)}>
         <Grid container spacing={2}>
@@ -45,7 +48,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag, emailError, s
                     if (emailError !== '') {
                         setEmailError('')
                     }
-                    setUserEmailConfirmDelete(e.target.value);
+                    setUserEmail(e.target.value);
                 }}
                 id="username-delete"
                 label="Your email address"
@@ -54,16 +57,29 @@ export default function DeleteAccountDialog({setDeleteAccountFlag, emailError, s
                 variant="standard"
                 helperText={emailError ? emailError : ''}
                 error={emailError.length > 0}
-                value={userEmailConfirmDelete ? userEmailConfirmDelete : ''}
+                value={userEmail ? userEmail : ''}
             >
             </TextField>
+            <TextField
+                margin="dense"
+                onChange={(e) => {
+                    setEmailError('');
+                    setCode(e.target.value);
+                }}
+                id="code"
+                label="Code from Email"
+                type="text"
+                fullWidth
+                variant="standard"
+                value={code}
+            ></TextField>
         </DialogContent>
         <DialogActions>
             <Button
                 variant="contained"
                 component="span"
                 sx={{backgroundColor: '#ff595e !important', ml: 2}}
-                onClick={() => AccountManager.deleteAccount(userEmailConfirmDelete, setEmailError, setState, handleClose, ctx, toggleOpenDangerousArea)}>
+                onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, ctx)}>
                 Delete this account
             </Button>
         </DialogActions>

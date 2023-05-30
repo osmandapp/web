@@ -6,19 +6,22 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import AccountManager from "../context/AccountManager";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
+import AppContext from "../context/AppContext";
 
 const useStyles = makeStyles(() => ({
     paper: {minWidth: "100vh"},
 }));
-export default function ChangeEmailDialog({setChangeEmailFlag, emailError, setEmailError, ctx}) {
+export default function ChangeEmailDialog({setChangeEmailFlag}) {
 
+    const ctx = useContext(AppContext);
     const classes = useStyles();
 
     const [newEmail, setNewEmail] = useState(null);
     const [code, setCode] = useState(null);
     const [codeConfirmed, setCodeConfirmed] = useState(null);
+    const [emailError, setEmailError] = useState('');
 
 
     function handleNext() {
@@ -37,16 +40,10 @@ export default function ChangeEmailDialog({setChangeEmailFlag, emailError, setEm
                 }
             });
         } else if (code && newEmail) {
-            AccountManager.confirmCode(newEmail, code, setEmailError).then((confirm) => {
-                if (confirm) {
-                    setCode(null);
-                    setCodeConfirmed(true);
-                    AccountManager.changeEmail(newEmail, setEmailError).then((changed) => {
-                        if (changed) {
-                            ctx.setUserEmail(newEmail);
-                            ctx.setLoginUser(null);
-                        }
-                    })
+            AccountManager.changeEmail(newEmail, code, setEmailError).then((changed) => {
+                if (changed) {
+                    ctx.setUserEmail(newEmail);
+                    ctx.setLoginUser(null);
                 }
             })
         }
@@ -124,7 +121,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag, emailError, setEm
 
         </DialogContent>
         <DialogActions>
-            <Button disabled={emailError} onClick={handleNext}>{code && newEmail ? 'Finish' : 'Next'}</Button>
+            <Button disabled={emailError !== ''} onClick={handleNext}>{code && newEmail ? 'Finish' : 'Next'}</Button>
         </DialogActions>
     </Dialog>
 }
