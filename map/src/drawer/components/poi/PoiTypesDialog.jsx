@@ -58,7 +58,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     };
 
     useEffect(() => {
-        setSearchOptions(Object.keys(ctx.poiCategory));
+        let categories = Object.keys(ctx.poiCategory);
+        categories = removeUnusedPoiCategories(categories)
+        setSearchOptions(categories);
     }, [])
 
     function showPoiCategoriesOnMap() {
@@ -134,6 +136,16 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }
 
+    function formattingPoiCategory(category) {
+        category = category.replaceAll("_", " ");
+        category = category.charAt(0).toUpperCase() + category.slice(1);
+        return category;
+    }
+
+    function removeUnusedPoiCategories(categories) {
+        return categories.filter(category => category !== 'user_defined_other' && category !== 'osmwiki')
+    }
+
 
     return (
         <Dialog open={dialogOpen} onClose={toggleShowDialog}>
@@ -160,8 +172,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                 if (reason === 'clear') {
                                     setSearchOptions(Object.keys(ctx.poiCategory));
                                 }
-                                setSelectedPoiCategory(newValue);
-                                getPoiTypesByCategory(newValue);
+                                const selectedPoiCategory = formattingPoiCategory(newValue);
+                                setSelectedPoiCategory(selectedPoiCategory);
+                                getPoiTypesByCategory(selectedPoiCategory);
                             }}
                             renderInput={params => (
                                 <TextField
@@ -196,7 +209,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                                      src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
                                             </div>
                                         </ListItemIcon>
-                                        {option}
+                                        {formattingPoiCategory(option)}
                                     </MenuItem>
                                 </div>}
                         />
