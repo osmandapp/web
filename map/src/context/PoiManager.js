@@ -2,6 +2,7 @@ import {get} from "axios";
 import icons from "../generated/poiicons.json";
 
 const POI_CATEGORIES = 'poiCategories';
+const TOP_POI_FILTERS = 'topPoiFilters';
 const DEFAULT_POI_ICON = "craft_default";
 const DEFAULT_POI_COLOR = '#f8931d';
 const DEFAULT_SHAPE_COLOR = 'circle';
@@ -16,7 +17,19 @@ async function getPoiCategories() {
             return response.data;
         }
     }
+}
 
+async function getTopPoiFilters() {
+    let filters = JSON.parse(localStorage.getItem(TOP_POI_FILTERS));
+    if (filters?.length > 0) {
+        return filters;
+    } else {
+        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-top-filters`);
+        if (response.data) {
+            localStorage.setItem(TOP_POI_FILTERS, JSON.stringify(response.data))
+            return response.data;
+        }
+    }
 }
 
 async function searchPoiCategories(search) {
@@ -32,10 +45,12 @@ async function searchPoiCategories(search) {
 }
 
 function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) {
-    if (icons.includes(`mx_${iconKeyName}.svg`)) {
+    if (icons.includes(`mx_${typeOsmTag}_${typeOsmValue}.svg`)) {
+        return `${typeOsmTag}_${typeOsmValue}`;
+    } else if (icons.includes(`mx_${iconKeyName}.svg`)) {
         return iconKeyName;
-    } else if (icons.includes(`mx_${typeOsmTag} ${typeOsmValue}.svg`)) {
-        return `${typeOsmTag} ${typeOsmValue}`;
+    }else if (icons.includes(`mx_topo_${iconKeyName}.svg`)) {
+        return `topo_${iconKeyName}`;
     } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
         return iconName;
     } else {
@@ -47,6 +62,7 @@ const PoiManager = {
     getPoiCategories,
     searchPoiCategories,
     getIconNameForPoiType,
+    getTopPoiFilters,
     DEFAULT_POI_ICON: DEFAULT_POI_ICON,
     DEFAULT_POI_COLOR: DEFAULT_POI_COLOR,
     DEFAULT_SHAPE_COLOR: DEFAULT_SHAPE_COLOR

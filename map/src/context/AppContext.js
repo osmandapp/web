@@ -502,7 +502,13 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         PoiManager.getPoiCategories(setLocalTracksLoading).then((categories) => {
-            setPoiCategories(categories);
+            PoiManager.getTopPoiFilters(setLocalTracksLoading).then((filters) => {
+                setPoiCategories(
+                    {
+                        categories: categories,
+                        filters: filters
+                    });
+            })
         })
     }, []);
 

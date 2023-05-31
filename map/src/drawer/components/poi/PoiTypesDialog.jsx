@@ -58,10 +58,16 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     };
 
     useEffect(() => {
-        let categories = Object.keys(ctx.poiCategory);
-        categories = removeUnusedPoiCategories(categories)
+        let categories = Object.keys(ctx.poiCategory.categories);
+        categories = removeUnusedPoiCategories(categories);
         setSearchOptions(categories);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if (selectedPoiCategory) {
+            getPoiTypesByCategory(selectedPoiCategory);
+        }
+    }, [selectedPoiCategory]);
 
     function showPoiCategoriesOnMap() {
         if (selectedPoiCategory) {
@@ -69,32 +75,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
             categories.push(selectedPoiCategory);
             ctx.setShowPoiCategories([...categories]);
             setDialogOpen(false);
-        }
-    }
-
-    function getPoiTypes() {
-        if (ctx.poiCategory && !_.isEmpty(ctx.poiCategory)) {
-            let res = [];
-            Object.keys(ctx.poiCategory).forEach(category => {
-                const types = ctx.poiCategory[category];
-                types.forEach(type => {
-                    if (!ctx.showPoiCategories.includes(type)) {
-                        res[`${type}`] = getPoiTypeIcon(type);
-                    }
-                })
-            })
-            return res;
-        }
-    }
-
-    function getPoiTypeIcon(type) {
-        const category = Object.keys(ctx.poiCategory).find(category => ctx.poiCategory[category].includes(type));
-        if (icons.includes(`mx_${category}_${type}.svg`)) {
-            return `${category}_${type}`;
-        } else if (icons.includes(`mx_${type}.svg`)) {
-            return type;
-        } else {
-            return PoiManager.DEFAULT_POI_ICON;
         }
     }
 
@@ -130,16 +110,26 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
 
     function getPoiTypesByCategory(newValue) {
         const category = newValue?.toLowerCase();
-        if (ctx.poiCategory[category]) {
-            setPoiTypesResult(ctx.poiCategory[category]);
-            setSearchOptions(ctx.poiCategory[category]);
+        if (ctx.poiCategory.categories[category]) {
+            setPoiTypesResult(ctx.poiCategory.categories[category]);
+            setSearchOptions(ctx.poiCategory.categories[category]);
         }
     }
 
     function formattingPoiCategory(category) {
-        category = category.replaceAll("_", " ");
-        category = category.charAt(0).toUpperCase() + category.slice(1);
+        if (category) {
+            category = formattingPoiFilter(category);
+            category = category.replaceAll("_", " ");
+            category = category.charAt(0).toUpperCase() + category.slice(1);
+        }
         return category;
+    }
+
+    function formattingPoiFilter(filter) {
+        if (filter) {
+            filter = filter.replaceAll("_filter", "");
+        }
+        return filter;
     }
 
     function removeUnusedPoiCategories(categories) {
@@ -170,11 +160,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                             value={selectedPoiCategory}
                             onChange={(event, newValue, reason) => {
                                 if (reason === 'clear') {
-                                    setSearchOptions(Object.keys(ctx.poiCategory));
+                                    setSearchOptions(Object.keys(ctx.poiCategory.categories));
                                 }
-                                const selectedPoiCategory = formattingPoiCategory(newValue);
-                                setSelectedPoiCategory(selectedPoiCategory);
-                                getPoiTypesByCategory(selectedPoiCategory);
+                                setSelectedPoiCategory(formattingPoiCategory(newValue));
                             }}
                             renderInput={params => (
                                 <TextField
@@ -231,11 +219,11 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     </div>
                 </Grid>
                 <Grid container spacing={2}>
-                    {Object.keys(ctx.poiCategory).map((item, key) =>
+                    {ctx.poiCategory.filters.map((item, key) =>
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
-                                          setSelectedPoiCategory(item)
+                                          setSelectedPoiCategory(formattingPoiCategory(item))
                                       }}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
@@ -245,10 +233,11 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                             <circle cx="24" cy="24" r="12" fill="#f8931d"/>
                                         </svg>
                                         <img className="icon"
-                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${item}.svg`}/>
+                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${formattingPoiFilter(item)}.svg`}/>
                                     </div>
                                 </ListItemIcon>
-                                {item}</MenuItem>
+                                {formattingPoiCategory(item)}
+                            </MenuItem>
                         </Grid>)}
                 </Grid>
             </DialogContent>
