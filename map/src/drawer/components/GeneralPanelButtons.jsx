@@ -2,12 +2,10 @@ import {ButtonGroup, IconButton, Paper, Tooltip} from "@mui/material";
 import TracksManager from "../../context/TracksManager";
 import {Create, Info, Upload} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
-import {Create, Info, Upload} from "@mui/icons-material";
-import React, {useContext} from "react";
 import AppContext from "../../context/AppContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {styled} from "@mui/material/styles";
-import PoiTypesDialog from "../PoiTypesDialog";
+import PoiTypesDialog from "./poi/PoiTypesDialog";
 
 const useStyles = makeStyles({
     buttongroup: {

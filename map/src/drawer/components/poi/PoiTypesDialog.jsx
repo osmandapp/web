@@ -13,13 +13,13 @@ import {
 import React, {useContext, useState} from "react";
 import {Close, Search} from "@mui/icons-material";
 import {Checkbox, FormControlLabel, MenuItem} from "@mui/material/";
-import AppContext from "../context/AppContext";
-import MarkerOptions from "../map/markers/MarkerOptions";
+import AppContext from "../../../context/AppContext";
+import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
-import drawerStyles from "./styles/DrawerStyles";
+import drawerStyles from "../../styles/DrawerStyles";
 import _ from "lodash";
-import PoiManager from "../context/PoiManager";
-import icons from "../generated/poiicons.json"
+import PoiManager from "../../../context/PoiManager";
+import icons from "../../../generated/poiicons.json"
 
 const useStyles = makeStyles({
     icon: {
@@ -104,7 +104,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
             const searchResult = await PoiManager.searchPoiCategories(value);
             if (searchResult) {
                 setPoiTypesResult(searchResult);
-                setSearchOptions(Object.keys(poiTypesResult));
+                if (poiTypesResult) {
+                    setSearchOptions(Object.keys(poiTypesResult));
+                }
             }
         } else {
             setPoiTypesResult(null);
@@ -173,8 +175,8 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                             id="category"
                             options={searchOptions}
                             renderOption={(props, option) =>
-                                <div className={styles.drawerItem}>
-                                    <MenuItem key={option + "menu"} {...props}>
+                                <div key={option + "menu"} className={styles.drawerItem}>
+                                    <MenuItem {...props}>
                                         <ListItemIcon sx={{mr: '-15px'}}>
                                             <div className={classes.icon}>
                                                 <svg className="background" viewBox="0 0 48 48"
@@ -191,8 +193,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         />
                     </Grid>
                     <Grid item xs={2}>
-                        <IconButton sx={{mt: '5px'}} type="button" aria-label="search">
-                            <Search onClick={showPoiCategoriesOnMap}/>
+                        <IconButton sx={{mt: '5px'}} type="button" aria-label="search"
+                                    onClick={showPoiCategoriesOnMap}>
+                            <Search/>
                         </IconButton>
                     </Grid>
                     <div style={{marginLeft: '15px'}}>
