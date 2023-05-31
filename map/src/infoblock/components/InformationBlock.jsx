@@ -103,7 +103,7 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
                 sx={{alignContent: "flex-end", height: '100vh', overflow: 'auto', width: '800px !important'}}
                 >
                 <div>
-                    {ctx.loadingContextMenu || ctx.gpxLoading && <LinearProgress size={20}/>}
+                    {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20}/>}
                     {tabsObj && tabsObj.tabList.length > 0 &&
                         <TabContext value={value}>
                             <AppBar position="static" color="default">

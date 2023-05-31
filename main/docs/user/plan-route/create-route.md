@@ -219,12 +219,12 @@ There are four ways to save:
 
 With this option you can save any track without even modifying it.  
 
-- Add at least one point to the map or open a previously created track.
-- Go to the menu *Options → Save as a new track*.
-- Write a name for the track, and select a folder from the list.
-- Enable displaying the track on the map, if required.
-- You can use the *Simplified track* feature if you want to delete all previously recorded waypoints from the track and save the route line only.  
-- After you tap the *Save* button, a dialogue opens informing you that the track has been saved and suggesting the next steps. You can [*open the track*](../personal/tracks.md#options-of-context-menu), *share* it, reopen the Plan a route to [*create a new route*](#create-new-route), or *Exit*.  
+1. Add at least one point to the map or open a previously created track.
+2. Go to the menu *Options → Save as a new track*.
+3. Write a name for the track, and select a folder from the list.
+4. Enable displaying the track on the map, if required.
+5. You can use the *Simplified track* feature if you want to delete all previously recorded waypoints from the track and save the route line only.  
+6. After you tap the *Save* button, a dialogue opens informing you that the track has been saved and suggesting the next steps. You can [*open the track*](../personal/tracks.md#options-of-context-menu), *share* it, reopen the Plan a route to [*create a new route*](#create-new-route), or *Exit*.  
 
 You can optionally change the name and folder later in *Menu → My Places → Tracks tab*. For more information about this and about displaying the track on the map, see the article [Tracks](../personal/tracks.md#manage-tracks).  
 
@@ -305,6 +305,8 @@ When creating a new track or editing an existing one, you can use this option to
 
 </Tabs>  
 
+In order to measure a distance or plan a journey, you need to establish landmarks on the map, namely points to plot a route. 
+
 - Text What is a Point
 - [How to create points](#how-to-create-points)
 - How to swap and delete points in a list
@@ -313,8 +315,13 @@ When creating a new track or editing an existing one, you can use this option to
 
 #### Add points
 
-Adds a point at the location of the *Pointer* in the center of the visible part of the map.  
-Move your finger on the map (gesture link). A straight dotted line will be visible from the last (first) point. the next point will always be located in the center of the screen. to add a point, tap Add Point. To add a point that is not a pointer, tap anywhere on the screen. you can use the action arrows to cancel or return canceled actions.    
+Adds a point at the *Pointer* location in the center of the visible part of the map.  
+Swipe your [finger across the map](../map/interact-with-map.md#gestures). A straight dotted line will be visible from the outermost point. The next point will always be in the centre of the screen. To add a new point, tap the Add Point button. To add a non-pointer point, tap anywhere on the screen. You can use the action arrows to cancel or return to a cancelled action.
+  
+
+#### List of Points
+
+The distance to the first point on a straight line
 
 
 ### Point Context menu
@@ -335,19 +342,23 @@ Move your finger on the map (gesture link). A straight dotted line will be visib
 
 </Tabs>    
 
-Tap a point from *Points list* or on the map to open Point Contecst menu   
+Each point on your route has its own context menu. It shows the *sequence number* of the point, the *distance from the start of the route*, the function to move it on the map and remove it, and a set of actions with sections of the route before and after this point. To edit, tap the required point in the [list of points](#list-of-points) or directly on the map.     
 
-1. *Point info*:  Point number in the list. The distance to the first point on a straight line.
-2. *<Translate ios="true" ids="move_point"/>* - <Translate ios="true" ids="move_point_descr"/> 
-3. *<Translate ios="true" ids="add_point_after"/>* - Move map to add points after a chosen point.  
-4. *<Translate ios="true" ids="add_point_before"/>* - Move map to add points before a chosen point.  
-5. *<Translate ios="true" ids="trim_before"/>* - The trim route before a chosen point.  
-6. *<Translate ios="true" ids="trim_after"/>* - The trim route after a chosen point. 
-7. *<Translate ios="true" ids="plan_route_split_before"/>* - Split route before a chosen point.   
-8. *<Translate ios="true" ids="plan_route_split_after"/>* - Split route after a chosen point. 
-9. [*<Translate ios="true" ids="change_route_type_before"/>*](#change-route-type) - Change route type (application profile) before a chosen point. 
-10. [*<Translate ios="true" ids="change_route_type_after"/>*](#change-route-type) - Change route type (application profile) after a chosen point.  
-11. *<Translate ios="true" ids="delete_point"/>* - Delete chosen point from the route.  
+- ***Information about the point***. The number of the point in the list. And the distance to the first point based on the routing type set, the distance may change when recalculated to the new type if the *Route between points* parameter is changed.  
+- ***<Translate ios="true" ids="move_point"/>*** - Allows you to change the position of a point on the map. Move the map using gestures to change the location of the point. The point indicator will be in the centre of the visible part of the map. 
+- ***<Translate ios="true" ids="add_point_after"/>*** - Move the map to add an additional point after the selected point. You can add as many points as you need until you tap cancel or apply.
+- ***<Translate ios="true" ids="add_point_before"/>*** - Move the map to add as many points as necessary after the selected point on the segment between this point and the next one.
+- ***<Translate ios="true" ids="trim_before"/>*** - You can trim the whole section of the route, points and segments, from its start to the selected point. The distance to be trimmed is indicated under the option name.  
+
+- ***<Translate ios="true" ids="trim_after"/>*** - You can trim a route, points and segments, from the last point added to the selected point. The distance to be trimmed is indicated under the option name. 
+
+- ***<Translate ios="true" ids="plan_route_split_before"/>*** - Allows to split the route before the selected point into separate unconnected segments.   
+
+- ***<Translate ios="true" ids="plan_route_split_after"/>*** - Allows to split the route after the selected point into separate unconnected segments. 
+- ***<Translate ios="true" ids="join_segments"/>*** - The last point on one of the split segments and the next in the list of points on the other segment have this connection setting.
+- [*<Translate ios="true" ids="change_route_type_before"/>*](#change-route-type) - You can change the connection mode, the routing type configured on the available profile, between points on the previous segment, or for all segments from the start of the route to the selected point.
+- [*<Translate ios="true" ids="change_route_type_after"/>*](#change-route-type) - You can change the routing type between points on the next segment or for all segments from the selected point to the last added point.
+- ***<Translate ios="true" ids="delete_point"/>*** - Remove the selected point from the route. Similar to deleting a point in a list.    
 
 
 ### Route between points
@@ -373,7 +384,7 @@ Tap a point from *Points list* or on the map to open Point Contecst menu
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
-With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the profiles that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.   
+With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the [profiles](../navigation/routing/index.md) that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.   
 
 - *Whole track* - The whole track will be recalculated using the selected profile.
 - *Next segment* - Only the next segment will be recalculated using the selected profile.  
@@ -407,10 +418,12 @@ The setting provides information about the distance from this point to the begin
 
 A segment is a section of a road, the distance between two points. The whole route consists of a set of segments you have set up, connected to each other or spaced apart from each other. 
 
+
 #### Start new segment
 
 Allows you to start creating a new route segment away from the previous segment.  
 A segment is a section of a route between two points that have already been calculated for a given routing type.
+
 
 #### Route calculation
 
@@ -441,7 +454,7 @@ By default, the routing type will match the previously selected profile, click o
 
 </Tabs>  
 
-The Route line shows an [automatically-generated road or straight route](../plan-route/create-route.md#creating-a-route) which you can save like a GPX track.  
+The Route line shows an automatically-generated road or straight route which you can save like a GPX track.  
 
 1. Profile icon (Android). It*s mean that this segment was built by this profile routing.
 2. Shaping points - basic points building the route.

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useContext, useState} from 'react';
+import {useEffect, useRef, useContext, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import {MapContainer, TileLayer, ZoomControl, Marker, ScaleControl} from "react-leaflet";
 import AppContext from "../../context/AppContext";
@@ -77,13 +77,12 @@ const OsmAndMap = () => {
     const [geocodingData, setGeocodingData] = useState(null);
 
     const ctx = useContext(AppContext);
-    let hash = null;
     const [hoverPoint, setHoverPoint] = useState(null);
 
     const whenReadyHandler = event => {
         const {target: map} = event;
         if (map) {
-            hash = new L.Hash(map);
+            new L.Hash(map);
             map.attributionControl.setPrefix('');
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {

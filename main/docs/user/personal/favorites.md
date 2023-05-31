@@ -123,12 +123,11 @@ After, you can choose color and shape for favorite icon.
 
 ![Favorite color and shape iOS](@site/static/img/personal/favorite_color_shape_ios.png)
 
-In 'Actions', you can replace another point with this. For Android, this 'Replace' button repeats in up corner of 'Add favorite' menu.
+In *Actions*, you can replace another point with this. For Android, this *Replace* button repeats in up corner of *Add favorite* menu.
 
-After creation, you can click 'Save' button for saving new Favorite point or 'Cancel' button for canceling point creation.
+After creation, you can click *Save* button for saving new Favorite point or *Cancel* button for canceling point creation.
 
 ![Favorite actions iOS](@site/static/img/personal/favorite_actions_ios.png)
-
 
 </TabItem>
 
@@ -140,8 +139,7 @@ To edit a Favorite point you need [to short tap](../map/map-context-menu.md#sele
 
 After that, you need to choose [*Edit favorite* button in *Map Context menu*](../map/map-context-menu.md#add--edit-favorite).  
 
-'Edit favorite' menu opens. It's look like ['Add favorite' menu](../personal/favorites.md#create). But in Action part there is one more action - 'Delete' button. For Android, there is additional 'Delete' button in up corner of 'Edit favorite' menu.  
-
+*Edit favorite* menu opens. It's look like *[Add favorite*](../personal/favorites.md#create)* menu. But in Action part there is one more action - *Delete* button. For Android, there is additional *Delete* button in up corner of *Edit favorite* menu.  
 
 <Tabs groupId="operating-systems">
 
@@ -158,7 +156,6 @@ After that, you need to choose [*Edit favorite* button in *Map Context menu*](..
 </TabItem>
 
 </Tabs>
-
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
 
@@ -248,7 +245,7 @@ In [searching list](#search-1) *Favorites* is sorted by distance from the map ce
 
 In order to switch between Folders <-> Points list, use the toggle on top right corner of the screen. Favorite Points in list are sorted by distance from device location.
 
-![Favorites folders list iOS](@site/static/img/personal/favorites_folders_list_ios.png) ![Favorites points list iOS](@site/static/img/personal/favorites_points_list_ios.png) 
+![Favorites folders list iOS](@site/static/img/personal/favorites_folders_list_ios.png) ![Favorites points list iOS](@site/static/img/personal/favorites_points_list_ios.png)  
 
 </TabItem>
 
@@ -262,9 +259,9 @@ Search function opens a points list of Favorites sorted by distance from map cen
 
 <TabItem value="android" label="Android">
 
-![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_android.png)
+![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_android.png)  
 
-Tap on &#128269; buttons opens search menu for Favorites. Tap on a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
+Tap on magnifying glass (&#128269;) button opens search menu for Favorites. Tap on a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_2_android.png)
 
@@ -304,8 +301,7 @@ Functions for Favorite folder:
 - &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - display or not Favorite points from the folder on the map.
 - &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 - &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file).
-- &nbsp;Button '<Translate android="true" ids="shared_string_cancel"/> ' - close this menu.
-
+- &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - close this menu.
 
 At the bottom of the screen there are four Actions buttons.  
 
@@ -332,16 +328,16 @@ Tap on &#128393; button opens special functions. You need to choose one ore more
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
 Actions:
-- 'Import loader' - allows to share/import Favorites points (folders) like "favorite.gpx" file.
-- 'Folder' - allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
-- 'Palette of colors' - allows to change colors for Favorites points (folders).
+- *Import loader* - allows to share/import Favorites points (folders) like "favorite.gpx" file.
+- *Folder* - allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
+- *Palette of colors* - allows to change colors for Favorites points (folders).
 - &#x1F5D1; - allows to delete chosen Favorites points (folders).
 
 Export/Import favorite for iOS version like special menu in "My Favorites" menu.
 
 ![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
 
-<Translate ios="true" ids="fav_import_title"/>  - <Translate ios="true" ids="fav_import_desc"/> . 
+<Translate ios="true" ids="fav_import_title"/>  - <Translate ios="true" ids="fav_import_desc"/>.  
 
 <Translate ios="true" ids="fav_export_title"/>  - You can export all your favorites like Favorites.gpx file.
 
@@ -349,9 +345,9 @@ Export/Import favorite for iOS version like special menu in "My Favorites" menu.
 
 </Tabs>
 
-## Favorite Groups 
+## Favorite Groups
 
-Favorite Groups is folders with favorite points in 'My Favorites' menu.
+Favorite Groups is folders with favorite points in *My Favorites* menu.
 
 ### Change color
 
@@ -359,7 +355,7 @@ Favorite Groups is folders with favorite points in 'My Favorites' menu.
 
 <TabItem value="android" label="Android">
 
-Clicking to '&#8942;' button opens special functions for a chosen Favorite folder.
+Tap &#8942; button opens special functions for a chosen Favorite folder.
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -369,13 +365,13 @@ Functions for Favorite folder:
 - &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - showing or not Favorite points from the folder on the map.
 - &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 - &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (like Favorites.gpx file).
-- &nbsp;Button '<Translate android="true" ids="shared_string_cancel"/> ' - close this menu.
+- &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - closes this menu.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Clicking to 'Pencil' button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to change colors for Favorites points (folders).
+Tap *Pencil* button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to change colors for Favorites points (folders).
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
@@ -383,9 +379,7 @@ Clicking to 'Pencil' button opens special functions for a chosen Favorite folder
 
 </Tabs>
 
-
 ### Bulk move
-
 
 <Tabs groupId="operating-systems">
 
@@ -399,7 +393,7 @@ Clicking to 'Pencil' button opens special functions for a chosen Favorite folder
 
 <TabItem value="ios" label="iOS">
 
-Clicking to 'Pencil' button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to move your Favorites points (folders) to others Favorites folders (named groups) or to new creating folder (group). If Favorite group (folder) hasn't any points it will be deleted after OsmAnd restart by automatic.
+*Pencil* button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to move your Favorites points (folders) to others Favorites folders (named groups) or to new creating folder (group). If Favorite group (folder) hasn't any points it will be deleted after OsmAnd restart by automatic.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
@@ -479,15 +473,13 @@ Functions for Favorite folder:
 
 </Tabs>
 
-
-## Special Favorites (Personal) 
-
+## Special Favorites (Personal)
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-"Personal" folder is a special folder for '<Translate android="true" ids="favorite_home_category"/> ' and '<Translate android="true" ids="work_button"/> ' points of [Navigation Context menu](../navigation/index.md). This folder doesn't have '&#8942;' button, because you can not change the parameters for this folder. 
+*Personal* folder is a special folder for *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points of [Navigation Context menu](../navigation/index.md). This folder doesn't have &#8942; button, because you can not change the parameters for this folder.  
 
 ![Favorites personal android](@site/static/img/personal/favorites_personal_android.png)
 
@@ -495,26 +487,22 @@ Functions for Favorite folder:
 
 <TabItem value="ios" label="iOS">
 
-"Personal" folder is a special folder for '<Translate ios="true" ids="home_pt"/> ' and '<Translate ios="true" ids="work_pt"/> ' points of [Navigation Context menu](../navigation/index.md).
+*Personal* folder is a special folder for *<Translate ios="true" ids="home_pt"/>* and *<Translate ios="true" ids="work_pt"/>* points of [Navigation Context menu](../navigation/index.md).
 
 </TabItem>
 
 </Tabs>
 
-
 ## Export / Import
 
 OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
-
 ### Favorites Backup  
 
-After each edit of Favorites OsmAnd makes a backup file. These backups can be found using file manager programs.  
+After each edit of Favorites, OsmAnd makes a backup file. These backups can be found using file manager programs: in Android use third-party apps, and in iOS they can be accessed with the system program *Files*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-To access the Favorites backup, you need to use third-party file managers.  
 
 *Android → data → net.osmand → files → backup*
 
@@ -528,11 +516,31 @@ In the latest versions of Android, access to system directories is limited. Howe
 
 <TabItem value="ios" label="iOS">
 
-Favorites backup can be reached with the iOS system *Files* program.  
-
 *Files → On my iPhone → OsmAnd Maps → favourites_backup*
 
 ![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
+
+</TabItem>
+
+</Tabs>
+
+#### Export Favorites backup
+
+You can export Favorites backup files using *[Export](../personal/import-export.md#export)* funciton. The resulting .osf file you can send to the internal memory of the device, cloud storage, or other users of the OsmAnd app via messengers.  
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
 
 </TabItem>
 

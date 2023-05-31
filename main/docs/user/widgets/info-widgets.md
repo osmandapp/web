@@ -60,23 +60,42 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
 
 ### * Elevation: map center
 
-<InfoAndroidOnly />  
-
 To display Elevation widget among *Altitude widgets*:
 - enable the [Development plugin](../plugins/development.md)
 - switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
-  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
-  
-:::caution
-Elevation widget will display information only when the hightmaps of the required area are downloaded.  
-:::
 
 | | |
 |------------|------------|
 | Enable | Menu → Configure screen → Left / Right panel → Altitude | 
 | By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png) 
+
+| | |
+|------------|------------|
+| Enable | Menu → Configure screen → Right panel → Elevation: map center | 
+| By tapping | No changes. |
+| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
+
+</TabItem>
+
+</Tabs>  
+    
+
+:::caution
+Elevation widget will display information only when the hightmaps of the required area are downloaded.  
+:::
 
 ## Current time
 
@@ -145,44 +164,34 @@ This widget shows the battery level of your device.
 
 ## Coordinates widget
 
-This widget is displayed at the top of the screen and shows the current geographic coordinates.
+There are 2 coordinates widgets:
+
+- *Coordinates: map center* - shows the geographic coordinates of the current map center.
+- *Coordinates: current location* (Android) or *Coordinates widget* (iOS) - shows the geographic coordinates of current geolocation.
+
+Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location.Ы
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-- *Coordinates: map center* - shows the geographic coordinates of the current map center.
-- *Coordinates: current location* - shows the geographic coordinates of current geolocation.
-
-Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of the user's current location.
-
 ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
-
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,top_widgets_panel,coordinates_widget"/>  |
-| By tapping | Copies the coordinates to the clipboard. |
-| Format | <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,coordinates_format"/> |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-
-- *Coordinates widget* - shows the geographic coordinates of current geolocation.
-- *Coordinates: map center* - shows the geographic coordinates of the current map center.
-
 ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
-
-| | |
-|------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel,coordinates_widget_current_location"/> and <Translate ios="true" ids="coordinates_widget_map_center"/> |
-| By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/> |
 
 </TabItem>
 
 </Tabs>
+
+| | |
+|------------|------------|
+| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel"/> |
+| By tapping | Copies the coordinates to the clipboard |
+| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) →<br/><Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/> |
 
 
 ## GPS Info  

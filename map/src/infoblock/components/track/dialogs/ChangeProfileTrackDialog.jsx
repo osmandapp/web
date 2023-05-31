@@ -6,9 +6,8 @@ import SelectTrackProfile from "../SelectTrackProfile";
 import DialogActions from "@mui/material/DialogActions";
 import AppContext from "../../../../context/AppContext";
 import TracksManager from "../../../../context/TracksManager";
-import {Button, Grid, IconButton, LinearProgress, ToggleButton, ToggleButtonGroup} from "@mui/material";
+import {Button, Grid, IconButton, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import {Close} from "@mui/icons-material";
-import _ from "lodash";
 import {makeStyles} from "@material-ui/core/styles";
 import TrackLayerProvider from "../../../../map/TrackLayerProvider";
 import RoutingManager from "../../../../context/RoutingManager";
@@ -31,7 +30,6 @@ export default function ChangeProfileTrackDialog({open}) {
     const [changeOne, setChangeOne] = useState(false);
     const [changeAll, setChangeAll] = useState(false);
     const [change, setChange] = React.useState('one');
-    const [process, setProcess] = useState(false);
     const [dialogOpen, setDialogOpen] = useState(open);
 
     const handleChange = (event, change) => {
@@ -120,38 +118,6 @@ export default function ChangeProfileTrackDialog({open}) {
         }
     }
 
-    function getPrevPoints() {
-        if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) < ctx.trackProfileManager.pointInd);
-        } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) <= ctx.trackProfileManager.pointInd);
-        }
-    }
-
-    function getNextPoints() {
-        if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) >= ctx.trackProfileManager.pointInd);
-        } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-            return ctx.selectedGpxFile.points.filter(p => ctx.selectedGpxFile.points.indexOf(p) > ctx.trackProfileManager.pointInd);
-        }
-    }
-
-    function createArrWithGeo(points) {
-        let p1 = points[0];
-        p1.geometry = p1.geometry ? p1.geometry : [];
-        p1.profile = TracksManager.PROFILE_LINE;
-        let p2 = points[points.length - 1];
-        let geo = _.cloneDeep(points);
-        geo.forEach(p => {
-            delete p.profile;
-            delete p.geometry;
-        })
-        p2.geometry = geo;
-        p2.profile = p2.profile ? p2.profile : TracksManager.PROFILE_LINE;
-
-        return [p1, p2];
-    }
-
     function updateGlobalProfileState() {
         ctx.setCreatingRouteMode({
             mode: profile.mode,
@@ -162,7 +128,6 @@ export default function ChangeProfileTrackDialog({open}) {
     }
 
     return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
-        {process ? <LinearProgress/> : <></>}
         <Grid container spacing={2}>
             <Grid item xs={11}>
                 <DialogTitle>Change profile</DialogTitle>

@@ -1,104 +1,48 @@
-import React, { useState, useContext } from 'react';
-import { Button, Checkbox, TextField, FormControlLabel } from '@mui/material/';
+import React, {useState, useContext, useEffect} from 'react';
+import {Button, Checkbox, TextField, FormControlLabel} from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
-import { useNavigate } from "react-router-dom";
-import Utils from "../util/Utils";
+import {useNavigate} from "react-router-dom";
+import {Box, Divider, Link, ListItemText, MenuItem, Typography} from "@mui/material";
+import {get} from "axios";
+import {makeStyles} from "@material-ui/core/styles";
+import DeleteAccountDialog from "./DeleteAccountDialog";
+import AccountManager from "../context/AccountManager";
+import ChangeEmailDialog from "./ChangeEmailDialog";
 
 
-async function isRequestOk(response, setEmailError) {
-    // console.log(response.ok)
-    if (!response.ok) {
-        let message = await response.text();
-        if (message) {
-            try {
-                let js = JSON.parse(message);
-                message = `An error has occured: ${js.error?.message}`;
-            } catch (e) {
-            }
-        }
-        setEmailError(message);
-        return null;
-    }
-    // let message = await response.text();
-    // console.log(message);
-    // const res = JSON.parse(message);
-    const res = await response.json();
-    if (res.status !== 'ok') {
-        const message = `Unknown error has occured: ${JSON.stringify(res)}`;
-        setEmailError(message);
-    }
-    return res;
-}
-
-
-async function userRegister(username, setEmailError, setState) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username })
-    });
-    if (await isRequestOk(response, setEmailError)) {
-        setState('register-verify');
-        setEmailError('');
-    }
-}
-
-async function userActivate(ctx, username, pwd, token, setEmailError, handleClose) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username, 'password': pwd, 'token' : token })
-    });
-    if (await isRequestOk(response, setEmailError)) {
-        ctx.setLoginUser(username);
-        setEmailError('');
-        handleClose();
-    }
-    return true;
-}
-
-async function userLogout(ctx, username, setEmailError, handleClose, setState) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username })
-    });
-    if (await isRequestOk(response, setEmailError)) {
-        setState('login');
-        ctx.setLoginUser('');
-        setEmailError('');
-        handleClose();
-    }
-}
-
-async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'username': username, 'password': pwd })
-    });
-    // console.log(response)
-    if (await isRequestOk(response, setEmailError)) {
-        setEmailError('');
-        ctx.setLoginUser(username);
-        handleClose();
-    }
-}
+const useStyles = makeStyles(() => ({
+    paper: {minWidth: "100vh"},
+}));
 
 
 export default function LoginDialog() {
+
     const ctx = useContext(AppContext);
+    const classes = useStyles();
+
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
     const [emailError, setEmailError] = useState('');
     const [state, setState] = useState('login'); // login, register, register-verify
+    const [openDangerousArea, setOpenDangerousArea] = useState(false);
+    const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
+    const [changeEmailFlag, setChangeEmailFlag] = useState(false);
+    const [accountInfo, setAccountInfo] = useState(null);
+
     const navigate = useNavigate();
+
+    const toggleOpenDangerousArea = () => {
+        setOpenDangerousArea(!openDangerousArea);
+        setDeleteAccountFlag(false);
+        setEmailError('');
+    };
+
     const handleClose = () => {
         setEmailError('');
         setPwd('');
@@ -106,38 +50,140 @@ export default function LoginDialog() {
         navigate('/map/');
     };
     const handleLogin = () => {
-        if ( state === 'register' ) {
-            userRegister(userEmail, setEmailError, setState);
+        if (state === 'register') {
+            AccountManager.userRegister(userEmail, setEmailError, setState).then();
         } else if (state === 'register-verify') {
-            userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose);
+            AccountManager.userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose).then();
         } else {
-            userLogin(ctx, userEmail, pwd, setEmailError, handleClose);
+            AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
         }
     }
-    
+
+    useEffect(() => {
+        if (ctx.loginUser && ctx.loginUser !== '') {
+            getAccountInfo().then();
+        } else {
+            setUserEmail(ctx.userEmail);
+        }
+    }, [ctx.loginUser]);
+
+    async function getAccountInfo() {
+        const resp = await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
+        if (resp.data) {
+            setAccountInfo(resp.data.info);
+        }
+    }
+
+
     if (ctx.loginUser) {
         return (
-            <Dialog open={true} onClose={handleClose}>
-                <DialogTitle>{ctx.loginUser}</DialogTitle>
+            <Dialog classes={{paper: classes.paper}} open={true} onClose={handleClose}>
+                <DialogTitle sx={{color: '#f8931d'}}>{ctx.loginUser}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
-                        You logged in as {ctx.loginUser}.<br />
+                    <DialogContentText component={'span'}>
+                        <Divider/>
                         {!ctx.listFiles || !ctx.listFiles.userid ? <></> :
-                        <span>
-                            Total files: {ctx.listFiles.totalFiles} ({ctx.listFiles.totalFileVersions} including versions).<br />
-                            Total files size: {(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB,
-                            cloud storage used: {(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB.
-                            <br /><br />
-                            <a href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`} target="_blank" >Download backup ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB</a>
-                        </span>
+                            <>
+                                <Typography component={'span'} variant="h6" noWrap>
+                                    {`Files info:`}
+                                </Typography>
+                                <MenuItem>
+                                    <ListItemText>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Total files: ${ctx.listFiles.totalFiles} (${ctx.listFiles.totalFileVersions} including versions)`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Total files size: ${(ctx.listFiles.totalFileSize / 1024.0 / 1024.0).toFixed(1)} MB`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Cloud storage used: ${(ctx.listFiles.totalZipSize / 1024 / 1024.0).toFixed(1)} MB`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <Link sx={{fontSize: "10pt"}}
+                                      href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`}
+                                      target="_blank">Download backup
+                                    ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB
+                                </Link>
+                            </>
                         }
+                        <Divider sx={{mt: 1}}/>
+                        {accountInfo && <>
+                            <Typography component={'span'} variant="h6" noWrap>
+                                {`Account info:`}
+                            </Typography>
+                            <MenuItem>
+                                <ListItemText>
+                                    <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                        {`Subscription: ${accountInfo.account} `}
+                                        {accountInfo.type && `(type: ${accountInfo.type})`}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                            {accountInfo.startTime && accountInfo.expireTime && <>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Start time: ${accountInfo.startTime}`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem sx={{mt: -1}}>
+                                    <ListItemText>
+                                        <Typography component={'span'} sx={{ml: 1}} variant="body2" noWrap>
+                                            {`Expire time: ${accountInfo.expireTime}`}
+                                        </Typography>
+                                    </ListItemText>
+                                </MenuItem>
+                            </>}
+                        </>}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
+                    <Link sx={{marginRight: "auto", fontSize: "10pt", ml: 2, color: '#ff595e'}}
+                          href="#"
+                          color="inherit"
+                          onClick={toggleOpenDangerousArea}>
+                        Dangerous area
+                    </Link>
                     <Button onClick={handleClose}>Close</Button>
-                    <Button onClick={(e) => userLogout(ctx, userEmail, setEmailError, handleClose, setState)}>
-                        Logout</Button>
+                    <Button
+                        onClick={() => AccountManager.userLogout(ctx, userEmail, setEmailError, handleClose, setState)}>
+                        Logout
+                    </Button>
                 </DialogActions>
+                {openDangerousArea && <Divider sx={{mb: 2, ml: 3, mr: 3, bgcolor: '#ff595e'}}/>}
+                {openDangerousArea && <Box sx={{mb: 2}}>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        sx={{backgroundColor: '#ff595e !important', ml: 3}}
+                        onClick={() => {
+                            setDeleteAccountFlag(true);
+                            AccountManager.sendCode(ctx.loginUser).then();
+                        }}>
+                        Delete your account
+                    </Button>
+                    <Link sx={{marginRight: "auto", fontSize: "10pt", ml: 2, color: '#ff595e'}}
+                          href="#"
+                          color="inherit"
+                          onClick={() => {
+                              setChangeEmailFlag(true);
+                              AccountManager.sendCode(ctx.loginUser).then();
+                          }}>
+                        Change email
+                    </Link>
+                    {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag}/>}
+                    {changeEmailFlag && <ChangeEmailDialog setChangeEmailFlag={setChangeEmailFlag}/>}
+                </Box>}
             </Dialog>);
 
     }
@@ -170,7 +216,7 @@ export default function LoginDialog() {
                     variant="standard"
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
-                    value={userEmail ? userEmail : ''}
+                    value={userEmail ? userEmail : ctx.userEmail}
                 >
                 </TextField>
 
@@ -199,8 +245,8 @@ export default function LoginDialog() {
                 {state === 'register-verify' ? <></> :
                     <FormControlLabel control={
                         <Checkbox checked={state === 'register'} onChange={(e) =>
-                            setState(state === 'login' ? 'register' : 'login')} />}
-                        label="Don't have the password or forgot it?" />
+                            setState(state === 'login' ? 'register' : 'login')}/>}
+                                      label="Don't have the password or forgot it?"/>
                 }
 
             </DialogContent>
@@ -208,8 +254,9 @@ export default function LoginDialog() {
                 <Button onClick={handleClose}>Cancel</Button>
                 <Button onClick={handleLogin}>{
                     state === 'register' ? 'Register' : (
-                        state === 'register-verify' ? 'Activate' : 'Login' 
-                    )}</Button>
+                        state === 'register-verify' ? 'Activate' : 'Login'
+                    )}
+                </Button>
             </DialogActions>
         </Dialog>
     );

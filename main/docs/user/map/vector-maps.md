@@ -495,24 +495,21 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 
 ### Map Language
 
+The Map language option is used to configure the spelling of names on the OsmAnd map for zoom levels 7-20б inclusive. For zoom levels 2-6, the names are displayed in the language set for OsmAnd in the system settings menu (see *[Display language](../personal/global-settings.md#display-language)* article).  
+
+If the names on the map are not translated into the desired language by the OSM community, you can use [transliterated names](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) or *<Translate ios="true" ids="translit_names"/>* (iOS) switcher.  
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate android="true" ids="use_latin_name_if_missing"/>" switcher):  
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-This setting allows using of any language for names on the map. If names don't have translation we can choose [transliteration](https://en.wikipedia.org/wiki/Transliteration) ("<Translate ios="true" ids="translit_names"/>" switcher): 
-
-
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_locale"/>*:
-- &nbsp;"<Translate ios="true" ids="sett_pref_lang"/>" - choosing a language from the list.
-- &nbsp;"<Translate ios="true" ids="sett_lang_show_local"/>" - showing the local language for names additionally for chosen language name.
-- &nbsp;"<Translate ios="true" ids="translit_names"/>" - using [transliteration](https://en.wikipedia.org/wiki/Transliteration) for names.
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_locale"/>*
 
 </TabItem>
 

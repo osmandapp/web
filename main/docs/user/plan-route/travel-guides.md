@@ -17,6 +17,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
+:::tip NOTE
+Travel Guides is a paid feature of the OsmAnd app.  
+:::
+
 ## Overview
 
 Virtual travel guides inside OsmAnd offer valuable insights, recommendations, and tips for users. They also allow tourists to access comprehensive navigation information to attractions directly within the app.  
@@ -30,10 +34,17 @@ Wikivoyage information includes the main facts about a place, transport, landmar
 
 - [Download](#download-articles) *Travel guides*.
 - Browse [articles](#travel-guide-article) about a country, region, city, attractions.
+    - Alternatively [display travel guides articles and / or points on the map](#travel-routes) using Configure map menu.
+    - Browse through attractions on the map, add them to *[Map markers](../personal/markers.md#add-marker-on-the-map)* or *[Favorites](../personal/favorites.md#add-to-map-markers)*.
+    - Using *[Read full](#manage-as-gpx-track)* button go to the *[Article](#travel-article) inside *Travel guides*.
 - [Bookmark](#explore-and-bookmarks-tabs) articles to read them later.
 - Chose [points](#points) from articles to visit and add them to the OsmAnd map.
 - Get more information about places to visit from offline [wikipedia articles](#combine-with-wikipedia).
 - [Build a route](../navigation/setup/route-navigation.md#set-destinations) to chosen touristic attractions.
+
+:::note
+*Travel guides* articles are stored inside OsmAnd in form of GPX tracks with Waypoints.  After adding these tracks to the map (see *[Points](#points)* or *[Travel routes](#travel-routes)* sections of this article), you can manage them via *[My Places](../personal/myplaces.md)* menu.
+:::
 
 ### Download articles
 
@@ -49,7 +60,7 @@ There are special guides like the list of UNESCO Global Geoparks Network or the 
 
 ## Browse Articles
 
-The *Travel guides* main screen consists of two general parts: the [search field](#travel-guides-search) and the travel guides list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmarks-tabs)*. By single tap on a tab, you can switch between them.  
+The *Travel guides* screen consists of two general parts: the [search field](#travel-guides-search) and the travel guides list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmarks-tabs)*. By single tap on a tab, you can switch between them.  
 When you open *Travel Guides* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. Tap on the item from the list opens the [Travel guide article](../plan-route/travel-guides.md#travel-guide-article). At the bottom of the screen is a switch to the [Bookmarks tab](#bookmarks).  
 
 ### Explore and Bookmark
@@ -82,7 +93,7 @@ Next to each search result are listed the first 3 most commonly used languages i
 ### Options
 
 In this menu you can customize the appearance of articles when working offline. Note, that *[downloaded](#download-articles)* travel guides do not contain images. They appear only when viewing articles with an active Internet connection.  
-In the Options menu, you can choose whether or not to save pictures in the articles you've viewed so that you can use them when you offline. You can also clear images cash or delete search history (works only with search inside *Travel guides*).
+In the Options menu, you can choose whether or not to save pictures in the articles you've viewed so that you can use them when you are offline. You can also clear images cash or delete search history (works only with search inside *Travel guides*).
 
 ![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png) 
 
@@ -92,7 +103,7 @@ In the Options menu, you can choose whether or not to save pictures in the artic
 
 ## Travel Article
 
-You can open an article from the proposed variants on the *[Explore tab](#explore-and-bookmarks-tabs)* or using the *[Search](#search)* option.  
+You can open an article from the proposed variants on the *[Explore tab](#explore-and-bookmarks-tabs)* or using the *[Search](#search)* option. 
 If you have added touristic attractions, called *[Points](#points)* from *Travel guide article* to the OsmAnd map, you can also open an article using *Read full* button in a waypoint [description section](../map/track-context-menu.md#description-and-info).  
 
 ![Travel guides article](@site/static/img/guides/travel_guides_article.png) 
@@ -100,7 +111,7 @@ If you have added touristic attractions, called *[Points](#points)* from *Travel
 <!-- 
 Add image -->
 
-the following controls are located at the top of the screen:
+The following controls are located at the top of the screen:
 - A switch to change language of an article. The language can be selected from the available options.The system language is used by default. 
 - Using &#8942; button you can share article with friends. The link opens in the OsmAnd app (apropriate travel guides file should be downloaded on the recipient device) or [Wikivoyage](https://www.wikivoyage.org/) site (if recipient doesn't have the OsmAnd app or for iOS devices).
 - Tap on a navigation panel opens *[Travel guides Navigation menu](#navigation-menu)*.
@@ -135,21 +146,51 @@ Most *Travel guide articles* have the same content structure, with an introducti
 
 ### Points
 
-*Travel guide articles* often contain tourist attractions grouped by topic. By single tap on a *Points* button at the bottom of the *[Article](#article)*, all attractions related to the topic (eating places, accommodation options, airports, shops, historical monuments, etc.) will be shown on the OsmAnd map. They will also be added to the map and can be managed as a *[Track](../personal/tracks.md)*.  
+*Travel guide articles* often contain tourist attractions grouped by topic. By single tap on a *Points* button at the bottom of the *[Article](#article)*, all attractions related to the topic (eating places, accommodation options, airports, shops, historical monuments, etc.) will be added to the map and can be *[managed as a Track](#manage-as-gpx-track)*.  
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points  menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png)
+![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+
+Attraction groups are marked by default with a certain icons: Eat and Drink categories with knife and fork in a red circle, Do and See with photocamera in a green circle, etc. You can manage points groups using &#8942; like a *[Waypoint folder](../map/track-context-menu.md#waypoints-folder)*.  
+
+:::note
+*Travel articles* points refer to waypoints of a GPX track.  
+You can also *[add points to the map](#travel-routes)* in *Configure map* menu. You can either show them all or select a specific category to display.  
+:::
+
+## Travel routes
+
+The alternative vay to browse *Travel guides* is to display them on the map using *Configure map* menu (<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>).
+
+![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_view.png) 
+
+### Travel routes and articles on the map
+
+After you turn on displaying *Travel routes* in the *Configure map* menu, you will see multicolor circles on the map. Orange ones are for route tracks, route articles, and some of their waypoints. If you tap on a specific route, article, or point and then press *Download* button (&#9047;), you will be able to [manage it as a track](#manage-as-gpx-track).  
+
+![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+
+<!--
+### Collections of tracks
+
+
+https://osmand.net/blog/routes/#generated-travel-routes
+
+-->
+## Manage as GPX Track
+
+After you have added *Travel guides* to the map, *Travel articles* can be saved as GPX track and managed via *[My places](../personal/myplaces.md)* menu (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>): they can be displayed on the map, shared, renamed, put into another folder, exported or deleted.  
+
+![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)
 
 - &nbsp;In *[Overview](../map/track-context-menu.md#overview)*, you can read short description or open [Travel guide article](../plan-route/travel-guides.md#travel-guide-article) by tap *Read full* button. *Edit* allows you to correct article.
 - &nbsp;There is no information in *[Track](../map/track-context-menu.md#altitude--speed-graphs)* section (*Travel guides* GPX files contain only waypoints).  
 - &nbsp;Under *[Points](../map/track-context-menu.md#points--waypoints)* you see folders with points grouped by name (Buy, Do, Drink, etc.).
+- &nbsp;The *[Option](../map/track-context-menu.md#options)* button performs the same functions as in the regular track.
 
 :::info
-*Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). In *[Track Context menu](../map/track-context-menu.md)* of a GPX-file, you can find general information from article to which this track belongs.  
+*Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). The number of points (waypoints) that the track contains is marked next to the icon &#128681; in the track field.  
+In *[Track Context menu](../map/track-context-menu.md)* of a GPX-file, you can find general information from article to which this track belongs.  
 :::
-
-### Manage as GPX Track
-
-You can save Travel Article as GPX and later Share with HTML content, View on Map and use to navigate by markers.
 
 ## Combine with Wikipedia
 
@@ -168,6 +209,3 @@ Please note, that the [Wikipedia plugin](../plugins/wikipedia.md) is a paid feat
 ## Custom Travel guides
 
 We recommend to add new articles or edit them on [Wikivoyage](https://en.wikivoyage.org/). About every 6 months we update Travel guides and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
-
-
-### View on Configure Map

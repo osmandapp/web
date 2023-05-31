@@ -17,7 +17,6 @@ import drawerStyles from "../../styles/DrawerStyles";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import TracksManager from "../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import {Dialog} from "@material-ui/core";
 

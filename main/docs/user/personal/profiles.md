@@ -16,11 +16,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 Each profile is available for full configuration. The following profiles are available by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
 
 In fact, each profile can become a separate application for the needs of the user. Of course, you can create your own profile with full customization for your needed.
 
-To start setting up an application profile:
 
 <Tabs groupId="operating-systems">
 
@@ -92,15 +93,15 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*,
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*,
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*.
-- *<Translate android="true" ids="shared_string_2_5_d_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- *<Translate android="true" ids="display_position"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode.
-  - *<Translate android="true" ids="shared_string_automatic"/>* - depends on Map orientation: bottom for movement direction, center for all others.
-  - *<Translate android="true" ids="position_on_map_center"/>*
-  - *<Translate android="true" ids="position_on_map_bottom"/>*
+- *2.5  D view* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- *<Translate android="true" ids="display_position"/>* - allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+  - *<Translate android="true" ids="position_on_map_center"/>* - the cursor will always be in the center of the screen.
+  - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate android="true" ids="shared_string_automatic"/>* - places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 - *<Translate android="true" ids="map_screen_orientation"/>* - sets the screen position for the OsmAnd application: 
-  - *<Translate android="true" ids="map_orientation_portrait"/>*, 
-  - *<Translate android="true" ids="map_orientation_landscape"/>*, 
-  - *<Translate android="true" ids="map_screen_orientation"/>*.
+  - *<Translate android="true" ids="map_orientation_portrait"/>* 
+  - *<Translate android="true" ids="map_orientation_landscape"/>* 
+  - *<Translate android="true" ids="map_screen_orientation"/>*
 - *[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)* - opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 
 </TabItem>
@@ -111,20 +112,21 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;*<Translate ios="true" ids="rotate_map_to"/>* - allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes):
-  - *<Translate ios="true" ids="rotate_map_none_fixed"/>*,
+- &nbsp;*<Translate ios="true" ids="rotate_map_to"/>* - allows [to set the map orientation mode](../map/interact-with-map.md#map-orientation-modes):
+  - *<Translate ios="true" ids="do_not_rotate"/>*,
   - *<Translate ios="true" ids="rotate_map_bearing_opt"/>*,
   - *<Translate ios="true" ids="rotate_map_compass_opt"/>*,
-  - *<Translate ios="true" ids="rotate_map_none_manually"/>*.
+  - *<Translate ios="true" ids="rotate_map_manual_opt"/>*.
 - &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - if enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- &nbsp;*<Translate ios="true" ids="position_on_map"/>* - allows to use center or bottom screen position for the cursor (["My location"](../map/interact-with-map.md#my-location--zoom)). In this mode the center of the map will be located slightly below the center of the device. It allows seeing more map information ahead of your movement which is usable in the navigation mode:
-  - *<Translate ios="true" ids="shared_string_automatic"/>* - depends on Map orientation: bottom for movement direction, center for all others.
-  - *<Translate ios="true" ids="position_on_map_center"/>*
-  - *<Translate ios="true" ids="position_on_map_bottom"/>*
+- &nbsp;*<Translate ios="true" ids="position_on_map"/>* - allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+  - *<Translate ios="true" ids="position_on_map_center"/>* - the cursor will always be in the center of the screen.
+  - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate ios="true" ids="shared_string_automatic"/>* - places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 
 </TabItem>
 
 </Tabs>
+
 
 ### Units & formats
 
@@ -238,7 +240,7 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 You can enable/disable buttons and input devices for OsmAnd.
 
-- *[<Translate ios="true" ids="sett_ext_input"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
+- *[<Translate ios="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
 
 </TabItem>
 
@@ -246,12 +248,6 @@ You can enable/disable buttons and input devices for OsmAnd.
 
 
 ## Navigation settings
-
-In the [Navigation article](../navigation/#navigation-settings), you can read about all the navigation settings (types, parameters, voice prompts or map view while driving) that you can set for the profile.   
-
-:::info
-There are no navigation settings in *Browse map* profile.  
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -273,6 +269,8 @@ There are no navigation settings in *Browse map* profile.
 
 </Tabs>
 
+In the [Navigation section](../navigation/index.md), you can read all about the navigation settings in the OsmAnd app that you can use on your trips.
+
 - [Routing Types](../navigation/routing/index.md)
 - [Route parameters](../navigation/routing/online-routing.md)
 - [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts)
@@ -280,7 +278,12 @@ There are no navigation settings in *Browse map* profile.
 - [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters)
 - [Customise route line](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 - [Map during navigation](../navigation/guidance/map-during-navigation.md)
-- [Animate location change](../navigation/guidance/navigation-settings.md#animate-own-position)
+- [Animate location change](../navigation/guidance/navigation-settings.md#animate-own-position)  
+
+:::info
+There are no navigation settings in *Browse map* profile.  
+:::
+
 
 ### Animate location change
 
@@ -542,34 +545,37 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <InfoAndroidOnly />  
 
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,open_place_reviews"/>*  
+
 This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.  
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,open_place_reviews"/>*
 
 ### Accesibility
 
 <InfoAndroidOnly />  
 
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>*
+
 This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for the selected profile. Where you can choose any parameters for your needed.  
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>*
 
 ### OsmAnd development
 
 <InfoAndroidOnly />  
 
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,development"/>*  
+
 This menu opens [Development plugin settings](../plugins/accessibility.md) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.  
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,development"/>*  
 
 ## Actions
 
 Actions with chosen profile:  
 
-- Export profile.
-- Copy from another profile.
-- Reset to default.
-- Delete profile.
+- *Export profile.*
+- *Copy from another profile.*
+- *Reset to default.*
+- *Delete profile.*
 
 <Tabs groupId="operating-systems">
 

@@ -37,12 +37,15 @@ export default function FavoriteAllGroups({setEnableGroups, favoritesGroups}) {
         }
     }, [favoritesGroups])
 
-    return (<MenuItem sx={{ml: 3}} divider>
-        <ListItemIcon>
-            <ViewHeadline fontSize="small"/>
-        </ListItemIcon>
-        <ListItemText> Show all favorites </ListItemText>
-        <Switch checked={allGroupsOpen}
-                onChange={(e) => enableLayerAllGroups(ctx, e.target.checked)}/>
-    </MenuItem>)
+
+    return (<>
+        {favoritesGroups.length > 0 && <MenuItem sx={{ml: 3}} divider>
+            <ListItemIcon>
+                <ViewHeadline fontSize="small"/>
+            </ListItemIcon>
+            <ListItemText> Show all favorites </ListItemText>
+            <Switch checked={allGroupsOpen}
+                    onChange={(e) => enableLayerAllGroups(ctx, e.target.checked)}/>
+        </MenuItem>}
+    </>)
 }

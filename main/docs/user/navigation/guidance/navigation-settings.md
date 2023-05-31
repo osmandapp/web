@@ -354,7 +354,7 @@ The **Maximum speed** setting sets the maximum driving speed and decreases the p
 </Tabs>
 
 
-If you select the engine type in the vehicle parameters, the CO2 footprint data will be displayed above the graph in [Route Details](../setup/route-details.md).
+If you select the engine type in the vehicle parameters, the [***CO2 footprint data***](../../navigation/setup/route-details.md#elevation-info) will be displayed above the graph in [Route Details](../setup/route-details.md).
 Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric, Hybrid***.  
 
 CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO2 emitted by an engine depends on the type of fuel and its combustion efficiency.  

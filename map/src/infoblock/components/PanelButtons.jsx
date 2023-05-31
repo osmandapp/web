@@ -7,10 +7,9 @@ import SaveTrackDialog from "./track/dialogs/SaveTrackDialog";
 import DeleteTrackDialog from "./track/dialogs/DeleteTrackDialog";
 import DeleteFavoriteDialog from "./favorite/DeleteFavoriteDialog";
 import _ from "lodash";
-import Utils, {getProfileIcon} from "../../util/Utils";
+import Utils from "../../util/Utils";
 import TracksManager from "../../context/TracksManager";
 import useUndoRedo from "../useUndoRedo";
-import RoutingManager from "../../context/RoutingManager";
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -37,9 +36,9 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         clear,
         isUndoPossible,
         isRedoPossible,
-        pastStates,
-        futureStates
+        pastStates
     } = useUndoRedo({});
+    //futureStates for logs
 
     useEffect(() => {
         if (clearState) {
