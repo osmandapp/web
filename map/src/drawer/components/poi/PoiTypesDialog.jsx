@@ -10,7 +10,7 @@ import {
     ListItemIcon,
     TextField
 } from "@mui/material";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Close, Search} from "@mui/icons-material";
 import {Checkbox, FormControlLabel, MenuItem} from "@mui/material/";
 import AppContext from "../../../context/AppContext";
@@ -56,6 +56,10 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
+
+    useEffect(() => {
+        setSearchOptions(Object.keys(ctx.poiCategory));
+    }, [])
 
     function showPoiCategoriesOnMap() {
         if (selectedPoiCategory) {
@@ -114,21 +118,22 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     }
 
     function getIcon(option) {
-        if (poiTypesResult[option]) {
+        if (poiTypesResult && option && poiTypesResult[option]) {
             option = poiTypesResult[option];
             return PoiManager.getIconNameForPoiType(option.keyName, option.osmTag, option.osmValue, option.iconName);
+        } else {
+            return PoiManager.getIconNameForPoiType(option);
         }
-        return option;
     }
 
     function getPoiTypesByCategory(newValue) {
         const category = newValue?.toLowerCase();
         if (ctx.poiCategory[category]) {
-            console.log(ctx.poiCategory[category])
             setPoiTypesResult(ctx.poiCategory[category]);
             setSearchOptions(ctx.poiCategory[category]);
         }
     }
+
 
     return (
         <Dialog open={dialogOpen} onClose={toggleShowDialog}>
@@ -151,7 +156,10 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     <Grid item xs={10}>
                         <Autocomplete
                             value={selectedPoiCategory}
-                            onChange={(event, newValue) => {
+                            onChange={(event, newValue, reason) => {
+                                if (reason === 'clear') {
+                                    setSearchOptions(Object.keys(ctx.poiCategory));
+                                }
                                 setSelectedPoiCategory(newValue);
                                 getPoiTypesByCategory(newValue);
                             }}
@@ -169,6 +177,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
 
                                 />
                             )}
+                            isOptionEqualToValue={(option, value) => option.value === value.value}
                             selectOnFocus
                             clearOnBlur
                             handleHomeEndKeys
@@ -231,7 +240,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                 </Grid>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleShowDialog}>Cancel</Button>
+                <Button onClick={toggleShowDialog}>Close</Button>
             </DialogActions>
         </Dialog>
     );
