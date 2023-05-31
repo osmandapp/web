@@ -69,7 +69,7 @@ export const toHHMMSS = function (time) {
         minutes = "0" + minutes;
     }
     if (seconds < 10) {
-        seconds = "0" + seconds;
+        seconds = "0" + Math.round(seconds);
     }
     return hours + ':' + minutes + ':' + seconds;
 }
