@@ -12,6 +12,7 @@ import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
 import ContextMenu from "./ContextMenu";
+import L from "leaflet";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -80,6 +81,7 @@ const OsmAndMap = () => {
     const whenReadyHandler = event => {
         const {target: map} = event;
         if (map) {
+            new L.Hash(map);
             map.attributionControl.setPrefix('');
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
