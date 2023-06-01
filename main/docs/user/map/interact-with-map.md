@@ -10,7 +10,9 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+## Overview
 
 How to interact with map using buttons and gestures, so you could pan, rotate and zoom in/out the map, how to rotate the map manually or automatically by compass or by bearing and how to change zoom scale.
 
@@ -60,6 +62,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 ## Map magnifier
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
+
 ## Map orientation & Compass
 
 ### Map orientation modes
@@ -68,7 +71,7 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_android.png)  
   
@@ -76,7 +79,7 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_ios.png)  
 
@@ -84,17 +87,15 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 </Tabs> 
 
-
 - **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
 
-
-
 :::note
 Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).
 :::
+
 
 ### Compass
 
@@ -148,35 +149,46 @@ With new map [rendering engine](../personal/global-settings.md#map-rendering-eng
 Under horizon you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only few map details can be observed.  
 The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
 
-
 :::info
 Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the ["My location"](#my-location--zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
 You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
+
 ## Settings
+
+<InfoAndroidOnly/>  
 
 ### Disable all animations
 
-You can disable all map animations during map change (gestures and buttons) in Settings <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>
+You can turn off all map animations during map changes, such as gestures and buttons.    
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
-### Extra compass settings
 
-- ** Use Kalman filter (Android)** - smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till:  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>
+### Extra compass settings  
 
-- ** Use Magnetic sensor** - smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till:  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>
+- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
+
+- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+
 
 ## External input device buttons
 
-Select an external control device, such as a keyboard or WunderLINQ.
+External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as Bluetooth or other types of keyboards, specialized buttons on vehicle navigation devices, [WunderLINQ](https://blackboxembedded.com/), [Parrot](https://www.parrot.com/en) and other controllers.  
+
+One of the main functions of the external input device buttons is to zoom in and out on the map. They also allow you to navigate around the map, and change map orientation without having to tap and gesture at the screen. The external input device buttons also support other functions, such as opening the main menu or AV Notes.  
+
+:::note
+The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
+:::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
-  
-> Note: the keyboard works with the setting disabled too. 
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
@@ -197,16 +209,15 @@ Select an external control device, such as a keyboard or WunderLINQ.
 |**&#8593; **| Wunderlinq  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
 |**ESC**| Wunderlinq  | Opens Wunderlinq dashboard |
 
-> You can check other details in [the code](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
-
+:::note
+You can read more about the actions of external input devices on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
+:::
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>
-
-> Note: the keyboard works with the setting disabled too. 
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|

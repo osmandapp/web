@@ -103,33 +103,28 @@ Read about Android Auto [here](../navigation/auto-car.md)
 
 ### Display language
 
-The display language (language of menus, pop-up prompts, internal text messages, and names on the map at zoom levels 2-6) for Android and iOS devices can be set through the system settings menu. You can keep the same language that is installed on your device, or select any other language from the list.  
+Display language is the setting of the language of the entire application, pop-up prompts, internal text, messages, etc. For Android system this can be done in the application, for iOS system - through the iOS settings. You can use the language installed on your device or select any other language from the list. 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*Android Settings  → OsmAnd → Language*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*
 
-![Change Language Android](@site/static/img/personal/profiles/map_language_andr_1.png) ![Change Language Android 2](@site/static/img/personal/profiles/map_language_andr_2.png)
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*iOS Settings  → OsmAnd maps → Language*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings"/> → OsmAnd maps → Language*
 
-![Change Language iOS](@site/static/img/personal/profiles/map_language_ios_1.png) ![Change Language iOS 2](@site/static/img/personal/profiles/map_language_ios_2.png)
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-:::note
-- Names on the map at zoom levels 7-20 (inclusive) is set via the Сonfigure Map menu inside the OsmAnd app (see [Map language](../map/vector-maps.md#map-language) article).
-- In versions of the OsmAnd prior to 4.4. (Android)  you can change display language inside the app in the Settings menu:  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,preferred_locale"/>*.
-:::
 
 ### Data storage folder
 
@@ -340,11 +335,30 @@ OsmAnd can warn you about speed cameras, but only if the laws in your country pe
 
 ### Uninstall speed camera
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems">
 
-This setting allows you to activate or deactivate the speed camera POI ([speed camera alert widget](../widgets/nav-widgets.md#alert-widget)). In some countries or regions, using speed camera warning apps is illegal. You need to make a choice depending on the laws in your country. Select *Keep active* and you will receive speed camera alerts. Select *Delete* and all data related to speed cameras: alerts, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+
+![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_andr.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
+
+![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![General Settings Cameras Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This setting allow you to activate or deactivate the speed cameras' POI. You will need to restart the OsmAnd application to apply the changes.   
+  
+In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select *Keep active*, and you will receive speed camera alerts and notifications. Select *Uninstall* and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
  
-![General Settings Cameras Android](@site/static/img/personal/profiles/speed_cam_andr.png)
+Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
 
-Read about Screen alert of Speed cameras: *[Alert widget](../widgets/nav-widgets.md#alert-widget)*
 
