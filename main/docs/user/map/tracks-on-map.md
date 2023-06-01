@@ -35,24 +35,24 @@ Read more about [GPX Tracks](../personal/tracks.md#track).
 
 ## Tracks 
 
-There are two options to display [Tracks](../personal/tracks.md) on the map: via [<Translate android="true" ids="configure_map"/>](../map/tracks-on-map.md#display-via-configure-map-menu) menu or [<Translate android="true" ids="shared_string_my_places"/>](../map/tracks-on-map.md#display-via-my-places-menu) menu
+### Display tracks on the map
+
+In OsmAnd, you can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-### Display via Configure map menu
+#### Tracks in Configure map menu
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Here you can select tracks to display them on the map.
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*   
 
-*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/>*:   
+![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png) 
 
-![Tracks menu Android](@site/static/img/map/tracks_menu_android.png) 
-
-_Import_ and _[Change appearance](#track-appearance)_ for chosen tracks:
+*Import* and *[Change appearance](#track-appearance)* for chosen tracks:
 
 *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>, <Translate android="true" ids="shared_string_import"/>*  
 
@@ -64,14 +64,16 @@ _Import_ and _[Change appearance](#track-appearance)_ for chosen tracks:
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/> → Choosing tracks for displayed from the list.*  
 
-![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png) 
+![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png)   
+
+It is not recommended to use this way of selecting tracks to display them on the map.  
 
 </TabItem>
 
 </Tabs>
 
 
-### Display via My Places menu
+#### Tracks in My Places menu
 
 <Tabs groupId="operating-systems">
 

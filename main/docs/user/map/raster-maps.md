@@ -346,8 +346,6 @@ If you want the maps to automatically update the tiles after some time, you can 
 
 <TabItem value="android" label="Android">  
 
-
-
 :::info
 **First of all, you need to choose your online source as [Main Map source](#select-map-as-main--underlay--overlay-layer), [Overlay](#overlay-layer)/[Underlay](#underlay-layer)**
 :::

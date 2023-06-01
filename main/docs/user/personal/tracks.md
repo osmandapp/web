@@ -142,8 +142,6 @@ You can configure available waypoint folders in the Tracks Context menu: show on
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*  
 
-At the bottom of the screen are four Actions buttons.
-
 ![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_android.png) 
 
 - "+" button  - allows [to import](./tracks.md#import-track) GPX track from device storage.
@@ -151,7 +149,7 @@ At the bottom of the screen are four Actions buttons.
 - "map" button - allows to choose tracks for showing its on the map.
 - "&#x1F5D1;" button - allows to choose tracks for deleting.
 - "&#10227;" button - allows to refresh tracks list.
-- "OSM editing" button - allows [to upload chosen track to OSM](../plugins/osm-editing.md).
+- "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
 
 </TabItem>
 
@@ -159,20 +157,16 @@ At the bottom of the screen are four Actions buttons.
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-Clicking to choosing track opens [Track Context menu](../map/track-context-menu.md) for any actions with it.
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) ![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)  
 
-Actions with track or tracks (track folders) by clicking to "&#8230;" in top screen.  
+ACTIONS  
+- **<Translate ios="true" ids="import_tracks"/>**  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
+- **<Translate ios="true" ids="create_new_trip"/>** - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) ![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)
-
-
-ACTIONS: on bottom part of the device screen
-- "_<Translate ios="true" ids="gpx_import_title"/>_"  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
-- "_<Translate ios="true" ids="create_new_trip"/>_" - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
-
-Buttons (by clicking to "&#8230;" in top screen):
+Buttons in "&#8230;" menu  
 - "export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
 - "map" button - allows to choose tracks for showing its on the map.
+- "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
 - "&#x1F5D1;" button - allows to choose tracks for deleting.
 
 </TabItem>
@@ -180,15 +174,18 @@ Buttons (by clicking to "&#8230;" in top screen):
 </Tabs>
 
 
-### Search / Sort
+### Search
 
-<InfoAndroidOnly />  
-
-Clicking to "&#x1F50D;" button on the top of the device screen opens the searching function of the tracks list.
+Tap the "&#x1F50D;" button at the top of the device screen to open the track list sorting menu.
 
 ![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_seaching_android.png) 
 
-Clicking to "sort" button on the top of the device screen opens choosing sort menu for tracks on the list.
+
+### Sort
+
+<InfoAndroidOnly/>
+
+Tap the "sort" button at the top of the device screen to open the track list sorting menu tool.
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_android.png) ![My places tracks sort 1 function Android](@site/static/img/personal/tracks/my_places_tracks_sort_1_android.png) 
 
@@ -269,9 +266,9 @@ Exporting track file or files to any massengers, email, file managers, Drive , a
 
 After recording and saving, the tracks can be managed as follows:  
 
-- In [**My Places**](../personal/myplaces.md), so that to view all ever recorded data pieces in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). 
-- In [**Configure map**](../map/configure-map-menu.md), so that to select a specific track and display it on the map.
-- With the [**Context menu**](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+- In [*My Places*](../personal/myplaces.md), so that to view all ever recorded data pieces in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). 
+- In [*Configure map*](../map/tracks-on-map.md), so that to select a specific track and display it on the map.
+- With the [*Context menu*](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
 
 
 ### View all tracks 
