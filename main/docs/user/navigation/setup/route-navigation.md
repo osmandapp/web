@@ -299,51 +299,53 @@ How to configure [routing type](../routing/index.md#routing-types) and [route pa
 
 ### Simulate navigation
 
-Simulate navigation function allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
+Simulate navigation option allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
 - Planning. You can see how long it may take to complete the entire route or its single segment.
 - Familiarization. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
-- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.
+- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
+
+#### Start / stop simulation
+
+When the navigation route is built. You can start to simulate movement using *<Translate android="true" ids="simulate_navigation"/>* option.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
-
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699_
-
-![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
-
-- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
-
-When you click on ["Start" button](#how-to-use), your simulation of navigation will start. 
-
-For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](#how-to-use).  
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
-
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
-
-![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
-
-- &nbsp;_<Translate ios="true" ids="simulation_preview_mode_title"/>_ - <Translate ios="true" ids="simulation_preview_mode_desc"/>
-- &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
-- &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
-
-When you click on [*Start* button](#start--stop-navigation), your simulation of navigation will start.  
-
-To stop the simulation of navigation, you need to tap [*Navigation* button → *Cancel*](#start--stop-navigation).
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
 
 </TabItem>
 
 </Tabs>
+
+In the *[Navigation menu](#navigation-menu)* go to <Translate android="true" ids="shared_string_settings,simulate_navigation"/>. Thеn toggle the switch to enable this option. Pressing the *[Start navigation](#how-to-use)* button starts the simulation. To stop the simulation of navigation you need to tap *[Dismiss](#start--stop-navigation)* button (Android), or *[Cancel](#start--stop-navigation)* (iOS).
+
+#### Simulation settings
+
+To adjust the speed of a simulation go to: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>

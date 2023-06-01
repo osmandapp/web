@@ -18,10 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Each profile is available for full configuration. The following profiles are available by default: _Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Public transport, Boat, Aircraft, Skiing, Horseback riding_. ```Truck, Motorcycle, Aircraft and Horseback riding profiles are switched off by default. You need to activate these profiles.```
+The following profiles are available by default: *Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Moped, Public transport, Boat, Aircraft, Skiing, Horseback riding*. Each profile is available for full configuration. Of course, you can create your own profile with full customization.
 
-In fact, each profile can become a separate application for the needs of the user. Of course, you can create your own profile with full customization for your needed.
-
+:::note
+**Truck, Motorcycle, Moped, Aircraft, Boat and Horseback riding** profiles are switched off by default. In order to use these profiles, you need to activate them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.  
+:::
 
 <Tabs groupId="operating-systems">
 
