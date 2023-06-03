@@ -66,6 +66,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.10.1",
     "@mui/lab": "^5.0.0-alpha.85",
     "yarn-upgrade-all": "^0.7.1"
   },

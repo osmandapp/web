@@ -7,7 +7,7 @@ import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
 import axios from 'axios';
-import spin from 'leaflet-spin';
+import 'leaflet-spin';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
 
@@ -25,11 +25,11 @@ export default function PoiLayer() {
     });
     const [prevController, setPrevController] = useState(false);
 
-    async function getPoi(controller, zoom) {
+    async function getPoi(controller, zoom, showPoiCategories) {
         let latlng = map.getCenter();
         let bbox = map.getBounds();
         const data = {
-            categories: ctx.showPoiCategories,
+            categories: showPoiCategories,
             latBboxPoint1: bbox.getNorthEast().lat,
             lngBboxPoint1: bbox.getNorthEast().lng,
             latBboxPoint2: bbox.getSouthWest().lat,
@@ -44,7 +44,8 @@ export default function PoiLayer() {
                 },
                 signal: controller.signal
             }
-        ).catch(function (thrown) {});
+        ).catch(function (thrown) {
+        });
         if (response?.data) {
             return response.data.features;
         }
@@ -66,9 +67,9 @@ export default function PoiLayer() {
         return (!_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length);
     }
 
-    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom) => {
+    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories) => {
         map.spin(true);
-        await getPoi(controller, zoom).then((res) => {
+        await getPoi(controller, zoom, showPoiCategories).then((res) => {
             map.spin(false);
             if (res && !ignore) {
                 const newPoiList = {
@@ -92,8 +93,7 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                
-                debouncedGetPoi(controller, ignore, zoom);
+                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories);
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
@@ -105,7 +105,7 @@ export default function PoiLayer() {
             }
         }
 
-        getPoiList();
+        getPoiList().then();
         return () => {
             ignore = true;
         }

@@ -1,10 +1,8 @@
 import {Dialog} from "@material-ui/core";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import {
     Autocomplete,
-    Button,
     Grid,
     IconButton,
     ListItemIcon,
@@ -17,9 +15,7 @@ import AppContext from "../../../context/AppContext";
 import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import drawerStyles from "../../styles/DrawerStyles";
-import _ from "lodash";
 import PoiManager from "../../../context/PoiManager";
-import icons from "../../../generated/poiicons.json"
 
 const useStyles = makeStyles({
     icon: {
@@ -194,6 +190,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                                     <circle cx="24" cy="24" r="12" fill="#f8931d"/>
                                                 </svg>
                                                 <img className="icon"
+                                                     alt={option}
                                                      src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
                                             </div>
                                         </ListItemIcon>
@@ -233,6 +230,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                             <circle cx="24" cy="24" r="12" fill="#f8931d"/>
                                         </svg>
                                         <img className="icon"
+                                             alt={item}
                                              src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${formattingPoiFilter(item)}.svg`}/>
                                     </div>
                                 </ListItemIcon>
@@ -241,9 +239,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         </Grid>)}
                 </Grid>
             </DialogContent>
-            <DialogActions>
-                <Button onClick={toggleShowDialog}>Close</Button>
-            </DialogActions>
         </Dialog>
     );
 }
