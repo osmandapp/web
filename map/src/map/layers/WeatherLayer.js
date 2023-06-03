@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { useMap } from "react-leaflet";
+import React, {useContext, useEffect} from 'react';
+import {useMap} from "react-leaflet";
 import AppContext from "../../context/AppContext";
 import {TileLayer, LayersControl} from "react-leaflet";
 
@@ -36,12 +36,14 @@ const WeatherLayer = () => {
     }, [map, ctx.weatherLayers, ctx.updateWeatherLayers])
 
     const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
-        const ind = layers.findIndex(l => l.name === event.name);
-        if (ind >= 0) {
-            let newlayers = [...layers];
-            newlayers[ind].checked = enable;
-            updateLayers(newlayers);
-        }
+        Object.keys(layers).forEach(type => {
+            const ind = layers[type].findIndex(l => l.name === event.name);
+            if (ind >= 0) {
+                let newlayers = [...layers];
+                newlayers[type][ind].checked = enable;
+                updateLayers(newlayers);
+            }
+        })
     }
 
     useEffect(() => {
@@ -57,7 +59,7 @@ const WeatherLayer = () => {
 
     return <>
         <LayersControl>
-            {ctx.weatherLayers.map((item) => (
+            {ctx.weatherLayers[ctx.weatherType].map((item) => (
                 <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key}>
                     <TileLayer
                         url={item.url}

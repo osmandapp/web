@@ -15,11 +15,15 @@ const osmandTileURL = {
 }
 
 
-function getWeatherUrl(layer) {
-    return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
+function getWeatherUrl(layer, type) {
+    if (type === 'gfs') {
+        return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
+    } else if (type === 'ecmwf') {
+        return process.env.REACT_APP_WEATHER_ECMWF_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
+    }
 }
 
-function getLayers() {
+function getWeatherLayers(type) {
     const layers = [
         {key: "temperature", name: "Temperature", opacity: 0.5, iconComponent: <Thermostat fontSize="small"/>},
         {key: "pressure", name: "Pressure", opacity: 0.6, iconComponent: <Compress fontSize="small"/>},
@@ -28,7 +32,7 @@ function getLayers() {
         {key: "precip", name: "Precipitation", opacity: 0.7, iconComponent: <Shower fontSize="small"/>},
     ];
     layers.map((item) => {
-        item.url = getWeatherUrl(item.key);
+        item.url = getWeatherUrl(item.key, type);
         item.maxNativeZoom = 3;
         item.maxZoom = 11;
         item.checked = false;
@@ -36,6 +40,13 @@ function getLayers() {
         return item;
     });
     return layers;
+}
+
+function getLayers() {
+    let allLayers = {};
+    allLayers['gfs'] = getWeatherLayers('gfs');
+    allLayers['ecmwf'] = getWeatherLayers('ecmwf');
+    return allLayers;
 }
 
 let monthNames = {};
@@ -413,6 +424,7 @@ export const AppContextProvider = (props) => {
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, updateWeatherLayers] = useState(getLayers());
     const [weatherDate, setWeatherDate] = useState(getWeatherDate());
+    const [weatherType, setWeatherType] = useState('gfs');
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
@@ -566,6 +578,7 @@ export const AppContextProvider = (props) => {
     return <AppContext.Provider value={{
         weatherLayers, updateWeatherLayers,
         weatherDate, setWeatherDate,
+        weatherType, setWeatherType,
         userEmail, setUserEmail,
         listFiles, setListFiles,
         loginUser, setLoginUser,
