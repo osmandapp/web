@@ -66,7 +66,9 @@ export default function Weather() {
     };
 
     useEffect(() => {
-        displayWeather(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
+            displayWeather(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+        }
     }, [ctx.weatherType]);
 
     useEffect(() => {
