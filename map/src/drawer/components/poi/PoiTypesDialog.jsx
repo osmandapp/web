@@ -42,7 +42,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     const classes = useStyles();
     const styles = drawerStyles();
 
-    const MIN_SIZE_SEARCH_VALUE = 2;
+    const MIN_SIZE_SEARCH_VALUE = 3;
 
     const [selectedPoiCategory, setSelectedPoiCategory] = useState(null);
     const [poiTypesResult, setPoiTypesResult] = useState([]);
@@ -65,6 +65,14 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }, [selectedPoiCategory]);
 
+    useEffect(() => {
+        if (poiTypesResult) {
+            setSearchOptions(Object.keys(poiTypesResult));
+        } else {
+            setSearchOptions([]);
+        }
+    }, [poiTypesResult]);
+
     function showPoiCategoriesOnMap() {
         if (selectedPoiCategory) {
             const categories = ctx.showPoiCategories;
@@ -83,12 +91,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
 
     async function searchPoiCategory(value) {
         if (value.length >= MIN_SIZE_SEARCH_VALUE) {
-            const searchResult = await PoiManager.searchPoiCategories(value);
+            let searchResult = await PoiManager.searchPoiCategories(value);
             if (searchResult) {
-                setPoiTypesResult(searchResult);
-                if (poiTypesResult) {
-                    setSearchOptions(Object.keys(poiTypesResult));
-                }
+                setPoiTypesResult({...searchResult});
             }
         } else {
             setPoiTypesResult(null);
@@ -164,6 +169,9 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                 <TextField
                                     value={searchText}
                                     onChange={e => {
+                                        if (e.target.value === '') {
+                                            setSearchOptions(Object.keys(ctx.poiCategory.categories));
+                                        }
                                         setSearchText(e.target.value);
                                         searchPoiCategory(e.target.value).then();
                                     }}
