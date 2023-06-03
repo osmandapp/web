@@ -22,14 +22,14 @@ async function displayWeather(ctx, setWeatherPoint, weatherType) {
         }
     }
     let data = {lat: lat, lon: lon}
-    const response = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&type=${weatherType}&week=false`, {
+    const response = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=false`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         data.day = await response.json();
     }
-    const responseWeek = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&type=${weatherType}&week=true`, {
+    const responseWeek = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=true`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -64,6 +64,10 @@ export default function Weather() {
     const handleWeatherType = (event, selectedType) => {
         ctx.setWeatherType(selectedType);
     };
+
+    useEffect(() => {
+        displayWeather(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+    }, [ctx.weatherType]);
 
     useEffect(() => {
         let resultText = '';
