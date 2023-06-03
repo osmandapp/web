@@ -39,7 +39,7 @@ const WeatherLayer = () => {
         Object.keys(layers).forEach(type => {
             const ind = layers[type].findIndex(l => l.name === event.name);
             if (ind >= 0) {
-                let newlayers = [...layers];
+                let newlayers = {...layers};
                 newlayers[type][ind].checked = enable;
                 updateLayers(newlayers);
             }
