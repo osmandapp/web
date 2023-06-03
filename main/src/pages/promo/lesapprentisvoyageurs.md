@@ -32,7 +32,7 @@ OsmAnd et ["Les Apprentis Voyageurs"](https://lesapprentisvoyageurs.fr/) vous pr
 
 <p> </p>
 
-1. **Le manuel complet** est [ICI](https://osmand.net/promo/manual).
+2. **Le manuel complet** est [ICI](https://osmand.net/promo/manual).
 
 
 OsmAnd ne collecte aucune information, veuillez lire [la politique de confidentialité](https://osmand.net/docs/legal/privacy-policy) et [les conditions d'utilisation d'OsmAnd](https://osmand.net/docs/legal/terms-of-use).
