@@ -7,6 +7,7 @@ import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
 import axios from 'axios';
+import spin from 'leaflet-spin';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
 
@@ -66,7 +67,9 @@ export default function PoiLayer() {
     }
 
     const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom) => {
+        map.spin(true);
         await getPoi(controller, zoom).then((res) => {
+            map.spin(false);
             if (res && !ignore) {
                 const newPoiList = {
                     prevLayer: _.cloneDeep(poiList.layer),

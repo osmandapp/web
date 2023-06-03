@@ -25,6 +25,7 @@
     "leaflet-contextmenu": "^1.4.0",
     "leaflet-geometryutil": "^0.10.1",
     "leaflet-hash": "^0.2.1",
+    "leaflet-spin": "^1.1.2",
     "leaflet.awesome-markers": "^2.0.5",
     "lodash": "^4.17.21",
     "pako": "^2.0.4",
