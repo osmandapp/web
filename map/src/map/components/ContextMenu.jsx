@@ -3,8 +3,9 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import {useNavigate} from "react-router-dom";
 import TracksManager from "../../context/TracksManager";
+import {get} from "axios";
 
-export default function ContextMenu({setGeocodingData}) {
+export default function ContextMenu({setGeocodingData, setRegionData}) {
 
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -32,6 +33,12 @@ export default function ContextMenu({setGeocodingData}) {
             map.contextmenu.addItem({
                 text: 'Where am I',
                 callback: whereAmI
+            });
+            map.contextmenu.addItem({
+                text: 'Show regions',
+                callback: (e) => {
+                    ctx.loginUser ? getRegions(e.latlng) : openLogin()
+                }
             });
             map.contextmenu.addItem({
                 text: 'Add favorite',
@@ -73,8 +80,30 @@ export default function ContextMenu({setGeocodingData}) {
         }
     };
 
+    async function getRegions(latlng) {
+        setRegionData(null);
+        await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/regions-by-latlon?`,
+            {
+                params: {
+                    lat: latlng.lat.toFixed(6),
+                    lon: latlng.lng.toFixed(6),
+                }
+            }
+        ).then((res => {
+            const regions = formattingRegions(res.data.regions);
+            setRegionData({
+                regions: regions,
+                latlng: latlng
+            })
+        }))
+    }
+
     function addFavorite(e) {
         ctx.addFavorite.location = e.latlng;
         ctx.setAddFavorite({...ctx.addFavorite});
+    }
+
+    function formattingRegions(regions) {
+        return regions.join(', ').replaceAll('_', ' ');
     }
 }

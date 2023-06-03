@@ -75,6 +75,7 @@ const OsmAndMap = () => {
     const hoverPointRef = useRef(null);
 
     const [geocodingData, setGeocodingData] = useState(null);
+    const [regionData, setRegionData] = useState(null);
 
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
@@ -105,7 +106,7 @@ const OsmAndMap = () => {
         >
             <LocalClientTrackLayer/>
             <PoiLayer/>
-            <RouteLayer geocodingData={geocodingData}/>
+            <RouteLayer geocodingData={geocodingData} region={regionData}/>
             <FavoriteLayer/>
             <WeatherLayer/>
             <TrackLayer/>
@@ -122,7 +123,7 @@ const OsmAndMap = () => {
                 && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons}/>}
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
-            <ContextMenu setGeocodingData={setGeocodingData}/>
+            <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData}/>
         </MapContainer>
     );
 };

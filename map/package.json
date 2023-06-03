@@ -67,6 +67,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.10",
     "@mui/lab": "^5.0.0-alpha.85",
     "yarn-upgrade-all": "^0.7.1"
   },
