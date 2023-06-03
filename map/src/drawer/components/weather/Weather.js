@@ -110,7 +110,11 @@ export default function Weather() {
 
     }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.updateWeatherLayers, weatherOpen]);
 
+    function disableLayers(item) {
+        return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === 'ecmwf';
+    }
 
+    
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => {
             setWeatherOpen(!weatherOpen);
@@ -147,6 +151,7 @@ export default function Weather() {
                     </ListItemIcon>
                     <ListItemText>{item.name}</ListItemText>
                     <Switch
+                        disabled={disableLayers(item)}
                         checked={item.checked}
                         onChange={switchLayer(ctx, index, ctx.weatherType)}/>
                 </MenuItem>
