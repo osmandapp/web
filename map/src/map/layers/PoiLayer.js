@@ -68,7 +68,7 @@ export default function PoiLayer() {
     }
 
     const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories) => {
-        map.spin(true);
+        map.spin(true, {color: '#1976d2'});
         await getPoi(controller, zoom, showPoiCategories).then((res) => {
             map.spin(false);
             if (res && !ignore) {

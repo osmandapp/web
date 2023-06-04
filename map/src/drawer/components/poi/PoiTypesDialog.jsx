@@ -16,6 +16,7 @@ import MarkerOptions from "../../../map/markers/MarkerOptions";
 import {makeStyles} from "@material-ui/core/styles";
 import drawerStyles from "../../styles/DrawerStyles";
 import PoiManager from "../../../context/PoiManager";
+import _ from "lodash";
 
 const useStyles = makeStyles({
     icon: {
@@ -54,22 +55,17 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     };
 
     useEffect(() => {
-        let categories = Object.keys(ctx.poiCategory.categories);
-        categories = removeUnusedPoiCategories(categories);
-        setSearchOptions(categories);
-    }, []);
-
-    useEffect(() => {
         if (selectedPoiCategory) {
             getPoiTypesByCategory(selectedPoiCategory);
         }
     }, [selectedPoiCategory]);
 
     useEffect(() => {
-        if (poiTypesResult) {
-            setSearchOptions(Object.values(poiTypesResult));
+        if (!_.isEmpty(poiTypesResult)) {
+            setSearchOptions(Object.keys(poiTypesResult));
         } else {
-            setSearchOptions([]);
+            let categories = removeUnusedPoiCategories(Object.keys(ctx.poiCategory.categories));
+            setSearchOptions(categories);
         }
     }, [poiTypesResult]);
 
@@ -112,7 +108,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     function getPoiTypesByCategory(newValue) {
         const category = newValue?.toLowerCase();
         if (ctx.poiCategory.categories[category]) {
-            setPoiTypesResult(ctx.poiCategory.categories[category]);
             setSearchOptions(ctx.poiCategory.categories[category]);
         }
     }
@@ -228,7 +223,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
-                                          setSelectedPoiCategory(formattingPoiCategory(item))
+                                          setSelectedPoiCategory(formattingPoiCategory(item));
                                       }}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
