@@ -67,7 +67,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
 
     useEffect(() => {
         if (poiTypesResult) {
-            setSearchOptions(Object.keys(poiTypesResult));
+            setSearchOptions(Object.values(poiTypesResult));
         } else {
             setSearchOptions([]);
         }
