@@ -10,7 +10,10 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+<InfoIncompleteArticle/>
 
 ## Overview
 
@@ -50,13 +53,9 @@ Slide animations could be disabled with special [setting](#disable-all-animation
 
 Keep in mind that during navigation zoom can be controlled by **Auto zoom setting**:
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>
+**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>  
 
-<p> </p>
-
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>
-
-<p> </p>
+**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>  
 
 
 ## Map magnifier
@@ -85,12 +84,19 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
+
+**North is up (fixed)** Map exhibits no automatic rotation, the north direction aways points upwards. When manually rotating with a [two fingers gesture](../map/interact-with-map.md#gestures), the widget's north direction changes accordingly. By tapping on the widget, the compass and the map return to the original orientation.    
+**Movement direction** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)   
+**Compass direction** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.     
+**Manually rotated (fixed)**  
+When you select this option, the map is fixed in the current position. You can manually change the card orientation with a two-finger gesture.
 
 - **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - the map is being rotated by your bearing, i.e. the direction of your movement (GPS direction) is synchronized with the map. [Read more](#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - the map is being synchronized with the device compass orientation. The [Compass widget](../widgets/map-buttons.md/#compass) will indicate ground truth north while the device is held flat. On devices without compass sensor the map orientation won't change.
+
 
 :::note
 Map orientation mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).

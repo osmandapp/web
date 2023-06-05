@@ -71,12 +71,12 @@ A simple and fast tool for creating points by specifying geographic coordinates.
 
 ### Record track
 
-Trip recording (Android) / Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends. Read about [Trip recording Plugin](../plugins/trip-recording.md).  
+Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special widgets to record your tracks. Trip recording (Android) or Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.    
 
 
-### Edit via Plan Route
+### Edit tracks with Plan a route
 
-- [Edit track via "Plan route" tool](../plan-route/create-route.md#modify-existing-gpx-track).  
+[**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track).  
 
 
 ## Add waypoint

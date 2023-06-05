@@ -14,6 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoIncompleteArticle/>
+
+## Overview
 
 Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Menu represent main controls on the map.
 
@@ -22,7 +25,8 @@ Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Me
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-My location & zoom buttons control the map display. You can read more in [Interact with map](../map/interact-with-map.md#my-location--zoom) article.
+My location and Zoom buttons control the map display. You can read more in [Interact with map](../map/interact-with-map.md#my-location--zoom) article.
+
 
 ## Directions
 
@@ -35,11 +39,13 @@ My location & zoom buttons control the map display. You can read more in [Intera
 - Default blue icon - the route is built, but navigation has not started yet. A dialog with route information will appear by click.
 - Blue arrow icon - the route is built and navigation has started. A dialog with route information will appear by click.
 
+
 ## Configure Map
 
 ![Configure Map](@site/static/img/widgets/configure_map.png)
 
 **Configure Map** button allows to access to [Configure Map menu](../map/configure-map-menu.md). Icon on it indicates [Current app profile](../personal/profiles.md).
+
 
 ## Main menu
 
@@ -47,45 +53,70 @@ My location & zoom buttons control the map display. You can read more in [Intera
 
 [Main menu](../start-with/main-menu.md) button allows to access to [all features](../start-with/main-menu.md) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
 
+
 ## Search
 
 ![Search button](@site/static/img/widgets/search_button.png)
 
 Search button buttons provides quick access from the map to [search capabilities](../search/index.md).
 
+
 ## Compass
 
-Compass widget shows how the map is oriented on your device's screen. You can select three types of compass:
-- **Fixed (north is up):** Map exhibits no automatic rotation, the north direction aways points upwards. When manually rotating with a [two fingers gesture](../map/interact-with-map.md#gestures), the widget's north direction changes accordingly. By tapping on the widget, the compass and the map return to the original orientation.
-- **Movement direction:** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)
-- **Compass direction:** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.  
+The Compass button shows how the map is oriented on your device screen. For more information, go to the *Map* section of the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.   
 
-[Read more info here](../map/interact-with-map.md#map-orientation--compass).
+<!--
+
+|  |  |
+|:------------|:----------- |
+| ![Compass widget](@site/static/img/widgets/map_butt_north_up_ios.png)   | **North is up (fixed)**. The map is fixed in the North direction, which is the top edge of your device. Similar to physical maps. |
+| ![Compass widget](@site/static/img/widgets/map_butt_movem_dir_ios.png)  | **Movement direction**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).  |
+| ![Compass widget](@site/static/img/widgets/map_butt_compas_dir_ios.png) | **Compass direction**        |
+| ![Compass widget](@site/static/img/widgets/map_butt_manually_ios.png)   | **Manually rotated (fixed)** |
+
+-->
+
+#### Buttons
+
+- ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)   
+**North is up (fixed)**. The map is fixed in the North direction, which is the top edge of your device. Similar to physical maps.  
+
+- ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)   
+**Movement direction**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
+
+- ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
+**Compass direction**. The icon points to the actual North, and the map moves according to the compass orientation of your device.  
+
+- ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
+**Manually rotated (fixed)**. When you select this option, the map is fixed in the current position. You can manually change the map orientation with a [*two-finger gesture*](../map/interact-with-map.md#gestures).
+
+
+#### Display options
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>*
 
-![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
-
-You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible only if the map is rotated*.
-
-![Compass widget](@site/static/img/widgets/compass_andr_1.png)
+![Compass widget](@site/static/img/widgets/map_butt_compass_widg_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to:* <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
 
-![Compass widget](@site/static/img/widgets/cmp_dir_north_andr.png) ![Compass widget](@site/static/img/widgets/movement_dir_andr.png) ![Compass widget](@site/static/img/widgets/compas_dir_andr.png)
-
-You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible if map is rotated*.
-
-![Compass widget](@site/static/img/widgets/compass_ios.png)
+![Compass widget](@site/static/img/widgets/map_butt_compass_widg_ios.png)
 
 </TabItem>
 
 </Tabs> 
+
+You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible if map is rotated*.  
+
+:::tip
+Tap the Compass button, if visible, in the upper left corner of the screen to switch the map orientation mode.
+:::
+
+
