@@ -7,15 +7,15 @@ module.exports = function (app) {
         logLevel: 'debug'
     });
     let testProxy = createProxyMiddleware({
-        target: 'http://test.osmand.net/',
+        target: 'https://test.osmand.net/',
         changeOrigin: true,
         hostRewrite: 'localhost:3000',
         logLevel: 'debug'
     });
-    app.use('/mapapi/', proxy);
-    app.use('/routing/', proxy);
-    app.use('/gpx/', proxy);
-    app.use('/tile/', proxy);
-    app.use('/weather-api/', proxy);
+    app.use('/mapapi/', testProxy);
+    app.use('/routing/', testProxy);
+    app.use('/gpx/', testProxy);
+    app.use('/tile/', testProxy);
+    app.use('/weather-api/', testProxy);
     
 };
