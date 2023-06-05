@@ -16,11 +16,7 @@ const osmandTileURL = {
 
 
 function getWeatherUrl(layer, type) {
-    if (type === 'gfs') {
-        return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
-    } else if (type === 'ecmwf') {
-        return process.env.REACT_APP_WEATHER_ECMWF_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
-    }
+    return process.env.REACT_APP_WEATHER_URL + type + '/tiles/' + layer + '/{time}/{z}/{x}/{y}.png';
 }
 
 function getWeatherLayers(type) {
