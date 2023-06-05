@@ -20,31 +20,9 @@ function getWeatherTime(weatherDateObj) {
 }
 
 const WeatherLayer = () => {
+
     const map = useMap();
     const ctx = useContext(AppContext);
-    useEffect(() => {
-        if (map) {
-            const enableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, true);
-            const disableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, false);
-            map.on('overlayadd', enableFunc);
-            map.on('overlayremove', disableFunc);
-            return () => {
-                map.off('overlayadd', enableFunc);
-                map.off('overlayremove', disableFunc);
-            };
-        }
-    }, [map, ctx.weatherLayers, ctx.updateWeatherLayers])
-
-    const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
-        Object.keys(layers).forEach(type => {
-            const ind = layers[type].findIndex(l => l.name === event.name);
-            if (ind >= 0) {
-                let newlayers = {...layers};
-                newlayers[type][ind].checked = enable;
-                updateLayers(newlayers);
-            }
-        })
-    }
 
     useEffect(() => {
         if (map) {

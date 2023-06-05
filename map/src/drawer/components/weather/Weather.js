@@ -9,9 +9,10 @@ import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
+import _ from "lodash";
 
 
-async function displayWeather(ctx, setWeatherPoint, weatherType) {
+async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
     let lat = 0;
     let lon = 0;
     if (window.location.hash) {
@@ -47,9 +48,9 @@ const addWeatherHours = (ctx, hours) => () => {
 }
 
 const switchLayer = (ctx, index, weatherType) => (e) => {
-    let newlayers = {...ctx.weatherLayers};
-    newlayers[weatherType][index].checked = e.target.checked;
-    ctx.updateWeatherLayers(newlayers);
+    let newLayers = {...ctx.weatherLayers};
+    newLayers[weatherType][index].checked = e.target.checked;
+    ctx.setWeatherLayers(newLayers);
 }
 
 export default function Weather() {
@@ -62,13 +63,36 @@ export default function Weather() {
     const [weatherOpen, setWeatherOpen] = useState(false);
 
     const handleWeatherType = (event, selectedType) => {
-        ctx.setWeatherType(selectedType);
+        if (selectedType !== null && selectedType !== ctx.weatherType) {
+            ctx.setWeatherType(selectedType);
+        }
     };
 
     useEffect(() => {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
-            displayWeather(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+            displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
+    }, [ctx.weatherType]);
+
+    useEffect(() => {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
+            displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+        }
+        let newLayers = {...ctx.weatherLayers};
+        Object.keys(newLayers).forEach(type => {
+            if (type !== ctx.weatherType) {
+                newLayers[type].forEach(l => {
+                    if (l.checked) {
+                        const index = _.indexOf(newLayers[type], l);
+                        if (!disableLayers(newLayers[ctx.weatherType][index])) {
+                            newLayers[ctx.weatherType][index].checked = true;
+                        }
+                        newLayers[type][index].checked = false;
+                    }
+                })
+            }
+        })
+        ctx.setWeatherLayers(newLayers);
     }, [ctx.weatherType]);
 
     useEffect(() => {
@@ -108,13 +132,13 @@ export default function Weather() {
             weather: {text: resultText}
         }));
 
-    }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.updateWeatherLayers, weatherOpen]);
+    }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers, weatherOpen]);
 
     function disableLayers(item) {
         return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === 'ecmwf';
     }
 
-    
+
     return <>
         <MenuItem sx={{mb: 1}} onClick={() => {
             setWeatherOpen(!weatherOpen);
@@ -167,7 +191,7 @@ export default function Weather() {
             </MenuItem>
             <MenuItem>
                 <Button variant="contained" component="span" sx={{ml: 3}}
-                        onClick={() => displayWeather(ctx, ctx.setWeatherPoint, ctx.weatherType)}>
+                        onClick={() => displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType)}>
                     Weather Forecast
                 </Button>
             </MenuItem>

@@ -422,7 +422,7 @@ export const AppContextProvider = (props) => {
 
     // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
-    const [weatherLayers, updateWeatherLayers] = useState(getLayers());
+    const [weatherLayers, setWeatherLayers] = useState(getLayers());
     const [weatherDate, setWeatherDate] = useState(getWeatherDate());
     const [weatherType, setWeatherType] = useState('gfs');
     const [gpxLoading, setGpxLoading] = useState(false);
@@ -576,7 +576,7 @@ export const AppContextProvider = (props) => {
         // eslint-disable-next-line
     }, [loginUser]);
     return <AppContext.Provider value={{
-        weatherLayers, updateWeatherLayers,
+        weatherLayers, setWeatherLayers,
         weatherDate, setWeatherDate,
         weatherType, setWeatherType,
         userEmail, setUserEmail,
