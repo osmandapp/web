@@ -47,12 +47,14 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }, [dialogOpen]);
 
     async function getIconCategories() {
-        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER)
-        const res = await resp.json();
-        if (res) {
-            setCurrentIconCategories('special');
-            setFavoriteIconCategories(res);
-        }
+        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER);
+        try {
+            const res = await resp.json();
+            if (res) {
+                setCurrentIconCategories('special');
+                setFavoriteIconCategories(res);
+            }
+        } catch { /* console.log("json error (please download OsmAnd-resources)", FavoritesManager.FAVORITE_GROUP_FOLDER); */ };
     }
 
     async function save() {
