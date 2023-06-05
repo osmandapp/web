@@ -42,11 +42,6 @@ async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
     ctx.setCurrentObjectType(type);
 }
 
-const addWeatherHours = (ctx, hours) => () => {
-    let dt = new Date(ctx.weatherDate.getTime() + (hours * 60 * 60 * 1000));
-    ctx.setWeatherDate(dt);
-}
-
 const switchLayer = (ctx, index, weatherType) => (e) => {
     let newLayers = {...ctx.weatherLayers};
     newLayers[weatherType][index].checked = e.target.checked;
@@ -56,6 +51,9 @@ const switchLayer = (ctx, index, weatherType) => (e) => {
 export default function Weather() {
 
     const ctx = useContext(AppContext);
+
+    const GFS_WEATHER_TYPE = 'gfs';
+    const ECWMF_WEATHER_TYPE = 'ecmwf';
 
     let hours = (-(new Date().getTime() - ctx.weatherDate.getTime()) / 3600000).toFixed(0);
     let utcHours = new Date().getUTCHours();
@@ -68,9 +66,19 @@ export default function Weather() {
         }
     };
 
+    function addWeatherHours(ctx, hours) {
+        let dt = new Date(ctx.weatherDate.getTime() + (hours * 60 * 60 * 1000));
+        ctx.setWeatherDate(dt);
+    }
+
     useEffect(() => {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
             displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+        }
+        if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
+            if ((ctx.weatherDate.getHours() % 3) !== 0 || ctx.weatherDate.getHours() !== 0) {
+                addWeatherHours(ctx, getTime(false));
+            }
         }
     }, [ctx.weatherType]);
 
@@ -135,7 +143,21 @@ export default function Weather() {
     }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers, weatherOpen]);
 
     function disableLayers(item) {
-        return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === 'ecmwf';
+        return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
+    }
+
+    function getTime(increment) {
+        let step = 1;
+        if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
+            const time = ctx.weatherDate.getHours()
+            if (time !== 0 && time % 3 !== 0) {
+                step = time % 3;
+            } else {
+                step = 3;
+            }
+        }
+        step = hours >= gmt30Hours ? step + 2 : step;
+        return increment ? step : -step;
     }
 
 
@@ -162,8 +184,8 @@ export default function Weather() {
                 onChange={handleWeatherType}
                 aria-label="Platform"
             >
-                <ToggleButton value="gfs">GFS</ToggleButton>
-                <ToggleButton value="ecmwf">ECWMF</ToggleButton>
+                <ToggleButton value={GFS_WEATHER_TYPE}>GFS</ToggleButton>
+                <ToggleButton value={ECWMF_WEATHER_TYPE}>ECWMF</ToggleButton>
             </ToggleButtonGroup>
             {ctx.weatherLayers && ctx.weatherLayers[ctx.weatherType].map((item, index) => (
                 <MenuItem key={item.key}>
@@ -181,11 +203,11 @@ export default function Weather() {
                 </MenuItem>
             ))}
             <MenuItem disableRipple={true}>
-                <IconButton sx={{ml: 1}} onClick={addWeatherHours(ctx, hours > gmt30Hours ? -3 : -1)}>
+                <IconButton sx={{ml: 1}} onClick={() => addWeatherHours(ctx, getTime(false))}>
                     <NavigateBefore/>
                 </IconButton>
                 <Typography>{ctx.weatherDate.toLocaleDateString() + " " + ctx.weatherDate.getHours() + ":00"}</Typography>
-                <IconButton onClick={addWeatherHours(ctx, hours >= gmt30Hours ? 3 : 1)}>
+                <IconButton onClick={() => addWeatherHours(ctx, getTime(true))}>
                     <NavigateNext/>
                 </IconButton>
             </MenuItem>
