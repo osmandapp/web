@@ -86,11 +86,16 @@ Map magnifier is a special way to magnify the map. Essentially it works as a mag
 
 </Tabs>  
 
+<!--
+
 **North is up (fixed)** Map exhibits no automatic rotation, the north direction aways points upwards. When manually rotating with a [two fingers gesture](../map/interact-with-map.md#gestures), the widget's north direction changes accordingly. By tapping on the widget, the compass and the map return to the original orientation.    
 **Movement direction** Map rotates by bearing, this is the direction of your movement by GPS, which is synchronized with the map. [Read more](../map/interact-with-map#rotate-map-by-bearing)   
 **Compass direction** Map synchronizes with the compass on your device and the widget points to the actual north of the Earth. If your device does not have a compass sensor, the map orientation will not change.     
 **Manually rotated (fixed)**  
 When you select this option, the map is fixed in the current position. You can manually change the card orientation with a two-finger gesture.
+
+-->
+
 
 - **<Translate android="true" ids="rotate_map_north_opt"/>** - north is always aligned towards the device top. The map orientation is fixed, i.e. not being rotated automatically, but can be rotated manually via a *2 pointer gesture* (2 finger touch & rotate).
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - the map orientation is fixed, i.e. not being rotated automatically, but has been rotated manually via a *2 pointer gesture* (2 finger touch & rotate). A single tap on the compass returns the to its north-is-up orientation.

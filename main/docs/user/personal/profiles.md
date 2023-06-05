@@ -91,7 +91,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="dark_theme"/> theme*
   - *<Translate android="true" ids="light_theme"/> theme*
   - *<Translate android="true" ids="system_default_theme"/>* - Applies the system theme. By default and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
-- *<Translate android="true" ids="rotate_map_to"/>* - Allows [to set orientation the map view](../map/interact-with-map.md#map-orientation-modes).
+- *<Translate android="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate android="true" ids="rotate_map_north_opt"/>*
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
@@ -115,13 +115,13 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
 
-- &nbsp;*<Translate ios="true" ids="rotate_map_to"/>* - Allows [to set the map orientation mode](../map/interact-with-map.md#map-orientation-modes):
+- *<Translate ios="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate ios="true" ids="rotate_map_north_opt"/>*
   - *<Translate ios="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate ios="true" ids="rotate_map_compass_opt"/>*
   - *<Translate ios="true" ids="rotate_map_manual_opt"/>*
-- &nbsp;*<Translate ios="true" ids="allow_3D_view"/>* - If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
-- &nbsp;*<Translate ios="true" ids="position_on_map"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+- *<Translate ios="true" ids="allow_3D_view"/>* - If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- *<Translate ios="true" ids="position_on_map"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
   - *<Translate ios="true" ids="position_on_map_center"/>* - The cursor will always be in the center of the screen.
   - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
   - *<Translate ios="true" ids="shared_string_automatic"/>* - Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).

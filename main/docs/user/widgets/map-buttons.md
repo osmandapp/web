@@ -113,10 +113,14 @@ The Compass button shows how the map is oriented on your device screen. For more
 
 </Tabs> 
 
-You can choose in the widget menu how the compass is displayed: *Always visible*, *Always hidden*, or *Visible if map is rotated*.  
+The compass icon on the button always points to the North. You can select how the compass button is displayed on the screen.
+- *Always visible* - the button does not disappear from the screen. 
+- *Always hidden* - in this case, you will not be able to change the map orientation quickly, but the button will not take up space on the screen.
+- *Visible if map is rotated* - the button is not visible while the compass is pointing the North at the top edge of your device.  
 
 :::tip
-Tap the Compass button, if visible, in the upper left corner of the screen to switch the map orientation mode.
+1. Tap the Compass button in the upper left corner of the screen, if visible, to switch the map orientation mode.
+2. You can change the map orientation mode by long-tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes) screen.
 :::
 
 
