@@ -170,25 +170,46 @@ The OsmAnd app for the iOS version only uses the OpenGL rendering engine.
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
 
-
 ## Privacy and security
 
-OsmAnd allows you to choose whether or not to share your activity in the app, the ability to edit your history and use the proxy of your choice. 
+OsmAnd allows you to choose whether or not to *[share your activity](#analytics)* in the app, the ability to edit your *[history](#history)* and use the *[proxy](#proxy)* (Android only) of your choice.  
+
+:::note
+For more information see [OsmAnd privacy and security policy](https://osmand.net/help-online/privacy-policy).
+:::
+
+### Analytics
+
+*<Translate android="true" ids="analytics_pref_title"/>* (Android) or *<Translate ios="true" ids="send_anonymous_data"/>* (iOS) - this setting allows you the choice whether or not to provide anonymous data about *Downloaded Maps* and *Visited Screens* (Android).  
+
+:::info
+Data about your location or the places you view on the map is not collected.
+:::
+
+<!-- This data allows OsmAnd to better understand...
+-->
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android"> 
 
-
-### Analytics
-
-*<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [OsmAnd privacy and security](https://osmand.net/help-online/privacy-policy).  
-To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
 
+</TabItem>
 
-### Identifiers
+<TabItem value="ios" label="iOS">  
+
+![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+#### Identifiers
+
+<InfoAndroidOnly />
 
 A UUID (Unique User Identifier) is generated for each installation of the OsmAnd application and sent to the servers during map loading. A random UUID is used to download offline maps from OsmAnd servers to control rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads. The UUID changes every 3 months.  
 
@@ -198,70 +219,52 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 *Menu → Settings → OsmAnd settings → Privacy and security → Identifiers*
 
-![UUID Android](@site/static/img/personal/profiles/uuid_android.png) 
+![UUID Android](@site/static/img/personal/profiles/uuid_android.png)
 
 <!--Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month. UUID is rotated every 3 months so there is no user profile built for a longer history.-->
 
-
 ### History
 
-*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), Navigation history and [Map markers history](../personal/markers.md#history).  
-To open History settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+You can enable/disable logging, as well as view, edit, and share previously entered data (*<Translate ios="true" ids="shared_string_history"/>*) in the following categories:  
+- [Search](../search/search-history.md)
+- [Navigation](../navigation/setup/route-navigation.md#previous-route--history)
+- [Map markers](../personal/markers.md#history)
 
-Available interactions:  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-Inside actions
-- Enable/disable history.
-- Delete some items from the history.
-- Share with.  
+<Tabs groupId="operating-systems">
 
-Actions
-- Create a backup as a file - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
-- Clear all history.  
+<TabItem value="android" label="Android"> 
 
 ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
-
-
-### Proxy
-
-*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows to configure';// an [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
-To open Proxy settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
-
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-### Send anonymous data
-
-*<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
-
-![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
-
-
-### History
-
-*<Translate ios="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/setup/route-navigation.md#previous-route--history) and [Map markers history](../personal/markers.md#history).  
-To open History settings, follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
-
-Available interactions:  
-
-Inside action:
-- Enable/disable history.
-
-Actions:
-- Export - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
-- Delete all history.  
-
-![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios_2.png)
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
+Actions
+- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- *Clear all history* (Android) or *Delete all history* (iOS) - you can delete all history entries recorded untill now.  
 
-## Other 
+Using the switch on the appropriate tab, you can enable/disable logging for each  data category (Search, Navigation, and Map markers history). On each tab, you can also delete one or more items or back them up to a file.  
+
+### Proxy
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows you to configure a [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
+
+![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)  
+
+## Other
 
 In this section of the OsmAnd settings, you can configure the notifications you receive, the location service, and how your application settings are saved.
 

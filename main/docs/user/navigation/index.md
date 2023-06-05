@@ -32,6 +32,7 @@ In the **[Route parameters](./routing/index.md)** section, you can read about di
 - [Public Transport routing](./routing/public-transport-navigation.md)
 - [Horseback routing](./routing/horse-routing.md)
 - [Ski routing](./routing/ski-routing.md)
+- [Train routing](./routing/train-routing.md)
 - [Boat routing](./routing/boat-navigation.md)
 - [Direct-to-point routing (Boat)](./routing/direct-to-point-routing.md)
 - [Straight line routing (Aircraft)](./routing/straight-line-routing.md)
