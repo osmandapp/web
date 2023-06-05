@@ -20,19 +20,20 @@ Offline OsmAnd routing is based on OpenStreetMap data and provides variety of ro
 
 - *[Car routing (Truck, Motorcycle)](./car-based-routing.md)* - OsmAnd provides driving instructions for  drivers of Cars, Trucks and Motorcycles.  
 - *[Bicycle  routing (MTB)](./bicycle-based-routing.md)* - Bicycle routing provides navigation prompts specifically for cyclists and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
-- *[Pedestrian routing](./pedestrian-routing.md)* - Pedestrian routing can be used not only for walking around the city, but also during hiking trips.
-- *[Moped routing](./moped-routing.md)* - Moped routing is based on the bicycle routing, though it has it's own features.
-- *[Public Transport routing](./public-transport-navigation.md)* - Public Transport navigation can help you while traveling around the city.
-- *[Horseback routing](./horse-routing.md)* - Horse routing provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
-- *[Skiing routing](./ski-routing.md)* - Ski routing allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
-- *[Boat routing](./boat-navigation.md)* - Boat routing can be used to build a route on rivers, channels, small lakes and in the open sea but only when fairways are marked in OpenStreetMap.
-- *[Straight line routing](./straight-line-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which is recalculated if location is far away from straight line.  
-- *[Direct-to-point routing](./direct-to-point-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
+- *[Pedestrian routing](./pedestrian-routing.md)* - can be used not only for walking around the city, but also during hiking trips.
+- *[Moped routing](./moped-routing.md)* - is based on the bicycle routing, though it has it's own features.
+- *[Public Transport routing](./public-transport-navigation.md)* - can help you while traveling around the city.
+- *[Horseback routing](./horse-routing.md)* - provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
+- *[Skiing routing](./ski-routing.md)* - allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
+- *[Train routing](./train-routing.md) - provides an opportunity to use the railroad tracks for navigation.
+- *[Boat routing](./boat-navigation.md)* - can be used to build a route on rivers, channels, small lakes and in the open sea but only when fairways are marked in OpenStreetMap.
+- *[Straight line routing](./straight-line-routing.md)* - provides a straight line routing (or "point-to-point" navigation) that is recalculated when your location changes.  
+- *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
 ## Other Routing types
 
-- *[Online routing](./online-routing.md)* (**Android only**) - Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
-- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - BRouter app can be used for offline routing.
+- *[Online routing](./online-routing.md)* (**Android only**) - is an OsmAnd feature that allows users to plan and navigate routes using online services.  
+- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - uses BRouter app for offline routing.
 
 ## Customize offline routing
 
