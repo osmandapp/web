@@ -24,6 +24,7 @@ export default function PoiLayer() {
         prevLayer: null
     });
     const [prevController, setPrevController] = useState(false);
+    const [useLimit, setUseLimit] = useState(false);
 
     async function getPoi(controller, zoom, showPoiCategories) {
         let latlng = map.getCenter();
@@ -44,10 +45,9 @@ export default function PoiLayer() {
                 },
                 signal: controller.signal
             }
-        ).catch(function (thrown) {
-        });
+        ).catch(function (thrown) {});
         if (response?.data) {
-            return response.data.features;
+            return response.data;
         }
     }
 
@@ -74,19 +74,24 @@ export default function PoiLayer() {
             if (res && !ignore) {
                 const newPoiList = {
                     prevLayer: _.cloneDeep(poiList.layer),
-                    layer: createPoiLayer(res)
+                    layer: createPoiLayer(res.features.features),
                 }
                 setPoiList(newPoiList);
+                setUseLimit(res.useLimit);
             }
         })
     }, 1000)).current;
+
+    function allPoiFound(zoom, prevZoom) {
+        return prevZoom && zoom > prevZoom && !useLimit;
+    }
 
     useEffect(() => {
         let ignore = false;
         let controller = new AbortController();
 
         async function getPoiList() {
-            if (((zoom !== prevZoom) || move || typesChanged()) && !_.isEmpty(ctx.showPoiCategories)) {
+            if (((!allPoiFound(zoom, prevZoom) && zoom !== prevZoom) || move || typesChanged()) && !_.isEmpty(ctx.showPoiCategories)) {
                 if (prevController) {
                     prevController.abort();
                 }
