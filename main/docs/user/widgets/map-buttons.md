@@ -79,16 +79,16 @@ The Compass button shows how the map is oriented on your device screen. For more
 #### Buttons
 
 - ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)   
-**North is up (fixed)**. The map is fixed in the North direction, which is the top edge of your device. Similar to physical maps.  
+**North is up (fixed)**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
 
 - ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)   
-**Movement direction**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
+**Movement direction**. In this mode, the map is oriented according to the direction of your device. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
 
 - ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
-**Compass direction**. The icon points to the actual North, and the map moves according to the compass orientation of your device.  
+**Compass direction**. In this mode, the map is oriented according to the device's compass. In this way, the north of the map corresponds to real north and you can see the orientation of the map in relation to the surrounding terrain. 
 
 - ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Manually rotated (fixed)**. When you select this option, the map is fixed in the current position. You can manually change the map orientation with a [*two-finger gesture*](../map/interact-with-map.md#gestures).
+**Manually rotated (fixed)**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user. 
 
 
 #### Display options
