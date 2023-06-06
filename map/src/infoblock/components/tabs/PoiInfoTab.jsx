@@ -12,15 +12,15 @@ import {
     MyLocation,
     Phone
 } from "@mui/icons-material";
+import PoiManager from "../../../context/PoiManager";
 
 const useStyles = makeStyles({
     icon: {
         "& .icon": {
-            top: '21px',
-            left: '517px',
             width: '40px',
             height: '40px',
-            position: 'absolute'
+            top: '20px',
+            left: '21px'
         },
         "& .background": {
             left: '-25px',
@@ -47,11 +47,11 @@ export default function PoiInfoTab({width}) {
             setPoiData(currentPoi);
             const {options: poiOptions, latlng} = currentPoi;
             setPoi({
-                name: poiOptions.title ? poiOptions.title : poiOptions.poiType,
+                name: poiOptions.title ? poiOptions.title : PoiManager.formattingPoiType(poiOptions.poiType),
                 icon: poiOptions.icon.options.html,
                 latlon: latlng,
                 subType: poiOptions.subType,
-                poiType: poiOptions.typeOsmValue,
+                poiType: PoiManager.formattingPoiType(poiOptions.typeOsmValue),
                 operator: poiOptions.operator,
                 website: poiOptions.website,
                 opening_hours: poiOptions.opening_hours,
@@ -64,7 +64,7 @@ export default function PoiInfoTab({width}) {
     }, [ctx.selectedGpxFile])
 
     return (
-        <Box className={styles.item} minWidth={width}>
+        <Box className={styles.item} maxWidth={width}>
             <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>
@@ -72,7 +72,7 @@ export default function PoiInfoTab({width}) {
                             {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
                         </Typography>
                     </Grid>
-                    <Grid className={styles.name} item xs={2}>
+                    <Grid className={styles.name} sx={{position: "relative"}} item xs={2}>
                         <div className={classes.icon}
                              dangerouslySetInnerHTML={{__html: poi.icon + ''}}/>
                     </Grid>

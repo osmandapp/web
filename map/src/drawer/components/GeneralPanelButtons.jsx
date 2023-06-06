@@ -63,7 +63,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        <Tooltip title="Poi icons" arrow placement="right">
+                        <Tooltip title="Poi" arrow placement="right">
                             <IconButton variant="contained"
                                         type="button"
                                         onClick={() => {

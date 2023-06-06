@@ -112,22 +112,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }
 
-    function formattingPoiCategory(category) {
-        if (category) {
-            category = formattingPoiFilter(category);
-            category = category.replaceAll("_", " ");
-            category = category.charAt(0).toUpperCase() + category.slice(1);
-        }
-        return category;
-    }
-
-    function formattingPoiFilter(filter) {
-        if (filter) {
-            filter = filter.replaceAll("_filter", "");
-        }
-        return filter;
-    }
-
     function removeUnusedPoiCategories(categories) {
         return categories.filter(category => category !== 'user_defined_other' && category !== 'osmwiki')
     }
@@ -158,7 +142,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                 if (reason === 'clear') {
                                     setSearchOptions(Object.keys(ctx.poiCategory.categories));
                                 }
-                                setSelectedPoiCategory(formattingPoiCategory(newValue));
+                                setSelectedPoiCategory(PoiManager.formattingPoiType(newValue));
                             }}
                             renderInput={params => (
                                 <TextField
@@ -171,7 +155,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                         searchPoiCategory(e.target.value).then();
                                     }}
                                     {...params}
-                                    label="label"
+                                    label="Search"
                                     variant="outlined"
                                     fullWidth
 
@@ -197,7 +181,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                                      src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
                                             </div>
                                         </ListItemIcon>
-                                        {formattingPoiCategory(option)}
+                                        {PoiManager.formattingPoiType(option)}
                                     </MenuItem>
                                 </div>}
                         />
@@ -223,7 +207,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
-                                          setSelectedPoiCategory(formattingPoiCategory(item));
+                                          setSelectedPoiCategory(PoiManager.formattingPoiType(item));
                                       }}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
@@ -234,10 +218,10 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                         </svg>
                                         <img className="icon"
                                              alt={item}
-                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${formattingPoiFilter(item)}.svg`}/>
+                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${PoiManager.formattingPoiFilter(item)}.svg`}/>
                                     </div>
                                 </ListItemIcon>
-                                {formattingPoiCategory(item)}
+                                {PoiManager.formattingPoiType(item)}
                             </MenuItem>
                         </Grid>)}
                 </Grid>
