@@ -225,10 +225,7 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 ### History
 
-You can enable/disable logging, as well as view, edit, and share previously entered data (*<Translate ios="true" ids="shared_string_history"/>*) in the following categories:  
-- [Search](../search/search-history.md)
-- [Navigation](../navigation/setup/route-navigation.md#previous-route--history)
-- [Map markers](../personal/markers.md#history)
+You can enable/disable history logging and view, edit, and share previously entered data (*history*) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history).  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
@@ -236,23 +233,40 @@ You can enable/disable logging, as well as view, edit, and share previously ente
 
 <TabItem value="android" label="Android"> 
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png)
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Actions
-- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history. You can choose what kind of history to *[Export](./import-export.md#export)*.
 - *Clear all history* (Android) or *Delete all history* (iOS) - you can delete all history entries recorded untill now.  
 
-Using the switch on the appropriate tab, you can enable/disable logging for each  data category (Search, Navigation, and Map markers history). On each tab, you can also delete one or more items or back them up to a file.  
+#### History options
+
+Using the switch on the appropriate tab (Search history, Navigation history, Map markers history), you can enable/disable logging for this category of record  data. On each tab, you can also delete one or more items or back them up to a file.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
+
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png)
+
+</TabItem>
+
+</Tabs>
 
 ### Proxy
 
