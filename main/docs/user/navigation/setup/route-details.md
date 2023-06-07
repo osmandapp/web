@@ -70,11 +70,11 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - The *Total distance* is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
 
-- *Estimated travel time* is calculated as a total of times on each segment and time penalties on specific points. Each navigation profile has different rules how to calculate speed on a segment and what penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, aircraft profiles use Default speed from [Navigation Settings](../navigation-settings.md#default-speed--road-speeds).
+- *Estimated travel time* is calculated as a total of times on each segment and time penalties on specific points. Each navigation profile has different rules how to calculate speed on a segment and what penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
 
 - *Estimated arrival time* is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
-- *CO2 footprint data* provides a rough estimation of how much CO2 will be produced by following the route. You will need to configure [Fuel engine type](../../navigation/guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get better approximation.
+- *CO2 footprint data* provides a rough estimation of how much CO2 will be produced by following the route. You will need to configure [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get better approximation.
 
 
 ## Elevation info
