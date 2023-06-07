@@ -70,7 +70,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - The *Total distance* is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
 
-- *Estimated travel time* is calculated as a total of times on each segment and time penalties on specific points. Each navigation profile has different rules how to calculate speed on a segment and what penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, aircraft profiles use Default speed from [Navigation Settings](../navigation-settings.md/default-speed--road-speeds.md).
+- *Estimated travel time* is calculated as a total of times on each segment and time penalties on specific points. Each navigation profile has different rules how to calculate speed on a segment and what penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, aircraft profiles use Default speed from [Navigation Settings](../navigation-settings.md#default-speed--road-speeds).
 
 - *Estimated arrival time* is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
@@ -243,5 +243,5 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
 - [**Print**](#print) allows you to print or save turn-by-turn route information.
-- **Export/Save** allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](../gpx-navigation.md)  should provide all features as navigation by the route.
+- **Export/Save** allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
 - **Share** shares an exported track or a link to the route which could be opened on another device with OsmAnd.
