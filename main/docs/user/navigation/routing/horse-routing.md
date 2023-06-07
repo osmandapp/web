@@ -12,9 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
-
 ## Overview
 
 *Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  
@@ -55,10 +52,10 @@ Horseback routing is designed to provide equestrians with information about hors
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
 | *<Translate android="true" ids="routing_attr_only_permitted_streets_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_streets_description"/>.  | Only streets specially designated for horses will be used for routing.   |
 | *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Only ways specially designated for horses will be used for routing.   |
-|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. |
+|*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. Without elevation data the fastest route as on plain terrain will be calculated. |
 
 Other routing settings:  
 - The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your horse speeds. They are used to determine whether the road can be used for routing.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your horse speeds. It is used to calculate Estimated Time of Arrival.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.

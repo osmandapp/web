@@ -225,9 +225,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
-:::note
 After the route is created, in the ["Details" section](../setup/route-details.md) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -245,13 +243,20 @@ After the route is created, in the ["Details" section](../setup/route-details.md
 
 </Tabs>
 
-:::note
-Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
-:::
+### Route recalculation
 
-:::tip
-To save your device battery, while navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
-:::
+Route is recalculated automatically once you deviate from the calculated route, you can change parameters in [Navigation settings](../guidance/navigation-settings.md#recalculate-route).
+
+### Pause / Resume navigation
+
+Sometimes if you want to stop by for a break and want to go off the route for a short period of the trip, you might want to use Pause / Resume navigation in order to pause voice prompts and stop oroute recalculation.
+
+
+### Save Power during navigation
+
+Navigation consumes lots of power because continuous GPS, Screen is on, route computation. So to save your device battery you might want to try following advices: 
+- Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
+- While navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 
 ## Settings
 
@@ -290,12 +295,7 @@ Please read about route parameters for the corresponding navigation type.
 
 How to configure [routing type](../routing/index.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
 
-### Route recalculation
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
-| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 ### Simulate navigation
 

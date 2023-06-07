@@ -13,12 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
+
 
 
 ## Overview
 
-*Moped routing* allows drivers to build an optimal route, taking into account the specifics of driving a vehicle such as a moped or scooter. The routing process considers various factors for safe, comfortable, and legal movement on roads or bicycle paths.
+*Moped routing* allows drivers to build an optimal (fastest) route, taking into account the specifics of driving a vehicle such as a moped or scooter. The routing process considers various factors for safe, comfortable, and legal movement on roads or bicycle paths.
 
 :::note
 By default, *Moped profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -53,5 +53,5 @@ The moped's rooting settings are very simple and consist of just a few options.
 Other routing settings:  
 - The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, the information from OSM may be outdated. 
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed)* (iOS) should be set according to your vehicle parameters. They are used to determine whether the road can be used for routing.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed)* (iOS) should be set according to your vehicle parameters. They are used for the unknown roads without speed limits. Mostly it happens, if you navigate by track or online routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
