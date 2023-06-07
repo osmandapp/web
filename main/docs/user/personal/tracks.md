@@ -115,13 +115,13 @@ To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-poin
 You can also add a waypoint as a Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
 :::
 
-### Display custom GPX tags
-
 ### Waypoint format description
 
 OsmAnd records tracks and their included waypoints to a [GPX file format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: file > track > segments > points. Available tags and descriptions of their parameters can be found in the Recorded [GPX file section](../plugins/trip-recording.md#recorded-gpx-file) of the Trip recording plugin article.  
 
 ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  
+
+### Display custom GPX tags
 
 ### Waypoint and Favorites
 

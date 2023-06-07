@@ -84,7 +84,7 @@ This profile is only available for iOS. It uses your car's audio and video syste
 This settings is not available for Android
 :::
 
-Read about Android Auto [here](../navigation/auto-car.md)
+To read about the capabilities of Android Auto within the OsmAnd application, see the corresponding [article](../navigation/auto-car.md) in the Navigation section.  
 
 </TabItem>
 
@@ -162,13 +162,29 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL. **Version 1** is recommended for low-performance or outdated devices.  
+The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
+
+**Version 1** is recommended for low-performance or outdated devices.   
+
 **Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
 The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
+
+**Features**
+- V2: first the tile is rendered, then all the characters (add link Link to render layers), does not support a raster layer over vector text, unlike V1.  
+- V1: all rendered as tiles text inside tiles  
+
+
+| Features | V1 | V2 |
+|:---|:--- |:--- |
+| Weather | | |
+| GPU / CPU dependent | | |
+| 3D | | |
+| Transparent symbols overlay / underlay | | |
+
 
 ## Privacy and security
 
