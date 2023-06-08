@@ -181,12 +181,12 @@ Graph with additional info and [<Translate android="true" ids="analyze_on_map"/>
 - ***Location Pin***. The data on the graph of your ***Current location*** contains the location icon, altitude, and percent slope value.  
 - ***Additional information***. The right (for Android) or left (for iOS) side of the graph contains data about the highest altitude and slope, the average value for both, and the lowest altitude and slope on the selected section of the route visible on the graph.  
 - ***Grade*** is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without the location point visible on the screen.  
-- ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*  
+- ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](./interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*  
 - ***Place a point on the graph***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.    
 
 **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-route-on-map-android) for the track.
 
-**<Translate android="true" ids="shared_string_options"/>** button opens menu with: "Edit" opens the track in [Plan route tool](../plan-route/index.md), "Delete" allows to delete chosen track item, "Split interval" opens [Split interval function](../map/track-context-menu.md#split-interval) for the track.
+**<Translate android="true" ids="shared_string_options"/>** button opens menu with: "Edit" opens the track in [Plan route tool](../plan-route/index.md), "Delete" allows to delete chosen track item, "Split interval" opens [Split interval function](#split-interval) for the track.
 
 <Tabs groupId="operating-systems">
 
@@ -263,7 +263,7 @@ This feature allows to calculate Elevation profile for GPX track online by the O
 Calculate altitude online on OsmAnd servers, based on satellite imagery and digital elevation models. Differences vs. device recorded altitude may be used as altitude correction.
 
 This feature can help to find Altitude data for any place:  
-_[Track Context menu](../map/track-context-menu.md) → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
+_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
 
 ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)  ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png)   ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude.png) 
 
