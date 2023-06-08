@@ -17,5 +17,5 @@ module.exports = function (app) {
     app.use('/gpx/', testProxy);
     app.use('/tile/', testProxy);
     app.use('/weather-api/', testProxy);
-    
+    app.use('/online-routing-providers.json', testProxy); // temporarly used for OSRM tasks
 };
