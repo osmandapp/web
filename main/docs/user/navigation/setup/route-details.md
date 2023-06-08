@@ -50,6 +50,7 @@ There are three ways to access the Route Details menu.
 
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../routing/#routing-types), some route details may not be displayed. Also route details is highly dependent on the OpenStreetMap data coverage.
 
+
 ## Distance / time / CO2
 
 <Tabs groupId="operating-systems">
@@ -70,20 +71,20 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - The *Total distance* is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
 
-- *Estimated travel time* is calculated as a total of times on each segment and time penalties on specific points. Each navigation profile has different rules how to calculate speed on a segment and what penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
+- *Estimated travel time* is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
 
 - *Estimated arrival time* is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
-- *CO2 footprint data* provides a rough estimation of how much CO2 will be produced by following the route. You will need to configure [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get better approximation.
+- *CO2 footprint data* provides a rough estimation of how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
 ## Elevation info
 
-Elevation information is provided on all offline OsmAnd routing profiles except profiles that use Straight line navigation. The elevation data is part of OsmAnd Offline maps and calcualted based on [Public SRTM sources](https://example.com).
+Elevation information is provided in all OsmAnd offline route profiles, with the exception of profiles that use Straight line navigation. The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://www.wikiwand.com/en/Shuttle_Radar_Topography_Mission).
 
 - *Altitude range* - displays minimum / maximum elevation on the route.
 - *Average altitude* - displays weighted average elevation on the route.
-- *Uphill / downhill* - here will be a link how up uphill calculated describe roughly the algorithm
+- *Uphill / downhill* - displays the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without the location point visible on the screen.
 
 <Tabs groupId="operating-systems">
 
@@ -120,7 +121,7 @@ Elevation information is provided on all offline OsmAnd routing profiles except 
 
 </Tabs>
 
-The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approimxated [slope](https://example.com). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
+The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approimxated [slope](https://www.wikiwand.com/en/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
 
 - ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*   
 - ***Location Pin***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with  altitude and slope percent will appear.  
@@ -160,9 +161,10 @@ If data is present you can select one of the following types:
    - *Time of day*
 
 ### Type of interactions
+
 - *Tap and Slide*. Tap the Graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
 - *Scale*. Scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
-- *Follow My location*. You can click [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
+- *Follow My location*. You can tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
 
 
 ## Road attributes
@@ -206,7 +208,7 @@ Road attributes are accessible in the Route Details and display segments related
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)  
 
-Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn informationis is displayed in the [Next turns](../../widgets/nav-widgets.md#next-turns) and [Lanes](../../widgets/nav-widgets.md#lanes) widgets, and it provides safe and efficient real-time navigation, and allows the driver to better navigate the road.
+Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn information is displayed in the [Next turns](../../widgets/nav-widgets.md#next-turns) and [Lanes](../../widgets/nav-widgets.md#lanes) widgets, and it provides safe and efficient real-time navigation, and allows the driver to better navigate the road.
 
 To view detailed information about specific sections of the route or to make necessary changes, you need to tap this section in the list. The map will zoom in to it and a [Context menu](../../map/map-context-menu.md) will open.  
 
