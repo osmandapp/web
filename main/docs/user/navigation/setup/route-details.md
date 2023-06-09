@@ -244,6 +244,6 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
-- [**Print**](#print) allows you to print or save turn-by-turn route information.
-- **Export/Save** allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
-- **Share** shares an exported track or a link to the route which could be opened on another device with OsmAnd.
+- [**Print**](#print) - allows you to print or save turn-by-turn route information.
+- **Export/Save** - allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
+- **Share** - shares an exported track or a link to the route which could be opened on another device with OsmAnd.

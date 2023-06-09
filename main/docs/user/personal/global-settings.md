@@ -162,16 +162,21 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
-
-**Version 1** is recommended for low-performance or outdated devices.   
-
-**Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
-The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
+:::note
+For **iOS** OsmAnd this feature works by default.
+:::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
+
+The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
+
+**Version 1** is recommended for low-performance or outdated devices.   
+
+**Version 2** is a fast rendering engine and provides features such as a [3D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
+The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
+
 
 **Features**
 - V2: first the tile is rendered, then all the characters (add link Link to render layers), does not support a raster layer over vector text, unlike V1.  
@@ -180,9 +185,10 @@ The OsmAnd app for the iOS version only uses the OpenGL rendering engine.
 
 | Features | V1 | V2 |
 |:---|:--- |:--- |
-| Weather | | |
+| Device | Recommended for low-performance or outdated devices | |
+| Weather | You cannot use this plugin | |
 | GPU / CPU dependent | | |
-| 3D | | |
+| 3D | Not available | |
 | Transparent symbols overlay / underlay | | |
 
 

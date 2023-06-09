@@ -61,7 +61,6 @@ Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Form
 
 ## Create / Edit Track
 
-
 ### Coordinate input
 
 <InfoAndroidOnly /> 
@@ -121,11 +120,25 @@ OsmAnd records tracks and their included waypoints to a [GPX file format](https:
 
 ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  
 
+
 ### Display custom GPX tags
 
-### Waypoint and Favorites
+### Locations along the route
 
-General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).
+General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).  
+
+Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in GPX (GPS Exchange Format).  
+
+[*Waypoints*](#add-waypoint) are individual points on a map or route. They are used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
+
+[*Points of interest(POI)*](../map/point-layers-on-map.md#points-of-interest-poi) are places of special interest to the user. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that the user wants to note or visit.  
+
+[*Favorite Points*](../personal/favorites.md) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
+
+[*Audio/video notes*](../plugins/audio-video-notes.md#gpx-file-with-waypoints) 
+
+All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
+
 
 ### Waypoints folder
 

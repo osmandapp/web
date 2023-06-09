@@ -63,7 +63,7 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap on it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
 
-### Create
+### Create and Edit
 
 The easiest way to create a new Favorite point is to select the [POI](../map/point-layers-on-map.md#points-of-interest-poi) or building on the map with a short tap and select [Add](../map/map-context-menu.md#add--edit-favorite) in [Map Context menu](../map/map-context-menu.md). In this case, all the information from POI will be added to a new Favorite.  
 You can also add a new Favorite point to any place on the map with [long tap](../map/map-context-menu.md#select-any-point-long-tap).  
@@ -136,7 +136,7 @@ You can also add a new Favorite point to any place on the map with [long tap](..
 
 </Tabs>
 
-### Edit
+#### Edit
 
 To edit a Favorite point, [short tap](../map/map-context-menu.md#select-an-object-short-tap) the selected Favorite point.
 
@@ -161,26 +161,6 @@ After that, you need to choose [*Edit favorite* button in *Map Context menu*](..
 </Tabs>
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
-
-### Search
-
-Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search-1).  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 ### Favorites in GPX file
 
@@ -211,6 +191,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 </Tabs>
 
+
 ### View
 
 In *My Places* menu you can find not only *Favorites* but also function buttons and switchers. Using these toolse you can customize *Favorites* folders and points and import/export favorites data.  
@@ -231,6 +212,7 @@ In *My Places* menu you can find not only *Favorites* but also function buttons 
 
 </Tabs>
 
+
 ### Order / Sorting
 
 The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the very top.  
@@ -244,6 +226,7 @@ The favorite folders and points are sorted alphabetically. The [personal folder]
 :::tip Note
 In [searching list](#search-1) *Favorites* is sorted by distance from the map center.  
 :::
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -257,6 +240,7 @@ In order to switch between Folders <-> Points list, use the toggle on top right 
 </TabItem>
 
 </Tabs>
+
 
 ### Search
 
@@ -283,6 +267,28 @@ Moving the screen down opens the search menu for Favorites: _Menu → My Places 
 </TabItem>
 
 </Tabs>
+
+
+#### Search function/Global search
+
+Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### Actions
 
@@ -393,7 +399,7 @@ Tap *Pencil* button opens special functions for a chosen Favorite folder. You ne
 <TabItem value="android" label="Android">
 
 :::caution Note
-**Only for iOS version.**
+*Only for iOS version.*
 :::
 
 </TabItem>
