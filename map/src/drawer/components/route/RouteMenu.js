@@ -3,7 +3,8 @@ import {styled} from '@mui/material/styles';
 import {Settings, RemoveCircle} from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
-    FormControl, InputLabel, Input, Select, Button, Typography, Link
+    FormControl, InputLabel, Input, Select, Button, Typography, Link,
+    Switch, FormControlLabel
 } from "@mui/material";
 import {
     ExpandLess, ExpandMore, Directions
@@ -166,6 +167,17 @@ export default function RouteMenu() {
                 <Typography>{formatRouteInfo(ctx?.routeData?.props)}</Typography>
             </MenuItem>
             }
+            { ctx?.routeData && <MenuItem key='routeshowdetails' sx={{ml: 1, mr: 1}} disableRipple={true}>
+                <FormControlLabel
+                    label="Show route points"
+                    labelPlacement="start"
+                    control={
+                        <Switch
+                            checked={ ctx.routeShowPoints }
+                            onChange={ e => ctx.setRouteShowPoints(e.target.checked) } />
+                    } />
+            </MenuItem>
+            }
             <MenuItem key='start' sx={{ml: 2, mr: 2, mt: 1}} className={classes.start} disableRipple={true}>
                 <FormControl fullWidth>
                     <TextField
@@ -276,7 +288,7 @@ export default function RouteMenu() {
                     <StyledInput ref={btnFile} accept=".gpx" id="contained-button-file" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
-                        Select Track
+                        Upload GPX to route
                     </Button>
                 </label>
             </MenuItem>

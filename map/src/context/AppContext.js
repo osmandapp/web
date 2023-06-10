@@ -429,6 +429,7 @@ export const AppContextProvider = (props) => {
     // route
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+    const [routeShowPoints, setRouteShowPoints] = useState(true);
     let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
     let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
@@ -564,6 +565,7 @@ export const AppContextProvider = (props) => {
         interPoints, setInterPoints,
         routeData, setRouteData,
         routeMode, setRouteMode,
+        routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,
