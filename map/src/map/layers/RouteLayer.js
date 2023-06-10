@@ -186,7 +186,7 @@ const RouteLayer = ({geocodingData}) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature/*, layer*/) => {
-        if(feature?.geometry?.type === "Point" && ctx.routeShowPoints == false) {
+        if(feature?.geometry?.type === "Point" && ctx.routeShowPoints === false) {
             return false;
         }
         return true;
