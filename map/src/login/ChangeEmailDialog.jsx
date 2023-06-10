@@ -42,7 +42,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
         } else if (code && newEmail) {
             AccountManager.changeEmail(newEmail, code, setEmailError).then((changed) => {
                 if (changed) {
-                    ctx.setUserEmail(newEmail);
+                    ctx.setUserEmail(newEmail, {days: 30, SameSite: 'Strict'});
                     ctx.setLoginUser(null);
                 }
             })

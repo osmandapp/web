@@ -240,7 +240,7 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, 
         let newUser = user?.username;
         if (loginUser !== newUser) {
             if (newUser) {
-                setUserEmail(newUser, {days: 30});
+                setUserEmail(newUser, {days: 30, SameSite: 'Strict'});
             }
             setLoginUser(newUser);
         }
