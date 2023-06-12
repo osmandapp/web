@@ -56,7 +56,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
             }
         } else {
             if (!codeConfirmed) {
-                return `Please enter verification code which was sent to your old email`;
+                return `Please enter verification code which was sent to your current email`;
             } else {
                 return `Please enter your new email`;
             }
