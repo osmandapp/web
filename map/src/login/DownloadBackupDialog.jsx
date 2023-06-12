@@ -7,7 +7,7 @@ import {
     List,
     ListItem,
     ListItemIcon,
-    ListItemText,
+    ListItemText, ToggleButton, ToggleButtonGroup,
     Typography
 } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -37,6 +37,8 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
     const menuType = ['My places', 'Settings', 'Resources'];
 
     const FILE_TYPE = 'FILE';
+    const BACKUP_TYPE_ZIP = '.zip';
+    const BACKUP_TYPE_OSF = '.osf';
 
 
     const [openedList, setOpenedList] = useState("")
@@ -45,6 +47,11 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
     const [backupData, setBackupData] = useState(null);
     const [loadingBackup, setLoadingBackup] = useState(false);
     const [errorBackup, setErrorBackup] = useState(null);
+    const [backupType, setBackupType] = useState(BACKUP_TYPE_OSF);
+
+    const handleBackupType = (event, selectedType) => {
+        setBackupType(selectedType);
+    };
 
     useEffect(() => {
         if (openDownloadBackupDialog && _.isEmpty(categories)) {
@@ -210,6 +217,9 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
             setLoadingBackup(true);
             const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`, backupData.data,
                 {
+                    params: {
+                        format: backupType
+                    },
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -295,6 +305,17 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
                 {errorBackup}
             </Typography>
         </DialogContent>
+        <ToggleButtonGroup
+            color="primary"
+            value={backupType}
+            exclusive
+            fullWidth={true}
+            onChange={handleBackupType}
+            aria-label="Platform"
+        >
+            <ToggleButton value={BACKUP_TYPE_ZIP}>ZIP</ToggleButton>
+            <ToggleButton value={BACKUP_TYPE_OSF}>OSF</ToggleButton>
+        </ToggleButtonGroup>
         <DialogActions>
             <Button disabled={!backupData}
                     onClick={() => downloadBackup()}>
