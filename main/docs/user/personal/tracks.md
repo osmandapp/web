@@ -123,6 +123,32 @@ OsmAnd records tracks and their included waypoints to a [GPX file format](https:
 
 ### Display custom GPX tags
 
+![My places Tracks](@site/static/img/personal/tracks/tracks_custom_GPX.png)  
+
+You can use the standard OsmAnd and OpenStreetMap tags as well as add your own to the point descriptions.  
+
+```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
+```  
+
+
 ### Locations along the route
 
 General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).  
@@ -135,14 +161,18 @@ Waypoints, points of interest (POIs), Favorite points and Audio/video notes all 
 
 [*Favorite Points*](../personal/favorites.md) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
 
-[*Audio/video notes*](../plugins/audio-video-notes.md#gpx-file-with-waypoints) 
+[*Audio/video notes*](../plugins/audio-video-notes.md#gpx-file-with-waypoints). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
 
 All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
 
 
 ### Waypoints folder
 
-You can configure available waypoint folders in the Tracks Context menu: show on map, rename, change appearance, add to markers, copy to favorites or delete. A detailed description is in this [article](../map/track-context-menu.md#waypoints-folder).
+*Track Context menu → <Translate android="true" ids="shared_string_gpx_points"/> → Three dots menu*
+
+![My places Tracks](@site/static/img/personal/tracks/tracks_waypoints_folder.png)  
+
+All waypoints of the route are stored in the folders you selected for them when creating or editing. To access a specific folder, you need to open the required track and go to the *Points* submenu. In the three points menu, you can edit a group of waypoints, add them to your marker list, or create a folder in *Menu → My Places → My Favorites*. You can read more information in the article [Tracks Context menu](../map/track-context-menu.md#waypoints-folder).
 
 
 ## My Places menu

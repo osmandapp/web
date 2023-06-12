@@ -177,7 +177,6 @@ The Android version of OsmAnd can use the standard first version of rendering or
 **Version 2** is a fast rendering engine and provides features such as a [3D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
 The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
 
-
 **Features**
 - V2: first the tile is rendered, then all the characters (add link Link to render layers), does not support a raster layer over vector text, unlike V1.  
 - V1: all rendered as tiles text inside tiles  
