@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect, useRef} from 'react';
 import {styled} from '@mui/material/styles';
-import {Settings, RemoveCircle} from '@mui/icons-material';
+import {Settings, RemoveCircle, Clear} from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
     FormControl, InputLabel, Input, Select, Button, Typography, Link,
@@ -201,7 +201,7 @@ export default function RouteMenu() {
                                 ctx.setRouteData(null);
                             }
                             }>
-                    <RemoveCircle fontSize="small"/>
+                    <Clear fontSize="small"/>
                 </IconButton>
             </MenuItem>
             {ctx.interPoints.map((item, ind) => (
@@ -247,7 +247,7 @@ export default function RouteMenu() {
                     ctx.setEndPoint(null);
                     ctx.setRouteData(null);
                 }}>
-                    <RemoveCircle fontSize="small"/>
+                    <Clear fontSize="small"/>
                 </IconButton>
             </MenuItem>
             {ctx.avoidRoads.map((item, ind) => (
