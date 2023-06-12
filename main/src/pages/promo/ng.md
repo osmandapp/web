@@ -16,15 +16,15 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-# Get free OsmAnd Pro for 1 month 
+# Get free OsmAnd Pro for 3 months 
 
 You dont know us for now, but we dream to be a friend of such an amazing you!
 
-Please take this introductory gift: 1 month of OsmAnd Pro, our best product.
+Please take this introductory gift: 3 months of OsmAnd Pro, our best product.
 
 Input your email to register promo:
 
-<RegisterUserPromoBlock  promoKey='birthday'/>
+<RegisterUserPromoBlock  promoKey='natgeo'/>
 
 **Follow the instructions from the letter we have sent, or read the full manual** [HERE](https://osmand.net/promo/manual#english-version).
 
