@@ -1,7 +1,7 @@
 import TracksManager from "./TracksManager";
 import _ from "lodash";
 import TrackLayerProvider from "../map/TrackLayerProvider";
-
+import { mergeStateObject } from "../util/Utils";
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -76,11 +76,44 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
     return segments;
 }
 
+// called by useState()
+// routeProvider definition
+function initRouteProvider() {
+    // always in list
+    const type = 'osmand';
+    const name = 'OsmAnd advanced router';
+
+    return {
+        name, // unique
+        providersOSRM: [],
+        providersOsmAnd: [{ type, name }],
+        providers() { return this.providersOSRM.concat(this.providersOsmAnd) } // OSRM first, OsmAnd as advanced option
+        // TODO find urls, etc
+    };
+}
+
+// load and validate OSRM routing providers
+// update providersOSRM, set default name to first OSRM provider
+async function loadRouteProviders(routeProvider, setRouteProvider) {
+    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/online-routing-providers.json`);
+    if (response.ok) {
+        const json = await response.json();
+        if(json && json?.providers && json?.providers[0]?.name) {
+            mergeStateObject(routeProvider, setRouteProvider, {
+                    providersOSRM: json.providers,
+                    name: json.providers[0].name
+                })
+        }
+    }
+}
+
 const RoutingManager = {
     addRoutingToCash,
     getRoutingFromCash,
     validateRoutingCash,
-    addSegmentToRouting
+    addSegmentToRouting,
+    initRouteProvider,
+    loadRouteProviders
 }
 
 export default RoutingManager;

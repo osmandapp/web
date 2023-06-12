@@ -3,6 +3,7 @@ import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
+import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
 
@@ -448,6 +449,7 @@ export const AppContextProvider = (props) => {
         mode: modeParam, opts: {},
         modes: {'car': {name: 'Car', params: {}}}
     });
+    const [routeProvider, setRouteProvider] = useState(RoutingManager.initRouteProvider);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
         modes: {'car': {name: 'Car', params: {}}}
@@ -500,6 +502,8 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
     }, []);
+
+    useEffect(() => { RoutingManager.loadRouteProviders(routeProvider, setRouteProvider) }, []);
 
     useEffect(() => {
         if (routeTrackFile) {
@@ -565,6 +569,7 @@ export const AppContextProvider = (props) => {
         interPoints, setInterPoints,
         routeData, setRouteData,
         routeMode, setRouteMode,
+        routeProvider, setRouteProvider,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,

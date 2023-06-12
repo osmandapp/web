@@ -117,6 +117,19 @@ function getProfileIcon(profile, color) {
     }
 }
 
+// get: current Object
+// set: function setVariabe
+// todo: Object to merge with current
+// used to update React useState object
+// returns merged Object for instant use
+// example: mergeStateObject(routeProvider, setRouteProvider, { name: 'osmand' })
+export function mergeStateObject(get, set, todo) {
+    const merged = Object.assign({}, get, todo);
+    set(() => merged); // is really need => ?
+    // console.log(merged);
+    return merged;
+}
+
 const Utils = {
     fetchUtil,
     fetchUtilLoad,
