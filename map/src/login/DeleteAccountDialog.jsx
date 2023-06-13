@@ -38,8 +38,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
         </Grid>
         <DialogContent>
             <DialogContentText>
-                We will immediately delete all of your files from cloud. All paid features will be
-                disabled.
+                Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access to paid features.
             </DialogContentText>
             <TextField
                 autoFocus
