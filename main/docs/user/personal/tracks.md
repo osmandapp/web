@@ -80,20 +80,6 @@ Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special
 
 ## Add waypoint
 
-Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
-
-To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.  
-
-1. **Add** the name of the waypoint, the address of the selected place and a description for it.
-2. **Select** Group.
-- You can select previously created categories of groups or create a new one.
-- For a new group (in the application it is also called a new category) of waypoints you create a name and an appearance. The icon, its color and shape will be used for all new waypoints added to the group.
-3. **Appearance** setting:
-- Icon from the list: *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
-- Color of the icon.
-- Shape of the icon: *Circle, Octagon, Square*.
-4. **Replace** another point with this, if you need to.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -110,22 +96,75 @@ To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-poin
  
 </Tabs>
 
-:::note
-You can also add a waypoint as a Quick action: [Add track waypoint](../widgets/quick-action.md#create-items).
-:::
+Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
+
+To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.  
+
+1. **Add** the name of the waypoint, the address of the selected place and a description for it.
+2. **Select** Group.
+- You can select previously created categories of groups or create a new one.
+- For a new group (in the application it is also called a new category) of waypoints you create a name and an appearance. The icon, its color and shape will be used for all new waypoints added to the group.
+3. **Appearance** setting:
+- Icon from the list: *Default, Special, Amenity, Transport, Service, Symbols, Sport, Emergency, Travel, Nautical, Education, Industrial*.
+- Color of the icon.
+- Shape of the icon: *Circle, Octagon, Square*.
+4. **Replace** another point with this, if you need to.  
+
+#### Quick action  
+You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../widgets/quick-action.md#create-items) to configure.
+
 
 ### Waypoint format description
 
-OsmAnd records tracks and their included waypoints to a [GPX file format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: file > track > segments > points. Available tags and descriptions of their parameters can be found in the Recorded [GPX file section](../plugins/trip-recording.md#recorded-gpx-file) of the Trip recording plugin article.  
+![Tracks](@site/static/img/personal/tracks/tracks_format_description.png)   
 
-![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  
+```xml
+<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <wpt lat="43.5368866" lon="3.7396109">
+    <time>2023-05-24T04:42:07Z</time>
+    <name>Test</name>
+    <desc>description test</desc>
+    <type>Waypoints test</type>
+    <extensions>
+      <osmand:icon>special_sun</osmand:icon>
+      <osmand:color>#eecc22</osmand:color>
+      <osmand:background>square</osmand:background>
+      <osmand:amenity_subtype>building</osmand:amenity_subtype>
+    </extensions>
+  </wpt>
+</gpx>
+```
+
+| Parameter | Description | 
+| --- | --- |
+| `lat` | **Latitude** is one of the geographic coordinates by which you can determine a location. | 
+| `lon` | **Longitude** is another of the geographic coordinates by which you can determine a location. |
+| `time` | **Timestamp** is the date and time when the point was recorded. |
+| `name` | **Name** is the name of the point. Any characters are allowed.  |
+| `desc` | **Description** contains additional information about the point. |
+| `type` | **Select group** is the name of the OsmAnd folder in which this waypoint is saved. |
+
+| Extension | Description | 
+| --- | --- |
+| `osmand:icon` | **Icon** is the name of the icon you selected. | 
+| `osmand:color` | **Color** is the color in HEX format.  |
+| `osmand:background` | **Background** is the shape of the icon, such as a circle, octagon or square. |
+
+Waypoints are recorded together with the track in the [GPX file](../../technical/osmand-file-formats/osmand-gpx.md). Each of these waypoints has its own set of tags for description. All tags that are directly related to the description of waypoints and that can be edited directly in the OsmAnd application are listed in this section.  
+To change the Waypoint description, you can go one of the following ways:
+  
+1. Find the required track in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
+2. Tap the track on the map, if it is included in the [list of visible](#show-tracks-on-map).
+3. Tap the required waypoint if it is [visible](#waypoints-folder) on the map.  
+
+    Then in the [Tracks Context menu](../map/track-context-menu.md) tap *Points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
+
+**Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data that you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
 
 ### Display custom GPX tags
 
-![My places Tracks](@site/static/img/personal/tracks/tracks_custom_GPX.png)  
-
-You can use the standard OsmAnd and OpenStreetMap tags as well as add your own to the point descriptions.  
+![Tracks](@site/static/img/personal/tracks/tracks_custom_GPX.png)  
 
 ```xml
 <gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
@@ -148,18 +187,20 @@ You can use the standard OsmAnd and OpenStreetMap tags as well as add your own t
 </gpx>
 ```  
 
+To describe points, you can use the basic [tags available](https://github.com/osmandapp/Osmand/blob/a3b5c637955a5914421d391206c2efb6ee2dff47/OsmAnd-java/src/main/java/net/osmand/GPXUtilities.java#L2476-L2500) in OsmAnd, which you can add and edit directly in the application. Or you can use [custom tags](https://github.com/osmandapp/OsmAnd/blob/fd3a882477518bd19bc8550af331507ba48cfb68/OsmAnd-java/src/main/java/net/osmand/gpx/GPXUtilities.java#L1137-L1160) for the description. These tags cannot be edited in the application, you need to use a text editor.  
+
+The official documentation of the gpx standard [here](https://www.topografix.com/GPX/1/1/#type_wptType).  
+
 
 ### Locations along the route
 
-General settings such as adding a point to the track, editing, adding to markers, and others are similar to the settings for Favorite points. Read more in the [Favourites article](../personal/favorites.md).  
-
-Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in GPX (GPS Exchange Format).  
+Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in GPX (GPS Exchange Format). You can use the same tags to describe and edit them.  
 
 [*Waypoints*](#add-waypoint) are individual points on a map or route. They are used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
 
 [*Points of interest(POI)*](../map/point-layers-on-map.md#points-of-interest-poi) are places of special interest to the user. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that the user wants to note or visit.  
 
-[*Favorite Points*](../personal/favorites.md) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
+[*Favorite points*](../personal/favorites.md) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
 
 [*Audio/video notes*](../plugins/audio-video-notes.md#gpx-file-with-waypoints). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
 
