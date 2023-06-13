@@ -70,7 +70,7 @@ async function deleteAccount(userEmail, code, setEmailError, ctx) {
             }).catch((error) => setEmailError(error.response.data));
 
         if (resp?.status === 200) {
-            ctx.setUserEmail(null);
+            ctx.setUserEmail('');
             ctx.setLoginUser(null);
         }
     } else {
