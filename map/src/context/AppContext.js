@@ -282,7 +282,7 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
+async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) { // TODO drop
     const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
@@ -305,16 +305,16 @@ async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCre
     }
 }
 
-function addModes(data) {
+function addModes(data) { // TODO drop
     data['line'] = {name: 'Line', params: {}};
     return data;
 }
 
-function filterMode(data) {
+function filterMode(data) { // TODO drop
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
 
-function getColors() {
+function getColors() { // TODO drop
     return {
         'car': '#1976d2',
         'truck': '#2F4F4F',
@@ -449,7 +449,7 @@ export const AppContextProvider = (props) => {
         mode: modeParam, opts: {},
         modes: {'car': {name: 'Car', params: {}}}
     });
-    const [routeProvider, setRouteProvider] = useState(RoutingManager.initRouteProvider);
+    const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
         modes: {'car': {name: 'Car', params: {}}}
@@ -503,7 +503,9 @@ export const AppContextProvider = (props) => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
     }, []);
 
-    useEffect(() => { RoutingManager.loadRouteProviders(routeProvider, setRouteProvider) }, []);
+    useEffect(() => {
+        RoutingManager.loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode, setCreatingRouteMode })
+    }, []);
 
     useEffect(() => {
         if (routeTrackFile) {
@@ -569,7 +571,7 @@ export const AppContextProvider = (props) => {
         interPoints, setInterPoints,
         routeData, setRouteData,
         routeMode, setRouteMode,
-        routeProvider, setRouteProvider,
+        routeProviders, setRouteProviders,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
