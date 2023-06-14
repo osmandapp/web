@@ -166,6 +166,7 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 For **iOS** OsmAnd this feature works by default.
 :::
 
+
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
