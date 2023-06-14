@@ -45,7 +45,9 @@ export default function PoiLayer() {
                 },
                 signal: controller.signal
             }
-        ).catch(function (thrown) {});
+        ).catch(() => {
+            console.log("The number of maps is more than limit")
+        });
         if (response?.data) {
             return response.data;
         }

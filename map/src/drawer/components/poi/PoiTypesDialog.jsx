@@ -69,10 +69,11 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }, [poiTypesResult]);
 
-    function showPoiCategoriesOnMap() {
-        if (selectedPoiCategory) {
+    function showPoiCategoriesOnMap(category) {
+        const selectedCategory = category ? category : selectedPoiCategory;
+        if (selectedCategory) {
             const categories = ctx.showPoiCategories;
-            categories.push(selectedPoiCategory);
+            categories.push(selectedCategory);
             ctx.setShowPoiCategories([...categories]);
             setDialogOpen(false);
         }
@@ -207,7 +208,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
-                                          setSelectedPoiCategory(PoiManager.formattingPoiType(item));
+                                          showPoiCategoriesOnMap(PoiManager.formattingPoiType(item));
                                       }}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
