@@ -7,7 +7,7 @@ import Translate from '@site/src/components/Translate.js';
 # Navigation Voice Prompt Triggering
 
                                
-**(Compiled by Hardy 2013, last reviewed 2021-01)**
+**(Compiled by Hardy 2013, last reviewed 2023-05)**
 ## Principle
 * Far-out prompts are  triggered based on a **lead distance threshold**, derived by converting a meaningful lead time via the **<Translate android="true" ids="default_speed_setting_title" />** of the profile and **lead time threshold**, calculated based on the current speed. The time threshold ensures that the announcements are triggered early enough even if your current speed exceeds the **<Translate android="true" ids="default_speed_setting_title" />**.
 * Users can change the **<Translate android="true" ids="default_speed_setting_title" />** of the profile and it will affect the trigger distance for voice prompts.
