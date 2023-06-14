@@ -261,12 +261,12 @@ You can enable/disable history logging and view, edit, and share previously ente
 
 </Tabs>
 
-- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history. You can choose what kind of history to *[Export](./import-export.md#export)*.
-- *Clear all history* (Android) or *Delete all history* (iOS) - you can delete all history entries recorded untill now.  
+- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- *Clear all history* (Android) or *Delete all history* (iOS) - is used to delete all history entries recorded untill now.  
 
 #### History options
 
-Using the switch on the appropriate tab (Search history, Navigation history, Map markers history), you can enable/disable logging for this category of record  data. On each tab, you can also delete one or more items or back them up to a file.  
+Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also delete one or more items from the list or share them as a file (to access these functions in iOS, tap *Edit* button).  
 
 <Tabs groupId="operating-systems">
 
@@ -278,7 +278,7 @@ Using the switch on the appropriate tab (Search history, Navigation history, Map
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png)
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
