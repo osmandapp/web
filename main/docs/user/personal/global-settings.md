@@ -162,10 +162,7 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-:::note
-For **iOS** OsmAnd this feature works by default.
-:::
-
+For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects. For the **iOS** version uses only OpenGL for map rendering.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
@@ -183,9 +180,11 @@ The OsmAnd app for the iOS version only uses the OpenGL rendering engine.
 - V1: all rendered as tiles text inside tiles  
 
 
-| Features | V1 | V2 |
+| Features | Version number 1 | OpenGl version |
 |:---|:--- |:--- |
-| Device | Recommended for low-performance or outdated devices | |
+| Cross-platform | Not used in iOS version | Fits both versions |
+| Softwarу performance | Recommended for low-performance or outdated devices | |
+|  | | |
 | Weather | You cannot use this plugin | |
 | GPU / CPU dependent | | |
 | 3D | Not available | |
