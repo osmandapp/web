@@ -9,7 +9,7 @@ import Translate from '@site/src/components/Translate.js';
                                
 **(Compiled by Hardy 2013, last reviewed 2021-01)**
 ## Principle
-* Far-out prompts are simply triggered based on a **lead distance threshold**, derived by converting a meaningful lead time via the **<Translate android="true" ids="default_speed_setting_title" />** of the profile.
+* Far-out prompts are  triggered based on a **lead distance threshold**, derived by converting a meaningful lead time via the **<Translate android="true" ids="default_speed_setting_title" />** of the profile and **lead time threshold**, calculated based on the current speed. The time threshold ensures that the announcements are triggered early enough even if your current speed exceeds the **<Translate android="true" ids="default_speed_setting_title" />**.
 * Users can change the **<Translate android="true" ids="default_speed_setting_title" />** of the profile and it will affect the trigger distance for voice prompts.
 * *Note*: The **<Translate android="true" ids="default_speed_setting_title" />** also affects the calculated route time 
 * Another way to change the voice prompt timing is to configure setting **<Translate android="true" ids="arrival_distance" />**. Check column **Arrival setting** further below to see which voice prompts will be affected. The trigger distance will be multiplied by the following factor
@@ -20,7 +20,6 @@ import Translate from '@site/src/components/Translate.js';
 **<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
 **<Translate android="true" ids="arrival_distance_factor_late" />** | 0.5
 **<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25
-* For close prompts, both a **distance threshold** and a **time threshold** are used (see column Time threshold below). The time threshold ensures that the announcements are triggered early enough even if your current speed exceeds the **<Translate android="true" ids="default_speed_setting_title" />**.
 * In addition, there is a user-configurable overall `VOICE_PROMPT_DELAY`, particularly needed for output type _Phone call audio_, where we emulate a call to a car stereo which comes with a noticeable delay. (Also all distances to be used in the prompts anticipate `VOICE_PROMPT_DELAY`!)
 * We mute prompts immediately once they appear to refer actions already passed, or if your direction of travel seems no in line with a current route.
 
@@ -34,7 +33,10 @@ While these are now also user-adjustable, the defaults are
 * Aircraft: 40 m/s (144 km/h)
 
 ## Trigger Behavior
-Prompt type | Trigger time (sec) | Trigger distance (m) | Time threshold used | Arrival setting | Comment |
+
+Exact trigger timings are present [in the code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). Trigger distance is approximate in the table below.
+
+Prompt type | Trigger time (sec) | ~ Trigger distance (m) | Time threshold used | Arrival setting | Comment |
 --- | --- | --- | --- | --- | -- |
 Turn now | Driving: 7 s   Cycling: 3.2 s   Walking: 2 s | Driving: 45 m    Cycling: 10 (12) m    Walking: 4 (12) m | :heavy_check_mark: | :heavy_check_mark: | Dist for 3.6 s, min 12 m      Time = max(8, sqrt(speed \* 3.6)) |
 Turn in X m | 22 s | Driving: 275 m    Cycling: 61 m    Walking: 24 m | :heavy_check_mark: |  | Skipped if less 15 seconds before turn |
