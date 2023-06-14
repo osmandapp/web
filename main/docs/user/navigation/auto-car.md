@@ -81,15 +81,15 @@ Most OsmAnd settings directly related to navigation are available in Android Aut
 2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
 3. Select [Address Search](#search) to enter a destination from the available search categories. -->
 
-:::note
+**Note**  
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
-:::
+
 
 <!-- Тут два ноута подряд, так себе. и нет вступления по выбору точек назначения с последующими ссылками - История, ПОИ... -->
 
-:::note
+**Note**  
 Through the **Settings** menu in Android Auto you can select the end point of the route, *without any ability to add intermediate destinations*.
-:::
+
 
 
 ### History
@@ -191,14 +191,14 @@ The screen of your vehicle's multimedia system can display 2D and 3D views of th
 
 The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps. Set up the display on the phone connected to Android Auto.  
 
-<!-- The Multi window display feature can also be enabled and disabled from the Window Shade.
+The Multi window display feature can also be enabled and disabled from the Window Shade.
 1. From a Home screen, tap Apps
 2. Tap Settings.
 3. Tap Multi window.
 4. Tap the Multi window switch
 5. Return to the home screen. 
 
-https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 -->
+https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969  
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
 
