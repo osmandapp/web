@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title:  Boat routing
 ---
 
@@ -12,11 +12,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
-Boat routing can be a valuable tool for anyone who enjoys boating or sailing, regardless of whether you are a water sports enthusiast or a professional sailor. It can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
+Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat.md)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
 The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
 
 <Tabs groupId="operating-systems">
@@ -70,14 +68,14 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
 
 Other routing settings:  
-- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.  
+- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your boat parameters. They are used to determine whether the waterway can be used for routing.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your boat parameters. It is used to calculate Estimated Time of Arrival.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
 ## Other routing types for Boat
 
-[Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation::  
+[Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation:  
 
  - [Direct-to-point routing for Boat](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Straight line routing for Boat](./boat-navigation.md#straight-line-routing-for-boat)

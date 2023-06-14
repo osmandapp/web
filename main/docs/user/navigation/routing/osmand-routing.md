@@ -16,23 +16,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 Offline OsmAnd routing is based on OpenStreetMap data and provides variety of routes for different purposes. This is a list of predefined routing types which could be extended. The navigation rules are contained in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) file and are used for offline routing. The route type changes automatically, when you change your profile.  
-**You can also create your [own routing.xml file](#custom-routing) and use it for navigation (only for advanced OsmAnd users).**  
+
+You can also create your **[own routing.xml file](#customize-offline-routing)** and use it for navigation (only for advanced OsmAnd users).
 
 - *[Car routing (Truck, Motorcycle)](./car-based-routing.md)* - OsmAnd provides driving instructions for  drivers of Cars, Trucks and Motorcycles.  
 - *[Bicycle  routing (MTB)](./bicycle-based-routing.md)* - Bicycle routing provides navigation prompts specifically for cyclists and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
-- *[Pedestrian routing](./pedestrian-routing.md)* - Pedestrian routing can be used not only for walking around the city, but also during hiking trips.
-- *[Moped routing](./moped-routing.md)* - Moped routing is based on the bicycle routing, though it has it's own features.
-- *[Public Transport routing](./public-transport-navigation.md)* - Public Transport navigation can help you while traveling around the city.
-- *[Horseback routing](./horse-routing.md)* - Horse routing provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
-- *[Skiing routing](./ski-routing.md)* - Ski routing allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
-- *[Boat routing](./boat-navigation.md)* - Boat routing can be used to build a route on rivers, channels, small lakes and in the open sea but only when fairways are marked in OpenStreetMap.
-- *[Straight line routing](./straight-line-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which is recalculated if location is far away from straight line.  
-- *[Direct-to-point routing](./direct-to-point-routing.md)* - Provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
+- *[Pedestrian routing](./pedestrian-routing.md)* - can be used not only for walking around the city, but also during hiking trips.
+- *[Moped routing](./moped-routing.md)* - is based on the bicycle routing, though it has it's own features.
+- *[Public Transport routing](./public-transport-navigation.md)* - can help you while traveling around the city.
+- *[Horseback routing](./horse-routing.md)* - provides equestrians with tools they need to plan and enjoy their horseback riding activities.  
+- *[Skiing routing](./ski-routing.md)* - allows users to plan and navigate ski tours and other winter sports activities using the OsmAnd mobile app.  
+- *[Train routing](./train-routing.md)* - provides an opportunity to use the railroad tracks for navigation.
+- *[Boat routing](./boat-navigation.md)* - can be used to build a route on rivers, channels, small lakes and in the open sea but only when fairways are marked in OpenStreetMap.
+- *[Straight line routing](./straight-line-routing.md)* - provides a straight line routing (or "point-to-point" navigation) that is recalculated when your location changes.  
+- *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
 ## Other Routing types
 
-- *[Online routing](./online-routing.md)* (**Android only**) - Online routing is an OsmAnd feature that allows users to plan and navigate routes using online services.  
-- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - BRouter app can be used for offline routing.
+- *[Online routing](./online-routing.md)* (**Android only**) - is an OsmAnd feature that allows users to plan and navigate routes using online services.  
+- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - uses BRouter app for offline routing.
 
 ## Customize offline routing
 
@@ -156,12 +158,8 @@ In OpenStreetMap, this information is usually marked with the tag '*[temporary](
 
 <InfoAndroidOnly />
 
-:::note
 *Development section* of the Route parameters settings only visible when [Development plugin](../../plugins/development.md) is turned on.
-:::
 
-| Parameter | Description |
-|:------------|:---------------|
-| *<Translate android="true" ids="use_live_routing"/>*  | Allows to use [OsmAnd Live updates](../../personal/maps.md#osmand-live) while routing. Note, that we recommend to use this option for testing purposes only. |   
-| *<Translate android="true" ids="use_two_phase_routing"/>*  | Adds an extra phase to the default (A*) algorithm to improve the quality of the calculated route. This option may be useful for finding routes in large and complex road networks, although it may take more time for route calculation.|  
-| *<Translate android="true" ids="use_fast_recalculation"/>* | <Translate android="true" ids="use_fast_recalculation_desc"/>  |  
+- ***<Translate android="true" ids="use_live_routing"/>***  - Allows to disable [OsmAnd Live updates](../../personal/maps.md#osmand-live) live updates for routing. We recommend to use this option on and disable once you experience some issues.
+- ***<Translate android="true" ids="use_two_phase_routing"/>***  - Allows to disable 2nd phase to the default (A*) algorithm to improve the quality of the calculated route. This option should be on and off only in case long routes have obvious issues. Please note that switching off might increase time calculation dramatically and also requires more memory.
+- ***<Translate android="true" ids="use_fast_recalculation"/>*** - <Translate android="true" ids="use_fast_recalculation_desc"/>  

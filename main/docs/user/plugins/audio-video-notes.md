@@ -41,22 +41,20 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
 3. If needed, configure [the recording settings](#plugin-settings) per profile.  
 
-
 ## Plugin settings
 
-For every profile, it is possible to configure the recording settings. 
+For each profile, you can configure the Audio/Video recording options.  
 
-**Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
-![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_photo_android.png)  ![Audio video plugin settings Video Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_video_android.png)
-
+![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)  
 
 | Parameter | Description |
 | --- | --- |
-| **<Translate android="true" ids="multimedia_use_system_camera"/>**  | If enabled, OsmAnd uses the system application to create photos in <Translate android="true" ids="photo_notes"/>.|
-| **<Translate android="true" ids="av_camera_pic_size"/>** | Establishes a size for photos to take in. The capabilities of the device camera determine the number of available options. If no option is selected, the app uses the size from the system settings for the device camera. |
+| **<Translate android="true" ids="camera_app"/>**  | You can choose whether to use the system app, or the OsmAnd camera to take <Translate android="true" ids="photo_notes"/>.|
+| **<Translate android="true" ids="av_camera_pic_size"/>** | Sets the size of the photos to be taken. The camera capabilities of the device determine the number of available options. If no option is selected, the app uses the size from the system settings of the device's camera. |
 | **<Translate android="true" ids="av_camera_focus"/>** | Establishes the method of how camera focus is set. The number of available options is determined by the capabilities of the device camera. Basically, there are three following  options: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; and *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofocus** is the most popular one and establishes the automatic mode for the camera; **continuous** makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep objects in focus no matter how far it is. |
-| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced when the camera makes a shot. |
+| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced when the camera makes a shot. Please note, that as required by privacy law, **in some countries devices will not have a camera shutter mute switch**.|
 | **<Translate android="true" ids="av_audio_format"/>** | Provides a choice of formats for an audio file. The number of available options as well as which one is used as default are determined with the parameters of a specific device. |
 | **<Translate android="true" ids="av_audio_bitrate"/>** | This option provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | If enabled, OsmAnd uses the system application to record video in <Translate android="true" ids="video_notes"/> . |

@@ -225,9 +225,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
-:::note
 After the route is created, in the ["Details" section](../setup/route-details.md) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -245,13 +243,20 @@ After the route is created, in the ["Details" section](../setup/route-details.md
 
 </Tabs>
 
-:::note
-Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
-:::
+### Route recalculation
 
-:::tip
-To save your device battery, while navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
-:::
+Route is recalculated automatically once you deviate from the calculated route, you can change parameters in [Navigation settings](../guidance/navigation-settings.md#recalculate-route).
+
+### Pause / Resume navigation
+
+Sometimes if you want to stop by for a break and want to go off the route for a short period of the trip, you might want to use Pause / Resume navigation in order to pause voice prompts and stop oroute recalculation.
+
+
+### Save Power during navigation
+
+Navigation consumes lots of power because continuous GPS, Screen is on, route computation. So to save your device battery you might want to try following advices: 
+- Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
+- While navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 
 ## Settings
 
@@ -290,60 +295,57 @@ Please read about route parameters for the corresponding navigation type.
 
 How to configure [routing type](../routing/index.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
 
-### Route recalculation
 
-| Parameter | Description | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/>* | <details><summary> <Translate android="true" ids="select_distance_route_will_recalc"/>  </summary>![Avoid roads Android](@site/static/img/navigation/routing/car_recalculate_route_andr.png) </details>        | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
-| *<Translate android="true" ids="in_case_of_reverse_direction"/>*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 ### Simulate navigation
 
-Simulate navigation function allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
+Simulate navigation option allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
 - Planning. You can see how long it may take to complete the entire route or its single segment.
 - Familiarization. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
-- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.
+- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
+
+#### Start / stop simulation
+
+When the navigation route is built. You can start to simulate movement using *<Translate android="true" ids="simulate_navigation"/>* option.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate android="true" ids="simulate_navigation"/>"_.
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
-
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699_
-
-![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android.png) ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_android_2.png)
-
-- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
-
-When you click on ["Start" button](#how-to-use), your simulation of navigation will start. 
-
-For stop the simulation of navigation you need to click on ["Navigation" button → "Dismiss" button](#how-to-use).  
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-When the navigation route is built. You can start to simulate a motion by this way using features _"<Translate ios="true" ids="simulate_navigation"/>"_.
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/>_. Enable the feature and starting navigation.
-
-You can choose "<Translate ios="true" ids="speed_mode"/>" settings for the speed of simulation navigation: _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,routing_settings,shared_string_settings,simulate_navigation"/> → &#8230;|_
-
-![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios.png) ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
-
-- &nbsp;_<Translate ios="true" ids="simulation_preview_mode_title"/>_ - <Translate ios="true" ids="simulation_preview_mode_desc"/>
-- &nbsp;_<Translate ios="true" ids="simulation_constant_mode_title"/>_ - <Translate ios="true" ids="simulation_constant_mode_desc"/>
-- &nbsp;_<Translate ios="true" ids="simulation_real_mode_title"/>_ - <Translate ios="true" ids="simulation_real_mode_desc"/>
-
-When you click on [*Start* button](#start--stop-navigation), your simulation of navigation will start.  
-
-To stop the simulation of navigation, you need to tap [*Navigation* button → *Cancel*](#start--stop-navigation).
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_1.png)
 
 </TabItem>
 
 </Tabs>
+
+In the *[Navigation menu](#navigation-menu)* go to <Translate android="true" ids="shared_string_settings,simulate_navigation"/>. Thеn toggle the switch to enable this option. Pressing the *[Start navigation](#how-to-use)* button starts the simulation. To stop the simulation of navigation you need to tap *[Dismiss](#start--stop-navigation)* button (Android), or *[Cancel](#start--stop-navigation)* (iOS).
+
+#### Simulation settings
+
+To adjust the speed of a simulation go to: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
+- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>

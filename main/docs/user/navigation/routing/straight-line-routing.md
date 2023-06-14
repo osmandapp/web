@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title:  Straight line routing (Aircraft)
 ---
 
@@ -52,5 +52,5 @@ Straight line routing is linked to *Aircraft profile*. By default, this profile 
 
 Other routing settings:  
 - In the [Recalculate route](../setup/route-navigation.md#route-recalculation) options, the distance at which the route will be recalculated for the Straight line routing is set to 500 meters by default.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) can also be set for *Straight line* routing. Default value is 720 km/h.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) can also be set for *Straight line* routing. It is used to calculate Estimated Time of Arrival.
 - In the [Development section](../routing/index.md#development-settings) of Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.

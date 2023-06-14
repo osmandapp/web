@@ -14,15 +14,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
-
-
 # Get OsmAnd Pro free for 3 months 
 
-Hey, you passed very well our Birthday QUIZ. Now you can take OsmAnd PRO free for 3 month.
+Hey, you passed very well our Birthday QUIZ (25-30 points). Now you can take OsmAnd PRO free for 3 months.
 
-Please, input your e-mail for registration:
+Please, input your e-mail for registration <u>until 30 June 2023</u> and read the manual below:
 
-<RegisterUserPromoBlock  promoKey='birthday'/>
+<RegisterUserPromoBlock  promoKey='birthday3'/>
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 

@@ -80,13 +80,15 @@ You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)*
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
 5. **Other**: 
-    - *Announce GPS signal loss and recovery*, *Announce route recalculation*, *Announce deviation from the route*.
+    - *Announce GPS signal loss and recovery* - OsmAnd will announce if your device loses the gps signal.  
+    - *Announce route recalculation* - OsmAnd will report a recalculation of the route in case of a [deviation or movement in reverse direction](./navigation-settings#recalculate-route).
+    - *Announce deviation from the route* - you will be informed about deviation from the route according to the [set parameters](./navigation-settings#recalculate-route).
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
     - *[Announcement time](#announcement-time)*.  
 7. **Output** (<u>for Android version</u>):
     - *[Voice guidance output](#voice-guidance-output)*.
-    - *Pause music* - voice prompts stop music playback for a while.   
+    - *Pause music* - voice prompts stop music playback for a while.
 
 ### Language
 
@@ -127,12 +129,15 @@ In this group you can set whether the voice prompts for the pre-set and added [W
 | Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
 | Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
 
+
 ### Speed cameras
 
-[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allows you to activate or deactivate the speed camera POI.  
-In some countries or regions, it is illegal to use speed camera warning apps. You need to make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall**, and all data related to speed cameras: warnings, notifications and POIs will be deleted until you completely reinstall OsmAnd.  
+[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.   
+  
+In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+
 
 ### Announcement time
 

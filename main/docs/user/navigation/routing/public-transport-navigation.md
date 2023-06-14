@@ -12,13 +12,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 Public transport navigation in the OsmAnd app allows you to work out the routes using public transport, which will certainly help you get around the "concrete jungle" faster.
 
-Data on public transport routes is taken from the [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd uses the [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for navigation.  
+Data on public transport routes is taken from the [OpenStreetMap](http://openstreetmap.org/) project. OsmAnd uses the [PTv2 scheme](https://wiki.openstreetmap.org/wiki/Public_transport) for navigation.  OsmAnd supports following OpenStreetMap routes for navigation  *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Default speed for each type of vehicle is configured in [Routing xml](../../../technical/build-osmand/routing.md) and it used to find the fastest routes. 
 
 :::note
 Public transport routing is in the testing phase. For now, you can build and view your route without the full navigation function.

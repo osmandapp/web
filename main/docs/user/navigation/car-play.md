@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [paid subscription](../purchases/ios#free-and-paid-features).
+To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [paid version of the app or to subscribe](../purchases/ios#free-and-paid-features).
 :::
 
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [CarPlay](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
@@ -36,7 +36,7 @@ To use CarPlay on your vehicle's screen, follow these steps:
 First, you need to select and configure the profile to be used when connecting to CarPlay. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles). A convenient profile for using CarPlay can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md). For quick access to the list of profiles available for connecting to CarPlay OsmAnd has a separate item *Menu → Settings → OsmAnd Settings → CarPlay Profile*. Also.  
 
 - For OsmAnd to work, [connect your iOS device](#overview) to the vehicle's multimedia system. To find out more about how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) website. 
-- You need to have one of [OsmAnd Paid subscriptions](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
+- You need to have one of [OsmAnd paid or subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
 - Once connected, you can set a destination and start OsmAnd navigation in CarPlay.  
 
 <!-- Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  -->

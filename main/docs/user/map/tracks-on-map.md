@@ -14,6 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+## Overview
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
 
@@ -34,24 +35,24 @@ Read more about [GPX Tracks](../personal/tracks.md#track).
 
 ## Tracks 
 
-There are two options to display [Tracks](../personal/tracks.md) on the map: via [<Translate android="true" ids="configure_map"/>](../map/tracks-on-map.md#display-via-configure-map-menu) menu or [<Translate android="true" ids="shared_string_my_places"/>](../map/tracks-on-map.md#display-via-my-places-menu) menu
+### Display tracks on the map
+
+In OsmAnd, you can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-### Display via Configure map menu
+#### Tracks in Configure map menu
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Here you can select tracks to display them on the map.
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*   
 
-*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/>*:   
+![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png) 
 
-![Tracks menu Android](@site/static/img/map/tracks_menu_android.png) 
-
-_Import_ and _[Change appearance](#track-appearance)_ for chosen tracks:
+*Import* and *[Change appearance](#track-appearance)* for chosen tracks:
 
 *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>, <Translate android="true" ids="shared_string_import"/>*  
 
@@ -63,14 +64,16 @@ _Import_ and _[Change appearance](#track-appearance)_ for chosen tracks:
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/> → Choosing tracks for displayed from the list.*  
 
-![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png) 
+![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png)   
+
+It is not recommended to use this way of selecting tracks to display them on the map.  
 
 </TabItem>
 
 </Tabs>
 
 
-### Display via My Places menu
+#### Tracks in My Places menu
 
 <Tabs groupId="operating-systems">
 
@@ -160,19 +163,18 @@ There are three ways to access the Track Appearance menu:
 
 ### Analyze Track on Map
 
+This tool allows you to view track information with graphs and a map.  
+
+There are several ways to open the Analyze on map.  
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-This option allows you to interactively review track information using graphs and the map. To get access to this menu shortly tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>
+Tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/track_analyze_on_map_android.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png) 
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)   
 
-- **Graph data Y-axis**: Altitude / Slope / Speed (if data is available in the track).
-- **Graph dimension X-axis**: Distance / Time / Time of day.
-- **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
-- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
-- **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed.  
 
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
@@ -180,14 +182,29 @@ This option allows you to interactively review track information using graphs an
 
 <TabItem value="ios" label="iOS">
 
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 4 Android](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
+![Track menu analyze on map 1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1_android.png) ![Track menu analyze on map 1.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1.1_android.png)
+![Track menu analyze on map 2 Android](@site/static/img/personal/tracks/track_analyze_on_map_2_android.png) ![Track menu analyze on map 2.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_2.1_android.png)
+
 </TabItem>
 
 </Tabs>
 
+- [**Graph data on the Y-axis**](#graph-data-on-the-y-axis): Altitude / Slope / Speed (if data is available in the track).
+- **Graph dimension X-axis**: Distance / Time / Time of day.
+- **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
+- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
+- **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed. 
 
-![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 4 Android](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
-![Track menu analyze on map 1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1_android.png) ![Track menu analyze on map 1.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1.1_android.png)
-![Track menu analyze on map 2 Android](@site/static/img/personal/tracks/track_analyze_on_map_2_android.png) ![Track menu analyze on map 2.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_2.1_android.png)
+### Graph data on the Y-axis 
+
+Displays the different types of data, if any in the track information.  
+- *Altitude*
+- *Slope*
+- *Speed*
+- *Altitude/Slope*
+- *Altitude/Speed*
+- *Slope/Speed*
 
 
 ## Navigation Route
@@ -228,7 +245,6 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 ### Save as a Track
 
-
 [Hiking / Cycling / Travel routes](../map/vector-maps.md#routes) are clickable. Just tap **the route symbol**, get full route information and download the GPX file for the selected route. (Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol).)
 
 Clicking on a shield ([OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)) proposes to choose the nearest routes.
@@ -247,9 +263,7 @@ Clicking on a shield ([OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osm
 
 </TabItem>
 
-</Tabs>
-
-
+</Tabs>  
 
 Choosing the route opens [Track Context menu](../map/track-context-menu.md):
 

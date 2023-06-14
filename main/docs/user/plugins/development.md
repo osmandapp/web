@@ -183,7 +183,7 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 *Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
-![Development widget fps 1](@site/static/img/plugins/development/ldev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -207,7 +207,6 @@ With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you ca
 - [Download](../start-with/download-maps.md) heightmaps of the desired area are  
 - Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
 
-
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
 
 ## Camera position Widgets
@@ -217,7 +216,6 @@ In order to make sure that the OsmAnd map is realistic and corresponds to photos
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
-
 
 *Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
@@ -235,11 +233,23 @@ In order to make sure that the OsmAnd map is realistic and corresponds to photos
 
 </Tabs>  
 
-
-
 ### Camera tilt
 
-![Camera tilt widget 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
+
+</TabItem>
+
+</Tabs>  
 
 The Camera tilt widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
 
@@ -250,13 +260,41 @@ At the same time, due to the imaginary movement of the viewer, the distance from
 
 ### Camera Elevation
 
-![Camera elevation widget 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
+
+</TabItem>
+
+</Tabs>  
 
 The Camera Elevation widget shows the camera elevation above the surface level. Camera elevation is indicated in meters / kilometers.  
 
 ### Zoom level
 
-![Zoom level widget 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widg_zoom_ios_1.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widg_zoom_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
 
 The Zoom level widget represents the current map zoom level.  
 
@@ -305,40 +343,35 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 
 OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use **simulate your position** option in the OsmAnd development plugin [settings](#plugin-settings):  
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-- Tap **Simulate your position**.  
-- Select a route simulation speed.
-- Select a GPX track to simulate the location and movement of the device.  
-
-![Development Settings Android](@site/static/img/plugins/development/start_simulation_1.png) ![Development Settings Android](@site/static/img/plugins/development/start_simulation_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
 - Tap **Simulate your position**.  
 - Select a track to simulate the location and movement of the device.
 - Select movement simulation speed.
 - Tap Start buton.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
 
 ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
 </Tabs>  
-  
+
 
 :::tip Note
-The location movement speed during the simulation can be equal to the recorded speed (1), or faster (x2, x3, x4).  
+The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
 :::
-  
 
 After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
 To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap on **stop** in the **simulate your position** option.
 
 :::note  
-You can also use GPX-track simulation directly from [navigation menu](../navigation/setup/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case you can use voice promts and other navigation options.  
+You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.  
 :::  

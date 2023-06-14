@@ -15,16 +15,18 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Map Context menu provides information about selected object on the map. It can also be used to build a route to a selected location.
+## Overview
 
+Map Context menu provides information about selected object on the map. It can also be used to build a route to a selected location.  
 
-## Context menu 
 In order to open Context menu you should tap on the object on the Map. There are two types of map contet menu: selecting an object - by short tap, selecting any precise point on the map - by long tap.
 
+
 ### Select an object (short tap)
+
 Context menu will appear when you **short tap** on the marked object on the Map. In this case context menu provides you the information of the object name & icon (how it is marked on the map),  address, distance and direction from your current position. By this method you can select POI, Favorite, Transport stop, Marker or Map Object.
 
-**Note**: Selectable map objects are OpenStreetMap [node](https://wiki.openstreetmap.org/wiki/Node) or [way](https://wiki.openstreetmap.org/wiki/Way).
+**NOTE**. Selectable map objects are OpenStreetMap [node](https://wiki.openstreetmap.org/wiki/Node) or [way](https://wiki.openstreetmap.org/wiki/Way).
 
 <Tabs groupId="operating-systems">
 
@@ -50,13 +52,11 @@ Context menu will appear when you hold at any point on the Map with **long tap**
 
 <TabItem value="android" label="Android"> 
  
-
 ![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
 
 ![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
@@ -68,8 +68,6 @@ Context menu will appear when you hold at any point on the Map with **long tap**
 ### Select route
 
 Short tap on a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context track menu](../map/track-context-menu.md).
-
-
 
 <Tabs groupId="operating-systems">
 
@@ -87,16 +85,17 @@ Short tap on a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context t
 
 </Tabs> 
 
+
 ### Hide context menu
 
 To hide the context menu:
 - Click on any empty place (to not open menu once again) on the map
 - Drag down by the top of menu 
 
+
 ## Details
+
 In order to gain more details about object you need to click on the "Details" button in the Context menu or move the panel up. 
-
-
 
 <Tabs groupId="operating-systems">
 
@@ -135,29 +134,19 @@ This panel includes additional information about the object. This info could be 
     - [Fee](https://wiki.openstreetmap.org/wiki/Key:fee)
     - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
     - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height)
-    - etc.
+
 
 ### Alternative names  
 
-OsmAnd displays additional names of POIs in Map context menu. First is shown the name in the [display language](../personal/global-settings.md#display-language) or from system list of preferred languages, alternative names are displayed in the drop-down menu.  
+<InfoAndroidOnly />
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
+OsmAnd displays additional names of POIs in Map context menu. First is shown the name in the [display language](../personal/global-settings.md#display-language) or from system list of preferred languages, alternative names are displayed in the drop-down menu.   
 
 ![Alternative names Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternative names Android](@site/static/img/map/alternative_names_andr.png)  
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly /> 
-
-</TabItem>
-
-</Tabs>  
 
 ### Coordinates 
+
 In the Context menu you can find geographical coordinates of an object. If you expand this section, you will see location in various geo formats and shareable OsmAnd Link. If you click on any item it will be automatically copied to the clipboard. 
 
 |Coordinates format||
@@ -166,21 +155,21 @@ In the Context menu you can find geographical coordinates of an object. If you e
 
 With OsmAnd Web Link you can send location to any device and it will be automatically recognized by OsmAnd (for example: https://osmand.net/go?lat=-49.306051764139475&lon=69.13371469678623&z=10).
 
+
 ### Nearby POIs/ Wikipedia
 
 These sections displays nearby [Wikipedia articles](../plugins/wikipedia.md) or [Points of Interest](../map/point-layers-on-map.md#points-of-interest-pois-on-the-map) with '<Translate android="true" ids="shared_string_show_on_map"/>' and '<Translate android="true" ids="search_more"/>' to display and [search](../search/search-poi.md) all other POI & Wikipedia articles.
 
 Clicking to 'Nearby POIs/ Wikipedia articles' opens a points list (Wikipedia and POIs). A tap to one of these points from a point list moves the map to this point (POI or Wikipedia) with the opening point Map Context menu.
 
-**Note**: [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
+**NOTE**. [<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) will appear only if you previously downloaded special maps with [Wikipedia articles for this area](../plugins/wikipedia.md#download-wikipedia).
 
 ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Nearby Wikipedia articles](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+
 
 ### Public Transport Routes
 
 Shown info about Public transport routes for chosen Transport stop. Information about Public transport Context menu and actions with it read [here](../map/public-transport.md#transport-routes-context-menu).
-
- 
 
 <Tabs groupId="operating-systems">
 
@@ -198,11 +187,13 @@ Shown info about Public transport routes for chosen Transport stop. Information 
 
 </Tabs> 
 
+
 ### Favorites / Track Points from the group
 
 This is a list of all points in one group for a [Favorite](../map/point-layers-on-map.md#favorites-on-the-map) or Waypoint. By clicking, the entire list of points of one group expands, when clicking on a point from the list, the map moves to the selected point.
 
 ![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png) 
+
 
 ### Article description
 
@@ -225,11 +216,13 @@ This part contains a part of the description from [Wikipedia article](../plugins
 
 </Tabs> 
 
+
 ### OpenStreetMap link
 
 OpenStreetMap link provides direct link to the OpenStreetMap object where you can find complete information about it (https://www.openstreetmap.org/node or https://www.openstreetmap.org/way).
 
 ![OSM link](@site/static/img/map/context_menu_osm_link.png) ![OSM link](@site/static/img/map/context_menu_osm_link_1.png)
+
 
 ### Online photos 
 
@@ -241,11 +234,10 @@ At this moment in iOS are available only images provided by the Mapillari servic
 
 ![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)
 
+
 ### * Audio/Video Note
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
+<InfoAndroidOnly />
 
 You can find additional information about [Audio / Video notes](../plugins/audio-video-notes.md) in Details Menu and buttons (Delete, Play, Show) in Context menu. 
 
@@ -253,15 +245,6 @@ For Image notes in the Details Menu an image is displayed; when you click on the
  
 ![Image list](@site/static/img/map/image_list_android.png) ![Video list](@site/static/img/map/video_list_android.png)
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs> 
 
 ## Actions
 
@@ -283,6 +266,7 @@ It is a set of specific manipulations that can be performed on a point or object
 
 </Tabs> 
 
+
 ### Add / Edit Favorite
 
 <Tabs groupId="operating-systems">
@@ -302,10 +286,13 @@ It is a set of specific manipulations that can be performed on a point or object
 </Tabs> 
 
 In the context menu there are options to **add** or to **edit** the selected point / object to the [favorites list](../personal/myplaces.md). 
-- In order to **add**, you need to select a point / object, click on the 'Star' icon (with signature Add) and enter all the necessary information. 
+
+- In order to **add**, you need to select a point / object, click on the 'Star' icon (with signature Add) and enter all the necessary information.  
+
 - In order to **edit** information about favorite point you need to turn on 'Show on the map' (Menu → Me places → Favorites) then press on it and in the Context menu instead of 'Star' icon will appear 'Pancil icon' (with signature Edit).
 
 - [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - adds a selected point to the favorites list.
+
 
 ### Add / Edit Marker
 
@@ -327,12 +314,13 @@ In the context menu there are options to **add** or to **edit** the selected poi
 It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
 
 Actions:
-- [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
-- 'Mark passed' (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
-- 'Make active' (Android) - moves marker to the top position (on the top panel).
-- 'Restore marker' (Android) - moves marker from History to active list.
+- [*<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>*](../personal/markers.md) - puts a new marker on the selected point.
+- *Mark passed* (Android) / *Dismiss* (iOS) - deactivates marker and puts it to the History.
+- *Make active* (Android) - moves marker to the top position (on the top panel).
+- *Restore marker* (Android) - moves marker from History to active list.
 
 Read more about [markers](../personal/markers.md).
+
 
 ### Share
 
@@ -352,20 +340,22 @@ Read more about [markers](../personal/markers.md).
 
 </Tabs> 
 
-The app provides the opportunity to **<Translate android="true" ids="shared_string_share"/>** location in a variety of ways. You can also share your location by selecting 'your location' icon on the map.
+The app provides the opportunity to **<Translate android="true" ids="shared_string_share"/>** location in a variety of ways. You can also share your location by selecting *your location* icon on the map.
 
 All options to share your location: 
-- Send - sends a message via messengers (name, address, coordinates and link) 
-- Copy - copies a message into clipboard (name, address, coordinates and link) 
-- Copy address (Android) - copies a message into clipboard (only address) 
-- Copy location/POI name (Android) - copies a message into clipboard (only name and coordinates) 
-- Copy coordinates (Android) - copies a message into clipboard (only coordinates) 
-- geo (Android) - opens local installed apps that support [geo url](https://developers.google.com/maps/documentation/urls/android-intents) 
-- QR-code (Android) - generates location in QR-code (link with your location)
-- Save Image (iOS) - saves a screenshot with map and selected point in the image gallery.
-- Assign to Contact (iOS) - makes an icon for chosen contact from the map screenshot.
-- Print (iOS) - opens Printer Options for printing the map screenshot.
-- Save to files (iOS) - saves the map screenshot in iCloud Drive or storage of your device.
+
+- **Send** - sends a message via messengers (name, address, coordinates and link) 
+- **Copy** - copies a message into clipboard (name, address, coordinates and link) 
+- **Copy address** (Android) - copies a message into clipboard (only address) 
+- **Copy location/POI name** (Android) - copies a message into clipboard (only name and coordinates) 
+- **Copy coordinates** (Android) - copies a message into clipboard (only coordinates) 
+- **geo** (Android) - opens local installed apps that support [geo url](https://developers.google.com/maps/documentation/urls/android-intents) 
+- **QR-code** (Android) - generates location in QR-code (link with your location)
+- **Save Image** (iOS) - saves a screenshot with map and selected point in the image gallery.
+- **Assign to Contact** (iOS) - makes an icon for chosen contact from the map screenshot.
+- **Print** (iOS) - opens Printer Options for printing the map screenshot.
+- **Save to files** (iOS) - saves the map screenshot in iCloud Drive or storage of your device.
+
 
 ### Directions To / From 
 
@@ -391,9 +381,10 @@ In order to start navigation or route planning, you need to select destination f
 
 It is also possible to select 'From' Destination first via Map context menu (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
-**Note**: if you click "Start navigation" - 'From' point will be discarded as application enters in Navigation mode. In order to preserve a route, don't click "Start navigation" and [swipe down](#hide-context-menu)  "Route preparation" menu.
+**NOTE**. If you tap **Start navigation** - *From* point will be discarded as application enters in Navigation mode. In order to preserve a route, don't click "Start navigation" and [swipe down](#hide-context-menu)  "Route preparation" menu.
 
 Read more about [navigation](../navigation/setup/route-navigation.md).
+
 
 ### Search nearby
 
@@ -413,9 +404,9 @@ Read more about [navigation](../navigation/setup/route-navigation.md).
 
 </Tabs> 
 
-Via this context menu action it is possible to search around specific location on the map. 
-
+With this context menu action it is possible to search around specific location on the map. 
 Read more about [search](../search/index.md) functionality.
+
 
 ### Avoid road
 
@@ -442,6 +433,7 @@ To delete previosly selected roads from *[Avoid roads list](../navigation/routin
 Avoid roads function is global and affects all *[Routing types](../navigation/routing/index.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
 :::
 
+
 ### Change object position
 
 <Tabs groupId="operating-systems">
@@ -462,10 +454,10 @@ Avoid roads function is global and affects all *[Routing types](../navigation/ro
 
 </TabItem>
 
-</Tabs> 
+</Tabs>  
 
+Almost every created object by user is moveable i.e. Marker, Favorite, Created POI, Audio/Video Note or Track Waypoint. First select an object on the map and then use *<Translate android="true" ids="change_markers_position"/>* menu to move it to a new location.
 
-Almost every created object by user is moveable i.e. Marker, Favorite, Created POI, Audio/Video Note or Track Waypoint. First select an object on the map and then use '<Translate android="true" ids="change_markers_position"/>' menu to move it to a new location.
 
 ### Plan a route
 
@@ -475,8 +467,8 @@ You can start a route planning from a selected point via object context menu.
 
 Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 
-### Update / Download Online Maps
 
+### Update / Download Online Maps
 
 <Tabs groupId="operating-systems">
 
@@ -484,8 +476,7 @@ Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 
 To update or download online maps (tiles) at specific location, you can use object context menu:  
 **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*.  
-Please refer to [full instruction](../map/raster-maps.md#download--update-tiles). 
-
+Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).   
 
 ![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)
 
@@ -502,6 +493,7 @@ Please refer to [full instruction](../map/raster-maps.md#download--update-tiles)
 </TabItem>
 
 </Tabs> 
+
 
 ### Update / Download Vector Maps
 
@@ -530,7 +522,8 @@ In case there is no offline map present at selected location, for example map ob
 **iOS**: If you already have [downloaded](../start-with/download-maps.md) OsmAnd maps (vector or terrain), it is possible to updated them via context 
 menu. You will need to select the region on the map first - click on any location on worldwide zoom 3-7. 
 
->**NOTE**: if you have opened context menu for map region (region is higlighted), you will be able to see '<Translate android="true" ids="rendering_category_details"/>' about it: type and size of a available map, link to a wikipedia page, language, population and other.
+**NOTE**: if you have opened context menu for map region (region is higlighted), you will be able to see *<Translate android="true" ids="rendering_category_details"/>* about it: type and size of a available map, link to a wikipedia page, language, population and other.
+
 
 ### * Add / Delete Parking point
 
@@ -554,11 +547,10 @@ menu. You will need to select the region on the map first - click on any locatio
 
 </Tabs> 
 
-
-
 Any selected location on the map could be marked as [a parking position](../plugins/parking.md). In order to delete parking position, you can open context menu associated with parking location.
 
 Requires [Parking position plugin](../plugins/parking.md).
+
 
 ### * Add / Edit  Track waypoint
 
@@ -582,11 +574,10 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 </Tabs> 
 
-
-
 It is possible to [add waypoints](../personal/tracks.md#add-waypoint) to any track at selected location via Map Context menu - <Translate android="true" ids="context_menu_item_add_waypoint"/> . By default waypoint is added to [currently recording track](../plugins/trip-recording.md#from-widget). Though if there are many [visible tracks](../map/tracks-on-map.md#tracks-on-the-map-layers) on the map, it will be suggested to select the track waypoint will be added to.
 
 Requires [Trip recording plugin](../plugins/trip-recording.md).
+
 
 ### * Create / Modify POI
 
@@ -606,8 +597,6 @@ Requires [Trip recording plugin](../plugins/trip-recording.md).
 
 </Tabs> 
 
- 
-
 With OSM Editing plugin, you can create and modify most of the POIs present on [OpenStreetMap](https://www.openstreetmap.org/).
 
 &nbsp;<Translate android="true" ids="context_menu_item_create_poi"/> - [creates a new POI](../plugins/osm-editing.md#how-to-add-poi) at selected location.
@@ -615,6 +604,7 @@ With OSM Editing plugin, you can create and modify most of the POIs present on [
 &nbsp;<Translate android="true" ids="poi_context_menu_modify"/> - [modifies selected POI](../plugins/osm-editing.md#how-to-modify-poi).
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
+
 
 ### * Open OSM Note
 
@@ -638,10 +628,10 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
 </Tabs> 
 
-
 You can [report](../plugins/osm-editing.md#how-to-report-a-mistake) map data errors at specific location to [OpenStreetMap community](https://wiki.openstreetmap.org/wiki/Join_the_community). Please follow [guidelines](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes) and add proper comments to an issue.
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
+
 
 ### * Comment / Close OSM Note
 
@@ -652,6 +642,7 @@ OpenStreetMap Notes via objects context menu.
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
+
 ### * Upload POI / OSM Note
 
 ![Upload POI Android](@site/static/img/map/action_poi_upload_android.png) ![Upload OSM Note Android](@site/static/img/map/action_note_upload_android.png)
@@ -660,11 +651,10 @@ In case you use 'Offline mode' to add / edit POI or OSM Note, you will need to u
 
 Requires [OSM Editing plugin](../plugins/osm-editing.md).
 
+
 ### * Record AV Note
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
+<InfoAndroidOnly />
 
 ![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 
@@ -676,42 +666,22 @@ Records or takes a media note at selected point on the map.
 
 Requires [Audio / Video note plugin](../plugins/audio-video-notes.md).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs> 
-
-
 
 ## Customize
 
-<Tabs groupId="operating-systems">
+<InfoAndroidOnly/>  
 
-<TabItem value="android" label="Android">  
+You can change the order or hide items from the *Actions* menu in the *Map context menu*. A total of 16 actions are suggested.  
+- You can move the three most useful actions to the top of the *Main actions* list.
+- The rest of the menu can be customized for each profile separately in the *Additional actions* and *Hidden* sections.  
 
-It is possible to reorder or hide items from the '<Translate android="true" ids="context_menu_actions"/>'. You can move the most useful actions to the top 3 actions and setup whole menu independently for each profile. It is also possible to reset to default settings after all.
+Available types of actions:  
+- **<Translate android="true" ids="main_actions"/>** - The section has only 4 buttons, three of which can be customized, and Actions, which remains unchanged.  
+- **<Translate android="true" ids="additional_actions"/>** - You can access these actions by tapping the *Actions* button.  
+- **<Translate android="true" ids="shared_string_hidden"/>** - Moving actions to this section does not stop them from working. They just don't appear in the Actions menu.  
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>
+*<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*  
 
-<p> </p>
-
-![Context menu actions items ](@site/static/img/map/customize_actions_menu.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs> 
+![Map context menu Customize](@site/static/img/map/map_context_menu_customize_1.png)   ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_2.png)   ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_3.png)
 
 
-
- 
