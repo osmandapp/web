@@ -768,6 +768,15 @@ function updateState(ctx) {
     ctx.setTrackState({...ctx.trackState});
 }
 
+function updateGlobalProfileState(ctx, profile) {
+    ctx.setCreatingRouteMode({
+        mode: profile,
+        modes: ctx.creatingRouteMode.modes,
+        opts: ctx.creatingRouteMode.modes[profile]?.params,
+        colors: ctx.creatingRouteMode.colors
+    })
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
@@ -799,6 +808,7 @@ const TracksManager = {
     isEqualPoints,
     updateState,
     getLocalTrackAnalysis,
+    updateGlobalProfileState,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
