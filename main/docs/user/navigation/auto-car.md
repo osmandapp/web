@@ -191,14 +191,14 @@ The screen of your vehicle's multimedia system can display 2D and 3D views of th
 
 The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps. Set up the display on the phone connected to Android Auto.  
 
-The Multi window display feature can also be enabled and disabled from the Window Shade.
+<!-- The Multi window display feature can also be enabled and disabled from the Window Shade.
 1. From a Home screen, tap Apps
 2. Tap Settings.
 3. Tap Multi window.
 4. Tap the Multi window switch
 5. Return to the home screen. 
 
-https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969  
+https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 -->
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
 
