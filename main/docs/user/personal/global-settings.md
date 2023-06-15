@@ -162,7 +162,8 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects. For the **iOS** version uses only OpenGL for map rendering.  
+For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects.  
+For the **iOS** version uses only OpenGL for map rendering.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
