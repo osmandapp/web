@@ -124,3 +124,18 @@ The compass icon on the button always points to the North. You can select how th
 :::
 
 
+## 3D mode
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>*  
+
+![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
+
+- *<Translate android="true" ids="shared_string_hidden"/>* - If this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map tilt.  
+- *<Translate android="true" ids="shared_string_visible"/>* - The button is always displayed on the map screen.
+- *<Translate android="true" ids="visible_in_3d_mode"/>* - The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
+
+**Tips**  
+**1.** The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
+**2.** You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.  The button setting is different for each profile.  
+**3.** It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
+
