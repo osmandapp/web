@@ -85,7 +85,7 @@ In this section of the General settings menu, you can set parameters for the cur
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profile_gs_appearance_android.png)
+![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_andr.png)
 
 - *<Translate android="true" ids="choose_osmand_theme"/>* - Allows you to set a day and night theme for the app, which can be applied to one profile or to all at once. This option does not change the [map mode](../map/vector-maps.md#map-mode) settings.
   - *<Translate android="true" ids="dark_theme"/> theme*
@@ -96,7 +96,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*
-- *2.5D view* - If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+- *2.5D view* - (placed on [*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*](../widgets/map-buttons.md#3d-mode))If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - *<Translate android="true" ids="display_position"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
   - *<Translate android="true" ids="position_on_map_center"/>* - The cursor will always be in the center of the screen.
   - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
@@ -113,7 +113,7 @@ In this section of the General settings menu, you can set parameters for the cur
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_gs_appearance_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_ios.png)
 
 - *<Translate ios="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate ios="true" ids="rotate_map_north_opt"/>*
