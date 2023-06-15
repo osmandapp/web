@@ -112,10 +112,15 @@ export default function PoiLayer() {
             }
         }
 
-        getPoiList().then();
-        return () => {
-            ignore = true;
+        if (zoom < 14 && !_.isEmpty(ctx.showPoiCategories)) {
+            alert("Please zoom in closer");
+        } else {
+            getPoiList().then();
+            return () => {
+                ignore = true;
+            }
         }
+
     }, [zoom, move, ctx.showPoiCategories])
 
     useEffect(() => {

@@ -189,7 +189,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     </Grid>
                     <Grid item xs={2}>
                         <IconButton sx={{mt: '5px'}} type="button" aria-label="search"
-                                    onClick={showPoiCategoriesOnMap}>
+                                    onClick={showPoiCategoriesOnMap(null)}>
                             <Search/>
                         </IconButton>
                     </Grid>
