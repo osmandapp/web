@@ -164,35 +164,31 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
-![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
+![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
 For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects.  
-For the **iOS** version uses only OpenGL for map rendering.  
-
-<!--
-The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
-
-**Version 1** is recommended for low-performance or outdated devices.   
-
-**Version 2** is a fast rendering engine and provides features such as a [3D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
-The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
-
-**Features**
-- V2: first the tile is rendered, then all the characters (add link Link to render layers), does not support a raster layer over vector text, unlike V1.  
-- V1: all rendered as tiles text inside tiles  
+For the **iOS** version uses only OpenGL for map rendering.        
 
 
-| Features | Version number 1 | OpenGl version |
+| Features | Version 1 | Version 2 (OpenGl) |
 |:---|:--- |:--- |
-| Cross-platform | Not used in iOS version | Fits both versions |
-| Softwarу performance | Recommended for low-performance or outdated devices | |
-|  | | |
-| Weather | You cannot use this plugin | |
-| GPU / CPU dependent | | |
-| 3D | Not available | |
-| Transparent symbols overlay / underlay | | |
+| Cross-platform | Not used in iOS version. | Fits both versions. |
+| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for OsmAnd 4.3 and later versions, and in test mode for OsmAnd 4.2. |
+| 3D view | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
+| Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
+| Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
+| [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
 
--->
+The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware.  Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+    </tr>
+</table> 
+
 
 ## Privacy and security
 
