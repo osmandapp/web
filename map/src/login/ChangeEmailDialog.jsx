@@ -158,7 +158,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
             <DialogActions>
                 <Button onClick={() => {
                     ctx.setLoginUser(null);
-                    ctx.setUserEmail(newEmail);
+                    ctx.setUserEmail(newEmail, {days: 30, SameSite: 'Strict'});
                 }
                 }>Login using new credentials
                 </Button>
