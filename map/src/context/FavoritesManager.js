@@ -1,8 +1,7 @@
-import {post} from "axios";
 import MarkerOptions from "../map/markers/MarkerOptions";
 import Utils from "../util/Utils";
-import TracksManager from "./TracksManager";
 import _ from "lodash";
+import { apiPost, quickNaNfix } from '../login/HttpApiLogout';
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
@@ -30,7 +29,7 @@ function getShapesSvg(color) {
 }
 
 async function addFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data,
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data,
         {
             params: {
                 fileName: fileName,
@@ -45,7 +44,7 @@ async function addFavorite(data, fileName, updatetime) {
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
-    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data,
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data,
         {
             params: {
                 fileName: fileName,
@@ -60,7 +59,7 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
-    let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data,
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data,
         {
             params: {
                 wptName: wptName,
@@ -96,13 +95,14 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
 function prepareTrackData(data) {
     if (data) {
         if (typeof data === "string") {
-            return JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-                if (value === "***NaN***") {
-                    return key === "ele" ? TracksManager.NAN_MARKER : NaN;
-                } else {
-                    return value;
-                }
-            });
+            return JSON.parse(quickNaNfix(data));
+            // return JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            //     if (value === "***NaN***") {
+            //         return key === "ele" ? TracksManager.NAN_MARKER : NaN;
+            //     } else {
+            //         return value;
+            //     }
+            // });
         } else {
             return data;
         }

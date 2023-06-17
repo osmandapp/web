@@ -9,7 +9,7 @@ import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
-
+import { apiGet } from '../../../login/HttpApiLogout';
 
 async function displayWeather(ctx, setWeatherPoint) {
     let lat = 0;
@@ -22,14 +22,14 @@ async function displayWeather(ctx, setWeatherPoint) {
         }
     }
     let data = {lat: lat, lon: lon}
-    const response = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&week=false`, {
+    const response = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&week=false`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
     if (response.ok) {
         data.day = await response.json();
     }
-    const responseWeek = await fetch(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&week=true`, {
+    const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&week=true`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });

@@ -23,6 +23,7 @@ import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
 import TracksManager from "../../../context/TracksManager";
+import { apiGet } from '../../../login/HttpApiLogout';
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
@@ -47,7 +48,7 @@ export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
     }, [dialogOpen]);
 
     async function getIconCategories() {
-        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER)
+        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER)
         const res = await resp.json();
         if (res) {
             setCurrentIconCategories('special');

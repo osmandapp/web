@@ -17,6 +17,7 @@ import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
+import { apiGet } from '../../../login/HttpApiLogout';
 
 export default function EditFavoriteDialog({
                                                favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen,
@@ -46,7 +47,7 @@ export default function EditFavoriteDialog({
     }, [editFavoritesDialogOpen]);
 
     async function getIconCategories() {
-        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER)
+        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER)
         const res = await resp.json();
         if (res) {
             Object.entries(res.categories).forEach(category => {
