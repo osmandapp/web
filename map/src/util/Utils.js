@@ -1,52 +1,53 @@
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
 import React from "react";
 import TracksManager from "../context/TracksManager";
+import { apiGet } from '../login/HttpApiLogout';
 
-async function fetchUtil(url, options) {
+// async function fetchUtil(url, options) { // dropped
 
-    const fetchData = async () => {
-        return await fetch(url, options);
-    };
+//     const fetchData = async () => {
+//         return await fetch(url, options);
+//     };
 
-    const response = await fetchData()
-        .then(function (result) {
-            return result;
-        });
+//     const response = await fetchData()
+//         .then(function (result) {
+//             return result;
+//         });
 
-    if (response.redirected) {
-        window.location.href = response.url;
-    }
+//     if (response.redirected) {
+//         window.location.href = response.url;
+//     }
 
-    return response;
-}
+//     return response;
+// }
 
-async function fetchUtilLoad(url, options, setProgressVisible) {
+// async function fetchUtilLoad(url, options, setProgressVisible) { // never used
 
-    setProgressVisible(true);
+//     setProgressVisible(true);
 
-    const fetchData = async () => {
-        return await fetch(url, options);
-    };
+//     const fetchData = async () => {
+//         return await fetch(url, options);
+//     };
 
-    const response = await fetchData()
-        .then(function (result) {
-            return result;
-        });
+//     const response = await fetchData()
+//         .then(function (result) {
+//             return result;
+//         });
 
-    if (response.redirected) {
-        setProgressVisible(false);
-        window.location.href = response.url;
-    }
+//     if (response.redirected) {
+//         setProgressVisible(false);
+//         window.location.href = response.url;
+//     }
 
-    return response;
-}
+//     return response;
+// }
 
 async function getFileData(file) {
     let trackData;
     if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
         trackData = file.url;
     } else {
-        let response = await fetchUtil(file.url, file.urlopts ? file.urlopts : {});
+        let response = await apiGet(file.url, file.urlopts ? file.urlopts : {});
         if (response.ok) {
             trackData = await response.text();
         } else {
@@ -131,8 +132,8 @@ export function mergeStateObject(get, set, todo) {
 }
 
 const Utils = {
-    fetchUtil,
-    fetchUtilLoad,
+    // fetchUtil,
+    // fetchUtilLoad,
     getFileData,
     getDistance,
     getPointsDist,
