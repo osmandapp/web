@@ -162,16 +162,21 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
+:::note
+For **iOS** OsmAnd this feature works by default.
+:::
 
-**Version 1** is recommended for low-performance or outdated devices.   
-
-**Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
-The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
 ![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
+
+The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL.   
+
+**Version 1** is recommended for low-performance or outdated devices.   
+
+**Version 2** is a fast rendering engine and provides features such as a [3D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
+The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
 
 **Features**
 - V2: first the tile is rendered, then all the characters (add link Link to render layers), does not support a raster layer over vector text, unlike V1.  
@@ -180,9 +185,10 @@ The OsmAnd app for the iOS version only uses the OpenGL rendering engine.
 
 | Features | V1 | V2 |
 |:---|:--- |:--- |
-| Weather | | |
+| Device | Recommended for low-performance or outdated devices | |
+| Weather | You cannot use this plugin | |
 | GPU / CPU dependent | | |
-| 3D | | |
+| 3D | Not available | |
 | Transparent symbols overlay / underlay | | |
 
 
@@ -261,12 +267,12 @@ You can enable/disable history logging and view, edit, and share previously ente
 
 </Tabs>
 
-- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history. You can choose what kind of history to *[Export](./import-export.md#export)*.
-- *Clear all history* (Android) or *Delete all history* (iOS) - you can delete all history entries recorded untill now.  
+- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- *Clear all history* (Android) or *Delete all history* (iOS) - is used to delete all history entries recorded untill now.  
 
 #### History options
 
-Using the switch on the appropriate tab (Search history, Navigation history, Map markers history), you can enable/disable logging for this category of record  data. On each tab, you can also delete one or more items or back them up to a file.  
+Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also delete one or more items from the list or share them as a file (to access these functions in iOS, tap *Edit* button).  
 
 <Tabs groupId="operating-systems">
 
@@ -278,7 +284,7 @@ Using the switch on the appropriate tab (Search history, Navigation history, Map
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png)
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 

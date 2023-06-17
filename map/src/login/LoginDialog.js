@@ -13,6 +13,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import DeleteAccountDialog from "./DeleteAccountDialog";
 import AccountManager from "../context/AccountManager";
 import ChangeEmailDialog from "./ChangeEmailDialog";
+import DownloadBackupDialog from "./DownloadBackupDialog";
 
 const useStyles = makeStyles(() => ({
     paper: {minWidth: "100vh"},
@@ -32,6 +33,7 @@ export default function LoginDialog() {
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [changeEmailFlag, setChangeEmailFlag] = useState(false);
     const [accountInfo, setAccountInfo] = useState(null);
+    const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
     const navigate = useNavigate();
 
@@ -114,11 +116,10 @@ export default function LoginDialog() {
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
-                                <Link sx={{fontSize: "10pt"}}
-                                      href={`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`}
-                                      target="_blank">Download backup
-                                    ~{(ctx.listFiles.totalUniqueZipSize / 1024 / 1024.0).toFixed(1)} MB
-                                </Link>
+                                <Button
+                                    onClick={() => setOpenDownloadBackupDialog(true)}>
+                                    Download backup
+                                </Button>
                             </>
                         }
                         <Divider sx={{mt: 1}}/>
@@ -190,6 +191,10 @@ export default function LoginDialog() {
                     {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag}/>}
                     {changeEmailFlag && <ChangeEmailDialog setChangeEmailFlag={setChangeEmailFlag}/>}
                 </Box>}
+                {openDownloadBackupDialog &&
+                    <DownloadBackupDialog
+                        openDownloadBackupDialog={openDownloadBackupDialog}
+                        setOpenDownloadBackupDialog={setOpenDownloadBackupDialog}/>}
             </Dialog>);
 
     }

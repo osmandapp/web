@@ -13,17 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--<InfoAndroidOnly />-->
-
-
-:::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app.
-:::
-
-
-Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when Audio/Video Notes plugin is enabled.
+<InfoAndroidOnly />
 
 ## Overview  
+
+Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when Audio/Video Notes plugin is enabled.
 
 The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [Map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
 
@@ -200,7 +194,6 @@ Adding the widget to the screen is needed when you would rather skip looking for
 ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
 
 
-
 ## Manage multiple notes
 
 ### Manage in My Places
@@ -238,11 +231,13 @@ The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) c
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
+
 ## Waypoints created from notes
 
 If an audio/video/photo note is added to a track, a waypoint is created. Waypoints exist within the track. If a track is visible, its waypoints are visible. So, audio/video/photo notes can be visible on the map altogether, or by the specific visible track. In the latter case, audio/video/photo notes are displayed as track waypoints. 
 
->**NOTE**: If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to the user of the device. 
+**NOTE**  
+If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to the user of the device. 
 
 ![Notes and waypoints on the map](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png) ![Waypoints on the track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
@@ -269,7 +264,6 @@ The name of a manually created waypoint can be established by the user.
 
 ![Manually adding a waypoint to track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
  
-
 
 ### View waypoints 
 
