@@ -143,15 +143,17 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
     // load OSRM providers first
     const osrm = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/online-routing-providers.json`);
     if (osrm.ok) {
-        const json = await osrm.json();
-        if(json && json?.providers && json?.providers[0]?.name) {
-            routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-                providersOSRM: json.providers,
-                // name: 'OsmAnd Advanced Router', // debug
-                name: json.providers[0].name, // set first OSRM provider
-                profile: json.providers[0]?.routes[0]?.name // select first profile
-            });
-        }
+        try {
+            const json = await osrm.json();
+            if(json && json?.providers && json?.providers[0]?.name) {
+                routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
+                    providersOSRM: json.providers,
+                    // name: 'OsmAnd Advanced Router', // debug
+                    name: json.providers[0].name, // set first OSRM provider
+                    profile: json.providers[0]?.routes[0]?.name // select first profile
+                });
+            }
+        } catch {}
     }
 
     // load OsmAnd provider as advanced solution
@@ -159,40 +161,42 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
     const osmand = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`);
     if (osmand.ok) {
-        const json = await osmand.json();
+        try {
+            const json = await osmand.json();
 
-        if (json && setCreatingRouteMode) {
-            let creatingData = _.cloneDeep(json);
-            creatingData = filterMode(creatingData);
-            creatingData = addModes(creatingData);
-            setCreatingRouteMode( {
-                mode: creatingRouteMode.mode,
-                modes: creatingData,
-                opts: creatingData[creatingRouteMode.mode]?.params,
-                colors: getColors()
-                }
-            );
-        }
+            if (json && setCreatingRouteMode) {
+                let creatingData = _.cloneDeep(json);
+                creatingData = filterMode(creatingData);
+                creatingData = addModes(creatingData);
+                setCreatingRouteMode( {
+                    mode: creatingRouteMode.mode,
+                    modes: creatingData,
+                    opts: creatingData[creatingRouteMode.mode]?.params,
+                    colors: getColors()
+                    }
+                );
+            }
 
-        if (json) {
-            // convert OsmAnd "profiles" {} to OSRM "routes" []
-            // Note: sort, filter, additional profiles will be processed here
+            if (json) {
+                // convert OsmAnd "profiles" {} to OSRM "routes" []
+                // Note: sort, filter, additional profiles will be processed here
 
-            const converted = [];
-            Object.keys(json).forEach((k) => {
-                converted.push(json[k]);
-            });
+                const converted = [];
+                Object.keys(json).forEach((k) => {
+                    converted.push(json[k]);
+                });
 
-            // update default OsmAnd provider with actual profiles
-            routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-                providersOsmAnd: [{
-                    type: routeProviders.providersOsmAnd[0].type,
-                    name: routeProviders.providersOsmAnd[0].name,
-                    url: routeProviders.providersOsmAnd[0].url,
-                     routes: converted
-                }]
-            });
-        }
+                // update default OsmAnd provider with actual profiles
+                routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
+                    providersOsmAnd: [{
+                        type: routeProviders.providersOsmAnd[0].type,
+                        name: routeProviders.providersOsmAnd[0].name,
+                        url: routeProviders.providersOsmAnd[0].url,
+                         routes: converted
+                    }]
+                });
+            }
+        } catch {}
     }
 
     // console.log(routeProviders.getType());
