@@ -31,6 +31,14 @@ async function loadTracks(setLoading) {
         }
     }
 
+    if(localTracks && localTracks.length !== Object.keys(localTracks).length) {
+        console.log('loadTracks() workaround for localTrack_0 (hole) localTrack_X');
+        const fixTracks = [];
+        localTracks.forEach(t => fixTracks.push(t));
+        updateLocalTracks(fixTracks);
+        localTracks = fixTracks;
+    }
+
     let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible?.local) {
         for (const local of savedVisible.local) {
@@ -474,7 +482,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
-        localStorage.removeItem('localTrack_' + currentTrackIndex);
+        localStorage.removeItem(LOCAL_TRACK_KEY + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
         if (ctx.localTracks.length > 0) {
             updateLocalTracks(ctx.localTracks);
