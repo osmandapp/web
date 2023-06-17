@@ -47,7 +47,7 @@ export default function SearchInfo() {
 
     const searchAsync = async (text, latlng) => {
         const params = `lat=${latlng.lat.toFixed(6)}&lon=${latlng.lng.toFixed(6)}&search=${text}`;
-        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search?${params}`, {
+        const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search?${params}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         });
