@@ -8,17 +8,15 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
 import {useNavigate} from "react-router-dom";
 import {Box, Divider, Link, ListItemText, MenuItem, Typography} from "@mui/material";
-import {get} from "axios";
+import { apiGet } from './HttpApiLogout';
 import {makeStyles} from "@material-ui/core/styles";
 import DeleteAccountDialog from "./DeleteAccountDialog";
 import AccountManager from "../context/AccountManager";
 import ChangeEmailDialog from "./ChangeEmailDialog";
 
-
 const useStyles = makeStyles(() => ({
     paper: {minWidth: "100vh"},
 }));
-
 
 export default function LoginDialog() {
 
@@ -60,6 +58,15 @@ export default function LoginDialog() {
     }
 
     useEffect(() => {
+        if (window.location.hash === '#logout' && ctx.loginUser) {
+            setState('login');
+            ctx.setLoginUser('');
+            window.location.hash = '';
+            setEmailError('You are logged out by server!');
+        }
+    }); // always
+
+    useEffect(() => {
         if (ctx.loginUser && ctx.loginUser !== '') {
             getAccountInfo().then();
         } else {
@@ -68,12 +75,11 @@ export default function LoginDialog() {
     }, [ctx.loginUser]);
 
     async function getAccountInfo() {
-        const resp = await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
+        const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
         if (resp.data) {
             setAccountInfo(resp.data.info);
         }
     }
-
 
     if (ctx.loginUser) {
         return (
