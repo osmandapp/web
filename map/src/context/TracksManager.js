@@ -1,8 +1,7 @@
 import Utils from "../util/Utils";
-import axios, {post} from "axios";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
-
+import { apiGet, apiPost, quickNaNfix } from '../login/HttpApiLogout';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -238,7 +237,7 @@ function getGroup(name, local) {
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
+    const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
         method: 'POST',
         credentials: 'include',
         body: formData
@@ -248,13 +247,14 @@ async function getTrackData(file) {
     if (response.ok) {
         let resp = await response.text();
         if (resp) {
-            let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-                if (value === "***NaN***") {
-                    return key === "ele" ? NAN_MARKER : NaN;
-                } else {
-                    return value;
-                }
-            });
+            let data = JSON.parse(quickNaNfix(resp));
+            // let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            //     if (value === "***NaN***") {
+            //         return key === "ele" ? NAN_MARKER : NaN;
+            //     } else {
+            //         return value;
+            //     }
+            // });
             if (data) {
                 track = data.gpx_data;
             }
@@ -421,7 +421,7 @@ async function getGpxTrack(file) {
         trackData.metaData.name = file.name;
     }
 
-    return await post(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
+    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -451,7 +451,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             let data = new FormData();
             data.append('file', oMyBlob, gpxFile.name);
             let res;
-            res = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data,
+            res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data,
                 {
                     params: {
                         name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
@@ -460,8 +460,8 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                 }
             );
 
-            if (res) {
-                const respGetFiles = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+            if (res && res?.data?.status === 'ok') {
+                const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
                 const resJson = await respGetFiles.json();
                 ctx.setListFiles(resJson);
                 deleteLocalTrack(ctx);
@@ -501,11 +501,10 @@ function formatRouteMode(routeMode) {
     return routeModeStr;
 }
 
-
 async function updateRouteBetweenPoints(ctx, start, end, settings) {
     ctx.setProcessRouting(true);
     let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
-    let result = await post(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
+    let result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
         {
             params: {
                 start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
@@ -521,36 +520,39 @@ async function updateRouteBetweenPoints(ctx, start, end, settings) {
     );
 
     if (result) {
-        if (typeof result.data === "string") {
-            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-                return value === "***NaN***" ? NaN : value;
-            });
+        let data = result?.data; // points
+        if (typeof result?.data === "string") {
+            data = JSON.parse(quickNaNfix(result.data));
+            // data = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            //     return value === "***NaN***" ? NaN : value;
+            // });
         }
-        if (result.msg) {
-            ctx.setRoutingErrorMsg(result.msg);
+        if (data.msg) {
+            ctx.setRoutingErrorMsg(data.msg);
         }
-        updateGapProfileOneSegment(end, result.points);
-        return result.points;
+        updateGapProfileOneSegment(end, data.points);
+        return data.points;
     }
 }
 
 async function updateRoute(points) {
     let result;
     if (points?.length > 0) {
-        result = await axios({
-            url: `${process.env.REACT_APP_GPX_API}/routing/get-route`,
-            method: 'post',
+        result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
+            method: 'POST',
             data: points,
         });
     }
     if (result) {
-        if (typeof result.data === "string") {
-            result = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-                return value === "***NaN***" ? NaN : value;
-            });
+        let data = result?.data; // points
+        if (typeof result?.data === "string") {
+            data = JSON.parse(quickNaNfix(result.data));
+            // data = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
+            //     return value === "***NaN***" ? NaN : value;
+            // });
         }
-        updateGapProfileAllSegments(result.points);
-        return result.points;
+        updateGapProfileAllSegments(data.points);
+        return data.points;
     }
 }
 
@@ -669,7 +671,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         ext: ctx.selectedGpxFile.ext,
         analysis: ctx.selectedGpxFile.analysis
     }
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data,
+    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -688,6 +690,10 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         ctx.selectedGpxFile.wpts = wpts;
         ctx.selectedGpxFile.pointsGroups = pointsGroups;
         return ctx.selectedGpxFile;
+    } else {
+        setLoading(false);
+        console.log('getTrackWithAnalysis fallback');
+        return ctx.selectedGpxFile;
     }
 }
 
@@ -697,7 +703,7 @@ async function getLocalTrackAnalysis(f) {
         metaData: f.metaData,
         ext: f.ext
     }
-    let resp = await post(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data,
+    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -708,6 +714,9 @@ async function getLocalTrackAnalysis(f) {
         Object.keys(data.data).forEach(t => {
             f[`${t}`] = data.data[t];
         });
+        return f;
+    } else {
+        console.log('getLocalTrackAnalysis fallback');
         return f;
     }
 }
