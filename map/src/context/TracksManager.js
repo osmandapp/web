@@ -1,7 +1,8 @@
 import Utils from "../util/Utils";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
-import { apiGet, apiPost, quickNaNfix } from '../login/HttpApiLogout';
+import { apiGet, apiPost } from '../login/HttpApiLogout';
+import { quickNaNfix } from "../util/Utils";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import TracksManager from "../context/TracksManager"; // NAN_MARKER only
+import { quickNaNfix } from "../util/Utils";
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
@@ -33,7 +33,7 @@ import TracksManager from "../context/TracksManager"; // NAN_MARKER only
         call apiGet(url, options) instead of fetch() or axios() or axios.get()
         call apiPost(url, data, options) instead of axios.post()
 
-        call quickNaNfix(badString) fix NaN(s) before JSON.parse()
+        call quickNaNfix(badString) fix NaN(s) before JSON.parse() (Utils.js)
 
     Read more details below.
 */
@@ -229,23 +229,5 @@ function isFormData(data) {
       (typeof FormData === 'function' && data instanceof FormData)
       || toString.call(data) === search
       || (toString.call(data.toString) === '[object Function]' && data.toString() === search)
-);
-}
-
-/*
-    Prepare string with NaN(s) before JSON.parse()
-
-    1) "ele":NaN is converted to "ele":NAN_MARKER
-    2) all others NaN are converted to null
-
-    NaN isn't supported by JSON standard
-*/
-export function quickNaNfix(bad) {
-    const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
-    const nil = ':null'; // others to null
-    // console.log('NaN', bad);
-    
-    return bad
-        .replace(/"ele": ?NaN\b/g, ele)
-        .replace(/: ?NaN\b/g, nil);
+    );
 }

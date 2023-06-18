@@ -3,45 +3,6 @@ import React from "react";
 import TracksManager from "../context/TracksManager";
 import { apiGet } from '../login/HttpApiLogout';
 
-// async function fetchUtil(url, options) { // dropped
-
-//     const fetchData = async () => {
-//         return await fetch(url, options);
-//     };
-
-//     const response = await fetchData()
-//         .then(function (result) {
-//             return result;
-//         });
-
-//     if (response.redirected) {
-//         window.location.href = response.url;
-//     }
-
-//     return response;
-// }
-
-// async function fetchUtilLoad(url, options, setProgressVisible) { // never used
-
-//     setProgressVisible(true);
-
-//     const fetchData = async () => {
-//         return await fetch(url, options);
-//     };
-
-//     const response = await fetchData()
-//         .then(function (result) {
-//             return result;
-//         });
-
-//     if (response.redirected) {
-//         setProgressVisible(false);
-//         window.location.href = response.url;
-//     }
-
-//     return response;
-// }
-
 async function getFileData(file) {
     let trackData;
     if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
@@ -129,6 +90,24 @@ export function mergeStateObject(get, set, todo) {
     set(() => merged); // is really need => ?
     // console.log(merged);
     return merged;
+}
+
+/*
+    Prepare string with NaN(s) before JSON.parse()
+
+    1) "ele":NaN is converted to "ele":NAN_MARKER
+    2) all others NaN are converted to null
+
+    NaN isn't supported by JSON standard
+*/
+export function quickNaNfix(bad) {
+    const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
+    const nil = ':null'; // others to null
+    // console.log('NaN', bad);
+    
+    return bad
+        .replace(/"ele": ?NaN\b/g, ele)
+        .replace(/: ?NaN\b/g, nil);
 }
 
 const Utils = {

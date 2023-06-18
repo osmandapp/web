@@ -1,7 +1,8 @@
 import MarkerOptions from "../map/markers/MarkerOptions";
 import Utils from "../util/Utils";
 import _ from "lodash";
-import { apiPost, quickNaNfix } from '../login/HttpApiLogout';
+import { apiPost } from '../login/HttpApiLogout';
+import { quickNaNfix } from "../util/Utils";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
