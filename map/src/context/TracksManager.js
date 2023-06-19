@@ -28,7 +28,9 @@ async function loadTracks(setLoading) {
     for (let name of names) {
         if (name.includes(LOCAL_TRACK_KEY)) {
             let ind = name.split('_')[1];
-            localTracks[ind] = JSON.parse(localStorage.getItem(name));
+            try {
+                localTracks[ind] = JSON.parse(localStorage.getItem(name));
+            } catch { console.log('localStorage JSON error, ignore track: ' + name) }
         }
     }
 
