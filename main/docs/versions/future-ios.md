@@ -40,7 +40,7 @@ You need to subscribe [OsmAnd Pro](https://osmand.net/docs/user/purchases) and d
 
 Put on _"Elevation: map center widget"_ on the screen: _Menu → Configure screen →  Right panel → Elevation: map center_
 
-![Elevation - Map center](@site/blog/2023-05-25-ios-4-45/elevation.png)
+![Elevation - Map center](@site/blog/2023-06-03-ios-4-45/elevation.png)
 
 
 ### New Track recording widgets
@@ -51,7 +51,7 @@ _Track recording - Duration, Uphill, Downhill_
 
 _Menu → Configure screen → Right panel → Track recording_
 
-![Track recording widgets](@site/blog/2023-05-25-ios-4-45/track-recording-widgets.png) ![Track recording widgets](@site/blog/2023-05-25-ios-4-45/track-recording-widgets_1.png)
+![Track recording widgets](@site/blog/2023-06-03-ios-4-45/track-recording-widgets.png) ![Track recording widgets](@site/blog/2023-06-03-ios-4-45/track-recording-widgets_1.png)
 
 
 
@@ -63,7 +63,7 @@ _Menu → Settings → App Profiles (Train) → Enable_
 
 After than you can make routing by using train roads.
 
-![Train profile](@site/blog/2023-05-25-ios-4-45/train.png)
+![Train profile](@site/blog/2023-06-03-ios-4-45/train.png)
 
 ### External keyboard updates
 
@@ -89,7 +89,7 @@ Added the search line for _My Places menu_: Favorites, Tracks, OSM Edits
 
 Added allowing to use Emoji in user points name.
 
-![Search for My Places](@site/blog/2023-05-25-ios-4-45/search.png)
+![Search for My Places](@site/blog/2023-06-03-ios-4-45/search.png)
 
 ### CarPlay updates
 
@@ -99,14 +99,14 @@ Added the [option for CarPlay](https://osmand.net/docs/user/navigation/car-play#
 
 Added allowing to use Emoji in user points name.
 
-![Emoji](@site/blog/2023-05-25-ios-4-45/emoji.png)
+![Emoji](@site/blog/2023-06-03-ios-4-45/emoji.png)
 
 
 ### Custom color for tracks
 
 Added extended palette for coloring [GPX tracks](https://osmand.net/docs/user/map/track-context-menu), [Favorites](https://osmand.net/docs/user/personal/favorites) and [Waypoints](https://osmand.net/docs/user/personal/tracks#add-waypoint).
 
-![Colors GPX](@site/blog/2023-05-25-ios-4-45/colors.png) ![Colors GPX](@site/blog/2023-05-25-ios-4-45/colors_1.png)
+![Colors GPX](@site/blog/2023-06-03-ios-4-45/colors.png) ![Colors GPX](@site/blog/2023-06-03-ios-4-45/colors_1.png)
 
 
 ### Bugs fixs

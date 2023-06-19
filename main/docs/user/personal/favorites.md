@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
 
 <Tabs groupId="operating-systems">
@@ -33,6 +35,7 @@ Favorites is one of the OsmAnd's features, that allows the user to make a kind o
 </TabItem>
 
 </Tabs>
+
 
 ## Favorite Point
 
@@ -60,10 +63,11 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap on it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
 
-### Create
 
-The easiest way to create a new favorite is to choose (by short tap) the [POI](../map/point-layers-on-map.md#points-of-interest-poi) or a building on the map and in [Map Context menu](../map/map-context-menu.md) select [*Add*](../map/map-context-menu.md#add--edit-favorite). In that case all the information from POI will be added to a new favorite point.  
-You can also add a new favorite on any place on the map by [long tap](../map/map-context-menu.md#select-any-point-long-tap).  
+### Create and Edit
+
+The easiest way to create a new Favorite point is to select the [POI](../map/point-layers-on-map.md#points-of-interest-poi) or building on the map with a short tap and select [Add](../map/map-context-menu.md#add--edit-favorite) in [Map Context menu](../map/map-context-menu.md). In this case, all the information from POI will be added to a new Favorite.  
+You can also add a new Favorite point to any place on the map with [long tap](../map/map-context-menu.md#select-any-point-long-tap).  
 
 <Tabs groupId="operating-systems">
 
@@ -71,29 +75,29 @@ You can also add a new favorite on any place on the map by [long tap](../map/map
 
 ![Favorite add menu Android](@site/static/img/personal/favorite_add_android.png)
 
-Here you can add: name, description, address for favorite.  
+- You can add: name, description, and address for Favorite point.  
 
 ![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)
 
-Select Favorite group (folder) for your favorite point or add new group (folder).
+- Select group for your favorite point or add new group.
 
 ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
 
-For adding new favorite group(folder), you need to add name, to select color. This color will be used for all new favorites added to the group by default.
+- For adding new favorite group, you need to add name, to select color. This color will be used for all new favorites added to the group by default.
 
 ![Favorite new group Android](@site/static/img/personal/favorite_new_group_android.png)
 
-Next, you can select icon for your favorite from our list.
+- Next, you can select icon for your favorite from our list.
 
 ![Favorite icon Android](@site/static/img/personal/favorite_icon_android.png)
 
-After, you can choose color and shape for favorite icon.
+- After, you can choose color and shape for favorite icon.
 
 ![Favorite color and shape Android](@site/static/img/personal/favorite_color_shape_android.png)
 
-In Actions, you can replace another point with this. For Android, this Replace button repeats in up corner of Add favorite menu.
+- In Actions, you can replace another point with this. For Android, this Replace button repeats in up corner of Add favorite menu.
 
-After creation, you can click Save button for saving new Favorite point or Cancel button for canceling point creation.
+- After creation, you can click Save button for saving new Favorite point or Cancel button for canceling point creation.
 
 ![Favorite actions Android](@site/static/img/personal/favorite_actions_android.png)
 
@@ -103,29 +107,29 @@ After creation, you can click Save button for saving new Favorite point or Cance
 
 ![Favorite add menu iOS](@site/static/img/personal/favorite_add_ios.png)
 
-Here you can add: name, description, address for favorite.  
+- You can add: name, description, address for favorite.  
 
 ![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)
 
-Select Favorite group (folder) for your favorite point or add new group (folder).
+- Select group for your favorite point or add new group.
 
 ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
 
-If you want to create a new favorite group (folder), you need to add name, to select color. This color will be used for all new favorites added to the group by default.
+- If you want to create a new favorite group (folder), you need to add name, to select color. This color will be used for all new favorites added to the group by default.
 
 ![Favorite new group iOS](@site/static/img/personal/favorite_new_group_ios.png)
 
-Next, you can select icon for your favorite from our list.
+- Next, you can select icon for your favorite from our list.
 
 ![Favorite icon iOS](@site/static/img/personal/favorite_icon_ios.png)
 
-After, you can choose color and shape for favorite icon.
+- After, you can choose color and shape for favorite icon.
 
 ![Favorite color and shape iOS](@site/static/img/personal/favorite_color_shape_ios.png)
 
-In *Actions*, you can replace another point with this. For Android, this *Replace* button repeats in up corner of *Add favorite* menu.
+- In *Actions*, you can replace another point with this. For Android, this *Replace* button repeats in up corner of *Add favorite* menu.
 
-After creation, you can click *Save* button for saving new Favorite point or *Cancel* button for canceling point creation.
+- After creation, you can click *Save* button for saving new Favorite point or *Cancel* button for canceling point creation.
 
 ![Favorite actions iOS](@site/static/img/personal/favorite_actions_ios.png)
 
@@ -133,13 +137,13 @@ After creation, you can click *Save* button for saving new Favorite point or *Ca
 
 </Tabs>
 
-### Edit
+#### Edit
 
-To edit a Favorite point you need [to short tap](../map/map-context-menu.md#select-an-object-short-tap) on chosen Favorite point.
+To edit a Favorite point, [short tap](../map/map-context-menu.md#select-an-object-short-tap) the selected Favorite point.
 
 After that, you need to choose [*Edit favorite* button in *Map Context menu*](../map/map-context-menu.md#add--edit-favorite).  
 
-*Edit favorite* menu opens. It's look like *[Add favorite*](../personal/favorites.md#create)* menu. But in Action part there is one more action - *Delete* button. For Android, there is additional *Delete* button in up corner of *Edit favorite* menu.  
+*Edit favorite* menu opens. It's look like *[Add favorite](#create)* menu. But in Action part there is one more action - *Delete* button. For Android, there is additional *Delete* button in up corner of *Edit favorite* menu.  
 
 <Tabs groupId="operating-systems">
 
@@ -159,36 +163,41 @@ After that, you need to choose [*Edit favorite* button in *Map Context menu*](..
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
 
-### Search
 
-Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search-1).  
+### Favorites in GPX file
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
+All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same [tags](../personal/tracks.md#waypoint-and-favorites) to store information and are saved in [GPX file format](../personal/tracks.md#waypoint-format-description).  
 
 
-</TabItem>
+```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
+```  
 
-<TabItem value="ios" label="iOS">
-
-![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 ## Manage Favorites
 
-In order to open Favorites list go to:
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>_
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/my_places_android.png)
 
@@ -196,13 +205,14 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>_
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ### View
 
@@ -224,6 +234,7 @@ In *My Places* menu you can find not only *Favorites* but also function buttons 
 
 </Tabs>
 
+
 ### Order / Sorting
 
 The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the very top.  
@@ -237,6 +248,7 @@ The favorite folders and points are sorted alphabetically. The [personal folder]
 :::tip Note
 In [searching list](#search-1) *Favorites* is sorted by distance from the map center.  
 :::
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -250,6 +262,7 @@ In order to switch between Folders <-> Points list, use the toggle on top right 
 </TabItem>
 
 </Tabs>
+
 
 ### Search
 
@@ -276,6 +289,28 @@ Moving the screen down opens the search menu for Favorites: _Menu → My Places 
 </TabItem>
 
 </Tabs>
+
+
+#### Search function/Global search
+
+Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### Actions
 
@@ -386,7 +421,7 @@ Tap *Pencil* button opens special functions for a chosen Favorite folder. You ne
 <TabItem value="android" label="Android">
 
 :::caution Note
-**Only for iOS version.**
+*Only for iOS version.*
 :::
 
 </TabItem>

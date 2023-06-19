@@ -30,6 +30,9 @@ Please, input your e-mail for registration:
 
 <SotmScreenshots />
 
+- Android version: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+- iOS version: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
 _________________
@@ -37,3 +40,5 @@ _________________
 
 <LinksSocial/>
 <LinksTelegram/>
+
+_________________

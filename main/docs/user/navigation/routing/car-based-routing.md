@@ -12,14 +12,13 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
 
 ## Overview
 
-Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. The right routing settings can help drivers save time, and fuel, and avoid hazards on the road.  
+Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. The right routing settings can help drivers save time, and fuel, and avoid hazards on the road. By default the fastest routing is provided.
 
 :::info
-The routing mechanism for ground vehicles differs only in a few settings. Common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their particularities.  
+The routing mechanism for motorized ground vehicles differs only in a few settings. Common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their particularities.  
 :::
 
 Routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the corresponding profile (*Driving, Truck, Motorcycle*).  
@@ -49,12 +48,12 @@ Car routing is designed to help drivers find the most efficient and direct route
 | *<Translate android="true" ids="prefer_in_routing_title"/>* |  <Translate android="true" ids="routing_attr_driving_style_prefer_unpaved_description"/> | For car routing it is assumed, that the surface of roads is [paved](https://wiki.openstreetmap.org/wiki/Key:surface), unless otherwise specified. |
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (only&nbsp;car) |  <details><summary> Roads, that are closed for goods delivery, will be avoided. </summary>![Goods delivery Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| This option applies only to vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use the [Truck profile](#truck-routing-settings).   |
-| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | In most cases, the shortest route will be suggested. Often this route can take longer than if the setting was disabled |
+| *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | To calculate fuel-efficient routing engine limits speed internallyto 60 kmh, it doesn't change Estimated Time of Arrival though. So in case of 2 same start-end routes motorway (120 kmh) and minor (60 kmh) - shorter route will be selected. For the service roads that has speed limit <60 kmh, faster route will be selected. |
 
 Other routing settings:
-- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#avoid-temporary-closures)* option. Note that in some cases, information from OSM can be outdated.
+- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.
 - In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your vehicle parameters. They are used to determine whether the road can be used for routing.
+- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your vehicle parameters. They are used for the unknown roads without speed limits. Mostly it happens, if you navigate by track or online routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
 ## Route parameters - Truck

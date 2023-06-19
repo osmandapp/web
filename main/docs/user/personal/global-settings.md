@@ -84,7 +84,7 @@ This profile is only available for iOS. It uses your car's audio and video syste
 This settings is not available for Android
 :::
 
-Read about Android Auto [here](../navigation/auto-car.md)
+To read about the capabilities of Android Auto within the OsmAnd application, see the corresponding [article](../navigation/auto-car.md) in the Navigation section.  
 
 </TabItem>
 
@@ -162,33 +162,74 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ### Map rendering engine
 
-The Android version of OsmAnd can use the standard first version of rendering or the second version named OpenGL. **Version 1** is recommended for low-performance or outdated devices.  
-**Version 2** is a fast rendering engine and provides features such as a [2.5D](../personal/profiles.md#appearance) where you can change the angle of view to get a 3D view. Version 2 is only available for OsmAnd 4.3 and the following versions, and also as a test mode for OsmAnd 4.2.
-The OsmAnd app for the iOS version only uses the OpenGL rendering engine.  
-
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>*
 
-![General Settings engine rendering Android](@site/static/img/personal/profiles/rendering_engine_andr.png)  
+![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
+
+For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects.  
+For the **iOS** version uses only OpenGL for map rendering.        
+
+
+| Features | Version 1 | Version 2 (OpenGl) |
+|:---|:--- |:--- |
+| Cross-platform | Not used in iOS version. | Fits both versions. |
+| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for OsmAnd 4.3 and later versions, and in test mode for OsmAnd 4.2. |
+| 3D view | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
+| Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
+| Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
+| [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
+
+The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware.  Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+    </tr>
+</table> 
 
 
 ## Privacy and security
 
-OsmAnd allows you to choose whether or not to share your activity in the app, the ability to edit your history and use the proxy of your choice. 
+OsmAnd allows you to choose whether or not to *[share your activity](#analytics)* in the app, the ability to edit your *[history](#history)* and use the *[proxy](#proxy)* (Android only) of your choice.  
+
+:::note
+For more information see [OsmAnd privacy and security policy](https://osmand.net/help-online/privacy-policy).
+:::
+
+### Analytics
+
+*<Translate android="true" ids="analytics_pref_title"/>* (Android) or *<Translate ios="true" ids="send_anonymous_data"/>* (iOS) - this setting allows you the choice whether or not to provide anonymous data about *Downloaded Maps* and *Visited Screens* (Android).  
+
+:::info
+Data about your location or the places you view on the map is not collected.
+:::
+
+<!-- This data allows OsmAnd to better understand...
+-->
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android"> 
 
-
-### Analytics
-
-*<Translate android="true" ids="analytics_pref_title"/>* - this setting allows you the choice whether or not to collect anonymous data about Downloaded Maps and Visited Screens. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [OsmAnd privacy and security](https://osmand.net/help-online/privacy-policy).  
-To open Analytics settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,analytics_pref_title"/>*  
 
 ![General Settings Collected data Android](@site/static/img/personal/profiles/general_settings_collected_data_android.png)  
 
+</TabItem>
 
-### Identifiers
+<TabItem value="ios" label="iOS">  
+
+![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+#### Identifiers
+
+<InfoAndroidOnly />
 
 A UUID (Unique User Identifier) is generated for each installation of the OsmAnd application and sent to the servers during map loading. A random UUID is used to download offline maps from OsmAnd servers to control rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads. The UUID changes every 3 months.  
 
@@ -198,70 +239,66 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 *Menu → Settings → OsmAnd settings → Privacy and security → Identifiers*
 
-![UUID Android](@site/static/img/personal/profiles/uuid_android.png) 
+![UUID Android](@site/static/img/personal/profiles/uuid_android.png)
 
 <!--Starting with OsmAnd 4.3 it's possible to disable UUID (Unique User Identifier) as the result the traffic could be deprioritized when lots of maps are downloaded i.e. in the beginning of the month. UUID is rotated every 3 months so there is no user profile built for a longer history.-->
 
-
 ### History
 
-*<Translate android="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), Navigation history and [Map markers history](../personal/markers.md#history).  
-To open History settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
+You can enable/disable history logging and view, edit, and share previously entered data (*history*) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history).  
 
-Available interactions:  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-Inside actions
-- Enable/disable history.
-- Delete some items from the history.
-- Share with.  
+<Tabs groupId="operating-systems">
 
-Actions
-- Create a backup as a file - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
-- Clear all history.  
+<TabItem value="android" label="Android"> 
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
-
-
-### Proxy
-
-*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows to configure';// an [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
-To open Proxy settings, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
-
-![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)  
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-### Send anonymous data
-
-*<Translate ios="true" ids="send_anonymous_data"/>* - this setting allows you the choice whether or not to collect anonymous data about map download statistics. This data allows OsmAnd to better understand. Data about your location or the places you view on the map is not collected. [Privace Policy of OsmAnd](https://osmand.net/help-online/privacy-policy).  
-
-![General Settings Collected data ios](@site/static/img/personal/profiles/general_settings_collected_data_ios.png)
-
-
-### History
-
-*<Translate ios="true" ids="shared_string_history"/>* - this setting allows you to view the history log separately for each type of history: [Search History](../search/search-history.md), [Navigation history](../navigation/setup/route-navigation.md#previous-route--history) and [Map markers history](../personal/markers.md#history).  
-To open History settings, follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
-
-Available interactions:  
-
-Inside action:
-- Enable/disable history.
-
-Actions:
-- Export - in each sub-item you can select the data to be exported to a file: *Settings*, *My Places*, *Resources*.
-- Delete all history.  
-
-![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios.png)  ![General Settings History IOS](@site/static/img/personal/profiles/general_settings_history_ios_2.png)
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
+- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- *Clear all history* (Android) or *Delete all history* (iOS) - is used to delete all history entries recorded untill now.  
 
-## Other 
+#### History options
+
+Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also delete one or more items from the list or share them as a file (to access these functions in iOS, tap *Edit* button).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
+
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+
+</TabItem>
+
+</Tabs>
+
+### Proxy
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="proxy_pref_title"/>* - this setting allows you to configure a [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the Proxy Host and Proxy Port.  
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,proxy_pref_title"/>*
+
+![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)  
+
+## Other
 
 In this section of the OsmAnd settings, you can configure the notifications you receive, the location service, and how your application settings are saved.
 

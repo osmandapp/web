@@ -13,17 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--<InfoAndroidOnly />-->
-
-
-:::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app.
-:::
-
-
-Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when Audio/Video Notes plugin is enabled.
+<InfoAndroidOnly />
 
 ## Overview  
+
+Your audio and video recordings can come in useful in the future, for example as memories of where you've been. They are available in the [My Places](../personal/myplaces.md) menu and are visible when Audio/Video Notes plugin is enabled.
 
 The Audio/Video Notes plugin extends OsmAnd's functionality by allowing the user to create their own notes in various formats, such as photos, video or audio, and associate them with their geographic location or current location. You can make recordings only when the plugin is on, using the [Audio/Video Notes widget](../widgets/info-widgets.md#-audio-video-notes-widget) and/or the [Map context menu](../map/map-context-menu.md#-audiovideo-note). The received data is automatically saved in [My Places](../personal/myplaces.md), from where it can be conveniently managed and shared.  
 
@@ -41,22 +35,20 @@ The audio/video notes are provided with the Audio/video notes plugin, and requir
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
 3. If needed, configure [the recording settings](#plugin-settings) per profile.  
 
-
 ## Plugin settings
 
-For every profile, it is possible to configure the recording settings. 
+For each profile, you can configure the Audio/Video recording options.  
 
-**Android**: <Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
-![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_photo_android.png)  ![Audio video plugin settings Video Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_settings_video_android.png)
-
+![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)  
 
 | Parameter | Description |
 | --- | --- |
-| **<Translate android="true" ids="multimedia_use_system_camera"/>**  | If enabled, OsmAnd uses the system application to create photos in <Translate android="true" ids="photo_notes"/>.|
-| **<Translate android="true" ids="av_camera_pic_size"/>** | Establishes a size for photos to take in. The capabilities of the device camera determine the number of available options. If no option is selected, the app uses the size from the system settings for the device camera. |
+| **<Translate android="true" ids="camera_app"/>**  | You can choose whether to use the system app, or the OsmAnd camera to take <Translate android="true" ids="photo_notes"/>.|
+| **<Translate android="true" ids="av_camera_pic_size"/>** | Sets the size of the photos to be taken. The camera capabilities of the device determine the number of available options. If no option is selected, the app uses the size from the system settings of the device's camera. |
 | **<Translate android="true" ids="av_camera_focus"/>** | Establishes the method of how camera focus is set. The number of available options is determined by the capabilities of the device camera. Basically, there are three following  options: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; and *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofocus** is the most popular one and establishes the automatic mode for the camera; **continuous** makes the camera detect movements and refocus accordingly; and the **infinity** option makes the lens to focus on a distance and thus keep objects in focus no matter how far it is. |
-| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced when the camera makes a shot. |
+| **<Translate android="true" ids="multimedia_photo_play_sound"/>** | If enabled, a sound is produced when the camera makes a shot. Please note, that as required by privacy law, **in some countries devices will not have a camera shutter mute switch**.|
 | **<Translate android="true" ids="av_audio_format"/>** | Provides a choice of formats for an audio file. The number of available options as well as which one is used as default are determined with the parameters of a specific device. |
 | **<Translate android="true" ids="av_audio_bitrate"/>** | This option provides a choice of bitrate options for an audio file to be created in. The available bitrate options range from 16kbps to 128 kbps, or the Default option. The default option is determined with the default microphone settings of the device. | 
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | If enabled, OsmAnd uses the system application to record video in <Translate android="true" ids="video_notes"/> . |
@@ -202,7 +194,6 @@ Adding the widget to the screen is needed when you would rather skip looking for
 ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
 
 
-
 ## Manage multiple notes
 
 ### Manage in My Places
@@ -240,11 +231,13 @@ The [Recording layer](../map/point-layers-on-map#-audio--video-points-android) c
 
 ![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
+
 ## Waypoints created from notes
 
 If an audio/video/photo note is added to a track, a waypoint is created. Waypoints exist within the track. If a track is visible, its waypoints are visible. So, audio/video/photo notes can be visible on the map altogether, or by the specific visible track. In the latter case, audio/video/photo notes are displayed as track waypoints. 
 
->**NOTE**: If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to the user of the device. 
+**NOTE**  
+If a track is exported, the waypoints cannot be viewed, or played, because audio/video/photo notes are stored on the device only, and available only to the user of the device. 
 
 ![Notes and waypoints on the map](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png) ![Waypoints on the track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
@@ -271,7 +264,6 @@ The name of a manually created waypoint can be established by the user.
 
 ![Manually adding a waypoint to track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
  
-
 
 ### View waypoints 
 
