@@ -74,7 +74,9 @@ export default function LoginDialog() {
         if (ctx.loginUser && ctx.loginUser !== '') {
             getAccountInfo().then();
         } else {
-            setUserEmail(ctx.userEmail);
+            if (ctx.useEmail) {
+                setUserEmail(ctx.userEmail);
+            }
         }
     }, [ctx.loginUser]);
 
