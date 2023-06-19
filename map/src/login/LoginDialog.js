@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
-import {useNavigate} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {Box, Divider, Link, ListItemText, MenuItem, Typography} from "@mui/material";
 import { apiGet } from './HttpApiLogout';
 import {makeStyles} from "@material-ui/core/styles";
@@ -59,14 +59,16 @@ export default function LoginDialog() {
         }
     }
 
+    const location = useLocation();
+
     useEffect(() => {
-        if (window.location.hash === '#logout' && ctx.loginUser) {
+        if (location.hash === '#logout' && ctx.loginUser) {
             setState('login');
             ctx.setLoginUser('');
-            window.location.hash = '';
             setEmailError('You are logged out by server!');
+            window.location.hash = ''; // useLocation() is read-only
         }
-    }); // always
+    }, [location.hash]);
 
     useEffect(() => {
         if (ctx.loginUser && ctx.loginUser !== '') {
