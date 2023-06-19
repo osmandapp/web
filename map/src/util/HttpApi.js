@@ -40,6 +40,7 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
 
         fetch: fully compatible, return original json/text/blob
 
+        axios: apiGet() support POST as { data }
         axios: apiGet() support POST as { method: 'post' }
         axios: apiGet() auto-detect-parse JSON into response.data
         axios: apiGet() support single-parameter call like axios({ url, ... })
@@ -68,7 +69,6 @@ export async function apiGet(url, options = null) {
     // parse axios single-parameter call ({ url, ... })
     // it might be url, get/post, data and other options
     // fetch { url }, then shift url (as options) to options
-    // finally, if post-data found in options, do post request
     if (options === null && typeof url === 'object' && url?.url) {
         // swap
         options = url;
@@ -76,7 +76,11 @@ export async function apiGet(url, options = null) {
         // fetch url
         url = options.url;
         delete options.url;
+    }
 
+    // parse axios { data }
+    // assume as post-data
+    if (options?.data) {
         // fetch data
         const data = options.data;
         delete options.data;
