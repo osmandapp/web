@@ -544,13 +544,16 @@ async function updateRoute(points) {
             data: points,
         });
     }
-    if (result) {
-        let data = result?.data; // points
-        if (typeof result?.data === "string") {
+    if (result && result.data) {
+        let data = result.data; // points
+        if (typeof result.data === "string") {
             data = JSON.parse(quickNaNfix(result.data));
         }
         updateGapProfileAllSegments(data.points);
         return data.points;
+    } else {
+        console.log('updateRoute fallback');
+        return points;
     }
 }
 
