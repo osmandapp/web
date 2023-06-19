@@ -41,7 +41,12 @@ First, you need to select and configure the profile to be used when connecting t
 
 <!-- Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  -->
 
+Setup block, Add proper links for Apple and Google documentation
+ Apple https://support.apple.com/en-us/HT205634
+ Google https://support.google.com/androidauto/answer/6348029?hl=en
+
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
+
 
 
 ## Start navigation
