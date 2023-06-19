@@ -1,4 +1,6 @@
-import { apiGet, apiPost } from '../login/HttpApiLogout';
+import { apiGet, apiPost } from '../util/HttpApi';
+
+export const LOGIN_LOGOUT_URL = '/map/loginForm#logout';
 
 async function userRegister(username, setEmailError, setState) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {

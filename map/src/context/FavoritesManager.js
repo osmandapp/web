@@ -1,7 +1,7 @@
 import MarkerOptions from "../map/markers/MarkerOptions";
 import Utils from "../util/Utils";
 import _ from "lodash";
-import { apiPost } from '../login/HttpApiLogout';
+import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from "../util/Utils";
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
@@ -97,13 +97,6 @@ function prepareTrackData(data) {
     if (data) {
         if (typeof data === "string") {
             return JSON.parse(quickNaNfix(data));
-            // return JSON.parse(data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            //     if (value === "***NaN***") {
-            //         return key === "ele" ? TracksManager.NAN_MARKER : NaN;
-            //     } else {
-            //         return value;
-            //     }
-            // });
         } else {
             return data;
         }

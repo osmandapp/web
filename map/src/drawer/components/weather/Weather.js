@@ -9,7 +9,7 @@ import {
     Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore,
 } from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
-import { apiGet } from '../../../login/HttpApiLogout';
+import { apiGet } from '../../../util/HttpApi';
 
 async function displayWeather(ctx, setWeatherPoint) {
     let lat = 0;

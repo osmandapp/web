@@ -18,7 +18,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import {Dialog} from "@material-ui/core";
-import { apiGet } from '../../../login/HttpApiLogout';
+import { apiGet } from '../../../util/HttpApi';
 
 export default function GpxCollection() {
 

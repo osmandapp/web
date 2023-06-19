@@ -7,7 +7,7 @@ import AppContext from "../../../../context/AppContext";
 import TracksManager from "../../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
-import { apiPost } from '../../../../login/HttpApiLogout';
+import { apiPost } from '../../../../util/HttpApi';
 
 export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowContextMenu}) {
 

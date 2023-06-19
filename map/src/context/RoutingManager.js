@@ -101,8 +101,6 @@ function filterMode(data) {
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
 
-// routeProviders
-// called by useState()
 function initRouteProviders() {
     // fallback default
     const type = 'osmand';
@@ -110,10 +108,16 @@ function initRouteProviders() {
     const name = 'OsmAnd Advanced Router';
     const url = `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`;
 
+    /*
+        routeProvides comprises:
+            Currently selected provider: name and profile;
+            Arrays of loaded and available providers;
+            Public Getters and Setters to work with;
+            Private helpers.
+    */
     return {
-        // updated via useState()
-        name, // current provider name
-        profile, // current profile name
+        name,
+        profile,
 
         // component Setters (called with AppContext reference)
         setName(ctx, name) { return mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { name }) },
@@ -145,7 +149,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
     if (osrm.ok) {
         try {
             const json = await osrm.json();
-            if(json && json?.providers && json?.providers[0]?.name) {
+            if (json && json?.providers && json?.providers[0]?.name) {
                 routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
                     providersOSRM: json.providers,
                     // name: 'OsmAnd Advanced Router', // debug
@@ -153,7 +157,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                     profile: json.providers[0]?.routes[0]?.name // select first profile
                 });
             }
-        } catch {}
+        } catch { console.log('failed to load osrm providers'); }
     }
 
     // load OsmAnd provider as advanced solution
@@ -196,15 +200,8 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                     }]
                 });
             }
-        } catch {}
+        } catch { console.log('failed to load osmand providers'); }
     }
-
-    // console.log(routeProviders.getType());
-    // console.log(routeProviders.getName());
-    // console.log(routeProviders.getProfile());
-    // console.log(routeProviders.getURL());
-    // console.log(routeProviders.listProfileNames());
-    // console.log(routeProviders.listProviderNames());
 }
 
 const RoutingManager = {

@@ -3,7 +3,7 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import {useNavigate} from "react-router-dom";
 import TracksManager from "../../context/TracksManager";
-import { apiGet } from '../../login/HttpApiLogout';
+import { apiGet } from '../../util/HttpApi';
 
 export default function ContextMenu({setGeocodingData}) {
 

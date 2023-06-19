@@ -1,7 +1,7 @@
 import Utils from "../util/Utils";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
-import { apiGet, apiPost } from '../login/HttpApiLogout';
+import { apiGet, apiPost } from '../util/HttpApi';
 import { quickNaNfix } from "../util/Utils";
 
 const GPX_FILE_TYPE = 'GPX';
@@ -34,7 +34,7 @@ async function loadTracks(setLoading) {
         }
     }
 
-    if(localTracks && localTracks.length !== Object.keys(localTracks).length) {
+    if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
         console.log('loadTracks() workaround for localTrack_0 (hole) localTrack_X');
         const fixTracks = [];
         localTracks.forEach(t => fixTracks.push(t));
@@ -259,13 +259,6 @@ async function getTrackData(file) {
         let resp = await response.text();
         if (resp) {
             let data = JSON.parse(quickNaNfix(resp));
-            // let data = JSON.parse(resp.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            //     if (value === "***NaN***") {
-            //         return key === "ele" ? NAN_MARKER : NaN;
-            //     } else {
-            //         return value;
-            //     }
-            // });
             if (data) {
                 track = data.gpx_data;
             }
@@ -534,9 +527,6 @@ async function updateRouteBetweenPoints(ctx, start, end, settings) {
         let data = result?.data; // points
         if (typeof result?.data === "string") {
             data = JSON.parse(quickNaNfix(result.data));
-            // data = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            //     return value === "***NaN***" ? NaN : value;
-            // });
         }
         if (data.msg) {
             ctx.setRoutingErrorMsg(data.msg);
@@ -558,9 +548,6 @@ async function updateRoute(points) {
         let data = result?.data; // points
         if (typeof result?.data === "string") {
             data = JSON.parse(quickNaNfix(result.data));
-            // data = JSON.parse(result.data.replace(/\bNaN\b/g, '"***NaN***"'), function (key, value) {
-            //     return value === "***NaN***" ? NaN : value;
-            // });
         }
         updateGapProfileAllSegments(data.points);
         return data.points;

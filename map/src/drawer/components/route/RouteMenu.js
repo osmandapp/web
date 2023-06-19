@@ -167,15 +167,17 @@ export default function RouteMenu() {
                 <Typography>{formatRouteInfo(ctx?.routeData?.props)}</Typography>
             </MenuItem>
             }
-            { ctx?.routeData && <MenuItem key='routeshowdetails' sx={{ml: 1, mr: 1}} disableRipple={true}>
+            {ctx?.routeData && <MenuItem key='routeshowdetails' sx={{ml: 1, mr: 1}} disableRipple={true}>
                 <FormControlLabel
                     label="Show route points"
                     labelPlacement="start"
                     control={
                         <Switch
                             checked={ ctx.routeShowPoints }
-                            onChange={ e => ctx.setRouteShowPoints(e.target.checked) } />
-                    } />
+                            onChange={ e => ctx.setRouteShowPoints(e.target.checked) }
+                        />
+                    }
+                />
             </MenuItem>
             }
             <MenuItem key='start' sx={{ml: 2, mr: 2, mt: 1}} className={classes.start} disableRipple={true}>

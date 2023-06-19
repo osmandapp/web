@@ -17,7 +17,7 @@ import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
-import { apiGet } from '../../../login/HttpApiLogout';
+import { apiGet } from '../../../util/HttpApi';
 
 export default function EditFavoriteDialog({
                                                favorite, editFavoritesDialogOpen, setEditFavoritesDialogOpen,

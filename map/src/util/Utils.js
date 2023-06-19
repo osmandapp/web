@@ -1,7 +1,7 @@
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
 import React from "react";
 import TracksManager from "../context/TracksManager";
-import { apiGet } from '../login/HttpApiLogout';
+import { apiGet } from '../util/HttpApi';
 
 async function getFileData(file) {
     let trackData;
@@ -79,16 +79,9 @@ function getProfileIcon(profile, color) {
     }
 }
 
-// get: current Object
-// set: function setVariabe
-// todo: Object to merge with current
-// used to update React useState object
-// returns merged Object for instant use
-// example: mergeStateObject(routeProvider, setRouteProvider, { name: 'osmand' })
-export function mergeStateObject(get, set, todo) {
-    const merged = Object.assign({}, get, todo);
-    set(() => merged); // is really need => ?
-    // console.log(merged);
+export function mergeStateObject(getObject, setFunction, todoObject) {
+    const merged = Object.assign({}, getObject, todoObject);
+    setFunction(() => merged); // is really need => ?
     return merged;
 }
 
@@ -100,19 +93,16 @@ export function mergeStateObject(get, set, todo) {
 
     NaN isn't supported by JSON standard
 */
-export function quickNaNfix(bad) {
+export function quickNaNfix(badString) {
     const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
-    const nil = ':null'; // others to null
-    // console.log('NaN', bad);
+    const nil = ':null'; // other NaN(s) to null (think about srtmEle)
     
-    return bad
+    return badString
         .replace(/"ele": ?NaN\b/g, ele)
         .replace(/: ?NaN\b/g, nil);
 }
 
 const Utils = {
-    // fetchUtil,
-    // fetchUtilLoad,
     getFileData,
     getDistance,
     getPointsDist,

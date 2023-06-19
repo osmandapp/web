@@ -1,34 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { globalNavigate } from "../App";
 import { quickNaNfix } from "../util/Utils";
+import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
 
     The concept:
        
-        universal wrapper for axios/fetch functions
+        universal wrapper for axios/fetch functions (HttpApi.js)
             &&
-        global component for react-route nagivate from everywhere
+        global component for react-route nagivate from everywhere (inside App.js)
             ==
-        catch "auth-failed" from API and do react-route to "login-logout"
+        catch "auth-failed" from API and do react-route to "login-logout" (from AccountManager)
 
         Notes:
 
-            login-logout is a login page with #logout hash to handle logout (loginLogoutForm)
+            login-logout is a login page with #logout hash to handle logout (LOGIN_LOGOUT_URL)
             default behavior: assume any 302-redirect as auth-failed => remote-logout
             you can make any logic to detect API remote-logout answers
 
-    Usage as component for globalNavigate:
-
-        import { HttpApiLogout, globalNavigate } from '../login/HttpApiLogout';
-
-        <HttpApiLogout /> // add component inside BrowserRoute
-
-        call globalNavigate() everywhere you need
-
     Usage as http-wrappers:
 
-        import { apiGet, apiPost } from '../login/HttpApiLogout';
+        import { apiGet, apiPost } from 'utils/HttpApi';
 
         call apiGet(url, options) instead of fetch() or axios() or axios.get()
         call apiPost(url, data, options) instead of axios.post()
@@ -37,17 +30,6 @@ import { quickNaNfix } from "../util/Utils";
 
     Read more details below.
 */
-
-const loginLogoutForm = '/map/loginForm#logout';
-
-// global useNavigate()
-export let globalNavigate;
-
-// component to include inside <BrowserRoute>
-export const HttpApiLogout = () => {
-  globalNavigate = useNavigate();
-  return null;
-};
 
 /*
     Universal wrapper replaces fetch() and axios() / axios.get() / axios.post()
@@ -87,7 +69,7 @@ export async function apiGet(url, options = null) {
     // it might be url, get/post, data and other options
     // fetch { url }, then shift url (as options) to options
     // finally, if post-data found in options, do post request
-    if(options === null && typeof url === 'object' && url?.url) {
+    if (options === null && typeof url === 'object' && url?.url) {
         // swap
         options = url;
 
@@ -99,7 +81,7 @@ export async function apiGet(url, options = null) {
         const data = options.data;
         delete options.data;
         
-        if(data) {
+        if (data) {
             return apiPost(url, data, options); // if data found, make post request
         }
     }
@@ -117,7 +99,7 @@ export async function apiGet(url, options = null) {
     // got blocked redirect
     if (response.type === 'opaqueredirect') {
         console.log('fetch-redirect-stop', url);
-        globalNavigate(loginLogoutForm);
+        globalNavigate(LOGIN_LOGOUT_URL);
         return Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
     }
 
@@ -140,16 +122,7 @@ export async function apiGet(url, options = null) {
         } catch (e) { // try NaN fix (fast method, with 2 regexp, without callback)
             try {
                 const bad = await response.clone().text();
-
-                // const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
-                // const nil = ':null'; // others to null
-
-                // const good = bad
-                //     .replace(/"ele": ?NaN\b/g, ele)
-                //     .replace(/: ?NaN\b/g, nil);
-                
                 data = JSON.parse(quickNaNfix(bad));
-               
                 // console.log('fetch-json-fix', url);
             } catch { // text, finally
                 data = await response.clone().text();
@@ -188,10 +161,10 @@ export async function apiPost(url, data = '', options = null) {
     let body = '';
     let type = null;
     
-    if(typeof data === 'string' ) { // plain string
+    if (typeof data === 'string' ) { // plain string
         body = data;
         type = 'text/plain';
-    } else if(isFormData(data)) { // FormData, keep type=null
+    } else if (isFormData(data)) { // FormData, keep type=null
         body = data; // type is formed by fetch()
     } else { // finally, try to convert from json
         if (typeof data === 'object') {

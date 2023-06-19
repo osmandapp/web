@@ -2,7 +2,7 @@ import {IconButton, Input} from "@mui/material";
 import {Close, Search} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import { apiGet } from '../../../login/HttpApiLogout';
+import { apiGet } from '../../../util/HttpApi';
 
 export default function SearchInfo() {
 

@@ -6,7 +6,7 @@ import TracksManager from "./TracksManager";
 import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
-import { apiGet } from '../login/HttpApiLogout';
+import { apiGet } from '../util/HttpApi';
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -282,7 +282,7 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) { // TODO drop
+async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
@@ -305,16 +305,16 @@ async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCre
     }
 }
 
-function addModes(data) { // TODO drop
+function addModes(data) {
     data['line'] = {name: 'Line', params: {}};
     return data;
 }
 
-function filterMode(data) { // TODO drop
+function filterMode(data) {
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
 
-function getColors() { // TODO drop
+function getColors() {
     return {
         'car': '#1976d2',
         'truck': '#2F4F4F',

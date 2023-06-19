@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
 import { useNavigate, useLocation } from "react-router-dom";
 import {Box, Divider, Link, ListItemText, MenuItem, Typography} from "@mui/material";
-import { apiGet } from './HttpApiLogout';
+import { apiGet } from '../util/HttpApi';
 import {makeStyles} from "@material-ui/core/styles";
 import DeleteAccountDialog from "./DeleteAccountDialog";
 import AccountManager from "../context/AccountManager";

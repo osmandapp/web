@@ -23,7 +23,7 @@ import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
 import FavoriteHelper from "./FavoriteHelper";
 import TracksManager from "../../../context/TracksManager";
-import { apiGet } from '../../../login/HttpApiLogout';
+import { apiGet } from '../../../util/HttpApi';
 
 export default function AddFavoriteDialog({dialogOpen, setDialogOpen}) {
 
