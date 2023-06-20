@@ -110,7 +110,7 @@ export async function apiGet(url, options = null) {
     // got http-error
     if (!response.ok) {
         console.log('fetch-http-error', url);
-        return Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
+        return Object.assign(response, { data: null }); // keep original text/json/blob
     }
 
     let data = null;
