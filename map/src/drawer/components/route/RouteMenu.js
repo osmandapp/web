@@ -286,8 +286,8 @@ export default function RouteMenu() {
                 </IconButton>
             </MenuItem>}
             <MenuItem key='uploadroute' disableRipple={true}>
-                <label htmlFor="contained-button-file">
-                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-file" type="file"
+                <label htmlFor="contained-button-route">
+                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-route" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
                         Upload GPX to route
