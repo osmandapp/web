@@ -45,6 +45,7 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
         axios: apiGet() auto-detect-parse JSON into response.data
         axios: apiGet() support single-parameter call like axios({ url, ... })
         axios: apiGet() support { responseType: 'blob' } to force binary data return
+        axios: apiGet() fill axios-style headers['xxx'] from fetch.response.headers.forEach()
         axios: apiGet() return http-error { data = body (text) } if option { dataOnErrors } set (axios-style)
         
         axios: apiPost() auto-detect JSON from post.data and stringify it
@@ -148,6 +149,9 @@ export async function apiGet(url, options = null) {
     let data = null;
 
     const contentType = response?.headers?.get('Content-Type')?.toString() || 'application/octet-stream'; // default
+
+    // emulate axios-style response headers (fill as object)
+    response.headers.forEach((val, key) => response.headers[key] = val);
     
     // auto-parse JSON => data, for particular Content-Type
     // examples: text/plain text/plain;charset=UTF-8 application/json
@@ -166,7 +170,9 @@ export async function apiGet(url, options = null) {
             }
         }
     } else { // blob() or text()
-        if (options?.responseType === 'blob') {
+        if (options?.responseType === 'blob' ||
+            options?.responseType === 'arraybuffer' // arraybuffer data tested on download-backup
+        ) {
             data = await response.clone().blob();
             // console.log('fetch-blob-data', url, contentType);
         } else { // finally, get text by default
