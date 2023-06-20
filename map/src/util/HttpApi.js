@@ -45,6 +45,7 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
         axios: apiGet() auto-detect-parse JSON into response.data
         axios: apiGet() support single-parameter call like axios({ url, ... })
         axios: apiGet() support { responseType: 'blob' } to force binary data return
+        axios: apiGet() return { data = body (text) } in case of http-error (axios-style)
         
         axios: apiPost() auto-detect JSON from post.data and stringify it
         axios: apiPost() auto-detect post.data Content-Type (text/json/FormData)
@@ -63,6 +64,15 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
         use { redirect: 'follow' } to allow redirects + block logout
 
         any other options {} are passed to fetch() - { method: 'POST' } as example
+        
+    Errors: 
+
+        axios-style usage "catch {} try {}" is disabled by default, but:
+        option { throwErrors: true } throws on: catch-error, http-error, redirect
+
+    Return:
+
+        TODO: write doc about returns for each case (catch-error, http-error, redirect, ok)
 */
 
 export async function apiGet(url, options = null) {
@@ -95,22 +105,38 @@ export async function apiGet(url, options = null) {
     try {
         response = await fetch(url, Object.assign({}, { redirect: 'manual' }, options));
     } catch (e) {
-        // got general error, no response at all
+        // got general error (have no response)
         console.log('fetch-catch-error', url, e);
-        return { ok: () => false, text: () => null, json: () => null, blob: () => null, data: null };
+        const ret = { ok: () => false, text: () => null, json: () => null, blob: () => null, data: null };
+        if (options.throwErrors) {
+            throw { response: ret };
+        } else {
+            return ret;
+        }
     }
 
     // got blocked redirect
     if (response.type === 'opaqueredirect') {
-        console.log('fetch-redirect-stop', url);
         globalNavigate(LOGIN_LOGOUT_URL);
-        return Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
+        console.log('fetch-redirect-stop', url);
+        const ret = Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
+        if (options.throwErrors) {
+            throw { response: ret };
+        } else {
+            return ret;
+        }
     }
 
     // got http-error
     if (!response.ok) {
-        console.log('fetch-http-error', url);
-        return Object.assign(response, { data: null }); // keep original text/json/blob
+        // console.log('fetch-http-error', url);
+        const body = await response.clone().text(); // axios-style: body as data
+        const ret = Object.assign(response, { data: body }); // keep original text/json/blob
+        if (options.throwErrors) {
+            throw { response: ret };
+        } else {
+            return ret;
+        }
     }
 
     let data = null;

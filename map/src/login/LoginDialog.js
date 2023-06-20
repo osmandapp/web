@@ -254,7 +254,7 @@ export default function LoginDialog() {
                     type="text"
                     fullWidth
                     variant="standard"
-                    value={code}
+                    value={code ?? ''}
                 ></TextField>
                 }
                 {state === 'register-verify' ? <></> :

@@ -68,6 +68,7 @@ async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) 
         }
         const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data,
             {
+                throwErrors: true,
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -113,11 +114,12 @@ async function sendCode(email, action, setEmailError) {
     }
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data,
         {
+            throwErrors: true,
             headers: {
                 'Content-Type': 'application/json'
             }
         }).catch((error) => {
-        setEmailError(error.response.data)
+            setEmailError && setEmailError(error.response.data)
     });
     if (resp?.status === 200) {
         return true;
@@ -127,6 +129,7 @@ async function sendCode(email, action, setEmailError) {
 async function confirmCode(email, code, setEmailError) {
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code,
         {
+            throwErrors: true,
             headers: {
                 'Content-Type': 'text/plain'
             }
@@ -144,6 +147,7 @@ async function changeEmail(email, token, setEmailError) {
     }
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data,
         {
+            throwErrors: true,
             headers: {
                 'Content-Type': 'application/json'
             }

@@ -117,7 +117,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                     type="text"
                     fullWidth
                     variant="standard"
-                    value={code}
+                    value={code ?? ''}
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
                 ></TextField>}
