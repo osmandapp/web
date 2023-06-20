@@ -124,6 +124,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
 
             </DialogContent>
             <DialogActions>
+                <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                 <Button disabled={emailError !== ''}
                         onClick={handleNext}>{code && newEmail ? 'Finish' : 'Next'}</Button>
             </DialogActions>
@@ -156,6 +157,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                 </Typography>}
             </DialogContent>
             <DialogActions>
+                <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                 <Button onClick={() => {
                     ctx.setLoginUser(null);
                     ctx.setUserEmail(newEmail);
