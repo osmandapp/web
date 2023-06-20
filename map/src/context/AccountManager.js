@@ -155,7 +155,8 @@ const AccountManager = {
     userLogout,
     sendCode,
     confirmCode,
-    changeEmail
+    changeEmail,
+    LOGIN_LOGOUT_URL
 }
 
 export default AccountManager;
