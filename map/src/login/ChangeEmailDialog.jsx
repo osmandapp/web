@@ -37,7 +37,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                 }
             })
         } else if (!code && newEmail) {
-            AccountManager.sendCode(newEmail, setEmailError).then((sent) => {
+            AccountManager.sendCode(newEmail, AccountManager.CHANGE_EMAIL_MSG, setEmailError).then((sent) => {
                 if (sent) {
                     setCodeConfirmed(false);
                 }
