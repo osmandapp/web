@@ -109,7 +109,9 @@ export async function apiGet(url, options = null) {
         console.log('fetch-catch-error', url, e);
         const ret = { ok: () => false, text: () => null, json: () => null, blob: () => null, data: null };
         if (options?.throwErrors) {
-            throw { response: ret };
+            const error = new Error('fetch-catch-error');
+            error.response = ret;
+            throw error;
         } else {
             return ret;
         }
@@ -121,7 +123,9 @@ export async function apiGet(url, options = null) {
         console.log('fetch-redirect-stop', url);
         const ret = Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
         if (options?.throwErrors) {
-            throw { response: ret };
+            const error = new Error('fetch-redirect-stop');
+            error.response = ret;
+            throw error;
         } else {
             return ret;
         }
@@ -133,7 +137,9 @@ export async function apiGet(url, options = null) {
         const data = options?.dataOnErrors ? await response.clone().text() : null; // axios-style: body as data
         const ret = Object.assign(response, { data }); // keep original text/json/blob
         if (options?.throwErrors) {
-            throw { response: ret };
+            const error = new Error('fetch-http-error');
+            error.response = ret;
+            throw error;
         } else {
             return ret;
         }
