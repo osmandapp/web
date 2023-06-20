@@ -152,23 +152,25 @@ To search by the Wikipedia [category](../search/search-poi.md#poi-search), selec
 
 ![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
-If necessary, tap the **Show Wikipedia on the map** option at the top of the search panel and search results from the Wikipedia category will appear on the map.    
+If necessary, tap the **Show Wikipedia on the map** option at the top of the search panel and search results from the Wikipedia category will appear on the map.  
 
 </TabItem>
 
 </Tabs>
 
-## Wikipedia languages  
+## Wikipedia article
 
-When there is a choice of languages to display the Wikipedia data, you can set the language in which you prefer to read the text. The figure below shows an example of [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) and an article that is written in French by default and is displayed in English, thanks to the other translations available for this Wikipedia data and the English language set for Wikipedia in the [Profile settings](../personal/profiles.md).  
+To open Wikipedia article:
 
+1. Enable [Wikipedia POI layer](../map/point-layers-on-map.md#-wikipedia) for a specified profile.
+2. Tap POI on the map.
+3. In the [context menu](../map/map-context-menu.md) of a POI tap *Details* (or simply pull the *context menu* up) to view an abstract of the chosen Wikipedia article.
+4. If you tap the text that appears in the *context menu*, you will be redirected to the offline Wikipedia article.
+5. For **Android** version of the OsmAnd app you can also use *Read article* or *Read full article* button.
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
-With the preferred language established for Wikipedia, for example, a French POI can show the text in English (see the figure below). 
 
 ![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png) 
 
@@ -176,29 +178,27 @@ With the preferred language established for Wikipedia, for example, a French POI
 
 <TabItem value="ios" label="iOS">
 
-If you have set a preferred language for Wikipedia, for example, the French POI may show text in English (see figure below).  
-
 ![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
 </Tabs>
 
+## Wikipedia settings  
+
+You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) and also configure [images download options](#download-images).
+
 ### Set preferred language  
 
-To set your preferred language, browse the Wikipedia data, navigate to the desired profile, tap the **Wikipedia** option, and in the list that opens, deselect **All language** and check the specific option. If multiple languages are selected, the displayed text will be in any of them.  
-
+In the **Android** and **iOS** versions of the OsmAnd app, you can set your preferred language (or languages) for displaying Wikipedia articles using the *Configure map menu*. If you select more than one language, the *Wikipedia* articles on the map will be shown in any of them:  
+1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
+2. Select needed profile and in the *<Translate android="true" ids="shared_string_show"/>* section choose *<Translate android="true" ids="shared_string_wikipedia"/>*.  
+3. Disable *<Translate android="true" ids="shared_string_all_languages"/>* option.  
+4. Select specific language(-s) in the opened list.  
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
-In the **Android** version, to set the preferred language for the Wikipedia data, do the following:  
-1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*  
-2. Select a profile and find the *<Translate android="true" ids="shared_string_show"/>* section of settings.  
-3. Tap *<Translate android="true" ids="shared_string_wikipedia"/>*, toggle it enabled, and then tap *<Translate android="true" ids="shared_string_language"/>*.  
-4. Check the preferred language(-s) in the opened list.  
 
 ![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
 
@@ -206,20 +206,12 @@ In the **Android** version, to set the preferred language for the Wikipedia data
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, to set the preferred language for the Wikipedia data, do the following:  
-1. Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/>*  
-2. Select a profile and find the *<Translate ios="true" ids="shared_string_show_on_map"/>* section of settings.  
-3. Tap *<Translate ios="true" ids="download_wikipedia_maps"/>*, if needed, toggle *<Translate ios="true" ids="shared_string_enabled"/>* on, and then tap *<Translate ios="true" ids="shared_string_language"/>*.  
-4. Check _All languages_ or the preferred language(-s) in the opened list.  
+In the **iOS** version, you can also set the preferred language for Wikipedia articles using:  
 
-Or
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
+- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
 
-_Menu → Settings → App Profiles → Plugins → Wikipedia_
-
-Here you can choose languages in which Wikipedia articles will appear on the map. Choose download or not images and set cache size for images.
-
-
-![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png) 
+![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
@@ -227,18 +219,11 @@ Here you can choose languages in which Wikipedia articles will appear on the map
 
 ### Switch languages inside article  
 
-If some translation options are available, you can switch the language when viewing a particular Wikipedia article. The language icon in the upper right corner of the article will offer options to choose from.  
+In case the *Wikipedia article* is available in different languages, you can switch the language while reading. After tapping the corresponding icon in the upper right corner of the screen you will be offered options to choose from.
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
-In the **Android** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu.md) upwards till viewing an abstract of the Wikipedia article:
-
-- Tap on an article.
-- Tap the current language icon in the header in the upper right corner of the screen, which opens a list of available language options.
-- Select the desired language.
 
 ![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png) 
 
@@ -246,57 +231,39 @@ In the **Android** version, with the [Wikipedia POI](../map/point-layers-on-map.
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, with the [Wikipedia POI](../map/point-layers-on-map.md#-wikipedia) turned on for a specific profile, it is enough to tap a POI, then scroll the opened [context menu](../map/map-context-menu.md) upwards till viewing an abstract of the Wikipedia article:
-
-- Tap on an article.
-- Tap the current language icon in the header in the upper right corner of the screen, which opens a list of available language options.
-- Select the desired language.
-
 ![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png) ![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
+### Download images
 
-## Images
-
+You can choose whether to download images from Wikipedia on your device or not inside *Wikipedia article*:
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
 
-Opening _[Wikipedia article](#display-wikipedia-on-the-map) → &#8942; → Options_. Here you can choose download images or not:
- - On, 
- - Off, 
- - Only Wi-Fi.
+- Open *[Wikipedia article](#display-wikipedia-on-the-map) → &#8942; → Options*
 
-
-![Switching images](@site/static/img/plugins/wikipedia/images_android.png) 
+![Switching images](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-Downloading images options:
+- Open *[Wikipedia article](#display-wikipedia-on-the-map) → Image icon*:
 
-1. _Menu → Settings → App Profiles → Plugins → Wikipedia → Download images_:
-    - Don't download
-    - Over Wi-Fi only
-    - Over any network
-  
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
-
-2. Opening _[Wikipedia article](#display-wikipedia-on-the-map) → Image icon_:
-    - Don't download
-    - Over Wi-Fi only
-    - Over any network
-    - Download only now
-   
 ![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
-
 
 </TabItem>
 
 </Tabs>
+
+In the **iOS** version of the app you can also access the image download options using *Wikipedia plugin settings*:
+
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
+- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+
+![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)

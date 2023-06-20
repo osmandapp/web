@@ -466,17 +466,17 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 ## Plugin settings
 
-:::note
-Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating it in the setting list for the profile.
+:::cation
+To access the plugin's settings, you must first [enable the plugin](../plugins/index.md#enable--disable) in the *Plugin section of the Main menu*.
 :::
 
-[Plugins](https://docs.osmand.net/en/main@latest../plugins) are a collection of settings that can be enabled with one click. Plugins also unlock additional functions of the application, they can be either [paid or free](../purchases/index.md). Some plugins have their own settings. Among other things, you can enable or disable plugins for each profile separately.  
+Plugins unlock additional functions of the application, they can be either [paid or free](../plugins/index.md#purchase). Not all the plugins have their own [settings](../plugins/index.md#plugin-settings). You can configure plugins for each profile separately.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings"/>*
 
 ![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_android.png)
 
@@ -494,13 +494,13 @@ Plugins must be enabled in [the Plugin list](../plugins/index.md) for activating
 
 ### Trip recording
 
-This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-recording-plugin-settings) for the selected profile. Where you can choose any parameters for recording your trip.
+This menu opens [the trip recording settings](../plugins/trip-recording.md#recording-settings) for the selected profile. Where you can choose any parameters for recording your trip.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,record_plugin_name"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,record_plugin_name"/>*  
 
 </TabItem>
 
@@ -518,7 +518,7 @@ This menu opens [the trip recording settings](../plugins/trip-recording.md#trip-
 
 This menu opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. Where you can choose any parameters for your needed.  
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,audionotes_plugin_name"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,audionotes_plugin_name"/>*  
 
 ### OpenStreetMap editing
 
@@ -528,7 +528,7 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,osm_editing_plugin_name"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,osm_editing_plugin_name"/>*  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
@@ -536,7 +536,7 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,product_title_osm_editing"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,osm_editing_plugin_name"/>*  
 
 ![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
@@ -548,28 +548,43 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 <InfoAndroidOnly />  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,open_place_reviews"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,open_place_reviews"/>*  
 
-This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings) for the selected profile. Where you can input your data for starting added reviews of any places.  
+This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings). Where you can input your data for starting added reviews of any places.  
 
+:::note
+Changing the settings of the OSM editing plugin affects all profiles.
+:::
 
 ### Accesibility
 
 <InfoAndroidOnly />  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,shared_string_accessibility"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,shared_string_accessibility"/>*
 
 This menu opens [Accessibility plugin settings](../plugins/accessibility.md) for the selected profile. Where you can choose any parameters for your needed.  
-
 
 ### OsmAnd development
 
 <InfoAndroidOnly />  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/> → <Translate android="true" ids="plugins_settings,development"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,development"/>*  
 
-This menu opens [Development plugin settings](../plugins/accessibility.md) for the selected profile. Settings for development and debugging features, like navigation simulation, rendering performance, or voice prompting. Intended for developers, not needed for normal app use.  
+This menu opens [Development plugin settings](../plugins/development.md#plugin-settings). Here you can configure the OsmAnd app for testing or try new features. These settings are intended for developers, and are not required for normal use of the application.  
 
+:::note
+Changing the settings of the OsmAnd development plugin affects all profiles.
+:::
+
+### Wikipedia
+
+:::caution iOS ONLY
+This feature is currently not available for the Android version of the OsmAnd app.
+:::
+
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
+
+This menu opens *[Wikipedia plugin settings](../plugins/development.md#plugin-settings)*. You can choose in which language the articles will be shown to you, and decide whether to download images from Wikipedia or not.
 
 ## Actions
 

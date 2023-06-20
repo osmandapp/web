@@ -2,6 +2,9 @@ import {post} from "axios";
 import Utils from "../util/Utils";
 
 
+const CHANGE_EMAIL_MSG = 'change';
+const DELETE_EMAIL_MSG = 'delete';
+
 async function userRegister(username, setEmailError, setState) {
     const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
@@ -55,7 +58,7 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     }
 }
 
-async function deleteAccount(userEmail, code, setEmailError, ctx) {
+async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) {
     if (isValidEmail(userEmail)) {
         const data = {
             username: userEmail,
@@ -70,8 +73,7 @@ async function deleteAccount(userEmail, code, setEmailError, ctx) {
             }).catch((error) => setEmailError(error.response.data));
 
         if (resp?.status === 200) {
-            ctx.setUserEmail('');
-            ctx.setLoginUser(null);
+            setAccountDeleted(true);
         }
     } else {
         setEmailError("Please enter valid email");
@@ -103,14 +105,18 @@ async function isRequestOk(response, setEmailError) {
     return res;
 }
 
-async function sendCode(email, setEmailError) {
-    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, email,
+async function sendCode(email, action, setEmailError) {
+    const data = {
+        email: email,
+        action: action
+    }
+    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data,
         {
             headers: {
-                'Content-Type': 'text/plain'
+                'Content-Type': 'application/json'
             }
         }).catch((error) => {
-            setEmailError(error.response.data)
+        setEmailError(error.response.data)
     });
     if (resp?.status === 200) {
         return true;
@@ -154,7 +160,9 @@ const AccountManager = {
     userLogout,
     sendCode,
     confirmCode,
-    changeEmail
+    changeEmail,
+    CHANGE_EMAIL_MSG: CHANGE_EMAIL_MSG,
+    DELETE_EMAIL_MSG: DELETE_EMAIL_MSG
 }
 
 export default AccountManager;
