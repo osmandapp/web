@@ -18,15 +18,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
+Android Auto is software developed by Google that allows users to connect their Android devices to compatible vehicle's multimedia systems. Android Auto provides a user interface optimized for safe use while driving, allowing drivers to access various features on their smartphones.  
+
 OsmAnd is available for [*Android Auto*](https://www.android.com/auto) functions in your vehicle. You can connect your Android to the vehicle's multimedia system screen and use OsmAnd to navigate.  
 Driving a car and using your phone or tablet at the same time is usually forbidden by law for safety reasons. Android Auto brings an adapted version of the OsmAnd app to the display of your car's multimedia system, making it easier and safer to access the app's navigation functions.  
 
 To use Android Auto, you need a smartphone with an Android operating system updated to version 5.0 or higher. With the appropriate version, you will have access to a simplified user interface and a collection of compatible apps, including OsmAnd.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-overview.png)  
+![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
 
-## Connection screen
+### Connection screen
 
 While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
 
@@ -35,6 +37,7 @@ While your device is connected to Android Auto, the map on the app screen is loc
 
 ## Start navigation
 
+1. To use the OsmAnd app in Android Auto, you have to purchase the **paid version** of the app or [subscribe](../purchases/android.md#free-and-paid-features).    
 
 <!-- 
 First, you need to select and configure the profile to be used when connecting to Android Auto. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).   
@@ -55,8 +58,6 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 
 
 ### Setup Android Auto
-
-To use the OsmAnd app in Android Auto, you have to purchase [paid version of the app or to subscribe](../purchases/android.md#free-and-paid-features).
 
 Setup block, Add proper links for Apple and Google documentation
  Apple https://support.apple.com/en-us/HT205634
@@ -117,6 +118,7 @@ Through the **Settings** menu in Android Auto you can select the end point of th
 
 ### History
 
+
 In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [Search History](../search/search-history.md) article.  
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)
@@ -175,17 +177,15 @@ From the list of tracks available in *Menu → My Places → [Tracks](../persona
 
 ### Search
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png) 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)  
 
-With this option you can search for the necessary places on the map to navigate. For convenience, you can search by different categories. 
+Going to Search gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POI, or coordinates are collected.
 
-- [Address search](../search/search-address.md) - enter the needed address in the search field.
-- [POI search](../search/search-poi.md) - search by Point of Interest names.
-- [Custom search](../search/custom-poi-search.md) - search by the categories you created.
-- [History search](../search/search-history.md) - displays your whole search history.
-- Coordinate search - suggests different formats of coordinates.  
+You can use the Search tool to find the required place on the map for route planning from any available search category.
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-12.png)   ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-13.png)
+- [Address](../search/search-address.md) - start typing the address in the search field.
+- [POI](../search/search-poi.md) and [Custom POI](../search/custom-poi-search.md)- the list of nearby similar names will also display POIs or their categories.
+- [Coordinates search](../search/search-address#coordinates-search) - enter the coordinates to find the point on the map.  
 
 
 ### Folder Last modified
@@ -204,8 +204,6 @@ Additional features help you customize the display and operation of OsmAnd in An
 
 In OsmAnd, you can set up [voice prompts](../navigation/guidance/voice-navigation.md) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-voice.png)
-
 
 ### Day/Night map mode
 
@@ -218,9 +216,7 @@ When you connect the app to Android Auto, the [map mode](../map/vector-maps.md#m
 
 This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different visual appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* in the app, not in Android Auto. For a detailed description of the types of alerts, see [this article](../widgets/nav-widgets.md#alert-types).    
 
-<!-- Скриншот с виджетом лимита скорости. Как писал выше - целое число, либо кратное 5.-->
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-alert.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
 
 ### Map appearance

@@ -48,6 +48,11 @@ Setup block, Add proper links for Apple and Google documentation
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 
+## CarPlay profile
+
+[CarPlay profile](../personal/global-settings.md#carplay-profile)
+
+
 
 ## Start navigation
 
