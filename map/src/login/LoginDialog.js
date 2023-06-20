@@ -179,7 +179,7 @@ export default function LoginDialog() {
                         sx={{backgroundColor: '#ff595e !important', ml: 3}}
                         onClick={() => {
                             setDeleteAccountFlag(true);
-                            AccountManager.sendCode(ctx.loginUser).then();
+                            AccountManager.sendCode(ctx.loginUser, AccountManager.DELETE_EMAIL_MSG, setEmailError).then();
                         }}>
                         Delete your account
                     </Button>
@@ -188,7 +188,7 @@ export default function LoginDialog() {
                           color="inherit"
                           onClick={() => {
                               setChangeEmailFlag(true);
-                              AccountManager.sendCode(ctx.loginUser).then();
+                              AccountManager.sendCode(ctx.loginUser, AccountManager.CHANGE_EMAIL_MSG, setEmailError).then();
                           }}>
                         Change email
                     </Link>

@@ -163,6 +163,7 @@ After that, you need to choose [*Edit favorite* button in *Map Context menu*](..
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
 
+
 ### Favorites in GPX file
 
 All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same [tags](../personal/tracks.md#waypoint-and-favorites) to store information and are saved in [GPX file format](../personal/tracks.md#waypoint-format-description).  
