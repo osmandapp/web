@@ -55,7 +55,7 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     }
 }
 
-async function deleteAccount(userEmail, code, setEmailError, ctx) {
+async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) {
     if (isValidEmail(userEmail)) {
         const data = {
             username: userEmail,
@@ -70,8 +70,7 @@ async function deleteAccount(userEmail, code, setEmailError, ctx) {
             }).catch((error) => setEmailError(error.response.data));
 
         if (resp?.status === 200) {
-            ctx.setUserEmail('');
-            ctx.setLoginUser(null);
+            setAccountDeleted(true);
         }
     } else {
         setEmailError("Please enter valid email");
