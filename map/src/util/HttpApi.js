@@ -45,7 +45,7 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
         axios: apiGet() auto-detect-parse JSON into response.data
         axios: apiGet() support single-parameter call like axios({ url, ... })
         axios: apiGet() support { responseType: 'blob' } to force binary data return
-        axios: apiGet() return { data = body (text) } in case of http-error (axios-style)
+        axios: apiGet() return http-error { data = body (text) } if option { dataOnErrors } set (axios-style)
         
         axios: apiPost() auto-detect JSON from post.data and stringify it
         axios: apiPost() auto-detect post.data Content-Type (text/json/FormData)
@@ -108,7 +108,7 @@ export async function apiGet(url, options = null) {
         // got general error (have no response)
         console.log('fetch-catch-error', url, e);
         const ret = { ok: () => false, text: () => null, json: () => null, blob: () => null, data: null };
-        if (options.throwErrors) {
+        if (options?.throwErrors) {
             throw { response: ret };
         } else {
             return ret;
@@ -120,7 +120,7 @@ export async function apiGet(url, options = null) {
         globalNavigate(LOGIN_LOGOUT_URL);
         console.log('fetch-redirect-stop', url);
         const ret = Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
-        if (options.throwErrors) {
+        if (options?.throwErrors) {
             throw { response: ret };
         } else {
             return ret;
@@ -130,9 +130,9 @@ export async function apiGet(url, options = null) {
     // got http-error
     if (!response.ok) {
         // console.log('fetch-http-error', url);
-        const body = await response.clone().text(); // axios-style: body as data
-        const ret = Object.assign(response, { data: body }); // keep original text/json/blob
-        if (options.throwErrors) {
+        const data = options?.dataOnErrors ? await response.clone().text() : null; // axios-style: body as data
+        const ret = Object.assign(response, { data }); // keep original text/json/blob
+        if (options?.throwErrors) {
             throw { response: ret };
         } else {
             return ret;
