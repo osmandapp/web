@@ -13,7 +13,7 @@ import FavoriteIcon from "./structure/FavoriteIcon";
 import FavoriteColor from "./structure/FavoriteColor";
 import FavoriteShape from "./structure/FavoriteShape";
 import FavoritesManager from "../../../context/FavoritesManager";
-import {post} from "axios";
+import { apiGet, apiPost } from '../../../util/HttpApi';
 
 export default function AddNewGroupDialog({dialogOpen, setDialogOpen, setFavoriteGroup}) {
 
@@ -33,7 +33,7 @@ export default function AddNewGroupDialog({dialogOpen, setDialogOpen, setFavorit
     }, [dialogOpen]);
 
     async function getIconCategories() {
-        let resp = await fetch(FavoritesManager.FAVORITE_GROUP_FOLDER)
+        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER)
         const res = await resp.json();
         if (res) {
             setCurrentIconCategories('special');
@@ -67,7 +67,7 @@ export default function AddNewGroupDialog({dialogOpen, setDialogOpen, setFavorit
         }
 
         if (data.pointsGroups[groupName]) {
-            let resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data,
+            let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data,
                 {
                     params: {
                         groupName: groupName,

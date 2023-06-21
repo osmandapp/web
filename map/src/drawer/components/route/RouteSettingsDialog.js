@@ -67,7 +67,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
             <DialogTitle>Additional Route Settings</DialogTitle>
             <DialogContent>
                 {Object.entries(opts).map(([key, opt]) =>
-                <>
+                    <React.Fragment key={'dialog_' + key}>
                         {checkSection(opt.section) && checkDevSection(opt) && <DialogContentText key={key}>{section}</DialogContentText>}
                         {checkDevSection(opt) && <Tooltip key={'tool_' + key} title={opt.description} >
                             {opt.type === 'boolean' ?
@@ -91,7 +91,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
                                 </FormControl>
                             }
                         </Tooltip>}
-                    </>
+                    </React.Fragment>
                 )}
 
             </DialogContent>

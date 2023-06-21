@@ -117,7 +117,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                     type="text"
                     fullWidth
                     variant="standard"
-                    value={code}
+                    value={code ?? ''}
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
                 ></TextField>}
@@ -160,7 +160,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                 <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                 <Button onClick={() => {
                     ctx.setLoginUser(null);
-                    ctx.setUserEmail(newEmail);
+                    ctx.setUserEmail(newEmail, {days: 30, SameSite: 'Strict'});
                 }
                 }>Login using new credentials
                 </Button>

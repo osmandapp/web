@@ -6,20 +6,18 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../context/AppContext"
-import {useNavigate} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {Box, Divider, Link, ListItemText, MenuItem, Typography} from "@mui/material";
-import {get} from "axios";
+import { apiGet } from '../util/HttpApi';
 import {makeStyles} from "@material-ui/core/styles";
 import DeleteAccountDialog from "./DeleteAccountDialog";
 import AccountManager from "../context/AccountManager";
 import ChangeEmailDialog from "./ChangeEmailDialog";
 import DownloadBackupDialog from "./DownloadBackupDialog";
 
-
 const useStyles = makeStyles(() => ({
     paper: {minWidth: "100vh"},
 }));
-
 
 export default function LoginDialog() {
 
@@ -61,21 +59,33 @@ export default function LoginDialog() {
         }
     }
 
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#logout' && ctx.loginUser) {
+            setState('login');
+            ctx.setLoginUser('');
+            setEmailError('You are logged out by server!');
+            window.location.hash = ''; // useLocation() is read-only
+        }
+    }, [location.hash]);
+
     useEffect(() => {
         if (ctx.loginUser && ctx.loginUser !== '') {
             getAccountInfo().then();
         } else {
-            setUserEmail(ctx.userEmail);
+            if (ctx.userEmail) {
+                setUserEmail(ctx.userEmail);
+            }
         }
     }, [ctx.loginUser]);
 
     async function getAccountInfo() {
-        const resp = await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
+        const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
         if (resp.data) {
             setAccountInfo(resp.data.info);
         }
     }
-
 
     if (ctx.loginUser) {
         return (
@@ -244,7 +254,7 @@ export default function LoginDialog() {
                     type="text"
                     fullWidth
                     variant="standard"
-                    value={code}
+                    value={code ?? ''}
                 ></TextField>
                 }
                 {state === 'register-verify' ? <></> :

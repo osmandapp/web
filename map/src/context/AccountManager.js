@@ -1,12 +1,12 @@
-import {post} from "axios";
-import Utils from "../util/Utils";
+import { apiGet, apiPost } from '../util/HttpApi';
 
+export const LOGIN_LOGOUT_URL = '/map/loginForm#logout';
 
 const CHANGE_EMAIL_MSG = 'change';
 const DELETE_EMAIL_MSG = 'delete';
 
 async function userRegister(username, setEmailError, setState) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({'username': username})
@@ -18,7 +18,7 @@ async function userRegister(username, setEmailError, setState) {
 }
 
 async function userActivate(ctx, username, pwd, token, setEmailError, handleClose) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({'username': username, 'password': pwd, 'token': token})
@@ -32,7 +32,7 @@ async function userActivate(ctx, username, pwd, token, setEmailError, handleClos
 }
 
 async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({'username': username, 'password': pwd})
@@ -40,12 +40,13 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
         ctx.setLoginUser(username);
+        ctx.setUserEmail(username, {days: 30, SameSite: 'Strict'}); // for next login
         handleClose();
     }
 }
 
 async function userLogout(ctx, username, setEmailError, handleClose, setState) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({'username': username})
@@ -65,8 +66,10 @@ async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) 
             password: null,
             token: code
         }
-        const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data,
+        const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data,
             {
+                throwErrors: true,
+                dataOnErrors: true,
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -110,13 +113,15 @@ async function sendCode(email, action, setEmailError) {
         email: email,
         action: action
     }
-    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data,
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data,
         {
+            throwErrors: true,
+            dataOnErrors: true,
             headers: {
                 'Content-Type': 'application/json'
             }
         }).catch((error) => {
-        setEmailError(error.response.data)
+            setEmailError && setEmailError(error.response.data)
     });
     if (resp?.status === 200) {
         return true;
@@ -124,8 +129,10 @@ async function sendCode(email, action, setEmailError) {
 }
 
 async function confirmCode(email, code, setEmailError) {
-    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code,
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code,
         {
+            throwErrors: true,
+            dataOnErrors: true,
             headers: {
                 'Content-Type': 'text/plain'
             }
@@ -141,8 +148,10 @@ async function changeEmail(email, token, setEmailError) {
         password: null,
         token: token
     }
-    const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data,
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data,
         {
+            throwErrors: true,
+            dataOnErrors: true,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -162,7 +171,8 @@ const AccountManager = {
     confirmCode,
     changeEmail,
     CHANGE_EMAIL_MSG: CHANGE_EMAIL_MSG,
-    DELETE_EMAIL_MSG: DELETE_EMAIL_MSG
+    DELETE_EMAIL_MSG: DELETE_EMAIL_MSG,
+    LOGIN_LOGOUT_URL
 }
 
 export default AccountManager;
