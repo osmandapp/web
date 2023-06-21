@@ -169,6 +169,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
         try {
             const json = await osmand.json();
 
+            // Tracks-routing compatibility 
             if (json && setCreatingRouteMode) {
                 let creatingData = _.cloneDeep(json);
                 creatingData = filterMode(creatingData);

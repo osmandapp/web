@@ -282,55 +282,6 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
-    if (response.ok) {
-        let data = await response.json();
-        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
-
-        let creatingData = _.cloneDeep(data);
-        creatingData = filterMode(creatingData);
-        creatingData = addModes(creatingData);
-        setCreatingRouteMode(
-            {
-                mode: creatingRouteMode.mode,
-                modes: creatingData,
-                opts: creatingData[creatingRouteMode.mode]?.params,
-                colors: getColors()
-            }
-        )
-    }
-}
-
-function addModes(data) {
-    data['line'] = {name: 'Line', params: {}};
-    return data;
-}
-
-function filterMode(data) {
-    return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
-}
-
-function getColors() {
-    return {
-        'car': '#1976d2',
-        'truck': '#2F4F4F',
-        'motorcycle': '#f8931d',
-        'bicycle': '#9053bd',
-        'boat': '#08b5ff',
-        'horsebackriding': '#7f3431',
-        'pedestrian': '#d90139',
-        'ski': '#ffacdf',
-        'line': '#5F9EA0',
-        'moped': '#3e690e',
-        'train': '#a56b6f'
-    };
-}
-
-
 async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg) {
     setRouteData(null);
     setRoutingErrorMsg(null);
@@ -498,10 +449,6 @@ export const AppContextProvider = (props) => {
             setLocalTracks(tracks);
         })
     }, [])
-
-    useEffect(() => {
-        loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
-    }, []);
 
     useEffect(() => {
         RoutingManager.loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode, setCreatingRouteMode })
