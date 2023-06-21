@@ -484,11 +484,11 @@ async function updateRouteBetweenPoints(ctx, start, end, settings) {
         if (typeof result?.data === "string") {
             data = JSON.parse(quickNaNfix(result.data));
         }
-        if (data.msg) {
-            ctx.setRoutingErrorMsg(data.msg);
+        if (data?.msg) {
+            ctx.setRoutingErrorMsg(data?.msg);
         }
-        updateGapProfileOneSegment(end, data.points);
-        return data.points;
+        updateGapProfileOneSegment(end, data?.points);
+        return data?.points;
     }
 }
 
