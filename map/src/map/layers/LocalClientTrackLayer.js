@@ -181,10 +181,8 @@ export default function LocalClientTrackLayer() {
     }
 
     function saveLocal() {
-        if (!ctx.selectedGpxFile.addPoint) {
-            if (ctx.localTracks.length > 0) {
-                TracksManager.saveTracks(ctx.localTracks, ctx);
-            }
+        if (ctx.localTracks.length > 0) {
+            TracksManager.saveTracks(ctx.localTracks, ctx);
         }
     }
 
