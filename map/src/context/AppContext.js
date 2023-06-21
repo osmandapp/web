@@ -3,8 +3,10 @@ import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
+import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
+import { apiGet } from '../util/HttpApi';
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -12,7 +14,6 @@ const osmandTileURL = {
     tileSize: 512,
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png'
 }
-
 
 function getWeatherUrl(layer) {
     return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
@@ -115,7 +116,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
             setFavorites({});
         } else {
             setGpxLoading(true);
-            const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
             await response.json().then((res) => {
                 if (res) {
                     res.loginUser = loginUser;
@@ -232,7 +233,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
 }
 
 async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, listFiles, setListFiles) {
-    const response = await Utils.fetchUtil(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET'
     });
     if (response.ok) {
@@ -240,7 +241,7 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, 
         let newUser = user?.username;
         if (loginUser !== newUser) {
             if (newUser) {
-                setUserEmail(newUser, {days: 30});
+                setUserEmail(newUser, {days: 30, SameSite: 'Strict'});
             }
             setLoginUser(newUser);
         }
@@ -248,7 +249,7 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail, 
 }
 
 async function loadTileUrls(setAllTileURLs) {
-    const response = await fetch(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
+    const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
     if (response.ok) {
         let data = await response.json();
         Object.values(data).forEach((item) => {
@@ -282,7 +283,7 @@ function getWeatherDate() {
 }
 
 async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -348,7 +349,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     }
     getRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
         + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
@@ -372,7 +373,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
 async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints) {
     let formData = new FormData();
     formData.append('file', routeTrackFile);
-    const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
         method: 'POST',
         body: formData
     });
@@ -429,6 +430,7 @@ export const AppContextProvider = (props) => {
     // route
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+    const [routeShowPoints, setRouteShowPoints] = useState(true);
     let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
     let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
@@ -447,6 +449,7 @@ export const AppContextProvider = (props) => {
         mode: modeParam, opts: {},
         modes: {'car': {name: 'Car', params: {}}}
     });
+    const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
         modes: {'car': {name: 'Car', params: {}}}
@@ -498,6 +501,10 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
+    }, []);
+
+    useEffect(() => {
+        RoutingManager.loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode, setCreatingRouteMode })
     }, []);
 
     useEffect(() => {
@@ -564,6 +571,8 @@ export const AppContextProvider = (props) => {
         interPoints, setInterPoints,
         routeData, setRouteData,
         routeMode, setRouteMode,
+        routeProviders, setRouteProviders,
+        routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,
         searchCtx, setSearchCtx,

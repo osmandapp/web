@@ -81,7 +81,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
                 type="text"
                 fullWidth
                 variant="standard"
-                value={code}
+                value={code ?? ''}
             ></TextField>
         </DialogContent>
         <DialogActions>
