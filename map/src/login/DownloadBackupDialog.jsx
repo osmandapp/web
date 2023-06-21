@@ -19,7 +19,7 @@ import AppContext from "../context/AppContext";
 import {Checkbox} from "@mui/material/";
 import _ from "lodash";
 import {makeStyles} from "@material-ui/core/styles";
-import {post} from "axios";
+import { apiPost } from '../util/HttpApi';
 
 
 const useStyles = makeStyles(() => ({
@@ -215,8 +215,9 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
         if (backupData) {
             setErrorBackup(null);
             setLoadingBackup(true);
-            const resp = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`, backupData.data,
+            const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup`, backupData.data,
                 {
+                    throwErrors: true,
                     params: {
                         format: backupType
                     },
@@ -262,7 +263,7 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
         </Grid>
         <DialogContent>
             {Object.keys(categories).map(k => {
-                return <>
+                return <React.Fragment key={'download_backup_' + k}>
                     <ListItem
                         key={k}
                         sx={{mb: -2}}
@@ -299,7 +300,7 @@ export default function DownloadBackupDialog({openDownloadBackupDialog, setOpenD
                             })}
                         </List>
                     </Collapse>
-                </>
+                </React.Fragment>
             })}
             <Typography variant="caption" color="textSecondary">
                 {errorBackup}

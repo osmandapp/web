@@ -11,3 +11,4 @@ Functional Descriptions:
 * [Navigation Voice Prompt Triggering](./voice-prompt-triggering.md)
 * [Trace Address Search Issues](./trace-address-search-issues.md)
 * [Map rendering: layers, text, symbols, buttons and their order](./map-rendering-layers.md)
+* [Calculating uphill, downhill and slope in OsmAnd](./calculate-uphill-slope.md)
