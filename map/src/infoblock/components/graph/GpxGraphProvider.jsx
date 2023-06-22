@@ -84,7 +84,11 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
 
-                sumDist += point.distance;
+                if (!point.distance && point.distanceFromStart) {
+                    sumDist = point.distanceFromStart;
+                } else {
+                    sumDist += point.distance;
+                }
 
                 let dataTab = {
                     "Distance": Math.round(sumDist) / 1000,

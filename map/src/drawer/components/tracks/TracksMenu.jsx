@@ -86,7 +86,6 @@ export default function TracksMenu() {
         } else {
             setGpxFiles([]);
             ctx.setTracksGroups([]);
-            setVisibleTracks({local: [], cloud: []});
         }
     }, [ctx.listFiles, ctx.setListFiles]);
 
@@ -162,7 +161,7 @@ export default function TracksMenu() {
             tracks: {text: resultText}
         }));
 
-    }, [visibleTracks, setVisibleTracks]);
+    }, [visibleTracks]);
 
 
     return <>

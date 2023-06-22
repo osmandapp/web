@@ -73,7 +73,7 @@ export default function ChangeProfileTrackDialog({open}) {
                     ctx.selectedGpxFile.points[0].profile = profile.mode;
                 }
             }
-            updateGlobalProfileState();
+           TracksManager.updateGlobalProfileState(ctx, profile.mode);
         } else {
             if (changeOne) {
                 let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
@@ -118,14 +118,6 @@ export default function ChangeProfileTrackDialog({open}) {
         }
     }
 
-    function updateGlobalProfileState() {
-        ctx.setCreatingRouteMode({
-            mode: profile.mode,
-            modes: ctx.creatingRouteMode.modes,
-            opts: ctx.creatingRouteMode.modes[profile.mode]?.params,
-            colors: ctx.creatingRouteMode.colors
-        })
-    }
 
     return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
         <Grid container spacing={2}>

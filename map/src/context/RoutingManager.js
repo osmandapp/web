@@ -146,7 +146,7 @@ function initRouteProviders() {
 // load and validate OSRM and OsmAnd routing providers
 async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
     // load OSRM providers first
-    const osrm = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/online-routing-providers.json`);
+    const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
     if (osrm.ok) {
         try {
             const json = await osrm.json();
