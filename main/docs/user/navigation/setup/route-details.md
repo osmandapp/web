@@ -124,6 +124,7 @@ Elevation information is provided in all OsmAnd offline route profiles, with the
 The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approimxated [slope](https://www.wikiwand.com/en/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
 
 - ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*   
+
 - ***Location Pin***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with  altitude and slope percent will appear.  
 
 
@@ -244,6 +245,6 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
-- [**Print**](#print) allows you to print or save turn-by-turn route information.
-- **Export/Save** allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
-- **Share** shares an exported track or a link to the route which could be opened on another device with OsmAnd.
+- [**Print**](#print) - allows you to print or save turn-by-turn route information.
+- **Export/Save** - allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
+- **Share** - shares an exported track or a link to the route which could be opened on another device with OsmAnd.

@@ -5,17 +5,28 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import AccountManager from "../context/AccountManager";
 import AppContext from "../context/AppContext";
+import {useNavigate} from "react-router-dom";
 
 export default function DeleteAccountDialog({setDeleteAccountFlag}) {
 
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
 
     const [userEmail, setUserEmail] = useState(null);
     const [code, setCode] = useState(null);
     const [emailError, setEmailError] = useState('');
+    const [accountDeleted, setAccountDeleted] = useState(false);
+
+    useEffect(() => {
+        if (accountDeleted) {
+            ctx.setUserEmail('');
+            ctx.setLoginUser(null);
+            navigate('/map/loginForm');
+        }
+    }, [accountDeleted]);
 
 
     return <Dialog open={true} onClose={() => setDeleteAccountFlag(false)}>
@@ -38,8 +49,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
         </Grid>
         <DialogContent>
             <DialogContentText>
-                We will immediately delete all of your files from cloud. All paid features will be
-                disabled.
+                Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access to paid features.
             </DialogContentText>
             <TextField
                 autoFocus
@@ -71,7 +81,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
                 type="text"
                 fullWidth
                 variant="standard"
-                value={code}
+                value={code ?? ''}
             ></TextField>
         </DialogContent>
         <DialogActions>
@@ -79,7 +89,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
                 variant="contained"
                 component="span"
                 sx={{backgroundColor: '#ff595e !important', ml: 2}}
-                onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, ctx)}>
+                onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, setAccountDeleted)}>
                 Delete this account
             </Button>
         </DialogActions>

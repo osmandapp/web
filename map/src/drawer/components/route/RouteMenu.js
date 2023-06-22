@@ -1,9 +1,10 @@
 import React, {useState, useContext, useEffect, useRef} from 'react';
 import {styled} from '@mui/material/styles';
-import {Settings, RemoveCircle} from '@mui/icons-material';
+import {Settings, RemoveCircle, Clear} from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
-    FormControl, InputLabel, Input, Select, Button, Typography, Link
+    FormControl, InputLabel, Input, Select, Button, Typography, Link,
+    Switch, FormControlLabel
 } from "@mui/material";
 import {
     ExpandLess, ExpandMore, Directions
@@ -36,7 +37,7 @@ function formatRouteInfo(props) {
     let res = ['Route: '];
     if (props?.overall?.distance) {
         let dst = (props.overall.distance / 1000).toFixed(1);
-        res.push(<b>{dst + ' km'}</b>);
+        res.push(<b key="info-dst">{dst + ' km'}</b>);
         res.push(', ');
     }
     if (props?.overall?.time) {
@@ -45,7 +46,7 @@ function formatRouteInfo(props) {
         if (min < 10) {
             min = '0' + min;
         }
-        res.push(<b>{Math.floor(hours).toFixed(0) + ':' + min}</b>);
+        res.push(<b key="info-time">{Math.floor(hours).toFixed(0) + ':' + min}</b>);
         res.push(', ');
     }
     res[res.length - 1] = '.';
@@ -166,6 +167,19 @@ export default function RouteMenu() {
                 <Typography>{formatRouteInfo(ctx?.routeData?.props)}</Typography>
             </MenuItem>
             }
+            {ctx?.routeData && <MenuItem key='routeshowdetails' sx={{ml: 1, mr: 1}} disableRipple={true}>
+                <FormControlLabel
+                    label="Show route points"
+                    labelPlacement="start"
+                    control={
+                        <Switch
+                            checked={ ctx.routeShowPoints }
+                            onChange={ e => ctx.setRouteShowPoints(e.target.checked) }
+                        />
+                    }
+                />
+            </MenuItem>
+            }
             <MenuItem key='start' sx={{ml: 2, mr: 2, mt: 1}} className={classes.start} disableRipple={true}>
                 <FormControl fullWidth>
                     <TextField
@@ -189,7 +203,7 @@ export default function RouteMenu() {
                                 ctx.setRouteData(null);
                             }
                             }>
-                    <RemoveCircle fontSize="small"/>
+                    <Clear fontSize="small"/>
                 </IconButton>
             </MenuItem>
             {ctx.interPoints.map((item, ind) => (
@@ -235,7 +249,7 @@ export default function RouteMenu() {
                     ctx.setEndPoint(null);
                     ctx.setRouteData(null);
                 }}>
-                    <RemoveCircle fontSize="small"/>
+                    <Clear fontSize="small"/>
                 </IconButton>
             </MenuItem>
             {ctx.avoidRoads.map((item, ind) => (
@@ -272,11 +286,11 @@ export default function RouteMenu() {
                 </IconButton>
             </MenuItem>}
             <MenuItem key='uploadroute' disableRipple={true}>
-                <label htmlFor="contained-button-file">
-                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-file" type="file"
+                <label htmlFor="contained-button-route">
+                    <StyledInput ref={btnFile} accept=".gpx" id="contained-button-route" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
-                        Select Track
+                        Upload GPX to route
                     </Button>
                 </label>
             </MenuItem>

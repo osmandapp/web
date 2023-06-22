@@ -4,6 +4,7 @@ import {useMap} from "react-leaflet";
 import {useNavigate} from "react-router-dom";
 import TracksManager from "../../context/TracksManager";
 import {get} from "axios";
+import { apiGet } from '../../util/HttpApi';
 
 export default function ContextMenu({setGeocodingData, setRegionData}) {
 
@@ -66,7 +67,7 @@ export default function ContextMenu({setGeocodingData, setRegionData}) {
     const whereAmI = async (e) => {
         setGeocodingData(null);
         const params = `lat=${e.latlng.lat.toFixed(6)}&lon=${e.latlng.lng.toFixed(6)}`;
-        const response = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/geocoding?${params}`, {
+        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/geocoding?${params}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         });

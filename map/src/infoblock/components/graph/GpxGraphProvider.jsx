@@ -76,15 +76,20 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
                 if (data.speed) {
-                    let pointSpeed = point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed;
-                    if (pointSpeed) {
-                        speed = ((Math.round(pointSpeed * 10) / 10) * 3.6).toFixed(2);
+                    speed = _.cloneDeep(point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed);
+                    if (speed) {
+                        speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);
                         minSpeed = Math.min(speed, minSpeed);
                         maxSpeed = Math.max(speed, maxSpeed);
                     }
                 }
 
-                sumDist += point.distance ? point.distance : point?.ext.distance;
+                if (!point.distance && !point?.ext.distance && point.distanceFromStart) {
+                    sumDist = point.distanceFromStart;
+                } else {
+                    sumDist += point.distance ? point.distance : point?.ext.distance ? point?.ext.distance : 0;
+                }
+
                 let dataTab = {
                     "Distance": Math.round(sumDist) / 1000,
                     "Elevation": ele,

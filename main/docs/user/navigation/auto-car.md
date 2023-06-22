@@ -81,15 +81,15 @@ Most OsmAnd settings directly related to navigation are available in Android Aut
 2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
 3. Select [Address Search](#search) to enter a destination from the available search categories. -->
 
-:::note
+**Note**  
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
-:::
+
 
 <!-- Тут два ноута подряд, так себе. и нет вступления по выбору точек назначения с последующими ссылками - История, ПОИ... -->
 
-:::note
+**Note**  
 Through the **Settings** menu in Android Auto you can select the end point of the route, *without any ability to add intermediate destinations*.
-:::
+
 
 
 ### History

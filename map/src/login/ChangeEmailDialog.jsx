@@ -37,7 +37,7 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                 }
             })
         } else if (!code && newEmail) {
-            AccountManager.sendCode(newEmail, setEmailError).then((sent) => {
+            AccountManager.sendCode(newEmail, AccountManager.CHANGE_EMAIL_MSG, setEmailError).then((sent) => {
                 if (sent) {
                     setCodeConfirmed(false);
                 }
@@ -117,13 +117,14 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                     type="text"
                     fullWidth
                     variant="standard"
-                    value={code}
+                    value={code ?? ''}
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
                 ></TextField>}
 
             </DialogContent>
             <DialogActions>
+                <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                 <Button disabled={emailError !== ''}
                         onClick={handleNext}>{code && newEmail ? 'Finish' : 'Next'}</Button>
             </DialogActions>
@@ -156,9 +157,10 @@ export default function ChangeEmailDialog({setChangeEmailFlag}) {
                 </Typography>}
             </DialogContent>
             <DialogActions>
+                <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                 <Button onClick={() => {
                     ctx.setLoginUser(null);
-                    ctx.setUserEmail(newEmail);
+                    ctx.setUserEmail(newEmail, {days: 30, SameSite: 'Strict'});
                 }
                 }>Login using new credentials
                 </Button>

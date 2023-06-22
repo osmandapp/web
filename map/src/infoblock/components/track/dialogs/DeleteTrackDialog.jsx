@@ -7,7 +7,7 @@ import AppContext from "../../../../context/AppContext";
 import TracksManager from "../../../../context/TracksManager";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
-import {post} from "axios";
+import { apiPost } from '../../../../util/HttpApi';
 
 export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowContextMenu}) {
 
@@ -26,7 +26,7 @@ export default function DeleteTrackDialog({dialogOpen, setDialogOpen, setShowCon
 
     async function deleteCurrentTrack() {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.loginUser) {
-            let response = await post(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, "",
+            let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, "",
                 {
                     params: {
                         name: ctx.selectedGpxFile.name,

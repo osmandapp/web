@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat.md)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
+Boat routing can be a valuable tool for anyone who enjoys boating or sailing by channels, rivers or fairways. Due to lack of most Fairways in OpenStreeetMap data,  the boat routing is *not recommended* for **open water navigation**, it is suggested to use **[Direct to point](#direct-to-point-routing-for-boat)** instead. With Depth contour lines enabled, it can help you stay safe on the water by avoiding hazards such as shallow waters, rocks, or other obstacles.  
 The OsmAnd Boat routing engine also takes into account the characteristics of the waterways and the boat themselves.  
 
 <Tabs groupId="operating-systems">

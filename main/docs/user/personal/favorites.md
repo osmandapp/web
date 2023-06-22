@@ -63,7 +63,8 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap on it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
 
-### Create
+
+### Create and Edit
 
 The easiest way to create a new Favorite point is to select the [POI](../map/point-layers-on-map.md#points-of-interest-poi) or building on the map with a short tap and select [Add](../map/map-context-menu.md#add--edit-favorite) in [Map Context menu](../map/map-context-menu.md). In this case, all the information from POI will be added to a new Favorite.  
 You can also add a new Favorite point to any place on the map with [long tap](../map/map-context-menu.md#select-any-point-long-tap).  
@@ -136,7 +137,7 @@ You can also add a new Favorite point to any place on the map with [long tap](..
 
 </Tabs>
 
-### Edit
+#### Edit
 
 To edit a Favorite point, [short tap](../map/map-context-menu.md#select-an-object-short-tap) the selected Favorite point.
 
@@ -162,40 +163,41 @@ After that, you need to choose [*Edit favorite* button in *Map Context menu*](..
 
 You can change name, description, address for chosen favorite, change or create new group for it, select another icon, color and shap, replace another point with this.
 
-### Search
-
-Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search-1).  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 ### Favorites in GPX file
 
-All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same [tags](../personal/tracks.md#waypoint-and-favorites) to store information and are saved in [GPX file format](../personal/tracks.md#waypoint-format-description).
+All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same [tags](../personal/tracks.md#waypoint-and-favorites) to store information and are saved in [GPX file format](../personal/tracks.md#waypoint-format-description).  
+
+
+```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
+```  
 
 
 ## Manage Favorites
 
-In order to open Favorites list go to:
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>_
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![My places favorites android](@site/static/img/personal/my_places_android.png)
 
@@ -203,13 +205,14 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>_
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 
 </TabItem>
 
 </Tabs>
+
 
 ### View
 
@@ -231,6 +234,7 @@ In *My Places* menu you can find not only *Favorites* but also function buttons 
 
 </Tabs>
 
+
 ### Order / Sorting
 
 The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the very top.  
@@ -244,6 +248,7 @@ The favorite folders and points are sorted alphabetically. The [personal folder]
 :::tip Note
 In [searching list](#search-1) *Favorites* is sorted by distance from the map center.  
 :::
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -257,6 +262,7 @@ In order to switch between Folders <-> Points list, use the toggle on top right 
 </TabItem>
 
 </Tabs>
+
 
 ### Search
 
@@ -283,6 +289,28 @@ Moving the screen down opens the search menu for Favorites: _Menu → My Places 
 </TabItem>
 
 </Tabs>
+
+
+#### Search function/Global search
+
+Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use [Search in 'My Favorites' menu](#search).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorite searching function Android](@site/static/img/personal/favorite_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite searching function iOS](@site/static/img/personal/favorite_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 ### Actions
 
@@ -393,7 +421,7 @@ Tap *Pencil* button opens special functions for a chosen Favorite folder. You ne
 <TabItem value="android" label="Android">
 
 :::caution Note
-**Only for iOS version.**
+*Only for iOS version.*
 :::
 
 </TabItem>
@@ -500,10 +528,7 @@ Functions for Favorite folder:
 
 </Tabs>
 
-## Export / Import
-
-OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
-### Favorites Backup  
+## Automatic Favorites Backup  
 
 After each edit of Favorites, OsmAnd makes a backup file. These backups can be found using file manager programs: in Android use third-party apps, and in iOS they can be accessed with the system program *Files*.  
 
@@ -531,7 +556,7 @@ In the latest versions of Android, access to system directories is limited. Howe
 
 </Tabs>
 
-#### Export Favorites backup
+### Export / Import Favorites backup
 
 You can export Favorites backup files using *[Export](../personal/import-export.md#export)* funciton. The resulting .osf file you can send to the internal memory of the device, cloud storage, or other users of the OsmAnd app via messengers.  
 
@@ -553,7 +578,12 @@ You can export Favorites backup files using *[Export](../personal/import-export.
 
 </Tabs>
 
-### Local folder  
+## Export / Import
+
+OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
+
+
+### All Favorites
 
 You can export and import Favorites using the Actions buttons at the bottom of the Favorites screen. Favorites.gpx file can be sent to Dropbox, Email, messengers, etc.  
 Favorites also can be imported from Favorites.gpx file using *Import favorites* or *Open In OsmAnd* function.  
@@ -581,7 +611,7 @@ Actions:
 
 </Tabs>
 
-### Favorites share
+### Favorite Group
 
 <Tabs groupId="operating-systems">
 

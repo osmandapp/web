@@ -11,7 +11,6 @@ import {
 import {Close, ExpandLess, ExpandMore, RouteOutlined} from "@mui/icons-material";
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import axios from "axios";
 import PopperMenu from "./PopperMenu";
 import drawerStyles from "../../styles/DrawerStyles";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -19,6 +18,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import {Dialog} from "@material-ui/core";
+import { apiGet } from '../../../util/HttpApi';
 
 export default function GpxCollection() {
 
@@ -41,7 +41,7 @@ export default function GpxCollection() {
 
     const downloadObf = async (name) => {
         setProcessDownload(true);
-        await axios({
+        await apiGet({
             url: `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`,
             method: 'post',
             data: ctx.gpxCollection,

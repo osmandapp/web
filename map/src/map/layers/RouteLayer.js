@@ -182,7 +182,19 @@ const RouteLayer = ({geocodingData, region}) => {
             }
             layer.bindPopup(desc);
         }
-    }
+    };
+
+    // filter features for GeoJSON
+    const routeFilter = (feature/*, layer*/) => {
+        if (feature?.geometry?.type === "Point" && ctx.routeShowPoints === false) {
+            return false;
+        }
+        return true;
+    };
+
+    // GeoJSON requires dynamic key to refresh (used for re-filtering)
+    const routeDataKey = () => ctx.routeData.id + ':' + ctx.routeShowPoints;
+
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
         if (feature.properties && feature.properties.description &&
@@ -231,8 +243,8 @@ const RouteLayer = ({geocodingData, region}) => {
     }, [ctx.searchCtx, ctx.setSearchCtx]);
 
     return <>
-        {ctx.routeData && <GeoJSON key={ctx.routeData.id} data={ctx.routeData.geojson}
-                                   pointToLayer={pointToLayer} onEachFeature={onEachFeature}/>}
+        {ctx.routeData && <GeoJSON key={routeDataKey()} data={ctx.routeData.geojson}
+                pointToLayer={pointToLayer} onEachFeature={onEachFeature} filter={routeFilter} />}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
                                    pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature}/>}
         {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
