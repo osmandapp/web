@@ -14,7 +14,7 @@ const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
-const LOCAL_TRACK_KEY = 'localTrack_';
+const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
@@ -24,7 +24,7 @@ async function loadTracks(setLoading) {
     let names = Object.keys(localStorage);
     setLoading(true);
     for (let name of names) {
-        if (name.includes(LOCAL_TRACK_KEY)) {
+        if (name.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             let ind = name.split('_')[1];
             try {
                 let res = await decompressString(localStorage.getItem(name));
@@ -34,6 +34,7 @@ async function loadTracks(setLoading) {
                 }
             } catch {
                 console.log('localStorage JSON error, ignore track: ' + name)
+                localStorage.removeItem(name);
             }
         }
     }
@@ -94,7 +95,7 @@ function saveLocalTrack(tracks, ctx) {
             ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
         } else {
             ctx.setRoutingErrorMsg(null);
-            localStorage.setItem(LOCAL_TRACK_KEY + currentTrackIndex, res);
+            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
             localStorage.setItem(DATA_SIZE_KEY, totalSize);
         }
     });
@@ -102,7 +103,7 @@ function saveLocalTrack(tracks, ctx) {
 
 function getOldSizeTrack(currentTrackIndex) {
     if (currentTrackIndex !== -1) {
-        let old = localStorage.getItem(LOCAL_TRACK_KEY + currentTrackIndex);
+        let old = localStorage.getItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
         if (old) {
             return old.length;
         }
@@ -116,7 +117,7 @@ async function updateLocalTracks(tracks) {
     for (let track of tracks) {
         let res = await compressJSON(prepareLocalTrack(track));
         if (res) {
-            localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), res);
+            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + _.indexOf(tracks, track), res);
             let tracksSize = res.length;
             totalSize += tracksSize;
             localStorage.setItem(DATA_SIZE_KEY, totalSize);
@@ -144,7 +145,7 @@ function prepareLocalTrack(track) {
 function deleteLocalTracks() {
     let keys = Object.keys(localStorage);
     for (let k of keys) {
-        if (k.includes(LOCAL_TRACK_KEY)) {
+        if (k.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             localStorage.removeItem(k);
         }
     }
@@ -434,7 +435,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
-        localStorage.removeItem(LOCAL_TRACK_KEY + currentTrackIndex);
+        localStorage.removeItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
         if (ctx.localTracks.length > 0) {
             updateLocalTracks(ctx.localTracks);
