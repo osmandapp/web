@@ -2,6 +2,7 @@ import TracksManager from "./TracksManager";
 import _ from "lodash";
 import TrackLayerProvider from "../map/TrackLayerProvider";
 import { mergeStateObject } from "../util/Utils";
+import { apiGet } from '../util/HttpApi';
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -145,7 +146,7 @@ function initRouteProviders() {
 // load and validate OSRM and OsmAnd routing providers
 async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
     // load OSRM providers first
-    const osrm = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/online-routing-providers.json`);
+    const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
     if (osrm.ok) {
         try {
             const json = await osrm.json();
@@ -163,7 +164,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
     // load OsmAnd provider as advanced solution
     // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
-    const osmand = await fetch(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`);
+    const osmand = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`);
     if (osmand.ok) {
         try {
             const json = await osmand.json();
