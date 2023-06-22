@@ -25,6 +25,9 @@ Driving a car and using your phone or tablet at the same time is usually forbidd
 
 To use Android Auto, you need a smartphone with an Android operating system updated to version 5.0 or higher. With the appropriate version, you will have access to a simplified user interface and a collection of compatible apps, including OsmAnd.  
 
+It is important to remember that Android Auto is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of the connection and the speed of Internet access.  
+
+
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
 
@@ -195,8 +198,7 @@ You can use the Search tool to find the required place on the map for route plan
 
 ## Additional features
 
-Additional features help you customize the display and operation of OsmAnd in Android Auto to suit your personal needs.  
-
+In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
 
 ### Voice prompts
 
@@ -205,11 +207,24 @@ Additional features help you customize the display and operation of OsmAnd in An
 In OsmAnd, you can set up [voice prompts](../navigation/guidance/voice-navigation.md) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
 
 
-### Day/Night map mode
+### Map mode
 
-When you connect the app to Android Auto, the [map mode](../map/vector-maps.md#map-mode) settings configured in the OsmAnd will be ignored. Instead, the display settings of Android Auto Day/Night mode for maps are used.  
+Android Auto and OsmAnd offer the ability to adjust the map to match lighting conditions. In *Day map mode*, the color scheme remains bright and contrasting, making it easier to read even in bright sunlight. In *Night mode*, the maps become darker, which helps the driver navigate better in the dark.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-map-mode.png)
+OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use the app in Android Auto, these options are ignored. Instead, the mode you selected in the Android Auto system settings for maps is used. 
+
+- You can choose to always display the map in Day mode.
+- You can select Night mode.
+- If you want the map display mode to switch depending on the time of day, select Automatic mode.  
+
+<table class="image">
+    <tr>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+    </tr>
+</table> 
+
+<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
 
 
 ### Screen Alert widget
@@ -221,28 +236,26 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 ### Map appearance
 
-The screen of your vehicle's multimedia system can display 2D and 3D views of the OsmAnd map.  You can activate, deactivate and set up *[2.5D view](../personal/profiles.md#appearance)* in the application *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*. Do this before connecting to Android Auto.  
+The screen of your vehicle's multimedia system can display 2D and 3D views of the OsmAnd map.  You can activate, deactivate and set up *[3D view](../widgets/map-buttons.md#3d-mode)* in the application *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*. Do this before connecting to Android Auto.  
 
-<!-- Это скриншот карплеля?
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance.png)  
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)  
-
--->
 
 ### Split-screen
 
 The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps. Set up the display on the phone connected to Android Auto.  
 
-<!-- The Multi window display feature can also be enabled and disabled from the Window Shade.
+**!**
+The Multi window display feature can also be enabled and disabled from the Window Shade.
 1. From a Home screen, tap Apps
 2. Tap Settings.
 3. Tap Multi window.
 4. Tap the Multi window switch
 5. Return to the home screen. 
 
-https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 -->
+https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-split-screen.png)
+![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
 
 
 ## Issues
@@ -257,26 +270,7 @@ Movement direction map orientation is [flipped and jiggles](https://github.com/o
 
 ### Volume control issue
 
-In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+In most cases, all types of **signals** remain at constant full volume, which is not affected by the simultaneous audio playback settings. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+
 If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
-
-
-<!--
-Fixes issues with voice control
-
-Choose which speakers to use.
-- On your phone or tablet, turn on Bluetooth.
-- Pair your phone or tablet to your car.
-- Set the source for your car's audio system to Bluetooth.
-    - On your Android phone or tablet, open the Google Maps app Maps.
-    - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.
-    - Choose an option:
-       - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
-       - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.
-
--->
-
-
-
-
 
