@@ -528,10 +528,7 @@ Functions for Favorite folder:
 
 </Tabs>
 
-## Export / Import
-
-OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
-### Favorites Backup  
+## Automatic Favorites Backup  
 
 After each edit of Favorites, OsmAnd makes a backup file. These backups can be found using file manager programs: in Android use third-party apps, and in iOS they can be accessed with the system program *Files*.  
 
@@ -559,7 +556,7 @@ In the latest versions of Android, access to system directories is limited. Howe
 
 </Tabs>
 
-#### Export Favorites backup
+### Export / Import Favorites backup
 
 You can export Favorites backup files using *[Export](../personal/import-export.md#export)* funciton. The resulting .osf file you can send to the internal memory of the device, cloud storage, or other users of the OsmAnd app via messengers.  
 
@@ -581,7 +578,12 @@ You can export Favorites backup files using *[Export](../personal/import-export.
 
 </Tabs>
 
-### Local folder  
+## Export / Import
+
+OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
+
+
+### All Favorites
 
 You can export and import Favorites using the Actions buttons at the bottom of the Favorites screen. Favorites.gpx file can be sent to Dropbox, Email, messengers, etc.  
 Favorites also can be imported from Favorites.gpx file using *Import favorites* or *Open In OsmAnd* function.  
@@ -609,7 +611,7 @@ Actions:
 
 </Tabs>
 
-### Favorites share
+### Favorite Group
 
 <Tabs groupId="operating-systems">
 
