@@ -1,8 +1,8 @@
-import Utils from "../util/Utils";
+import Utils, {quickNaNfix} from "../util/Utils";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
-import { apiGet, apiPost } from '../util/HttpApi';
-import { quickNaNfix } from "../util/Utils";
+import {apiGet, apiPost} from '../util/HttpApi';
+import {compressJSON, decompressString} from "../util/GzipBase64.mjs";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -14,7 +14,7 @@ const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
-const LOCAL_TRACK_KEY = 'localTrack_';
+const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
@@ -23,25 +23,39 @@ async function loadTracks(setLoading) {
     let localTracks = [];
     let names = Object.keys(localStorage);
     setLoading(true);
-    const promises = [];
-
     for (let name of names) {
-        if (name.includes(LOCAL_TRACK_KEY)) {
+        if (name.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             let ind = name.split('_')[1];
             try {
-                localTracks[ind] = JSON.parse(localStorage.getItem(name));
-            } catch { console.log('localStorage JSON error, ignore track: ' + name) }
+                let res = await decompressString(localStorage.getItem(name));
+                if (res) {
+                    localTracks[ind] = JSON.parse(res);
+                    localTracks = openVisibleTracks(fixLocalTracks(localTracks));
+                }
+            } catch {
+                console.log('localStorage JSON error, ignore track: ' + name)
+                localStorage.removeItem(name);
+            }
         }
     }
 
+        setLoading(false);
+        return localTracks;
+
+}
+
+function fixLocalTracks(localTracks) {
     if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
         console.log('loadTracks() workaround for localTrack_0 (hole) localTrack_X');
         const fixTracks = [];
         localTracks.forEach(t => fixTracks.push(t));
-        updateLocalTracks(fixTracks);
+        updateLocalTracks(fixTracks).then();
         localTracks = fixTracks;
     }
+    return localTracks;
+}
 
+function openVisibleTracks(localTracks) {
     let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
     if (savedVisible?.local) {
         for (const local of savedVisible.local) {
@@ -50,32 +64,12 @@ async function loadTracks(setLoading) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
                         f.selected = true;
                         f.index = _.indexOf(localTracks, f);
-                        if (f.hasGeo) {
-                            promises.push(await TracksManager.updateRoute(f.tracks[0].points).then((points) => {
-                                f.tracks[0].points = points;
-                                TracksManager.getLocalTrackAnalysis(f).then(res => {
-                                    f = res;
-                                });
-                            }));
-                        } else {
-                            promises.push(await TracksManager.getLocalTrackAnalysis(f).then(res => {
-                                f = res;
-                            }));
-                        }
                     } else {
                         f.selected = false;
                     }
                 }
             }
         }
-    }
-    if (promises.length > 0) {
-        await Promise.all(promises).then(() => {
-            setLoading(false);
-            return localTracks;
-        })
-    } else {
-        setLoading(false);
     }
     return localTracks;
 }
@@ -84,111 +78,74 @@ function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     let track;
     if (currentTrackIndex !== -1) {
-        track = tracks[currentTrackIndex];
+        track = ctx.selectedGpxFile;
     } else {
         track = tracks[tracks.length - 1];
     }
-    const prepareTrack = preparePoints(_.cloneDeep(track));
-    let localTrack = {
-        name: track.name,
-        id: track.id,
-        metaData: track.metaData,
-        tracks: prepareTrack.track,
-        wpts: track.wpts,
-        pointsGroups: track.pointsGroups,
-        ext: track.ext,
-        selected: false,
-        originalName: track.originalName,
-        hasGeo: prepareTrack.hasGeo
-    }
-    let trackStr = JSON.stringify(localTrack);
-    let tracksSize = trackStr.length;
+    let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
     if (!totalSize) {
         totalSize = 0;
     }
-
-    let oldSize = 0;
-    if (currentTrackIndex !== -1) {
-        let old = localStorage.getItem(LOCAL_TRACK_KEY + currentTrackIndex);
-        if (old) {
-            oldSize = old.length;
-        }
-    }
-    if (((oldSize === 0 && (tracksSize + totalSize)) || ((totalSize - oldSize) + tracksSize)) > 5000000) {
-        ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
-    } else {
-        ctx.setRoutingErrorMsg(null)
-        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
+    compressJSON(prepareLocalTrack(track)).then(res => {
+        tracksSize = res.length;
+        let oldSize = getOldSizeTrack(currentTrackIndex);
         totalSize = totalSize - oldSize + tracksSize;
-        localStorage.setItem(DATA_SIZE_KEY, totalSize);
-    }
+        if (((oldSize === 0 && (tracksSize + totalSize)) || ((totalSize - oldSize) + tracksSize)) > 5000000) {
+            ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+        } else {
+            ctx.setRoutingErrorMsg(null);
+            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
+            localStorage.setItem(DATA_SIZE_KEY, totalSize);
+        }
+    });
 }
 
-function preparePoints(track) {
-    let hasGeo = false;
-    if (!_.isEmpty(track.points)) {
-        track.points.forEach(p => {
-            if (p.geometry?.length > 0) {
-                hasGeo = true;
-                delete p.geometry;
-            }
-        })
-        return {
-            track:[{points: track.points}],
-            hasGeo: hasGeo
-        };
-    } else {
-        if (track.tracks) {
-            track.tracks.forEach(t => {
-                if (t.points) {
-                    t.points.forEach(p => {
-                        if (p.geometry?.length > 0) {
-                            hasGeo = true;
-                            delete p.geometry;
-                        }
-                    })
-                }
-            })
-            return {
-                track: track.tracks,
-                hasGeo: hasGeo
-            };
+function getOldSizeTrack(currentTrackIndex) {
+    if (currentTrackIndex !== -1) {
+        let old = localStorage.getItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
+        if (old) {
+            return old.length;
         }
     }
+    return 0;
 }
 
-function updateLocalTracks(tracks) {
+async function updateLocalTracks(tracks) {
     deleteLocalTracks();
     let totalSize = 0;
     for (let track of tracks) {
-        const prepareTrack = preparePoints(_.cloneDeep(track));
-        let localTrack = {
-            name: track.name,
-            id: track.id,
-            metaData: track.metaData,
-            tracks: prepareTrack.track,
-            wpts: track.wpts,
-            pointsGroups: track.pointsGroups,
-            ext: track.ext,
-            analysis: track.analysis,
-            selected: false,
-            originalName: track.originalName,
-            hasGeo: prepareTrack.hasGeo
+        let res = await compressJSON(prepareLocalTrack(track));
+        if (res) {
+            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + _.indexOf(tracks, track), res);
+            let tracksSize = res.length;
+            totalSize += tracksSize;
+            localStorage.setItem(DATA_SIZE_KEY, totalSize);
         }
-        let trackStr = JSON.stringify(localTrack);
-        localStorage.setItem(LOCAL_TRACK_KEY + _.indexOf(tracks, track), trackStr);
-
-        let tracksSize = trackStr.length;
-        totalSize += tracksSize;
     }
-    localStorage.setItem(DATA_SIZE_KEY, totalSize);
+}
+
+function prepareLocalTrack(track) {
+    const prepareTrack = _.cloneDeep(track);
+    return {
+        name: prepareTrack.name,
+        id: prepareTrack.id,
+        metaData: prepareTrack.metaData,
+        points: prepareTrack.points,
+        tracks: prepareTrack.track,
+        wpts: prepareTrack.wpts,
+        pointsGroups: prepareTrack.pointsGroups,
+        ext: prepareTrack.ext,
+        analysis: prepareTrack.analysis,
+        selected: false,
+        originalName: prepareTrack.originalName
+    };
 }
 
 function deleteLocalTracks() {
     let keys = Object.keys(localStorage);
     for (let k of keys) {
-        if (k.includes(LOCAL_TRACK_KEY)) {
+        if (k.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             localStorage.removeItem(k);
         }
     }
@@ -478,7 +435,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 function deleteLocalTrack(ctx) {
     let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
-        localStorage.removeItem(LOCAL_TRACK_KEY + currentTrackIndex);
+        localStorage.removeItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
         if (ctx.localTracks.length > 0) {
             updateLocalTracks(ctx.localTracks);
@@ -528,11 +485,11 @@ async function updateRouteBetweenPoints(ctx, start, end, settings) {
         if (typeof result?.data === "string") {
             data = JSON.parse(quickNaNfix(result.data));
         }
-        if (data.msg) {
-            ctx.setRoutingErrorMsg(data.msg);
+        if (data?.msg) {
+            ctx.setRoutingErrorMsg(data?.msg);
         }
-        updateGapProfileOneSegment(end, data.points);
-        return data.points;
+        updateGapProfileOneSegment(end, data?.points);
+        return data?.points;
     }
 }
 
@@ -778,6 +735,15 @@ function updateState(ctx) {
     ctx.setTrackState({...ctx.trackState});
 }
 
+function updateGlobalProfileState(ctx, profile) {
+    ctx.setCreatingRouteMode({
+        mode: profile,
+        modes: ctx.creatingRouteMode.modes,
+        opts: ctx.creatingRouteMode.modes[profile]?.params,
+        colors: ctx.creatingRouteMode.colors
+    })
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
@@ -809,6 +775,7 @@ const TracksManager = {
     isEqualPoints,
     updateState,
     getLocalTrackAnalysis,
+    updateGlobalProfileState,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

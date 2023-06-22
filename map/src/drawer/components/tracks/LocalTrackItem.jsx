@@ -1,14 +1,12 @@
 import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
-import {LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
+import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import _ from "lodash";
-import TracksManager from "../../../context/TracksManager";
 
 export default function LocalTrackItem({track, index}) {
 
     const ctx = useContext(AppContext);
     const [indexTrack, setIndexTrack] = useState(index);
-    const [loading, setLoading] = useState(false);
 
     function enableLayer(visible) {
         if (!visible) {
@@ -37,44 +35,10 @@ export default function LocalTrackItem({track, index}) {
 
     function addTrackToMap() {
         if (indexTrack !== undefined) {
-            addSelectedTack().then(() => startEdit());
+            updateLocalTrack(track);
+            updateTrackInfoBlock();
+            startEdit();
         }
-    }
-
-    async function addSelectedTack() {
-        const promises = [];
-        let selectedTrack = ctx.localTracks[indexTrack];
-        if (selectedTrack.hasGeo && !selectedTrack.getGeo) {
-            setLoading(true);
-            await TracksManager.updateRoute(selectedTrack.tracks[0].points).then((points) => {
-                setLoading(false);
-                selectedTrack.getGeo = true;
-                if (points && !_.isEmpty(points)) {
-                    selectedTrack.tracks[0].points = points;
-                    selectedTrack.points = points;
-                }
-                promises.push(TracksManager.getLocalTrackAnalysis(selectedTrack).then(res => {
-                    selectedTrack = res;
-                }));
-            })
-        } else {
-            promises.push(TracksManager.getLocalTrackAnalysis(selectedTrack).then(res => {
-                selectedTrack = res;
-            }));
-        }
-
-        if (promises.length > 0) {
-            await Promise.all(promises).then(() => {
-                update(selectedTrack);
-            })
-        } else {
-            update(selectedTrack);
-        }
-    }
-
-    function update(track) {
-        updateLocalTrack(track);
-        updateTrackInfoBlock();
     }
 
     function updateLocalTrack(selectedTrack) {
@@ -82,7 +46,6 @@ export default function LocalTrackItem({track, index}) {
         setIndexTrack(indexTrack);
         selectedTrack.selected = true;
         selectedTrack.zoom = true;
-        selectedTrack.updateLayers = true;
         ctx.setSelectedGpxFile(selectedTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
     }
@@ -127,6 +90,5 @@ export default function LocalTrackItem({track, index}) {
                         enableLayer(e.target.checked);
                     }}/>
         </MenuItem>
-        {loading ? <LinearProgress/> : <></>}
     </div>
 }
