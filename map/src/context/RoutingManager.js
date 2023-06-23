@@ -3,6 +3,7 @@ import _ from "lodash";
 import TrackLayerProvider from "../map/TrackLayerProvider";
 import { mergeStateObject } from "../util/Utils";
 import { apiGet } from '../util/HttpApi';
+import { copy } from "../util/Utils";
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -101,61 +102,194 @@ function addModes(data) {
 function filterMode(data) {
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
+/*
+    OsmAnd provider structure and modifications: https://test.osmand.net/routing/routing-modes
+
+        1. OsmAnd type, router (key), url are pre-defined
+        2. OsmAnd provider is ONE only in providersOsmAnd[] array
+        3. OsmAnd profiles are converted from {} to profiles[] array
+        4. OsmAnd profile's .params are copied to .backup (used to reset params)
+
+    OSRM provider structure and modifications: https://test.osmand.net/online-routing-providers.json
+
+        1. OSRM type, name (as key), url, routes are loaded into providersOSRM[]
+        2. routes[] are renamed to profiles[], each profile .type is renamed to .key
+        3. finally, names are turned into pretty names by aliases (hardcoded)
+
+    Attributes usage:
+
+        1. providers[] usage: key as is, type, name (pretty), url (when profile has no url)
+        2. profiles[] usage: key as is, name (pretty), url/params are optional
+        3. current choosed: type, router(key), profile(key)
+
+    routeProviders comprises:
+
+        Currently selected provider: type, router (key), profile (key) -- will use these to keep in routing results;
+        Arrays of loaded (= available) providers;
+        Public Getters and Setters to work with;
+        Private helpers.
+
+    TODO:
+        - test when OSRM and/or OsmAnd provides did not load
+*/
 
 function initRouteProviders() {
-    // fallback default
-    const type = 'osmand';
-    const profile = 'Car';
-    const name = 'OsmAnd Advanced Router';
-    const url = `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`;
+    const preloaded = {
+        type: 'osmand',
+        router: 'osmand',
+        profile: 'car',
+        name: 'OsmAnd Advanced',
+        url: `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`,
+    };
 
-    /*
-        routeProvides comprises:
-            Currently selected provider: name and profile;
-            Arrays of loaded and available providers;
-            Public Getters and Setters to work with;
-            Private helpers.
-    */
     return {
-        name,
-        profile,
+        // current
+        type: preloaded.type,
+        router: preloaded.router, // ref to providers.key
+        profile: preloaded.profile, // ref to profiles.key
 
-        // component Setters (called with AppContext reference)
-        setName(ctx, name) { return mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { name }) },
-        setProfile(ctx, profile) { return mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { profile }) },
+        // getters (use copy to prevent direct modify by parents)
+        allProviders() { return this._allProviders() }, // no-copy-need
+        getProvider(router = this.router) { return copy(this._getProvider(router)) },
+        allProfiles(router = this.router) { return copy(this._allProfiles(router)) },
+        getProfile(router = this.router, profile = this.profile) { return copy(this._getProfile(router, profile)) },
+        getParams(router = this.router, profile = this.profile) { return copy(this._getParams(router, profile)) },
+        getResetParams(router = this.router, profile = this.profile) { return copy(this._getResetParams(router, profile)) },
 
-        // component Getters
-        getName() { return this.name },
-        getProfile() { return this.profile },
-        getType() { return this.currentProvider()?.type },
-        getURL() { return this.currentProfile()?.url || this.currentProvider()?.url },
-        listProfileNames() { return this.currentProvider()?.routes?.map(e => e.name) },
-        listProviderNames() { return this.getProviders()?.map(e => e.name) },
+        // internals (strict and fast)
+        _allProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // OSRM + OsmAnd
+        _getProvider(router) { return this._allProviders()?.find(r => r.key === router) ?? {} },
+        _allProfiles(router) { return this._getProvider(router)?.profiles ?? [] },
+        _getProfile(router, profile) { return this._allProfiles(router)?.find(p => p.key === profile) ?? {} },
+        _getParams(router, profile) { return this._getProfile(router, profile)?.params },
+        _getResetParams(router, profile) { return this._getProfile(router, profile)?.backup },
 
-        // initialized by loadRouteProviders()
-        providersOSRM: [], // always dynamically loaded
-        providersOsmAnd: [{ type, name, url }], // preloaded, but overriden dynamically
+        // actions
+        params(ctx = null, opts) {
+            /*
+                Saving profile params isn't easy process:
 
-        // private helper functions
-        getProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // ordered, OSRM used first
-        currentProvider() { return this.getProviders()?.find(e => e?.name === this.name) }, // current Provider
-        currentProfile() { return this.currentProvider()?.routes?.find(e => e?.name === this.profile) }, // current Profile
+                1. We can't modify _getProfile().params directly because allProviders() consist of joined arrays
+                2. We assume that opts are applicable to providersOsmAnd only (OSRM options aren't supported)
+                3. Therefore, we look into providersOsmAnd, rewrite params and call ctx-setter
+            */
+
+            if (!ctx || opts === undefined) throw(new Error('invalid route.params() call'));
+
+            const router = ctx.routeProviders.router;
+            const profile = ctx.routeProviders.profile;
+
+            ctx.routeProviders?.providersOsmAnd?.forEach(r => {
+                if (r.key === router) {
+                    r.profiles?.forEach(p => {
+                        if(p.key === profile) {
+                            p.params = opts;
+                        }
+                    });
+                }
+            });
+
+            ctx.setRouteProviders(ctx.routeProviders);
+        },
+
+        paused: false,
+        pause(ctx, state) {
+            // pause routing while RouteSettingsDialog open
+            if (!ctx || state === undefined) throw(new Error('invalid route.pause() call'));
+            mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { paused: state });
+        },
+
+        choose(ctx = null, { router = null, profile = null } = {}) {
+            /*
+                Switch to selected "router" and/or "profile":
+
+                1. use current router|profile when (any)===null
+                2. use first available when router|profile is not applicable
+                3. type is changed automatically according to applicated router
+
+                Examples:
+
+                choose(ctx, { profile }) - switch profile, keep router
+                choose(ctx, { router }) - switch router, try to keep profile
+                choose(ctx, { router, profile }) - switch both (if applicable)
+
+                Return: updated routeProviders (use if you need) or null
+            */
+            const routeProviders = ctx?.routeProviders;
+
+            if (!ctx || !routeProviders) throw(new Error('invalid route.choose() call'));
+
+            // use current values if not defined
+            router = router ?? routeProviders.router;
+            profile = profile ?? routeProviders.profile;
+
+            const providers = this.allProviders();
+
+            if (!providers.find(r => r.key === router)) {
+                router = providers[0].key ?? 'osmand'; // fallback
+            }
+
+            const profiles = this.allProfiles(router);
+
+            if (!profiles.find(p => p.key === profile)) {
+                profile = profiles[0].key ?? 'car'; // fallback
+            }
+
+            if (router && profile) {
+                const type = this.getProvider(router)?.type ?? 'osmand'; // fallback
+                console.log('choosen:', type, router, profile);
+                return mergeStateObject(routeProviders, ctx.setRouteProviders, { type, router, profile });
+            }
+
+            return routeProviders; // unmodified
+        },
+
+        /*
+            providersOSRM and providersOsmAnd are loaded by loadRouterProviders()
+            Nevertheless, providersOsmAnd might be used before they are loaded
+            Therefore, OsmAnd must be initialized with minimal-fallback data
+        */
+        providersOSRM: [],
+        providersOsmAnd: [Object.assign({}, preloaded,
+            { key: preloaded.router, profiles: [{ key: 'car', name: 'Car' }] })],
+
     };
 }
 
 // load and validate OSRM and OsmAnd routing providers
 async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
+    const nameAliases = {
+        'ZLZK': 'OSRM',
+        'Routing OSM DE (Demo)': 'OSRM (backup)'
+    };
+
     // load OSRM providers first
     const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
     if (osrm.ok) {
         try {
             const json = await osrm.json();
             if (json && json?.providers && json?.providers[0]?.name) {
+
+                json.providers.forEach(p => { // routes to profiles
+                    p.key = p.name; // name acts as key
+                    if (nameAliases[p.key]) {
+                        p.name = nameAliases[p.key];
+                    }
+                    if (p.routes) {
+                        p.routes.forEach(r => { // type to key
+                            r.key = r.type;
+                            delete r.type;
+                        });
+                        p.profiles = p.routes;
+                        delete p.routes;
+                    }
+                });
+
                 routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
                     providersOSRM: json.providers,
-                    // name: 'OsmAnd Advanced Router', // debug
-                    name: json.providers[0].name, // set first OSRM provider
-                    profile: json.providers[0]?.routes[0]?.name // select first profile
+                    type: json.providers[0].type,
+                    router: json.providers[0].key, // select first OSRM key and type
+                    profile: json.providers[0]?.profiles[0]?.key // select first profile
                 });
             }
         } catch { console.log('failed to load osrm providers'); }
@@ -169,7 +303,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
         try {
             const json = await osmand.json();
 
-            // Tracks-routing compatibility 
+            // Tracks-routing compatibility
             if (json && setCreatingRouteMode) {
                 let creatingData = _.cloneDeep(json);
                 creatingData = filterMode(creatingData);
@@ -184,22 +318,25 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
             }
 
             if (json) {
-                // convert OsmAnd "profiles" {} to OSRM "routes" []
-                // Note: sort, filter, additional profiles will be processed here
-
+                // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
+                // note: sort, filter, additional profiles will be processed here
+                // copy .params to .backup (used later to reset params in settings)
                 const converted = [];
                 Object.keys(json).forEach((k) => {
+                    if (json[k]?.params) {
+                        json[k].backup = copy(json[k]?.params);
+                    }
                     converted.push(json[k]);
                 });
 
                 // update default OsmAnd provider with actual profiles
                 routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-                    providersOsmAnd: [{
-                        type: routeProviders.providersOsmAnd[0].type,
-                        name: routeProviders.providersOsmAnd[0].name,
-                        url: routeProviders.providersOsmAnd[0].url,
-                         routes: converted
-                    }]
+                    providersOsmAnd: [
+                        Object.assign({},
+                            routeProviders.providersOsmAnd[0], // keep preloaded
+                            { profiles: converted } // add profiles
+                        )
+                    ]
                 });
             }
         } catch { console.log('failed to load osmand providers'); }

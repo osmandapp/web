@@ -78,6 +78,10 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
+        ctx.routeProviders.pause(ctx, openSettings);
+    }, [openSettings]);
+
+    useEffect(() => {
         if (!ctx.routeTrackFile) {
             if (btnFile.current) {
                 btnFile.current.value = "";
@@ -129,8 +133,7 @@ export default function RouteMenu() {
 
     return <>
         {openSettings &&
-            <RouteSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} profile={ctx.routeMode}
-                                 setProfile={ctx.setRouteMode} useDev={true}/>}
+            <RouteSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} useDev={true}/>}
         <MenuItem key='routeTop' sx={{mb: 1}} onClick={() => setOpen(!open)}>
             <ListItemIcon>
                 <Directions fontSize="small"/>
@@ -142,24 +145,19 @@ export default function RouteMenu() {
         <Collapse in={open} timeout="auto" unmountOnExit>
             <MenuItem key='routeprofile' sx={{ml: 1, mr: 2}} disableRipple={true}>
                 <FormControl fullWidth>
-                    <InputLabel id="route-mode-label">Route profile</InputLabel>
+                    <InputLabel id="route-mode-label">{`Route profile (${ctx.routeProviders.type})`}</InputLabel>
                     <Select
                         labelid="route-mode-label"
-                        label="Route profile"
-                        value={ctx.routeMode.mode}
-                        onChange={(e) => ctx.setRouteMode({
-                            mode: e.target.value, modes: ctx.routeMode.modes,
-                            opts: ctx.routeMode.modes[e.target.value]?.params
-                        })}
+                        label={`Route profile (${ctx.routeProviders.type})`}
+                        value={ctx.routeProviders.profile}
+                        onChange={(e) => ctx.routeProviders.choose(ctx, { profile: e.target.value })}
                     >
-                        {Object.entries(ctx.routeMode.modes).map(([key, vl]) =>
-                            <MenuItem key={key} value={key}>{vl.name}</MenuItem>
+                        { ctx.routeProviders.allProfiles().map(({ key, name }) =>
+                            <MenuItem key={key} value={key}>{name}</MenuItem>
                         )}
                     </Select>
                 </FormControl>
-                <IconButton sx={{ml: 1}} onClick={() => {
-                    setOpenSettings(true)
-                }}>
+                <IconButton sx={{ml: 1}} onClick={() => { setOpenSettings(true) }}>
                     <Settings fontSize="small"/>
                 </IconButton>
             </MenuItem>
@@ -293,7 +291,15 @@ export default function RouteMenu() {
                         Upload GPX to route
                     </Button>
                 </label>
+
             </MenuItem>
+            {/* <MenuItem key='test' disableRipple={true}>
+                <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
+                    ctx.routeProviders.choose(ctx);
+                }}>
+                    TEST
+                </Button>
+            </MenuItem> */}
 
         </Collapse>
     </>;
