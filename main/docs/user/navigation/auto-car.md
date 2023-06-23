@@ -46,11 +46,12 @@ While your device is connected to Android Auto, the map on the app screen is loc
 First, you need to select and configure the profile to be used when connecting to Android Auto. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).   
 -->
 
-:::caution
-Now, Android Auto uses the first [OsmAnd profile](../personal/profiles) on the Profile list for navigation. Please, set your prefered Profile at the first place ("Browse map" Profile is not readed by Android Auto):
-_OsmAnd menu → Settings → App Profiles → Edit profile list → move your profile on the top or after "Browse map" profile_ 
 
+:::note
+Now, Android Auto uses the first [OsmAnd profile](../personal/profiles) on the Profile list for navigation. Please, set your prefered Profile at the first place ("Browse map" Profile is not readed by Android Auto):
+*OsmAnd menu → Settings → App Profiles → Edit profile list → move your profile on the top or after "Browse map" profile* 
 :::
+
 
 For OsmAnd to work, you need to connect your Android device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
@@ -164,6 +165,8 @@ Favorites is one of the functions of OsmAnd that allows the user to make a kind 
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers.png)
 
+You can select Map Markers as your final destination. The list of markers that are added to your map are 
+
 
 ### Tracks
 
@@ -193,7 +196,9 @@ You can use the Search tool to find the required place on the map for route plan
 
 ### Folder Last modified
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
+
+The Favorites and Tracks categories have a special *Last Modified* folder. Since the list in these categories can be very large as it contains all your existing favorites or tracks, this folder is necessary for easy and quick access to your most recent destinations.   
 
 
 ## Additional features
