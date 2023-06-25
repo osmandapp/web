@@ -1,4 +1,4 @@
-import {get} from "axios";
+import { apiGet } from '../util/HttpApi';
 import icons from "../generated/poiicons.json";
 
 const POI_CATEGORIES = 'poiCategories';
@@ -12,7 +12,7 @@ async function getPoiCategories() {
     if (categories?.length > 0) {
         return categories;
     } else {
-        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`);
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`);
         if (response.data) {
             localStorage.setItem(POI_CATEGORIES, JSON.stringify(response.data))
             return response.data;
@@ -25,7 +25,7 @@ async function getTopPoiFilters() {
     if (filters?.length > 0) {
         return filters;
     } else {
-        let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-top-filters`);
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-top-filters`);
         if (response.data) {
             localStorage.setItem(TOP_POI_FILTERS, JSON.stringify(response.data))
             return response.data;
@@ -34,7 +34,7 @@ async function getTopPoiFilters() {
 }
 
 async function searchPoiCategories(search) {
-    let response = await get(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`,
+    let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`,
         {
             params: {
                 search: search,

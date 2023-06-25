@@ -6,11 +6,11 @@ import L from "leaflet";
 import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
 import icons from "../../generated/poiicons.json"
-import axios from 'axios';
 import 'leaflet-spin';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
 import {Alert} from "@mui/material";
+import {apiPost} from "../../util/HttpApi";
 
 export default function PoiLayer() {
 
@@ -28,15 +28,17 @@ export default function PoiLayer() {
     const [useLimit, setUseLimit] = useState(false);
     const [mapLimitExceeded, setMapLimitExceeded] = useState(false);
     const [addAlert, setAddAlert] = useState(false);
+    const [bbox, setBbox] = useState(null);
 
-    async function getPoi(controller, showPoiCategories) {
-        let bbox = map.getBounds();
+    async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         const searchData = {
             categories: showPoiCategories,
             northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
             southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+            savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
+            savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null
         };
-        let response = await axios.post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, searchData,
+        let response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, searchData,
             {
                 signal: controller.signal
             }
@@ -64,17 +66,21 @@ export default function PoiLayer() {
         return (!_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length);
     }
 
-    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories) => {
+    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories, savedBbox) => {
         map.spin(true, {color: '#1976d2'});
-        await getPoi(controller, showPoiCategories).then((res) => {
+        let bbox = map.getBounds();
+        await getPoi(controller, showPoiCategories, bbox, savedBbox).then((res) => {
             map.spin(false);
             if (res && !ignore) {
-                const newPoiList = {
-                    prevLayer: _.cloneDeep(poiList.layer),
-                    layer: createPoiLayer(res.features.features),
+                if (!res.alreadyFound) {
+                    const newPoiList = {
+                        prevLayer: _.cloneDeep(poiList.layer),
+                        layer: createPoiLayer(res.features.features),
+                    }
+                    setPoiList(newPoiList);
+                    setBbox(!res.useLimit ? bbox : null);
+                    setUseLimit(res.useLimit);
                 }
-                setPoiList(newPoiList);
-                setUseLimit(res.useLimit);
                 setMapLimitExceeded(res.mapLimitExceeded);
             }
         })
@@ -96,7 +102,7 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories);
+                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories, bbox);
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
@@ -208,6 +214,6 @@ export default function PoiLayer() {
 
 
     return <>
-        {addAlert && <Alert sx={{position: 'absolute', zIndex: 1000, left: '40%'}} severity="info">Please zoom in closer!</Alert>}
+        {addAlert && <Alert sx={{position: 'absolute', zIndex: 1000, left: '40%', top: '2%'}} severity="info">Please zoom in closer!</Alert>}
     </>
 }

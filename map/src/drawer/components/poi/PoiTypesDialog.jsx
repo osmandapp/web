@@ -204,7 +204,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     </div>
                 </Grid>
                 <Grid container spacing={2}>
-                    {ctx.poiCategory.filters.map((item, key) =>
+                    {ctx.poiCategory?.filters.map((item, key) =>
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
                                       onClick={() => {
