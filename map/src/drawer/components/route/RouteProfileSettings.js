@@ -25,18 +25,18 @@ export default function RouteProfileSettings({ useDev, setOpenSettings }) {
 
     const saveParams = () => {
         if (opts) {
-            ctx.routeProviders.params(ctx, opts);
+            ctx.routeProviders.PARAMS(ctx, opts);
         }
     };
 
     const onChangeRouter = (e) => {
         saveParams(); // before router change
-        ctx.routeProviders.choose(ctx, { router: e.target.value });
+        ctx.routeProviders.CHOOSE(ctx, { router: e.target.value });
     };
 
     const onChangeProfile = (e) => {
         saveParams(); // before profile change
-        ctx.routeProviders.choose(ctx, { profile: e.target.value });
+        ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value });
     };
 
     let section = '';

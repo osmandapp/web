@@ -282,74 +282,6 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg) {
-    setRouteData(null);
-    setRoutingErrorMsg(null);
-    const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
-    let inter = '';
-    interPoints.forEach((i) => {
-        inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
-    });
-    const endurl = `points=${endPoint.lat.toFixed(6)},${endPoint.lng.toFixed(6)}`;
-    let avoidRoadsUrl = '';
-    avoidRoads.forEach((i) => {
-        avoidRoadsUrl += ',' + i.id;
-    });
-    if (avoidRoadsUrl !== '') {
-        avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
-    }
-    getRouteText(true, null)
-    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let props = {};
-        if (data.msg) {
-            setRoutingErrorMsg(data.msg);
-            data = data.features;
-        }
-        if (data.features.length > 0) {
-            props = data.features[0]?.properties;
-        }
-        let allData = {geojson: data, id: new Date().getTime(), props: props};
-        setRouteData(allData);
-        getRouteText(false, allData)
-    }
-}
-
-async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints) {
-    let formData = new FormData();
-    formData.append('file', routeTrackFile);
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
-        method: 'POST',
-        body: formData
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let start, end;
-        let props = {};
-        if (data?.features?.length > 0) {
-            let coords = data?.features[0].geometry.coordinates;
-            if (coords.length > 0) {
-                start = {lat: coords[0][1], lng: coords[0][0]};
-                end = {lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0]};
-            }
-            props = data.features[0]?.properties;
-        }
-        setStartPoint(start);
-        setEndPoint(end);
-        setInterPoints([]);
-        setRouteData({geojson: data, id: new Date().getTime(), props: props});
-    } else {
-        let message = await response.text();
-        alert(message);
-    }
-}
-
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
@@ -375,7 +307,7 @@ export const AppContextProvider = (props) => {
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([])
-    // 
+    //
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
     // route
@@ -396,10 +328,10 @@ export const AppContextProvider = (props) => {
         let arr = searchParams.get('pin').split(',');
         pinInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
-    const [routeMode, setRouteMode] = useState({
-        mode: modeParam, opts: {},
-        modes: {'car': {name: 'Car', params: {}}}
-    });
+    // const [routeMode, setRouteMode] = useState({
+    //     mode: modeParam, opts: {},
+    //     modes: {'car': {name: 'Car', params: {}}}
+    // });
     const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
@@ -455,23 +387,28 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        if (routeTrackFile) {
-            calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints);
+        if (routeProviders.isReady() && routeTrackFile) {
+            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
+            RoutingManager.calculateGpxRoute({
+                routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints
+            });
         }
-    }, [routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint]);
+    }, [routeProviders, routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
-        if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg);
+        if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
+            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
+            RoutingManager.calculateRoute( {
+                routeProviders, startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg
+            });
         } else {
             setHeaderText(prevState => ({
                 ...prevState,
                 route: {text: ``}
             }));
         }
-        // ! routeTrackFile is not part of dependency ! 
-    }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
-
+        // ! routeTrackFile is not part of dependency ! really? :)
+    }, [routeProviders, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads]); // ,setRouteData
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
@@ -480,7 +417,7 @@ export const AppContextProvider = (props) => {
         } else {
             if (data) {
                 let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeMode.mode} is found.`
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.profile} is found.`
             }
         }
         setHeaderText(prevState => ({
@@ -517,7 +454,7 @@ export const AppContextProvider = (props) => {
         pinPoint, setPinPoint,
         interPoints, setInterPoints,
         routeData, setRouteData,
-        routeMode, setRouteMode,
+        // routeMode, setRouteMode,
         routeProviders, setRouteProviders,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,

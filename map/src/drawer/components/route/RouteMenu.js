@@ -78,7 +78,7 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        ctx.routeProviders.pause(ctx, openSettings);
+        ctx.routeProviders.PAUSE(ctx, openSettings);
     }, [openSettings]);
 
     useEffect(() => {
@@ -150,7 +150,7 @@ export default function RouteMenu() {
                         labelid="route-mode-label"
                         label={`Route profile (${ctx.routeProviders.type})`}
                         value={ctx.routeProviders.profile}
-                        onChange={(e) => ctx.routeProviders.choose(ctx, { profile: e.target.value })}
+                        onChange={(e) => ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value })}
                     >
                         { ctx.routeProviders.allProfiles().map(({ key, name }) =>
                             <MenuItem key={key} value={key}>{name}</MenuItem>
@@ -295,7 +295,7 @@ export default function RouteMenu() {
             </MenuItem>
             {/* <MenuItem key='test' disableRipple={true}>
                 <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
-                    ctx.routeProviders.choose(ctx);
+                    ctx.routeProviders.CHOOSE(ctx);
                 }}>
                     TEST
                 </Button>

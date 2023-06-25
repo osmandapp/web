@@ -102,6 +102,226 @@ function addModes(data) {
 function filterMode(data) {
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
+
+async function calculateRoute({
+    routeProviders,
+    startPoint,
+    endPoint,
+    interPoints,
+    avoidRoads,
+    routeMode,
+    setRouteData,
+    getRouteText,
+    setRoutingErrorMsg
+}) {
+    if (routeProviders.type === 'osmand') {
+        return calculateRouteOsmAnd({
+            startPoint,
+            endPoint,
+            interPoints,
+            avoidRoads,
+            routeMode,
+            setRouteData,
+            getRouteText,
+            setRoutingErrorMsg
+        });
+    }
+
+    // OSRM
+
+    const url = routeProviders.getURL();
+    const tail = '?geometries=geojson&overview=full&steps=true';
+    // /route/v1/car/5.27292619,46.24043224;5.521884918212891,46.7739372253418;5.823853492736816,47.001930236816406?overview=full&steps=true
+
+    const points = [];
+
+    const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
+
+    points.push(geo(startPoint));
+    interPoints?.forEach(i => points.push(geo(i)));
+    points.push(geo(endPoint));
+
+    const coordinates = points.join(';');
+
+    // console.log(url + coordinates + tail);
+    const response = await apiGet(url + coordinates + tail);
+
+    if (response.ok) {
+        const data = osrmToFeaturesCollection(await response.json());
+        const props = data.features[0]?.properties ?? {};
+        const allData = { geojson: data, id: new Date().getTime(), props: props };
+        setRouteData(allData);
+        getRouteText(false, allData);
+    }
+}
+
+function osrmToFeaturesCollection(osrm) {
+/*
+    convert OSRM routes[] to features[] "LineString"
+    convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
+    convert OSRM waypoints[] to features[] "Point" (OSRM's start-end)
+    convert OSRM duration/distance to properties
+
+    now support only 1st of routes[]
+*/
+    const features = [];
+
+    const cap = (s) => s && s[0].toUpperCase() + s.slice(1);
+
+    const maneuver = (s) => {
+        // imperative
+        const type = cap(s?.maneuver?.type ?? ''); // Turn
+        const modifier = cap(s?.maneuver?.modifier ?? ''); // Left
+
+        // target
+        const name = s?.name ?? ''; // street
+        const ref = s?.ref ? ` (${s.ref})` : ''; // (REF)
+
+        // go
+        const distance = s?.distance ?? '';
+
+        const imperative = type + ' ' + modifier;
+        const target = name ? 'to ' + name + ' ' + ref : '';
+        const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
+
+        return `${imperative} ${target} ${go}`; // Turn Slight right to Schirmschneise and go 621 meters
+    }
+
+    osrm?.routes?.forEach(r => {
+        // parse geo
+        features.push({
+            type: 'Feature',
+            geometry: r.geometry,
+            properties: {
+                overall: {
+                    time: r.duration,
+                    distance: r.distance
+                }
+            }
+        });
+        // parse turns
+        r.legs?.forEach(l => {
+            l.steps?.forEach(s => {
+                features.push({
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: s.maneuver?.location
+                    },
+                    properties: {
+                        description: maneuver(s)
+                    }
+                });
+            })
+        });
+    });
+
+    // parse points (really need?)
+    osrm?.waypoints?.forEach(w => {
+        features.push({
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: w.location
+            },
+            properties: {
+                description: w.name
+            }
+        });
+    });
+
+    return { type: 'FeatureCollection', features };
+}
+
+async function calculateRouteOsmAnd({
+    startPoint,
+    endPoint,
+    interPoints,
+    avoidRoads,
+    routeMode,
+    setRouteData,
+    getRouteText,
+    setRoutingErrorMsg
+}) {
+    setRouteData(null);
+    setRoutingErrorMsg(null);
+    const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
+    let inter = '';
+    interPoints.forEach((i) => {
+        inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
+    });
+    const endurl = `points=${endPoint.lat.toFixed(6)},${endPoint.lng.toFixed(6)}`;
+    let avoidRoadsUrl = '';
+    avoidRoads.forEach((i) => {
+        avoidRoadsUrl += ',' + i.id;
+    });
+    if (avoidRoadsUrl !== '') {
+        avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
+    }
+    getRouteText(true, null)
+    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
+        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    });
+    if (response.ok) {
+        let data = await response.json();
+        let props = {};
+        if (data.msg) {
+            setRoutingErrorMsg(data.msg);
+            data = data.features;
+        }
+        if (data.features.length > 0) {
+            props = data.features[0]?.properties;
+        }
+        let allData = {geojson: data, id: new Date().getTime(), props: props};
+        setRouteData(allData);
+        getRouteText(false, allData)
+    }
+}
+
+/*
+    calculateGpxRoute() processes GPX-data via API-request /routing/gpx-approximate
+    OSRM profiles car/bicycle/pedestrian are compatible and supported by API
+    OsmAnd profiles (ex-routeMode) are supported as is
+*/
+async function calculateGpxRoute({
+    routeMode,
+    routeTrackFile,
+    setRouteData,
+    setStartPoint,
+    setEndPoint,
+    setInterPoints
+}) {
+    let formData = new FormData();
+    formData.append('file', routeTrackFile);
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
+        method: 'POST',
+        body: formData
+    });
+    if (response.ok) {
+        let data = await response.json();
+        let start, end;
+        let props = {};
+        if (data?.features?.length > 0) {
+            let coords = data?.features[0].geometry.coordinates;
+            if (coords.length > 0) {
+                start = {lat: coords[0][1], lng: coords[0][0]};
+                end = {lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0]};
+            }
+            props = data.features[0]?.properties;
+        }
+        setStartPoint(start);
+        setEndPoint(end);
+        setInterPoints([]);
+        setRouteData({geojson: data, id: new Date().getTime(), props: props});
+    } else {
+        let message = await response.text();
+        alert(message);
+    }
+}
+
 /*
     OsmAnd provider structure and modifications: https://test.osmand.net/routing/routing-modes
 
@@ -128,9 +348,6 @@ function filterMode(data) {
         Arrays of loaded (= available) providers;
         Public Getters and Setters to work with;
         Private helpers.
-
-    TODO:
-        - test when OSRM and/or OsmAnd provides did not load
 */
 
 function initRouteProviders() {
@@ -148,6 +365,11 @@ function initRouteProviders() {
         router: preloaded.router, // ref to providers.key
         profile: preloaded.profile, // ref to profiles.key
 
+        // readiness
+        loaded: false,
+        paused: false,
+        isReady() { return this.loaded === true && this.paused === false },
+
         // getters (use copy to prevent direct modify by parents)
         allProviders() { return this._allProviders() }, // no-copy-need
         getProvider(router = this.router) { return copy(this._getProvider(router)) },
@@ -155,6 +377,7 @@ function initRouteProviders() {
         getProfile(router = this.router, profile = this.profile) { return copy(this._getProfile(router, profile)) },
         getParams(router = this.router, profile = this.profile) { return copy(this._getParams(router, profile)) },
         getResetParams(router = this.router, profile = this.profile) { return copy(this._getResetParams(router, profile)) },
+        getURL(router = this.router, profile = this.profile) { return this._getURL(router, profile) },
 
         // internals (strict and fast)
         _allProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // OSRM + OsmAnd
@@ -163,9 +386,10 @@ function initRouteProviders() {
         _getProfile(router, profile) { return this._allProfiles(router)?.find(p => p.key === profile) ?? {} },
         _getParams(router, profile) { return this._getProfile(router, profile)?.params },
         _getResetParams(router, profile) { return this._getProfile(router, profile)?.backup },
+        _getURL(router, profile) { return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url },
 
         // actions
-        params(ctx = null, opts) {
+        PARAMS(ctx = null, opts) {
             /*
                 Saving profile params isn't easy process:
 
@@ -174,7 +398,7 @@ function initRouteProviders() {
                 3. Therefore, we look into providersOsmAnd, rewrite params and call ctx-setter
             */
 
-            if (!ctx || opts === undefined) throw(new Error('invalid route.params() call'));
+            if (!ctx || opts === undefined) throw(new Error('invalid route.PARAMS() call'));
 
             const router = ctx.routeProviders.router;
             const profile = ctx.routeProviders.profile;
@@ -192,14 +416,13 @@ function initRouteProviders() {
             ctx.setRouteProviders(ctx.routeProviders);
         },
 
-        paused: false,
-        pause(ctx, state) {
+        PAUSE(ctx, state) {
             // pause routing while RouteSettingsDialog open
-            if (!ctx || state === undefined) throw(new Error('invalid route.pause() call'));
+            if (!ctx || state === undefined) throw(new Error('invalid route.PAUSE() call'));
             mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { paused: state });
         },
 
-        choose(ctx = null, { router = null, profile = null } = {}) {
+        CHOOSE(ctx = null, { router = null, profile = null } = {}) {
             /*
                 Switch to selected "router" and/or "profile":
 
@@ -209,15 +432,15 @@ function initRouteProviders() {
 
                 Examples:
 
-                choose(ctx, { profile }) - switch profile, keep router
-                choose(ctx, { router }) - switch router, try to keep profile
-                choose(ctx, { router, profile }) - switch both (if applicable)
+                CHOOSE(ctx, { profile }) - switch profile, keep router
+                CHOOSE(ctx, { router }) - switch router, try to keep profile
+                CHOOSE(ctx, { router, profile }) - switch both (if applicable)
 
                 Return: updated routeProviders (use if you need) or null
             */
             const routeProviders = ctx?.routeProviders;
 
-            if (!ctx || !routeProviders) throw(new Error('invalid route.choose() call'));
+            if (!ctx || !routeProviders) throw(new Error('invalid route.CHOOSE() call'));
 
             // use current values if not defined
             router = router ?? routeProviders.router;
@@ -237,7 +460,7 @@ function initRouteProviders() {
 
             if (router && profile) {
                 const type = this.getProvider(router)?.type ?? 'osmand'; // fallback
-                console.log('choosen:', type, router, profile);
+                // console.log('choosen:', type, router, profile);
                 return mergeStateObject(routeProviders, ctx.setRouteProviders, { type, router, profile });
             }
 
@@ -341,6 +564,16 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
             }
         } catch { console.log('failed to load osmand providers'); }
     }
+
+    routeProviders = mergeStateObject(routeProviders, setRouteProviders, { loaded: true }); // ready
+}
+
+function routeModeCompatible(routeProviders) {
+    const compatible = {
+        mode: routeProviders.profile,
+        opts: routeProviders.getParams() ?? {} // compatible opts can't be undefined
+    }
+    return compatible;
 }
 
 const RoutingManager = {
@@ -349,7 +582,10 @@ const RoutingManager = {
     validateRoutingCash,
     addSegmentToRouting,
     initRouteProviders,
-    loadRouteProviders
+    loadRouteProviders,
+    routeModeCompatible,
+    calculateGpxRoute,
+    calculateRoute
 }
 
 export default RoutingManager;
