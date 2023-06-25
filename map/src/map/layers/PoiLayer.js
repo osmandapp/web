@@ -10,6 +10,7 @@ import axios from 'axios';
 import 'leaflet-spin';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
+import {Alert} from "@mui/material";
 
 export default function PoiLayer() {
 
@@ -26,6 +27,7 @@ export default function PoiLayer() {
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
     const [mapLimitExceeded, setMapLimitExceeded] = useState(false);
+    const [addAlert, setAddAlert] = useState(false);
 
     async function getPoi(controller, showPoiCategories) {
         let bbox = map.getBounds();
@@ -107,8 +109,9 @@ export default function PoiLayer() {
         }
 
         if ((zoom < 8 && !_.isEmpty(ctx.showPoiCategories)) || mapLimitExceeded) {
-            alert("Please zoom in closer");
+            setAddAlert(true);
         } else {
+            setAddAlert(false);
             getPoiList().then();
             return () => {
                 ignore = true;
@@ -202,4 +205,9 @@ export default function PoiLayer() {
             }
         }
     }
+
+
+    return <>
+        {addAlert && <Alert sx={{position: 'absolute', zIndex: 1000, left: '40%'}} severity="info">Please zoom in closer!</Alert>}
+    </>
 }
