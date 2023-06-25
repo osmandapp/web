@@ -25,24 +25,17 @@ export default function PoiLayer() {
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
+    const [mapLimitExceeded, setMapLimitExceeded] = useState(false);
 
-    async function getPoi(controller, zoom, showPoiCategories) {
-        let latlng = map.getCenter();
+    async function getPoi(controller, showPoiCategories) {
         let bbox = map.getBounds();
-        const data = {
+        const searchData = {
             categories: showPoiCategories,
-            latBboxPoint1: bbox.getNorthEast().lat,
-            lngBboxPoint1: bbox.getNorthEast().lng,
-            latBboxPoint2: bbox.getSouthWest().lat,
-            lngBboxPoint2: bbox.getSouthWest().lng,
+            northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
+            southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
         };
-        let response = await axios.post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, data,
+        let response = await axios.post(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, searchData,
             {
-                params: {
-                    lat: latlng.lat.toFixed(6),
-                    lon: latlng.lng.toFixed(6),
-                    zoom: zoom
-                },
                 signal: controller.signal
             }
         ).catch(() => {
@@ -71,7 +64,7 @@ export default function PoiLayer() {
 
     const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories) => {
         map.spin(true, {color: '#1976d2'});
-        await getPoi(controller, zoom, showPoiCategories).then((res) => {
+        await getPoi(controller, showPoiCategories).then((res) => {
             map.spin(false);
             if (res && !ignore) {
                 const newPoiList = {
@@ -80,6 +73,7 @@ export default function PoiLayer() {
                 }
                 setPoiList(newPoiList);
                 setUseLimit(res.useLimit);
+                setMapLimitExceeded(res.mapLimitExceeded);
             }
         })
     }, 1000)).current;
@@ -112,7 +106,7 @@ export default function PoiLayer() {
             }
         }
 
-        if (zoom < 14 && !_.isEmpty(ctx.showPoiCategories)) {
+        if ((zoom < 8 && !_.isEmpty(ctx.showPoiCategories)) || mapLimitExceeded) {
             alert("Please zoom in closer");
         } else {
             getPoiList().then();
