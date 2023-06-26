@@ -181,9 +181,7 @@ From the list of tracks available in *Menu → My Places → [Tracks](../persona
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-tracks.png)
 
 
-### Search
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)  
+### Search 
 
 Going to Search gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POI, or coordinates are collected.
 
@@ -193,23 +191,28 @@ You can use the Search tool to find the required place on the map for route plan
 - [POI](../search/search-poi.md) and [Custom POI](../search/custom-poi-search.md)- the list of nearby similar names will also display POIs or their categories.
 - [Coordinates search](../search/search-address#coordinates-search) - enter the coordinates to find the point on the map.  
 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)   
+
 
 ### Folder Last modified
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
-
 The Favorites and Tracks categories have a special *Last Modified* folder. Since the list in these categories can be very large as it contains all your existing favorites or tracks, this folder is necessary for easy and quick access to your most recent destinations.   
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
 
 
 ## Additional features
 
 In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
 
+
 ### Voice prompts
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
+Voice prompts are one of the most useful features of OsmAnd while navigating for Android Auto, giving you real-time guidance and allowing the driver to stay focused on the road. Voice prompts provide clear instructions on turns, directions, and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
 
-In OsmAnd, you can set up [voice prompts](../navigation/guidance/voice-navigation.md) separately for one selected profile or for all profiles at once. Do this before starting a route on your device, tablet or phone. In Android Auto, the only setting available is to disable or enable all selected voice prompts at the same time.   
+To configure [voice prompts](../navigation/guidance/voice-navigation.md) according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. In Android Auto, only the setting to turn all selected voice prompts off or on at the same time is available.  
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
 
 ### Map mode
@@ -234,21 +237,19 @@ OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use 
 
 ### Screen Alert widget
 
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*. In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle. For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types). To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
+
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
-This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*. In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle. For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types). To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).
 
-
-### Map appearance
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance.png)  
+### Map appearance  
 
 On the screen of your vehicle's multimedia system, you can use both the 2D and 3D views of OsmAnd maps to display your route and navigation. For your map to have a 3D view, you need to open the main *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>* in the application directly. This has to be done before connecting to Android Auto. Read more about the setup 3D-view in the article *[Map Buttons](../widgets/map-buttons.md#3d-mode)*.  
 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance.png)
+
 
 ### Split-screen
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
 
 The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle's multimedia system screen simultaneously with music, message or other notification apps. Setting up the split-screen display on a phone connected to Android Auto or on the screen in your vehicle's system.  
 
@@ -256,6 +257,8 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle
 2. Tap Settings.
 3. Find Multi window and choose switch.
 4. Return to the home screen.  
+
+![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
 
 
 ## Issues
