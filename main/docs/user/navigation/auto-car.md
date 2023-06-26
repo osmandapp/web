@@ -234,33 +234,28 @@ OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use 
 
 ### Screen Alert widget
 
-This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different visual appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* in the app, not in Android Auto. For a detailed description of the types of alerts, see [this article](../widgets/nav-widgets.md#alert-types).    
-
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
+
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*. In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle. For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types). To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).
 
 
 ### Map appearance
 
-The screen of your vehicle's multimedia system can display 2D and 3D views of the OsmAnd map.  You can activate, deactivate and set up *[3D view](../widgets/map-buttons.md#3d-mode)* in the application *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*. Do this before connecting to Android Auto.  
-
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance.png)  
+
+On the screen of your vehicle's multimedia system, you can use both the 2D and 3D views of OsmAnd maps to display your route and navigation. For your map to have a 3D view, you need to open the main *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>* in the application directly. This has to be done before connecting to Android Auto. Read more about the setup 3D-view in the article *[Map Buttons](../widgets/map-buttons.md#3d-mode)*.  
 
 
 ### Split-screen
 
-The OsmAnd app can be opened and used to navigate in Android Auto on the screen of your vehicle's multimedia system at the same time as the music, message or other notification apps. Set up the display on the phone connected to Android Auto.  
-
-**!**
-The Multi window display feature can also be enabled and disabled from the Window Shade.
-1. From a Home screen, tap Apps
-2. Tap Settings.
-3. Tap Multi window.
-4. Tap the Multi window switch
-5. Return to the home screen. 
-
-https://support.google.com/androidauto/answer/6348063?hl=en&ref_topic=6106969 
-
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_map_split_screen.png)
+
+The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle's multimedia system screen simultaneously with music, message or other notification apps. Setting up the split-screen display on a phone connected to Android Auto or on the screen in your vehicle's system.  
+
+1. From Home screen, tap Apps.
+2. Tap Settings.
+3. Find Multi window and choose switch.
+4. Return to the home screen.  
 
 
 ## Issues
