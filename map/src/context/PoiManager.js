@@ -1,5 +1,6 @@
-import { apiGet } from '../util/HttpApi';
+import {apiGet} from '../util/HttpApi';
 import icons from "../generated/poiicons.json";
+import _ from "lodash";
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -37,11 +38,13 @@ async function searchPoiCategories(search) {
     let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`,
         {
             params: {
-                search: search,
+                search: search
             }
-        }).catch();
-    if (response.data) {
+        });
+    if (!_.isEmpty(response?.data)) {
         return response.data;
+    } else {
+        console.log(`Poi category not found`);
     }
 }
 

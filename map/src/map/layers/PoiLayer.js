@@ -42,11 +42,11 @@ export default function PoiLayer() {
             {
                 signal: controller.signal
             }
-        ).catch(() => {
-            console.log("The number of maps is more than limit")
-        });
+        )
         if (response?.data) {
             return response.data;
+        } else {
+            console.log(`Pois not found`);
         }
     }
 
@@ -73,13 +73,15 @@ export default function PoiLayer() {
             map.spin(false);
             if (res && !ignore) {
                 if (!res.alreadyFound) {
-                    const newPoiList = {
-                        prevLayer: _.cloneDeep(poiList.layer),
-                        layer: createPoiLayer(res.features.features),
+                    if (!res.mapLimitExceeded && res.features) {
+                        const newPoiList = {
+                            prevLayer: _.cloneDeep(poiList.layer),
+                            layer: createPoiLayer(res.features.features),
+                        }
+                        setPoiList(newPoiList);
+                        setBbox(!res.useLimit ? bbox : null);
+                        setUseLimit(res.useLimit);
                     }
-                    setPoiList(newPoiList);
-                    setBbox(!res.useLimit ? bbox : null);
-                    setUseLimit(res.useLimit);
                 }
                 setMapLimitExceeded(res.mapLimitExceeded);
             }

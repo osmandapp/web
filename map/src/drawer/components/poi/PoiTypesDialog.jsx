@@ -189,7 +189,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     </Grid>
                     <Grid item xs={2}>
                         <IconButton sx={{mt: '5px'}} type="button" aria-label="search"
-                                    onClick={showPoiCategoriesOnMap(null)}>
+                                    onClick={() => showPoiCategoriesOnMap(null)}>
                             <Search/>
                         </IconButton>
                     </Grid>
@@ -207,9 +207,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     {ctx.poiCategory?.filters.map((item, key) =>
                         <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
                             <MenuItem key={key + "type"}
-                                      onClick={() => {
-                                          showPoiCategoriesOnMap(PoiManager.formattingPoiType(item));
-                                      }}
+                                      onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiType(item))}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
                                     <div className={classes.icon}>
