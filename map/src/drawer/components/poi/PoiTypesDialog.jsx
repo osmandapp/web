@@ -49,6 +49,8 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     const [poiTypesResult, setPoiTypesResult] = useState([]);
     const [searchText, setSearchText] = useState(null);
     const [searchOptions, setSearchOptions] = useState([]);
+    const [searchError, setSearchError] = useState('');
+
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -72,10 +74,14 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     function showPoiCategoriesOnMap(category) {
         const selectedCategory = category ? category : selectedPoiCategory;
         if (selectedCategory) {
-            const categories = ctx.showPoiCategories;
-            categories.push(selectedCategory);
-            ctx.setShowPoiCategories([...categories]);
-            setDialogOpen(false);
+            if (ctx.showPoiCategories.includes(selectedCategory)) {
+                setSearchError(`This category is already selected!`)
+            } else {
+                const categories = ctx.showPoiCategories;
+                categories.push(selectedCategory);
+                ctx.setShowPoiCategories([...categories]);
+                setDialogOpen(false);
+            }
         }
     }
 
@@ -149,6 +155,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                 <TextField
                                     value={searchText}
                                     onChange={e => {
+                                        setSearchError('');
                                         if (e.target.value === '') {
                                             setSearchOptions(Object.keys(ctx.poiCategory.categories));
                                         }
@@ -158,6 +165,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                                     {...params}
                                     label="Search"
                                     variant="outlined"
+                                    helperText={searchError ? searchError : ''}
                                     fullWidth
 
                                 />
