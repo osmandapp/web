@@ -328,10 +328,6 @@ export const AppContextProvider = (props) => {
         let arr = searchParams.get('pin').split(',');
         pinInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
-    // const [routeMode, setRouteMode] = useState({
-    //     mode: modeParam, opts: {},
-    //     modes: {'car': {name: 'Car', params: {}}}
-    // });
     const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
@@ -454,7 +450,6 @@ export const AppContextProvider = (props) => {
         pinPoint, setPinPoint,
         interPoints, setInterPoints,
         routeData, setRouteData,
-        // routeMode, setRouteMode,
         routeProviders, setRouteProviders,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,

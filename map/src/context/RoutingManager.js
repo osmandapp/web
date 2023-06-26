@@ -114,6 +114,7 @@ async function calculateRoute({
     getRouteText,
     setRoutingErrorMsg
 }) {
+    // OsmAnd (call original function)
     if (routeProviders.type === 'osmand') {
         return calculateRouteOsmAnd({
             startPoint,
@@ -128,10 +129,8 @@ async function calculateRoute({
     }
 
     // OSRM
-
     const url = routeProviders.getURL();
     const tail = '?geometries=geojson&overview=full&steps=true';
-    // /route/v1/car/5.27292619,46.24043224;5.521884918212891,46.7739372253418;5.823853492736816,47.001930236816406?overview=full&steps=true
 
     const points = [];
 
@@ -144,7 +143,7 @@ async function calculateRoute({
     const coordinates = points.join(';');
 
     // console.log(url + coordinates + tail);
-    const response = await apiGet(url + coordinates + tail);
+    const response = await apiGet(url + coordinates + tail, { apiCache: true });
 
     if (response.ok) {
         const data = osrmToFeaturesCollection(await response.json());
@@ -262,6 +261,7 @@ async function calculateRouteOsmAnd({
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
         + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        apiCache: true,
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -297,6 +297,7 @@ async function calculateGpxRoute({
     let formData = new FormData();
     formData.append('file', routeTrackFile);
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
+        apiCache: true,
         method: 'POST',
         body: formData
     });
@@ -406,7 +407,7 @@ function initRouteProviders() {
             ctx.routeProviders?.providersOsmAnd?.forEach(r => {
                 if (r.key === router) {
                     r.profiles?.forEach(p => {
-                        if(p.key === profile) {
+                        if (p.key === profile) {
                             p.params = opts;
                         }
                     });

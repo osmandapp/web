@@ -115,7 +115,7 @@ export async function apiGet(url, options = null) {
     let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options, options?.body) : null;
 
     if (cacheKey && cache[cacheKey]) {
-        console.log('cache-hit', cacheKey);
+        // console.log('cache-hit', cacheKey);
         return cache[cacheKey];
     }
 

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Button, Checkbox, FormControlLabel, 
+import { Button, Checkbox, FormControlLabel,
         FormControl, InputLabel,
         Tooltip, Select, MenuItem } from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
@@ -40,7 +40,7 @@ const onCheckBox = (key, opts, setOpts) => (e) => {
     setOpts(nopts);
 }
 
-
+// now is used by TracksManager, not by RoutingManager
 export default function RouteSettingsDialog({ setOpenSettings, profile, setProfile, useDev}) {
     const ctx = useContext(AppContext);
     const [opts, setOpts] = useState(profile.opts);

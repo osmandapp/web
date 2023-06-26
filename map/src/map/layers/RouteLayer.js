@@ -86,9 +86,10 @@ const RouteLayer = ({geocodingData}) => {
             obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
         }
         if (Object.keys(obj).length > 0) {
-            if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
-                obj['mode'] = ctx.routeMode.mode;
-            }
+            // TODO add route profile if start+end are set
+            // if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
+            //     obj['mode'] = ctx.routeMode.mode;
+            // }
             setSearchParams(obj);
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeMode]);
