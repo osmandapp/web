@@ -314,7 +314,6 @@ export const AppContextProvider = (props) => {
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeShowPoints, setRouteShowPoints] = useState(true);
-    let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
     let startInit, endInit, pinInit;
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
@@ -480,7 +479,7 @@ export const AppContextProvider = (props) => {
         routingCash, setRoutingCash,
         routingNewSegments, setRoutingNewSegments,
         processRouting, setProcessRouting,
-        selectedWpt, setSelectedWpt
+        selectedWpt, setSelectedWpt,
     }}>
         {props.children}
     </AppContext.Provider>;

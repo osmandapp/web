@@ -103,57 +103,6 @@ function filterMode(data) {
     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
 }
 
-async function calculateRoute({
-    routeProviders,
-    startPoint,
-    endPoint,
-    interPoints,
-    avoidRoads,
-    routeMode,
-    setRouteData,
-    getRouteText,
-    setRoutingErrorMsg
-}) {
-    // OsmAnd (call original function)
-    if (routeProviders.type === 'osmand') {
-        return calculateRouteOsmAnd({
-            startPoint,
-            endPoint,
-            interPoints,
-            avoidRoads,
-            routeMode,
-            setRouteData,
-            getRouteText,
-            setRoutingErrorMsg
-        });
-    }
-
-    // OSRM
-    const url = routeProviders.getURL();
-    const tail = '?geometries=geojson&overview=full&steps=true';
-
-    const points = [];
-
-    const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
-
-    points.push(geo(startPoint));
-    interPoints?.forEach(i => points.push(geo(i)));
-    points.push(geo(endPoint));
-
-    const coordinates = points.join(';');
-
-    // console.log(url + coordinates + tail);
-    const response = await apiGet(url + coordinates + tail, { apiCache: true });
-
-    if (response.ok) {
-        const data = osrmToFeaturesCollection(await response.json());
-        const props = data.features[0]?.properties ?? {};
-        const allData = { geojson: data, id: new Date().getTime(), props: props };
-        setRouteData(allData);
-        getRouteText(false, allData);
-    }
-}
-
 function osrmToFeaturesCollection(osrm) {
 /*
     convert OSRM routes[] to features[] "LineString"
@@ -232,6 +181,62 @@ function osrmToFeaturesCollection(osrm) {
     return { type: 'FeatureCollection', features };
 }
 
+async function calculateRoute({
+    routeProviders,
+    startPoint,
+    endPoint,
+    interPoints,
+    avoidRoads,
+    routeMode,
+    setRouteData,
+    getRouteText,
+    setRoutingErrorMsg
+}) {
+    // OsmAnd (call original function)
+    if (routeProviders.type === 'osmand') {
+        return calculateRouteOsmAnd({
+            startPoint,
+            endPoint,
+            interPoints,
+            avoidRoads,
+            routeMode,
+            setRouteData,
+            getRouteText,
+            setRoutingErrorMsg
+        });
+    }
+
+    // OSRM
+    const url = routeProviders.getURL();
+    const tail = '?geometries=geojson&overview=full&steps=true';
+
+    const points = [];
+
+    const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
+
+    points.push(geo(startPoint));
+    interPoints?.forEach(i => points.push(geo(i)));
+    points.push(geo(endPoint));
+
+    const coordinates = points.join(';');
+
+    setRoutingErrorMsg(null);
+    getRouteText(true, null);
+
+    // console.log(url + coordinates + tail);
+    const response = await apiGet(url + coordinates + tail, { apiCache: true });
+
+    if (response.ok) {
+        const data = osrmToFeaturesCollection(await response.json());
+        const props = data.features[0]?.properties ?? {};
+        const allData = { geojson: data, id: new Date().getTime(), props: props };
+        setRouteData(allData);
+        getRouteText(false, allData);
+    } else {
+        setRouteData(null);
+    }
+}
+
 async function calculateRouteOsmAnd({
     startPoint,
     endPoint,
@@ -242,7 +247,7 @@ async function calculateRouteOsmAnd({
     getRouteText,
     setRoutingErrorMsg
 }) {
-    setRouteData(null);
+    // setRouteData(null); // don't reset (for better rendering)
     setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';
@@ -278,6 +283,8 @@ async function calculateRouteOsmAnd({
         let allData = {geojson: data, id: new Date().getTime(), props: props};
         setRouteData(allData);
         getRouteText(false, allData)
+    } else {
+        setRouteData(null);
     }
 }
 
@@ -379,6 +386,7 @@ function initRouteProviders() {
         getParams(router = this.router, profile = this.profile) { return copy(this._getParams(router, profile)) },
         getResetParams(router = this.router, profile = this.profile) { return copy(this._getResetParams(router, profile)) },
         getURL(router = this.router, profile = this.profile) { return this._getURL(router, profile) },
+        getProviderByType(type = this.type) { return copy(this._getProviderByType(type)) },
 
         // internals (strict and fast)
         _allProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // OSRM + OsmAnd
@@ -388,6 +396,7 @@ function initRouteProviders() {
         _getParams(router, profile) { return this._getProfile(router, profile)?.params },
         _getResetParams(router, profile) { return this._getProfile(router, profile)?.backup },
         _getURL(router, profile) { return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url },
+        _getProviderByType(type) { return this._allProviders()?.find(r => r.type === type) ?? {} },
 
         // actions
         PARAMS(ctx = null, opts) {
@@ -423,7 +432,7 @@ function initRouteProviders() {
             mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { paused: state });
         },
 
-        CHOOSE(ctx = null, { router = null, profile = null } = {}) {
+        CHOOSE(ctx = null, { type = null, router = null, profile = null } = {}) {
             /*
                 Switch to selected "router" and/or "profile":
 
@@ -437,11 +446,20 @@ function initRouteProviders() {
                 CHOOSE(ctx, { router }) - switch router, try to keep profile
                 CHOOSE(ctx, { router, profile }) - switch both (if applicable)
 
+                Special case (used for searchParams / share route link):
+
+                CHOOSE(ctx, { type, [profile] }) - select 1st type's provider
+
                 Return: updated routeProviders (use if you need) or null
             */
             const routeProviders = ctx?.routeProviders;
 
             if (!ctx || !routeProviders) throw(new Error('invalid route.CHOOSE() call'));
+
+            if (type && !router) {
+                router = routeProviders.getProviderByType(type)?.key ?? 'osmand';
+                // console.log('type', type, 'router', router);
+            }
 
             // use current values if not defined
             router = router ?? routeProviders.router;
@@ -460,7 +478,7 @@ function initRouteProviders() {
             }
 
             if (router && profile) {
-                const type = this.getProvider(router)?.type ?? 'osmand'; // fallback
+                type = this.getProvider(router)?.type ?? 'osmand'; // fallback
                 // console.log('choosen:', type, router, profile);
                 return mergeStateObject(routeProviders, ctx.setRouteProviders, { type, router, profile });
             }
@@ -564,6 +582,15 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                 });
             }
         } catch { console.log('failed to load osmand providers'); }
+    }
+
+    // set type/profile according to window.location.search
+    const searchParams = new URLSearchParams(window.location.search);
+    const type = searchParams.get('type');
+    const profile = searchParams.get('profile');
+    if (type && profile) {
+        // emulate ctx {} for CHOOSE() call
+        routeProviders.CHOOSE({ routeProviders, setRouteProviders }, { type, profile });
     }
 
     routeProviders = mergeStateObject(routeProviders, setRouteProviders, { loaded: true }); // ready

@@ -32,7 +32,6 @@ const useStyles = makeStyles({
     }
 })
 
-
 function formatRouteInfo(props) {
     let res = ['Route: '];
     if (props?.overall?.distance) {
@@ -64,7 +63,6 @@ function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ", " + pnt.lng.toFixed(5);
 }
 
-
 export default function RouteMenu() {
 
     const ctx = useContext(AppContext);
@@ -80,6 +78,15 @@ export default function RouteMenu() {
     useEffect(() => {
         ctx.routeProviders.PAUSE(ctx, openSettings);
     }, [openSettings]);
+
+    useEffect(() => {
+        if (ctx.routeProviders.loaded && ctx.routeTypeInit && ctx.routeProfileInit) {
+            ctx.routeProviders.CHOOSE(ctx, {
+                type: ctx.routeTypeInit,
+                profile: ctx.routeProfileInit
+            });
+        }
+    }, [ctx.routeTypeInit, ctx.routeProfileInit, ctx.routeProviders.loaded]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -129,7 +136,6 @@ export default function RouteMenu() {
             return fieldValue;
         }
     }
-
 
     return <>
         {openSettings &&
@@ -295,9 +301,14 @@ export default function RouteMenu() {
             </MenuItem>
             {/* <MenuItem key='test' disableRipple={true}>
                 <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
-                    ctx.routeProviders.CHOOSE(ctx);
+                    ctx.routeProviders.CHOOSE(ctx, { type: 'osmand', profile: 'xxx' });
                 }}>
-                    TEST
+                    TEST1
+                </Button>
+                <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
+                    ctx.routeProviders.CHOOSE(ctx, { type: 'osrm', profile: 'xxx' });
+                }}>
+                    TEST2
                 </Button>
             </MenuItem> */}
 
