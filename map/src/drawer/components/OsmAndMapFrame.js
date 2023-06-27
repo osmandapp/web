@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Drawer, Toolbar, Box, SnackbarContent, Button} from "@mui/material";
+import {Drawer, Toolbar, Box, SnackbarContent, Button, Alert} from "@mui/material";
 import {
     IconButton, AppBar
 } from "@mui/material";
@@ -64,15 +64,9 @@ const OsmAndMapFrame = () => {
                     </AppBar>
                     </Box>
                     {ctx.routingErrorMsg &&
-                        <SnackbarContent sx={{backgroundColor: "#1976d2", marginTop: "3px"}}
-                                         message={ctx.routingErrorMsg}
-                                         action={
-                                             <Button key='close' onClick={() => {
-                                                 ctx.setRoutingErrorMsg(null);
-                                             }}>
-                                                 <Close sx={{color: "#ffffff"}}/>
-                                             </Button>
-                                         }/>}
+                        <Alert severity="warning" onClose={() => ctx.setRoutingErrorMsg(null)}>
+                            {ctx.routingErrorMsg}
+                        </Alert>}
                     <OsmAndMap/>
                     <GeneralPanelButtons drawerWidth={drawerWidth}/>
                 </Box>

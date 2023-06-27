@@ -234,6 +234,8 @@ async function calculateRoute({
         getRouteText(false, allData);
     } else {
         setRouteData(null);
+        getRouteText(false, null);
+        setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
 }
 
@@ -270,7 +272,7 @@ async function calculateRouteOsmAnd({
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
-    if (response.ok) {
+    if (response.ok && response.data?.features) {
         let data = await response.json();
         let props = {};
         if (data.msg) {
@@ -285,6 +287,8 @@ async function calculateRouteOsmAnd({
         getRouteText(false, allData)
     } else {
         setRouteData(null);
+        getRouteText(false, null);
+        setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
 }
 
