@@ -133,7 +133,7 @@ B. You can click the SQLiteDb-file on your email, cloud, or messenger, download 
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,actions,export_profile"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,actions,export_profile"/>*  
 
 A. <Translate ios="true" ids="shared_string_import,quick_action_map_source_title,shared_string_continue,shared_string_import_complete,gpx_finish"/>  
 
