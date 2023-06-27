@@ -357,9 +357,9 @@ async function calculateGpxRoute({
     routeProviders comprises:
 
         Currently selected provider: type, router (key), profile (key) -- will use these to keep in routing results;
+        Public getters() and ACTIONS() to work with;
         Arrays of loaded (= available) providers;
-        Public Getters and Setters to work with;
-        Private helpers.
+        Internal helper functions
 */
 
 function initRouteProviders() {
