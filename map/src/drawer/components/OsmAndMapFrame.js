@@ -1,9 +1,9 @@
 import React, {useContext, useState} from 'react';
-import {Drawer, Toolbar, Box, SnackbarContent, Button, Alert} from "@mui/material";
+import {Drawer, Toolbar, Box, Alert} from "@mui/material";
 import {
     IconButton, AppBar
 } from "@mui/material";
-import {Close, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu} from '@mui/icons-material';
+import {KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu} from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import {Outlet} from 'react-router-dom';
