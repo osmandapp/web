@@ -297,7 +297,6 @@ export default function RouteMenu() {
                         Upload GPX to route
                     </Button>
                 </label>
-
             </MenuItem>
         </Collapse>
     </>;
