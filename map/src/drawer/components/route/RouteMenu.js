@@ -299,19 +299,6 @@ export default function RouteMenu() {
                 </label>
 
             </MenuItem>
-            {/* <MenuItem key='test' disableRipple={true}>
-                <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
-                    ctx.routeProviders.CHOOSE(ctx, { type: 'osmand', profile: 'xxx' });
-                }}>
-                    TEST1
-                </Button>
-                <Button variant="contained" component="span" sx={{ml: 2}} onClick={() => {
-                    ctx.routeProviders.CHOOSE(ctx, { type: 'osrm', profile: 'xxx' });
-                }}>
-                    TEST2
-                </Button>
-            </MenuItem> */}
-
         </Collapse>
     </>;
 
