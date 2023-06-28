@@ -68,8 +68,8 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
                 if (elevationSRTM) {
-                    eleSRTM = TracksManager.getEle(point, elevationSRTM, points).toFixed(2);
-                    if (!elevation) {
+                    eleSRTM = TracksManager.getEle(point, elevationSRTM, points)?.toFixed(2);
+                    if (eleSRTM && !elevation) {
                         eleSRTM = Math.round(eleSRTM * 10) / 10;
                         minEle = Math.min(eleSRTM, minEle);
                         maxEle = Math.max(eleSRTM, maxEle);

@@ -116,8 +116,8 @@ const OsmAndMap = () => {
                 url={ctx.tileURL.url}
             />
 
-            {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons}/>}
+            {hoverPoint &&
+                <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph}/>}
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
             <ContextMenu setGeocodingData={setGeocodingData}/>

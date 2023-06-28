@@ -1,101 +1,219 @@
-import React, {useContext} from 'react';
-import {Area, Tooltip, XAxis, YAxis, Legend, Line, ComposedChart} from "recharts";
+import React, {useContext, useRef} from 'react';
+import {Chart} from 'react-chartjs-2';
+import {
+    Tooltip,
+    Legend,
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    LineElement,
+    Filler
+} from "chart.js";
 import {Typography} from "@mui/material";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
+import zoomPlugin from "chartjs-plugin-zoom";
+
+const mouseLine = {
+    id: 'mouseLine',
+    afterEvent: function (chart, e) {
+        const chartArea = chart.chartArea;
+        chart.options.mouseLine = {};
+        if (e.event.x >= chartArea.left && e.event.y >= chartArea.top &&
+            e.event.x <= chartArea.right && e.event.y <= chartArea.bottom &&
+            chart._active.length > 0) {
+            chart.options.mouseLine = {};
+            chart.options.mouseLine.x = chart._active[0].element.x;
+        } else {
+            chart.options.mouseLine = {};
+            chart.options.mouseLine.x = NaN;
+        }
+    },
+    afterDraw: function (chart) {
+        const ctx = chart.ctx;
+        const chartArea = chart.chartArea;
+        const x = chart.options.mouseLine?.x;
+        if (!isNaN(x)) {
+            ctx.save();
+            ctx.lineWidth = 1
+            ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
+            ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
+            ctx.strokeStyle = '#ff595e';
+            ctx.stroke();
+            ctx.restore();
+        }
+    }
+}
+
+
+ChartJS.register(
+    Tooltip,
+    Legend,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    LineElement,
+    Filler,
+    zoomPlugin,
+    mouseLine
+);
+
 
 export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, minSpeed, maxSpeed}) {
+
     const ctx = useContext(AppContext);
 
     minEle = Math.ceil(minEle / 10) * 10;
     maxEle = Math.floor(maxEle / 10) * 10;
 
-    function onMouseMoveGraph(e) {
-        if (e.isTooltipActive) {
-            if (ctx.mapMarkerListener && ctx.selectedGpxFile) {
-                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-                const lat = Object.values(pointList)[e.activeTooltipIndex].lat;
-                const lng = Object.values(pointList)[e.activeTooltipIndex].lng;
+    const chartRef = useRef(null);
+
+    function onMouseMoveGraph(e, chartRef) {
+        if (!chartRef) {
+            return;
+        }
+        if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
+            let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+            const ind = chartRef.current._active[0].element.$context.index;
+            if (ind) {
+                const lat = Object.values(pointList)[ind].lat;
+                const lng = Object.values(pointList)[ind].lng;
                 ctx.mapMarkerListener(lat, lng);
+            } else {
+                ctx.mapMarkerListener(null);
             }
         } else {
-            ctx.mapMarkerListener(null, null);
+            ctx.mapMarkerListener(null);
         }
     }
 
+
+    const options = {
+        responsive: true,
+        spanGaps: true,
+        interaction: {
+            intersect: false,
+            mode: 'index'
+        },
+        plugins: {
+            tooltips: {
+                mode: "index",
+                intersect: false
+            },
+            hover: {
+                mode: "nearest",
+                intersect: false,
+                includeInvisible: true
+            },
+            legend: {
+                display: false
+            },
+            zoom: {
+                limits: {
+                    y: {min: minEle - 10, max: maxEle + 10}
+                },
+                zoom: {
+                    wheel: {
+                        enabled: true,
+                        rangeMax: {
+                            y: maxEle
+                        }
+                    },
+                    mode: "xy",
+                    speed: 100,
+                },
+                pan: {
+                    enabled: true,
+                    mode: "xy",
+                    speed: 100
+                }
+            }
+        },
+        scales: {
+            x: {
+                display: true,
+                ticks: {
+                    beginAtZero: true,
+                    maxTicksLimit: 7,
+                }
+            },
+            y1: {
+                display: minEle && maxEle,
+                position: 'left',
+            },
+            y2: {
+                display: minSpeed !== null && maxSpeed !== null,
+                position: 'right',
+                grid: {
+                    drawOnChartArea: false,
+                }
+            },
+        }
+    };
+
+    const graphData = {
+        labels: data.map((d) => {
+            if (d[`${xAxis}`] !== 0) {
+                return d[`${xAxis}`].toFixed(2)
+            } else {
+                return 0;
+            }
+        }),
+        datasets: [
+            {
+                label: 'Elevation',
+                type: 'line',
+                data: data.map((d) => d[`${yAxis}`]),
+                borderColor: 'rgb(53, 162, 235)',
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                min: minEle,
+                max: maxEle,
+                fill: true,
+                yAxisID: 'y1',
+                pointRadius: 0
+            },
+            {
+                label: 'ElevationSRTM',
+                type: 'line',
+                data: data.map((d) => d[`ElevationSRTM`]),
+                borderColor: '#ffc939',
+                backgroundColor: '#f7fabe',
+                min: minEle,
+                max: maxEle,
+                fill: true,
+                yAxisID: 'y1',
+                pointRadius: 0
+            },
+            {
+                label: 'Speed',
+                type: 'line',
+                data: data.map((d) => d[`Speed`]),
+                borderColor: '#ff595e',
+                min: minSpeed,
+                max: maxSpeed,
+                yAxisID: 'y2',
+                pointRadius: 0
+            },
+        ],
+    };
+
+
     return (<>
             <Typography component={'span'} type="title" color="inherit" sx={{p: 0}}>
-                <ComposedChart
+                <Chart
+                    ref={chartRef}
                     width={width}
                     height={150}
-                    data={data}
                     margin={{top: 0, right: 0, left: -20, bottom: 0}}
                     style={{fontSize: 10}}
-                    onMouseMove={onMouseMoveGraph}
-                >
-                    <defs>
-                        <linearGradient id="colorEl" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#8ac827" stopOpacity={0.9}/>
-                            <stop offset="95%" stopColor="#bddbb0" stopOpacity={0}/>
-                        </linearGradient>
-                        <linearGradient id="colorElSRTM" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#aad3df" stopOpacity={0.9}/>
-                            <stop offset="95%" stopColor="#bddbb0" stopOpacity={0}/>
-                        </linearGradient>
-                    </defs>
-                    <XAxis
-                        dataKey={xAxis}
-                        type="number"
-                        tickCount={9}
-                        tick={{fontSize: 10}}/>
-                    <YAxis
-                        yAxisId="left"
-                        dataKey={yAxis}
-                        type="number"
-                        tickCount={6}
-                        domain={[minEle, maxEle]}
-                        tick={{fontSize: 10}}/>
-                    <YAxis
-                        yAxisId="left"
-                        dataKey="ElevationSRTM"
-                        type="number"
-                        tickCount={6}
-                        domain={[minEle, maxEle]}
-                        tick={{fontSize: 10}}/>
-                    <YAxis
-                        yAxisId="right"
-                        orientation="right"
-                        dataKey="Speed"
-                        type="number"
-                        tickCount={6}
-                        domain={[minSpeed, maxSpeed]}
-                        tick={{fontSize: 10}}/>
-                    <Legend
-                        style={{fontSize: 10}}/>
-                    <Tooltip/>
-                    <Area
-                        yAxisId="left"
-                        type="monotone"
-                        dataKey="Elevation"
-                        stroke="#8ac827"
-                        fillOpacity={1}
-                        fill="url(#colorEl)"
-                    />
-                    <Area
-                        yAxisId="left"
-                        type="monotone"
-                        dataKey="ElevationSRTM"
-                        stroke="#aad3df"
-                        fillOpacity={1}
-                        fill="url(#colorElSRTM)"
-                    />
-                    <Line
-                        yAxisId="right"
-                        dataKey="Speed"
-                        dot={false}
-                        stroke="#ffacde"
-                    />
-                </ComposedChart>
+                    data={graphData}
+                    options={options}
+                    onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
+                    onMouseLeave={() => ctx.mapMarkerListener(null)}
+                />
             </Typography>
         </>
     );
