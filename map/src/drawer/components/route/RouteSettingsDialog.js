@@ -44,16 +44,22 @@ const onCheckBox = (key, opts, setOpts) => (e) => {
 export default function RouteSettingsDialog({ setOpenSettings, profile, setProfile, useDev}) {
     const ctx = useContext(AppContext);
     const [opts, setOpts] = useState(profile.opts);
-    const handleClose = () => {
-        setOpenSettings(false);
-        setOpts(ctx.routeMode.opts);
-    };
-    const handleAccept = () => {
+
+    const handleCloseAccept = () => {
         setOpenSettings(false);
         let newRouteMode = Object.assign({}, profile);
         newRouteMode.opts = opts;
         setProfile(newRouteMode);
     };
+
+    const showReset = () => {
+        return opts &&
+            JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams('osmand', profile.name));
+    }
+    const handleReset = () => {
+        setOpts(ctx.routeProviders.getResetParams('osmand', profile.name)); // compatible, temporarly
+    };
+
     section = '';
 
     function checkDevSection(opt) {
@@ -63,7 +69,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
     }
 
     return (
-        <Dialog open={true} onClose={handleClose}>
+        <Dialog open={true} onClose={handleCloseAccept}>
             <DialogTitle>Additional Route Settings</DialogTitle>
             <DialogContent>
                 {Object.entries(opts).map(([key, opt]) =>
@@ -96,8 +102,8 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
 
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleAccept}>OK</Button>
+                {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                <Button onClick={handleCloseAccept}>OK</Button>
             </DialogActions>
         </Dialog>
     );
