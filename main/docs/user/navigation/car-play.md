@@ -113,13 +113,15 @@ To build a route to a POI in CarPlay, follow these steps:
 
 1. Select the needed POI from the list of available categories or enter the name of the POI using [Search](#search). 
 2. OsmAnd calculates the route and displays it on the CarPlay screen. Tap **Start** button to start navigating to that location. 
-3. Depending on your OsmAnd app settings and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to your destination.
+3. Depending on your OsmAnd app settings and your vehicle<!-- или настроек в профиле который используется для кп?-->, you may receive [voice prompts](#voice-prompts) to guide you to your destination.
 6. When you arrive at the location, the app will notify you that you have reached the POI.
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-poi(1).png)  
 
 
 ### Map markers
+
+<!-- To define your final destination as a Map Marker, you first need to create the required number of markers in the OsmAnd app on your device before connecting it to the system. Markers need to be available in the *Menu → Map marker* list. This is described in more detail in the [*Markers*](../personal/markers.md) article. -->
 
 To use [markers](../personal/markers.md#overview) in CarPlay for navigation, they need to be added in advance in the OsmAnd app on your device, tablet or phone, and they need to be available in the *Menu → Map marker* list.   
 
@@ -135,33 +137,38 @@ Favorites is one of the functions of OsmAnd that allows the user to make a kind 
 
 ### Tracks
 
-:::tip
-It is better not to choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
-:::
+To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks.md#import-track) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
 
-From the list of tracks available in the OsmAnd app in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in the CarPlay list or on the device connected to the vehicle's multimedia system. The route will either build up to the start of the track or display the current direction along the track.   
+From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks.md)*, select the required one before connecting to the vehicle's multimedia system, and the route will either build up to the start of the track or display the current direction along the track.   
+
+Tracks can also be selected directly on the vehicle screen in CarPlay. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified). 
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
 
 ### Search
 
-With this option, you can search for the necessary places on the map to navigate. For convenience, you can search by different categories.  
-- [Address search](../search/search-address.md) - enter the needed address in the search field.
-- [POI search](../search/search-poi.md) - search by Point of Interest names.
-- [Custom search](../search/custom-poi-search.md) - search by the categories you created.
-- [History search](../search/search-history.md) - displays your whole search history.
-- Coordinate search - suggests different formats of coordinates.  
+Going to Search gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POI, or coordinates are collected.
+
+You can use the Search tool to find the required place on the map for route planning from any available search category.
+
+- [Address](../search/search-address.md) - start typing the address in the search field.
+- [POI](../search/search-poi.md) and [Custom POI](../search/custom-poi-search.md)- the list of nearby similar names will also display POIs or their categories.
+- [Coordinates search](../search/search-address#coordinates-search) - enter the coordinates to find the point on the map.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)
 
 
 ## Additional features
 
+In addition to the basic features of the OsmAnd app in CarPlay that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
+
 
 ### Voice prompts
 
-In OsmAnd, you can configure voice prompts for the selected profile. Do this before you start your route on your device, tablet, or phone, as you will not be able to do this on your vehicle screen. For how to do this, see the article [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md). To see recommended settings for CarPlay, click here.  
+Voice prompts are one of the most useful features of OsmAnd while navigating for CarPlay, giving you real-time guidance and allowing the driver to stay focused on the road. Voice prompts provide clear instructions on turns, directions, and other navigation instructions, providing a safer and more comfortable use of the navigation system.  
+
+To configure [Voice prompts](../navigation/guidance/voice-navigation.md) according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for CarPlay, click here.  
 
 
 ### Announce incoming text messages
@@ -177,15 +184,19 @@ You can also enable or disable Announce messages directly in CarPlay. Read about
 
 ### Screen Alert widget
 
-This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
-You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.  
+<!-- This [widget](../widgets/nav-widgets.md#alert-widget) combines alert types such as **Pedestrian crosswalks** and **Speed Limit**.  
+You can set them up by going to *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>*.  -->
+
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*. In Car Play it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle. For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types). To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).   
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 
 ### Map appearance
 
-You can change the viewing angle for the 2.5D view of the map on your vehicle's multimedia system screen.  
+You can change the viewing angle for the 3D view of the map on your vehicle's multimedia system screen.  
+
+On the screen of your vehicle's multimedia system, you can use both the 2D and 3D views of OsmAnd maps to display your route and navigation. For your map to have a 3D view, you need to open the main *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>* in the application directly. This has to be done before connecting to Car Play. Read more about the setup 3D-view in the article.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)    
 
@@ -196,10 +207,10 @@ The Car Play dashboard will soon be able to display and use the OsmAnd navigatio
 
 <!-- 
 Most common issues 
-__
-Troubleshooting
-Fixes issues with voice control
-__
+-->
+## Troubleshooting
+
+### Fixes issues with voice control
 
 Sometimes CarPlay won't connect, or you just can't hear anything even though it's connected. Other times, the OsmAnd app doesn't open properly in CarPlay. Here are some of the factors that affect CarPlay's performance and possible solutions.  
 
@@ -224,16 +235,14 @@ Choose which speakers to use.
 - On your phone or tablet, turn on Bluetooth.
 - Pair your phone or tablet to your car.
 - Set the source for your car's audio system to Bluetooth.
-    - On your Android phone or tablet, open the OsmAnd.
+    - On your phone or tablet, open the OsmAnd.
     - Tap your profile picture or initial Account Circle and then Settings Settings and then Navigation settings.
     - Choose an option:
        - To hear navigation from your car speakers, turn on Play voice over Bluetooth.
        - To hear navigation from your phone or tablet’s speaker, turn off Play voice over Bluetooth.  
 
--->
 
-
-## Volume control issue
+### Volume control issue
 
 In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
 If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri during a call. Hold down the button on the steering wheel that turns on Siri, and during the call, adjust the volume using the dashboard or steering wheel.  

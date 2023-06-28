@@ -107,7 +107,6 @@ You can select previously preset and added [Markers](../personal/markers.md#sett
 2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
 3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
--->
 
 **Note**  
 While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
@@ -130,55 +129,45 @@ In the History category, you can select a destination from a list of endpoints. 
 
 ### POI
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_poi_1.png)  
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_poi_2.png)
-
 POIs (points of interest) are a type of points that are highlighted on the map by special icons provided in the [OsmAnd settings](../map/point-layers-on-map.md#points-of-interest-poi) and sorted into groups. 
 
 To build a route to a POI in Android Auto, follow these steps:
 
-1. Select the needed POI from the list of available categories or enter the name of the POI using [Search](#search). 
+1. Select the needed POI from the list of available categories, or enter the name of the POI using [Search](#search). 
 2. OsmAnd calculates the route and displays it on the Android Auto screen. Tap **Start** button to start navigating to that location. 
-3. Depending on your OsmAnd app settings and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to your destination.
+3. Depending on your OsmAnd app [settings](../navigation/guidance/navigation-settings.md) and your vehicle, you may receive [voice prompts](#voice-prompts) to guide you to a destination.  
 
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-7.png)
+<table class="image">
+    <tr>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_2.png').default} alt="AA"/></td>
+    </tr>
+</table> 
 
-<!-- 
-Маркеры не отображаются в АА (Баг или не сделали)
-## Markers
-
-To use [markers](../personal/markers.md#overview) in Android Auto for navigation, they need to be added in advance in the OsmAnd app on your device, tablet or phone, and they need to be available in the *Menu → Map marker* list.     
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-10.png)
--->
 
 ### Favorites
 
+*Favorites* is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle's multimedia system.  
+
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_favorites.png)
-
-Favorites is one of the functions of OsmAnd that allows the user to make a kind of bookmark (note) on the map. While using Android Auto you cannot add or modify Favourites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, configure everything you need before connecting the device to your vehicle's multimedia system.  
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-favrites.png)
 
 
 ### Map markers
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers.png)
+To define your final destination as a Map Marker, you first need to create the required number of markers in the OsmAnd app on your device before connecting it to the system. Markers need to be available in the *Menu → Map marker* list. This is described in more detail in the [*Markers*](../personal/markers.md) article. 
 
-You can select Map Markers as your final destination. The list of markers that are added to your map are 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
 
 
 ### Tracks
 
+To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks.md#import-track) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
+
+From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks.md)*, select the required one before connecting to the vehicle's multimedia system, and the route will either build up to the start of the track or display the current direction along the track.   
+
+Tracks can also be selected directly on the vehicle screen in Android Auto. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified).  
+
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
-
-:::tip
-Do not choose tracks that are obviously far away from your current location. It can take a long time to get to the starting point of the track.
-:::
-
-From the list of tracks available in *Menu → My Places → [Tracks](../personal/tracks.md)*, you can select the necessary one in Android Auto or on the device connected to the vehicle's multimedia system and the route will either build up to the start of the track or display the current direction along the track.  
-
-![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-tracks.png)
 
 
 ### Search 
