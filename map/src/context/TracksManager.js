@@ -80,12 +80,21 @@ function openVisibleTracks(localTracks) {
 
 function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+
+    if(currentTrackIndex === -1) {
+        tracks.push(ctx.selectedGpxFile);
+        currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    }
+
     let track;
     if (currentTrackIndex !== -1) {
         track = ctx.selectedGpxFile;
     } else {
-        track = tracks[tracks.length - 1];
+        track = ctx.selectedGpxFile;
+        // track = tracks[tracks.length - 1]; // wtf
+        console.log('saveLocalTrack unknown currentTrackIndex');
     }
+
     let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
     if (!totalSize) {

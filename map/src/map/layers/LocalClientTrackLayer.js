@@ -56,7 +56,10 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 checkDeleteSelected();
-                if (ctx.createTrack?.enable && ctx.selectedGpxFile?.points) {
+                if (ctx.createTrack?.enable &&
+                    (ctx.selectedGpxFile?.points?.length > 0 ||
+                    ctx.selectedGpxFile?.wpts?.length > 0)
+                ) {
                     saveLocal();
                 }
                 checkZoom();
@@ -186,7 +189,11 @@ export default function LocalClientTrackLayer() {
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
+            // localTracks exist: do update/append
             TracksManager.saveTracks(ctx.localTracks, ctx);
+        } else {
+            // localTracks empty: add gpx as 1st track (points and/or wpts are included)
+            createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts);
         }
     }
 
@@ -434,9 +441,9 @@ export default function LocalClientTrackLayer() {
         layers.addLayer(marker);
     }
 
-    function createLocalTrack(file, points) {
+    function createLocalTrack(file, points = [], wpts = []) {
         TracksManager.prepareTrack(file);
-        file.tracks = [{points: points}];
+        file.tracks = [{points: points, wpts: wpts}];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
         file.index = ctx.localTracks.length;
         ctx.localTracks.push(file);
