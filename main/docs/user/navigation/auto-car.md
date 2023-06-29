@@ -38,20 +38,31 @@ While your device is connected to Android Auto, the map on the app screen is loc
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)
 
 
+### Interaction with the map
+
+Android Auto displays the OsmAnd interface adapted to the vehicle's multimedia system screen. Interaction with the map is limited to buttons such as:  
+
+- [*OsmAnd menu*](#destination-points) - contains a list of available options to assign an endpoint to the route.
+- *Settings* - this button is responsible for access to turn [voice promts](#voice-prompts) on or off while you are navigating a selected route.
+- [*Search*](#search) - tapping the button opens a screen with access to the search functions. 
+- [*My Location*](../widgets/map-buttons.md#my-location--zoom) - moves the visible part of the map so that your current location is in the center of the screen.
+- *Zoom* - allows you to zoom in and out of the visible part of the map.
+- *[Compass](../widgets/map-buttons.md#compass)* - shows which of the four available map orientation modes on your device screen is selected.
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction.png)
+
+
 ## Start navigation
 
-1. To use the OsmAnd app in Android Auto, you have to purchase the **paid version** of the app or [subscribe](../purchases/android.md#free-and-paid-features).    
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_first_screen.png)  
+
+To use the OsmAnd app in Android Auto, you have to purchase the **paid version** of the app or [subscribe](../purchases/android.md#free-and-paid-features).    
 
 <!-- 
 First, you need to select and configure the profile to be used when connecting to Android Auto. You can read how to configure a profile in the article [Profiles (Settings)](../personal/profiles).   
 -->
 
-
-:::note
-Now, Android Auto uses the first [OsmAnd profile](../personal/profiles) on the Profile list for navigation. Please, set your prefered Profile at the first place ("Browse map" Profile is not readed by Android Auto):
-*OsmAnd menu → Settings → App Profiles → Edit profile list → move your profile on the top or after "Browse map" profile* 
-:::
-
+Android Auto uses the first [OsmAnd profile](../personal/profiles) in the Profiles list for navigation. Set the preferred profile to the first place, the "Browse map" profile is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your profile to the first place or after the *Browse map* profile.  
 
 For OsmAnd to work, you need to connect your Android device to the vehicle's multimedia system.  
 - Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/).
@@ -60,7 +71,7 @@ For OsmAnd to work, you need to connect your Android device to the vehicle's mul
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-setup.png)
 
-
+<!-- 
 ### Setup Android Auto
 
 Setup block, Add proper links for Apple and Google documentation
@@ -73,50 +84,33 @@ All categories for route endpoint selection, [History](#history), [POIs](#poi-ca
 А это разве касается АА?
  Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in CarPlay may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.
 -->
-
+<!--
 ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-start.png)  ![Android Auto screen](@site/static/img/navigation/auto-car/android-auto-stop.png)  
-
+-->
 <!--
 Второй скриншот с виджетом ограничения скорости? в 31 км?
 Если так, то такого не бывает. есть знаки ограничения с целыми числами или кратных 5.
 -->
 
-### Interaction with the map
-
-Most OsmAnd settings directly related to navigation are available in Android Auto. Interaction with the map is limited to *My Location* and *Zoom*. Android Auto also has the *[Compass](../widgets/map-buttons.md#compass)* widget. The rest of the settings are focused on getting the end point for the route on the map. <!-- что тут за последнее предложение? если rest - то ОК, но компасс тогда не в тему.-->
-
-- **OsmAnd menu**
-- **Settings** are responsible for turning [voice promts](#voice-prompts) on/off.
-- **Search**
-- **My Location**
-- **Zoom**
-- **Map orientatin**
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_first_screen.png)
-
 
 ## Destination Points
 
-You can select previously preset and added [POIs](#poi-categories), or [Favorites](#favorites), or [Map Markers](#map-markers)  as a destination point. It is also possible to select a recorded or downloaded [Track](#tracks) for the route, use the [Search](#search), or select a destination from the route [History](#history).   
-1. Select the necessary point category from the list, POIs, Favorites, or Markers.  
-2. From the folder list that opens, select the folder you need.  
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).   
+
+1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
+  
     - All categories can contain no more list items than are provided by your vehicle's multimedia system. This means that the list in Android Auto could be incomplete and all other folders are only available in the OsmAnd app on your device.    
     -  The [Last modified](#folder-last-modified) folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
-    - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.
-2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
-3. Select [Address Search](#search) to enter a destination from the available search categories. 
+    - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.  
 
+2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.  
 
-**Note**  
-While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+3. Select [Search](#search) to enter a destination from the available search categories.  
 
-
-<!-- Тут два ноута подряд, так себе. и нет вступления по выбору точек назначения с последующими ссылками - История, ПОИ... -->
-
-
-**Note**  
-Through the **Settings** menu in Android Auto you can select the end point of the route, *without any ability to add intermediate destinations*.
+:::note
+While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+:::
 
 
 ### History

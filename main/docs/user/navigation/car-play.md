@@ -16,11 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>  
 
-## Overview
 
-:::tip NOTE
-To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [paid version of the app or to subscribe](../purchases/ios#free-and-paid-features).
-:::
+## Overview
 
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [CarPlay](https://www.apple.com/ios/carplay/) is software that puts an adapted version of the OsmAnd application on the display of your vehicle's multimedia system, making it easier and safer to access the navigation functions of the application without using your hands.  
 
@@ -28,7 +25,29 @@ To use CarPlay on your vehicle's screen, follow these steps:
 
 1. CarPlay is not available in all countries. Make sure it is supported in your [country or region](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) and that CarPlay is supported in your [vehicle model](https://www.apple.com/ios/carplay/available-models/).
 2. [Connect your device](https://support.apple.com/en-gb/HT203412) to your vehicle's multimedia system using a USB port or wirelessly with Wi-Fi or Bluetooth. When connecting for the first time, you may need permission to use CarPlay on your device. 
-3. Once connected, the CarPlay interface will automatically appear on your vehicle screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.
+3. Once connected, the CarPlay interface will automatically appear on your vehicle screen with all available apps. If the CarPlay home screen does not appear, select the CarPlay logo on the vehicle display.  
+
+
+### Connection screen
+
+While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
+
+![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
+
+
+### Interaction with the map
+
+CarPlay displays the OsmAnd interface adapted to the vehicle's multimedia system screen. Interaction with the map is limited to:  
+
+- [*My Location*](../widgets/map-buttons.md#my-location--zoom) - moves the visible part of the map so that your current location is in the center of the screen.
+- *Zoom* - allows you to zoom in and out of the visible part of the map.   
+
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
+
+
+### CarPlay profile
+
+[CarPlay profile](../personal/global-settings.md#carplay-profile)
 
 
 ## Setup
@@ -40,21 +59,17 @@ First, you need to select and configure the profile to be used when connecting t
 - Once connected, you can set a destination and start OsmAnd navigation in CarPlay.  
 
 <!-- Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet.  -->
-
+<!--
 Setup block, Add proper links for Apple and Google documentation
  Apple https://support.apple.com/en-us/HT205634
  Google https://support.google.com/androidauto/answer/6348029?hl=en
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
-
-
-## CarPlay profile
-
-[CarPlay profile](../personal/global-settings.md#carplay-profile)
-
-
+-->
 
 ## Start navigation
+
+To use the iOS version of the OsmAnd app in CarPlay, you have to purchase a [paid version of the app or to subscribe](../purchases/ios#free-and-paid-features).  
 
 1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the CarPlay screen or in the [OsmAnd app](../navigation/setup/route-navigation.md).
 2. You can use [voice prompts](#voice-prompts) to listen for directions or messages about issues on the road.  
@@ -71,31 +86,27 @@ All categories for **route endpoint** selection, *[History](#history), [POIs](#p
 <!-- ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start-2(1).png)  -->
 
 
-### Interaction with the map
-
-Most OsmAnd settings directly related to navigation are available in CarPlay. Interaction with the map is limited to *My Location* and *Zoom*.  
-
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
-
-
 ## Select a route endpoint 
 
-You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the Search, or select a destination from the route history.   
-1. Select the necessary category from the user points: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
-- In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
-    -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).   
+
+1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
+  
+    - All categories can contain no more list items than are provided by your vehicle's multimedia system. This means that the list in Android Auto could be incomplete and all other folders are only available in the OsmAnd app on your device.    
+    -  The [Last modified](#folder-last-modified) folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
-- The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), as well as the distance from the point of the current location to it.
-2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
-3. Select [Address Search](#search) to enter a destination from the available search categories. 
+    - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.  
+
+2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.  
+
+3. Select [Search](#search) to enter a destination from the available search categories.  
 
 :::note
-While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](./guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 :::
 
-:::note
+**Note**
 Through the **Navigation** menu in Car Play, you can select the end point of the route, *without any ability to add intermediate destinations*.  
-:::
 
 
 ### History
@@ -244,7 +255,8 @@ Choose which speakers to use.
 
 ### Volume control issue
 
-In most cases, all signals remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+In most cases, all **signals** remain at constant full volume, separate from the audio playback settings at the same time. To change the volume of the OsmAnd navigation prompts when using CarPlay, go to *Setup → Voice → Voice volume* on the vehicle's multimedia system screen.  
+
 If this method does not work, there is another option. To adjust the notification volume, you need to turn on Siri during a call. Hold down the button on the steering wheel that turns on Siri, and during the call, adjust the volume using the dashboard or steering wheel.  
 
 
