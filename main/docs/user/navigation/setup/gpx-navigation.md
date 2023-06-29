@@ -45,8 +45,8 @@ GPX usually contains a sequence of points (waypoints) that define a route. It ca
 
 In OsmAnd, GPX file can be created using:
 
-- ["Plan a route"](../../plan-route/create-route.md) tool.
-- [Create a route -> Save](./route-details.md#save--export).  
+- *[Plan a route](../../plan-route/create-route.md)* tool.
+- [Create a route -> Save](./route-details.md#share--export-actions).  
 - [Trip (track) recording](../../plugins/trip-recording.md) plugin.
 - [Web portal](../../plan-route/web.md#tracks) (Pro subscription required).
 
@@ -136,7 +136,7 @@ Also you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing
 
 ### Attach to roads
 
-When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the "Attach to the roads" option in the [*Navigation menu*](../setup/route-navigation.md#navigation-menu) (only in the **Android** version of the app) or in the [*Follow track menu*](#follow-track-menu) (both Android and iOs versions). If you tap this option,  the ['Plan a route'](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)* (only in the **Android** version of the app) or in the *[Follow track menu](#follow-track-menu)* (both Android and iOs versions). If you tap this option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.
 
 <Tabs groupId="operating-systems">
 
@@ -156,7 +156,7 @@ When your track selected as a *[destination point](../setup/route-navigation.md#
 
 - Threshold distance (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
 - When you change the profile, OsmAnd automatically reattaches your track to the allowed for this profile roads.
-If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **'Apply'** is active, and the track can be used for navigation.
+If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
 :::note
 After attaching your track to the roads in [Route details section](../setup/route-details.md), you will find more precise information about your route and [Voice instructions](#guidance) will be more detailed.

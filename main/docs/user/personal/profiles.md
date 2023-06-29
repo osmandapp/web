@@ -584,7 +584,7 @@ This feature is currently not available for the Android version of the OsmAnd ap
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
 
-This menu opens *[Wikipedia plugin settings](../plugins/development.md#plugin-settings)*. You can choose in which language the articles will be shown to you, and decide whether to download images from Wikipedia or not.
+This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can choose in which language the articles will be shown to you, and decide whether to download images from Wikipedia or not.
 
 ## Actions
 
