@@ -3,7 +3,6 @@ import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import {useNavigate} from "react-router-dom";
 import TracksManager from "../../context/TracksManager";
-import {get} from "axios";
 import { apiGet } from '../../util/HttpApi';
 
 export default function ContextMenu({setGeocodingData, setRegionData}) {
@@ -83,7 +82,7 @@ export default function ContextMenu({setGeocodingData, setRegionData}) {
 
     async function getRegions(latlng) {
         setRegionData(null);
-        await get(`${process.env.REACT_APP_USER_API_SITE}/mapapi/regions-by-latlon?`,
+        await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/regions-by-latlon?`,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),
