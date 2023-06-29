@@ -86,14 +86,12 @@ function saveLocalTrack(tracks, ctx) {
         currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     }
 
-    let track;
-    if (currentTrackIndex !== -1) {
-        track = ctx.selectedGpxFile;
-    } else {
-        track = ctx.selectedGpxFile;
-        // track = tracks[tracks.length - 1]; // wtf
-        console.log('saveLocalTrack unknown currentTrackIndex');
+    if (currentTrackIndex === -1) {
+        console.error('saveLocalTrack unknown currentTrackIndex');
+        return;
     }
+
+    const track = ctx.selectedGpxFile;
 
     let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
