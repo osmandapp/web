@@ -81,14 +81,9 @@ function openVisibleTracks(localTracks) {
 function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
 
-    if(currentTrackIndex === -1) {
+    if (currentTrackIndex === -1) {
         tracks.push(ctx.selectedGpxFile);
         currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-    }
-
-    if (currentTrackIndex === -1) {
-        console.error('saveLocalTrack unknown currentTrackIndex');
-        return;
     }
 
     const track = ctx.selectedGpxFile;

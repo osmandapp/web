@@ -443,7 +443,7 @@ export default function LocalClientTrackLayer() {
 
     function createLocalTrack(file, points = [], wpts = []) {
         TracksManager.prepareTrack(file);
-        file.tracks = [{points: points, wpts: wpts}];
+        file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
         file.index = ctx.localTracks.length;
         ctx.localTracks.push(file);
