@@ -35,7 +35,7 @@ It is important to remember that Android Auto is a data-intensive application, i
 
 While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
 
-![Android Auto](@site/static/img/navigation/auto-car/android-auto-osmand_screen.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)
 
 
 ## Start navigation
@@ -67,7 +67,7 @@ Setup block, Add proper links for Apple and Google documentation
  Apple https://support.apple.com/en-us/HT205634
  Google https://support.google.com/androidauto/answer/6348029?hl=en
 
-All categories for route endpoint selection, [History](#history), [POIs](#poi-categories),<!--[Markers](#map-markers), --> [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides.
+All categories for route endpoint selection, [History](#history), [POIs](#poi-categories),[Markers](#map-markers), [Search](#address-search), [Favourites](#favorites), and [Tracks](#tracks) may contain no more list items than your vehicle's multimedia system provides.
 
 <!--
 А это разве касается АА?
@@ -97,19 +97,19 @@ Most OsmAnd settings directly related to navigation are available in Android Aut
 
 ## Destination Points
 
-**!**
-You can select previously preset and added [Markers](../personal/markers.md#settings), [Favorites](../personal/favorites.md), or [POIs](../map/point-layers-on-map.md#points-of-interest-poi) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the search, or select a destination from the route history.   
-1. Select the necessary category from the list: [*POI categories*](#poi-categories), [*Map markers*](#map-markers) or [*Favorites*](#favorites) and [Tracks](#tracks).  
-- In the folder list that opens, select the needed one. A list of just 12 or 24 folders is available, the number depends on your vehicle's multimedia system. All other folders are only available in the app on your phone or tablet.  
-    -  The *Last modified* folder contains a list of recent destinations, sorted by date added or changed.
+You can select previously preset and added [POIs](#poi-categories), or [Favorites](#favorites), or [Map Markers](#map-markers)  as a destination point. It is also possible to select a recorded or downloaded [Track](#tracks) for the route, use the [Search](#search), or select a destination from the route [History](#history).   
+1. Select the necessary point category from the list, POIs, Favorites, or Markers.  
+2. From the folder list that opens, select the folder you need.  
+    - All categories can contain no more list items than are provided by your vehicle's multimedia system. This means that the list in Android Auto could be incomplete and all other folders are only available in the OsmAnd app on your device.    
+    -  The [Last modified](#folder-last-modified) folder contains a list of recent destinations, sorted by date added or changed.
     -  The list of all other folders is sorted by the most recent update, new folders are at the top of the list. It is not possible to change their order manually.
-- The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), as well as the distance from the point of the current location to it.
+    - The list of points within folders is sorted by the distance to them, starting with the nearest. Each point has a name or coordinates, a shaped icon (color and icon set by default or chosen by you in the OsmAnd application), and the distance from the point of the current location to it.
 2. Select the [History](#history) category to find one of the recent destinations that are stored in the device's memory.
 3. Select [Address Search](#search) to enter a destination from the available search categories. 
 
 
 **Note**  
-While driving, selected points can be announced when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
+While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
 
 
 <!-- Тут два ноута подряд, так себе. и нет вступления по выбору точек назначения с последующими ссылками - История, ПОИ... -->
@@ -121,15 +121,14 @@ Through the **Settings** menu in Android Auto you can select the end point of th
 
 ### History
 
-
-In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [Search History](../search/search-history.md) article.  
+In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [*Search History*](../search/search-history.md) article.  
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)
 
 
-### POI
+### POI Categories
 
-POIs (points of interest) are a type of points that are highlighted on the map by special icons provided in the [OsmAnd settings](../map/point-layers-on-map.md#points-of-interest-poi) and sorted into groups. 
+POIs (Points of Interest) are a type of points that identify places or objects on the map that are important or of interest to users. They are highlighted by special icons provided in the [OsmAnd settings](../map/point-layers-on-map.md#poi-types) and sorted into groups.  
 
 To build a route to a POI in Android Auto, follow these steps:
 
@@ -147,7 +146,7 @@ To build a route to a POI in Android Auto, follow these steps:
 
 ### Favorites
 
-*Favorites* is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [Favorites](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle's multimedia system.  
+*Favorites* is one of the functions of OsmAnd that allows the user to make a kind of bookmarks (notes) on the map. While using Android Auto you cannot add or modify Favorites, only use existing ones. The list of [*Favorites*](../personal/favorites.md#manage-favorites) can be found in the OsmAnd app *Menu → My Places → Favorites*. If you want to use them for navigation, add the necessary places in the favorites before connecting the device to your vehicle's multimedia system.  
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_favorites.png)
 
