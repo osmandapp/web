@@ -314,7 +314,7 @@ export const AppContextProvider = (props) => {
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeShowPoints, setRouteShowPoints] = useState(true);
-    let startInit, endInit, pinInit;
+    let startInit, endInit, pinInit, interInit = [];
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
@@ -327,6 +327,12 @@ export const AppContextProvider = (props) => {
         let arr = searchParams.get('pin').split(',');
         pinInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
+    if (searchParams.get('inter')) {
+        searchParams.get('inter').split(';').forEach(ll => {
+            const [lat, lng] = ll.split(',');
+            interInit.push({lat: parseFloat(lat), lng: parseFloat(lng)});
+        });
+    }
     const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
@@ -335,7 +341,7 @@ export const AppContextProvider = (props) => {
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
-    const [interPoints, setInterPoints] = useState([]);
+    const [interPoints, setInterPoints] = useState(interInit ?? []);
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
