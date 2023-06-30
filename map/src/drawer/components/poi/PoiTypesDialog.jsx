@@ -141,80 +141,71 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                 </Grid>
             </Grid>
             <DialogContent>
-                <Grid container spacing={2}>
-                    <Grid item xs={10}>
-                        <Autocomplete
-                            value={selectedPoiCategory}
-                            onChange={(event, newValue, reason) => {
-                                if (reason === 'clear') {
+                <Autocomplete
+                    value={selectedPoiCategory}
+                    onChange={(event, newValue, reason) => {
+                        if (reason === 'clear') {
+                            setSearchOptions(Object.keys(ctx.poiCategory.categories));
+                        }
+                        showPoiCategoriesOnMap(PoiManager.formattingPoiType(newValue));
+                    }}
+                    renderInput={params => (
+                        <TextField
+                            value={searchText}
+                            onChange={e => {
+                                setSearchError('');
+                                if (e.target.value === '') {
                                     setSearchOptions(Object.keys(ctx.poiCategory.categories));
                                 }
-                                setSelectedPoiCategory(PoiManager.formattingPoiType(newValue));
+                                setSearchText(e.target.value);
+                                searchPoiCategory(e.target.value).then();
                             }}
-                            renderInput={params => (
-                                <TextField
-                                    value={searchText}
-                                    onChange={e => {
-                                        setSearchError('');
-                                        if (e.target.value === '') {
-                                            setSearchOptions(Object.keys(ctx.poiCategory.categories));
-                                        }
-                                        setSearchText(e.target.value);
-                                        searchPoiCategory(e.target.value).then();
-                                    }}
-                                    {...params}
-                                    label="Search"
-                                    variant="outlined"
-                                    helperText={searchError ? searchError : ''}
-                                    fullWidth
+                            {...params}
+                            label="Search"
+                            variant="outlined"
+                            helperText={searchError ? searchError : ''}
+                            fullWidth
 
-                                />
-                            )}
-                            isOptionEqualToValue={(option, value) => option.value === value.value}
-                            selectOnFocus
-                            clearOnBlur
-                            handleHomeEndKeys
-                            id="category"
-                            options={searchOptions}
-                            renderOption={(props, option) =>
-                                <div key={option + "menu"} className={styles.drawerItem}>
-                                    <MenuItem {...props}>
-                                        <ListItemIcon sx={{mr: '-15px'}}>
-                                            <div className={classes.icon}>
-                                                <svg className="background" viewBox="0 0 48 48"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="24" cy="24" r="12" fill="#f8931d"/>
-                                                </svg>
-                                                <img className="icon"
-                                                     alt={option}
-                                                     src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
-                                            </div>
-                                        </ListItemIcon>
-                                        {PoiManager.formattingPoiType(option)}
-                                    </MenuItem>
-                                </div>}
                         />
-                    </Grid>
-                    <Grid item xs={2}>
-                        <IconButton sx={{mt: '5px'}} type="button" aria-label="search"
-                                    onClick={() => showPoiCategoriesOnMap(null)}>
-                            <Search/>
-                        </IconButton>
-                    </Grid>
-                    <div style={{marginLeft: '15px'}}>
-                        {ctx.showPoiCategories.map((category, index) =>
-                            <FormControlLabel
-                                key={index + "subType"}
-                                control={<Checkbox checked={ctx.showPoiCategories.includes(category)}
-                                                   onChange={() => handleChange(category)}/>}
-                                label={`${category}`}
-                            />)}
-                    </div>
-                </Grid>
+                    )}
+                    isOptionEqualToValue={(option, value) => option.value === value.value}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    id="category"
+                    options={searchOptions}
+                    renderOption={(props, option) =>
+                        <div key={option + "menu"} className={styles.drawerItem}>
+                            <MenuItem {...props}>
+                                <ListItemIcon sx={{mr: '-15px'}}>
+                                    <div className={classes.icon}>
+                                        <svg className="background" viewBox="0 0 48 48"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="24" cy="24" r="12" fill="#f8931d"/>
+                                        </svg>
+                                        <img className="icon"
+                                             alt={option}
+                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
+                                    </div>
+                                </ListItemIcon>
+                                {PoiManager.formattingPoiType(option)}
+                            </MenuItem>
+                        </div>}
+                />
+                <div style={{marginLeft: '2px', marginBottom: '10px'}}>
+                    {ctx.showPoiCategories.map((category, index) =>
+                        <FormControlLabel
+                            key={index + "subType"}
+                            control={<Checkbox checked={ctx.showPoiCategories.includes(category)}
+                                               onChange={() => handleChange(category)}/>}
+                            label={`${category}`}
+                        />)}
+                </div>
                 <Grid container spacing={2}>
                     {ctx.poiCategory?.filters.map((item, key) =>
-                        <Grid item key={key + "column"} xs={6} className={styles.drawerItem}>
-                            <MenuItem key={key + "type"}
+                        <Grid style={{marginLeft: '-7px'}} item key={key + "column"} xs={6}
+                              className={styles.drawerItem}>
+                            <MenuItem style={{marginTop: '-15px'}} key={key + "type"}
                                       onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiType(item))}
                             >
                                 <ListItemIcon sx={{mr: '-15px'}}>
