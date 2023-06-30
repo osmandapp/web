@@ -27,6 +27,7 @@ export default function PoiLayer() {
     const [useLimit, setUseLimit] = useState(false);
     const [addAlert, setAddAlert] = useState(false);
     const [bbox, setBbox] = useState(null);
+    const [prevCategoriesCount, setPrevCategoriesCount] = useState(null);
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         const searchData = {
@@ -34,7 +35,8 @@ export default function PoiLayer() {
             northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
             southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
-            savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null
+            savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
+            prevCategoriesCount: prevCategoriesCount
         };
         let response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`, searchData,
             {
@@ -64,10 +66,10 @@ export default function PoiLayer() {
         return (!_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length);
     }
 
-    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories, savedBbox) => {
+    const debouncedGetPoi = useRef(_.debounce(async (controller, ignore, zoom, poiList, showPoiCategories, savedBbox, prevCategoriesCount) => {
         map.spin(true, {color: '#1976d2'});
         let bbox = map.getBounds();
-        await getPoi(controller, showPoiCategories, bbox, savedBbox).then((res) => {
+        await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then((res) => {
             map.spin(false);
             if (res && !ignore) {
                 if (!res.alreadyFound) {
@@ -78,6 +80,7 @@ export default function PoiLayer() {
                         }
                         setPoiList(newPoiList);
                         setBbox(!res.useLimit ? bbox : null);
+                        setPrevCategoriesCount(showPoiCategories.length);
                         setUseLimit(res.useLimit);
                     }
                 }
@@ -104,7 +107,7 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories, bbox);
+                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories, bbox, prevCategoriesCount);
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
