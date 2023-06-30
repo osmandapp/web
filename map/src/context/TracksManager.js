@@ -2,7 +2,7 @@ import Utils, {quickNaNfix} from "../util/Utils";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
 import {apiGet, apiPost} from '../util/HttpApi';
-import {compressJSON, decompressJSON} from "../util/GzipBase64.mjs";
+import {compressFromJSON, decompressToJSON} from "../util/GzipBase64.mjs";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -27,7 +27,7 @@ async function loadTracks(setLoading) {
         if (name.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             let ind = name.split('_')[1];
             try {
-                const json = await decompressJSON(localStorage.getItem(name));
+                const json = await decompressToJSON(localStorage.getItem(name));
                 if (json) {
                     localTracks[ind] = json;
                 } else {
@@ -80,18 +80,20 @@ function openVisibleTracks(localTracks) {
 
 function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-    let track;
-    if (currentTrackIndex !== -1) {
-        track = ctx.selectedGpxFile;
-    } else {
-        track = tracks[tracks.length - 1];
+
+    if (currentTrackIndex === -1) {
+        tracks.push(ctx.selectedGpxFile);
+        currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     }
+
+    const track = ctx.selectedGpxFile;
+
     let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
     if (!totalSize) {
         totalSize = 0;
     }
-    compressJSON(prepareLocalTrack(track)).then(res => {
+    compressFromJSON(prepareLocalTrack(track)).then(res => {
         tracksSize = res.length;
         let oldSize = getOldSizeTrack(currentTrackIndex);
         totalSize = totalSize - oldSize + tracksSize;
@@ -119,7 +121,7 @@ async function updateLocalTracks(tracks) {
     deleteLocalTracks();
     let totalSize = 0;
     for (let track of tracks) {
-        let res = await compressJSON(prepareLocalTrack(track));
+        let res = await compressFromJSON(prepareLocalTrack(track));
         if (res) {
             localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + _.indexOf(tracks, track), res);
             let tracksSize = res.length;

@@ -424,7 +424,7 @@ export const AppContextProvider = (props) => {
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([])
-    // 
+    //
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
     // route
@@ -522,7 +522,7 @@ export const AppContextProvider = (props) => {
                 route: {text: ``}
             }));
         }
-        // ! routeTrackFile is not part of dependency ! 
+        // ! routeTrackFile is not part of dependency !
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
 
 
