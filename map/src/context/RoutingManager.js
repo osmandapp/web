@@ -4,6 +4,7 @@ import TrackLayerProvider from "../map/TrackLayerProvider";
 import { mergeStateObject } from "../util/Utils";
 import { apiGet } from '../util/HttpApi';
 import { copyObj } from "../util/Utils";
+import onlineRoutingProviders from "../generated/online-routing-providers.json";
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -501,41 +502,39 @@ function initRouteProviders() {
 
 // load and validate OSRM and OsmAnd routing providers
 async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
-    const nameAliases = {
-        'ZLZK': 'OSRM',
-        'Routing OSM DE (Demo)': 'OSRM (backup)'
-    };
 
-    // load OSRM providers first
-    const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
-    if (osrm.ok) {
-        try {
-            const json = await osrm.json();
-            if (json && json?.providers && json?.providers[0]?.name) {
+    let json = onlineRoutingProviders;
 
-                json.providers.forEach(p => { // routes to profiles
-                    p.key = p.name; // name acts as key
-                    if (nameAliases[p.key]) {
-                        p.name = nameAliases[p.key];
-                    }
-                    if (p.routes) {
-                        p.routes.forEach(r => { // type to key
-                            r.key = r.type;
-                            delete r.type;
-                        });
-                        p.profiles = p.routes;
-                        delete p.routes;
-                    }
+    if(!json) {
+        const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
+        if (osrm.ok) {
+            json = osrm.data;
+        }
+    }
+
+    if (json && json?.providers && json?.providers[0]?.name) {
+
+        json.providers.forEach(p => { // routes to profiles
+            p.name = p.webName ?? p.name;
+            p.key = p.name; // name acts as key
+            if (p.routes) {
+                p.routes.forEach(r => { // type to key
+                    r.key = r.type;
+                    delete r.type;
                 });
-
-                routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-                    providersOSRM: json.providers,
-                    type: json.providers[0].type,
-                    router: json.providers[0].key, // select first OSRM key and type
-                    profile: json.providers[0]?.profiles[0]?.key // select first profile
-                });
+                p.profiles = p.routes;
+                delete p.routes;
             }
-        } catch { console.log('failed to load osrm providers'); }
+        });
+
+        routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
+            providersOSRM: json.providers,
+            type: json.providers[0].type,
+            router: json.providers[0].key, // select first OSRM key and type
+            profile: json.providers[0]?.profiles[0]?.key // select first profile
+        });
+    } else {
+        console.log('failed to load osrm providers');
     }
 
     // load OsmAnd provider as advanced solution
@@ -582,7 +581,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                     ]
                 });
             }
-        } catch { console.log('failed to load osmand providers'); }
+        } catch { console.log('failed to load osmand profiles'); }
     }
 
     // set type/profile according to window.location.search
