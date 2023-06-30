@@ -43,7 +43,6 @@ const onCheckBox = (key, opts, setOpts) => (e) => {
     setOpts(nopts);
 }
 
-// now is used by TracksManager, not by RoutingManager
 export default function RouteSettingsDialog({ setOpenSettings, profile, setProfile, useDev}) {
     const ctx = useContext(AppContext);
     const [opts, setOpts] = useState(profile.opts);
@@ -60,7 +59,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
             JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams('osmand', profile.mode));
     }
     const handleReset = () => {
-        setOpts(ctx.routeProviders.getResetParams('osmand', profile.mode)); // compatible, temporarly
+        setOpts(ctx.routeProviders.getResetParams('osmand', profile.mode));
     };
 
     section = '';

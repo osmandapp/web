@@ -53,7 +53,7 @@ function moveableMarker(ctx, map, marker) {
         }
     })
 
-    return marker
+    return marker;
 }
 
 const RouteLayer = ({geocodingData}) => {
@@ -99,7 +99,6 @@ const RouteLayer = ({geocodingData}) => {
     }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeProviders.type, ctx.routeProviders.profile, ctx.routeProviders.loaded]);
 
     useEffect(() => {
-        // if (searchParams['pin'] || searchParams['start'] || searchParams['end']) {
         if (ctx.routeProviders.loaded && (Object.keys(searchParams).length > 0 || searchCleanup)) {
             if (Object.keys(searchParams).length === 0) {
                 setSearchCleanup(false); // only once

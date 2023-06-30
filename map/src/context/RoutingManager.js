@@ -121,7 +121,7 @@ function osrmToFeaturesCollection(osrm) {
         const modifier = cap(s?.maneuver?.modifier ?? ''); // Left
 
         // target
-        const name = s?.name ?? ''; // street
+        const name = s?.name ?? ''; // Street
         const ref = s?.ref ? ` (${s.ref})` : ''; // (REF)
 
         // go
@@ -131,7 +131,7 @@ function osrmToFeaturesCollection(osrm) {
         const target = name ? 'to ' + name + ' ' + ref : '';
         const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
 
-        return `${imperative} ${target} ${go}`; // Turn Slight right to Schirmschneise and go 621 meters
+        return `${imperative} ${target} ${go}`; // Turn Left to Street and go 621 meters
     }
 
     osrm?.routes?.forEach(r => {
@@ -222,7 +222,6 @@ async function calculateRoute({
     setRoutingErrorMsg(null);
     getRouteText(true, null);
 
-    // console.log(url + coordinates + tail);
     const response = await apiGet(url + coordinates + tail, { apiCache: true });
 
     if (response.ok) {
@@ -248,7 +247,6 @@ async function calculateRouteOsmAnd({
     getRouteText,
     setRoutingErrorMsg
 }) {
-    // setRouteData(null); // don't reset (for better rendering)
     setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';

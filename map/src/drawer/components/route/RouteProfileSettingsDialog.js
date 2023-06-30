@@ -21,9 +21,9 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
         saveParams();
     };
 
-    // Reset (options)
+    // Reset options
     const handleReset = () => {
-        setOpts(ctx.routeProviders.getResetParams()); // copy
+        setOpts(ctx.routeProviders.getResetParams());
     };
 
     const saveParams = () => {
@@ -33,12 +33,12 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
     };
 
     const onChangeRouter = (e) => {
-        saveParams(); // before router change
+        saveParams();
         ctx.routeProviders.CHOOSE(ctx, { router: e.target.value });
     };
 
     const onChangeProfile = (e) => {
-        saveParams(); // before profile change
+        saveParams();
         ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value });
     };
 
