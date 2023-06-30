@@ -13,9 +13,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../../../context/AppContext"
 
 export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) {
-    const ctx = useContext(AppContext); // you can't rely on parent's ctx to use local useEffect(..., [ctx...])
+    const ctx = useContext(AppContext);
 
-    // Close = Acept
+    // Close = Accept
     const handleCloseAccept = () => {
         setOpenSettings(false);
         saveParams();

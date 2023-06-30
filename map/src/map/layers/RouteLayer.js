@@ -63,8 +63,8 @@ const RouteLayer = ({geocodingData}) => {
     const navigate = useNavigate();
     const url = useLocation();
 
-    const [searchParams, setSearchParams] = useState({});
-    const [searchCleanup, setSearchCleanup] = useState(false);
+    const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
+    const [routeQueryStringCleanup, setQueryStringCleanup] = useState(false);
 
     useEffect(() => {
         if (ctx.routeProviders.loaded) {
@@ -91,25 +91,25 @@ const RouteLayer = ({geocodingData}) => {
                 obj.profile = ctx.routeProviders.profile;
             }
 
-            if (Object.keys(obj).length > 0 || searchCleanup) {
-                setSearchCleanup(true);
-                setSearchParams(obj);
+            if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
+                setQueryStringCleanup(true);
+                setRouteQueryStringParams(obj);
             }
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeProviders.type, ctx.routeProviders.profile, ctx.routeProviders.loaded]);
 
     useEffect(() => {
-        if (ctx.routeProviders.loaded && (Object.keys(searchParams).length > 0 || searchCleanup)) {
-            if (Object.keys(searchParams).length === 0) {
-                setSearchCleanup(false); // only once
+        if (ctx.routeProviders.loaded && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+            if (Object.keys(routeQueryStringParams).length === 0) {
+                setQueryStringCleanup(false); // only once
             }
-            const pretty = new URLSearchParams(Object.entries(searchParams)).toString().replaceAll('%2C', ',');
+            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams)).toString().replaceAll('%2C', ',');
             navigate({
                 hash: url.hash,
                 search: "?" + pretty
             });
         }
-    }, [searchParams, setSearchParams, ctx.routeProviders.loaded]);
+    }, [routeQueryStringParams, setRouteQueryStringParams, ctx.routeProviders.loaded]);
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);
