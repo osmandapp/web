@@ -1,7 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { Button, Checkbox, FormControlLabel,
-        FormControl, InputLabel,
+        FormControl, InputLabel, Box, IconButton,
         Tooltip, Select, MenuItem } from '@mui/material/';
+import CloseIcon from '@mui/icons-material/Close';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -54,10 +57,10 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
 
     const showReset = () => {
         return opts &&
-            JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams('osmand', profile.name));
+            JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams('osmand', profile.mode));
     }
     const handleReset = () => {
-        setOpts(ctx.routeProviders.getResetParams('osmand', profile.name)); // compatible, temporarly
+        setOpts(ctx.routeProviders.getResetParams('osmand', profile.mode)); // compatible, temporarly
     };
 
     section = '';
@@ -70,7 +73,19 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
-            <DialogTitle>Additional Route Settings</DialogTitle>
+            <Box display="flex">
+                <Box flexGrow={1}>
+                    <DialogTitle>
+                        Advanced Routing Settings
+                    </DialogTitle>
+                </Box>
+                <Box>
+                    <IconButton onClick={handleCloseAccept}>
+                        <CloseIcon />
+                    </IconButton>
+                </Box>
+            </Box>
+
             <DialogContent>
                 {Object.entries(opts).map(([key, opt]) =>
                     <React.Fragment key={'dialog_' + key}>
@@ -79,6 +94,8 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
                             {opt.type === 'boolean' ?
                                 <FormControlLabel key={key} label={opt.label} control={
                                     <Checkbox key={'check_' + key} checked={opt.value}
+                                        icon={opt.group && <RadioButtonUncheckedIcon />}
+                                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
                                         onChange={onCheckBox(key, opts, setOpts)} />
                                 }>
                                 </FormControlLabel>
@@ -102,7 +119,9 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
 
             </DialogContent>
             <DialogActions>
-                {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                <Box display='flex' flexGrow={1}>
+                    {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                </Box>
                 <Button onClick={handleCloseAccept}>OK</Button>
             </DialogActions>
         </Dialog>

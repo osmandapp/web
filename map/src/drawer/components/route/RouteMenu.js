@@ -10,7 +10,7 @@ import {
     ExpandLess, ExpandMore, Directions
 } from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
-import RouteProfileSettings from './RouteProfileSettings';
+import RouteProfileSettingsDialog from './RouteProfileSettingsDialog';
 import {TextField} from "@mui/material/";
 import {LatLng} from "leaflet";
 import {makeStyles} from "@material-ui/core/styles";
@@ -139,7 +139,7 @@ export default function RouteMenu() {
 
     return <>
         {openSettings &&
-            <RouteProfileSettings key='routesettingsdialog' setOpenSettings={setOpenSettings} useDev={true}/>}
+            <RouteProfileSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} useDev={true}/>}
         <MenuItem key='routeTop' sx={{mb: 1}} onClick={() => setOpen(!open)}>
             <ListItemIcon>
                 <Directions fontSize="small"/>

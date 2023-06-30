@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Button, Checkbox, FormControlLabel,
-        FormControl, InputLabel,
+        FormControl, InputLabel, Box, IconButton,
         Tooltip, Select, MenuItem } from '@mui/material/';
+import CloseIcon from '@mui/icons-material/Close';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -9,7 +12,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from "../../../context/AppContext"
 
-export default function RouteProfileSettings({ useDev, setOpenSettings }) {
+export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) {
     const ctx = useContext(AppContext); // you can't rely on parent's ctx to use local useEffect(..., [ctx...])
 
     // Close = Acept
@@ -90,7 +93,18 @@ export default function RouteProfileSettings({ useDev, setOpenSettings }) {
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
-            <DialogTitle>Advanced Routing Settings</DialogTitle>
+            <Box display="flex">
+                <Box flexGrow={1}>
+                    <DialogTitle>
+                        Advanced Routing Settings
+                    </DialogTitle>
+                </Box>
+                <Box>
+                    <IconButton onClick={handleCloseAccept}>
+                        <CloseIcon />
+                    </IconButton>
+                </Box>
+            </Box>
 
             <DialogContent>
                 <InputLabel id="route-provider-label">Provider</InputLabel>
@@ -124,6 +138,8 @@ export default function RouteProfileSettings({ useDev, setOpenSettings }) {
                             {opt.type === 'boolean' ?
                                 <FormControlLabel key={key} label={opt.label} control={
                                     <Checkbox key={'check_' + key} checked={opt.value}
+                                        icon={opt.group && <RadioButtonUncheckedIcon />}
+                                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
                                         onChange={onCheckBox(key, opts, setOpts)} />
                                 }>
                                 </FormControlLabel>
@@ -146,7 +162,9 @@ export default function RouteProfileSettings({ useDev, setOpenSettings }) {
                 )}
             </DialogContent>
             <DialogActions>
-                {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                <Box display='flex' flexGrow={1}>
+                    {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                </Box>
                 <Button onClick={handleCloseAccept}>OK</Button>
             </DialogActions>
         </Dialog>
