@@ -1,4 +1,4 @@
-import {Box, Grid, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
+import {Box, Grid, Link, ListItemIcon, ListItemText, MenuItem, Typography} from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import contextMenuStyles from "../../styles/ContextMenuStyles";
@@ -13,6 +13,7 @@ import {
     Phone
 } from "@mui/icons-material";
 import PoiManager from "../../../context/PoiManager";
+import TracksManager from "../../../context/TracksManager";
 
 const useStyles = makeStyles({
     icon: {
@@ -58,7 +59,8 @@ export default function PoiInfoTab({width}) {
                 email: poiOptions.email,
                 phone: poiOptions.phone,
                 facebook: poiOptions.facebook,
-                instagram: poiOptions.instagram
+                instagram: poiOptions.instagram,
+                osmUrl: poiOptions.osmUrl
             })
         }
     }, [ctx.selectedGpxFile])
@@ -69,7 +71,9 @@ export default function PoiInfoTab({width}) {
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>
                         <Typography className={styles.name} variant="inherit">
-                            {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
+                            <Link href={poi.osmUrl} target="_blank" underline="none">
+                                {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
+                            </Link>
                         </Typography>
                     </Grid>
                     <Grid className={styles.name} sx={{position: "relative"}} item xs={2}>

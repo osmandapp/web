@@ -168,7 +168,8 @@ export default function PoiLayer() {
                 email: poi.properties.email,
                 phone: poi.properties.phone,
                 facebook: poi.properties.facebook,
-                instagram: poi.properties.instagram
+                instagram: poi.properties.instagram,
+                osmUrl: poi.properties.osmUrl
             });
         })
 
