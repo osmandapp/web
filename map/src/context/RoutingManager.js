@@ -3,7 +3,7 @@ import _ from "lodash";
 import TrackLayerProvider from "../map/TrackLayerProvider";
 import { mergeStateObject } from "../util/Utils";
 import { apiGet } from '../util/HttpApi';
-import { copy } from "../util/Utils";
+import { copyObj } from "../util/Utils";
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -383,13 +383,13 @@ function initRouteProviders() {
 
         // getters (use copy to prevent direct modify by parents)
         allProviders() { return this._allProviders() }, // no-copy-need
-        getProvider(router = this.router) { return copy(this._getProvider(router)) },
-        allProfiles(router = this.router) { return copy(this._allProfiles(router)) },
-        getProfile(router = this.router, profile = this.profile) { return copy(this._getProfile(router, profile)) },
-        getParams(router = this.router, profile = this.profile) { return copy(this._getParams(router, profile)) },
-        getResetParams(router = this.router, profile = this.profile) { return copy(this._getResetParams(router, profile)) },
+        getProvider(router = this.router) { return copyObj(this._getProvider(router)) },
+        allProfiles(router = this.router) { return copyObj(this._allProfiles(router)) },
+        getProfile(router = this.router, profile = this.profile) { return copyObj(this._getProfile(router, profile)) },
+        getParams(router = this.router, profile = this.profile) { return copyObj(this._getParams(router, profile)) },
+        getResetParams(router = this.router, profile = this.profile) { return copyObj(this._getResetParams(router, profile)) },
         getURL(router = this.router, profile = this.profile) { return this._getURL(router, profile) },
-        getProviderByType(type = this.type) { return copy(this._getProviderByType(type)) },
+        getProviderByType(type = this.type) { return copyObj(this._getProviderByType(type)) },
 
         // internals (strict and fast)
         _allProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // OSRM + OsmAnd
@@ -569,7 +569,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                 const converted = [];
                 Object.keys(json).forEach((k) => {
                     if (json[k]?.params) {
-                        json[k].backup = copy(json[k]?.params);
+                        json[k].backup = copyObj(json[k]?.params);
                     }
                     converted.push(json[k]);
                 });

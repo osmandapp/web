@@ -103,14 +103,17 @@ export function mergeStateObject(getObject, setFunction, todoObject, path = null
 export function quickNaNfix(badString) {
     const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
     const nil = ':null'; // other NaN(s) to null (think about srtmEle)
-    
+
     return badString
         .replace(/"ele": ?NaN\b/g, ele)
         .replace(/: ?NaN\b/g, nil);
 }
 
-// faster than _.cloneDeep()
-export function copy(obj) {
+/*
+    Copy simple (JSON) objects, faster than _.cloneDeep()
+    Don't use on objects with circular structure (such as layers)
+*/
+export function copyObj(obj) {
     return typeof obj === 'object' ? JSON.parse(JSON.stringify(obj)) : obj;
 }
 
