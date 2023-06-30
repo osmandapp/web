@@ -9,7 +9,7 @@ import {
     TextField
 } from "@mui/material";
 import React, {useContext, useEffect, useState} from "react";
-import {Close, Search} from "@mui/icons-material";
+import {Close} from "@mui/icons-material";
 import {Checkbox, FormControlLabel, MenuItem} from "@mui/material/";
 import AppContext from "../../../context/AppContext";
 import MarkerOptions from "../../../map/markers/MarkerOptions";
@@ -45,7 +45,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
 
     const MIN_SIZE_SEARCH_VALUE = 3;
 
-    const [selectedPoiCategory, setSelectedPoiCategory] = useState(null);
     const [poiTypesResult, setPoiTypesResult] = useState([]);
     const [searchText, setSearchText] = useState(null);
     const [searchOptions, setSearchOptions] = useState([]);
@@ -57,12 +56,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     };
 
     useEffect(() => {
-        if (selectedPoiCategory) {
-            getPoiTypesByCategory(selectedPoiCategory);
-        }
-    }, [selectedPoiCategory]);
-
-    useEffect(() => {
         if (!_.isEmpty(poiTypesResult)) {
             setSearchOptions(Object.keys(poiTypesResult));
         } else {
@@ -72,13 +65,12 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     }, [poiTypesResult]);
 
     function showPoiCategoriesOnMap(category) {
-        const selectedCategory = category ? category : selectedPoiCategory;
-        if (selectedCategory) {
-            if (ctx.showPoiCategories.includes(selectedCategory)) {
+        if (category) {
+            if (ctx.showPoiCategories.includes(category)) {
                 setSearchError(`This category is already selected!`)
             } else {
                 const categories = ctx.showPoiCategories;
-                categories.push(selectedCategory);
+                categories.push(category);
                 ctx.setShowPoiCategories([...categories]);
                 setDialogOpen(false);
             }
@@ -112,13 +104,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         }
     }
 
-    function getPoiTypesByCategory(newValue) {
-        const category = newValue?.toLowerCase();
-        if (ctx.poiCategory.categories[category]) {
-            setSearchOptions(ctx.poiCategory.categories[category]);
-        }
-    }
-
     function removeUnusedPoiCategories(categories) {
         return categories.filter(category => category !== 'user_defined_other' && category !== 'osmwiki')
     }
@@ -142,7 +127,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
             </Grid>
             <DialogContent>
                 <Autocomplete
-                    value={selectedPoiCategory}
                     onChange={(event, newValue, reason) => {
                         if (reason === 'clear') {
                             setSearchOptions(Object.keys(ctx.poiCategory.categories));

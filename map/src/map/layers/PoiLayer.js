@@ -5,7 +5,6 @@ import _ from "lodash";
 import L from "leaflet";
 import MarkerOptions from "../markers/MarkerOptions";
 import Utils from "../../util/Utils";
-import icons from "../../generated/poiicons.json"
 import 'leaflet-spin';
 import PoiManager from "../../context/PoiManager";
 import "leaflet.markercluster";
@@ -26,7 +25,6 @@ export default function PoiLayer() {
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
-    const [mapLimitExceeded, setMapLimitExceeded] = useState(false);
     const [addAlert, setAddAlert] = useState(false);
     const [bbox, setBbox] = useState(null);
 
@@ -83,7 +81,9 @@ export default function PoiLayer() {
                         setUseLimit(res.useLimit);
                     }
                 }
-                setMapLimitExceeded(res.mapLimitExceeded);
+                if (res.mapLimitExceeded) {
+                    setAddAlert(true);
+                }
             }
         })
     }, 1000)).current;
@@ -116,7 +116,7 @@ export default function PoiLayer() {
             }
         }
 
-        if ((zoom < 8 && !_.isEmpty(ctx.showPoiCategories)) || mapLimitExceeded) {
+        if ((zoom < 8 && !_.isEmpty(ctx.showPoiCategories))) {
             setAddAlert(true);
         } else {
             setAddAlert(false);
