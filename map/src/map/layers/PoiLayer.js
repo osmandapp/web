@@ -182,38 +182,19 @@ export default function PoiLayer() {
         let colorBackground = color && color !== 'null' ? color : PoiManager.DEFAULT_POI_COLOR;
         colorBackground = Utils.hexToArgb(colorBackground);
         const svg = MarkerOptions.getSvgBackground(colorBackground, PoiManager.DEFAULT_SHAPE_COLOR);
-        const iconWpt = getIconNameForPoiType(poi);
+        const iconWpt = PoiManager.getIconNameForPoiType(poi.properties.iconKeyName, poi.properties.typeOsmTag, poi.properties.typeOsmValue, poi.properties.iconName);
         if (iconWpt) {
             return L.divIcon({
                 html: `
                               <div>
                                   ${svg}
-                                  <img class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">
+                                  <img alt="iconWpt" class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">
                                   </div>
                               </div>
                               `
             })
         }
     }
-
-    function getIconNameForPoiType(poi) {
-        if (poi) {
-            const iconKeyName = poi.properties.iconKeyName;
-            const typeOsmTag = poi.properties.typeOsmTag;
-            const typeOsmValue = poi.properties.typeOsmValue;
-            const iconName = poi.properties.iconName;
-            if (icons.includes(`mx_${iconKeyName}.svg`)) {
-                return iconKeyName;
-            } else if (icons.includes(`mx_${typeOsmTag} ${typeOsmValue}.svg`)) {
-                return `${typeOsmTag} ${typeOsmValue}`;
-            } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
-                return iconName;
-            } else {
-                return PoiManager.DEFAULT_POI_ICON;
-            }
-        }
-    }
-
 
     return <>
         {addAlert && <Alert sx={{position: 'absolute', zIndex: 1000, left: '40%', top: '2%'}} severity="info">Please zoom in closer!</Alert>}

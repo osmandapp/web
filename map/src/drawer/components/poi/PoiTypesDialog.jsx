@@ -107,9 +107,8 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         if (poiTypesResult && option && poiTypesResult[option]) {
             option = poiTypesResult[option];
             return PoiManager.getIconNameForPoiType(option.keyName, option.osmTag, option.osmValue, option.iconName);
-        } else {
-            return PoiManager.getIconNameForPoiType(option);
         }
+        return PoiManager.DEFAULT_POI_ICON;
     }
 
     function getPoiTypesByCategory(newValue) {
@@ -151,6 +150,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     }}
                     renderInput={params => (
                         <TextField
+                            style={{marginBottom: '7px'}}
                             value={searchText}
                             onChange={e => {
                                 setSearchError('');
