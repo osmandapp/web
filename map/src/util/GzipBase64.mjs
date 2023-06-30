@@ -1,35 +1,33 @@
 import {gzip, ungzip} from 'pako';
 
 /*
-    v0.01 (2023-06-07)
-
     TODO: localStorageAvailableBytes()
-
     TODO: compressBlob() / decompressBlob()
+    TODO: apply native Compression API (again)
 
     Exports:
 
-        async compressJSON(input: Object) -- return: String -- compress JSON-object to gzipped base64-string
-        async compressString(input: String) -- return: String -- compress string to gzipped base64-string
+        async compressFromJSON(input: Object) -- return: String -- compress JSON-object to gzipped base64-string
+        async compressFromString(input: String) -- return: String -- compress string to gzipped base64-string
 
-        async decompressJSON(input: String) -- return: Object -- decompress base64-string to JSON-object
-        async decompressString(input: String) -- return: String -- decompress base64-string to string
+        async decompressToJSON(input: String) -- return: Object -- decompress base64-string to JSON-object
+        async decompressToString(input: String) -- return: String -- decompress base64-string to string
 
 */
 
-export async function compressJSON(obj) {
+export async function compressFromJSON(obj) {
     return compressToBase64(JSON.stringify(obj));
 }
 
-export async function compressString(str) {
+export async function compressFromString(str) {
     return compressToBase64(str);
 }
 
-export async function decompressJSON(str) {
+export async function decompressToJSON(str) {
     return JSON.parse(await decompressFromBase64(str));
 }
 
-export async function decompressString(str) {
+export async function decompressToString(str) {
     return decompressFromBase64(str);
 }
 

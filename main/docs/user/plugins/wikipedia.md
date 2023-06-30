@@ -165,8 +165,8 @@ To open Wikipedia article:
 1. Enable [Wikipedia POI layer](../map/point-layers-on-map.md#-wikipedia) for a specified profile.
 2. Tap POI on the map.
 3. In the [context menu](../map/map-context-menu.md) of a POI tap *Details* (or simply pull the *context menu* up) to view an abstract of the chosen Wikipedia article.
-4. If you tap the text that appears in the *context menu*, you will be redirected to the offline Wikipedia article.
-5. For **Android** version of the OsmAnd app you can also use *Read article* or *Read full article* button.
+4. If you tap that text, you will be redirected to the offline Wikipedia article.
+5. For **Android** version of the OsmAnd app you can also use *Read article* or *Read full article* buttons.
 
 <Tabs groupId="operating-systems">
 
@@ -186,12 +186,11 @@ To open Wikipedia article:
 
 ## Wikipedia settings  
 
-You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) and also configure [images download options](#download-images).
-
+You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) and also configure [images download options](#download-images) for each [profile](../personal/profiles.md).
 ### Set preferred language  
 
-In the **Android** and **iOS** versions of the OsmAnd app, you can set your preferred language (or languages) for displaying Wikipedia articles using the *Configure map menu*. If you select more than one language, the *Wikipedia* articles on the map will be shown in any of them:  
-1. Go to: *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
+In the **Android** and **iOS** versions of the OsmAnd app, you can set your preferred language (or languages) for displaying Wikipedia articles using the *Configure map menu*. If you select more than one language, the *Wikipedia* articles on the map will be shown in any of them. Go to:  
+1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
 2. Select needed profile and in the *<Translate android="true" ids="shared_string_show"/>* section choose *<Translate android="true" ids="shared_string_wikipedia"/>*.  
 3. Disable *<Translate android="true" ids="shared_string_all_languages"/>* option.  
 4. Select specific language(-s) in the opened list.  
@@ -206,16 +205,18 @@ In the **Android** and **iOS** versions of the OsmAnd app, you can set your pref
 
 <TabItem value="ios" label="iOS">
 
-In the **iOS** version, you can also set the preferred language for Wikipedia articles using:  
-
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
-
 ![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
 </Tabs>
+
+:::note
+In the **iOS** version, you can also set the preferred language for Wikipedia articles using:  
+
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
+- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+:::
 
 ### Switch languages inside article  
 

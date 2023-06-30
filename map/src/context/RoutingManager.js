@@ -8,17 +8,16 @@ import { copy } from "../util/Utils";
 const STOP_CALC_ROUTING = 'stop';
 
 function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
-    const routingKey = createRoutingKey(startPoint, endPoint, ctx.creatingRouteMode);
+    const routingKey = createRoutingKey(startPoint, endPoint, startPoint.routeMode);
     let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
 
     routingList[routingKey] = {
         startPoint: _.cloneDeep(startPoint),
         endPoint: _.cloneDeep(endPoint),
-        routeMode: _.cloneDeep(ctx.creatingRouteMode),
+        routeMode: startPoint.routeMode,
         tempLine: tempLine,
         geometry: null
     }
-
     ctx.setRoutingCash({...routingList});
     return routingList;
 }

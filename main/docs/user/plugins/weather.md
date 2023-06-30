@@ -44,7 +44,7 @@ The Weather plugin is only available with Map rendering [Version 2](../personal/
 
 ### Weather forecast screen  
 
-We craeted a special Weather screen in Main menu for quick access to all Weather tools. Weather screen provides information about temperature, air pressure, wind speed, cloud coverage and precipitation. At the bottom of the screen you can see the Weather forecast toolbar: the date buttons and the time slider are used to set the exact time for which the weather forecast will be displayed.  
+We created a special Weather screen in Main menu for quick access to all Weather tools. Weather screen provides information about temperature, air pressure, wind speed, cloud coverage and precipitation. At the bottom of the screen you can see the Weather forecast toolbar: the date buttons and the time slider are used to set the exact time for which the weather forecast will be displayed.  
 
 <Tabs groupId="operating-systems">  
 

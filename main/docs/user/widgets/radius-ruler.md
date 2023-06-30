@@ -50,7 +50,7 @@ The Ruler gives a visual estimate of the objects on the map and distance between
 
 | | |
 |------------|------------|
-| Units Format  | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>_ |
+| Units Format  | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>_ |
 
 </TabItem>
 
@@ -84,7 +84,7 @@ Radius-ruler widget shows distance between your location and center point of the
 |------------|------------|
 | Enable | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_ruler_control"/>_ |
 | Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>_  |
+| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>_  |
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_1.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_2.png)
 
@@ -128,7 +128,7 @@ In addition to that, you could see **blue triangle** as a Compass direction. Thi
 | | |
 |------------|------------|
 | Enable | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_ruler_control,shared_string_ellipsis,show_compass_ruler"/> / <Translate ios="true" ids="hide_compass_ruler"/>_ |
-| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/>_|
+| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>_|
 
 </TabItem>
 
@@ -242,7 +242,7 @@ Video guide how to use Radius ruler:
 | | |
 |------------|------------|
 | Enable |  <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> |
-| Units Format |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,unit_of_length"/>|
+| Units Format |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>|
 
 </TabItem>
 
