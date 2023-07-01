@@ -421,7 +421,8 @@ export const AppContextProvider = (props) => {
             }));
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [routeProviders, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads]); // ,setRouteData
+    }, [routeProviders.isReady(), routeProviders.type, routeProviders.router, routeProviders.profile,
+        startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
