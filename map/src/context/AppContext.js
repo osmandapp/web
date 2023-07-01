@@ -387,7 +387,7 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            await routeProviders.LOAD({
+            await routeProviders.loadProviders({
                 setter: setRouteProviders, // optional if initSetter() was called before
                 routeProviders,
                 setRouteProviders,

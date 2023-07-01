@@ -427,7 +427,7 @@ function initRouteProviders() {
         },
 
         // actions
-        PARAMS({ setter = null, opts }) {
+        setParams({ setter = null, opts }) {
             /*
                 Saving profile params isn't easy process:
 
@@ -455,7 +455,7 @@ function initRouteProviders() {
         },
 
 
-        PAUSE({ setter = null, pause }) {
+        setPause({ setter = null, pause }) {
             if (pause === true || pause === false) {
                 this.initSetter(setter);
                 this.paused = pause;
@@ -463,7 +463,7 @@ function initRouteProviders() {
             }
         },
 
-        CHOOSE({ setter = null, type = null, router = null, profile = null } = {}) {
+        choose({ setter = null, type = null, router = null, profile = null } = {}) {
             /*
                 Switch to selected "router" and/or "profile":
 
@@ -473,13 +473,13 @@ function initRouteProviders() {
 
                 Examples:
 
-                CHOOSE({ [setter], profile }) - switch profile, keep router
-                CHOOSE({ [setter], router }) - switch router, try to keep profile
-                CHOOSE({ [setter], router, profile }) - switch both (if applicable)
+                choose({ [setter], profile }) - switch profile, keep router
+                choose({ [setter], router }) - switch router, try to keep profile
+                choose({ [setter], router, profile }) - switch both (if applicable)
 
                 Special case (used for searchParams / share route link):
 
-                CHOOSE({ [setter], type, [profile] }) - select 1st type's provider
+                choose({ [setter], type, [profile] }) - select 1st type's provider
             */
 
             this.initSetter(setter);
@@ -518,7 +518,7 @@ function initRouteProviders() {
         },
 
         // load and validate OSRM and OsmAnd routing providers
-        async LOAD({ setter = null, creatingRouteMode = null, setCreatingRouteMode = null }) {
+        async loadProviders({ setter = null, creatingRouteMode = null, setCreatingRouteMode = null }) {
             this.initSetter(setter);
 
             let json = onlineRoutingProviders;
@@ -610,7 +610,7 @@ function initRouteProviders() {
             const type = searchParams.get('type');
             const profile = searchParams.get('profile');
             if (type && profile) {
-                this.CHOOSE({ type, profile });
+                this.choose({ type, profile });
             }
 
             this.loaded = true;
