@@ -76,12 +76,12 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        ctx.routeProviders.PAUSE(ctx, openSettings);
+        ctx.routeProviders.PAUSE({ pause: openSettings });
     }, [openSettings]);
 
     useEffect(() => {
         if (ctx.routeProviders.loaded && ctx.routeTypeInit && ctx.routeProfileInit) {
-            ctx.routeProviders.CHOOSE(ctx, {
+            ctx.routeProviders.CHOOSE({
                 type: ctx.routeTypeInit,
                 profile: ctx.routeProfileInit
             });
@@ -156,7 +156,7 @@ export default function RouteMenu() {
                         labelid="route-mode-label"
                         label={`Route profile (${ctx.routeProviders.type})`}
                         value={ctx.routeProviders.profile}
-                        onChange={(e) => ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value })}
+                        onChange={(e) => ctx.routeProviders.CHOOSE({ profile: e.target.value })}
                     >
                         { ctx.routeProviders.allProfiles().map(({ key, name }) =>
                             <MenuItem key={key} value={key}>{name}</MenuItem>

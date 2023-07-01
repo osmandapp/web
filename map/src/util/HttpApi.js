@@ -115,7 +115,7 @@ export async function apiGet(url, options = null) {
     let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options, options?.body) : null;
 
     if (cacheKey && cache[cacheKey]) {
-        // console.log('cache-hit', cacheKey);
+        console.log('cache-hit', cacheKey);
         return cache[cacheKey];
     }
 
@@ -202,6 +202,7 @@ export async function apiGet(url, options = null) {
 
     // store cache
     if (cacheKey) {
+        // console.log('cache-store', cacheKey);
         const cached = Object.assign(response, {
             data, // axios
             blob: async () => await response.clone().blob(), // resolved

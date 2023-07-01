@@ -1,7 +1,6 @@
 import TracksManager from "./TracksManager";
 import _ from "lodash";
 import TrackLayerProvider from "../map/TrackLayerProvider";
-import { mergeStateObject } from "../util/Utils";
 import { apiGet } from '../util/HttpApi';
 import { copyObj } from "../util/Utils";
 import onlineRoutingProviders from "../generated/online-routing-providers.json";
@@ -370,6 +369,8 @@ function initRouteProviders() {
     };
 
     return {
+        setter: null,
+
         // current
         type: preloaded.type,
         router: preloaded.router, // ref to providers.key
@@ -400,8 +401,33 @@ function initRouteProviders() {
         _getURL(router, profile) { return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url },
         _getProviderByType(type) { return this._allProviders()?.find(r => r.type === type) ?? {} },
 
+        flushState() {
+            if (this.setter) {
+                this.setter((previous) => Object.assign({}, previous, this)); // queue
+            } else {
+                console.error('geoRouter incorrect flushState() call');
+            }
+        },
+
+        initSetter(setter = null) {
+            if (setter && setter !== this.setter) {
+                this.setter = setter;
+                this.flushState();
+                /*
+                 * there is 3 alternative ways:
+                 *
+                 * setter(o => Object.assign(o, { setter })); // next render
+                 * setter(o => { o.setter = setter; return {...o}; } ); // next render
+                 * this.setter = setter; setter(() => Object.assign({}, this)); // current render
+                 */
+            }
+            if (!this.setter) {
+                console.error('geoRouter incorrect initSetter() call');
+            }
+        },
+
         // actions
-        PARAMS(ctx = null, opts) {
+        PARAMS({ setter = null, opts }) {
             /*
                 Saving profile params isn't easy process:
 
@@ -410,12 +436,12 @@ function initRouteProviders() {
                 3. Therefore, we look into providersOsmAnd, rewrite params and call ctx-setter
             */
 
-            if (!ctx || opts === undefined) throw(new Error('invalid route.PARAMS() call'));
+            this.initSetter(setter);
 
-            const router = ctx.routeProviders.router;
-            const profile = ctx.routeProviders.profile;
+            const router = this.router;
+            const profile = this.profile;
 
-            ctx.routeProviders?.providersOsmAnd?.forEach(r => {
+            this.providersOsmAnd?.forEach(r => {
                 if (r.key === router) {
                     r.profiles?.forEach(p => {
                         if (p.key === profile) {
@@ -425,16 +451,19 @@ function initRouteProviders() {
                 }
             });
 
-            ctx.setRouteProviders(ctx.routeProviders);
+            this.flushState();
         },
 
-        PAUSE(ctx, state) {
-            // pause routing while RouteSettingsDialog open
-            if (!ctx || state === undefined) throw(new Error('invalid route.PAUSE() call'));
-            mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { paused: state });
+
+        PAUSE({ setter = null, pause }) {
+            if (pause === true || pause === false) {
+                this.initSetter(setter);
+                this.paused = pause;
+                this.flushState();
+            }
         },
 
-        CHOOSE(ctx = null, { type = null, router = null, profile = null } = {}) {
+        CHOOSE({ setter = null, type = null, router = null, profile = null } = {}) {
             /*
                 Switch to selected "router" and/or "profile":
 
@@ -444,28 +473,25 @@ function initRouteProviders() {
 
                 Examples:
 
-                CHOOSE(ctx, { profile }) - switch profile, keep router
-                CHOOSE(ctx, { router }) - switch router, try to keep profile
-                CHOOSE(ctx, { router, profile }) - switch both (if applicable)
+                CHOOSE({ [setter], profile }) - switch profile, keep router
+                CHOOSE({ [setter], router }) - switch router, try to keep profile
+                CHOOSE({ [setter], router, profile }) - switch both (if applicable)
 
                 Special case (used for searchParams / share route link):
 
-                CHOOSE(ctx, { type, [profile] }) - select 1st type's provider
-
-                Return: updated routeProviders (use if you need) or null
+                CHOOSE({ [setter], type, [profile] }) - select 1st type's provider
             */
-            const routeProviders = ctx?.routeProviders;
 
-            if (!ctx || !routeProviders) throw(new Error('invalid route.CHOOSE() call'));
+            this.initSetter(setter);
 
             if (type && !router) {
-                router = routeProviders.getProviderByType(type)?.key ?? 'osmand';
+                router = this.getProviderByType(type)?.key ?? 'osmand';
                 // console.log('type', type, 'router', router);
             }
 
             // use current values if not defined
-            router = router ?? routeProviders.router;
-            profile = profile ?? routeProviders.profile;
+            router = router ?? this.router;
+            profile = profile ?? this.profile;
 
             const providers = this.allProviders();
 
@@ -482,11 +508,116 @@ function initRouteProviders() {
             if (router && profile) {
                 type = this.getProvider(router)?.type ?? 'osmand'; // fallback
                 // console.log('choosen:', type, router, profile);
-                return mergeStateObject(routeProviders, ctx.setRouteProviders, { type, router, profile });
+
+                this.type = type;
+                this.router = router;
+                this.profile = profile;
+
+                this.flushState();
+            }
+        },
+
+        // load and validate OSRM and OsmAnd routing providers
+        async LOAD({ setter = null, creatingRouteMode = null, setCreatingRouteMode = null }) {
+            this.initSetter(setter);
+
+            let json = onlineRoutingProviders;
+
+            if(!json) {
+                const osrm = await apiGet(
+                    `${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`,
+                    { apiCache: true }
+                );
+                if (osrm.ok) {
+                    json = osrm.data;
+                }
             }
 
-            return routeProviders; // unmodified
+            if (json && json?.providers && json?.providers[0]?.name) {
+
+                json.providers.forEach(p => { // routes to profiles
+                    p.name = p.webName ?? p.name;
+                    p.key = p.name; // name acts as key
+                    if (p.routes) {
+                        p.routes.forEach(r => { // type to key
+                            r.key = r.type;
+                            delete r.type;
+                        });
+                        p.profiles = p.routes;
+                        delete p.routes;
+                    }
+                });
+
+                this.providersOSRM = json.providers;
+                this.type = json.providers[0].type;
+                this.router = json.providers[0].key; // select first OSRM key and type
+                this.profile = json.providers[0]?.profiles[0]?.key; // select first profile
+            } else {
+                console.log('failed to load osrm providers');
+            }
+
+            // load OsmAnd provider as advanced solution
+            // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
+            // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
+            const osmand = await apiGet(
+                `${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`,
+                { apiCache: true }
+            );
+            if (osmand.ok) {
+                try {
+                    const json = await osmand.json();
+
+                    // Tracks-routing compatibility
+                    if (json && setCreatingRouteMode) {
+                        let creatingData = _.cloneDeep(json);
+                        creatingData = filterMode(creatingData);
+                        creatingData = addModes(creatingData);
+                        setCreatingRouteMode( {
+                            mode: creatingRouteMode.mode,
+                            modes: creatingData,
+                            opts: creatingData[creatingRouteMode.mode]?.params,
+                            colors: getColors()
+                            }
+                        );
+                    }
+
+                    if (json) {
+                        // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
+                        // note: sort, filter, additional profiles will be processed here
+                        // copy .params to .backup (used later to reset params in settings)
+                        const converted = [];
+                        Object.keys(json).forEach((k) => {
+                            if (json[k]?.params) {
+                                json[k].backup = copyObj(json[k]?.params);
+                            }
+                            converted.push(json[k]);
+                        });
+
+                        // update default OsmAnd provider with actual profiles
+                        this.providersOsmAnd = [
+                            Object.assign({},
+                                this.providersOsmAnd[0], // keep preloaded
+                                { profiles: converted } // add profiles
+                            )
+                        ];
+                    }
+                } catch { console.log('failed to load osmand profiles'); }
+
+            }
+
+            // set type/profile according to window.location.search
+            const searchParams = new URLSearchParams(window.location.search);
+            const type = searchParams.get('type');
+            const profile = searchParams.get('profile');
+            if (type && profile) {
+                this.CHOOSE({ type, profile });
+            }
+
+            this.loaded = true;
+
+            this.flushState();
         },
+
 
         /*
             providersOSRM and providersOsmAnd are loaded by loadRouterProviders()
@@ -498,102 +629,6 @@ function initRouteProviders() {
             { key: preloaded.router, profiles: [{ key: 'car', name: 'Car' }] })],
 
     };
-}
-
-// load and validate OSRM and OsmAnd routing providers
-async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
-
-    let json = onlineRoutingProviders;
-
-    if(!json) {
-        const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
-        if (osrm.ok) {
-            json = osrm.data;
-        }
-    }
-
-    if (json && json?.providers && json?.providers[0]?.name) {
-
-        json.providers.forEach(p => { // routes to profiles
-            p.name = p.webName ?? p.name;
-            p.key = p.name; // name acts as key
-            if (p.routes) {
-                p.routes.forEach(r => { // type to key
-                    r.key = r.type;
-                    delete r.type;
-                });
-                p.profiles = p.routes;
-                delete p.routes;
-            }
-        });
-
-        routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-            providersOSRM: json.providers,
-            type: json.providers[0].type,
-            router: json.providers[0].key, // select first OSRM key and type
-            profile: json.providers[0]?.profiles[0]?.key // select first profile
-        });
-    } else {
-        console.log('failed to load osrm providers');
-    }
-
-    // load OsmAnd provider as advanced solution
-    // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
-    // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
-    const osmand = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`);
-    if (osmand.ok) {
-        try {
-            const json = await osmand.json();
-
-            // Tracks-routing compatibility
-            if (json && setCreatingRouteMode) {
-                let creatingData = _.cloneDeep(json);
-                creatingData = filterMode(creatingData);
-                creatingData = addModes(creatingData);
-                setCreatingRouteMode( {
-                    mode: creatingRouteMode.mode,
-                    modes: creatingData,
-                    opts: creatingData[creatingRouteMode.mode]?.params,
-                    colors: getColors()
-                    }
-                );
-            }
-
-            if (json) {
-                // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
-                // note: sort, filter, additional profiles will be processed here
-                // copy .params to .backup (used later to reset params in settings)
-                const converted = [];
-                Object.keys(json).forEach((k) => {
-                    if (json[k]?.params) {
-                        json[k].backup = copyObj(json[k]?.params);
-                    }
-                    converted.push(json[k]);
-                });
-
-                // update default OsmAnd provider with actual profiles
-                routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
-                    providersOsmAnd: [
-                        Object.assign({},
-                            routeProviders.providersOsmAnd[0], // keep preloaded
-                            { profiles: converted } // add profiles
-                        )
-                    ]
-                });
-            }
-        } catch { console.log('failed to load osmand profiles'); }
-    }
-
-    // set type/profile according to window.location.search
-    const searchParams = new URLSearchParams(window.location.search);
-    const type = searchParams.get('type');
-    const profile = searchParams.get('profile');
-    if (type && profile) {
-        // emulate ctx {} for CHOOSE() call
-        routeProviders.CHOOSE({ routeProviders, setRouteProviders }, { type, profile });
-    }
-
-    routeProviders = mergeStateObject(routeProviders, setRouteProviders, { loaded: true }); // ready
 }
 
 function routeModeCompatible(routeProviders) {
@@ -610,7 +645,6 @@ const RoutingManager = {
     validateRoutingCash,
     addSegmentToRouting,
     initRouteProviders,
-    loadRouteProviders,
     routeModeCompatible,
     calculateGpxRoute,
     calculateRoute

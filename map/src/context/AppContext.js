@@ -377,6 +377,8 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
+    routeProviders.initSetter(setRouteProviders);
+
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
@@ -384,7 +386,17 @@ export const AppContextProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        RoutingManager.loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode, setCreatingRouteMode })
+        const sequentialLoad = async () => {
+            await routeProviders.LOAD({
+                setter: setRouteProviders, // optional if initSetter() was called before
+                routeProviders,
+                setRouteProviders,
+                creatingRouteMode,
+                setCreatingRouteMode
+            });
+            // await (next class instance load) soon
+        };
+        sequentialLoad();
     }, []);
 
     useEffect(() => {
