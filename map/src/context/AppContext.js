@@ -7,6 +7,7 @@ import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
 import { apiGet } from '../util/HttpApi';
+import { initRouteProviders } from "../class/geoRouter.js";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -333,7 +334,7 @@ export const AppContextProvider = (props) => {
             interInit.push({lat: parseFloat(lat), lng: parseFloat(lng)});
         });
     }
-    const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
+    const [routeProviders, setRouteProviders] = useState(initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
         modes: {'car': {name: 'Car', params: {}}}
