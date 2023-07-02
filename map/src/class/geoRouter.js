@@ -3,9 +3,11 @@ import { copyObj } from "../util/Utils";
 import { choose } from "./geoRouter/choose.js";
 import { setPause } from "./geoRouter/setPause.js";
 import { setParams } from "./geoRouter/setParams.js";
-import { initSetter } from "./geoRouter/initSetter.js";
-import { flushState } from "./geoRouter/flushState.js";
 import { loadProviders } from "./geoRouter/loadProviders.js";
+
+import { nextState } from "./geoRouter/nextState.js";
+import { flushState } from "./geoRouter/flushState.js";
+import { initSetter } from "./geoRouter/initSetter.js";
 
 /*
     OsmAnd provider structure and modifications: https://test.osmand.net/routing/routing-modes
@@ -77,14 +79,15 @@ export function initRouteProviders() {
         _getURL(router, profile) { return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url },
         _getProviderByType(type) { return this._allProviders()?.find(r => r.type === type) ?? {} },
 
-
         // setters/actions
         choose,
         setPause,
         setParams,
-        initSetter,
-        flushState,
         loadProviders,
+
+        nextState,
+        flushState,
+        initSetter,
 
         /*
             providersOSRM and providersOsmAnd are loaded by loadRouterProviders()

@@ -1,6 +1,6 @@
 export function initSetter(setter = null) {
     if (setter && setter !== this.setter) {
-        this.setter = setter;
+        this.setter = setter; // TODO FIXME ..........
         this.flushState();
         /*
          * there is 3 alternative ways:
