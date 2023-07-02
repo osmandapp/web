@@ -294,6 +294,7 @@ export default function RouteMenu() {
                     <StyledInput ref={btnFile} accept=".gpx" id="contained-button-route" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
+                        {/* { ctx.routeProviders.paused.toString() + ' ' } */}
                         Upload GPX to route
                     </Button>
                 </label>

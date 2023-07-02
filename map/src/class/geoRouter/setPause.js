@@ -1,4 +1,4 @@
-export function setPause({ setter = null, pause }) {
+export function setPause({ pause }) {
     // const next = this.nextState();
     // next.paused = !!pause;
     // this.flushState(next);

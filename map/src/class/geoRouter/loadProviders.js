@@ -30,7 +30,7 @@ function getColors() {
 
 // load and validate OSRM and OsmAnd routing providers
 export async function loadProviders({ setter = null, creatingRouteMode = null, setCreatingRouteMode = null }) {
-    this.initSetter(setter);
+    // this.initSetter(setter);
 
     let json = onlineRoutingProviders;
 

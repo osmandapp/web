@@ -17,7 +17,7 @@ export function choose({ setter = null, type = null, router = null, profile = nu
         choose({ [setter], type, [profile] }) - select 1st type's provider
     */
 
-    this.initSetter(setter);
+    // this.initSetter(setter);
 
     if (type && !router) {
         router = this.getProviderByType(type)?.key ?? 'osmand';
