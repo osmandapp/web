@@ -40,7 +40,7 @@ const mouseLine = {
             ctx.lineWidth = 1
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#ff595e';
+            ctx.strokeStyle = '#757575';
             ctx.stroke();
             ctx.restore();
         }
@@ -99,9 +99,29 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
             mode: 'index'
         },
         plugins: {
-            tooltips: {
+            tooltip: {
+                enabled: true,
                 mode: "index",
-                intersect: false
+                intersect: false,
+                backgroundColor: '#757575',
+                displayColors: false,
+                callbacks: {
+                    title: (context) => {
+                        return `Distance: ${context[0].label} km`
+                    },
+                    label: (context) => {
+                        let label = context.dataset.label || '';
+
+                        if (label) {
+                            label += ': ';
+                        }
+                        const dimension = context.dataset.yAxisID === 'y1' ? 'm' : 'm/c'
+                        if (context.parsed.y !== null) {
+                            label += `${context.parsed.y} ${dimension}`;
+                        }
+                        return label;
+                    }
+                }
             },
             hover: {
                 mode: "nearest",
