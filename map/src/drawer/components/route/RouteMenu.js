@@ -76,17 +76,8 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        ctx.routeProviders.setPause({ pause: openSettings });
+        ctx.routeProviders.onOpenSettings({ opened: openSettings });
     }, [openSettings]);
-
-    useEffect(() => {
-        if (ctx.routeProviders.loaded && ctx.routeTypeInit && ctx.routeProfileInit) {
-            ctx.routeProviders.choose({
-                type: ctx.routeTypeInit,
-                profile: ctx.routeProfileInit
-            });
-        }
-    }, [ctx.routeTypeInit, ctx.routeProfileInit, ctx.routeProviders.loaded]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -156,7 +147,7 @@ export default function RouteMenu() {
                         labelid="route-mode-label"
                         label={`Route profile (${ctx.routeProviders.type})`}
                         value={ctx.routeProviders.profile}
-                        onChange={(e) => ctx.routeProviders.choose({ profile: e.target.value })}
+                        onChange={(e) => ctx.routeProviders.onRouterProfileSelected({ profile: e.target.value })}
                     >
                         { ctx.routeProviders.allProfiles().map(({ key, name }) =>
                             <MenuItem key={key} value={key}>{name}</MenuItem>
@@ -294,7 +285,8 @@ export default function RouteMenu() {
                     <StyledInput ref={btnFile} accept=".gpx" id="contained-button-route" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
-                        {/* { ctx.routeProviders.paused.toString() + ' ' } */}
+                        { ctx.routeProviders.isReady().toString() + ':' }
+                        {/* { ctx.routeProviders.paused.toString() + ':' } */}
                         Upload GPX to route
                     </Button>
                 </label>

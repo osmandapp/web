@@ -7,7 +7,7 @@ import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
 import { apiGet } from '../util/HttpApi';
-import { initRouteProviders } from "../class/geoRouter.js";
+import { geoRouter } from "../class/geoRouter.js";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -334,7 +334,6 @@ export const AppContextProvider = (props) => {
             interInit.push({lat: parseFloat(lat), lng: parseFloat(lng)});
         });
     }
-    const [routeProviders, setRouteProviders] = useState(initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
         modes: {'car': {name: 'Car', params: {}}}
@@ -378,7 +377,9 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
-    routeProviders.initSetter(setRouteProviders);
+    const [routeProviders, setRouteProviders] = useState(() => new geoRouter());
+
+    routeProviders.initSetter({ setter: setRouteProviders });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -388,13 +389,7 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            await routeProviders.loadProviders({
-                setter: setRouteProviders, // optional if initSetter() was called before
-                routeProviders,
-                setRouteProviders,
-                creatingRouteMode,
-                setCreatingRouteMode
-            });
+            await routeProviders.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
             // await (next class instance load) soon
         };
         sequentialLoad();

@@ -1,4 +1,11 @@
-export function choose({ setter = null, type = null, router = null, profile = null } = {}) {
+/**
+ *
+ * @param { type, router, profile } combination to pick
+ *
+ * @return { type, router, profile } || null
+ *
+ */
+export function pickTypeRouterProfile({ type = null, router = null, profile = null } = {}) {
     /*
         Switch to selected "router" and/or "profile":
 
@@ -8,16 +15,14 @@ export function choose({ setter = null, type = null, router = null, profile = nu
 
         Examples:
 
-        choose({ [setter], profile }) - switch profile, keep router
-        choose({ [setter], router }) - switch router, try to keep profile
-        choose({ [setter], router, profile }) - switch both (if applicable)
+        choose({ profile }) - switch profile, keep router
+        choose({ router }) - switch router, try to keep profile
+        choose({ router, profile }) - switch both (if applicable)
 
         Special case (used for searchParams / share route link):
 
-        choose({ [setter], type, [profile] }) - select 1st type's provider
+        choose({ type, [profile] }) - select 1st type's provider
     */
-
-    // this.initSetter(setter);
 
     if (type && !router) {
         router = this.getProviderByType(type)?.key ?? 'osmand';
@@ -42,12 +47,10 @@ export function choose({ setter = null, type = null, router = null, profile = nu
 
     if (router && profile) {
         type = this.getProvider(router)?.type ?? 'osmand'; // fallback
-        // console.log('choosen:', type, router, profile);
-
-        this.type = type;
-        this.router = router;
-        this.profile = profile;
-
-        this.flushState();
+        console.log('picked:', type, router, profile);
+        return { type, router, profile };
+    } else {
+        console.error('pickTypeRouterProfile failed:', type, router, profile);
+        return null;
     }
 }

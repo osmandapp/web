@@ -1,7 +1,7 @@
 import _ from "lodash";
-import { copyObj } from "../../util/Utils";
-import { apiGet } from "../../util/HttpApi";
-import onlineRoutingProviders from "../../generated/online-routing-providers.json";
+import { copyObj } from "../../../util/Utils";
+import { apiGet } from "../../../util/HttpApi";
+import onlineRoutingProviders from "../../../generated/online-routing-providers.json";
 
 function addModes(data) {
     data['line'] = { name: 'Line', params: {} };
@@ -29,8 +29,8 @@ function getColors() {
 }
 
 // load and validate OSRM and OsmAnd routing providers
-export async function loadProviders({ setter = null, creatingRouteMode = null, setCreatingRouteMode = null }) {
-    // this.initSetter(setter);
+export async function loadProviders({ parseQueryString, creatingRouteMode = null, setCreatingRouteMode = null }) {
+    const next = this.nextState();
 
     let json = onlineRoutingProviders;
 
@@ -59,10 +59,10 @@ export async function loadProviders({ setter = null, creatingRouteMode = null, s
             }
         });
 
-        this.providersOSRM = json.providers;
-        this.type = json.providers[0].type;
-        this.router = json.providers[0].key; // select first OSRM key and type
-        this.profile = json.providers[0]?.profiles[0]?.key; // select first profile
+        next.providersOSRM = json.providers;
+        next.type = json.providers[0].type;
+        next.router = json.providers[0].key; // select first OSRM key and type
+        next.profile = json.providers[0]?.profiles[0]?.key; // select first profile
     } else {
         console.log('failed to load osrm providers');
     }
@@ -105,9 +105,9 @@ export async function loadProviders({ setter = null, creatingRouteMode = null, s
                 });
 
                 // update default OsmAnd provider with actual profiles
-                this.providersOsmAnd = [
+                next.providersOsmAnd = [
                     Object.assign({},
-                        this.providersOsmAnd[0], // keep preloaded
+                        next.providersOsmAnd[0], // keep preloaded
                         { profiles: converted } // add profiles
                     )
                 ];
@@ -117,14 +117,19 @@ export async function loadProviders({ setter = null, creatingRouteMode = null, s
     }
 
     // set type/profile according to window.location.search
-    const searchParams = new URLSearchParams(window.location.search);
-    const type = searchParams.get('type');
-    const profile = searchParams.get('profile');
-    if (type && profile) {
-        this.choose({ type, profile });
+    if (parseQueryString) {
+        const searchParams = new URLSearchParams(window.location.search);
+        const type = searchParams.get('type');
+        const profile = searchParams.get('profile');
+        if (type && profile) {
+            const picked = next.pickTypeRouterProfile.call(next, { type, profile });
+            next.type = picked.type;
+            next.router = picked.router;
+            next.profile = picked.profile;
+        }
     }
 
-    this.loaded = true;
+    next.loaded = true;
 
-    this.flushState();
+    next.flushState(next);
 }

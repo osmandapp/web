@@ -1,30 +1,41 @@
-export function initSetter(setter = null) {
+/**
+ * Save useState() setter function for this class
+ *
+ * @name initSetter
+ * @category geoRouter
+ *
+ * @example
+ *
+ * const [routeProviders, setRouteProviders] = useState(initRouteProviders);
+ * routeProviders.initSetter({ setter: setRouteProviders });
+ */
+export function initSetter({ setter = null }) {
     if (setter && setter !== this.setter) {
-        setter((previous) => Object.assign({}, previous, { setter }));
+        setter((previous) => Object.assign(proto(previous), previous, { setter }));
     }
-    // if (setter && setter !== this.setter) {
-    //     this.setter = setter;
-    //     this.flushState();
-    //     /*
-    //      * there is 3 alternative ways:
-    //      *
-    //      * setter(o => Object.assign(o, { setter })); // next render
-    //      * setter(o => { o.setter = setter; return {...o}; } ); // next render
-    //      * this.setter = setter; setter(() => Object.assign({}, this)); // BAD: current render
-    //      */
-    // }
-    // if (!this.setter) {
-    //     console.error('geoRouter incorrect initSetter() call');
-    // }
-}
-
-export function nextState() {
-    return Object.assign({}, this);
 }
 
 /**
- * Flushes state by queue changes into React setState() (this.setter)
+ * Return Object copy of current state.
  *
+ * @name nextState
+ * @category geoRouter
+ *
+ * @example
+ *
+ * const next = this.nextState();
+ * next.router = router;
+ * next.profile = profile;
+ * next.flushState(next);
+ */
+export function nextState() {
+    return Object.assign(proto(this), this);
+}
+
+/**
+ * Flush state by queue changes into React useState() setter (this.setter)
+ *
+ * @name flushState
  * @category geoRouter
  *
  * @param {Object|Function|null} state
@@ -35,13 +46,14 @@ export function nextState() {
  *
  * @example
  *
- * const next = this.nextState();
- * next.paused = !!pause;
- * this.flushState(next);
+ * const next = this.nextState(); // complex mutate
+ * next.router = router;
+ * next.profile = profile;
+ * next.flushState(next);
  *
- * this.flushState((o) => o.paused = !!pause);
+ * this.flushState((o) => o.paused = !!pause); // simple mutate
  *
- * this.paused = !!pause; // BAD: you must not mutate React state
+ * this.paused = !!pause; // bad mutate (you don't allowed to mutate this)
  * this.flushState();
  */
 
@@ -58,7 +70,7 @@ export function flushState(state = null) {
 
     if (state && typeof state === 'function') {
         this.setter((previous) => {
-            const next = Object.assign({}, previous);
+            const next = Object.assign(proto(previous), previous);
             state(next); // callback
             return next;
         });
@@ -66,7 +78,15 @@ export function flushState(state = null) {
     }
 
     if (state === null && typeof state === 'object') {
-        this.setter((previous) => Object.assign({}, previous, this));
+        this.setter((previous) => Object.assign(proto(previous), previous, this));
         return;
     }
+}
+
+/**
+ * @param {object|class} instance
+ * @return empty object of same prototype
+ */
+function proto(instance) {
+    return Object.create(Object.getPrototypeOf(instance));
 }

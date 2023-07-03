@@ -278,7 +278,7 @@ async function generateCacheKey(url, options = null, body = null) {
 
     let data = body ?? '';
 
-    if(isFormData(body)) {
+    if (isFormData(body)) {
         for (const [k, v] of body.entries()) {
             data = md5(data + k);
             if (v.toString() === "[object File]") {
