@@ -3,12 +3,39 @@ import GpxGraph from "./GpxGraph";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import _ from "lodash";
+import {Checkbox, FormControlLabel} from "@mui/material";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+    checkbox: {
+        '& .MuiTypography-root': {
+            fontSize: '12',
+        },
+        transform: "scale(0.8)"
+    }
+})
 
 const GpxGraphProvider = ({width}) => {
 
     const ctx = useContext(AppContext);
+    const classes = useStyles();
+
+    const ELEVATION = 'Elevation';
+    const ELEVATION_SRTM = 'ElevationSRTM';
+    const SPEED = 'Speed';
+    const DISTANCE = 'Distance';
 
     const [data, setData] = useState(null);
+    const [showData, setShowData] = useState(
+        {
+            [ELEVATION]: true,
+            [ELEVATION_SRTM]: false,
+            [SPEED]: false
+        });
+
+    function hasData() {
+        return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED];
+    }
 
     useEffect(() => {
         let trackData = {};
@@ -91,10 +118,10 @@ const GpxGraphProvider = ({width}) => {
                 }
 
                 let dataTab = {
-                    "Distance": Math.round(sumDist) / 1000,
-                    "Elevation": ele,
-                    "ElevationSRTM": eleSRTM,
-                    "Speed": speed,
+                    [DISTANCE]: Math.round(sumDist) / 1000,
+                    [ELEVATION]: ele,
+                    [ELEVATION_SRTM]: eleSRTM,
+                    [SPEED]: speed,
                 };
                 result.push(dataTab);
             });
@@ -104,10 +131,26 @@ const GpxGraphProvider = ({width}) => {
 
 
     return (<>
-            {graphData &&
+            <div style={{marginLeft: '20px'}}>
+                {Object.entries(showData).map(([key, value]) =>
+                    <FormControlLabel className={classes.checkbox} key={key} label={key} control={
+                        <Checkbox sx={{marginLeft: '-30px'}} checked={value}
+                                  onChange={() => {
+                                      let updatedShowData = Object.assign({}, showData);
+                                      updatedShowData[key] = !value;
+                                      setShowData(updatedShowData);
+                                  }
+                                  }/>
+                    }>
+                    </FormControlLabel>
+                )}
+            </div>
+            {graphData && hasData() &&
                 <GpxGraph data={graphData?.res}
-                          xAxis={"Distance"}
-                          yAxis={"Elevation"}
+                          showData={showData}
+                          xAxis={DISTANCE}
+                          y1Axis={[ELEVATION, ELEVATION_SRTM]}
+                          y2Axis={SPEED}
                           width={width}
                           minEle={graphData?.minEle}
                           maxEle={graphData?.maxEle}

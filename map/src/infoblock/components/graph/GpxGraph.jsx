@@ -1,4 +1,4 @@
-import React, {useContext, useRef} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Chart} from 'react-chartjs-2';
 import {
     Tooltip,
@@ -62,14 +62,27 @@ ChartJS.register(
 );
 
 
-export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, minSpeed, maxSpeed}) {
+export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, minEle, maxEle, minSpeed, maxSpeed}) {
 
     const ctx = useContext(AppContext);
+
+    const [speedData, setSpeedData] = useState(null);
+    const [eleData, setEleData] = useState(null);
+    const [eleSRTMData, setEleSRTMData] = useState(null);
 
     minEle = Math.ceil(minEle / 10) * 10;
     maxEle = Math.floor(maxEle / 10) * 10;
 
     const chartRef = useRef(null);
+
+    useEffect(() => {
+        if (data) {
+            setSpeedData(showData[y2Axis] ? data.map((d) => d[y2Axis]) : null);
+            setEleData(showData[y1Axis[0]] ? data.map((d) => d[y1Axis[0]]) : null);
+            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => d[y1Axis[1]]) : null);
+        }
+
+    }, [data, showData]);
 
     function onMouseMoveGraph(e, chartRef) {
         if (!chartRef) {
@@ -107,7 +120,7 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 displayColors: false,
                 callbacks: {
                     title: (context) => {
-                        return `Distance: ${context[0].label} km`
+                        return `${xAxis}: ${context[0].label} km`
                     },
                     label: (context) => {
                         let label = context.dataset.label || '';
@@ -170,7 +183,7 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 }
             },
             y1: {
-                display: minEle && maxEle,
+                display: (showData[y1Axis[0]] || showData[y1Axis[1]]) && minEle && maxEle,
                 position: 'left',
                 title: {
                     display: true,
@@ -183,7 +196,7 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 }
             },
             y2: {
-                display: minSpeed !== null && maxSpeed !== null,
+                display: showData[y2Axis] && minSpeed !== null && maxSpeed !== null,
                 position: 'right',
                 grid: {
                     drawOnChartArea: false,
@@ -203,17 +216,17 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
 
     const graphData = {
         labels: data.map((d) => {
-            if (d[`${xAxis}`] !== 0) {
-                return d[`${xAxis}`].toFixed(2)
+            if (d[xAxis] !== 0) {
+                return d[xAxis].toFixed(2)
             } else {
                 return 0;
             }
         }),
         datasets: [
             {
-                label: 'Elevation',
+                label: y1Axis[0],
                 type: 'line',
-                data: data.map((d) => d[`${yAxis}`]),
+                data: eleData,
                 borderColor: 'rgb(53, 162, 235)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 min: minEle,
@@ -223,9 +236,9 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 pointRadius: 0
             },
             {
-                label: 'ElevationSRTM',
+                label: y1Axis[1],
                 type: 'line',
-                data: data.map((d) => d[`ElevationSRTM`]),
+                data: eleSRTMData,
                 borderColor: '#ffc939',
                 backgroundColor: '#f7fabe',
                 min: minEle,
@@ -235,9 +248,9 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 pointRadius: 0
             },
             {
-                label: 'Speed',
+                label: y2Axis,
                 type: 'line',
-                data: data.map((d) => d[`Speed`]),
+                data: speedData,
                 borderColor: '#ff595e',
                 min: minSpeed,
                 max: maxSpeed,
