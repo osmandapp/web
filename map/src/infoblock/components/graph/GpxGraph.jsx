@@ -138,17 +138,44 @@ export default function GpxGraph({data, xAxis, yAxis, width, minEle, maxEle, min
                 ticks: {
                     beginAtZero: true,
                     maxTicksLimit: 7,
+                },
+                title: {
+                    display: true,
+                    text: 'distance in km',
+                    color: '#757575',
+                    font: {
+                        size: 10,
+                        lineHeight: 1.2,
+                    }
                 }
             },
             y1: {
                 display: minEle && maxEle,
                 position: 'left',
+                title: {
+                    display: true,
+                    text: 'ele in m',
+                    color: '#757575',
+                    font: {
+                        size: 10,
+                        lineHeight: 1.2,
+                    }
+                }
             },
             y2: {
                 display: minSpeed !== null && maxSpeed !== null,
                 position: 'right',
                 grid: {
                     drawOnChartArea: false,
+                },
+                title: {
+                    display: true,
+                    text: 'speed in m/c',
+                    color: '#757575',
+                    font: {
+                        size: 10,
+                        lineHeight: 1.2,
+                    }
                 }
             },
         }
