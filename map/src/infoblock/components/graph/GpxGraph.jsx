@@ -15,6 +15,8 @@ import {Typography} from "@mui/material";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import zoomPlugin from "chartjs-plugin-zoom";
+import annotationsPlugin from "chartjs-plugin-annotation";
+import _ from "lodash";
 
 const mouseLine = {
     id: 'mouseLine',
@@ -58,7 +60,8 @@ ChartJS.register(
     LineElement,
     Filler,
     zoomPlugin,
-    mouseLine
+    mouseLine,
+    annotationsPlugin
 );
 
 
@@ -69,9 +72,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
     const [speedData, setSpeedData] = useState(null);
     const [eleData, setEleData] = useState(null);
     const [eleSRTMData, setEleSRTMData] = useState(null);
-
-    minEle = Math.ceil(minEle / 10) * 10;
-    maxEle = Math.floor(maxEle / 10) * 10;
+    const [maxMinData, setMaxMinData] = useState({});
 
     const chartRef = useRef(null);
 
@@ -80,9 +81,34 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             setSpeedData(showData[y2Axis] ? data.map((d) => d[y2Axis]) : null);
             setEleData(showData[y1Axis[0]] ? data.map((d) => d[y1Axis[0]]) : null);
             setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => d[y1Axis[1]]) : null);
+            if (showData[y1Axis[0]]) {
+                addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
+            }
         }
 
     }, [data, showData]);
+
+    function addMaxMinMarkers(min, max, dataSet) {
+        let res = {
+            min: null,
+            max: null
+        };
+        data.forEach((value, index) => {
+            if (value[dataSet] === min && !res.min) {
+                res.min = index;
+            }
+            if (value[dataSet] === max && !res.max) {
+                res.max = index;
+            }
+        })
+        res = {
+            min: {x: res.min, y: data[res.min][dataSet]},
+            max: {x: res.max, y: data[res.max][dataSet]}
+        }
+        let newMaxMin = Object.assign({}, maxMinData);
+        newMaxMin[dataSet] = res;
+        setMaxMinData(newMaxMin);
+    }
 
     function onMouseMoveGraph(e, chartRef) {
         if (!chartRef) {
@@ -103,6 +129,10 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
         }
     }
 
+    function showMaxMin(dataSet) {
+        return showData[dataSet] && !_.isEmpty(maxMinData) && maxMinData[dataSet];
+    }
+
 
     const options = {
         responsive: true,
@@ -112,6 +142,60 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             mode: 'index'
         },
         plugins: {
+            annotation: {
+                annotations: {
+                    label1: {
+                        display: showMaxMin(y1Axis[0]),
+                        type: 'line',
+                        id: 'vline' + maxMinData[y1Axis[0]]?.min?.x,
+                        mode: 'vertical',
+                        scaleID: 'x',
+                        value: maxMinData[y1Axis[0]]?.min?.x,
+                        borderColor: '#757575',
+                        borderWidth: 1,
+                    },
+                    label2: {
+                        display: showMaxMin(y1Axis[0]),
+                        type: 'label',
+                        xValue: maxMinData[y1Axis[0]]?.min?.x,
+                        yValue: "center",
+                        backgroundColor: '#ebf3f2',
+                        content: [Math.round(maxMinData[y1Axis[0]]?.min?.y)],
+                        font: {
+                            size: 9
+                        },
+                        borderRadius: 5,
+                        color: 'green',
+                        borderWidth: 1,
+                        padding: 2
+                    },
+                    label3: {
+                        display: showMaxMin(y1Axis[0]),
+                        type: 'line',
+                        id: 'vline' + maxMinData[y1Axis[0]]?.max?.x,
+                        mode: 'vertical',
+                        scaleID: 'x',
+                        value: maxMinData[y1Axis[0]]?.max?.x,
+                        borderColor: '#757575',
+                        borderWidth: 1,
+                    },
+                    label4: {
+                        display: showMaxMin(y1Axis[0]),
+                        type: 'label',
+                        xValue: maxMinData[y1Axis[0]]?.max?.x,
+                        yValue: "center",
+                        backgroundColor: '#ebf3f2',
+                        content: [Math.round(maxMinData[y1Axis[0]]?.max?.y)],
+                        font: {
+                            size: 9
+                        },
+                        borderRadius: 5,
+                        color: 'red',
+                        borderWidth: 1,
+                        padding: 2
+                    },
+                }
+            },
             tooltip: {
                 enabled: true,
                 mode: "index",
