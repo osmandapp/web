@@ -37,7 +37,7 @@ OsmAnd offers you many map styles and data layers that fit by default. Let's tak
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_offline"/>*  
+*<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*   
 
 </TabItem>
 
