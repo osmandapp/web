@@ -7,10 +7,7 @@ export function onOpenSettings({ opened }) {
 }
 
 /**
- * Save profile params is not easy:
- * 1. We can't modify _getProfile().params directly because allProviders() consist of joined arrays
- * 2. We assume that params are applicable to providersOsmAnd only (OSRM options aren't supported)
- * 3. Therefore, we look into providersOsmAnd, rewrite params and call ctx-setter
+ * Save changed params to current router/profile
  */
 export function onParamsChanged({ params }) {
     const next = this.nextState();
@@ -18,7 +15,7 @@ export function onParamsChanged({ params }) {
     const router = next.router;
     const profile = next.profile;
 
-    next.providersOsmAnd?.forEach(r => {
+    next.providers.forEach(r => {
         if (r.key === router) {
             r.profiles?.forEach(p => {
                 if (p.key === profile) {

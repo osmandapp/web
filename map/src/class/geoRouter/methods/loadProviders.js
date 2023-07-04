@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { copyObj } from "../../../util/Utils";
 import { apiGet } from "../../../util/HttpApi";
 import onlineRoutingProviders from "../../../generated/online-routing-providers.json";
@@ -28,11 +27,8 @@ function getColors() {
     };
 }
 
-// load and validate OSRM and OsmAnd routing providers
-export async function loadProviders({ parseQueryString, creatingRouteMode = null, setCreatingRouteMode = null }) {
-    const next = this.nextState();
-
-    let json = onlineRoutingProviders;
+async function loadProvidersOSRM() {
+    let json = onlineRoutingProviders; // imported
 
     if(!json) {
         const osrm = await apiGet(
@@ -54,19 +50,23 @@ export async function loadProviders({ parseQueryString, creatingRouteMode = null
                     r.key = r.type;
                     delete r.type;
                 });
+                p.routes.push({
+                    key: 'line',
+                    name: 'Line'
+                });
                 p.profiles = p.routes;
                 delete p.routes;
             }
         });
 
-        next.providersOSRM = json.providers;
-        next.type = json.providers[0].type;
-        next.router = json.providers[0].key; // select first OSRM key and type
-        next.profile = json.providers[0]?.profiles[0]?.key; // select first profile
-    } else {
-        console.log('failed to load osrm providers');
+        return json.providers; // success
     }
 
+    console.log('failed to load osrm providers');
+    return null;
+}
+
+async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
     // load OsmAnd provider as advanced solution
     // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
@@ -74,47 +74,71 @@ export async function loadProviders({ parseQueryString, creatingRouteMode = null
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`,
         { apiCache: true }
     );
-    if (osmand.ok) {
-        try {
-            const json = await osmand.json();
 
-            // Tracks-routing compatibility
-            if (json && setCreatingRouteMode) {
-                let creatingData = _.cloneDeep(json);
-                creatingData = filterMode(creatingData);
-                creatingData = addModes(creatingData);
-                setCreatingRouteMode( {
-                    mode: creatingRouteMode.mode,
-                    modes: creatingData,
-                    opts: creatingData[creatingRouteMode.mode]?.params,
-                    colors: getColors()
-                    }
-                );
-            }
+    const json = osmand.data;
 
-            if (json) {
-                // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
-                // note: sort, filter, additional profiles will be processed here
-                // copy .params to .backup (used later to reset params in settings)
-                const converted = [];
-                Object.keys(json).forEach((k) => {
-                    if (json[k]?.params) {
-                        json[k].backup = copyObj(json[k]?.params);
-                    }
+    if (osmand.ok && json && json.car) {
+        // Tracks-routing compatibility
+        if (json && setCreatingRouteMode) {
+            let creatingData = copyObj(json);
+            creatingData = filterMode(creatingData);
+            creatingData = addModes(creatingData);
+            setCreatingRouteMode( {
+                mode: creatingRouteMode.mode,
+                modes: creatingData,
+                opts: creatingData[creatingRouteMode.mode]?.params,
+                colors: getColors()
+                }
+            );
+        }
+
+        if (json) {
+            // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
+            // note: sort, filter, additional profiles will be processed here
+            // copy .params to .backup (used later to reset params in settings)
+
+            const converted = [];
+
+            Object.keys(json).forEach((k) => {
+                if (json[k]?.params) {
+                    json[k].backup = copyObj(json[k]?.params);
+                }
+                if(!k.includes('rescuetrack')) {
                     converted.push(json[k]);
-                });
+                }
+            });
 
-                // update default OsmAnd provider with actual profiles
-                next.providersOsmAnd = [
-                    Object.assign({},
-                        next.providersOsmAnd[0], // keep preloaded
-                        { profiles: converted } // add profiles
-                    )
-                ];
-            }
-        } catch { console.log('failed to load osmand profiles'); }
+            converted.push({
+                key: 'line',
+                name: 'Line',
+                params: {}
+            });
 
+            return converted; // success
+        }
     }
+
+    console.log('failed to load osmand profiles');
+    return null;
+}
+
+export async function loadProviders({ parseQueryString, creatingRouteMode = null, setCreatingRouteMode = null }) {
+    const next = this.nextState();
+
+    const profilesOsmAnd = await loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode });
+
+    const osmand = profilesOsmAnd
+        ? [Object.assign({}, next.fallback, { profiles: profilesOsmAnd })]
+        : [next.fallback];
+
+    const osrm = await loadProvidersOSRM() || [];
+
+    next.providers = [].concat(osrm, osmand); // default OSRM first
+
+    // set 1st router/profile
+    next.type = next.providers[0].type;
+    next.router = next.providers[0].key;
+    next.profile = next.providers[0].profiles[0].key;
 
     // set type/profile according to window.location.search
     if (parseQueryString) {
@@ -128,6 +152,8 @@ export async function loadProviders({ parseQueryString, creatingRouteMode = null
             next.profile = picked.profile;
         }
     }
+
+    next.colors = getColors();
 
     next.loaded = true;
 

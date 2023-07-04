@@ -3,7 +3,6 @@ import {Air, Cloud, Compress, Shower, Thermostat} from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
-import RoutingManager from "./RoutingManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
 import { apiGet } from '../util/HttpApi';
@@ -397,28 +396,29 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (routeProviders.isReady() && routeTrackFile) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateGpxRoute({
-                routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints
+            routeProviders.calculateGpxRoute({
+                routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints,
+                getRouteText, setRoutingErrorMsg
             });
         }
-    }, [routeProviders, routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
+    }, [routeProviders.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
         if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateRoute( {
-                routeProviders, startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg
+            routeProviders.calculateRoute({
+                startPoint, endPoint, interPoints, avoidRoads,
+                setRouteData, getRouteText, setRoutingErrorMsg
             });
         } else {
-            setHeaderText(prevState => ({
-                ...prevState,
-                route: {text: ``}
-            }));
+            if(!routeTrackFile) {
+                setHeaderText(prevState => ({
+                    ...prevState,
+                    route: {text: ``}
+                }));
+            }
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [routeProviders.isReady(), routeProviders.type, routeProviders.router, routeProviders.profile,
-        startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
+    }, [routeProviders.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
@@ -427,7 +427,7 @@ export const AppContextProvider = (props) => {
         } else {
             if (data) {
                 let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.profile} is found.`
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.getProfileName()} is found.`
             }
         }
         setHeaderText(prevState => ({

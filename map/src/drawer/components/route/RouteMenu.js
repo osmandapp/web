@@ -4,7 +4,7 @@ import {Settings, RemoveCircle, Clear} from '@mui/icons-material';
 import {
     ListItemText, Collapse, MenuItem, ListItemIcon, IconButton,
     FormControl, InputLabel, Input, Select, Button, Typography, Link,
-    Switch, FormControlLabel
+    Switch, FormControlLabel, Box
 } from "@mui/material";
 import {
     ExpandLess, ExpandMore, Directions
@@ -150,7 +150,18 @@ export default function RouteMenu() {
                         onChange={(e) => ctx.routeProviders.onRouterProfileSelected({ profile: e.target.value })}
                     >
                         { ctx.routeProviders.allProfiles().map(({ key, name }) =>
-                            <MenuItem key={key} value={key}>{name}</MenuItem>
+                            <MenuItem key={key} value={key}>
+                                <Box display="flex" width="100%" alignItems="center">
+                                    <Box display="flex" width={25} justifyContent="center" alignItems="center">
+                                        { ctx.routeProviders.getProfileIcon({ profile: key }) }
+                                    </Box>
+                                    <Box display="flex" sx={{ ml: 1 }}>
+                                        <Box sx={{ mt: '3px' }}>
+                                            {name}
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            </MenuItem>
                         )}
                     </Select>
                 </FormControl>
@@ -285,7 +296,7 @@ export default function RouteMenu() {
                     <StyledInput ref={btnFile} accept=".gpx" id="contained-button-route" type="file"
                                  onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}/>
                     <Button variant="contained" component="span" sx={{ml: 2}}>
-                        { ctx.routeProviders.isReady().toString() + ':' }
+                        {/* { ctx.routeProviders.isReady().toString() + ':' } */}
                         {/* { ctx.routeProviders.paused.toString() + ':' } */}
                         Upload GPX to route
                     </Button>

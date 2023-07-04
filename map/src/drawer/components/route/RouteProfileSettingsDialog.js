@@ -126,7 +126,18 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
                         onChange={onChangeProfile}
                     >
                         { ctx.routeProviders.allProfiles().map(({ key, name }) =>
-                            <MenuItem key={key} value={key}>{name}</MenuItem>
+                            <MenuItem key={key} value={key}>
+                                <Box display="flex" width="100%" alignItems="center">
+                                    <Box display="flex" width={25} justifyContent="center" alignItems="center">
+                                        { ctx.routeProviders.getProfileIcon({ profile: key }) }
+                                    </Box>
+                                    <Box display="flex" sx={{ ml: 1 }}>
+                                        <Box sx={{ mt: '3px' }}>
+                                            {name}
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            </MenuItem>
                         )}
                     </Select>
                 </FormControl>
