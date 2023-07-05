@@ -11,12 +11,14 @@ import {
     LineElement,
     Filler
 } from "chart.js";
-import {Typography} from "@mui/material";
+import {Slider, SliderThumb, Typography} from "@mui/material";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import zoomPlugin from "chartjs-plugin-zoom";
 import annotationsPlugin from "chartjs-plugin-annotation";
 import _ from "lodash";
+import {makeStyles} from "@material-ui/core/styles";
+import clsx from "clsx";
 
 const mouseLine = {
     id: 'mouseLine',
@@ -64,17 +66,42 @@ ChartJS.register(
     annotationsPlugin
 );
 
+const useStyles = makeStyles({
+    slider: {
+        '& .MuiSlider-thumb': {
+            "&.first-thumb": {
+                backgroundImage: `url('/map/images/map_icons/map_track_point_start.svg')`,
+                backgroundPosition: 'center'
+            },
+            "&.second-thumb ": {
+                backgroundImage: `url('/map/images/map_icons/map_track_point_finish.svg')`,
+                backgroundPosition: 'center'
+            }
+        },
+        '& .MuiSlider-valueLabel': {fontSize: "8px"}
+    }
+})
+
 
 export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, minEle, maxEle, minSpeed, maxSpeed}) {
 
     const ctx = useContext(AppContext);
+    const styles = useStyles();
 
     const [speedData, setSpeedData] = useState(null);
     const [eleData, setEleData] = useState(null);
     const [eleSRTMData, setEleSRTMData] = useState(null);
     const [maxMinData, setMaxMinData] = useState({});
+    const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
 
     const chartRef = useRef(null);
+
+    const handleRangeChange = (event, newValue) => {
+        setDistRangeValue(newValue);
+        if (showRange) {
+            ctx.setTrackRange(newValue);
+        }
+    };
 
     useEffect(() => {
         if (data) {
@@ -84,8 +111,9 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
             }
+            setDistRangeValue([0, data.length])
+            ctx.setTrackRange(null);
         }
-
     }, [data, showData]);
 
     function addMaxMinMarkers(min, max, dataSet) {
@@ -101,13 +129,15 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 res.max = index;
             }
         })
-        res = {
-            min: {x: res.min, y: data[res.min][dataSet]},
-            max: {x: res.max, y: data[res.max][dataSet]}
+        if (res.min && res.max) {
+            res = {
+                min: {x: res.min, y: data[res.min][dataSet]},
+                max: {x: res.max, y: data[res.max][dataSet]}
+            }
+            let newMaxMin = Object.assign({}, maxMinData);
+            newMaxMin[dataSet] = res;
+            setMaxMinData(newMaxMin);
         }
-        let newMaxMin = Object.assign({}, maxMinData);
-        newMaxMin[dataSet] = res;
-        setMaxMinData(newMaxMin);
     }
 
     function onMouseMoveGraph(e, chartRef) {
@@ -131,6 +161,11 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
 
     function showMaxMin(dataSet) {
         return showData[dataSet] && !_.isEmpty(maxMinData) && maxMinData[dataSet];
+    }
+
+    function showRange() {
+        const defaultPos = distRangeValue[0] === 0 && distRangeValue[1] === data.length;
+        return !defaultPos;
     }
 
 
@@ -194,6 +229,13 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                         borderWidth: 1,
                         padding: 2
                     },
+                    box1: {
+                        display: showRange(),
+                        type: 'box',
+                        xMin: distRangeValue[0],
+                        xMax: distRangeValue[1],
+                        backgroundColor: 'rgba(245, 208, 39, 0.34)'
+                    }
                 }
             },
             tooltip: {
@@ -267,7 +309,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 }
             },
             y1: {
-                display: (showData[y1Axis[0]] || showData[y1Axis[1]]) && minEle && maxEle,
+                display: (showData[y1Axis[0]] !== undefined || showData[y1Axis[1]] !== undefined),
                 position: 'left',
                 title: {
                     display: true,
@@ -280,7 +322,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 }
             },
             y2: {
-                display: showData[y2Axis] && minSpeed !== null && maxSpeed !== null,
+                display: showData[y2Axis] !== undefined,
                 position: 'right',
                 grid: {
                     drawOnChartArea: false,
@@ -344,6 +386,20 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
         ],
     };
 
+    function ThumbComponent(props) {
+        const {children, className, ...other} = props;
+        const extraClassName =
+            other["data-index"] === 0 ? "first-thumb" : "second-thumb";
+        return (
+            <SliderThumb {...other} className={clsx(className, extraClassName)}>
+                {children}
+            </SliderThumb>
+        );
+    }
+
+    function valueLabelFormat(value) {
+        return `${(data[value][xAxis]).toFixed(1)}  km`;
+    }
 
     return (<>
             <Typography component={'span'} type="title" color="inherit" sx={{p: 0}}>
@@ -359,6 +415,19 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                     onMouseLeave={() => ctx.mapMarkerListener(null)}
                 />
             </Typography>
+            <Slider
+                className={styles.slider}
+                valueLabelDisplay="auto"
+                valueLabelFormat={valueLabelFormat}
+                getAriaLabel={() => 'Distance range'}
+                size="small"
+                value={distRangeValue}
+                onChange={handleRangeChange}
+                min={0}
+                step={1}
+                max={data.length - 1}
+                components={{Thumb: ThumbComponent}}
+            />
         </>
     );
 };

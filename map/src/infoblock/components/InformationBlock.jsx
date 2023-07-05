@@ -90,6 +90,7 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
         setShowContextMenu(false);
         setClearState(true);
         ctx.setCurrentObjectType(null);
+        ctx.setShowPoints({points: true, wpts: true});
     }
 
 

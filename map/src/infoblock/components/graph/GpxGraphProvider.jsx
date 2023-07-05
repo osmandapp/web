@@ -3,7 +3,7 @@ import GpxGraph from "./GpxGraph";
 import AppContext from "../../../context/AppContext";
 import TracksManager from "../../../context/TracksManager";
 import _ from "lodash";
-import {Checkbox, FormControlLabel} from "@mui/material";
+import {Checkbox, Divider, FormControlLabel} from "@mui/material";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -26,12 +26,7 @@ const GpxGraphProvider = ({width}) => {
     const DISTANCE = 'Distance';
 
     const [data, setData] = useState(null);
-    const [showData, setShowData] = useState(
-        {
-            [ELEVATION]: true,
-            [ELEVATION_SRTM]: false,
-            [SPEED]: false
-        });
+    const [showData, setShowData] = useState(null);
 
     function hasData() {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED];
@@ -80,18 +75,20 @@ const GpxGraphProvider = ({width}) => {
                 let eleSRTM;
                 let speed;
                 if (elevation) {
-                    ele = TracksManager.getEle(point, elevation, points).toFixed(2);
-                    ele = Math.round(ele * 10) / 10;
-                    if (minEle === TracksManager.NAN_MARKER) {
-                        minEle = ele;
-                    } else {
-                        minEle = Math.min(ele, minEle);
-                    }
+                    ele = TracksManager.getEle(point, elevation, points)?.toFixed(2);
+                    if (ele !== undefined) {
+                        ele = Math.round(ele * 10) / 10;
+                        if (minEle === TracksManager.NAN_MARKER) {
+                            minEle = ele;
+                        } else {
+                            minEle = Math.min(ele, minEle);
+                        }
 
-                    if (maxEle === TracksManager.NAN_MARKER) {
-                        maxEle = ele;
-                    } else {
-                        maxEle = Math.max(ele, maxEle);
+                        if (maxEle === TracksManager.NAN_MARKER) {
+                            maxEle = ele;
+                        } else {
+                            maxEle = Math.max(ele, maxEle);
+                        }
                     }
                 }
                 if (elevationSRTM) {
@@ -125,16 +122,44 @@ const GpxGraphProvider = ({width}) => {
                 };
                 result.push(dataTab);
             });
+
+            setShowData({
+                [ELEVATION]: data.ele,
+                [ELEVATION_SRTM]: data.srtm,
+                [SPEED]: data.speed
+            })
+
             return {res: result, minEle: minEle, maxEle: maxEle, minSpeed: minSpeed, maxSpeed: maxSpeed};
         }
     }, [data]);
 
 
     return (<>
+            <div style={{marginLeft: '15px', marginTop: '-10px'}}>
+                <FormControlLabel className={classes.checkbox} key={'show_points'} label={'Show track points'} control={
+                    <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.points} disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
+                              onChange={() => {
+                                  let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                  updatedShowPoints.points = !updatedShowPoints.points;
+                                  ctx.setShowPoints(updatedShowPoints)
+                              }}/>
+                }>
+                </FormControlLabel>
+                <FormControlLabel className={classes.checkbox} key={'show_wpts'} label={'Show track wpts'} control={
+                    <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.wpts} disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
+                              onChange={() => {
+                                  let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                  updatedShowPoints.wpts = !updatedShowPoints.wpts;
+                                  ctx.setShowPoints(updatedShowPoints)
+                              }}/>
+                }>
+                </FormControlLabel>
+            </div>
+            {showData && <Divider sx={{mt: "3px", mb: "12px"}}/>}
             <div style={{marginLeft: '20px'}}>
-                {Object.entries(showData).map(([key, value]) =>
+                {showData && Object.entries(showData).map(([key, value]) =>
                     <FormControlLabel className={classes.checkbox} key={key} label={key} control={
-                        <Checkbox sx={{marginLeft: '-30px'}} checked={value}
+                        <Checkbox sx={{marginLeft: '-30px'}} checked={value} disabled={value === undefined}
                                   onChange={() => {
                                       let updatedShowData = Object.assign({}, showData);
                                       updatedShowData[key] = !value;
@@ -145,7 +170,7 @@ const GpxGraphProvider = ({width}) => {
                     </FormControlLabel>
                 )}
             </div>
-            {graphData && hasData() &&
+            {graphData && showData && hasData() &&
                 <GpxGraph data={graphData?.res}
                           showData={showData}
                           xAxis={DISTANCE}

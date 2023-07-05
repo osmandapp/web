@@ -138,7 +138,8 @@ function prepareLocalTrack(track) {
         ext: prepareTrack.ext,
         analysis: prepareTrack.analysis,
         selected: false,
-        originalName: prepareTrack.originalName
+        originalName: prepareTrack.originalName,
+        hasGeo: prepareTrack.hasGeo,
     };
 }
 
@@ -607,7 +608,7 @@ function getEle(point, elevation, array) {
                 return prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
-                    return 0;
+                    return undefined;
                 } else {
                     ind++;
                 }

@@ -493,6 +493,12 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
+    const [trackRange, setTrackRange] = useState(null);
+    const [showPoints, setShowPoints] = useState({
+        points: true,
+        wpts: true
+    });
+
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
@@ -601,7 +607,9 @@ export const AppContextProvider = (props) => {
         routingCash, setRoutingCash,
         routingNewSegments, setRoutingNewSegments,
         processRouting, setProcessRouting,
-        selectedWpt, setSelectedWpt
+        selectedWpt, setSelectedWpt,
+        trackRange, setTrackRange,
+        showPoints, setShowPoints,
     }}>
         {props.children}
     </AppContext.Provider>;
