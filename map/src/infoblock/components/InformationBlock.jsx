@@ -25,6 +25,10 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
     useEffect(() => {
         if (!showContextMenu) {
             stopCreatedTrack(false);
+            ctx.setShowPoints({points: true, wpts: true});
+            ctx.setTrackRange(null);
+            setClearState(true);
+            ctx.setCurrentObjectType(null);
         }
     }, [showContextMenu])
 
@@ -86,14 +90,6 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
         }
     }
 
-    function closeContextMenu() {
-        setShowContextMenu(false);
-        setClearState(true);
-        ctx.setCurrentObjectType(null);
-        ctx.setShowPoints({points: true, wpts: true});
-        ctx.setTrackRange(null);
-    }
-
 
     return <>{showContextMenu && !hideContextMenu &&
         <>
@@ -107,9 +103,7 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
                         <TabContext value={value}>
                             <AppBar position="static" color="default">
                                 <div style={{display: 'inherit'}}>
-                                    <Button key='close' onClick={() => {
-                                        closeContextMenu()
-                                    }}>
+                                    <Button key='close' onClick={() => setShowContextMenu(false)}>
                                         <Close/>
                                     </Button>
                                     <TabList

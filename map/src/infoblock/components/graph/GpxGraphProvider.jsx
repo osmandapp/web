@@ -66,7 +66,7 @@ const GpxGraphProvider = ({width}) => {
                 [SPEED]: data.speed ? data.speed : ''
             })
         }
-    },[data]);
+    }, [data]);
 
     const graphData = useMemo(() => {
         if (!_.isEmpty(data?.data)) {
@@ -140,27 +140,31 @@ const GpxGraphProvider = ({width}) => {
     }
 
     return (<>
-            <div style={{marginLeft: '15px', marginTop: '-10px'}}>
-                <FormControlLabel className={classes.checkbox} key={'show_points'} label={'Show track points'} control={
-                    <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.points} disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
-                              onChange={() => {
-                                  let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                  updatedShowPoints.points = !updatedShowPoints.points;
-                                  ctx.setShowPoints(updatedShowPoints)
-                              }}/>
-                }>
-                </FormControlLabel>
-                <FormControlLabel className={classes.checkbox} key={'show_wpts'} label={'Show track wpts'} control={
-                    <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.wpts} disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
-                              onChange={() => {
-                                  let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                  updatedShowPoints.wpts = !updatedShowPoints.wpts;
-                                  ctx.setShowPoints(updatedShowPoints)
-                              }}/>
-                }>
-                </FormControlLabel>
-            </div>
-            {showData && <Divider sx={{mt: "3px", mb: "12px"}}/>}
+            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                <div style={{marginLeft: '15px', marginTop: '-10px'}}>
+                    <FormControlLabel className={classes.checkbox} key={'show_points'} label={'Show track points'}
+                                      control={
+                                          <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.points}
+                                                    disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
+                                                    onChange={() => {
+                                                        let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                                        updatedShowPoints.points = !updatedShowPoints.points;
+                                                        ctx.setShowPoints(updatedShowPoints)
+                                                    }}/>
+                                      }>
+                    </FormControlLabel>
+                    <FormControlLabel className={classes.checkbox} key={'show_wpts'} label={'Show track wpts'} control={
+                        <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.wpts}
+                                  disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
+                                  onChange={() => {
+                                      let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                      updatedShowPoints.wpts = !updatedShowPoints.wpts;
+                                      ctx.setShowPoints(updatedShowPoints)
+                                  }}/>
+                    }>
+                    </FormControlLabel>
+                </div>}
+            {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <Divider sx={{mt: "3px", mb: "12px"}}/>}
             <div style={{marginLeft: '20px'}}>
                 {showData && Object.entries(showData).map(([key, value]) =>
                     <FormControlLabel className={classes.checkbox} key={key} label={key} control={
