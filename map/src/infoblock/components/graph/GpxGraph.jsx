@@ -168,6 +168,15 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
         return !defaultPos;
     }
 
+    function showY1Scale() {
+        const hasEle = showData[y1Axis[0]] !== '' && showData[y1Axis[0]] !== false;
+        const hasEleSRTM = showData[y1Axis[1]] !== '' && showData[y1Axis[1]] !== false;
+        return hasEle || hasEleSRTM;
+    }
+
+    function showY2Scale() {
+        return showData[y2Axis] !== '' && showData[y2Axis] !== false;
+    }
 
     const options = {
         responsive: true,
@@ -309,7 +318,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 }
             },
             y1: {
-                display: (showData[y1Axis[0]] !== undefined || showData[y1Axis[1]] !== undefined),
+                display: showY1Scale(),
                 position: 'left',
                 title: {
                     display: true,
@@ -322,7 +331,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 }
             },
             y2: {
-                display: showData[y2Axis] !== undefined,
+                display: showY2Scale(),
                 type: 'linear',
                 position: 'right',
                 title: {
