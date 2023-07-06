@@ -272,7 +272,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             },
             zoom: {
                 limits: {
-                    y: {min: minEle - 10, max: maxEle + 10}
+                    y1: {min: minEle - 10, max: maxEle + 10}
                 },
                 zoom: {
                     wheel: {
@@ -323,10 +323,8 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             },
             y2: {
                 display: showData[y2Axis] !== undefined,
+                type: 'linear',
                 position: 'right',
-                grid: {
-                    drawOnChartArea: false,
-                },
                 title: {
                     display: true,
                     text: 'speed in m/c',
