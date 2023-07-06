@@ -26,19 +26,6 @@ OsmAnd provides several ways to view your search history.
 - Information block in the navigation menu of [route preparation](../navigation/setup/route-navigation.md#navigation-menu) displays a list of recent destination points, which are also part of the search history.
 - Search history is available in [Android Auto](../navigation/auto-car.md#search) and [CarPlay](../navigation/car-play.md#search).
 
-<!--
-1. Re-search: Users can use the Search History to re-search for previously searched locations or addresses without having to enter the query again. This saves time and effort when searching for locations.
-
-2 Quick access to frequently visited places: If the user frequents certain places like home, work or favorite places, the Search History can save these places and provide quick access to them without having to search every time.
-
-Tracking previous trips: Search History can be useful for tracking previous trips and itineraries. This can be useful for retrieving routes that the user has taken before, or for scheduling trips based on previous experiences.
-
-4. Searching for places at a specific time or date: If the user has searched for places or addresses at a specific time or date, Search History can help reconstruct those searches for later use or analysis.
-
-5. Deletion and management of records: Search History also provides the ability to delete or manage previous records, which can be useful for maintaining privacy or organizing history.
-
-In general, Search History in the navigation application serves to enhance user experience, improve search and navigation efficiency, and preserve and provide relevant information about a user's previous actions.
--->
 
 ## How to use
 
@@ -56,35 +43,42 @@ In general, Search History in the navigation application serves to enhance user 
 
 </TabItem>
 
-</Tabs>
+</Tabs> 
 
-<!-- Openning list of your history searching. Write needed word for seaching -->
-<!--
-Key features of Search History include:
+The search history serves to provide relevant information about your previous actions.
 
-1. query storage: The app stores text queries entered by the user and the locations that were found as a result of the search.
-2. Date and Time: Each query in the history is usually accompanied by the date and time when it was executed. This helps users keep track of when they searched for certain places or routes.
-3. Ease of Use: Search History provides a simple interface for viewing, filtering, and deleting previous searches, making it easy to use.
-4. Frequently Visited Places: The app can also automatically save places that the user frequently visits to provide quick access to them in the future without having to search again.
-5. Privacy: It is important to protect the personal data of users, so navigation applications usually provide an option to delete all or individual records from the Search History.
--->
+- *Re-search*. You can use the search history to search again for previously searched places or addresses without having to re-enter the query.  
+
+- *Quick access to frequently visited places*. If you visit certain places frequently, such as your home, work, or favorite places, Search History saves those places, providing quick access to them.  
+
+- *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before or [plan your next route](../plan-route/create-route.md) based on previous ones.  
+
+- *Search for places over a certain period of time*. For the Android app, you need to use a long press, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
+
+- *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
+
 
 ### Search query list
 
-Display **order in the list**:
+**Order of items** displayed in the list.  
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
 
 The following **types of objects** get into the Search History list:
-- **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or other such places that the user has searched tapped on the map.
-- **Text Querie**. These are text strings that the user types into the search box to find a specific place or address, and then taps on them to browse. For example, *Restaurants downtown* or *Nearest gas station*.
-- **Tracks and Waypoints**.
+- **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
+- **Text Queries**. These are text strings that the you types into the search box to find a specific place or address, and then taps on them to browse. For example, *Restaurants downtown* or *Nearest gas station*.
+- **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
 
-<!--
-What type of objects are in the list
--->
+Each field in the Search History list contains some of the **information** available to the application.
+- An icon that identifies the type or category of the found object.
+- The object name, location, address, or text query. For tracks information about the distance, number of waypoints, and time is displayed.
+- Distance from the user's current location to the point and direction by compass.
+- In iOS the list is sorted by month.
+
 
 ## Actions
+
+In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export). Two more actions are available in the Android app: [share](#share-search-history-objects) search items as a gpx file, and *disable or enable* the entire search history without deleting it.
 
 ### Delete
 
@@ -104,19 +98,22 @@ What type of objects are in the list
 
 </Tabs>
 
-<!-- Long tap to one line from History list -->
+Long tap to one line from History list 
+5. Privacy: It is important to protect the personal data of users, so navigation applications usually provide an option to delete all or individual records from the Search History. 
+
+#### Share search history objects
 
 
-### Export (Android)
+### Export
 
-<!-- Exporting items or the entire Search History can be useful for the following scenarios:
+Exporting items or the entire Search History can be useful for the following scenarios:
 
 1. Backup: The user may want to back up their Search History to save important information or to restore it to another device.
 
 2. Transferring to another device: If the user changes device, he/she can use Export function to transfer the Search History to the new device without having to search and enter the data again.
 
-3. data analysis and processing: The user may want to export the Search History for data analysis, reporting, or use in other applications for additional processing.
+3. Data analysis and processing: The user may want to export the Search History for data analysis, reporting, or use in other applications for additional processing.
 
 4. Share space with another user of the application.
--->
+
 
