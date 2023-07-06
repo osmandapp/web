@@ -53,11 +53,20 @@ const GpxGraphProvider = ({width}) => {
                 }
             }
         }
-
         if (trackData) {
             setData({...trackData});
         }
     }, [ctx.selectedGpxFile]);
+
+    useEffect(() => {
+        if (data) {
+            setShowData({
+                [ELEVATION]: data.ele ? data.ele : '',
+                [ELEVATION_SRTM]: data.srtm ? data.srtm : '',
+                [SPEED]: data.speed ? data.speed : ''
+            })
+        }
+    },[data]);
 
     const graphData = useMemo(() => {
         if (!_.isEmpty(data?.data)) {
@@ -122,17 +131,13 @@ const GpxGraphProvider = ({width}) => {
                 };
                 result.push(dataTab);
             });
-
-            setShowData({
-                [ELEVATION]: data.ele ? data.ele : '',
-                [ELEVATION_SRTM]: data.srtm ? data.srtm : '',
-                [SPEED]: data.speed ? data.speed : ''
-            })
-
             return {res: result, minEle: minEle, maxEle: maxEle, minSpeed: minSpeed, maxSpeed: maxSpeed};
         }
     }, [data]);
 
+    function checkShowData(value) {
+        return value === '' ? false : value;
+    }
 
     return (<>
             <div style={{marginLeft: '15px', marginTop: '-10px'}}>
@@ -159,7 +164,7 @@ const GpxGraphProvider = ({width}) => {
             <div style={{marginLeft: '20px'}}>
                 {showData && Object.entries(showData).map(([key, value]) =>
                     <FormControlLabel className={classes.checkbox} key={key} label={key} control={
-                        <Checkbox sx={{marginLeft: '-30px'}} checked={value !== '' && value} disabled={value === ''}
+                        <Checkbox sx={{marginLeft: '-30px'}} checked={checkShowData(value)} disabled={value === ''}
                                   onChange={() => {
                                       let updatedShowData = Object.assign({}, showData);
                                       updatedShowData[key] = !value;
