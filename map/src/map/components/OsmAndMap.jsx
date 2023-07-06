@@ -13,6 +13,7 @@ import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
 import ContextMenu from "./ContextMenu";
 import L from "leaflet";
+import GraphLayer from "../layers/GraphLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -107,6 +108,7 @@ const OsmAndMap = () => {
             <FavoriteLayer/>
             <WeatherLayer/>
             <TrackLayer/>
+            <GraphLayer/>
             <TileLayer
                 ref={tileLayer}
                 attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

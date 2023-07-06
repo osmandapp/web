@@ -27,7 +27,6 @@ export default function LocalClientTrackLayer() {
     const [addRoutingToTrack, setAddRoutingToTrack] = useState(false);
     const [openAddRoutingToTrackDialog, setOpenAddRoutingToTrackDialog] = useState(false);
     const [newPoint, setNewPoint] = useState(null);
-    const [trackRangeLine, setTrackRangeLine] = useState(null);
 
     const routingCashRef = useRef(ctx.routingCash);
 
@@ -124,7 +123,6 @@ export default function LocalClientTrackLayer() {
             } else {
                 clearCreateLayers(ctx.createTrack.layers);
             }
-            removeTrackRangeLine();
             let savedFile;
             if (ctx.createTrack.deletePrev && ctx.selectedGpxFile.prevState) {
                 savedFile = ctx.selectedGpxFile.prevState;
@@ -749,67 +747,6 @@ export default function LocalClientTrackLayer() {
         }
     }, [ctx.routingNewSegments])
 
-    useEffect(() => {
-        if (ctx.selectedGpxFile.layers) {
-            checkShowPoints(ctx.showPoints.points, false);
-            checkShowPoints(ctx.showPoints.wpts, true);
-        }
-    }, [ctx.showPoints.points, ctx.showPoints.wpts])
-
-    function checkShowPoints(showPoints, isWpts) {
-        if (!showPoints) {
-            ctx.selectedGpxFile.layers.getLayers().forEach(l => {
-                if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = 'none';
-                }
-            })
-        } else {
-            ctx.selectedGpxFile.layers.getLayers().forEach(l => {
-                if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = null;
-                }
-            })
-        }
-    }
-
-    function checkWpts(isWpts, layer) {
-        return isWpts ? layer.options.wpt : !layer.options.wpt;
-    }
-
-    function removeTrackRangeLine() {
-        if (trackRangeLine) {
-            if (map.hasLayer(trackRangeLine)) {
-                map.removeLayer(trackRangeLine);
-            }
-            setTrackRangeLine(null);
-        }
-    }
-
-    useEffect(() => {
-        if (ctx.trackRange) {
-            let points = [];
-            if (ctx.selectedGpxFile.hasGeo) {
-                ctx.selectedGpxFile.points.forEach(p => {
-                    points = points.concat(p.geometry);
-                })
-            } else {
-                points = ctx.selectedGpxFile.points;
-            }
-            let selectedPoints = points.slice(ctx.trackRange[0], ctx.trackRange[1]);
-            let polyline = new L.Polyline(selectedPoints, {
-                color: '#ffc939',
-                weight: 5
-            });
-            if (trackRangeLine) {
-                trackRangeLine.setLatLngs(polyline._latlngs);
-            } else {
-                setTrackRangeLine(polyline);
-                polyline.addTo(map);
-            }
-        } else {
-            removeTrackRangeLine();
-        }
-    }, [ctx.trackRange])
 
     return <>
         {openAddRoutingToTrackDialog && <AddRoutingToTrackDialog setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}
