@@ -124,9 +124,9 @@ const GpxGraphProvider = ({width}) => {
             });
 
             setShowData({
-                [ELEVATION]: data.ele,
-                [ELEVATION_SRTM]: data.srtm,
-                [SPEED]: data.speed
+                [ELEVATION]: data.ele ? data.ele : '',
+                [ELEVATION_SRTM]: data.srtm ? data.srtm : '',
+                [SPEED]: data.speed ? data.speed : ''
             })
 
             return {res: result, minEle: minEle, maxEle: maxEle, minSpeed: minSpeed, maxSpeed: maxSpeed};
@@ -159,7 +159,7 @@ const GpxGraphProvider = ({width}) => {
             <div style={{marginLeft: '20px'}}>
                 {showData && Object.entries(showData).map(([key, value]) =>
                     <FormControlLabel className={classes.checkbox} key={key} label={key} control={
-                        <Checkbox sx={{marginLeft: '-30px'}} checked={value} disabled={value === undefined}
+                        <Checkbox sx={{marginLeft: '-30px'}} checked={value !== '' && value} disabled={value === ''}
                                   onChange={() => {
                                       let updatedShowData = Object.assign({}, showData);
                                       updatedShowData[key] = !value;
