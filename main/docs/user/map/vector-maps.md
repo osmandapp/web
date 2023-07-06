@@ -495,7 +495,7 @@ You can choose this setting by long-click to "+" or "-" button on the screen or:
 
 ### Map Language
 
-The Map language option is used to configure the spelling of names on the OsmAnd map for zoom levels 7-20б inclusive. For zoom levels 2-6, the names are displayed in the language set for OsmAnd in the system settings menu (see *[Display language](../personal/global-settings.md#display-language)* article).  
+The Map language option is used to configure the spelling of names on the OsmAnd map for zoom levels 7-20, inclusive. For zoom levels 2-6, the names are displayed in the language set for OsmAnd in the system settings menu (see *[Display language](../personal/global-settings.md#display-language)* article).  
 
 If the names on the map are not translated into the desired language by the OSM community, you can use [transliterated names](https://en.wikipedia.org/wiki/Transliteration): *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) or *<Translate ios="true" ids="translit_names"/>* (iOS) switcher.  
 
