@@ -142,10 +142,20 @@ function prepareLocalTrack(track) {
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
         ext: prepareTrack.ext,
-        analysis: prepareTrack.analysis,
+        analysis: prepareAnalysis(prepareTrack.analysis),
         selected: false,
-        originalName: prepareTrack.originalName
+        originalName: prepareTrack.originalName,
+        hasGeo: prepareTrack.hasGeo,
     };
+}
+
+function prepareAnalysis(analysis) {
+    let newAnalysis = Object.assign({}, analysis);
+    newAnalysis.avgElevationSrtm = -1;
+    newAnalysis.maxElevationSrtm = -1;
+    newAnalysis.minElevationSrtm = -1;
+    newAnalysis.srtmAnalysis = false;
+    return newAnalysis;
 }
 
 function deleteLocalTracks() {
@@ -613,7 +623,7 @@ function getEle(point, elevation, array) {
                 return prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
-                    return 0;
+                    return undefined;
                 } else {
                     ind++;
                 }
@@ -782,6 +792,7 @@ const TracksManager = {
     updateState,
     getLocalTrackAnalysis,
     updateGlobalProfileState,
+    prepareAnalysis,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,
