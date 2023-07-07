@@ -263,7 +263,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                         if (label) {
                             label += ': ';
                         }
-                        const dimension = context.dataset.yAxisID === 'y1' ? 'm' : 'm/c'
+                        const dimension = context.dataset.yAxisID === 'y1' ? 'm' : 'm/s'
                         if (context.parsed.y !== null) {
                             label += `${context.parsed.y} ${dimension}`;
                         }
@@ -272,7 +272,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 }
             },
             hover: {
-                mode: "nearest",
+                mode: 'nearest',
                 intersect: false,
                 includeInvisible: true
             },
@@ -291,12 +291,12 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                             y: maxEle
                         }
                     },
-                    mode: "xy",
+                    mode: 'xy',
                     speed: 100,
                 },
                 pan: {
                     enabled: true,
-                    mode: "xy",
+                    mode: 'xy',
                     speed: 100
                 }
             }
@@ -337,7 +337,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 position: 'right',
                 title: {
                     display: true,
-                    text: 'speed in m/c',
+                    text: 'speed in m/s',
                     color: '#757575',
                     font: {
                         size: 10,
@@ -349,13 +349,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
     };
 
     const graphData = {
-        labels: data.map((d) => {
-            if (d[xAxis] !== 0) {
-                return d[xAxis].toFixed(2)
-            } else {
-                return 0;
-            }
-        }),
+        labels: data.map((d) => d[xAxis]!==0 ? d[xAxis].toFixed(2) : 0),
         datasets: [
             {
                 label: y1Axis[0],

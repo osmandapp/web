@@ -101,7 +101,7 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
                     {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20}/>}
                     {tabsObj && tabsObj.tabList.length > 0 &&
                         <TabContext value={value}>
-                            <AppBar position="static" color="default">
+                            <AppBar position='static' color='default'>
                                 <div style={{display: 'inherit'}}>
                                     <Button key='close' onClick={() => setShowContextMenu(false)}>
                                         <Close/>
