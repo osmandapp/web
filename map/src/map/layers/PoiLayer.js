@@ -167,6 +167,7 @@ export default function PoiLayer() {
                 iconName: poi.properties.iconName,
                 operator: poi.properties.operator,
                 website: poi.properties.website,
+                wikipedia: poi.properties.wikipedia,
                 opening_hours: poi.properties.opening_hours,
                 email: poi.properties.email,
                 phone: poi.properties.phone,

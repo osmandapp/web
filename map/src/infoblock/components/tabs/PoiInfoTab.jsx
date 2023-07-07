@@ -42,6 +42,10 @@ export default function PoiInfoTab({width}) {
     const [poi, setPoi] = useState({});
     const [poiData, setPoiData] = useState({});
 
+    function getUrl(url) {
+        return url.length > 40 ? `${url.substring(0, 40)} ...` : url;
+    }
+
     useEffect(() => {
         const currentPoi = ctx.selectedGpxFile.poi;
         if (currentPoi && !_.isEqual(currentPoi, poiData)) {
@@ -55,6 +59,7 @@ export default function PoiInfoTab({width}) {
                 poiType: PoiManager.formattingPoiType(poiOptions.typeOsmValue),
                 operator: poiOptions.operator,
                 website: poiOptions.website,
+                wikipedia: poiOptions.wikipedia,
                 opening_hours: poiOptions.opening_hours,
                 email: poiOptions.email,
                 phone: poiOptions.phone,
@@ -70,7 +75,7 @@ export default function PoiInfoTab({width}) {
             <Typography sx={{position: "relative"}} className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>
-                        <Typography className={styles.name} variant="inherit">
+                        <Typography sx={{mb: 10}} className={styles.name} variant="inherit">
                             <Link href={poi.osmUrl} target="_blank" underline="none">
                                 {poi.name ? poi.poiType + ": " + poi.name : poi.poiType}
                             </Link>
@@ -119,7 +124,21 @@ export default function PoiInfoTab({width}) {
                     </ListItemIcon>
                     <ListItemText>
                         <Typography sx={{ml: 1}} variant="inherit" noWrap>
-                            {poi.website}
+                            <Link href={poi.website} target="_blank" underline="none">
+                                {getUrl(poi.website)}
+                            </Link>
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>}
+                {poi.wikipedia && <MenuItem sx={{ml: -2, mt: -1}}>
+                    <ListItemIcon>
+                        <Language fontSize="small"/>
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography sx={{ml: 1}} variant="inherit" noWrap>
+                            <Link href={poi.wikipedia} target="_blank" underline="none">
+                                {getUrl(poi.wikipedia)}
+                            </Link>
                         </Typography>
                     </ListItemText>
                 </MenuItem>}
