@@ -78,7 +78,7 @@ Each field in the Search History list contains some of the **information** avail
 
 ## Actions
 
-In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export). Two more actions are available in the Android app: [share](#share-search-history-objects) search items as a gpx file, and *disable or enable* the entire search history without deleting it.
+In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). Two more actions are available in the Android app: [share](#share-search-history-objects) search items as a [gpx](../../technical/osmand-file-formats/osmand-gpx.md) file, and *disable or enable* the entire search history without deleting it.
 
 ### Delete
 
@@ -98,13 +98,14 @@ In the Search History tool, you can [delete](#delete) unnecessary queries, all a
 
 </Tabs>
 
-Long tap to one line from History list 
-5. Privacy: It is important to protect the personal data of users, so navigation applications usually provide an option to delete all or individual records from the Search History. 
+After using OsmAnd for a long time, the *Search History* list can become too long, so deleting search queries helps to clear the list. You can delete queries that are no longer relevant or that you no longer intend to use in the future, which makes it easier to search through the list, especially when you need to find specific search queries quickly.    
 
-#### Share search history objects
+To open the deletion screen, you need to long-click on any of the query items in the list.
 
 
-### Export
+
+
+### Export and Share
 
 Exporting items or the entire Search History can be useful for the following scenarios:
 
@@ -115,5 +116,12 @@ Exporting items or the entire Search History can be useful for the following sce
 3. Data analysis and processing: The user may want to export the Search History for data analysis, reporting, or use in other applications for additional processing.
 
 4. Share space with another user of the application.
+
+
+#### Share
+
+The steps to share search history items are similar to [export](#export-and-share), with the difference that you export the whole history at once as an [osf](../../technical/osmand-file-formats/osmand-osf.md) file, while you can share individual files in gpx format.  
+
+On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share. 
 
 

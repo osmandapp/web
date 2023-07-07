@@ -14,62 +14,52 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-The search address helps you to find your needed address from OpenStreetMap data.
+## Overview
 
-You may want to find the nearest location of a certain type, view your own location or search for a place by zip code. Just use the guide below.
+*Address search OsmAnd* is based on OpenStreetMap data and allows you to find a location and get directions to a specific address, postcode, or coordinates.  
 
-**Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file.
+
+**Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. 
+
+OsmAnd provides several ways to get to the *Search tool* where the **Address search** section is located.
+
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Address* tab.
+- Go to the main Android *Menu → Search → Address tab*.
+- When preparing to start a route, tap *Navigation → Set destination → Search field*.  
+
 
 ## How to use
 
-Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) and [coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
-
-Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="shared_string_address"/>
-
 ![Search Street Android](@site/static/img/search/street_search_android.png) 
-
-- [<Translate android="true" ids="search_street"/>](../search/search-address.md#search-street)
-- [<Translate android="true" ids="start_search_from_city"/>](../search/search-address.md#search-citytownlocality)
-- [<Translate android="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
-- [<Translate android="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
-- <Translate android="true" ids="nearest_cities"/>
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Clicking to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate ios="true" ids="shared_string_address"/>
-
-![Search Street iOS](@site/static/img/search/street_search_ios.png)
-
-- [<Translate ios="true" ids="select_street"/>](../search/search-address.md#search-street)
-- [<Translate ios="true" ids="select_city"/>](../search/search-address.md#search-citytownlocality)
-- [<Translate ios="true" ids="select_postcode"/>](../search/search-address.md#postcode-search)
-- [<Translate ios="true" ids="coords_search"/>](../search/search-address.md#coordinates-search)
-- <Translate ios="true" ids="nearest_cities"/>
+![Search Street iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
+You can search by address using five options, such as:
+
+- [Search street](#search-street)
+- [First Specify(Select city)](#first-specifyselect-city) 
+- [Postcode search](#postcode-search)
+- [Coordinates search](#coordinates-search)
+- **Nearest cities** - Shows a small list of cities around your location. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and the compass direction.
+
+Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) and [coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
+
+
 ### Search street
 
-Street Searching by ["addr:street=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all streets with this name.
-
-Clicking to chosen variant opens building list and crossroads.
-
-Shown direction, distance to objects, categories of objects.
-
-Tap to chosen address in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -81,25 +71,22 @@ Tap to chosen address in the list opens [Map Context menu](../map/map-context-me
 
 ![Search Street iOS](@site/static/img/search/address_street_search_ios.png) ![Search Street Android](@site/static/img/search/address_street_search_1_ios.png)
 
-
 </TabItem>
 
 </Tabs>
 
-### Search City/Town/Locality
-
-
-City/Town/Locality Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with this name.
+Street Searching by ["addr:street=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all streets with this name.
 
 Clicking to chosen variant opens building list and crossroads.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
+Tap to chosen address in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
 
+
+### First Specify(Select city)
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -115,21 +102,18 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 </Tabs>
 
+City/Town/Locality Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with this name.
 
-### Postcode search
-
-Postcode Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with postcode tag.
-
-Clicking to chosen postcode opens objects list which have this postcode in tags.
+Clicking to chosen variant opens building list and crossroads.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
+Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
 
-**Note:** [United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases).
+
+### Postcode search
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -145,28 +129,22 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 </Tabs>
 
+Postcode Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with postcode tag.
+
+Clicking to chosen postcode opens objects list which have this postcode in tags.
+
+Shown direction, distance to objects, categories of objects.
+
+Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
+
+**Note:** [United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases).  
+
 
 ### Coordinates search
 
-Coordinates Searching by [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system). Result: showing a point on the map.
-
-Search result shows direction, distance to a point on the map.
-
-Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.
-
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
-
-<Translate android="true" ids="coordinates_format"/> - choose needed format for input or transform your coordinates:
-
-- <Translate android="true" ids="navigate_point_format_D"/> - 50.12333  19.93233 (Lat Long).
-- <Translate android="true" ids="navigate_point_format_DM"/> - 50:7.39320  19:55.93980 (Lat Long).
-- <Translate android="true" ids="navigate_point_format_DMS"/> - 50:7:23.59200  19:55:56.38800 (Lat Long).
-- <Translate android="true" ids="navigate_point_format_utm"/> - 34N 5552876  423678 (Zone Northing Easting).
-- <Translate android="true" ids="navigate_point_format_olc"/> (OLC) - 9F2X4WFJ+7W (Open Location Code represents area 9m x 14m).
-- <Translate android="true" ids="navigate_point_mgrs"/> - 34U DA 23678 52873.
 
 ![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
 
@@ -174,15 +152,25 @@ Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any
 
 <TabItem value="ios" label="iOS">
 
+![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Coordinates Searching by [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system). Result: showing a point on the map.
+
+Search result shows direction, distance to a point on the map.
+
+Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.  
+
 <Translate android="true" ids="coordinates_format"/> - choose needed format for input or transform your coordinates:
 
 - <Translate android="true" ids="navigate_point_format_D"/> - 50.12333  19.93233 (Lat Long).
 - <Translate android="true" ids="navigate_point_format_DM"/> - 50:7.39320  19:55.93980 (Lat Long).
 - <Translate android="true" ids="navigate_point_format_DMS"/> - 50:7:23.59200  19:55:56.38800 (Lat Long).
 - <Translate android="true" ids="navigate_point_format_utm"/> - 34N 5552876  423678 (Zone Northing Easting).
+- (Android) <Translate android="true" ids="navigate_point_format_olc"/> (OLC) - 9F2X4WFJ+7W (Open Location Code represents area 9m x 14m).
+- (Android) <Translate android="true" ids="navigate_point_mgrs"/> - 34U DA 23678 52873.  
 
-![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
 
-</TabItem>
-
-</Tabs>
