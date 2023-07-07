@@ -281,7 +281,8 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             },
             zoom: {
                 limits: {
-                    y1: {min: minEle - 10, max: maxEle + 10}
+                    y1: {min: minEle - 10, max: maxEle + 10},
+                    y2: {min: minSpeed - 10, max: maxSpeed + 10},
                 },
                 zoom: {
                     wheel: {
