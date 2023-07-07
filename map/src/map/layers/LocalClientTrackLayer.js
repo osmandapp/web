@@ -56,7 +56,10 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 checkDeleteSelected();
-                if (ctx.createTrack?.enable && ctx.selectedGpxFile?.points) {
+                if (ctx.createTrack?.enable &&
+                    (ctx.selectedGpxFile?.points?.length > 0 ||
+                    ctx.selectedGpxFile?.wpts?.length > 0)
+                ) {
                     saveLocal();
                 }
                 checkZoom();
@@ -186,7 +189,11 @@ export default function LocalClientTrackLayer() {
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
+            // localTracks exist: do update/append
             TracksManager.saveTracks(ctx.localTracks, ctx);
+        } else {
+            // localTracks empty: add gpx as 1st track (points and/or wpts are included)
+            createLocalTrack(ctx.selectedGpxFile, ctx.selectedGpxFile.points, ctx.selectedGpxFile.wpts);
         }
     }
 
@@ -215,6 +222,7 @@ export default function LocalClientTrackLayer() {
                         enable: true,
                         edit: true
                     })
+                    track.analysis = TracksManager.prepareAnalysis(track.analysis);
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);
@@ -434,9 +442,9 @@ export default function LocalClientTrackLayer() {
         layers.addLayer(marker);
     }
 
-    function createLocalTrack(file, points) {
+    function createLocalTrack(file, points = [], wpts = []) {
         TracksManager.prepareTrack(file);
-        file.tracks = [{points: points}];
+        file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
         file.index = ctx.localTracks.length;
         ctx.localTracks.push(file);
@@ -620,6 +628,7 @@ export default function LocalClientTrackLayer() {
                         if (newPoint.profile === TracksManager.PROFILE_LINE) {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
+                            trackRef.current.hasGeo = true;
                             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
                             layers.addLayer(tempLine);
                             RoutingManager.addRoutingToCash(prevPoint, newPoint, tempLine, ctx, routingCashRef.current);
@@ -745,6 +754,7 @@ export default function LocalClientTrackLayer() {
             })
         }
     }, [ctx.routingNewSegments])
+
 
     return <>
         {openAddRoutingToTrackDialog && <AddRoutingToTrackDialog setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}

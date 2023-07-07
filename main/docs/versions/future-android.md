@@ -16,30 +16,22 @@ You can participate in testing the OsmAnd beta build through Google Play.
 
 ## What's new
 
-* Added allowing to use Emoji in user point names.
-* Support themed icons (Android 13).
-* New Train profile, allows to calculate routes using railways.
-* Add option "Announce deviation from the route".
-* Start screen restore from file.
-* Improved "Tracks" menu in "Configure Map".
-* Context menu now displays localized names for POI.
-* Added option to share route by link.
-* Added "Nautical miles/feet" unit of length.
-* Map orientation added new fixed mode.
-* Simplified start screen.
-* Added "Speed/Slope" graph for track analysis.
-* App language selection moved to system settings on Android 13.
-* Added possibility to download online tiles used as "Overlay" or "Underlay" maps.
-* Added support of imperial measurement units for "Vehicle parameters".
-* New Moped profile.
-* "Display position" added new option "Automatic".
-
-* **Bugs fixs:**
-  * Fixed OpenGL: animation, inscription.
-  * Fixed Travel guides: points categories disappearation.
-  * Fixed Weather download bugs.
-  * Fix for Per-app language selection in Android 13.
-  * Accessibility: fixed issue with map UI that was visible for screen readers on all screens.
-  * Fixed map gestures for tilt, zoom and rotation.
-  * Fixed location position in split screen mode in Android Auto.
-  * Fixed issues with displaying Vegan places.
+* BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX.
+* Free backup for favorites and settings to OsmAnd Cloud.
+* New format for Terrain maps with 3D Relief support.
+* Tracks management: updated UI, added sorting, support of nested folders.
+* Android Auto: new start menu for access favorites, tracks and poi categories.
+* One list of widgets for Top/Bottom panel.
+* New "Train" profile, allows to calculate railways routes.
+* Contour lines works with any "Map source".
+* Expanded list of default actions for external keyboards.
+* Custom routing files, added options to delete or overwrite.
+* Added option to "Announce deviation from the route".
+* Start screen: added option restore OsmAnd state from file.
+* Added Hazardous Materials classes for North America.
+* Added support of "Via ferrata" for pedestrian routing.
+* Added "CAI" scale for difficulty classification of the routes.
+* Fixed per-app language selection.
+* Added support themed icons.
+* OsmAnd Cloud: added option to delete account.
+* Accessibility: touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.

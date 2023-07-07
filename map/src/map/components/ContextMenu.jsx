@@ -82,7 +82,7 @@ export default function ContextMenu({setGeocodingData, setRegionData}) {
 
     async function getRegions(latlng) {
         setRegionData(null);
-        await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/regions-by-latlon?`,
+        await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/regions-by-latlon`,
             {
                 params: {
                     lat: latlng.lat.toFixed(6),

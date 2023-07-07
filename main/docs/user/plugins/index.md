@@ -26,7 +26,7 @@ In order to get access to the specific functions, provided by a plugin, it must 
 <TabItem value="android" label="Android">
 
 To enable / disable plugins go to:
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
@@ -35,7 +35,7 @@ To enable / disable plugins go to:
 <TabItem value="ios" label="iOS">
 
 To enable / disable plugins go to:
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
+<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
 
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
@@ -86,24 +86,22 @@ OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**,
 Only the development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
-Almost each plugin have specific profile or global settings, which can be accessed via:  
+Almost each plugin have specific profile or global settings, which can be accessed via: 
+
+- *Main menu → Plugins → Plugin name → Settings*  or  
+- *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-- *Main menu → Plugins → Plugin name → Settings*  or  
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
-
-![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_1.png) ![Settings plugin Android 2](@site/static/img/plugins/development/plugin_settings_android_2.png) ![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_3.png)  
+![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_1.png) ![Settings plugin Android 2](@site/static/img/plugins/development/plugin_settings_android_2.png) ![Settings plugin Android 3](@site/static/img/plugins/development/plugin_settings_android_3.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → Plugin settings*.  
-
-![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_1.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/plugin_settings_ios_2.png) ![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_3.png)  
+![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_1.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/plugin_settings_ios_2.png) ![Settings plugin iOS 3](@site/static/img/plugins/development/plugin_settings_ios_3.png)  
 
 </TabItem>
 

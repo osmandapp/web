@@ -117,7 +117,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 | | |
 |------------|------------|
 | Enable | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>|
-| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles,general_settings_2,units_and_formats,angular_units"/> |  
+| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/> |  
 
 </TabItem>
 

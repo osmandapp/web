@@ -54,6 +54,10 @@ export default function ChangeProfileTrackDialog({open}) {
         ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER ? 'Next' : null;
 
     async function changeProfile() {
+        if(!ctx.selectedGpxFile.layers) {
+            TracksManager.updateGlobalProfileState(ctx, profile.mode);
+            return; // on empty track
+        }
         let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
         if (!partialEdit) {
             if (changeAll) {

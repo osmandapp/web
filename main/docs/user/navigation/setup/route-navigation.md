@@ -97,7 +97,7 @@ There are 3 ways to reach the navigation menu:
 
 In Navigation menu you can set your destination using:
 - Special favories points [**Home / Work**](#use-home--work-points).
-- Previous route or History.
+- Previous route or [History](../../personal/global-settings.md#history).
 
 Cansel button at the bottom of the screen leads back to the main screen. [Start button](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
   
@@ -149,14 +149,14 @@ The most important thing to start navigation is to determine your destination. T
 
 </Tabs>
 
-- &nbsp;"&#x1F589;" - allows to open the destination points list to make changes.
-- &nbsp;"&#8592;" - moves to Navigation menu screen.
-- &nbsp;"&#10005;" - allows to delete destination point from the points list.
-- &nbsp;"&#61;" - allows to change point order in the points list.
-- &nbsp;"&#43; Add" - opens context menu "Add intermediate".
-- &nbsp;"&#9776; Clear all" - allows to clear all intermediate points.
+- **&nbsp;&#x1F589;** - allows to open the destination points list to make changes.
+- **&nbsp;&#8592;** - moves to Navigation menu screen.
+- **&nbsp;&#10005;** - allows to delete destination point from the points list.
+- **&nbsp;&#61;** - allows to change point order in the points list.
+- *&nbsp;&#43; Add* - opens context menu *Add intermediate*.
+- *&nbsp;&#9776; Clear all* - allows to clear all intermediate points.
 
-If you choose "Sort" (Android) or "Options" (iOS) in the destinations points list, you will reach special options to adjust the order of navigation to intermediate points.
+If you choose *Sort* (**Android**) or *Options* (**iOS**) in the destinations list, you will reach special options to adjust the order of navigation to intermediate points.
 
 <Tabs groupId="operating-systems">
 
@@ -183,7 +183,7 @@ In this menu, you can find additional options for managing destinations points:
 
 ### Use Home / Work points
 
-_Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu.  
+_Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu. If you have not entered addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
 
 <Tabs groupId="operating-systems">
 
@@ -221,11 +221,16 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 </Tabs>
 
+:::note
+- When [logging of History](../../personal/global-settings.md#history-options) data is disabled, you will not be prompted to use previouse routes for navigation.
+- You can delete some or all history records about your previous routes. This can be done on the *[Navigation history](../../personal/global-settings.md#history-options)* tab of the History option (*Menu → Settings → OsmAnd settings → History*).
+:::
+
 ## Start / stop navigation
 
 Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
 
-After the route is created, in the ["Details" section](../setup/route-details.md) you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+After the route is created, in the *[Details](../setup/route-details.md)* section you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 
 <Tabs groupId="operating-systems">
 
@@ -245,12 +250,11 @@ After the route is created, in the ["Details" section](../setup/route-details.md
 
 ### Route recalculation
 
-Route is recalculated automatically once you deviate from the calculated route, you can change parameters in [Navigation settings](../guidance/navigation-settings.md#recalculate-route).
+The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the 
 
 ### Pause / Resume navigation
 
 Sometimes if you want to stop by for a break and want to go off the route for a short period of the trip, you might want to use Pause / Resume navigation in order to pause voice prompts and stop oroute recalculation.
-
 
 ### Save Power during navigation
 
@@ -260,7 +264,7 @@ Navigation consumes lots of power because continuous GPS, Screen is on, route co
 
 ## Settings
 
-In this section, you can read about all the navigation settings (routing, vehicle, navigation parameters, voice prompts, and how the map looks while moving) that can be set for a profile.  
+To access the navigation settings, follow one of the steps below:
 
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.  
 - *Navigation button → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
@@ -269,6 +273,7 @@ In this section, you can read about all the navigation settings (routing, vehicl
 :::info
 There are no navigation settings in *Browse map* profile.  
 :::
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -294,8 +299,6 @@ Please read about route parameters for the corresponding navigation type.
 ### Navigation settings
 
 How to configure [routing type](../routing/index.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
-
-
 
 ### Simulate navigation
 

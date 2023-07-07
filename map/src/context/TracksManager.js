@@ -2,7 +2,7 @@ import Utils, {quickNaNfix} from "../util/Utils";
 import FavoritesManager from "./FavoritesManager";
 import _ from "lodash";
 import {apiGet, apiPost} from '../util/HttpApi';
-import {compressJSON, decompressString} from "../util/GzipBase64.mjs";
+import {compressFromJSON, decompressToJSON} from "../util/GzipBase64.mjs";
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -27,26 +27,30 @@ async function loadTracks(setLoading) {
         if (name.includes(LOCAL_COMPRESSED_TRACK_KEY)) {
             let ind = name.split('_')[1];
             try {
-                let res = await decompressString(localStorage.getItem(name));
-                if (res) {
-                    localTracks[ind] = JSON.parse(res);
-                    localTracks = openVisibleTracks(fixLocalTracks(localTracks));
+                const json = await decompressToJSON(localStorage.getItem(name));
+                if (json) {
+                    localTracks[ind] = json;
+                } else {
+                    console.log('loadTracks empty track: ' + name)
+                    localStorage.removeItem(name);
                 }
             } catch {
-                console.log('localStorage JSON error, ignore track: ' + name)
+                console.log('loadTracks JSON/decompress error: ' + name);
                 localStorage.removeItem(name);
             }
         }
     }
 
-        setLoading(false);
-        return localTracks;
+    localTracks = fixLocalTracks(localTracks); // fix holes
+    localTracks = openVisibleTracks(localTracks); // mark visible
 
+    setLoading(false);
+    return localTracks;
 }
 
 function fixLocalTracks(localTracks) {
     if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
-        console.log('loadTracks() workaround for localTrack_0 (hole) localTrack_X');
+        console.log('loadTracks localTrack_0 (hole) localTrack_X workaround');
         const fixTracks = [];
         localTracks.forEach(t => fixTracks.push(t));
         updateLocalTracks(fixTracks).then();
@@ -76,18 +80,20 @@ function openVisibleTracks(localTracks) {
 
 function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
-    let track;
-    if (currentTrackIndex !== -1) {
-        track = ctx.selectedGpxFile;
-    } else {
-        track = tracks[tracks.length - 1];
+
+    if (currentTrackIndex === -1) {
+        tracks.push(ctx.selectedGpxFile);
+        currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
     }
+
+    const track = ctx.selectedGpxFile;
+
     let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
     if (!totalSize) {
         totalSize = 0;
     }
-    compressJSON(prepareLocalTrack(track)).then(res => {
+    compressFromJSON(prepareLocalTrack(track)).then(res => {
         tracksSize = res.length;
         let oldSize = getOldSizeTrack(currentTrackIndex);
         totalSize = totalSize - oldSize + tracksSize;
@@ -115,7 +121,7 @@ async function updateLocalTracks(tracks) {
     deleteLocalTracks();
     let totalSize = 0;
     for (let track of tracks) {
-        let res = await compressJSON(prepareLocalTrack(track));
+        let res = await compressFromJSON(prepareLocalTrack(track));
         if (res) {
             localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + _.indexOf(tracks, track), res);
             let tracksSize = res.length;
@@ -136,10 +142,20 @@ function prepareLocalTrack(track) {
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
         ext: prepareTrack.ext,
-        analysis: prepareTrack.analysis,
+        analysis: prepareAnalysis(prepareTrack.analysis),
         selected: false,
-        originalName: prepareTrack.originalName
+        originalName: prepareTrack.originalName,
+        hasGeo: prepareTrack.hasGeo,
     };
+}
+
+function prepareAnalysis(analysis) {
+    let newAnalysis = Object.assign({}, analysis);
+    newAnalysis.avgElevationSrtm = -1;
+    newAnalysis.maxElevationSrtm = -1;
+    newAnalysis.minElevationSrtm = -1;
+    newAnalysis.srtmAnalysis = false;
+    return newAnalysis;
 }
 
 function deleteLocalTracks() {
@@ -607,7 +623,7 @@ function getEle(point, elevation, array) {
                 return prevP[elevation];
             } else {
                 if (ind - array.indexOf(point) > 2) {
-                    return 0;
+                    return undefined;
                 } else {
                     ind++;
                 }
@@ -776,6 +792,7 @@ const TracksManager = {
     updateState,
     getLocalTrackAnalysis,
     updateGlobalProfileState,
+    prepareAnalysis,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

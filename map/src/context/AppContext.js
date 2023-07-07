@@ -358,7 +358,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     getRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}&${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -434,7 +434,7 @@ export const AppContextProvider = (props) => {
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([])
-    // 
+    //
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
     // route
@@ -505,6 +505,12 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
+    const [trackRange, setTrackRange] = useState(null);
+    const [showPoints, setShowPoints] = useState({
+        points: true,
+        wpts: true
+    });
+
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
@@ -546,7 +552,7 @@ export const AppContextProvider = (props) => {
                 route: {text: ``}
             }));
         }
-        // ! routeTrackFile is not part of dependency ! 
+        // ! routeTrackFile is not part of dependency !
     }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
 
 
@@ -628,6 +634,8 @@ export const AppContextProvider = (props) => {
         routingNewSegments, setRoutingNewSegments,
         processRouting, setProcessRouting,
         selectedWpt, setSelectedWpt,
+        trackRange, setTrackRange,
+        showPoints, setShowPoints,
         showPoiCategories, setShowPoiCategories,
         poiCategory, setPoiCategories
     }}>

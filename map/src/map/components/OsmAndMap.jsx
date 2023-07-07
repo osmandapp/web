@@ -14,6 +14,7 @@ import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
 import ContextMenu from "./ContextMenu";
 import PoiLayer from "../layers/PoiLayer";
+import GraphLayer from "../layers/GraphLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -110,6 +111,7 @@ const OsmAndMap = () => {
             <FavoriteLayer/>
             <WeatherLayer/>
             <TrackLayer/>
+            <GraphLayer/>
             <TileLayer
                 ref={tileLayer}
                 attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -119,8 +121,8 @@ const OsmAndMap = () => {
                 url={ctx.tileURL.url}
             />
 
-            {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons}/>}
+            {hoverPoint &&
+                <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph}/>}
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData}/>

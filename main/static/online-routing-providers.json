@@ -3,6 +3,7 @@
         {
             "type" : "osrm",
             "name" : "ZLZK",
+            "webName" : "OSRM",
             "url" : "https://zlzk.biz/",
             "routes" : [
                 {
@@ -25,6 +26,7 @@
         {
             "type": "osrm",
             "name": "Routing OSM DE (Demo)",
+            "webName" : "OSRM (Backup)",
             "url": "https://routing.openstreetmap.de/",
             "routes": [
                 {
