@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import AppContext from "../../../context/AppContext";
 import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
 import _ from "lodash";
+import TracksManager from "../../../context/TracksManager";
 
 export default function LocalTrackItem({track, index}) {
 
@@ -46,6 +47,7 @@ export default function LocalTrackItem({track, index}) {
         setIndexTrack(indexTrack);
         selectedTrack.selected = true;
         selectedTrack.zoom = true;
+        selectedTrack.analysis = TracksManager.prepareAnalysis(selectedTrack.analysis);
         ctx.setSelectedGpxFile(selectedTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
     }

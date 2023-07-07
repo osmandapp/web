@@ -215,6 +215,7 @@ export default function LocalClientTrackLayer() {
                         enable: true,
                         edit: true
                     })
+                    track.analysis = TracksManager.prepareAnalysis(track.analysis);
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);

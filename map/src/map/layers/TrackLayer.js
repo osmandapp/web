@@ -2,17 +2,17 @@ import {useContext, useEffect} from 'react';
 import AppContext from "../../context/AppContext";
 import {useMap} from "react-leaflet";
 import TrackLayerProvider from "../TrackLayerProvider";
+import TracksManager from "../../context/TracksManager";
 
 
 async function addTrackToMap(ctx, file, map) {
     let layer = TrackLayerProvider.createLayersByTrackData(file);
     layer.on('click', (e) => {
+        file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile(Object.assign({}, file));
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
-            ctx.setCurrentObjectType(type);
-            ctx.setUpdateContextMenu(true);
-        }
+        let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        ctx.setCurrentObjectType(type);
+        ctx.setUpdateContextMenu(true);
     });
     file.gpx = layer;
     map.fitBounds(layer.getBounds());
