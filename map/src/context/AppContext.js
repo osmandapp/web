@@ -350,7 +350,7 @@ async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, rou
     getRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
+        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}&${maxDist}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
