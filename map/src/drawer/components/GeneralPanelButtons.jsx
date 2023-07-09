@@ -63,7 +63,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        {ctx.superUser && <Tooltip title="Poi" arrow placement="right">
+                        {ctx.devMode && <Tooltip title="Poi" arrow placement="right">
                             <IconButton variant="contained"
                                         type="button"
                                         onClick={() => {
