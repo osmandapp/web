@@ -510,7 +510,7 @@ export const AppContextProvider = (props) => {
         points: true,
         wpts: true
     });
-    const [superUser, setSuperUser] = useState(false);
+    const [devMode, setDevMode] = useState(false);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -639,7 +639,7 @@ export const AppContextProvider = (props) => {
         showPoints, setShowPoints,
         showPoiCategories, setShowPoiCategories,
         poiCategory, setPoiCategories,
-        superUser, setSuperUser,
+        devMode, setDevMode,
     }}>
         {props.children}
     </AppContext.Provider>;
