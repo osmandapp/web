@@ -88,6 +88,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/core@npm:^7.10.1":
+  version: 7.22.8
+  resolution: "@babel/core@npm:7.22.8"
+  dependencies:
+    "@ampproject/remapping": ^2.2.0
+    "@babel/code-frame": ^7.22.5
+    "@babel/generator": ^7.22.7
+    "@babel/helper-compilation-targets": ^7.22.6
+    "@babel/helper-module-transforms": ^7.22.5
+    "@babel/helpers": ^7.22.6
+    "@babel/parser": ^7.22.7
+    "@babel/template": ^7.22.5
+    "@babel/traverse": ^7.22.8
+    "@babel/types": ^7.22.5
+    "@nicolo-ribaudo/semver-v6": ^6.3.3
+    convert-source-map: ^1.7.0
+    debug: ^4.1.0
+    gensync: ^1.0.0-beta.2
+    json5: ^2.2.2
+  checksum: 75ed701c14ad17070382ae1dd166f7534b31f2c71e00995a5f261ee2398ee96335b0736573b8ff24ab6e3e6f5814ee2a48fa11ab90fabcd3dfc70ea87c5f30a6
+  languageName: node
+  linkType: hard
+
 "@babel/eslint-parser@npm:^7.16.3":
   version: 7.22.6
   resolution: "@babel/eslint-parser@npm:7.22.6"
@@ -111,6 +134,18 @@ __metadata:
     "@jridgewell/trace-mapping": ^0.3.17
     jsesc: ^2.5.1
   checksum: efa64da70ca88fe69f05520cf5feed6eba6d30a85d32237671488cc355fdc379fe2c3246382a861d49574c4c2f82a317584f8811e95eb024e365faff3232b49d
+  languageName: node
+  linkType: hard
+
+"@babel/generator@npm:^7.22.7":
+  version: 7.22.7
+  resolution: "@babel/generator@npm:7.22.7"
+  dependencies:
+    "@babel/types": ^7.22.5
+    "@jridgewell/gen-mapping": ^0.3.2
+    "@jridgewell/trace-mapping": ^0.3.17
+    jsesc: ^2.5.1
+  checksum: cee15558888bdf5564e19cfaf95101b2910fa425f30cc1a25ac9b8621bd62b63544eb1b36ad89c80b5e41915699219f78712cab128d1f7e3da6a21fbf4143927
   languageName: node
   linkType: hard
 
@@ -390,6 +425,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/parser@npm:^7.22.7":
+  version: 7.22.7
+  resolution: "@babel/parser@npm:7.22.7"
+  bin:
+    parser: ./bin/babel-parser.js
+  checksum: 02209ddbd445831ee8bf966fdf7c29d189ed4b14343a68eb2479d940e7e3846340d7cc6bd654a5f3d87d19dc84f49f50a58cf9363bee249dc5409ff3ba3dab54
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:7.22.5"
@@ -499,7 +543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-private-property-in-object@npm:^7.16.0":
+"@babel/plugin-proposal-private-property-in-object@npm:^7.16.0, @babel/plugin-proposal-private-property-in-object@npm:^7.21.10":
   version: 7.21.11
   resolution: "@babel/plugin-proposal-private-property-in-object@npm:7.21.11"
   dependencies:
@@ -1648,6 +1692,24 @@ __metadata:
     debug: ^4.1.0
     globals: ^11.1.0
   checksum: e38c6bf31c62b646dab0e90b86ed4fd03ba5be2f14bbdb5370939b9479c477633c33c34efd2ea45f24aa41ac50605cb41d7f1f4281193f79dcf99e999ebe6166
+  languageName: node
+  linkType: hard
+
+"@babel/traverse@npm:^7.22.8":
+  version: 7.22.8
+  resolution: "@babel/traverse@npm:7.22.8"
+  dependencies:
+    "@babel/code-frame": ^7.22.5
+    "@babel/generator": ^7.22.7
+    "@babel/helper-environment-visitor": ^7.22.5
+    "@babel/helper-function-name": ^7.22.5
+    "@babel/helper-hoist-variables": ^7.22.5
+    "@babel/helper-split-export-declaration": ^7.22.6
+    "@babel/parser": ^7.22.7
+    "@babel/types": ^7.22.5
+    debug: ^4.1.0
+    globals: ^11.1.0
+  checksum: a381369bc3eedfd13ed5fef7b884657f1c29024ea7388198149f0edc34bd69ce3966e9f40188d15f56490a5e12ba250ccc485f2882b53d41b054fccefb233e33
   languageName: node
   linkType: hard
 
@@ -9751,6 +9813,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"leaflet-spin@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "leaflet-spin@npm:1.1.2"
+  dependencies:
+    spin.js: ^2.3.1
+  peerDependencies:
+    leaflet: <=1
+  checksum: cbb5c4a86c6781ee3b52d3fc3ea8da33e3d5e06e0b08bbc8a5f905f6fe509453e4f4469ae4f7b438e38b4fcc5040aba180ab9ee2f02f2c720c88b79aec77d060
+  languageName: node
+  linkType: hard
+
 "leaflet.awesome-markers@npm:^2.0.5":
   version: 2.0.5
   resolution: "leaflet.awesome-markers@npm:2.0.5"
@@ -9767,7 +9840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leaflet@npm:^1.6.0, leaflet@npm:^1.8.0":
+"leaflet@npm:^1.6.0, leaflet@npm:^1.9.3":
   version: 1.9.4
   resolution: "leaflet@npm:1.9.4"
   checksum: bfc79f17a247b37b92d84b3c78702501603392d6589fde606de4a825d11f1609d90225388834f2e0709dac327e52dcd4b4b9cc9fd3d590060c5b1e53b84fa6c6
@@ -10722,6 +10795,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "osmand-map@workspace:."
   dependencies:
+    "@babel/core": ^7.10.1
+    "@babel/plugin-proposal-private-property-in-object": ^7.21.10
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
     "@hello-pangea/dnd": ^15.0.0
@@ -10744,10 +10819,11 @@ __metadata:
     env-cmd: ^10.1.0
     http-proxy-middleware: ^2.0.6
     ionicons: ^6.0.2
-    leaflet: ^1.8.0
+    leaflet: ^1.9.3
     leaflet-contextmenu: ^1.4.0
     leaflet-geometryutil: ^0.10.1
     leaflet-hash: ^0.2.1
+    leaflet-spin: ^1.1.2
     leaflet.awesome-markers: ^2.0.5
     lodash: ^4.17.21
     pako: ^2.0.4
@@ -13432,6 +13508,13 @@ __metadata:
     select-hose: ^2.0.0
     spdy-transport: ^3.0.0
   checksum: 2c739d0ff6f56ad36d2d754d0261d5ec358457bea7cbf77b1b05b0c6464f2ce65b85f196305f50b7bd9120723eb94bae9933466f28e67e5cd8cde4e27f1d75f8
+  languageName: node
+  linkType: hard
+
+"spin.js@npm:^2.3.1":
+  version: 2.3.2
+  resolution: "spin.js@npm:2.3.2"
+  checksum: e064bec3568190de3c94ec1ecc09a5a03470e86402bfbdc48da4c0e524fba42142f36ed6336bdb3549014237b993316acb182242b5028b5ce3bc74fc095b2260
   languageName: node
   linkType: hard
 

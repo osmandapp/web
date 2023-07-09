@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { useMap } from "react-leaflet";
+import React, {useContext, useEffect, useState} from 'react';
+import {useMap} from "react-leaflet";
 import AppContext from "../../context/AppContext";
 import {TileLayer, LayersControl} from "react-leaflet";
 
@@ -20,56 +20,42 @@ function getWeatherTime(weatherDateObj) {
 }
 
 const WeatherLayer = () => {
+
     const map = useMap();
     const ctx = useContext(AppContext);
-    useEffect(() => {
-        if (map) {
-            const enableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, true);
-            const disableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, false);
-            map.on('overlayadd', enableFunc);
-            map.on('overlayremove', disableFunc);
-            return () => {
-                map.off('overlayadd', enableFunc);
-                map.off('overlayremove', disableFunc);
-            };
-        }
-    }, [map, ctx.weatherLayers, ctx.updateWeatherLayers])
 
-    const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
-        const ind = layers.findIndex(l => l.name === event.name);
-        if (ind >= 0) {
-            let newlayers = [...layers];
-            newlayers[ind].checked = enable;
-            updateLayers(newlayers);
-        }
-    }
+    const [time, setTime] = useState(null);
 
     useEffect(() => {
         if (map) {
             map.eachLayer((layer) => {
-                if (layer.options.tms) {
+                if (layer.options.time) {
                     layer.options.time = getWeatherTime(ctx.weatherDate);
                     layer.redraw();
                 }
             });
         }
+        setTime(getWeatherTime(ctx.weatherDate));
     }, [ctx.weatherDate]);
+
 
     return <>
         <LayersControl>
-            {ctx.weatherLayers.map((item) => (
-                <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key}>
-                    <TileLayer
-                        url={item.url}
-                        time={getWeatherTime(ctx.weatherDate)}
-                        tms={true}
-                        minZoom={1}
-                        opacity={item.opacity}
-                        maxNativeZoom={item.maxNativeZoom}
-                        maxZoom={item.maxZoom}
-                    />
-                </LayersControl.Overlay>
-            ))}
+            {Object.keys(ctx.weatherLayers).map(k => {
+                return ctx.weatherLayers[k].map((item) => (
+                    <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key + time}>
+                        <TileLayer
+                            url={item.url}
+                            time={time}
+                            tms={true}
+                            minZoom={1}
+                            opacity={item.opacity}
+                            maxNativeZoom={item.maxNativeZoom}
+                            maxZoom={item.maxZoom}
+                        />
+                    </LayersControl.Overlay>
+                ))
+            })}
         </LayersControl>
     </>;
 };
