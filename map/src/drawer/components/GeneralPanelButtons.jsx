@@ -63,7 +63,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        <Tooltip title="Poi" arrow placement="right">
+                        {ctx.superUser && <Tooltip title="Poi" arrow placement="right">
                             <IconButton variant="contained"
                                         type="button"
                                         onClick={() => {
@@ -72,7 +72,7 @@ export default function GeneralPanelButtons({drawerWidth}) {
                                         }}>
                                 <Info fontSize="small"/>
                             </IconButton>
-                        </Tooltip>
+                        </Tooltip>}
                     </ButtonGroup>
                 </Paper>
             </div>
