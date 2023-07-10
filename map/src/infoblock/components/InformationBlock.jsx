@@ -10,6 +10,7 @@ import FavoritesTabList from "./tabs/FavoritesTabList";
 import _ from "lodash";
 import ChangeProfileTrackDialog from "./track/dialogs/ChangeProfileTrackDialog";
 import PointContextMenu from "./PointContextMenu";
+import PoiTabList from "../PoiTabList";
 
 
 export default function InformationBlock({hideContextMenu, drawerWidth}) {
@@ -25,6 +26,10 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
     useEffect(() => {
         if (!showContextMenu) {
             stopCreatedTrack(false);
+            ctx.setShowPoints({points: true, wpts: true});
+            ctx.setTrackRange(null);
+            setClearState(true);
+            ctx.setCurrentObjectType(null);
         }
     }, [showContextMenu])
 
@@ -53,6 +58,8 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
+                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
+                    obj = new PoiTabList().create();
                 } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx, setShowContextMenu);
                 }
@@ -86,12 +93,6 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
         }
     }
 
-    function closeContextMenu() {
-        setShowContextMenu(false);
-        setClearState(true);
-        ctx.setCurrentObjectType(null);
-    }
-
 
     return <>{showContextMenu && !hideContextMenu &&
         <>
@@ -103,11 +104,9 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
                     {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20}/>}
                     {tabsObj && tabsObj.tabList.length > 0 &&
                         <TabContext value={value}>
-                            <AppBar position="static" color="default">
+                            <AppBar position='static' color='default'>
                                 <div style={{display: 'inherit'}}>
-                                    <Button key='close' onClick={() => {
-                                        closeContextMenu()
-                                    }}>
+                                    <Button key='close' onClick={() => setShowContextMenu(false)}>
                                         <Close/>
                                     </Button>
                                     <TabList

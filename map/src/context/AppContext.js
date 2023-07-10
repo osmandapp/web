@@ -5,6 +5,7 @@ import Utils from "../util/Utils";
 import TracksManager from "./TracksManager";
 import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
+import PoiManager from "./PoiManager";
 import { apiGet } from '../util/HttpApi';
 import { geoRouter } from "../class/geoRouter.js";
 
@@ -19,7 +20,7 @@ function getWeatherUrl(layer) {
     return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
 }
 
-function getLayers() {
+function getWeatherLayers(type) {
     const layers = [
         {key: "temperature", name: "Temperature", opacity: 0.5, iconComponent: <Thermostat fontSize="small"/>},
         {key: "pressure", name: "Pressure", opacity: 0.6, iconComponent: <Compress fontSize="small"/>},
@@ -28,7 +29,7 @@ function getLayers() {
         {key: "precip", name: "Precipitation", opacity: 0.7, iconComponent: <Shower fontSize="small"/>},
     ];
     layers.map((item) => {
-        item.url = getWeatherUrl(item.key);
+        item.url = getWeatherUrl(item.key, type);
         item.maxNativeZoom = 3;
         item.maxZoom = 11;
         item.checked = false;
@@ -36,6 +37,13 @@ function getLayers() {
         return item;
     });
     return layers;
+}
+
+function getLayers() {
+    let allLayers = {};
+    allLayers['gfs'] = getWeatherLayers('gfs');
+    allLayers['ecmwf'] = getWeatherLayers('ecmwf');
+    return allLayers;
 }
 
 let monthNames = {};
@@ -63,13 +71,13 @@ export const toHHMMSS = function (time) {
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
     if (hours < 10) {
-        hours = "0" + hours;
+        hours = '0' + hours;
     }
     if (minutes < 10) {
-        minutes = "0" + minutes;
+        minutes = '0' + minutes;
     }
     if (seconds < 10) {
-        seconds = "0" + seconds;
+        seconds = '0' + Math.round(seconds);
     }
     return hours + ':' + minutes + ':' + seconds;
 }
@@ -290,11 +298,13 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
     const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
     const OBJECT_TYPE_WEATHER = 'weather';
+    const OBJECT_TYPE_POI = 'poi';
 
     // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
-    const [weatherLayers, updateWeatherLayers] = useState(getLayers());
+    const [weatherLayers, setWeatherLayers] = useState(getLayers());
     const [weatherDate, setWeatherDate] = useState(getWeatherDate());
+    const [weatherType, setWeatherType] = useState('gfs');
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
@@ -370,6 +380,8 @@ export const AppContextProvider = (props) => {
         futureStates: []
     });
     const [openedPopper, setOpenedPopper] = useState(null);
+    const [showPoiCategories, setShowPoiCategories] = useState([]);
+    const [poiCategory, setPoiCategories] = useState(null);
 
     const [routingCash, setRoutingCash] = useState([]);
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
@@ -378,13 +390,32 @@ export const AppContextProvider = (props) => {
 
     const [routeProviders, setRouteProviders] = useState(() => new geoRouter());
 
+    const [trackRange, setTrackRange] = useState(null);
+    const [showPoints, setShowPoints] = useState({
+        points: true,
+        wpts: true
+    });
+    const [devMode, setDevMode] = useState(false);
+
     routeProviders.initSetter({ setter: setRouteProviders });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
         })
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        PoiManager.getPoiCategories(setLocalTracksLoading).then((categories) => {
+            PoiManager.getTopPoiFilters(setLocalTracksLoading).then((filters) => {
+                setPoiCategories(
+                    {
+                        categories: categories,
+                        filters: filters
+                    });
+            })
+        })
+    }, []);
 
     useEffect(() => {
         const sequentialLoad = async () => {
@@ -449,8 +480,9 @@ export const AppContextProvider = (props) => {
         // eslint-disable-next-line
     }, [loginUser]);
     return <AppContext.Provider value={{
-        weatherLayers, updateWeatherLayers,
+        weatherLayers, setWeatherLayers,
         weatherDate, setWeatherDate,
+        weatherType, setWeatherType,
         userEmail, setUserEmail,
         listFiles, setListFiles,
         loginUser, setLoginUser,
@@ -480,6 +512,7 @@ export const AppContextProvider = (props) => {
         OBJECT_TYPE_CLOUD_TRACK,
         OBJECT_TYPE_LOCAL_CLIENT_TRACK,
         OBJECT_TYPE_WEATHER,
+        OBJECT_TYPE_POI,
         createTrack, setCreateTrack,
         creatingRouteMode, setCreatingRouteMode,
         gpxCollection, setGpxCollection,
@@ -495,6 +528,11 @@ export const AppContextProvider = (props) => {
         routingNewSegments, setRoutingNewSegments,
         processRouting, setProcessRouting,
         selectedWpt, setSelectedWpt,
+        trackRange, setTrackRange,
+        showPoints, setShowPoints,
+        showPoiCategories, setShowPoiCategories,
+        poiCategory, setPoiCategories,
+        devMode, setDevMode,
     }}>
         {props.children}
     </AppContext.Provider>;
