@@ -74,8 +74,11 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 </Tabs>
 
 :::tip Note
-For this options to work properly, we recommend that you allow OsmAnd to get the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.  
+- For this options to work properly, we recommend that you allow OsmAnd to get the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.  
+- **Troubleshooting**: your *iOS device* may temporarily **suspend or stop apps** from running in the background.  
+For more information about all troubleshooting, read the [*Track recording*](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) in the appropriate documentation section. 
 :::
+
 
 
 ### Start a Dialog
@@ -111,10 +114,6 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 </Tabs>
 
-:::warning TROUBLESHOOTING  
-Your *iOS device* may temporarily **suspend or stop apps** from running in the background.  
-For more information about all troubleshooting, read the [*Track recording*](../troubleshooting/track-recording-issues) in the appropriate documentation section. 
-:::
 
 
 ### Launcher (Android)

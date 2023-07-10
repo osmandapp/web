@@ -17,15 +17,20 @@
     "@types/leaflet.awesome-markers": "^2.0.25",
     "axios": "^0.27.2",
     "blueimp-md5": "^2.19.0",
+    "chart.js": "^4.3.0",
+    "chartjs-plugin-annotation": "^3.0.1",
+    "chartjs-plugin-zoom": "^2.0.1",
+    "clsx": "^1.2.1",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "env-cmd": "^10.1.0",
     "http-proxy-middleware": "^2.0.6",
     "ionicons": "^6.0.2",
-    "leaflet": "^1.8.0",
+    "leaflet": "^1.9.3",
     "leaflet-contextmenu": "^1.4.0",
     "leaflet-geometryutil": "^0.10.1",
     "leaflet-hash": "^0.2.1",
+    "leaflet-spin": "^1.1.2",
     "leaflet.awesome-markers": "^2.0.5",
     "lodash": "^4.17.21",
     "pako": "^2.0.4",
@@ -33,6 +38,7 @@
     "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.1.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-leaflet": "^4.0.0",
@@ -50,7 +56,8 @@
     "build:staging": "env-cmd -f .env.staging react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "generate:poiicons": "ls public/images/poi-icons-svg | jq -R -s -c 'split(\"\\n\")[:-1]'\n\n > src/generated/poiicons.json"
   },
   "browserslist": {
     "production": [
@@ -65,6 +72,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.10",
     "@mui/lab": "^5.0.0-alpha.85",
     "yarn-upgrade-all": "^0.7.1"
   },

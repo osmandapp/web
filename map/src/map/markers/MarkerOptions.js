@@ -30,6 +30,11 @@ const options = {
     interIcon: MarkerIcon({bg: '#f6791b'}),
     endIcon: MarkerIcon({bg: '#ff595e'}),
     pointerIcons: MarkerIcon({bg: '#fec93b'}),
+    pointerGraph: L.icon({
+        iconUrl: '/map/images/map_icons/circle_pointer.svg',
+        iconSize: [13, 13],
+        clickable: false
+    }),
     route: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
         iconSize: [13, 13],

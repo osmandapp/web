@@ -30,8 +30,9 @@ export default function GeneralInfoTab({width, setShowContextMenu}) {
     return (<>
             <Box minWidth={width} maxWidth={width}>
                 <GeneralInfo width={width} setOpenDescDialog={setOpenDescDialog}/>
+                <Divider sx={{mt: '3px', mb: '12px'}}/>
                 <GpxGraphProvider width={width}/>
-                <Divider sx={{mt: "3px", mb: "12px"}}/>
+                <Divider sx={{mt: '3px', mb: '12px'}}/>
                 <Button
                     variant="contained"
                     sx={{ml: "-0.5px !important"}}

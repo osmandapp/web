@@ -222,6 +222,7 @@ export default function LocalClientTrackLayer() {
                         enable: true,
                         edit: true
                     })
+                    track.analysis = TracksManager.prepareAnalysis(track.analysis);
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);
@@ -627,6 +628,7 @@ export default function LocalClientTrackLayer() {
                         if (newPoint.profile === TracksManager.PROFILE_LINE) {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
+                            trackRef.current.hasGeo = true;
                             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
                             layers.addLayer(tempLine);
                             RoutingManager.addRoutingToCash(prevPoint, newPoint, tempLine, ctx, routingCashRef.current);
@@ -752,6 +754,7 @@ export default function LocalClientTrackLayer() {
             })
         }
     }, [ctx.routingNewSegments])
+
 
     return <>
         {openAddRoutingToTrackDialog && <AddRoutingToTrackDialog setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useContext, useState, useCallback} from 'react';
-import {Marker, GeoJSON, useMap} from "react-leaflet";
+import {Marker, GeoJSON, useMap, Popup} from "react-leaflet";
 import L from 'leaflet';
 import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
@@ -56,7 +56,8 @@ function moveableMarker(ctx, map, marker) {
     return marker;
 }
 
-const RouteLayer = ({geocodingData}) => {
+
+const RouteLayer = ({geocodingData, region}) => {
 
     const map = useMap();
     const ctx = useContext(AppContext);
@@ -265,6 +266,9 @@ const RouteLayer = ({geocodingData}) => {
                                  ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}
         {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={MarkerOptions.options.pointerIcons}
                                  ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers}/>}
+        {region && <Popup position={region.latlng}>
+            {region.regions}
+        </Popup>}
     </>;
 };
 
