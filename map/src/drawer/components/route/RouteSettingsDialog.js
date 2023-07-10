@@ -119,7 +119,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
             </DialogContent>
             <DialogActions>
                 <Box display='flex' flexGrow={1}>
-                    {showReset() && <Button onClick={handleReset}>Reset</Button>}
+                    {showReset() && <Button sx={{ ml: 1 }} onClick={handleReset}>Reset</Button>}
                 </Box>
                 <Button onClick={handleCloseAccept}>OK</Button>
             </DialogActions>
