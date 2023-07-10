@@ -5,6 +5,7 @@ import AppContext from "../../context/AppContext";
 import RouteLayer from "../layers/RouteLayer"
 import WeatherLayer from "../layers/WeatherLayer"
 import 'leaflet-hash';
+import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from "../layers/FavoriteLayer";
@@ -12,7 +13,8 @@ import TrackLayer from "../layers/TrackLayer";
 import LocalClientTrackLayer from "../layers/LocalClientTrackLayer";
 import MarkerOptions from "../markers/MarkerOptions";
 import ContextMenu from "./ContextMenu";
-import L from "leaflet";
+import PoiLayer from "../layers/PoiLayer";
+import GraphLayer from "../layers/GraphLayer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -74,6 +76,7 @@ const OsmAndMap = () => {
     const hoverPointRef = useRef(null);
 
     const [geocodingData, setGeocodingData] = useState(null);
+    const [regionData, setRegionData] = useState(null);
 
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
@@ -103,10 +106,12 @@ const OsmAndMap = () => {
                       editable={true}
         >
             <LocalClientTrackLayer/>
-            <RouteLayer geocodingData={geocodingData}/>
+            <PoiLayer/>
+            <RouteLayer geocodingData={geocodingData} region={regionData}/>
             <FavoriteLayer/>
             <WeatherLayer/>
             <TrackLayer/>
+            <GraphLayer/>
             <TileLayer
                 ref={tileLayer}
                 attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -116,11 +121,11 @@ const OsmAndMap = () => {
                 url={ctx.tileURL.url}
             />
 
-            {hoverPoint // && <CircleMarker ref={hoverPointRef} center={hoverPoint} radius={5} pathOptions={{ color: 'blue' }} opacity={1} />
-                && <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerIcons}/>}
+            {hoverPoint &&
+                <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph}/>}
             <ZoomControl position="bottomleft"/>
             <ScaleControl imperial={false} position="bottomright"/>
-            <ContextMenu setGeocodingData={setGeocodingData}/>
+            <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData}/>
         </MapContainer>
     );
 };
