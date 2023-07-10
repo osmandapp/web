@@ -1,53 +1,39 @@
 /**
- *
  * @param { type, router, profile } combination to pick
- *
  * @return { type, router, profile } || null
- *
+ * @example
+ * pick...({ profile }) - pick profile, keep router
+ * pick...({ router }) - pick router, try to keep profile
+ * pick...({ router, profile }) - pick both (if applicable)
+ * pick...({ type, [profile] }) - pick 1st type's provider (special usage)
  */
 export function pickTypeRouterProfile({ type = null, router = null, profile = null } = {}) {
-    /*
-        Switch to selected "router" and/or "profile":
-
-        1. use current router|profile when (any)===null
-        2. use first available when router|profile is not applicable
-        3. type is changed automatically according to applicated router
-
-        Examples:
-
-        choose({ profile }) - switch profile, keep router
-        choose({ router }) - switch router, try to keep profile
-        choose({ router, profile }) - switch both (if applicable)
-
-        Special case (used for searchParams / share route link):
-
-        choose({ type, [profile] }) - select 1st type's provider
-    */
+    const providers = this.providers;
 
     if (type && !router) {
-        router = this.getProviderByType(type)?.key ?? 'osmand';
-        // console.log('type', type, 'router', router);
+        router = providers.find(r => r.type === type)?.key ?? this.fallback.key;
+        // console.log('type-router-profile:', type, router, profile);
     }
 
-    // use current values if not defined
-    router = router ?? this.router;
-    profile = profile ?? this.profile;
+    router = router ?? this.router; // current
+    profile = profile ?? this.profile; // current
 
-    const providers = this.allProviders();
+    let provider = providers.find(r => r.key === router);
 
-    if (!providers.find(r => r.key === router)) {
-        router = providers[0].key ?? 'osmand'; // fallback
+    if (!provider) {
+        router = providers[0].key ?? this.fallback.key;
+        provider = providers.find(r => r.key === router);
     }
 
-    const profiles = this.allProfiles(router);
+    const profiles = provider.profiles ?? [];
 
     if (!profiles.find(p => p.key === profile)) {
-        profile = profiles[0].key ?? 'car'; // fallback
+        profile = profiles[0].key ?? this.fallback.profiles[0].key;
     }
 
     if (router && profile) {
-        type = this.getProvider(router)?.type ?? 'osmand'; // fallback
-        console.log('picked:', type, router, profile);
+        type = provider.type ?? this.fallback.type;
+        // console.log('picked:', type, router, profile);
         return { type, router, profile };
     } else {
         console.error('pickTypeRouterProfile failed:', type, router, profile);

@@ -68,7 +68,7 @@ const RouteLayer = ({geocodingData, region}) => {
     const [routeQueryStringCleanup, setQueryStringCleanup] = useState(false);
 
     useEffect(() => {
-        if (ctx.routeProviders.loaded) {
+        if (ctx.routeRouter.isReady()) {
             let obj = {};
             if (ctx.startPoint) {
                 obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
@@ -83,8 +83,9 @@ const RouteLayer = ({geocodingData, region}) => {
                 obj['inter'] = ctx.interPoints.map(i => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
             if (Object.keys(obj).length > 0) {
-                obj.type = ctx.routeProviders.type;
-                obj.profile = ctx.routeProviders.profile;
+                const { type, profile } = ctx.routeRouter.getProfile();
+                obj.type = type;
+                obj.profile = profile;
             }
             if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
                 setQueryStringCleanup(true);
@@ -92,10 +93,10 @@ const RouteLayer = ({geocodingData, region}) => {
             }
         }
     }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints,
-        ctx.routeProviders.type, ctx.routeProviders.profile, ctx.routeProviders.loaded]);
+        ctx.routeRouter.getEffectDeps()]);
 
     useEffect(() => {
-        if (ctx.routeProviders.loaded && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+        if (ctx.routeRouter.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
             if (Object.keys(routeQueryStringParams).length === 0) {
                 setQueryStringCleanup(false); // only once
             }
@@ -107,7 +108,7 @@ const RouteLayer = ({geocodingData, region}) => {
                 search: "?" + pretty
             });
         }
-    }, [routeQueryStringParams, setRouteQueryStringParams, ctx.routeProviders.loaded]);
+    }, [routeQueryStringParams, ctx.routeRouter.isReady()]); // setRouteQueryStringParams
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);

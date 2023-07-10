@@ -1,6 +1,5 @@
 /**
  * Pause routing when Setting dialog is opened
- * @todo ignore pause for OSRM and Line profile
  */
 export function onOpenSettings({ opened }) {
     this.flushState((o) => o.paused = !!opened);

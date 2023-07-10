@@ -7,7 +7,7 @@ import _ from "lodash";
 import FavoritesManager from "./FavoritesManager";
 import PoiManager from "./PoiManager";
 import { apiGet } from '../util/HttpApi';
-import { geoRouter } from "../class/geoRouter.js";
+import { geoRouter } from "../class/geoRouter/geoRouter.js";
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -388,7 +388,7 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
-    const [routeProviders, setRouteProviders] = useState(() => new geoRouter());
+    const [routeRouter, setRouteRouter] = useState(() => new geoRouter());
 
     const [trackRange, setTrackRange] = useState(null);
     const [showPoints, setShowPoints] = useState({
@@ -397,7 +397,7 @@ export const AppContextProvider = (props) => {
     });
     const [devMode, setDevMode] = useState(false);
 
-    routeProviders.initSetter({ setter: setRouteProviders });
+    routeRouter.initSetter({ setter: setRouteRouter });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -419,29 +419,29 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            await routeProviders.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
+            await routeRouter.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
             // await (next class instance load) soon
         };
         sequentialLoad();
     }, []);
 
     useEffect(() => {
-        if (routeProviders.isReady() && routeTrackFile) {
-            routeProviders.calculateGpxRoute({
+        if (routeRouter.isReady() && routeTrackFile) {
+            routeRouter.calculateGpxRoute({
                 routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints,
                 getRouteText, setRoutingErrorMsg
             });
         }
-    }, [routeProviders.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
+    }, [routeRouter.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
-        if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
-            routeProviders.calculateRoute({
+        if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
+            routeRouter.calculateRoute({
                 startPoint, endPoint, interPoints, avoidRoads,
                 setRouteData, getRouteText, setRoutingErrorMsg
             });
         } else {
-            if(!routeTrackFile) {
+            if (!routeTrackFile) {
                 setHeaderText(prevState => ({
                     ...prevState,
                     route: {text: ``}
@@ -449,7 +449,7 @@ export const AppContextProvider = (props) => {
             }
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [routeProviders.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
+    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
@@ -458,7 +458,7 @@ export const AppContextProvider = (props) => {
         } else {
             if (data) {
                 let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.getProfileName()} is found.`
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeRouter.getProfile()?.name} is found.`
             }
         }
         setHeaderText(prevState => ({
@@ -496,7 +496,7 @@ export const AppContextProvider = (props) => {
         pinPoint, setPinPoint,
         interPoints, setInterPoints,
         routeData, setRouteData,
-        routeProviders, setRouteProviders,
+        routeRouter, setRouteRouter,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,
         routeTrackFile, setRouteTrackFile,

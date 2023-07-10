@@ -88,7 +88,7 @@ export default function LoginDialog() {
     }
 
     const clickHandler = (event) => {
-        if(event.detail === 3){
+        if (event.detail === 3) {
             ctx.setDevMode(true);
         }
     }

@@ -30,7 +30,7 @@ function getColors() {
 async function loadProvidersOSRM() {
     let json = onlineRoutingProviders; // imported
 
-    if(!json) {
+    if (!json) {
         const osrm = await apiGet(
             `${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`,
             { apiCache: true }
@@ -95,15 +95,15 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
         if (json) {
             // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
             // note: sort, filter, additional profiles will be processed here
-            // copy .params to .backup (used later to reset params in settings)
+            // copy .params to .reset (used later to reset params in settings)
 
             const converted = [];
 
             Object.keys(json).forEach((k) => {
                 if (json[k]?.params) {
-                    json[k].backup = copyObj(json[k]?.params);
+                    json[k].resetParams = copyObj(json[k]?.params);
                 }
-                if(!k.includes('rescuetrack')) {
+                if (!k.includes('rescuetrack')) {
                     converted.push(json[k]);
                 }
             });

@@ -6,8 +6,8 @@
  *
  * @example
  *
- * const [routeProviders, setRouteProviders] = useState(initRouteProviders);
- * routeProviders.initSetter({ setter: setRouteProviders });
+ * const [routeRouter, setRouteRouter] = useState(initRouteRouter);
+ * routeRouter.initSetter({ setter: setRouteRouter });
  */
 export function initSetter({ setter = null }) {
     if (setter && setter !== this.setter) {

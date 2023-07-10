@@ -1,14 +1,20 @@
-import { loadProviders } from "./geoRouter/methods/loadProviders.js";
-import { calculateRoute } from "./geoRouter/legacy/calculateRoute.js";
-import { calculateGpxRoute } from "./geoRouter/legacy/calculateGpxRoute.js";
-import { pickTypeRouterProfile } from "./geoRouter/methods/pickTypeRouterProfile.js";
+import { loadProviders } from "./methods/loadProviders.js";
+import { calculateRoute } from "./legacy/calculateRoute.js";
+import { calculateGpxRoute } from "./legacy/calculateGpxRoute.js";
+import { pickTypeRouterProfile } from "./methods/pickTypeRouterProfile.js";
 
-import { initSetter, nextState, flushState } from "./geoRouter/state.js";
-import { onOpenSettings, onParamsChanged, onRouterProfileSelected } from "./geoRouter/events.js";
-import { isReady, getEffectDeps, getProfileName, getProfileIcon, getProfileColor,
-    allProviders, getProvider, allProfiles, getProfile, getParams, getResetParams, getURL, getProviderByType,
-    _allProviders, _getProvider, _allProfiles, _getProfile, _getParams, _getResetParams, _getURL, _getProviderByType,
-} from "./geoRouter/getters.js";
+import { initSetter, nextState, flushState } from "./state.js";
+import { onOpenSettings, onParamsChanged, onRouterProfileSelected } from "./events.js";
+import {
+    isReady,
+    getEffectDeps,
+    listProviders,
+    listProfiles,
+    getProfile,
+    getParams,
+    getResetParams,
+    getURL,
+} from "./getters.js";
 
 // fallback
 const osmand = {
@@ -40,31 +46,15 @@ export class geoRouter {
     fallback = osmand;
     providers = [osmand];
 
-    // getters() - new
+    // getters()
     isReady = isReady;
     getEffectDeps = getEffectDeps;
-    getProfileName = getProfileName;
-    getProfileIcon = getProfileIcon;
-    getProfileColor = getProfileColor;
-
-    // getters() - old
-    allProviders = allProviders;
-    getProvider = getProvider;
-    allProfiles = allProfiles;
+    listProviders = listProviders;
+    listProfiles = listProfiles;
     getProfile = getProfile;
     getParams = getParams;
     getResetParams = getResetParams;
     getURL = getURL;
-    getProviderByType = getProviderByType;
-
-    _allProviders = _allProviders;
-    _getProvider = _getProvider;
-    _allProfiles = _allProfiles;
-    _getProfile = _getProfile;
-    _getParams = _getParams;
-    _getResetParams = _getResetParams;
-    _getURL = _getURL;
-    _getProviderByType = _getProviderByType;
 
     // events()
     onOpenSettings = onOpenSettings;
