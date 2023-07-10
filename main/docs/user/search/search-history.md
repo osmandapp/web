@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-*Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves time.   
+*Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time.   
 
 OsmAnd provides several ways to view your search history.  
 
@@ -66,19 +66,21 @@ The search history serves to provide relevant information about your previous ac
 
 The following **types of objects** get into the Search History list:
 - **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
-- **Text Queries**. These are text strings that the you types into the search box to find a specific place or address, and then taps on them to browse. For example, *Restaurants downtown* or *Nearest gas station*.
 - **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
 
 Each field in the Search History list contains some of the **information** available to the application.
 - An icon that identifies the type or category of the found object.
-- The object name, location, address, or text query. For tracks information about the distance, number of waypoints, and time is displayed.
+- The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
 - Distance from the user's current location to the point and direction by compass.
 - In iOS the list is sorted by month.
 
 
 ## Actions
 
-In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). Two more actions are available in the Android app: [share](#share-search-history-objects) search items as a [gpx](../../technical/osmand-file-formats/osmand-gpx.md) file, and *disable or enable* the entire search history without deleting it.
+In the Search History tool, you can [delete](#delete) unnecessary queries, all at once or by individual items. You can use History [export](#export-and-share). The Android app provides an additional action of [sharing](#share-android) search items as a [*gpx*](../../technical/osmand-file-formats/osmand-gpx.md) file.  
+
+You can **disable or enable** the display of the entire search history. In this case, the queries are not deleted from the device. In Android, the switch is located on the main screen of the tool on the [History tab](#overview). In iOS, it is located in *Menu → Settings → OsmAnd Settings → History → Search History*. 
+
 
 ### Delete
 
@@ -100,24 +102,14 @@ In the Search History tool, you can [delete](#delete) unnecessary queries, all a
 
 After using OsmAnd for a long time, the *Search History* list can become too long, so deleting search queries helps to clear the list. You can delete queries that are no longer relevant or that you no longer intend to use in the future, which makes it easier to search through the list, especially when you need to find specific search queries quickly.    
 
-To open the deletion screen, you need to long-click on any of the query items in the list.
-
-
+You need to **long-tap on any of the query items in the list** to open the Delete screen.  
+- *Select or deselect random items* - tap the required item in the list.
+- *Select the period available for deleting*, such as day, last 7 days, or month - check the box with the subheading in the list.
+- *You can delete the entire history* at once by tapping the *Select All* button at the bottom of the screen.
+- *Menu → Settings → OsmAnd settings → History → Actions*. This section contains the **Delete all history** button.
 
 
 ### Export and Share
-
-Exporting items or the entire Search History can be useful for the following scenarios:
-
-1. Backup: The user may want to back up their Search History to save important information or to restore it to another device.
-
-2. Transferring to another device: If the user changes device, he/she can use Export function to transfer the Search History to the new device without having to search and enter the data again.
-
-3. Data analysis and processing: The user may want to export the Search History for data analysis, reporting, or use in other applications for additional processing.
-
-4. Share space with another user of the application.
-
-You can enable/disable history logging and view, edit, and share previously entered data (*history*) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history).  
 
 <Tabs groupId="operating-systems">
 
@@ -139,34 +131,33 @@ You can enable/disable history logging and view, edit, and share previously ente
 
 </Tabs>
 
-- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
-- *Clear all history* (Android) or *Delete all history* (iOS) - is used to delete all history entries recorded untill now.  
+There are several available options to export the search history. All files are exported in *osf* (OsmAnd settings File) format.  
+- *Menu → Settings → OsmAnd settings → History → Search history*.  
+    Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.    
 
-#### History options
+- *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (Android).  
+    *Menu → Settings → OsmAnd settings → History → Actions → Export* (iOS).  
+    Tapping these items takes you to the *Import/Export* (Android) or *Local Backup* (iOS) menu. Expand the *My Places* list and find *Search History*. All queries are exported in one file at once.  
 
-Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also delete one or more items from the list or share them as a file (to access these functions in iOS, tap *Edit* button).  
+- *Menu → Settings → Import/Export → Export to file* (Android).  
+    *Menu → Settings → Local Backup → Back up as file* (iOS).  
+    You can read more details in the [Import/Export](../personal/import-export.md#export) article.  
 
-<Tabs groupId="operating-systems">
+- [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)
+    You can use the Cloud to back up your search history. In the *Local Changes* menu or *Settings → Back up data → My Places → Search History*.
 
-<TabItem value="android" label="Android"> 
-
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
-
-</TabItem>
-
-</Tabs>
+Exporting items or the entire search history can be useful in the following cases:  
+- *Backup*. You can back up your search history to save the information before deleting it and restoring it if necessary.
+- *Transferring to another device*. When you change devices, you can use the export function or the Cloud to transfer your search history to a new device without having to search and enter data again.
+- *Analyze and process data*.  You can export your search history for data analysis or use it in other applications.
+- [*Share*](#share-android) search history with other OsmAnd users.
 
 
-#### Share
+#### Share (Android)
 
-The steps to share search history items are similar to [export](#export-and-share), with the difference that you export the whole history at once as an [osf](../../technical/osmand-file-formats/osmand-osf.md) file, while you can share individual files in gpx format.  
+The steps to share search history items are similar to [export](#export-and-share), with the difference that you export the whole history at once as an [osf](../../technical/osmand-file-formats/osmand-osf.md) file, while you can share individual selected files in gpx format.  
 
 On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share. 
 
+![Settings History](@site/static/img/search/history_search_share_andr.png)
 

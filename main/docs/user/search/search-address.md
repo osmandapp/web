@@ -18,7 +18,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Address search OsmAnd* is based on OpenStreetMap data and allows you to find a location and get directions to a specific address, postcode, or coordinates.  
 
-
 **Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. 
 
 OsmAnd provides several ways to get to the *Search tool* where the **Address search** section is located.
@@ -57,7 +56,7 @@ You can search by address using five options, such as:
 Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) and [coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
 
 
-### Search street
+## Search street
 
 <Tabs groupId="operating-systems">
 
@@ -75,6 +74,14 @@ Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/in
 
 </Tabs>
 
+Search for streets by *[addr:street=*](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)*. Result: all streets with this name are shown.
+- When you tap the selected option, a list of buildings and intersections is opened.
+- Direction, distance to objects, and object categories are shown.
+- If you choose the selected address in the list, the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object opens.
+
+You can enter a street name in the search box and it will display relevant results related to the specified street. These can be exact addresses, buildings, intersections, and other objects related to the street.
+
+<!--
 Street Searching by ["addr:street=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all streets with this name.
 
 Clicking to chosen variant opens building list and crossroads.
@@ -82,9 +89,10 @@ Clicking to chosen variant opens building list and crossroads.
 Shown direction, distance to objects, categories of objects.
 
 Tap to chosen address in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
+-->
 
 
-### First Specify(Select city)
+## First Specify(Select city)
 
 <Tabs groupId="operating-systems">
 
@@ -102,16 +110,26 @@ Tap to chosen address in the list opens [Map Context menu](../map/map-context-me
 
 </Tabs>
 
+City/City/Village Search by *[addr:city/hamlet/town/village/suburb=*](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)*. Result: displaying all objects with this name.
+
+- When you tap the selected option, a list of buildings and intersections opens.
+- The direction, distance to the objects, and object categories are shown.
+- Tapping an object in the list opens the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
+
+<!--
 City/Town/Locality Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with this name.
 
 Clicking to chosen variant opens building list and crossroads.
 
 Shown direction, distance to objects, categories of objects.
 
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.
+Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
+-->
+
+To specify your search, you can enter the name of the city, town, or village where the address you are looking for is located. This helps to narrow your search and get a more accurate list.
 
 
-### Postcode search
+## Postcode search
 
 <Tabs groupId="operating-systems">
 
@@ -131,16 +149,16 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 Postcode Searching by ["addr:city/hamlet/town/village/suburb=*"](https://wiki.openstreetmap.org/w/index.php?title=Key:addr). Result: showing all objects with postcode tag.
 
-Clicking to chosen postcode opens objects list which have this postcode in tags.
-
-Shown direction, distance to objects, categories of objects.
-
-Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
+- When you tap the selected option, postcode opens objects list which have this postcode in tags.
+- Shown direction, distance to objects, categories of objects.
+- Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object with additional info about chosen postcode below the object name.
 
 **Note:** [United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases).  
 
+The postal code search function allows you to enter a postal code and get relevant results related to the specified postal code. This is useful when the address is unknown but the postal code is known.
 
-### Coordinates search
+
+## Coordinates search
 
 <Tabs groupId="operating-systems">
 
@@ -160,9 +178,8 @@ Tap to a object in the list opens [Map Context menu](../map/map-context-menu.md#
 
 Coordinates Searching by [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system). Result: showing a point on the map.
 
-Search result shows direction, distance to a point on the map.
-
-Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.  
+- Search result shows direction, distance to a point on the map.
+- Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.  
 
 <Translate android="true" ids="coordinates_format"/> - choose needed format for input or transform your coordinates:
 
