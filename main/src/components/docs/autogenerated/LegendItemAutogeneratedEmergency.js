@@ -20,6 +20,7 @@ export default function Render() {
         'Fire hydrant' : 'emergency/emergency_emergency_fire_hydrant',
         'Fire hydrant (underground)' : 'emergency/emergency_emergency_fire_hydrant_fire_hydrant_type_underground',
         'Emergency access point' : 'emergency/emergency_highway_emergency_access_point',
+        'Emergency assembly point' : 'emergency/emergency_emergency_assembly_point',
         'Rescue box' : 'emergency/emergency_emergency_rescue_box',
         'Defibrillator' : 'emergency/emergency_emergency_defibrillator',
         'Mountain rescue station' : 'emergency/emergency_emergency_mountain_rescue',
