@@ -82,7 +82,9 @@ const RouteLayer = ({geocodingData, region}) => {
             if (ctx.interPoints?.length > 0) {
                 obj['inter'] = ctx.interPoints.map(i => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
-            if (Object.keys(obj).length > 0) {
+            const qs = new URLSearchParams(window.location.search);
+            if (Object.keys(obj).length > 0
+                || ( qs.get('type') && qs.get('profile') ) ) {
                 const { type, profile } = ctx.routeRouter.getProfile();
                 obj.type = type;
                 obj.profile = profile;
