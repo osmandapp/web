@@ -71,7 +71,7 @@ The following **types of objects** get into the Search History list:
 Each field in the Search History list contains some of the **information** available to the application.
 - An icon that identifies the type or category of the found object.
 - The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
-- Distance from the user's current location to the point and direction by compass.
+- Distance from the your current location to the point and direction by compass.
 - In iOS the list is sorted by month.
 
 
@@ -143,7 +143,7 @@ There are several available options to export the search history. All files are 
     *Menu → Settings → Local Backup → Back up as file* (iOS).  
     You can read more details in the [Import/Export](../personal/import-export.md#export) article.  
 
-- [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)
+- [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)  
     You can use the Cloud to back up your search history. In the *Local Changes* menu or *Settings → Back up data → My Places → Search History*.
 
 Exporting items or the entire search history can be useful in the following cases:  
