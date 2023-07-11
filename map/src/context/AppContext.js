@@ -429,7 +429,7 @@ export const AppContextProvider = (props) => {
         if (routeRouter.isReady() && routeTrackFile) {
             routeRouter.calculateGpxRoute({
                 routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints,
-                getRouteText, setRoutingErrorMsg
+                changeRouteText, setRoutingErrorMsg
             });
         }
     }, [routeRouter.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
@@ -438,7 +438,7 @@ export const AppContextProvider = (props) => {
         if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
             routeRouter.calculateRoute({
                 startPoint, endPoint, interPoints, avoidRoads,
-                setRouteData, getRouteText, setRoutingErrorMsg
+                setRouteData, changeRouteText, setRoutingErrorMsg
             });
         } else {
             if (!routeTrackFile) {
@@ -451,7 +451,7 @@ export const AppContextProvider = (props) => {
         // ! routeTrackFile is not part of dependency ! really? :)
     }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
-    function getRouteText(processRoute, data) {
+    function changeRouteText(processRoute, data) {
         let resultText = ``;
         if (processRoute) {
             resultText = `Route calculating…`;

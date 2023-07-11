@@ -1,7 +1,14 @@
+import md5 from "blueimp-md5";
+import Utils from "../../../util/Utils";
 import { apiGet } from "../../../util/HttpApi";
 import TracksManager from "../../../context/TracksManager";
+import TrackLayerProvider from "../../../map/TrackLayerProvider";
 
-function osrmToFeaturesCollection(osrm) {
+const PROFILE_LINE = TracksManager.PROFILE_LINE;
+
+const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
+
+function osrmToFeaturesCollection(osrm, style = {}) {
 /*
     convert OSRM routes[] to features[] "LineString"
     convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
@@ -43,7 +50,8 @@ function osrmToFeaturesCollection(osrm) {
                     time: r.duration,
                     distance: r.distance
                 }
-            }
+            },
+            style
         });
         // parse turns
         r.legs?.forEach(l => {
@@ -85,20 +93,27 @@ export async function calculateRoute({
     interPoints,
     avoidRoads,
     setRouteData,
-    getRouteText,
+    changeRouteText,
     setRoutingErrorMsg
 }) {
 
-    // TODO
-    if (this.profile === 'line') {
-        setRouteData(null);
-        getRouteText(false, null);
-        setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
+    const style = { color: this.colors[this.profile] ?? 'blue' };
 
-        console.log('line route requested');
-
-        return;
+    if (this.profile === PROFILE_LINE) {
+        return calculateRouteLine({
+            startPoint,
+            endPoint,
+            interPoints,
+            setRouteData,
+            changeRouteText,
+            setRoutingErrorMsg,
+            style
+        });
     }
+
+    const waitingStyle = LINE_WAITING_STYLE;
+    const waitingLines = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style: waitingStyle });
+    setRouteData(waitingLines);
 
     if (this.type === 'osrm') {
         return calculateRouteOSRM.call(this, {
@@ -106,8 +121,9 @@ export async function calculateRoute({
             endPoint,
             interPoints,
             setRouteData,
-            getRouteText,
-            setRoutingErrorMsg
+            changeRouteText,
+            setRoutingErrorMsg,
+            style
         });
     }
 
@@ -124,8 +140,9 @@ export async function calculateRoute({
             interPoints,
             avoidRoads,
             setRouteData,
-            getRouteText,
-            setRoutingErrorMsg
+            changeRouteText,
+            setRoutingErrorMsg,
+            style
         });
     }
 
@@ -137,8 +154,9 @@ async function calculateRouteOSRM({
     endPoint,
     interPoints,
     setRouteData,
-    getRouteText,
-    setRoutingErrorMsg
+    changeRouteText,
+    setRoutingErrorMsg,
+    style
 }) {
     // OSRM
     const url = this.getURL();
@@ -155,19 +173,19 @@ async function calculateRouteOSRM({
     const coordinates = points.join(';');
 
     setRoutingErrorMsg(null);
-    getRouteText(true, null);
+    changeRouteText(true, null);
 
     const response = await apiGet(url + coordinates + tail, { apiCache: true });
 
     if (response.ok) {
-        const data = osrmToFeaturesCollection(await response.json());
+        const data = osrmToFeaturesCollection(await response.json(), style);
         const props = data.features[0]?.properties ?? {};
         const allData = { geojson: data, id: new Date().getTime(), props: props };
         setRouteData(allData);
-        getRouteText(false, allData);
+        changeRouteText(false, allData);
     } else {
         setRouteData(null);
-        getRouteText(false, null);
+        changeRouteText(false, null);
         setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
 }
@@ -179,8 +197,9 @@ async function calculateRouteOsmAnd({
     avoidRoads,
     routeMode,
     setRouteData,
-    getRouteText,
-    setRoutingErrorMsg
+    changeRouteText,
+    setRoutingErrorMsg,
+    style
 }) {
     setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -196,7 +215,7 @@ async function calculateRouteOsmAnd({
     if (avoidRoadsUrl !== '') {
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
-    getRouteText(true, null)
+    changeRouteText(true, null)
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
         + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
@@ -213,13 +232,85 @@ async function calculateRouteOsmAnd({
         }
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
+            data.features.forEach(f => {
+                if(f.geometry?.type === 'LineString') {
+                    f.style = style;
+                }
+            });
         }
         let allData = {geojson: data, id: new Date().getTime(), props: props};
         setRouteData(allData);
-        getRouteText(false, allData)
+        changeRouteText(false, allData)
     } else {
         setRouteData(null);
-        getRouteText(false, null);
+        changeRouteText(false, null);
         setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
+}
+
+async function calculateRouteLine({
+    startPoint,
+    endPoint,
+    interPoints,
+    setRouteData,
+    changeRouteText,
+    setRoutingErrorMsg,
+    style
+}) {
+    const route = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style });
+    changeRouteText(false, route);
+    setRoutingErrorMsg(null);
+    setRouteData(route);
+    return route;
+}
+
+function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style = {} } = {}) {
+
+    const coordinates = [];
+    coordinates.push([startPoint.lng, startPoint.lat]);
+    interPoints?.forEach(i => coordinates.push([i.lng, i.lat]));
+    coordinates.push([endPoint.lng, endPoint.lat]);
+
+    const id = md5(JSON.stringify(coordinates));
+
+    let distance = 0, latPrev = null, lonPrev = null;
+    coordinates.forEach(ll => {
+        let [lon, lat] = ll; // vice-versa
+        if (latPrev !== null && lonPrev !== null) {
+            distance += Utils.getDistance(latPrev, lonPrev, lat, lon);
+        }
+        latPrev = lat;
+        lonPrev = lon;
+    });
+
+    const time = 0;
+
+    const geojson = {
+        id,
+        props: {
+            overall: {
+                time,
+                distance
+            }
+        },
+        geojson: {
+            type: 'FeaturesCollection',
+            features: [{
+                type: 'Feature',
+                geometry: {
+                    type: 'LineString',
+                    coordinates
+                },
+                properties: {
+                    overall: {
+                        time,
+                        distance
+                    }
+                },
+                style
+            }]
+        }
+    };
+
+    return geojson;
 }

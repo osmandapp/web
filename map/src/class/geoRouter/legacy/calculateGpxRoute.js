@@ -12,7 +12,7 @@ export async function calculateGpxRoute({
     setStartPoint,
     setEndPoint,
     setInterPoints,
-    getRouteText,
+    changeRouteText,
     setRoutingErrorMsg,
 }) {
     const routeMode = {
@@ -21,7 +21,7 @@ export async function calculateGpxRoute({
     }
 
     setRoutingErrorMsg(null);
-    getRouteText(true, null);
+    changeRouteText(true, null);
 
     let formData = new FormData();
     formData.append('file', routeTrackFile);
@@ -49,11 +49,11 @@ export async function calculateGpxRoute({
         setInterPoints([]);
         const allData = {geojson: data, id: new Date().getTime(), props: props};
         setRouteData(allData);
-        getRouteText(false, allData);
+        changeRouteText(false, allData);
     } else {
         const message = await response.text();
         setRouteData(null);
-        getRouteText(false, null);
+        changeRouteText(false, null);
         setRoutingErrorMsg(message);
     }
 }

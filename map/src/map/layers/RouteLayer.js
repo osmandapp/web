@@ -250,8 +250,10 @@ const RouteLayer = ({geocodingData, region}) => {
         }
     }, [ctx.searchCtx, ctx.setSearchCtx]);
 
+    const passStyle = f => f.style; // pass geojson.features.style to set colors/etc
+
     return <>
-        {ctx.routeData && <GeoJSON key={routeDataKey()} data={ctx.routeData.geojson}
+        {ctx.routeData && <GeoJSON key={routeDataKey()} data={ctx.routeData.geojson} style={passStyle}
                 pointToLayer={pointToLayer} onEachFeature={onEachFeature} filter={routeFilter} />}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
                                    pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature}/>}

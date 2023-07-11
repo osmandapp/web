@@ -1,9 +1,13 @@
 import { copyObj } from "../../../util/Utils";
 import { apiGet } from "../../../util/HttpApi";
+import TracksManager from "../../../context/TracksManager";
 import onlineRoutingProviders from "../../../generated/online-routing-providers.json";
 
+const PROFILE_LINE = TracksManager.PROFILE_LINE;
+const PROFILE_LINE_NAME = PROFILE_LINE[0].toUpperCase() + PROFILE_LINE.slice(1);
+
 function addModes(data) {
-    data['line'] = { name: 'Line', params: {} };
+    data[PROFILE_LINE] = { name: PROFILE_LINE_NAME, params: {} };
     return data;
 }
 
@@ -21,7 +25,7 @@ function getColors() {
         'horsebackriding': '#7f3431',
         'pedestrian': '#d90139',
         'ski': '#ffacdf',
-        'line': '#5F9EA0',
+        [PROFILE_LINE]: '#5F9EA0',
         'moped': '#3e690e',
         'train': '#a56b6f'
     };
@@ -51,8 +55,8 @@ async function loadProvidersOSRM() {
                     delete r.type;
                 });
                 p.routes.push({
-                    key: 'line',
-                    name: 'Line'
+                    key: PROFILE_LINE,
+                    name: PROFILE_LINE_NAME
                 });
                 p.profiles = p.routes;
                 delete p.routes;
@@ -109,8 +113,8 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
             });
 
             converted.push({
-                key: 'line',
-                name: 'Line',
+                key: PROFILE_LINE,
+                name: PROFILE_LINE_NAME,
                 params: {}
             });
 

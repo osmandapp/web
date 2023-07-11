@@ -1,5 +1,8 @@
 import { copyObj } from "../../util/Utils";
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import TracksManager from "../../context/TracksManager";
+
+const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 /**
  * Return this Router status:
@@ -13,7 +16,7 @@ export function isReady() {
     return (this.loaded === true && (
             this.paused === false
             || this.type !=='osmand'
-            || this.profile === 'line'
+            || this.profile === PROFILE_LINE
         )
     );
 };
@@ -98,7 +101,7 @@ function getProfileDetails({ p, type, router, profile } = {}) {
 }
 
 function getProfileIcon({ color, profile } = {}) {
-    if (profile === 'line') {
+    if (profile === PROFILE_LINE) {
         return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
     } else {
         const path = '/map/images/profile_icons/' + profile + '.svg';
