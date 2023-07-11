@@ -1,5 +1,6 @@
 import { copyObj } from "../../util/Utils";
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import BusAlertIcon from '@mui/icons-material/BusAlert';
 import TracksManager from "../../context/TracksManager";
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
@@ -103,6 +104,8 @@ function getProfileDetails({ p, type, router, profile } = {}) {
 function getProfileIcon({ color, profile } = {}) {
     if (profile === PROFILE_LINE) {
         return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
+    } else if (profile.includes('rescuetrack')) {
+        return <BusAlertIcon sx={{ color: color }} fontSize="small"/>
     } else {
         const path = '/map/images/profile_icons/' + profile + '.svg';
         return <svg height="25" width="25" alt={profile}><image href={path} /></svg>;

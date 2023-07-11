@@ -27,7 +27,9 @@ function getColors() {
         'ski': '#ffacdf',
         [PROFILE_LINE]: '#5F9EA0',
         'moped': '#3e690e',
-        'train': '#a56b6f'
+        'train': '#a56b6f',
+        'rescuetrack': '#0000ff',
+        'rescuetrack-emergency': '#ff0000',
     };
 }
 
@@ -104,12 +106,14 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
             const converted = [];
 
             Object.keys(json).forEach((k) => {
+                if (k.includes('rescuetrack')
+                        && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
+                    return;
+                }
                 if (json[k]?.params) {
                     json[k].resetParams = copyObj(json[k]?.params);
                 }
-                if (!k.includes('rescuetrack')) {
-                    converted.push(json[k]);
-                }
+                converted.push(json[k]);
             });
 
             converted.push({
