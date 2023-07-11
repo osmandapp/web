@@ -76,7 +76,9 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        ctx.routeRouter.onOpenSettings({ opened: openSettings });
+        openSettings
+            ? ctx.routeRouter.onOpenSettings()
+            : ctx.routeRouter.onCloseSettings()
     }, [openSettings]);
 
     useEffect(() => {

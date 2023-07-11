@@ -4,7 +4,16 @@ import { calculateGpxRoute } from "./legacy/calculateGpxRoute.js";
 import { pickTypeRouterProfile } from "./methods/pickTypeRouterProfile.js";
 
 import { initSetter, nextState, flushState } from "./state.js";
-import { onOpenSettings, onParamsChanged, onRouterProfileSelected } from "./events.js";
+
+import {
+    onOpenSettings,
+    onCloseSettings,
+    onDragStart,
+    onDragEnd,
+    onParamsChanged,
+    onRouterProfileSelected,
+} from "./events.js";
+
 import {
     isReady,
     getEffectDeps,
@@ -25,7 +34,7 @@ const osmand = {
         key: 'car',
         name: 'Car',
         params: {},
-        backup: {}
+        resetParams: {}
     }],
     url: `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`
 };
@@ -35,6 +44,7 @@ export class geoRouter {
     setter = null;
     loaded = false;
     paused = false;
+    preview = false;
 
     // current
     type = osmand.type;
@@ -58,6 +68,9 @@ export class geoRouter {
 
     // events()
     onOpenSettings = onOpenSettings;
+    onCloseSettings = onCloseSettings;
+    onDragStart = onDragStart;
+    onDragEnd = onDragEnd;
     onParamsChanged = onParamsChanged;
     onRouterProfileSelected = onRouterProfileSelected;
 

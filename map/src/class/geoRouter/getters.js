@@ -34,6 +34,7 @@ export function getEffectDeps() {
         type: this.type,
         router: this.router,
         profile: this.profile,
+        preview: this.preview,
         ready: this.isReady(),
     });
 }

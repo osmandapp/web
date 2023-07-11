@@ -1,9 +1,8 @@
-/**
- * Pause routing when Setting dialog is opened
- */
-export function onOpenSettings({ opened }) {
-    this.flushState((o) => o.paused = !!opened);
-}
+export function onOpenSettings() { this.flushState((o) => o.paused = true); }
+export function onCloseSettings() { this.flushState((o) => o.paused = false); }
+
+export function onDragStart() { this.flushState((o) => o.preview = true); }
+export function onDragEnd() { this.flushState((o) => o.preview = false); }
 
 /**
  * Save changed params to current router/profile

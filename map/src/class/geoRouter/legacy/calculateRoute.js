@@ -115,6 +115,10 @@ export async function calculateRoute({
     const waitingLines = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style: waitingStyle });
     setRouteData(waitingLines);
 
+    if (this.preview) {
+        return;
+    }
+
     if (this.type === 'osrm') {
         return calculateRouteOSRM.call(this, {
             startPoint,
