@@ -256,21 +256,21 @@ const RouteLayer = ({geocodingData, region}) => {
 
     return <>
         {ctx.routeData && <GeoJSON key={routeDataKey()} data={ctx.routeData.geojson} style={passStyle}
-                pointToLayer={pointToLayer} onEachFeature={onEachFeature} filter={routeFilter} />}
+            pointToLayer={pointToLayer} onEachFeature={onEachFeature} filter={routeFilter} />}
         {geocodingData && <GeoJSON key={geocodingData.id} data={geocodingData.geojson}
-                                   pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature}/>}
+            pointToLayer={pointToLayerGeoData} onEachFeature={onEachFeature}/>}
         {ctx.searchCtx.geojson && <GeoJSON key={ctx.searchCtx.id} data={ctx.searchCtx.geojson}
-                                           pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature}/>}
+            pointToLayer={pointToLayerSearch} onEachFeature={onEachFeature}/>}
         {ctx.startPoint &&
             <Marker position={ctx.startPoint} icon={MarkerOptions.options.startIcon}
-                    ref={startPointRef} draggable={true} eventHandlers={startEventHandlers}/>}
+                ref={startPointRef} draggable={true} eventHandlers={startEventHandlers}/>}
         {ctx.interPoints.map((it, ind) =>
             <Marker key={'mark' + ind} data-index={ind} position={it} icon={MarkerOptions.options.interIcon}
-                    draggable={true} eventHandlers={intermediatEventHandlers}/>)}
+                draggable={true} eventHandlers={intermediatEventHandlers}/>)}
         {ctx.endPoint && <Marker position={ctx.endPoint} icon={MarkerOptions.options.endIcon}
-                                 ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}
+            ref={endPointRef} draggable={true} eventHandlers={endEventHandlers}/>}
         {ctx.pinPoint && <Marker position={ctx.pinPoint} icon={MarkerOptions.options.pointerIcons}
-                                 ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers}/>}
+            ref={pinPointRef} draggable={true} eventHandlers={pinEventHandlers}/>}
         {region && <Popup position={region.latlng}>
             {region.regions}
         </Popup>}

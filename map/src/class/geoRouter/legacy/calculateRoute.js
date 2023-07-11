@@ -233,7 +233,7 @@ async function calculateRouteOsmAnd({
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
             data.features.forEach(f => {
-                if(f.geometry?.type === 'LineString') {
+                if (f.geometry?.type === 'LineString') {
                     f.style = style;
                 }
             });
