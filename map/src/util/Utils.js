@@ -79,9 +79,16 @@ function getProfileIcon(profile, color) {
     }
 }
 
-export function mergeStateObject(getObject, setFunction, todoObject) {
-    const merged = Object.assign({}, getObject, todoObject);
-    setFunction(() => merged); // is really need => ?
+export function mergeStateObject(getObject, setFunction, todoObject, path = null) {
+    /*
+        Please note: getObject will be directly modified here!
+        In the next render cycle it will be overriden by useState.
+        We use ()=>{} to make correct queue of changes for next render.
+
+        You might use return Object as you want, but you don't have to re-assign it to getObject (as it's already done).
+    */
+    const merged = Object.assign(getObject, todoObject); // getObject has been modified
+    setFunction(previous => Object.assign({}, previous, merged)); // push useState setter()
     return merged;
 }
 
@@ -96,10 +103,18 @@ export function mergeStateObject(getObject, setFunction, todoObject) {
 export function quickNaNfix(badString) {
     const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
     const nil = ':null'; // other NaN(s) to null (think about srtmEle)
-    
+
     return badString
         .replace(/"ele": ?NaN\b/g, ele)
         .replace(/: ?NaN\b/g, nil);
+}
+
+/*
+    Copy simple (JSON) objects, faster than _.cloneDeep()
+    Don't use on objects with circular structure (such as layers)
+*/
+export function copyObj(obj) {
+    return typeof obj === 'object' ? JSON.parse(JSON.stringify(obj)) : obj;
 }
 
 const Utils = {

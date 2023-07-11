@@ -1,3 +1,4 @@
+import md5 from "blueimp-md5";
 import { globalNavigate } from "../App";
 import { quickNaNfix } from "../util/Utils";
 import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
@@ -69,7 +70,13 @@ import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
     Errors:
 
         axios-style usage "catch {} try {}" is disabled by default, but:
-        option { throwErrors: true } throws on: catch-error, http-error, redirect
+
+        option { throwErrors: true } will throw on: catch-error, http-error, redirect
+        option { dataOnErrors: true } will set response.data = body (text) on: http-error
+
+    Cache:
+
+        option { apiCache: true } will cache successful responses by key: md5(url+options+body)
 
     Return:
 
@@ -101,14 +108,22 @@ export async function apiGet(url, options = null) {
         }
     }
 
-    let response;
+    // parse query string from options.params (axios)
+    const qs = '?' + new URLSearchParams(options?.params || {}).toString();
+    const fullURL = url + (qs === '?' ? '' : qs);
+
+    let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options, options?.body) : null;
+
+    if (cacheKey && cache[cacheKey]) {
+        // console.log('cache-hit', cacheKey);
+        return cache[cacheKey];
+    }
+
+    let response = null;
 
     try {
-        // parse query string from options.params (axios)
-        const qs = '?' + new URLSearchParams(options?.params || {}).toString();
-        const fullURL = url + (qs === '?' ? '' : qs);
-
-        response = await fetch(fullURL, Object.assign({}, { redirect: 'manual' }, options));
+        const fullOptions = Object.assign({}, { redirect: 'manual' }, options);
+        response = await fetch(fullURL, fullOptions);
     } catch (e) {
         // got general error (have no response)
         console.log('fetch-catch-error', url, e);
@@ -185,6 +200,17 @@ export async function apiGet(url, options = null) {
         }
     }
 
+    // store cache
+    if (cacheKey) {
+        const cached = Object.assign(response, {
+            data, // axios
+            blob: async () => await response.clone().blob(), // resolved
+            json: async () => await response.clone().json(), // resolved
+            text: async () => await response.clone().text(), // resolved
+        });
+        cache[cacheKey] = cached;
+    }
+
     return Object.assign(response, {
         data, // data is for axios lovers :)
         blob: response.blob, // original
@@ -241,4 +267,27 @@ function isFormData(data) {
       || toString.call(data) === search
       || (toString.call(data.toString) === '[object Function]' && data.toString() === search)
     );
+}
+
+const cache = {};
+
+// hash deeply through FormData and File objects
+async function generateCacheKey(url, options = null, body = null) {
+    const opts = options ? md5(JSON.stringify(options)) : '';
+
+    let data = body ?? '';
+
+    if(isFormData(body)) {
+        for (const [k, v] of body.entries()) {
+            data = md5(data + k);
+            if (v.toString() === "[object File]") {
+                data = md5(data + v.name + v.size);
+                data = md5(data + await v.text());
+            } else {
+                data = md5(data + JSON.stringify(v));
+            }
+        }
+    }
+
+    return md5(url + opts + data);
 }
