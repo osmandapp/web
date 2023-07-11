@@ -10,7 +10,7 @@ import {
     ExpandLess, ExpandMore, Directions
 } from '@mui/icons-material';
 import AppContext from "../../../context/AppContext"
-import RouteSettingsDialog from './RouteSettingsDialog';
+import RouteProfileSettingsDialog from './RouteProfileSettingsDialog';
 import {TextField} from "@mui/material/";
 import {LatLng} from "leaflet";
 import {makeStyles} from "@material-ui/core/styles";
@@ -31,7 +31,6 @@ const useStyles = makeStyles({
         }
     }
 })
-
 
 function formatRouteInfo(props) {
     let res = ['Route: '];
@@ -64,7 +63,6 @@ function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ", " + pnt.lng.toFixed(5);
 }
 
-
 export default function RouteMenu() {
 
     const ctx = useContext(AppContext);
@@ -76,6 +74,19 @@ export default function RouteMenu() {
     const [end, setEnd] = useState('');
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    useEffect(() => {
+        ctx.routeProviders.PAUSE(ctx, openSettings);
+    }, [openSettings]);
+
+    useEffect(() => {
+        if (ctx.routeProviders.loaded && ctx.routeTypeInit && ctx.routeProfileInit) {
+            ctx.routeProviders.CHOOSE(ctx, {
+                type: ctx.routeTypeInit,
+                profile: ctx.routeProfileInit
+            });
+        }
+    }, [ctx.routeTypeInit, ctx.routeProfileInit, ctx.routeProviders.loaded]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -126,11 +137,9 @@ export default function RouteMenu() {
         }
     }
 
-
     return <>
         {openSettings &&
-            <RouteSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} profile={ctx.routeMode}
-                                 setProfile={ctx.setRouteMode} useDev={true}/>}
+            <RouteProfileSettingsDialog key='routesettingsdialog' setOpenSettings={setOpenSettings} useDev={true}/>}
         <MenuItem key='routeTop' sx={{mb: 1}} onClick={() => setOpen(!open)}>
             <ListItemIcon>
                 <Directions fontSize="small"/>
@@ -142,24 +151,19 @@ export default function RouteMenu() {
         <Collapse in={open} timeout="auto" unmountOnExit>
             <MenuItem key='routeprofile' sx={{ml: 1, mr: 2}} disableRipple={true}>
                 <FormControl fullWidth>
-                    <InputLabel id="route-mode-label">Route profile</InputLabel>
+                    <InputLabel id="route-mode-label">{`Route profile (${ctx.routeProviders.type})`}</InputLabel>
                     <Select
                         labelid="route-mode-label"
-                        label="Route profile"
-                        value={ctx.routeMode.mode}
-                        onChange={(e) => ctx.setRouteMode({
-                            mode: e.target.value, modes: ctx.routeMode.modes,
-                            opts: ctx.routeMode.modes[e.target.value]?.params
-                        })}
+                        label={`Route profile (${ctx.routeProviders.type})`}
+                        value={ctx.routeProviders.profile}
+                        onChange={(e) => ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value })}
                     >
-                        {Object.entries(ctx.routeMode.modes).map(([key, vl]) =>
-                            <MenuItem key={key} value={key}>{vl.name}</MenuItem>
+                        { ctx.routeProviders.allProfiles().map(({ key, name }) =>
+                            <MenuItem key={key} value={key}>{name}</MenuItem>
                         )}
                     </Select>
                 </FormControl>
-                <IconButton sx={{ml: 1}} onClick={() => {
-                    setOpenSettings(true)
-                }}>
+                <IconButton sx={{ml: 1}} onClick={() => { setOpenSettings(true) }}>
                     <Settings fontSize="small"/>
                 </IconButton>
             </MenuItem>
@@ -294,7 +298,6 @@ export default function RouteMenu() {
                     </Button>
                 </label>
             </MenuItem>
-
         </Collapse>
     </>;
 

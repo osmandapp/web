@@ -290,123 +290,6 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode) {
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
-    if (response.ok) {
-        let data = await response.json();
-        setRouteMode({mode: routeMode.mode, modes: data, opts: data[routeMode.mode]?.params});
-
-        let creatingData = _.cloneDeep(data);
-        creatingData = filterMode(creatingData);
-        creatingData = addModes(creatingData);
-        setCreatingRouteMode(
-            {
-                mode: creatingRouteMode.mode,
-                modes: creatingData,
-                opts: creatingData[creatingRouteMode.mode]?.params,
-                colors: getColors()
-            }
-        )
-    }
-}
-
-function addModes(data) {
-    data['line'] = {name: 'Line', params: {}};
-    return data;
-}
-
-function filterMode(data) {
-    return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
-}
-
-function getColors() {
-    return {
-        'car': '#1976d2',
-        'truck': '#2F4F4F',
-        'motorcycle': '#f8931d',
-        'bicycle': '#9053bd',
-        'boat': '#08b5ff',
-        'horsebackriding': '#7f3431',
-        'pedestrian': '#d90139',
-        'ski': '#ffacdf',
-        'line': '#5F9EA0',
-        'moped': '#3e690e',
-        'train': '#a56b6f'
-    };
-}
-
-
-async function calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg) {
-    setRouteData(null);
-    setRoutingErrorMsg(null);
-    const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
-    let inter = '';
-    interPoints.forEach((i) => {
-        inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
-    });
-    const endurl = `points=${endPoint.lat.toFixed(6)},${endPoint.lng.toFixed(6)}`;
-    let avoidRoadsUrl = '';
-    avoidRoads.forEach((i) => {
-        avoidRoadsUrl += ',' + i.id;
-    });
-    if (avoidRoadsUrl !== '') {
-        avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
-    }
-    getRouteText(true, null)
-    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}&${maxDist}`, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let props = {};
-        if (data.msg) {
-            setRoutingErrorMsg(data.msg);
-            data = data.features;
-        }
-        if (data.features.length > 0) {
-            props = data.features[0]?.properties;
-        }
-        let allData = {geojson: data, id: new Date().getTime(), props: props};
-        setRouteData(allData);
-        getRouteText(false, allData)
-    }
-}
-
-async function calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints) {
-    let formData = new FormData();
-    formData.append('file', routeTrackFile);
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
-        method: 'POST',
-        body: formData
-    });
-    if (response.ok) {
-        let data = await response.json();
-        let start, end;
-        let props = {};
-        if (data?.features?.length > 0) {
-            let coords = data?.features[0].geometry.coordinates;
-            if (coords.length > 0) {
-                start = {lat: coords[0][1], lng: coords[0][0]};
-                end = {lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0]};
-            }
-            props = data.features[0]?.properties;
-        }
-        setStartPoint(start);
-        setEndPoint(end);
-        setInterPoints([]);
-        setRouteData({geojson: data, id: new Date().getTime(), props: props});
-    } else {
-        let message = await response.text();
-        alert(message);
-    }
-}
-
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
@@ -441,8 +324,7 @@ export const AppContextProvider = (props) => {
     const [routeData, setRouteData] = useState(null);
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeShowPoints, setRouteShowPoints] = useState(true);
-    let modeParam = searchParams.get('mode') ? searchParams.get('mode') : 'car';
-    let startInit, endInit, pinInit;
+    let startInit, endInit, pinInit, interInit = [];
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
@@ -455,10 +337,12 @@ export const AppContextProvider = (props) => {
         let arr = searchParams.get('pin').split(',');
         pinInit = {lat: parseFloat(arr[0]), lng: parseFloat(arr[1])};
     }
-    const [routeMode, setRouteMode] = useState({
-        mode: modeParam, opts: {},
-        modes: {'car': {name: 'Car', params: {}}}
-    });
+    if (searchParams.get('inter')) {
+        searchParams.get('inter').split(';').forEach(ll => {
+            const [lat, lng] = ll.split(',');
+            interInit.push({lat: parseFloat(lat), lng: parseFloat(lng)});
+        });
+    }
     const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car', opts: {},
@@ -467,7 +351,7 @@ export const AppContextProvider = (props) => {
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
-    const [interPoints, setInterPoints] = useState([]);
+    const [interPoints, setInterPoints] = useState(interInit ?? []);
     const [avoidRoads, setAvoidRoads] = useState([]);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
@@ -531,31 +415,33 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        loadRouteModes(routeMode, setRouteMode, creatingRouteMode, setCreatingRouteMode);
-    }, []);
-
-    useEffect(() => {
         RoutingManager.loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode, setCreatingRouteMode })
     }, []);
 
     useEffect(() => {
-        if (routeTrackFile) {
-            calculateGpxRoute(routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints);
+        if (routeProviders.isReady() && routeTrackFile) {
+            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
+            RoutingManager.calculateGpxRoute({
+                routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint, setInterPoints
+            });
         }
-    }, [routeMode, routeTrackFile, setRouteData, setStartPoint, setEndPoint]);
+    }, [routeProviders, routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
-        if (!routeTrackFile && startPoint && endPoint) {
-            calculateRoute(startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg);
+        if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
+            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
+            RoutingManager.calculateRoute( {
+                routeProviders, startPoint, endPoint, interPoints, avoidRoads, routeMode, setRouteData, getRouteText, setRoutingErrorMsg
+            });
         } else {
             setHeaderText(prevState => ({
                 ...prevState,
                 route: {text: ``}
             }));
         }
-        // ! routeTrackFile is not part of dependency !
-    }, [routeMode, startPoint, endPoint, routeTrackFile, interPoints, avoidRoads, setRouteData]);
-
+        // ! routeTrackFile is not part of dependency ! really? :)
+    }, [routeProviders.isReady(), routeProviders.type, routeProviders.router, routeProviders.profile,
+        startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
     function getRouteText(processRoute, data) {
         let resultText = ``;
@@ -564,7 +450,7 @@ export const AppContextProvider = (props) => {
         } else {
             if (data) {
                 let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeMode.mode} is found.`
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.profile} is found.`
             }
         }
         setHeaderText(prevState => ({
@@ -602,7 +488,6 @@ export const AppContextProvider = (props) => {
         pinPoint, setPinPoint,
         interPoints, setInterPoints,
         routeData, setRouteData,
-        routeMode, setRouteMode,
         routeProviders, setRouteProviders,
         routeShowPoints, setRouteShowPoints,
         weatherPoint, setWeatherPoint,

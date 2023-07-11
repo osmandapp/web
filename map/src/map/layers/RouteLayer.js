@@ -5,7 +5,6 @@ import AppContext from "../../context/AppContext";
 import {useNavigate, useLocation} from 'react-router-dom';
 import MarkerOptions from "../markers/MarkerOptions";
 
-
 function dist(a1, a2) {
     // distance is not correct
     return (a1.lat - a2.lat) * (a1.lat - a2.lat) +
@@ -54,7 +53,7 @@ function moveableMarker(ctx, map, marker) {
         }
     })
 
-    return marker
+    return marker;
 }
 
 
@@ -65,42 +64,50 @@ const RouteLayer = ({geocodingData, region}) => {
     const navigate = useNavigate();
     const url = useLocation();
 
-    const [searchParams, setSearchParams] = useState({});
+    const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
+    const [routeQueryStringCleanup, setQueryStringCleanup] = useState(false);
 
     useEffect(() => {
-        let obj = {};
-        if (ctx.startPoint) {
-            obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
-        }
-        if (ctx.interPoints?.length > 0) {
-            let r = '';
-            ctx.interPoints.forEach((it, ind) => {
-                r += ',' + ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
-            })
-            obj['ipoints'] = r.substring(1);
-        }
-        if (ctx.endPoint) {
-            obj['end'] = ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
-        }
-        if (ctx.pinPoint) {
-            obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
-        }
-        if (Object.keys(obj).length > 0) {
-            if (ctx.routeMode?.mode && (Object.keys(obj).includes('start') || Object.keys(obj).includes('end'))) {
-                obj['mode'] = ctx.routeMode.mode;
+        if (ctx.routeProviders.loaded) {
+            let obj = {};
+            if (ctx.startPoint) {
+                obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
             }
-            setSearchParams(obj);
+            if (ctx.endPoint) {
+                obj['end'] = ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
+            }
+            if (ctx.pinPoint) {
+                obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
+            }
+            if (ctx.interPoints?.length > 0) {
+                obj['inter'] = ctx.interPoints.map(i => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
+            }
+            if (Object.keys(obj).length > 0) {
+                obj.type = ctx.routeProviders.type;
+                obj.profile = ctx.routeProviders.profile;
+            }
+            if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
+                setQueryStringCleanup(true);
+                setRouteQueryStringParams(obj);
+            }
         }
-    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.routeMode]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints,
+        ctx.routeProviders.type, ctx.routeProviders.profile, ctx.routeProviders.loaded]);
 
     useEffect(() => {
-        if (searchParams['pin'] || searchParams['start'] || searchParams['end']) {
+        if (ctx.routeProviders.loaded && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+            if (Object.keys(routeQueryStringParams).length === 0) {
+                setQueryStringCleanup(false); // only once
+            }
+            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams)).toString()
+                .replaceAll('%2C', ',')
+                .replaceAll('%3B', ';');
             navigate({
                 hash: url.hash,
-                search: "?" + new URLSearchParams(Object.entries(searchParams)).toString()
-            })
+                search: "?" + pretty
+            });
         }
-    }, [searchParams, setSearchParams]);
+    }, [routeQueryStringParams, setRouteQueryStringParams, ctx.routeProviders.loaded]);
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);
