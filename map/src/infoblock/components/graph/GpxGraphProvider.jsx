@@ -117,10 +117,10 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
 
-                if (!point.distance && !point?.ext.distance && point.distanceFromStart) {
-                    sumDist = point.distanceFromStart;
-                } else {
-                    sumDist += point.distance ? point.distance : point?.ext.distance ? point?.ext.distance : 0;
+                if (point.distance || point.distance === 0) {
+                    sumDist += point.distance;
+                } else if (point.distanceFromStart > 0 || point.ext?.distance > 0) {
+                    sumDist = point.distanceFromStart || point.ext?.distance;
                 }
 
                 let dataTab = {
