@@ -30,7 +30,7 @@ Categories screen is list of POI categories and additional actions buttons below
 Actions button:
 
 - &nbsp;<Translate android="true" ids="search_online_address"/> (Android) - allows to use [online POI search](../search/search-poi.md#online-search-android).
-- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/custom-poi-search.md).
+- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/search-poi.md).
 - &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export.md).
 - &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/search-poi.md).
 
@@ -41,6 +41,7 @@ Typical queries:
 - Favorite/Waypoint search
 - Track search
 - Online (Nominatim) search
+- URL search (google urls, osmand urls)
 - Search history
 
 ## Search near specific location
