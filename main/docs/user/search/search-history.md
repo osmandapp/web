@@ -60,15 +60,31 @@ The search history serves to provide relevant information about your previous ac
 
 ### Search query list
 
-**Order of items** displayed in the list.  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![History search](@site/static/img/search/history_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![History search](@site/static/img/search/history_search_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+1. **Order of items** displayed in the list.  
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
 
-The following **types of objects** get into the Search History list:
+2. The following **types of objects** get into the Search History list:
 - **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
 - **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
 
-Each field in the Search History list contains some of the **information** available to the application.
+3. Each field in the Search History list contains some of the **information** available to the application.
 - An icon that identifies the type or category of the found object.
 - The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
 - Distance from the your current location to the point and direction by compass.
@@ -132,19 +148,22 @@ You need to **long-tap on any of the query items in the list** to open the Delet
 </Tabs>
 
 There are several available options to export the search history. All files are exported in *osf* (OsmAnd settings File) format.  
-- *Menu → Settings → OsmAnd settings → History → Search history*.  
+
+1. *Menu → Settings → OsmAnd settings → History → Search history*.  
     Export is available using the OsmAnd settings menu. For Android, following this path takes you to the delete screen where [Share history](#share-android) is available. In the case of iOS, you can select individual items or the entire history on the screen, and after tapping the *Export* button, go to *Local Backup* menu.    
 
-- *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (Android).  
+2. *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (Android).  
     *Menu → Settings → OsmAnd settings → History → Actions → Export* (iOS).  
     Tapping these items takes you to the *Import/Export* (Android) or *Local Backup* (iOS) menu. Expand the *My Places* list and find *Search History*. All queries are exported in one file at once.  
 
-- *Menu → Settings → Import/Export → Export to file* (Android).  
+3. *Menu → Settings → Import/Export → Export to file* (Android).  
     *Menu → Settings → Local Backup → Back up as file* (iOS).  
     You can read more details in the [Import/Export](../personal/import-export.md#export) article.  
 
-- [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)  
-    You can use the Cloud to back up your search history. In the *Local Changes* menu or *Settings → Back up data → My Places → Search History*.
+4. [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)  
+    You can use the Cloud to back up your search history. In the *Local Changes* menu or *Settings → Back up data → My Places → Search History*.  
+
+![Settings History](@site/static/img/search/history_search_share_andr.png)  
 
 Exporting items or the entire search history can be useful in the following cases:  
 - *Backup*. You can back up your search history to save the information before deleting it and restoring it if necessary.
@@ -155,9 +174,11 @@ Exporting items or the entire search history can be useful in the following case
 
 #### Share (Android)
 
+![Settings History](@site/static/img/search/history_search_share_andr.png)
+
 The steps to share search history items are similar to [export](#export-and-share), with the difference that you export the whole history at once as an [osf](../../technical/osmand-file-formats/osmand-osf.md) file, while you can share individual selected files in gpx format.  
 
 On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share. 
 
-![Settings History](@site/static/img/search/history_search_share_andr.png)
+
 
