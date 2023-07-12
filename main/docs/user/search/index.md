@@ -32,12 +32,12 @@ Coordinate search – offers different coordinate formats.
 ### [Search Address](./search-address.md)
 The search address helps you to find your needed address from OpenStreetMap data.
 
-### [Search POI](./search-poi.md)
+### [Search All](./search-all.md)
 
 ### [Search History](./search-history.md)
 
 Search History
 
-### [Custom POI Search](./custom-poi-search.md)
+### [Search POI](./search-poi.md)
 
 Configure custom poi search
