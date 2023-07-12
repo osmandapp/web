@@ -150,7 +150,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
 
     return (<div key={'group' + index}>
         <MenuItem sx={{ml: 3}} divider onClick={() => {
-            toggleFavoritesPointsOpen();
+            markers.length > 0 && toggleFavoritesPointsOpen();
         }}>
             <ListItemIcon style={{color: group.name && FavoritesManager.getColorGroup(ctx, group.name, false)}}>
                 <Folder fontSize="small"/>
@@ -168,7 +168,7 @@ export default function FavoriteGroup({index, group, enableGroups, setEnableGrou
                 onClick={(e) => {
                     e.stopPropagation()
                 }}/>
-            {markers === [] ? <></> : favoritesPointsOpen ? <ExpandLess/> : <ExpandMore/>}
+            {markers.length === 0 ? <></> : favoritesPointsOpen ? <ExpandLess/> : <ExpandMore/>}
         </MenuItem>
         {loadingFavorites ? <LinearProgress/> : <></>}
         <Collapse in={favoritesPointsOpen} timeout="auto">
