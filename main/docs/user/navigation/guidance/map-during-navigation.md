@@ -62,7 +62,7 @@ During navigation, the location, distance from the surface, and map view change 
 This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
 For Android, this item named **Animate own position** is located in the "Other" section of the General Settings menu.
 
-**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/custom-poi-search.md) and select it to display POI on the map.
+**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/search-poi.md) and select it to display POI on the map.
 **Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
