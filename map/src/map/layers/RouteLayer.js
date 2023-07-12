@@ -7,12 +7,6 @@ import MarkerOptions from "../markers/MarkerOptions";
 
 const DRAG_DEBOUNCE_MS = 10;
 
-function dist(a1, a2) {
-    // distance is not correct
-    return (a1.lat - a2.lat) * (a1.lat - a2.lat) +
-        (a1.lng - a2.lng) * (a1.lng - a2.lng);
-}
-
 function moveableMarker(ctx, map, marker) {
     let moved;
     let mv;
@@ -38,26 +32,7 @@ function moveableMarker(ctx, map, marker) {
         map.dragging.enable();
         map.off("mousemove", trackCursor);
         if (moved && Math.abs(moved.x - marker._point.x) + Math.abs(moved.y - marker._point.y) > 10) {
-            let newInterPoints = Object.assign([], ctx.interPoints);
-            let minInd = -1;
-            if (ctx.interPoints.length > 0) {
-                let minDist = dist(ctx.endPoint, mv) +
-                    dist(ctx.interPoints[ctx.interPoints.length - 1], mv);
-                for (let i = 0; i < ctx.interPoints.length; i++) {
-                    let dst = dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], mv) +
-                        dist(ctx.interPoints[i], mv);
-                    if (dst < minDist) {
-                        minInd = i;
-                        minDist = dst;
-                    }
-                }
-            }
-            if (minInd < 0) {
-                newInterPoints.push(marker.getLatLng());
-            } else {
-                newInterPoints.splice(minInd, 0, marker.getLatLng());
-            }
-            ctx.setInterPoints(newInterPoints);
+            ctx.routeRouter.newInterPoint({ ctx, ll: marker.getLatLng(), old: mv });
         }
     })
 

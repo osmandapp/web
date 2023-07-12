@@ -1,6 +1,8 @@
-import { loadProviders } from "./methods/loadProviders.js";
 import { calculateRoute } from "./legacy/calculateRoute.js";
 import { calculateGpxRoute } from "./legacy/calculateGpxRoute.js";
+
+import { loadProviders } from "./methods/loadProviders.js";
+import { newInterPoint } from "./methods/newInterPoint.js";
 import { pickTypeRouterProfile } from "./methods/pickTypeRouterProfile.js";
 
 import { initSetter, nextState, flushState } from "./state.js";
@@ -76,6 +78,7 @@ export class geoRouter {
 
     // methods()
     loadProviders = loadProviders;
+    newInterPoint = newInterPoint;
     pickTypeRouterProfile = pickTypeRouterProfile;
 
     // legacy()
