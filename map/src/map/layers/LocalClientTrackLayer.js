@@ -67,6 +67,20 @@ export default function LocalClientTrackLayer() {
                 checkUpdateLayers();
             }
         }
+        if (ctx.selectedGpxFile?.layers) {
+            /*
+                map.off('click');
+                map.on('click', clickMap);
+
+                clickMap() uses context vars?
+                Got old context inside event handler?
+
+                1. Use Effect() to monitor context changes.
+                2. Disable previous handler (don't queue handlers).
+                3. Re-setup new event handler with refreshed context.
+             */
+            addClickOnMap(); // refresh ctx
+        }
     }, [ctx.selectedGpxFile]);
 
     useEffect(() => {
@@ -101,7 +115,6 @@ export default function LocalClientTrackLayer() {
 
         setLocalLayers({...localLayers});
     }, [ctx.localTracks, ctx.setLocalTracks]);
-
 
     useEffect(() => {
         if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
@@ -561,7 +574,8 @@ export default function LocalClientTrackLayer() {
         } else if (ctx.selectedGpxFile?.dragPoint === undefined) {
             ctx.trackState.block = false;
             map.getContainer().style.cursor = 'crosshair';
-            map.on("click", clickMap);
+            map.off('click'); // !!!
+            map.on('click', clickMap);
         }
     }
 
