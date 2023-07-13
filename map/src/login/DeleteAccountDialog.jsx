@@ -24,7 +24,7 @@ export default function DeleteAccountDialog({setDeleteAccountFlag}) {
         if (accountDeleted) {
             ctx.setUserEmail('');
             ctx.setLoginUser(null);
-            navigate('/map/loginForm');
+            navigate('/map/loginForm' + window.location.search + window.location.hash);
         }
     }, [accountDeleted]);
 

@@ -12,7 +12,7 @@ export default function ContextMenu({setGeocodingData, setRegionData}) {
     const navigate = useNavigate();
 
     const openLogin = () => {
-        navigate('/map/loginForm');
+        navigate('/map/loginForm' + window.location.search + window.location.hash);
     }
 
     useEffect(() => {
