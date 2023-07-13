@@ -15,7 +15,7 @@ import {
 import {
     AccessTime,
     AvTimer,
-    CloudDownload,
+    CloudUpload,
     Commit, Create,
     Download,
     Edit,
@@ -28,7 +28,7 @@ export default function GeneralInfo({width, setOpenDescDialog}) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
-    
+
     const [disableButton, setDisableButton] = useState(true);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
     const [points, setPoints] = useState(0);
@@ -350,10 +350,10 @@ export default function GeneralInfo({width, setOpenDescDialog}) {
                             ctx.selectedGpxFile.save = true;
                             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                         }}>
-                        <CloudDownload
+                        <CloudUpload
                             fontSize="small"
                             sx={{mr: "7px"}}/>
-                        Save
+                        Save to cloud
                     </Button>}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
                     <Button
