@@ -46,7 +46,7 @@ export default function LoginDialog() {
         setEmailError('');
         setPwd('');
         setCode('');
-        navigate('/map/');
+        navigate('/map/' + window.location.search + window.location.hash);
     };
     const handleLogin = () => {
         if (state === 'register') {

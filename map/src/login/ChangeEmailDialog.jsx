@@ -148,7 +148,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                                     setEmailChanged(false);
                                     ctx.setLoginUser(null);
                                     ctx.setUserEmail('');
-                                    navigate('/map/');
+                                    navigate('/map/' + window.location.search + window.location.hash);
                                 }}
                             >
                                 <Close fontSize="small" />

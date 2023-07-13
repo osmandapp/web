@@ -16,7 +16,7 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
 
     const navigate = useNavigate();
     const openLogin = () => {
-        navigate('/map/loginForm');
+        navigate('/map/loginForm' + window.location.search + window.location.hash);
     };
 
     return (
