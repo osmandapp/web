@@ -1,5 +1,5 @@
 import {ButtonGroup, IconButton, Paper, Tooltip} from "@mui/material";
-import {Close, Delete, Folder, Redo, Undo} from "@mui/icons-material";
+import {Close, Delete, CloudUpload, Redo, Undo} from "@mui/icons-material";
 import React, {useContext, useEffect, useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import AppContext from "../../context/AppContext";
@@ -103,8 +103,8 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                             ctx.creatingRouteMode.colors[_.lowerCase(ctx.creatingRouteMode.mode)])}
                                     </IconButton>
                                 </Tooltip>}
-                            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                                <Tooltip title="Save" arrow placement="right">
+                            {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                                <Tooltip title="Save to cloud" arrow placement="right">
                                     <IconButton
                                         variant="contained"
                                         type="button"
@@ -113,7 +113,7 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
                                         }}
                                     >
-                                        <Folder fontSize="small"/>
+                                        <CloudUpload fontSize="small"/>
                                     </IconButton>
                                 </Tooltip>}
                             {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER && ctx.currentObjectType !== ctx.OBJECT_TYPE_POI &&
