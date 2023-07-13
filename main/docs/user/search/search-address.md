@@ -31,13 +31,13 @@ OsmAnd provides several ways to get to the *Search tool* where the **Address sea
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/street_search_android.png) 
+![Search Android](@site/static/img/search/search_address_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Street iOS](@site/static/img/search/street_search_ios.png)  
+![Search iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
@@ -203,20 +203,6 @@ For more information about [United Kingdom Poscode data](https://github.com/hvdw
 
 **Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geofences or precise positioning in open space.  
 
-<!--
-Address - for searching by an [address tags](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) and [coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).  
-
-Coordinates Searching by [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system). Result: showing a point on the map.
-
-- Search result shows direction, distance to a point on the map.
-- Tap to the result opens [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) of a point on the map with additional info.  
--->
-
-**Scope of the coordinate search function**:
-- *Precise location*. Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services. 
-- *Places without an address*. Coordinates are particularly useful when it comes to places that do not have an exact address, or when the address is unknown. For example, it may be a remote area, a point on the sea, or a mountain peak. By entering coordinates, you can find and navigate to such locations without having to know the address.
-- *Location sharing*. Searching by coordinates provides a convenient way to enter information. You can enter coordinates manually or copy them from other sources. This can be useful when sharing locations with others or using previously obtained coordinates.
-
 
 ### Coordinate format
 
@@ -247,9 +233,10 @@ There are several ways to enter coordinates for the search. To use each of them,
     - *Input rules*. The coordinates consist of an MGRS zone, a square, and two more digits indicating east and north offsets.
     - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers.
 
-7. Swiss Grid (CH1903)
+7. **Swiss Grid** (CH1903)  
+https://en.wikipedia.org/wiki/Swiss_coordinate_system
 
-8. Swiss Grid (CH1903+)
+8. **Swiss Grid** (CH1903+)
 
-You can set a different coordinate format for each profile. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
+> You can set a different coordinate format for each profile. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
 
