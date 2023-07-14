@@ -1,6 +1,6 @@
-import TracksManager from "./TracksManager";
-import _ from "lodash";
-import TrackLayerProvider from "../map/TrackLayerProvider";
+import TracksManager from './TracksManager';
+import _ from 'lodash';
+import TrackLayerProvider from '../map/TrackLayerProvider';
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -13,9 +13,9 @@ function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
         endPoint: _.cloneDeep(endPoint),
         routeMode: startPoint.routeMode,
         tempLine: tempLine,
-        geometry: null
-    }
-    ctx.setRoutingCash({...routingList});
+        geometry: null,
+    };
+    ctx.setRoutingCash({ ...routingList });
     return routingList;
 }
 
@@ -43,24 +43,28 @@ function getRoutingFromCash(track, ctx, map) {
 function updateSelectedRouting(segment, polylineTemp, ctx) {
     segment.geometry = null;
     segment.tempLine = polylineTemp;
-    ctx.setRoutingCash({...ctx.routingCash});
+    ctx.setRoutingCash({ ...ctx.routingCash });
 }
 
 function validateRoutingCash(point, ctx, routingCashRef) {
     let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
-    Object.keys(routingList).forEach(k => {
-        if (segmentHasPoint(routingList[k], point) && (routingList[k].geometry === null)) {
+    Object.keys(routingList).forEach((k) => {
+        if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
             routingList[k].geometry = 'stop';
         }
-    })
+    });
 }
 
 function segmentHasPoint(segment, point) {
-    return TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point);
+    return (
+        TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
+    );
 }
 
 function createRoutingKey(startPoint, endPoint, routeMode) {
-    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${endPoint.lng},${TracksManager.formatRouteMode(routeMode)}`;
+    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${
+        endPoint.lng
+    },${TracksManager.formatRouteMode(routeMode)}`;
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
@@ -68,8 +72,8 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
         oldPoint: oldPoint,
         start: start,
         end: end,
-        tempPolyline:tempPolyline
-    }
+        tempPolyline: tempPolyline,
+    };
     segments.push(segment);
     return segments;
 }
@@ -79,6 +83,6 @@ const RoutingManager = {
     getRoutingFromCash,
     validateRoutingCash,
     addSegmentToRouting,
-}
+};
 
 export default RoutingManager;
