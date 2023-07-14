@@ -130,11 +130,12 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
             </Box>
         </>
     }
-        <PanelButtons
-            drawerWidth={drawerWidth}
-            showContextMenu={showContextMenu}
-            setShowContextMenu={setShowContextMenu}
-            clearState={clearState}/>
+        {showContextMenu &&
+            <PanelButtons
+                drawerWidth={drawerWidth}
+                showContextMenu={showContextMenu}
+                setShowContextMenu={setShowContextMenu}
+                clearState={clearState}/>}
         {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
         {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
     </>
