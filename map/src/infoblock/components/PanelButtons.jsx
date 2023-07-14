@@ -37,22 +37,22 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         isUndoPossible,
         isRedoPossible,
         pastStates
-    } = useUndoRedo({});
+    } = useUndoRedo({}, ctx.trackState.pastStates, ctx.trackState.futureStates);
     //futureStates for logs
 
     useEffect(() => {
         if (clearState) {
-            clear();
+            doClear();
         }
     }, [clearState])
 
     useEffect(() => {
         if (useSavedState) {
-            ctx.trackState.block = false;
             getState(state);
+            ctx.trackState.block = false;
+            ctx.setTrackState({...ctx.trackState});
         }
     }, [state])
-
 
     useEffect(() => {
         if (!useSavedState) {
@@ -63,6 +63,11 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
             }
         }
     }, [ctx.trackState])
+
+    function doClear() {
+        clear(); // setState() can't be used inside dispatch()
+        ctx.setTrackState({ pastStates: [], futureStates: [] });
+    }
 
     function getState(currentState) {
         getTrack(currentState);
@@ -77,7 +82,6 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
         objFromState.getRouting = true;
 
         ctx.setSelectedGpxFile({...objFromState});
-
     }
 
     return (ctx.selectedGpxFile &&
@@ -154,8 +158,8 @@ const PanelButtons = ({drawerWidth, showContextMenu, setShowContextMenu, clearSt
                                 variant="contained"
                                 type="button"
                                 onClick={() => {
+                                    doClear();
                                     setShowContextMenu(false);
-                                    clear();
                                 }}
                             >
                                 <Close fontSize="small"/>

@@ -1,14 +1,11 @@
-import {useContext, useReducer} from "react";
-import AppContext from "../context/AppContext";
+import {useReducer} from "react";
 
 const SET_STATE = "SET_STATE";
 const UNDO = "UNDO";
 const REDO = "REDO";
 const CLEAR = "CLEAR";
 
-const useUndoRedo = (initialState = {}) => {
-
-    const ctx = useContext(AppContext);
+const useUndoRedo = (initialState = {}, pastStates = [], futureStates = []) => {
 
     const reducerWithUndoRedo = (state, action) => {
         const {past, present, future} = state;
@@ -33,10 +30,6 @@ const useUndoRedo = (initialState = {}) => {
                     future: future.slice(1)
                 };
             case CLEAR:
-                ctx.setTrackState({
-                    pastStates: [],
-                    futureStates: []
-                })
                 return {
                     past: [],
                     present: {},
@@ -48,9 +41,9 @@ const useUndoRedo = (initialState = {}) => {
     };
 
     const [state, dispatch] = useReducer(reducerWithUndoRedo, {
-        past: ctx.trackState.pastStates,
+        past: pastStates,
         present: initialState,
-        future: ctx.trackState.futureStates
+        future: futureStates
     });
     const {past, present, future} = state;
 
