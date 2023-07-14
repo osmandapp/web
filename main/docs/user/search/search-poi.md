@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 title:  Search POI
 ---
 
@@ -12,30 +12,42 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 <InfoIncompleteArticle/>
+
+## Overview 
+
+*OsmAnd Categories Search*  
 
 Point of interesting (POI) seaching is one the general function of OsmAnd. [POI](https://wiki.openstreetmap.org/wiki/Points_of_interest) is any object on the map. How you know OsmAnd uses data from [OpenStreetMap](http://openstreetmap.org/).
 
 **Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
 
+
 ## How to use
 
-For starting search points you need to click to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/>
+All POI types in OsmAnd:  
+[gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml)  
 
-Categories screen is list of POI categories and additional actions buttons below of the list:
-
-![Search POI list Android](@site/static/img/search/poi_list_android.png) ![Search POI list iOS](@site/static/img/search/poi_list_ios.png)
-
-Actions button:
-
-- &nbsp;<Translate android="true" ids="search_online_address"/> (Android) - allows to use [online POI search](../search/search-poi.md#online-search-android).
-- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/custom-poi-search.md).
-- &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export.md).
-- &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/custom-poi-search.md).
+### Search query list
 
 
-### POI search
+## Categories POI search
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Search POI Android](@site/static/img/search/poi_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search POI iOS](@site/static/img/search/poi_search_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 In Categories menu user can start searching by typping line.
 
@@ -43,39 +55,113 @@ OsmAnd starts to find names and categories of POI by entered words. First result
 
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
 
-![Search POI Android](@site/static/img/search/poi_search_android.png) ![Search POI iOS](@site/static/img/search/poi_search_ios.png)
-
 Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map.md#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
 
 Enable / disable POI layer on the map:
 
-<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>
+<Tabs groupId="operating-systems">
 
-<p> </p>
+<TabItem value="android" label="Android">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>
+*<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
-<p> </p>
+![POI overlay Android](@site/static/img/search/poi_overlay_android.png)
 
-![POI overlay Android](@site/static/img/search/poi_overlay_android.png) ![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
+
+![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
-### Favorite/Waypoint search
+### Filters
 
-In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map.md#favorites) and [Waypoints](../map/point-layers-on-map.md#track-points) by searching. 
 
-Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
+## Custom POI search
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.png) ![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)
+### Custom POI filter
 
-### Online search (Android)
+<Tabs groupId="operating-systems">
 
-In [Categories menu](../search/search-poi.md#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
+<TabItem value="android" label="Android">
 
-![Online search Android](@site/static/img/search/online_search_android.png)
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate android="true" ids="custom_search"/>
 
-If OsmAnd can not find something you can increase search radius by tapping to "Increase search radius" button.
+![Custom search Android](@site/static/img/search/search_custom_filter_andr.png) 
 
-Or if you don't have any result you can provide feedback by clicking to "Send" button below device screen.
+</TabItem>
 
-![Online search feedback Android](@site/static/img/search/online_search_feedback_android.png)
+<TabItem value="ios" label="iOS">
+
+[Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/> -> <Translate ios="true" ids="add_custom_category"/>
+
+![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd allows you to create your Custom POI filters where you can collect needed POI from one/other categories.
+
+Combine POI types from different categories. Tap switch to select all, tap left side to category selection. 
+
+Below screen there is info panel about number of selected categories. Below selected category name you find names/number of selected POI types.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Custom search Android](@site/static/img/search/search_custom_filter_second_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+SAVE it:
+ 
+**iOS**: Save button - enter name
+
+![Custom POI save iOS](@site/static/img/search/custom_poi_save_ios.png)
+
+
+**Android**: can add filter , next blue "SAVE" button below of the screen -> enter name
+
+![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
+
+
+### Edit an existing filter
+
+From the main screen:
+1. Tap on the agnifying glass to open the Search screen
+2. Select the Categories tab
+3. Choose the custom category : screen with search results will open
+4. Tap on filter icon and then on Filter screen
+5. Tap on the 3-dot icon
+6. In the drop-down menu, select "Edit categories"
+
+
+### Delete Custom POI filter
+
+**iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
+
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)
+
+**Android**: you need to tap on Custom POI filter in the Categories list -> click to Filter button -> click to &#8285; -> Delete filter
+
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
+
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)
+

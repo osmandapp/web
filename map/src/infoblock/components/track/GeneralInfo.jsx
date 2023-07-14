@@ -18,7 +18,7 @@ import {
 import {
     AccessTime,
     AvTimer,
-    CloudDownload,
+    CloudUpload,
     Commit,
     Create,
     Download,
@@ -393,8 +393,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
                         }}
                     >
-                        <CloudDownload fontSize="small" sx={{ mr: '7px' }} />
-                        Save
+                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                        Save to cloud
                     </Button>
                 )}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (

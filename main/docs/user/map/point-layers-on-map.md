@@ -83,7 +83,7 @@ Enable / disable points of interest of **selected** type on the map:
 
 ### POI Types
 
-You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/custom-poi-search.md) and select it to display POI on the map.
+You can select one or many from standard OsmAnd POI types or make your own [POI filter](../search/search-poi.md) and select it to display POI on the map.
 
 ![Single POI Selection](@site/static/img/map/single_selection_android.png) ![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png)
 

@@ -169,7 +169,7 @@ Going to Search gives you quick access to a list of recent [destination history]
 You can use the Search tool to find the required place on the map for route planning from any available search category.
 
 - [Address](../search/search-address.md) - start typing the address in the search field.
-- [POI](../search/search-poi.md) and [Custom POI](../search/custom-poi-search.md)- the list of nearby similar names will also display POIs or their categories.
+- [POI](../search/search-poi.md) and [Custom POI](../search/search-poi.md)- the list of nearby similar names will also display POIs or their categories.
 - [Coordinates search](../search/search-address#coordinates-search) - enter the coordinates to find the point on the map.  
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)  
