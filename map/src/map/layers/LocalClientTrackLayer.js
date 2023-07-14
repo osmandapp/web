@@ -66,17 +66,15 @@ export default function LocalClientTrackLayer() {
                 checkUpdateLayers();
             }
         }
-        if (ctx.selectedGpxFile?.layers) {
+    }, [ctx.selectedGpxFile]);
+
+    useEffect(() => {
+        if (ctx.selectedGpxFile?.layers && ctx.createTrack?.enable) {
             /*
-                map.off('click');
-                map.on('click', clickMap);
-
-                clickMap() uses context vars?
-                Got old context inside event handler?
-
-                1. Use Effect() to monitor context changes.
-                2. Disable previous handler (don't queue handlers).
-                3. Re-setup new event handler with refreshed context.
+                Reminders when your handler uses context:
+                - Use Effect() to monitor context changes;
+                - Disable previous handler (don't chain handlers);
+                - Re-setup new event handler with refreshed context.
              */
             addClickOnMap(); // refresh ctx
         }
