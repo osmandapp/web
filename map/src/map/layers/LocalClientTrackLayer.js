@@ -13,7 +13,6 @@ import RoutingManager from "../../context/RoutingManager";
 import WptMapDialog from "../components/WptMapDialog";
 import AddRoutingToTrackDialog from "../components/AddRoutingToTrackDialog";
 
-
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -63,23 +62,33 @@ export default function LocalClientTrackLayer() {
                     saveLocal();
                 }
                 checkZoom();
-                checkClickOnMapEvent();
+                // checkClickOnMapEvent();
                 checkUpdateLayers();
             }
         }
     }, [ctx.selectedGpxFile]);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile?.layers && ctx.createTrack?.enable) {
-            /*
-                Reminders when your handler uses context:
-                - Use Effect() to monitor context changes;
-                - Disable previous handler (don't chain handlers);
-                - Re-setup new event handler with refreshed context.
-             */
-            addClickOnMap(); // refresh ctx
+        /*
+            Reminders if event handler uses context:
+            - Use Effect() to monitor context changes;
+            - Disable previous handler (don't chain handlers);
+            - Re-setup new event handler with refreshed context.
+         */
+        if (ctx.createTrack && ctx.selectedGpxFile) {
+            if (ctx.selectedGpxFile?.dragPoint === false) {
+                console.log('del-drag');
+                delete ctx.selectedGpxFile?.dragPoint;
+                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+            } else if (ctx.createTrack?.enable && ctx.selectedGpxFile?.dragPoint === undefined) {
+                console.log('set');
+                setupClickOnMap();
+            } else {
+                console.log('del');
+                deleteClickOnMap();
+            }
         }
-    }, [ctx.selectedGpxFile]);
+    }, [ctx.createTrack, ctx.selectedGpxFile]);
 
     useEffect(() => {
         for (let l in localLayers) {
@@ -130,7 +139,7 @@ export default function LocalClientTrackLayer() {
                 ctx.setCurrentObjectType(type);
                 initNewTrack();
             }
-            addClickOnMap();
+            // addClickOnMap();
         } else if (ctx.createTrack?.enable === false) {
             if (ctx.createTrack.clear) {
                 clearCreateLayers(ctx.selectedGpxFile.layers);
@@ -145,7 +154,7 @@ export default function LocalClientTrackLayer() {
             }
             saveResult(savedFile, false);
             ctx.setCreateTrack(null);
-            deleteClickOnMap();
+            // deleteClickOnMap();
         }
     }, [ctx.createTrack])
 
@@ -190,13 +199,13 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function checkClickOnMapEvent() {
-        if (ctx.selectedGpxFile.addPoint && !ctx.selectedGpxFile.addWpt) {
-            //getNewRoute();
-        } else {
-            checkDragPoint();
-        }
-    }
+    // function checkClickOnMapEvent() {
+    //     if (ctx.selectedGpxFile.addPoint && !ctx.selectedGpxFile.addWpt) {
+    //         //getNewRoute();
+    //     } else {
+    //         checkDragPoint();
+    //     }
+    // }
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
@@ -278,15 +287,15 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function checkDragPoint() {
-        if (ctx.selectedGpxFile?.dragPoint) {
-            deleteClickOnMap();
-        } else {
-            if (ctx.createTrack?.enable) {
-                addClickOnMap();
-            }
-        }
-    }
+    // function checkDragPoint() {
+    //     if (ctx.selectedGpxFile?.dragPoint) {
+    //         deleteClickOnMap();
+    //     } else {
+    //         if (ctx.createTrack?.enable) {
+    //             addClickOnMap();
+    //         }
+    //     }
+    // }
 
     function checkUpdateLayers() {
         if (ctx.selectedGpxFile?.updateLayers) {
@@ -565,7 +574,7 @@ export default function LocalClientTrackLayer() {
         return res;
     }
 
-    function addClickOnMap() {
+    function setupClickOnMap() {
         if (ctx.selectedGpxFile?.dragPoint === false) {
             delete ctx.selectedGpxFile?.dragPoint;
             ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
@@ -611,6 +620,7 @@ export default function LocalClientTrackLayer() {
     }, [addRoutingToTrack])
 
     function clickMap(e) {
+        console.log('click', Math.random());
         if (trackRef.current?.addWpt) {
             ctx.addFavorite.location = e.latlng;
             ctx.addFavorite.editTrack = true;
