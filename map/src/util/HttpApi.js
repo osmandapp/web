@@ -246,7 +246,11 @@ export async function apiPost(url, data = '', options = null) {
         // finally, try to convert from json
         if (typeof data === 'object') {
             let converted = '';
-            converted = JSON.stringify(data);
+            try {
+                converted = JSON.stringify(data);
+            } catch (e) {
+                console.error('apiPost', e);
+            }
             if (converted.length > 0) {
                 body = converted;
                 type = 'application/json';

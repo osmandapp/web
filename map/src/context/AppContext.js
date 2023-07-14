@@ -90,24 +90,28 @@ export const getGpxTime = (f) => {
     if (!dt) {
         dt = f.name.match(/(20\d\d)(\d\d)(\d\d)/);
     }
-    if (dt) {
-        let date = new Date();
-        date.setFullYear(parseInt(dt[1]));
-        date.setMonth(parseInt(dt[2]) - 1);
-        date.setDate(parseInt(dt[3]));
-        return date.getTime();
-    } else {
-        dt = f.name.match(/(\d\d) (...) (20\d\d)/);
+    try {
         if (dt) {
-            let monthNames = evaluateMonthNames();
-            if (monthNames[dt[2]]) {
-                let date = new Date();
-                date.setFullYear(parseInt(dt[3]));
-                date.setMonth(monthNames[dt[2]] - 1);
-                date.setDate(parseInt(dt[1]));
-                return date.getTime();
+            let date = new Date();
+            date.setFullYear(parseInt(dt[1]));
+            date.setMonth(parseInt(dt[2]) - 1);
+            date.setDate(parseInt(dt[3]));
+            return date.getTime();
+        } else {
+            dt = f.name.match(/(\d\d) (...) (20\d\d)/);
+            if (dt) {
+                let monthNames = evaluateMonthNames();
+                if (monthNames[dt[2]]) {
+                    let date = new Date();
+                    date.setFullYear(parseInt(dt[3]));
+                    date.setMonth(monthNames[dt[2]] - 1);
+                    date.setDate(parseInt(dt[1]));
+                    return date.getTime();
+                }
             }
         }
+    } catch (e) {
+        console.error('getGpxTime', e);
     }
     return 0;
 };

@@ -90,8 +90,12 @@ async function isRequestOk(response, setEmailError) {
     if (!response.ok) {
         let message = await response.text();
         if (message) {
-            let js = JSON.parse(message);
-            message = `An error has occured: ${js.error?.message}`;
+            try {
+                let js = JSON.parse(message);
+                message = `An error has occured: ${js.error?.message}`;
+            } catch (e) {
+                console.error('isRequestOk', e);
+            }
         }
         setEmailError(message);
         return null;
