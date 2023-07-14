@@ -17,9 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Point of interesting (POI) seaching is one the general function of OsmAnd. [POI](https://wiki.openstreetmap.org/wiki/Points_of_interest) is any object on the map. How you know OsmAnd uses data from [OpenStreetMap](http://openstreetmap.org/).
-
-**Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
+*OsmAnd Search All*
 
 
 ## How to use
@@ -39,6 +37,8 @@ Point of interesting (POI) seaching is one the general function of OsmAnd. [POI]
 </TabItem>
 
 </Tabs>
+
+**Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
 
 For starting search points you need to click to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/>
 
@@ -79,6 +79,29 @@ Typical queries:
 </TabItem>
 
 </Tabs>
+
+
+### Favorite/Waypoint/Tracks search
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorite search Android](@site/static/img/search/favorite_search_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map.md#favorites) and [Waypoints](../map/point-layers-on-map.md#track-points) by searching. 
+
+Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
 
 
 ## Address Search
@@ -169,22 +192,7 @@ OsmAnd starts to find names and categories of POI by entered words. First result
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
 
 
-### Online search (Android)
-
-![Online search Android](@site/static/img/search/search_online_andr.png)  
-
-In [Categories menu](../search/search-poi.md#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
-
-![Online search Android](@site/static/img/search/online_search_android.png)
-
-If OsmAnd can not find something you can increase search radius by tapping to "Increase search radius" button.
-
-Or if you don't have any result you can provide feedback by clicking to "Send" button below device screen.
-
-![Online search feedback Android](@site/static/img/search/online_search_feedback_android.png)
-
-
-### Custom Search
+### Custom POI Search
 
 <Tabs groupId="operating-systems">
 
@@ -203,26 +211,17 @@ Or if you don't have any result you can provide feedback by clicking to "Send" b
 </Tabs>
 
 
+## Online search (Android)
 
-## Favorite/Waypoint search
+![Online search Android](@site/static/img/search/search_online_andr.png)  
 
-<Tabs groupId="operating-systems">
+In [Categories menu](../search/search-poi.md#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
 
-<TabItem value="android" label="Android">
+![Online search Android](@site/static/img/search/online_search_android.png)
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.png) 
+If OsmAnd can not find something you can increase search radius by tapping to "Increase search radius" button.
 
-</TabItem>
+Or if you don't have any result you can provide feedback by clicking to "Send" button below device screen.
 
-<TabItem value="ios" label="iOS">
-
-![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map.md#favorites) and [Waypoints](../map/point-layers-on-map.md#track-points) by searching. 
-
-Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
+![Online search feedback Android](@site/static/img/search/online_search_feedback_android.png)
 

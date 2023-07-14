@@ -82,6 +82,10 @@ Enable / disable POI layer on the map:
 
 ### Filters
 
+### Rearrange categories
+
+### Online Search
+
 
 ## Custom POI search
 
