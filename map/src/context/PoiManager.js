@@ -1,10 +1,10 @@
-import {apiGet} from '../util/HttpApi';
-import icons from "../generated/poiicons.json";
-import _ from "lodash";
+import { apiGet } from '../util/HttpApi';
+import icons from '../generated/poiicons.json';
+import _ from 'lodash';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
-const DEFAULT_POI_ICON = "craft_default";
+const DEFAULT_POI_ICON = 'craft_default';
 const DEFAULT_POI_COLOR = '#f8931d';
 const DEFAULT_SHAPE_COLOR = 'circle';
 
@@ -15,7 +15,7 @@ async function getPoiCategories() {
     } else {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`);
         if (response.data) {
-            localStorage.setItem(POI_CATEGORIES, JSON.stringify(response.data))
+            localStorage.setItem(POI_CATEGORIES, JSON.stringify(response.data));
             return response.data;
         }
     }
@@ -28,19 +28,18 @@ async function getTopPoiFilters() {
     } else {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-top-filters`);
         if (response.data) {
-            localStorage.setItem(TOP_POI_FILTERS, JSON.stringify(response.data))
+            localStorage.setItem(TOP_POI_FILTERS, JSON.stringify(response.data));
             return response.data;
         }
     }
 }
 
 async function searchPoiCategories(search) {
-    let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`,
-        {
-            params: {
-                search: search
-            }
-        });
+    let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`, {
+        params: {
+            search: search,
+        },
+    });
     if (!_.isEmpty(response?.data)) {
         return response.data;
     } else {
@@ -65,7 +64,7 @@ function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) 
 function formattingPoiType(type) {
     if (type) {
         type = formattingPoiFilter(type);
-        type = type.replaceAll("_", " ");
+        type = type.replaceAll('_', ' ');
         type = type.charAt(0).toUpperCase() + type.slice(1);
     }
     return type;
@@ -73,7 +72,7 @@ function formattingPoiType(type) {
 
 function formattingPoiFilter(filter) {
     if (filter) {
-        filter = filter.replaceAll("_filter", "");
+        filter = filter.replaceAll('_filter', '');
     }
     return filter;
 }
@@ -87,7 +86,7 @@ const PoiManager = {
     formattingPoiFilter,
     DEFAULT_POI_ICON: DEFAULT_POI_ICON,
     DEFAULT_POI_COLOR: DEFAULT_POI_COLOR,
-    DEFAULT_SHAPE_COLOR: DEFAULT_SHAPE_COLOR
-}
+    DEFAULT_SHAPE_COLOR: DEFAULT_SHAPE_COLOR,
+};
 
 export default PoiManager;

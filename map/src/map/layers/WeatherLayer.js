@@ -1,7 +1,7 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {useMap} from "react-leaflet";
-import AppContext from "../../context/AppContext";
-import {TileLayer, LayersControl} from "react-leaflet";
+import React, { useContext, useEffect, useState } from 'react';
+import { useMap } from 'react-leaflet';
+import AppContext from '../../context/AppContext';
+import { TileLayer, LayersControl } from 'react-leaflet';
 
 function getWeatherTime(weatherDateObj) {
     let h = weatherDateObj.getUTCHours();
@@ -16,11 +16,10 @@ function getWeatherTime(weatherDateObj) {
     if (d < 10) {
         d = '0' + d;
     }
-    return weatherDateObj.getUTCFullYear() + '' + m + '' + d + "_" + h + "00";
+    return weatherDateObj.getUTCFullYear() + '' + m + '' + d + '_' + h + '00';
 }
 
 const WeatherLayer = () => {
-
     const map = useMap();
     const ctx = useContext(AppContext);
 
@@ -38,26 +37,31 @@ const WeatherLayer = () => {
         setTime(getWeatherTime(ctx.weatherDate));
     }, [ctx.weatherDate]);
 
-
-    return <>
-        <LayersControl>
-            {Object.keys(ctx.weatherLayers).map(k => {
-                return ctx.weatherLayers[k].map((item) => (
-                    <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key + time}>
-                        <TileLayer
-                            url={item.url}
-                            time={time}
-                            tms={true}
-                            minZoom={1}
-                            opacity={item.opacity}
-                            maxNativeZoom={item.maxNativeZoom}
-                            maxZoom={item.maxZoom}
-                        />
-                    </LayersControl.Overlay>
-                ))
-            })}
-        </LayersControl>
-    </>;
+    return (
+        <>
+            <LayersControl>
+                {Object.keys(ctx.weatherLayers).map((k) => {
+                    return ctx.weatherLayers[k].map((item) => (
+                        <LayersControl.Overlay
+                            name={item.name}
+                            checked={item.checked}
+                            key={'overlay_' + item.key + time}
+                        >
+                            <TileLayer
+                                url={item.url}
+                                time={time}
+                                tms={true}
+                                minZoom={1}
+                                opacity={item.opacity}
+                                maxNativeZoom={item.maxNativeZoom}
+                                maxZoom={item.maxZoom}
+                            />
+                        </LayersControl.Overlay>
+                    ));
+                })}
+            </LayersControl>
+        </>
+    );
 };
 
 export default WeatherLayer;

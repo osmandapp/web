@@ -8,8 +8,8 @@ const DELETE_EMAIL_MSG = 'delete';
 async function userRegister(username, setEmailError, setState) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'username': username})
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('register-verify');
@@ -20,8 +20,8 @@ async function userRegister(username, setEmailError, setState) {
 async function userActivate(ctx, username, pwd, token, setEmailError, handleClose) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'username': username, 'password': pwd, 'token': token})
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username, password: pwd, token: token }),
     });
     if (await isRequestOk(response, setEmailError)) {
         ctx.setLoginUser(username);
@@ -34,13 +34,13 @@ async function userActivate(ctx, username, pwd, token, setEmailError, handleClos
 async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'username': username, 'password': pwd})
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username, password: pwd }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
         ctx.setLoginUser(username);
-        ctx.setUserEmail(username, {days: 30, SameSite: 'Strict'}); // for next login
+        ctx.setUserEmail(username, { days: 30, SameSite: 'Strict' }); // for next login
         handleClose();
     }
 }
@@ -48,8 +48,8 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
 async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'username': username})
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('login');
@@ -64,22 +64,21 @@ async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) 
         const data = {
             username: userEmail,
             password: null,
-            token: code
-        }
-        const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data,
-            {
-                throwErrors: true,
-                dataOnErrors: true,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).catch((error) => setEmailError(error.response.data));
+            token: code,
+        };
+        const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data, {
+            throwErrors: true,
+            dataOnErrors: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).catch((error) => setEmailError(error.response.data));
 
         if (resp?.status === 200) {
             setAccountDeleted(true);
         }
     } else {
-        setEmailError("Please enter valid email");
+        setEmailError('Please enter valid email');
     }
 }
 
@@ -91,11 +90,8 @@ async function isRequestOk(response, setEmailError) {
     if (!response.ok) {
         let message = await response.text();
         if (message) {
-            try {
-                let js = JSON.parse(message);
-                message = `An error has occured: ${js.error?.message}`;
-            } catch (e) {
-            }
+            let js = JSON.parse(message);
+            message = `An error has occured: ${js.error?.message}`;
         }
         setEmailError(message);
         return null;
@@ -111,17 +107,16 @@ async function isRequestOk(response, setEmailError) {
 async function sendCode(email, action, setEmailError) {
     const data = {
         email: email,
-        action: action
-    }
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data,
-        {
-            throwErrors: true,
-            dataOnErrors: true,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).catch((error) => {
-            setEmailError && setEmailError(error.response.data)
+        action: action,
+    };
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data, {
+        throwErrors: true,
+        dataOnErrors: true,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).catch((error) => {
+        setEmailError && setEmailError(error.response.data);
     });
     if (resp?.status === 200) {
         return true;
@@ -129,14 +124,13 @@ async function sendCode(email, action, setEmailError) {
 }
 
 async function confirmCode(email, code, setEmailError) {
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code,
-        {
-            throwErrors: true,
-            dataOnErrors: true,
-            headers: {
-                'Content-Type': 'text/plain'
-            }
-        }).catch((error) => setEmailError(error.response.data));;
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code, {
+        throwErrors: true,
+        dataOnErrors: true,
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+    }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
     }
@@ -146,16 +140,15 @@ async function changeEmail(email, token, setEmailError) {
     const data = {
         username: email,
         password: null,
-        token: token
-    }
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data,
-        {
-            throwErrors: true,
-            dataOnErrors: true,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).catch((error) => setEmailError(error.response.data));
+        token: token,
+    };
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data, {
+        throwErrors: true,
+        dataOnErrors: true,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
     }
@@ -172,7 +165,7 @@ const AccountManager = {
     changeEmail,
     CHANGE_EMAIL_MSG: CHANGE_EMAIL_MSG,
     DELETE_EMAIL_MSG: DELETE_EMAIL_MSG,
-    LOGIN_LOGOUT_URL
-}
+    LOGIN_LOGOUT_URL,
+};
 
 export default AccountManager;

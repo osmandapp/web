@@ -1,23 +1,14 @@
-import {
-    Box, Button,
-    Collapse,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Typography
-} from "@mui/material";
-import {ExpandLess, ExpandMore, Folder} from "@mui/icons-material";
-import React, {useContext, useEffect, useState} from "react";
-import CloudTrackItem from "./CloudTrackItem";
+import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
+import React, { useContext, useEffect, useState } from 'react';
+import CloudTrackItem from './CloudTrackItem';
 
-import Actions from "./Actions";
-import drawerStyles from "../../styles/DrawerStyles";
-import AppContext from "../../../context/AppContext";
-import PopperMenu from "./PopperMenu";
+import Actions from './Actions';
+import drawerStyles from '../../styles/DrawerStyles';
+import AppContext from '../../../context/AppContext';
+import PopperMenu from './PopperMenu';
 
-
-export default function CloudTrackGroup({index, group}) {
-
+export default function CloudTrackGroup({ index, group }) {
     const styles = drawerStyles();
     const ctx = useContext(AppContext);
 
@@ -37,18 +28,18 @@ export default function CloudTrackGroup({index, group}) {
     };
 
     function addToCollection() {
-        group.files.forEach(file => {
-            if (!ctx.gpxCollection.find(name => name === file.name)) {
+        group.files.forEach((file) => {
+            if (!ctx.gpxCollection.find((name) => name === file.name)) {
                 ctx.gpxCollection.push(file.name);
             }
-        })
+        });
         ctx.setGpxCollection([...ctx.gpxCollection]);
     }
 
     useEffect(() => {
         if (indexGroup !== -1) {
             if (showTracks.includes(indexGroup)) {
-                showTracks.splice(showTracks.indexOf(indexGroup), 1)
+                showTracks.splice(showTracks.indexOf(indexGroup), 1);
             } else {
                 showTracks.push(indexGroup);
             }
@@ -59,59 +50,67 @@ export default function CloudTrackGroup({index, group}) {
     const Buttons = () => {
         return (
             <div>
-                {<MenuItem onClick={(e) => {
-                    addToCollection()
-                    e.stopPropagation();
-                }}>To Collection</MenuItem>}
+                {
+                    <MenuItem
+                        onClick={(e) => {
+                            addToCollection();
+                            e.stopPropagation();
+                        }}
+                    >
+                        To Collection
+                    </MenuItem>
+                }
             </div>
-        )
-    }
+        );
+    };
 
-
-    return <div className={styles.drawerItem} key={'group' + index}>
-        <MenuItem sx={{ml: 3}} divider onClick={(e) => {
-            if (e.target !== 'path') {
-                setIndexGroup(index);
-                toggleTracksOpen();
-            }
-        }}>
-            <ListItemIcon>
-                <Folder fontSize="small"/>
-            </ListItemIcon>
-            <ListItemText>
-                <Typography variant="inherit" noWrap>
-                    {group.name}
-                </Typography>
-            </ListItemText>
-            <Button
-                sx={{borderRadius: 28, minWidth: '30px !important'}}
-                size="small"
-                ref={anchorEl}
+    return (
+        <div className={styles.drawerItem} key={'group' + index}>
+            <MenuItem
+                sx={{ ml: 3 }}
+                divider
                 onClick={(e) => {
-                    handleToggle();
-                    ctx.setOpenedPopper(anchorEl);
-                    e.stopPropagation();
+                    if (e.target !== 'path') {
+                        setIndexGroup(index);
+                        toggleTracksOpen();
+                    }
                 }}
             >
-                <Typography variant="body2" color="textSecondary">
-                    {group.files.length > 0 ? `${group.files.length}` : ''}
-                </Typography>
-            </Button>
-            <Box>
-                <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons}/>
-            </Box>
-            {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess/> : <ExpandMore/>}
-        </MenuItem>
-        <Collapse in={showTracks.includes(index)} timeout="auto">
-            <div style={{maxHeight: '41vh', overflow: 'auto'}}>
-                <Actions files={group.files}
-                         setSortFiles={setSortFiles}/>
-                {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
-                    return <CloudTrackItem key={file + index}
-                                           file={file}/>
-                })}
-            </div>
-        </Collapse>
-    </div>
-
+                <ListItemIcon>
+                    <Folder fontSize="small" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        {group.name}
+                    </Typography>
+                </ListItemText>
+                <Button
+                    sx={{ borderRadius: 28, minWidth: '30px !important' }}
+                    size="small"
+                    ref={anchorEl}
+                    onClick={(e) => {
+                        handleToggle();
+                        ctx.setOpenedPopper(anchorEl);
+                        e.stopPropagation();
+                    }}
+                >
+                    <Typography variant="body2" color="textSecondary">
+                        {group.files.length > 0 ? `${group.files.length}` : ''}
+                    </Typography>
+                </Button>
+                <Box>
+                    <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons} />
+                </Box>
+                {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess /> : <ExpandMore />}
+            </MenuItem>
+            <Collapse in={showTracks.includes(index)} timeout="auto">
+                <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
+                    <Actions files={group.files} setSortFiles={setSortFiles} />
+                    {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
+                        return <CloudTrackItem key={file + index} file={file} />;
+                    })}
+                </div>
+            </Collapse>
+        </div>
+    );
 }

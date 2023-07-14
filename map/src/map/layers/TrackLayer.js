@@ -1,13 +1,12 @@
-import {useContext, useEffect} from 'react';
-import AppContext from "../../context/AppContext";
-import {useMap} from "react-leaflet";
-import TrackLayerProvider from "../TrackLayerProvider";
-import TracksManager from "../../context/TracksManager";
-
+import { useContext, useEffect } from 'react';
+import AppContext from '../../context/AppContext';
+import { useMap } from 'react-leaflet';
+import TrackLayerProvider from '../TrackLayerProvider';
+import TracksManager from '../../context/TracksManager';
 
 async function addTrackToMap(ctx, file, map) {
     let layer = TrackLayerProvider.createLayersByTrackData(file);
-    layer.on('click', (e) => {
+    layer.on('click', () => {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile(Object.assign({}, file));
         let type = ctx.OBJECT_TYPE_CLOUD_TRACK;

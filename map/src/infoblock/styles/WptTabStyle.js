@@ -1,40 +1,40 @@
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const wptTabStyle = makeStyles({
     icon: {
-        "& .icon": {
+        '& .icon': {
             top: '22px',
-            left: '20px'
+            left: '20px',
         },
-        "& .background": {
+        '& .background': {
             marginBottom: '-40px',
             marginRight: '20px',
             marginLeft: '10px',
-            filter: "drop-shadow(0 0 0 gray)"
-        }
+            filter: 'drop-shadow(0 0 0 gray)',
+        },
     },
     iconOnlyName: {
-        "& .icon": {
+        '& .icon': {
             top: '16px',
-            left: '20px'
+            left: '20px',
         },
-        "& .background": {
+        '& .background': {
             marginBottom: '-40px',
             marginRight: '20px',
             marginLeft: '10px',
-            filter: "drop-shadow(0 0 0 gray)"
-        }
+            filter: 'drop-shadow(0 0 0 gray)',
+        },
     },
     text: {
         '& .MuiTypography-root': {
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            width: "100%",
-            paddingRight: "20px",
-            marginLeft: "14px !important"
-        }
-    }
-})
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            width: '100%',
+            paddingRight: '20px',
+            marginLeft: '14px !important',
+        },
+    },
+});
 
 export default wptTabStyle;

@@ -1,13 +1,13 @@
-import {IconButton, ListItemText, TextField} from "@mui/material";
-import {Delete} from "@mui/icons-material";
-import React from "react";
-import contextMenuStyles from "../../../styles/ContextMenuStyles";
+import { IconButton, ListItemText, TextField } from '@mui/material';
+import { Delete } from '@mui/icons-material';
+import React from 'react';
+import contextMenuStyles from '../../../styles/ContextMenuStyles';
 
-export default function FavoriteDescription({favoriteDescription, setFavoriteDescription, setClose}) {
-
+export default function FavoriteDescription({ favoriteDescription, setFavoriteDescription, setClose }) {
     const menuStyles = contextMenuStyles();
 
-    return (<ListItemText sx={{mt: 3}}>
+    return (
+        <ListItemText sx={{ mt: 3 }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="desc"
@@ -29,8 +29,8 @@ export default function FavoriteDescription({favoriteDescription, setFavoriteDes
                     setFavoriteDescription('');
                 }}
             >
-                <Delete fontSize="small"/>
+                <Delete fontSize="small" />
             </IconButton>
         </ListItemText>
-    )
+    );
 }

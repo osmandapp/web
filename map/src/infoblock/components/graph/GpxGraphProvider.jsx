@@ -1,22 +1,21 @@
-import React, {useContext, useEffect, useMemo, useState} from 'react';
-import GpxGraph from "./GpxGraph";
-import AppContext from "../../../context/AppContext";
-import TracksManager from "../../../context/TracksManager";
-import _ from "lodash";
-import {Checkbox, Divider, FormControlLabel} from "@mui/material";
-import {makeStyles} from "@material-ui/core/styles";
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import GpxGraph from './GpxGraph';
+import AppContext from '../../../context/AppContext';
+import TracksManager from '../../../context/TracksManager';
+import _ from 'lodash';
+import { Checkbox, Divider, FormControlLabel } from '@mui/material';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     checkbox: {
         '& .MuiTypography-root': {
             fontSize: '12',
         },
-        transform: "scale(0.8)"
-    }
-})
+        transform: 'scale(0.8)',
+    },
+});
 
-const GpxGraphProvider = ({width}) => {
-
+const GpxGraphProvider = ({ width }) => {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
@@ -54,7 +53,7 @@ const GpxGraphProvider = ({width}) => {
             }
         }
         if (trackData) {
-            setData({...trackData});
+            setData({ ...trackData });
         }
     }, [ctx.selectedGpxFile]);
 
@@ -63,15 +62,15 @@ const GpxGraphProvider = ({width}) => {
             setShowData({
                 [ELEVATION]: data.ele ? data.ele : '',
                 [ELEVATION_SRTM]: data.srtm ? data.srtm : '',
-                [SPEED]: data.speed ? data.speed : ''
-            })
+                [SPEED]: data.speed ? data.speed : '',
+            });
         }
     }, [data]);
 
     const graphData = useMemo(() => {
         if (!_.isEmpty(data?.data)) {
-            let elevation = data.ele ? "ele" : null;
-            let elevationSRTM = data.srtm ? "srtmEle" : null;
+            let elevation = data.ele ? 'ele' : null;
+            let elevationSRTM = data.srtm ? 'srtmEle' : null;
             let points = data.data;
             let result = [];
             let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
@@ -109,7 +108,9 @@ const GpxGraphProvider = ({width}) => {
                     }
                 }
                 if (data.speed) {
-                    speed = _.cloneDeep(point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed);
+                    speed = _.cloneDeep(
+                        point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
+                    );
                     if (speed) {
                         speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);
                         minSpeed = Math.min(speed, minSpeed);
@@ -131,7 +132,7 @@ const GpxGraphProvider = ({width}) => {
                 };
                 result.push(dataTab);
             });
-            return {res: result, minEle: minEle, maxEle: maxEle, minSpeed: minSpeed, maxSpeed: maxSpeed};
+            return { res: result, minEle: minEle, maxEle: maxEle, minSpeed: minSpeed, maxSpeed: maxSpeed };
         }
     }, [data]);
 
@@ -139,58 +140,85 @@ const GpxGraphProvider = ({width}) => {
         return value === '' ? false : value;
     }
 
-    return (<>
-            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                <div style={{marginLeft: '15px', marginTop: '-10px'}}>
-                    <FormControlLabel className={classes.checkbox} key={'show_points'} label={'Show track points'}
-                                      control={
-                                          <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.points}
-                                                    disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
-                                                    onChange={() => {
-                                                        let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                                        updatedShowPoints.points = !updatedShowPoints.points;
-                                                        ctx.setShowPoints(updatedShowPoints)
-                                                    }}/>
-                                      }>
-                    </FormControlLabel>
-                    <FormControlLabel className={classes.checkbox} key={'show_wpts'} label={'Show track wpts'} control={
-                        <Checkbox sx={{marginLeft: '-30px'}} checked={ctx.showPoints.wpts}
-                                  disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
-                                  onChange={() => {
-                                      let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                      updatedShowPoints.wpts = !updatedShowPoints.wpts;
-                                      ctx.setShowPoints(updatedShowPoints)
-                                  }}/>
-                    }>
-                    </FormControlLabel>
-                </div>}
-            {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && <Divider sx={{mt: "3px", mb: "12px"}}/>}
-            <div style={{marginLeft: '20px'}}>
-                {showData && Object.entries(showData).map(([key, value]) =>
-                    <FormControlLabel className={classes.checkbox} key={key} label={key} control={
-                        <Checkbox sx={{marginLeft: '-30px'}} checked={checkShowData(value)} disabled={value === ''}
-                                  onChange={() => {
-                                      let updatedShowData = Object.assign({}, showData);
-                                      updatedShowData[key] = !value;
-                                      setShowData(updatedShowData);
-                                  }
-                                  }/>
-                    }>
-                    </FormControlLabel>
-                )}
+    return (
+        <>
+            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                <div style={{ marginLeft: '15px', marginTop: '-10px' }}>
+                    <FormControlLabel
+                        className={classes.checkbox}
+                        key={'show_points'}
+                        label={'Show track points'}
+                        control={
+                            <Checkbox
+                                sx={{ marginLeft: '-30px' }}
+                                checked={ctx.showPoints.points}
+                                disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
+                                onChange={() => {
+                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                    updatedShowPoints.points = !updatedShowPoints.points;
+                                    ctx.setShowPoints(updatedShowPoints);
+                                }}
+                            />
+                        }
+                    ></FormControlLabel>
+                    <FormControlLabel
+                        className={classes.checkbox}
+                        key={'show_wpts'}
+                        label={'Show track wpts'}
+                        control={
+                            <Checkbox
+                                sx={{ marginLeft: '-30px' }}
+                                checked={ctx.showPoints.wpts}
+                                disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
+                                onChange={() => {
+                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
+                                    updatedShowPoints.wpts = !updatedShowPoints.wpts;
+                                    ctx.setShowPoints(updatedShowPoints);
+                                }}
+                            />
+                        }
+                    ></FormControlLabel>
+                </div>
+            )}
+            {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                <Divider sx={{ mt: '3px', mb: '12px' }} />
+            )}
+            <div style={{ marginLeft: '20px' }}>
+                {showData &&
+                    Object.entries(showData).map(([key, value]) => (
+                        <FormControlLabel
+                            className={classes.checkbox}
+                            key={key}
+                            label={key}
+                            control={
+                                <Checkbox
+                                    sx={{ marginLeft: '-30px' }}
+                                    checked={checkShowData(value)}
+                                    disabled={value === ''}
+                                    onChange={() => {
+                                        let updatedShowData = Object.assign({}, showData);
+                                        updatedShowData[key] = !value;
+                                        setShowData(updatedShowData);
+                                    }}
+                                />
+                            }
+                        ></FormControlLabel>
+                    ))}
             </div>
-            {graphData && showData && hasData() &&
-                <GpxGraph data={graphData?.res}
-                          showData={showData}
-                          xAxis={DISTANCE}
-                          y1Axis={[ELEVATION, ELEVATION_SRTM]}
-                          y2Axis={SPEED}
-                          width={width}
-                          minEle={graphData?.minEle}
-                          maxEle={graphData?.maxEle}
-                          minSpeed={graphData?.minSpeed}
-                          maxSpeed={graphData?.maxSpeed}
-                />}
+            {graphData && showData && hasData() && (
+                <GpxGraph
+                    data={graphData?.res}
+                    showData={showData}
+                    xAxis={DISTANCE}
+                    y1Axis={[ELEVATION, ELEVATION_SRTM]}
+                    y2Axis={SPEED}
+                    width={width}
+                    minEle={graphData?.minEle}
+                    maxEle={graphData?.maxEle}
+                    minSpeed={graphData?.minSpeed}
+                    maxSpeed={graphData?.maxSpeed}
+                />
+            )}
         </>
     );
 };
