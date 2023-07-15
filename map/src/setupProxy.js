@@ -2,12 +2,13 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
     const proxy = createProxyMiddleware({
-        target: (process.env.NODE_ENV === 'development')
-            ? 'https://test.osmand.net/' // https
-            : 'http://localhost:8080/',
-         changeOrigin: true,
+        target:
+            process.env.NODE_ENV === 'development'
+                ? 'https://test.osmand.net/' // https
+                : 'http://localhost:8080/',
+        changeOrigin: true,
         hostRewrite: 'localhost:3000',
-        logLevel: 'debug'
+        logLevel: 'debug',
     });
     app.use('/mapapi/', proxy);
     app.use('/routing/', proxy);

@@ -1,10 +1,10 @@
-import TracksManager from "./TracksManager";
-import _ from "lodash";
-import TrackLayerProvider from "../map/TrackLayerProvider";
-import { mergeStateObject } from "../util/Utils";
+import TracksManager from './TracksManager';
+import _ from 'lodash';
+import TrackLayerProvider from '../map/TrackLayerProvider';
+import { mergeStateObject } from '../util/Utils';
 import { apiGet } from '../util/HttpApi';
-import { copyObj } from "../util/Utils";
-import onlineRoutingProviders from "../generated/online-routing-providers.json";
+import { copyObj } from '../util/Utils';
+import onlineRoutingProviders from '../generated/online-routing-providers.json';
 
 const STOP_CALC_ROUTING = 'stop';
 
@@ -17,9 +17,9 @@ function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
         endPoint: _.cloneDeep(endPoint),
         routeMode: startPoint.routeMode,
         tempLine: tempLine,
-        geometry: null
-    }
-    ctx.setRoutingCash({...routingList});
+        geometry: null,
+    };
+    ctx.setRoutingCash({ ...routingList });
     return routingList;
 }
 
@@ -47,24 +47,28 @@ function getRoutingFromCash(track, ctx, map) {
 function updateSelectedRouting(segment, polylineTemp, ctx) {
     segment.geometry = null;
     segment.tempLine = polylineTemp;
-    ctx.setRoutingCash({...ctx.routingCash});
+    ctx.setRoutingCash({ ...ctx.routingCash });
 }
 
 function validateRoutingCash(point, ctx, routingCashRef) {
     let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
-    Object.keys(routingList).forEach(k => {
-        if (segmentHasPoint(routingList[k], point) && (routingList[k].geometry === null)) {
+    Object.keys(routingList).forEach((k) => {
+        if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
             routingList[k].geometry = 'stop';
         }
-    })
+    });
 }
 
 function segmentHasPoint(segment, point) {
-    return TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point);
+    return (
+        TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
+    );
 }
 
 function createRoutingKey(startPoint, endPoint, routeMode) {
-    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${endPoint.lng},${TracksManager.formatRouteMode(routeMode)}`;
+    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${
+        endPoint.lng
+    },${TracksManager.formatRouteMode(routeMode)}`;
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
@@ -72,25 +76,25 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
         oldPoint: oldPoint,
         start: start,
         end: end,
-        tempPolyline:tempPolyline
-    }
+        tempPolyline: tempPolyline,
+    };
     segments.push(segment);
     return segments;
 }
 
 function getColors() {
     return {
-        'car': '#1976d2',
-        'truck': '#2F4F4F',
-        'motorcycle': '#f8931d',
-        'bicycle': '#9053bd',
-        'boat': '#08b5ff',
-        'horsebackriding': '#7f3431',
-        'pedestrian': '#d90139',
-        'ski': '#ffacdf',
-        'line': '#5F9EA0',
-        'moped': '#3e690e',
-        'train': '#a56b6f'
+        car: '#1976d2',
+        truck: '#2F4F4F',
+        motorcycle: '#f8931d',
+        bicycle: '#9053bd',
+        boat: '#08b5ff',
+        horsebackriding: '#7f3431',
+        pedestrian: '#d90139',
+        ski: '#ffacdf',
+        line: '#5F9EA0',
+        moped: '#3e690e',
+        train: '#a56b6f',
     };
 }
 
@@ -104,7 +108,7 @@ function filterMode(data) {
 }
 
 function osrmToFeaturesCollection(osrm) {
-/*
+    /*
     convert OSRM routes[] to features[] "LineString"
     convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
     convert OSRM waypoints[] to features[] "Point" (OSRM's start-end)
@@ -133,9 +137,9 @@ function osrmToFeaturesCollection(osrm) {
         const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
 
         return `${imperative} ${target} ${go}`; // Turn Left to Street and go 621 meters
-    }
+    };
 
-    osrm?.routes?.forEach(r => {
+    osrm?.routes?.forEach((r) => {
         // parse geo
         features.push({
             type: 'Feature',
@@ -143,38 +147,38 @@ function osrmToFeaturesCollection(osrm) {
             properties: {
                 overall: {
                     time: r.duration,
-                    distance: r.distance
-                }
-            }
+                    distance: r.distance,
+                },
+            },
         });
         // parse turns
-        r.legs?.forEach(l => {
-            l.steps?.forEach(s => {
+        r.legs?.forEach((l) => {
+            l.steps?.forEach((s) => {
                 features.push({
                     type: 'Feature',
                     geometry: {
                         type: 'Point',
-                        coordinates: s.maneuver?.location
+                        coordinates: s.maneuver?.location,
                     },
                     properties: {
-                        description: maneuver(s)
-                    }
+                        description: maneuver(s),
+                    },
                 });
-            })
+            });
         });
     });
 
     // parse points (really need?)
-    osrm?.waypoints?.forEach(w => {
+    osrm?.waypoints?.forEach((w) => {
         features.push({
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: w.location
+                coordinates: w.location,
             },
             properties: {
-                description: w.name
-            }
+                description: w.name,
+            },
         });
     });
 
@@ -190,7 +194,7 @@ async function calculateRoute({
     routeMode,
     setRouteData,
     getRouteText,
-    setRoutingErrorMsg
+    setRoutingErrorMsg,
 }) {
     // OsmAnd (call original function)
     if (routeProviders.type === 'osmand') {
@@ -202,7 +206,7 @@ async function calculateRoute({
             routeMode,
             setRouteData,
             getRouteText,
-            setRoutingErrorMsg
+            setRoutingErrorMsg,
         });
     }
 
@@ -215,7 +219,7 @@ async function calculateRoute({
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
 
     points.push(geo(startPoint));
-    interPoints?.forEach(i => points.push(geo(i)));
+    interPoints?.forEach((i) => points.push(geo(i)));
     points.push(geo(endPoint));
 
     const coordinates = points.join(';');
@@ -246,7 +250,7 @@ async function calculateRouteOsmAnd({
     routeMode,
     setRouteData,
     getRouteText,
-    setRoutingErrorMsg
+    setRoutingErrorMsg,
 }) {
     setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -262,14 +266,19 @@ async function calculateRouteOsmAnd({
     if (avoidRoadsUrl !== '') {
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
-    getRouteText(true, null)
-    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
-        apiCache: true,
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
+    getRouteText(true, null);
+    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
+    const response = await apiGet(
+        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
+            `routeMode=${TracksManager.formatRouteMode(
+                routeMode
+            )}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`,
+        {
+            apiCache: true,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        }
+    );
     if (response.ok && response.data?.features) {
         let data = await response.json();
         let props = {};
@@ -280,9 +289,9 @@ async function calculateRouteOsmAnd({
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
         }
-        let allData = {geojson: data, id: new Date().getTime(), props: props};
+        let allData = { geojson: data, id: new Date().getTime(), props: props };
         setRouteData(allData);
-        getRouteText(false, allData)
+        getRouteText(false, allData);
     } else {
         setRouteData(null);
         getRouteText(false, null);
@@ -301,15 +310,20 @@ async function calculateGpxRoute({
     setRouteData,
     setStartPoint,
     setEndPoint,
-    setInterPoints
+    setInterPoints,
 }) {
     let formData = new FormData();
     formData.append('file', routeTrackFile);
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(routeMode)}`, {
-        apiCache: true,
-        method: 'POST',
-        body: formData
-    });
+    const response = await apiGet(
+        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(
+            routeMode
+        )}`,
+        {
+            apiCache: true,
+            method: 'POST',
+            body: formData,
+        }
+    );
     if (response.ok) {
         let data = await response.json();
         let start, end;
@@ -317,15 +331,15 @@ async function calculateGpxRoute({
         if (data?.features?.length > 0) {
             let coords = data?.features[0].geometry.coordinates;
             if (coords.length > 0) {
-                start = {lat: coords[0][1], lng: coords[0][0]};
-                end = {lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0]};
+                start = { lat: coords[0][1], lng: coords[0][0] };
+                end = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
             }
             props = data.features[0]?.properties;
         }
         setStartPoint(start);
         setEndPoint(end);
         setInterPoints([]);
-        setRouteData({geojson: data, id: new Date().getTime(), props: props});
+        setRouteData({ geojson: data, id: new Date().getTime(), props: props });
     } else {
         let message = await response.text();
         alert(message);
@@ -378,27 +392,61 @@ function initRouteProviders() {
         // readiness
         loaded: false,
         paused: false,
-        isReady() { return this.loaded === true && this.paused === false },
+        isReady() {
+            return this.loaded === true && this.paused === false;
+        },
 
         // getters (use copy to prevent direct modify by parents)
-        allProviders() { return this._allProviders() }, // no-copy-need
-        getProvider(router = this.router) { return copyObj(this._getProvider(router)) },
-        allProfiles(router = this.router) { return copyObj(this._allProfiles(router)) },
-        getProfile(router = this.router, profile = this.profile) { return copyObj(this._getProfile(router, profile)) },
-        getParams(router = this.router, profile = this.profile) { return copyObj(this._getParams(router, profile)) },
-        getResetParams(router = this.router, profile = this.profile) { return copyObj(this._getResetParams(router, profile)) },
-        getURL(router = this.router, profile = this.profile) { return this._getURL(router, profile) },
-        getProviderByType(type = this.type) { return copyObj(this._getProviderByType(type)) },
+        allProviders() {
+            return this._allProviders();
+        }, // no-copy-need
+        getProvider(router = this.router) {
+            return copyObj(this._getProvider(router));
+        },
+        allProfiles(router = this.router) {
+            return copyObj(this._allProfiles(router));
+        },
+        getProfile(router = this.router, profile = this.profile) {
+            return copyObj(this._getProfile(router, profile));
+        },
+        getParams(router = this.router, profile = this.profile) {
+            return copyObj(this._getParams(router, profile));
+        },
+        getResetParams(router = this.router, profile = this.profile) {
+            return copyObj(this._getResetParams(router, profile));
+        },
+        getURL(router = this.router, profile = this.profile) {
+            return this._getURL(router, profile);
+        },
+        getProviderByType(type = this.type) {
+            return copyObj(this._getProviderByType(type));
+        },
 
         // internals (strict and fast)
-        _allProviders() { return this.providersOSRM.concat(this.providersOsmAnd) }, // OSRM + OsmAnd
-        _getProvider(router) { return this._allProviders()?.find(r => r.key === router) ?? {} },
-        _allProfiles(router) { return this._getProvider(router)?.profiles ?? [] },
-        _getProfile(router, profile) { return this._allProfiles(router)?.find(p => p.key === profile) ?? {} },
-        _getParams(router, profile) { return this._getProfile(router, profile)?.params },
-        _getResetParams(router, profile) { return this._getProfile(router, profile)?.backup },
-        _getURL(router, profile) { return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url },
-        _getProviderByType(type) { return this._allProviders()?.find(r => r.type === type) ?? {} },
+        _allProviders() {
+            return this.providersOSRM.concat(this.providersOsmAnd);
+        }, // OSRM + OsmAnd
+        _getProvider(router) {
+            return this._allProviders()?.find((r) => r.key === router) ?? {};
+        },
+        _allProfiles(router) {
+            return this._getProvider(router)?.profiles ?? [];
+        },
+        _getProfile(router, profile) {
+            return this._allProfiles(router)?.find((p) => p.key === profile) ?? {};
+        },
+        _getParams(router, profile) {
+            return this._getProfile(router, profile)?.params;
+        },
+        _getResetParams(router, profile) {
+            return this._getProfile(router, profile)?.backup;
+        },
+        _getURL(router, profile) {
+            return this._getProfile(router, profile)?.url ?? this._getProvider(router)?.url;
+        },
+        _getProviderByType(type) {
+            return this._allProviders()?.find((r) => r.type === type) ?? {};
+        },
 
         // actions
         PARAMS(ctx = null, opts) {
@@ -410,14 +458,14 @@ function initRouteProviders() {
                 3. Therefore, we look into providersOsmAnd, rewrite params and call ctx-setter
             */
 
-            if (!ctx || opts === undefined) throw(new Error('invalid route.PARAMS() call'));
+            if (!ctx || opts === undefined) throw new Error('invalid route.PARAMS() call');
 
             const router = ctx.routeProviders.router;
             const profile = ctx.routeProviders.profile;
 
-            ctx.routeProviders?.providersOsmAnd?.forEach(r => {
+            ctx.routeProviders?.providersOsmAnd?.forEach((r) => {
                 if (r.key === router) {
-                    r.profiles?.forEach(p => {
+                    r.profiles?.forEach((p) => {
                         if (p.key === profile) {
                             p.params = opts;
                         }
@@ -430,7 +478,7 @@ function initRouteProviders() {
 
         PAUSE(ctx, state) {
             // pause routing while RouteSettingsDialog open
-            if (!ctx || state === undefined) throw(new Error('invalid route.PAUSE() call'));
+            if (!ctx || state === undefined) throw new Error('invalid route.PAUSE() call');
             mergeStateObject(ctx.routeProviders, ctx.setRouteProviders, { paused: state });
         },
 
@@ -456,7 +504,7 @@ function initRouteProviders() {
             */
             const routeProviders = ctx?.routeProviders;
 
-            if (!ctx || !routeProviders) throw(new Error('invalid route.CHOOSE() call'));
+            if (!ctx || !routeProviders) throw new Error('invalid route.CHOOSE() call');
 
             if (type && !router) {
                 router = routeProviders.getProviderByType(type)?.key ?? 'osmand';
@@ -469,13 +517,13 @@ function initRouteProviders() {
 
             const providers = this.allProviders();
 
-            if (!providers.find(r => r.key === router)) {
+            if (!providers.find((r) => r.key === router)) {
                 router = providers[0].key ?? 'osmand'; // fallback
             }
 
             const profiles = this.allProfiles(router);
 
-            if (!profiles.find(p => p.key === profile)) {
+            if (!profiles.find((p) => p.key === profile)) {
                 profile = profiles[0].key ?? 'car'; // fallback
             }
 
@@ -494,18 +542,22 @@ function initRouteProviders() {
             Therefore, OsmAnd must be initialized with minimal-fallback data
         */
         providersOSRM: [],
-        providersOsmAnd: [Object.assign({}, preloaded,
-            { key: preloaded.router, profiles: [{ key: 'car', name: 'Car' }] })],
-
+        providersOsmAnd: [
+            Object.assign({}, preloaded, { key: preloaded.router, profiles: [{ key: 'car', name: 'Car' }] }),
+        ],
     };
 }
 
 // load and validate OSRM and OsmAnd routing providers
-async function loadRouteProviders({ routeProviders, setRouteProviders, creatingRouteMode = null, setCreatingRouteMode = null }) {
-
+async function loadRouteProviders({
+    routeProviders,
+    setRouteProviders,
+    creatingRouteMode = null,
+    setCreatingRouteMode = null,
+}) {
     let json = onlineRoutingProviders;
 
-    if(!json) {
+    if (!json) {
         const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`);
         if (osrm.ok) {
             json = osrm.data;
@@ -513,12 +565,13 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
     }
 
     if (json && json?.providers && json?.providers[0]?.name) {
-
-        json.providers.forEach(p => { // routes to profiles
+        json.providers.forEach((p) => {
+            // routes to profiles
             p.name = p.webName ?? p.name;
             p.key = p.name; // name acts as key
             if (p.routes) {
-                p.routes.forEach(r => { // type to key
+                p.routes.forEach((r) => {
+                    // type to key
                     r.key = r.type;
                     delete r.type;
                 });
@@ -531,7 +584,7 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
             providersOSRM: json.providers,
             type: json.providers[0].type,
             router: json.providers[0].key, // select first OSRM key and type
-            profile: json.providers[0]?.profiles[0]?.key // select first profile
+            profile: json.providers[0]?.profiles[0]?.key, // select first profile
         });
     } else {
         console.log('failed to load osrm providers');
@@ -550,13 +603,12 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                 let creatingData = _.cloneDeep(json);
                 creatingData = filterMode(creatingData);
                 creatingData = addModes(creatingData);
-                setCreatingRouteMode( {
+                setCreatingRouteMode({
                     mode: creatingRouteMode.mode,
                     modes: creatingData,
                     opts: creatingData[creatingRouteMode.mode]?.params,
-                    colors: getColors()
-                    }
-                );
+                    colors: getColors(),
+                });
             }
 
             if (json) {
@@ -574,14 +626,17 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
                 // update default OsmAnd provider with actual profiles
                 routeProviders = mergeStateObject(routeProviders, setRouteProviders, {
                     providersOsmAnd: [
-                        Object.assign({},
+                        Object.assign(
+                            {},
                             routeProviders.providersOsmAnd[0], // keep preloaded
                             { profiles: converted } // add profiles
-                        )
-                    ]
+                        ),
+                    ],
                 });
             }
-        } catch { console.log('failed to load osmand profiles'); }
+        } catch {
+            console.log('failed to load osmand profiles');
+        }
     }
 
     // set type/profile according to window.location.search
@@ -599,8 +654,8 @@ async function loadRouteProviders({ routeProviders, setRouteProviders, creatingR
 function routeModeCompatible(routeProviders) {
     const compatible = {
         mode: routeProviders.profile,
-        opts: routeProviders.getParams() ?? {} // compatible opts can't be undefined
-    }
+        opts: routeProviders.getParams() ?? {}, // compatible opts can't be undefined
+    };
     return compatible;
 }
 
@@ -613,7 +668,7 @@ const RoutingManager = {
     loadRouteProviders,
     routeModeCompatible,
     calculateGpxRoute,
-    calculateRoute
-}
+    calculateRoute,
+};
 
 export default RoutingManager;

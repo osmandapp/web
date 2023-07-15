@@ -1,7 +1,7 @@
-import md5 from "blueimp-md5";
-import { globalNavigate } from "../App";
-import { quickNaNfix } from "../util/Utils";
-import { LOGIN_LOGOUT_URL } from "../context/AccountManager";
+import md5 from 'blueimp-md5';
+import { globalNavigate } from '../App';
+import { quickNaNfix } from '../util/Utils';
+import { LOGIN_LOGOUT_URL } from '../context/AccountManager';
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
@@ -170,31 +170,37 @@ export async function apiGet(url, options = null) {
     const contentType = response?.headers?.get('Content-Type')?.toString() || 'application/octet-stream'; // default
 
     // emulate axios-style response headers (fill as object)
-    response.headers.forEach((val, key) => response.headers[key] = val);
+    response.headers.forEach((val, key) => (response.headers[key] = val));
 
     // auto-parse JSON => data, for particular Content-Type
     // examples: text/plain text/plain;charset=UTF-8 application/json
     if (contentType.match(/text|json/i)) {
-        try { // pure json
+        try {
+            // pure json
             data = await response.clone().json();
             // console.log('fetch-json-ok', url);
-        } catch (e) { // try NaN fix (fast method, with 2 regexp, without callback)
+        } catch (e) {
+            // try NaN fix (fast method, with 2 regexp, without callback)
             try {
                 const bad = await response.clone().text();
                 data = JSON.parse(quickNaNfix(bad));
                 // console.log('fetch-json-fix', url);
-            } catch { // text, finally
+            } catch {
+                // text, finally
                 data = await response.clone().text();
                 // console.log('fetch-json-text', url, e);
             }
         }
-    } else { // blob() or text()
-        if (options?.responseType === 'blob' ||
+    } else {
+        // blob() or text()
+        if (
+            options?.responseType === 'blob' ||
             options?.responseType === 'arraybuffer' // arraybuffer data tested on download-backup
         ) {
             data = await response.clone().blob();
             // console.log('fetch-blob-data', url, contentType);
-        } else { // finally, get text by default
+        } else {
+            // finally, get text by default
             data = await response.clone().text();
             // console.log('fetch-text-string', url, contentType);
         }
@@ -229,16 +235,22 @@ export async function apiPost(url, data = '', options = null) {
     let body = '';
     let type = null;
 
-    if (typeof data === 'string' ) { // plain string
+    if (typeof data === 'string') {
+        // plain string
         body = data;
         type = 'text/plain';
-    } else if (isFormData(data)) { // FormData, keep type=null
+    } else if (isFormData(data)) {
+        // FormData, keep type=null
         body = data; // type is formed by fetch()
-    } else { // finally, try to convert from json
+    } else {
+        // finally, try to convert from json
         if (typeof data === 'object') {
             let converted = '';
-            try { converted = JSON.stringify(data); } catch { }
-
+            try {
+                converted = JSON.stringify(data);
+            } catch (e) {
+                console.error('apiPost', e);
+            }
             if (converted.length > 0) {
                 body = converted;
                 type = 'application/json';
@@ -262,10 +274,11 @@ export async function apiPost(url, data = '', options = null) {
 function isFormData(data) {
     var search = '[object FormData]';
 
-    return data && (
-      (typeof FormData === 'function' && data instanceof FormData)
-      || toString.call(data) === search
-      || (toString.call(data.toString) === '[object Function]' && data.toString() === search)
+    return (
+        data &&
+        ((typeof FormData === 'function' && data instanceof FormData) ||
+            toString.call(data) === search ||
+            (toString.call(data.toString) === '[object Function]' && data.toString() === search))
     );
 }
 
@@ -277,12 +290,12 @@ async function generateCacheKey(url, options = null, body = null) {
 
     let data = body ?? '';
 
-    if(isFormData(body)) {
+    if (isFormData(body)) {
         for (const [k, v] of body.entries()) {
             data = md5(data + k);
-            if (v.toString() === "[object File]") {
+            if (v.toString() === '[object File]') {
                 data = md5(data + v.name + v.size);
-                data = md5(data + await v.text());
+                data = md5(data + (await v.text()));
             } else {
                 data = md5(data + JSON.stringify(v));
             }

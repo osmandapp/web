@@ -1,11 +1,10 @@
-import React, {useContext, useState} from "react";
-import AppContext from "../../../context/AppContext";
-import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import _ from "lodash";
-import TracksManager from "../../../context/TracksManager";
+import React, { useContext, useState } from 'react';
+import AppContext from '../../../context/AppContext';
+import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
+import _ from 'lodash';
+import TracksManager from '../../../context/TracksManager';
 
-export default function LocalTrackItem({track, index}) {
-
+export default function LocalTrackItem({ track, index }) {
     const ctx = useContext(AppContext);
     const [indexTrack, setIndexTrack] = useState(index);
 
@@ -22,7 +21,7 @@ export default function LocalTrackItem({track, index}) {
             if (ctx.createTrack) {
                 ctx.createTrack.enable = false;
                 ctx.createTrack.clear = true;
-                ctx.setCreateTrack({...ctx.createTrack});
+                ctx.setCreateTrack({ ...ctx.createTrack });
             }
         }
     }
@@ -64,33 +63,35 @@ export default function LocalTrackItem({track, index}) {
                 enable: true,
                 edit: true,
                 closePrev: {
-                    file: _.cloneDeep(ctx.selectedGpxFile)
-                }
-            })
+                    file: _.cloneDeep(ctx.selectedGpxFile),
+                },
+            });
         } else {
             ctx.setCreateTrack({
                 enable: true,
-                edit: true
-            })
+                edit: true,
+            });
         }
     }
 
-    return <div>
-        <MenuItem key={'track._leaflet_id' + indexTrack} onClick={() => addTrackToMap()}>
-            <Tooltip title={<div>
-                {track.name}
-            </div>}>
-                <ListItemText inset>
-                    <Typography variant="inherit" noWrap>
-                        {"* " + track.name}
-                    </Typography>
-                </ListItemText>
-            </Tooltip>
-            <Switch checked={track.selected === true || ctx.selectedGpxFile?.name === track.name}
+    return (
+        <div>
+            <MenuItem key={'track._leaflet_id' + indexTrack} onClick={() => addTrackToMap()}>
+                <Tooltip title={<div>{track.name}</div>}>
+                    <ListItemText inset>
+                        <Typography variant="inherit" noWrap>
+                            {'* ' + track.name}
+                        </Typography>
+                    </ListItemText>
+                </Tooltip>
+                <Switch
+                    checked={track.selected === true || ctx.selectedGpxFile?.name === track.name}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => {
                         enableLayer(e.target.checked);
-                    }}/>
-        </MenuItem>
-    </div>
+                    }}
+                />
+            </MenuItem>
+        </div>
+    );
 }

@@ -1,43 +1,36 @@
-import {Dialog} from "@material-ui/core";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import {
-    Autocomplete,
-    Grid,
-    IconButton,
-    ListItemIcon,
-    TextField
-} from "@mui/material";
-import React, {useContext, useEffect, useState} from "react";
-import {Close} from "@mui/icons-material";
-import {Checkbox, FormControlLabel, MenuItem} from "@mui/material/";
-import AppContext from "../../../context/AppContext";
-import MarkerOptions from "../../../map/markers/MarkerOptions";
-import {makeStyles} from "@material-ui/core/styles";
-import drawerStyles from "../../styles/DrawerStyles";
-import PoiManager from "../../../context/PoiManager";
-import _ from "lodash";
+import { Dialog } from '@material-ui/core';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import { Autocomplete, Grid, IconButton, ListItemIcon, TextField } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Close } from '@mui/icons-material';
+import { Checkbox, FormControlLabel, MenuItem } from '@mui/material/';
+import AppContext from '../../../context/AppContext';
+import MarkerOptions from '../../../map/markers/MarkerOptions';
+import { makeStyles } from '@material-ui/core/styles';
+import drawerStyles from '../../styles/DrawerStyles';
+import PoiManager from '../../../context/PoiManager';
+import _ from 'lodash';
 
 const useStyles = makeStyles({
     icon: {
-        "& .icon": {
+        '& .icon': {
             left: '11px',
             top: '14px',
             width: '20px',
             height: '20px',
-            position: 'absolute'
+            position: 'absolute',
         },
-        "& .background": {
+        '& .background': {
             top: '3px',
             width: '50px',
             height: '50px',
-            filter: "drop-shadow(0 0 0 gray)"
-        }
-    }
-})
+            filter: 'drop-shadow(0 0 0 gray)',
+        },
+    },
+});
 
-export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
-
+export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
     const ctx = useContext(AppContext);
 
     const classes = useStyles();
@@ -49,7 +42,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     const [searchText, setSearchText] = useState(null);
     const [searchOptions, setSearchOptions] = useState([]);
     const [searchError, setSearchError] = useState('');
-
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -67,7 +59,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     function showPoiCategoriesOnMap(category) {
         if (category) {
             if (ctx.showPoiCategories.includes(category)) {
-                setSearchError(`This category is already selected!`)
+                setSearchError(`This category is already selected!`);
             } else {
                 const categories = ctx.showPoiCategories;
                 categories.push(category);
@@ -88,7 +80,7 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
         if (value.length >= MIN_SIZE_SEARCH_VALUE) {
             let searchResult = await PoiManager.searchPoiCategories(value);
             if (searchResult) {
-                setPoiTypesResult({...searchResult});
+                setPoiTypesResult({ ...searchResult });
             }
         } else {
             setPoiTypesResult(null);
@@ -105,9 +97,8 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
     }
 
     function removeUnusedPoiCategories(categories) {
-        return categories.filter(category => category !== 'user_defined_other' && category !== 'osmwiki')
+        return categories.filter((category) => category !== 'user_defined_other' && category !== 'osmwiki');
     }
-
 
     return (
         <Dialog open={dialogOpen} onClose={toggleShowDialog}>
@@ -116,12 +107,13 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     <DialogTitle>Show POI</DialogTitle>
                 </Grid>
                 <Grid item xs={2}>
-                    <IconButton sx={{mt: '15px', ml: '25px'}}
-                                variant="contained"
-                                type="button"
-                                onClick={toggleShowDialog}
+                    <IconButton
+                        sx={{ mt: '15px', ml: '25px' }}
+                        variant="contained"
+                        type="button"
+                        onClick={toggleShowDialog}
                     >
-                        <Close fontSize="small"/>
+                        <Close fontSize="small" />
                     </IconButton>
                 </Grid>
             </Grid>
@@ -133,11 +125,11 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                         }
                         showPoiCategoriesOnMap(PoiManager.formattingPoiType(newValue));
                     }}
-                    renderInput={params => (
+                    renderInput={(params) => (
                         <TextField
-                            style={{marginBottom: '7px'}}
+                            style={{ marginBottom: '7px' }}
                             value={searchText}
-                            onChange={e => {
+                            onChange={(e) => {
                                 setSearchError('');
                                 if (e.target.value === '') {
                                     setSearchOptions(Object.keys(ctx.poiCategory.categories));
@@ -150,7 +142,6 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                             variant="outlined"
                             helperText={searchError ? searchError : ''}
                             fullWidth
-
                         />
                     )}
                     isOptionEqualToValue={(option, value) => option.value === value.value}
@@ -159,54 +150,82 @@ export default function PoiTypesDialog({dialogOpen, setDialogOpen}) {
                     handleHomeEndKeys
                     id="category"
                     options={searchOptions}
-                    renderOption={(props, option) =>
-                        <div key={option + "menu"} className={styles.drawerItem}>
+                    renderOption={(props, option) => (
+                        <div key={option + 'menu'} className={styles.drawerItem}>
                             <MenuItem {...props}>
-                                <ListItemIcon sx={{mr: '-15px'}}>
+                                <ListItemIcon sx={{ mr: '-15px' }}>
                                     <div className={classes.icon}>
-                                        <svg className="background" viewBox="0 0 48 48"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="24" cy="24" r="12" fill="#f8931d"/>
+                                        <svg
+                                            className="background"
+                                            viewBox="0 0 48 48"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle cx="24" cy="24" r="12" fill="#f8931d" />
                                         </svg>
-                                        <img className="icon"
-                                             alt={option}
-                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}/>
+                                        <img
+                                            className="icon"
+                                            alt={option}
+                                            src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${getIcon(
+                                                option
+                                            )}.svg`}
+                                        />
                                     </div>
                                 </ListItemIcon>
                                 {PoiManager.formattingPoiType(option)}
                             </MenuItem>
-                        </div>}
+                        </div>
+                    )}
                 />
-                <div style={{marginLeft: '2px', marginBottom: '10px'}}>
-                    {ctx.showPoiCategories.map((category, index) =>
+                <div style={{ marginLeft: '2px', marginBottom: '10px' }}>
+                    {ctx.showPoiCategories.map((category, index) => (
                         <FormControlLabel
-                            key={index + "subType"}
-                            control={<Checkbox checked={ctx.showPoiCategories.includes(category)}
-                                               onChange={() => handleChange(category)}/>}
+                            key={index + 'subType'}
+                            control={
+                                <Checkbox
+                                    checked={ctx.showPoiCategories.includes(category)}
+                                    onChange={() => handleChange(category)}
+                                />
+                            }
                             label={`${category}`}
-                        />)}
+                        />
+                    ))}
                 </div>
                 <Grid container spacing={2}>
-                    {ctx.poiCategory?.filters.map((item, key) =>
-                        <Grid style={{marginLeft: '-7px'}} item key={key + "column"} xs={6}
-                              className={styles.drawerItem}>
-                            <MenuItem style={{marginTop: '-15px'}} key={key + "type"}
-                                      onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiType(item))}
+                    {ctx.poiCategory?.filters.map((item, key) => (
+                        <Grid
+                            style={{ marginLeft: '-7px' }}
+                            item
+                            key={key + 'column'}
+                            xs={6}
+                            className={styles.drawerItem}
+                        >
+                            <MenuItem
+                                style={{ marginTop: '-15px' }}
+                                key={key + 'type'}
+                                onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiType(item))}
                             >
-                                <ListItemIcon sx={{mr: '-15px'}}>
+                                <ListItemIcon sx={{ mr: '-15px' }}>
                                     <div className={classes.icon}>
-                                        <svg className="background" viewBox="0 0 48 48"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="24" cy="24" r="12" fill="#f8931d"/>
+                                        <svg
+                                            className="background"
+                                            viewBox="0 0 48 48"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle cx="24" cy="24" r="12" fill="#f8931d" />
                                         </svg>
-                                        <img className="icon"
-                                             alt={item}
-                                             src={`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${PoiManager.formattingPoiFilter(item)}.svg`}/>
+                                        <img
+                                            className="icon"
+                                            alt={item}
+                                            src={`/map/images/${
+                                                MarkerOptions.POI_ICONS_FOLDER
+                                            }/mx_${PoiManager.formattingPoiFilter(item)}.svg`}
+                                        />
                                     </div>
                                 </ListItemIcon>
                                 {PoiManager.formattingPoiType(item)}
                             </MenuItem>
-                        </Grid>)}
+                        </Grid>
+                    ))}
                 </Grid>
             </DialogContent>
         </Dialog>
