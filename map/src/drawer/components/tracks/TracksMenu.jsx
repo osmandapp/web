@@ -174,7 +174,7 @@ export default function TracksMenu() {
                 <Typography variant="body2" color="textSecondary">
                     {gpxFiles.length > 0 ? `${gpxFiles.length}` : ''}
                 </Typography>
-                {gpxFiles.length === 0 ? <></> : tracksGroupsOpen ? <ExpandLess /> : <ExpandMore />}
+                {tracksGroupsOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             {(ctx.gpxLoading || ctx.localTracksLoading) && !ctx.createTrack ? <LinearProgress /> : <></>}
             <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>

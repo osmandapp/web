@@ -27,19 +27,24 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
-    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo({});
+    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo(
+        {},
+        ctx.trackState.pastStates,
+        ctx.trackState.futureStates
+    );
     //futureStates for logs
 
     useEffect(() => {
         if (clearState) {
-            clear();
+            doClear();
         }
     }, [clearState]);
 
     useEffect(() => {
         if (useSavedState) {
-            ctx.trackState.block = false;
             getState(state);
+            ctx.trackState.block = false;
+            ctx.setTrackState({ ...ctx.trackState });
         }
     }, [state]);
 
@@ -52,6 +57,11 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
             }
         }
     }, [ctx.trackState]);
+
+    function doClear() {
+        clear(); // setState() can't be used inside dispatch()
+        ctx.setTrackState({ pastStates: [], futureStates: [] });
+    }
 
     function getState(currentState) {
         getTrack(currentState);
