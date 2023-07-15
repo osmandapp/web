@@ -1,4 +1,4 @@
-import {gzip, ungzip} from 'pako';
+import { gzip, ungzip } from 'pako';
 
 /*
     TODO: localStorageAvailableBytes()
@@ -54,7 +54,10 @@ async function decompressFromBase64(base64string) {
             Uint8Array.from() used because ungzip requires Array not String
             ungzip() called with {to=string} option, so resulted as String not Array
     */
-    return ungzip(Uint8Array.from(atob(base64string), c => c.charCodeAt(0)), {to: 'string'});
+    return ungzip(
+        Uint8Array.from(atob(base64string), (c) => c.charCodeAt(0)),
+        { to: 'string' }
+    );
 }
 
 // convert Uint8Array to String as is (byte by byte)

@@ -1,10 +1,9 @@
-import {ListItemText, TextField} from "@mui/material";
-import React, {useContext, useEffect, useState} from "react";
-import contextMenuStyles from "../../../styles/ContextMenuStyles";
-import AppContext from "../../../../context/AppContext";
+import { ListItemText, TextField } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import contextMenuStyles from '../../../styles/ContextMenuStyles';
+import AppContext from '../../../../context/AppContext';
 
-export default function FavoriteName({favoriteName, setFavoriteName, favoriteGroup, favorite, setErrorName}) {
-
+export default function FavoriteName({ favoriteName, setFavoriteName, favoriteGroup, favorite, setErrorName }) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
@@ -14,23 +13,24 @@ export default function FavoriteName({favoriteName, setFavoriteName, favoriteGro
     useEffect(() => {
         let group = ctx.favorites[favoriteGroup === null ? favorite?.category : favoriteGroup.name];
         let names = [];
-        group && group.wpts.forEach(wpt => {
-            if (favorite) {
-                if (wpt.name !== favorite.name) {
+        group &&
+            group.wpts.forEach((wpt) => {
+                if (favorite) {
+                    if (wpt.name !== favorite.name) {
+                        names.push(wpt.name);
+                    }
+                } else {
                     names.push(wpt.name);
                 }
-            } else {
-                names.push(wpt.name);
-            }
-        })
+            });
         setFavNames(names);
     }, [favoriteGroup]);
 
     useEffect(() => {
-        if (favNames.find(name => name === favoriteName)) {
+        if (favNames.find((name) => name === favoriteName)) {
             setNameAlreadyExist(true);
             setErrorName(true);
-        } else if (favoriteName === "" || !favoriteName.trim().length) {
+        } else if (favoriteName === '' || !favoriteName.trim().length) {
             setErrorName(true);
         } else {
             setNameAlreadyExist(false);
@@ -39,16 +39,17 @@ export default function FavoriteName({favoriteName, setFavoriteName, favoriteGro
     }, [favoriteName]);
 
     function gerErrorText(favoriteName) {
-        if (favoriteName === "") {
-            return 'Empty name!'
+        if (favoriteName === '') {
+            return 'Empty name!';
         } else if (nameAlreadyExist) {
-            return 'This name already exists!'
+            return 'This name already exists!';
         } else {
             return ' ';
         }
     }
 
-    return (<ListItemText>
+    return (
+        <ListItemText>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="name"
@@ -57,9 +58,9 @@ export default function FavoriteName({favoriteName, setFavoriteName, favoriteGro
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
                 autoFocus={true}
-                error={favoriteName === "" || nameAlreadyExist}
+                error={favoriteName === '' || nameAlreadyExist}
                 helperText={gerErrorText(favoriteName)}
             />
         </ListItemText>
-    )
+    );
 }

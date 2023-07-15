@@ -1,12 +1,11 @@
-import AppContext from "../../../context/AppContext";
-import {Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import React, {useContext, useState} from "react";
-import Utils from "../../../util/Utils";
-import TrackInfo from "./TrackInfo";
-import TracksManager from "../../../context/TracksManager";
+import AppContext from '../../../context/AppContext';
+import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
+import React, { useContext, useState } from 'react';
+import Utils from '../../../util/Utils';
+import TrackInfo from './TrackInfo';
+import TracksManager from '../../../context/TracksManager';
 
-export default function CloudTrackItem({file}) {
-
+export default function CloudTrackItem({ file }) {
     const ctx = useContext(AppContext);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
@@ -34,17 +33,20 @@ export default function CloudTrackItem({file}) {
         if (file.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
         } else {
-            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+                file.type
+            )}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
             newGpxFiles[file.name] = {
-                'url': url,
-                'clienttimems': file.clienttimems,
-                'updatetimems': file.updatetimems,
-                'name': file.name,
-                'type': "GPX"};
+                url: url,
+                clienttimems: file.clienttimems,
+                updatetimems: file.updatetimems,
+                name: file.name,
+                type: 'GPX',
+            };
             let f = await Utils.getFileData(newGpxFiles[file.name]);
             const gpxfile = new File([f], file.name, {
-                type: "text/plain",
+                type: 'text/plain',
             });
             let track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
@@ -52,11 +54,11 @@ export default function CloudTrackItem({file}) {
                 let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;
-                Object.keys(track).forEach(t => {
+                Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });
                 ctx.setGpxFiles(newGpxFiles);
-                newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles.analysis);
+                newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
             } else {
                 setError(true);
@@ -64,25 +66,35 @@ export default function CloudTrackItem({file}) {
         }
     }
 
-    return (<>
-        <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
-            <Tooltip title={<TrackInfo file={file}/>}>
-                <ListItemText inset>
-                    <Typography variant="inherit" noWrap>
-                        {TracksManager.getFileName(file)}
-                    </Typography>
-                </ListItemText>
-            </Tooltip>
-            <Switch
-                checked={!!ctx.gpxFiles[file.name]?.url}
-                onClick={(e) => e.stopPropagation()}
-                onChange={(e) => {
-                    !file.local && enableLayer(setLoadingTrack, e.target.checked)
-                }}/>
-        </MenuItem>
-        {loadingTrack ? <LinearProgress/> : <></>}
-        {error && <Alert onClose={() => {
-            setError(false)
-        }} severity="warning">Something went wrong!</Alert>}
-    </>)
+    return (
+        <>
+            <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
+                <Tooltip title={<TrackInfo file={file} />}>
+                    <ListItemText inset>
+                        <Typography variant="inherit" noWrap>
+                            {TracksManager.getFileName(file)}
+                        </Typography>
+                    </ListItemText>
+                </Tooltip>
+                <Switch
+                    checked={!!ctx.gpxFiles[file.name]?.url}
+                    onClick={(e) => e.stopPropagation()}
+                    onChange={(e) => {
+                        !file.local && enableLayer(setLoadingTrack, e.target.checked);
+                    }}
+                />
+            </MenuItem>
+            {loadingTrack ? <LinearProgress /> : <></>}
+            {error && (
+                <Alert
+                    onClose={() => {
+                        setError(false);
+                    }}
+                    severity="warning"
+                >
+                    Something went wrong!
+                </Alert>
+            )}
+        </>
+    );
 }

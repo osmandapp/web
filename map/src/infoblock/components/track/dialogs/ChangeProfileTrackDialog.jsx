@@ -1,28 +1,26 @@
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import {Dialog} from "@material-ui/core";
-import React, {useContext, useEffect, useState} from "react";
-import SelectTrackProfile from "../SelectTrackProfile";
-import DialogActions from "@mui/material/DialogActions";
-import AppContext from "../../../../context/AppContext";
-import TracksManager from "../../../../context/TracksManager";
-import {Button, Grid, IconButton, ToggleButton, ToggleButtonGroup} from "@mui/material";
-import {Close} from "@mui/icons-material";
-import {makeStyles} from "@material-ui/core/styles";
-import TrackLayerProvider from "../../../../map/TrackLayerProvider";
-import RoutingManager from "../../../../context/RoutingManager";
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import { Dialog } from '@material-ui/core';
+import React, { useContext, useEffect, useState } from 'react';
+import SelectTrackProfile from '../SelectTrackProfile';
+import DialogActions from '@mui/material/DialogActions';
+import AppContext from '../../../../context/AppContext';
+import TracksManager from '../../../../context/TracksManager';
+import { Button, Grid, IconButton, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Close } from '@mui/icons-material';
+import { makeStyles } from '@material-ui/core/styles';
+import TrackLayerProvider from '../../../../map/TrackLayerProvider';
+import RoutingManager from '../../../../context/RoutingManager';
 
 const useStyles = makeStyles({
     dialog: {
         '& .MuiDialog-paper': {
-            overflow: 'hidden'
-        }
-    }
-})
+            overflow: 'hidden',
+        },
+    },
+});
 
-
-export default function ChangeProfileTrackDialog({open}) {
-
+export default function ChangeProfileTrackDialog({ open }) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
@@ -48,10 +46,14 @@ export default function ChangeProfileTrackDialog({open}) {
             setChangeAll(true);
             setChangeOne(false);
         }
-    }, [change])
+    }, [change]);
 
-    const partialEdit = ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE ? 'Previous' :
-        ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER ? 'Next' : null;
+    const partialEdit =
+        ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE
+            ? 'Previous'
+            : ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER
+            ? 'Next'
+            : null;
 
     async function changeProfile() {
         if (!ctx.selectedGpxFile.layers) {
@@ -77,7 +79,7 @@ export default function ChangeProfileTrackDialog({open}) {
                     ctx.selectedGpxFile.points[0].profile = profile.mode;
                 }
             }
-           TracksManager.updateGlobalProfileState(ctx, profile.mode);
+            TracksManager.updateGlobalProfileState(ctx, profile.mode);
         } else {
             if (changeOne) {
                 let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
@@ -86,12 +88,24 @@ export default function ChangeProfileTrackDialog({open}) {
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
                     prevPoint.profile = profile.mode;
                     prevPoint.routeMode = profile;
-                    let currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, prevPoint, currentPoint);
+                    let currentPolyline = TrackLayerProvider.updatePolyline(
+                        prevPoint,
+                        currentPoint,
+                        polylines,
+                        prevPoint,
+                        currentPoint
+                    );
                     RoutingManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, ctx);
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                     currentPoint.profile = profile.mode;
                     currentPoint.routeMode = profile;
-                    let currentPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, currentPoint, nextPoint);
+                    let currentPolyline = TrackLayerProvider.updatePolyline(
+                        currentPoint,
+                        nextPoint,
+                        polylines,
+                        currentPoint,
+                        nextPoint
+                    );
                     RoutingManager.addRoutingToCash(currentPoint, nextPoint, currentPolyline, ctx);
                 }
             } else if (changeAll) {
@@ -107,7 +121,11 @@ export default function ChangeProfileTrackDialog({open}) {
                         }
                     }
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                    for (let i = ctx.trackProfileManager.pointInd; i < ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd + 1; i++) {
+                    for (
+                        let i = ctx.trackProfileManager.pointInd;
+                        i < ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd + 1;
+                        i++
+                    ) {
                         const start = ctx.selectedGpxFile.points[i];
                         const end = ctx.selectedGpxFile.points[i + 1];
                         if (start.profile !== TracksManager.PROFILE_GAP) {
@@ -122,64 +140,63 @@ export default function ChangeProfileTrackDialog({open}) {
         }
     }
 
-
-    return <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
-        <Grid container spacing={2}>
-            <Grid item xs={11}>
-                <DialogTitle>Change profile</DialogTitle>
+    return (
+        <Dialog disableEnforceFocus open={open} onClose={toggleShowDialog} className={classes.dialog}>
+            <Grid container spacing={2}>
+                <Grid item xs={11}>
+                    <DialogTitle>Change profile</DialogTitle>
+                </Grid>
+                <Grid item xs={1} sx={{ ml: -4, mt: 1.5 }}>
+                    <IconButton variant="contained" type="button" onClick={() => ctx.setTrackProfileManager({})}>
+                        <Close fontSize="small" />
+                    </IconButton>
+                </Grid>
             </Grid>
-            <Grid item xs={1} sx={{ml: -4, mt: 1.5}}>
-                <IconButton
-                    variant="contained"
-                    type="button"
-                    onClick={() => ctx.setTrackProfileManager({})}
+            {partialEdit && (
+                <DialogActions style={{ justifyContent: 'center', overflowY: 'hidden' }}>
+                    <ToggleButtonGroup
+                        value={change}
+                        exclusive
+                        fullWidth={true}
+                        onChange={handleChange}
+                        aria-label="text alignment"
+                    >
+                        <ToggleButton value="one">{partialEdit} segment</ToggleButton>
+                        <ToggleButton value="all">All {partialEdit} segments</ToggleButton>
+                    </ToggleButtonGroup>
+                </DialogActions>
+            )}
+            {!partialEdit && (
+                <DialogActions style={{ justifyContent: 'center', overflowY: 'hidden' }}>
+                    <ToggleButtonGroup
+                        value={change}
+                        exclusive
+                        fullWidth={true}
+                        onChange={handleChange}
+                        aria-label="text alignment"
+                    >
+                        <ToggleButton value="one">Next segments</ToggleButton>
+                        <ToggleButton value="all">All segments</ToggleButton>
+                    </ToggleButtonGroup>
+                </DialogActions>
+            )}
+            <DialogContent sx={{ minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px' }}>
+                <SelectTrackProfile profile={profile} setProfile={setProfile} label={'Route profile'} />
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={() => ctx.setTrackProfileManager({})}>Cancel</Button>
+                <Button
+                    onClick={() => {
+                        changeProfile().then(() => {
+                            ctx.setTrackProfileManager({});
+                            ctx.trackState.update = true;
+                            ctx.setTrackState({ ...ctx.trackState });
+                        });
+                    }}
                 >
-                    <Close fontSize="small"/>
-                </IconButton>
-            </Grid>
-        </Grid>
-        {partialEdit && <DialogActions style={{justifyContent: 'center', overflowY: 'hidden'}}>
-            <ToggleButtonGroup
-                value={change}
-                exclusive
-                fullWidth={true}
-                onChange={handleChange}
-                aria-label="text alignment">
-                <ToggleButton value="one">
-                    {partialEdit} segment
-                </ToggleButton>
-                <ToggleButton value="all">
-                    All {partialEdit} segments
-                </ToggleButton>
-            </ToggleButtonGroup>
-        </DialogActions>}
-        {!partialEdit && <DialogActions style={{justifyContent: 'center', overflowY: 'hidden'}}>
-            <ToggleButtonGroup
-                value={change}
-                exclusive
-                fullWidth={true}
-                onChange={handleChange}
-                aria-label="text alignment">
-                <ToggleButton value="one">
-                    Next segments
-                </ToggleButton>
-                <ToggleButton value="all">
-                    All segments
-                </ToggleButton>
-            </ToggleButtonGroup>
-        </DialogActions>}
-        <DialogContent sx={{minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px'}}>
-            <SelectTrackProfile profile={profile} setProfile={setProfile} label={"Route profile"}/>
-        </DialogContent>
-        <DialogActions>
-            <Button onClick={() => ctx.setTrackProfileManager({})}>Cancel</Button>
-            <Button onClick={() => {
-                changeProfile().then(() => {
-                    ctx.setTrackProfileManager({});
-                    ctx.trackState.update = true;
-                    ctx.setTrackState({...ctx.trackState});
-                })
-            }}>Change</Button>
-        </DialogActions>
-    </Dialog>
+                    Change
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
 }

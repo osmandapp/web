@@ -1,23 +1,24 @@
-import {Tab} from "@mui/material";
-import React from "react";
-import FavoriteInfoTab from "./FavoriteInfoTab";
+import { Tab } from '@mui/material';
+import React from 'react';
+import FavoriteInfoTab from './FavoriteInfoTab';
 
 export default class FavoritesTabList {
     state = {
         tabs: null,
         tabList: [],
         defaultTab: 'favInfo',
-        graphWidth: 400
+        graphWidth: 400,
     };
 
     create() {
         let tabs = {};
         let list = [];
 
-        tabs.Info = <FavoriteInfoTab key='favInfo' width={this.state.graphWidth}/>;
+        tabs.Info = <FavoriteInfoTab key="favInfo" width={this.state.graphWidth} />;
 
-        list = list.concat(Object.keys(tabs).map((item, index) =>
-            <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>));
+        list = list.concat(
+            Object.keys(tabs).map((item) => <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item} />)
+        );
 
         this.state.tabList = list;
         this.state.tabs = tabs;
