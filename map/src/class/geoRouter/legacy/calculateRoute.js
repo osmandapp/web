@@ -1,22 +1,22 @@
-import md5 from "blueimp-md5";
-import Utils from "../../../util/Utils";
-import { apiGet } from "../../../util/HttpApi";
-import TracksManager from "../../../context/TracksManager";
-import TrackLayerProvider from "../../../map/TrackLayerProvider";
+import md5 from 'blueimp-md5';
+import Utils from '../../../util/Utils';
+import { apiGet } from '../../../util/HttpApi';
+import TracksManager from '../../../context/TracksManager';
+import TrackLayerProvider from '../../../map/TrackLayerProvider';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 
 function osrmToFeaturesCollection(osrm, style = {}) {
-/*
-    convert OSRM routes[] to features[] "LineString"
-    convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
-    convert OSRM waypoints[] to features[] "Point" (OSRM's start-end)
-    convert OSRM duration/distance to properties
+    /*
+        convert OSRM routes[] to features[] "LineString"
+        convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
+        convert OSRM waypoints[] to features[] "Point" (OSRM's start-end)
+        convert OSRM duration/distance to properties
 
-    now support only 1st of routes[]
-*/
+        now support only 1st of routes[]
+    */
     const features = [];
 
     const cap = (s) => s && s[0].toUpperCase() + s.slice(1);
@@ -38,9 +38,9 @@ function osrmToFeaturesCollection(osrm, style = {}) {
         const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
 
         return `${imperative} ${target} ${go}`; // Turn Left to Street and go 621 meters
-    }
+    };
 
-    osrm?.routes?.forEach(r => {
+    osrm?.routes?.forEach((r) => {
         // parse geo
         features.push({
             type: 'Feature',
@@ -48,39 +48,39 @@ function osrmToFeaturesCollection(osrm, style = {}) {
             properties: {
                 overall: {
                     time: r.duration,
-                    distance: r.distance
-                }
+                    distance: r.distance,
+                },
             },
-            style
+            style,
         });
         // parse turns
-        r.legs?.forEach(l => {
-            l.steps?.forEach(s => {
+        r.legs?.forEach((l) => {
+            l.steps?.forEach((s) => {
                 features.push({
                     type: 'Feature',
                     geometry: {
                         type: 'Point',
-                        coordinates: s.maneuver?.location
+                        coordinates: s.maneuver?.location,
                     },
                     properties: {
-                        description: maneuver(s)
-                    }
+                        description: maneuver(s),
+                    },
                 });
-            })
+            });
         });
     });
 
     // parse points (really need?)
-    osrm?.waypoints?.forEach(w => {
+    osrm?.waypoints?.forEach((w) => {
         features.push({
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: w.location
+                coordinates: w.location,
             },
             properties: {
-                description: w.name
-            }
+                description: w.name,
+            },
         });
     });
 
@@ -94,9 +94,8 @@ export async function calculateRoute({
     avoidRoads,
     setRouteData,
     changeRouteText,
-    setRoutingErrorMsg
+    setRoutingErrorMsg,
 }) {
-
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
     if (this.profile === PROFILE_LINE) {
@@ -107,7 +106,7 @@ export async function calculateRoute({
             setRouteData,
             changeRouteText,
             setRoutingErrorMsg,
-            style
+            style,
         });
     }
 
@@ -127,7 +126,7 @@ export async function calculateRoute({
             setRouteData,
             changeRouteText,
             setRoutingErrorMsg,
-            style
+            style,
         });
     }
 
@@ -135,8 +134,8 @@ export async function calculateRoute({
     if (this.type === 'osmand') {
         const routeMode = {
             mode: this.profile,
-            opts: this.getParams() ?? {}
-        }
+            opts: this.getParams() ?? {},
+        };
         return calculateRouteOsmAnd({
             routeMode,
             startPoint,
@@ -146,7 +145,7 @@ export async function calculateRoute({
             setRouteData,
             changeRouteText,
             setRoutingErrorMsg,
-            style
+            style,
         });
     }
 
@@ -160,7 +159,7 @@ async function calculateRouteOSRM({
     setRouteData,
     changeRouteText,
     setRoutingErrorMsg,
-    style
+    style,
 }) {
     // OSRM
     const url = this.getURL();
@@ -171,7 +170,7 @@ async function calculateRouteOSRM({
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
 
     points.push(geo(startPoint));
-    interPoints?.forEach(i => points.push(geo(i)));
+    interPoints?.forEach((i) => points.push(geo(i)));
     points.push(geo(endPoint));
 
     const coordinates = points.join(';');
@@ -203,7 +202,7 @@ async function calculateRouteOsmAnd({
     setRouteData,
     changeRouteText,
     setRoutingErrorMsg,
-    style
+    style,
 }) {
     setRoutingErrorMsg(null);
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
@@ -219,14 +218,19 @@ async function calculateRouteOsmAnd({
     if (avoidRoadsUrl !== '') {
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
-    changeRouteText(true, null)
-    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`
-    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?`
-        + `routeMode=${TracksManager.formatRouteMode(routeMode)}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`, {
-        apiCache: true,
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    });
+    changeRouteText(true, null);
+    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
+    const response = await apiGet(
+        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
+            `routeMode=${TracksManager.formatRouteMode(
+                routeMode
+            )}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`,
+        {
+            apiCache: true,
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        }
+    );
     if (response.ok && response.data?.features) {
         let data = await response.json();
         let props = {};
@@ -236,15 +240,15 @@ async function calculateRouteOsmAnd({
         }
         if (data.features.length > 0) {
             props = data.features[0]?.properties;
-            data.features.forEach(f => {
+            data.features.forEach((f) => {
                 if (f.geometry?.type === 'LineString') {
                     f.style = style;
                 }
             });
         }
-        let allData = {geojson: data, id: new Date().getTime(), props: props};
+        let allData = { geojson: data, id: new Date().getTime(), props: props };
         setRouteData(allData);
-        changeRouteText(false, allData)
+        changeRouteText(false, allData);
     } else {
         setRouteData(null);
         changeRouteText(false, null);
@@ -259,7 +263,7 @@ async function calculateRouteLine({
     setRouteData,
     changeRouteText,
     setRoutingErrorMsg,
-    style
+    style,
 }) {
     const route = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style });
     changeRouteText(false, route);
@@ -269,16 +273,17 @@ async function calculateRouteLine({
 }
 
 function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style = {} } = {}) {
-
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);
-    interPoints?.forEach(i => coordinates.push([i.lng, i.lat]));
+    interPoints?.forEach((i) => coordinates.push([i.lng, i.lat]));
     coordinates.push([endPoint.lng, endPoint.lat]);
 
     const id = md5(JSON.stringify(coordinates));
 
-    let distance = 0, latPrev = null, lonPrev = null;
-    coordinates.forEach(ll => {
+    let distance = 0,
+        latPrev = null,
+        lonPrev = null;
+    coordinates.forEach((ll) => {
         let [lon, lat] = ll; // vice-versa
         if (latPrev !== null && lonPrev !== null) {
             distance += Utils.getDistance(latPrev, lonPrev, lat, lon);
@@ -294,26 +299,28 @@ function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style =
         props: {
             overall: {
                 time,
-                distance
-            }
+                distance,
+            },
         },
         geojson: {
             type: 'FeaturesCollection',
-            features: [{
-                type: 'Feature',
-                geometry: {
-                    type: 'LineString',
-                    coordinates
+            features: [
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'LineString',
+                        coordinates,
+                    },
+                    properties: {
+                        overall: {
+                            time,
+                            distance,
+                        },
+                    },
+                    style,
                 },
-                properties: {
-                    overall: {
-                        time,
-                        distance
-                    }
-                },
-                style
-            }]
-        }
+            ],
+        },
     };
 
     return geojson;

@@ -11,23 +11,23 @@ export function pickTypeRouterProfile({ type = null, router = null, profile = nu
     const providers = this.providers;
 
     if (type && !router) {
-        router = providers.find(r => r.type === type)?.key ?? this.fallback.key;
+        router = providers.find((r) => r.type === type)?.key ?? this.fallback.key;
         // console.log('type-router-profile:', type, router, profile);
     }
 
     router = router ?? this.router; // current
     profile = profile ?? this.profile; // current
 
-    let provider = providers.find(r => r.key === router);
+    let provider = providers.find((r) => r.key === router);
 
     if (!provider) {
         router = providers[0].key ?? this.fallback.key;
-        provider = providers.find(r => r.key === router);
+        provider = providers.find((r) => r.key === router);
     }
 
     const profiles = provider.profiles ?? [];
 
-    if (!profiles.find(p => p.key === profile)) {
+    if (!profiles.find((p) => p.key === profile)) {
         profile = profiles[0].key ?? this.fallback.profiles[0].key;
     }
 

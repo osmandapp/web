@@ -1,4 +1,4 @@
-import Utils from "../../../util/Utils";
+import Utils from '../../../util/Utils';
 
 /**
  * Add (Shift/Push/Insert) new Inter-point.
@@ -30,11 +30,9 @@ export function newInterPoint({ ctx, ll } = {}) {
     let minInd = -1;
 
     if (ctx.interPoints.length > 0) {
-        let minDist = dist(ctx.endPoint, ll) +
-            dist(ctx.interPoints[ctx.interPoints.length - 1], ll);
+        let minDist = dist(ctx.endPoint, ll) + dist(ctx.interPoints[ctx.interPoints.length - 1], ll);
         for (let i = 0; i < ctx.interPoints.length; i++) {
-            let dst = dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], ll) +
-                dist(ctx.interPoints[i], ll);
+            let dst = dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], ll) + dist(ctx.interPoints[i], ll);
             if (dst < minDist) {
                 minInd = i;
                 minDist = dst;

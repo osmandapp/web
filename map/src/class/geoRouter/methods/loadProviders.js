@@ -1,7 +1,7 @@
-import { copyObj } from "../../../util/Utils";
-import { apiGet } from "../../../util/HttpApi";
-import TracksManager from "../../../context/TracksManager";
-import onlineRoutingProviders from "../../../generated/online-routing-providers.json";
+import { copyObj } from '../../../util/Utils';
+import { apiGet } from '../../../util/HttpApi';
+import TracksManager from '../../../context/TracksManager';
+import onlineRoutingProviders from '../../../generated/online-routing-providers.json';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 const PROFILE_LINE_NAME = PROFILE_LINE[0].toUpperCase() + PROFILE_LINE.slice(1);
@@ -17,18 +17,18 @@ function filterMode(data) {
 
 function getColors() {
     return {
-        'car': '#1976d2',
-        'truck': '#2F4F4F',
-        'motorcycle': '#f8931d',
-        'bicycle': '#9053bd',
-        'boat': '#08b5ff',
-        'horsebackriding': '#7f3431',
-        'pedestrian': '#d90139',
-        'ski': '#ffacdf',
+        car: '#1976d2',
+        truck: '#2F4F4F',
+        motorcycle: '#f8931d',
+        bicycle: '#9053bd',
+        boat: '#08b5ff',
+        horsebackriding: '#7f3431',
+        pedestrian: '#d90139',
+        ski: '#ffacdf',
         [PROFILE_LINE]: '#5F9EA0',
-        'moped': '#3e690e',
-        'train': '#a56b6f',
-        'rescuetrack': '#0000ff',
+        moped: '#3e690e',
+        train: '#a56b6f',
+        rescuetrack: '#0000ff',
         'rescuetrack-emergency': '#ff0000',
     };
 }
@@ -37,28 +37,28 @@ async function loadProvidersOSRM() {
     let json = onlineRoutingProviders; // imported
 
     if (!json) {
-        const osrm = await apiGet(
-            `${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`,
-            { apiCache: true }
-        );
+        const osrm = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/online-routing-providers.json`, {
+            apiCache: true,
+        });
         if (osrm.ok) {
             json = osrm.data;
         }
     }
 
     if (json && json?.providers && json?.providers[0]?.name) {
-
-        json.providers.forEach(p => { // routes to profiles
+        json.providers.forEach((p) => {
+            // routes to profiles
             p.name = p.webName ?? p.name;
             p.key = p.name; // name acts as key
             if (p.routes) {
-                p.routes.forEach(r => { // type to key
+                p.routes.forEach((r) => {
+                    // type to key
                     r.key = r.type;
                     delete r.type;
                 });
                 p.routes.push({
                     key: PROFILE_LINE,
-                    name: PROFILE_LINE_NAME
+                    name: PROFILE_LINE_NAME,
                 });
                 p.profiles = p.routes;
                 delete p.routes;
@@ -76,10 +76,7 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
     // load OsmAnd provider as advanced solution
     // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
-    const osmand = await apiGet(
-        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`,
-        { apiCache: true }
-    );
+    const osmand = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, { apiCache: true });
 
     const json = osmand.data;
 
@@ -89,13 +86,12 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
             let creatingData = copyObj(json);
             creatingData = filterMode(creatingData);
             creatingData = addModes(creatingData);
-            setCreatingRouteMode( {
+            setCreatingRouteMode({
                 mode: creatingRouteMode.mode,
                 modes: creatingData,
                 opts: creatingData[creatingRouteMode.mode]?.params,
-                colors: getColors()
-                }
-            );
+                colors: getColors(),
+            });
         }
 
         if (json) {
@@ -106,8 +102,7 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
             const converted = [];
 
             Object.keys(json).forEach((k) => {
-                if (k.includes('rescuetrack')
-                        && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
+                if (k.includes('rescuetrack') && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
                     return;
                 }
                 if (json[k]?.params) {
@@ -119,7 +114,7 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
             converted.push({
                 key: PROFILE_LINE,
                 name: PROFILE_LINE_NAME,
-                params: {}
+                params: {},
             });
 
             return converted; // success
@@ -135,11 +130,9 @@ export async function loadProviders({ parseQueryString, creatingRouteMode = null
 
     const profilesOsmAnd = await loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode });
 
-    const osmand = profilesOsmAnd
-        ? [Object.assign({}, next.fallback, { profiles: profilesOsmAnd })]
-        : [next.fallback];
+    const osmand = profilesOsmAnd ? [Object.assign({}, next.fallback, { profiles: profilesOsmAnd })] : [next.fallback];
 
-    const osrm = await loadProvidersOSRM() || [];
+    const osrm = (await loadProvidersOSRM()) || [];
 
     next.providers = [].concat(osrm, osmand); // default OSRM first
 

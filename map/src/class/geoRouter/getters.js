@@ -1,7 +1,7 @@
-import { copyObj } from "../../util/Utils";
-import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import { copyObj } from '../../util/Utils';
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import BusAlertIcon from '@mui/icons-material/BusAlert';
-import TracksManager from "../../context/TracksManager";
+import TracksManager from '../../context/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
@@ -14,13 +14,8 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
  * @return {bool}
  */
 export function isReady() {
-    return (this.loaded === true && (
-            this.paused === false
-            || this.type !=='osmand'
-            || this.profile === PROFILE_LINE
-        )
-    );
-};
+    return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE);
+}
 
 /**
  * Return useEffect() dependency to monitor changes.
@@ -52,8 +47,8 @@ export function listProviders() {
  * @return { key, name, color, icon, type, router, profile }
  */
 export function getProfile({ type = this.type, router = this.router, profile = this.profile } = {}) {
-    const r = this.providers.find(r => r.key === router);
-    const p = r?.profiles?.find(p => p.key === profile);
+    const r = this.providers.find((r) => r.key === router);
+    const p = r?.profiles?.find((p) => p.key === profile);
     return getProfileDetails.call(this, { p, type, router, profile });
 }
 
@@ -61,24 +56,24 @@ export function getProfile({ type = this.type, router = this.router, profile = t
  * @return [{ key, name, color, icon, type, router, profile }]
  */
 export function listProfiles({ type = this.type, router = this.router, profile = this.profile } = {}) {
-    const r = this.providers.find(r => r.key === router);
-    return r?.profiles?.map(p => getProfileDetails.call(this, { p, type, router, profile }));
+    const r = this.providers.find((r) => r.key === router);
+    return r?.profiles?.map((p) => getProfileDetails.call(this, { p, type, router, profile }));
 }
 
 // return copy of profile's params
 export function getParams({ router = this.router, profile = this.profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.params);
-};
+}
 
 // return copy of profile's resetParams
 export function getResetParams({ router = this.router, profile = this.profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.resetParams);
-};
+}
 
 // return profile's URL or provider's URL
 export function getURL({ router = this.router, profile = this.profile } = {}) {
-    const r = this.providers.find(r => r.key === router);
-    const p = r?.profiles?.find(p => p.key === profile);
+    const r = this.providers.find((r) => r.key === router);
+    const p = r?.profiles?.find((p) => p.key === profile);
     return p.url ?? r.url;
 }
 
@@ -98,17 +93,21 @@ function getProfileDetails({ p, type, router, profile } = {}) {
         resetParams,
         type,
         router,
-        profile
+        profile,
     };
 }
 
 function getProfileIcon({ color, profile } = {}) {
     if (profile === PROFILE_LINE) {
-        return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
+        return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
     } else if (profile.includes('rescuetrack')) {
-        return <BusAlertIcon sx={{ color: color }} fontSize="small"/>
+        return <BusAlertIcon sx={{ color: color }} fontSize="small" />;
     } else {
         const path = '/map/images/profile_icons/' + profile + '.svg';
-        return <svg height="25" width="25" alt={profile}><image href={path} /></svg>;
+        return (
+            <svg height="25" width="25" alt={profile}>
+                <image href={path} />
+            </svg>
+        );
     }
 }

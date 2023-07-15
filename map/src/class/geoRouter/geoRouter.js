@@ -1,11 +1,11 @@
-import { calculateRoute } from "./legacy/calculateRoute.js";
-import { calculateGpxRoute } from "./legacy/calculateGpxRoute.js";
+import { calculateRoute } from './legacy/calculateRoute.js';
+import { calculateGpxRoute } from './legacy/calculateGpxRoute.js';
 
-import { loadProviders } from "./methods/loadProviders.js";
-import { newInterPoint } from "./methods/newInterPoint.js";
-import { pickTypeRouterProfile } from "./methods/pickTypeRouterProfile.js";
+import { loadProviders } from './methods/loadProviders.js';
+import { newInterPoint } from './methods/newInterPoint.js';
+import { pickTypeRouterProfile } from './methods/pickTypeRouterProfile.js';
 
-import { initSetter, nextState, flushState } from "./state.js";
+import { initSetter, nextState, flushState } from './state.js';
 
 import {
     onOpenSettings,
@@ -14,7 +14,7 @@ import {
     onDragEnd,
     onParamsChanged,
     onRouterProfileSelected,
-} from "./events.js";
+} from './events.js';
 
 import {
     isReady,
@@ -25,20 +25,22 @@ import {
     getParams,
     getResetParams,
     getURL,
-} from "./getters.js";
+} from './getters.js';
 
 // fallback
 const osmand = {
     key: 'osmand',
     type: 'osmand',
     name: 'OsmAnd Advanced',
-    profiles: [{
-        key: 'car',
-        name: 'Car',
-        params: {},
-        resetParams: {}
-    }],
-    url: `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`
+    profiles: [
+        {
+            key: 'car',
+            name: 'Car',
+            params: {},
+            resetParams: {},
+        },
+    ],
+    url: `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`,
 };
 
 export class geoRouter {

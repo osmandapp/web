@@ -1,8 +1,18 @@
-export function onOpenSettings() { this.flushState((o) => o.paused = true); }
-export function onCloseSettings() { this.flushState((o) => o.paused = false); }
+export function onOpenSettings() {
+    this.flushState((o) => (o.paused = true));
+}
 
-export function onDragStart() { this.flushState((o) => o.preview = true); }
-export function onDragEnd() { this.flushState((o) => o.preview = false); }
+export function onCloseSettings() {
+    this.flushState((o) => (o.paused = false));
+}
+
+export function onDragStart() {
+    this.flushState((o) => (o.preview = true));
+}
+
+export function onDragEnd() {
+    this.flushState((o) => (o.preview = false));
+}
 
 /**
  * Save changed params to current router/profile
@@ -13,9 +23,9 @@ export function onParamsChanged({ params }) {
     const router = next.router;
     const profile = next.profile;
 
-    next.providers.forEach(r => {
+    next.providers.forEach((r) => {
         if (r.key === router) {
-            r.profiles?.forEach(p => {
+            r.profiles?.forEach((p) => {
                 if (p.key === profile) {
                     p.params = params;
                 }
