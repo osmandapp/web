@@ -3,11 +3,11 @@ import { Air, Cloud, Compress, Shower, Thermostat } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from '../util/Utils';
 import TracksManager from './TracksManager';
-import RoutingManager from './RoutingManager';
 import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
 import PoiManager from './PoiManager';
 import { apiGet } from '../util/HttpApi';
+import { geoRouter } from '../class/geoRouter/geoRouter.js';
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -355,7 +355,6 @@ export const AppContextProvider = (props) => {
                 interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
     }
-    const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
     const [creatingRouteMode, setCreatingRouteMode] = useState({
         mode: 'car',
         opts: {},
@@ -402,12 +401,16 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
+    const [routeRouter, setRouteRouter] = useState(() => new geoRouter());
+
     const [trackRange, setTrackRange] = useState(null);
     const [showPoints, setShowPoints] = useState({
         points: true,
         wpts: true,
     });
     const [devMode, setDevMode] = useState(false);
+
+    routeRouter.initSetter({ setter: setRouteRouter });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -427,69 +430,59 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        RoutingManager.loadRouteProviders({
-            routeProviders,
-            setRouteProviders,
-            creatingRouteMode,
-            setCreatingRouteMode,
-        });
+        const sequentialLoad = async () => {
+            await routeRouter.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
+            // await (next class instance load) soon
+        };
+        sequentialLoad();
     }, []);
 
     useEffect(() => {
-        if (routeProviders.isReady() && routeTrackFile) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateGpxRoute({
-                routeMode,
+        if (routeRouter.isReady() && routeTrackFile) {
+            routeRouter.calculateGpxRoute({
                 routeTrackFile,
                 setRouteData,
                 setStartPoint,
                 setEndPoint,
                 setInterPoints,
+                changeRouteText,
+                setRoutingErrorMsg,
             });
         }
-    }, [routeProviders, routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
+    }, [routeRouter.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
-        if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateRoute({
-                routeProviders,
+        if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
+            routeRouter.calculateRoute({
                 startPoint,
                 endPoint,
                 interPoints,
                 avoidRoads,
-                routeMode,
                 setRouteData,
-                getRouteText,
+                changeRouteText,
                 setRoutingErrorMsg,
             });
         } else {
-            setHeaderText((prevState) => ({
-                ...prevState,
-                route: { text: `` },
-            }));
+            if (!routeTrackFile) {
+                setHeaderText((prevState) => ({
+                    ...prevState,
+                    route: { text: `` },
+                }));
+            }
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [
-        routeProviders.isReady(),
-        routeProviders.type,
-        routeProviders.router,
-        routeProviders.profile,
-        startPoint,
-        endPoint,
-        interPoints,
-        routeTrackFile,
-        avoidRoads,
-    ]); // ,setRouteData
+    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
-    function getRouteText(processRoute, data) {
+    function changeRouteText(processRoute, data) {
         let resultText = ``;
         if (processRoute) {
             resultText = `Route calculating…`;
         } else {
             if (data) {
                 let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.profile} is found.`;
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${
+                    routeRouter.getProfile()?.name
+                } is found.`;
             }
         }
         setHeaderText((prevState) => ({
@@ -546,8 +539,8 @@ export const AppContextProvider = (props) => {
                 setInterPoints,
                 routeData,
                 setRouteData,
-                routeProviders,
-                setRouteProviders,
+                routeRouter,
+                setRouteRouter,
                 routeShowPoints,
                 setRouteShowPoints,
                 weatherPoint,

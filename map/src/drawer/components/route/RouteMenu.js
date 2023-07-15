@@ -16,6 +16,7 @@ import {
     Link,
     Switch,
     FormControlLabel,
+    Box,
 } from '@mui/material';
 import { ExpandLess, ExpandMore, Directions } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
@@ -84,17 +85,8 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        ctx.routeProviders.PAUSE(ctx, openSettings);
+        openSettings ? ctx.routeRouter.onOpenSettings() : ctx.routeRouter.onCloseSettings();
     }, [openSettings]);
-
-    useEffect(() => {
-        if (ctx.routeProviders.loaded && ctx.routeTypeInit && ctx.routeProfileInit) {
-            ctx.routeProviders.CHOOSE(ctx, {
-                type: ctx.routeTypeInit,
-                profile: ctx.routeProfileInit,
-            });
-        }
-    }, [ctx.routeTypeInit, ctx.routeProfileInit, ctx.routeProviders.loaded]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -145,6 +137,8 @@ export default function RouteMenu() {
         }
     }
 
+    const { type, profile } = ctx.routeRouter.getProfile();
+
     return (
         <>
             {openSettings && (
@@ -161,16 +155,23 @@ export default function RouteMenu() {
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <MenuItem key="routeprofile" sx={{ ml: 1, mr: 2 }} disableRipple={true}>
                     <FormControl fullWidth>
-                        <InputLabel id="route-mode-label">{`Route profile (${ctx.routeProviders.type})`}</InputLabel>
+                        <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
                         <Select
                             labelid="route-mode-label"
-                            label={`Route profile (${ctx.routeProviders.type})`}
-                            value={ctx.routeProviders.profile}
-                            onChange={(e) => ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value })}
+                            label={`Route profile (${type})`}
+                            value={profile}
+                            onChange={(e) => ctx.routeRouter.onRouterProfileSelected({ profile: e.target.value })}
                         >
-                            {ctx.routeProviders.allProfiles().map(({ key, name }) => (
+                            {ctx.routeRouter.listProfiles().map(({ key, name, icon }) => (
                                 <MenuItem key={key} value={key}>
-                                    {name}
+                                    <Box display="flex" width="100%" alignItems="center">
+                                        <Box display="flex" width={25} justifyContent="center" alignItems="center">
+                                            {icon}
+                                        </Box>
+                                        <Box display="flex" sx={{ ml: 1 }}>
+                                            <Box sx={{ mt: '3px' }}>{name}</Box>
+                                        </Box>
+                                    </Box>
                                 </MenuItem>
                             ))}
                         </Select>
@@ -330,6 +331,8 @@ export default function RouteMenu() {
                             onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                         />
                         <Button variant="contained" component="span" sx={{ ml: 2 }}>
+                            {/* { ctx.routeRouter.isReady().toString() + ':' } */}
+                            {/* { ctx.routeRouter.paused.toString() + ':' } */}
                             Upload GPX to route
                         </Button>
                     </label>

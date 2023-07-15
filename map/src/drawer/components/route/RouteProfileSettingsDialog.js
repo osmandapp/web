@@ -32,23 +32,23 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
 
     // Reset options
     const handleReset = () => {
-        setOpts(ctx.routeProviders.getResetParams());
+        setOpts(ctx.routeRouter.getResetParams());
     };
 
     const saveParams = () => {
         if (opts) {
-            ctx.routeProviders.PARAMS(ctx, opts);
+            ctx.routeRouter.onParamsChanged({ params: opts });
         }
     };
 
     const onChangeRouter = (e) => {
         saveParams();
-        ctx.routeProviders.CHOOSE(ctx, { router: e.target.value });
+        ctx.routeRouter.onRouterProfileSelected({ router: e.target.value });
     };
 
     const onChangeProfile = (e) => {
         saveParams();
-        ctx.routeProviders.CHOOSE(ctx, { profile: e.target.value });
+        ctx.routeRouter.onRouterProfileSelected({ profile: e.target.value });
     };
 
     let section = '';
@@ -89,14 +89,16 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
     };
 
     const showReset = () => {
-        return opts && JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams());
+        return opts && JSON.stringify(opts) !== JSON.stringify(ctx.routeRouter.getResetParams());
     };
 
     const [opts, setOpts] = useState();
 
     useEffect(() => {
-        setOpts(ctx.routeProviders.getParams());
-    }, [ctx.routeProviders.router, ctx.routeProviders.profile]);
+        setOpts(ctx.routeRouter.getParams());
+    }, [ctx.routeRouter.getEffectDeps()]);
+
+    const { router, profile } = ctx.routeRouter.getProfile();
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
@@ -114,8 +116,8 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
             <DialogContent>
                 <InputLabel id="route-provider-label">Provider</InputLabel>
                 <FormControl fullWidth>
-                    <Select value={ctx.routeProviders.router} onChange={onChangeRouter}>
-                        {ctx.routeProviders.allProviders().map(({ key, name }) => (
+                    <Select value={router} onChange={onChangeRouter}>
+                        {ctx.routeRouter.listProviders().map(({ key, name }) => (
                             <MenuItem key={key} value={key}>
                                 {name}
                             </MenuItem>
@@ -125,10 +127,17 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
 
                 <InputLabel>Profile</InputLabel>
                 <FormControl fullWidth>
-                    <Select value={ctx.routeProviders.profile} onChange={onChangeProfile}>
-                        {ctx.routeProviders.allProfiles().map(({ key, name }) => (
+                    <Select value={profile} onChange={onChangeProfile}>
+                        {ctx.routeRouter.listProfiles().map(({ key, name, icon }) => (
                             <MenuItem key={key} value={key}>
-                                {name}
+                                <Box display="flex" width="100%" alignItems="center">
+                                    <Box display="flex" width={25} justifyContent="center" alignItems="center">
+                                        {icon}
+                                    </Box>
+                                    <Box display="flex" sx={{ ml: 1 }}>
+                                        <Box sx={{ mt: '3px' }}>{name}</Box>
+                                    </Box>
+                                </Box>
                             </MenuItem>
                         ))}
                     </Select>
@@ -148,6 +157,7 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
                                             label={opt.label}
                                             control={
                                                 <Checkbox
+                                                    sx={{ mt: '-6px' }}
                                                     key={'check_' + key}
                                                     checked={opt.value}
                                                     icon={opt.group && <RadioButtonUncheckedIcon />}

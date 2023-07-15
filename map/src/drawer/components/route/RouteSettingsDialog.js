@@ -64,11 +64,13 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
 
     const showReset = () => {
         return (
-            opts && JSON.stringify(opts) !== JSON.stringify(ctx.routeProviders.getResetParams('osmand', profile.mode))
+            opts &&
+            JSON.stringify(opts) !==
+                JSON.stringify(ctx.routeRouter.getResetParams({ type: 'osmand', profile: profile.mode }))
         );
     };
     const handleReset = () => {
-        setOpts(ctx.routeProviders.getResetParams('osmand', profile.mode));
+        setOpts(ctx.routeRouter.getResetParams({ type: 'osmand', profile: profile.mode }));
     };
 
     section = '';
@@ -106,6 +108,7 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
                                         label={opt.label}
                                         control={
                                             <Checkbox
+                                                sx={{ mt: '-6px' }}
                                                 key={'check_' + key}
                                                 checked={opt.value}
                                                 icon={opt.group && <RadioButtonUncheckedIcon />}

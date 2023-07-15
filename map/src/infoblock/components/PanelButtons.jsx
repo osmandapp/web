@@ -167,8 +167,8 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
                                         variant="contained"
                                         type="button"
                                         onClick={() => {
+                                            doClear();
                                             setShowContextMenu(false);
-                                            clear();
                                         }}
                                     >
                                         <Close fontSize="small" />
