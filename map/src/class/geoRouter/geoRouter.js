@@ -24,6 +24,7 @@ import {
     getProfile,
     getParams,
     getResetParams,
+    isParamsChanged,
     getURL,
 } from './getters.js';
 
@@ -68,6 +69,7 @@ export class geoRouter {
     getProfile = getProfile;
     getParams = getParams;
     getResetParams = getResetParams;
+    isParamsChanged = isParamsChanged;
     getURL = getURL;
 
     // events()

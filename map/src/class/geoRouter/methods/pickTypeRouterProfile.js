@@ -1,6 +1,7 @@
 /**
  * @param { type, router, profile } combination to pick
- * @return { type, router, profile } || null
+ * @return { type, router, profile, p } || null
+ * @note returned { p } is profile object
  * @example
  * pick...({ profile }) - pick profile, keep router
  * pick...({ router }) - pick router, try to keep profile
@@ -33,8 +34,9 @@ export function pickTypeRouterProfile({ type = null, router = null, profile = nu
 
     if (router && profile) {
         type = provider.type ?? this.fallback.type;
-        // console.log('picked:', type, router, profile);
-        return { type, router, profile };
+        const p = provider?.profiles?.find((p) => p.key === profile);
+        // console.log('picked:', type, router, profile, p);
+        return { type, router, profile, p };
     } else {
         console.error('pickTypeRouterProfile failed:', type, router, profile);
         return null;

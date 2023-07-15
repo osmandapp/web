@@ -89,7 +89,7 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
     };
 
     const showReset = () => {
-        return opts && JSON.stringify(opts) !== JSON.stringify(ctx.routeRouter.getResetParams());
+        return ctx.routeRouter.isParamsChanged({ params: opts });
     };
 
     const [opts, setOpts] = useState();

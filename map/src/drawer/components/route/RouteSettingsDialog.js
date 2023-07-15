@@ -63,12 +63,9 @@ export default function RouteSettingsDialog({ setOpenSettings, profile, setProfi
     };
 
     const showReset = () => {
-        return (
-            opts &&
-            JSON.stringify(opts) !==
-                JSON.stringify(ctx.routeRouter.getResetParams({ type: 'osmand', profile: profile.mode }))
-        );
+        return ctx.routeRouter.isParamsChanged({ params: opts, type: 'osmand', profile: profile.mode });
     };
+
     const handleReset = () => {
         setOpts(ctx.routeRouter.getResetParams({ type: 'osmand', profile: profile.mode }));
     };

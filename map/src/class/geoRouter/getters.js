@@ -50,6 +50,7 @@ export function getProfile({ type = this.type, router = this.router, profile = t
     const r = this.providers.find((r) => r.key === router);
     const p = r?.profiles?.find((p) => p.key === profile);
     return getProfileDetails.call(this, { p, type, router, profile });
+    // return getProfileDetails.call(this, this.pickTypeRouterProfile({ type, router, profile }));
 }
 
 /**
@@ -61,13 +62,29 @@ export function listProfiles({ type = this.type, router = this.router, profile =
 }
 
 // return copy of profile's params
-export function getParams({ router = this.router, profile = this.profile } = {}) {
+export function getParams({ router, profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.params);
 }
 
 // return copy of profile's resetParams
-export function getResetParams({ router = this.router, profile = this.profile } = {}) {
+export function getResetParams({ type, router, profile } = {}) {
+    if (type) {
+        // legacy for old RouteSettingsDialog
+        return copyObj(this.getProfile(this.pickTypeRouterProfile({ type, profile }))?.resetParams);
+    }
     return copyObj(this.getProfile({ router, profile })?.resetParams);
+}
+
+export function isParamsChanged({ params, type, router, profile } = {}) {
+    if (params) {
+        const json = JSON.stringify(params);
+        if (json.length > 0) {
+            if (json !== JSON.stringify(this.getResetParams({ type, router, profile }))) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 // return profile's URL or provider's URL
