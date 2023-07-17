@@ -120,9 +120,11 @@ export default function PointContextMenu({ anchorEl }) {
     }
 
     async function join(point1, point2) {
-        point2.geometry = await TracksManager.updateRouteBetweenPoints(ctx, point1, point2);
+        point2.geometry = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
         point1.profile = point2.profile;
+        point1.geoProfile = point2.geoProfile;
         delete point1.geometry[point1.geometry.length - 1].profile;
+        delete point1.geometry[point1.geometry.length - 1].geoProfile;
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.trackState.update = true;
@@ -160,36 +162,6 @@ export default function PointContextMenu({ anchorEl }) {
                         Trim before
                     </MenuItem>
                 )}
-                {pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && (
-                    <MenuItem
-                        onClick={() => {
-                            trimAfter();
-                            ctx.setPointContextMenu({});
-                        }}
-                    >
-                        Trim after
-                    </MenuItem>
-                )}
-                {pointInd > 0 && !isPointAfterGap(pointInd) && (
-                    <MenuItem
-                        onClick={() => {
-                            changeProfileBefore();
-                            ctx.setPointContextMenu({});
-                        }}
-                    >
-                        Change route type before this point
-                    </MenuItem>
-                )}
-                {pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && (
-                    <MenuItem
-                        onClick={() => {
-                            changeProfileAfter();
-                            ctx.setPointContextMenu({});
-                        }}
-                    >
-                        Change route type after this point
-                    </MenuItem>
-                )}
                 {pointInd >= 2 &&
                     pointInd < ctx.selectedGpxFile.points.length - 1 &&
                     !isGap(pointInd) &&
@@ -205,6 +177,36 @@ export default function PointContextMenu({ anchorEl }) {
                             Split before
                         </MenuItem>
                     )}
+                {isPointAfterGap(pointInd) && (
+                    <MenuItem
+                        onClick={() => {
+                            joinBefore();
+                            ctx.setPointContextMenu({});
+                        }}
+                    >
+                        Join before
+                    </MenuItem>
+                )}
+                {pointInd > 0 && !isPointAfterGap(pointInd) && (
+                    <MenuItem
+                        onClick={() => {
+                            changeProfileBefore();
+                            ctx.setPointContextMenu({});
+                        }}
+                    >
+                        Profile before
+                    </MenuItem>
+                )}
+                {pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd) && (
+                    <MenuItem
+                        onClick={() => {
+                            trimAfter();
+                            ctx.setPointContextMenu({});
+                        }}
+                    >
+                        Trim after
+                    </MenuItem>
+                )}
                 {pointInd >= 1 &&
                     pointInd < ctx.selectedGpxFile.points.length - 2 &&
                     !isGap(pointInd) &&
@@ -220,16 +222,6 @@ export default function PointContextMenu({ anchorEl }) {
                             Split after
                         </MenuItem>
                     )}
-                {isPointAfterGap(pointInd) && (
-                    <MenuItem
-                        onClick={() => {
-                            joinBefore();
-                            ctx.setPointContextMenu({});
-                        }}
-                    >
-                        Join before
-                    </MenuItem>
-                )}
                 {isGap(pointInd) && (
                     <MenuItem
                         onClick={() => {
@@ -238,6 +230,16 @@ export default function PointContextMenu({ anchorEl }) {
                         }}
                     >
                         Join after
+                    </MenuItem>
+                )}
+                {pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && (
+                    <MenuItem
+                        onClick={() => {
+                            changeProfileAfter();
+                            ctx.setPointContextMenu({});
+                        }}
+                    >
+                        Profile after
                     </MenuItem>
                 )}
             </div>
@@ -267,7 +269,7 @@ export default function PointContextMenu({ anchorEl }) {
                     <Grid container spacing={2}>
                         <Grid item xs={10}>
                             <Paper>
-                                <div style={{ maxHeight: '15vh', overflow: 'auto' }}>
+                                <div style={{ maxHeight: '30vh', overflow: 'auto' }}>
                                     <ClickAwayListener onClickAway={handleClose}>
                                         <MenuList
                                             className={classes.drawerItem}

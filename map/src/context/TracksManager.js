@@ -466,48 +466,50 @@ function deleteLocalTrack(ctx) {
     return false;
 }
 
-function formatRouteMode(routeMode) {
-    let routeModeStr = routeMode.mode;
-    Object.keys(routeMode.opts).forEach((o) => {
-        if (routeMode.opts[o]?.value === true) {
-            routeModeStr += ',' + o;
-        } else if (routeMode.opts[o]?.value === false) {
-            // skip
-        } else {
-            routeModeStr += ',' + o + '=' + routeMode.opts[o].value;
-        }
-    });
+function formatRouteMode(geoProfile) {
+    let routeModeStr = geoProfile?.profile ?? 'car';
+    if (geoProfile?.params) {
+        Object.keys(geoProfile.params).forEach((o) => {
+            if (geoProfile.params[o]?.value === true) {
+                routeModeStr += ',' + o;
+            } else if (geoProfile.params[o]?.value === false) {
+                // skip
+            } else {
+                routeModeStr += ',' + o + '=' + geoProfile.params[o].value;
+            }
+        });
+    }
     return routeModeStr;
 }
 
-async function updateRouteBetweenPoints(ctx, start, end, settings) {
-    ctx.setProcessRouting(true);
-    let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
-    let result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '', {
-        params: {
-            start: JSON.stringify({ latitude: start.lat, longitude: start.lng }),
-            end: JSON.stringify({ latitude: end.lat, longitude: end.lng }),
-            routeMode: routeMode,
-            hasRouting: start.segment !== null || end.segment !== null,
-            maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE,
-        },
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+// async function updateRouteBetweenPoints(ctx, start, end, settings) {
+//     ctx.setProcessRouting(true);
+//     let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
+//     let result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '', {
+//         params: {
+//             start: JSON.stringify({ latitude: start.lat, longitude: start.lng }),
+//             end: JSON.stringify({ latitude: end.lat, longitude: end.lng }),
+//             routeMode: routeMode,
+//             hasRouting: start.segment !== null || end.segment !== null,
+//             maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE,
+//         },
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//     });
 
-    if (result) {
-        let data = result?.data; // points
-        if (typeof result?.data === 'string') {
-            data = JSON.parse(quickNaNfix(result.data));
-        }
-        if (data?.msg) {
-            ctx.setRoutingErrorMsg(data?.msg);
-        }
-        updateGapProfileOneSegment(end, data?.points);
-        return data?.points;
-    }
-}
+//     if (result) {
+//         let data = result?.data; // points
+//         if (typeof result?.data === 'string') {
+//             data = JSON.parse(quickNaNfix(result.data));
+//         }
+//         if (data?.msg) {
+//             ctx.setRoutingErrorMsg(data?.msg);
+//         }
+//         updateGapProfileOneSegment(end, data?.points);
+//         return data?.points;
+//     }
+// }
 
 async function updateRoute(points) {
     let result;
@@ -639,20 +641,27 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
     const wpts = _.cloneDeep(ctx.selectedGpxFile.wpts);
     const pointsGroups = _.cloneDeep(ctx.selectedGpxFile.pointsGroups);
-    let data = {
+    const postData = {
         tracks: points ? [{ points: points }] : ctx.selectedGpxFile.tracks,
         metaData: ctx.selectedGpxFile.metaData,
         ext: ctx.selectedGpxFile.ext,
         analysis: ctx.selectedGpxFile.analysis,
     };
-    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data, {
+
+    if (postData.analysis) {
+        // zero every-time-unique variables for better caching
+        postData.analysis.startTime = postData.analysis.endTime = 0;
+    }
+
+    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
+        apiCache: true,
         headers: {
             'Content-Type': 'application/json',
         },
     });
     if (resp.data) {
         setLoading(false);
-        let data = FavoritesManager.prepareTrackData(resp.data);
+        const data = FavoritesManager.prepareTrackData(resp.data);
         Object.keys(data.data).forEach((t) => {
             ctx.selectedGpxFile[`${t}`] = data.data[t];
         });
@@ -670,28 +679,29 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
-async function getLocalTrackAnalysis(f) {
-    let data = {
-        tracks: f.tracks,
-        metaData: f.metaData,
-        ext: f.ext,
-    };
-    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data, {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-    if (resp.data) {
-        let data = FavoritesManager.prepareTrackData(resp.data);
-        Object.keys(data.data).forEach((t) => {
-            f[`${t}`] = data.data[t];
-        });
-        return f;
-    } else {
-        console.log('getLocalTrackAnalysis fallback');
-        return f;
-    }
-}
+// async function getLocalTrackAnalysis(f) {
+//     let data = {
+//         tracks: f.tracks,
+//         metaData: f.metaData,
+//         ext: f.ext,
+//     };
+//     let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data, {
+//         apiCache: true,
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//     });
+//     if (resp.data) {
+//         let data = FavoritesManager.prepareTrackData(resp.data);
+//         Object.keys(data.data).forEach((t) => {
+//             f[`${t}`] = data.data[t];
+//         });
+//         return f;
+//     } else {
+//         console.log('getLocalTrackAnalysis fallback');
+//         return f;
+//     }
+// }
 
 function createTrack(ctx, latlng) {
     let createState = {
@@ -749,14 +759,14 @@ function updateState(ctx) {
     ctx.setTrackState({ ...ctx.trackState });
 }
 
-function updateGlobalProfileState(ctx, profile) {
-    ctx.setCreatingRouteMode({
-        mode: profile,
-        modes: ctx.creatingRouteMode.modes,
-        opts: ctx.creatingRouteMode.modes[profile]?.params,
-        colors: ctx.creatingRouteMode.colors,
-    });
-}
+// function updateGlobalProfileState(ctx, profile) {
+//     ctx.setCreatingRouteMode({
+//         mode: profile,
+//         modes: ctx.creatingRouteMode.modes,
+//         opts: ctx.creatingRouteMode.modes[profile]?.params,
+//         colors: ctx.creatingRouteMode.colors,
+//     });
+// }
 
 const TracksManager = {
     loadTracks,
@@ -769,7 +779,8 @@ const TracksManager = {
     getGpxTrack,
     saveTrack,
     getEditablePoints,
-    updateRouteBetweenPoints,
+    // updateRouteBetweenPoints,
+    updateGapProfileOneSegment,
     updateRoute,
     updateStat,
     getEle,
@@ -788,8 +799,8 @@ const TracksManager = {
     getFavoriteGroups,
     isEqualPoints,
     updateState,
-    getLocalTrackAnalysis,
-    updateGlobalProfileState,
+    // getLocalTrackAnalysis,
+    // updateGlobalProfileState,
     prepareAnalysis,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,

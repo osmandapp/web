@@ -13,6 +13,8 @@ import RoutingManager from '../../context/RoutingManager';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 
+const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
+
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -28,6 +30,21 @@ export default function LocalClientTrackLayer() {
     const [newPoint, setNewPoint] = useState(null);
 
     const routingCashRef = useRef(ctx.routingCash);
+
+    const debouncerTimer = useRef(null);
+
+    function debouncer(f, timerRef, ms) {
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+            timerRef.current = null;
+        }
+        if (timerRef.current === null) {
+            timerRef.current = setTimeout(() => {
+                timerRef.current = null;
+                f();
+            }, ms);
+        }
+    }
 
     useEffect(() => {
         routingCashRef.current = ctx.routingCash;
@@ -46,10 +63,11 @@ export default function LocalClientTrackLayer() {
     //     trackRef.current = ctx.selectedGpxFile;
     // }, [ctx.selectedGpxFile])
 
-    const routeModeRef = useRef(ctx.creatingRouteMode);
-    useEffect(() => {
-        routeModeRef.current = ctx.creatingRouteMode;
-    }, [ctx.creatingRouteMode]);
+    const geoRouter = ctx.trackRouter;
+    // const routeModeRef = useRef(ctx.creatingRouteMode);
+    // useEffect(() => {
+    //     routeModeRef.current = ctx.creatingRouteMode;
+    // }, [ctx.creatingRouteMode]);
 
     useEffect(() => {
         if (ctxTrack) {
@@ -84,7 +102,7 @@ export default function LocalClientTrackLayer() {
                 deleteClickOnMap();
             }
         }
-    }, [ctx.createTrack, ctxTrack]);
+    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps()]);
 
     useEffect(() => {
         for (let l in localLayers) {
@@ -344,64 +362,72 @@ export default function LocalClientTrackLayer() {
             const segmentKey = queueForRouting.objs[0].key;
             const newFile = ctxTrack;
             Promise.resolve(
-                TracksManager.updateRouteBetweenPoints(
-                    ctx,
-                    segmentObj.startPoint,
-                    segmentObj.endPoint,
-                    segmentObj.routeMode
-                ).then((res) => {
-                    if (!res) {
-                        res = [
-                            {
-                                lat: segmentObj.startPoint.lat,
-                                lng: segmentObj.startPoint.lng,
-                            },
-                            {
-                                lat: segmentObj.endPoint.lat,
-                                lng: segmentObj.endPoint.lng,
-                            },
-                        ];
-                    }
+                ctx.trackRouter
+                    .updateRouteBetweenPoints(
+                        ctx,
+                        segmentObj.startPoint,
+                        segmentObj.endPoint,
+                        // segmentObj.routeMode
+                        segmentObj?.geoProfile
+                    )
+                    .then((res) => {
+                        if (!res) {
+                            res = [
+                                {
+                                    lat: segmentObj.startPoint.lat,
+                                    lng: segmentObj.startPoint.lng,
+                                },
+                                {
+                                    lat: segmentObj.endPoint.lat,
+                                    lng: segmentObj.endPoint.lng,
+                                },
+                            ];
+                        }
 
-                    ctx.routingCash[segmentKey].geometry = res;
-                    segmentObj.endPoint.geometry = res;
-                    const startInd = newFile.points?.findIndex((p) => isEqualPoints(p, segmentObj.startPoint));
-                    if (
-                        newFile.points &&
-                        startInd !== -1 &&
-                        isEqualPoints(newFile.points[startInd + 1], segmentObj.endPoint)
-                    ) {
-                        newFile.points[startInd + 1].geometry = _.cloneDeep(res);
-                        let currentLine = segmentObj.tempLine;
-                        let polyline = new EditablePolyline(map, ctx, res, null, ctxTrack).create();
-                        currentLine.setLatLngs(polyline._latlngs);
-                        currentLine.options.name = undefined;
-                        currentLine.setStyle({
-                            color: ctx.creatingRouteMode.colors[segmentObj.startPoint.profile],
-                            dashArray: null,
-                        });
+                        ctx.routingCash[segmentKey].geometry = res;
+                        segmentObj.endPoint.geometry = res;
+                        const startInd = newFile.points?.findIndex((p) => isEqualPoints(p, segmentObj.startPoint));
+                        if (
+                            newFile.points &&
+                            startInd !== -1 &&
+                            isEqualPoints(newFile.points[startInd + 1], segmentObj.endPoint)
+                        ) {
+                            newFile.points[startInd + 1].geometry = _.cloneDeep(res);
+                            let currentLine = segmentObj.tempLine;
+                            let polyline = new EditablePolyline(map, ctx, res, null, ctxTrack).create();
+                            currentLine.setLatLngs(polyline._latlngs);
+                            currentLine.options.name = undefined;
+                            currentLine.setStyle({
+                                // color: ctx.creatingRouteMode.colors[segmentObj.startPoint.profile],
+                                color: geoRouter.getProfile(segmentObj.startPoint)?.color,
+                                dashArray: null,
+                            });
 
-                        setQueueForRouting((prev) => ({
-                            isProcessing: false,
-                            objs: prev.objs,
-                        }));
-
-                        TracksManager.getTrackWithAnalysis(
-                            TracksManager.GET_ANALYSIS,
-                            ctx,
-                            ctx.setLoadingContextMenu,
-                            newFile.points
-                        ).then((res) => {
-                            saveChanges(null, null, null, res);
                             setQueueForRouting((prev) => ({
                                 isProcessing: false,
                                 objs: prev.objs,
                             }));
-                            ctx.setSelectedGpxFile({ ...res });
-                            ctx.setProcessRouting(false);
-                        });
-                    }
-                })
+
+                            const analysis = () => {
+                                TracksManager.getTrackWithAnalysis(
+                                    TracksManager.GET_ANALYSIS,
+                                    ctx,
+                                    ctx.setLoadingContextMenu,
+                                    newFile.points
+                                ).then((res) => {
+                                    saveChanges(null, null, null, res);
+                                    setQueueForRouting((prev) => ({
+                                        isProcessing: false,
+                                        objs: prev.objs,
+                                    }));
+                                    ctx.setSelectedGpxFile({ ...res });
+                                    ctx.setProcessRouting(false);
+                                });
+                            };
+
+                            debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+                        }
+                    })
             );
             const newObjs = queueForRouting.objs.slice(1);
             const newQueue = {
@@ -444,7 +470,8 @@ export default function LocalClientTrackLayer() {
                 ctxTrack
             ).create();
             polyline.setStyle({
-                color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
+                // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
+                color: geoRouter.getProfile()?.color,
             });
             layers.addLayer(polyline);
         } else {
@@ -470,22 +497,27 @@ export default function LocalClientTrackLayer() {
                     ctxTrack
                 ).create();
                 polyline.setStyle({
-                    color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
+                    // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
+                    color: geoRouter.getProfile()?.color,
                 });
                 layers.addLayer(polyline);
             }
         }
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
-            (res) => {
-                saveChanges(null, null, null, res);
-            }
-        );
+        const analysis = () => {
+            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
+                (res) => {
+                    saveChanges(null, null, null, res);
+                }
+            );
+        };
+        debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
     }
 
     function addGeometryToTrack(newPoint, points) {
         let prevPoint = points[points.length - 1];
         prevPoint.geometry = deleteInfo(_.cloneDeep(points));
         prevPoint.profile = newPoint.profile;
+        prevPoint.geoProfile = newPoint.geoProfile;
         let firstP = points[0];
         firstP.geometry = [];
         firstP.profile = TracksManager.PROFILE_LINE;
@@ -638,7 +670,8 @@ export default function LocalClientTrackLayer() {
             points.push(newPoint);
             let prevPoint = getPrevPoint(points);
             prevPoint.profile = newPoint.profile;
-            prevPoint.routeMode = newPoint.routeMode;
+            prevPoint.geoProfile = newPoint.geoProfile;
+            // prevPoint.routeMode = newPoint.routeMode;
 
             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
             layers.addLayer(tempLine);
@@ -667,12 +700,13 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
         } else {
-            let newPoint = createNewPoint(e, routeModeRef.current);
+            // let newPoint = createNewPoint(e, routeModeRef.current);
+            let newPoint = createNewPoint(e, geoRouter.getGeoProfile());
             let points = ctxTrack.points;
             let layers = ctxTrack.layers;
             let prevPoint = ctxTrack.prevPoint;
             if (isNewPoint(ctxTrack, newPoint)) {
-                newPoint.routeMode = routeModeRef.current;
+                // newPoint.routeMode = routeModeRef.current;
                 if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(points)) {
                     setOpenAddRoutingToTrackDialog(true);
                     setNewPoint(newPoint);
@@ -684,7 +718,8 @@ export default function LocalClientTrackLayer() {
                             prevPoint.profile = TracksManager.PROFILE_LINE;
                         }
                         prevPoint.profile = newPoint.profile;
-                        prevPoint.routeMode = newPoint.routeMode;
+                        prevPoint.geoProfile = newPoint.geoProfile;
+                        // prevPoint.routeMode = newPoint.routeMode;
                         if (newPoint.profile === TracksManager.PROFILE_LINE) {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
@@ -724,18 +759,20 @@ export default function LocalClientTrackLayer() {
         return !track.points.find((p) => isEqualPoints(p, newPoint));
     }
 
-    function createNewPoint(e, routeModeRef) {
-        let newPoint = {
+    function createNewPoint(e, geoProfile = geoRouter.getGeoProfile()) {
+        const newPoint = {
             lat: e ? e.latlng.lat : ctx.createTrack.latlng.lat,
             lng: e ? e.latlng.lng : ctx.createTrack.latlng.lng,
             ele: TracksManager.NAN_MARKER,
-            profile: routeModeRef ? routeModeRef.mode : ctx.creatingRouteMode.mode,
+            // profile: routeModeRef ? routeModeRef.mode : ctx.creatingRouteMode.mode,
+            profile: geoProfile.profile, // required by get-analisys
+            geoProfile: geoProfile,
             geometry: [],
-            routeMode: routeModeRef ? routeModeRef : ctx.creatingRouteMode,
+            // routeMode: routeModeRef ? routeModeRef : ctx.creatingRouteMode,
         };
-        if (newPoint.profile !== TracksManager.PROFILE_LINE) {
-            newPoint.geometry = [];
-        }
+        // if (newPoint.profile !== TracksManager.PROFILE_LINE) {
+        //     newPoint.geometry = []; // geometry is already set to [] just few lines before
+        // }
         return newPoint;
     }
 
@@ -781,8 +818,11 @@ export default function LocalClientTrackLayer() {
         ctxTrack.newPoint = points[points.length - 1];
         ctxTrack.update = false;
 
-        const currentProfile = ctxTrack.newPoint?.profile ? ctxTrack.newPoint?.profile : TracksManager.PROFILE_LINE;
-        TracksManager.updateGlobalProfileState(ctx, currentProfile);
+        // const currentProfile = ctxTrack.newPoint?.profile ? ctxTrack.newPoint?.profile : TracksManager.PROFILE_LINE;
+        // TracksManager.updateGlobalProfileState(ctx, currentProfile); // select last used type|router|profile when track loaded
+        const geoProfile =
+            ctxTrack.newPoint?.geoProfile ?? geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
+        geoRouter.onRouterProfileSelected(geoProfile);
 
         // ctx.addFavorite.editTrack = true;
         // ctx.setAddFavorite({...ctx.addFavorite});

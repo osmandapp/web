@@ -1,5 +1,6 @@
 import { calculateRoute } from './legacy/calculateRoute.js';
 import { calculateGpxRoute } from './legacy/calculateGpxRoute.js';
+import { updateRouteBetweenPoints } from './legacy/updateRouteBetweenPoints.js';
 
 import { loadProviders } from './methods/loadProviders.js';
 import { newInterPoint } from './methods/newInterPoint.js';
@@ -26,6 +27,7 @@ import {
     getResetParams,
     isParamsChanged,
     getURL,
+    getGeoProfile,
 } from './getters.js';
 
 // fallback
@@ -71,6 +73,7 @@ export class geoRouter {
     getResetParams = getResetParams;
     isParamsChanged = isParamsChanged;
     getURL = getURL;
+    getGeoProfile = getGeoProfile;
 
     // events()
     onOpenSettings = onOpenSettings;
@@ -88,6 +91,7 @@ export class geoRouter {
     // legacy()
     calculateRoute = calculateRoute;
     calculateGpxRoute = calculateGpxRoute;
+    updateRouteBetweenPoints = updateRouteBetweenPoints;
 
     // state()
     nextState = nextState;

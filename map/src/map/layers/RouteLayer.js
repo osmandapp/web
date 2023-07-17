@@ -48,6 +48,7 @@ const RouteLayer = ({ geocodingData, region }) => {
     let timer = null;
     function debouncer(f) {
         // if (timer) { clearTimeout(timer); timer = null; } // another kind of debouncer
+        console.log('timer', timer);
         if (timer === null) {
             timer = setTimeout(() => {
                 timer = null;

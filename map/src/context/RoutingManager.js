@@ -5,13 +5,13 @@ import TrackLayerProvider from '../map/TrackLayerProvider';
 const STOP_CALC_ROUTING = 'stop';
 
 function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
-    const routingKey = createRoutingKey(startPoint, endPoint, startPoint.routeMode);
+    const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
     let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
 
     routingList[routingKey] = {
         startPoint: _.cloneDeep(startPoint),
         endPoint: _.cloneDeep(endPoint),
-        routeMode: startPoint.routeMode,
+        geoProfile: startPoint.geoProfile,
         tempLine: tempLine,
         geometry: null,
     };
@@ -23,8 +23,8 @@ function getRoutingFromCash(track, ctx, map) {
     for (let i = 0; i < track.points.length - 1; i++) {
         const start = track.points[i];
         const end = track.points[i + 1];
-        if (end.routeMode) {
-            const routingKey = createRoutingKey(start, end, end.routeMode);
+        if (end.geoProfile) {
+            const routingKey = createRoutingKey(start, end, end.geoProfile);
             const geoCash = ctx.routingCash[routingKey]?.geometry;
             if (geoCash === STOP_CALC_ROUTING) {
                 let polylineTemp = TrackLayerProvider.createEditableTempLPolyline(start, end, map, ctx);
@@ -61,10 +61,18 @@ function segmentHasPoint(segment, point) {
     );
 }
 
-function createRoutingKey(startPoint, endPoint, routeMode) {
-    return `startLat=${startPoint.lat},startLng=${startPoint.lng},endLat=${endPoint.lat},endLng=${
-        endPoint.lng
-    },${TracksManager.formatRouteMode(routeMode)}`;
+// key looks like query string but never used as it
+function createRoutingKey(startPoint, endPoint, geoProfile) {
+    if (!startPoint || !endPoint || !geoProfile) {
+        console.error('createRoutingKey got empty parameter', startPoint, endPoint, geoProfile);
+    }
+
+    const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
+
+    // const geo = TracksManager.formatRouteMode(geoProfile); // this is not enough
+    const geo = JSON.stringify(geoProfile); // include all of type/router/profile/params
+
+    return ll + geo;
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {

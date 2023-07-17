@@ -6,14 +6,14 @@ import onlineRoutingProviders from '../../../generated/online-routing-providers.
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 const PROFILE_LINE_NAME = PROFILE_LINE[0].toUpperCase() + PROFILE_LINE.slice(1);
 
-function addModes(data) {
-    data[PROFILE_LINE] = { name: PROFILE_LINE_NAME, params: {} };
-    return data;
-}
+// function addModes(data) {
+//     data[PROFILE_LINE] = { name: PROFILE_LINE_NAME, params: {} };
+//     return data;
+// }
 
-function filterMode(data) {
-    return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
-}
+// function filterMode(data) {
+//     return Object.fromEntries(Object.entries(data).filter(([key]) => !key.includes('rescuetrack')));
+// }
 
 function getColors() {
     return {
@@ -72,7 +72,8 @@ async function loadProvidersOSRM() {
     return null;
 }
 
-async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
+// async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
+async function loadProfilesOsmAnd() {
     // load OsmAnd provider as advanced solution
     // TracksManager compatibility: provide OsmAnd to setCreatingRouteMode
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
@@ -81,18 +82,18 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
     const json = osmand.data;
 
     if (osmand.ok && json && json.car) {
-        // Tracks-routing compatibility
-        if (json && setCreatingRouteMode) {
-            let creatingData = copyObj(json);
-            creatingData = filterMode(creatingData);
-            creatingData = addModes(creatingData);
-            setCreatingRouteMode({
-                mode: creatingRouteMode.mode,
-                modes: creatingData,
-                opts: creatingData[creatingRouteMode.mode]?.params,
-                colors: getColors(),
-            });
-        }
+        // // Tracks-routing compatibility
+        // if (json && setCreatingRouteMode) {
+        //     let creatingData = copyObj(json);
+        //     creatingData = filterMode(creatingData);
+        //     creatingData = addModes(creatingData);
+        //     setCreatingRouteMode({
+        //         mode: creatingRouteMode.mode,
+        //         modes: creatingData,
+        //         opts: creatingData[creatingRouteMode.mode]?.params,
+        //         colors: getColors(),
+        //     });
+        // }
 
         if (json) {
             // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
@@ -125,10 +126,12 @@ async function loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode }) {
     return null;
 }
 
-export async function loadProviders({ parseQueryString, creatingRouteMode = null, setCreatingRouteMode = null }) {
+// export async function loadProviders({ parseQueryString, creatingRouteMode = null, setCreatingRouteMode = null }) {
+export async function loadProviders({ parseQueryString = false } = {}) {
     const next = this.nextState();
 
-    const profilesOsmAnd = await loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode });
+    // const profilesOsmAnd = await loadProfilesOsmAnd({ creatingRouteMode, setCreatingRouteMode });
+    const profilesOsmAnd = await loadProfilesOsmAnd();
 
     const osmand = profilesOsmAnd ? [Object.assign({}, next.fallback, { profiles: profilesOsmAnd })] : [next.fallback];
 

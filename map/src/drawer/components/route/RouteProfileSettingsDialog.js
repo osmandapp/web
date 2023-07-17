@@ -21,8 +21,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../../../context/AppContext';
 
-export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) {
+export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings }) {
     const ctx = useContext(AppContext);
+
+    geoRouter = geoRouter || ctx.routeRouter; // trackRouter callers specify distinct geoRouter
 
     // Close = Accept
     const handleCloseAccept = () => {
@@ -32,23 +34,23 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
 
     // Reset options
     const handleReset = () => {
-        setOpts(ctx.routeRouter.getResetParams());
+        setOpts(geoRouter.getResetParams());
     };
 
     const saveParams = () => {
         if (opts) {
-            ctx.routeRouter.onParamsChanged({ params: opts });
+            geoRouter.onParamsChanged({ params: opts });
         }
     };
 
     const onChangeRouter = (e) => {
         saveParams();
-        ctx.routeRouter.onRouterProfileSelected({ router: e.target.value });
+        geoRouter.onRouterProfileSelected({ router: e.target.value });
     };
 
     const onChangeProfile = (e) => {
         saveParams();
-        ctx.routeRouter.onRouterProfileSelected({ profile: e.target.value });
+        geoRouter.onRouterProfileSelected({ profile: e.target.value });
     };
 
     let section = '';
@@ -89,16 +91,16 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
     };
 
     const showReset = () => {
-        return ctx.routeRouter.isParamsChanged({ params: opts });
+        return geoRouter.isParamsChanged({ params: opts });
     };
 
     const [opts, setOpts] = useState();
 
     useEffect(() => {
-        setOpts(ctx.routeRouter.getParams());
-    }, [ctx.routeRouter.getEffectDeps()]);
+        setOpts(geoRouter.getParams());
+    }, [geoRouter.getEffectDeps()]);
 
-    const { router, profile } = ctx.routeRouter.getProfile();
+    const { router, profile } = geoRouter.getProfile();
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
@@ -117,7 +119,7 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
                 <InputLabel id="route-provider-label">Provider</InputLabel>
                 <FormControl fullWidth>
                     <Select value={router} onChange={onChangeRouter}>
-                        {ctx.routeRouter.listProviders().map(({ key, name }) => (
+                        {geoRouter.listProviders().map(({ key, name }) => (
                             <MenuItem key={key} value={key}>
                                 {name}
                             </MenuItem>
@@ -128,7 +130,7 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
                 <InputLabel>Profile</InputLabel>
                 <FormControl fullWidth>
                     <Select value={profile} onChange={onChangeProfile}>
-                        {ctx.routeRouter.listProfiles().map(({ key, name, icon }) => (
+                        {geoRouter.listProfiles().map(({ key, name, icon }) => (
                             <MenuItem key={key} value={key}>
                                 <Box display="flex" width="100%" alignItems="center">
                                     <Box display="flex" width={25} justifyContent="center" alignItems="center">
@@ -196,7 +198,9 @@ export default function RouteProfileSettingsDialog({ useDev, setOpenSettings }) 
                         </Button>
                     )}
                 </Box>
-                <Button onClick={handleCloseAccept}>OK</Button>
+                <Button onClick={handleCloseAccept} sx={{ fontWeight: 'bold' }}>
+                    OK
+                </Button>
             </DialogActions>
         </Dialog>
     );

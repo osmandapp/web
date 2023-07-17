@@ -132,12 +132,12 @@ export async function calculateRoute({
 
     // OsmAnd (call original function)
     if (this.type === 'osmand') {
-        const routeMode = {
-            mode: this.profile,
-            opts: this.getParams() ?? {},
+        const geoProfile = {
+            profile: this.profile,
+            params: this.getParams() ?? {},
         };
         return calculateRouteOsmAnd({
-            routeMode,
+            geoProfile,
             startPoint,
             endPoint,
             interPoints,
@@ -198,7 +198,7 @@ async function calculateRouteOsmAnd({
     endPoint,
     interPoints,
     avoidRoads,
-    routeMode,
+    geoProfile,
     setRouteData,
     changeRouteText,
     setRoutingErrorMsg,
@@ -220,11 +220,10 @@ async function calculateRouteOsmAnd({
     }
     changeRouteText(true, null);
     const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
+    const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-            `routeMode=${TracksManager.formatRouteMode(
-                routeMode
-            )}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`,
+            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`,
         {
             apiCache: true,
             method: 'GET',

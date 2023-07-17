@@ -15,10 +15,12 @@ export async function calculateGpxRoute({
     changeRouteText,
     setRoutingErrorMsg,
 }) {
-    const routeMode = {
-        mode: this.profile,
-        opts: this.getParams() ?? {},
+    const geoProfile = {
+        profile: this.profile,
+        params: this.getParams() ?? {},
     };
+
+    const routeModeStr = TracksManager.formatRouteMode(geoProfile);
 
     setRoutingErrorMsg(null);
     changeRouteText(true, null);
@@ -27,9 +29,7 @@ export async function calculateGpxRoute({
     formData.append('file', routeTrackFile);
 
     const response = await apiGet(
-        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${TracksManager.formatRouteMode(
-            routeMode
-        )}`,
+        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/gpx-approximate?routeMode=${routeModeStr}`,
         {
             apiCache: true,
             method: 'POST',
