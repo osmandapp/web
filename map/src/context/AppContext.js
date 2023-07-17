@@ -320,7 +320,12 @@ export const AppContextProvider = (props) => {
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
-    const [selectedGpxFile, setSelectedGpxFile] = useState({});
+
+    const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
+    const setSelectedGpxFile = (s) => {
+        reactSetSelectedGpxFile(() => s); // convert setState({}) to queued setState(() => {})
+    };
+
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
     //
@@ -355,11 +360,11 @@ export const AppContextProvider = (props) => {
                 interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
     }
-    const [creatingRouteMode, setCreatingRouteMode] = useState({
-        mode: 'car',
-        opts: {},
-        modes: { car: { name: 'Car', params: {} } },
-    });
+    // const [creatingRouteMode, setCreatingRouteMode] = useState({
+    //     mode: 'car',
+    //     opts: {},
+    //     modes: { car: { name: 'Car', params: {} } },
+    // });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
@@ -402,6 +407,9 @@ export const AppContextProvider = (props) => {
     const [selectedWpt, setSelectedWpt] = useState(null);
 
     const [routeRouter, setRouteRouter] = useState(() => new geoRouter());
+    const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
+    const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
+    const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
     const [trackRange, setTrackRange] = useState(null);
     const [showPoints, setShowPoints] = useState({
@@ -411,6 +419,9 @@ export const AppContextProvider = (props) => {
     const [devMode, setDevMode] = useState(false);
 
     routeRouter.initSetter({ setter: setRouteRouter });
+    trackRouter.initSetter({ setter: setTrackRouter });
+    afterPointRouter.initSetter({ setter: setAfterPointRouter });
+    beforePointRouter.initSetter({ setter: setBeforePointRouter });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -431,8 +442,11 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            await routeRouter.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
-            // await (next class instance load) soon
+            // await routeRouter.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
+            await routeRouter.loadProviders({ parseQueryString: true });
+            await trackRouter.loadProviders();
+            await afterPointRouter.loadProviders();
+            await beforePointRouter.loadProviders();
         };
         sequentialLoad();
     }, []);
@@ -540,7 +554,9 @@ export const AppContextProvider = (props) => {
                 routeData,
                 setRouteData,
                 routeRouter,
-                setRouteRouter,
+                trackRouter,
+                afterPointRouter,
+                beforePointRouter,
                 routeShowPoints,
                 setRouteShowPoints,
                 weatherPoint,
@@ -570,8 +586,8 @@ export const AppContextProvider = (props) => {
                 OBJECT_TYPE_POI,
                 createTrack,
                 setCreateTrack,
-                creatingRouteMode,
-                setCreatingRouteMode,
+                // creatingRouteMode,
+                // setCreatingRouteMode,
                 gpxCollection,
                 setGpxCollection,
                 loadingContextMenu,

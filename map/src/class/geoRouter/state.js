@@ -40,18 +40,18 @@ export function nextState() {
  *
  * @param {Object|Function|null} state
  *
- * Object: flush based on previously copied @see nextState
- * Function: flush by applying callback: (old) => old.foo = bar
- * null: flush fresh copy of "this" (BAD idea to modify "this" by parent)
+ * Function: flush by applying callback: (old) => old.foo = bar -- BEST WAY
+ * Object: flush based on previously copied @see nextState -- USE ONCE PER RENDER
+ * null: flush fresh copy of "this" (BAD idea to modify "this" by parent) - DON'T USE
  *
  * @example
+ *
+ * this.flushState((o) => o.paused = !!pause); // simple mutate
  *
  * const next = this.nextState(); // complex mutate
  * next.router = router;
  * next.profile = profile;
  * next.flushState(next);
- *
- * this.flushState((o) => o.paused = !!pause); // simple mutate
  *
  * this.paused = !!pause; // bad mutate (you don't allowed to mutate this)
  * this.flushState();

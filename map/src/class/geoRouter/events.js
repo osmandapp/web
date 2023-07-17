@@ -17,33 +17,33 @@ export function onDragEnd() {
 /**
  * Save changed params to current router/profile
  */
-export function onParamsChanged({ params }) {
-    const next = this.nextState();
-
-    const router = next.router;
-    const profile = next.profile;
-
-    next.providers.forEach((r) => {
+export function onParamsChanged({ params, router = this.router, profile = this.profile }) {
+    this.providers.forEach((r, providerIdx) => {
         if (r.key === router) {
-            r.profiles?.forEach((p) => {
+            r.profiles?.forEach((p, profileIdx) => {
                 if (p.key === profile) {
-                    p.params = params;
+                    this.flushState((o) => {
+                        o.providers[providerIdx].profiles[profileIdx].params = params;
+                    });
                 }
             });
         }
     });
-
-    next.flushState(next);
 }
 
 /**
- * Pick type/router/profile based on selected one(s)
+ * Pick and set { type/router/profile } based params.
+ * Optionally, set given { params } to just picked profile.
+ * @alias onRouterProfileSelected { type, router, profile, params }
  */
-export function onRouterProfileSelected({ type = null, router = null, profile = null } = {}) {
-    const picked = this.pickTypeRouterProfile({ type, router, profile });
+export function onGeoProfile({ type = null, router = null, profile = null, params = null } = {}) {
+    const picked = this.pickTypeRouterProfile({ type, router, profile }); // FIXME - getProfile() !?
     this.flushState((o) => {
         o.type = picked.type;
         o.router = picked.router;
         o.profile = picked.profile;
     });
+    if (params) {
+        this.onParamsChanged({ params, router: picked.router, profile: picked.profile });
+    }
 }

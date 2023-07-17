@@ -61,7 +61,8 @@ export default class EditablePolyline {
             polyline.setStyle(this.style);
         } else {
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode],
+                // color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode],
+                color: this.ctx.trackRouter.getProfile()?.color,
             });
         }
         return polyline;
@@ -165,6 +166,7 @@ export default class EditablePolyline {
                 lat: lat,
                 lng: lng,
                 profile: prevPoint.profile,
+                geoProfile: prevPoint.geoProfile,
             };
             if (nextPoint.geometry) {
                 this.map.removeLayer(currentLayer);
@@ -198,6 +200,7 @@ export default class EditablePolyline {
                 delete newPoint.geometry;
                 if (newPoint.profile === TracksManager.PROFILE_GAP) {
                     newPoint.profile = _.cloneDeep(track.points[ind - 1].profile);
+                    newPoint.geoProfile = _.cloneDeep(track.points[ind - 1].geoProfile);
                 }
             }
 
@@ -263,7 +266,8 @@ export default class EditablePolyline {
                 polyline = new EditablePolyline(this.map, this.ctx, [startPoint, endPoint], null).create();
             }
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[startPoint.profile],
+                // color: this.ctx.creatingRouteMode.colors[startPoint.profile],
+                color: this.ctx.trackRouter.getProfile(startPoint)?.color,
             });
             this.ctx.selectedGpxFile.layers.addLayer(polyline);
         }

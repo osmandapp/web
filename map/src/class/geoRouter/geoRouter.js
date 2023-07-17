@@ -1,5 +1,6 @@
 import { calculateRoute } from './legacy/calculateRoute.js';
 import { calculateGpxRoute } from './legacy/calculateGpxRoute.js';
+import { updateRouteBetweenPoints } from './legacy/updateRouteBetweenPoints.js';
 
 import { loadProviders } from './methods/loadProviders.js';
 import { newInterPoint } from './methods/newInterPoint.js';
@@ -7,14 +8,7 @@ import { pickTypeRouterProfile } from './methods/pickTypeRouterProfile.js';
 
 import { initSetter, nextState, flushState } from './state.js';
 
-import {
-    onOpenSettings,
-    onCloseSettings,
-    onDragStart,
-    onDragEnd,
-    onParamsChanged,
-    onRouterProfileSelected,
-} from './events.js';
+import { onOpenSettings, onCloseSettings, onDragStart, onDragEnd, onParamsChanged, onGeoProfile } from './events.js';
 
 import {
     isReady,
@@ -26,6 +20,7 @@ import {
     getResetParams,
     isParamsChanged,
     getURL,
+    getGeoProfile,
 } from './getters.js';
 
 // fallback
@@ -71,6 +66,7 @@ export class geoRouter {
     getResetParams = getResetParams;
     isParamsChanged = isParamsChanged;
     getURL = getURL;
+    getGeoProfile = getGeoProfile;
 
     // events()
     onOpenSettings = onOpenSettings;
@@ -78,7 +74,8 @@ export class geoRouter {
     onDragStart = onDragStart;
     onDragEnd = onDragEnd;
     onParamsChanged = onParamsChanged;
-    onRouterProfileSelected = onRouterProfileSelected;
+    onGeoProfile = onGeoProfile;
+    onRouterProfileSelected = onGeoProfile; // alias
 
     // methods()
     loadProviders = loadProviders;
@@ -88,6 +85,7 @@ export class geoRouter {
     // legacy()
     calculateRoute = calculateRoute;
     calculateGpxRoute = calculateGpxRoute;
+    updateRouteBetweenPoints = updateRouteBetweenPoints;
 
     // state()
     nextState = nextState;

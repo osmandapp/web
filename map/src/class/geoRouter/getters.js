@@ -43,14 +43,42 @@ export function listProviders() {
 
 /**
  * Return current/specified profile.
- * @param { type, router, profile } optional
+ * @param { type, router, profile } optional ||
+ * @param { geoProfile } { type, router, profile }
  * @return { key, name, color, icon, type, router, profile }
+ * @note caller might use { track.point (with .geoProfile) } as parameter
  */
-export function getProfile({ type = this.type, router = this.router, profile = this.profile } = {}) {
+export function getProfile({ type = this.type, router = this.router, profile = this.profile, geoProfile } = {}) {
+    if (geoProfile) {
+        // console.log('getProfile(geoProfile)', geoProfile);
+        type = geoProfile.type ?? type;
+        router = geoProfile.router ?? router;
+        profile = geoProfile.profile ?? profile;
+    }
     const r = this.providers.find((r) => r.key === router);
     const p = r?.profiles?.find((p) => p.key === profile);
-    return getProfileDetails.call(this, { p, type, router, profile });
-    // return getProfileDetails.call(this, this.pickTypeRouterProfile({ type, router, profile }));
+    if (r && p) {
+        return getProfileDetails.call(this, { p, type, router, profile }); // quick
+    } else {
+        return getProfileDetails.call(this, this.pickTypeRouterProfile({ type, router, profile })); // slower
+    }
+}
+
+/**
+ * Return JSON for track.point.geoProfile
+ * @param { type, router, profile } optional ||
+ * @param { geoProfile } { type, router, profile }
+ * @return { type, router, profile, params } <geoProfile>
+ * @note caller might use { track.point.geoProfile } as parameters
+ */
+export function getGeoProfile({ type = this.type, router = this.router, profile = this.profile, geoProfile } = {}) {
+    const found = this.getProfile({ type, router, profile, geoProfile });
+    return {
+        type: found.type,
+        router: found.router,
+        profile: found.profile,
+        params: found.params ?? {},
+    };
 }
 
 /**
@@ -69,8 +97,8 @@ export function getParams({ router, profile } = {}) {
 // return copy of profile's resetParams
 export function getResetParams({ type, router, profile } = {}) {
     if (type) {
-        // legacy for old RouteSettingsDialog
-        return copyObj(this.getProfile(this.pickTypeRouterProfile({ type, profile }))?.resetParams);
+        // legacy for old RouteSettingsDialog, cleaned-up
+        // return copyObj(this.getProfile(this.pickTypeRouterProfile({ type, profile }))?.resetParams);
     }
     return copyObj(this.getProfile({ router, profile })?.resetParams);
 }
@@ -111,6 +139,9 @@ function getProfileDetails({ p, type, router, profile } = {}) {
         type,
         router,
         profile,
+        // routeMode: { mode: profile, opts: params }, // legacy, cleaned-up
+        // mode: key, // legacy for formatRouteMode() updateRouteBetweenPoints(), cleaned-up
+        // opts: params, // legacy for formatRouteMode() updateRouteBetweenPoints(), cleaned-up
     };
 }
 
@@ -121,10 +152,11 @@ function getProfileIcon({ color, profile } = {}) {
         return <BusAlertIcon sx={{ color: color }} fontSize="small" />;
     } else {
         const path = '/map/images/profile_icons/' + profile + '.svg';
-        return (
-            <svg height="25" width="25" alt={profile}>
-                <image href={path} />
-            </svg>
-        );
+        return <img src={path} width={25} height={25} alt={profile} />;
+        // return (
+        //     <svg height="25" width="25" alt={profile}>
+        //         <image href={path} width="25" height="25" />
+        //     </svg>
+        // );
     }
 }
