@@ -1,13 +1,13 @@
-import {IconButton, ListItemText, TextField} from "@mui/material";
-import {Delete} from "@mui/icons-material";
-import React from "react";
-import contextMenuStyles from "../../../styles/ContextMenuStyles";
+import { IconButton, ListItemText, TextField } from '@mui/material';
+import { Delete } from '@mui/icons-material';
+import React from 'react';
+import contextMenuStyles from '../../../styles/ContextMenuStyles';
 
-export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, setClose}) {
-
+export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, setClose }) {
     const menuStyles = contextMenuStyles();
 
-    return (<ListItemText>
+    return (
+        <ListItemText>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="address"
@@ -27,8 +27,8 @@ export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, se
                     setFavoriteAddress('');
                 }}
             >
-                <Delete fontSize="small"/>
+                <Delete fontSize="small" />
             </IconButton>
         </ListItemText>
-    )
+    );
 }

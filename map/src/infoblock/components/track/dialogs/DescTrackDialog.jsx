@@ -1,28 +1,22 @@
-import {Dialog} from "@material-ui/core";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import TracksManager from "../../../../context/TracksManager";
-import DialogActions from "@mui/material/DialogActions";
-import {Alert, Box, Button, TextField} from "@mui/material";
-import React, {useContext, useEffect, useState} from "react";
-import AppContext from "../../../../context/AppContext";
-import {Editor} from "react-draft-wysiwyg";
-import {
-    ContentState,
-    convertFromHTML,
-    convertToRaw,
-    EditorState
-} from "draft-js";
+import { Dialog } from '@material-ui/core';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import TracksManager from '../../../../context/TracksManager';
+import DialogActions from '@mui/material/DialogActions';
+import { Alert, Box, Button, TextField } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import AppContext from '../../../../context/AppContext';
+import { Editor } from 'react-draft-wysiwyg';
+import { ContentState, convertFromHTML, convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import "draft-js/dist/Draft.css";
-import _ from "lodash";
-import contextMenuStyles from "../../../styles/ContextMenuStyles";
-import {AddPhotoAlternate} from "@mui/icons-material";
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import 'draft-js/dist/Draft.css';
+import _ from 'lodash';
+import contextMenuStyles from '../../../styles/ContextMenuStyles';
+import { AddPhotoAlternate } from '@mui/icons-material';
 
-export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
-
+export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
     const ctx = useContext(AppContext);
     const styles = contextMenuStyles();
 
@@ -47,10 +41,7 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
             const desc = ctx.selectedGpxFile?.metaData?.desc;
             if (desc) {
                 setDescription(desc);
-                setState(EditorState.createWithContent(
-                    ContentState.createFromBlockArray(
-                        convertFromHTML(desc)
-                    )));
+                setState(EditorState.createWithContent(ContentState.createFromBlockArray(convertFromHTML(desc))));
             }
             const img = ctx.selectedGpxFile?.metaData?.link;
             if (img) {
@@ -58,7 +49,7 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
                 setPrevLink(_.cloneDeep(img));
             }
         }
-    }, [dialogOpen])
+    }, [dialogOpen]);
 
     function saveImg(newUrl) {
         if (ctx.selectedGpxFile?.metaData) {
@@ -74,9 +65,7 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
     function saveDesc(state) {
         if (state.getCurrentContent().hasText() && state.getCurrentContent().getPlainText().length > 0) {
             if (ctx.selectedGpxFile) {
-                const newDesc = draftToHtml(
-                    convertToRaw(state.getCurrentContent())
-                );
+                const newDesc = draftToHtml(convertToRaw(state.getCurrentContent()));
                 setDescription(newDesc);
                 if (!ctx.selectedGpxFile.metaData) {
                     ctx.selectedGpxFile.metaData = {};
@@ -92,55 +81,49 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
     }
 
     function saveState() {
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setLocalTracks([...ctx.localTracks]);
         TracksManager.saveTracks(ctx.localTracks, ctx);
     }
-
 
     return (
         <>
             <Dialog disableEnforceFocus open={dialogOpen} onClose={toggleShowDialog}>
                 <DialogTitle>Description</DialogTitle>
-                <DialogContent
-                    sx={{minWidth: "300px"}}>
-                    {!editDescription
-                        ? <>
-                            {link
-                                ? <Box
-                                    component="img"
-                                    src={link}
-                                    onClick={toggleShowEditImgDialog}
-                                />
-                                : <Button
+                <DialogContent sx={{ minWidth: '300px' }}>
+                    {!editDescription ? (
+                        <>
+                            {link ? (
+                                <Box component="img" src={link} onClick={toggleShowEditImgDialog} />
+                            ) : (
+                                <Button
                                     variant="contained"
-                                    sx={{ml: "-0.5px !important"}}
+                                    sx={{ ml: '-0.5px !important' }}
                                     className={styles.button}
                                     onClick={() => {
-                                        toggleShowEditImgDialog()
+                                        toggleShowEditImgDialog();
                                     }}
                                 >
-                                    <AddPhotoAlternate
-                                        fontSize="small"
-                                    />
+                                    <AddPhotoAlternate fontSize="small" />
                                     Add title image
-                                </Button>}
-                            {openDescAlert && !description &&
+                                </Button>
+                            )}
+                            {openDescAlert && !description && (
                                 <Alert
-                                    sx={{mt: 2}}
+                                    sx={{ mt: 2 }}
                                     severity="info"
                                     onClose={() => {
-                                        setOpenDescAlert(false)
-                                    }
-                                    }>
+                                        setOpenDescAlert(false);
+                                    }}
+                                >
                                     Click EDIT to add a description...
                                 </Alert>
-                            }
+                            )}
                             <DialogContentText>
-                                <div dangerouslySetInnerHTML={{__html: description}}/>
+                                <div dangerouslySetInnerHTML={{ __html: description }} />
                             </DialogContentText>
                         </>
-                        :
+                    ) : (
                         <Editor
                             editorState={state}
                             onEditorStateChange={setState}
@@ -148,21 +131,26 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
                             wrapperClassName="wrapperClassName"
                             editorClassName="editorClassName"
                         />
-                    }
+                    )}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={toggleShowDialog}>Cancel</Button>
-                    {!editDescription
-                        ? <Button onClick={() => setEditDescription(true)}>Edit</Button>
-                        : <Button onClick={() => {
-                            saveDesc(state);
-                            setEditDescription(false);
-                        }
-                        }>Save</Button>}
+                    {!editDescription ? (
+                        <Button onClick={() => setEditDescription(true)}>Edit</Button>
+                    ) : (
+                        <Button
+                            onClick={() => {
+                                saveDesc(state);
+                                setEditDescription(false);
+                            }}
+                        >
+                            Save
+                        </Button>
+                    )}
                 </DialogActions>
             </Dialog>
             <Dialog open={editImgDialogOpen} onClose={toggleShowEditImgDialog}>
-                <DialogContent sx={{minWidth: "300px"}}>
+                <DialogContent sx={{ minWidth: '300px' }}>
                     <TextField
                         autoFocus
                         margin="dense"
@@ -176,21 +164,20 @@ export default function DescTrackDialog({dialogOpen, setDialogOpen}) {
                         fullWidth
                         variant="standard"
                         value={link ? link : ''}
-                    >
-                    </TextField>
+                    ></TextField>
                 </DialogContent>
                 <DialogActions>
                     <Button
                         onClick={() => {
                             setLink(prevLink);
-                            toggleShowEditImgDialog()
+                            toggleShowEditImgDialog();
                         }}
                     >
                         Cancel
                     </Button>
                     <Button
                         onClick={() => {
-                            saveImg(linkEditValue)
+                            saveImg(linkEditValue);
                             toggleShowEditImgDialog();
                         }}
                     >

@@ -1,18 +1,19 @@
-import LinearScaleIcon from "@mui/icons-material/LinearScale";
-import React from "react";
-import TracksManager from "../context/TracksManager";
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import React from 'react';
+import TracksManager from '../context/TracksManager';
 import { apiGet } from '../util/HttpApi';
 
 async function getFileData(file) {
     let trackData;
-    if (file.url.substr(0, 1) === '<') { // direct XML has to start with a <
+    if (file.url.substr(0, 1) === '<') {
+        // direct XML has to start with a <
         trackData = file.url;
     } else {
         let response = await apiGet(file.url, file.urlopts ? file.urlopts : {});
         if (response.ok) {
             trackData = await response.text();
         } else {
-            trackData = '<gpx version="1.1" />'
+            trackData = '<gpx version="1.1" />';
         }
     }
     return trackData;
@@ -22,26 +23,26 @@ const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6372.8; // for haversine use R = 6372.8 km instead of 6371 km
     const dLat = toRadians(lat2 - lat1);
     const dLon = toRadians(lon2 - lon1);
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
     //double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     //return R * c * 1000;
     // simplyfy haversine:
-    return (2 * R * 1000 * Math.asin(Math.sqrt(a)));
-}
+    return 2 * R * 1000 * Math.asin(Math.sqrt(a));
+};
 
 const toRadians = (angdeg) => {
-    return angdeg / 180.0 * Math.PI;
-}
+    return (angdeg / 180.0) * Math.PI;
+};
 
 function getPointsDist(list) {
     let dist = 0;
     if (list.length > 0) {
         for (let index = 0; index < list.length; ++index) {
             if (index === 0) {
-                list[index].distance = 0
-                list[index].distanceFromStart = 0
+                list[index].distance = 0;
+                list[index].distanceFromStart = 0;
             } else {
                 let d = getDistance(list[index].lat, list[index].lng, list[index - 1].lat, list[index - 1].lng);
                 dist += d;
@@ -72,14 +73,21 @@ function hexToArgb(hex) {
 
 function getProfileIcon(profile, color) {
     if (profile === TracksManager.PROFILE_LINE) {
-        return <LinearScaleIcon sx={{ color: color }} fontSize="small"/>
+        return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
     } else {
-        return <img color={color}
-                    src={"/map/images/profile_icons/" + profile + ".svg"} height={25} width={25} alt={profile}/>
+        return (
+            <img
+                color={color}
+                src={'/map/images/profile_icons/' + profile + '.svg'}
+                height={25}
+                width={25}
+                alt={profile}
+            />
+        );
     }
 }
 
-export function mergeStateObject(getObject, setFunction, todoObject, path = null) {
+export function mergeStateObject(getObject, setFunction, todoObject) {
     /*
         Please note: getObject will be directly modified here!
         In the next render cycle it will be overriden by useState.
@@ -88,7 +96,7 @@ export function mergeStateObject(getObject, setFunction, todoObject, path = null
         You might use return Object as you want, but you don't have to re-assign it to getObject (as it's already done).
     */
     const merged = Object.assign(getObject, todoObject); // getObject has been modified
-    setFunction(previous => Object.assign({}, previous, merged)); // push useState setter()
+    setFunction((previous) => Object.assign({}, previous, merged)); // push useState setter()
     return merged;
 }
 
@@ -104,9 +112,7 @@ export function quickNaNfix(badString) {
     const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
     const nil = ':null'; // other NaN(s) to null (think about srtmEle)
 
-    return badString
-        .replace(/"ele": ?NaN\b/g, ele)
-        .replace(/: ?NaN\b/g, nil);
+    return badString.replace(/"ele": ?NaN\b/g, ele).replace(/: ?NaN\b/g, nil);
 }
 
 /*
@@ -122,7 +128,7 @@ const Utils = {
     getDistance,
     getPointsDist,
     hexToArgb,
-    getProfileIcon
+    getProfileIcon,
 };
 
 export default Utils;

@@ -1,20 +1,18 @@
-import {AppBar, Button, LinearProgress, Box} from "@mui/material";
-import AppContext from "../../context/AppContext"
-import React, {useState, useContext, useEffect} from "react";
-import {TabContext, TabList, TabPanel} from "@mui/lab";
-import {Close} from '@mui/icons-material';
-import TrackTabList from "./tabs/TrackTabList";
-import WeatherTabList from "./tabs/WeatherTabList";
-import PanelButtons from "./PanelButtons";
-import FavoritesTabList from "./tabs/FavoritesTabList";
-import _ from "lodash";
-import ChangeProfileTrackDialog from "./track/dialogs/ChangeProfileTrackDialog";
-import PointContextMenu from "./PointContextMenu";
-import PoiTabList from "../PoiTabList";
+import { AppBar, Button, LinearProgress, Box } from '@mui/material';
+import AppContext from '../../context/AppContext';
+import React, { useState, useContext, useEffect } from 'react';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { Close } from '@mui/icons-material';
+import TrackTabList from './tabs/TrackTabList';
+import WeatherTabList from './tabs/WeatherTabList';
+import PanelButtons from './PanelButtons';
+import FavoritesTabList from './tabs/FavoritesTabList';
+import _ from 'lodash';
+import ChangeProfileTrackDialog from './track/dialogs/ChangeProfileTrackDialog';
+import PointContextMenu from './PointContextMenu';
+import PoiTabList from '../PoiTabList';
 
-
-export default function InformationBlock({hideContextMenu, drawerWidth}) {
-
+export default function InformationBlock({ hideContextMenu, drawerWidth }) {
     const ctx = useContext(AppContext);
 
     const [showContextMenu, setShowContextMenu] = useState(false);
@@ -26,21 +24,24 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
     useEffect(() => {
         if (!showContextMenu) {
             stopCreatedTrack(false);
-            ctx.setShowPoints({points: true, wpts: true});
+            ctx.setShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
             ctx.setCurrentObjectType(null);
         }
-    }, [showContextMenu])
+    }, [showContextMenu]);
 
     useEffect(() => {
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
             stopCreatedTrack(true);
         }
-    }, [ctx.currentObjectType])
+    }, [ctx.currentObjectType]);
 
     useEffect(() => {
-        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER) {
+        if (
+            (!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) &&
+            ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER
+        ) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowContextMenu(false);
@@ -74,7 +75,11 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
     function clearStateIfObjChange() {
-        if (prevTrack && prevTrack.name !== ctx.selectedGpxFile.name && prevTrack.points?.length !== ctx.selectedGpxFile?.points?.length) {
+        if (
+            prevTrack &&
+            prevTrack.name !== ctx.selectedGpxFile.name &&
+            prevTrack.points?.length !== ctx.selectedGpxFile?.points?.length
+        ) {
             setClearState(true);
         } else {
             setClearState(false);
@@ -87,55 +92,57 @@ export default function InformationBlock({hideContextMenu, drawerWidth}) {
             if (deletePrev) {
                 ctx.createTrack.deletePrev = deletePrev;
             }
-            ctx.setCreateTrack({...ctx.createTrack});
+            ctx.setCreateTrack({ ...ctx.createTrack });
             ctx.addFavorite.editTrack = false;
-            ctx.setAddFavorite({...ctx.addFavorite});
+            ctx.setAddFavorite({ ...ctx.addFavorite });
         }
     }
 
-
-    return <>{showContextMenu && !hideContextMenu &&
+    return (
         <>
-            <Box
-                anchor={'right'}
-                sx={{alignContent: "flex-end", height: '100vh', overflow: 'auto', width: '800px !important'}}
-                >
-                <div>
-                    {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20}/>}
-                    {tabsObj && tabsObj.tabList.length > 0 &&
-                        <TabContext value={value}>
-                            <AppBar position='static' color='default'>
-                                <div style={{display: 'inherit'}}>
-                                    <Button key='close' onClick={() => setShowContextMenu(false)}>
-                                        <Close/>
-                                    </Button>
-                                    <TabList
-                                        onChange={(e, newValue) => setValue(newValue)}
-                                        children={tabsObj.tabList}
-                                    />
-                                </div>
-                            </AppBar>
-                            <div>
-                                {Object.values(tabsObj.tabs).map((item, index) =>
-                                    <TabPanel
-                                        value={item.key + ''}
-                                        key={'tabpanel:' + item.key}>
-                                        {item}
-                                    </TabPanel>)
-                                }
-                            </div>
-                        </TabContext>
-                    }
-                </div>
-            </Box>
-            <PanelButtons
-                drawerWidth={drawerWidth}
-                showContextMenu={showContextMenu}
-                setShowContextMenu={setShowContextMenu}
-                clearState={clearState}/>
+            {showContextMenu && !hideContextMenu && (
+                <>
+                    <Box
+                        anchor={'right'}
+                        sx={{ alignContent: 'flex-end', height: '100vh', overflow: 'auto', width: '800px !important' }}
+                    >
+                        <div>
+                            {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                            {tabsObj && tabsObj.tabList.length > 0 && (
+                                <TabContext value={value}>
+                                    <AppBar position="static" color="default">
+                                        <div style={{ display: 'inherit' }}>
+                                            <Button key="close" onClick={() => setShowContextMenu(false)}>
+                                                <Close />
+                                            </Button>
+                                            <TabList onChange={(e, newValue) => setValue(newValue)}>
+                                                {tabsObj.tabList}
+                                            </TabList>
+                                        </div>
+                                    </AppBar>
+                                    <div>
+                                        {Object.values(tabsObj.tabs).map((item) => (
+                                            <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}>
+                                                {item}
+                                            </TabPanel>
+                                        ))}
+                                    </div>
+                                </TabContext>
+                            )}
+                        </div>
+                    </Box>
+                </>
+            )}
+            {showContextMenu && (
+                <PanelButtons
+                    drawerWidth={drawerWidth}
+                    showContextMenu={showContextMenu}
+                    setShowContextMenu={setShowContextMenu}
+                    clearState={clearState}
+                />
+            )}
+            {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
+            {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}
         </>
-    }
-        {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true}/>}
-        {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref}/>}
-    </>
+    );
 }

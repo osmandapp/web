@@ -1,8 +1,8 @@
-import Utils, {quickNaNfix} from "../util/Utils";
-import FavoritesManager from "./FavoritesManager";
-import _ from "lodash";
-import {apiGet, apiPost} from '../util/HttpApi';
-import {compressFromJSON, decompressToJSON} from "../util/GzipBase64.mjs";
+import Utils, { quickNaNfix } from '../util/Utils';
+import FavoritesManager from './FavoritesManager';
+import _ from 'lodash';
+import { apiGet, apiPost } from '../util/HttpApi';
+import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -31,7 +31,7 @@ async function loadTracks(setLoading) {
                 if (json) {
                     localTracks[ind] = json;
                 } else {
-                    console.log('loadTracks empty track: ' + name)
+                    console.log('loadTracks empty track: ' + name);
                     localStorage.removeItem(name);
                 }
             } catch {
@@ -52,7 +52,7 @@ function fixLocalTracks(localTracks) {
     if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
         console.log('loadTracks localTrack_0 (hole) localTrack_X workaround');
         const fixTracks = [];
-        localTracks.forEach(t => fixTracks.push(t));
+        localTracks.forEach((t) => fixTracks.push(t));
         updateLocalTracks(fixTracks).then();
         localTracks = fixTracks;
     }
@@ -79,11 +79,11 @@ function openVisibleTracks(localTracks) {
 }
 
 function saveLocalTrack(tracks, ctx) {
-    let currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    let currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
 
     if (currentTrackIndex === -1) {
         tracks.push(ctx.selectedGpxFile);
-        currentTrackIndex = tracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+        currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
     }
 
     const track = ctx.selectedGpxFile;
@@ -93,12 +93,14 @@ function saveLocalTrack(tracks, ctx) {
     if (!totalSize) {
         totalSize = 0;
     }
-    compressFromJSON(prepareLocalTrack(track)).then(res => {
+    compressFromJSON(prepareLocalTrack(track)).then((res) => {
         tracksSize = res.length;
         let oldSize = getOldSizeTrack(currentTrackIndex);
         totalSize = totalSize - oldSize + tracksSize;
-        if (((oldSize === 0 && (tracksSize + totalSize)) || ((totalSize - oldSize) + tracksSize)) > 5000000) {
-            ctx.setRoutingErrorMsg("Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes.");
+        if (((oldSize === 0 && tracksSize + totalSize) || totalSize - oldSize + tracksSize) > 5000000) {
+            ctx.setRoutingErrorMsg(
+                "Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes."
+            );
         } else {
             ctx.setRoutingErrorMsg(null);
             localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
@@ -172,7 +174,7 @@ function createName(ctx) {
     let count = 0;
     let name;
     let maxNumber = 0;
-    ctx.localTracks.forEach(t => {
+    ctx.localTracks.forEach((t) => {
         if (t.name.split(' - ')[0] === date) {
             let sp = parseInt(t.name.split(' - ')[1], 10);
             count++;
@@ -180,13 +182,13 @@ function createName(ctx) {
                 maxNumber = sp;
             }
         }
-    })
-    name = count > 0 ? (date + ' - ' + (count + 1)) : date;
-    ctx.localTracks.forEach(t => {
+    });
+    name = count > 0 ? date + ' - ' + (count + 1) : date;
+    ctx.localTracks.forEach((t) => {
         if (t.name === name) {
             name = date + ' - ' + (maxNumber + 1);
         }
-    })
+    });
 
     return name;
 }
@@ -199,9 +201,9 @@ function getFileName(currentFile) {
 function prepareName(name, local) {
     name = name.replace(/.gpx/, '');
     if (name.includes('/')) {
-        return name.split('/')[1]
+        return name.split('/')[1];
     } else if (local && name.includes(':')) {
-        return name.split(':')[1]
+        return name.split(':')[1];
     } else {
         return name;
     }
@@ -210,11 +212,11 @@ function prepareName(name, local) {
 function getGroup(name, local) {
     name = name.replace(/.gpx/, '');
     if (name.includes('/')) {
-        return name.split('/')[0]
+        return name.split('/')[0];
     } else if (local && name.includes(':')) {
-        return name.split(':')[0]
+        return name.split(':')[0];
     } else {
-        return "Tracks";
+        return 'Tracks';
     }
 }
 
@@ -224,7 +226,7 @@ async function getTrackData(file) {
     const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
         method: 'POST',
         credentials: 'include',
-        body: formData
+        body: formData,
     });
 
     let track = null;
@@ -258,22 +260,22 @@ function prepareTrack(track) {
 
 function hasGeo(track) {
     if (!_.isEmpty(track.points)) {
-        track.points.forEach(p => {
+        track.points.forEach((p) => {
             if (p.geometry?.length > 0) {
                 return true;
             }
-        })
+        });
     } else {
         if (track.tracks) {
-            track.tracks.forEach(t => {
+            track.tracks.forEach((t) => {
                 if (t.points) {
-                    t.points.forEach(p => {
+                    t.points.forEach((p) => {
                         if (p.geometry?.length > 0) {
                             return true;
                         }
-                    })
+                    });
                 }
-            })
+            });
         }
     }
     return false;
@@ -287,34 +289,34 @@ function openNewLocalTrack(ctx) {
     selectedTrack.index = ctx.localTracks.length - 1;
     ctx.setCreateTrack({
         enable: true,
-        edit: true
-    })
+        edit: true,
+    });
     ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
 }
 
 function closeCloudTrack(ctx, track) {
     if (ctx.gpxFiles[track.originalName]) {
         ctx.gpxFiles[track.originalName].url = null;
-        ctx.setGpxFiles({...ctx.gpxFiles});
+        ctx.setGpxFiles({ ...ctx.gpxFiles });
     }
 }
 
 function getTrackPoints(track) {
     let points = [];
     if (track.tracks) {
-        track.tracks.forEach(track => {
+        track.tracks.forEach((track) => {
             if (track.points) {
-                track.points.forEach(point => {
+                track.points.forEach((point) => {
                     if (point.geometry) {
-                        point.geometry.forEach(trk => {
+                        point.geometry.forEach((trk) => {
                             points.push(trk);
-                        })
+                        });
                     } else {
                         points.push(point);
                     }
-                })
+                });
             }
-        })
+        });
     }
     return points;
 }
@@ -322,22 +324,22 @@ function getTrackPoints(track) {
 function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
-        track.tracks.forEach(track => {
-            track.points?.forEach(point => {
+        track.tracks.forEach((track) => {
+            track.points?.forEach((point) => {
                 points.push(point);
-            })
-        })
+            });
+        });
     }
     return points;
 }
 
 function addDistance(track) {
     if (track.tracks) {
-        track.tracks.forEach(t => {
+        track.tracks.forEach((t) => {
             if (!_.isEmpty(t.points)) {
                 addDistanceToPoints(t.points);
             }
-        })
+        });
     }
 }
 
@@ -347,9 +349,9 @@ function addDistanceToPoints(points) {
     for (let point of points) {
         if (point.geometry) {
             point.dist = 0;
-            point.geometry.forEach(p => {
+            point.geometry.forEach((p) => {
                 point.dist += p.distance;
-            })
+            });
             distanceFromStart += point.dist;
             point.distanceFromStart = distanceFromStart;
             if (point.geometry[point.geometry.length - 1]?.profile === TracksManager.PROFILE_GAP) {
@@ -383,13 +385,13 @@ function addDistanceToPoints(points) {
 
 async function getGpxTrack(file) {
     let trackData = {
-        tracks: file.points ? [{points: file.points}] : file.tracks,
+        tracks: file.points ? [{ points: file.points }] : file.tracks,
         wpts: file.wpts,
         metaData: file.metaData,
         pointsGroups: file.pointsGroups,
         ext: file.ext,
-        analysis: null
-    }
+        analysis: null,
+    };
 
     if (!trackData.metaData?.name) {
         if (!trackData.metaData) {
@@ -398,44 +400,44 @@ async function getGpxTrack(file) {
         trackData.metaData.name = file.name;
     }
 
-    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData,
-        {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+    return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 }
 
 async function saveTrack(ctx, currentFolder, fileName, type, file) {
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
-        if (currentFolder === "Tracks") {
-            currentFolder = "";
+        if (currentFolder === 'Tracks') {
+            currentFolder = '';
         } else {
-            currentFolder = currentFolder + "/";
+            currentFolder = currentFolder + '/';
         }
     }
     if (ctx.loginUser) {
-        let gpxFile = file ? file : (ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile);
+        let gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
         if (gpxFile.points) {
-            gpxFile.tracks = [{points: gpxFile.points}];
+            gpxFile.tracks = [{ points: gpxFile.points }];
         }
         let gpx = await getGpxTrack(gpxFile);
         if (gpx) {
             let convertedData = new TextEncoder().encode(gpx.data);
-            let zippedResult = require('pako').gzip(convertedData, {to: "Uint8Array"});
+            let zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
             let convertedZipped = zippedResult.buffer;
-            let oMyBlob = new Blob([convertedZipped], {type: "gpx"});
+            let oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             let data = new FormData();
             data.append('file', oMyBlob, gpxFile.name);
             let res;
-            res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data,
-                {
-                    params: {
-                        name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : (currentFolder + fileName + ".gpx"),
-                        type: type,
-                    }
-                }
-            );
+            res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
+                params: {
+                    name:
+                        type === FavoritesManager.FAVORITE_FILE_TYPE
+                            ? currentFolder
+                            : currentFolder + fileName + '.gpx',
+                    type: type,
+                },
+            });
 
             if (res && res?.data?.status === 'ok') {
                 const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -449,7 +451,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 }
 
 function deleteLocalTrack(ctx) {
-    let currentTrackIndex = ctx.localTracks.findIndex(t => t.name === ctx.selectedGpxFile.name);
+    let currentTrackIndex = ctx.localTracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
         localStorage.removeItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
@@ -466,7 +468,7 @@ function deleteLocalTrack(ctx) {
 
 function formatRouteMode(routeMode) {
     let routeModeStr = routeMode.mode;
-    Object.keys(routeMode.opts).forEach(o => {
+    Object.keys(routeMode.opts).forEach((o) => {
         if (routeMode.opts[o]?.value === true) {
             routeModeStr += ',' + o;
         } else if (routeMode.opts[o]?.value === false) {
@@ -481,24 +483,22 @@ function formatRouteMode(routeMode) {
 async function updateRouteBetweenPoints(ctx, start, end, settings) {
     ctx.setProcessRouting(true);
     let routeMode = settings ? formatRouteMode(settings) : formatRouteMode(ctx.creatingRouteMode);
-    let result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '',
-        {
-            params: {
-                start: JSON.stringify({latitude: start.lat, longitude: start.lng}),
-                end: JSON.stringify({latitude: end.lat, longitude: end.lng}),
-                routeMode: routeMode,
-                hasRouting: start.segment !== null || end.segment !== null,
-                maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE
-            },
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-    );
+    let result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '', {
+        params: {
+            start: JSON.stringify({ latitude: start.lat, longitude: start.lng }),
+            end: JSON.stringify({ latitude: end.lat, longitude: end.lng }),
+            routeMode: routeMode,
+            hasRouting: start.segment !== null || end.segment !== null,
+            maxDist: process.env.REACT_APP_MAX_ROUTE_DISTANCE,
+        },
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 
     if (result) {
         let data = result?.data; // points
-        if (typeof result?.data === "string") {
+        if (typeof result?.data === 'string') {
             data = JSON.parse(quickNaNfix(result.data));
         }
         if (data?.msg) {
@@ -519,7 +519,7 @@ async function updateRoute(points) {
     }
     if (result && result.data) {
         let data = result.data; // points
-        if (typeof result.data === "string") {
+        if (typeof result.data === 'string') {
             data = JSON.parse(quickNaNfix(result.data));
         }
         updateGapProfileAllSegments(data.points);
@@ -532,9 +532,9 @@ async function updateRoute(points) {
 
 function updateGapProfileAllSegments(points) {
     if (points) {
-        points.forEach(p => {
+        points.forEach((p) => {
             updateGapProfileOneSegment(p, p.geometry);
-        })
+        });
     }
 }
 
@@ -589,7 +589,7 @@ function updateStat(track) {
             for (let p of t.points) {
                 if (p.geometry) {
                     for (let g of p.geometry) {
-                        let ele = getEle(g, "ele", p.geometry);
+                        let ele = getEle(g, 'ele', p.geometry);
                         track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
                         if (ele > 0) {
                             totalEleSum += ele;
@@ -598,7 +598,7 @@ function updateStat(track) {
                         }
                     }
                 } else {
-                    let ele = getEle(p, "ele", t.points);
+                    let ele = getEle(p, 'ele', t.points);
                     track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
                     if (ele > 0) {
                         totalEleSum += ele;
@@ -640,21 +640,20 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     const wpts = _.cloneDeep(ctx.selectedGpxFile.wpts);
     const pointsGroups = _.cloneDeep(ctx.selectedGpxFile.pointsGroups);
     let data = {
-        tracks: points ? [{points: points}] : ctx.selectedGpxFile.tracks,
+        tracks: points ? [{ points: points }] : ctx.selectedGpxFile.tracks,
         metaData: ctx.selectedGpxFile.metaData,
         ext: ctx.selectedGpxFile.ext,
-        analysis: ctx.selectedGpxFile.analysis
-    }
-    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data,
-        {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        analysis: ctx.selectedGpxFile.analysis,
+    };
+    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, data, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
     if (resp.data) {
         setLoading(false);
         let data = FavoritesManager.prepareTrackData(resp.data);
-        Object.keys(data.data).forEach(t => {
+        Object.keys(data.data).forEach((t) => {
             ctx.selectedGpxFile[`${t}`] = data.data[t];
         });
         ctx.selectedGpxFile.update = true;
@@ -675,17 +674,16 @@ async function getLocalTrackAnalysis(f) {
     let data = {
         tracks: f.tracks,
         metaData: f.metaData,
-        ext: f.ext
-    }
-    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data,
-        {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        ext: f.ext,
+    };
+    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
     if (resp.data) {
         let data = FavoritesManager.prepareTrackData(resp.data);
-        Object.keys(data.data).forEach(t => {
+        Object.keys(data.data).forEach((t) => {
             f[`${t}`] = data.data[t];
         });
         return f;
@@ -697,22 +695,22 @@ async function getLocalTrackAnalysis(f) {
 
 function createTrack(ctx, latlng) {
     let createState = {
-        enable: true
-    }
+        enable: true,
+    };
     if (latlng) {
         createState.latlng = latlng;
     }
     if (ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile)
-        }
+            file: _.cloneDeep(ctx.selectedGpxFile),
+        };
     }
-    ctx.setCreateTrack({...createState});
+    ctx.setCreateTrack({ ...createState });
 }
 
 function createGpxTracks() {
     let res = [];
-    res.push({points: []})
+    res.push({ points: [] });
     return res;
 }
 
@@ -728,16 +726,16 @@ function clearTrack(file, points) {
 }
 
 function getTracks(allFiles) {
-    return (!allFiles || !allFiles.uniqueFiles ? [] :
-        allFiles.uniqueFiles).filter((item) => {
-        return (item.type === 'gpx' || item.type === 'GPX')
-            && (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX');
+    return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
+        return (
+            (item.type === 'gpx' || item.type === 'GPX') &&
+            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
+        );
     });
 }
 
 function getFavoriteGroups(allFiles) {
-    return (!allFiles || !allFiles.uniqueFiles ? [] :
-        allFiles.uniqueFiles).filter((item) => {
+    return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
         return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
     });
 }
@@ -748,7 +746,7 @@ function isEqualPoints(point1, point2) {
 
 function updateState(ctx) {
     ctx.trackState.update = true;
-    ctx.setTrackState({...ctx.trackState});
+    ctx.setTrackState({ ...ctx.trackState });
 }
 
 function updateGlobalProfileState(ctx, profile) {
@@ -756,8 +754,8 @@ function updateGlobalProfileState(ctx, profile) {
         mode: profile,
         modes: ctx.creatingRouteMode.modes,
         opts: ctx.creatingRouteMode.modes[profile]?.params,
-        colors: ctx.creatingRouteMode.colors
-    })
+        colors: ctx.creatingRouteMode.colors,
+    });
 }
 
 const TracksManager = {
@@ -803,7 +801,7 @@ const TracksManager = {
     CHANGE_PROFILE_BEFORE: CHANGE_PROFILE_BEFORE,
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
-    TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG
+    TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
 };
 
 export default TracksManager;

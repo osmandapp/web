@@ -1,14 +1,13 @@
-import L from "leaflet";
-import TrackLayerProvider from "./TrackLayerProvider";
-import MarkerOptions from "./markers/MarkerOptions";
-import GeometryUtil from "leaflet-geometryutil";
-import _ from "lodash";
-import TracksManager from "../context/TracksManager";
-import EditableMarker from "./EditableMarker";
-import RoutingManager from "../context/RoutingManager";
+import L from 'leaflet';
+import TrackLayerProvider from './TrackLayerProvider';
+import MarkerOptions from './markers/MarkerOptions';
+import GeometryUtil from 'leaflet-geometryutil';
+import _ from 'lodash';
+import TracksManager from '../context/TracksManager';
+import EditableMarker from './EditableMarker';
+import RoutingManager from '../context/RoutingManager';
 
 export default class EditablePolyline {
-
     currentPolyline;
 
     constructor(map, ctx, points, layer, track, style) {
@@ -26,11 +25,10 @@ export default class EditablePolyline {
             polyline = this.createBasePolyline();
         }
         if (polyline) {
-            let marker = new L.Marker((new L.LatLng(null, null)), {
+            let marker = new L.Marker(new L.LatLng(null, null), {
                 icon: MarkerOptions.options.route,
-                draggable: true
-
-            })
+                draggable: true,
+            });
             this.addEvents(polyline, marker);
         }
         return polyline;
@@ -42,14 +40,14 @@ export default class EditablePolyline {
         });
 
         marker.on('dragstart', (e) => {
-            this.ctx.setPointContextMenu({})
+            this.ctx.setPointContextMenu({});
             this.dragStartNewPoint(e, this.track);
         });
 
         marker.on('dragend', (e) => {
             this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
                 this.ctx.setGpxLoading(false);
-            })
+            });
         });
 
         this.map.on('mousemove', (e) => {
@@ -63,7 +61,7 @@ export default class EditablePolyline {
             polyline.setStyle(this.style);
         } else {
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode]
+                color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode],
             });
         }
         return polyline;
@@ -71,7 +69,7 @@ export default class EditablePolyline {
 
     mousemovePolyline(e, marker) {
         let coordinates = this.map.mouseEventToLatLng(e.originalEvent);
-        marker.setLatLng(coordinates)
+        marker.setLatLng(coordinates);
         if (!this.map.hasLayer(marker)) {
             marker.addTo(this.map);
         }
@@ -91,7 +89,7 @@ export default class EditablePolyline {
             let trackInd = _.indexOf(points, nextPoint, 0);
             let index;
             if (points[trackInd - 1].profile === TracksManager.PROFILE_LINE) {
-                currentLayer._latlngs.forEach(p => {
+                currentLayer._latlngs.forEach((p) => {
                     let currentInd = _.indexOf(currentLayerPoints, p, 0);
                     if (currentInd < currentLayerPoints.length - 1) {
                         let next = currentLayerPoints[currentInd + 1];
@@ -99,49 +97,49 @@ export default class EditablePolyline {
                             index = currentInd + 1;
                         }
                     }
-                })
+                });
                 track.dragPoint = {
                     trackInd: trackInd,
                     ind: index,
                     lat: lat,
-                    lng: lng
+                    lng: lng,
                 };
             } else {
                 let index = _.indexOf(points, nextPoint, 0);
                 track.dragPoint = {
                     ind: index,
                     lat: lat,
-                    lng: lng
+                    lng: lng,
                 };
             }
         } else {
             let index;
             let trackInd;
-            currentLayer._latlngs.forEach(p => {
+            currentLayer._latlngs.forEach((p) => {
                 let currentInd = _.indexOf(currentLayerPoints, p, 0);
                 if (currentInd < currentLayerPoints.length - 1) {
                     let next = currentLayerPoints[currentInd + 1];
                     if (GeometryUtil.belongsSegment(new L.LatLng(lat, lng), new L.LatLng(p.lat, p.lng), next)) {
                         index = currentInd + 1;
-                        track.points.forEach(tp => {
+                        track.points.forEach((tp) => {
                             if (tp.lat === p.lat && tp.lng === p.lng) {
                                 trackInd = _.indexOf(track.points, tp, 0);
                             }
-                        })
+                        });
                     }
                 }
-            })
+            });
             track.dragPoint = {
                 trackInd: trackInd + 1,
                 ind: index,
                 lat: lat,
-                lng: lng
+                lng: lng,
             };
         }
 
         if (track.dragPoint) {
             track.addPoint = false;
-            this.ctx.setSelectedGpxFile({...track});
+            this.ctx.setSelectedGpxFile({ ...track });
         }
     }
 
@@ -150,7 +148,7 @@ export default class EditablePolyline {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
 
-        let newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null, track).create()
+        let newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null, track).create();
         track.layers.addLayer(newMarker);
 
         let currentLayer = track.layers._layers[this.currentPolyline];
@@ -166,7 +164,7 @@ export default class EditablePolyline {
             let newPoint = {
                 lat: lat,
                 lng: lng,
-                profile: prevPoint.profile
+                profile: prevPoint.profile,
             };
             if (nextPoint.geometry) {
                 this.map.removeLayer(currentLayer);
@@ -174,17 +172,17 @@ export default class EditablePolyline {
                 let newGeo = oldGeo.splice(0, ind);
                 newGeo.push({
                     lat: lat,
-                    lng: lng
-                })
+                    lng: lng,
+                });
                 oldGeo.unshift({
                     lat: lat,
-                    lng: lng
-                })
+                    lng: lng,
+                });
                 nextPoint.geometry = oldGeo;
                 newPoint.geometry = newGeo;
 
-                this.createPolyline(prevPoint, newPoint)
-                this.createPolyline(newPoint, nextPoint)
+                this.createPolyline(prevPoint, newPoint);
+                this.createPolyline(newPoint, nextPoint);
             } else {
                 currentLayer._latlngs.splice(ind, 0, newPoint);
                 currentLayer.setLatLngs(currentLayer._latlngs);
@@ -210,31 +208,49 @@ export default class EditablePolyline {
             let nextPoint = trackPoints[ind + 1];
             this.map.removeLayer(currentLayer);
 
-            let polylineTempCurrent = TrackLayerProvider.createTempPolyline({
-                lat: prevPoint.lat,
-                lng: prevPoint.lng
-            }, currentPoint);
+            let polylineTempCurrent = TrackLayerProvider.createTempPolyline(
+                {
+                    lat: prevPoint.lat,
+                    lng: prevPoint.lng,
+                },
+                currentPoint
+            );
             polylineTempCurrent.point = currentPoint;
             polylineTempCurrent.addTo(this.map);
 
-            let polylineTempNext = TrackLayerProvider.createTempPolyline({
-                lat: currentPoint.lat,
-                lng: currentPoint.lng
-            }, nextPoint);
+            let polylineTempNext = TrackLayerProvider.createTempPolyline(
+                {
+                    lat: currentPoint.lat,
+                    lng: currentPoint.lng,
+                },
+                nextPoint
+            );
             polylineTempNext.point = nextPoint;
             polylineTempNext.addTo(this.map);
 
-            segments = RoutingManager.addSegmentToRouting(prevPoint, currentPoint, oldPoint, polylineTempCurrent, segments);
-            segments = RoutingManager.addSegmentToRouting(currentPoint, nextPoint, oldPoint, polylineTempNext, segments);
+            segments = RoutingManager.addSegmentToRouting(
+                prevPoint,
+                currentPoint,
+                oldPoint,
+                polylineTempCurrent,
+                segments
+            );
+            segments = RoutingManager.addSegmentToRouting(
+                currentPoint,
+                nextPoint,
+                oldPoint,
+                polylineTempNext,
+                segments
+            );
 
             track.addPoint = false;
             track.dragPoint = false;
-            this.ctx.setSelectedGpxFile({...track});
+            this.ctx.setSelectedGpxFile({ ...track });
 
-            this.ctx.setRoutingNewSegments([...segments])
+            this.ctx.setRoutingNewSegments([...segments]);
 
             this.ctx.trackState.update = true;
-            this.ctx.setTrackState({...this.ctx.trackState});
+            this.ctx.setTrackState({ ...this.ctx.trackState });
         }
     }
 
@@ -247,7 +263,7 @@ export default class EditablePolyline {
                 polyline = new EditablePolyline(this.map, this.ctx, [startPoint, endPoint], null).create();
             }
             polyline.setStyle({
-                color: this.ctx.creatingRouteMode.colors[startPoint.profile]
+                color: this.ctx.creatingRouteMode.colors[startPoint.profile],
             });
             this.ctx.selectedGpxFile.layers.addLayer(polyline);
         }

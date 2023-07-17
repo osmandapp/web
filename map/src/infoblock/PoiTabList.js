@@ -1,22 +1,23 @@
-import {Tab} from "@mui/material";
-import React from "react";
-import PoiInfoTab from "./components/tabs/PoiInfoTab";
+import { Tab } from '@mui/material';
+import React from 'react';
+import PoiInfoTab from './components/tabs/PoiInfoTab';
 
 export default class PoiTabList {
     state = {
         tabs: null,
         tabList: [],
         defaultTab: 'poiInfo',
-        graphWidth: 600
+        graphWidth: 600,
     };
 
     create() {
         const tabs = {
-            'Info': <PoiInfoTab key='poiInfo' width={this.state.graphWidth}/>
+            Info: <PoiInfoTab key="poiInfo" width={this.state.graphWidth} />,
         };
 
-        const list = Object.keys(tabs).map((item) =>
-            <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item}/>);
+        const list = Object.keys(tabs).map((item) => (
+            <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item} />
+        ));
 
         this.state.tabList = list;
         this.state.tabs = tabs;

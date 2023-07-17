@@ -1,18 +1,17 @@
-import {Dialog} from "@material-ui/core";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import TracksManager from "../../../context/TracksManager";
-import DialogActions from "@mui/material/DialogActions";
-import {Button} from "@mui/material";
-import React, {useContext} from "react";
-import AppContext from "../../../context/AppContext";
-import FavoritesManager from "../../../context/FavoritesManager";
-import FavoriteHelper from "./FavoriteHelper";
-import PointManager from "../../../context/PointManager";
+import { Dialog } from '@material-ui/core';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import TracksManager from '../../../context/TracksManager';
+import DialogActions from '@mui/material/DialogActions';
+import { Button } from '@mui/material';
+import React, { useContext } from 'react';
+import AppContext from '../../../context/AppContext';
+import FavoritesManager from '../../../context/FavoritesManager';
+import FavoriteHelper from './FavoriteHelper';
+import PointManager from '../../../context/PointManager';
 
-export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
-
+export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt }) {
     const ctx = useContext(AppContext);
 
     const toggleShowDialog = () => {
@@ -24,7 +23,7 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
             if (ctx.selectedWpt) {
                 const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
                 const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.wpt.lon;
-                const ind = ctx.selectedGpxFile.wpts.findIndex(wpt => wpt.lat === lat && wpt.lon === lng);
+                const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt.lat === lat && wpt.lon === lng);
                 PointManager.deleteWpt(ind, ctx);
                 setDialogOpen(false);
                 ctx.setSelectedWpt(null);
@@ -40,12 +39,27 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
                 let result = await FavoritesManager.deleteFavorite(
                     ctx.selectedGpxFile.file.wpts[i],
                     ctx.selectedGpxFile.file.name,
-                    ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems)
+                    ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems
+                );
                 if (result) {
-                    ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(ctx.favorites[ctx.selectedGpxFile.nameGroup], result);
-                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, ctx.selectedGpxFile.nameGroup, result);
-                    FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, result, ctx.selectedGpxFile.markerCurrent.title, ctx.selectedGpxFile.nameGroup, true);
-                    ctx.setFavorites({...ctx.favorites});
+                    ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(
+                        ctx.favorites[ctx.selectedGpxFile.nameGroup],
+                        result
+                    );
+                    ctx.favorites = FavoriteHelper.updateSelectedGroup(
+                        ctx.favorites,
+                        ctx.selectedGpxFile.nameGroup,
+                        result
+                    );
+                    FavoriteHelper.updateSelectedFile(
+                        ctx,
+                        ctx.favorites,
+                        result,
+                        ctx.selectedGpxFile.markerCurrent.title,
+                        ctx.selectedGpxFile.nameGroup,
+                        true
+                    );
+                    ctx.setFavorites({ ...ctx.favorites });
                     closeContextMenu();
                     break;
                 }
@@ -72,13 +86,10 @@ export default function DeleteFavoriteDialog({dialogOpen, setDialogOpen, wpt}) {
         <Dialog open={true} onClose={toggleShowDialog}>
             <DialogTitle>{getTitleDialog()}</DialogTitle>
             <DialogContent>
-                <DialogContentText>
-                    {getQuestionDialog()}
-                </DialogContentText>
+                <DialogContentText>{getQuestionDialog()}</DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => deleteWpt()}>
-                    Delete</Button>
+                <Button onClick={() => deleteWpt()}>Delete</Button>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
             </DialogActions>
         </Dialog>
