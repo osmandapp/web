@@ -121,11 +121,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                         }
                     }
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                    for (
-                        let i = ctx.trackProfileManager.pointInd;
-                        i < ctx.selectedGpxFile.points.length - ctx.trackProfileManager.pointInd + 1;
-                        i++
-                    ) {
+                    for (let i = ctx.trackProfileManager.pointInd; i < ctx.selectedGpxFile.points.length - 1; i++) {
                         const start = ctx.selectedGpxFile.points[i];
                         const end = ctx.selectedGpxFile.points[i + 1];
                         if (start.profile !== TracksManager.PROFILE_GAP) {
