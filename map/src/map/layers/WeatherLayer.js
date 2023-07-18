@@ -4,19 +4,19 @@ import AppContext from '../../context/AppContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
 
 function getWeatherTime(weatherDateObj) {
-    let h = weatherDateObj.getUTCHours();
+    let h = weatherDateObj.getHours();
     if (h < 10) {
         h = '0' + h;
     }
-    let m = weatherDateObj.getUTCMonth() + 1;
+    let m = weatherDateObj.getMonth() + 1;
     if (m < 10) {
         m = '0' + m;
     }
-    let d = weatherDateObj.getUTCDate();
+    let d = weatherDateObj.getDate();
     if (d < 10) {
         d = '0' + d;
     }
-    return weatherDateObj.getUTCFullYear() + '' + m + '' + d + '_' + h + '00';
+    return weatherDateObj.getFullYear() + '' + m + '' + d + '_' + h + '00';
 }
 
 const WeatherLayer = () => {
@@ -28,7 +28,7 @@ const WeatherLayer = () => {
     useEffect(() => {
         if (map) {
             map.eachLayer((layer) => {
-                if (layer.options.time) {
+                if (layer.options.name === 'weather' && layer.options.time) {
                     layer.options.time = getWeatherTime(ctx.weatherDate);
                     layer.redraw();
                 }
@@ -48,6 +48,7 @@ const WeatherLayer = () => {
                             key={'overlay_' + item.key + time}
                         >
                             <TileLayer
+                                name={'weather'}
                                 url={item.url}
                                 time={time}
                                 tms={true}

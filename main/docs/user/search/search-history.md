@@ -76,15 +76,15 @@ The search history serves to provide relevant information about your previous ac
 
 </Tabs> 
 
-1. **Order of items** displayed in the list.  
+**1.** **Order of items** displayed in the list.  
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
 
-2. The following **types of objects** get into the Search History list:
+**2.** The following **types of objects** get into the Search History list:
 - **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
 - **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
 
-3. Each field in the Search History list contains some of the **information** available to the application.
+**3.** Each field in the Search History list contains some of the **information** available to the application.
 - An icon that identifies the type or category of the found object.
 - The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
 - Distance from the your current location to the point and direction by compass.

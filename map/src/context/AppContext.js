@@ -16,8 +16,8 @@ const osmandTileURL = {
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
 };
 
-function getWeatherUrl(layer) {
-    return process.env.REACT_APP_WEATHER_TILES_URL + '/' + layer + '/{time}/{z}/{x}/{y}.png';
+function getWeatherUrl(layer, type) {
+    return `${process.env.REACT_APP_WEATHER_URL}${type}/tiles/${layer}/{time}/{z}/{x}/{y}.png`;
 }
 
 function getWeatherLayers(type) {

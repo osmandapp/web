@@ -65,20 +65,18 @@ export default function GeneralPanelButtons({ drawerWidth }) {
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        {ctx.devMode && (
-                            <Tooltip title="Poi" arrow placement="right">
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => {
-                                        setOpenPoiDialog(true);
-                                        ctx.setCurrentObjectType(ctx.OBJECT_TYPE_POI);
-                                    }}
-                                >
-                                    <Info fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
-                        )}
+                        <Tooltip title="Poi" arrow placement="right">
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                onClick={() => {
+                                    setOpenPoiDialog(true);
+                                    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_POI);
+                                }}
+                            >
+                                <Info fontSize="small" />
+                            </IconButton>
+                        </Tooltip>
                     </ButtonGroup>
                 </Paper>
             </div>
