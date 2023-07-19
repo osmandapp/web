@@ -267,12 +267,12 @@ async function calculateRouteOsmAnd({
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
     getRouteText(true, null);
-    const maxDist = `maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
+    const maxDist = `&maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
             `routeMode=${TracksManager.formatRouteMode(
                 routeMode
-            )}&${starturl}${inter}&${endurl}&${avoidRoadsUrl}${maxDist}`,
+            )}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}`,
         {
             apiCache: true,
             method: 'GET',
