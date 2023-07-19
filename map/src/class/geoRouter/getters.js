@@ -6,6 +6,15 @@ import TracksManager from '../../context/TracksManager';
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 /**
+ * <geoProfile> is object: { type, router, profile, params }
+ *
+ * When geoProfile used as getter parameters, all fields are optional.
+ * If some fields are omited, they will be taken from this class current vars.
+ *
+ * When you got geoProfile as a result, it must be stored as is into track.point.geoProfile
+ */
+
+/**
  * Return this Router status:
  * loaded: all providers loaded.
  * paused: pause route calculate.
@@ -44,16 +53,18 @@ export function listProviders() {
 /**
  * Return current/specified profile.
  * @param { type, router, profile } optional ||
- * @param { geoProfile } { type, router, profile }
  * @return { key, name, color, icon, type, router, profile }
- * @note caller might use { track.point (with .geoProfile) } as parameter
+ *
+ * Bad case, don't use it:
+ * @param { ..., geoProfile }
+ * @note it allows to call with { track.point } not with { track.point.geoProfile }
  */
 export function getProfile({ type = this.type, router = this.router, profile = this.profile, geoProfile } = {}) {
     if (geoProfile) {
-        // console.log('getProfile(geoProfile)', geoProfile);
         type = geoProfile.type ?? type;
         router = geoProfile.router ?? router;
         profile = geoProfile.profile ?? profile;
+        // console.log('getProfile(geoProfile)', geoProfile);
     }
     const r = this.providers.find((r) => r.key === router);
     const p = r?.profiles?.find((p) => p.key === profile);
@@ -66,18 +77,15 @@ export function getProfile({ type = this.type, router = this.router, profile = t
 
 /**
  * Return JSON for track.point.geoProfile
- * @param { type, router, profile } optional ||
- * @param { geoProfile } { type, router, profile }
  * @return { type, router, profile, params } <geoProfile>
- * @note caller might use { track.point.geoProfile } as parameters
  */
-export function getGeoProfile({ type = this.type, router = this.router, profile = this.profile, geoProfile } = {}) {
-    const found = this.getProfile({ type, router, profile, geoProfile });
+export function getGeoProfile(geoProfile) {
+    const { type, router, profile, params } = this.getProfile(geoProfile);
     return {
-        type: found.type,
-        router: found.router,
-        profile: found.profile,
-        params: found.params ?? {},
+        type,
+        router,
+        profile,
+        params: params ?? {},
     };
 }
 
@@ -159,4 +167,8 @@ function getProfileIcon({ color, profile } = {}) {
         //     </svg>
         // );
     }
+}
+
+export function getColor(geoProfile) {
+    return this.getProfile(geoProfile)?.color || 'black';
 }

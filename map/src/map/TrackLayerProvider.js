@@ -40,7 +40,7 @@ function parsePoints(points, layers, draggable, ctx) {
                 if (ctx) {
                     polyline.setStyle({
                         // color: ctx.creatingRouteMode.colors[getProfile(point, points)],
-                        color: ctx.trackRouter.getProfile(getPointGeoProfile(point, points))?.color,
+                        color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
                     });
                 }
                 addStartEndGap(point, points, layers, draggable);
@@ -65,7 +65,7 @@ function parsePoints(points, layers, draggable, ctx) {
     if (ctx) {
         endPolyline.setStyle({
             // color: ctx.creatingRouteMode.colors[TracksManager.PROFILE_LINE],
-            color: ctx.trackRouter.getProfile({ profile: TracksManager.PROFILE_LINE })?.color,
+            color: ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
         });
     }
     layers.push(endPolyline);
@@ -110,7 +110,7 @@ function createPolyline(coords, ctx, point, points) {
     if (ctx) {
         polyline.setStyle({
             // color: ctx.creatingRouteMode.colors[getProfile(point, points)],
-            color: ctx.trackRouter.getProfile(getPointGeoProfile(point, points))?.color,
+            color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
         });
     }
     return polyline;

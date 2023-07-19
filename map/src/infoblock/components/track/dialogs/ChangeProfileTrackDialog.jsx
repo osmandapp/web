@@ -103,7 +103,9 @@ export default function ChangeProfileTrackDialog({ open }) {
                     ? ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1]
                     : currentPoint;
 
-            geoRouter.onGeoProfile(point ?? currentPoint);
+            const geoProfile = point.geoProfile ?? currentPoint.geoProfile;
+
+            geoRouter.onGeoProfile(geoProfile);
         }
     }, [ctx.trackProfileManager?.pointInd]);
 

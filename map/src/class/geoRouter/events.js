@@ -37,7 +37,7 @@ export function onParamsChanged({ params, router = this.router, profile = this.p
  * @alias onRouterProfileSelected { type, router, profile, params }
  */
 export function onGeoProfile({ type = null, router = null, profile = null, params = null } = {}) {
-    const picked = this.pickTypeRouterProfile({ type, router, profile }); // FIXME - getProfile() !?
+    const picked = this.pickTypeRouterProfile({ type, router, profile });
     this.flushState((o) => {
         o.type = picked.type;
         o.router = picked.router;

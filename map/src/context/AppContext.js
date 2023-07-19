@@ -493,10 +493,9 @@ export const AppContextProvider = (props) => {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${
-                    routeRouter.getProfile()?.name
-                } is found.`;
+                const { name } = routeRouter.getProfile();
+                const dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
             }
         }
         setHeaderText((prevState) => ({

@@ -393,7 +393,7 @@ export default function LocalClientTrackLayer() {
                             currentLine.options.name = undefined;
                             currentLine.setStyle({
                                 // color: ctx.creatingRouteMode.colors[segmentObj.startPoint.profile],
-                                color: geoRouter.getProfile(segmentObj.startPoint)?.color,
+                                color: geoRouter.getColor(segmentObj.startPoint),
                                 dashArray: null,
                             });
 
@@ -465,7 +465,7 @@ export default function LocalClientTrackLayer() {
             ).create();
             polyline.setStyle({
                 // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
-                color: geoRouter.getProfile()?.color,
+                color: geoRouter.getColor(),
             });
             layers.addLayer(polyline);
         } else {
@@ -492,7 +492,7 @@ export default function LocalClientTrackLayer() {
                 ).create();
                 polyline.setStyle({
                     // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
-                    color: geoRouter.getProfile()?.color,
+                    color: geoRouter.getColor(),
                 });
                 layers.addLayer(polyline);
             }
@@ -861,7 +861,7 @@ export default function LocalClientTrackLayer() {
         if (ctxTrack.points?.length > 1) {
             const beforeLast = ctxTrack.points[ctxTrack.points.length - 2];
             if (beforeLast && beforeLast.geoProfile) {
-                return geoRouter.getGeoProfile(beforeLast);
+                return geoRouter.getGeoProfile(beforeLast.geoProfile);
             }
         }
         return null;
