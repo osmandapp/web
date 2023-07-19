@@ -60,9 +60,9 @@ You can perform an **Address Search** using 5 options such as:
 
 ### Search query list
 
-**1.** The **order** of items in the list.
+**1.** The **order** of items in the list:
 - **Alphabetical order**. The list starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **In ascending numerical order**, the house numbers in the next search list are displayed after you specify the city and street.
+- **Ascending numerical order**. In the next search list, after entering the city and street, the house numbers are displayed in ascending order.
 
 **2.** Each field in the Address Search list contains **information** such as:
 - An icon that identifies the type of locality.
@@ -90,8 +90,9 @@ You can perform an **Address Search** using 5 options such as:
 </Tabs>
 
 This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.   
+
 - To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS). 
-- In the list that opens, select the required locality.
+- In the list that opens, select the required locality. [Here](#search-query-list) describes the order in which search queries are displayed and what information is available about each item.
 - On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  

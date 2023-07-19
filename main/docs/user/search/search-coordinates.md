@@ -66,6 +66,7 @@ There are several ways to enter coordinates for the search. To use each of them,
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
 
     **Decimal coordinates (degrees)**. In this format, latitude and longitude coordinates are written in decimal format, for example, 52.37022° latitude and 4.89517° longitude for Amsterdam. This input method is easy to use and is the most common. You can read more about Decimal coordinates format [here](https://www.wikiwand.com/en/Decimal_degrees#:~:text=Decimal%20degrees%20are%20an%20alternative,are%20south%20of%20the%20equator).  
+    
     - *Input rules*. Latitude and longitude coordinates are written in decimal format, where latitude ranges from -90 to 90 and longitude ranges from -180 to 180.
     - *Most commonly used*. Decimal coordinates are widely used in navigation applications, GPS devices, web maps, and other geopositioning services.  
 
@@ -128,6 +129,23 @@ There are several ways to enter coordinates for the search. To use each of them,
 
 
 > For each profile separately you can set a different coordinate format. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
+
+<!--
+When you use the City Search feature from the list of communities nearest to you or the selected part of the map on your device screen, then selecting a street and house provides the following benefits and conveniences:
+
+1. Convenience and speed: Allows users to quickly find a specific street and house in a selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
+
+2. Visibility and accuracy: Users can select a street from a list, which provides a visual representation of the available options and helps avoid errors when entering an address manually.
+
+3. Advanced features: The ability to select a specific house from a list facilitates accurate navigation to the desired location. This is especially useful when you need to deliver goods or visit a specific building.
+
+4. Minimize errors: Using a preset list of cities, streets and houses helps avoid misspellings or incorrect address selection, ensuring accurate and reliable searches.
+
+5. Versatility: The City Search feature from the list of localities is applicable in a variety of scenarios including traveling, deliveries, ordering a cab, and other situations where you need to find a specific location in a city.
+
+These advantages make the City Search function, followed by street and house selection, a useful tool for quickly and accurately locating a location in a navigation application.
+-->
+
 
 <!--
 
