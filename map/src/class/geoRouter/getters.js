@@ -6,15 +6,6 @@ import TracksManager from '../../context/TracksManager';
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 /**
- * <geoProfile> is object: { type, router, profile, params }
- *
- * When geoProfile used as getter parameters, all fields are optional.
- * If some fields are omited, they will be taken from this class current vars.
- *
- * When you got geoProfile as a result, it must be stored as is into track.point.geoProfile
- */
-
-/**
  * Return this Router status:
  * loaded: all providers loaded.
  * paused: pause route calculate.
@@ -52,19 +43,22 @@ export function listProviders() {
 
 /**
  * Return current/specified profile.
- * @param { type, router, profile } optional ||
- * @return { key, name, color, icon, type, router, profile }
  *
- * Bad case, don't use it:
- * @param { ..., geoProfile }
- * @note it allows to call with { track.point } not with { track.point.geoProfile }
+ * Usual way:
+ * @param { type, router, profile } optional ||
+ *
+ * Track-Point way:
+ * @param { ... profile, geoProfile: { type, router, profile, params } }
+ * With Track-Point way, point.profile will be used if no point.geoProfile found.
+ *
+ * @return { key, name, color, icon, type, router, profile }
  */
 export function getProfile({ type = this.type, router = this.router, profile = this.profile, geoProfile } = {}) {
     if (geoProfile) {
         type = geoProfile.type ?? type;
         router = geoProfile.router ?? router;
         profile = geoProfile.profile ?? profile;
-        // console.log('getProfile(geoProfile)', geoProfile);
+        // console.log('getProfile() with geoProfile', geoProfile);
     }
     const r = this.providers.find((r) => r.key === router);
     const p = r?.profiles?.find((p) => p.key === profile);
@@ -107,6 +101,7 @@ export function getResetParams({ router, profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.resetParams);
 }
 
+// compare given parameters with resetParams
 export function isParamsChanged({ params, type, router, profile } = {}) {
     if (params) {
         const json = JSON.stringify(params);

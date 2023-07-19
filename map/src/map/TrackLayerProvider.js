@@ -141,11 +141,14 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
 // used just to pick color
 // find previous point if possible
 // use PROFILE_LINE if no geoProfile found
-// return <geoProfile> { type, router, profile, params }
 function getPointGeoProfile(point, points) {
     const ind = _.indexOf(points, point, 0);
     const usePoint = ind > 0 ? points[ind - 1] : point;
-    return usePoint?.geoProfile ?? { profile: TracksManager.PROFILE_LINE };
+    if (usePoint?.geoProfile || usePoint?.profile) {
+        return { profile: usePoint?.profile, geoProfile: usePoint?.geoProfile };
+    } else {
+        return { profile: TracksManager.PROFILE_LINE };
+    }
 }
 
 // function getProfile(point, points) {

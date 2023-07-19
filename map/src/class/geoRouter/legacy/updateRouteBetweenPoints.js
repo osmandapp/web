@@ -40,12 +40,11 @@ function osrmToPoints(osrm) {
             points.push({
                 lat,
                 lng,
-                // distance, // see also addDistanceToPoints()
+                // distance, // don't calc it now, see addDistanceToPoints()
 
-                // More fields will be filled later by GET_ANALYSIS:
-                // srtmEle: null,
-                // ele: TracksManager.NAN_MARKER,
-                // ext: { ele: TracksManager.NAN_MARKER },
+                srtmEle: null,
+                ele: TracksManager.NAN_MARKER,
+                ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
             });
         });
     });
@@ -64,8 +63,10 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile }) {
 
     if (response.ok) {
         const points = osrmToPoints(await response.json());
-        // TracksManager.updateGapProfileOneSegment(end, data?.points); FIXME
-        return points;
+        if (points.length >= 2) {
+            TracksManager.updateGapProfileOneSegment(end, points);
+            return points;
+        }
     }
 
     return null;

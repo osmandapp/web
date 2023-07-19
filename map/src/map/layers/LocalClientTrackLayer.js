@@ -365,18 +365,18 @@ export default function LocalClientTrackLayer() {
                 ctx.trackRouter
                     .updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.geoProfile)
                     .then((res) => {
-                        if (!res) {
-                            res = [
-                                {
-                                    lat: segmentObj.startPoint.lat,
-                                    lng: segmentObj.startPoint.lng,
-                                },
-                                {
-                                    lat: segmentObj.endPoint.lat,
-                                    lng: segmentObj.endPoint.lng,
-                                },
-                            ];
-                        }
+                        // if (!res) {
+                        //     res = [
+                        //         {
+                        //             lat: segmentObj.startPoint.lat,
+                        //             lng: segmentObj.startPoint.lng,
+                        //         },
+                        //         {
+                        //             lat: segmentObj.endPoint.lat,
+                        //             lng: segmentObj.endPoint.lng,
+                        //         },
+                        //     ];
+                        // }
 
                         ctx.routingCash[segmentKey].geometry = res;
                         segmentObj.endPoint.geometry = res;
@@ -515,6 +515,7 @@ export default function LocalClientTrackLayer() {
         let firstP = points[0];
         firstP.geometry = [];
         firstP.profile = TracksManager.PROFILE_LINE;
+        firstP.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
         return [firstP, prevPoint];
     }
 
@@ -710,6 +711,7 @@ export default function LocalClientTrackLayer() {
                         prevPoint = getPrevPoint(points);
                         if (!prevPoint.profile) {
                             prevPoint.profile = TracksManager.PROFILE_LINE;
+                            prevPoint.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
                         }
                         prevPoint.profile = newPoint.profile;
                         prevPoint.geoProfile = newPoint.geoProfile;
@@ -745,6 +747,7 @@ export default function LocalClientTrackLayer() {
         let prevPoint = points[points.length - 2];
         if (!prevPoint.profile) {
             prevPoint.profile = TracksManager.PROFILE_LINE;
+            prevPoint.geoProfile = geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
         return prevPoint;
     }
@@ -814,10 +817,12 @@ export default function LocalClientTrackLayer() {
 
         // const currentProfile = ctxTrack.newPoint?.profile ? ctxTrack.newPoint?.profile : TracksManager.PROFILE_LINE;
         // TracksManager.updateGlobalProfileState(ctx, currentProfile); // select last used type|router|profile when track loaded
-        const geoProfile =
-            ctxTrack.newPoint?.geoProfile ?? geoRouter.getGeoProfile({ profile: TracksManager.PROFILE_LINE });
-        geoRouter.onGeoProfile(geoProfile);
 
+        if (ctxTrack.newPoint?.geoProfile || ctxTrack.newPoint?.profile) {
+            geoRouter.onGeoProfile(ctxTrack.newPoint);
+        } else {
+            geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
+        }
         // ctx.addFavorite.editTrack = true;
         // ctx.setAddFavorite({...ctx.addFavorite});
 

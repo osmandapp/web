@@ -95,6 +95,21 @@ export class geoRouter {
     initSetter = initSetter;
 }
 
+/**
+ * <geoProfile> is an object:
+ *
+ * Usual way: { type, router, profile, params }
+ *
+ * Track-Point way: { ... profile, geoProfile: { type, router, profile, params } }
+ *
+ * With Track-Point way, point.profile will be used if no point.geoProfile found.
+ *
+ * When geoProfile used as getter parameters, all fields are optional.
+ * If some fields are omited, they will be taken from this class current vars.
+ *
+ * When you got geoProfile as a result, it must be stored as is into track.point.geoProfile
+ */
+
 /*
     TODO rewrite/remove old doc
 

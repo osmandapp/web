@@ -540,8 +540,8 @@ function updateGapProfileAllSegments(points) {
     }
 }
 
-function updateGapProfileOneSegment(routPoint, points) {
-    if (routPoint.profile === PROFILE_GAP) {
+function updateGapProfileOneSegment(routePoint, points) {
+    if (routePoint.profile === PROFILE_GAP) {
         points[points.length - 1].profile = PROFILE_GAP;
     }
 }

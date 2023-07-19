@@ -94,18 +94,21 @@ export default function ChangeProfileTrackDialog({ open }) {
         /*
             Set geoRouter type/profile/base based on pointInd in case of partialEdit.
             See also: editCurrentTrack() onGeoProfile() in LocalClientTrackLayer
+            Used when Profile before/after was selected in Point Context menu.
         */
         if (partialEdit) {
             const currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
 
-            const point =
+            const usePoint =
                 ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE
                     ? ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1]
                     : currentPoint;
 
-            const geoProfile = point.geoProfile ?? currentPoint.geoProfile;
+            const finalPoint = usePoint ?? currentPoint;
 
-            geoRouter.onGeoProfile(geoProfile);
+            if (finalPoint.geoProfile || finalPoint.profile) {
+                geoRouter.onGeoProfile(finalPoint);
+            }
         }
     }, [ctx.trackProfileManager?.pointInd]);
 
