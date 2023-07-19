@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Air, Cloud, Compress, Shower, Thermostat } from '@mui/icons-material';
 import useCookie from 'react-use-cookie';
 import Utils from '../util/Utils';
 import TracksManager from './TracksManager';
@@ -8,6 +7,7 @@ import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
 import PoiManager from './PoiManager';
 import { apiGet } from '../util/HttpApi';
+import WeatherManager from './WeatherManager';
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -15,36 +15,6 @@ const osmandTileURL = {
     tileSize: 512,
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
 };
-
-function getWeatherUrl(layer, type) {
-    return `${process.env.REACT_APP_WEATHER_URL}${type}/tiles/${layer}/{time}/{z}/{x}/{y}.png`;
-}
-
-function getWeatherLayers(type) {
-    const layers = [
-        { key: 'temperature', name: 'Temperature', opacity: 0.5, iconComponent: <Thermostat fontSize="small" /> },
-        { key: 'pressure', name: 'Pressure', opacity: 0.6, iconComponent: <Compress fontSize="small" /> },
-        { key: 'wind', name: 'Wind', opacity: 0.6, iconComponent: <Air fontSize="small" /> },
-        { key: 'cloud', name: 'Cloud', opacity: 0.5, iconComponent: <Cloud fontSize="small" /> },
-        { key: 'precip', name: 'Precipitation', opacity: 0.7, iconComponent: <Shower fontSize="small" /> },
-    ];
-    layers.map((item) => {
-        item.url = getWeatherUrl(item.key, type);
-        item.maxNativeZoom = 3;
-        item.maxZoom = 11;
-        item.checked = false;
-
-        return item;
-    });
-    return layers;
-}
-
-function getLayers() {
-    let allLayers = {};
-    allLayers['gfs'] = getWeatherLayers('gfs');
-    allLayers['ecmwf'] = getWeatherLayers('ecmwf');
-    return allLayers;
-}
 
 let monthNames = {};
 
@@ -280,23 +250,6 @@ async function loadTileUrls(setAllTileURLs) {
     }
 }
 
-function getWeatherDate() {
-    // // "20211222_0600"
-    // let [searchParams, setSearchParams] = useSearchParams();
-    const searchParams = new URLSearchParams(window.location.search);
-    const weatherDateObj = new Date();
-    if (searchParams.get('date')) {
-        let weather_date = searchParams.get('date');
-        weatherDateObj.setUTCFullYear(parseInt(weather_date.slice(0, 4)));
-        weatherDateObj.setUTCMonth(parseInt(weather_date.slice(4, 6)) - 1);
-        weatherDateObj.setUTCDate(parseInt(weather_date.slice(6, 8)));
-        weatherDateObj.setUTCHours(parseInt(weather_date.slice(9, 11)));
-    }
-    weatherDateObj.setUTCMinutes(0);
-    weatherDateObj.setUTCSeconds(0);
-    return weatherDateObj;
-}
-
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
@@ -306,10 +259,9 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_WEATHER = 'weather';
     const OBJECT_TYPE_POI = 'poi';
 
-    // const [searchParams, setSearchParams] = useSearchParams({});
     const searchParams = new URLSearchParams(window.location.search);
-    const [weatherLayers, setWeatherLayers] = useState(getLayers());
-    const [weatherDate, setWeatherDate] = useState(getWeatherDate());
+    const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
+    const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
     const [weatherType, setWeatherType] = useState('gfs');
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);

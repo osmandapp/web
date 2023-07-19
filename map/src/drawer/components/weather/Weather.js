@@ -3,50 +3,8 @@ import { Typography, ListItemText, Switch, Collapse, Button, ToggleButton, Toggl
 import { IconButton, Divider, MenuItem, ListItemIcon } from '@mui/material';
 import { Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
-import { apiGet } from '../../../util/HttpApi';
 import _ from 'lodash';
-
-async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
-    let lat = 0;
-    let lon = 0;
-    if (window.location.hash) {
-        let spl = window.location.hash.split('/');
-        if (spl.length > 1) {
-            lon = parseFloat(spl[spl.length - 1]);
-            lat = parseFloat(spl[spl.length - 2]);
-        }
-    }
-    let data = { lat: lat, lon: lon };
-    const response = await apiGet(
-        `${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=false`,
-        {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        }
-    );
-    if (response.ok) {
-        data.day = await response.json();
-    }
-    const responseWeek = await apiGet(
-        `${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=true`,
-        {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        }
-    );
-    if (responseWeek.ok) {
-        data.week = await responseWeek.json();
-    }
-    setWeatherPoint(data);
-    let type = ctx.OBJECT_TYPE_WEATHER;
-    ctx.setCurrentObjectType(type);
-}
-
-const switchLayer = (ctx, index, weatherType) => (e) => {
-    let newLayers = { ...ctx.weatherLayers };
-    newLayers[weatherType][index].checked = e.target.checked;
-    ctx.setWeatherLayers(newLayers);
-};
+import WeatherManager from '../../../context/WeatherManager';
 
 export default function Weather() {
     const ctx = useContext(AppContext);
@@ -54,15 +12,20 @@ export default function Weather() {
     const GFS_WEATHER_TYPE = 'gfs';
     const ECWMF_WEATHER_TYPE = 'ecmwf';
 
-    let hours = (-(new Date().getTime() - ctx.weatherDate.getTime()) / 3600000).toFixed(0);
-    let utcHours = new Date().getUTCHours();
-    let gmt30Hours = 24 - (utcHours % 3); // here we need to align to GMT hours
     const [weatherOpen, setWeatherOpen] = useState(false);
+
+    let diffHours = (-(new Date().getTime() - ctx.weatherDate.getTime()) / 3600000).toFixed(0); // diff between current and selected
 
     const handleWeatherType = (event, selectedType) => {
         if (selectedType !== null && selectedType !== ctx.weatherType) {
             ctx.setWeatherType(selectedType);
         }
+    };
+
+    const switchLayer = (ctx, index, weatherType) => (e) => {
+        let newLayers = { ...ctx.weatherLayers };
+        newLayers[weatherType][index].checked = e.target.checked;
+        ctx.setWeatherLayers(newLayers);
     };
 
     function addWeatherHours(ctx, hours) {
@@ -72,18 +35,18 @@ export default function Weather() {
 
     useEffect(() => {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
-            displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+            WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
         if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
             if (ctx.weatherDate.getHours() % 3 !== 0 || ctx.weatherDate.getHours() !== 0) {
-                addWeatherHours(ctx, getTime(false));
+                addWeatherHours(ctx, getStep(false));
             }
         }
     }, [ctx.weatherType]);
 
     useEffect(() => {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
-            displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+            WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
         let newLayers = { ...ctx.weatherLayers };
         Object.keys(newLayers).forEach((type) => {
@@ -105,13 +68,12 @@ export default function Weather() {
     useEffect(() => {
         let resultText = '';
         let weatherDateObj = ctx.weatherDate;
-        let hours = (-(new Date().getTime() - weatherDateObj.getTime()) / 3600000).toFixed(0);
         let hourstr = 'now';
-        if (hours !== 0) {
+        if (diffHours !== 0) {
             let day = 0;
-            while (hours >= 24) {
+            while (diffHours >= 24) {
                 day++;
-                hours -= 24;
+                diffHours -= 24;
             }
             if (day > 0) {
                 if (day === 1) {
@@ -119,14 +81,14 @@ export default function Weather() {
                 } else {
                     hourstr = '+ ' + day + ' days ';
                 }
-                hours = hours - (hours % 3);
-            } else if (hours > 0) {
+                diffHours = diffHours - (diffHours % 3);
+            } else if (diffHours > 0) {
                 hourstr = '+';
             }
-            if (hours > 0) {
-                hourstr += hours + ' hours';
-            } else if (hours < 0) {
-                hourstr = hours + ' hours';
+            if (diffHours > 0) {
+                hourstr += diffHours + ' hours';
+            } else if (diffHours < 0) {
+                hourstr = diffHours + ' hours';
             }
         }
 
@@ -144,17 +106,20 @@ export default function Weather() {
         return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
     }
 
-    function getTime(increment) {
+    function getStep(increment) {
         let step = 1;
+        const time = ctx.weatherDate.getUTCHours();
         if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
-            const time = ctx.weatherDate.getHours();
             if (time !== 0 && time % 3 !== 0) {
                 step = time % 3;
             } else {
                 step = 3;
             }
+        } else {
+            if (Math.abs(diffHours) >= 23) {
+                step = 3;
+            }
         }
-        step = hours >= gmt30Hours ? step + 2 : step;
         return increment ? step : -step;
     }
 
@@ -204,13 +169,13 @@ export default function Weather() {
                             </MenuItem>
                         ))}
                     <MenuItem disableRipple={true}>
-                        <IconButton sx={{ ml: 1 }} onClick={() => addWeatherHours(ctx, getTime(false))}>
+                        <IconButton sx={{ ml: 1 }} onClick={() => addWeatherHours(ctx, getStep(false))}>
                             <NavigateBefore />
                         </IconButton>
                         <Typography>
                             {ctx.weatherDate.toLocaleDateString() + ' ' + ctx.weatherDate.getHours() + ':00'}
                         </Typography>
-                        <IconButton onClick={() => addWeatherHours(ctx, getTime(true))}>
+                        <IconButton onClick={() => addWeatherHours(ctx, getStep(true))}>
                             <NavigateNext />
                         </IconButton>
                     </MenuItem>
@@ -219,7 +184,9 @@ export default function Weather() {
                             variant="contained"
                             component="span"
                             sx={{ ml: 3 }}
-                            onClick={() => displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType)}
+                            onClick={() =>
+                                WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType)
+                            }
                         >
                             Weather Forecast
                         </Button>
