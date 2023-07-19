@@ -1,5 +1,5 @@
+import { quickNaNfix } from '../../../util/Utils';
 import { apiGet, apiPost } from '../../../util/HttpApi';
-import Utils, { quickNaNfix } from '../../../util/Utils';
 import TracksManager from '../../../context/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
@@ -33,20 +33,16 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
 function osrmToPoints(osrm) {
     const points = [];
     osrm?.routes?.forEach((r) => {
-        let distance = 0; // 1st point = 0
+        // let distance = 0; // 1st point = 0
         const coordinates = r.geometry?.coordinates;
-        coordinates?.forEach(([lng, lat], i) => {
-            if (i > 0) {
-                distance = Utils.getDistance(lat, lng, coordinates[i - 1][1], coordinates[i - 1][0]);
-            }
+        coordinates?.forEach(([lng, lat]) => {
+            // if (i > 0) { distance = Utils.getDistance(lat, lng, coordinates[i - 1][1], coordinates[i - 1][0]); }
             points.push({
                 lat,
                 lng,
-                distance,
+                // distance, // see also addDistanceToPoints()
 
-                // Note: distance will be recalculated later.
-                // More fields will be filled later by GET_ANALYSIS.
-
+                // More fields will be filled later by GET_ANALYSIS:
                 // srtmEle: null,
                 // ele: TracksManager.NAN_MARKER,
                 // ext: { ele: TracksManager.NAN_MARKER },
