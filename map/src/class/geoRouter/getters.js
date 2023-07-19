@@ -103,11 +103,7 @@ export function getParams({ router, profile } = {}) {
 }
 
 // return copy of profile's resetParams
-export function getResetParams({ type, router, profile } = {}) {
-    if (type) {
-        // legacy for old RouteSettingsDialog, cleaned-up
-        // return copyObj(this.getProfile(this.pickTypeRouterProfile({ type, profile }))?.resetParams);
-    }
+export function getResetParams({ router, profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.resetParams);
 }
 
@@ -147,9 +143,6 @@ function getProfileDetails({ p, type, router, profile } = {}) {
         type,
         router,
         profile,
-        // routeMode: { mode: profile, opts: params }, // legacy, cleaned-up
-        // mode: key, // legacy for formatRouteMode() updateRouteBetweenPoints(), cleaned-up
-        // opts: params, // legacy for formatRouteMode() updateRouteBetweenPoints(), cleaned-up
     };
 }
 
