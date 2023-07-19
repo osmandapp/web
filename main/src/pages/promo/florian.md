@@ -48,7 +48,7 @@ ________________________________
 
 Hello funs of two wheels!
 
-OsmAnd and ["Florian Veks"](https://lesapprentisvoyageurs.fr/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
+OsmAnd and ["Florian Veks"](https://www.youtube.com/channel/UCQE5EG-9M1E-E_hkcQoh3Pw) introduce and present you OsmAnd Pro subscriptions for 1 year. 
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 **Your steps**:
