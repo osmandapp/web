@@ -104,9 +104,9 @@ export function getResetParams({ router, profile } = {}) {
 // compare given parameters with resetParams
 export function isParamsChanged({ params, type, router, profile } = {}) {
     if (params) {
-        const json = JSON.stringify(params);
-        if (json.length > 0) {
-            if (json !== JSON.stringify(this.getResetParams({ type, router, profile }))) {
+        const resetParams = this.getResetParams({ type, router, profile });
+        if (resetParams) {
+            if (JSON.stringify(params) !== JSON.stringify(resetParams)) {
                 return true;
             }
         }
