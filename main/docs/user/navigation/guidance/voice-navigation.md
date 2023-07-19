@@ -81,8 +81,8 @@ You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)*
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
 5. **Other**: 
     - *Announce GPS signal loss and recovery* - OsmAnd will announce if your device loses the gps signal.  
-    - *Announce route recalculation* - OsmAnd will report a recalculation of the route in case of a [deviation or movement in reverse direction](./navigation-settings#recalculate-route).
-    - *Announce deviation from the route* - you will be informed about deviation from the route according to the [set parameters](./navigation-settings#recalculate-route).
+    - *Announce route recalculation* - OsmAnd will report a recalculation of the route in case of a [deviation or movement in reverse direction](./navigation-settings.md#recalculate-route).
+    - *Announce deviation from the route* - you will be informed about deviation from the route according to the [set parameters](./navigation-settings.md#recalculate-route).
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
     - *[Announcement time](#announcement-time)*.  
@@ -179,7 +179,7 @@ If you choose TTS-voice, you need to have a [text-to-speech](https://en.wikipedi
 
 Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
 
-Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation#voice-navigation) section.  
+Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
 
 ### List of available TTS
 
