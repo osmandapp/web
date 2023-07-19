@@ -61,7 +61,6 @@ export default class EditablePolyline {
             polyline.setStyle(this.style);
         } else {
             polyline.setStyle({
-                // color: this.ctx.creatingRouteMode.colors[this.ctx.creatingRouteMode.mode],
                 color: this.ctx.trackRouter.getColor(),
             });
         }
@@ -266,7 +265,6 @@ export default class EditablePolyline {
                 polyline = new EditablePolyline(this.map, this.ctx, [startPoint, endPoint], null).create();
             }
             polyline.setStyle({
-                // color: this.ctx.creatingRouteMode.colors[startPoint.profile],
                 color: this.ctx.trackRouter.getColor(startPoint),
             });
             this.ctx.selectedGpxFile.layers.addLayer(polyline);

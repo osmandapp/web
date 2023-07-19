@@ -7,7 +7,6 @@ import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
 import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-// import Utils from '../../util/Utils';
 import TracksManager from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
@@ -97,12 +96,6 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
                                                 }}
                                             >
                                                 {ctx.trackRouter.getProfile()?.icon}
-                                                {/* {Utils.getProfileIcon(
-                                                    _.lowerCase(ctx.creatingRouteMode.mode),
-                                                    ctx.creatingRouteMode.colors[
-                                                        _.lowerCase(ctx.creatingRouteMode.mode)
-                                                    ]
-                                                )} */}
                                             </IconButton>
                                         </Tooltip>
                                     )}

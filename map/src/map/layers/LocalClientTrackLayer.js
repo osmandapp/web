@@ -57,17 +57,8 @@ export default function LocalClientTrackLayer() {
     }, [queueForRouting]);
 
     let ctxTrack = ctx.selectedGpxFile;
-    // const trackRef = useRef(ctx.selectedGpxFile);
-    // let ctxTrack = trackRef.current;
-    // useEffect(() => {
-    //     trackRef.current = ctx.selectedGpxFile;
-    // }, [ctx.selectedGpxFile])
 
     const geoRouter = ctx.trackRouter;
-    // const routeModeRef = useRef(ctx.creatingRouteMode);
-    // useEffect(() => {
-    //     routeModeRef.current = ctx.creatingRouteMode;
-    // }, [ctx.creatingRouteMode]);
 
     useEffect(() => {
         if (ctxTrack) {
@@ -365,19 +356,6 @@ export default function LocalClientTrackLayer() {
                 ctx.trackRouter
                     .updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.geoProfile)
                     .then((res) => {
-                        // if (!res) {
-                        //     res = [
-                        //         {
-                        //             lat: segmentObj.startPoint.lat,
-                        //             lng: segmentObj.startPoint.lng,
-                        //         },
-                        //         {
-                        //             lat: segmentObj.endPoint.lat,
-                        //             lng: segmentObj.endPoint.lng,
-                        //         },
-                        //     ];
-                        // }
-
                         ctx.routingCash[segmentKey].geometry = res;
                         segmentObj.endPoint.geometry = res;
                         const startInd = newFile.points?.findIndex((p) => isEqualPoints(p, segmentObj.startPoint));
@@ -392,7 +370,6 @@ export default function LocalClientTrackLayer() {
                             currentLine.setLatLngs(polyline._latlngs);
                             currentLine.options.name = undefined;
                             currentLine.setStyle({
-                                // color: ctx.creatingRouteMode.colors[segmentObj.startPoint.profile],
                                 color: geoRouter.getColor(segmentObj.startPoint),
                                 dashArray: null,
                             });
@@ -464,7 +441,6 @@ export default function LocalClientTrackLayer() {
                 ctxTrack
             ).create();
             polyline.setStyle({
-                // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
                 color: geoRouter.getColor(),
             });
             layers.addLayer(polyline);
@@ -491,7 +467,6 @@ export default function LocalClientTrackLayer() {
                     ctxTrack
                 ).create();
                 polyline.setStyle({
-                    // color: ctx.creatingRouteMode.colors[ctx.creatingRouteMode.mode],
                     color: geoRouter.getColor(),
                 });
                 layers.addLayer(polyline);
@@ -666,7 +641,6 @@ export default function LocalClientTrackLayer() {
             let prevPoint = getPrevPoint(points);
             prevPoint.profile = newPoint.profile;
             prevPoint.geoProfile = newPoint.geoProfile;
-            // prevPoint.routeMode = newPoint.routeMode;
 
             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
             layers.addLayer(tempLine);
@@ -695,13 +669,11 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);
         } else {
-            // let newPoint = createNewPoint(e, routeModeRef.current);
             let newPoint = createNewPoint(e, geoRouter.getGeoProfile());
             let points = ctxTrack.points;
             let layers = ctxTrack.layers;
             let prevPoint = ctxTrack.prevPoint;
             if (isNewPoint(ctxTrack, newPoint)) {
-                // newPoint.routeMode = routeModeRef.current;
                 if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(points)) {
                     setOpenAddRoutingToTrackDialog(true);
                     setNewPoint(newPoint);
@@ -715,7 +687,6 @@ export default function LocalClientTrackLayer() {
                         }
                         prevPoint.profile = newPoint.profile;
                         prevPoint.geoProfile = newPoint.geoProfile;
-                        // prevPoint.routeMode = newPoint.routeMode;
                         if (newPoint.profile === TracksManager.PROFILE_LINE) {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
@@ -761,11 +732,9 @@ export default function LocalClientTrackLayer() {
             lat: e ? e.latlng.lat : ctx.createTrack.latlng.lat,
             lng: e ? e.latlng.lng : ctx.createTrack.latlng.lng,
             ele: TracksManager.NAN_MARKER,
-            // profile: routeModeRef ? routeModeRef.mode : ctx.creatingRouteMode.mode,
             profile: geoProfile.profile, // required by get-analisys
             geoProfile: geoProfile,
             geometry: [],
-            // routeMode: routeModeRef ? routeModeRef : ctx.creatingRouteMode,
         };
         // if (newPoint.profile !== TracksManager.PROFILE_LINE) {
         //     newPoint.geometry = []; // geometry is already set to [] just few lines before
@@ -814,9 +783,6 @@ export default function LocalClientTrackLayer() {
 
         ctxTrack.newPoint = points[points.length - 1];
         ctxTrack.update = false;
-
-        // const currentProfile = ctxTrack.newPoint?.profile ? ctxTrack.newPoint?.profile : TracksManager.PROFILE_LINE;
-        // TracksManager.updateGlobalProfileState(ctx, currentProfile); // select last used type|router|profile when track loaded
 
         if (ctxTrack.newPoint?.geoProfile || ctxTrack.newPoint?.profile) {
             geoRouter.onGeoProfile(ctxTrack.newPoint);

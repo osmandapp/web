@@ -1,5 +1,3 @@
-// import LinearScaleIcon from '@mui/icons-material/LinearScale';
-// import React from 'react';
 import TracksManager from '../context/TracksManager';
 import { apiGet } from '../util/HttpApi';
 
@@ -70,22 +68,6 @@ function hexToArgb(hex) {
     const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
-
-// function getProfileIcon(profile, color) {
-//     if (profile === TracksManager.PROFILE_LINE) {
-//         return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
-//     } else {
-//         return (
-//             <img
-//                 color={color}
-//                 src={'/map/images/profile_icons/' + profile + '.svg'}
-//                 height={25}
-//                 width={25}
-//                 alt={profile}
-//             />
-//         );
-//     }
-// }
 
 /*
     Prepare string with NaN(s) before JSON.parse()

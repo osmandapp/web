@@ -39,7 +39,6 @@ function parsePoints(points, layers, draggable, ctx) {
                 let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
                 if (ctx) {
                     polyline.setStyle({
-                        // color: ctx.creatingRouteMode.colors[getProfile(point, points)],
                         color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
                     });
                 }
@@ -64,7 +63,6 @@ function parsePoints(points, layers, draggable, ctx) {
     let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
     if (ctx) {
         endPolyline.setStyle({
-            // color: ctx.creatingRouteMode.colors[TracksManager.PROFILE_LINE],
             color: ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
         });
     }
@@ -109,7 +107,6 @@ function createPolyline(coords, ctx, point, points) {
     let polyline = new L.Polyline(coords, getPolylineOpt());
     if (ctx) {
         polyline.setStyle({
-            // color: ctx.creatingRouteMode.colors[getProfile(point, points)],
             color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
         });
     }
@@ -150,15 +147,6 @@ function getPointGeoProfile(point, points) {
         return { profile: TracksManager.PROFILE_LINE };
     }
 }
-
-// function getProfile(point, points) {
-//     let ind = _.indexOf(points, point, 0);
-//     if (ind > 0) {
-//         return points[ind - 1].profile ? points[ind - 1].profile : TracksManager.PROFILE_LINE;
-//     } else {
-//         return point.profile ? point.profile : TracksManager.PROFILE_LINE;
-//     }
-// }
 
 function parseWpt(points, layers) {
     points &&

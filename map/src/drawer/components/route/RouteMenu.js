@@ -331,8 +331,6 @@ export default function RouteMenu() {
                             onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                         />
                         <Button variant="contained" component="span" sx={{ ml: 2 }}>
-                            {/* { ctx.routeRouter.isReady().toString() + ':' } */}
-                            {/* { ctx.routeRouter.paused.toString() + ':' } */}
                             Upload GPX to route
                         </Button>
                     </label>

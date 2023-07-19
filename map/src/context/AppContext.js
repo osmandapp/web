@@ -360,11 +360,6 @@ export const AppContextProvider = (props) => {
                 interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
     }
-    // const [creatingRouteMode, setCreatingRouteMode] = useState({
-    //     mode: 'car',
-    //     opts: {},
-    //     modes: { car: { name: 'Car', params: {} } },
-    // });
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
@@ -442,7 +437,6 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            // await routeRouter.loadProviders({ parseQueryString: true, creatingRouteMode, setCreatingRouteMode });
             await routeRouter.loadProviders({ parseQueryString: true });
             await trackRouter.loadProviders();
             await afterPointRouter.loadProviders();
@@ -510,12 +504,12 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail);
-        // eslint-disable-next-line
     }, [loginUser]);
+
     useEffect(() => {
         loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
-        // eslint-disable-next-line
     }, [loginUser]);
+
     return (
         <AppContext.Provider
             value={{
@@ -585,8 +579,6 @@ export const AppContextProvider = (props) => {
                 OBJECT_TYPE_POI,
                 createTrack,
                 setCreateTrack,
-                // creatingRouteMode,
-                // setCreatingRouteMode,
                 gpxCollection,
                 setGpxCollection,
                 loadingContextMenu,
