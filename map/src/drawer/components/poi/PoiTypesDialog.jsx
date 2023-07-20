@@ -101,8 +101,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
     }
 
     function removeUnusedFilters(filters) {
-        filters = filters.filter((f) => f !== 'routes');
-        return filters;
+        return filters.filter((f) => f !== 'routes');
     }
 
     function getLabel(category) {

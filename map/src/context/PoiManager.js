@@ -87,9 +87,9 @@ function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) 
 function formattingPoiFilter(type, rename) {
     if (type) {
         if (rename) {
-            type = poiFilters[`${type}`].length > 1 ? poiFilters[`${type}`][1] : poiFilters[`${type}`][0];
+            type = poiFilters[type].length > 1 ? poiFilters[type][1] : poiFilters[type][0];
         } else {
-            type = poiFilters[`${type}`][0];
+            type = poiFilters[type][0];
         }
     }
     return type;
