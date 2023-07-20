@@ -93,12 +93,12 @@ export function listProfiles({ type = this.type, router = this.router, profile =
 
 // return copy of profile's params
 export function getParams({ router, profile } = {}) {
-    return copyObj(this.getProfile({ router, profile })?.params);
+    return copyObj(this.getProfile({ router, profile })?.params || {});
 }
 
 // return copy of profile's resetParams
 export function getResetParams({ router, profile } = {}) {
-    return copyObj(this.getProfile({ router, profile })?.resetParams);
+    return copyObj(this.getProfile({ router, profile })?.resetParams || {});
 }
 
 // compare given parameters with resetParams
