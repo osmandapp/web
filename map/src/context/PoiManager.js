@@ -8,6 +8,29 @@ const DEFAULT_POI_ICON = 'craft_default';
 const DEFAULT_POI_COLOR = '#f8931d';
 const DEFAULT_SHAPE_COLOR = 'circle';
 
+const poiFilters = {
+    accomodation: ['Accomodation'],
+    cafe_and_restaurant: ['Cafe and restaurant'],
+    charging_station: ['Charging station'],
+    emergency: ['Emergency'],
+    entertainment: ['Entertainment', 'Leisure'],
+    filling_station: ['Filling station'],
+    finance: ['Finance'],
+    healthcare: ['Healthcare'],
+    parking: ['Parking'],
+    personal_transport: ['Personal transport'],
+    public_transport: ['Public transport'],
+    routes: ['Routes'],
+    seamark: ['Seamark', 'Nautical'],
+    shop: ['Shop'],
+    shop_food: ['Shop food', 'Convenience store and supermarket'],
+    sightseeing: ['Sightseeing'],
+    sport: ['Sport'],
+    sustenance: ['Sustenance', 'Food'],
+    tourism: ['Tourism'],
+    water_filter: ['Water filter', 'Water'],
+};
+
 async function getPoiCategories() {
     let categories = JSON.parse(localStorage.getItem(POI_CATEGORIES));
     if (categories?.length > 0) {
@@ -61,18 +84,28 @@ function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) 
     }
 }
 
+function formattingPoiFilter(type, rename) {
+    if (type) {
+        if (rename) {
+            type = poiFilters[type].length > 1 ? poiFilters[type][1] : poiFilters[type][0];
+        } else {
+            type = poiFilters[type][0];
+        }
+    }
+    return type;
+}
+
 function formattingPoiType(type) {
     if (type) {
-        type = formattingPoiFilter(type);
         type = type.replaceAll('_', ' ');
         type = type.charAt(0).toUpperCase() + type.slice(1);
     }
     return type;
 }
 
-function formattingPoiFilter(filter) {
-    if (filter) {
-        filter = filter.replaceAll('_filter', '');
+function preparePoiFilterIcon(filter) {
+    if (filter === 'water_filter') {
+        return 'amenity_drinking_water';
     }
     return filter;
 }
@@ -84,9 +117,11 @@ const PoiManager = {
     getTopPoiFilters,
     formattingPoiType,
     formattingPoiFilter,
+    preparePoiFilterIcon,
     DEFAULT_POI_ICON: DEFAULT_POI_ICON,
     DEFAULT_POI_COLOR: DEFAULT_POI_COLOR,
     DEFAULT_SHAPE_COLOR: DEFAULT_SHAPE_COLOR,
+    poiFilters,
 };
 
 export default PoiManager;

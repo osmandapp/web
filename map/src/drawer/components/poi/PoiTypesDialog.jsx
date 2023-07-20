@@ -100,6 +100,22 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
         return categories.filter((category) => category !== 'user_defined_other' && category !== 'osmwiki');
     }
 
+    function removeUnusedFilters(filters) {
+        return filters.filter((f) => f !== 'routes');
+    }
+
+    function getLabel(category) {
+        const poiFilter = Object.keys(PoiManager.poiFilters).find(
+            (name) => PoiManager.poiFilters[name][0] === category
+        );
+        if (poiFilter) {
+            return PoiManager.poiFilters[`${poiFilter}`].length > 1
+                ? PoiManager.poiFilters[`${poiFilter}`][1]
+                : PoiManager.poiFilters[`${poiFilter}`][0];
+        }
+        return category;
+    }
+
     return (
         <Dialog open={dialogOpen} onClose={toggleShowDialog}>
             <Grid container spacing={2}>
@@ -138,7 +154,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
                                 searchPoiCategory(e.target.value).then();
                             }}
                             {...params}
-                            label="Search"
+                            label="Search poi category"
                             variant="outlined"
                             helperText={searchError ? searchError : ''}
                             fullWidth
@@ -186,12 +202,12 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
                                     onChange={() => handleChange(category)}
                                 />
                             }
-                            label={`${category}`}
+                            label={getLabel(category)}
                         />
                     ))}
                 </div>
                 <Grid container spacing={2}>
-                    {ctx.poiCategory?.filters.map((item, key) => (
+                    {removeUnusedFilters(ctx.poiCategory?.filters).map((item, key) => (
                         <Grid
                             style={{ marginLeft: '-7px' }}
                             item
@@ -200,9 +216,9 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
                             className={styles.drawerItem}
                         >
                             <MenuItem
-                                style={{ marginTop: '-15px' }}
+                                style={{ marginTop: '-15px', fontSize: '0.9rem' }}
                                 key={key + 'type'}
-                                onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiType(item))}
+                                onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiFilter(item, false))}
                             >
                                 <ListItemIcon sx={{ mr: '-15px' }}>
                                     <div className={classes.icon}>
@@ -218,11 +234,11 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
                                             alt={item}
                                             src={`/map/images/${
                                                 MarkerOptions.POI_ICONS_FOLDER
-                                            }/mx_${PoiManager.formattingPoiFilter(item)}.svg`}
+                                            }/mx_${PoiManager.preparePoiFilterIcon(item)}.svg`}
                                         />
                                     </div>
                                 </ListItemIcon>
-                                {PoiManager.formattingPoiType(item)}
+                                {PoiManager.formattingPoiFilter(item, true)}
                             </MenuItem>
                         </Grid>
                     ))}
