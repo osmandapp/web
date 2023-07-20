@@ -28,6 +28,20 @@ Point of interesting (POI) seaching is one the general function of OsmAnd. [POI]
 All POI types in OsmAnd:  
 [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml)  
 
+The POI (Points of Interest) search in the navigation application allows users to find interesting places and objects around them or in a selected area. These include:
+
+1. What: The POI search provides access to different categories of places such as restaurants, hotels, banks, pharmacies, gas stations, points of interest, etc.
+
+2. Why: Users can use POI Finder to find landmarks in a new city, navigate unfamiliar terrain, find convenient services, or plan routes with stops at desired locations.
+
+3. How: The POI Search function contains a search bar where the user can enter keywords or place names. The results are displayed as a list sorted by category, making it easy to navigate through them.
+
+4. Convenience: The filtering function allows users to select desired characteristics for POIs so that only relevant items such as rating, distance from current location, hours of operation and other attributes are displayed in the list.
+
+5. Custom Search: Users can create their own search filters by selecting POI types from various ready-made categories and subcategories and saving them for future use.
+
+POI Search makes it easy to find places and services of interest by providing a convenient way to locate and display information about POIs in a selected area. This feature makes the navigation application a useful tool for traveling, city navigation and quick access to necessary services and facilities.  
+
 ### Search query list
 
 
@@ -82,7 +96,55 @@ Enable / disable POI layer on the map:
 
 ### Filters
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![POI overlay Android](@site/static/img/search/search_poi_filter_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search POI iOS](@site/static/img/search/search_poi_filter_andr.png)
+
+</TabItem>
+
+</Tabs>
+
+You can use the **Filter** function to select the necessary characteristics for a POI, and the result is a list containing only the relevant objects. To use the filter:  
+- Select the category you are interested in from the category list.
+- On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to "Show on the map".
+- In the filter, select the type of characteristics.   
+
+![POI overlay Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+
+A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are some of them here:  
+
+| Filter | Types | Note |
+|:------------|:---------------|:---------------|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Allows you to use streams and drains for boat navigation. Enabling this option may be useful for small boats such as canoes, kayaks, rafts, rowboats. |  [Streams](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) are naturally-forming waterways that are too narrow to be called a river. [Drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) are artificial waterways, typically lined with concrete or similar, used to carry superfluous water like storm water or grey-discharge.|
+| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
+
+
+
 ### Rearrange categories
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![POI overlay Android](@site/static/img/search/search_poi_rearrange_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search POI iOS](@site/static/img/search/search_poi_rearrange_andr.png)
+
+</TabItem>
+
+</Tabs>
 
 ### Online Search
 
