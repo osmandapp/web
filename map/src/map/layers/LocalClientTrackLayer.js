@@ -87,13 +87,18 @@ export default function LocalClientTrackLayer() {
             if (ctxTrack?.dragPoint === false) {
                 delete ctxTrack?.dragPoint;
                 ctx.setSelectedGpxFile({ ...ctxTrack });
-            } else if (ctx.createTrack?.enable && ctxTrack?.dragPoint === undefined) {
+            } else if (
+                ctx.createTrack?.enable &&
+                _.isEmpty(ctx.pointContextMenu) &&
+                ctxTrack?.dragPoint === undefined
+            ) {
                 setupClickOnMap();
             } else {
                 deleteClickOnMap();
             }
         }
-    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps()]);
+        // ctx.pointContextMenu was added to monitor menu state and ignore click
+    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu]);
 
     useEffect(() => {
         for (let l in localLayers) {

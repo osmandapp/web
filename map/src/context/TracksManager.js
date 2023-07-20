@@ -650,32 +650,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     }
 }
 
-// not used?
-
-// async function getLocalTrackAnalysis(f) {
-//     let data = {
-//         tracks: f.tracks,
-//         metaData: f.metaData,
-//         ext: f.ext,
-//     };
-//     let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${GET_ANALYSIS}`, data, {
-//         apiCache: true,
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//     });
-//     if (resp.data) {
-//         let data = FavoritesManager.prepareTrackData(resp.data);
-//         Object.keys(data.data).forEach((t) => {
-//             f[`${t}`] = data.data[t];
-//         });
-//         return f;
-//     } else {
-//         console.log('getLocalTrackAnalysis fallback');
-//         return f;
-//     }
-// }
-
 function createTrack(ctx, latlng) {
     let createState = {
         enable: true,

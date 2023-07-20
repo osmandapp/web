@@ -1,6 +1,6 @@
 import { AppBar, Button, LinearProgress, Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Close } from '@mui/icons-material';
 import TrackTabList from './tabs/TrackTabList';
@@ -20,6 +20,23 @@ export default function InformationBlock({ hideContextMenu, drawerWidth }) {
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
     const [clearState, setClearState] = useState(false);
+
+    /**
+     * Handle Escape key to close PointContextMenu.
+     * Located here (parent) to run Effect on closed menu.
+     * Otherwise (if located in child) we can't catch removeEventListener moment.
+     */
+    const escapePointMenu = useCallback((e) => {
+        if (e.key === 'Escape') {
+            ctx.setPointContextMenu({});
+        }
+    }, []);
+    useEffect(() => {
+        window.removeEventListener('keydown', escapePointMenu);
+        if (!_.isEmpty(ctx.pointContextMenu)) {
+            window.addEventListener('keydown', escapePointMenu);
+        }
+    }, [ctx.pointContextMenu]);
 
     useEffect(() => {
         if (!showContextMenu) {
