@@ -72,7 +72,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             let res = [];
             menuType.forEach((type) => {
                 if (type !== 'Maps') {
-                    selectAllCategory(type, res, groups);
+                    res = res.concat(selectAllCategory(type, groups));
                 }
             });
             setSelectedCategories(res);
@@ -170,9 +170,15 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             } else if (maps.includes(n)) {
                 addToGeneralGroup([menuType[3]], res, n, groups);
             } else if (resources.includes(n) || n.startsWith(`${FILE_TYPE}_`)) {
-                addToGeneralGroup([menuType[2]], res, n, groups);
+                addToGeneralGroup([menuType[2]], res, n, groups); // add Maps to the end of the list
             }
         });
+        // remove empty category
+        Object.keys(res).forEach(t => {
+            if (!res[t]) {
+                delete res[t];
+            }
+        })
         return res;
     }
 
@@ -217,7 +223,8 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         }
     }
 
-    function selectAllCategory(type, res, groups) {
+    function selectAllCategory(type, groups) {
+        let res = [];
         res.push(type);
         if (groups[type]) {
             Object.keys(groups[type]).forEach((cat) => {
@@ -226,6 +233,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 }
             });
         }
+        return res;
     }
 
     function getTypeSize(size) {
