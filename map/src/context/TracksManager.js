@@ -102,7 +102,7 @@ function saveLocalTrack(tracks, ctx) {
                 "Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes."
             );
         } else {
-            ctx.setRoutingErrorMsg(null);
+            // ctx.setRoutingErrorMsg(null); // don't reset error message here (lose previous message)
             localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
             localStorage.setItem(DATA_SIZE_KEY, totalSize);
         }

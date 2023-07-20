@@ -178,7 +178,7 @@ async function calculateRouteOSRM({
     setRoutingErrorMsg(null);
     changeRouteText(true, null);
 
-    const response = await apiGet(url + coordinates + tail, { apiCache: true });
+    const response = await apiGet(url + coordinates + tail, { apiCache: true, dataOnErrors: true });
 
     if (response.ok) {
         const data = osrmToFeaturesCollection(await response.json(), style);
@@ -189,7 +189,14 @@ async function calculateRouteOSRM({
     } else {
         setRouteData(null);
         changeRouteText(false, null);
-        setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
+        try {
+            const json = JSON.parse(response.data);
+            if (json.message) {
+                setRoutingErrorMsg(json.message + ' (please try another provider/profile)');
+            }
+        } catch (e) {
+            console.error('OSRM fatal error', e);
+        }
     }
 }
 

@@ -22,7 +22,7 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
             return result;
         } else {
             console.error('Router error, Line used');
-            ctx.setRoutingErrorMsg('Router error, Line used');
+            // ctx.setRoutingErrorMsg('Router error, Line used');
             return routers[PROFILE_LINE]({ ctx, start, end, geoProfile });
         }
     }
@@ -51,7 +51,7 @@ function osrmToPoints(osrm) {
     return points;
 }
 
-async function updateRouteBetweenPointsOSRM({ start, end, geoProfile }) {
+async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
     const url = this.getURL(geoProfile);
     const tail = '?geometries=geojson&overview=simplified&steps=false';
 
@@ -59,13 +59,26 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile }) {
     const points = [geo(start), geo(end)];
     const coordinates = points.join(';');
 
-    const response = await apiGet(url + coordinates + tail, { apiCache: true });
+    const response = await apiGet(url + coordinates + tail, { apiCache: true, dataOnErrors: true });
 
     if (response.ok) {
         const points = osrmToPoints(await response.json());
         if (points.length >= 2) {
             TracksManager.updateGapProfileOneSegment(end, points);
+            ctx.setRoutingErrorMsg(null);
             return points;
+        }
+        if (points.message) {
+            ctx.setRoutingErrorMsg(points.message);
+        }
+    } else {
+        try {
+            const json = JSON.parse(response.data);
+            if (json.message) {
+                ctx.setRoutingErrorMsg(json.message + ' (please try another provider/profile)');
+            }
+        } catch (e) {
+            console.error('OSRM fatal error', e);
         }
     }
 
@@ -105,6 +118,7 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
             ctx.setRoutingErrorMsg(data?.msg);
         }
         TracksManager.updateGapProfileOneSegment(end, data?.points);
+        ctx.setRoutingErrorMsg(null);
         return data?.points;
     }
 
