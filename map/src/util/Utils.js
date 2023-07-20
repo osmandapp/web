@@ -97,7 +97,6 @@ const Utils = {
     getDistance,
     getPointsDist,
     hexToArgb,
-    // getProfileIcon,
 };
 
 export default Utils;

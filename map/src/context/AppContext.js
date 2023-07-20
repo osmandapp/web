@@ -6,7 +6,7 @@ import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
 import PoiManager from './PoiManager';
 import { apiGet } from '../util/HttpApi';
-import { geoRouter } from '../class/geoRouter/geoRouter.js';
+import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import WeatherManager from './WeatherManager';
 
 const osmandTileURL = {
