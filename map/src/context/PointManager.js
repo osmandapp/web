@@ -52,7 +52,7 @@ async function insertPointToTrack(currentTrack, index, point, ctx) {
 }
 
 async function insertPoint(points, index, point, lengthSum, ctx) {
-    const updateRouteBetweenPoints = ctx.trackRouter.updateRouteBetweenPoints;
+    const geoRouter = ctx.trackRouter;
     points.splice(index, 0, point);
     let firstPoint = index === 0 || index === lengthSum;
     let lastPoint = index === points.length - 1 + lengthSum;
@@ -60,25 +60,25 @@ async function insertPoint(points, index, point, lengthSum, ctx) {
         if (i + lengthSum === index && point) {
             if (firstPoint) {
                 if (points[i + 1].geometry) {
-                    let newGeometryFromNewPoint = await updateRouteBetweenPoints(ctx, point, points[i + 1]);
+                    let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
                     if (newGeometryFromNewPoint) {
                         points[i + 1].geometry = newGeometryFromNewPoint;
                     }
                 }
             } else if (lastPoint) {
                 if (points[i - 1].geometry) {
-                    let newGeometryToNewPoint = await updateRouteBetweenPoints(ctx, points[i - 1], point);
+                    let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
                     if (newGeometryToNewPoint) {
                         point.geometry = newGeometryToNewPoint;
                     }
                 }
             } else {
                 if (points[i + 1].geometry) {
-                    let newGeometryToNewPoint = await updateRouteBetweenPoints(ctx, points[i - 1], point);
+                    let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
                     if (newGeometryToNewPoint) {
                         point.geometry = newGeometryToNewPoint;
                     }
-                    let newGeometryFromNewPoint = await updateRouteBetweenPoints(ctx, point, points[i + 1]);
+                    let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
                     if (newGeometryFromNewPoint) {
                         points[i + 1].geometry = newGeometryFromNewPoint;
                     }

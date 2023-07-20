@@ -4,7 +4,7 @@ import TracksManager from '../../../context/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
-export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = this.getGeoProfile()) {
+export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = this?.getGeoProfile()) {
     const routers = {
         osrm: updateRouteBetweenPointsOSRM,
         osmand: updateRouteBetweenPointsOsmAnd,
