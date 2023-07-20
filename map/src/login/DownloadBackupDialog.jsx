@@ -69,6 +69,13 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             let groups = getCategoryGroups();
             groups = prepareFileGroups(groups);
             setCategories(groups);
+            let res = [];
+            menuType.forEach((type) => {
+                if (type !== 'Maps') {
+                    selectAllCategory(type, res, groups);
+                }
+            });
+            setSelectedCategories(res);
         }
     }, [openDownloadBackupDialog]);
 
@@ -152,7 +159,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             [menuType[0]]: null,
             [menuType[1]]: null,
             [menuType[2]]: null,
-            [menuType[3]]: null
+            [menuType[3]]: null,
         };
         let names = Object.keys(groups);
         names.forEach((n) => {
@@ -177,7 +184,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         return res;
     }
 
-    function selectCategory(e, k) {
+    function selectCategory(k, e) {
         e.stopPropagation();
         if (selectedCategories.includes(k)) {
             if (categories[k]) {
@@ -207,6 +214,17 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 });
             }
             setSelectedCategories(list);
+        }
+    }
+
+    function selectAllCategory(type, res, groups) {
+        res.push(type);
+        if (groups[type]) {
+            Object.keys(groups[type]).forEach((cat) => {
+                if (!selectedCategories.includes(cat)) {
+                    res.push(cat);
+                }
+            });
         }
     }
 
@@ -292,7 +310,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                                     <Checkbox
                                         edge="start"
                                         checked={selectedCategories.includes(k)}
-                                        onChange={(e) => selectCategory(e, k)}
+                                        onChange={(e) => selectCategory(k, e)}
                                     />
                                 </ListItemIcon>
                                 <ListItemText sx={{ ml: -3 }} primary={k} />
@@ -310,7 +328,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                                                     <Checkbox
                                                         edge="start"
                                                         checked={selectedCategories.includes(sk)}
-                                                        onChange={(e) => selectCategory(e, sk)}
+                                                        onChange={(e) => selectCategory(sk, e)}
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText sx={{ ml: -3 }} primary={prepareType(sk)} />
