@@ -44,8 +44,9 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         'ITINERARY_GROUPS',
     ];
     const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS'];
-    const resources = ['ONLINE_ROUTING_ENGINES', 'MAP_SOURCES'];
-    const menuType = ['My places', 'Settings', 'Resources'];
+    const resources = ['ONLINE_ROUTING_ENGINES'];
+    const maps = ['MAP_SOURCES', 'FILE_MAPS', 'FILE_SRTM', 'FILE_ROADS', 'FILE_TILES', 'FILE_WIKI'];
+    const menuType = ['My places', 'Settings', 'Resources', 'Maps'];
 
     const FILE_TYPE = 'FILE';
     const BACKUP_TYPE_ZIP = '.zip';
@@ -147,17 +148,22 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     }
 
     function prepareFileGroups(groups) {
-        let res = {};
+        let res = {
+            [menuType[0]]: null,
+            [menuType[1]]: null,
+            [menuType[2]]: null,
+            [menuType[3]]: null
+        };
         let names = Object.keys(groups);
         names.forEach((n) => {
             if (userPlaces.includes(n)) {
-                res = addToGeneralGroup('My places', res, n, groups);
-            }
-            if (settings.includes(n)) {
-                res = addToGeneralGroup('Settings', res, n, groups);
-            }
-            if (resources.includes(n) || n.startsWith(`${FILE_TYPE}_`)) {
-                res = addToGeneralGroup('Resources', res, n, groups);
+                addToGeneralGroup([menuType[0]], res, n, groups);
+            } else if (settings.includes(n)) {
+                addToGeneralGroup([menuType[1]], res, n, groups);
+            } else if (maps.includes(n)) {
+                addToGeneralGroup([menuType[3]], res, n, groups);
+            } else if (resources.includes(n) || n.startsWith(`${FILE_TYPE}_`)) {
+                addToGeneralGroup([menuType[2]], res, n, groups);
             }
         });
         return res;
