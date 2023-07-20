@@ -174,11 +174,11 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             }
         });
         // remove empty category
-        Object.keys(res).forEach(t => {
+        Object.keys(res).forEach((t) => {
             if (!res[t]) {
                 delete res[t];
             }
-        })
+        });
         return res;
     }
 
