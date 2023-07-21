@@ -115,8 +115,13 @@ export default function Weather() {
             } else {
                 step = 3;
             }
+            // step 6 after 5 days
+            if (Math.abs(diffHours) + new Date().getUTCHours() >= 120) {
+                step += 3;
+            }
         } else {
-            if (Math.abs(diffHours) >= 23) {
+            // step 3 after 1 day
+            if (Math.abs(diffHours) + new Date().getUTCHours() >= 24) {
                 step = 3;
             }
         }
