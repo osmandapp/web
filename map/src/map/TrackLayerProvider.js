@@ -39,7 +39,7 @@ function parsePoints(points, layers, draggable, ctx) {
                 let polyline = new L.Polyline(coordsTrk, getPolylineOpt());
                 if (ctx) {
                     polyline.setStyle({
-                        color: ctx.creatingRouteMode.colors[getProfile(point, points)],
+                        color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
                     });
                 }
                 addStartEndGap(point, points, layers, draggable);
@@ -63,7 +63,7 @@ function parsePoints(points, layers, draggable, ctx) {
     let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
     if (ctx) {
         endPolyline.setStyle({
-            color: ctx.creatingRouteMode.colors[TracksManager.PROFILE_LINE],
+            color: ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE }),
         });
     }
     layers.push(endPolyline);
@@ -107,7 +107,7 @@ function createPolyline(coords, ctx, point, points) {
     let polyline = new L.Polyline(coords, getPolylineOpt());
     if (ctx) {
         polyline.setStyle({
-            color: ctx.creatingRouteMode.colors[getProfile(point, points)],
+            color: ctx.trackRouter.getColor(getPointGeoProfile(point, points)),
         });
     }
     return polyline;
@@ -135,12 +135,16 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
     }
 }
 
-function getProfile(point, points) {
-    let ind = _.indexOf(points, point, 0);
-    if (ind > 0) {
-        return points[ind - 1].profile ? points[ind - 1].profile : TracksManager.PROFILE_LINE;
+// used just to pick color
+// find previous point if possible
+// use PROFILE_LINE if no geoProfile found
+function getPointGeoProfile(point, points) {
+    const ind = _.indexOf(points, point, 0);
+    const usePoint = ind > 0 ? points[ind - 1] : point;
+    if (usePoint?.geoProfile || usePoint?.profile) {
+        return { profile: usePoint?.profile, geoProfile: usePoint?.geoProfile };
     } else {
-        return point.profile ? point.profile : TracksManager.PROFILE_LINE;
+        return { profile: TracksManager.PROFILE_LINE };
     }
 }
 
@@ -202,10 +206,9 @@ function getPolylineOpt() {
 }
 
 function getPolylineByPoints(point, polylines) {
-    let res;
-    let geo = point.geometry;
-    if (geo) {
-        res = polylines.find((polyline) => {
+    if (point && point.geometry) {
+        const geo = point.geometry;
+        const res = polylines.find((polyline) => {
             let layerPoints = polyline._latlngs;
             if (layerPoints.length === geo.length) {
                 let matchedFirstPoint = geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng;
@@ -218,8 +221,10 @@ function getPolylineByPoints(point, polylines) {
             }
             return null;
         });
+        return res;
+    } else {
+        console.error('getPolylineByPoints empty geometry', point);
     }
-    return res;
 }
 
 function getPolylineByStartEnd(startPoint, endPoint, polylines) {
@@ -236,11 +241,15 @@ function getPolylineByStartEnd(startPoint, endPoint, polylines) {
 }
 
 function updatePolylineToTemp(startPoint, endPoint, polyline) {
-    let polylineTemp = createTempPolyline(startPoint, endPoint);
-    polyline.setLatLngs(polylineTemp._latlngs);
-    polyline.setStyle(TEMP_LINE_STYLE);
-    polyline.point = endPoint;
-    return polyline;
+    if (polyline) {
+        const polylineTemp = createTempPolyline(startPoint, endPoint);
+        polyline.setLatLngs(polylineTemp._latlngs);
+        polyline.setStyle(TEMP_LINE_STYLE);
+        polyline.point = endPoint;
+        return polyline;
+    } else {
+        console.error('updatePolylineToTemp empty polyline', startPoint, endPoint);
+    }
 }
 
 function getPointByPolyline(layer, points) {

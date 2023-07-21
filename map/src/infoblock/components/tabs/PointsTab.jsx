@@ -10,7 +10,7 @@ import {
     MenuItem,
     Typography,
 } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
@@ -31,16 +31,19 @@ const PointsTab = ({ width }) => {
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
 
-    const onDragEnd = async (result) => {
-        setLoading(true);
-        if (!result.destination) {
-            return;
-        }
-        if (ctx.selectedGpxFile) {
-            await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
-        }
-        setLoading(false);
-    };
+    const onDragEnd = useCallback(
+        async (result) => {
+            setLoading(true);
+            if (!result.destination) {
+                return;
+            }
+            if (ctx.selectedGpxFile) {
+                await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
+            }
+            setLoading(false);
+        },
+        [ctx.trackRouter, ctx.selectedGpxFile]
+    );
 
     const getItemStyle = (isDragging, draggableStyle) => ({
         userSelect: 'none',

@@ -162,7 +162,7 @@ export default function TracksMenu() {
             ...prevState,
             tracks: { text: resultText },
         }));
-    }, [visibleTracks]);
+    }, [visibleTracks, ctx.selectedGpxFile]);
 
     return (
         <>
