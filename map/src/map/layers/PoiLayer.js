@@ -4,7 +4,6 @@ import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
-import Utils from '../../util/Utils';
 import 'leaflet-spin';
 import PoiManager from '../../context/PoiManager';
 import 'leaflet.markercluster';
@@ -188,10 +187,7 @@ export default function PoiLayer() {
     }
 
     function getPoiIcon(poi) {
-        const color = poi.properties.color;
-        let colorBackground = color && color !== 'null' ? color : PoiManager.DEFAULT_POI_COLOR;
-        colorBackground = Utils.hexToArgb(colorBackground);
-        const svg = MarkerOptions.getSvgBackground(colorBackground, PoiManager.DEFAULT_SHAPE_COLOR);
+        const svg = MarkerOptions.getSvgBackground(PoiManager.DEFAULT_POI_COLOR, PoiManager.DEFAULT_SHAPE_COLOR);
         const iconWpt = PoiManager.getIconNameForPoiType(
             poi.properties.iconKeyName,
             poi.properties.typeOsmTag,

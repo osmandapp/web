@@ -44,8 +44,9 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         'ITINERARY_GROUPS',
     ];
     const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS'];
-    const resources = ['ONLINE_ROUTING_ENGINES', 'MAP_SOURCES'];
-    const menuType = ['My places', 'Settings', 'Resources'];
+    const resources = ['ONLINE_ROUTING_ENGINES'];
+    const maps = ['MAP_SOURCES', 'FILE_MAPS', 'FILE_SRTM', 'FILE_ROADS', 'FILE_TILES', 'FILE_WIKI'];
+    const menuType = ['My places', 'Settings', 'Resources', 'Maps'];
 
     const FILE_TYPE = 'FILE';
     const BACKUP_TYPE_ZIP = '.zip';
@@ -68,6 +69,13 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             let groups = getCategoryGroups();
             groups = prepareFileGroups(groups);
             setCategories(groups);
+            let res = [];
+            menuType.forEach((type) => {
+                if (type !== 'Maps') {
+                    res = res.concat(selectAllCategory(type, groups));
+                }
+            });
+            setSelectedCategories(res);
         }
     }, [openDownloadBackupDialog]);
 
@@ -147,17 +155,28 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     }
 
     function prepareFileGroups(groups) {
-        let res = {};
+        let res = {
+            [menuType[0]]: null,
+            [menuType[1]]: null,
+            [menuType[2]]: null,
+            [menuType[3]]: null,
+        };
         let names = Object.keys(groups);
         names.forEach((n) => {
             if (userPlaces.includes(n)) {
-                res = addToGeneralGroup('My places', res, n, groups);
+                addToGeneralGroup([menuType[0]], res, n, groups);
+            } else if (settings.includes(n)) {
+                addToGeneralGroup([menuType[1]], res, n, groups);
+            } else if (maps.includes(n)) {
+                addToGeneralGroup([menuType[3]], res, n, groups);
+            } else if (resources.includes(n) || n.startsWith(`${FILE_TYPE}_`)) {
+                addToGeneralGroup([menuType[2]], res, n, groups); // add Maps to the end of the list
             }
-            if (settings.includes(n)) {
-                res = addToGeneralGroup('Settings', res, n, groups);
-            }
-            if (resources.includes(n) || n.startsWith(`${FILE_TYPE}_`)) {
-                res = addToGeneralGroup('Resources', res, n, groups);
+        });
+        // remove empty category
+        Object.keys(res).forEach((t) => {
+            if (!res[t]) {
+                delete res[t];
             }
         });
         return res;
@@ -171,7 +190,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         return res;
     }
 
-    function selectCategory(e, k) {
+    function selectCategory(k, e) {
         e.stopPropagation();
         if (selectedCategories.includes(k)) {
             if (categories[k]) {
@@ -202,6 +221,19 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             }
             setSelectedCategories(list);
         }
+    }
+
+    function selectAllCategory(type, groups) {
+        let res = [];
+        res.push(type);
+        if (groups[type]) {
+            Object.keys(groups[type]).forEach((cat) => {
+                if (!selectedCategories.includes(cat)) {
+                    res.push(cat);
+                }
+            });
+        }
+        return res;
     }
 
     function getTypeSize(size) {
@@ -286,7 +318,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                                     <Checkbox
                                         edge="start"
                                         checked={selectedCategories.includes(k)}
-                                        onChange={(e) => selectCategory(e, k)}
+                                        onChange={(e) => selectCategory(k, e)}
                                     />
                                 </ListItemIcon>
                                 <ListItemText sx={{ ml: -3 }} primary={k} />
@@ -304,7 +336,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                                                     <Checkbox
                                                         edge="start"
                                                         checked={selectedCategories.includes(sk)}
-                                                        onChange={(e) => selectCategory(e, sk)}
+                                                        onChange={(e) => selectCategory(sk, e)}
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText sx={{ ml: -3 }} primary={prepareType(sk)} />
