@@ -16,31 +16,32 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview 
 
-*OsmAnd Categories Search*  
+OsmAnd Point of Interest (POI) search allows you to quickly and conveniently find places of interest such as restaurants, hotels, gas stations, and other objects near your current location or a selected area on the map.  
 
+The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by category to help you quickly find what you are looking for, and the filter allows you to select certain POI characteristics to display only relevant results.  
+
+Custom Search complements the functionality by providing the ability to select categories and subcategories of POIs and save the filters created for later use. This makes it easier to find POIs that match specific needs and preferences.  
+
+The overall functionality of POI search provides accuracy, visibility and convenience in finding places of interest and services nearby. It allows you to plan trips, find nearby facilities and get additional information about them such as ratings, reviews and contact details.   
+
+<!--
 Point of interesting (POI) seaching is one the general function of OsmAnd. [POI](https://wiki.openstreetmap.org/wiki/Points_of_interest) is any object on the map. How you know OsmAnd uses data from [OpenStreetMap](http://openstreetmap.org/).
 
 **Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
+-->
+
+OsmAnd provides several ways to get to the *Search tool → [Address search tab](../search/search-address.md)* where the **Coordinates search** is located.
+
+- The [Search button](../widgets/map-buttons.md#search) on the map application screen.
+- Go to the main Android *Menu → Search → Address tab → Coordinates Search*.
+- When preparing to start a route, tap *Navigation → Set destination → Search field → Address tab → Coordinates Search*.  
+- configure map - show poi overlay - search 
 
 
 ## How to use
 
 All POI types in OsmAnd:  
 [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml)  
-
-The POI (Points of Interest) search in the navigation application allows users to find interesting places and objects around them or in a selected area. These include:
-
-1. What: The POI search provides access to different categories of places such as restaurants, hotels, banks, pharmacies, gas stations, points of interest, etc.
-
-2. Why: Users can use POI Finder to find landmarks in a new city, navigate unfamiliar terrain, find convenient services, or plan routes with stops at desired locations.
-
-3. How: The POI Search function contains a search bar where the user can enter keywords or place names. The results are displayed as a list sorted by category, making it easy to navigate through them.
-
-4. Convenience: The filtering function allows users to select desired characteristics for POIs so that only relevant items such as rating, distance from current location, hours of operation and other attributes are displayed in the list.
-
-5. Custom Search: Users can create their own search filters by selecting POI types from various ready-made categories and subcategories and saving them for future use.
-
-POI Search makes it easy to find places and services of interest by providing a convenient way to locate and display information about POIs in a selected area. This feature makes the navigation application a useful tool for traveling, city navigation and quick access to necessary services and facilities.  
 
 ### Search query list
 
@@ -79,7 +80,7 @@ Enable / disable POI layer on the map:
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
-![POI overlay Android](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
@@ -100,7 +101,7 @@ Enable / disable POI layer on the map:
 
 <TabItem value="android" label="Android">
 
-![POI overlay Android](@site/static/img/search/search_poi_filter_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_filter_andr.png)
 
 </TabItem>
 
@@ -119,12 +120,31 @@ You can use the **Filter** function to select the necessary characteristics for 
 
 ![POI overlay Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
-A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are some of them here:  
+A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of 21 default categories. Some of them are listed here:    
 
-| Filter | Types | Note |
-|:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Allows you to use streams and drains for boat navigation. Enabling this option may be useful for small boats such as canoes, kayaks, rafts, rowboats. |  [Streams](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) are naturally-forming waterways that are too narrow to be called a river. [Drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) are artificial waterways, typically lined with concrete or similar, used to carry superfluous water like storm water or grey-discharge.|
-| *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
+| Categories | Types | Values | Note |
+|:------------|:---------------|:---------------|:---------------|
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
 
 
 
@@ -134,7 +154,7 @@ A filter can consist of quite a number of items, the presence of which depends o
 
 <TabItem value="android" label="Android">
 
-![POI overlay Android](@site/static/img/search/search_poi_rearrange_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_rearrange_andr.png)
 
 </TabItem>
 
@@ -146,7 +166,26 @@ A filter can consist of quite a number of items, the presence of which depends o
 
 </Tabs>
 
+The Rearrange Categories feature allows you to list only the categories you need and arrange them in the order you are most comfortable using them.   
+
+Description and how to use:
+- Initially, the list is sorted alphabetically. Created categories are also added in alphabetical order.
+- Changes in the list of categories are made for each profile separately.
+- Move categories by dragging and dropping them to the right position in the list.
+- To hide unnecessary categories, tap the *minus* icon. 
+- Available, previously Hidden categories can be returned to the displayed list by tapping the *plus* icon.
+- Use the Reset to default button to return the list to the preset state.
+- Categories created with [Custom Search](#custom-poi-search) or [Filters](#filters) can be deleted using the Delete icon.  
+
+![Search POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
+
+
 ### Online Search
+
+![Search POI Android](@site/static/img/search/search_poi_online_andr.png)
+
+https://nominatim.openstreetmap.org/ui/search.html  
+https://nominatim.org/  
 
 
 ## Custom POI search
