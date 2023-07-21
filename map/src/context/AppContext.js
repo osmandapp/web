@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils from '../util/Utils';
 import TracksManager from './TracksManager';
-import RoutingManager from './RoutingManager';
 import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
 import PoiManager from './PoiManager';
 import { apiGet } from '../util/HttpApi';
+import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import WeatherManager from './WeatherManager';
 
 const osmandTileURL = {
@@ -272,7 +272,12 @@ export const AppContextProvider = (props) => {
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
-    const [selectedGpxFile, setSelectedGpxFile] = useState({});
+
+    const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
+    const setSelectedGpxFile = (s) => {
+        reactSetSelectedGpxFile(() => s); // convert setState({}) to queued setState(() => {})
+    };
+
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
     //
@@ -285,7 +290,8 @@ export const AppContextProvider = (props) => {
     let startInit,
         endInit,
         pinInit,
-        interInit = [];
+        interInit = [],
+        avoidInit = [];
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
@@ -307,17 +313,19 @@ export const AppContextProvider = (props) => {
                 interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
     }
-    const [routeProviders, setRouteProviders] = useState(RoutingManager.initRouteProviders);
-    const [creatingRouteMode, setCreatingRouteMode] = useState({
-        mode: 'car',
-        opts: {},
-        modes: { car: { name: 'Car', params: {} } },
-    });
+    if (searchParams.get('avoid')) {
+        searchParams
+            .get('avoid')
+            .split(';')
+            .forEach((id) => {
+                avoidInit.push({ id, name: 'Way ' + Math.trunc(id / 64) });
+            });
+    }
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
-    const [interPoints, setInterPoints] = useState(interInit ?? []);
-    const [avoidRoads, setAvoidRoads] = useState([]);
+    const [interPoints, setInterPoints] = useState(interInit);
+    const [avoidRoads, setAvoidRoads] = useState(avoidInit);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
     const [addFavorite, setAddFavorite] = useState({
@@ -354,12 +362,22 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
+    const [routeRouter, setRouteRouter] = useState(() => new geoRouter());
+    const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
+    const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
+    const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
+
     const [trackRange, setTrackRange] = useState(null);
     const [showPoints, setShowPoints] = useState({
         points: true,
         wpts: true,
     });
     const [devMode, setDevMode] = useState(false);
+
+    routeRouter.initSetter({ setter: setRouteRouter });
+    trackRouter.initSetter({ setter: setTrackRouter });
+    afterPointRouter.initSetter({ setter: setAfterPointRouter });
+    beforePointRouter.initSetter({ setter: setBeforePointRouter });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -379,69 +397,60 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        RoutingManager.loadRouteProviders({
-            routeProviders,
-            setRouteProviders,
-            creatingRouteMode,
-            setCreatingRouteMode,
-        });
+        const sequentialLoad = async () => {
+            await routeRouter.loadProviders({ parseQueryString: true });
+            await trackRouter.loadProviders();
+            await afterPointRouter.loadProviders();
+            await beforePointRouter.loadProviders();
+        };
+        sequentialLoad();
     }, []);
 
     useEffect(() => {
-        if (routeProviders.isReady() && routeTrackFile) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateGpxRoute({
-                routeMode,
+        if (routeRouter.isReady() && routeTrackFile) {
+            routeRouter.calculateGpxRoute({
                 routeTrackFile,
                 setRouteData,
                 setStartPoint,
                 setEndPoint,
                 setInterPoints,
+                changeRouteText,
+                setRoutingErrorMsg,
             });
         }
-    }, [routeProviders, routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
+    }, [routeRouter.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
 
     useEffect(() => {
-        if (routeProviders.isReady() && !routeTrackFile && startPoint && endPoint) {
-            const routeMode = RoutingManager.routeModeCompatible(routeProviders);
-            RoutingManager.calculateRoute({
-                routeProviders,
+        if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
+            routeRouter.calculateRoute({
                 startPoint,
                 endPoint,
                 interPoints,
                 avoidRoads,
-                routeMode,
                 setRouteData,
-                getRouteText,
+                changeRouteText,
                 setRoutingErrorMsg,
             });
         } else {
-            setHeaderText((prevState) => ({
-                ...prevState,
-                route: { text: `` },
-            }));
+            if (!routeTrackFile) {
+                setHeaderText((prevState) => ({
+                    ...prevState,
+                    route: { text: `` },
+                }));
+            }
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [
-        routeProviders.isReady(),
-        routeProviders.type,
-        routeProviders.router,
-        routeProviders.profile,
-        startPoint,
-        endPoint,
-        interPoints,
-        routeTrackFile,
-        avoidRoads,
-    ]); // ,setRouteData
+    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
 
-    function getRouteText(processRoute, data) {
+    function changeRouteText(processRoute, data) {
         let resultText = ``;
         if (processRoute) {
             resultText = `Route calculating…`;
         } else {
             if (data) {
-                let dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${routeProviders.profile} is found.`;
+                const { name } = routeRouter.getProfile();
+                const dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
+                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
             }
         }
         setHeaderText((prevState) => ({
@@ -456,12 +465,12 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail);
-        // eslint-disable-next-line
     }, [loginUser]);
+
     useEffect(() => {
         loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
-        // eslint-disable-next-line
     }, [loginUser]);
+
     return (
         <AppContext.Provider
             value={{
@@ -498,8 +507,10 @@ export const AppContextProvider = (props) => {
                 setInterPoints,
                 routeData,
                 setRouteData,
-                routeProviders,
-                setRouteProviders,
+                routeRouter,
+                trackRouter,
+                afterPointRouter,
+                beforePointRouter,
                 routeShowPoints,
                 setRouteShowPoints,
                 weatherPoint,
@@ -529,8 +540,6 @@ export const AppContextProvider = (props) => {
                 OBJECT_TYPE_POI,
                 createTrack,
                 setCreateTrack,
-                creatingRouteMode,
-                setCreatingRouteMode,
                 gpxCollection,
                 setGpxCollection,
                 loadingContextMenu,

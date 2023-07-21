@@ -2,13 +2,11 @@ import React, { useEffect, useRef, useContext, useState, useCallback } from 'rea
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
+import TracksManager from '../../context/TracksManager';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MarkerOptions from '../markers/MarkerOptions';
 
-function dist(a1, a2) {
-    // distance is not correct
-    return (a1.lat - a2.lat) * (a1.lat - a2.lat) + (a1.lng - a2.lng) * (a1.lng - a2.lng);
-}
+const DRAG_DEBOUNCE_MS = 10;
 
 function moveableMarker(ctx, map, marker) {
     let moved;
@@ -17,6 +15,12 @@ function moveableMarker(ctx, map, marker) {
     function trackCursor(evt) {
         marker.setLatLng(evt.latlng);
     }
+
+    // marker.on("mousemove", () => {
+    //     if (moved) {
+    //         console.log('drag...');
+    //     }
+    // })
 
     marker.on('mousedown', () => {
         moved = marker._point;
@@ -29,25 +33,7 @@ function moveableMarker(ctx, map, marker) {
         map.dragging.enable();
         map.off('mousemove', trackCursor);
         if (moved && Math.abs(moved.x - marker._point.x) + Math.abs(moved.y - marker._point.y) > 10) {
-            let newInterPoints = Object.assign([], ctx.interPoints);
-            let minInd = -1;
-            if (ctx.interPoints.length > 0) {
-                let minDist = dist(ctx.endPoint, mv) + dist(ctx.interPoints[ctx.interPoints.length - 1], mv);
-                for (let i = 0; i < ctx.interPoints.length; i++) {
-                    let dst =
-                        dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], mv) + dist(ctx.interPoints[i], mv);
-                    if (dst < minDist) {
-                        minInd = i;
-                        minDist = dst;
-                    }
-                }
-            }
-            if (minInd < 0) {
-                newInterPoints.push(marker.getLatLng());
-            } else {
-                newInterPoints.splice(minInd, 0, marker.getLatLng());
-            }
-            ctx.setInterPoints(newInterPoints);
+            ctx.routeRouter.newInterPoint({ ctx, ll: marker.getLatLng(), old: mv });
         }
     });
 
@@ -60,12 +46,24 @@ const RouteLayer = ({ geocodingData, region }) => {
     const navigate = useNavigate();
     const url = useLocation();
 
+    let timer = null;
+    function debouncer(f) {
+        // if (timer) { clearTimeout(timer); timer = null; } // another kind of debouncer
+        if (timer === null) {
+            timer = setTimeout(() => {
+                timer = null;
+                f();
+            }, DRAG_DEBOUNCE_MS);
+        }
+    }
+
     const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
     const [routeQueryStringCleanup, setQueryStringCleanup] = useState(false);
 
     useEffect(() => {
-        if (ctx.routeProviders.loaded) {
+        if (ctx.routeRouter.isReady()) {
             let obj = {};
+
             if (ctx.startPoint) {
                 obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
             }
@@ -78,63 +76,92 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (ctx.interPoints?.length > 0) {
                 obj['inter'] = ctx.interPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
-            if (Object.keys(obj).length > 0) {
-                obj.type = ctx.routeProviders.type;
-                obj.profile = ctx.routeProviders.profile;
+            if (ctx.avoidRoads?.length > 0) {
+                obj['avoid'] = ctx.avoidRoads.map(({ id }) => id).join(';');
             }
+
+            const qs = new URLSearchParams(window.location.search);
+            if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
+                const { type, profile } = ctx.routeRouter.getProfile();
+                obj.type = type;
+                obj.profile = profile;
+
+                if (ctx.routeRouter.isParamsChanged()) {
+                    const mode = TracksManager.formatRouteMode({
+                        profile: profile,
+                        params: ctx.routeRouter.getChangedParams(),
+                    });
+                    obj['params'] = mode.toString().replaceAll('=', ':'); // pretty-url
+                }
+            }
+
             if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
                 setQueryStringCleanup(true);
                 setRouteQueryStringParams(obj);
             }
         }
-    }, [
-        ctx.startPoint,
-        ctx.endPoint,
-        ctx.pinPoint,
-        ctx.interPoints,
-        ctx.routeProviders.type,
-        ctx.routeProviders.profile,
-        ctx.routeProviders.loaded,
-    ]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints, ctx.avoidRoads, ctx.routeRouter.getEffectDeps()]);
 
     useEffect(() => {
-        if (ctx.routeProviders.loaded && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+        if (ctx.routeRouter.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
             if (Object.keys(routeQueryStringParams).length === 0) {
                 setQueryStringCleanup(false); // only once
             }
             const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
                 .toString()
                 .replaceAll('%2C', ',')
+                .replaceAll('%3A', ':')
                 .replaceAll('%3B', ';');
             navigate({
                 hash: url.hash,
                 search: '?' + pretty,
             });
         }
-    }, [routeQueryStringParams, setRouteQueryStringParams, ctx.routeProviders.loaded]);
+    }, [routeQueryStringParams, ctx.routeRouter.isReady()]); // setRouteQueryStringParams
 
     const startPointRef = useRef(null);
     const endPointRef = useRef(null);
     const pinPointRef = useRef(null);
     const startEventHandlers = useCallback(
         {
+            drag() {
+                const marker = startPointRef.current;
+                if (marker != null) {
+                    debouncer(() => ctx.setStartPoint(marker.getLatLng()));
+                }
+            },
+            dragstart() {
+                ctx.routeRouter.onDragStart();
+            },
             dragend() {
+                ctx.routeRouter.onDragEnd();
                 const marker = startPointRef.current;
                 if (marker != null) {
                     ctx.setStartPoint(marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
-            click() {
-                // ctx.setStartPoint(null);
-                // ctx.setRouteData(null);
-            },
+            // click() {
+            //     // ctx.setStartPoint(null);
+            //     // ctx.setRouteData(null);
+            // }
         },
         [ctx.setStartPoint, startPointRef]
     );
+
     const endEventHandlers = useCallback(
         {
+            drag() {
+                const marker = endPointRef.current;
+                if (marker != null) {
+                    debouncer(() => ctx.setEndPoint(marker.getLatLng()));
+                }
+            },
+            dragstart() {
+                ctx.routeRouter.onDragStart();
+            },
             dragend() {
+                ctx.routeRouter.onDragEnd();
                 const marker = endPointRef.current;
                 if (marker != null) {
                     ctx.setEndPoint(marker.getLatLng());
@@ -144,6 +171,7 @@ const RouteLayer = ({ geocodingData, region }) => {
         },
         [ctx.setEndPoint, endPointRef]
     );
+
     const pinEventHandlers = useCallback(
         {
             dragend() {
@@ -160,15 +188,25 @@ const RouteLayer = ({ geocodingData, region }) => {
     const intermediatEventHandlers = useCallback(
         {
             // click called after dragend
-            clicknotworking(event) {
-                // console.log('Marker clicked');
-                let ind = event.target.options['data-index'];
-                let newinter = Object.assign([], ctx.interPoints);
-                newinter.splice(ind, 1);
-                ctx.setInterPoints(newinter);
+            // clicknotworking(event) {
+            //     let ind = event.target.options['data-index'];
+            //     let newinter = Object.assign([], ctx.interPoints);
+            //     newinter.splice(ind, 1);
+            //     ctx.setInterPoints(newinter);
+            // },
+            drag(event) {
+                debouncer(() => {
+                    let ind = event.target.options['data-index'];
+                    let newinter = Object.assign([], ctx.interPoints);
+                    newinter[ind] = event.target.getLatLng();
+                    ctx.setInterPoints(newinter);
+                });
+            },
+            dragstart() {
+                ctx.routeRouter.onDragStart();
             },
             dragend(event) {
-                // console.log('Marker dragged');
+                ctx.routeRouter.onDragEnd();
                 let ind = event.target.options['data-index'];
                 let newinter = Object.assign([], ctx.interPoints);
                 newinter[ind] = event.target.getLatLng();
@@ -186,23 +224,21 @@ const RouteLayer = ({ geocodingData, region }) => {
         opacity: 1,
         fillOpacity: 0.8,
     };
+
     const onEachFeature = (feature, layer) => {
         if (feature.properties && feature.properties.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
-                let roadId = feature.properties.roadId;
-                let avoidRoadObj = {
-                    id: roadId,
-                    name: 'Way ' + Math.trunc(roadId / 64),
-                };
-                window['addAvoidRoadId' + avoidRoadObj.id] = () => {
+                const id = feature.properties.roadId;
+                const name = 'Way ' + Math.trunc(id / 64);
+
+                window['addAvoidRoadId' + id] = () => {
                     let newAvoidRoads = Object.assign([], ctx.avoidRoads);
-                    newAvoidRoads.push(avoidRoadObj);
+                    newAvoidRoads.push({ id, name });
                     ctx.setAvoidRoads(newAvoidRoads);
                 };
-                desc =
-                    `${desc}. <a href="#" onclick="addAvoidRoadId${avoidRoadObj.id}()">` +
-                    `Avoid ${avoidRoadObj.name}</a>`;
+
+                desc = `${desc}. <input type="button" value="Avoid ${name}" onclick="addAvoidRoadId${id}()"/>`;
             }
             layer.bindPopup(desc);
         }
@@ -265,12 +301,15 @@ const RouteLayer = ({ geocodingData, region }) => {
         }
     }, [ctx.searchCtx, ctx.setSearchCtx]);
 
+    const passStyle = (f) => f.style; // pass geojson.features.style to set colors/etc
+
     return (
         <>
             {ctx.routeData && (
                 <GeoJSON
                     key={routeDataKey()}
                     data={ctx.routeData.geojson}
+                    style={passStyle}
                     pointToLayer={pointToLayer}
                     onEachFeature={onEachFeature}
                     filter={routeFilter}

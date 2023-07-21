@@ -18,13 +18,19 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         if (map) {
             map.contextmenu.removeAllItems();
             map.contextmenu.addItem({
-                text: 'Set as start',
+                text: 'Route from',
                 callback: (e) => ctx.setStartPoint(e.latlng),
             });
             map.contextmenu.addItem({
-                text: 'Set as end',
+                text: 'Route to',
                 callback: (e) => ctx.setEndPoint(e.latlng),
             });
+            if (ctx.startPoint && ctx.endPoint) {
+                map.contextmenu.addItem({
+                    text: 'Route via',
+                    callback: (e) => ctx.routeRouter.newInterPoint({ ctx, ll: e.latlng }),
+                });
+            }
             map.contextmenu.addItem({
                 text: 'Add pin',
                 callback: (e) => ctx.setPinPoint(e.latlng),
@@ -63,12 +69,9 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     }, [
         ctx.startPoint,
         ctx.endPoint,
-        ctx.setStartPoint,
-        ctx.setEndPoint,
+        ctx.interPoints,
         ctx.pinPoint,
-        ctx.setPinPoint,
         map,
-        ctx.setRouteData,
         ctx.loginUser,
         ctx.createTrack,
         ctx.selectedGpxFile,

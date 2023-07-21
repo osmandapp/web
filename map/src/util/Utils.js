@@ -1,5 +1,3 @@
-import LinearScaleIcon from '@mui/icons-material/LinearScale';
-import React from 'react';
 import TracksManager from '../context/TracksManager';
 import { apiGet } from '../util/HttpApi';
 
@@ -71,35 +69,6 @@ function hexToArgb(hex) {
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
 
-function getProfileIcon(profile, color) {
-    if (profile === TracksManager.PROFILE_LINE) {
-        return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
-    } else {
-        return (
-            <img
-                color={color}
-                src={'/map/images/profile_icons/' + profile + '.svg'}
-                height={25}
-                width={25}
-                alt={profile}
-            />
-        );
-    }
-}
-
-export function mergeStateObject(getObject, setFunction, todoObject) {
-    /*
-        Please note: getObject will be directly modified here!
-        In the next render cycle it will be overriden by useState.
-        We use ()=>{} to make correct queue of changes for next render.
-
-        You might use return Object as you want, but you don't have to re-assign it to getObject (as it's already done).
-    */
-    const merged = Object.assign(getObject, todoObject); // getObject has been modified
-    setFunction((previous) => Object.assign({}, previous, merged)); // push useState setter()
-    return merged;
-}
-
 /*
     Prepare string with NaN(s) before JSON.parse()
 
@@ -128,7 +97,6 @@ const Utils = {
     getDistance,
     getPointsDist,
     hexToArgb,
-    getProfileIcon,
 };
 
 export default Utils;
