@@ -218,6 +218,7 @@ async function calculateRouteOsmAnd({
         inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
     });
     const endurl = `points=${endPoint.lat.toFixed(6)},${endPoint.lng.toFixed(6)}`;
+
     let avoidRoadsUrl = '';
     avoidRoads.forEach((i) => {
         avoidRoadsUrl += ',' + i.id;

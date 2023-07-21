@@ -290,7 +290,8 @@ export const AppContextProvider = (props) => {
     let startInit,
         endInit,
         pinInit,
-        interInit = [];
+        interInit = [],
+        avoidInit = [];
     if (searchParams.get('start')) {
         let arr = searchParams.get('start').split(',');
         startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
@@ -312,11 +313,19 @@ export const AppContextProvider = (props) => {
                 interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
             });
     }
+    if (searchParams.get('avoid')) {
+        searchParams
+            .get('avoid')
+            .split(';')
+            .forEach((id) => {
+                avoidInit.push({ id, name: 'Way ' + Math.trunc(id / 64) });
+            });
+    }
     const [startPoint, setStartPoint] = useState(startInit);
     const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
-    const [interPoints, setInterPoints] = useState(interInit ?? []);
-    const [avoidRoads, setAvoidRoads] = useState([]);
+    const [interPoints, setInterPoints] = useState(interInit);
+    const [avoidRoads, setAvoidRoads] = useState(avoidInit);
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
     const [addFavorite, setAddFavorite] = useState({

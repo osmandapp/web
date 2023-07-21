@@ -74,6 +74,9 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (ctx.interPoints?.length > 0) {
                 obj['inter'] = ctx.interPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
+            if (ctx.avoidRoads?.length > 0) {
+                obj['avoid'] = ctx.avoidRoads.map(({ id }) => id).join(';');
+            }
             const qs = new URLSearchParams(window.location.search);
             if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
                 const { type, profile } = ctx.routeRouter.getProfile();
@@ -85,7 +88,7 @@ const RouteLayer = ({ geocodingData, region }) => {
                 setRouteQueryStringParams(obj);
             }
         }
-    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints, ctx.routeRouter.getEffectDeps()]);
+    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints, ctx.avoidRoads, ctx.routeRouter.getEffectDeps()]);
 
     useEffect(() => {
         if (ctx.routeRouter.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
@@ -213,19 +216,16 @@ const RouteLayer = ({ geocodingData, region }) => {
         if (feature.properties && feature.properties.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
-                let roadId = feature.properties.roadId;
-                let avoidRoadObj = {
-                    id: roadId,
-                    name: 'Way ' + Math.trunc(roadId / 64),
-                };
-                window['addAvoidRoadId' + avoidRoadObj.id] = () => {
+                const id = feature.properties.roadId;
+                const name = 'Way ' + Math.trunc(id / 64);
+
+                window['addAvoidRoadId' + id] = () => {
                     let newAvoidRoads = Object.assign([], ctx.avoidRoads);
-                    newAvoidRoads.push(avoidRoadObj);
+                    newAvoidRoads.push({ id, name });
                     ctx.setAvoidRoads(newAvoidRoads);
                 };
-                desc =
-                    `${desc}. <a href="#" onclick="addAvoidRoadId${avoidRoadObj.id}()">` +
-                    `Avoid ${avoidRoadObj.name}</a>`;
+
+                desc = `${desc}. <input type="button" value="Avoid ${name}" onclick="addAvoidRoadId${id}()"/>`;
             }
             layer.bindPopup(desc);
         }
