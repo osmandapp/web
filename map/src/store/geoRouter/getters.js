@@ -101,10 +101,26 @@ export function getResetParams({ router, profile } = {}) {
     return copyObj(this.getProfile({ router, profile })?.resetParams || {});
 }
 
+// return getParams filtered against getResetParams
+export function getChangedParams({ router, profile } = {}) {
+    const params = this.getParams({ router, profile });
+    const resetParams = this.getResetParams({ router, profile });
+
+    if (params && resetParams) {
+        Object.keys(params).forEach((k) => {
+            if (params[k].value === resetParams[k].value) {
+                delete params[k];
+            }
+        });
+    }
+
+    return params;
+}
+
 // compare given parameters with resetParams
-export function isParamsChanged({ params, type, router, profile } = {}) {
+export function isParamsChanged({ params = this.getParams(), router, profile } = {}) {
     if (params) {
-        const resetParams = this.getResetParams({ type, router, profile });
+        const resetParams = this.getResetParams({ router, profile });
         if (resetParams) {
             if (JSON.stringify(params) !== JSON.stringify(resetParams)) {
                 return true;

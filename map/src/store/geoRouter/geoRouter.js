@@ -18,6 +18,7 @@ import {
     getProfile,
     getParams,
     getResetParams,
+    getChangedParams,
     isParamsChanged,
     getURL,
     getGeoProfile,
@@ -65,6 +66,7 @@ export class geoRouter {
     getProfile = getProfile;
     getParams = getParams;
     getResetParams = getResetParams;
+    getChangedParams = getChangedParams;
     isParamsChanged = isParamsChanged;
     getURL = getURL;
     getGeoProfile = getGeoProfile;

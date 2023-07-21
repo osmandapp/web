@@ -116,7 +116,7 @@ export async function apiGet(url, options = null) {
 
     if (cacheKey && cache[cacheKey]) {
         // console.log('cache-hit'); //, cacheKey);
-        return cache[cacheKey];
+        return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
     let response = null;

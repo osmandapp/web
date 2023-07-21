@@ -68,34 +68,39 @@ async function loadProfilesOsmAnd() {
     // OsmAnd JSON profiles list is converted from Object to Array (for OSRM compatibility)
     const osmand = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/routing-modes`, { apiCache: true });
 
-    const json = osmand.data;
+    const data = osmand.data;
 
-    if (osmand.ok && json && json.car) {
-        if (json) {
-            // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
-            // note: sort, filter, additional profiles will be processed here
-            // copy .params to .reset (used later to reset params in settings)
+    if (osmand.ok && data && data.car) {
+        // convert OsmAnd "profiles" {} to OSRM "profiles" [] array
+        // note: sort, filter, additional profiles will be processed here
+        // copy .params to .reset (used later to reset params in settings)
+        const converted = [];
 
-            const converted = [];
+        /*
+            OsmAnd provider Data will be modified later (profile params might change).
+            As it's not read-only, data must be unique for every geoRouter instance.
+            HttpApi cache might return shared-cache-object. Shared!
+            Therefore, copy received object to made it unique.
+        */
+        const json = copyObj(data);
 
-            Object.keys(json).forEach((k) => {
-                if (k.includes('rescuetrack') && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
-                    return;
-                }
-                if (json[k]?.params) {
-                    json[k].resetParams = copyObj(json[k]?.params);
-                }
-                converted.push(json[k]);
-            });
+        Object.keys(json).forEach((k) => {
+            if (k.includes('rescuetrack') && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
+                return;
+            }
+            if (json[k]?.params) {
+                json[k].resetParams = copyObj(json[k]?.params);
+            }
+            converted.push(json[k]);
+        });
 
-            converted.push({
-                key: PROFILE_LINE,
-                name: PROFILE_LINE_NAME,
-                params: {},
-            });
+        converted.push({
+            key: PROFILE_LINE,
+            name: PROFILE_LINE_NAME,
+            params: {},
+        });
 
-            return converted; // success
-        }
+        return converted; // success
     }
 
     console.log('failed to load osmand profiles');
@@ -118,16 +123,36 @@ export async function loadProviders({ parseQueryString = false } = {}) {
     next.router = next.providers[0].key;
     next.profile = next.providers[0].profiles[0].key;
 
-    // set type/profile according to window.location.search
+    // set type/profile [/mode] according to window.location.search
     if (parseQueryString) {
         const searchParams = new URLSearchParams(window.location.search);
+
         const type = searchParams.get('type');
         const profile = searchParams.get('profile');
+
         if (type && profile) {
             const picked = next.pickTypeRouterProfile.call(next, { type, profile });
             next.type = picked.type;
             next.router = picked.router;
             next.profile = picked.profile;
+
+            if (searchParams.get('params')) {
+                const freshParams = TracksManager.decodeRouteMode({
+                    routeMode: searchParams.get('params').toString().replaceAll(':', '='),
+                    params: next.getResetParams({ router: picked.router, profile: picked.profile }),
+                });
+
+                // update picked route-profile's params
+                next.providers.forEach((r, providerIdx) => {
+                    if (r.key === picked.router) {
+                        r.profiles?.forEach((p, profileIdx) => {
+                            if (p.key === picked.profile) {
+                                next.providers[providerIdx].profiles[profileIdx].params = freshParams;
+                            }
+                        });
+                    }
+                });
+            }
         }
     }
 

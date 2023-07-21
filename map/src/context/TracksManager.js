@@ -466,20 +466,35 @@ function deleteLocalTrack(ctx) {
     return false;
 }
 
-function formatRouteMode(geoProfile) {
-    let routeModeStr = geoProfile?.profile ?? 'car';
-    if (geoProfile?.params) {
-        Object.keys(geoProfile.params).forEach((o) => {
-            if (geoProfile.params[o]?.value === true) {
+function formatRouteMode({ profile = 'car', params }) {
+    let routeModeStr = profile ?? 'car';
+    if (params) {
+        Object.keys(params).forEach((o) => {
+            if (params[o]?.value === true) {
                 routeModeStr += ',' + o;
-            } else if (geoProfile.params[o]?.value === false) {
+            } else if (params[o]?.value === false) {
                 // skip
             } else {
-                routeModeStr += ',' + o + '=' + geoProfile.params[o].value;
+                routeModeStr += ',' + o + '=' + params[o].value;
             }
         });
     }
     return routeModeStr;
+}
+
+// return params updated with parsed routeMode
+function decodeRouteMode({ routeMode, params }) {
+    const draft = { ...params };
+
+    routeMode.split(',').forEach((p) => {
+        // assume empty as true (see formatRouteMode)
+        const [key, val = true] = p.split('=');
+        if (draft[key]) {
+            draft[key].value = val;
+        }
+    });
+
+    return draft;
 }
 
 async function updateRoute(points) {
@@ -732,6 +747,7 @@ const TracksManager = {
     clearTrack,
     getGroup,
     formatRouteMode,
+    decodeRouteMode,
     getTracks,
     getFavoriteGroups,
     isEqualPoints,

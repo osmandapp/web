@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useContext, useState, useCallback } from 'rea
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
+import TracksManager from '../../context/TracksManager';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MarkerOptions from '../markers/MarkerOptions';
 
@@ -62,6 +63,7 @@ const RouteLayer = ({ geocodingData, region }) => {
     useEffect(() => {
         if (ctx.routeRouter.isReady()) {
             let obj = {};
+
             if (ctx.startPoint) {
                 obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
             }
@@ -77,12 +79,22 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (ctx.avoidRoads?.length > 0) {
                 obj['avoid'] = ctx.avoidRoads.map(({ id }) => id).join(';');
             }
+
             const qs = new URLSearchParams(window.location.search);
             if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
                 const { type, profile } = ctx.routeRouter.getProfile();
                 obj.type = type;
                 obj.profile = profile;
+
+                if (ctx.routeRouter.isParamsChanged()) {
+                    const mode = TracksManager.formatRouteMode({
+                        profile: profile,
+                        params: ctx.routeRouter.getChangedParams(),
+                    });
+                    obj['params'] = mode.toString().replaceAll('=', ':'); // pretty-url
+                }
             }
+
             if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
                 setQueryStringCleanup(true);
                 setRouteQueryStringParams(obj);
@@ -98,6 +110,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
                 .toString()
                 .replaceAll('%2C', ',')
+                .replaceAll('%3A', ':')
                 .replaceAll('%3B', ';');
             navigate({
                 hash: url.hash,
