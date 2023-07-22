@@ -9,8 +9,8 @@ import WeatherManager from '../../../context/WeatherManager';
 export default function Weather() {
     const ctx = useContext(AppContext);
 
-    const GFS_WEATHER_TYPE = 'gfs';
-    const ECWMF_WEATHER_TYPE = 'ecmwf';
+    const GFS_WEATHER_TYPE = 'gfs'; //step 1 hour, after 24 hours after the current time - 3 hours
+    const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
     const [weatherOpen, setWeatherOpen] = useState(false);
 
@@ -107,25 +107,49 @@ export default function Weather() {
     }
 
     function getStep(increment) {
-        let step = 1;
-        const time = ctx.weatherDate.getUTCHours();
+        let step;
+        const utcHours = ctx.weatherDate.getUTCHours();
+        step = getGFSStep(utcHours);
+        if (!step) {
+            step = getECWMFStep(utcHours);
+        }
+        if (!step) {
+            console.log(`Some error during get hours step, time = ${ctx.weatherDate}`);
+        }
+        return increment ? step : -step;
+    }
+
+    function getGFSStep(utcHours) {
+        if (ctx.weatherType === GFS_WEATHER_TYPE) {
+            let step = 1;
+            if (Math.abs(diffHours) >= 24) {
+                // start the 3 hours step only from the first number that is a multiple of 3
+                if (utcHours % 3 === 0) {
+                    step = 3;
+                }
+            }
+            return step;
+        }
+        return null;
+    }
+
+    function getECWMFStep(utcHours) {
         if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
-            if (time !== 0 && time % 3 !== 0) {
-                step = time % 3;
+            let step;
+            if (utcHours !== 0 && utcHours % 3 !== 0) {
+                step = utcHours % 3;
             } else {
                 step = 3;
             }
-            // step 6 after 5 days
             if (Math.abs(diffHours) + new Date().getUTCHours() >= 120) {
-                step += 3;
+                // start the 6 hours step only from the first number that is a multiple of 6
+                if (utcHours % 6 === 0) {
+                    step = 6;
+                }
             }
-        } else {
-            // step 3 after 1 day
-            if (Math.abs(diffHours) + new Date().getUTCHours() >= 24) {
-                step = 3;
-            }
+            return step;
         }
-        return increment ? step : -step;
+        return null;
     }
 
     return (
