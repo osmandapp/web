@@ -9,7 +9,7 @@ import WeatherManager from '../../../context/WeatherManager';
 export default function Weather() {
     const ctx = useContext(AppContext);
 
-    const GFS_WEATHER_TYPE = 'gfs'; //step 1 hour, after 24 hours after the current time - 3 hours
+    const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
     const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
     const [weatherOpen, setWeatherOpen] = useState(false);
@@ -115,6 +115,7 @@ export default function Weather() {
         }
         if (!step) {
             console.log(`Some error during get hours step, time = ${ctx.weatherDate}`);
+            return 0;
         }
         return increment ? step : -step;
     }
