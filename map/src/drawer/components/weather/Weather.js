@@ -14,7 +14,7 @@ export default function Weather() {
 
     const [weatherOpen, setWeatherOpen] = useState(false);
 
-    const diffHours =
+    const currentDiffHours =
         Math.trunc(ctx.weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
 
     const handleWeatherType = (event, selectedType) => {
@@ -35,10 +35,10 @@ export default function Weather() {
     }
 
     function resetWeatherDate() {
-        const align = alignedStep(0, new Date());
-        if (align) {
-            const aligned = new Date(new Date().getTime() + align * 60 * 60 * 1000);
-            ctx.setWeatherDate(aligned);
+        const alignedStep = getAlignedStep({ direction: 0, diffHours: 0, date: new Date() });
+        if (alignedStep) {
+            const alignedDate = new Date(new Date().getTime() + alignedStep * 60 * 60 * 1000);
+            ctx.setWeatherDate(alignedDate);
         } else {
             ctx.setWeatherDate(new Date());
         }
@@ -49,10 +49,10 @@ export default function Weather() {
             WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
         if (ctx.weatherType) {
-            const align = alignedStep(0);
-            if (align) {
-                // console.log('align-current', align);
-                addWeatherHours(ctx, align); // step current when need
+            const alignedStep = getAlignedStep({ direction: 0 });
+            if (alignedStep) {
+                // console.log('align-current', alignedStep);
+                addWeatherHours(ctx, alignedStep); // step current when need
             }
         }
     }, [ctx.weatherType]);
@@ -82,7 +82,7 @@ export default function Weather() {
         let resultText = '';
         let weatherDateObj = ctx.weatherDate;
         let hourstr = 'now';
-        let hours = diffHours;
+        let hours = currentDiffHours;
 
         if (hours !== 0) {
             let day = 0;
@@ -121,38 +121,32 @@ export default function Weather() {
         return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
     }
 
-    function getDesiredStep() {
-        if (ctx.weatherType === ECWMF_WEATHER_TYPE && Math.abs(diffHours) + new Date().getUTCHours() >= 120) {
-            return 6;
-        }
-        if (ctx.weatherType === GFS_WEATHER_TYPE && Math.abs(diffHours) >= 24) {
-            return 3;
-        }
+    function getBaseStep(diffHours) {
         if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
-            return 3;
+            return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
         }
         if (ctx.weatherType === GFS_WEATHER_TYPE) {
-            return 1;
+            return Math.abs(diffHours) >= 24 ? 3 : 1;
         }
         return 0;
     }
 
     // align-backward (<0) align-forward (>0) else just align if needed
-    function alignedStep(direction, date = ctx.weatherDate) {
-        const desired = getDesiredStep();
+    function getAlignedStep({ direction, diffHours = currentDiffHours, date = ctx.weatherDate }) {
+        const baseStep = getBaseStep(diffHours);
 
-        const ideal = direction < 0 ? -desired : direction > 0 ? +desired : 0;
-        const idealHours = new Date(date.getTime() + ideal * 3600 * 1000).getUTCHours();
+        const baseStepWithDirection = direction < 0 ? -baseStep : direction > 0 ? +baseStep : 0;
+        const newHoursUTC = new Date(date.getTime() + baseStepWithDirection * 3600 * 1000).getUTCHours();
 
-        if (idealHours % desired === 0) {
-            // console.log('ideal', ideal);
-            return ideal;
+        if (newHoursUTC % baseStep === 0) {
+            // console.log('ideal', baseStepWithDirection);
+            return baseStepWithDirection;
         }
 
-        const currentHours = date.getUTCHours();
-        const aligned = direction < 0 ? -(currentHours % desired) : +(desired - (currentHours % desired));
-        // console.log('aligned', aligned);
-        return aligned;
+        const currentHoursUTC = date.getUTCHours();
+        const alignedStep = direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
+        // console.log('aligned', alignedStep);
+        return alignedStep;
     }
 
     return (
@@ -204,13 +198,16 @@ export default function Weather() {
                         <IconButton sx={{ ml: 1 }} onClick={resetWeatherDate}>
                             <RestartAlt />
                         </IconButton>
-                        <IconButton sx={{ ml: 1 }} onClick={() => addWeatherHours(ctx, alignedStep(-1))}>
+                        <IconButton
+                            sx={{ ml: 1 }}
+                            onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: -1 }))}
+                        >
                             <NavigateBefore />
                         </IconButton>
                         <Typography>
                             {ctx.weatherDate.toLocaleDateString() + ' ' + ctx.weatherDate.getHours() + ':00'}
                         </Typography>
-                        <IconButton onClick={() => addWeatherHours(ctx, alignedStep(+1))}>
+                        <IconButton onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: +1 }))}>
                             <NavigateNext />
                         </IconButton>
                     </MenuItem>
