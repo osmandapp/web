@@ -50,13 +50,17 @@ export default function GraphLayer() {
         if (!showPoints) {
             ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = 'none';
+                    if (l._icon) {
+                        l._icon.style.display = 'none';
+                    }
                 }
             });
         } else {
             ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = null;
+                    if (l._icon) {
+                        l._icon.style.display = null;
+                    }
                 }
             });
         }
