@@ -14,7 +14,12 @@ const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [showContextMenu, setShowContextMenu] = useState(false);
     const [hideContextMenu, setHideContextMenu] = useState(false);
+    const [clearState, setClearState] = useState(false);
+    const [resizing, setResizing] = useState(false);
+    const [drawerHeight, setDrawerHeight] = useState(45);
+
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
@@ -48,7 +53,7 @@ const OsmAndMapFrame = () => {
                                     <IconButton
                                         onClick={toggleContextMenu}
                                         edge="start"
-                                        sx={{ ml: 2, display: { xl: 'none' } }}
+                                        sx={{ ml: 2, display: { xs: 'none', md: 'block' } }}
                                     >
                                         <KeyboardDoubleArrowLeft />
                                     </IconButton>
@@ -57,7 +62,7 @@ const OsmAndMapFrame = () => {
                                     <IconButton
                                         onClick={toggleContextMenu}
                                         edge="start"
-                                        sx={{ ml: 2, display: { xl: 'none' } }}
+                                        sx={{ ml: 2, display: { xs: 'none', md: 'block' } }}
                                     >
                                         <KeyboardDoubleArrowRight />
                                     </IconButton>
@@ -70,11 +75,71 @@ const OsmAndMapFrame = () => {
                             {ctx.routingErrorMsg}
                         </Alert>
                     )}
-                    <OsmAndMap />
-                    <GeneralPanelButtons drawerWidth={drawerWidth} />
+                    <OsmAndMap showZoom={!showContextMenu} />
+                    <Box
+                        sx={{
+                            display: { xs: 'none', md: 'block' },
+                        }}
+                    >
+                        <GeneralPanelButtons
+                            drawerWidth={drawerWidth}
+                            showContextMenu={showContextMenu}
+                            setShowContextMenu={setShowContextMenu}
+                            clearState={clearState}
+                        />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: { xs: 'block', md: 'none' },
+                        }}
+                    >
+                        <GeneralPanelButtons
+                            drawerWidth={0}
+                            showContextMenu={showContextMenu}
+                            setShowContextMenu={setShowContextMenu}
+                            clearState={clearState}
+                        />
+                    </Box>
                 </Box>
-                <InformationBlock hideContextMenu={hideContextMenu} drawerWidth={drawerWidth} />
+                <Box
+                    sx={{
+                        display: { xs: 'none', md: 'block' },
+                    }}
+                >
+                    <InformationBlock
+                        mobile={false}
+                        hideContextMenu={hideContextMenu}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        setClearState={setClearState}
+                    />
+                </Box>
             </div>
+            <Drawer
+                variant="temporary"
+                PaperProps={{
+                    sx: {
+                        height: `${drawerHeight}px`,
+                        overflow: 'visible',
+                    },
+                }}
+                sx={{ mt: 500, display: { xs: 'block', md: 'none' } }}
+                hideBackdrop
+                open={true}
+                anchor={'bottom'}
+            >
+                <InformationBlock
+                    mobile={true}
+                    hideContextMenu={hideContextMenu}
+                    showContextMenu={showContextMenu}
+                    setShowContextMenu={setShowContextMenu}
+                    setClearState={setClearState}
+                    resizing={resizing}
+                    setResizing={setResizing}
+                    setDrawerHeight={setDrawerHeight}
+                    drawerHeight={drawerHeight}
+                />
+            </Drawer>
             <Drawer
                 variant="temporary"
                 open={drawerOpen}

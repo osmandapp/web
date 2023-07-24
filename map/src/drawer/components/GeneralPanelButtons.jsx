@@ -6,6 +6,9 @@ import AppContext from '../../context/AppContext';
 import { makeStyles } from '@material-ui/core/styles';
 import { styled } from '@mui/material/styles';
 import PoiTypesDialog from './poi/PoiTypesDialog';
+import PanelButtons from '../../infoblock/components/PanelButtons';
+import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
+import PointContextMenu from '../../infoblock/components/PointContextMenu';
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -14,7 +17,7 @@ const useStyles = makeStyles({
         height: '10px',
     },
 });
-export default function GeneralPanelButtons({ drawerWidth }) {
+export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setShowContextMenu, clearState }) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const StyledInput = styled('input')({
@@ -80,9 +83,18 @@ export default function GeneralPanelButtons({ drawerWidth }) {
                     </ButtonGroup>
                 </Paper>
             </div>
+            {showContextMenu && (
+                <PanelButtons
+                    showContextMenu={showContextMenu}
+                    setShowContextMenu={setShowContextMenu}
+                    clearState={clearState}
+                />
+            )}
             {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} />
             )}
+            {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
+            {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}
         </div>
     );
 }

@@ -10,7 +10,7 @@ export default class TrackTabList {
         tabs: null,
         tabList: [],
         defaultTab: 'general',
-        graphWidth: 400,
+        graphWidth: document.body.offsetWidth / 4 > 400 ? 400 : document.body.offsetWidth,
     };
 
     create(ctx, setShowContextMenu) {

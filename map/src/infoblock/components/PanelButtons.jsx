@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     },
 });
 
-const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearState }) => {
+const PanelButtons = ({ showContextMenu, setShowContextMenu, clearState }) => {
     const classes = useStyles();
 
     const ctx = useContext(AppContext);
@@ -81,7 +81,7 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
         ctx.selectedGpxFile && (
             <div>
                 {showContextMenu && (
-                    <div style={{ left: drawerWidth + 10 }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+                    <div style={{ marginTop: '-50px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
                         <div className="leaflet-control leaflet-bar padding-container">
                             <Paper>
                                 <ButtonGroup orientation="vertical" color="primary" sx={{ maxWidth: 36 }}>

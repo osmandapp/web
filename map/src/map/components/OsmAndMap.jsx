@@ -67,7 +67,7 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const OsmAndMap = () => {
+const OsmAndMap = ({ showZoom }) => {
     const classes = useStyles();
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
@@ -129,7 +129,7 @@ const OsmAndMap = () => {
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            <ZoomControl position="bottomleft" />
+            {showZoom && <ZoomControl position="bottomleft" />}
             <ScaleControl imperial={false} position="bottomright" />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
