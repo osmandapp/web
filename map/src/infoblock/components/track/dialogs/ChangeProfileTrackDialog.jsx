@@ -213,7 +213,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                         </IconButton>
                     </Box>
                 </Box>
-                <DialogContent sx={{ minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px' }}>
+                <DialogContent sx={{ minWidth: 350, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px' }}>
                     <SelectTrackProfile
                         hideSettings={true}
                         geoRouter={geoRouter}
