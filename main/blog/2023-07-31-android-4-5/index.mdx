@@ -19,54 +19,54 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Great news for Android users!  
 We're happy to announce the new 4.5 OsmAnd release for Android devices. 
 
+![banner_android_4](./img/banner_android_4-5.jpg)
+
 <!--truncate-->
 
-* BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX.
-* Free backup for favorites and settings to OsmAnd Cloud.
-* New format for Terrain maps with 3D Relief support.
-* Tracks management: updated UI, added sorting, support of nested folders.
-* Android Auto: new start menu for access favorites, tracks and poi categories.
-* One list of widgets for Top/Bottom panel.
-* New "Train" profile, allows to calculate railways routes.
-* Contour lines works with any "Map source".
-* Expanded list of default actions for external keyboards.
-* Custom routing files, added options to delete or overwrite.
-* Added option to "Announce deviation from the route".
-* Start screen: added option restore OsmAnd state from file.
-* Added Hazardous Materials classes for North America.
-* Added support of "Via ferrata" for pedestrian routing.
-* Added "CAI" scale for difficulty classification of the routes.
-* Fixed per-app language selection.
-* Added support themed icons.
-* OsmAnd Cloud: added option to delete account.
-* Accessibility: touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
-
+* [BLE/ANT+ sensors](#bleant-sensors)
+* [Free backup](#free-account-backup)
+* [New format for Terrain maps](#terrain-maps-updates)
+* [Tracks management menu](#track-management)
+* [New for Android Auto](#android-auto-improvments)
+* [Widget improvments](#widget-improvments)
+* ["Train" profile](#train-profile)
+* [Contour lines updates](#contour-lines-for-map-sources)
+* [External keyboards improvments](#more-actions-for-external-keyboards)
+* [Updates for Voice prompts settings](#announce-deviation-from-the-route)
+* [Start screen](#update-for-start-screen)
+* [Hazardous Materials classes](#hazardous-materials-classes-for-north-america)
+* ["Via ferrata" for pedestrian routing](#via-ferrata-for-pedestrian-routing)
+* ["CAI" scale for difficulty classification](#cai-scale)
+* [Support of themed icons](#support-themed-icons-for-android-13)
+* [Update of OsmAnd Cloud options](#option-delete-cloud-account)
+* [Accessibility plugin update](#accessibility-updates)
+* [Custom routing files](#custom-routing-files-options)
+* [Fixed](#fixed)
 
 ## BLE/ANT+ sensors
 
-Redesign [External sensror Plugin](https://osmand.net/docs/user/plugins/external-sensors):
+Redesign [External sensor Plugin](https://osmand.net/docs/user/plugins/external-sensors):
 - reworked connection
 
 ![Plugin ES](./img/external_sensors.png) ![Plugin ES](./img/external_sensors_1.png)
 
-- writing and viewing received [data to GPX](https://osmand.net/docs/user/plugins/trip-recording#recording-settings)
+- record and view received data in GPX [data to GPX](https://osmand.net/docs/user/plugins/trip-recording#recording-settings)
 
 ![Plugin ES](./img/external_sensors_2.png) ![Plugin ES](./img/external_sensors_3.png)
 
 ## Free account (Backup)
 
-For this release we added _OsmAnd Start_. It means that each our user can register own email for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud).
+For this release we added _OsmAnd Start_. It means that each user can register own email for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud).
 
 
-Now you can make free backup for Favorites and OsmAnd Settings
-Free OsmAnd Cloud account for Favorites: _OsmAnd Start_
+Now you can make free backup for Favorites and OsmAnd Settings. Free OsmAnd Cloud account for Favorites: _OsmAnd Start_
 
 
 ![start](./img/start.png) ![start](./img/start_1.png)
 
 ## Terrain maps updates
 
-We added _Terrain map_ for countries in [Download maps](https://osmand.net/docs/user/start-with/download-maps) menu. This type of data can be used for generated [Slopes, Hillshades(paid)](https://osmand.net/docs/user/purchases/android#free-and-paid-features), and 3D maps([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)).
+We added _Terrain map_ for countries in [Download maps](https://osmand.net/docs/user/start-with/download-maps) menu. This type of data can be used for generated [Slopes, Hillshades (paid)](https://osmand.net/docs/user/purchases/android#free-and-paid-features), and 3D maps ([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)).
 
 Our updates:
 - [Slope](https://osmand.net/docs/user/plugins/contour-lines#slope-map) and [Hillshades](https://osmand.net/docs/user/plugins/contour-lines#hillshade-map) can be generated from _Terrain map_ data
@@ -84,8 +84,8 @@ Redesign of the [_My Places > Tracks_](https://osmand.net/docs/user/personal/tra
 - Added filters:
     - With the ability to save the filter.
 - Added folder options:
-    - Allow sharing folder of tracks of selection of tracks.
-- Allow deleting folder.
+    - Allows sharing folder of tracks with selected tracks.
+- Allows deleting folder.
 - Added all tracks stat.
 
 ![Track menu](./img/track_menu.png) ![Track menu](./img/track_menu_1.png)
@@ -94,7 +94,7 @@ Redesign of the [_My Places > Tracks_](https://osmand.net/docs/user/personal/tra
 
 ## Android Auto improvments
 
-- New start menu for access Favorites, POIs, Map markers, Tracks, History categories.
+- New start menu for access to Favorites, POIs, Map markers, Tracks, History categories.
 
 ![AA](./img/android_auto.png)
 
@@ -108,7 +108,7 @@ Redesign of the [_My Places > Tracks_](https://osmand.net/docs/user/personal/tra
 
 ## Widget improvments
 
-We added one list of widgets for [Top/Bottom panels](https://osmand.net/docs/user/widgets/configure-screen#widget-panels):
+We added the list of widgets for [Top/Bottom panels](https://osmand.net/docs/user/widgets/configure-screen#widget-panels):
 
 _OsmAnd menu → Configure screen → Top panel / Bottom panel_
 
@@ -120,41 +120,66 @@ _Train_ profile was added for [Profile list](https://osmand.net/docs/user/person
 
 ![Train](./img/tr.png)
 
-## Contour lines functional updates
+## Contour lines for Map sources
 
-Contour lines works with any "Map source".
+[Contour lines](https://osmand.net/docs/user/plugins/contour-lines#contour-lines-map) works with any ["Map source"](https://osmand.net/docs/user/map/configure-map-menu):
+
+_OsmAnd menu → Configure map → Map source..._
+
+![contour lines](./img/contour_lines.png)
 
 ## More actions for external keyboards
 
-Expanded list of default actions for external keyboards.
+Added the expanded list of default actions for [external keyboards](https://osmand.net/docs/user/map/interact-with-map#external-input-device-buttons).
 
 ## Announce deviation from the route
 
-Added option to "Announce deviation from the route".
+Added option to disable / enable "Announce deviation from the route" for [Voice prompts](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts) settings:
+
+_OsmAnd menu → Configure profile → Navigation settings → Voice prompts → Other → Announce deviation from the route_
+
+It is enabled by default.
 
 ## Update for Start screen
 
-Start screen: added option restore OsmAnd state from file.
+[Start screen](https://osmand.net/docs/user/start-with/first-steps#how-to-download-maps): added option restore OsmAnd state from file.
+
+![Start screen](./img/android_st.png)
 
 ## Hazardous Materials classes for North America
 
-Added Hazardous Materials classes for North America.
+Added [Hazardous Materials](https://osmand.net/docs/user/navigation/routing/car-based-routing/#route-parameters---truck) classes for North America:
+
+_OsmAnd menu → Configure profile (Truck) → Navigation settings → Route parameters → Transporting of hazardous materials_
+
+![hazar materials](./img/hazard.png)
+
 
 ## "Via ferrata" for pedestrian routing
 
-Added support of "Via ferrata" for pedestrian routing.
+Added support of "Via ferrata" for [pedestrian routing](https://osmand.net/docs/user/navigation/routing/pedestrian-routing):
+
+_OsmAnd menu → Configure profile (Walking) → Navigation settings → Route parameters → Montainside route (Via ferrata)_
+
+![Pedestrian route](./img/ferrata.png)
 
 ##  "CAI" scale
 
-Added "CAI" scale for difficulty classification of the routes.
+Added ["CAI"(Club Alpino Italiano)](https://www.cai.it/) scale for [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/) of the routes:
 
-## Support themed icons
+_OsmAnd menu → Configure map → Routes → Difficulty classification_
 
-Added support themed icons.
+![CAI](./img/cai.png)
+
+## Support themed icons for Android 13
+
+We support themed (adaptive) icons for [Android 13](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#user-theming).
+
+![Adaptive icon](./img/adaptive_icon.png)
 
 ## Option Delete Cloud account
 
-We added to opportunity to delete an account for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud):
+We added an opportunity to delete an account for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud):
 
 _OsmAnd Menu → Settings → OsmAnd Cloud →  → Delete account_
 
@@ -162,11 +187,19 @@ _OsmAnd Menu → Settings → OsmAnd Cloud →  → Delete account_
 
 ## Accessibility updates
 
-Accessibility: touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
+[Accessibility](https://osmand.net/docs/user/plugins/accessibility): touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
+
+## Custom routing files options
+
+[Custom routing files](https://osmand.net/docs/user/navigation/routing/osmand-routing#customize-offline-routing): added options to delete or overwrite.
+
+_OsmAnd menu → Configure profile → Navigation settings → [Navigation type](https://osmand.net/docs/user/navigation/guidance/navigation-settings#navigation-type) → &#8942; (routing_custom.xml) → Delete_
+
+![Delere custom routing](./img/custom_routing.png)
 
 ## Fixed
 
-- per-app language selection
+- Per-app language selection
 
 
 _______________________________________________
