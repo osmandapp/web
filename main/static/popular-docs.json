@@ -1,0 +1,10 @@
+{
+  "popularArticles" : {
+     "Android purchases" : "/docs/user/purchases/android/",
+     "Raster Maps (Online / Offline)" : "/docs/user/map/raster-maps/",
+     "Tracks" : "/docs/user/personal/tracks/",
+     "Configure Screen" : "/docs/user/widgets/configure-screen/",
+     "Download maps" : "/docs/user/start-with/download-maps/",
+     "Plan route" : "/docs/user/plan-route/create-route/"
+  }
+}
