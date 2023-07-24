@@ -40,6 +40,13 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 
 ## How to use
 
+<!--
+Point of Interest (POI) Search:
+
+- Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, etc.
+- Filters and sorting results by category, distance or rating are possible.
+- Search results show the location of the POI, its contact information, ratings and reviews.
+-->
 All POI types in OsmAnd:  
 [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml)  
 
@@ -64,15 +71,12 @@ All POI types in OsmAnd:
 
 </Tabs>
 
-In Categories menu user can start searching by typping line.
-
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info (full name, categorie name, direction and distance to POI, work time). Pressing to needed categorie opens POI list of this categorie. 
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info  
+(full name, categorie name, direction and distance to POI, work time). Pressing to needed categorie opens POI list of this categorie. 
 
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
 
 Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map.md#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
-
-Enable / disable POI layer on the map:
 
 <Tabs groupId="operating-systems">
 
@@ -124,27 +128,28 @@ A filter can consist of quite a number of items, the presence of which depends o
 
 | Categories | Types | Values | Note |
 |:------------|:---------------|:---------------|:---------------|
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
-| <Translate android="true" ids="poi_filter_accomodation"/> |  |  |  |
+| 1. <Translate android="true" ids="poi_filter_accomodation"/> | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | <ul><li> No </li><li> Yes </li></ul>  |  |
+| 2. Cafe and restaurant | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 3. Charging station | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 4. Convenience store and supermarket | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 5. <Translate android="true" ids="poi_filter_emergency"/> | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 6. Filling station | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 7. Finance | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 8. Food | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 9. Healthcare | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 10. Leisure | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 11. Nautical | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 12. <Translate android="true" ids="poi_filter_closest_poi"/> | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 13. <Translate android="true" ids="poi_filter_parking"/> | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 14. Personal transport | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 15. <Translate android="true" ids="poi_filter_public_transport"/> | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 16. Routes | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 17. Sightseeing | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 18. Sport | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 19. Store | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 20. Tourism | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 21. Water | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 22. Wikipedia | <details><summary> 9 types of category </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
 
 
 
@@ -182,10 +187,13 @@ Description and how to use:
 
 ### Online Search
 
-![Search POI Android](@site/static/img/search/search_poi_online_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_online_andr.png)  
 
-https://nominatim.openstreetmap.org/ui/search.html  
-https://nominatim.org/  
+**Online Search** provides the ability to find locations, addresses and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back.  
+
+Use of Online Search:
+- Online search ensures that data is up-to-date and updates are available, as the service is constantly updated and uses open data sources. In addition, it provides a wide coverage of places and objects, allowing the user to find places of interest in different regions of the world.
+- Provides access to Internet services, which is useful in cities and on highways with good Internet coverage.
 
 
 ## Custom POI search
