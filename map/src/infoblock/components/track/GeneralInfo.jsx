@@ -331,7 +331,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         </ListItemIcon>
                         <ListItemText>
                             <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Elevation SRTM (min/avg/max): ${elevationSRTM}`}
+                                {`Elevation SRTM: ${elevationSRTM}`}
                                 {elevationSRTM === '' && (
                                     <Link
                                         href="#"
