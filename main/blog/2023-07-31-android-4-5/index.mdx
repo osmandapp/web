@@ -21,26 +21,25 @@ We're happy to announce the new 4.5 OsmAnd release for Android devices.
 
 <!--truncate-->
 
-* BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX.
-* Free backup for favorites and settings to OsmAnd Cloud.
-* New format for Terrain maps with 3D Relief support.
-* Tracks management: updated UI, added sorting, support of nested folders.
-* Android Auto: new start menu for access favorites, tracks and poi categories.
-* One list of widgets for Top/Bottom panel.
-* New "Train" profile, allows to calculate railways routes.
-* Contour lines works with any "Map source".
-* Expanded list of default actions for external keyboards.
-* Custom routing files, added options to delete or overwrite.
-* Added option to "Announce deviation from the route".
-* Start screen: added option restore OsmAnd state from file.
-* Added Hazardous Materials classes for North America.
-* Added support of "Via ferrata" for pedestrian routing.
-* Added "CAI" scale for difficulty classification of the routes.
-* Fixed per-app language selection.
-* Added support themed icons.
-* OsmAnd Cloud: added option to delete account.
-* Accessibility: touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
-
+* [BLE/ANT+ sensors](#bleant-sensors)
+* [Free backup](#free-account-backup)
+* [New format for Terrain maps](#terrain-maps-updates)
+* [Tracks management menu](#track-management)
+* [New for Android Auto](#android-auto-improvments)
+* [Widget improvments](#widget-improvments)
+* ["Train" profile](#train-profile)
+* [Contour lines updates](#contour-lines-for-map-sources)
+* [External keyboards improvments](#more-actions-for-external-keyboards)
+* [Updates for Voice prompts settings](#announce-deviation-from-the-route)
+* [Start screen](#update-for-start-screen)
+* [Hazardous Materials classes](#hazardous-materials-classes-for-north-america)
+* ["Via ferrata" for pedestrian routing](#via-ferrata-for-pedestrian-routing)
+* ["CAI" scale for difficulty classification](#cai-scale)
+* [Support of themed icons](#support-themed-icons-for-android-13)
+* [Update of OsmAnd Cloud options](#option-delete-cloud-account)
+* [Accessibility plugin update](#accessibility-updates)
+* [Custom routing files](#custom-routing-files-options)
+* [Fixed](#fixed)
 
 ## BLE/ANT+ sensors
 
@@ -134,7 +133,7 @@ Added the expanded list of default actions for [external keyboards](https://osma
 
 ## Announce deviation from the route
 
-Added option to "Announce deviation from the route":
+Added option to disable / enable "Announce deviation from the route" for [Voice prompts](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts) settings:
 
 _OsmAnd menu → Configure profile → Navigation settings → Voice prompts → Other → Announce deviation from the route_
 
@@ -148,19 +147,34 @@ It is enabled by default.
 
 ## Hazardous Materials classes for North America
 
-Added Hazardous Materials classes for North America.
+Added [Hazardous Materials](https://osmand.net/docs/user/navigation/routing/car-based-routing/#route-parameters---truck) classes for North America:
+
+_OsmAnd menu → Configure profile (Truck) → Navigation settings → Route parameters → Transporting of hazardous materials_
+
+![hazar materials](./img/hazard.png)
+
 
 ## "Via ferrata" for pedestrian routing
 
-Added support of "Via ferrata" for pedestrian routing.
+Added support of "Via ferrata" for [pedestrian routing](https://osmand.net/docs/user/navigation/routing/pedestrian-routing):
+
+_OsmAnd menu → Configure profile (Walking) → Navigation settings → Route parameters → Montainside route (Via ferrata)_
+
+![Pedestrian route](./img/ferrata.png)
 
 ##  "CAI" scale
 
-Added "CAI" scale for difficulty classification of the routes.
+Added ["CAI"(Club Alpino Italiano)](https://www.cai.it/) scale for [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/) of the routes:
 
-## Support themed icons
+_OsmAnd menu → Configure map → Routes → Difficulty classification_
 
-Added support themed icons.
+![CAI](./img/cai.png)
+
+## Support themed icons for Android 13
+
+We support themed (adaptive) icons for [Android 13](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#user-theming).
+
+![Adaptive icon](./img/adaptive_icon.png)
 
 ## Option Delete Cloud account
 
@@ -173,6 +187,14 @@ _OsmAnd Menu → Settings → OsmAnd Cloud →  → Delete account_
 ## Accessibility updates
 
 Accessibility: touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
+
+## Custom routing files options
+
+Custom routing files: added options to delete or overwrite:
+
+_OsmAnd menu → Configure profile → Navigation settings → Navigation type → &#8942; (routing_custom.xml) → Delete_
+
+![Delere custom routing](./img/custom_routing.png)
 
 ## Fixed
 
