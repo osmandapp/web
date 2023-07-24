@@ -13,7 +13,7 @@ export default function Weather() {
     const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
     const MIN_WEATHER_DAYS = -2;
-    const MAX_WEATHER_DAYS = +5;
+    const MAX_WEATHER_DAYS = +7;
 
     const [weatherOpen, setWeatherOpen] = useState(false);
 
