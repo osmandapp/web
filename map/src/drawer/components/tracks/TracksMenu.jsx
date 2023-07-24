@@ -141,7 +141,7 @@ export default function TracksMenu() {
             if (item.selected) {
                 tracks++;
                 if (item.points?.length > 0) {
-                    dist += item.points[item.points.length - 1].dist;
+                    dist += item.points[item.points.length - 1].distanceFromStart;
                     seg += item.points.length - 1;
                 }
             }
