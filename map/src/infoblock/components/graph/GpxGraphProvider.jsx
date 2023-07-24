@@ -154,11 +154,7 @@ const GpxGraphProvider = ({ width }) => {
                                 sx={{ marginLeft: '-30px' }}
                                 checked={ctx.showPoints.points}
                                 disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
-                                onChange={() => {
-                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                    updatedShowPoints.points = !updatedShowPoints.points;
-                                    ctx.setShowPoints(updatedShowPoints);
-                                }}
+                                onChange={() => ctx.mutateShowPoints((o) => (o.points = !o.points))}
                             />
                         }
                     ></FormControlLabel>
@@ -171,11 +167,7 @@ const GpxGraphProvider = ({ width }) => {
                                 sx={{ marginLeft: '-30px' }}
                                 checked={ctx.showPoints.wpts}
                                 disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
-                                onChange={() => {
-                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                    updatedShowPoints.wpts = !updatedShowPoints.wpts;
-                                    ctx.setShowPoints(updatedShowPoints);
-                                }}
+                                onChange={() => ctx.mutateShowPoints((o) => (o.wpts = !o.wpts))}
                             />
                         }
                     ></FormControlLabel>

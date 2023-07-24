@@ -44,7 +44,7 @@ export default function GraphLayer() {
             checkShowPoints(ctx.showPoints.points, false);
             checkShowPoints(ctx.showPoints.wpts, true);
         }
-    }, [ctx.showPoints.points, ctx.showPoints.wpts]);
+    }, [ctx.showPoints.points, ctx.showPoints.wpts, ctx.selectedGpxFile]);
 
     function checkShowPoints(showPoints, isWpts) {
         if (!showPoints) {
