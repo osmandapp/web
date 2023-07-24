@@ -197,6 +197,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     };
 
     const EditName = () => {
+        const isLetterUpperCase = (l) => l === l.toUpperCase() && l.toLowerCase() !== l.toUpperCase();
+        const nUpperCaseLetters = fileName.split('').filter((c) => isLetterUpperCase(c)).length;
+        const inputLength = fileName.length + nUpperCaseLetters + 3; // add extra space
         return (
             <div style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
                 {!disableButton && (
@@ -204,7 +207,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         <TextareaAutosize
                             style={{
                                 maxWidth: '400px',
-                                width: fileName.length + 'ch',
+                                width: inputLength + 'ch',
                                 resize: 'none',
                                 marginBottom: '5px',
                                 fontSize: '16px',
@@ -242,7 +245,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         </Typography>
                     </div>
                 )}
-                <div style={{ display: 'inline-block', marginLeft: '5px', marginBottom: '3px' }}>
+                <div style={{ display: 'inline-block', marginLeft: '10px', marginBottom: '3px' }}>
                     <Box display="flex" justifyContent="flex-end">
                         {!disableButton && (
                             <Button
@@ -250,7 +253,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                 style={{ backgroundColor: '#fbc73a' }}
                                 onClick={(e) => changeFileName(e)}
                             >
-                                save
+                                Save
                             </Button>
                         )}
                         {!disableButton && (
@@ -263,7 +266,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                     setDisableButton(!disableButton);
                                 }}
                             >
-                                close
+                                Cancel
                             </Button>
                         )}
                     </Box>
