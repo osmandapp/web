@@ -28,36 +28,78 @@ const WeatherLayer = () => {
     useEffect(() => {
         if (map) {
             map.eachLayer((layer) => {
-                if (layer.options.name === 'weather' && layer.options.time) {
-                    layer.options.time = getWeatherTime(ctx.weatherDate);
-                    layer.redraw();
+                if (layer.options?.name?.match(/^weather-/) && layer.options.time) {
+                    const newTime = getWeatherTime(ctx.weatherDate);
+                    const key = layer.options.name.split('-')[1];
+                    map.eachLayer((fade) => {
+                        if (fade.options?.name === 'fade-' + key) {
+                            const FADE_INTERVAL_MS = 100;
+                            let tries = 10; // maximum 1 second
+
+                            const tryFade = () => {
+                                if (layer.isLoading() === false || tries === 0) {
+                                    if (fade.options.time !== newTime) {
+                                        fade.options.time = newTime;
+                                        fade.redraw();
+                                    }
+                                } else {
+                                    tries--;
+                                    setTimeout(tryFade, FADE_INTERVAL_MS);
+                                }
+                            };
+
+                            setTimeout(tryFade, FADE_INTERVAL_MS);
+                        }
+                    });
+                    if (layer.options.time !== newTime) {
+                        layer.options.time = newTime;
+                        layer.redraw();
+                    }
                 }
             });
         }
         setTime(getWeatherTime(ctx.weatherDate));
     }, [ctx.weatherDate]);
 
+    const opacityDivider = 0.6; // main+fade layers (*0.5 + *0.5) result less opacity than 1 layer *1.0
+
     return (
         <>
             <LayersControl>
                 {Object.keys(ctx.weatherLayers).map((k) => {
                     return ctx.weatherLayers[k].map((item) => (
-                        <LayersControl.Overlay
-                            name={item.name}
-                            checked={item.checked}
-                            key={'overlay_' + item.key + time}
-                        >
-                            <TileLayer
-                                name={'weather'}
-                                url={item.url}
-                                time={time}
-                                tms={true}
-                                minZoom={1}
-                                opacity={item.opacity}
-                                maxNativeZoom={item.maxNativeZoom}
-                                maxZoom={item.maxZoom}
-                            />
-                        </LayersControl.Overlay>
+                        <React.Fragment key={'weather_fader_' + item.key}>
+                            <LayersControl.Overlay
+                                key={'weather_main_' + item.key + item.checked}
+                                checked={item.checked}
+                            >
+                                <TileLayer
+                                    name={'weather-' + item.key}
+                                    url={item.url}
+                                    time={time}
+                                    tms={true}
+                                    minZoom={1}
+                                    opacity={item.opacity * opacityDivider}
+                                    maxNativeZoom={item.maxNativeZoom}
+                                    maxZoom={item.maxZoom}
+                                />
+                            </LayersControl.Overlay>
+                            <LayersControl.Overlay
+                                key={'weather_fade_' + item.key + item.checked}
+                                checked={item.checked}
+                            >
+                                <TileLayer
+                                    name={'fade-' + item.key}
+                                    url={item.url}
+                                    time={time}
+                                    tms={true}
+                                    minZoom={1}
+                                    opacity={item.opacity * opacityDivider}
+                                    maxNativeZoom={item.maxNativeZoom}
+                                    maxZoom={item.maxZoom}
+                                />
+                            </LayersControl.Overlay>
+                        </React.Fragment>
                     ));
                 })}
             </LayersControl>
