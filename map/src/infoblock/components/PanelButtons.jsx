@@ -9,6 +9,7 @@ import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
 import TracksManager from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
+import { isMobile } from 'react-device-detect';
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -81,7 +82,10 @@ const PanelButtons = ({ showContextMenu, setShowContextMenu, clearState }) => {
         ctx.selectedGpxFile && (
             <div>
                 {showContextMenu && (
-                    <div style={{ marginTop: '-50px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+                    <div
+                        style={{ marginTop: isMobile ? '-130px' : '-50px' }}
+                        className={`${classes.buttongroup} ${'leaflet-bottom'}`}
+                    >
                         <div className="leaflet-control leaflet-bar padding-container">
                             <Paper>
                                 <ButtonGroup orientation="vertical" color="primary" sx={{ maxWidth: 36 }}>

@@ -7,9 +7,9 @@ import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
 import PoiTabList from '../PoiTabList';
+import { isMobile } from 'react-device-detect';
 
 export default function InformationBlock({
-    mobile,
     hideContextMenu,
     showContextMenu,
     setShowContextMenu,
@@ -126,7 +126,7 @@ export default function InformationBlock({
     }
 
     function showInfoBlock() {
-        return mobile ? true : !hideContextMenu;
+        return isMobile ? true : !hideContextMenu;
     }
 
     return (
@@ -138,7 +138,7 @@ export default function InformationBlock({
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                             {tabsObj &&
                                 tabsObj.tabList.length > 0 &&
-                                (mobile ? (
+                                (isMobile ? (
                                     <TabContext value={value}>
                                         <AppBar position="static" color="default">
                                             <div>

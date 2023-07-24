@@ -31,8 +31,8 @@ export default function HeaderInfo() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="h6" color="inherit" style={{ display: 'inline' }}>
-                <SearchInfo />
+            <SearchInfo />
+            <Typography sx={{ display: 'inline', fontSize: 14 }} color="inherit">
                 {text}
             </Typography>
         </Box>

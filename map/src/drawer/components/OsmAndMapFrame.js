@@ -9,6 +9,7 @@ import HeaderInfo from './header/HeaderInfo';
 import InformationBlock from '../../infoblock/components/InformationBlock';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './GeneralPanelButtons';
+import { isMobile } from 'react-device-detect';
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
@@ -49,21 +50,13 @@ const OsmAndMapFrame = () => {
                                     <Menu />
                                 </IconButton>
                                 <HeaderInfo />
-                                {ctx.currentObjectType && hideContextMenu && (
-                                    <IconButton
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                        sx={{ ml: 2, display: { xs: 'none', md: 'block' } }}
-                                    >
+                                {ctx.currentObjectType && hideContextMenu && !isMobile && (
+                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
                                         <KeyboardDoubleArrowLeft />
                                     </IconButton>
                                 )}
-                                {ctx.currentObjectType && !hideContextMenu && (
-                                    <IconButton
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                        sx={{ ml: 2, display: { xs: 'none', md: 'block' } }}
-                                    >
+                                {ctx.currentObjectType && !hideContextMenu && !isMobile && (
+                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
                                         <KeyboardDoubleArrowRight />
                                     </IconButton>
                                 )}
@@ -76,91 +69,72 @@ const OsmAndMapFrame = () => {
                         </Alert>
                     )}
                     <OsmAndMap showZoom={!showContextMenu} />
-                    <Box
-                        sx={{
-                            display: { xs: 'none', md: 'block' },
-                        }}
-                    >
-                        <GeneralPanelButtons
-                            drawerWidth={drawerWidth}
-                            showContextMenu={showContextMenu}
-                            setShowContextMenu={setShowContextMenu}
-                            clearState={clearState}
-                        />
-                    </Box>
-                    <Box
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}
-                    >
-                        <GeneralPanelButtons
-                            drawerWidth={0}
-                            showContextMenu={showContextMenu}
-                            setShowContextMenu={setShowContextMenu}
-                            clearState={clearState}
-                        />
-                    </Box>
+                    <GeneralPanelButtons
+                        drawerWidth={isMobile ? 0 : drawerWidth}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        clearState={clearState}
+                    />
                 </Box>
-                <Box
-                    sx={{
-                        display: { xs: 'none', md: 'block' },
-                    }}
-                >
+                {!isMobile && (
                     <InformationBlock
-                        mobile={false}
                         hideContextMenu={hideContextMenu}
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         setClearState={setClearState}
                     />
-                </Box>
+                )}
             </div>
-            <Drawer
-                variant="temporary"
-                PaperProps={{
-                    sx: {
-                        height: `${drawerHeight}px`,
-                        overflow: 'visible',
-                    },
-                }}
-                sx={{ mt: 500, display: { xs: 'block', md: 'none' } }}
-                hideBackdrop
-                open={true}
-                anchor={'bottom'}
-            >
-                <InformationBlock
-                    mobile={true}
-                    hideContextMenu={hideContextMenu}
-                    showContextMenu={showContextMenu}
-                    setShowContextMenu={setShowContextMenu}
-                    setClearState={setClearState}
-                    resizing={resizing}
-                    setResizing={setResizing}
-                    setDrawerHeight={setDrawerHeight}
-                    drawerHeight={drawerHeight}
-                />
-            </Drawer>
-            <Drawer
-                variant="temporary"
-                open={drawerOpen}
-                onClose={toggleDrawer}
-                sx={{
-                    display: { xs: 'block', md: 'none' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
-            >
-                <OsmAndDrawer mobile={true} toggleDrawer={toggleDrawer} />
-            </Drawer>
-            <Drawer
-                variant="permanent"
-                sx={{
-                    display: { xs: 'none', md: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
-                open
-            >
-                <OsmAndDrawer mobile={false} />
-            </Drawer>
+            {isMobile && (
+                <Drawer
+                    variant="temporary"
+                    PaperProps={{
+                        sx: {
+                            height: `${drawerHeight}px`,
+                            overflow: 'visible',
+                        },
+                    }}
+                    sx={{ mt: 500 }}
+                    hideBackdrop
+                    open={true}
+                    anchor={'bottom'}
+                    disableEnforceFocus
+                >
+                    <InformationBlock
+                        hideContextMenu={hideContextMenu}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        setClearState={setClearState}
+                        resizing={resizing}
+                        setResizing={setResizing}
+                        setDrawerHeight={setDrawerHeight}
+                        drawerHeight={drawerHeight}
+                    />
+                </Drawer>
+            )}
+            {isMobile && (
+                <Drawer
+                    variant="temporary"
+                    open={drawerOpen}
+                    onClose={toggleDrawer}
+                    sx={{
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
+                >
+                    <OsmAndDrawer toggleDrawer={toggleDrawer} />
+                </Drawer>
+            )}
+            {!isMobile && (
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
+                    open
+                >
+                    <OsmAndDrawer />
+                </Drawer>
+            )}
             <Outlet />
         </>
     );
