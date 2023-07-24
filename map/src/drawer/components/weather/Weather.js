@@ -12,6 +12,9 @@ export default function Weather() {
     const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
     const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
+    const MIN_WEATHER_DAYS = -2;
+    const MAX_WEATHER_DAYS = +5;
+
     const [weatherOpen, setWeatherOpen] = useState(false);
 
     const currentDiffHours =
@@ -195,11 +198,12 @@ export default function Weather() {
                             </MenuItem>
                         ))}
                     <MenuItem disableRipple={true}>
-                        <IconButton sx={{ ml: 1 }} onClick={resetWeatherDate}>
+                        <IconButton sx={{ ml: 1 }} disabled={currentDiffHours === 0} onClick={resetWeatherDate}>
                             <RestartAlt />
                         </IconButton>
                         <IconButton
                             sx={{ ml: 1 }}
+                            disabled={currentDiffHours <= MIN_WEATHER_DAYS * 24}
                             onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: -1 }))}
                         >
                             <NavigateBefore />
@@ -207,7 +211,10 @@ export default function Weather() {
                         <Typography>
                             {ctx.weatherDate.toLocaleDateString() + ' ' + ctx.weatherDate.getHours() + ':00'}
                         </Typography>
-                        <IconButton onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: +1 }))}>
+                        <IconButton
+                            disabled={currentDiffHours >= MAX_WEATHER_DAYS * 24}
+                            onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: +1 }))}
+                        >
                             <NavigateNext />
                         </IconButton>
                     </MenuItem>
