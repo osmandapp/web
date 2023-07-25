@@ -195,11 +195,11 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 ## Hillshade / Slope
 
-Hillshade / Slope are raster offline maps that are displayed as a special map layer - Terrain (2nd overlay). These maps are created from 1 source (global planet file) and divided into regions, but it is not needed to switch between maps cause it's been merged automatically. You can exclusively select Hillshade and Terrain layer, though you could be combined if you use [as underlay or overlay](#select-map-as-main--underlay--overlay-layer).
+Hillshade / Slope are raster offline maps that are displayed as a special (terrain) map layer (2nd overlay). These maps are created from 1 source (global planet file) and divided into regions, but it is not needed to switch between maps they are merged automatically. You can only select the Hillshade or the Slope layer (though you could combine them both if you use [as underlay or overlay](#select-map-as-main--underlay--overlay-layer)).
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable [Contour lines plugin](../plugins/contour-lines.md).  
+To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable the [Contour lines plugin](../plugins/contour-lines.md).  
 
 ### Configure display options
 

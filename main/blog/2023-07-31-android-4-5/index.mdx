@@ -27,16 +27,16 @@ We're happy to announce the new 4.5 OsmAnd release for Android devices.
 * [Free backup](#free-account-backup)
 * [New format for Terrain maps](#terrain-maps-updates)
 * [Tracks management menu](#track-management)
-* [New for Android Auto](#android-auto-improvments)
-* [Widget improvments](#widget-improvments)
-* ["Train" profile](#train-profile)
+* [New for Android Auto](#android-auto-improvements)
+* [Widget improvements](#widget-improvements)
+* [Train profile](#train-profile)
 * [Contour lines updates](#contour-lines-for-map-sources)
-* [External keyboards improvments](#more-actions-for-external-keyboards)
+* [External keyboards improvements](#more-actions-for-external-keyboards)
 * [Updates for Voice prompts settings](#announce-deviation-from-the-route)
-* [Start screen](#update-for-start-screen)
+* [Start screen](#updated-start-screen)
 * [Hazardous Materials classes](#hazardous-materials-classes-for-north-america)
-* ["Via ferrata" for pedestrian routing](#via-ferrata-for-pedestrian-routing)
-* ["CAI" scale for difficulty classification](#cai-scale)
+* [Via ferrata for pedestrian routing](#via-ferrata-for-pedestrian-routing)
+* [CAI scale for route difficulty classification](#cai-scale)
 * [Support of themed icons](#support-themed-icons-for-android-13)
 * [Update of OsmAnd Cloud options](#option-delete-cloud-account)
 * [Accessibility plugin update](#accessibility-updates)
@@ -46,69 +46,69 @@ We're happy to announce the new 4.5 OsmAnd release for Android devices.
 ## BLE/ANT+ sensors
 
 Redesign [External sensor Plugin](https://osmand.net/docs/user/plugins/external-sensors):
-- reworked connection
+- reworked connection screen
 
 ![Plugin ES](./img/external_sensors.png) ![Plugin ES](./img/external_sensors_1.png)
 
-- record and view received data in GPX [data to GPX](https://osmand.net/docs/user/plugins/trip-recording#recording-settings)
+- record and view sensor data in [GPX format](https://osmand.net/docs/user/plugins/trip-recording#recording-settings)
 
 ![Plugin ES](./img/external_sensors_2.png) ![Plugin ES](./img/external_sensors_3.png)
 
 ## Free account (Backup)
 
-For this release we added _OsmAnd Start_. It means that each user can register own email for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud).
+For this release we have added _OsmAnd Start_. Each user can register their own email for the [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud).
 
 
-Now you can make free backup for Favorites and OsmAnd Settings. Free OsmAnd Cloud account for Favorites: _OsmAnd Start_
+Now you can backup your favorites and OsmAnd settings for free. Free OsmAnd Cloud account for Favorites: _OsmAnd Start_
 
 
 ![start](./img/start.png) ![start](./img/start_1.png)
 
 ## Terrain maps updates
 
-We added _Terrain map_ for countries in [Download maps](https://osmand.net/docs/user/start-with/download-maps) menu. This type of data can be used for generated [Slopes, Hillshades (paid)](https://osmand.net/docs/user/purchases/android#free-and-paid-features), and 3D maps ([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)).
+We have added _Terrain map_ for countries in [Download maps](https://osmand.net/docs/user/start-with/download-maps) menu. This data type can be used to generate [Slopes, Hillshades (paid)](https://osmand.net/docs/user/purchases/android#free-and-paid-features), and 3D maps ([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)).
 
 Our updates:
 - [Slope](https://osmand.net/docs/user/plugins/contour-lines#slope-map) and [Hillshades](https://osmand.net/docs/user/plugins/contour-lines#hillshade-map) can be generated from _Terrain map_ data
 
 ![terrain](./img/terrain.png) ![terrain](./img/terrain_0.png)
 
-- Redesign [_Terrain menu_](https://osmand.net/docs/user/map/configure-map-menu)
+- Redesigned [_Terrain menu_](https://osmand.net/docs/user/map/configure-map-menu)
 
 ![terrain](./img/terrain_1.png) ![terrain](./img/terrain_2.png)
 
 ## Track management
 
-Redesign of the [_My Places > Tracks_](https://osmand.net/docs/user/personal/tracks) menu:
+[_My Places > Tracks_](https://osmand.net/docs/user/personal/tracks) menu has been re-organized:
 - Added sorting.
 - Added filters:
     - With the ability to save the filter.
 - Added folder options:
-    - Allows sharing folder of tracks with selected tracks.
-- Allows deleting folder.
+    - Now you can share the tracks folder with selected tracks.
+    - You can also delete selected tracks folder.
 - Added all tracks stat.
 
 ![Track menu](./img/track_menu.png) ![Track menu](./img/track_menu_1.png)
 
 ![Track menu](./img/track_menu_2.png) ![Track menu](./img/track_menu_3.png)
 
-## Android Auto improvments
+## Android Auto improvements
 
-- New start menu for access to Favorites, POIs, Map markers, Tracks, History categories.
+- New start menu for accessing Favorites, POIs, Map markers, Tracks, and History categories.
 
 ![AA](./img/android_auto.png)
 
 - Driving profile:
-   - If current profile is "Driving" (derived from Driving - Truck, Car, Motorcycle...), then AA should stay the same.
-   - If current profile is not "Driving", then it should change first in the list Driving.
+   - If the current profile is "Driving" (derived from Driving - Truck, Car, Motorcycle...), then AA keeps selected profile.
+   - If the current profile is not "Driving", it is automatically changed to Driving.
 - Fixed laggy location.
-- Button to hide Screen menu.
+- Added button to hide Screen menu.
 
 ![AA](./img/android_auto_1.png)
 
-## Widget improvments
+## Widget improvements
 
-We added the list of widgets for [Top/Bottom panels](https://osmand.net/docs/user/widgets/configure-screen#widget-panels):
+We added the list of widgets for the [Top/Bottom panels](https://osmand.net/docs/user/widgets/configure-screen#widget-panels):
 
 _OsmAnd menu → Configure screen → Top panel / Bottom panel_
 
@@ -116,13 +116,13 @@ _OsmAnd menu → Configure screen → Top panel / Bottom panel_
 
 ## Train profile
 
-_Train_ profile was added for [Profile list](https://osmand.net/docs/user/personal/profiles). New profile allows to calculate railways routes.
+_Train_ profile was added to [Profile list](https://osmand.net/docs/user/personal/profiles). The new profile allows the calculation of railway routes.
 
 ![Train](./img/tr.png)
 
 ## Contour lines for Map sources
 
-[Contour lines](https://osmand.net/docs/user/plugins/contour-lines#contour-lines-map) works with any ["Map source"](https://osmand.net/docs/user/map/configure-map-menu):
+[Contour lines](https://osmand.net/docs/user/plugins/contour-lines#contour-lines-map) work with any ["Map source"](https://osmand.net/docs/user/map/configure-map-menu):
 
 _OsmAnd menu → Configure map → Map source..._
 
@@ -140,7 +140,7 @@ _OsmAnd menu → Configure profile → Navigation settings → Voice prompts →
 
 It is enabled by default.
 
-## Update for Start screen
+## Updated Start screen
 
 [Start screen](https://osmand.net/docs/user/start-with/first-steps#how-to-download-maps): added option restore OsmAnd state from file.
 
@@ -155,17 +155,17 @@ _OsmAnd menu → Configure profile (Truck) → Navigation settings → Route par
 ![hazar materials](./img/hazard.png)
 
 
-## "Via ferrata" for pedestrian routing
+## Via ferrata for pedestrian routing
 
-Added support of "Via ferrata" for [pedestrian routing](https://osmand.net/docs/user/navigation/routing/pedestrian-routing):
+Added support of _Via ferrata_ for [pedestrian routing](https://osmand.net/docs/user/navigation/routing/pedestrian-routing):
 
-_OsmAnd menu → Configure profile (Walking) → Navigation settings → Route parameters → Montainside route (Via ferrata)_
+_OsmAnd menu → Configure profile (Walking) → Navigation settings → Route parameters → Mountainside route (Via ferrata)_
 
 ![Pedestrian route](./img/ferrata.png)
 
-##  "CAI" scale
+##  CAI scale
 
-Added ["CAI"(Club Alpino Italiano)](https://www.cai.it/) scale for [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/) of the routes:
+Added [CAI (Club Alpino Italiano)](https://www.cai.it/) scale for routes [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/):
 
 _OsmAnd menu → Configure map → Routes → Difficulty classification_
 
@@ -179,7 +179,7 @@ We support themed (adaptive) icons for [Android 13](https://developer.android.co
 
 ## Option Delete Cloud account
 
-We added an opportunity to delete an account for [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud):
+We added the ability to delete an [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud) account:
 
 _OsmAnd Menu → Settings → OsmAnd Cloud →  → Delete account_
 
@@ -189,13 +189,13 @@ _OsmAnd Menu → Settings → OsmAnd Cloud →  → Delete account_
 
 [Accessibility](https://osmand.net/docs/user/plugins/accessibility): touch target size for all buttons changed to 48 dp fixed issue with map UI that was visible for screen readers.
 
-## Custom routing files options
+## Custom routing files option
 
-[Custom routing files](https://osmand.net/docs/user/navigation/routing/osmand-routing#customize-offline-routing): added options to delete or overwrite.
+[Custom routing](https://osmand.net/docs/user/navigation/routing/osmand-routing#customize-offline-routing): added options to delete or overwrite routing files.
 
 _OsmAnd menu → Configure profile → Navigation settings → [Navigation type](https://osmand.net/docs/user/navigation/guidance/navigation-settings#navigation-type) → &#8942; (routing_custom.xml) → Delete_
 
-![Delere custom routing](./img/custom_routing.png)
+![Delete custom routing](./img/custom_routing.png)
 
 ## Fixed
 
