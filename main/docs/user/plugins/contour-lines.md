@@ -65,7 +65,7 @@ To display Contour lines and Terrain data on the map:
 
 1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Contour lines plugin in the Plugins section of the Main menu.
 2. [Download](#download-maps) contour lines and/or terrain maps.
-3. [Enable and adjust](#show--configure-map-view) contour lines and/or relief on the map view.
+3. [Enable and adjust](#configure-map-view) contour lines and/or relief on the map view.
 
 You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
