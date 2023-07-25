@@ -118,9 +118,9 @@ const GpxGraphProvider = ({ width }) => {
                     }
                 }
 
-                // get-analysis might broke point.distance, so use "total" first
-                if (point.distanceFromStart > 0 || point.ext?.distance > 0) {
-                    sumDist = point.distanceFromStart || point.ext?.distance;
+                // get-analysis might make point.distance inaccurate, so use "total" first
+                if (point.distanceTotal > 0 || point.distanceSegment > 0 || point.ext?.distance > 0) {
+                    sumDist = point.distanceTotal || point.distanceSegment || point.ext?.distance;
                 } else if (point.distance || point.distance === 0) {
                     sumDist += point.distance;
                 }

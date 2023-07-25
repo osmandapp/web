@@ -95,7 +95,7 @@ const PointsTab = ({ width }) => {
                             <Typography variant="inherit" noWrap>
                                 Point - {index + 1}
                                 <br />
-                                {point.distanceFromStart === 0 ? 'start' : Math.round(point.distanceFromStart) + ' m'}
+                                {point.distanceSegment === 0 ? 'start' : Math.round(point.distanceSegment) + ' m'}
                                 {point.profile && ' • '}
                                 {point.profile}
                             </Typography>
