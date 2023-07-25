@@ -90,7 +90,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
         <>
             <Dialog disableEnforceFocus open={dialogOpen} onClose={toggleShowDialog}>
                 <DialogTitle>Description</DialogTitle>
-                <DialogContent sx={{ minWidth: '300px' }}>
+                <DialogContent sx={{ minWidth: 300, minHeight: editDescription ? 300 : 0 }}>
                     {!editDescription ? (
                         <>
                             {link ? (
@@ -119,22 +119,16 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
                                     Click EDIT to add a description...
                                 </Alert>
                             )}
-                            <DialogContentText>
+                            <DialogContentText component={'span'}>
                                 <div dangerouslySetInnerHTML={{ __html: description }} />
                             </DialogContentText>
                         </>
                     ) : (
-                        <Editor
-                            editorState={state}
-                            onEditorStateChange={setState}
-                            toolbarClassName="toolbarClassName"
-                            wrapperClassName="wrapperClassName"
-                            editorClassName="editorClassName"
-                        />
+                        <Editor editorState={state} onEditorStateChange={setState} />
                     )}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={toggleShowDialog}>Cancel</Button>
+                    <Button onClick={toggleShowDialog}>Close</Button>
                     {!editDescription ? (
                         <Button onClick={() => setEditDescription(true)}>Edit</Button>
                     ) : (
