@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Contour lines and Terrain
+title: Contour lines, Hillshade, Slope
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-Terrain information, such as **Contour lines**, **Hillshades** and **Slopes**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
+Terrain information, such as **Contour lines**, **Hillshade** and **Slope**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
 
 ## Overview
 
@@ -61,11 +61,11 @@ For full information see [License](https://github.com/osmandapp/OsmAnd/blob/mast
 
 ## Setup 
 
-To display Contour lines and Terrain data on the map:
+To display Contour lines, Hilshade, Slope data on the map:
 
-1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Contour lines plugin in the Plugins section of the Main menu.
-2. [Download](#download-maps) contour lines and/or terrain maps.
-3. [Enable and adjust](#configure-map-view) contour lines and/or relief on the map view.
+1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu.
+2. [Download](#download-maps) Contour lines and/or Hillshade or Slope maps.
+3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
 
 You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
