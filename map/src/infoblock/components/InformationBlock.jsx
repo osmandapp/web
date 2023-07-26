@@ -59,8 +59,8 @@ export default function InformationBlock({
     }, [showContextMenu]);
 
     useEffect(() => {
-        getWidth();
-    }, [hideContextMenu]);
+        setDrawerWidth(getWidth());
+    }, [mobile, showContextMenu, hideContextMenu]);
 
     useEffect(() => {
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
@@ -137,21 +137,18 @@ export default function InformationBlock({
     }
 
     function getWidth() {
-        let currentWidth;
         if (showContextMenu && showInfoBlock()) {
-            currentWidth = mobile ? 'auto' : `${DRAWER_SIZE + 24}px`;
+            return mobile ? 'auto' : `${DRAWER_SIZE + 24}px`;
         } else {
-            currentWidth = '0px';
+            return '0px';
         }
-        setDrawerWidth(currentWidth);
-        return currentWidth;
     }
 
     return (
         <>
             {showContextMenu && showInfoBlock() && (
                 <>
-                    <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: `auto`, width: `${getWidth()}` }}>
+                    <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth() }}>
                         <div>
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                             {tabsObj &&
