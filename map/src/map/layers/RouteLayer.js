@@ -18,7 +18,7 @@ function moveableMarker(ctx, map, marker) {
 
     // marker.on("mousemove", () => {
     //     if (moved) {
-    //         console.log('drag...');
+    //         console.debug('drag...');
     //     }
     // })
 

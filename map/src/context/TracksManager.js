@@ -31,11 +31,11 @@ async function loadTracks(setLoading) {
                 if (json) {
                     localTracks[ind] = json;
                 } else {
-                    console.log('loadTracks empty track: ' + name);
+                    console.error('loadTracks empty track: ' + name);
                     localStorage.removeItem(name);
                 }
             } catch {
-                console.log('loadTracks JSON/decompress error: ' + name);
+                console.error('loadTracks JSON/decompress error: ' + name);
                 localStorage.removeItem(name);
             }
         }
@@ -50,7 +50,7 @@ async function loadTracks(setLoading) {
 
 function fixLocalTracks(localTracks) {
     if (localTracks && localTracks.length !== Object.keys(localTracks).length) {
-        console.log('loadTracks localTrack_0 (hole) localTrack_X workaround');
+        console.error('loadTracks localTrack_0 (hole) localTrack_X workaround');
         const fixTracks = [];
         localTracks.forEach((t) => fixTracks.push(t));
         updateLocalTracks(fixTracks).then();
@@ -518,7 +518,7 @@ async function updateRoute(points) {
         updateGapProfileAllSegments(data.points);
         return data.points;
     } else {
-        console.log('updateRoute fallback');
+        console.error('updateRoute fallback');
         return points;
     }
 }
@@ -665,7 +665,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         return ctx.selectedGpxFile;
     } else {
         setLoading(false);
-        console.log('getTrackWithAnalysis fallback');
+        console.error('getTrackWithAnalysis fallback');
         return ctx.selectedGpxFile;
     }
 }

@@ -13,7 +13,7 @@ export function pickTypeRouterProfile({ type = null, router = null, profile = nu
 
     if (type && !router) {
         router = providers.find((r) => r.type === type)?.key ?? this.fallback.key;
-        // console.log('type-router-profile:', type, router, profile);
+        // console.debug('type-router-profile:', type, router, profile);
     }
 
     router = router ?? this.router; // current
@@ -35,7 +35,7 @@ export function pickTypeRouterProfile({ type = null, router = null, profile = nu
     if (router && profile) {
         type = provider.type ?? this.fallback.type;
         const p = provider?.profiles?.find((p) => p.key === profile);
-        // console.log('picked:', type, router, profile, p);
+        // console.debug('picked:', type, router, profile, p);
         return { type, router, profile, p };
     } else {
         console.error('pickTypeRouterProfile failed:', type, router, profile);
