@@ -66,6 +66,7 @@ There are several ways to enter coordinates for the search. To use each of them,
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
 
     **Decimal coordinates (degrees)**. In this format, latitude and longitude coordinates are written in decimal format, for example, 52.37022° latitude and 4.89517° longitude for Amsterdam. This input method is easy to use and is the most common. You can read more about Decimal coordinates format [here](https://www.wikiwand.com/en/Decimal_degrees#:~:text=Decimal%20degrees%20are%20an%20alternative,are%20south%20of%20the%20equator).  
+
     - *Input rules*. Latitude and longitude coordinates are written in decimal format, where latitude ranges from -90 to 90 and longitude ranges from -180 to 180.
     - *Most commonly used*. Decimal coordinates are widely used in navigation applications, GPS devices, web maps, and other geopositioning services.  
 
@@ -128,6 +129,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
 
 > For each profile separately you can set a different coordinate format. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
+
 
 <!--
 

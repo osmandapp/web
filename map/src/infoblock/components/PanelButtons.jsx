@@ -15,12 +15,7 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
-    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo(
-        {},
-        ctx.trackState.pastStates,
-        ctx.trackState.futureStates
-    );
-    //futureStates for logs
+    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
     useEffect(() => {
         if (clearState) {
@@ -31,7 +26,6 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
     useEffect(() => {
         if (useSavedState) {
             getState(state);
-            ctx.trackState.block = false;
             ctx.setTrackState({ ...ctx.trackState });
         }
     }, [state]);
@@ -48,7 +42,7 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
 
     function doClear() {
         clear(); // setState() can't be used inside dispatch()
-        ctx.setTrackState({ pastStates: [], futureStates: [] });
+        ctx.setTrackState({ update: false });
     }
 
     function getState(currentState) {
@@ -120,11 +114,7 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                             <IconButton
                                 variant="contained"
                                 type="button"
-                                disabled={
-                                    !isUndoPossible ||
-                                    ctx.trackState.block ||
-                                    (pastStates.length === 1 && _.isEmpty(pastStates[0]))
-                                }
+                                disabled={!isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))}
                                 onClick={(e) => {
                                     undo();
                                     setUseSavedState(true);
