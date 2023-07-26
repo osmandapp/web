@@ -215,9 +215,11 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     >
                         <div dangerouslySetInnerHTML={{ __html: `${desc}` }} />
                     </Typography>
-                    <IconButton onClick={() => setOpenDescDialog(true)}>
-                        <Edit fontSize="small" />
-                    </IconButton>
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        <IconButton onClick={() => setOpenDescDialog(true)}>
+                            <Edit fontSize="small" />
+                        </IconButton>
+                    )}
                 </Box>
                 <Divider sx={{ mt: '6px', mb: '12px' }} light />
             </ListItemText>
@@ -402,23 +404,23 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             <Typography className={styles.info} variant="subtitle1" color="inherit">
                 <div>{ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}</div>
                 <div>
-                    {ctx.selectedGpxFile?.metaData?.desc ? (
-                        Description({ desc: ctx.selectedGpxFile?.metaData?.desc })
-                    ) : (
-                        <>
-                            <Link
-                                href="#"
-                                color="inherit"
-                                sx={{ fontSize: '0.875rem' }}
-                                onClick={() => {
-                                    setOpenDescDialog(true);
-                                }}
-                            >
-                                • Add description
-                            </Link>
-                            <Divider sx={{ mt: '6px', mb: '12px' }} light />
-                        </>
-                    )}
+                    {ctx.selectedGpxFile?.metaData?.desc
+                        ? Description({ desc: ctx.selectedGpxFile?.metaData?.desc })
+                        : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                              <>
+                                  <Link
+                                      href="#"
+                                      color="inherit"
+                                      sx={{ fontSize: '0.875rem' }}
+                                      onClick={() => {
+                                          setOpenDescDialog(true);
+                                      }}
+                                  >
+                                      • Add description
+                                  </Link>
+                                  <Divider sx={{ mt: '6px', mb: '12px' }} light />
+                              </>
+                          )}
                 </div>
                 {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                     <Button
@@ -445,7 +447,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         }}
                     >
                         <Create fontSize="small" sx={{ mr: '7px' }} />
-                        Edit
+                        Edit Track
                     </Button>
                 )}
                 <Button
