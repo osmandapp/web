@@ -4,6 +4,12 @@ import TracksManager from '../../../context/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
+const defaultPointExtras = {
+    srtmEle: null,
+    ele: TracksManager.NAN_MARKER,
+    ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
+};
+
 export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = this?.getGeoProfile()) {
     const routers = {
         osrm: updateRouteBetweenPointsOSRM,
@@ -37,17 +43,14 @@ function osrmToPoints(osrm) {
         const coordinates = r.geometry?.coordinates;
         coordinates?.forEach(([lng, lat], i) => {
             if (i > 0) {
-                distance = Utils.getDistance(lat, lng, coordinates[i - 1][1], coordinates[i - 1][0]);
+                const [prevLng, prevLat] = coordinates[i - 1];
+                distance = Utils.getDistance(lat, lng, prevLat, prevLng);
             }
             points.push({
                 lat,
                 lng,
-
-                distance, // filled later by addDistanceToPoints() but needed earlier for distanceFromStart
-
-                srtmEle: null,
-                ele: TracksManager.NAN_MARKER,
-                ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
+                distance,
+                ...defaultPointExtras,
             });
         });
     });
@@ -89,9 +92,10 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
 }
 
 async function updateRouteBetweenPointsLine({ start, end }) {
+    const distance = Utils.getDistance(start.lat, start.lng, end.lat, end.lng);
     return [
-        { lat: start.lat, lng: start.lng },
-        { lat: end.lat, lng: end.lng },
+        { lat: start.lat, lng: start.lng, distance: 0, ...defaultPointExtras },
+        { lat: end.lat, lng: end.lng, distance, ...defaultPointExtras },
     ];
 }
 

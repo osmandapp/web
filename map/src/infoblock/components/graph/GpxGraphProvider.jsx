@@ -118,10 +118,11 @@ const GpxGraphProvider = ({ width }) => {
                     }
                 }
 
-                if (point.distance || point.distance === 0) {
+                // get-analysis might make point.distance inaccurate, so use "total" first
+                if (point.distanceTotal > 0 || point.distanceSegment > 0 || point.ext?.distance > 0) {
+                    sumDist = point.distanceTotal || point.distanceSegment || point.ext?.distance;
+                } else if (point.distance || point.distance === 0) {
                     sumDist += point.distance;
-                } else if (point.distanceFromStart > 0 || point.ext?.distance > 0) {
-                    sumDist = point.distanceFromStart || point.ext?.distance;
                 }
 
                 let dataTab = {
@@ -153,11 +154,7 @@ const GpxGraphProvider = ({ width }) => {
                                 sx={{ marginLeft: '-30px' }}
                                 checked={ctx.showPoints.points}
                                 disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
-                                onChange={() => {
-                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                    updatedShowPoints.points = !updatedShowPoints.points;
-                                    ctx.setShowPoints(updatedShowPoints);
-                                }}
+                                onChange={() => ctx.mutateShowPoints((o) => (o.points = !o.points))}
                             />
                         }
                     ></FormControlLabel>
@@ -170,11 +167,7 @@ const GpxGraphProvider = ({ width }) => {
                                 sx={{ marginLeft: '-30px' }}
                                 checked={ctx.showPoints.wpts}
                                 disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
-                                onChange={() => {
-                                    let updatedShowPoints = Object.assign({}, ctx.showPoints);
-                                    updatedShowPoints.wpts = !updatedShowPoints.wpts;
-                                    ctx.setShowPoints(updatedShowPoints);
-                                }}
+                                onChange={() => ctx.mutateShowPoints((o) => (o.wpts = !o.wpts))}
                             />
                         }
                     ></FormControlLabel>

@@ -48,7 +48,7 @@ export default function InformationBlock({
     useEffect(() => {
         if (!showContextMenu) {
             stopCreatedTrack(false);
-            ctx.setShowPoints({ points: true, wpts: true });
+            ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
             ctx.setCurrentObjectType(null);
