@@ -52,10 +52,8 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowCo
                 cleanContextMenu();
             }
         } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
-            let wasDeleted = TracksManager.deleteLocalTrack(ctx);
-            if (wasDeleted) {
-                cleanContextMenu();
-            }
+            TracksManager.deleteLocalTrack(ctx);
+            cleanContextMenu();
         }
     }
 

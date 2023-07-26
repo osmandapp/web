@@ -451,7 +451,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 }
 
 function deleteLocalTrack(ctx) {
-    let currentTrackIndex = ctx.localTracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
+    const currentTrackIndex = ctx.localTracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
     if (currentTrackIndex !== -1) {
         localStorage.removeItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
         ctx.localTracks.splice(currentTrackIndex, 1);
@@ -461,9 +461,7 @@ function deleteLocalTrack(ctx) {
             localStorage.removeItem(DATA_SIZE_KEY);
         }
         ctx.setLocalTracks([...ctx.localTracks]);
-        return true;
     }
-    return false;
 }
 
 function formatRouteMode({ profile = 'car', params }) {
