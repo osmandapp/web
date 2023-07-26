@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
-import Utils from '../util/Utils';
+import Utils, { useMutator } from '../util/Utils';
 import TracksManager from './TracksManager';
 import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
@@ -369,10 +369,12 @@ export const AppContextProvider = (props) => {
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
     const [trackRange, setTrackRange] = useState(null);
-    const [showPoints, setShowPoints] = useState({
+
+    const [showPoints, mutateShowPoints] = useMutator({
         points: true,
         wpts: true,
     });
+
     const [devMode, setDevMode] = useState(false);
 
     routeRouter.initSetter({ setter: setRouteRouter });
@@ -570,7 +572,7 @@ export const AppContextProvider = (props) => {
                 trackRange,
                 setTrackRange,
                 showPoints,
-                setShowPoints,
+                mutateShowPoints,
                 showPoiCategories,
                 setShowPoiCategories,
                 poiCategory,

@@ -44,19 +44,23 @@ export default function GraphLayer() {
             checkShowPoints(ctx.showPoints.points, false);
             checkShowPoints(ctx.showPoints.wpts, true);
         }
-    }, [ctx.showPoints.points, ctx.showPoints.wpts]);
+    }, [ctx.showPoints.points, ctx.showPoints.wpts, ctx.selectedGpxFile]);
 
     function checkShowPoints(showPoints, isWpts) {
         if (!showPoints) {
             ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = 'none';
+                    if (l._icon) {
+                        l._icon.style.display = 'none';
+                    }
                 }
             });
         } else {
             ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = null;
+                    if (l._icon) {
+                        l._icon.style.display = null;
+                    }
                 }
             });
         }
