@@ -350,8 +350,9 @@ export const AppContextProvider = (props) => {
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
-        pastStates: [],
-        futureStates: [],
+        update: false, // push track to undo/redo
+        // pastStates: [], // was used for logs
+        // futureStates: [], // was used for logs
     });
     const [openedPopper, setOpenedPopper] = useState(null);
     const [showPoiCategories, setShowPoiCategories] = useState([]);

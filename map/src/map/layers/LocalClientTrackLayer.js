@@ -625,7 +625,6 @@ export default function LocalClientTrackLayer() {
             delete ctxTrack?.dragPoint;
             ctx.setSelectedGpxFile({ ...ctxTrack });
         } else if (ctxTrack?.dragPoint === undefined) {
-            ctx.trackState.block = false;
             map.getContainer().style.cursor = 'crosshair';
             map.off('click'); // !!!
             map.on('click', clickMap);
