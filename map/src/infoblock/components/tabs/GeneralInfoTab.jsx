@@ -24,7 +24,7 @@ export default function GeneralInfoTab({ width, setShowContextMenu }) {
 
     return (
         <>
-            <Box minWidth={width} maxWidth={width}>
+            <Box>
                 <GeneralInfo width={width} setOpenDescDialog={setOpenDescDialog} />
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
                 <GpxGraphProvider width={width} />

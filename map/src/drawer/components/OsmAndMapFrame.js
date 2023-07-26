@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Drawer, Toolbar, Box, Alert } from '@mui/material';
 import { IconButton, AppBar } from '@mui/material';
 import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu } from '@mui/icons-material';
@@ -9,56 +9,76 @@ import HeaderInfo from './header/HeaderInfo';
 import InformationBlock from '../../infoblock/components/InformationBlock';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './GeneralPanelButtons';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
-    const [drawerOpen, setDrawerOpen] = useState(false);
+    const MOBILE_SCREEN_SIZE = 1200;
+    const LEFT_DRAWER_SIZE = 320;
+
+    const [drawerLeftOpen, setDrawerLeftOpen] = useState(false);
+    const [showContextMenu, setShowContextMenu] = useState(false);
     const [hideContextMenu, setHideContextMenu] = useState(false);
-    const toggleDrawer = () => {
-        setDrawerOpen(!drawerOpen);
+    const [clearState, setClearState] = useState(false);
+    const [resizing, setResizing] = useState(false);
+    const [drawerRightHeight, setDrawerRightHeight] = useState(0);
+    const [drawerRightWidth, setDrawerRightWidth] = useState(0);
+    const [mobile, setMobile] = useState(false);
+    const [width] = useWindowSize();
+
+    const toggleLeftDrawer = () => {
+        let res = !drawerLeftOpen;
+        setDrawerLeftOpen(res);
     };
 
     const toggleContextMenu = () => {
         setHideContextMenu(!hideContextMenu);
     };
 
-    const drawerWidth = 320;
+    let leftDrawerWidth = mobile ? 0 : LEFT_DRAWER_SIZE;
+
+    useEffect(() => {
+        if (width && width < MOBILE_SCREEN_SIZE) {
+            leftDrawerWidth = 0;
+            setMobile(true);
+        } else {
+            if (showContextMenu && !hideContextMenu) {
+                leftDrawerWidth = LEFT_DRAWER_SIZE;
+            }
+            setMobile(false);
+        }
+    }, [width, hideContextMenu]);
 
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <Box
                     sx={{
-                        width: { sm: `calc(100%)`, xs: `calc(100%)` },
-                        ml: { md: `${drawerWidth}px` },
+                        width: { xs: `calc(100%)` },
+                        ml: { md: `${leftDrawerWidth}px` },
+                        mr: `${drawerRightWidth}`,
                         height: '100vh',
                         display: 'flex',
                         flexDirection: 'column',
                     }}
                 >
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box>
                         <AppBar position="static">
                             <Toolbar variant="dense">
-                                <IconButton onClick={toggleDrawer} edge="start" sx={{ mr: 2, display: { md: 'none' } }}>
-                                    <Menu />
-                                </IconButton>
+                                {mobile && (
+                                    <IconButton onClick={toggleLeftDrawer} edge="start" sx={{ mr: 2 }}>
+                                        <Menu />
+                                    </IconButton>
+                                )}
                                 <HeaderInfo />
-                                {ctx.currentObjectType && hideContextMenu && (
-                                    <IconButton
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                        sx={{ ml: 2, display: { xl: 'none' } }}
-                                    >
+                                {ctx.currentObjectType && hideContextMenu && !mobile && (
+                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
                                         <KeyboardDoubleArrowLeft />
                                     </IconButton>
                                 )}
-                                {ctx.currentObjectType && !hideContextMenu && (
-                                    <IconButton
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                        sx={{ ml: 2, display: { xl: 'none' } }}
-                                    >
+                                {ctx.currentObjectType && !hideContextMenu && !mobile && (
+                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
                                         <KeyboardDoubleArrowRight />
                                     </IconButton>
                                 )}
@@ -70,32 +90,91 @@ const OsmAndMapFrame = () => {
                             {ctx.routingErrorMsg}
                         </Alert>
                     )}
-                    <OsmAndMap />
-                    <GeneralPanelButtons drawerWidth={drawerWidth} />
+                    <OsmAndMap showZoom={!showContextMenu} />
+                    <GeneralPanelButtons
+                        drawerWidth={leftDrawerWidth}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        clearState={clearState}
+                    />
                 </Box>
-                <InformationBlock hideContextMenu={hideContextMenu} drawerWidth={drawerWidth} />
             </div>
-            <Drawer
-                variant="temporary"
-                open={drawerOpen}
-                onClose={toggleDrawer}
-                sx={{
-                    display: { xs: 'block', md: 'none' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
-            >
-                <OsmAndDrawer mobile={true} toggleDrawer={toggleDrawer} />
-            </Drawer>
-            <Drawer
-                variant="permanent"
-                sx={{
-                    display: { xs: 'none', md: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
-                open
-            >
-                <OsmAndDrawer mobile={false} />
-            </Drawer>
+            {!mobile && (
+                <Drawer
+                    variant="temporary"
+                    PaperProps={{
+                        sx: {
+                            width: `${drawerRightWidth}`,
+                        },
+                    }}
+                    open={true}
+                    hideBackdrop
+                    sx={{ mr: 500 }}
+                    anchor={'right'}
+                    disableEnforceFocus
+                >
+                    <InformationBlock
+                        mobile={mobile}
+                        setDrawerWidth={setDrawerRightWidth}
+                        hideContextMenu={hideContextMenu}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        setClearState={setClearState}
+                    />
+                </Drawer>
+            )}
+            {mobile && (
+                <Drawer
+                    variant="temporary"
+                    PaperProps={{
+                        sx: {
+                            height: `${drawerRightHeight}px`,
+                            overflow: 'visible',
+                        },
+                    }}
+                    sx={{ mt: 500 }}
+                    hideBackdrop
+                    open={true}
+                    anchor={'bottom'}
+                    disableEnforceFocus
+                >
+                    <InformationBlock
+                        mobile={mobile}
+                        setDrawerWidth={setDrawerRightWidth}
+                        hideContextMenu={hideContextMenu}
+                        showContextMenu={showContextMenu}
+                        setShowContextMenu={setShowContextMenu}
+                        setClearState={setClearState}
+                        resizing={resizing}
+                        setResizing={setResizing}
+                        setDrawerHeight={setDrawerRightHeight}
+                        drawerHeight={drawerRightHeight}
+                    />
+                </Drawer>
+            )}
+            {mobile && (
+                <Drawer
+                    variant="temporary"
+                    open={drawerLeftOpen}
+                    onClose={toggleLeftDrawer}
+                    sx={{
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: LEFT_DRAWER_SIZE },
+                    }}
+                >
+                    <OsmAndDrawer mobile={mobile} toggleDrawer={toggleLeftDrawer} />
+                </Drawer>
+            )}
+            {!mobile && (
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: LEFT_DRAWER_SIZE },
+                    }}
+                    open={drawerLeftOpen}
+                >
+                    <OsmAndDrawer mobile={mobile} />
+                </Drawer>
+            )}
             <Outlet />
         </>
     );

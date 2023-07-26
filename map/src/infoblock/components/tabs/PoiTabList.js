@@ -1,6 +1,6 @@
 import { Tab } from '@mui/material';
 import React from 'react';
-import PoiInfoTab from './components/tabs/PoiInfoTab';
+import PoiInfoTab from './PoiInfoTab';
 
 export default class PoiTabList {
     state = {

@@ -39,6 +39,7 @@
         "prop-types": "^15.8.1",
         "react": "^18.1.0",
         "react-chartjs-2": "^5.2.0",
+        "react-device-detect": "^2.2.3",
         "react-dom": "^18.1.0",
         "react-draft-wysiwyg": "^1.15.0",
         "react-leaflet": "^4.0.0",
@@ -52,6 +53,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "start:mobile": "HOST=0.0.0.0 react-scripts start",
         "build": "react-scripts build",
         "build:staging": "env-cmd -f .env.staging react-scripts build",
         "test": "react-scripts test",

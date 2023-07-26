@@ -11,7 +11,7 @@ import {
     LineElement,
     Filler,
 } from 'chart.js';
-import { Slider, SliderThumb, Typography } from '@mui/material';
+import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
 import zoomPlugin from 'chartjs-plugin-zoom';
@@ -405,10 +405,10 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     return (
         <>
-            <Typography component={'span'} type="title" color="inherit" sx={{ p: 0 }}>
+            <Box sx={{ p: 0, maxWidth: width - 40 }}>
                 <Chart
                     ref={chartRef}
-                    width={width}
+                    width={width - 40}
                     height={150}
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
@@ -417,7 +417,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
                     onMouseLeave={() => ctx.mapMarkerListener(null)}
                 />
-            </Typography>
+            </Box>
             <Slider
                 className={styles.slider}
                 valueLabelDisplay="auto"
