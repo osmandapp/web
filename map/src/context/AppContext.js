@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
-import Utils from '../util/Utils';
+import Utils, { useMutator } from '../util/Utils';
 import TracksManager from './TracksManager';
 import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
@@ -350,8 +350,9 @@ export const AppContextProvider = (props) => {
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
-        pastStates: [],
-        futureStates: [],
+        update: false, // push track to undo/redo
+        // pastStates: [], // was used for logs
+        // futureStates: [], // was used for logs
     });
     const [openedPopper, setOpenedPopper] = useState(null);
     const [showPoiCategories, setShowPoiCategories] = useState([]);
@@ -368,10 +369,12 @@ export const AppContextProvider = (props) => {
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
     const [trackRange, setTrackRange] = useState(null);
-    const [showPoints, setShowPoints] = useState({
+
+    const [showPoints, mutateShowPoints] = useMutator({
         points: true,
         wpts: true,
     });
+
     const [devMode, setDevMode] = useState(false);
 
     routeRouter.initSetter({ setter: setRouteRouter });
@@ -569,7 +572,7 @@ export const AppContextProvider = (props) => {
                 trackRange,
                 setTrackRange,
                 showPoints,
-                setShowPoints,
+                mutateShowPoints,
                 showPoiCategories,
                 setShowPoiCategories,
                 poiCategory,

@@ -1,5 +1,35 @@
 import TracksManager from '../context/TracksManager';
 import { apiGet } from '../util/HttpApi';
+import { useState } from 'react';
+
+/**
+ * Mutation-compatible wrapper over useState(object)
+ * Create object copy -> Apply callback() -> Call setter()
+ *
+ * Example:
+ *
+ * const [showPoints, mutateShowPoints] = useMutator({ points: true, wpts: true });
+ *
+ * mutateShowPoints((next) => (next.points = !next.points)) // functional way
+ * mutateShowPoints({ points: true, wpts: true }) // classic way supported
+ */
+export function useMutator(init) {
+    const [state, setter] = useState(init);
+    const mutator = (update) => {
+        if (update && typeof update === 'function') {
+            setter((previous) => {
+                const proto = (instance) => Object.create(Object.getPrototypeOf(instance));
+                const next = Object.assign(proto(previous), previous);
+                update(next); // callback
+                return next;
+            });
+            return;
+        } else {
+            setter(() => update);
+        }
+    };
+    return [state, mutator];
+}
 
 async function getFileData(file) {
     let trackData;
@@ -40,12 +70,12 @@ function getPointsDist(list) {
         for (let index = 0; index < list.length; ++index) {
             if (index === 0) {
                 list[index].distance = 0;
-                list[index].distanceFromStart = 0;
+                list[index].distanceSegment = 0;
             } else {
                 let d = getDistance(list[index].lat, list[index].lng, list[index - 1].lat, list[index - 1].lng);
                 dist += d;
                 list[index].distance = d;
-                list[index].distanceFromStart = dist;
+                list[index].distanceSegment = dist;
             }
         }
     }

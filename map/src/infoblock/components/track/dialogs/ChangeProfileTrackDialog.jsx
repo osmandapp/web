@@ -13,6 +13,7 @@ import TrackLayerProvider from '../../../../map/TrackLayerProvider';
 import RoutingManager from '../../../../context/RoutingManager';
 import RouteProfileSettingsDialog from '../../../../drawer/components/route/RouteProfileSettingsDialog';
 import { Settings } from '@mui/icons-material';
+import { useWindowSize } from '../../../../util/hooks/useWindowSize';
 
 const useStyles = makeStyles({
     dialog: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles({
 export default function ChangeProfileTrackDialog({ open }) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
+    const [width] = useWindowSize();
 
     const geoRouters = {
         [TracksManager.CHANGE_PROFILE_ALL]: ctx.trackRouter,
@@ -213,7 +215,9 @@ export default function ChangeProfileTrackDialog({ open }) {
                         </IconButton>
                     </Box>
                 </Box>
-                <DialogContent sx={{ minWidth: 500, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px' }}>
+                <DialogContent
+                    sx={{ minWidth: width / 4, padding: '0px 0px', marginLeft: '-15px', marginRight: '-23px' }}
+                >
                     <SelectTrackProfile
                         hideSettings={true}
                         geoRouter={geoRouter}

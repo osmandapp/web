@@ -1,7 +1,6 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
 import { Close, Delete, CloudUpload, Redo, Undo } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
 import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
@@ -10,28 +9,13 @@ import _ from 'lodash';
 import TracksManager from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
-const useStyles = makeStyles({
-    buttongroup: {
-        top: '30vh',
-        width: '10px',
-        height: '10px',
-    },
-});
-
-const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearState }) => {
-    const classes = useStyles();
-
+const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
-    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo(
-        {},
-        ctx.trackState.pastStates,
-        ctx.trackState.futureStates
-    );
-    //futureStates for logs
+    const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
     useEffect(() => {
         if (clearState) {
@@ -42,7 +26,6 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
     useEffect(() => {
         if (useSavedState) {
             getState(state);
-            ctx.trackState.block = false;
             ctx.setTrackState({ ...ctx.trackState });
         }
     }, [state]);
@@ -59,7 +42,7 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
 
     function doClear() {
         clear(); // setState() can't be used inside dispatch()
-        ctx.setTrackState({ pastStates: [], futureStates: [] });
+        ctx.setTrackState({ update: false });
     }
 
     function getState(currentState) {
@@ -79,99 +62,94 @@ const PanelButtons = ({ drawerWidth, showContextMenu, setShowContextMenu, clearS
 
     return (
         ctx.selectedGpxFile && (
-            <div>
-                {showContextMenu && (
-                    <div style={{ left: drawerWidth + 10 }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
-                        <div className="leaflet-control leaflet-bar padding-container">
-                            <Paper>
-                                <ButtonGroup orientation="vertical" color="primary" sx={{ maxWidth: 36 }}>
-                                    {ctx.createTrack && (
-                                        <Tooltip title="Change profile" arrow placement="right">
-                                            <IconButton
-                                                variant="contained"
-                                                type="button"
-                                                onClick={() => {
-                                                    ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                                    ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
-                                                }}
-                                            >
-                                                {ctx.trackRouter.getProfile()?.icon}
-                                            </IconButton>
-                                        </Tooltip>
-                                    )}
-                                    {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                                        <Tooltip title="Save to cloud" arrow placement="right">
-                                            <IconButton
-                                                variant="contained"
-                                                type="button"
-                                                onClick={() => {
-                                                    ctx.selectedGpxFile.save = true;
-                                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                                }}
-                                            >
-                                                <CloudUpload fontSize="small" />
-                                            </IconButton>
-                                        </Tooltip>
-                                    )}
-                                    {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
-                                        ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                            <Tooltip title="Delete" arrow placement="right">
-                                                <IconButton
-                                                    variant="contained"
-                                                    type="button"
-                                                    onClick={() => setOpenDeleteDialog(true)}
-                                                >
-                                                    <Delete fontSize="small" />
-                                                </IconButton>
-                                            </Tooltip>
-                                        )}
-                                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                                        <IconButton
-                                            variant="contained"
-                                            type="button"
-                                            disabled={
-                                                !isUndoPossible ||
-                                                ctx.trackState.block ||
-                                                (pastStates.length === 1 && _.isEmpty(pastStates[0]))
-                                            }
-                                            onClick={(e) => {
-                                                undo();
-                                                setUseSavedState(true);
-                                                e.stopPropagation();
-                                            }}
-                                        >
-                                            <Undo fontSize="small" />
-                                        </IconButton>
-                                    )}
-                                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                                        <IconButton
-                                            variant="contained"
-                                            type="button"
-                                            disabled={!isRedoPossible}
-                                            onClick={(e) => {
-                                                redo();
-                                                setUseSavedState(true);
-                                                e.stopPropagation();
-                                            }}
-                                        >
-                                            <Redo fontSize="small" />
-                                        </IconButton>
-                                    )}
+            <div
+                style={{
+                    marginTop: orientation === 'vertical' ? '2px' : 0,
+                    marginLeft: orientation === 'vertical' ? 0 : '2px',
+                }}
+            >
+                <Paper>
+                    <ButtonGroup orientation={orientation} color="primary">
+                        {ctx.createTrack && (
+                            <Tooltip title="Change profile" arrow placement="right">
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => {
+                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
+                                    }}
+                                >
+                                    {ctx.trackRouter.getProfile()?.icon}
+                                </IconButton>
+                            </Tooltip>
+                        )}
+                        {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            <Tooltip title="Save to cloud" arrow placement="right">
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => {
+                                        ctx.selectedGpxFile.save = true;
+                                        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                    }}
+                                >
+                                    <CloudUpload fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
+                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
+                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
+                                <Tooltip title="Delete" arrow placement="right">
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        onClick={() => {
-                                            doClear();
-                                            setShowContextMenu(false);
-                                        }}
+                                        onClick={() => setOpenDeleteDialog(true)}
                                     >
-                                        <Close fontSize="small" />
+                                        <Delete fontSize="small" />
                                     </IconButton>
-                                </ButtonGroup>
-                            </Paper>
-                        </div>
-                    </div>
-                )}
+                                </Tooltip>
+                            )}
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                disabled={!isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))}
+                                onClick={(e) => {
+                                    undo();
+                                    setUseSavedState(true);
+                                    e.stopPropagation();
+                                }}
+                            >
+                                <Undo fontSize="small" />
+                            </IconButton>
+                        )}
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                disabled={!isRedoPossible}
+                                onClick={(e) => {
+                                    redo();
+                                    setUseSavedState(true);
+                                    e.stopPropagation();
+                                }}
+                            >
+                                <Redo fontSize="small" />
+                            </IconButton>
+                        )}
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            onClick={() => {
+                                doClear();
+                                setShowContextMenu(false);
+                            }}
+                        >
+                            <Close fontSize="small" />
+                        </IconButton>
+                    </ButtonGroup>
+                </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}
                 {openDeleteDialog &&
                     (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ||

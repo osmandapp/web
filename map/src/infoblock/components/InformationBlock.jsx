@@ -1,25 +1,32 @@
-import { AppBar, Button, LinearProgress, Box } from '@mui/material';
+import { AppBar, LinearProgress, Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Close } from '@mui/icons-material';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
-import PanelButtons from './PanelButtons';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
-import ChangeProfileTrackDialog from './track/dialogs/ChangeProfileTrackDialog';
-import PointContextMenu from './PointContextMenu';
-import PoiTabList from '../PoiTabList';
+import PoiTabList from './tabs/PoiTabList';
 
-export default function InformationBlock({ hideContextMenu, drawerWidth }) {
+export default function InformationBlock({
+    mobile,
+    setDrawerWidth,
+    hideContextMenu,
+    showContextMenu,
+    setShowContextMenu,
+    setClearState,
+    resizing,
+    setResizing,
+    setDrawerHeight,
+    drawerHeight,
+}) {
+    const DRAWER_SIZE = 400;
+
     const ctx = useContext(AppContext);
 
-    const [showContextMenu, setShowContextMenu] = useState(false);
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
-    const [clearState, setClearState] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -41,10 +48,13 @@ export default function InformationBlock({ hideContextMenu, drawerWidth }) {
     useEffect(() => {
         if (!showContextMenu) {
             stopCreatedTrack(false);
-            ctx.setShowPoints({ points: true, wpts: true });
+            ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
             ctx.setCurrentObjectType(null);
+            if (setDrawerHeight) {
+                setDrawerHeight(0);
+            }
         }
     }, [showContextMenu]);
 
@@ -86,6 +96,9 @@ export default function InformationBlock({ hideContextMenu, drawerWidth }) {
                     clearStateIfObjChange();
                     setTabsObj(obj);
                     setValue(obj.defaultTab);
+                    if (setDrawerHeight) {
+                        setDrawerHeight(50);
+                    }
                 }
             }
         }
@@ -115,51 +128,125 @@ export default function InformationBlock({ hideContextMenu, drawerWidth }) {
         }
     }
 
+    function showInfoBlock() {
+        return mobile ? true : !hideContextMenu;
+    }
+
+    function getWidth() {
+        let currentWidth;
+        if (showContextMenu && showInfoBlock()) {
+            currentWidth = mobile ? 'auto' : `${DRAWER_SIZE + 24}px`;
+        } else {
+            currentWidth = '0px';
+        }
+        setDrawerWidth(currentWidth);
+        return currentWidth;
+    }
+
     return (
         <>
-            {showContextMenu && !hideContextMenu && (
+            {showContextMenu && showInfoBlock() && (
                 <>
-                    <Box
-                        anchor={'right'}
-                        sx={{ alignContent: 'flex-end', height: '100vh', overflow: 'auto', width: '800px !important' }}
-                    >
+                    <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: `auto`, width: `${getWidth()}` }}>
                         <div>
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
-                            {tabsObj && tabsObj.tabList.length > 0 && (
-                                <TabContext value={value}>
-                                    <AppBar position="static" color="default">
-                                        <div style={{ display: 'inherit' }}>
-                                            <Button key="close" onClick={() => setShowContextMenu(false)}>
-                                                <Close />
-                                            </Button>
-                                            <TabList onChange={(e, newValue) => setValue(newValue)}>
-                                                {tabsObj.tabList}
-                                            </TabList>
+                            {tabsObj &&
+                                tabsObj.tabList.length > 0 &&
+                                (mobile ? (
+                                    <TabContext value={value}>
+                                        <AppBar position="static" color="default">
+                                            <div>
+                                                <TabList
+                                                    onTouchStart={() => {
+                                                        setResizing(true);
+                                                    }}
+                                                    onTouchEnd={() => {
+                                                        setResizing(false);
+                                                    }}
+                                                    onTouchMove={(e) => {
+                                                        if (!resizing) {
+                                                            return;
+                                                        }
+                                                        let offsetTop =
+                                                            document.body.offsetHeight - e.changedTouches[0].clientY;
+                                                        let minHeight = 50;
+                                                        let maxHeight = 600;
+                                                        if (offsetTop < minHeight) {
+                                                            setDrawerHeight(minHeight);
+                                                        } else if (offsetTop > maxHeight) {
+                                                            setDrawerHeight(maxHeight);
+                                                        } else {
+                                                            setDrawerHeight(offsetTop);
+                                                        }
+                                                    }}
+                                                    onMouseDown={() => {
+                                                        setResizing(true);
+                                                    }}
+                                                    onMouseUp={() => {
+                                                        setResizing(false);
+                                                    }}
+                                                    onMouseMove={(e) => {
+                                                        if (!resizing) {
+                                                            return;
+                                                        }
+                                                        let offsetTop = document.body.offsetHeight - e.clientY;
+                                                        let minHeight = 50;
+                                                        let maxHeight = 600;
+                                                        if (offsetTop + minHeight / 2 < minHeight) {
+                                                            setDrawerHeight(minHeight);
+                                                        } else if (offsetTop + minHeight / 2 > maxHeight) {
+                                                            setDrawerHeight(maxHeight);
+                                                        } else {
+                                                            setDrawerHeight(offsetTop + minHeight / 2);
+                                                        }
+                                                    }}
+                                                    variant="scrollable"
+                                                    scrollButtons
+                                                    allowScrollButtonsMobile
+                                                    onChange={(e, newValue) => setValue(newValue)}
+                                                >
+                                                    {tabsObj.tabList}
+                                                </TabList>
+                                            </div>
+                                        </AppBar>
+                                        <div style={{ height: `${drawerHeight}px`, overflowX: 'auto' }}>
+                                            {Object.values(tabsObj.tabs).map((item) => (
+                                                <TabPanel
+                                                    sx={{ paddingBottom: '70px' }}
+                                                    value={item.key + ''}
+                                                    key={'tabpanel:' + item.key}
+                                                >
+                                                    {item}
+                                                </TabPanel>
+                                            ))}
                                         </div>
-                                    </AppBar>
-                                    <div>
-                                        {Object.values(tabsObj.tabs).map((item) => (
-                                            <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}>
-                                                {item}
-                                            </TabPanel>
-                                        ))}
-                                    </div>
-                                </TabContext>
-                            )}
+                                    </TabContext>
+                                ) : (
+                                    <TabContext value={value}>
+                                        <AppBar position="static" color="default">
+                                            <div>
+                                                <TabList
+                                                    variant="scrollable"
+                                                    scrollButtons
+                                                    onChange={(e, newValue) => setValue(newValue)}
+                                                >
+                                                    {tabsObj.tabList}
+                                                </TabList>
+                                            </div>
+                                        </AppBar>
+                                        <div>
+                                            {Object.values(tabsObj.tabs).map((item) => (
+                                                <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}>
+                                                    {item}
+                                                </TabPanel>
+                                            ))}
+                                        </div>
+                                    </TabContext>
+                                ))}
                         </div>
                     </Box>
                 </>
             )}
-            {showContextMenu && (
-                <PanelButtons
-                    drawerWidth={drawerWidth}
-                    showContextMenu={showContextMenu}
-                    setShowContextMenu={setShowContextMenu}
-                    clearState={clearState}
-                />
-            )}
-            {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
-            {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}
         </>
     );
 }

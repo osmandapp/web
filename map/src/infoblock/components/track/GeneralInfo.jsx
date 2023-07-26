@@ -197,16 +197,28 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         }
     }
 
-    function getDesc(desc) {
-        return desc.length > 140 ? `${desc.substring(0, 140)} ...` : desc;
-    }
-
     const Description = ({ desc }) => {
         return (
             <ListItemText>
-                <Typography onClick={() => setOpenDescDialog(true)} variant="inherit" sx={{ fontSize: '0.875rem' }}>
-                    <div dangerouslySetInnerHTML={{ __html: `${getDesc(desc)}` }} />
-                </Typography>
+                <Box display="flex" alignItems="end">
+                    <Typography
+                        component={'span'}
+                        variant="inherit"
+                        sx={{
+                            mt: -2,
+                            maxHeight: 200,
+                            fontSize: '0.875rem',
+                            display: 'inline-block',
+                            textOverflow: 'ellipsis',
+                            overflow: 'hidden !important',
+                        }}
+                    >
+                        <div dangerouslySetInnerHTML={{ __html: `${desc}` }} />
+                    </Typography>
+                    <IconButton onClick={() => setOpenDescDialog(true)}>
+                        <Edit fontSize="small" />
+                    </IconButton>
+                </Box>
                 <Divider sx={{ mt: '6px', mb: '12px' }} light />
             </ListItemText>
         );
@@ -356,7 +368,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         </ListItemIcon>
                         <ListItemText>
                             <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Elevation SRTM (min/avg/max): ${elevationSRTM}`}
+                                {`Elevation SRTM: ${elevationSRTM}`}
                                 {elevationSRTM === '' && (
                                     <Link
                                         href="#"
@@ -444,7 +456,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     }}
                 >
                     <Download fontSize="small" sx={{ mr: '3px' }} />
-                    Download
+                    Download GPX
                 </Button>
                 <MenuItem sx={{ ml: -2 }}>
                     <ListItemIcon>

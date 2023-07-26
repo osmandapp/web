@@ -117,7 +117,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
     }
 
     return (
-        <Dialog open={dialogOpen} onClose={toggleShowDialog}>
+        <Dialog open={dialogOpen} onClose={toggleShowDialog} disableEnforceFocus>
             <Grid container spacing={2}>
                 <Grid item xs={10}>
                     <DialogTitle>Show POI</DialogTitle>

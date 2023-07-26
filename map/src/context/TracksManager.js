@@ -344,7 +344,8 @@ function addDistance(track) {
 }
 
 function addDistanceToPoints(points) {
-    let distanceFromStart = 0;
+    let distanceTotal = 0;
+    let distanceSegment = 0;
     let prevGapInd = 0;
     for (let point of points) {
         if (point.geometry) {
@@ -352,10 +353,12 @@ function addDistanceToPoints(points) {
             point.geometry.forEach((p) => {
                 point.dist += p.distance;
             });
-            distanceFromStart += point.dist;
-            point.distanceFromStart = distanceFromStart;
+            distanceTotal += point.dist;
+            distanceSegment += point.dist;
+            point.distanceTotal = distanceTotal;
+            point.distanceSegment = distanceSegment;
             if (point.geometry[point.geometry.length - 1]?.profile === TracksManager.PROFILE_GAP) {
-                distanceFromStart = 0;
+                distanceSegment = 0;
             }
         } else {
             let ind = _.indexOf(points, point);
@@ -363,21 +366,25 @@ function addDistanceToPoints(points) {
                 let prevPoint = points[ind - 1];
                 if (prevGapInd !== ind) {
                     point.dist = Utils.getDistance(point.lat, point.lng, prevPoint.lat, prevPoint.lng);
-                    distanceFromStart += point.dist;
-                    point.distanceFromStart = distanceFromStart;
+                    distanceTotal += point.dist;
+                    distanceSegment += point.dist;
+                    point.distanceTotal = distanceTotal;
+                    point.distanceSegment = distanceSegment;
                 } else {
                     point.dist = 0;
-                    point.distanceFromStart = distanceFromStart;
+                    point.distanceTotal = distanceTotal;
+                    point.distanceSegment = distanceSegment;
                 }
             } else {
                 point.dist = 0;
-                point.distanceFromStart = 0;
+                point.distanceSegment = 0;
+                point.distanceTotal = distanceTotal;
             }
             if (point.profile === TracksManager.PROFILE_GAP) {
                 let segPoints = points.slice(prevGapInd, ind);
                 prevGapInd = ind + 1;
                 Utils.getPointsDist(segPoints);
-                distanceFromStart = 0;
+                distanceSegment = 0;
             }
         }
     }
@@ -534,7 +541,7 @@ function updateStat(track) {
     addDistance(track);
     let activePoints = track.points;
     if (track.analysis?.totalDistance) {
-        track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceFromStart;
+        track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceTotal;
     }
     track.analysis.timeMoving = null;
     track.analysis.diffElevationUp = null;
