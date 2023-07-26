@@ -35,7 +35,7 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 - The [Search button](../widgets/map-buttons.md#search) on the map application screen.
 - Go to the main Android *Menu → Search → Address tab → Coordinates Search*.
 - When preparing to start a route, tap *Navigation → Set destination → Search field → Address tab → Coordinates Search*.  
-- configure map - show poi overlay - search 
+- *Configure map → Show poi overlay → Search* 
 
 
 ## How to use
@@ -71,9 +71,9 @@ All POI types in OsmAnd:
 
 </Tabs>
 
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info  
-(full name, categorie name, direction and distance to POI, work time). Pressing to needed categorie opens POI list of this categorie. 
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
 
+<!--
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
 
 Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map.md#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
@@ -98,7 +98,7 @@ Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button 
 
 </Tabs>
 
-
+-->
 
 ### Filters
 
@@ -127,6 +127,8 @@ You can use the **Filter** function to select the necessary characteristics for 
 
 A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of 21 default categories. Some of them are listed here:    
 
+<!--
+
 | Categories | Types | Note |
 |:------------|:---------------|:---------------|
 | 1. **<Translate android="true" ids="poi_filter_accomodation"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge (2 values) </li><li> Heating (7 values) </li><li> Internet access type (3 values) </li><li> Mattress (2 values) </li><li> Payment type (more than 10 values) </li><li> Shower (1 values) </li><li> Smoking (6 values) </li><li> Star rating (10 values) </li><li> Wheelchair accessibility (4 values) </li></ul></details> |  |  
@@ -152,6 +154,7 @@ A filter can consist of quite a number of items, the presence of which depends o
 | 21. Water | Does not contain any filters. |  |
 | 22. Wikipedia | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
 
+-->
 
 ### Rearrange categories
 
@@ -192,7 +195,7 @@ Description and how to use:
 **Online Search** allows finding locations,, addresses and points of interest in real-time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back.  
 
 Online Search includes the following features:  
-1. **Search by location**. You can enter the name of a city, street, district, or other location and OsmAnd will provide results matching the query.
+1. **Search by location**. You can enter the name of a city, street, neighbourhood, or other location and OsmAnd will provide results matching the query.
 2. **Geocoding**. Online search converts your text queries into geographic coordinates, allowing precise location.
 3. **Reverse geocoding**. You can enter geographic coordinates and Search will return the corresponding location as a city name, street name, or place on the map.
 4. **Search by Points of Interest**. Allows you to search for different points by name or category.
@@ -238,6 +241,7 @@ Combine POI types from different categories. Tap switch to select all, tap left 
 
 Below screen there is info panel about number of selected categories. Below selected category name you find names/number of selected POI types.
 
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -265,10 +269,11 @@ SAVE it:
 **Android**: can add filter , next blue "SAVE" button below of the screen -> enter name
 
 ![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
-
+-->
 
 ### Edit an existing filter
 
+<!--
 From the main screen:
 1. Tap on the agnifying glass to open the Search screen
 2. Select the Categories tab
@@ -276,10 +281,11 @@ From the main screen:
 4. Tap on filter icon and then on Filter screen
 5. Tap on the 3-dot icon
 6. In the drop-down menu, select "Edit categories"
-
+-->
 
 ### Delete Custom POI filter
 
+<!--
 **iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
 
 ![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)
@@ -288,5 +294,36 @@ From the main screen:
 
 ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
 
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)  
 
+
+
+| Amenity categories | Values for POI types | Description |
+|:------------|:---------------|:---------------|
+| 1. **<Translate android="true" ids="amenity_type_administrative"/>** | <details><summary> 25 types </summary> <ul><li> Allotments </li><li> Fridge (2 values) </li><li> Heating (7 values) </li><li> Internet access type (3 values) </li><li> Mattress (2 values) </li><li> Payment type (more than 10 values) </li><li> Shower (1 values) </li><li> Smoking (6 values) </li><li> Star rating (10 values) </li><li> Wheelchair accessibility (4 values) </li></ul></details> |  |   
+| 2. **<Translate android="true" ids="christmas_poi"/>** | <ul><li> 5 types </li><li> Christmas event </li><li> Christmas market </li><li> Christmas pyramid </li><li> Christmas shop </li><li> Christmas tree </li></ul> |  | 
+| 3. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 16 types </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Internet access type (3 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 4. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 5. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 6. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  | 
+| 7. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 8. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 9. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
+| 10. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 11.**<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 12. <Translate android="true" ids="poi_filter_closest_poi"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 13. <Translate android="true" ids="poi_filter_parking"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 14. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 15. <Translate android="true" ids="poi_filter_public_transport"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 16. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 17. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 18. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 19. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 20. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 21. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. |  |
+| 22. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
+| 23. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
+
+Each amenity category contains a list of available generic values for POI types. You have the option to select or deselect them individually by tapping the field of the type you are interested in. *Select all* - to do this, select the toggle button.  And refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.
+
+-->
