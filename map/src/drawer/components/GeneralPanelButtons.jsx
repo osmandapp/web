@@ -9,6 +9,7 @@ import PoiTypesDialog from './poi/PoiTypesDialog';
 import PanelButtons from '../../infoblock/components/PanelButtons';
 import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -25,6 +26,8 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     });
 
     const [openPoiDialog, setOpenPoiDialog] = useState(false);
+    const [width, height] = useWindowSize();
+    const orientation = getOrientation();
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
@@ -40,11 +43,25 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
         });
     };
 
+    function getOrientation() {
+        return height > 500 && width > 0 ? 'vertical' : 'horizontal';
+    }
+
     return (
-        <div style={{ left: drawerWidth + 10 }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
-            <div className="leaflet-control leaflet-bar padding-container">
+        <div style={{ left: drawerWidth + 10, top: '55px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+            <div
+                className="leaflet-control leaflet-bar padding-container"
+                style={{ display: 'flex', flexDirection: orientation === 'vertical' ? 'column' : 'row' }}
+            >
                 <Paper>
-                    <ButtonGroup orientation="vertical" color="primary">
+                    <ButtonGroup
+                        sx={{
+                            width: orientation === 'vertical' ? 41 : 'auto',
+                            height: orientation === 'vertical' ? 'auto' : 41,
+                        }}
+                        orientation={orientation}
+                        color="primary"
+                    >
                         <Tooltip title="Create track" arrow placement="right">
                             <IconButton
                                 variant="contained"
@@ -63,7 +80,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                     type="file"
                                     onChange={fileSelected(ctx)}
                                 />
-                                <IconButton variant="contained" component="span">
+                                <IconButton sx={{ ml: '2px' }} variant="contained" component="span">
                                     <Upload fontSize="small" />
                                 </IconButton>
                             </label>
@@ -82,7 +99,13 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
-                {showContextMenu && <PanelButtons setShowContextMenu={setShowContextMenu} clearState={clearState} />}
+                {showContextMenu && (
+                    <PanelButtons
+                        orientation={orientation}
+                        setShowContextMenu={setShowContextMenu}
+                        clearState={clearState}
+                    />
+                )}
             </div>
             {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} />

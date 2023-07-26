@@ -9,7 +9,7 @@ import _ from 'lodash';
 import TracksManager from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
-const PanelButtons = ({ setShowContextMenu, clearState }) => {
+const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -68,9 +68,14 @@ const PanelButtons = ({ setShowContextMenu, clearState }) => {
 
     return (
         ctx.selectedGpxFile && (
-            <div style={{ marginTop: '2px' }}>
+            <div
+                style={{
+                    marginTop: orientation === 'vertical' ? '2px' : 0,
+                    marginLeft: orientation === 'vertical' ? 0 : '2px',
+                }}
+            >
                 <Paper>
-                    <ButtonGroup orientation="vertical" color="primary" sx={{ maxWidth: 36 }}>
+                    <ButtonGroup orientation={orientation} color="primary">
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
