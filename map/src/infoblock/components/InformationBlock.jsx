@@ -6,10 +6,11 @@ import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
-import PoiTabList from '../PoiTabList';
-import { isMobile } from 'react-device-detect';
+import PoiTabList from './tabs/PoiTabList';
 
 export default function InformationBlock({
+    mobile,
+    setDrawerWidth,
     hideContextMenu,
     showContextMenu,
     setShowContextMenu,
@@ -19,6 +20,8 @@ export default function InformationBlock({
     setDrawerHeight,
     drawerHeight,
 }) {
+    const DRAWER_SIZE = 400;
+
     const ctx = useContext(AppContext);
 
     const [value, setValue] = useState('general');
@@ -101,6 +104,10 @@ export default function InformationBlock({
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
+    useEffect(() => {
+        getWidth();
+    });
+
     function clearStateIfObjChange() {
         if (
             prevTrack &&
@@ -126,19 +133,30 @@ export default function InformationBlock({
     }
 
     function showInfoBlock() {
-        return isMobile ? true : !hideContextMenu;
+        return mobile ? true : !hideContextMenu;
+    }
+
+    function getWidth() {
+        let currentWidth;
+        if (showContextMenu && showInfoBlock()) {
+            currentWidth = mobile ? 'auto' : `${DRAWER_SIZE}px`;
+        } else {
+            currentWidth = '0px';
+        }
+        setDrawerWidth(currentWidth);
+        return currentWidth;
     }
 
     return (
         <>
             {showContextMenu && showInfoBlock() && (
                 <>
-                    <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: `auto` }}>
+                    <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: `auto`, width: `${getWidth()}` }}>
                         <div>
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                             {tabsObj &&
                                 tabsObj.tabList.length > 0 &&
-                                (isMobile ? (
+                                (mobile ? (
                                     <TabContext value={value}>
                                         <AppBar position="static" color="default">
                                             <div>
@@ -163,6 +181,27 @@ export default function InformationBlock({
                                                             setDrawerHeight(maxHeight);
                                                         } else {
                                                             setDrawerHeight(offsetTop);
+                                                        }
+                                                    }}
+                                                    onMouseDown={() => {
+                                                        setResizing(true);
+                                                    }}
+                                                    onMouseUp={() => {
+                                                        setResizing(false);
+                                                    }}
+                                                    onMouseMove={(e) => {
+                                                        if (!resizing) {
+                                                            return;
+                                                        }
+                                                        let offsetTop = document.body.offsetHeight - e.clientY;
+                                                        let minHeight = 50;
+                                                        let maxHeight = 600;
+                                                        if (offsetTop + minHeight / 2 < minHeight) {
+                                                            setDrawerHeight(minHeight);
+                                                        } else if (offsetTop + minHeight / 2 > maxHeight) {
+                                                            setDrawerHeight(maxHeight);
+                                                        } else {
+                                                            setDrawerHeight(offsetTop + minHeight / 2);
                                                         }
                                                     }}
                                                     variant="scrollable"

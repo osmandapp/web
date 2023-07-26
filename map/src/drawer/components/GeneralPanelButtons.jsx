@@ -82,14 +82,8 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
+                {showContextMenu && <PanelButtons setShowContextMenu={setShowContextMenu} clearState={clearState} />}
             </div>
-            {showContextMenu && (
-                <PanelButtons
-                    showContextMenu={showContextMenu}
-                    setShowContextMenu={setShowContextMenu}
-                    clearState={clearState}
-                />
-            )}
             {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} />
             )}

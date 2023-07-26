@@ -419,7 +419,6 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 />
             </Box>
             <Slider
-                sx={{ width: width - 40 }}
                 className={styles.slider}
                 valueLabelDisplay="auto"
                 valueLabelFormat={valueLabelFormat}

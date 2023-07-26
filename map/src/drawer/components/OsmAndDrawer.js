@@ -10,9 +10,8 @@ import RouteMenu from './route/RouteMenu';
 import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import SearchResultMenu from './search/SearchResultMenu';
-import { isMobile } from 'react-device-detect';
 
-export default function OsmAndDrawer({ toggleDrawer }) {
+export default function OsmAndDrawer({ mobile, toggleDrawer }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -23,7 +22,7 @@ export default function OsmAndDrawer({ toggleDrawer }) {
     return (
         <>
             <Toolbar variant="dense">
-                {isMobile ? (
+                {mobile ? (
                     <>
                         <IconButton
                             size="large"
