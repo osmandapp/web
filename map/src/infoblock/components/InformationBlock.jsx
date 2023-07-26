@@ -104,10 +104,6 @@ export default function InformationBlock({
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
 
-    useEffect(() => {
-        getWidth();
-    });
-
     function clearStateIfObjChange() {
         if (
             prevTrack &&

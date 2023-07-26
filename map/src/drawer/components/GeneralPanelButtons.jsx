@@ -27,7 +27,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
 
     const [openPoiDialog, setOpenPoiDialog] = useState(false);
     const [width, height] = useWindowSize();
-    const orientation = getOrientation();
+    const orientation = getButtonOrientation();
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
@@ -43,7 +43,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
         });
     };
 
-    function getOrientation() {
+    function getButtonOrientation() {
         return height > 500 && width > 0 ? 'vertical' : 'horizontal';
     }
 
