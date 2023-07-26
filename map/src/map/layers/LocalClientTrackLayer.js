@@ -175,7 +175,6 @@ export default function LocalClientTrackLayer() {
             ctx.localTracks[ind].index = ind;
             if (ctx.createTrack.clear) {
                 ctx.localTracks[ind].selected = false;
-                ctx.setSelectedGpxFile({});
             } else {
                 if (ctx.createTrack.edit || closePrev) {
                     ctx.localTracks[ind].updated = true;
@@ -183,8 +182,12 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx);
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
             ctx.setLocalTracks([...ctx.localTracks]);
+
+            if (ctx.createTrack.clear) {
+                ctx.setSelectedGpxFile({}); // finally, after saveTracks
+            }
         }
     }
 
@@ -220,7 +223,7 @@ export default function LocalClientTrackLayer() {
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
             // localTracks exist: do update/append
-            TracksManager.saveTracks(ctx.localTracks, ctx);
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
@@ -507,11 +510,13 @@ export default function LocalClientTrackLayer() {
 
     function createLocalTrack(file, points = [], wpts = []) {
         TracksManager.prepareTrack(file);
+
         file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
         file.index = ctx.localTracks.length;
-        ctx.localTracks.push(file);
+        file.selected = true;
 
+        ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
     }
 
@@ -748,6 +753,7 @@ export default function LocalClientTrackLayer() {
 
     function initNewTrack() {
         ctxTrack = {};
+        ctxTrack.selected = true;
         ctxTrack.name = TracksManager.createName(ctx);
         ctxTrack.tracks = TracksManager.createGpxTracks();
         ctxTrack.pointsGroups = {};

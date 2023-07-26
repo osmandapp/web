@@ -186,9 +186,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             }
 
             ctx.selectedGpxFile.name = newName;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
 
-            TracksManager.saveTracks(ctx.localTracks, ctx);
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setLocalTracks([...ctx.localTracks]);
 
             setEnableEditName(false);
