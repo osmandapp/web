@@ -2,6 +2,7 @@ import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
+import { sanitizeFileName } from '../../../util/Utils';
 import {
     Box,
     Button,
@@ -12,7 +13,7 @@ import {
     ListItemIcon,
     ListItemText,
     MenuItem,
-    TextareaAutosize,
+    TextField,
     Typography,
 } from '@mui/material';
 import {
@@ -33,8 +34,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
-    const [disableButton, setDisableButton] = useState(true);
+    const [enableEditName, setEnableEditName] = useState(false);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
+    const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
     const [distance, setDistance] = useState(0);
     const [timeRange, setTimeRange] = useState('');
@@ -61,10 +63,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }, [ctx.selectedGpxFile]);
 
     function getName() {
+        setEnableEditName(false);
         setFileName(ctx.selectedGpxFile.name);
-        if (!disableButton) {
-            setDisableButton(!disableButton);
-        }
     }
 
     function getPoints() {
@@ -163,28 +163,44 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
 
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
-            setDisableButton(!disableButton);
-            if (validName(fileName)) {
-                let currentTrack = ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name);
-                currentTrack.name = fileName;
-                ctx.selectedGpxFile.name = fileName;
-                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                ctx.setLocalTracks([...ctx.localTracks]);
-                TracksManager.saveTracks(ctx.localTracks, ctx);
-            } else {
-                setFileName(ctx.selectedGpxFile.name);
-            }
-        }
-    }
+            const oldName = ctx.selectedGpxFile.name;
+            const newName = sanitizeFileName(fileName) || sanitizeFileName(oldName);
 
-    function validName(fileName) {
-        let existName = ctx.localTracks.find((t) => t.name === fileName);
-        return fileName !== '' && fileName.trim().length > 0 && !existName;
+            setFileName(newName); // update for next try
+
+            if (newName === oldName) {
+                setEnableEditName(false);
+                setFileNameError('');
+                return;
+            }
+
+            if (ctx.localTracks.find((t) => t.name === newName)) {
+                setFileNameError('This name is already exists');
+                return;
+            }
+
+            const currentTrack = ctx.localTracks.find((t) => t.name === oldName);
+
+            if (currentTrack) {
+                currentTrack.name = newName;
+            }
+
+            ctx.selectedGpxFile.name = newName;
+            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+
+            TracksManager.saveTracks(ctx.localTracks, ctx);
+            ctx.setLocalTracks([...ctx.localTracks]);
+
+            setEnableEditName(false);
+            setFileNameError('');
+            return;
+        }
     }
 
     function getDesc(desc) {
         return desc.length > 140 ? `${desc.substring(0, 140)} ...` : desc;
     }
+
     const Description = ({ desc }) => {
         return (
             <ListItemText>
@@ -202,28 +218,33 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         const inputLength = fileName.length + nUpperCaseLetters + 3; // add extra space
         return (
             <div style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
-                {!disableButton && (
+                {enableEditName && (
                     <div style={{ display: 'inline-block' }}>
-                        <TextareaAutosize
+                        <TextField
                             style={{
+                                minWidth: '200px',
                                 maxWidth: '400px',
                                 width: inputLength + 'ch',
                                 resize: 'none',
                                 marginBottom: '5px',
                                 fontSize: '16px',
                             }}
+                            multiline
                             className={styles.nameInput}
                             name="title"
                             onChange={(e) => setFileName(e.target.value)}
                             value={fileName}
-                            disabled={disableButton}
-                            onKeyDown={(e) => changeFileName(e)}
+                            disabled={!enableEditName}
+                            onKeyUp={(e) => changeFileName(e)}
                             autoFocus={true}
+                            size="small"
+                            error={!!fileNameError}
+                            helperText={fileNameError}
                         />
                     </div>
                 )}
 
-                {disableButton && (
+                {!enableEditName && (
                     <div style={{ display: 'inline-block' }}>
                         <Typography
                             className={styles.name}
@@ -237,7 +258,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                 type="button"
                                 sx={{ mb: '5px' }}
                                 onClick={() => {
-                                    setDisableButton(false);
+                                    setEnableEditName(true);
                                 }}
                             >
                                 <Edit fontSize="small" />
@@ -247,7 +268,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                 )}
                 <div style={{ display: 'inline-block', marginLeft: '10px', marginBottom: '3px' }}>
                     <Box display="flex" justifyContent="flex-end">
-                        {!disableButton && (
+                        {enableEditName && (
                             <Button
                                 variant="contained"
                                 style={{ backgroundColor: '#fbc73a' }}
@@ -256,14 +277,15 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                 Save
                             </Button>
                         )}
-                        {!disableButton && (
+                        {enableEditName && (
                             <Button
                                 sx={{ ml: 1 }}
                                 variant="contained"
                                 style={{ backgroundColor: '#aad3df' }}
                                 onClick={() => {
                                     setFileName(ctx.selectedGpxFile.name);
-                                    setDisableButton(!disableButton);
+                                    setEnableEditName(false);
+                                    setFileNameError('');
                                 }}
                             >
                                 Cancel

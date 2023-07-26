@@ -27,7 +27,7 @@ export default function LocalTrackItem({ track, index }) {
     }
 
     function deleteTrackFromMap() {
-        let currentTrack = ctx.localTracks[track.index];
+        let currentTrack = ctx.localTracks[track?.index ?? index];
         currentTrack.selected = false;
         cleanSelectedTrackIfNeed(currentTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
