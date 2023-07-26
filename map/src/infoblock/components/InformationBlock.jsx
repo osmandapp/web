@@ -139,7 +139,7 @@ export default function InformationBlock({
     function getWidth() {
         let currentWidth;
         if (showContextMenu && showInfoBlock()) {
-            currentWidth = mobile ? 'auto' : `${DRAWER_SIZE}px`;
+            currentWidth = mobile ? 'auto' : `${DRAWER_SIZE + 24}px`;
         } else {
             currentWidth = '0px';
         }
