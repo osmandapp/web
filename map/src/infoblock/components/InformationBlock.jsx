@@ -59,6 +59,10 @@ export default function InformationBlock({
     }, [showContextMenu]);
 
     useEffect(() => {
+        getWidth();
+    }, [hideContextMenu]);
+
+    useEffect(() => {
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
             stopCreatedTrack(true);
         }
