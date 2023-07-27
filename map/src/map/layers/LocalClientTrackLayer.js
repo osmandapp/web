@@ -70,7 +70,6 @@ export default function LocalClientTrackLayer() {
                     saveLocal();
                 }
                 checkZoom();
-                // checkClickOnMapEvent();
                 checkUpdateLayers();
             }
         }
@@ -151,7 +150,6 @@ export default function LocalClientTrackLayer() {
                 ctx.setCurrentObjectType(type);
                 initNewTrack();
             }
-            // addClickOnMap();
         } else if (ctx.createTrack?.enable === false) {
             if (ctx.createTrack.clear) {
                 clearCreateLayers(ctxTrack.layers);
@@ -166,7 +164,6 @@ export default function LocalClientTrackLayer() {
             }
             saveResult(savedFile, false);
             ctx.setCreateTrack(null);
-            // deleteClickOnMap();
         }
     }, [ctx.createTrack]);
 
@@ -212,14 +209,6 @@ export default function LocalClientTrackLayer() {
             ctx.setSelectedGpxFile({});
         }
     }
-
-    // function checkClickOnMapEvent() {
-    //     if (ctx.selectedGpxFile.addPoint && !ctx.selectedGpxFile.addWpt) {
-    //         //getNewRoute();
-    //     } else {
-    //         checkDragPoint();
-    //     }
-    // }
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
@@ -303,16 +292,6 @@ export default function LocalClientTrackLayer() {
             setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
         }
     }
-
-    // function checkDragPoint() {
-    //     if (ctx.selectedGpxFile?.dragPoint) {
-    //         deleteClickOnMap();
-    //     } else {
-    //         if (ctx.createTrack?.enable) {
-    //             addClickOnMap();
-    //         }
-    //     }
-    // }
 
     function checkUpdateLayers() {
         if (ctxTrack?.updateLayers) {
@@ -744,9 +723,6 @@ export default function LocalClientTrackLayer() {
             geoProfile: geoProfile,
             geometry: [],
         };
-        // if (newPoint.profile !== TracksManager.PROFILE_LINE) {
-        //     newPoint.geometry = []; // geometry is already set to [] just few lines before
-        // }
         return newPoint;
     }
 
