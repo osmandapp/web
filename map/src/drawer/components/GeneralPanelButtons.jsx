@@ -49,22 +49,8 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
             return 'vertical';
         } else {
             // mobile
-            const screenType = window.screen?.orientation?.type;
-            if (screenType) {
-                //normal browsers
-                if (screenType.startsWith('portrait')) {
-                    return 'vertical';
-                }
-                if (screenType.startsWith('landscape')) {
-                    return 'horizontal';
-                }
-            } else {
-                // chrome/ios
-                if (height > width) {
-                    return 'vertical';
-                } else {
-                    return 'horizontal';
-                }
+            if (height < width) {
+                return 'horizontal';
             }
         }
         return 'vertical';
