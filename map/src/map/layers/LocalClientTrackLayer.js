@@ -140,6 +140,7 @@ export default function LocalClientTrackLayer() {
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
             delete ctx.createTrack.layers;
+            ctx.setCreateTrack({ ...ctx.createTrack });
         }
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.createTrack.edit) {
@@ -754,7 +755,7 @@ export default function LocalClientTrackLayer() {
 
     function initNewTrack() {
         ctxTrack = {};
-        // ctxTrack.selected = true; // FIXME
+        // ctxTrack.selected = true; // wrong way
         ctxTrack.name = TracksManager.createName(ctx);
         ctxTrack.tracks = TracksManager.createGpxTracks();
         ctxTrack.pointsGroups = {};
