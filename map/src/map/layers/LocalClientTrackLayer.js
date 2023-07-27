@@ -174,7 +174,6 @@ export default function LocalClientTrackLayer() {
         let ind = ctx.localTracks.findIndex((t) => t.name === file.name);
         if (ind !== -1) {
             ctx.localTracks[ind] = file;
-            ctx.localTracks[ind].index = ind;
             if (ctx.createTrack.clear) {
                 ctx.localTracks[ind].selected = false;
             } else {
@@ -184,7 +183,7 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
             ctx.setLocalTracks([...ctx.localTracks]);
 
             if (ctx.createTrack.clear) {
@@ -225,7 +224,7 @@ export default function LocalClientTrackLayer() {
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
             // localTracks exist: do update/append
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
@@ -515,8 +514,6 @@ export default function LocalClientTrackLayer() {
 
         file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
-        file.index = ctx.localTracks.length;
-        // file.selected = true; // FIXME
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
