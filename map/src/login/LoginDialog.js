@@ -13,8 +13,8 @@ import DeleteAccountDialog from './DeleteAccountDialog';
 import AccountManager from '../context/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
-import {useWindowSize} from "../util/hooks/useWindowSize";
-import {makeStyles} from "@material-ui/core/styles";
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
@@ -23,7 +23,7 @@ export default function LoginDialog() {
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
 
     const useStyles = makeStyles(() => ({
-        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px`},
+        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px` },
     }));
 
     const classes = useStyles();

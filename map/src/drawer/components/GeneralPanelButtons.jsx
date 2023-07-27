@@ -48,7 +48,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     }
 
     return (
-        <div style={{ left: drawerWidth + 10, top: '55px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+        <div style={{ left: drawerWidth + 10, top: '68px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
             <div
                 className="leaflet-control leaflet-bar padding-container"
                 style={{ display: 'flex', flexDirection: orientation === 'vertical' ? 'column' : 'row' }}
