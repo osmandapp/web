@@ -41,7 +41,7 @@ export default function EditFavoriteDialog({
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
     const [width] = useWindowSize();
-    const widthDialog = width / 2 < 450 ? width * 1.5 : 450;
+    const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
     const toggleDeleteFavoritesDialogOpen = () => {
         setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);

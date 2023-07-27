@@ -24,12 +24,13 @@ import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import { apiPost } from '../util/HttpApi';
 
-const useStyles = makeStyles(() => ({
-    paper: { minWidth: '100vh' },
-}));
 
-export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpenDownloadBackupDialog }) {
+export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpenDownloadBackupDialog, widthDialog }) {
     const ctx = useContext(AppContext);
+    const useStyles = makeStyles(() => ({
+        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px`},
+    }));
+
     const classes = useStyles();
 
     const userPlaces = [
