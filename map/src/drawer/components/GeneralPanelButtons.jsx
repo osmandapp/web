@@ -44,7 +44,30 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     };
 
     function getButtonOrientation() {
-        return height > 500 && width > 0 ? 'vertical' : 'horizontal';
+        // desktop
+        if (height > 500) {
+            return 'vertical';
+        } else {
+            // mobile
+            const screenType = window.screen?.orientation?.type;
+            if (screenType) {
+                //normal browsers
+                if (screenType.startsWith('portrait')) {
+                    return 'vertical';
+                }
+                if (screenType.startsWith('landscape')) {
+                    return 'horizontal';
+                }
+            } else {
+                // chrome/ios
+                if (height > width) {
+                    return 'vertical';
+                } else {
+                    return 'horizontal';
+                }
+            }
+        }
+        return 'vertical';
     }
 
     return (

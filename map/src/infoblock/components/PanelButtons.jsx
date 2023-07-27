@@ -69,7 +69,14 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                 }}
             >
                 <Paper>
-                    <ButtonGroup orientation={orientation} color="primary">
+                    <ButtonGroup
+                        sx={{
+                            width: orientation === 'vertical' ? 41 : 'auto',
+                            height: orientation === 'vertical' ? 'auto' : 41,
+                        }}
+                        orientation={orientation}
+                        color="primary"
+                    >
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
