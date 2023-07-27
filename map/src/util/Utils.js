@@ -123,7 +123,7 @@ export function copyObj(obj) {
 }
 
 // remove dangerous filename parts
-export function sanitizeFileName(filename) {
+export function prepareFileName(filename) {
     const truncate = (sanitized, length) => {
         const uint8Array = new TextEncoder().encode(sanitized);
         const truncated = uint8Array.slice(0, length);

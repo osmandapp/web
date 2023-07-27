@@ -2,7 +2,7 @@ import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
-import { sanitizeFileName } from '../../../util/Utils';
+import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
     Button,
@@ -164,7 +164,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     function changeFileName(e) {
         if (e.key === 'Enter' || e.type === 'click') {
             const oldName = ctx.selectedGpxFile.name;
-            const newName = sanitizeFileName(fileName) || sanitizeFileName(oldName);
+            const newName = prepareFileName(fileName) || prepareFileName(oldName);
 
             setFileName(newName); // update for next try
 
