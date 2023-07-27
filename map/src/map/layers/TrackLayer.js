@@ -14,7 +14,7 @@ async function addTrackToMap(ctx, file, map) {
         ctx.setUpdateContextMenu(true);
     });
     file.gpx = layer;
-    map.fitBounds(layer.getBounds());
+    map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
     layer.addTo(map);
     ctx.setGpxFiles(ctx.gpxFiles);
     ctx.setSelectedGpxFile(Object.assign({}, file));

@@ -107,7 +107,8 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                addTrackToMap(track, true, true);
+                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0; // don't zoom on empty track
+                addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
                 if (track.updated) {
@@ -246,7 +247,7 @@ export default function LocalClientTrackLayer() {
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds());
+                    map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
                 }
             }
             layer.on('click', () => {
@@ -287,7 +288,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds());
+            map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
         }
     }
 
