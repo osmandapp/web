@@ -18,6 +18,7 @@ import FavoriteShape from './structure/FavoriteShape';
 import FavoritesManager from '../../../context/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
 import { apiGet } from '../../../util/HttpApi';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
 
 export default function EditFavoriteDialog({
     favorite,
@@ -39,6 +40,9 @@ export default function EditFavoriteDialog({
     const [favoriteIconCategories, setFavoriteIconCategories] = useState(null);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
+    const [width] = useWindowSize();
+
+    const widthDialog = width / 2 < 450 ? width * 1.5 : 450;
 
     const toggleDeleteFavoritesDialogOpen = () => {
         setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);
@@ -205,11 +209,13 @@ export default function EditFavoriteDialog({
                     favoriteAddress={favoriteAddress}
                     setFavoriteAddress={setFavoriteAddress}
                     setClose={null}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteDescription
                     favoriteDescription={favoriteDescription}
                     setFavoriteDescription={setFavoriteDescription}
                     setClose={null}
+                    widthDialog={widthDialog}
                 />
                 {!ctx.addFavorite.editTrack && (
                     <FavoriteGroup
@@ -225,6 +231,7 @@ export default function EditFavoriteDialog({
                         setFavoriteGroup={setFavoriteGroup}
                         groups={ctx.selectedGpxFile.pointsGroups}
                         defaultGroup={favorite.category}
+                        widthDialog={widthDialog}
                     />
                 )}
                 <FavoriteIcon
@@ -235,11 +242,13 @@ export default function EditFavoriteDialog({
                     selectedGpxFile={ctx.selectedGpxFile}
                     add={false}
                     defaultIcon={favorite.icon}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteColor
                     favoriteColor={favoriteColor}
                     setFavoriteColor={setFavoriteColor}
                     defaultColor={favorite.color}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteShape
                     color={favoriteColor}
@@ -248,29 +257,23 @@ export default function EditFavoriteDialog({
                     defaultBackground={favorite.background}
                 />
             </DialogContent>
-            <DialogActions>
-                <Grid container spacing={3}>
-                    <Grid item xs={8}>
-                        <Button sx={{ marginLeft: 'auto' }} onClick={toggleDeleteFavoritesDialogOpen}>
-                            Delete
-                        </Button>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <Button onClick={() => setEditFavoritesDialogOpen(false)}>Cancel</Button>
-                    </Grid>
-                    <Grid item xs={2}>
-                        {deleteFavoritesDialogOpen && (
-                            <DeleteFavoriteDialog
-                                dialogOpen={deleteFavoritesDialogOpen}
-                                setDialogOpen={setDeleteFavoritesDialogOpen}
-                                wpt={favorite}
-                            />
-                        )}
-                        <Button disabled={errorName} onClick={() => save()}>
-                            Save
-                        </Button>
-                    </Grid>
-                </Grid>
+            <DialogActions sx={{ display: 'inline' }}>
+                <Button sx={{ marginLeft: 'auto' }} onClick={toggleDeleteFavoritesDialogOpen}>
+                    Delete
+                </Button>
+                <div style={{ float: 'right' }}>
+                    <Button onClick={() => setEditFavoritesDialogOpen(false)}>Cancel</Button>
+                    {deleteFavoritesDialogOpen && (
+                        <DeleteFavoriteDialog
+                            dialogOpen={deleteFavoritesDialogOpen}
+                            setDialogOpen={setDeleteFavoritesDialogOpen}
+                            wpt={favorite}
+                        />
+                    )}
+                    <Button disabled={errorName} onClick={() => save()}>
+                        Save
+                    </Button>
+                </div>
             </DialogActions>
         </Dialog>
     );

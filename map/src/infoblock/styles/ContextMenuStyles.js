@@ -25,7 +25,6 @@ const contextMenuStyles = makeStyles({
     },
     favouriteLineInfo: {
         maxWidth: '450px !important',
-        width: '450px !important',
         resize: 'none',
         fontFamily: 'Arial',
         color: 'black',

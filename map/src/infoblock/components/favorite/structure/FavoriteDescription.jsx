@@ -3,11 +3,11 @@ import { Delete } from '@mui/icons-material';
 import React from 'react';
 import contextMenuStyles from '../../../styles/ContextMenuStyles';
 
-export default function FavoriteDescription({ favoriteDescription, setFavoriteDescription, setClose }) {
+export default function FavoriteDescription({ favoriteDescription, setFavoriteDescription, setClose, widthDialog }) {
     const menuStyles = contextMenuStyles();
 
     return (
-        <ListItemText sx={{ mt: 3 }}>
+        <ListItemText sx={{ maxWidth: `${widthDialog}px`, mt: 3 }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="desc"
@@ -19,18 +19,20 @@ export default function FavoriteDescription({ favoriteDescription, setFavoriteDe
                 multiline
                 rows={2}
             />
-            <IconButton
-                variant="contained"
-                type="button"
-                onClick={() => {
-                    if (setClose) {
-                        setClose(false);
-                    }
-                    setFavoriteDescription('');
-                }}
-            >
-                <Delete fontSize="small" />
-            </IconButton>
+            {favoriteDescription && favoriteDescription !== '' && (
+                <IconButton
+                    variant="contained"
+                    type="button"
+                    onClick={() => {
+                        if (setClose) {
+                            setClose(false);
+                        }
+                        setFavoriteDescription('');
+                    }}
+                >
+                    <Delete fontSize="small" />
+                </IconButton>
+            )}
         </ListItemText>
     );
 }

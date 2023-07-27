@@ -17,10 +17,8 @@ export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, 
                 </Typography>
             </ListItemText>
             <Box
-                component="div"
                 sx={{
                     display: 'flex',
-                    overflow: 'hidden',
                 }}
             >
                 {Object.entries(shapesSvg).map((shape, index) => {
