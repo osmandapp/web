@@ -122,7 +122,9 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
             ctx.selectedGpxFile.index = ctx.localTracks.length;
             ctx.localTracks.push(ctx.selectedGpxFile);
         }
-        TracksManager.saveTracks(ctx.localTracks, ctx);
+        TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     async function saveFavorite() {

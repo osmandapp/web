@@ -54,7 +54,6 @@ export default function Weather() {
         if (ctx.weatherType) {
             const alignedStep = getAlignedStep({ direction: 0 });
             if (alignedStep) {
-                // console.log('align-current', alignedStep);
                 addWeatherHours(ctx, alignedStep); // step current when need
             }
         }
@@ -142,13 +141,11 @@ export default function Weather() {
         const newHoursUTC = new Date(date.getTime() + baseStepWithDirection * 3600 * 1000).getUTCHours();
 
         if (newHoursUTC % baseStep === 0) {
-            // console.log('ideal', baseStepWithDirection);
             return baseStepWithDirection;
         }
 
         const currentHoursUTC = date.getUTCHours();
         const alignedStep = direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
-        // console.log('aligned', alignedStep);
         return alignedStep;
     }
 

@@ -115,7 +115,7 @@ export async function apiGet(url, options = null) {
     let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options, options?.body) : null;
 
     if (cacheKey && cache[cacheKey]) {
-        // console.log('cache-hit'); //, cacheKey);
+        // console.debug('cache-hit'); //, cacheKey);
         return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
@@ -126,7 +126,7 @@ export async function apiGet(url, options = null) {
         response = await fetch(fullURL, fullOptions);
     } catch (e) {
         // got general error (have no response)
-        console.log('fetch-catch-error', url, e);
+        console.error('fetch-catch-error', url, e);
         const ret = { ok: false, text: () => null, json: () => null, blob: () => null, data: null };
         if (options?.throwErrors) {
             const error = new Error('fetch-catch-error');
@@ -140,7 +140,7 @@ export async function apiGet(url, options = null) {
     // got blocked redirect
     if (response.type === 'opaqueredirect') {
         globalNavigate(LOGIN_LOGOUT_URL);
-        console.log('fetch-redirect-stop', url);
+        console.error('fetch-redirect-stop', url);
         const ret = Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
         if (options?.throwErrors) {
             const error = new Error('fetch-redirect-stop');
@@ -153,7 +153,7 @@ export async function apiGet(url, options = null) {
 
     // got http-error
     if (!response.ok) {
-        // console.log('fetch-http-error', url);
+        // console.debug('fetch-http-error', url);
         const data = options?.dataOnErrors ? await response.clone().text() : null; // axios-style: body as data
         const ret = Object.assign(response, { data }); // keep original text/json/blob
         if (options?.throwErrors) {
@@ -178,17 +178,17 @@ export async function apiGet(url, options = null) {
         try {
             // pure json
             data = await response.clone().json();
-            // console.log('fetch-json-ok', url);
+            // console.debug('fetch-json-ok', url);
         } catch (e) {
             // try NaN fix (fast method, with 2 regexp, without callback)
             try {
                 const bad = await response.clone().text();
                 data = JSON.parse(quickNaNfix(bad));
-                // console.log('fetch-json-fix', url);
+                // console.debug('fetch-json-fix', url);
             } catch {
                 // text, finally
                 data = await response.clone().text();
-                // console.log('fetch-json-text', url, e);
+                // console.debug('fetch-json-text', url, e);
             }
         }
     } else {
@@ -198,17 +198,17 @@ export async function apiGet(url, options = null) {
             options?.responseType === 'arraybuffer' // arraybuffer data tested on download-backup
         ) {
             data = await response.clone().blob();
-            // console.log('fetch-blob-data', url, contentType);
+            // console.debug('fetch-blob-data', url, contentType);
         } else {
             // finally, get text by default
             data = await response.clone().text();
-            // console.log('fetch-text-string', url, contentType);
+            // console.debug('fetch-text-string', url, contentType);
         }
     }
 
     // store cache
     if (cacheKey) {
-        // console.log('cache-store', cacheKey);
+        // console.debug('cache-store', cacheKey);
         const cached = Object.assign(response, {
             data, // axios
             blob: async () => await response.clone().blob(), // resolved
@@ -257,18 +257,18 @@ export async function apiPost(url, data = '', options = null) {
                 type = 'application/json';
             } else {
                 // defaults used (empty body, empty type)
-                console.log('post-unknown-data', url, typeof data, data);
+                console.error('post-unknown-data', url, typeof data, data);
             }
         }
     }
-    // console.log('post-data', url, type, typeof data, data);
+    // console.debug('post-data', url, type, typeof data, data);
 
     // parse headers from options, override optional Content-Type
     const contentType = type ? { 'Content-Type': type } : {}; // null?
     const headers = Object.assign({}, options?.headers || {}, contentType);
     const fullOptions = Object.assign({}, options, { method: 'POST' }, { headers }, { body });
 
-    // console.log('fetch-post', url, fullOptions);
+    // console.debug('fetch-post', url, fullOptions);
     return apiGet(url, fullOptions);
 }
 

@@ -149,7 +149,7 @@ export async function calculateRoute({
         });
     }
 
-    console.log('unknown calculateRoute() call');
+    console.error('unknown calculateRoute() call');
 }
 
 async function calculateRouteOSRM({
