@@ -35,9 +35,9 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
                             <ArrowBack />
                         </IconButton>
                         {ctx.loginUser ? (
-                            <Typography color="inherit">{ctx.loginUser}</Typography>
+                            <Typography onClick={openLogin} color="inherit">{ctx.loginUser}</Typography>
                         ) : (
-                            <Typography variant="h6" color="inherit">
+                            <Typography onClick={openLogin} variant="h6" color="inherit">
                                 Login
                             </Typography>
                         )}
