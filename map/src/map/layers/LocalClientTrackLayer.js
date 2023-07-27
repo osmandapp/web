@@ -106,7 +106,7 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0; // don't zoom on empty track
+                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0 || track.tracks?.length > 0;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
