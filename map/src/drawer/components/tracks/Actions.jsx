@@ -13,7 +13,7 @@ export default function Actions({ files, setSortFiles }) {
                 sx={{ ml: 4 }}
                 onClick={(e) => {
                     e.stopPropagation();
-                    let lf = files.sort((f, s) => {
+                    const sortedCopy = [...files].sort((f, s) => {
                         let ftime = getGpxTime(f);
                         let stime = getGpxTime(s);
                         if (ftime === stime) {
@@ -26,7 +26,7 @@ export default function Actions({ files, setSortFiles }) {
                         }
                     });
                     setTimeUp(!timeUp);
-                    setSortFiles([...lf]);
+                    setSortFiles(sortedCopy);
                 }}
             >
                 <Sort fontSize="small" />
@@ -34,7 +34,7 @@ export default function Actions({ files, setSortFiles }) {
             <IconButton
                 onClick={(e) => {
                     e.stopPropagation();
-                    let lf = files.sort((f, s) => {
+                    const sortedCopy = [...files].sort((f, s) => {
                         if (alphaUp) {
                             return f.name > s.name ? 1 : -1;
                         } else {
@@ -42,7 +42,7 @@ export default function Actions({ files, setSortFiles }) {
                         }
                     });
                     setAlphaUp(!alphaUp);
-                    setSortFiles([...lf]);
+                    setSortFiles(sortedCopy);
                 }}
             >
                 <SortByAlpha fontSize="small" />
