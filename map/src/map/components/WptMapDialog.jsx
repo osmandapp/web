@@ -21,19 +21,17 @@ import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import EditFavoriteDialog from '../../infoblock/components/favorite/EditFavoriteDialog';
 import DeleteFavoriteDialog from '../../infoblock/components/favorite/DeleteFavoriteDialog';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const useStyles = makeStyles({
     icon: {
         '& .icon': {
             width: '40px',
             height: '40px',
-            top: '20px',
-            left: '71px',
+            top: '10px',
+            left: '10px',
         },
         '& .background': {
-            left: '-25px',
-            top: '-25px',
-            right: '-25px',
             width: '100px',
             height: '100px',
             filter: 'drop-shadow(0 0 0 gray)',
@@ -50,6 +48,8 @@ export default function WptMapDialog() {
     const [descriptionOpen, setDescriptionOpen] = useState(false);
     const [editFavoritesDialogOpen, setEditFavoritesDialogOpen] = useState(false);
     const [deleteFavoritesDialogOpen, setDeleteFavoritesDialogOpen] = useState(false);
+    const [width] = useWindowSize();
+    const widthDialog = width / 2 < 450 ? width * 1.5 : 450;
 
     const toggleDescriptionOpen = () => {
         setDescriptionOpen(!descriptionOpen);
@@ -86,8 +86,8 @@ export default function WptMapDialog() {
     return (
         <>
             {wpt && (
-                <Dialog sx={{ minWidth: '600px' }} disableEnforceFocus open={ctx.selectedWpt !== null}>
-                    <DialogContent sx={{ minWidth: '500px', overflowX: 'hidden', overflowY: 'hidden' }}>
+                <Dialog sx={{ maxWidth: `${widthDialog}px` }} disableEnforceFocus open={ctx.selectedWpt !== null}>
+                    <DialogContent sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                         <IconButton
                             sx={{ float: 'right', mb: -1, mt: -1, mr: -2 }}
                             variant="contained"
@@ -99,28 +99,22 @@ export default function WptMapDialog() {
                             <Close fontSize="small" />
                         </IconButton>
                         <Typography className={styles.info} variant="subtitle1" color="inherit">
-                            <Grid container spacing={2}>
-                                <Grid className={styles.name} item xs={9}>
-                                    <Typography
-                                        style={{ color: '#666666', fontWeight: 'bold' }}
-                                        className={styles.name}
-                                        variant="inherit"
-                                    >
-                                        {wpt.name}
-                                    </Typography>
-                                </Grid>
-                                <Grid sx={{ position: 'relative' }} className={styles.name} item xs={3}>
-                                    <div
-                                        style={{ marginBottom: '-120px', marginLeft: '50px' }}
-                                        className={classes.icon}
-                                        dangerouslySetInnerHTML={{
-                                            __html:
-                                                MarkerOptions.getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon)
-                                                    .options.html + '',
-                                        }}
-                                    />
-                                </Grid>
-                            </Grid>
+                            <div
+                                style={{ position: 'relative' }}
+                                className={classes.icon}
+                                dangerouslySetInnerHTML={{
+                                    __html:
+                                        MarkerOptions.getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon).options
+                                            .html + '',
+                                }}
+                            />
+                            <Typography
+                                sx={{ color: '#666666', fontWeight: 'bold', mt: '-40px' }}
+                                className={styles.name}
+                                variant="inherit"
+                            >
+                                {wpt.name}
+                            </Typography>
                             <MenuItem sx={{ ml: -2, mt: -1 }}>
                                 <ListItemIcon
                                     style={{
@@ -162,31 +156,31 @@ export default function WptMapDialog() {
                             )}
                         </Typography>
                     </DialogContent>
-                    <DialogActions>
+                    <DialogActions sx={{ display: 'inline' }}>
                         <Link
-                            sx={{ marginRight: 'auto', fontSize: '10pt', ml: 2 }}
+                            sx={{ fontSize: '10pt', ml: 2, mr: 2 }}
                             href="#"
                             color="inherit"
                             onClick={enableWptDragging}
                         >
                             Move this waypoint
                         </Link>
-                        <Button
-                            variant="contained"
-                            component="span"
-                            sx={{ backgroundColor: '#ff595e !important' }}
-                            onClick={toggleDeleteFavoritesDialogOpen}
-                        >
-                            Delete
-                        </Button>
-                        <Button
-                            variant="contained"
-                            component="span"
-                            sx={{ backgroundColor: '#fbc73a' }}
-                            onClick={toggleEditFavoritesDialogOpen}
-                        >
-                            Edit
-                        </Button>
+                        <div style={{ float: 'right' }}>
+                            <Button
+                                variant="contained"
+                                sx={{ backgroundColor: '#ff595e !important' }}
+                                onClick={toggleDeleteFavoritesDialogOpen}
+                            >
+                                Delete
+                            </Button>
+                            <Button
+                                variant="contained"
+                                sx={{ backgroundColor: '#fbc73a', ml: 1 }}
+                                onClick={toggleEditFavoritesDialogOpen}
+                            >
+                                Edit
+                            </Button>
+                        </div>
                     </DialogActions>
                 </Dialog>
             )}
