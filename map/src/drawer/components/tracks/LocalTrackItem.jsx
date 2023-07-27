@@ -48,7 +48,7 @@ export default function LocalTrackItem({ track }) {
 
     function updateLocalTrack() {
         ref.selected = true;
-        // ref.zoom = true; // selected is enough for init-zoom
+        ref.zoom = true;
         ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
         ctx.setLocalTracks([...ctx.localTracks]);
         ctx.setSelectedGpxFile({ ...track });
