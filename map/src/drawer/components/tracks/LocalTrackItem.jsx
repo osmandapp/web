@@ -27,26 +27,39 @@ export default function LocalTrackItem({ track, index }) {
     }
 
     function deleteTrackFromMap() {
-        let currentTrack = ctx.localTracks[track.index];
+        if (track.index === undefined) {
+            console.warn('deleteTrackFromMap track without track.index');
+        }
+        if (index === undefined) {
+            console.warn('deleteTrackFromMap call without index param');
+        }
+        const foundIndex = track.index ?? index ?? ctx.localTracks?.findIndex((t) => t.name === track.name);
+        const currentTrack = ctx.localTracks[foundIndex];
         currentTrack.selected = false;
         cleanSelectedTrackIfNeed(currentTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     function addTrackToMap() {
-        if (indexTrack !== undefined) {
-            updateLocalTrack(track);
+        if (indexTrack === undefined) {
+            console.warn('addTrackToMap without indexTrack');
+        }
+        const foundIndex = indexTrack ?? ctx.localTracks?.findIndex((t) => t.name === track.name);
+        if (foundIndex !== undefined) {
+            updateLocalTrack(track, foundIndex);
             updateTrackInfoBlock();
             startEdit();
         }
     }
 
-    function updateLocalTrack(selectedTrack) {
-        track.index = indexTrack;
-        setIndexTrack(indexTrack);
+    function updateLocalTrack(selectedTrack, foundIndex) {
+        setIndexTrack(foundIndex);
+
+        selectedTrack.index = foundIndex;
         selectedTrack.selected = true;
         selectedTrack.zoom = true;
         selectedTrack.analysis = TracksManager.prepareAnalysis(selectedTrack.analysis);
+
         ctx.setSelectedGpxFile(selectedTrack);
         ctx.setLocalTracks([...ctx.localTracks]);
     }

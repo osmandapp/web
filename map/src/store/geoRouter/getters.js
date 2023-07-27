@@ -58,7 +58,7 @@ export function getProfile({ type = this.type, router = this.router, profile = t
         type = geoProfile.type ?? type;
         router = geoProfile.router ?? router;
         profile = geoProfile.profile ?? profile;
-        // console.log('getProfile() with geoProfile', geoProfile);
+        // console.debug('getProfile() with geoProfile', geoProfile);
     }
     const r = this.providers.find((r) => r.key === router);
     const p = r?.profiles?.find((p) => p.key === profile);

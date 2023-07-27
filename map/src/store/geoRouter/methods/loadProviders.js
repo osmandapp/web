@@ -59,7 +59,7 @@ async function loadProvidersOSRM() {
         return json.providers; // success
     }
 
-    console.log('failed to load osrm providers');
+    console.error('failed to load osrm providers');
     return null;
 }
 
@@ -103,7 +103,7 @@ async function loadProfilesOsmAnd() {
         return converted; // success
     }
 
-    console.log('failed to load osmand profiles');
+    console.error('failed to load osmand profiles');
     return null;
 }
 

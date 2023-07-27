@@ -122,6 +122,39 @@ export function copyObj(obj) {
     return typeof obj === 'object' ? JSON.parse(JSON.stringify(obj)) : obj;
 }
 
+// remove dangerous filename parts
+export function prepareFileName(filename) {
+    const truncate = (sanitized, length) => {
+        const uint8Array = new TextEncoder().encode(sanitized);
+        const truncated = uint8Array.slice(0, length);
+        return new TextDecoder().decode(truncated);
+    };
+
+    // eslint-disable-next-line no-useless-escape
+    const illegalRe = /[\/\?<>\\:\*\|"]/g;
+    // eslint-disable-next-line no-control-regex
+    const controlRe = /[\x00-\x1f\x80-\x9f]/g;
+    const reservedRe = /^\.+$/;
+    // eslint-disable-next-line no-useless-escape
+    const unixRe = /[\`\'\$\{\}\[\]\(\)]/g;
+    const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
+    const spacesRe = / +/g;
+
+    const space = ' ';
+
+    return truncate(
+        filename
+            .replace(illegalRe, space)
+            .replace(controlRe, space)
+            .replace(reservedRe, space)
+            .replace(unixRe, space)
+            .replace(windowsReservedRe, space)
+            .replace(spacesRe, space)
+            .trim(),
+        255
+    );
+}
+
 const Utils = {
     getFileData,
     getDistance,
