@@ -3,7 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../../styles/ContextMenuStyles';
 import AppContext from '../../../../context/AppContext';
 
-export default function FavoriteName({ favoriteName, setFavoriteName, favoriteGroup, favorite, setErrorName }) {
+export default function FavoriteName({
+    favoriteName,
+    setFavoriteName,
+    favoriteGroup,
+    favorite,
+    setErrorName,
+    widthDialog,
+}) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
@@ -49,7 +56,7 @@ export default function FavoriteName({ favoriteName, setFavoriteName, favoriteGr
     }
 
     return (
-        <ListItemText>
+        <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="name"

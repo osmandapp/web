@@ -41,7 +41,6 @@ export default function EditFavoriteDialog({
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
     const [width] = useWindowSize();
-
     const widthDialog = width / 2 < 450 ? width * 1.5 : 450;
 
     const toggleDeleteFavoritesDialogOpen = () => {
@@ -204,6 +203,7 @@ export default function EditFavoriteDialog({
                     favoriteGroup={favoriteGroup}
                     favorite={favorite}
                     setErrorName={setErrorName}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteAddress
                     favoriteAddress={favoriteAddress}
@@ -223,6 +223,7 @@ export default function EditFavoriteDialog({
                         setFavoriteGroup={setFavoriteGroup}
                         groups={ctx.favorites.groups}
                         defaultGroup={favorite.category}
+                        widthDialog={widthDialog}
                     />
                 )}
                 {ctx.addFavorite.editTrack && (
