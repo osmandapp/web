@@ -30,51 +30,25 @@ Point of interesting (POI) seaching is one the general function of OsmAnd. [POI]
 **Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
 -->
 
-OsmAnd provides several ways to get to the *Search tool → [Address search tab](../search/search-address.md)* where the **Coordinates search** is located.
+OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
-- The [Search button](../widgets/map-buttons.md#search) on the map application screen.
-- Go to the main Android *Menu → Search → Address tab → Coordinates Search*.
-- When preparing to start a route, tap *Navigation → Set destination → Search field → Address tab → Coordinates Search*.  
-- *Configure map → Show poi overlay → Search* 
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
+- Go to the main *Menu → Search → Categories tab*.
+- When preparing to start a route, tap *Navigation → Set destination → Search field*.  
+- Go to the main Android *Menu → Configure map → Show POI overlay... → Search*. 
 
 
 ## How to use
 
 Point of Interest (POI) Search:
 
-- Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, etc.
+- Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, and other.
 - Filters and sorting results by category, distance or rating are possible.
 - Search results show the location of the POI, its contact information, ratings and reviews.
 
-All POI types in OsmAnd:  
-[gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml)  
+All POI types in OsmAnd: [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).   
 
-### Search query list
-
-
-## Categories POI search
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Search POI iOS](@site/static/img/search/poi_search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
-
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
-
-Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button allows [to show search results on the map like POI-overlay](../map/point-layers-on-map.md#points-of-interest-poi). It will be easy to find your places on the map, you can write search word on searching field or click to "x" for stopping your search and switch off POI-overlay. 
+To search for POIs by categories directly on the map, you need to select the required categories from the [list](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
 
 <Tabs groupId="operating-systems">
 
@@ -95,6 +69,39 @@ Tapping to "<Translate android="true" ids="shared_string_show_on_map"/>" button 
 </TabItem>
 
 </Tabs>
+
+
+### Search query list
+
+1. The order of the elements in the list:
+- **Alphabet order**. The list of categories in the main tab of the search tool, as well as the list of categories of amenities in the сustom search and their inner values, are arranged in alphabetical order.
+- **Distance**. Elements in the internal list of the Category tab are arranged in order of distance from the given location.
+- **By importance**. Filter types are ordered from the most important or most used for a given category of POI.
+
+
+## Categories POI search
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search POI iOS](@site/static/img/search/poi_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.   
 
 
 ### Filters
@@ -147,8 +154,8 @@ A filter can consist of quite a number of items, the presence of which depends o
 | 18. Sport | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 19. Store | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 20. Tourism | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 21. Water | Does not contain any filters. |  |
-| 22. Wikipedia | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
+| 21. Water | Does not contain any filters. | Sources of [drinking water](https://wiki.openstreetmap.org/wiki/Key:drinking_water) created or arranged by man. |
+| 22. Wikipedia | Does not contain any filters. | To search in this category, you need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in. |
 
 
 ### Rearrange categories
@@ -303,12 +310,11 @@ From the main screen:
 ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)  
 
 
-
 | Amenity categories | Values for POI types | Description |
 |:------------|:---------------|:---------------|
-| 1. **<Translate android="true" ids="amenity_type_administrative"/>** | <details><summary> 25 types </summary> <ul><li> Allotments </li><li> Atoll </li><li> Borough </li><li> City </li><li> City block </li><li> Country </li><li> Courthouse </li><li> Customs </li><li> Diplomatic office </li><li> Farm </li><li> Government </li><li> Hamlet </li><li> Island </li><li> Islet </li><li> Isolated dwelling </li><li> Locality </li><li> Neighbourhood </li><li> Police </li><li> Prison </li><li> Quarter </li><li> Residential area </li><li> Suburb </li><li> Town </li><li> Town hall </li><li> Village </li></ul></details> |  |   
-| 2. **<Translate android="true" ids="christmas_poi"/>** | <ul><li> 5 types </li><li> Christmas event </li><li> Christmas market </li><li> Christmas pyramid </li><li> Christmas shop </li><li> Christmas tree </li></ul> |  | 
-| 3. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 16 types </summary> _ </details> |  |
+| 1. **<Translate android="true" ids="amenity_type_administrative"/>** | <details><summary> 25 types </summary> <ul><li> Allotments </li><li> Atoll </li><li> Borough </li><li> City </li><li> City block </li><li> Country </li><li> Courthouse </li><li> Customs </li><li> Diplomatic office </li><li> Farm </li><li> Government </li><li> Hamlet </li><li> Island </li><li> Islet </li><li> Isolated dwelling </li><li> Locality </li><li> Neighbourhood </li><li> Police </li><li> Prison </li><li> Quarter </li><li> Residential area </li><li> Suburb </li><li> Town </li><li> Town hall </li><li> Village </li></ul></details> | Includes various [administrative places](https://wiki.openstreetmap.org/wiki/Key:place). |   
+| 2. **Сhristmas** | <details><summary> 5 types </summary> <ul><li> Christmas event </li><li> Christmas market </li><li> Christmas pyramid </li><li> Christmas shop </li><li> Christmas tree </li></ul></details> |  | 
+| 3. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 16 types </summary> <ul><li> Allotments </li><li> Atoll </li><li> Borough </li><li> City </li><li> City block </li><li> Country </li><li> Courthouse </li><li> Customs </li><li> Diplomatic office </li><li> Farm </li><li> Government </li><li> Hamlet </li><li> Island </li><li> Islet </li><li> Isolated dwelling </li><li> Locality </li><li> Neighbourhood </li><li> Police </li><li> Prison </li><li> Quarter </li><li> Residential area </li><li> Suburb </li><li> Town </li><li> Town hall </li><li> Village </li></ul></details> |  |
 | 4. **<Translate android="true" ids="amenity_type_emergency"/>** | <details><summary> 14 types </summary> _ </details> |  |
 | 5. **Emergency infrastructure** | <details><summary> 12 types </summary> _ </details> |  |
 | 6. **<Translate android="true" ids="amenity_type_finance"/>** | <details><summary> 12 types </summary> _ </details> |  | 
@@ -317,17 +323,17 @@ From the main screen:
 | 9. **<Translate android="true" ids="amenity_type_healthcare"/>** | <details><summary> 31 types </summary> _ </details> |  | 
 | 10. **<Translate android="true" ids="amenity_type_leisure"/>** | <details><summary> 148 types </summary> _ </details> |  |
 | 11.**<Translate android="true" ids="amenity_type_man_made"/>** | <details><summary> 121 types </summary> _ </details> |  |
-| 12. <Translate android="true" ids="amenity_type_military"/> | <details><summary> 7 types </summary> <ul><li> Danger area </li><li> Military bunker </li><li> Military naval base </li><li> Military office </li><li> Military range </li><li> Military zone </li><li> Nuclear explosion site </li></ul></details> |  |
-| 13. <Translate android="true" ids="amenity_type_natural"/> | <details><summary> 50 types </summary> _ </details> |  |
-| 14. **Nautical** | <details><summary> 41 types </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 15. <Translate android="true" ids="poi_filter_public_transport"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 16. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 17. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 18. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 19. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 20. **<Translate android="true" ids="amenity_type_education"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 21. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. |  |
-| 22. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
-| 23. **<Translate android="true" ids="amenity_type_education"/>** | Does not contain any filters. | To search in this category, you need to download the Wikipedia map of the region you are interested in. |
+| 12. **m<Translate android="true" ids="amenity_type_military"/>** | <details><summary> 7 types </summary> <ul><li> Danger area </li><li> Military bunker </li><li> Military naval base </li><li> Military office </li><li> Military range </li><li> Military zone </li><li> Nuclear explosion site </li></ul></details> |  |
+| 13. **<Translate android="true" ids="amenity_type_natural"/>** | <details><summary> 50 types </summary> _ </details> |  |
+| 14. **Nautical** | <details><summary> 41 types </summary> _ </details> |  |
+| 15. **<Translate android="true" ids="amenity_type_office"/>** | <details><summary> 39 types </summary> _ </details> |  |
+| 16. **Routes** | <ul><li> 4 types: </li><li> Route Article </li><li> Route Article Point </li><li> Route track </li><li> Route Track Point </li></ul> |  |
+| 17. **Service** | <details><summary> 111 types </summary> _ </details> |  |
+| 18. **<Translate android="true" ids="amenity_type_sport"/>** | <details><summary> 119 types </summary> _ </details> |  |
+| 19. **Store** | <details><summary> 156 types </summary> _ </details> |  |
+| 20. **<Translate android="true" ids="amenity_type_tourism"/>** | <details><summary> 103 types </summary> _ </details> |  |
+| 21. **<Translate android="true" ids="amenity_type_transportation"/>** | <details><summary> 97 types </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> And other... </li></ul> </details> | Points of interest related to different modes of transportation and related services. View the list [here](https://wiki.openstreetmap.org/wiki/Key:amenity#Transportation). |
+| 22. **User defined** | <ul><li> *1 type:* </li><li> User Defined Other Postcode </li></ul> |  |
+| 23. **Wikipedia** | <ul><li> *1 type:* </li><li> Wikipedia </li></ul> | You need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in. |
 
 Each amenity category contains a list of available generic values for POI types. You have the option to select or deselect them individually by tapping the field of the type you are interested in. *Select all* - to do this, select the toggle button.  And refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.
