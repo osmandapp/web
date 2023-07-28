@@ -164,6 +164,8 @@ export default function TracksMenu() {
         }));
     }, [visibleTracks, ctx.selectedGpxFile]);
 
+    const totalTracksCount = gpxFiles?.length + ctx.localTracks?.length ?? 0;
+
     return (
         <>
             <MenuItem sx={{ mb: 1 }} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
@@ -172,7 +174,7 @@ export default function TracksMenu() {
                 </ListItemIcon>
                 <ListItemText> Tracks </ListItemText>
                 <Typography variant="body2" color="textSecondary">
-                    {gpxFiles.length > 0 ? `${gpxFiles.length}` : ''}
+                    {totalTracksCount || ''}
                 </Typography>
                 {tracksGroupsOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
