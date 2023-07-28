@@ -69,16 +69,18 @@ const OsmAndMapFrame = () => {
                                     </IconButton>
                                 )}
                                 <HeaderInfo />
-                                {ctx.currentObjectType && hideContextMenu && !mobile && (
-                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
-                                        <KeyboardDoubleArrowLeft />
-                                    </IconButton>
-                                )}
-                                {ctx.currentObjectType && !hideContextMenu && !mobile && (
-                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
-                                        <KeyboardDoubleArrowRight />
-                                    </IconButton>
-                                )}
+                                <div style={{ flexGrow: hideContextMenu ? 0.34 : 1, marginRight: -100 }}>
+                                    {ctx.currentObjectType && hideContextMenu && !mobile && (
+                                        <IconButton onClick={toggleContextMenu} edge="start">
+                                            <KeyboardDoubleArrowLeft />
+                                        </IconButton>
+                                    )}
+                                    {ctx.currentObjectType && !hideContextMenu && !mobile && (
+                                        <IconButton onClick={toggleContextMenu} edge="start">
+                                            <KeyboardDoubleArrowRight />
+                                        </IconButton>
+                                    )}
+                                </div>
                             </Toolbar>
                         </AppBar>
                     </Box>

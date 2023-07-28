@@ -24,6 +24,9 @@ const useStyles = makeStyles(() => ({
         '& .leaflet-control-layers': {
             border: '0px !important',
         },
+        '& .leaflet-bottom ': {
+            bottom: '50px',
+        },
         '& .leaflet-control-layers-toggle': {
             width: '0px !important',
             height: '0px !important',
