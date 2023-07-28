@@ -514,7 +514,7 @@ export default function LocalClientTrackLayer() {
         file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
         file.index = ctx.localTracks.length;
-        file.selected = true;
+        // file.selected = true; // FIXME
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -753,7 +753,7 @@ export default function LocalClientTrackLayer() {
 
     function initNewTrack() {
         ctxTrack = {};
-        ctxTrack.selected = true;
+        // ctxTrack.selected = true; // FIXME
         ctxTrack.name = TracksManager.createName(ctx);
         ctxTrack.tracks = TracksManager.createGpxTracks();
         ctxTrack.pointsGroups = {};
