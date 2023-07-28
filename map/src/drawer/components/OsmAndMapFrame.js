@@ -56,7 +56,6 @@ const OsmAndMapFrame = () => {
                 <Box
                     sx={{
                         width: { xs: `calc(100%)` },
-                        ml: { md: `${leftDrawerWidth}px` },
                         mr: `${drawerRightWidth}`,
                     }}
                 >
@@ -68,22 +67,14 @@ const OsmAndMapFrame = () => {
                                         <Menu />
                                     </IconButton>
                                 )}
-                                <HeaderInfo />
+                                <HeaderInfo leftDrawerWidth={leftDrawerWidth} />
                                 {ctx.currentObjectType && hideContextMenu && !mobile && (
-                                    <IconButton
-                                        sx={{ ml: `${width - 634}px` }}
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                    >
+                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
                                         <KeyboardDoubleArrowLeft />
                                     </IconButton>
                                 )}
                                 {ctx.currentObjectType && !hideContextMenu && !mobile && (
-                                    <IconButton
-                                        sx={{ ml: `${width - 1059}px` }}
-                                        onClick={toggleContextMenu}
-                                        edge="start"
-                                    >
+                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
                                         <KeyboardDoubleArrowRight />
                                     </IconButton>
                                 )}

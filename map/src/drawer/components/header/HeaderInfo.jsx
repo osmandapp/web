@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import SearchInfo from './SearchInfo';
 
-export default function HeaderInfo() {
+export default function HeaderInfo({ leftDrawerWidth }) {
     const ctx = useContext(AppContext);
 
     const [text, setText] = useState([]);
@@ -30,7 +30,7 @@ export default function HeaderInfo() {
     }, [ctx.headerText, ctx.setHeaderText]);
 
     return (
-        <Box>
+        <Box sx={{ ml: `${leftDrawerWidth}px` }}>
             <SearchInfo />
             <Typography sx={{ display: 'inline', fontSize: 14 }} color="inherit">
                 {text}
