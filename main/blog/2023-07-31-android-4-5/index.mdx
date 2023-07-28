@@ -19,7 +19,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Good news, everybody! 
 Revolutionary changes we made in 4.5 OsmAnd release for Android devices. Go ahead and read all what was added and improved.
 
-Big Spoiler: OsmAnd Cloud backup for Favourites, OsmAnd Settings and OSM Notes going free. 
+**Big Spoiler:** 
+- OsmAnd Cloud backup for Favourites, OsmAnd Settings and OSM Notes going free
+- New Terrain format and 3D relief
+- New Track management menu
+- BLE sensors
+- Train profile..
 
 ![banner_android_4](./img/banner_android_4-5.jpg)
 
@@ -31,6 +36,7 @@ Big Spoiler: OsmAnd Cloud backup for Favourites, OsmAnd Settings and OSM Notes g
 * [Tracks management menu](#track-management)
 * [New for Android Auto](#android-auto-improvements)
 * [Widget improvements](#widget-improvements)
+* [Visible in 3D Mode](#2d3d-button)
 * [Train profile](#train-profile)
 * [Contour lines updates](#contour-lines-for-map-sources)
 * [External keyboards improvements](#more-actions-for-external-keyboards)
@@ -128,9 +134,26 @@ _OsmAnd menu → Configure screen → Top panel / Bottom panel_
 
 ![widget](./img/widget.png) ![widget](./img/widget_1.png)
 
+
+## 2D/3D button
+
+
+The new "3D/2D Mode" button for the map screen was added. Now you can make a map tilt not only with [two fingers](https://osmand.net/docs/user/map/interact-with-map#gestures). "3D/2D Mode" button acts differently with menus and on map screens if _3D Mode_ in Configure Screen is set to Visible in 3D Mode.
+
+_OsmANd Menu → Configure Screen → Buttons → 3D Mode_:
+- Hidden
+- Visible
+- VIsible in 3D mode
+
+** **map tilt angle by button is the last tilt angle by two-finger gestures**
+
+![3D/2D Mode](./img/3d_mode.png)  ![3D/2D Mode](./img/3d_mode_1.png)
+
 ## Train profile
 
 _Train_ profile was added to [Profile list](https://osmand.net/docs/user/personal/profiles). The new profile allows the calculation of railway routes.
+
+** **Disabled by default**: _OsmAnd Menu → Settings → App profiles_
 
 ![Train](./img/tr.png)
 
@@ -140,7 +163,7 @@ _Train_ profile was added to [Profile list](https://osmand.net/docs/user/persona
 
 _OsmAnd menu → Configure map → Map source..._
 
-Now, you can see contour lines with raster maps:
+Now, you can see contour lines with raster maps (Map sources):
 
 ![contour lines](./img/contour_lines.png)
 
@@ -154,7 +177,7 @@ Added option to disable / enable "Announce deviation from the route" for [Voice 
 
 _OsmAnd menu → Configure profile → Navigation settings → Voice prompts → Other → Announce deviation from the route_
 
-It is enabled by default.
+** **Enabled by default**
 
 ## Updated Start screen
 
@@ -215,7 +238,9 @@ _OsmAnd menu → Configure profile → Navigation settings → [Navigation type]
 
 ## Fixed
 
-- Per-app language selection
+- [Per-app language selection](https://github.com/osmandapp/OsmAnd/issues/16938) (Android 13).
+- Include Bearing/Heading data for Trip recording on [OsmAnd development plugin settings](https://osmand.net/docs/user/plugins/development#plugin-settings).
+- [Bugs](https://github.com/osmandapp/OsmAnd/milestone/38?closed=1).
 
 
 _______________________________________________
