@@ -82,8 +82,11 @@ export default function TracksMenu() {
                     tg.unshift(defGroup);
                 }
             }
-            ctx.gpxFiles.trackGroups = tg;
             ctx.setTracksGroups(tg);
+
+            const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+            newGpxFiles.trackGroups = tg;
+            ctx.setGpxFiles(newGpxFiles);
         } else {
             setGpxFiles([]);
             ctx.setTracksGroups([]);

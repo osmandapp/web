@@ -56,8 +56,8 @@ export default function CloudTrackItem({ file }) {
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });
-                ctx.setGpxFiles(newGpxFiles);
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
+                ctx.setGpxFiles(newGpxFiles);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
             } else {
                 setError(true);
