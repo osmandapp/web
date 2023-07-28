@@ -203,7 +203,7 @@ export default function LoginDialog() {
                         <Button
                             variant="contained"
                             component="span"
-                            sx={{ backgroundColor: '#ff595e !important', ml: 3 }}
+                            sx={{ backgroundColor: '#ff595e !important', ml: 3, mb: '10px' }}
                             onClick={() => {
                                 setDeleteAccountFlag(true);
                                 AccountManager.sendCode(
@@ -217,9 +217,9 @@ export default function LoginDialog() {
                         </Button>
                         <Link
                             sx={{
-                                marginRight: 'auto',
+                                mr: 'auto',
+                                ml: '25px',
                                 fontSize: '10pt',
-                                ml: 2,
                                 color: '#ff595e',
                                 whiteSpace: 'nowrap',
                             }}

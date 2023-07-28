@@ -10,13 +10,18 @@ import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { useWindowSize } from '../util/hooks/useWindowSize';
 
-const useStyles = makeStyles(() => ({
-    paper: { minWidth: '100vh' },
-}));
 export default function ChangeEmailDialog({ setChangeEmailFlag }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
+
+    const [width] = useWindowSize();
+    const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
+    const useStyles = makeStyles(() => ({
+        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px` },
+    }));
+
     const classes = useStyles();
 
     const [newEmail, setNewEmail] = useState(null);
