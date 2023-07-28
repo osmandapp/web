@@ -106,7 +106,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
         <Dialog open={true} onClose={handleCloseAccept}>
             <Box display="flex">
                 <Box flexGrow={1}>
-                    <DialogTitle>Advanced Routing Settings</DialogTitle>
+                    <DialogTitle>Routing Provider Settings</DialogTitle>
                 </Box>
                 <Box>
                     <IconButton onClick={handleCloseAccept}>
@@ -119,11 +119,14 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                 <InputLabel id="route-provider-label">Provider</InputLabel>
                 <FormControl fullWidth>
                     <Select value={router} onChange={onChangeRouter}>
-                        {geoRouter.listProviders().map(({ key, name }) => (
-                            <MenuItem key={key} value={key}>
-                                {name}
-                            </MenuItem>
-                        ))}
+                        {geoRouter.listProviders().map(
+                            ({ key, name, type }) =>
+                                (type !== 'osmand' || ctx.develFeatures === true) && (
+                                    <MenuItem key={key} value={key}>
+                                        {name}
+                                    </MenuItem>
+                                )
+                        )}
                     </Select>
                 </FormControl>
 

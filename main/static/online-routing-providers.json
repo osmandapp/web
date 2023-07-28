@@ -26,7 +26,7 @@
         {
             "type": "osrm",
             "name": "Routing OSM DE (Demo)",
-            "webName" : "OSRM (Backup)",
+            "webName" : "OSRM (backup)",
             "url": "https://routing.openstreetmap.de/",
             "routes": [
                 {

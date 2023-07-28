@@ -87,8 +87,8 @@ export default function LoginDialog() {
     }
 
     const clickHandler = (event) => {
-        if (event.detail === 3) {
-            ctx.setDevMode(true);
+        if (event.detail % 3 === 0) {
+            ctx.setDevelFeatures(!ctx.develFeatures);
         }
     };
 
@@ -96,7 +96,7 @@ export default function LoginDialog() {
         return (
             <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
                 <DialogTitle sx={{ color: '#f8931d' }} onClick={clickHandler}>
-                    {ctx.loginUser}
+                    {ctx.loginUser} {ctx.develFeatures && ' :-)'}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText component={'span'}>
