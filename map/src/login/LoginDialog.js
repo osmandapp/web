@@ -216,7 +216,13 @@ export default function LoginDialog() {
                             Delete your account
                         </Button>
                         <Link
-                            sx={{ marginRight: 'auto', fontSize: '10pt', ml: 2, color: '#ff595e' }}
+                            sx={{
+                                marginRight: 'auto',
+                                fontSize: '10pt',
+                                ml: 2,
+                                color: '#ff595e',
+                                whiteSpace: 'nowrap',
+                            }}
                             href="#"
                             color="inherit"
                             onClick={() => {
