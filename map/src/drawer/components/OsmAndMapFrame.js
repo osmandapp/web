@@ -52,15 +52,13 @@ const OsmAndMapFrame = () => {
 
     return (
         <>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div>
                 <Box
                     sx={{
                         width: { xs: `calc(100%)` },
                         ml: { md: `${leftDrawerWidth}px` },
                         mr: `${drawerRightWidth}`,
-                        height: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
+                        height: 'auto',
                     }}
                 >
                     <Box>
