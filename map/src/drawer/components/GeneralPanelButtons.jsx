@@ -117,7 +117,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                 )}
             </div>
             {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
-                <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} />
+                <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
             {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}

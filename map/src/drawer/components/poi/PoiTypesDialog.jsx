@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
+export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     const ctx = useContext(AppContext);
 
     const classes = useStyles();
@@ -117,22 +117,15 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
     }
 
     return (
-        <Dialog open={dialogOpen} onClose={toggleShowDialog} disableEnforceFocus>
-            <Grid container spacing={2}>
-                <Grid item xs={10}>
-                    <DialogTitle>Show POI</DialogTitle>
-                </Grid>
-                <Grid item xs={2}>
-                    <IconButton
-                        sx={{ mt: '15px', ml: '25px' }}
-                        variant="contained"
-                        type="button"
-                        onClick={toggleShowDialog}
-                    >
+        <Dialog sx={{ maxWidth: `${width * 0.75}px` }} open={dialogOpen} onClose={toggleShowDialog} disableEnforceFocus>
+            <DialogTitle sx={{ display: 'inline' }}>
+                Show POI
+                <div style={{ float: 'right' }}>
+                    <IconButton sx={{ ml: '25px' }} variant="contained" type="button" onClick={toggleShowDialog}>
                         <Close fontSize="small" />
                     </IconButton>
-                </Grid>
-            </Grid>
+                </div>
+            </DialogTitle>
             <DialogContent>
                 <Autocomplete
                     onChange={(event, newValue, reason) => {
@@ -212,7 +205,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen }) {
                             style={{ marginLeft: '-7px' }}
                             item
                             key={key + 'column'}
-                            xs={6}
+                            xs={width > 500 ? 6 : 12}
                             className={styles.drawerItem}
                         >
                             <MenuItem
