@@ -33,25 +33,24 @@ export default function CloudTrackItem({ file }) {
         if (file.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
         } else {
-            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-                file.type
-            )}&name=${encodeURIComponent(file.name)}`;
+            const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+            const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
             newGpxFiles[file.name] = {
-                url: url,
+                url: URL + qs,
                 clienttimems: file.clienttimems,
                 updatetimems: file.updatetimems,
                 name: file.name,
                 type: 'GPX',
             };
-            let f = await Utils.getFileData(newGpxFiles[file.name]);
+            const f = await Utils.getFileData(newGpxFiles[file.name]);
             const gpxfile = new File([f], file.name, {
                 type: 'text/plain',
             });
-            let track = await TracksManager.getTrackData(gpxfile);
+            const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (track) {
-                let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+            if (track && (track.points?.length > 0 || track.wpts?.length > 0 || track.tracks?.length > 0)) {
+                const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
