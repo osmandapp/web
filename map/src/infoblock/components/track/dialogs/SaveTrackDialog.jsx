@@ -75,7 +75,7 @@ export default function SaveTrackDialog() {
     }
 
     function hasExistTrack(fileName, folder) {
-        let selectedGroup = ctx.gpxFiles.trackGroups.find((g) => {
+        const selectedGroup = ctx.gpxFiles.trackGroups?.find((g) => {
             if (folder.title) {
                 return g.name === folder.title;
             } else {
