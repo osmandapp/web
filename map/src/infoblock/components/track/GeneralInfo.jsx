@@ -52,7 +52,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         const analysis = track.analysis;
         if (analysis && analysis.hasElevationData === false && !analysis.srtmAnalysis) {
             let totalPoints = track.points?.length ?? 0;
-            track.points.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
+            track.points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
             if (totalPoints <= TracksManager.AUTO_SRTM_MAX_POINTS) {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, track.points).then(
                     (result) => {
