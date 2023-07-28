@@ -25,7 +25,7 @@ const OsmAndMapFrame = () => {
     const [drawerRightHeight, setDrawerRightHeight] = useState(0);
     const [drawerRightWidth, setDrawerRightWidth] = useState(0);
     const [mobile, setMobile] = useState(false);
-    const [width] = useWindowSize();
+    const [width, height] = useWindowSize();
 
     const toggleLeftDrawer = () => {
         let res = !drawerLeftOpen;
@@ -58,7 +58,6 @@ const OsmAndMapFrame = () => {
                         width: { xs: `calc(100%)` },
                         ml: { md: `${leftDrawerWidth}px` },
                         mr: `${drawerRightWidth}`,
-                        height: 'auto',
                     }}
                 >
                     <Box>
@@ -118,6 +117,7 @@ const OsmAndMapFrame = () => {
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         setClearState={setClearState}
+                        heightScreen={height}
                     />
                 </Drawer>
             )}
@@ -143,6 +143,7 @@ const OsmAndMapFrame = () => {
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         setClearState={setClearState}
+                        heightScreen={height}
                         resizing={resizing}
                         setResizing={setResizing}
                         setDrawerHeight={setDrawerRightHeight}

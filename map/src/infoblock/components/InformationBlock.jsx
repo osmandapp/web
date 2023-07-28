@@ -15,6 +15,7 @@ export default function InformationBlock({
     showContextMenu,
     setShowContextMenu,
     setClearState,
+    heightScreen,
     resizing,
     setResizing,
     setDrawerHeight,
@@ -168,8 +169,7 @@ export default function InformationBlock({
                                                         if (!resizing) {
                                                             return;
                                                         }
-                                                        let offsetTop =
-                                                            document.body.offsetHeight - e.changedTouches[0].clientY;
+                                                        let offsetTop = heightScreen - e.changedTouches[0].clientY;
                                                         let minHeight = 50;
                                                         let maxHeight = 600;
                                                         if (offsetTop < minHeight) {
@@ -190,7 +190,7 @@ export default function InformationBlock({
                                                         if (!resizing) {
                                                             return;
                                                         }
-                                                        let offsetTop = document.body.offsetHeight - e.clientY;
+                                                        let offsetTop = heightScreen - e.clientY;
                                                         let minHeight = 50;
                                                         let maxHeight = 600;
                                                         if (offsetTop + minHeight / 2 < minHeight) {
