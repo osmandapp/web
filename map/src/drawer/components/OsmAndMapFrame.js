@@ -86,7 +86,12 @@ const OsmAndMapFrame = () => {
                             {ctx.routingErrorMsg}
                         </Alert>
                     )}
-                    <OsmAndMap mobile={mobile} />
+                    <OsmAndMap
+                        mobile={mobile}
+                        drawerRightHeight={drawerRightHeight}
+                        leftDrawerWidth={leftDrawerWidth}
+                        drawerRightWidth={drawerRightWidth}
+                    />
                     <GeneralPanelButtons
                         drawerWidth={leftDrawerWidth}
                         showContextMenu={showContextMenu}
