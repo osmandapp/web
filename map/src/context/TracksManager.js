@@ -230,6 +230,7 @@ async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
     const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
+        apiCache: true,
         method: 'POST',
         credentials: 'include',
         body: formData,
