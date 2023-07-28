@@ -18,6 +18,7 @@ const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
 const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
+const AUTO_SRTM_MAX_POINTS = 10000;
 
 async function loadTracks(setLoading) {
     let localTracks = [];
@@ -783,6 +784,7 @@ const TracksManager = {
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
+    AUTO_SRTM_MAX_POINTS: AUTO_SRTM_MAX_POINTS,
 };
 
 export default TracksManager;
