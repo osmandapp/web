@@ -10,7 +10,7 @@ export default function LocalTrackItem({ track }) {
     const ref = ctx.localTracks.find((t) => t.name === track.name);
 
     if (!ref) {
-        console.debug('LocalTrackItem track not found (removed)', track.name);
+        // console.debug('LocalTrackItem track not found (removed)', track.name);
         return null;
     }
 
