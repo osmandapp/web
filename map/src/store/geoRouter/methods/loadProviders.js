@@ -85,7 +85,7 @@ async function loadProfilesOsmAnd() {
         const json = copyObj(data);
 
         Object.keys(json).forEach((k) => {
-            if (k.includes('rescuetrack') && process.env.REACT_APP_RESCUETRACK_PROFILE === 'hide') {
+            if (k.includes('rescuetrack') && process.env.REACT_APP_DEVEL_FEATURES !== 'yes') {
                 return;
             }
             if (json[k]?.params) {
