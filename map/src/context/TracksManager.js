@@ -663,15 +663,22 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             ctx.selectedGpxFile[`${t}`] = data.data[t];
         });
         ctx.selectedGpxFile.update = true;
-        if (path !== TracksManager.GET_SRTM_DATA) {
-            ctx.selectedGpxFile.analysis.srtmAnalysis = false;
-        }
         ctx.selectedGpxFile.wpts = wpts;
         ctx.selectedGpxFile.pointsGroups = pointsGroups;
+
+        // automatic SRTM request
+        if (path === GET_ANALYSIS) {
+            if (data.data.analysis?.hasElevationData) {
+                ctx.selectedGpxFile.analysis.srtmAnalysis = false;
+            } else {
+                return getTrackWithAnalysis(GET_SRTM_DATA, ctx, setLoading, points);
+            }
+        }
+
         return ctx.selectedGpxFile;
     } else {
         setLoading(false);
-        console.error('getTrackWithAnalysis fallback');
+        console.error('getTrackWithAnalysis fallback', path);
         return ctx.selectedGpxFile;
     }
 }
