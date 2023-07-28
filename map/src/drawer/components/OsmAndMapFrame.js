@@ -69,18 +69,24 @@ const OsmAndMapFrame = () => {
                                     </IconButton>
                                 )}
                                 <HeaderInfo />
-                                <div style={{ flexGrow: hideContextMenu ? 0.34 : 1, marginRight: -100 }}>
-                                    {ctx.currentObjectType && hideContextMenu && !mobile && (
-                                        <IconButton onClick={toggleContextMenu} edge="start">
-                                            <KeyboardDoubleArrowLeft />
-                                        </IconButton>
-                                    )}
-                                    {ctx.currentObjectType && !hideContextMenu && !mobile && (
-                                        <IconButton onClick={toggleContextMenu} edge="start">
-                                            <KeyboardDoubleArrowRight />
-                                        </IconButton>
-                                    )}
-                                </div>
+                                {ctx.currentObjectType && hideContextMenu && !mobile && (
+                                    <IconButton
+                                        sx={{ ml: `${width - 634}px` }}
+                                        onClick={toggleContextMenu}
+                                        edge="start"
+                                    >
+                                        <KeyboardDoubleArrowLeft />
+                                    </IconButton>
+                                )}
+                                {ctx.currentObjectType && !hideContextMenu && !mobile && (
+                                    <IconButton
+                                        sx={{ ml: `${width - 1059}px` }}
+                                        onClick={toggleContextMenu}
+                                        edge="start"
+                                    >
+                                        <KeyboardDoubleArrowRight />
+                                    </IconButton>
+                                )}
                             </Toolbar>
                         </AppBar>
                     </Box>

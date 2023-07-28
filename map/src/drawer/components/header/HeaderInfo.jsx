@@ -30,7 +30,7 @@ export default function HeaderInfo() {
     }, [ctx.headerText, ctx.setHeaderText]);
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box>
             <SearchInfo />
             <Typography sx={{ display: 'inline', fontSize: 14 }} color="inherit">
                 {text}
