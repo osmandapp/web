@@ -68,7 +68,7 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
             <MenuList>
                 <Weather />
                 <TracksMenu />
-                <FavoritesMenu />
+                {ctx.favorites?.groups?.length > 0 && <FavoritesMenu />}
                 {ctx.develFeatures && <MapStyle />}
                 <RouteMenu />
                 <SearchResultMenu />
