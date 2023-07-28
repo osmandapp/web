@@ -56,7 +56,7 @@ const OsmAndMapFrame = () => {
                 <Box
                     sx={{
                         width: { xs: `calc(100%)` },
-                        mr: `${drawerRightWidth}`,
+                        mr: drawerRightWidth,
                     }}
                 >
                     <Box>

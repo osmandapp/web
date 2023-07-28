@@ -157,12 +157,7 @@ export default function WptMapDialog() {
                         </Typography>
                     </DialogContent>
                     <DialogActions sx={{ display: 'inline' }}>
-                        <Link
-                            sx={{ fontSize: '10pt', ml: 2, mr: 2 }}
-                            href="#"
-                            color="inherit"
-                            onClick={enableWptDragging}
-                        >
+                        <Link sx={{ fontSize: '10pt', mx: 2 }} href="#" color="inherit" onClick={enableWptDragging}>
                             Move this waypoint
                         </Link>
                         <div style={{ float: 'right' }}>
