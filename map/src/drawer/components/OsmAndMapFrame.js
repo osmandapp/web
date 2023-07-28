@@ -14,7 +14,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
-    const MOBILE_SCREEN_SIZE = 1200;
+    const MOBILE_SCREEN_SIZE = 900;
     const LEFT_DRAWER_SIZE = 320;
 
     const [drawerLeftOpen, setDrawerLeftOpen] = useState(false);
