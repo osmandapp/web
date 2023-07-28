@@ -70,7 +70,6 @@ export default function LocalClientTrackLayer() {
                     saveLocal();
                 }
                 checkZoom();
-                // checkClickOnMapEvent();
                 checkUpdateLayers();
             }
         }
@@ -107,7 +106,8 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                addTrackToMap(track, true, true);
+                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0 || track.tracks?.length > 0;
+                addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
                 if (track.updated) {
@@ -139,6 +139,7 @@ export default function LocalClientTrackLayer() {
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
             delete ctx.createTrack.layers;
+            ctx.setCreateTrack({ ...ctx.createTrack });
         }
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.createTrack.edit) {
@@ -149,7 +150,6 @@ export default function LocalClientTrackLayer() {
                 ctx.setCurrentObjectType(type);
                 initNewTrack();
             }
-            // addClickOnMap();
         } else if (ctx.createTrack?.enable === false) {
             if (ctx.createTrack.clear) {
                 clearCreateLayers(ctxTrack.layers);
@@ -164,7 +164,6 @@ export default function LocalClientTrackLayer() {
             }
             saveResult(savedFile, false);
             ctx.setCreateTrack(null);
-            // deleteClickOnMap();
         }
     }, [ctx.createTrack]);
 
@@ -172,7 +171,6 @@ export default function LocalClientTrackLayer() {
         let ind = ctx.localTracks.findIndex((t) => t.name === file.name);
         if (ind !== -1) {
             ctx.localTracks[ind] = file;
-            ctx.localTracks[ind].index = ind;
             if (ctx.createTrack.clear) {
                 ctx.localTracks[ind].selected = false;
             } else {
@@ -182,7 +180,7 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
             ctx.setLocalTracks([...ctx.localTracks]);
 
             if (ctx.createTrack.clear) {
@@ -212,18 +210,10 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    // function checkClickOnMapEvent() {
-    //     if (ctx.selectedGpxFile.addPoint && !ctx.selectedGpxFile.addWpt) {
-    //         //getNewRoute();
-    //     } else {
-    //         checkDragPoint();
-    //     }
-    // }
-
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
             // localTracks exist: do update/append
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
@@ -246,7 +236,7 @@ export default function LocalClientTrackLayer() {
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds());
+                    map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
                 }
             }
             layer.on('click', () => {
@@ -287,7 +277,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds());
+            map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
         }
     }
 
@@ -302,16 +292,6 @@ export default function LocalClientTrackLayer() {
             setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
         }
     }
-
-    // function checkDragPoint() {
-    //     if (ctx.selectedGpxFile?.dragPoint) {
-    //         deleteClickOnMap();
-    //     } else {
-    //         if (ctx.createTrack?.enable) {
-    //             addClickOnMap();
-    //         }
-    //     }
-    // }
 
     function checkUpdateLayers() {
         if (ctxTrack?.updateLayers) {
@@ -513,8 +493,6 @@ export default function LocalClientTrackLayer() {
 
         file.tracks = [{ points, wpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData(file);
-        file.index = ctx.localTracks.length;
-        // file.selected = true; // FIXME
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -745,15 +723,12 @@ export default function LocalClientTrackLayer() {
             geoProfile: geoProfile,
             geometry: [],
         };
-        // if (newPoint.profile !== TracksManager.PROFILE_LINE) {
-        //     newPoint.geometry = []; // geometry is already set to [] just few lines before
-        // }
         return newPoint;
     }
 
     function initNewTrack() {
         ctxTrack = {};
-        // ctxTrack.selected = true; // FIXME
+        // ctxTrack.selected = true; // wrong way
         ctxTrack.name = TracksManager.createName(ctx);
         ctxTrack.tracks = TracksManager.createGpxTracks();
         ctxTrack.pointsGroups = {};

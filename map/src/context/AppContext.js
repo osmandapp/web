@@ -375,7 +375,7 @@ export const AppContextProvider = (props) => {
         wpts: true,
     });
 
-    const [devMode, setDevMode] = useState(false);
+    const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
 
     routeRouter.initSetter({ setter: setRouteRouter });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -577,8 +577,8 @@ export const AppContextProvider = (props) => {
                 setShowPoiCategories,
                 poiCategory,
                 setPoiCategories,
-                devMode,
-                setDevMode,
+                develFeatures,
+                setDevelFeatures,
             }}
         >
             {props.children}

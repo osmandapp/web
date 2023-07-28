@@ -38,7 +38,7 @@ export function getEffectDeps() {
  * @return [{ key, name }]
  */
 export function listProviders() {
-    return this.providers.map(({ key, name }) => ({ key, name }));
+    return this.providers.map(({ key, name, type }) => ({ key, name, type }));
 }
 
 /**
