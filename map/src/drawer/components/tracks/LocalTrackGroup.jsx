@@ -18,7 +18,7 @@ export default function LocalTrackGroup() {
 
     const ctx = useContext(AppContext);
 
-    const [localGpxOpen, setLocalGpxOpen] = useState(false);
+    const [localGpxOpen, setLocalGpxOpen] = useState(true);
     const [sortFiles, setSortFiles] = useState([]);
     const anchorEl = React.useRef(null);
     const [open, setOpen] = useState(false);
