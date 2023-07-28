@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Avatar, Box, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
 import FavoritesManager from '../../../../context/FavoritesManager';
 
-export default function FavoriteColor({ favoriteColor, setFavoriteColor, defaultColor }) {
+export default function FavoriteColor({ favoriteColor, setFavoriteColor, defaultColor, widthDialog }) {
     const [selectFavoriteColor, setSelectFavoriteColor] = useState(false);
 
     let prepareColors = FavoritesManager.orderList(FavoritesManager.colors, defaultColor);
@@ -17,7 +17,7 @@ export default function FavoriteColor({ favoriteColor, setFavoriteColor, default
             <Box
                 sx={{
                     display: 'flex',
-                    width: 450,
+                    maxWidth: `${widthDialog}px`,
                     overflowX: 'scroll',
                 }}
             >

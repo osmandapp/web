@@ -9,18 +9,23 @@ import AppContext from '../context/AppContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
 import { apiGet } from '../util/HttpApi';
-import { makeStyles } from '@material-ui/core/styles';
 import DeleteAccountDialog from './DeleteAccountDialog';
 import AccountManager from '../context/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
-
-const useStyles = makeStyles(() => ({
-    paper: { minWidth: '100vh' },
-}));
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
+
+    const [width] = useWindowSize();
+    const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
+
+    const useStyles = makeStyles(() => ({
+        paper: { maxWidth: `${widthDialog}px`, minWidth: `${widthDialog}px` },
+    }));
+
     const classes = useStyles();
 
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
@@ -198,7 +203,7 @@ export default function LoginDialog() {
                         <Button
                             variant="contained"
                             component="span"
-                            sx={{ backgroundColor: '#ff595e !important', ml: 3 }}
+                            sx={{ backgroundColor: '#ff595e !important', ml: 3, mb: '10px' }}
                             onClick={() => {
                                 setDeleteAccountFlag(true);
                                 AccountManager.sendCode(
@@ -211,7 +216,13 @@ export default function LoginDialog() {
                             Delete your account
                         </Button>
                         <Link
-                            sx={{ marginRight: 'auto', fontSize: '10pt', ml: 2, color: '#ff595e' }}
+                            sx={{
+                                mr: 'auto',
+                                ml: '25px',
+                                fontSize: '10pt',
+                                color: '#ff595e',
+                                whiteSpace: 'nowrap',
+                            }}
                             href="#"
                             color="inherit"
                             onClick={() => {
@@ -233,13 +244,14 @@ export default function LoginDialog() {
                     <DownloadBackupDialog
                         openDownloadBackupDialog={openDownloadBackupDialog}
                         setOpenDownloadBackupDialog={setOpenDownloadBackupDialog}
+                        widthDialog={widthDialog}
                     />
                 )}
             </Dialog>
         );
     }
     return (
-        <Dialog open={true} onClose={handleClose}>
+        <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
             <DialogTitle>
                 {state === 'register' ? 'Register' : state === 'register-verify' ? 'Verify your email' : 'Login'}
             </DialogTitle>

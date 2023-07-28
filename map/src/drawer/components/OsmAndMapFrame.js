@@ -14,7 +14,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
-    const MOBILE_SCREEN_SIZE = 1200;
+    const MOBILE_SCREEN_SIZE = 900;
     const LEFT_DRAWER_SIZE = 320;
 
     const [drawerLeftOpen, setDrawerLeftOpen] = useState(false);
@@ -25,7 +25,7 @@ const OsmAndMapFrame = () => {
     const [drawerRightHeight, setDrawerRightHeight] = useState(0);
     const [drawerRightWidth, setDrawerRightWidth] = useState(0);
     const [mobile, setMobile] = useState(false);
-    const [width] = useWindowSize();
+    const [width, height] = useWindowSize();
 
     const toggleLeftDrawer = () => {
         let res = !drawerLeftOpen;
@@ -52,15 +52,11 @@ const OsmAndMapFrame = () => {
 
     return (
         <>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div>
                 <Box
                     sx={{
                         width: { xs: `calc(100%)` },
-                        ml: { md: `${leftDrawerWidth}px` },
-                        mr: `${drawerRightWidth}`,
-                        height: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
+                        mr: drawerRightWidth,
                     }}
                 >
                     <Box>
@@ -71,14 +67,14 @@ const OsmAndMapFrame = () => {
                                         <Menu />
                                     </IconButton>
                                 )}
-                                <HeaderInfo />
+                                <HeaderInfo leftDrawerWidth={leftDrawerWidth} />
                                 {ctx.currentObjectType && hideContextMenu && !mobile && (
-                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
+                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
                                         <KeyboardDoubleArrowLeft />
                                     </IconButton>
                                 )}
                                 {ctx.currentObjectType && !hideContextMenu && !mobile && (
-                                    <IconButton onClick={toggleContextMenu} edge="start" sx={{ ml: 2 }}>
+                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
                                         <KeyboardDoubleArrowRight />
                                     </IconButton>
                                 )}
@@ -90,7 +86,12 @@ const OsmAndMapFrame = () => {
                             {ctx.routingErrorMsg}
                         </Alert>
                     )}
-                    <OsmAndMap showZoom={!showContextMenu} />
+                    <OsmAndMap
+                        mobile={mobile}
+                        drawerRightHeight={drawerRightHeight}
+                        leftDrawerWidth={leftDrawerWidth}
+                        drawerRightWidth={drawerRightWidth}
+                    />
                     <GeneralPanelButtons
                         drawerWidth={leftDrawerWidth}
                         showContextMenu={showContextMenu}
@@ -120,6 +121,7 @@ const OsmAndMapFrame = () => {
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         setClearState={setClearState}
+                        heightScreen={height}
                     />
                 </Drawer>
             )}
@@ -145,6 +147,7 @@ const OsmAndMapFrame = () => {
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         setClearState={setClearState}
+                        heightScreen={height}
                         resizing={resizing}
                         setResizing={setResizing}
                         setDrawerHeight={setDrawerRightHeight}
