@@ -204,7 +204,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
 
             ctx.selectedGpxFile.name = newName;
 
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setSelectedGpxFile + setLocalTracks
+            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setLocalTracks([...ctx.localTracks]);
 

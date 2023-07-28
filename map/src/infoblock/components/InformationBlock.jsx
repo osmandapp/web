@@ -63,7 +63,7 @@ export default function InformationBlock({
     }, [mobile, showContextMenu, hideContextMenu]);
 
     useEffect(() => {
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
+        if (ctx.currentObjectType && ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
             stopCreatedTrack(true);
         }
     }, [ctx.currentObjectType]);

@@ -5,6 +5,7 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager from '../../context/FavoritesManager';
+import TracksManager from '../../context/TracksManager';
 import _ from 'lodash';
 
 const FavoriteLayer = () => {
@@ -39,7 +40,7 @@ const FavoriteLayer = () => {
                         file.name === ctx.selectedGpxFile.file?.name &&
                         !ctx.selectedGpxFile.editFavorite
                     ) {
-                        map.fitBounds(file.markers.getBounds());
+                        map.fitBounds(file.markers.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
                     }
                 }
             } else if (!file.url && file.markers) {

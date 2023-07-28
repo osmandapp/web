@@ -19,6 +19,7 @@ const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
+const FIT_BOUNDS_OPTIONS = { maxZoom: 17 }; // don't fitBounds closer
 
 async function loadTracks(setLoading) {
     let localTracks = [];
@@ -68,7 +69,6 @@ function openVisibleTracks(localTracks) {
                 if (f.name === local.name) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
                         f.selected = true;
-                        f.index = _.indexOf(localTracks, f);
                     } else {
                         f.selected = false;
                     }
@@ -83,11 +83,8 @@ function saveLocalTrack(tracks, ctx) {
     let currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
 
     if (currentTrackIndex === -1) {
-        ctx.selectedGpxFile.index = tracks.length; // mutate state (ctx)
         tracks.push(ctx.selectedGpxFile); // mutate state (via parameter)
-
         // instant call setState if you don't sure about parent
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setLocalTracks([...ctx.localTracks]);
 
         currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
@@ -294,7 +291,6 @@ function openNewLocalTrack(ctx) {
     ctx.setCurrentObjectType(type);
     let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
     selectedTrack.selected = true;
-    selectedTrack.index = ctx.localTracks.length - 1;
     ctx.setCreateTrack({
         enable: true,
         edit: true,
@@ -785,6 +781,7 @@ const TracksManager = {
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
     AUTO_SRTM_MAX_POINTS: AUTO_SRTM_MAX_POINTS,
+    FIT_BOUNDS_OPTIONS: FIT_BOUNDS_OPTIONS,
 };
 
 export default TracksManager;

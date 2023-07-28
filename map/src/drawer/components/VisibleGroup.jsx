@@ -150,18 +150,11 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     {visibleTracks.local.length > 0 &&
                         visibleTracks.local.map((track, index) => {
-                            return (
-                                <LocalTrackItem
-                                    className={classes.item}
-                                    key={track + index}
-                                    track={track}
-                                    index={track.index}
-                                />
-                            );
+                            return <LocalTrackItem className={classes.item} key={'vis-local-' + index} track={track} />;
                         })}
                     {visibleTracks.cloud.length > 0 &&
                         visibleTracks.cloud.map((track, index) => {
-                            return <CloudTrackItem className={classes.item} key={track + index} file={track} />;
+                            return <CloudTrackItem className={classes.item} key={'vis-cloud-' + index} file={track} />;
                         })}
                 </div>
             </Collapse>
