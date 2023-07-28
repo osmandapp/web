@@ -19,9 +19,10 @@ export default function SaveTrackDialog() {
     const [existTrack, setExistTrack] = useState(false);
     const [process, setProcess] = useState(false);
 
-    let folders = ctx.gpxFiles.trackGroups?.map((group) => ({
-        title: group.name,
-    }));
+    const folders =
+        ctx.gpxFiles.trackGroups?.map((group) => ({
+            title: group.name,
+        })) ?? [];
 
     function getOldGroup() {
         return ctx.selectedGpxFile.originalName
