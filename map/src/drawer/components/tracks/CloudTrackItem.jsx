@@ -31,7 +31,7 @@ export default function CloudTrackItem({ file }) {
     async function addTrackToMap(setProgressVisible) {
         setProgressVisible(true);
         if (file.url) {
-            ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
+            ctx.setSelectedGpxFile(Object.assign({}, ctx.gpxFiles[file.name]));
         } else {
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
             const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
@@ -57,8 +57,8 @@ export default function CloudTrackItem({ file }) {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
-                ctx.setGpxFiles(newGpxFiles);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
+                ctx.setGpxFiles(newGpxFiles); // finally, success
             } else {
                 setError(true);
             }

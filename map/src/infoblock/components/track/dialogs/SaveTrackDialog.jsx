@@ -20,7 +20,7 @@ export default function SaveTrackDialog() {
     const [process, setProcess] = useState(false);
 
     const folders =
-        ctx.gpxFiles.trackGroups?.map((group) => ({
+        ctx.tracksGroups?.map((group) => ({
             title: group.name,
         })) ?? [];
 
@@ -75,7 +75,7 @@ export default function SaveTrackDialog() {
     }
 
     function hasExistTrack(fileName, folder) {
-        const selectedGroup = ctx.gpxFiles.trackGroups?.find((g) => {
+        const selectedGroup = ctx.tracksGroups?.find((g) => {
             if (folder.title) {
                 return g.name === folder.title;
             } else {

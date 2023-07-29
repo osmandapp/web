@@ -40,15 +40,17 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowCo
                 // delete layer
                 const newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                ctx.setGpxFiles(newGpxFiles);
+
                 // delete track from menu
-                newGpxFiles.trackGroups?.forEach((group) => {
+                const newTracksGroups = [...ctx.tracksGroups];
+                newTracksGroups?.forEach((group) => {
                     const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
                     if (currentFile !== -1) {
                         group.files.splice(currentFile, 1);
                     }
                 });
-                // finally after forEach
-                ctx.setGpxFiles(newGpxFiles);
+                ctx.setTracksGroups(newTracksGroups);
 
                 cleanContextMenu();
             }
