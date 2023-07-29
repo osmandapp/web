@@ -13,7 +13,6 @@ export default function SaveTrackDialog() {
 
     const [folder, setFolder] = useState(getOldGroup);
     const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
-    const [dialogOpen, setDialogOpen] = useState(ctx.selectedGpxFile.save);
     const [error, setError] = useState(false);
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
@@ -30,13 +29,12 @@ export default function SaveTrackDialog() {
             : 'Tracks';
     }
 
-    const toggleShowDialog = (clear) => {
-        setDialogOpen(!dialogOpen);
+    const closeDialog = ({ uploaded }) => {
         setProcess(false);
-        if (clear) {
-            ctx.selectedGpxFile.clear = true;
+        if (uploaded) {
+            // ctx.selectedGpxFile.clear = true; // no-more-need
         }
-        ctx.selectedGpxFile.save = !ctx.selectedGpxFile.save;
+        ctx.selectedGpxFile.save = false;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     };
 
@@ -60,11 +58,31 @@ export default function SaveTrackDialog() {
         if (validName(fileName)) {
             setProcess(true);
             if (!hasExistTrack(fileName, folder)) {
-                await TracksManager.saveTrack(ctx, getFolderName(folder), fileName, TracksManager.GPX_FILE_TYPE);
-                toggleShowDialog(true);
+                const uploaded = !!(await TracksManager.saveTrack(
+                    ctx,
+                    getFolderName(folder),
+                    fileName,
+                    TracksManager.GPX_FILE_TYPE
+                ));
+                closeDialog({ uploaded });
             } else {
                 setExistTrack(true);
             }
+        } else {
+            setError(true);
+        }
+    }
+
+    async function confirmedSaveTrack() {
+        if (validName(fileName)) {
+            setProcess(true);
+            const uploaded = !!(await TracksManager.saveTrack(
+                ctx,
+                getFolderName(folder),
+                fileName,
+                TracksManager.GPX_FILE_TYPE
+            ));
+            closeDialog({ uploaded });
         } else {
             setError(true);
         }
@@ -101,12 +119,7 @@ export default function SaveTrackDialog() {
                     <Button
                         onClick={() => {
                             setExistTrack(false);
-                            TracksManager.saveTrack(
-                                ctx,
-                                getFolderName(folder),
-                                fileName,
-                                TracksManager.GPX_FILE_TYPE
-                            ).then();
+                            confirmedSaveTrack();
                         }}
                     >
                         Yes
@@ -118,7 +131,7 @@ export default function SaveTrackDialog() {
 
     return (
         <div>
-            <Dialog open={true} onClose={() => toggleShowDialog(false)}>
+            <Dialog open={true} onClose={() => closeDialog({ uploaded: false })}>
                 {process ? <LinearProgress /> : <></>}
                 <DialogUpdateTrack open={existTrack} onClose={!existTrack} />
                 <DialogTitle>Save track</DialogTitle>
@@ -195,11 +208,8 @@ export default function SaveTrackDialog() {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => toggleShowDialog(false)}>Cancel</Button>
-                    <Button
-                        disabled={getFolderName(folder) === null || fileName === '' || error}
-                        onClick={() => saveTrack()}
-                    >
+                    <Button onClick={() => closeDialog({ uploaded: false })}>Cancel</Button>
+                    <Button disabled={getFolderName(folder) === null || fileName === '' || error} onClick={saveTrack}>
                         Save
                     </Button>
                 </DialogActions>
