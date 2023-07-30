@@ -29,10 +29,10 @@ export default function CloudTrackItem({ file }) {
     }
 
     async function addTrackToMap(setProgressVisible) {
-        setProgressVisible(true);
         if (file.url) {
             ctx.setSelectedGpxFile(Object.assign({}, ctx.gpxFiles[file.name]));
         } else {
+            setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
             const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
