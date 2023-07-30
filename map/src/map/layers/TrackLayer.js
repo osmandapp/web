@@ -27,7 +27,16 @@ function removeLayerFromMap(file, map) {
 
 const TrackLayer = () => {
     const ctx = useContext(AppContext);
+    const ctxTrack = ctx.selectedGpxFile;
+
     const map = useMap();
+
+    // control zoom-fit for cloud tracks
+    useEffect(() => {
+        if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
+            map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+        }
+    }, [ctxTrack]);
 
     useEffect(() => {
         let filesMap = ctx.gpxFiles ? ctx.gpxFiles : {};

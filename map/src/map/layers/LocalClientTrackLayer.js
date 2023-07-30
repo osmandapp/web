@@ -69,20 +69,16 @@ export default function LocalClientTrackLayer() {
      *
      * - check/get routing from cache
      * - save Local tracks (when editor enabled)
-     * - check/set Zoom (fitBounds) for Local and Cloud tracks
+     * - check/set Zoom (fitBounds) for Local tracks
      * - .updateLayers processing (?)
      */
     useEffect(() => {
-        if (ctxTrack) {
+        if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
             if (ctxTrack.getRouting) {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (
-                    ctx.createTrack?.enable &&
-                    isEmptyTrack(ctxTrack) === false &&
-                    ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
-                ) {
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
                     saveLocal();
                 }
                 checkZoom();
@@ -241,20 +237,11 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkZoom() {
-        if (ctxTrack.gpx && ctxTrack.zoom) {
-            // cloud-track-zoom
-            showCloudTrackOnMap();
-        } else if (ctxTrack.selected && ctxTrack.zoom) {
+        if (ctxTrack.selected && ctxTrack.zoom) {
             // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
             showSelectedPointOnMap();
-        }
-    }
-
-    function showCloudTrackOnMap() {
-        if (ctxTrack.gpx) {
-            map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
         }
     }
 
