@@ -29,7 +29,9 @@ export default function CloudTrackItem({ file }) {
     }
 
     async function addTrackToMap(setProgressVisible) {
-        if (file.url) {
+        // Watch out for file.url because this component was called using different data sources.
+        // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
+        if (file.url || ctx.gpxFiles[file.name]?.url) {
             ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
             ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
         } else {
