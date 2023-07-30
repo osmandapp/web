@@ -459,7 +459,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         sx={{ ml: '-0.5px !important' }}
                         className={styles.button}
                         onClick={() => {
-                            TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
+                            TracksManager.addTrack({ ctx, track: { ...ctx.selectedGpxFile }, overwrite: true });
                             ctx.setUpdateContextMenu(true);
                         }}
                     >

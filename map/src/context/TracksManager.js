@@ -203,22 +203,22 @@ function getFileName(currentFile) {
 }
 
 function prepareName(name, local) {
-    name = name.replace(/.gpx/, '');
-    if (name.includes('/')) {
-        return name.split('/')[1];
-    } else if (local && name.includes(':')) {
-        return name.split(':')[1];
+    const result = name.replace(/.gpx/, '');
+    if (result.includes('/')) {
+        return result.split('/')[1];
+    } else if (local && result.includes(':')) {
+        return result.split(':')[1];
     } else {
-        return name;
+        return result;
     }
 }
 
 function getGroup(name, local) {
-    name = name.replace(/.gpx/, '');
-    if (name.includes('/')) {
-        return name.split('/')[0];
-    } else if (local && name.includes(':')) {
-        return name.split(':')[0];
+    const result = name.replace(/.gpx/, '');
+    if (result.includes('/')) {
+        return result.split('/')[0];
+    } else if (local && result.includes(':')) {
+        return result.split(':')[0];
     } else {
         return 'Tracks';
     }
@@ -247,19 +247,51 @@ async function getTrackData(file) {
     return track;
 }
 
-function addTrack(ctx, track) {
-    prepareTrack(track);
-    ctx.localTracks.push(track);
-    ctx.setLocalTracks([...ctx.localTracks]);
-    openNewLocalTrack(ctx);
-    closeCloudTrack(ctx, track);
+function addTrack({ ctx, track, overwrite = false } = {}) {
+    const originalName = track.name;
+    const firstName = prepareName(originalName, true);
+
+    let ref = null;
+    let localName = firstName;
+
+    if (overwrite) {
+        const found = ctx.localTracks?.find((t) => t.name === localName);
+        if (found) {
+            ref = found;
+        } else {
+            ref = track;
+            ctx.localTracks.push(ref);
+        }
+    } else {
+        let occupied = null;
+        for (let i = 1; i < 100; i++) {
+            occupied = ctx.localTracks?.find((t) => t.name === localName);
+            if (!occupied) {
+                break; // free name found
+            }
+            localName = firstName + ' - ' + i; // try with "Track - X"
+        }
+        if (occupied) {
+            throw new Error('TracksManager addTrack() too many same-tracks');
+        }
+
+        ref = track;
+        ctx.localTracks.push(ref);
+    }
+
+    prepareTrack(ref, localName, originalName);
+
+    closeCloudTrack(ctx, ref);
+    openNewLocalTrack(ctx, ref, overwrite);
+    ctx.setLocalTracks([...ctx.localTracks]); // finally
 }
 
-function prepareTrack(track) {
-    track.hasGeo = hasGeo(track);
-    track.originalName = _.cloneDeep(track.name);
-    track.name = TracksManager.prepareName(track.name, true);
+function prepareTrack(track, localName = null, originalName = null) {
+    track.originalName = originalName ?? track.name;
+    track.name = localName ?? prepareName(track.name, true);
     track.id = track.name;
+
+    track.hasGeo = hasGeo(track);
     addDistance(track);
 }
 
@@ -286,16 +318,15 @@ function hasGeo(track) {
     return false;
 }
 
-function openNewLocalTrack(ctx) {
-    let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
-    ctx.setCurrentObjectType(type);
-    let selectedTrack = ctx.localTracks[ctx.localTracks.length - 1];
-    selectedTrack.selected = true;
-    ctx.setCreateTrack({
-        enable: true,
-        edit: true,
-    });
-    ctx.setSelectedGpxFile(Object.assign({}, selectedTrack));
+// set copy of track with .overwrite <bool> and .selected = true
+// overwrite flag used later when re-uploading (save to cloud)
+// set type of current object, enable editor with "edit" flag
+function openNewLocalTrack(ctx, track, overwrite = false) {
+    track.selected = true;
+    track.overwrite = overwrite;
+    ctx.setSelectedGpxFile({ ...track });
+    ctx.setCreateTrack({ enable: true, edit: true });
+    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
 }
 
 function closeCloudTrack(ctx, track) {

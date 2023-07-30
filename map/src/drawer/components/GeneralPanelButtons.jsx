@@ -33,10 +33,10 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
-                let track = await TracksManager.getTrackData(file);
+                const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack(ctx, track);
+                    TracksManager.addTrack({ ctx, track, overwrite: false });
                 }
             });
             reader.readAsText(file);
