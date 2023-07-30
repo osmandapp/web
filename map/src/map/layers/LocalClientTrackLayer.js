@@ -66,7 +66,11 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                if (
+                    ctx.createTrack?.enable &&
+                    isEmptyTrack(ctxTrack) === false &&
+                    ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+                ) {
                     saveLocal();
                 }
                 checkZoom();
