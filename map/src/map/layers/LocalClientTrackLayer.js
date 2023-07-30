@@ -111,10 +111,27 @@ export default function LocalClientTrackLayer() {
         // ctx.pointContextMenu was added to monitor menu state and ignore click
     }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu]);
 
+    // after Edit, cleanup localLayers which were "killed" by updateLayers()
+    useEffect(() => {
+        if (ctx.createTrack?.enable === false) {
+            let deleted = 0;
+            for (const l in localLayers) {
+                if (map.hasLayer(localLayers[l]) === false) {
+                    delete localLayers[l];
+                    deleted++;
+                }
+            }
+            if (deleted > 0) {
+                setLocalLayers({ ...localLayers });
+            }
+        }
+    }, [ctx.createTrack?.enable]);
+
     useEffect(() => {
         for (let l in localLayers) {
             localLayers[l].active = false;
         }
+
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
@@ -249,6 +266,9 @@ export default function LocalClientTrackLayer() {
         if (track.points) {
             track.tracks = [{ points: track.points }];
         }
+        if (track.updated) {
+            track.updated = false; // reset
+        }
         let layer = TrackLayerProvider.createLayersByTrackData(track);
         if (layer) {
             if (fitBounds) {
@@ -275,7 +295,7 @@ export default function LocalClientTrackLayer() {
                 points: track.points ? track.points : TracksManager.getEditablePoints(track),
                 active: active,
             };
-            setLocalLayers({ ...localLayers });
+            // setLocalLayers({ ...localLayers }); // redunant setLocalLayers - called soon by parents
         }
     }
 
