@@ -60,6 +60,18 @@ export default function LocalClientTrackLayer() {
 
     const geoRouter = ctx.trackRouter;
 
+    /**
+     * Note: run on any selectedGpxFile including Cloud-mode
+     *
+     * Depends: every change of ctx.selectedGpxFile
+     *
+     * Actions:
+     *
+     * - check/get routing from cache
+     * - save Local tracks (when editor enabled)
+     * - check/set Zoom (fitBounds) for Local and Cloud tracks
+     * - .updateLayers processing (?)
+     */
     useEffect(() => {
         if (ctxTrack) {
             if (ctxTrack.getRouting) {
@@ -229,10 +241,20 @@ export default function LocalClientTrackLayer() {
     }
 
     function checkZoom() {
-        if (ctxTrack.selected && ctxTrack.zoom) {
+        if (ctxTrack.gpx && ctxTrack.zoom) {
+            // cloud-track-zoom
+            showCloudTrackOnMap();
+        } else if (ctxTrack.selected && ctxTrack.zoom) {
+            // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
             showSelectedPointOnMap();
+        }
+    }
+
+    function showCloudTrackOnMap() {
+        if (ctxTrack.gpx) {
+            map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
         }
     }
 
