@@ -3,7 +3,7 @@ import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typogra
 import React, { useContext, useState } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 
 export default function CloudTrackItem({ file }) {
     const ctx = useContext(AppContext);
@@ -49,7 +49,7 @@ export default function CloudTrackItem({ file }) {
             });
             const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (track && (track.points?.length > 0 || track.wpts?.length > 0 || track.tracks?.length > 0)) {
+            if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;

@@ -789,6 +789,14 @@ function updateState(ctx) {
     ctx.setTrackState({ ...ctx.trackState });
 }
 
+// check: geo-points, way-points, gpx-trkpt
+export function isEmptyTrack(track) {
+    if (track?.points?.length > 0 || track?.wpts?.length > 0 || track?.tracks?.length > 0) {
+        return false;
+    }
+    return true;
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
