@@ -498,7 +498,7 @@ async function downloadAfterUpload(ctx, file) {
         type: 'text/plain',
     });
     const track = await TracksManager.getTrackData(gpxfile);
-    if (track && (track.points?.length > 0 || track.wpts?.length > 0 || track.tracks?.length > 0)) {
+    if (isEmptyTrack(track) === false) {
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
         ctx.setCurrentObjectType(type);
         track.name = file.name;
@@ -791,7 +791,10 @@ function updateState(ctx) {
 
 // check: geo-points, way-points, gpx-trkpt
 export function isEmptyTrack(track) {
-    if (track?.points?.length > 0 || track?.wpts?.length > 0 || track?.tracks?.length > 0) {
+    if (track?.points?.length > 0 || track?.wpts?.length > 0) {
+        return false;
+    }
+    if (track?.tracks?.length > 0 && track.tracks[0].points?.length > 0) {
         return false;
     }
     return true;

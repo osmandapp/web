@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
-import TracksManager from '../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
@@ -66,7 +66,7 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (ctx.createTrack?.enable && (ctxTrack?.points?.length > 0 || ctxTrack?.wpts?.length > 0)) {
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
                     saveLocal();
                 }
                 checkZoom();
@@ -106,7 +106,7 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0 || track.tracks?.length > 0;
+                const needFitBounds = isEmptyTrack(track) === false;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
