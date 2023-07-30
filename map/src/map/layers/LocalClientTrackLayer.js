@@ -125,7 +125,7 @@ export default function LocalClientTrackLayer() {
                 setLocalLayers({ ...localLayers });
             }
         }
-    }, [ctx.createTrack?.enable]);
+    }, [ctx.createTrack?.enable]); // think about dep on localLayers
 
     useEffect(() => {
         for (let l in localLayers) {

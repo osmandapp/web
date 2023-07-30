@@ -4,20 +4,27 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import TracksManager from '../../context/TracksManager';
 
-async function addTrackToMap(ctx, file, map) {
-    let layer = TrackLayerProvider.createLayersByTrackData(file);
+function addTrackToMap({ ctx, file, map, fit = true } = {}) {
+    const layer = TrackLayerProvider.createLayersByTrackData(file);
+
     layer.on('click', () => {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile(Object.assign({}, file));
-        let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateContextMenu(true);
     });
-    file.gpx = layer;
-    map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+    // file.gpx = layer; // better modify state by parent (closer to setState)
+
+    if (fit) {
+        map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+    }
+
     layer.addTo(map);
-    ctx.setGpxFiles(ctx.gpxFiles);
-    ctx.setSelectedGpxFile(Object.assign({}, file));
+
+    return layer;
+    // ctx.setGpxFiles(ctx.gpxFiles); // not here, better call once, after parent's full cycle
+    // ctx.setSelectedGpxFile(Object.assign({}, file)); // not now, because this is view-layer init
 }
 
 function removeLayerFromMap(file, map) {
@@ -38,16 +45,38 @@ const TrackLayer = () => {
         }
     }, [ctxTrack]);
 
+    // after Edit, reload Cloud Tracks, whose Layers were killed by UpdateLayers()
     useEffect(() => {
-        let filesMap = ctx.gpxFiles ? ctx.gpxFiles : {};
+        if (ctx.createTrack?.enable === false) {
+            let restored = 0;
+            for (const l in ctx.gpxFiles) {
+                if (ctx.gpxFiles[l].gpx && map.hasLayer(ctx.gpxFiles[l].gpx) === false) {
+                    restored++;
+                    ctx.gpxFiles[l].gpx = addTrackToMap({ ctx, file: ctx.gpxFiles[l], map, fit: false });
+                }
+            }
+            if (restored > 0) {
+                ctx.setGpxFiles({ ...ctx.gpxFiles });
+            }
+        }
+    }, [ctx.createTrack?.enable]); // think about dep on ctx.gpxFiles
+
+    useEffect(() => {
+        let processed = 0;
+        const filesMap = ctx.gpxFiles ?? {};
         Object.values(filesMap).forEach((file) => {
             if (file.url && !file.gpx) {
-                addTrackToMap(ctx, file, map);
+                processed++;
+                file.gpx = addTrackToMap({ ctx, file, map });
             } else if (!file.url && file.gpx) {
+                processed++;
                 removeLayerFromMap(file, map);
             }
         });
-    }, [ctx.gpxFiles, ctx.setGpxFiles]);
+        if (processed > 0) {
+            ctx.setGpxFiles({ ...ctx.gpxFiles }); // finally
+        }
+    }, [ctx.gpxFiles]);
 };
 
 export default TrackLayer;
