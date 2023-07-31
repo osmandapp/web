@@ -17,9 +17,9 @@ export default function FavoritesMenu() {
     const [once, setOnce] = useState(false);
 
     useEffect(() => {
+        let res = [];
         if (ctx.favorites.groups && !once) {
             setOnce(true);
-            let res = [];
             ctx.favorites.groups.forEach((g) => {
                 if (g.hidden !== true) {
                     res.push(g);
@@ -42,9 +42,15 @@ export default function FavoritesMenu() {
             let r = enableGroups.concat(ng);
             setEnableGroups([...r]);
         } else {
-            if (!ctx.favorites?.groups) {
-                setOpenFavoritesGroups([]);
+            if (ctx.favorites?.groups) {
+                ctx.favorites.groups.forEach((g) => {
+                    if (g.hidden !== true) {
+                        res.push(g);
+                    }
+                });
             }
+            setOpenFavoritesGroups(res);
+
         }
     }, [ctx.favorites]);
 
