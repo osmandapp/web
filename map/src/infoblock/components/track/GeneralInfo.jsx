@@ -1,7 +1,7 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
@@ -439,20 +439,22 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                               </>
                           )}
                 </div>
-                {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                    <Button
-                        variant="contained"
-                        sx={{ ml: '-0.5px !important' }}
-                        className={styles.button}
-                        onClick={() => {
-                            ctx.selectedGpxFile.save = true;
-                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                        }}
-                    >
-                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                        Save to cloud
-                    </Button>
-                )}
+                {ctx.loginUser &&
+                    ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                    isEmptyTrack(ctx.selectedGpxFile) === false && (
+                        <Button
+                            variant="contained"
+                            sx={{ ml: '-0.5px !important' }}
+                            className={styles.button}
+                            onClick={() => {
+                                ctx.selectedGpxFile.save = true;
+                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                            }}
+                        >
+                            <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                            Save to cloud
+                        </Button>
+                    )}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                     <Button
                         variant="contained"
@@ -467,16 +469,18 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Edit Track
                     </Button>
                 )}
-                <Button
-                    variant="contained"
-                    className={styles.button}
-                    onClick={() => {
-                        downloadGpx().then();
-                    }}
-                >
-                    <Download fontSize="small" sx={{ mr: '3px' }} />
-                    Download GPX
-                </Button>
+                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                    <Button
+                        variant="contained"
+                        className={styles.button}
+                        onClick={() => {
+                            downloadGpx().then();
+                        }}
+                    >
+                        <Download fontSize="small" sx={{ mr: '3px' }} />
+                        Download GPX
+                    </Button>
+                )}
                 <MenuItem sx={{ ml: -2 }}>
                     <ListItemIcon>
                         <RouteOutlined fontSize="small" />

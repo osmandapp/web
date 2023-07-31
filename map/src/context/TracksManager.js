@@ -554,7 +554,7 @@ function deleteLocalTrack(ctx) {
         }
         ctx.setLocalTracks([...ctx.localTracks]);
     } else {
-        console.error('deleteLocalTrack unable to find track');
+        // console.debug('deleteLocalTrack unable to find track');
     }
 }
 
