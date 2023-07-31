@@ -7,7 +7,7 @@ import AddNewGroupDialog from '../AddNewGroupDialog';
 import _ from 'lodash';
 import AppContext from '../../../../context/AppContext';
 
-export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups, defaultGroup }) {
+export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups, defaultGroup, widthDialog }) {
     const ctx = useContext(AppContext);
 
     const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
@@ -112,9 +112,8 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
             <Box
                 sx={{
                     display: 'flex',
-                    width: 450,
-                    overflow: 'hidden',
-                    overflowX: 'scroll',
+                    maxWidth: `${widthDialog}px`,
+                    overflowX: 'auto',
                 }}
             >
                 {groupList.length > 0 &&

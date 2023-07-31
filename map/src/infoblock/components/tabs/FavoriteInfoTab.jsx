@@ -112,7 +112,7 @@ const FavoriteInfoTab = ({ width }) => {
                         </Grid>
                     )}
                 </Grid>
-                <Grid container sx={{ mt: -9 }}>
+                <Grid container>
                     <ListItemIcon
                         style={{
                             color: favorite.category && FavoritesManager.getColorGroup(ctx, favorite.category, false),

@@ -100,7 +100,8 @@ The table shows all the features that are included in the paid and free packages
 | [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-** - [Android Auto](https://www.android.com/auto/) function works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). (If you buy OsmAnd Pro for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that you can have Android Auto function by OsmAnd Pro subscription bought from another app store.)
+** - [Android Auto](https://www.android.com/auto/) function works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). (If you buy OsmAnd Pro for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.)
+
 
 ### Pro Features
 
@@ -180,8 +181,6 @@ To restore the purchase, please check what OsmAnd plan you bought.
  1. Clear the cache for Google Play (Huawei AppGallery).
  2. Clear the cache for OsmAnd.
  3. Restart the device and try to restore again.
-
-
 
 ## Giftcards
 

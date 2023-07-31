@@ -44,11 +44,20 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     };
 
     function getButtonOrientation() {
-        return height > 500 && width > 0 ? 'vertical' : 'horizontal';
+        // desktop
+        if (height > 500) {
+            return 'vertical';
+        } else {
+            // mobile
+            if (height < width) {
+                return 'horizontal';
+            }
+        }
+        return 'vertical';
     }
 
     return (
-        <div style={{ left: drawerWidth + 10, top: '55px' }} className={`${classes.buttongroup} ${'leaflet-bottom'}`}>
+        <div style={{ left: drawerWidth + 10, top: '68px' }} className={classes.buttongroup + ' leaflet-bottom'}>
             <div
                 className="leaflet-control leaflet-bar padding-container"
                 style={{ display: 'flex', flexDirection: orientation === 'vertical' ? 'column' : 'row' }}
@@ -108,7 +117,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                 )}
             </div>
             {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
-                <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} />
+                <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
             {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}

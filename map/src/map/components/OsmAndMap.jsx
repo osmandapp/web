@@ -17,11 +17,22 @@ import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
 
 const useStyles = makeStyles(() => ({
-    root: {
+    root: (props) => ({
         width: '100%',
         height: '100%',
+        position: 'fixed',
         '& .leaflet-control-layers': {
             border: '0px !important',
+        },
+        '& .leaflet-control-zoom': {
+            left: `${props.leftDrawerWidth}px`,
+        },
+        '& .leaflet-bottom ': {
+            bottom: `${props.mobile ? 50 + props.drawerRightHeight : 50}px`,
+            right: `${props.mobile ? 0 : props.drawerRightWidth}`,
+        },
+        '& .leaflet-control-scale-line': {
+            marginBottom: `${props.mobile ? -6 : 0}px`,
         },
         '& .leaflet-control-layers-toggle': {
             width: '0px !important',
@@ -49,7 +60,7 @@ const useStyles = makeStyles(() => ({
             color: 'black',
             borderRadius: '4px',
         },
-    },
+    }),
 }));
 
 // initial location on map
@@ -67,8 +78,8 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const OsmAndMap = ({ showZoom }) => {
-    const classes = useStyles();
+const OsmAndMap = ({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidth }) => {
+    const classes = useStyles({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidth });
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
@@ -119,7 +130,7 @@ const OsmAndMap = ({ showZoom }) => {
             <GraphLayer />
             <TileLayer
                 ref={tileLayer}
-                attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution='WEB OsmAnd 0.1 &amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 minZoom={1}
                 maxZoom={20}
                 maxNativeZoom={18}
@@ -129,8 +140,10 @@ const OsmAndMap = ({ showZoom }) => {
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            {showZoom && <ZoomControl position="bottomleft" />}
-            <ScaleControl imperial={false} position="bottomright" />
+            {mobile && <ZoomControl position="topright" />}
+            {!mobile && <ZoomControl position="bottomleft" />}
+            {mobile && <ScaleControl imperial={false} position="bottomleft" />}
+            {!mobile && <ScaleControl imperial={false} position="bottomright" />}
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );

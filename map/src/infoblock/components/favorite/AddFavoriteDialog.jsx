@@ -19,6 +19,7 @@ import FavoritesManager from '../../../context/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
 import TracksManager from '../../../context/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
     const menuStyles = contextMenuStyles();
@@ -36,6 +37,8 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
     const [favoriteShape, setFavoriteShape] = useState(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
     const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
+    const [width] = useWindowSize();
+    const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
     useEffect(() => {
         getIconCategories().then();
@@ -230,9 +233,10 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                     setFavoriteName={setFavoriteName}
                     favoriteGroup={favoriteGroup}
                     setErrorName={setErrorName}
+                    widthDialog={widthDialog}
                 />
                 {!addAddress && (
-                    <ListItemText>
+                    <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
                         <IconButton sx={{ mt: -1 }} onClick={() => setAddAddress(true)}>
                             <Add />
                         </IconButton>
@@ -244,10 +248,11 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                         favoriteAddress={favoriteAddress}
                         setFavoriteAddress={setFavoriteAddress}
                         setClose={setAddAddress}
+                        widthDialog={widthDialog}
                     />
                 )}
                 {!addDescription && (
-                    <ListItemText>
+                    <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
                         <IconButton sx={{ mt: -1 }} onClick={() => setAddDescription(true)}>
                             <Add />
                         </IconButton>
@@ -259,6 +264,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                         favoriteDescription={favoriteDescription}
                         setFavoriteDescription={setFavoriteDescription}
                         setClose={setAddDescription}
+                        widthDialog={widthDialog}
                     />
                 )}
                 {!ctx.addFavorite.editTrack && (
@@ -267,6 +273,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                         setFavoriteGroup={setFavoriteGroup}
                         groups={ctx.favorites.groups}
                         defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME}
+                        widthDialog={widthDialog}
                     />
                 )}
                 {ctx.addFavorite.editTrack && (
@@ -275,6 +282,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                         setFavoriteGroup={setFavoriteGroup}
                         groups={ctx.selectedGpxFile.pointsGroups}
                         defaultGroup={FavoritesManager.DEFAULT_GROUP_NAME_POINTS_GROUPS}
+                        widthDialog={widthDialog}
                     />
                 )}
                 <FavoriteIcon
@@ -285,11 +293,13 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
                     selectedGpxFile={ctx.selectedGpxFile}
                     add={true}
                     defaultIcon={MarkerOptions.DEFAULT_WPT_ICON}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteColor
                     favoriteColor={favoriteColor}
                     setFavoriteColor={setFavoriteColor}
                     defaultColor={MarkerOptions.DEFAULT_WPT_COLOR}
+                    widthDialog={widthDialog}
                 />
                 <FavoriteShape
                     color={favoriteColor}

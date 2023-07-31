@@ -15,6 +15,7 @@ export default function FavoriteIcon({
     selectedGpxFile,
     add,
     defaultIcon,
+    widthDialog,
 }) {
     const favoriteStyles = favoriteEditMenuStyles();
 
@@ -29,7 +30,7 @@ export default function FavoriteIcon({
                 sx={{
                     flexWrap: 'wrap',
                     display: 'flex',
-                    maxWidth: 400,
+                    maxWidth: `${widthDialog}px`,
                 }}
             >
                 {icons.map((icon, index) => {
@@ -126,8 +127,7 @@ export default function FavoriteIcon({
                 component="div"
                 sx={{
                     flexGrow: 1,
-                    width: 450,
-                    overflow: 'hidden',
+                    maxWidth: `${widthDialog}px`,
                 }}
             >
                 <Paper>
