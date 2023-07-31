@@ -197,7 +197,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary.md) | Display or hide Mapillary layer on the map |
 | <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide Contour lines on the map |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_hillshade_slope"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide Hillshade / Slope layer on the map |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide the Terrain (Hillshade / Slope) layer on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing.md) | Allows to display on the map all OSM notes |
 
 ### Navigation
