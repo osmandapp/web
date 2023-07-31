@@ -5,7 +5,7 @@ import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 
-export default function CloudTrackItem({ file }) {
+export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
@@ -74,6 +74,7 @@ export default function CloudTrackItem({ file }) {
                 <Tooltip title={<TrackInfo file={file} />}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
+                            {customIcon}
                             {TracksManager.getFileName(file)}
                         </Typography>
                     </ListItemText>

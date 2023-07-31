@@ -7,6 +7,7 @@ import LocalTrackItem from './tracks/LocalTrackItem';
 import PopperMenu from './tracks/PopperMenu';
 import AppContext from '../../context/AppContext';
 import TracksManager from '../../context/TracksManager';
+import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 
 const useStyles = makeStyles({
     group: {
@@ -125,7 +126,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
         <div>
             <MenuItem sx={{ ml: 3 }} className={classes.group} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
                 <ListItemIcon>
-                    <Visibility fontSize="small" />
+                    <Visibility fontSize="small" sx={{ mb: '3px' }} />
                 </ListItemIcon>
                 <ListItemText> Visible </ListItemText>
                 <Button
@@ -154,7 +155,14 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                         })}
                     {visibleTracks.cloud.length > 0 &&
                         visibleTracks.cloud.map((track, index) => {
-                            return <CloudTrackItem className={classes.item} key={'vis-cloud-' + index} file={track} />;
+                            return (
+                                <CloudTrackItem
+                                    key={'vis-cloud-' + index}
+                                    className={classes.item}
+                                    customIcon={<CloudOutlinedIcon fontSize="small" sx={{ mb: '-3px', mr: 1 }} />}
+                                    file={track}
+                                />
+                            );
                         })}
                 </div>
             </Collapse>

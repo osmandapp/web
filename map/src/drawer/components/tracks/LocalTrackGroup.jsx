@@ -90,7 +90,7 @@ export default function LocalTrackGroup() {
         <div className={styles.drawerItem}>
             <MenuItem sx={{ ml: 3 }} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
                 <ListItemIcon>
-                    <Folder fontSize="small" />
+                    <Folder fontSize="small" sx={{ mb: '4px' }} />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="inherit" noWrap>
