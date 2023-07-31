@@ -236,78 +236,26 @@ This functionality is especially useful in various cases:
 
 <TabItem value="android" label="Android">
 
-![Custom search Android](@site/static/img/search/search_custom_filter_andr.png) 
+![Custom search Android](@site/static/img/search/search_custom_filter_andr.png)   ![Custom search Android](@site/static/img/search/search_custom_filter_second_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)
+![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd allows you to create your Custom POI filters where you can collect needed POI from one/other categories.
+*Custom POI filter* includes sets of amenity categories consisting of relevant values. OsmAnd allows you to collect and combine the required POI types from one or more suggested categories.  
 
-Combine POI types from different categories. Tap switch to select all, tap left side to category selection. 
+In order to create your own filters to find the places you are looking for on the map, you need to select all the categories and subcategories of interest, [save](#save-custom-filters), and then [edit](#edit-an-existing-filter) if necessary. You may not save the filtered data, but only view it by tapping the *Show* button. But then all your actions will be canceled when you switch to other searches or exit the search tool.  
 
-Below screen there is info panel about number of selected categories. Below selected category name you find names/number of selected POI types.
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Custom search Android](@site/static/img/search/search_custom_filter_second_andr.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-SAVE it:
- 
-**iOS**: Save button - enter name
-
-![Custom POI save iOS](@site/static/img/search/custom_poi_save_ios.png)
-
-
-**Android**: can add filter , next blue "SAVE" button below of the screen -> enter name
-
-![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
-
-
-### Edit an existing filter
-
-
-From the main screen:
-1. Tap on the agnifying glass to open the Search screen
-2. Select the Categories tab
-3. Choose the custom category : screen with search results will open
-4. Tap on filter icon and then on Filter screen
-5. Tap on the 3-dot icon
-6. In the drop-down menu, select "Edit categories"
-
-
-### Delete Custom POI filter
-
-
-**iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
-
-![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)
-
-**Android**: you need to tap on Custom POI filter in the Categories list -> click to Filter button -> click to &#8285; -> Delete filter
-
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
-
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)  
+- Each amenity category contains a list of available generic values for POI types. 
+- You have the option to select or deselect them individually by tapping the field of the type you are interested in. 
+- *Select all* - to do this, select the toggle button. 
+- And refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.  
 
 
 | Amenity categories | Values for POI types | Description |
@@ -327,13 +275,61 @@ From the main screen:
 | 13. **<Translate android="true" ids="amenity_type_natural"/>** | <details><summary> 50 types </summary> _ </details> |  |
 | 14. **Nautical** | <details><summary> 41 types </summary> _ </details> |  |
 | 15. **<Translate android="true" ids="amenity_type_office"/>** | <details><summary> 39 types </summary> _ </details> |  |
-| 16. **Routes** | <ul><li> 4 types: </li><li> Route Article </li><li> Route Article Point </li><li> Route track </li><li> Route Track Point </li></ul> |  |
+| 16. **Routes** | <details><summary> 4 types </summary><ul><li> Route Article </li><li> Route Article Point </li><li> Route track </li><li> Route Track Point </li></ul></details> |  |
 | 17. **Service** | <details><summary> 111 types </summary> _ </details> |  |
 | 18. **<Translate android="true" ids="amenity_type_sport"/>** | <details><summary> 119 types </summary> _ </details> |  |
 | 19. **Store** | <details><summary> 156 types </summary> _ </details> |  |
 | 20. **<Translate android="true" ids="amenity_type_tourism"/>** | <details><summary> 103 types </summary> _ </details> |  |
 | 21. **<Translate android="true" ids="amenity_type_transportation"/>** | <details><summary> 97 types </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> And other... </li></ul> </details> | Points of interest related to different modes of transportation and related services. View the list [here](https://wiki.openstreetmap.org/wiki/Key:amenity#Transportation). |
-| 22. **User defined** | <ul><li> *1 type:* </li><li> User Defined Other Postcode </li></ul> |  |
-| 23. **Wikipedia** | <ul><li> *1 type:* </li><li> Wikipedia </li></ul> | You need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in. |
+| 22. **User defined** | <details><summary> 1 types </summary> User Defined Other Postcode </details> |  |
+| 23. **Wikipedia** | <details><summary> 1 types </summary> Wikipedia </details> | You need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in. |
 
-Each amenity category contains a list of available generic values for POI types. You have the option to select or deselect them individually by tapping the field of the type you are interested in. *Select all* - to do this, select the toggle button.  And refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.
+
+#### Save custom filters
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Custom POI save iOS](@site/static/img/search/custom_poi_save_ios.png)
+
+</TabItem>
+
+</Tabs>
+ 
+To save a custom filter, select everything you need, then:
+
+- Tap the *Show* button and select the *Save* button for iOS, or the button with the *icon indicating the save action* for Android. 
+- Enter a name for the new category.
+- Your filter will appear in the *Categories tab* list in the Search tool.  
+
+
+### Edit an existing filter
+
+From the main screen:
+1. Tap on the agnifying glass to open the Search screen
+2. Select the Categories tab
+3. Choose the custom category : screen with search results will open
+4. Tap on filter icon and then on Filter screen
+5. Tap on the 3-dot icon
+6. In the drop-down menu, select "Edit categories"
+
+
+### Delete Custom POI filter
+
+**iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
+
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)
+
+**Android**: you need to tap on Custom POI filter in the Categories list -> click to Filter button -> click to &#8285; -> Delete filter
+
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
+
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)  
+
