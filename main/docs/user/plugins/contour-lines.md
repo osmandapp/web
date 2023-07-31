@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Contour lines, Hillshade, Slope
+title: Contour lines and Terrain (Hillshade, Slope)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -61,10 +61,10 @@ For full information see [License](https://github.com/osmandapp/OsmAnd/blob/mast
 
 ## Setup 
 
-To display Contour lines, Hilshade, Slope data on the map:
+To display Contour lines and Terrain (Hilshade, Slope) data on the map:
 
 1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu.
-2. [Download](#download-maps) Contour lines and/or Hillshade or Slope maps.
+2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain maps.
 3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
 
 You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
