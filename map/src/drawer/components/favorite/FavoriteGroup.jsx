@@ -140,13 +140,17 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
         }
     }, [ctx.favorites, ctx.setFavorites]);
 
+    function getGroupSize(group) {
+        return group?.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? '' : group.name].points.length;
+    }
+
     return (
         <div key={'group' + index}>
             <MenuItem
                 sx={{ ml: 3 }}
                 divider
                 onClick={() => {
-                    markers.length > 0 && toggleFavoritesPointsOpen();
+                    getGroupSize(group) > 0 && toggleFavoritesPointsOpen();
                 }}
             >
                 <ListItemIcon style={{ color: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}>
@@ -168,7 +172,7 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
                         e.stopPropagation();
                     }}
                 />
-                {markers.length === 0 ? <></> : favoritesPointsOpen ? <ExpandLess /> : <ExpandMore />}
+                {getGroupSize(group) === 0 ? <></> : favoritesPointsOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             {loadingFavorites ? <LinearProgress /> : <></>}
             <Collapse in={favoritesPointsOpen} timeout="auto">

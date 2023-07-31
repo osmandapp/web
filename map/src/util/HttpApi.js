@@ -109,6 +109,13 @@ export async function apiGet(url, options = null) {
     }
 
     // parse query string from options.params (axios)
+    if (options?.params) {
+        Object.keys(options.params).forEach((k) => {
+            if (options.params[k] === undefined) {
+                delete options.params[k];
+            }
+        });
+    }
     const qs = '?' + new URLSearchParams(options?.params || {}).toString();
     const fullURL = url + (qs === '?' ? '' : qs);
 
