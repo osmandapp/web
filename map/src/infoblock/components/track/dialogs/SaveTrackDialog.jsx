@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -17,6 +17,8 @@ export default function SaveTrackDialog() {
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
     const [process, setProcess] = useState(false);
+
+    const cloudAutoSave = !!ctx.createTrack?.cloudAutoSave;
 
     const folders =
         ctx.tracksGroups?.map((group) => ({
@@ -103,6 +105,12 @@ export default function SaveTrackDialog() {
         return selectedGroup ? selectedGroup.files.find((f) => TracksManager.prepareName(f.name) === fileName) : false;
     }
 
+    useEffect(() => {
+        if (cloudAutoSave) {
+            confirmedSaveTrack();
+        }
+    }, []);
+
     const DialogUpdateTrack = ({ open, close }) => {
         return (
             <Dialog open={open} onClose={close}>
@@ -131,88 +139,98 @@ export default function SaveTrackDialog() {
 
     return (
         <div>
-            <Dialog open={true} onClose={() => closeDialog({ uploaded: false })}>
+            <Dialog open={true} onClose={() => cloudAutoSave === false && closeDialog({ uploaded: false })}>
                 {process ? <LinearProgress /> : <></>}
-                <DialogUpdateTrack open={existTrack} onClose={!existTrack} />
-                <DialogTitle>Save track</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>{`Are you sure you want to save the track to the cloud tracks?`}</DialogContentText>
-                    {error && (
-                        <Alert
-                            onClose={() => {
-                                setError(false);
-                            }}
-                            severity="warning"
-                        >
-                            You tried to save the wrong name!
-                        </Alert>
-                    )}
-                    {existError && (
-                        <Alert
-                            onClose={() => {
-                                setExistError(false);
-                            }}
-                            severity="warning"
-                        >
-                            Select other name!
-                        </Alert>
-                    )}
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        onChange={(e) => {
-                            setFileName(e.target.value);
-                        }}
-                        label="Name"
-                        id="fileName"
-                        type="fileName"
-                        fullWidth
-                        error={fileName === ''}
-                        helperText={fileName === '' ? 'Empty name!' : ' '}
-                        variant="standard"
-                        value={fileName ? fileName : ''}
-                    ></TextField>
-                    <Autocomplete
-                        value={folder}
-                        onChange={(event, newValue) => {
-                            setFolder(newValue);
-                        }}
-                        filterOptions={(options, params) => {
-                            const filtered = filter(options, params);
-                            const { inputValue } = params;
-                            const isExisting = options.some((option) => inputValue === option.title);
-                            if (inputValue !== '' && !isExisting) {
-                                filtered.push({
-                                    inputValue,
-                                    title: `Add "${inputValue}"`,
-                                });
-                            }
-                            return filtered;
-                        }}
-                        selectOnFocus
-                        clearOnBlur
-                        handleHomeEndKeys
-                        id="folder"
-                        options={folders}
-                        getOptionLabel={(option) => getFolderName(option)}
-                        renderOption={(props, option) => <li {...props}>{option.title}</li>}
-                        freeSolo
-                        renderInput={(params) => (
+                {cloudAutoSave && <DialogTitle>Uploading to cloud...</DialogTitle>}
+                {cloudAutoSave === false && (
+                    <>
+                        <DialogUpdateTrack open={existTrack} onClose={!existTrack} />
+                        <DialogTitle>Save track</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>
+                                Are you sure you want to save the track to the cloud tracks?
+                            </DialogContentText>
+                            {error && (
+                                <Alert
+                                    onClose={() => {
+                                        setError(false);
+                                    }}
+                                    severity="warning"
+                                >
+                                    You tried to save the wrong name!
+                                </Alert>
+                            )}
+                            {existError && (
+                                <Alert
+                                    onClose={() => {
+                                        setExistError(false);
+                                    }}
+                                    severity="warning"
+                                >
+                                    Select other name!
+                                </Alert>
+                            )}
                             <TextField
-                                {...params}
-                                label="Folder"
-                                error={folder == null}
-                                helperText={folder == null ? 'Empty folder!' : ' '}
+                                autoFocus
+                                margin="dense"
+                                onChange={(e) => {
+                                    setFileName(e.target.value);
+                                }}
+                                label="Name"
+                                id="fileName"
+                                type="fileName"
+                                fullWidth
+                                error={fileName === ''}
+                                helperText={fileName === '' ? 'Empty name!' : ' '}
+                                variant="standard"
+                                value={fileName ? fileName : ''}
+                            ></TextField>
+                            <Autocomplete
+                                value={folder}
+                                onChange={(event, newValue) => {
+                                    setFolder(newValue);
+                                }}
+                                filterOptions={(options, params) => {
+                                    const filtered = filter(options, params);
+                                    const { inputValue } = params;
+                                    const isExisting = options.some((option) => inputValue === option.title);
+                                    if (inputValue !== '' && !isExisting) {
+                                        filtered.push({
+                                            inputValue,
+                                            title: `Add "${inputValue}"`,
+                                        });
+                                    }
+                                    return filtered;
+                                }}
+                                selectOnFocus
+                                clearOnBlur
+                                handleHomeEndKeys
+                                id="folder"
+                                options={folders}
+                                getOptionLabel={(option) => getFolderName(option)}
+                                renderOption={(props, option) => <li {...props}>{option.title}</li>}
+                                freeSolo
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        label="Folder"
+                                        error={folder == null}
+                                        helperText={folder == null ? 'Empty folder!' : ' '}
+                                    />
+                                )}
                             />
-                        )}
-                    />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => closeDialog({ uploaded: false })}>Cancel</Button>
-                    <Button disabled={getFolderName(folder) === null || fileName === '' || error} onClick={saveTrack}>
-                        Save
-                    </Button>
-                </DialogActions>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={() => closeDialog({ uploaded: false })}>Cancel</Button>
+                            <Button
+                                disabled={getFolderName(folder) === null || fileName === '' || error}
+                                onClick={saveTrack}
+                            >
+                                Save
+                            </Button>
+                        </DialogActions>
+                    </>
+                )}
             </Dialog>
         </div>
     );

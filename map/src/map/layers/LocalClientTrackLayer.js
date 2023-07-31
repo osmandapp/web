@@ -172,7 +172,7 @@ export default function LocalClientTrackLayer() {
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
             delete ctx.createTrack.layers;
-            ctx.setCreateTrack({ ...ctx.createTrack });
+            ctx.setCreateTrack({ ...ctx.createTrack }); // stop-editor (cleanup closePrev)
         }
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.createTrack.edit) {
@@ -196,7 +196,7 @@ export default function LocalClientTrackLayer() {
                 savedFile = ctxTrack;
             }
             saveResult(savedFile, false);
-            ctx.setCreateTrack(null);
+            ctx.setCreateTrack(null); // stop-editor
         }
     }, [ctx.createTrack]);
 
@@ -279,7 +279,7 @@ export default function LocalClientTrackLayer() {
             layer.on('click', () => {
                 if (!ctx.createTrack || !ctx.createTrack.enable) {
                     ctx.setCreateTrack({
-                        enable: true,
+                        enable: true, // start-editor
                         edit: true,
                     });
                     track.analysis = TracksManager.prepareAnalysis(track.analysis);

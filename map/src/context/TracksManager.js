@@ -322,11 +322,13 @@ function hasGeo(track) {
 // overwrite flag used later when re-uploading (save to cloud)
 // set type of current object, enable editor with "edit" flag
 function openNewLocalTrack(ctx, track, overwrite = false) {
+    // set parent's too
     track.selected = true;
-    track.overwrite = overwrite;
     ctx.setSelectedGpxFile({ ...track });
-    ctx.setCreateTrack({ enable: true, edit: true });
+
     ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
+
+    ctx.setCreateTrack({ enable: true, edit: true, cloudAutoSave: overwrite }); // start-editor
 }
 
 function closeCloudTrack(ctx, track) {
@@ -502,7 +504,7 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
 // download it and use as current Cloud track
 async function downloadAfterUpload(ctx, file) {
     const createState = {
-        enable: false,
+        enable: false, // stop-editor
     };
 
     // cleanup
@@ -766,7 +768,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
 function createTrack(ctx, latlng) {
     let createState = {
-        enable: true,
+        enable: true, // start-editor
     };
     if (latlng) {
         createState.latlng = latlng;
