@@ -225,6 +225,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         sx={{
                             mt: -2,
                             maxHeight: 200,
+                            maxWidth: 350,
                             fontSize: '0.875rem',
                             display: 'inline-block',
                             textOverflow: 'ellipsis',
@@ -288,7 +289,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             <IconButton
                                 variant="contained"
                                 type="button"
-                                sx={{ mb: '5px' }}
+                                sx={{ mb: '5px', maxHeight: 20 }}
                                 onClick={() => {
                                     setEnableEditName(true);
                                 }}
