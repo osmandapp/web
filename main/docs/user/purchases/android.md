@@ -83,6 +83,7 @@ The table shows all the features that are included in the paid and free packages
 | [Hourly map updates](../personal/maps.md#osmand-live)<br/> (1 hour delay) | - | - | ✔ |
 | **[Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [3D Relief](https://osmand.net/docs/user/plugins/contour-lines/#3d-relief) | - | - | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
@@ -111,14 +112,15 @@ At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | allowing to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
-| [Live Updates](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | possibility to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing the color and width of the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
-| [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection) |
-| 3D Relief | Own and observe the scale model of your neighborhood or the whole continent. |
+| [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows you to calculate an altitude graph for your track (Internet connection required) |
+| [3D Relief](https://osmand.net/docs/user/plugins/contour-lines/#3d-relief) | allows you to own and observe a scale model of your neighborhood or an whole continent |
+
 
 ### How to buy
 
