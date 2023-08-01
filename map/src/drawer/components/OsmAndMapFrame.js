@@ -15,6 +15,7 @@ const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
     const MOBILE_SCREEN_SIZE = 1000;
+    const MAIN_MENU_OPEN_SCREEN_SIZE = 1200;
     const LEFT_DRAWER_SIZE = 320;
 
     const [mainMenuOpen, setMainMenuOpen] = useState(false);
@@ -38,13 +39,8 @@ const OsmAndMapFrame = () => {
 
     //screen version
     useEffect(() => {
-        if (width && width < MOBILE_SCREEN_SIZE) {
-            setMobile(true);
-            setMainMenuOpen(false);
-        } else {
-            setMobile(false);
-            setMainMenuOpen(true);
-        }
+        setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
+        setMainMenuOpen(!!(width && width >= MAIN_MENU_OPEN_SCREEN_SIZE));
     }, [width, hideContextMenu]);
 
     //main menu size
