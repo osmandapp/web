@@ -215,6 +215,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     const Description = ({ desc }) => {
+        const html = desc.replaceAll('target="_self"', 'target="_blank"');
         return (
             <ListItemText>
                 <Box display="flex" alignItems="end">
@@ -230,7 +231,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             overflow: 'hidden !important',
                         }}
                     >
-                        <div dangerouslySetInnerHTML={{ __html: `${desc}` }} />
+                        <div dangerouslySetInnerHTML={{ __html: html }} />
                     </Typography>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                         <IconButton onClick={() => setOpenDescDialog(true)}>
