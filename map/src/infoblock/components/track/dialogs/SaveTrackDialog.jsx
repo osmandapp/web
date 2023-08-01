@@ -7,12 +7,13 @@ import AppContext from '../../../../context/AppContext';
 import TracksManager from '../../../../context/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
+import { prepareFileName } from '../../../../util/Utils';
 
 export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
 
     const [folder, setFolder] = useState(getOldGroup);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile.name);
+    const [fileName, setFileName] = useState(prepareFileName(ctx.selectedGpxFile.name));
     const [error, setError] = useState(false);
     const [existError, setExistError] = useState(false);
     const [existTrack, setExistTrack] = useState(false);
@@ -57,13 +58,17 @@ export default function SaveTrackDialog() {
     const filter = createFilterOptions();
 
     async function saveTrack() {
-        if (validName(fileName)) {
+        const preparedName = prepareFileName(fileName);
+        if (preparedName !== fileName) {
+            setFileName(preparedName);
+        }
+        if (validName(preparedName)) {
             setProcess(true);
-            if (!hasExistTrack(fileName, folder)) {
+            if (!hasExistTrack(preparedName, folder)) {
                 const uploaded = !!(await TracksManager.saveTrack(
                     ctx,
                     getFolderName(folder),
-                    fileName,
+                    preparedName,
                     TracksManager.GPX_FILE_TYPE
                 ));
                 closeDialog({ uploaded });
@@ -76,12 +81,16 @@ export default function SaveTrackDialog() {
     }
 
     async function confirmedSaveTrack() {
-        if (validName(fileName)) {
+        const preparedName = prepareFileName(fileName);
+        if (preparedName !== fileName) {
+            setFileName(preparedName);
+        }
+        if (validName(preparedName)) {
             setProcess(true);
             const uploaded = !!(await TracksManager.saveTrack(
                 ctx,
                 getFolderName(folder),
-                fileName,
+                preparedName,
                 TracksManager.GPX_FILE_TYPE
             ));
             closeDialog({ uploaded });
@@ -90,11 +99,11 @@ export default function SaveTrackDialog() {
         }
     }
 
-    function validName(fileName) {
-        return fileName !== '' && fileName.trim().length > 0;
+    function validName(name) {
+        return name !== '' && name.trim().length > 0;
     }
 
-    function hasExistTrack(fileName, folder) {
+    function hasExistTrack(name, folder) {
         const selectedGroup = ctx.tracksGroups?.find((g) => {
             if (folder.title) {
                 return g.name === folder.title;
@@ -102,7 +111,7 @@ export default function SaveTrackDialog() {
                 return g.name === folder;
             }
         });
-        return selectedGroup ? selectedGroup.files.find((f) => TracksManager.prepareName(f.name) === fileName) : false;
+        return selectedGroup ? selectedGroup.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
     }
 
     useEffect(() => {
