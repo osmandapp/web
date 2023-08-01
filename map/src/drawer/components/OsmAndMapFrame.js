@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Drawer, Toolbar, Box, Alert } from '@mui/material';
 import { IconButton, AppBar } from '@mui/material';
-import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu } from '@mui/icons-material';
+import { Menu } from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
 import { Outlet } from 'react-router-dom';
@@ -16,12 +16,12 @@ const OsmAndMapFrame = () => {
 
     const MOBILE_SCREEN_SIZE = 1000;
     const MAIN_MENU_OPEN_SCREEN_SIZE = 1200;
-    const LEFT_DRAWER_SIZE = 320;
+    const MAIN_MENU_SIZE = 320;
 
     const [mainMenuOpen, setMainMenuOpen] = useState(false);
     const [mainMenuWidth, setMainMenuWidth] = useState(0);
-    const [showContextMenu, setShowContextMenu] = useState(false);
-    const [hideContextMenu, setHideContextMenu] = useState(false);
+    const [showInfoBlock, setShowInfoBlock] = useState(false);
+    const [infoBlockOpen, setInfoBlockOpen] = useState(true);
     const [clearState, setClearState] = useState(false);
     const [resizing, setResizing] = useState(false);
     const [drawerRightHeight, setDrawerRightHeight] = useState(0);
@@ -29,24 +29,20 @@ const OsmAndMapFrame = () => {
     const [mobile, setMobile] = useState(false);
     const [width, height] = useWindowSize();
 
-    const toggleLeftDrawer = () => {
+    const toggleMainMenu = () => {
         setMainMenuOpen(!mainMenuOpen);
-    };
-
-    const toggleContextMenu = () => {
-        setHideContextMenu(!hideContextMenu);
     };
 
     //screen version
     useEffect(() => {
         setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
         setMainMenuOpen(!!(width && width >= MAIN_MENU_OPEN_SCREEN_SIZE));
-    }, [width, hideContextMenu]);
+    }, [width]);
 
     //main menu size
     useEffect(() => {
         if (mainMenuOpen && !mobile) {
-            setMainMenuWidth(LEFT_DRAWER_SIZE);
+            setMainMenuWidth(MAIN_MENU_SIZE);
         } else {
             setMainMenuWidth(0);
         }
@@ -64,20 +60,10 @@ const OsmAndMapFrame = () => {
                     <Box>
                         <AppBar position="static">
                             <Toolbar variant="dense">
-                                <IconButton onClick={toggleLeftDrawer} edge="start" sx={{ mr: 2 }}>
+                                <IconButton onClick={toggleMainMenu} edge="start" sx={{ mr: 2 }}>
                                     <Menu />
                                 </IconButton>
                                 <HeaderInfo mainMenuWidth={mainMenuWidth} />
-                                {ctx.currentObjectType && hideContextMenu && !mobile && (
-                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
-                                        <KeyboardDoubleArrowLeft />
-                                    </IconButton>
-                                )}
-                                {ctx.currentObjectType && !hideContextMenu && !mobile && (
-                                    <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
-                                        <KeyboardDoubleArrowRight />
-                                    </IconButton>
-                                )}
                             </Toolbar>
                         </AppBar>
                     </Box>
@@ -94,9 +80,12 @@ const OsmAndMapFrame = () => {
                     />
                     <GeneralPanelButtons
                         mainMenuWidth={mainMenuWidth}
-                        showContextMenu={showContextMenu}
-                        setShowContextMenu={setShowContextMenu}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        infoBlockOpen={infoBlockOpen}
+                        setInfoBlockOpen={setInfoBlockOpen}
                         clearState={clearState}
+                        mobile={mobile}
                     />
                 </Box>
             </div>
@@ -117,9 +106,9 @@ const OsmAndMapFrame = () => {
                     <InformationBlock
                         mobile={mobile}
                         setDrawerWidth={setDrawerRightWidth}
-                        hideContextMenu={hideContextMenu}
-                        showContextMenu={showContextMenu}
-                        setShowContextMenu={setShowContextMenu}
+                        infoBlockOpen={infoBlockOpen}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
                         setClearState={setClearState}
                         heightScreen={height}
                     />
@@ -143,9 +132,9 @@ const OsmAndMapFrame = () => {
                     <InformationBlock
                         mobile={mobile}
                         setDrawerWidth={setDrawerRightWidth}
-                        hideContextMenu={hideContextMenu}
-                        showContextMenu={showContextMenu}
-                        setShowContextMenu={setShowContextMenu}
+                        infoBlockOpen={infoBlockOpen}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
                         setClearState={setClearState}
                         heightScreen={height}
                         resizing={resizing}
@@ -159,18 +148,18 @@ const OsmAndMapFrame = () => {
                 <Drawer
                     variant="temporary"
                     open={mainMenuOpen}
-                    onClose={toggleLeftDrawer}
+                    onClose={toggleMainMenu}
                     hideBackdrop={!mobile}
                     disableEnforceFocus
                     PaperProps={{
                         sx: {
                             boxSizing: 'border-box',
-                            width: LEFT_DRAWER_SIZE,
+                            width: MAIN_MENU_SIZE,
                         },
                     }}
                     sx={{ ml: 500 }}
                 >
-                    <OsmAndDrawer toggleDrawer={toggleLeftDrawer} />
+                    <OsmAndDrawer toggleDrawer={toggleMainMenu} />
                 </Drawer>
             }
             <Outlet />

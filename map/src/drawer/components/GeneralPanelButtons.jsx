@@ -18,7 +18,15 @@ const useStyles = makeStyles({
         height: '10px',
     },
 });
-export default function GeneralPanelButtons({ mainMenuWidth, showContextMenu, setShowContextMenu, clearState }) {
+export default function GeneralPanelButtons({
+    mainMenuWidth,
+    showInfoBlock,
+    setShowInfoBlock,
+    infoBlockOpen,
+    setInfoBlockOpen,
+    clearState,
+    mobile,
+}) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const StyledInput = styled('input')({
@@ -108,11 +116,14 @@ export default function GeneralPanelButtons({ mainMenuWidth, showContextMenu, se
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
-                {showContextMenu && (
+                {showInfoBlock && (
                     <PanelButtons
                         orientation={orientation}
-                        setShowContextMenu={setShowContextMenu}
+                        setShowInfoBlock={setShowInfoBlock}
+                        infoBlockOpen={infoBlockOpen}
+                        setInfoBlockOpen={setInfoBlockOpen}
                         clearState={clearState}
+                        mobile={mobile}
                     />
                 )}
             </div>
