@@ -45,9 +45,10 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only four of them require purchase of OsmAnd+ or OsmAnd Pro license before use:  
+Most plugins are available for free, only four of them require purchase of [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license before use:  
 
-- [Contour lines and Terrain](../plugins/contour-lines.md)  
+- [Contour lines and Terrain (Hillshade, Slope)](../plugins/contour-lines.md) 
+- 3D Relief 
 - [Wikipedia](../plugins/wikipedia.md)  
 - [Nautical map view](../plugins/nautical-charts.md)  
 - [Weather](../plugins/weather.md)  
@@ -66,6 +67,7 @@ OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**,
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
 | [Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+| 🤖 [3D Relief](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
