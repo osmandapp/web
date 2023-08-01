@@ -77,6 +77,7 @@ The table shows all the features that are included in the paid and free packages
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps.md#update-maps)<br/>Once a month (15 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
@@ -114,12 +115,12 @@ At the moment, the Pro subscription has the following features:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map) |
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | possibility to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | allows you to own and observe a scale model of your neighborhood or an whole continent |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing the color and width of the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
 | [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows you to calculate an altitude graph for your track (Internet connection required) |
-| [3D Relief](https://osmand.net/docs/user/plugins/contour-lines/#3d-relief) | allows you to own and observe a scale model of your neighborhood or an whole continent |
 
 
 ### How to buy

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Contour lines and Terrain (Hillshade, Slope)
+title: Contour lines and Terrain (Hillshade, Slope, 3D Relief)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,6 +11,9 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 Terrain information, such as **Contour lines**, **Hillshade** and **Slope**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
@@ -23,11 +26,12 @@ Each provided by this plugin map is an independent layer that appears above or b
 The Contour Lines plugin is a paid feature of the OsmAnd app.  
 :::
 
-Contour lines consists of 3 map types:  
+Contour lines consists of next map types:  
 
-- **Contour lines**  - [vector](../map/vector-maps.md) map represented in **feet** or **meters**.
-- **Hillshade** - [raster](../map/raster-maps.md) map layer.
-- **Slopes** - [raster](../map/raster-maps.md) map layer.
+- **Contour lines**  - [vector](../map/vector-maps.md) map represented in **feet** or **meters** (Android and iOS).
+- **Hillshade** - [raster](../map/raster-maps.md) map layer (iOS only).
+- **Slopes** - [raster](../map/raster-maps.md) map layer (iOS only).
+- **Terrain map** - special relief [vector](../map/vector-maps.md) map (Android only).
 
 <Tabs groupId="operating-systems">
 
@@ -61,19 +65,25 @@ For full information see [License](https://github.com/osmandapp/OsmAnd/blob/mast
 
 ## Setup 
 
-To display Contour lines and Terrain (Hilshade, Slope) data on the map:
+To display **Contour lines** and **Terrain (Hilshade, Slope)** data on the map:
 
-1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu.
+1. Purchase: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu.
 2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain maps.
 3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
 
 You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
+To display **3D Relief** (Android only):
+
+1. Purchase: [OsmAnd Pro purchases plan](../purchases/android.md#free-and-paid-features) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase).
+2. [Download](#download-maps) Terrain maps.
+3. [Enable and adjust](#configure-map-view) 3D Relief for the map view.
+
 ## Download Maps
 
 ### How to download  
 
-To download **Contour lines**, **Hillshade**, and/or **Slope** for a specific area, do the following:
+To download **Contour lines**, **Hillshade**(iOS), **Slope**(iOS), **Terrain maps**(Android) for a specific area, do the following:
 
 <Tabs groupId="operating-systems">
 
@@ -150,7 +160,7 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 <TabItem value="android" label="Android">
 
-To enable contour lines layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
+To enable contour lines layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/> → <Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
@@ -168,18 +178,18 @@ To enable contour lines layer go to [*<Translate android="true" ids="shared_stri
 <TabItem value="ios" label="iOS">
 
 
-To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_settings_style"/>* section and scroll to **<Translate ios="true" ids="srtm_plugin_name"/>** and toggle on.   
+To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_widget_renderer"/>* section and scroll to **<Translate ios="true" ids="srtm_plugin_name"/>** and toggle on.   
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
 #### APPEARANCE SETTINGS
 
 - *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
-- *<Translate ios="true" ids="display_starting_at_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
-- *<Translate ios="true" ids="map_settings_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
-- *<Translate ios="true" ids="map_settings_line_width"/>* - choice of width options for displaying Contour lines on the map.
+- *Display starting at zoom level* - minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
+- *<Translate ios="true" ids="srtm_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
+- *<Translate ios="true" ids="rendering_attr_depthContourWidth_name"/>* - choice of width options for displaying Contour lines on the map.
 - *<Translate ios="true" ids="map_settings_line_density"/>* - choice of density options for displaying Contour lines on the map: Low, Medium, High (the map loads slower if the density is High).
-- *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
+- *<Translate ios="true" ids="available_maps"/>* - shows previously unloaded contour line maps either for the selected area on the map or for the nearest areas relative to the current center of the map displayed on the screen.
 
 
 
@@ -226,12 +236,12 @@ To enable Hillshade layer go to [*<Translate ios="true" ids="shared_string_menu,
 #### APPEARANCE SETTINGS
 
 - *<Translate ios="true" ids="toggle_hillshade"/>* - toggle on/off Terrain on the map.
-- *<Translate ios="true" ids="map_settings_hillshade"/>* / *<Translate ios="true" ids="gpx_slope"/>* - choice to display one of the relief data types: either Hillshade or Slope.
+- *<Translate ios="true" ids="shared_string_hillshade"/>* / *<Translate ios="true" ids="shared_string_slope"/>* - choice to display one of the relief data types: either Hillshade or Slope.
 - *<Translate ios="true" ids="map_settings_layer_transparency"/>* - percentage scale to determine the degree of transparency the shadow used to display hills.
-- *<Translate ios="true" ids="res_zoom_levels"/>* - the minimum and maximum options to tap, to select:
+- *<Translate ios="true" ids="shared_string_zoom_levels"/>* - the minimum and maximum options to tap, to select:
     - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Hillshade will be visible on the map. 
     - the maximum zoom level at which it should disappear.
-- *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
+- *<Translate ios="true" ids="available_maps"/>* - shows previously unloaded Hillshade maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
 
 </TabItem>
@@ -281,13 +291,13 @@ To enable slope layer go to [*<Translate ios="true" ids="shared_string_menu,conf
 #### APPEARANCE SETTINGS
 
 - *<Translate ios="true" ids="toggle_hillshade"/>* - toggle on/off Terrain on the map.  
-- *<Translate ios="true" ids="map_settings_hillshade"/>* / *<Translate ios="true" ids="gpx_slope"/>* - choice to display one of the terrain data types: either Hillshade, or Slope.
+- *<Translate ios="true" ids="shared_string_hillshade"/>* / *<Translate ios="true" ids="shared_string_slope"/>* - choice to display one of the terrain data types: either Hillshade, or Slope.
 - *<Translate ios="true" ids="map_settings_layer_transparency"/>* - percentage scale to determine the degree of transparency the colours used to display slope. 
-- *<Translate ios="true" ids="res_zoom_levels"/>* - minimum and maximum options to tap, to select:
+- *<Translate ios="true" ids="shared_string_zoom_levels"/>* - minimum and maximum options to tap, to select:
     - the minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Slope angle colours are expected to be viewable on the map. 
     - the maximum zoom level at which the colours are expected to disappear.
-- *<Translate ios="true" ids="map_settings_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
-- *<Translate ios="true" ids="osmand_live_available_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
+- *<Translate ios="true" ids="shared_string_legend"/>* - the legend of colours to show the angle range at which the steepness of the slope can differ. For more details, refer to [Wikipedia](https://en.m.wikipedia.org/wiki/Grade_(slope)).
+- *<Translate ios="true" ids="available_maps"/>* - shows previously unloaded Slope maps either for the selected area on the map or for geographical location relative to the current center of the map displayed on the screen.  
 
 
 </TabItem>
@@ -302,6 +312,33 @@ Each colour corresponds to an angle of deviation from the plane.
 ![Slope colour legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
 
 :::
+
+
+### 3D Relief
+
+3D raised relief maps are a beautiful three-dimensional representation of the world on your device screen. It works offline and you can image relief 3D on [OsmAnd vector maps](../map/vector-maps.md), any [raster maps](../map/raster-maps.md#select-raster-maps) as [Map Source](../map/raster-maps.md#main) or [Underlay/Overlay](../map/raster-maps.md#overlay-layer). It's [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+To enable _3D Relief_ go to [*<Translate Android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*](../map/configure-map-menu.md), find the *"3D Relief"* button. Tap it and make enabled it.  
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android.png) 
+
+Next, to download [Terrain map](../plugins/contour-lines.md#how-to-download) of needed regions. After that you can see the next map visualisation:
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png)
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
 
 ### Combine layer types
 
