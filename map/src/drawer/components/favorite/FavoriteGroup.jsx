@@ -79,36 +79,38 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
     }
 
     async function addGroupToMap(setProgressVisible, addToMap) {
-        setProgressVisible(true);
-        let newFavoriteFiles = Object.assign({}, ctx.favorites);
-        if (ctx.favorites[group.name]?.url) {
-            newFavoriteFiles[group.name].addToMap = addToMap;
-            ctx.setFavorites({ ...newFavoriteFiles });
-        } else {
-            newFavoriteFiles = await getFavorites(addToMap, newFavoriteFiles);
-            if (addToMap) {
-                let newSelectedGpxFile = {};
-                newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
-                newSelectedGpxFile.nameGroup = group.name;
-                if (!ctx.selectedGpxFile) {
-                    ctx.selectedGpxFile = {};
-                }
-                if (ctx.selectedGpxFile.markerCurrent) {
-                    newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-                }
-                ctx.setSelectedGpxFile(newSelectedGpxFile);
+        if (FavoritesManager.getGroupSize(group) > 0) {
+            setProgressVisible(true);
+            let newFavoriteFiles = Object.assign({}, ctx.favorites);
+            if (ctx.favorites[group.name]?.url) {
+                newFavoriteFiles[group.name].addToMap = addToMap;
                 ctx.setFavorites({ ...newFavoriteFiles });
+            } else {
+                newFavoriteFiles = await getFavorites(addToMap, newFavoriteFiles);
+                if (addToMap) {
+                    let newSelectedGpxFile = {};
+                    newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
+                    newSelectedGpxFile.nameGroup = group.name;
+                    if (!ctx.selectedGpxFile) {
+                        ctx.selectedGpxFile = {};
+                    }
+                    if (ctx.selectedGpxFile.markerCurrent) {
+                        newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
+                    }
+                    ctx.setSelectedGpxFile(newSelectedGpxFile);
+                    ctx.setFavorites({ ...newFavoriteFiles });
+                }
             }
-        }
 
-        let savedVisibleFav = JSON.parse(localStorage.getItem('visibleFav'));
-        if (savedVisibleFav) {
-            savedVisibleFav.push(group.name);
-            localStorage.setItem('visibleFav', JSON.stringify(savedVisibleFav));
-        } else {
-            localStorage.setItem('visibleFav', JSON.stringify([group.name]));
+            let savedVisibleFav = JSON.parse(localStorage.getItem('visibleFav'));
+            if (savedVisibleFav) {
+                savedVisibleFav.push(group.name);
+                localStorage.setItem('visibleFav', JSON.stringify(savedVisibleFav));
+            } else {
+                localStorage.setItem('visibleFav', JSON.stringify([group.name]));
+            }
+            setProgressVisible(false);
         }
-        setProgressVisible(false);
     }
 
     useEffect(() => {
@@ -122,7 +124,7 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
                 };
                 markerList.push(marker);
             });
-        } else if (favoritesPointsOpen && markers.length === 0) {
+        } else if (favoritesPointsOpen && markers.length === 0 && FavoritesManager.getGroupSize(group)) {
             getFavoritesWithoutLayers().then();
         }
         setMarkers(markerList);
@@ -140,17 +142,13 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
         }
     }, [ctx.favorites, ctx.setFavorites]);
 
-    function getGroupSize(group) {
-        return group?.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? '' : group.name].points.length;
-    }
-
     return (
         <div key={'group' + index}>
             <MenuItem
                 sx={{ ml: 3 }}
                 divider
                 onClick={() => {
-                    getGroupSize(group) > 0 && toggleFavoritesPointsOpen();
+                    FavoritesManager.getGroupSize(group) > 0 && toggleFavoritesPointsOpen();
                 }}
             >
                 <ListItemIcon style={{ color: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}>
@@ -161,18 +159,30 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
                         {group.name}
                     </Typography>
                 </ListItemText>
-                <Switch
-                    checked={
-                        ctx.favorites[group.name]?.addToMap === true && enableGroups.some((e) => e.name === group.name)
-                    }
-                    onChange={(e) => {
-                        enableLayerWithGroups(setLoadingFavorites, e.target.checked).then();
-                    }}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                    }}
-                />
-                {getGroupSize(group) === 0 ? <></> : favoritesPointsOpen ? <ExpandLess /> : <ExpandMore />}
+                <Typography variant="body2" color="textSecondary">
+                    {FavoritesManager.getGroupSize(group) > 0 ? FavoritesManager.getGroupSize(group) : ''}
+                </Typography>
+                {FavoritesManager.getGroupSize(group) > 0 && (
+                    <Switch
+                        checked={
+                            ctx.favorites[group.name]?.addToMap === true &&
+                            enableGroups.some((e) => e.name === group.name)
+                        }
+                        onChange={(e) => {
+                            enableLayerWithGroups(setLoadingFavorites, e.target.checked).then();
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                        }}
+                    />
+                )}
+                {FavoritesManager.getGroupSize(group) === 0 ? (
+                    <></>
+                ) : favoritesPointsOpen ? (
+                    <ExpandLess />
+                ) : (
+                    <ExpandMore />
+                )}
             </MenuItem>
             {loadingFavorites ? <LinearProgress /> : <></>}
             <Collapse in={favoritesPointsOpen} timeout="auto">
