@@ -189,7 +189,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    return group && group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? '' : group.name]?.points.length;
+    return group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? '' : group.name]?.points.length;
 }
 
 const FavoritesManager = {

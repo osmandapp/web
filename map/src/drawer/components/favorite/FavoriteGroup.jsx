@@ -124,7 +124,7 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
                 };
                 markerList.push(marker);
             });
-        } else if (favoritesPointsOpen && markers.length === 0 && FavoritesManager.getGroupSize(group)) {
+        } else if (favoritesPointsOpen && markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
             getFavoritesWithoutLayers().then();
         }
         setMarkers(markerList);
