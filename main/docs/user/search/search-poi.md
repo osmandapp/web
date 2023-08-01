@@ -97,12 +97,30 @@ To search for POIs by categories directly on the map, you need to select the req
 
 </Tabs>
 
+<!--
+The "Search by POI Categories" tool in the OpenStreetMap-based navigation application provides the user with the ability to quickly find locations of interest and objects classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow the user to refine the search results by selecting different values for additional characteristics.
+
+How it works:
+1. Category Selection: The user selects a POI category of interest, such as restaurants, hotels, stores, etc., from the provided list of categories.
+2. Characteristic Filters: After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, the user can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
+3. Applying Filters: The user selects the desired values in the filters, then the application applies these filters to the search results to show only those properties that match the specified characteristics.
+4. Displaying results: After applying filters, the application displays a list of POIs matching the category and characteristics set. The results can be presented on a map with markers or as a list with detailed information about each POI.
+
+Benefits:
+- User Customization: Feature filters allow users to customize searches to meet their specific needs and preferences.
+- Refined results: Filters help refine search results, making them more relevant and accurate.
+- Multiple Categories: The OpenStreetMap database has an extensive set of POI categories, allowing users to find sites of different types and categories.
+
+The "Search by POI Category" tool in the OpenStreetMap-based navigation application provides convenience and flexibility in finding locations of interest, providing users with accurate results and many options to customize their search.
+
+
+______
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
 
 OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
 
 Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.   
-
+-->
 
 ### Filters
 
@@ -323,13 +341,28 @@ From the main screen:
 
 ### Delete Custom POI filter
 
-**iOS**: button "<Translate ios="true" ids="delete_custom_categories"/>" in [Actions buttons](../search/search-poi#how-to-use)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 ![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)
 
-**Android**: you need to tap on Custom POI filter in the Categories list -> click to Filter button -> click to &#8285; -> Delete filter
+</TabItem>
 
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_android.png) ![Custom POI delete Android](@site/static/img/search/custom_poi_delete_1_android.png)
+</Tabs>
 
-![Custom POI delete Android](@site/static/img/search/custom_poi_delete_2_android.png)  
+You can only delete categories that were created using filters or custom search.
+
+- Go to the [Categories tab](#categories-poi-search) and select the required one.
+- In the field next to *Show on Map*, tap the icon representing the *filter*.
+- In the Filters menu, tap the *three dots* &#8285; located in the upper right corner of the screen.
+- Select **Delete Filter**.
+- You cannot undo the deletion. 
+
 
