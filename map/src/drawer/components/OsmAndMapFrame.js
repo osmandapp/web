@@ -17,7 +17,8 @@ const OsmAndMapFrame = () => {
     const MOBILE_SCREEN_SIZE = 900;
     const LEFT_DRAWER_SIZE = 320;
 
-    const [drawerLeftOpen, setDrawerLeftOpen] = useState(false);
+    const [mainMenuOpen, setMainMenuOpen] = useState(false);
+    const [mainMenuWidth, setMainMenuWidth] = useState(0);
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [hideContextMenu, setHideContextMenu] = useState(false);
     const [clearState, setClearState] = useState(false);
@@ -28,27 +29,32 @@ const OsmAndMapFrame = () => {
     const [width, height] = useWindowSize();
 
     const toggleLeftDrawer = () => {
-        let res = !drawerLeftOpen;
-        setDrawerLeftOpen(res);
+        setMainMenuOpen(!mainMenuOpen);
     };
 
     const toggleContextMenu = () => {
         setHideContextMenu(!hideContextMenu);
     };
 
-    let leftDrawerWidth = mobile ? 0 : LEFT_DRAWER_SIZE;
-
+    //screen version
     useEffect(() => {
         if (width && width < MOBILE_SCREEN_SIZE) {
-            leftDrawerWidth = 0;
             setMobile(true);
+            setMainMenuOpen(false);
         } else {
-            if (showContextMenu && !hideContextMenu) {
-                leftDrawerWidth = LEFT_DRAWER_SIZE;
-            }
             setMobile(false);
+            setMainMenuOpen(true);
         }
     }, [width, hideContextMenu]);
+
+    //main menu size
+    useEffect(() => {
+        if (mainMenuOpen && !mobile) {
+            setMainMenuWidth(LEFT_DRAWER_SIZE);
+        } else {
+            setMainMenuWidth(0);
+        }
+    }, [mainMenuOpen]);
 
     return (
         <>
@@ -62,12 +68,10 @@ const OsmAndMapFrame = () => {
                     <Box>
                         <AppBar position="static">
                             <Toolbar variant="dense">
-                                {mobile && (
-                                    <IconButton onClick={toggleLeftDrawer} edge="start" sx={{ mr: 2 }}>
-                                        <Menu />
-                                    </IconButton>
-                                )}
-                                <HeaderInfo leftDrawerWidth={leftDrawerWidth} />
+                                <IconButton onClick={toggleLeftDrawer} edge="start" sx={{ mr: 2 }}>
+                                    <Menu />
+                                </IconButton>
+                                <HeaderInfo mainMenuWidth={mainMenuWidth} />
                                 {ctx.currentObjectType && hideContextMenu && !mobile && (
                                     <IconButton sx={{ ml: '5px' }} onClick={toggleContextMenu} edge="start">
                                         <KeyboardDoubleArrowLeft />
@@ -89,11 +93,11 @@ const OsmAndMapFrame = () => {
                     <OsmAndMap
                         mobile={mobile}
                         drawerRightHeight={drawerRightHeight}
-                        leftDrawerWidth={leftDrawerWidth}
+                        mainMenuWidth={mainMenuWidth}
                         drawerRightWidth={drawerRightWidth}
                     />
                     <GeneralPanelButtons
-                        drawerWidth={leftDrawerWidth}
+                        mainMenuWidth={mainMenuWidth}
                         showContextMenu={showContextMenu}
                         setShowContextMenu={setShowContextMenu}
                         clearState={clearState}
@@ -155,29 +159,24 @@ const OsmAndMapFrame = () => {
                     />
                 </Drawer>
             )}
-            {mobile && (
+            {
                 <Drawer
                     variant="temporary"
-                    open={drawerLeftOpen}
+                    open={mainMenuOpen}
                     onClose={toggleLeftDrawer}
-                    sx={{
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: LEFT_DRAWER_SIZE },
+                    hideBackdrop={!mobile}
+                    disableEnforceFocus
+                    PaperProps={{
+                        sx: {
+                            boxSizing: 'border-box',
+                            width: LEFT_DRAWER_SIZE,
+                        },
                     }}
+                    sx={{ ml: 500 }}
                 >
-                    <OsmAndDrawer mobile={mobile} toggleDrawer={toggleLeftDrawer} />
+                    <OsmAndDrawer toggleDrawer={toggleLeftDrawer} />
                 </Drawer>
-            )}
-            {!mobile && (
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: LEFT_DRAWER_SIZE },
-                    }}
-                    open={drawerLeftOpen}
-                >
-                    <OsmAndDrawer mobile={mobile} />
-                </Drawer>
-            )}
+            }
             <Outlet />
         </>
     );

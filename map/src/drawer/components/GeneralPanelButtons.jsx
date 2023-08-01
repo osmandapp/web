@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         height: '10px',
     },
 });
-export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setShowContextMenu, clearState }) {
+export default function GeneralPanelButtons({ mainMenuWidth, showContextMenu, setShowContextMenu, clearState }) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
     const StyledInput = styled('input')({
@@ -57,7 +57,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     }
 
     return (
-        <div style={{ left: drawerWidth + 10, top: '68px' }} className={classes.buttongroup + ' leaflet-bottom'}>
+        <div style={{ left: mainMenuWidth + 10, top: '68px' }} className={classes.buttongroup + ' leaflet-bottom'}>
             <div
                 className="leaflet-control leaflet-bar padding-container"
                 style={{ display: 'flex', flexDirection: orientation === 'vertical' ? 'column' : 'row' }}
