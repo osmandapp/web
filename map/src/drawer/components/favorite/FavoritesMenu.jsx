@@ -21,7 +21,7 @@ export default function FavoritesMenu() {
         if (ctx.favorites.groups && !once) {
             setOnce(true);
             ctx.favorites.groups.forEach((g) => {
-                if (g.hidden !== true) {
+                if (g.hidden !== true && FavoritesManager.getGroupSize(g) > 0) {
                     res.push(g);
                 }
             });
@@ -44,15 +44,14 @@ export default function FavoritesMenu() {
         } else {
             if (ctx.favorites?.groups) {
                 ctx.favorites.groups.forEach((g) => {
-                    if (g.hidden !== true) {
+                    if (g.hidden !== true && FavoritesManager.getGroupSize(g) > 0) {
                         res.push(g);
                     }
                 });
             }
             setOpenFavoritesGroups(res);
-
         }
-    }, [ctx.favorites]);
+    }, [ctx.favorites.groups]);
 
     useEffect(() => {
         let enableAllGroups = enableGroups.length === openFavoritesGroups.length;

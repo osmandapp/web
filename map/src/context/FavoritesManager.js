@@ -188,6 +188,15 @@ function createDefaultWptGroup(wptGroup) {
     }
 }
 
+function getGroupSize(group) {
+    const wpts =
+        group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]?.points;
+    if (wpts) {
+        return wpts.length > 0 ? wpts.length : 0;
+    }
+    return 0;
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
@@ -198,6 +207,7 @@ const FavoritesManager = {
     getColorGroup,
     createGroup,
     createDefaultWptGroup,
+    getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,
