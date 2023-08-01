@@ -141,7 +141,7 @@ To tell a story of where you have been, GPS data, as latitude and longitude of y
 
 ### [Contour lines and Terrain](./contour-lines.md)
 
-Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.  
+Topography information, such as Contour lines, Hillshade, Slope - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.  
 
 ### [Nautical map view](./nautical-charts.md)
 
