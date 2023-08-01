@@ -66,22 +66,8 @@ export default class EditableMarker {
     }
 
     createPointContextMenu(e) {
-        let coord = e.latlng;
-        this.ctx.pointContextMenu.ref = {
-            getBoundingClientRect() {
-                return {
-                    width: 0,
-                    height: 0,
-                    top: e.containerPoint.y,
-                    right: e.containerPoint.x,
-                    bottom: e.containerPoint.y,
-                    left: e.containerPoint.x,
-                };
-            },
-        };
-        this.ctx.pointContextMenu.left = e.containerPoint.x;
-        this.ctx.pointContextMenu.top = e.containerPoint.y;
-        this.ctx.pointContextMenu.coord = coord;
+        this.ctx.pointContextMenu.coord = e.latlng;
+        this.ctx.pointContextMenu.element = e.originalEvent.target;
         this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
     }
 
