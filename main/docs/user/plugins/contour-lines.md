@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Topography: Contour lines and Terrain (Hillshade, Slope, 3D Relief)
+title: Topography - Contour lines and Terrain (Hillshade, Slope, 3D Relief)
 ---
 
 import Tabs from '@theme/Tabs';
