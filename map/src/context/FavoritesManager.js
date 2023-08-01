@@ -191,7 +191,10 @@ function createDefaultWptGroup(wptGroup) {
 function getGroupSize(group) {
     const wpts =
         group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]?.points;
-    return wpts && wpts.length > 0 ? wpts.length : 0;
+    if (wpts) {
+        return wpts.length > 0 ? wpts.length : 0;
+    }
+    return 0;
 }
 
 const FavoritesManager = {
