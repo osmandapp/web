@@ -27,7 +27,7 @@ Other layers are instance in the plugins.
 | MapTileLayer (underlay)           | -50 000          | Map  | Raster tiles underlay |
 | MapTileLayer (main layer)         |   5 000          | Map  | Map raster tiles |
 | CountourLinesLayer                |   6 000          | Map  | Doesn't have own layer class. Managed by main MapTileLayer |
-| TerrainLayer                      |  60 000          | Map  | [Hillshades and slopes](/docs/user/plugins/contour-lines) |
+| TerrainLayer                      |  60 000          | Map  | [Hillshade and slope](/docs/user/plugins/contour-lines) |
 | MapTileLayer (overlay)            |  70 000          | Map  | Raster tiles overlay  |
 
 ### Android. Symbols layers
@@ -90,7 +90,7 @@ Other layers are instance in the plugins.
 | ---------------------------- | ----------: |---------------------- |
 | OAUnderlayMapLayer	       | -5          | Raster tiles underlay |
 | Raster layer (MapRasterLayerProvider) | 0  | Map raster tiles      |
-| OATerrainMapLayer	           | 4           | [Contour lines, hillshades and slopes](/docs/user/plugins/contour-lines) |
+| OATerrainMapLayer	           | 4           | [Contour lines, hillshade and slope](/docs/user/plugins/contour-lines) |
 | OAOverlayMapLayer	           | 5           | Raster tiles overlay  |
 | OAMapillaryLayer	           | 10          | Mapillary layer       |
 | OAWeatherRasterLayer	       | 20          | Weather               |

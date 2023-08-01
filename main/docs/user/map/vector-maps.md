@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Overview
 
-Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour Lines information. You can create your own OsmAnd map style to demonstrate the necessary information.
+Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour line information. You can create your own OsmAnd map style to demonstrate the necessary information.
 
 
 ## Use cases
@@ -46,7 +46,7 @@ OsmAnd offers you many map styles and data layers that fit by default. Let's tak
 
 ### OsmAnd
 
-OsmAnd style is the default style of map rendering, general-purpose style. It offers details about the city such as streets, buildings, transport stops, etc. Simplified rendering to have cleaner maps in the populated cities. Key features: contour lines, routes, surface quality, access restrictions, road shields, paths rendering according to SAC scale, whitewater sports features.
+OsmAnd style is the default style of map rendering, general-purpose style. It offers details about the city such as streets, buildings, transport stops, etc. Simplified rendering to have cleaner maps in the populated cities. Key features: routes, surface quality, access restrictions, road shields, paths rendering according to SAC scale, whitewater sports features, topography features like contour lines.
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
 
@@ -129,9 +129,9 @@ Download map fonts for simplified/traditional Chinese, Japanese and Korean maps:
 
 ## * Contour Lines
 
-Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable [Contour lines Plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
+Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via [Contour lines Menu](../plugins/contour-lines.md#contour-lines-map).
+Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map).
 
 <Tabs groupId="operating-systems">
 

@@ -62,7 +62,7 @@ For Android you can find all information about OsmAnd data and change storage fo
 
 **<Translate android="true" ids="shared_string_osmand_usage"/>**:
 
-Here you can find all information about data size for each categories of data: maps, travel guides, hillshade / slope / contour lines, tracks, audio / video notes, tiles, other.
+Here you can find all information about data size for each categories of data: maps, travel guides, contour lines / hillshade / slope, tracks, audio / video notes, tiles, other.
 
 **<Translate android="true" ids="change_data_storage_folder"/>**
 

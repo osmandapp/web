@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Contour lines and Terrain (Hillshade, Slope, 3D Relief)
+title: Topography: Contour lines and Terrain (Hillshade, Slope, 3D Relief)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,22 +16,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-Terrain information, such as **Contour lines**, **Hillshade** and **Slope**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more.  Topographic information on a map can be represented by slope shading, contour lines for the uphill and downhill, and the colour of the slope angle deviation from flat.
+Topography information, such as **Contour lines**, **Hillshade** and **Slope**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more. Topographic information on a map can be represented by contour lines for the uphill and downhill, relief shading, and the color-coded slope angle.
 
 ## Overview
 
 Each provided by this plugin map is an independent layer that appears above or below the main map source when enabled, depending on the settings.
 
 :::tip NOTE
-The Contour Lines plugin is a paid feature of the OsmAnd app.  
+The Topography plugin is a paid feature of the OsmAnd app.  
 :::
 
-Contour lines consists of next map types:  
+The Topography plugin provides access to the following map types:  
 
 - **Contour lines**  - [vector](../map/vector-maps.md) map represented in **feet** or **meters** (Android and iOS).
-- **Hillshade** - [raster](../map/raster-maps.md) map layer (iOS only).
-- **Slopes** - [raster](../map/raster-maps.md) map layer (iOS only).
-- **Terrain map** - special relief [vector](../map/vector-maps.md) map (Android only).
+- **Hillshade** - [raster](../map/raster-maps.md) map layer (Android and iOS).
+- **Slope** - [raster](../map/raster-maps.md) map layer (Android and iOS).
+- **Terrain map (3D)** - special relief [vector](../map/vector-maps.md) map (Android only).
 
 <Tabs groupId="operating-systems">
 
@@ -65,17 +65,17 @@ For full information see [License](https://github.com/osmandapp/OsmAnd/blob/mast
 
 ## Setup 
 
-To display **Contour lines** and **Terrain (Hilshade, Slope)** data on the map:
+To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
 1. Purchase: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu.
-2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain maps.
+2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
 
 You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 To display **3D Relief** (Android only):
 
-1. Purchase: [OsmAnd Pro purchases plan](../purchases/android.md#free-and-paid-features) and [Enable](../plugins/index.md#enable--disable) the Contour lines plugin in the Plugins section of the Main menu: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase).
+1. Purchase: [OsmAnd Pro purchases plan](../purchases/android.md#free-and-paid-features) and [Enable](../plugins/index.md#enable--disable) the Topography plugin in the Plugins section of the Main menu: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase).
 2. [Download](#download-maps) Terrain maps.
 3. [Enable and adjust](#configure-map-view) 3D Relief for the map view.
 
@@ -83,7 +83,7 @@ To display **3D Relief** (Android only):
 
 ### How to download  
 
-To download **Contour lines**, **Hillshade**(iOS), **Slope**(iOS), **Terrain maps**(Android) for a specific area, do the following:
+To download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)**(Android only) for a specific area, do the following:
 
 <Tabs groupId="operating-systems">
 
@@ -129,13 +129,13 @@ It is important to decide in what units of length measurement (meters or feet) i
 
 <TabItem value="android" label="Android">   
 
-![Contour lines download dialogue Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour lines download dialogue iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
 
 </TabItem>
 
@@ -148,7 +148,7 @@ Units of length measurement are not interchangeable, and if feet need to be swit
 
 ## Configure map view
 
-When you have  downloaded required maps, you can display **Contour lines** / **Terrain**  through [Configure map](../map/configure-map-menu.md) section of Main menu.
+After you have downloaded the required maps, you can display **Contour lines** / **Terrain** via the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 
  
 ### Contour lines map
@@ -160,7 +160,7 @@ Contour lines allow you to explore in which direction and how much the surface i
 
 <TabItem value="android" label="Android">
 
-To enable contour lines layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/> → <Translate android="true" ids="index_srtm_ele"/>*, and toggle on the **Contour lines** option.   
+To enable contour lines layer go to [*<Translate android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="index_srtm_ele"/> → <Translate android="true" ids="download_srtm_maps"/>*, and toggle on the **Contour lines** option.   
 
 ![Contour lines menu Android](@site/static/img/plugins/contour-lines/contour_lines_menu_android.png)
 
@@ -178,7 +178,7 @@ To enable contour lines layer go to [*<Translate android="true" ids="shared_stri
 <TabItem value="ios" label="iOS">
 
 
-To enable contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_widget_renderer"/>* section and scroll to **<Translate ios="true" ids="srtm_plugin_name"/>** and toggle on.   
+To enable Contour lines layer go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), find the *<Translate ios="true" ids="map_widget_renderer"/>* section and scroll to **<Translate ios="true" ids="srtm_plugin_name"/>** and toggle on.   
 
 ![Contour lines menu iOS](@site/static/img/plugins/contour-lines/cont_lin_menu_ios_2.png) 
 
