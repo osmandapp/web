@@ -120,7 +120,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
-            {ctx.pointContextMenu.ref && <PointContextMenu anchorEl={ctx.pointContextMenu.ref} />}
+            {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}
         </div>
     );
 }
