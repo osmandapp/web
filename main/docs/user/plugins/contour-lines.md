@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Topography: Contour lines and Terrain (Hillshade, Slope, 3D Relief)
+title: Topography - Contour lines, Terrain (Hillshade, Slope), 3D Relief
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-Topography information, such as **Contour lines**, **Hillshade** and **Slope**, helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more. Topographic information on a map can be represented by contour lines for the uphill and downhill, relief shading, and the color-coded slope angle.
+Topography information like **Contour lines**, **Hillshade** and **Slope**, **3D Relief** helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more. Topographic information on a map can be represented by contour lines for the uphill and downhill, relief shading, and the color-coded slope angle.
 
 ## Overview
 
@@ -82,8 +82,7 @@ To display **3D Relief** (Android only):
 ## Download Maps
 
 ### How to download  
-
-To download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)**(Android only) for a specific area, do the following:
+Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Android only) for a specific area as follows:
 
 <Tabs groupId="operating-systems">
 
@@ -93,8 +92,8 @@ To download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)**(An
 - Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*     
 - Choose a country.
 - Download packages from sections:  
-    - The *<Translate android="true" ids="region_maps"/>* section provides available packages with maps for the entire country. If needed, download ones.  
-    - The *<Translate android="true" ids="regions"/>* section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.  
+    - The *<Translate android="true" ids="region_maps"/>* section provides available maps for the entire country.
+    - The *<Translate android="true" ids="regions"/>* section lists the regions of a country. Tapping a region,will show maps available for the region.  
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_1.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_2.png)
 
@@ -184,7 +183,7 @@ To enable Contour lines layer go to [*<Translate ios="true" ids="shared_string_m
 
 #### APPEARANCE SETTINGS
 
-- *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
+- *Contour lines* - toggle on/off to see Contour lines on the map.
 - *Display starting at zoom level* - minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate ios="true" ids="srtm_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
 - *<Translate ios="true" ids="rendering_attr_depthContourWidth_name"/>* - choice of width options for displaying Contour lines on the map.
@@ -316,7 +315,7 @@ Each colour corresponds to an angle of deviation from the plane.
 
 ### 3D Relief
 
-3D raised relief maps are a beautiful three-dimensional representation of the world on your device screen. It works offline and you can image relief 3D on [OsmAnd vector maps](../map/vector-maps.md), any [raster maps](../map/raster-maps.md#select-raster-maps) as [Map Source](../map/raster-maps.md#main) or [Underlay/Overlay](../map/raster-maps.md#overlay-layer). It's [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
+3D raised relief maps are a beautiful three-dimensional representation of the world on your device screen. It works offline and you can image relief 3D on [OsmAnd vector maps](../map/vector-maps.md), any [raster maps](../map/raster-maps.md#select-raster-maps) as [Map Source](../map/raster-maps.md#main) or [Underlay/Overlay](../map/raster-maps.md#overlay-layer). 3D Relief is an [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
 
 <Tabs groupId="operating-systems">
 
@@ -326,7 +325,7 @@ To enable _3D Relief_ go to [*<Translate Android="true" ids="shared_string_menu,
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android.png) 
 
-Next, to download [Terrain map](../plugins/contour-lines.md#how-to-download) of needed regions. After that you can see the next map visualisation:
+Next download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of needed regions. After that you obtain the following map visualisation:
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png)
 
@@ -342,7 +341,7 @@ Next, to download [Terrain map](../plugins/contour-lines.md#how-to-download) of 
 
 ### Combine layer types
 
-You can combine *Contour lines*, *Hillshade*, *Slope* layers if necessary. For example, to estimate curvature of a mountain range, the obvious choice would be a combination of Contour lines and Hillshade. To estimate the steepness of a slope or to find points of equal height, you can display Contour lines and Slope layers together.  
+You can combine *Contour lines*, the *Hillshade* and *Slope* layers as needed. To e.g. estimate the curvature of a mountain slope, an obvious choice is a combination of Contour lines and Hillshade. To estimate the steepness of a slope or to find points of equal height, you can display Contour lines and Slope layers together.  
 
 <Tabs groupId="operating-systems">
 

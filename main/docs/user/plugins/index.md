@@ -47,7 +47,7 @@ To enable / disable plugins go to:
 
 Most plugins are available for free, only four of them require purchase of [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license before use:  
 
-- [Contour lines and Terrain (Hillshade, Slope)](../plugins/contour-lines.md) 
+- [Topography - Contour lines and Terrain (Hillshade, Slope)](../plugins/contour-lines.md) 
 - 3D Relief 
 - [Wikipedia](../plugins/wikipedia.md)  
 - [Nautical map view](../plugins/nautical-charts.md)  
@@ -66,7 +66,7 @@ OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**,
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
-| [Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+| [Topography](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
 | 🤖 [3D Relief](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
@@ -139,7 +139,7 @@ OsmAnd Online maps are an extensive addition to the OpenStreetMap database alrea
 
 To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, added with waypoints, provided for navigation, shared with friends, etc.  
 
-### [Contour lines and Terrain](./contour-lines.md)
+### [Topography](./contour-lines.md)
 
 Topography information, such as Contour lines, Hillshade, Slope - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.  
 
