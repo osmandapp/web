@@ -7,5 +7,15 @@
      "Download maps" : "/docs/user/start-with/download-maps/",
      "Plan route" : "/docs/user/plan-route/create-route/",
      "Trip recording" : "/docs/user/plugins/trip-recording/"
-  }
+  },
+  "telegramChats" : {
+    "Telegram English" : "https://t.me/OsmAndMaps",
+    "Telegram German" : "https://t.me/deosmand",
+    "Telegram Italian" : "https://t.me/itosmand",
+    "Telegram French" : "https://t.me/frosmand",
+    "Telegram Poland" : "https://t.me/osmand_pl",
+    "Telegram Ukraine" : "https://t.me/uaosmand",
+    "Telegram Türkçe" : "https://t.me/OsmAndTR",
+    "Telegram Russian" : "https://t.me/ruosmand"
+ }
 }
