@@ -18,7 +18,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Unlike traditional routing algorithms, which use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for hikers, backpackers, and other outdoor enthusiasts who want to navigate off-trail or explore remote areas where traditional routes may not be available. Light aircraft pilots or ship skippers can also use this type of routing in their daily routine.  
 
-![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)
+
+
+![Straight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
 Straight line routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
 

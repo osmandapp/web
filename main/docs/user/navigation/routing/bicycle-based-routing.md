@@ -57,4 +57,4 @@ Other routing settings:
 
 ## MTB routing particularities
 
-The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note, that there are some penalties for using [MTB routes](../../map/vector-maps.md#routes), and therefore they are less likely to be offered for cycling to home or to work.  
+The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note, that there are some penalties for using [MTB routes](../../map/vector-maps.md#routes), and therefore they are less likely to be offered for cycling to home or to work.
