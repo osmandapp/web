@@ -82,8 +82,7 @@ To display **3D Relief** (Android only):
 ## Download Maps
 
 ### How to download  
-
-To download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Android only) for a specific area, do the following:
+Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Android only) for a specific area as follows:
 
 <Tabs groupId="operating-systems">
 
@@ -93,8 +92,8 @@ To download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (A
 - Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*     
 - Choose a country.
 - Download packages from sections:  
-    - The *<Translate android="true" ids="region_maps"/>* section provides available packages with maps for the entire country. If needed, download ones.  
-    - The *<Translate android="true" ids="regions"/>* section lists the regions of the country. If to tap a region, there will be map packages available to download for the region.  
+    - The *<Translate android="true" ids="region_maps"/>* section provides available maps for the entire country.
+    - The *<Translate android="true" ids="regions"/>* section lists the regions of a country. Tapping a region,will show maps available for the region.  
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_1.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_2.png)
 
@@ -184,7 +183,7 @@ To enable Contour lines layer go to [*<Translate ios="true" ids="shared_string_m
 
 #### APPEARANCE SETTINGS
 
-- *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off Contour lines on the map.
+- *Contour lines* - toggle on/off to see Contour lines on the map.
 - *Display starting at zoom level* - minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines is expected to be viewable on the map.
 - *<Translate ios="true" ids="srtm_color_scheme"/>* - choice of colour options in which Contour lines will be displayed on the map.
 - *<Translate ios="true" ids="rendering_attr_depthContourWidth_name"/>* - choice of width options for displaying Contour lines on the map.
