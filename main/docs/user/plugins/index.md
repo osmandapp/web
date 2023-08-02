@@ -142,7 +142,7 @@ To tell a story of where you have been, GPS data, as latitude and longitude of y
 
 ### [Topography](./contour-lines.md)
 
-Topography information, such as Contour lines, Hillshade, Slope, 3D Relief - helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
+Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 
 ### [Nautical map view](./nautical-charts.md)
 
