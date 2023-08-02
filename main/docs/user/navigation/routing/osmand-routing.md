@@ -160,6 +160,6 @@ In OpenStreetMap, this information is usually marked with the tag '*[temporary](
 
 *Development section* of the Route parameters settings only visible when [Development plugin](../../plugins/development.md) is turned on.
 
-- ***<Translate android="true" ids="use_live_routing"/>***  - Allows to disable [OsmAnd Live updates](../../personal/maps.md#osmand-live) live updates for routing. We recommend to use this option on and disable once you experience some issues.
+- ***<Translate android="true" ids="use_live_routing"/>***  - Allows to disable [OsmAnd Live updates](../../personal/maps.md#osmand-live) for routing. We recommend to use this option on and disable once you experience some issues.
 - ***<Translate android="true" ids="use_two_phase_routing"/>***  - Allows to disable 2nd phase to the default (A*) algorithm to improve the quality of the calculated route. This option should be on and off only in case long routes have obvious issues. Please note that switching off might increase time calculation dramatically and also requires more memory.
 - ***<Translate android="true" ids="use_fast_recalculation"/>*** - <Translate android="true" ids="use_fast_recalculation_desc"/>  
