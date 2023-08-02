@@ -166,7 +166,36 @@ Interaction with the graph:
 
 <TabItem value="android" label="Android">
 
+**For tracks with altitude data:**
+
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) 
+
+- *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
+- *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
+- *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
+- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
+
+**For tracks without altitude data (_No elevation data_):**
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
+
+Here we can calculate elevation for a track:
+
+_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) (Free function) or [_Calculate offline_](#calculate-offline) (Paid function <ProFeature/>):
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_1.png) 
+
+#### Calculate offline
+
+:::note
+<ProFeature/> _Calculate offline_ feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#pro-features">OsmAnd Pro subscribers</a>.
+:::
+
+This feature allows to calculate Elevation profile for GPX track offline for any places, based on [Terrain map data](../plugins/contour-lines.md#how-to-download)):  
+
+_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png) 
 
 </TabItem>
 
@@ -174,14 +203,16 @@ Interaction with the graph:
 
 ![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
 
-</TabItem>
-
-</Tabs>
 
 - *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
 - *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
 - *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
+
+</TabItem>
+
+</Tabs>
+
 
 <!-- 
 Online Elevation profile
@@ -322,7 +353,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 
 
 - *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](../map/track-context-menu.md#gps-filter).
-- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](../map/track-context-menu.md#online-elevation-profile), attach your track to the roads or calculate it online.
+- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](../map/track-context-menu.md#online-elevation-profile), attach your track to the roads or calculate it offline (needed [Terrain maps](../plugins/contour-lines.md#download-maps)).
 - *<Translate android="true" ids="simulate_your_location"/>* - [simulate your position](../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
