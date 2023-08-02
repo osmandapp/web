@@ -47,7 +47,7 @@ To enable / disable plugins go to:
 
 Most plugins are available for free, only four of them require purchase of [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license before use:  
 
-- [Topography - Contour lines and Terrain (Hillshade, Slope)](../plugins/contour-lines.md) 
+- [Topography](../plugins/contour-lines.md) 
 - 3D Relief 
 - [Wikipedia](../plugins/wikipedia.md)  
 - [Nautical map view](../plugins/nautical-charts.md)  

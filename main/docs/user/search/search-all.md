@@ -173,13 +173,13 @@ Just you need to enter your favorite/waypoint name, first results will be your f
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_search_android.png) 
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/poi_search_ios.png)  
+![Search POI iOS](@site/static/img/search/poi_search_ios.png)
 
 </TabItem>
 
