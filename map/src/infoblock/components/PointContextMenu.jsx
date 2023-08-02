@@ -226,16 +226,7 @@ export default function PointContextMenu({ anchorEl }) {
     return (
         <>
             {pointInd !== -1 && (
-                <Popper
-                    open={anchorEl !== undefined}
-                    anchorEl={anchorEl}
-                    transition
-                    style={{
-                        zIndex: 1000,
-                        left: ctx.pointContextMenu?.left + 330,
-                        top: ctx.pointContextMenu?.top + 50,
-                    }}
-                >
+                <Popper open={!!anchorEl} anchorEl={anchorEl}>
                     <ClickAwayListener onClickAway={handleClose}>
                         <Grid container spacing={2}>
                             <Grid item xs={10}>
