@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-Topography information like **Contour lines**, **Terrain** (**Hillshade** and **Slope**) and **3D Relief** helps you visually assess the shape of the land surface, considering curvature, extremes, steepness, points of equal height, and more. Topographic information on a map can be represented by elevation contour lines, relief shading, and the color-coded slope angle.
+Topography information like **Contour lines**, **Terrain** (**Hillshade** and **Slope**) and **3D Relief** helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 
 ## Overview
 
@@ -114,11 +114,16 @@ Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Andr
 </Tabs>
 
 :::caution NOTE
-The download size of the Contour lines maps of mountainous regions can be very large. Hence our maps of some countries and regions are divided into smaller portions.  
-
-On older devices maps bigger than 2 GB might not be properly supported, so download the smallest area you need. 
+The download size of the **Contour lines** maps of mountainous regions can be rather large, and on older devices maps bigger than 2 GB might not be properly supported. We provide regional portions, so download the smallest area you need. 
 :::
 
+:::tip NOTE
+For the **Hillshade** or **Slope** functionality,
+- if you are using Map rendering engine v1, you need to use the conventional Hillshade or Slope raster downloads,
+- if you are using Map rendering engine v2,
+   - you can continue to use the old Hillshade or Slope raster downloads, but need activate the Development and enable its setting "_Use raster sqlite for Hillshade / slope_.
+   - Alternatively, you can use the new "Terrain map (3D)" downloads (saving a bit of storage space), and the Hillshade/Slope/3D Relief effects can be produced from that on the device.
+:::
 
 ### Meters or Feet
 
@@ -148,7 +153,7 @@ The unit variants are not interchangeable, if you need to switch from meters to 
 
 ## Configure map view
 
-After you have downloaded the required maps, you can display **Contour lines** / **Terrain** via the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+After you have downloaded the required maps, you can display **Contour lines** and/or **Terrain** (Hillshade/Slope) via the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 
  
 ### Contour lines
