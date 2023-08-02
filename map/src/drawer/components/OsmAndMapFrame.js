@@ -33,13 +33,13 @@ const OsmAndMapFrame = () => {
         setMainMenuOpen(!mainMenuOpen);
     };
 
-    //screen version
+    // screen version
     useEffect(() => {
         setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
         setMainMenuOpen(!!(width && width >= MAIN_MENU_OPEN_SCREEN_SIZE));
     }, [width]);
 
-    //main menu size
+    // main menu size
     useEffect(() => {
         if (mainMenuOpen && !mobile) {
             setMainMenuWidth(MAIN_MENU_SIZE);

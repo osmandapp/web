@@ -9,7 +9,15 @@ import _ from 'lodash';
 import TracksManager from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
-const PanelButtons = ({ orientation, setShowInfoBlock, infoBlockOpen, setInfoBlockOpen, clearState, mobile }) => {
+const PanelButtons = ({
+    orientation,
+    setShowInfoBlock,
+    infoBlockOpen,
+    setInfoBlockOpen,
+    clearState,
+    mobile,
+    bsize,
+}) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -64,19 +72,38 @@ const PanelButtons = ({ orientation, setShowInfoBlock, infoBlockOpen, setInfoBlo
         ctx.setSelectedGpxFile({ ...objFromState });
     }
 
+    function getMarginTop() {
+        if (mobile) {
+            return orientation === 'vertical' ? `${bsize * 3.5}px` : 0;
+        } else {
+            return orientation === 'vertical' ? `-${bsize * 3}px` : 0;
+        }
+    }
+
+    function getMarginLeft() {
+        if (mobile) {
+            return orientation === 'vertical' ? `-${bsize}px` : `${bsize}px`;
+        } else {
+            return orientation === 'vertical' ? 0 : `${bsize}px`;
+        }
+    }
+
     return (
         ctx.selectedGpxFile && (
             <div
                 style={{
-                    marginTop: orientation === 'vertical' ? '2px' : 0,
-                    marginLeft: orientation === 'vertical' ? 0 : '2px',
+                    marginTop: getMarginTop(),
+                    marginLeft: getMarginLeft(),
+                    marginBottom: !mobile && 'auto',
                 }}
             >
                 <Paper>
                     <ButtonGroup
                         sx={{
-                            width: orientation === 'vertical' ? 41 : 'auto',
-                            height: orientation === 'vertical' ? 'auto' : 41,
+                            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
+                            borderRadius: '4px',
+                            width: orientation === 'vertical' ? bsize : 'auto',
+                            height: orientation === 'vertical' ? 'auto' : bsize,
                         }}
                         orientation={orientation}
                         color="primary"
