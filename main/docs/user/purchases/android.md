@@ -123,6 +123,7 @@ At the moment, the Pro subscription has the following features:
 | [Elevation correction(offline)](../map/track-context-menu.md#calculate-offline) | allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region) |
 
 
+
 ### How to buy
 
 Easy way to choose and buy needed plan by _"Purchases"_ menu. Of course, you see proposal menu for paid features.
