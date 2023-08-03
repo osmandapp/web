@@ -12,10 +12,12 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overview
 Plugins significantly enhance OsmAnd's functionality. Each is designed to solve a problem or use case, such as trip recording, accessing Wikipedia articles offline, visualizing terrain data, providing street-level views, etc.
 
 Plugins can be internal (you can activate them inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via the OsmAnd API and can get access to OsmAnd data.  
+
 
 ## Configure a plugin
 In order to access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
@@ -46,10 +48,10 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only these require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license before use:  
+Most plugins are available for free, only the plugins in the list below require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license to use:  
 
 - [Topography](../plugins/contour-lines.md)
-- 3D Relief (a feature under the Topography plugin)
+- 3D Relief (feature of the Topography plugin)
 - [Wikipedia](../plugins/wikipedia.md)
 - [Nautical map view](../plugins/nautical-charts.md)
 - [Weather](../plugins/weather.md)

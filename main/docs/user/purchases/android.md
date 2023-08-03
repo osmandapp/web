@@ -135,7 +135,7 @@ or
 
 _<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
 
 **Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
@@ -147,7 +147,7 @@ _<Translate android="true" ids="shared_string_menu,shared_string_settings,purcha
 
 ## Legacy subscriptions (prior 4.0)
 
-New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subscriptions are legacy and techncically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until the user unsubscribes (the price for them might change in the future).
+New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subscriptions are obsolete and technically equate to a *Map Subscription*, although older subscriptions are eligible for hourly map updates. Users cannot buy old subscriptions, but old subscriptions are automatically renewed until the user unsubscribes (the price may change in the future).
 
 
 ## Restore purchases

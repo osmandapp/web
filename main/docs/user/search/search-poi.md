@@ -98,13 +98,13 @@ To search for POIs by categories directly on the map, you need to select the req
 </Tabs>
 
 <!--
-The "Search by POI Categories" tool in the OpenStreetMap-based navigation application provides the user with the ability to quickly find locations of interest and objects classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow the user to refine the search results by selecting different values for additional characteristics.
+The **Search by POI Categories** tool in the OpenStreetMap-based navigation application provides the user with the ability to quickly find locations of interest and objects classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow the user to refine the search results by selecting different values for additional characteristics.
 
 How it works:
-1. Category Selection: The user selects a POI category of interest, such as restaurants, hotels, stores, etc., from the provided list of categories.
-2. Characteristic Filters: After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, the user can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
-3. Applying Filters: The user selects the desired values in the filters, then the application applies these filters to the search results to show only those properties that match the specified characteristics.
-4. Displaying results: After applying filters, the application displays a list of POIs matching the category and characteristics set. The results can be presented on a map with markers or as a list with detailed information about each POI.
+- Category Selection. You selects a POI category of interest, such as restaurants, hotels, stores, etc., from the provided list of categories.
+- Characteristic Filters. After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, the user can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
+- Applying Filters. You selects the required values in the filters, then the application applies these filters to the search results to show only those properties that match the specified characteristics.
+- Displaying results. After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with some information about each POI.
 
 Benefits:
 - User Customization: Feature filters allow users to customize searches to meet their specific needs and preferences.
@@ -162,7 +162,7 @@ A filter can consist of quite a number of items, the presence of which depends o
 | 8. Food | <details><summary> 24 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 9. Healthcare | <details><summary> 11 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
 | 10. Leisure | <details><summary> 16 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 11. Nautical |  no filters  | Includes various [administrative places](https://wiki.openstreetmap.org/wiki/Key:place). |
+| 11. Nautical | Filters are not available  | Includes various [administrative places](https://wiki.openstreetmap.org/wiki/Key:place). |
 | 12. <Translate android="true" ids="poi_filter_closest_poi"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 13. <Translate android="true" ids="poi_filter_parking"/> | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 14. Personal transport | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
@@ -297,7 +297,7 @@ In order to create your own filters to find the places you are looking for on th
 | 17. **Service** | <details><summary> 111 types </summary> _ </details> |  |
 | 18. **<Translate android="true" ids="amenity_type_sport"/>** | <details><summary> 119 types </summary> _ </details> |  |
 | 19. **Store** | <details><summary> 156 types </summary> _ </details> |  |
-| 20. **<Translate android="true" ids="amenity_type_tourism"/>** | <details><summary> 103 types </summary> _ </details> |  |
+| 20. **<Translate android="true" ids="amenity_type_tourism"/>** | <details><summary> 103 types </summary><ul><li> [Alpine hut](https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dalpine_hut) </li><li> Amusement ride </li><li> Animal (attraction) </li><li> Beach </li><li> Camp pitch </li><li> Castle </li><li> Guest house </li><li> Hostel </li><li> Memorial </li><li> Park </li><li> And other... </li></ul></details> | [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism). Places and objects of special interest to tourists, including places to see, places to stay, facilities and places providing information and support to tourists. |
 | 21. **<Translate android="true" ids="amenity_type_transportation"/>** | <details><summary> 97 types </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> And other... </li></ul> </details> | Points of interest related to different modes of transportation and related services. View the list [here](https://wiki.openstreetmap.org/wiki/Key:amenity#Transportation). |
 | 22. **User defined** | <details><summary> 1 types </summary> User Defined Other Postcode </details> |  |
 | 23. **Wikipedia** | <details><summary> 1 types </summary> Wikipedia </details> | You need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in. |
@@ -321,7 +321,7 @@ In order to create your own filters to find the places you are looking for on th
 
 </Tabs>
  
-To save a custom filter, select everything you need, then:
+To save a custom filter, select everything you need, then:  
 
 - Tap the *Show* button and select the *Save* button for iOS, or the button with the *icon indicating the save action* for Android. 
 - Enter a name for the new category.
@@ -365,4 +365,7 @@ You can only delete categories that were created using filters or custom search.
 - Select **Delete Filter**.
 - You cannot undo the deletion. 
 
+An additional option for the iOS app is **Delete Custom Categories**. The item is at the end of the *Categories* tab list. Select the unneeded categories by item or *Select all* and delete.  
+
+![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)  
 

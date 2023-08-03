@@ -13,17 +13,16 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
-
-Topography information like **Contour lines**, **Terrain** (**Hillshade** and **Slope**) and **3D Relief** helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
+ 
 
 ## Overview
 
-Each feature provided by this plugin is an independent map layer which when enabled appears above or below the main map source, depending on the settings.
+Topography information like **Contour lines**, **Terrain** (**Hillshade** and **Slope**) and **3D Relief** helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc. 
+
+Each feature provided by this plugin is an independent map layer that, when enabled, is displayed above or below the main map source depending on the settings.  
 
 :::tip NOTE
-The Topography plugin is a paid feature of the OsmAnd app.  
+The Topography plugin is a [paid feature](../purchases/android.md#free-and-paid-features) of the OsmAnd app.  
 :::
 
 The Topography plugin provides access to the following map types:  
@@ -75,9 +74,10 @@ You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKo
 
 To display **3D Relief** (Android only):
 
-1. Purchase: [OsmAnd Pro purchases plan](../purchases/android.md#free-and-paid-features) and [Enable](../plugins/index.md#enable--disable) the Topography plugin in the Plugins section of the Main menu: [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase).
+1. Purchase an [OsmAnd Pro plan](../purchases/android.md#free-and-paid-features) that includes the Topography plugin. After purchase, the plugin will appear in the Plugins list in the main Menu. Plans such as [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase) are suitable.
 2. [Download](#download-maps) Terrain map (3D) maps.
 3. [Enable and adjust](#configure-map-view) 3D Relief for the map view.
+
 
 ## Download Maps
 
@@ -88,7 +88,7 @@ Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Andr
 
 <TabItem value="android" label="Android">
 
-  
+
 - Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*     
 - Choose a country.
 - Download packages from sections:  
@@ -173,10 +173,10 @@ To enable the Contour lines layer, go to [*<Translate android="true" ids="shared
 
 - *<Translate android="true" ids="download_srtm_maps"/>* - toggle on/off to show or hide Contour lines on the map.
 - *<Translate android="true" ids="show_from_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines are visible on the map.
-- *<Translate android="true" ids="srtm_color_scheme"/>* - choice of color options in which Contour lines are shown on the map. 
-- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>* - choice of width options to display Contour lines on the map. 
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>* - choice of density options to display Contour lines on the map: Low, Medium, High. (The map loads slower for higher density).
-- *<Translate android="true" ids="welmode_download_maps"/>* - shows Contour line maps for the selected area or the nearest areas relative to the current map center which would require to be downloaded.
+- *<Translate android="true" ids="srtm_color_scheme"/>* - selection of color options in which Contour lines are shown on the map. 
+- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>* - selection of width options for displaying  Contour lines on the map. 
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>* - selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded slower.
+- *<Translate android="true" ids="welmode_download_maps"/>* - shows Contour line maps for the selected area or the nearest areas relative to the current map center to be downloaded.
 
 </TabItem>
 
@@ -191,12 +191,10 @@ To enable the Contour lines layer go to [*<Translate ios="true" ids="shared_stri
 
 - *<Translate ios="true" ids="toggle_contour_lines"/>* - toggle on/off to show or hide Contour lines on the map.
 - *Display starting at zoom level* - minimum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines are visible on the map.
-- *<Translate ios="true" ids="srtm_color_scheme"/>* - choice of color options in which Contour lines are shown on the map. 
-- *<Translate ios="true" ids="rendering_attr_depthContourWidth_name"/>* - choice of width options to display Contour lines on the map.
-- *<Translate ios="true" ids="map_settings_line_density"/>* - choice of density options to display Contour lines on the map: Low, Medium, High. (The map loads slower for higher density).
-- *<Translate ios="true" ids="available_maps"/>* - shows Contour line maps for the selected area or the nearest areas relative to the current map center which would require to be downloaded.
-
-
+- *<Translate ios="true" ids="srtm_color_scheme"/>* - selection of color options in which Contour lines are shown on the map. 
+- *<Translate ios="true" ids="rendering_attr_depthContourWidth_name"/>* - selection of width options for displaying  Contour lines on the map.
+- *<Translate ios="true" ids="map_settings_line_density"/>* - selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded slower.
+- *<Translate ios="true" ids="available_maps"/>* - shows Contour line maps for the selected area or the nearest areas relative to the current map center to be downloaded.
 
 </TabItem>
 
@@ -313,7 +311,7 @@ Each color corresponds to an angle of deviation from the horizontal.
 
 ### 3D Relief
 
-The 3D Relief feature produces a raised relief and provides an impressive three-dimensional representation of the landscape. It works offline, and you can use the 3D Relief with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as [Map Source](../map/raster-maps.md#main) or as [Underlay/Overlay](../map/raster-maps.md#overlay-layer). 3D Relief is an [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
+The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer). 3D Relief is an [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
 
 <Tabs groupId="operating-systems">
 
@@ -339,7 +337,9 @@ Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download
 
 ### Combine layer types
 
-You can combine the *Contour lines* and the *Hillshade* or *Slope* layers as needed. To e.g. estimate the curvature of a mountain slope, an obvious choice is a combination of Contour lines and Hillshade. To estimate the steepness of a slope or to find points of equal height, you can display Contour lines and Slope layers together.
+If necessary, you can combine contour lines and Hillshade or Slope layers. For example, to estimate the curvature of a mountain slope, a combination of Contour lines and Hillshade is an obvious choice. To estimate slope steepness or to find points with the same height, you can display Contour lines and Slope layers.  
+
+It is best to use a combination of 3D Relief and Hillshade. This allows you to get a more realistic and clear view of the terrain, its relief and landscape features on the map, which makes navigation and orienteering more convenient and reliable. For example, the combination of 3D Relief and Hillshade is best used in mountainous terrain, hilly areas, hiking and biking trails.  
 
 <Tabs groupId="operating-systems">
 
