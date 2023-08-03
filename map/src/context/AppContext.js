@@ -274,9 +274,8 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
 
     const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
-    const setSelectedGpxFile = (s) => {
-        reactSetSelectedGpxFile(() => s); // convert setState({}) to queued setState(() => {})
-    };
+    const setSelectedGpxFile = (s) => reactSetSelectedGpxFile(() => s); // wrap setter to queue-style
+    const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
@@ -495,6 +494,8 @@ export const AppContextProvider = (props) => {
                 setGpxLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
+                unverifiedGpxFile,
+                setUnverifiedGpxFile,
                 mapMarkerListener,
                 setMapMarkerListener,
                 tileURL,

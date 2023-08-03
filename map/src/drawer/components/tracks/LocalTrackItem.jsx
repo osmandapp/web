@@ -78,7 +78,11 @@ export default function LocalTrackItem({ track }) {
     }
 
     function isAlreadyEdit() {
-        return !!(ctx.createTrack?.enable && ctx.selectedGpxFile?.name === track.name);
+        return !!(
+            ctx.createTrack?.enable &&
+            ctx.selectedGpxFile?.name === track.name &&
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        );
     }
 
     return (

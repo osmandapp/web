@@ -733,7 +733,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
 
-    let resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
+    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, postData, {
         apiCache: true,
         headers: {
             'Content-Type': 'application/json',
@@ -742,23 +742,26 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     if (resp.data) {
         setLoading(false);
         const data = FavoritesManager.prepareTrackData(resp.data);
+
+        const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
+
         Object.keys(data.data).forEach((t) => {
-            ctx.selectedGpxFile[`${t}`] = data.data[t];
+            newGpxFile[`${t}`] = data.data[t];
         });
-        ctx.selectedGpxFile.update = true;
-        ctx.selectedGpxFile.wpts = wpts;
-        ctx.selectedGpxFile.pointsGroups = pointsGroups;
+        newGpxFile.update = true;
+        newGpxFile.wpts = wpts;
+        newGpxFile.pointsGroups = pointsGroups;
 
         // automatic SRTM request
         if (path === GET_ANALYSIS) {
             if (data.data.analysis?.hasElevationData) {
-                ctx.selectedGpxFile.analysis.srtmAnalysis = false;
+                newGpxFile.analysis.srtmAnalysis = false;
             } else {
-                return getTrackWithAnalysis(GET_SRTM_DATA, ctx, setLoading, points);
+                return getTrackWithAnalysis(GET_SRTM_DATA, ctx, setLoading, points); // auto-srtm-this
             }
         }
 
-        return ctx.selectedGpxFile;
+        return newGpxFile;
     } else {
         setLoading(false);
         console.error('getTrackWithAnalysis fallback', path);

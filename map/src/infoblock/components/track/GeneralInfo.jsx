@@ -56,8 +56,10 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             if (totalPoints <= TracksManager.AUTO_SRTM_MAX_POINTS) {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, track.points).then(
                     (result) => {
-                        getSRTMEle(result);
-                        ctx.setSelectedGpxFile({ ...result });
+                        if (result) {
+                            // getSRTMEle(result); // set by distinct Effect
+                            ctx.setUnverifiedGpxFile(() => ({ ...result })); // auto-srtm
+                        }
                     }
                 );
             }
@@ -401,8 +403,10 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                                 setLoadingSrtm,
                                                 ctx.selectedGpxFile.points
                                             ).then((track) => {
-                                                getSRTMEle(track);
-                                                ctx.setSelectedGpxFile({ ...track });
+                                                if (track) {
+                                                    // getSRTMEle(track); // set by distinct Effect
+                                                    ctx.setUnverifiedGpxFile(() => ({ ...track }));
+                                                }
                                             });
                                         }}
                                     >

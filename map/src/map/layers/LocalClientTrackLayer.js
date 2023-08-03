@@ -60,6 +60,67 @@ export default function LocalClientTrackLayer() {
 
     const geoRouter = ctx.trackRouter;
 
+    /*
+        unverifiedGpxFile is a kind of selectedGpxFile
+
+        They're calculated by async get-analytics calls. Due to delayed/async
+        nature, user might have already choosen another selectedGpxFile when
+        we've got get-analytics results. This is the reason why we can't
+        directly update unverifiedGpxFile to selectedGpxFile.
+
+        To avoid mis-overwriting selectedGpxFile with unverifiedGpxFile, we
+        have to compare name, description, and points before setting
+        selectedGpxFile.
+
+        Optionally, in case when unverifiedGpxFile is stale, we could try to
+        find corresponding file in localTracks/gpxTracks and update there if we
+        have found actual file to update (TODO).
+    */
+    useEffect(() => {
+        const selected = ctx.selectedGpxFile;
+        const unverified = ctx.unverifiedGpxFile;
+
+        function isPointsHaveSameGeo(p1, p2) {
+            if (!p1 || !p2 || p1.length !== p2.length) {
+                return false;
+            }
+            for (let i = 0; i < p1.length; i++) {
+                if (TracksManager.isEqualPoints(p1[i], p2[i]) === false) {
+                    return false;
+                }
+            }
+            for (let i = 0; i < p1.length; i++) {
+                const g1 = p1[i].geometry;
+                const g2 = p2[i].geometry;
+                if (!g1 && !g2) {
+                    return true; // both w/o geometry = ok
+                }
+                if (!g1 || !g2 || g1.length !== g2.length) {
+                    return false;
+                }
+                for (let j = 0; j < g1.length; j++) {
+                    if (TracksManager.isEqualPoints(g1[j], g2[j]) === false) {
+                        return false;
+                    }
+                }
+            }
+            return true; // all-the-same
+        }
+
+        if (unverified && selected) {
+            if (
+                unverified.name === selected.name &&
+                unverified.metaData?.desc === selected.metaData?.desc &&
+                (isPointsHaveSameGeo(selected.points, unverified.points) ||
+                    isPointsHaveSameGeo(selected.tracks[0]?.points, unverified.tracks[0]?.points))
+            ) {
+                ctx.setSelectedGpxFile(unverified);
+            } else {
+                console.debug('unverified-gpx-file', unverified.name);
+            }
+        }
+    }, [ctx.unverifiedGpxFile]);
+
     /**
      * Note: run on any selectedGpxFile including Cloud-mode
      *
@@ -368,7 +429,7 @@ export default function LocalClientTrackLayer() {
             ...queueForRouting,
             objs: queue,
         };
-        setQueueForRouting(newQueue);
+        setQueueForRouting(() => newQueue);
     }, [ctx.routingCash]);
 
     useEffect(() => {
@@ -376,7 +437,7 @@ export default function LocalClientTrackLayer() {
             if (queueForRouting.isProcessing) return;
             const segmentObj = queueForRouting.objs[0].obj;
             const segmentKey = queueForRouting.objs[0].key;
-            const newFile = ctxTrack;
+            const newFile = ctxTrack; // ref
             Promise.resolve(
                 ctx.trackRouter
                     .updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.geoProfile)
@@ -411,13 +472,7 @@ export default function LocalClientTrackLayer() {
                                     ctx.setLoadingContextMenu,
                                     newFile.points
                                 ).then((res) => {
-                                    saveChanges(null, null, null, res);
-                                    setQueueForRouting((prev) => ({
-                                        isProcessing: false,
-                                        objs: prev.objs,
-                                    }));
-                                    ctx.setSelectedGpxFile({ ...res });
-                                    ctx.setProcessRouting(false);
+                                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
                                 });
                             };
 
@@ -430,7 +485,10 @@ export default function LocalClientTrackLayer() {
                 isProcessing: true,
                 objs: newObjs,
             };
-            setQueueForRouting(newQueue);
+            setQueueForRouting(() => newQueue);
+
+            if (newObjs.length === 0) ctx.setProcessRouting(false);
+            saveChanges(null, null, null, newFile); // finally, after promises
         }
     }, [queueForRouting]);
 
@@ -497,14 +555,19 @@ export default function LocalClientTrackLayer() {
                 layers.addLayer(polyline);
             }
         }
+
         const analysis = () => {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
                 (res) => {
-                    saveChanges(null, null, null, res);
+                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
                 }
             );
         };
+
         debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+
+        // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
+        saveChanges(null, null, null, ctxTrack);
     }
 
     function addGeometryToTrack(newPoint, points) {
