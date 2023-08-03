@@ -1,6 +1,6 @@
 import { ButtonGroup, IconButton, Paper, Tooltip, Button } from '@mui/material';
 import TracksManager from '../../context/TracksManager';
-import { Create, Info, Upload } from '@mui/icons-material';
+import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { makeStyles } from '@material-ui/core/styles';
@@ -96,6 +96,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                     >
                         <Tooltip title="Create track" arrow placement="right">
                             <IconButton
+                                sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
                                 variant="contained"
                                 type="button"
                                 onClick={() =>
@@ -106,7 +107,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                     })
                                 }
                             >
-                                <Create fontSize="small" />
+                                <Insights fontSize="small" />
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Upload track" arrow placement="right">
@@ -118,7 +119,11 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                     type="file"
                                     onChange={fileSelected(ctx)}
                                 />
-                                <IconButton sx={{ ml: '2px', mt: '3px' }} variant="contained" component="span">
+                                <IconButton
+                                    sx={{ ml: '2px', mt: orientation === 'vertical' ? 0 : '3px' }}
+                                    variant="contained"
+                                    component="span"
+                                >
                                     <Upload fontSize="small" />
                                 </IconButton>
                             </label>

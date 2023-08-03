@@ -1,5 +1,5 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
-import { Close, Delete, CloudUpload, Redo, Undo } from '@mui/icons-material';
+import { Close, Delete, CloudUpload, Redo, Undo, Create } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
@@ -82,6 +82,24 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                         orientation={orientation}
                         color="primary"
                     >
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                            <Tooltip title="Edit" arrow placement="right">
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => {
+                                        TracksManager.addTrack({
+                                            ctx,
+                                            track: { ...ctx.selectedGpxFile },
+                                            overwrite: true,
+                                        });
+                                        ctx.setUpdateContextMenu(true);
+                                    }}
+                                >
+                                    <Create fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
