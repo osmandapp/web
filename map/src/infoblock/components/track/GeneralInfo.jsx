@@ -35,7 +35,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const ctx = useContext(AppContext);
 
     const [enableEditName, setEnableEditName] = useState(false);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
+    const [fileName, setFileName] = useState((ctx.selectedGpxFile && ctx.selectedGpxFile.name) ?? '');
     const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
     const [distance, setDistance] = useState(0);
@@ -206,7 +206,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
 
             ctx.selectedGpxFile.name = newName;
 
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
+            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setLocalTracks([...ctx.localTracks]);
 

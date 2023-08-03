@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
+import _ from 'lodash';
 
 export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
@@ -30,11 +31,22 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     }
 
     async function addTrackToMap(setProgressVisible) {
+        // cleanup edited localTrack
+        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+            ctx.setCreateTrack({
+                enable: false,
+                closePrev: {
+                    file: _.cloneDeep(ctx.selectedGpxFile),
+                },
+            });
+        }
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (file.url || ctx.gpxFiles[file.name]?.url) {
-            ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
+            if (file.name !== ctx.selectedGpxFile.name) {
+                ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
+                ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
+            }
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;

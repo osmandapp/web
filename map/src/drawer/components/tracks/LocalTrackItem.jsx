@@ -61,7 +61,7 @@ export default function LocalTrackItem({ track }) {
     }
 
     function startEdit() {
-        if (ctx.createTrack?.enable) {
+        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
                 enable: true, // start-editor
                 edit: true,

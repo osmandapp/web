@@ -79,18 +79,15 @@ function openVisibleTracks(localTracks) {
     return localTracks;
 }
 
-function saveLocalTrack(tracks, ctx) {
-    let currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
+function saveLocalTrack({ ctx, track }) {
+    const localTracks = ctx.localTracks;
+
+    let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
 
     if (currentTrackIndex === -1) {
-        tracks.push(ctx.selectedGpxFile); // mutate state (via parameter)
-        // instant call setState if you don't sure about parent
-        ctx.setLocalTracks([...ctx.localTracks]);
-
-        currentTrackIndex = tracks.findIndex((t) => t.name === ctx.selectedGpxFile.name);
+        currentTrackIndex = localTracks.push(track) - 1; // mutate state, get new index
+        ctx.setLocalTracks([...localTracks]); // instant call setState if you don't sure about parent
     }
-
-    const track = ctx.selectedGpxFile;
 
     let tracksSize;
     let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
@@ -254,6 +251,7 @@ function addTrack({ ctx, track, overwrite = false } = {}) {
     let ref = null;
     let localName = firstName;
 
+    // FIXME confirm@parent
     if (overwrite) {
         const found = ctx.localTracks?.find((t) => t.name === localName);
         if (found) {
@@ -322,13 +320,26 @@ function hasGeo(track) {
 // overwrite flag used later when re-uploading (save to cloud)
 // set type of current object, enable editor with "edit" flag
 function openNewLocalTrack(ctx, track, overwrite = false) {
-    // set parent's too
-    track.selected = true;
+    const createState = {
+        enable: true, // start-editor
+        edit: true,
+        cloudAutoSave: overwrite,
+    };
+
+    // cleanup
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+        createState.closePrev = {
+            file: _.cloneDeep(ctx.selectedGpxFile),
+        };
+    }
+
+    ctx.setCreateTrack(createState);
+
+    // parent needs our track.selected = true
+    track.selected = true; // track is ref
     ctx.setSelectedGpxFile({ ...track });
 
     ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
-
-    ctx.setCreateTrack({ enable: true, edit: true, cloudAutoSave: overwrite }); // start-editor
 }
 
 function closeCloudTrack(ctx, track) {
@@ -508,7 +519,7 @@ async function downloadAfterUpload(ctx, file) {
     };
 
     // cleanup
-    if (ctx.selectedGpxFile) {
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
             file: _.cloneDeep(ctx.selectedGpxFile),
         };
@@ -776,7 +787,8 @@ function createTrack(ctx, latlng) {
     if (latlng) {
         createState.latlng = latlng;
     }
-    if (ctx.selectedGpxFile) {
+    // cleanup
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
             file: _.cloneDeep(ctx.selectedGpxFile),
         };

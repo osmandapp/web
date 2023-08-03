@@ -69,15 +69,15 @@ export default function LocalClientTrackLayer() {
         directly update unverifiedGpxFile to selectedGpxFile.
 
         To avoid mis-overwriting selectedGpxFile with unverifiedGpxFile, we
-        have to compare name, description, and points before setting
-        selectedGpxFile.
+        have to compare name, description, 'selected', and points before
+        setting selectedGpxFile.
 
         Optionally, in case when unverifiedGpxFile is stale, we could try to
         find corresponding file in localTracks/gpxTracks and update there if we
         have found actual file to update (TODO).
     */
     useEffect(() => {
-        const selected = ctx.selectedGpxFile;
+        const trusted = ctx.selectedGpxFile;
         const unverified = ctx.unverifiedGpxFile;
 
         function isPointsHaveSameGeo(p1, p2) {
@@ -107,13 +107,15 @@ export default function LocalClientTrackLayer() {
             return true; // all-the-same
         }
 
-        if (unverified && selected) {
+        if (unverified && trusted) {
             if (
-                unverified.name === selected.name &&
-                unverified.metaData?.desc === selected.metaData?.desc &&
-                (isPointsHaveSameGeo(selected.points, unverified.points) ||
-                    isPointsHaveSameGeo(selected.tracks[0]?.points, unverified.tracks[0]?.points))
+                unverified.name === trusted.name &&
+                unverified.selected === trusted.selected &&
+                unverified.metaData?.desc === trusted.metaData?.desc &&
+                (isPointsHaveSameGeo(unverified.points, trusted.points) ||
+                    isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
             ) {
+                // console.debug('verified');
                 ctx.setSelectedGpxFile(unverified);
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
@@ -186,7 +188,7 @@ export default function LocalClientTrackLayer() {
                 setLocalLayers({ ...localLayers });
             }
         }
-    }, [ctx.createTrack?.enable]); // think about dep on localLayers
+    }, [ctx.createTrack?.enable]);
 
     useEffect(() => {
         for (let l in localLayers) {
@@ -227,13 +229,28 @@ export default function LocalClientTrackLayer() {
         setLocalLayers({ ...localLayers });
     }, [ctx.localTracks, ctx.setLocalTracks]);
 
+    /*
+        Track Editor state life cycle:
+
+        Start: ctx.createTrack = null => ctx.createTrack.enable = true
+        Stop: ctx.createTrack.enable = false (!!!) => ctx.createTrack = null
+
+        ctx.createTrack.latlng: used to specify newly created-track coordinates
+        ctx.createTrack.closePrev: close previous file, use with both enable=true/false
+        ctx.createTrack.cloudAutoSave: ignore cloud-already-exist confirmation (used by Cloud -> Edit track)
+
+        ctx.createTrack.edit: ?
+        ctx.createTrack.clear: ?
+        ctx.createTrack.layers: ?
+        ctx.createTrack.deletePrev: ?
+    */
     useEffect(() => {
         if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
             delete ctx.createTrack.layers;
-            ctx.setCreateTrack({ ...ctx.createTrack }); // stop-editor (cleanup closePrev)
+            ctx.setCreateTrack({ ...ctx.createTrack }); // closePrev, not always stop-editor
         }
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.createTrack.edit) {
@@ -257,7 +274,7 @@ export default function LocalClientTrackLayer() {
                 savedFile = ctxTrack;
             }
             saveResult(savedFile, false);
-            ctx.setCreateTrack(null); // stop-editor
+            ctx.setCreateTrack(null); // stop-editor (finished)
         }
     }, [ctx.createTrack]);
 
@@ -274,8 +291,8 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
-            ctx.setLocalTracks([...ctx.localTracks]);
+            TracksManager.saveTracks({ ctx, track: file }); // ctx.localTracks might be modified there
+            ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
 
             if (ctx.createTrack.clear) {
                 ctx.setSelectedGpxFile({}); // finally, after saveTracks
@@ -306,8 +323,8 @@ export default function LocalClientTrackLayer() {
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
-            // localTracks exist: do update/append
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
+            // localTracks exist: do update/append into localStorage
+            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile });
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
