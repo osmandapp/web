@@ -14,6 +14,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     async function enableLayer(setProgressVisible, visible) {
         if (!visible) {
             deleteTrackFromMap();
+            setProgressVisible(false);
         } else {
             await addTrackToMap(setProgressVisible);
         }
@@ -80,6 +81,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                     </ListItemText>
                 </Tooltip>
                 <Switch
+                    disabled={loadingTrack}
                     checked={!!ctx.gpxFiles[file.name]?.url}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => {
