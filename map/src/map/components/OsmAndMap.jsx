@@ -108,10 +108,8 @@ const OsmAndMap = ({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidt
         }
     }, [ctx.tileURL]);
 
+    // fix contextmenu of point for mobile device
     useEffect(() => {
-        if (tileLayer.current) {
-            tileLayer.current.setUrl(ctx.tileURL.url);
-        }
         const markerEventHandler = (e) => {
             if (
                 e.target?.draggable &&
