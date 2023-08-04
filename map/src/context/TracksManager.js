@@ -267,42 +267,44 @@ function handleEditCloudTrack(ctx) {
 }
 
 function addTrack({ ctx, track, overwrite = false } = {}) {
+    const newLocalTracks = [...ctx.localTracks];
+
     const originalName = track.name;
     const firstName = prepareName(originalName, true);
-
-    let ref = null;
     let localName = firstName;
 
-    if (overwrite) {
-        const found = ctx.localTracks?.find((t) => t.name === localName);
-        if (found) {
-            ref = found;
-        } else {
-            ref = track;
-            ctx.localTracks.push(ref);
-        }
-    } else {
+    // find free name
+    if (overwrite === false) {
         let occupied = null;
         for (let i = 1; i < 100; i++) {
-            occupied = ctx.localTracks?.find((t) => t.name === localName);
+            occupied = newLocalTracks?.find((t) => t.name === localName);
             if (!occupied) {
-                break; // free name found
+                break; // found
             }
             localName = firstName + ' - ' + i; // try with "Track - X"
         }
         if (occupied) {
             throw new Error('TracksManager addTrack() too many same-tracks');
         }
-
-        ref = track;
-        ctx.localTracks.push(ref);
     }
 
-    prepareTrack(ref, localName, originalName);
+    prepareTrack(track, localName, originalName);
 
-    closeCloudTrack(ctx, ref);
-    openNewLocalTrack(ctx, ref, overwrite);
-    ctx.setLocalTracks([...ctx.localTracks]); // finally
+    closeCloudTrack(ctx, track);
+    openNewLocalTrack(ctx, track, overwrite);
+
+    if (overwrite) {
+        const foundIndex = newLocalTracks?.findIndex((t) => t.name === localName);
+        if (foundIndex !== -1) {
+            newLocalTracks[foundIndex] = track;
+        } else {
+            newLocalTracks.push(track);
+        }
+    } else {
+        newLocalTracks.push(track);
+    }
+
+    ctx.setLocalTracks(newLocalTracks); // finally
 }
 
 function prepareTrack(track, localName = null, originalName = null) {
