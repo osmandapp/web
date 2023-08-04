@@ -108,6 +108,32 @@ const OsmAndMap = ({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidt
         }
     }, [ctx.tileURL]);
 
+    useEffect(() => {
+        if (tileLayer.current) {
+            tileLayer.current.setUrl(ctx.tileURL.url);
+        }
+        const markerEventHandler = (e) => {
+            if (
+                e.target?.draggable &&
+                e.target?.alt === 'Marker' &&
+                e.target?.classList?.contains('leaflet-marker-draggable')
+            ) {
+                if (e.type === 'touchstart') {
+                    ctx.setPointContextMenu({});
+                    e.preventDefault();
+                }
+                if (e.type === 'touchend') {
+                    e.preventDefault();
+                    if (e.target?.title !== 'poly') {
+                        e.target?.dispatchEvent(new Event('contextmenu', e));
+                    }
+                }
+            }
+        };
+        document.addEventListener('touchstart', markerEventHandler, { passive: false });
+        document.addEventListener('touchend', markerEventHandler, { passive: false });
+    }, []);
+
     return (
         <MapContainer
             center={position}

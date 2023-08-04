@@ -64,27 +64,6 @@ export default class EditableMarker {
                 }
             }
         });
-
-        const markerEventHandler = (e) => {
-            if (
-                e.target?.draggable &&
-                e.target?.alt === 'Marker' &&
-                e.target?.classList?.contains('leaflet-marker-draggable')
-            ) {
-                if (e.type === 'touchstart') {
-                    this.ctx.setPointContextMenu({});
-                    e.preventDefault();
-                }
-                if (e.type === 'touchend') {
-                    e.preventDefault();
-                    if (e.target?.title !== 'poly') {
-                        e.target?.dispatchEvent(new Event('contextmenu', e));
-                    }
-                }
-            }
-        };
-        document.addEventListener('touchstart', markerEventHandler, { passive: false });
-        document.addEventListener('touchend', markerEventHandler, { passive: false });
     }
 
     createPointContextMenu(e) {
