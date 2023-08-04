@@ -201,6 +201,7 @@ Hillshade / Slope are raster offline maps that are displayed as a special (terra
 
 To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable the [Topography plugin](../plugins/contour-lines.md).  
 
+
 ### Configure display options
 
 <Tabs groupId="operating-systems">
@@ -220,6 +221,21 @@ To download and install Hillshade / Slope Maps, you need to [purchase](../purcha
 </Tabs>
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
+
+
+## 3D Relief
+
+![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
+
+The **3D Relief** feature is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
+
+*To start using 3D Relief*:  
+You need to purchase [OsmAnd Pro](../purchases/index.md), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+
+*How the 3D Relief feature works*:  
+*1.* To create a 3D relief, OsmAnd receives information about the terrain elevation.  
+*2.* Based on the elevation data, a 3D model is created to display mountains, hills, valleys, and other terrain elements on the map.  
+*3.* OsmAnd then displays these three-dimensional models on a flat map. The map can be zoomed in, zoomed out, and rotated to view the terrain from different angles and perspectives.  
 
 
 ## Prepare / copy raster maps to device 
