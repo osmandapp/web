@@ -259,6 +259,8 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_WEATHER = 'weather';
     const OBJECT_TYPE_POI = 'poi';
 
+    const [globalConfirmation, setGlobalConfirmation] = useState(null);
+
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
@@ -476,6 +478,8 @@ export const AppContextProvider = (props) => {
     return (
         <AppContext.Provider
             value={{
+                globalConfirmation,
+                setGlobalConfirmation,
                 weatherLayers,
                 setWeatherLayers,
                 weatherDate,

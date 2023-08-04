@@ -10,6 +10,7 @@ import InformationBlock from '../../infoblock/components/InformationBlock';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './GeneralPanelButtons';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
@@ -86,6 +87,7 @@ const OsmAndMapFrame = () => {
                             {ctx.routingErrorMsg}
                         </Alert>
                     )}
+                    <GlobalConfirmationDialog />
                     <OsmAndMap
                         mobile={mobile}
                         drawerRightHeight={drawerRightHeight}

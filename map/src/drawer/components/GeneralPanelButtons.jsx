@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton, Paper, Tooltip, Button } from '@mui/material';
+import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
 import TracksManager from '../../context/TracksManager';
 import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
@@ -10,9 +10,7 @@ import PanelButtons from '../../infoblock/components/PanelButtons';
 import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { Dialog } from '@material-ui/core';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogActions from '@mui/material/DialogActions';
+import { doubt } from '../../dialogs/GlobalConfirmationDialog';
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -28,29 +26,9 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
         display: 'none',
     });
 
-    const [confirmation, setConfirmation] = useState(null);
     const [openPoiDialog, setOpenPoiDialog] = useState(false);
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
-
-    /*
-        Example:
-
-        onClick={() =>
-            doubt({
-                text: 'Stop editing the current track?',
-                sure: ctx.createTrack?.enable !== true,
-                callback: () => TracksManager.createTrack(ctx),
-            })
-        }
-    */
-    function doubt({ sure, text, callback }) {
-        if (sure) {
-            callback();
-        } else {
-            setConfirmation({ sure, text, callback });
-        }
-    }
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
@@ -101,6 +79,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                 type="button"
                                 onClick={() =>
                                     doubt({
+                                        ctx,
                                         text: 'Stop editing the current track?',
                                         sure: ctx.createTrack?.enable !== true,
                                         callback: () => TracksManager.createTrack(ctx),
@@ -155,23 +134,6 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
             {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}
-            {confirmation && (
-                <Dialog open={true} onClose={() => setConfirmation(null)}>
-                    <DialogTitle>{confirmation.text}</DialogTitle>
-                    <DialogActions>
-                        <Button onClick={() => setConfirmation(null)}>Cancel</Button>
-                        <Button
-                            sx={{ fontWeight: 'bold' }}
-                            onClick={() => {
-                                setConfirmation(null);
-                                confirmation.callback();
-                            }}
-                        >
-                            OK
-                        </Button>
-                    </DialogActions>
-                </Dialog>
-            )}
         </div>
     );
 }
