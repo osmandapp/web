@@ -139,7 +139,7 @@ export default function LoginDialog() {
                                                 1024 /
                                                 1024.0
                                             ).toFixed(1)} MB ${
-                                                accountInfo && `from ${accountInfo.maxAccSize / (1024 * 1024)} MB`
+                                                accountInfo && `of ${accountInfo.maxAccSize / (1024 * 1024)} MB`
                                             }`}
                                         </Typography>
                                     </ListItemText>
