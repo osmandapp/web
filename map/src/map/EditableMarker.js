@@ -46,6 +46,7 @@ export default class EditableMarker {
             this.dragStartPoint(e, track);
         });
         marker.on('dragend', (e) => {
+            this.ctx.setPointContextMenu({});
             this.dragEndPoint(e, track);
             if (e.target.options.wpt) {
                 e.target.dragging.disable();
@@ -63,12 +64,35 @@ export default class EditableMarker {
                 }
             }
         });
+
+        const markerEventHandler = (e) => {
+            if (
+                e.target?.draggable &&
+                e.target?.alt === 'Marker' &&
+                e.target?.classList?.contains('leaflet-marker-draggable')
+            ) {
+                if (e.type === 'touchstart') {
+                    this.ctx.setPointContextMenu({});
+                    e.preventDefault();
+                }
+                if (e.type === 'touchend') {
+                    e.preventDefault();
+                    if (e.target?.title !== 'poly') {
+                        e.target?.dispatchEvent(new Event('contextmenu', e));
+                    }
+                }
+            }
+        };
+        document.addEventListener('touchstart', markerEventHandler, { passive: false });
+        document.addEventListener('touchend', markerEventHandler, { passive: false });
     }
 
     createPointContextMenu(e) {
-        this.ctx.pointContextMenu.coord = e.latlng;
-        this.ctx.pointContextMenu.element = e.originalEvent.target;
-        this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+        if (e.latlng) {
+            this.ctx.pointContextMenu.coord = e.latlng;
+            this.ctx.pointContextMenu.element = e.originalEvent.target;
+            this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+        }
     }
 
     dragStartPoint(e, track) {
