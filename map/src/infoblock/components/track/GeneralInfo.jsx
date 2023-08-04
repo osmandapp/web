@@ -466,10 +466,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         variant="contained"
                         sx={{ ml: '-0.5px !important' }}
                         className={styles.button}
-                        onClick={() => {
-                            TracksManager.addTrack({ ctx, track: { ...ctx.selectedGpxFile }, overwrite: true });
-                            ctx.setUpdateContextMenu(true);
-                        }}
+                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                     >
                         <Create fontSize="small" sx={{ mr: '7px' }} />
                         Edit Track

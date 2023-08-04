@@ -6,17 +6,17 @@ import { Button, Dialog, DialogTitle, DialogActions } from '@mui/material';
     Example:
 
     onClick={() =>
-        doubt({
+        confirm({
             ctx,
-            sure: ctx.createTrack?.enable !== true,
+            skip: ctx.createTrack?.enable !== true,
             text: 'Stop editing the current track?',
             callback: () => TracksManager.createTrack(ctx),
         })
     }
 */
 
-export function doubt({ ctx, sure, text, callback }) {
-    if (sure) {
+export function confirm({ ctx, skip, text, callback }) {
+    if (skip) {
         callback();
     } else {
         ctx.setGlobalConfirmation({ text, callback });

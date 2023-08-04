@@ -3,6 +3,7 @@ import FavoritesManager from './FavoritesManager';
 import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
+import { confirm } from '../dialogs/GlobalConfirmationDialog';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -244,6 +245,27 @@ async function getTrackData(file) {
     return track;
 }
 
+// handle "Edit Cloud Track" buttons
+// show overwrite-confirmation dialog
+// called from GeneralInfo and PanelButtons
+function handleEditCloudTrack(ctx) {
+    const track = { ...ctx.selectedGpxFile }; // prepare copy
+    const name = prepareName(track.name, true); // get local name
+    const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
+
+    function proceed() {
+        addTrack({ ctx, track, overwrite: true });
+        ctx.setUpdateContextMenu(true);
+    }
+
+    confirm({
+        ctx,
+        callback: proceed,
+        skip: localTrackNotFound,
+        text: name + ' - local track found. Overwrite?',
+    });
+}
+
 function addTrack({ ctx, track, overwrite = false } = {}) {
     const originalName = track.name;
     const firstName = prepareName(originalName, true);
@@ -251,7 +273,6 @@ function addTrack({ ctx, track, overwrite = false } = {}) {
     let ref = null;
     let localName = firstName;
 
-    // FIXME confirm@parent
     if (overwrite) {
         const found = ctx.localTracks?.find((t) => t.name === localName);
         if (found) {
@@ -854,6 +875,7 @@ const TracksManager = {
     getFileName,
     prepareName,
     getTrackData,
+    handleEditCloudTrack,
     addTrack,
     getTrackPoints,
     getGpxTrack,

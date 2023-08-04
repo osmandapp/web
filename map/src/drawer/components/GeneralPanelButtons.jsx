@@ -10,7 +10,7 @@ import PanelButtons from '../../infoblock/components/PanelButtons';
 import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { doubt } from '../../dialogs/GlobalConfirmationDialog';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
 const useStyles = makeStyles({
     buttongroup: {
@@ -78,10 +78,10 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                 variant="contained"
                                 type="button"
                                 onClick={() =>
-                                    doubt({
+                                    confirm({
                                         ctx,
                                         text: 'Stop editing the current track?',
-                                        sure: ctx.createTrack?.enable !== true,
+                                        skip: ctx.createTrack?.enable !== true,
                                         callback: () => TracksManager.createTrack(ctx),
                                     })
                                 }

@@ -87,14 +87,7 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                                 <IconButton
                                     variant="contained"
                                     type="button"
-                                    onClick={() => {
-                                        TracksManager.addTrack({
-                                            ctx,
-                                            track: { ...ctx.selectedGpxFile },
-                                            overwrite: true,
-                                        });
-                                        ctx.setUpdateContextMenu(true);
-                                    }}
+                                    onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                                 >
                                     <Create fontSize="small" />
                                 </IconButton>
