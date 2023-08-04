@@ -186,6 +186,9 @@ export default function InformationBlock({
                                                     onMouseUp={() => {
                                                         setResizing(false);
                                                     }}
+                                                    onMouseOut={() => {
+                                                        setResizing(false);
+                                                    }}
                                                     onMouseMove={(e) => {
                                                         if (!resizing) {
                                                             return;
