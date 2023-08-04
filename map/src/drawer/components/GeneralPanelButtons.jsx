@@ -77,7 +77,7 @@ export default function GeneralPanelButtons({
             }}
         >
             <div
-                className="leaflet-control padding-container"
+                className="padding-container"
                 style={{
                     display: 'flex',
                     flexDirection: orientation === 'vertical' ? 'column' : 'row',
