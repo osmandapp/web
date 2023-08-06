@@ -70,9 +70,6 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (ctx.endPoint) {
                 obj['end'] = ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
             }
-            if (ctx.pinPoint) {
-                obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
-            }
             if (ctx.interPoints?.length > 0) {
                 obj['inter'] = ctx.interPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
@@ -93,6 +90,11 @@ const RouteLayer = ({ geocodingData, region }) => {
                     });
                     obj['params'] = mode.toString().replaceAll('=', ':'); // pretty-url
                 }
+            }
+
+            // allow-alone-pin
+            if (ctx.pinPoint) {
+                obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
             }
 
             if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
