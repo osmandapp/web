@@ -8,7 +8,15 @@ import { pickTypeRouterProfile } from './methods/pickTypeRouterProfile.js';
 
 import { initSetter, nextState, flushState } from './state.js';
 
-import { onOpenSettings, onCloseSettings, onDragStart, onDragEnd, onParamsChanged, onGeoProfile } from './events.js';
+import {
+    onOpenSettings,
+    onCloseSettings,
+    onDragStart,
+    onDragEnd,
+    onParamsChanged,
+    onGeoProfile,
+    escapeFromLineProfile,
+} from './events.js';
 
 import {
     isReady,
@@ -80,6 +88,7 @@ export class geoRouter {
     onParamsChanged = onParamsChanged;
     onGeoProfile = onGeoProfile;
     onRouterProfileSelected = onGeoProfile; // alias
+    escapeFromLineProfile = escapeFromLineProfile;
 
     // methods()
     loadProviders = loadProviders;
