@@ -100,7 +100,12 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
         setOpts(geoRouter.getParams());
     }, [geoRouter.getEffectDeps()]);
 
-    const { router, profile } = geoRouter.getProfile();
+    const { type, router, profile } = geoRouter.getProfile();
+
+    function isAllowedType(checkType) {
+        // allow for currently selected type or non-osmand types or when develFeatures
+        return checkType === type || checkType !== 'osmand' || ctx.develFeatures === true;
+    }
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
@@ -121,7 +126,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                     <Select value={router} onChange={onChangeRouter}>
                         {geoRouter.listProviders().map(
                             ({ key, name, type }) =>
-                                (type !== 'osmand' || ctx.develFeatures === true) && (
+                                isAllowedType(type) && (
                                     <MenuItem key={key} value={key}>
                                         {name}
                                     </MenuItem>
