@@ -38,7 +38,7 @@ Exact trigger timings are present [in the code](https://github.com/osmandapp/Osm
 
 Prompt type | Trigger time (sec) | ~ Trigger distance (m) | Time threshold used | Arrival setting | Comment |
 --- | --- | --- | --- | --- | -- |
-Turn now | Driving: 7 s   Cycling: 3.2 s   Walking: 2 s | Driving: 45 m    Cycling: 10 (12) m    Walking: 4 (12) m | :heavy_check_mark: | :heavy_check_mark: | Dist for 3.6 s, min 12 m      Time = max(8, sqrt(speed \* 3.6)) |
+Turn now | Driving: 7 s   Cycling: 3.2 s   Walking: 2 s | Driving: 45 m    Cycling: 10 (12) m    Walking: 4 (12) m | :heavy_check_mark: | :heavy_check_mark: | Trigger distance = 3.6 s @ defSpeed (min 12 m), trigger time = max(8, sqrt(defSpeed * 3.6)). Under evaluation: Both triggers scaled down for low actual speeds. |
 Turn in X m | 22 s | Driving: 275 m    Cycling: 61 m    Walking: 24 m | :heavy_check_mark: |  | Skipped if less 15 seconds before turn |
 Prepare to turn in X m | 115 s | Driving: 1438 m    Cycling: 319 m    Walking: - |  |  | Skipped if less 150 meters before "Turn in"  Skipped if speed < 8 km/h |
 Long Prepare to turn in X m | 300 s | Driving: -    Cycling: -    Walking: - |  |  | Skipped if default speed < 108 km/h |
