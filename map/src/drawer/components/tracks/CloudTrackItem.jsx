@@ -43,10 +43,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (file.url || ctx.gpxFiles[file.name]?.url) {
-            if (file.name !== ctx.selectedGpxFile.name) {
-                ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
-                ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
-            }
+            // if (file.name !== ctx.selectedGpxFile.name) { ...
+            ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
+            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
