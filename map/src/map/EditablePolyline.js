@@ -27,6 +27,7 @@ export default class EditablePolyline {
         if (polyline) {
             let marker = new L.Marker(new L.LatLng(null, null), {
                 icon: MarkerOptions.options.route,
+                title: 'poly',
                 draggable: true,
             });
             this.addEvents(polyline, marker);
@@ -45,6 +46,7 @@ export default class EditablePolyline {
         });
 
         marker.on('dragend', (e) => {
+            this.ctx.setPointContextMenu({});
             this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
                 this.ctx.setGpxLoading(false);
             });

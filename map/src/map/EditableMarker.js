@@ -46,6 +46,7 @@ export default class EditableMarker {
             this.dragStartPoint(e, track);
         });
         marker.on('dragend', (e) => {
+            this.ctx.setPointContextMenu({});
             this.dragEndPoint(e, track);
             if (e.target.options.wpt) {
                 e.target.dragging.disable();
@@ -66,9 +67,11 @@ export default class EditableMarker {
     }
 
     createPointContextMenu(e) {
-        this.ctx.pointContextMenu.coord = e.latlng;
-        this.ctx.pointContextMenu.element = e.originalEvent.target;
-        this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+        if (e.latlng) {
+            this.ctx.pointContextMenu.coord = e.latlng;
+            this.ctx.pointContextMenu.element = e.originalEvent.target;
+            this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+        }
     }
 
     dragStartPoint(e, track) {
