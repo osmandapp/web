@@ -20,15 +20,12 @@ many other parameters, it's hard to provide reasonable control to user so it's n
 but there is no program that has a golden standard. 
 
 OsmAnd uses 3 steps algorithm: 
-- Filter noisy data - 
+- Filter noisy data 
 - Find local extremums (minimums and maximums)
 - Calculate sum of differences between min and max
 
-
-### Filter Noisy data
-
 Some tracks contains lots of noisy data which needs to be filtered first. For now we apply filtering to all tracks but prepared tracks such as built by 
-Plan Route tool, Navigation tool or after SRTM correction, filtering shoulddn't have any effect.
+Plan Route tool, Navigation tool or after SRTM correction, filtering shouldn't have any effect.
 
 ### Filter 70% slope
 Filtering is based on finding **extreme points** that are significantly higher or lower then 1 neighbor point on the left and 1 neighbor point on the right on the graph. 
