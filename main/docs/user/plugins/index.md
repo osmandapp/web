@@ -12,12 +12,15 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Overview
-Plugins greatly enhance OsmAnd functionality. Each of them is designed to solve a separate problem, such as trip recording, getting Wikipedia articles offline, putting additional terrain data or street-level views on the map etc.
-Plugins can be internal (you can turn them on inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via OsmAnd API and can get access to OsmAnd data.  
 
-## Configure plugin
-In order to get access to the specific functions, provided by a plugin, it must be [enabled first](#enable--disable). You need to [purchase](#purchase) some plugins before use. In some cases, a special map layer should be activated or a user profile should be [configured](#plugin-settings).
+## Overview
+Plugins significantly enhance OsmAnd's functionality. Each is designed to solve a problem or use case, such as trip recording, accessing Wikipedia articles offline, visualizing terrain data, providing street-level views, etc.
+
+Plugins can be internal (you can activate them inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via the OsmAnd API and can get access to OsmAnd data.  
+
+
+## Configure a plugin
+In order to access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
 
 ### Enable / disable
 
@@ -45,18 +48,19 @@ To enable / disable plugins go to:
 
 ### Purchase
 
-Most plugins are available for free, only four of them require purchase of OsmAnd+ or OsmAnd Pro license before use:  
+Most plugins are available for free, only the plugins in the list below require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license to use:  
 
-- [Contour lines and Terrain](../plugins/contour-lines.md)  
-- [Wikipedia](../plugins/wikipedia.md)  
-- [Nautical map view](../plugins/nautical-charts.md)  
-- [Weather](../plugins/weather.md)  
+- [Topography](../plugins/contour-lines.md)
+- 3D Relief (feature of the Topography plugin)
+- [Wikipedia](../plugins/wikipedia.md)
+- [Nautical map view](../plugins/nautical-charts.md)
+- [Weather](../plugins/weather.md)
 
 Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
 
 ### Plugin Features
 
-OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
+OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Context Menu actions**, **Drawer actions**, **Map Style**, **Map Source**, **Profile**.
 
 🤖 - only for Android version of OsmAnd.
 
@@ -65,7 +69,8 @@ OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**,
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
-| [Contour lines and Terrain](#contour-lines-and-terrain) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+| [Topography](#topography) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
+| 🤖 [3D Relief](#topography) | [Map layer](../plugins/contour-lines.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
@@ -86,7 +91,7 @@ OsmAnd Plugins could contribute to these Feature groups: **Layer**, **Widgets**,
 Only the development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
-Almost each plugin have specific profile or global settings, which can be accessed via: 
+Most plugins provide specific profile or global settings, which can be accessed via: 
 
 - *Main menu → Plugins → Plugin name → Settings*  or  
 - *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
@@ -107,7 +112,7 @@ Almost each plugin have specific profile or global settings, which can be access
 
 </Tabs>
 
-Below you can find the list of plugins, that have their own settings.
+The following plugins provide their own settings:
 
 🤖 - only for Android version of OsmAnd.
 
@@ -115,9 +120,9 @@ Below you can find the list of plugins, that have their own settings.
 |:------------|:-------|
 | [Trip recording](#trip-recording) | Сonfigure the trip recording [operation modes](../plugins/trip-recording.md#recording-parameters) |
 | [Weather](#weather) | Configure measurement units for displaying weather events |
-|🤖 [Audio/video notes](#audiovideo-notes) | Select video format, how long to store [etc.](../plugins/audio-video-notes.md#plugin-settings) |
+|🤖 [Audio/video notes](#audiovideo-notes) | Select [video format, how long to store, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
-|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login](../plugins/openplacereviews.md#plugin-settings) or use test registration|
+|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login, or use test registration](../plugins/openplacereviews.md#plugin-settings) |
 |🤖 [External Sensors](#external-sensors) | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
 |🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
@@ -131,51 +136,51 @@ Having Wikipedia on your trip helps you learn more about the places you visit. I
 
 ### [Online maps](./online-map.md)
 
-OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source.  
+OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from various sources.  
 
 ### [Trip recording](./trip-recording.md)
 
-To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, added with waypoints, provided for navigation, shared with friends, etc.  
+To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, enhanced with waypoints, provided for navigation, shared with friends, etc.  
 
-### [Contour lines and Terrain](./contour-lines.md)
+### [Topography](./contour-lines.md)
 
-Terrain information, such as Contour lines, Hillshades, Slopes - helps to make a visual assessment of the shape of the land surface by considering the curvature, extremes, steepness, points of equal height, and other.  
+Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 
 ### [Nautical map view](./nautical-charts.md)
 
-Nautical map provides detailed graphical representation of oceans, seas, coastal areas and rivers to help you navigate on the water, and be aware of popular traffic routes, obstacles in your waterway, the nearest harbors, anchorages, and other essential reference.
+Nautical map view provides detailed graphical representation of oceans, seas, coastal areas and rivers to help you navigate on the water, see popular traffic routes, obstacles in the waterway, harbors, anchorages, and other essential reference.
 
 ### [Ski map view](./ski-maps.md)
 
-Ski Map View shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
+Ski map view uses winter colors, shows downhill or cross-country pistes, cable cars, chairlifts, and other facilities and services, which can be used to navigate recreation areas, ski resorts and terrain parks.
 
 ### [Audio/video notes](./audio-video-notes.md)
 
-Audio/video notes for future reference in case of need, or just to remember the moment, scene, or interaction. Once made audio/video notes are available from *My places* as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.  
+Create audio/video notes for future reference, e.g. to remember a event, scene, or interaction. Created audio/video notes are available from *My places* as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.  
 
 ### [Parking position](./parking.md)
 
-Set a point on the map where your car is left on the street and notify your calendar when parking time starts. This will make it easier for you to track the time and location of your car.
+Set a point on the map where your car is left on the street and notify your calendar when the parking time ends. This will make it easier for you to track the time and location of your car.
 
 ### [OpenStreetMap editing](./osm-editing.md)
 
-OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community that aims to create a comprehensive map of the world and provide up-to-date, open-source data to every user.  
+The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community creating a comprehensive map of the world and providing publicly available up-to-date, open-source data.  
 
 ### [OpenPlaceReviews](./openplacereviews.md)
 
-The plugin allows you to add and view photos of restaurants, cafes and other points of interest in the context menu of the place. For Android only.  
+The plugin allows you to add and view photos of restaurants, cafes and other points of interest in the place's context menu. For Android only.  
 
 ### [Mapillary](./mapillary.md)
 
-To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
+See street-level views of your routes or places of interest, provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
 ### [Accessibility](./accessibility.md)
 
-Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
+The Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
 
 ### [External sensors](./external-sensors.md)
 
-Connect external sensors to display data on OsmAndand screen and to store needed information in track recordings. For Android only.  
+Connect external sensors to display their data in OsmAnd and to store the information in track recordings. For Android only.  
 
 ### [Weather](./weather.md)
 
@@ -183,7 +188,7 @@ Shows the hourly forecast for the current day and for 7 days ahead.
 
 ### [OsmAnd development](./development.md)
 
-OsmAnd development plugin is only necessary for developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.  
+The OsmAnd development plugin targets developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.  
 
 ### [OsmAnd Tracker](./osmand-tracker.md)
 

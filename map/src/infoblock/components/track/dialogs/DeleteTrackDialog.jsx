@@ -9,7 +9,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { apiPost } from '../../../../util/HttpApi';
 
-export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowContextMenu }) {
+export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
 
     const place =
@@ -25,7 +25,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowCo
 
     function cleanContextMenu() {
         setDialogOpen(false);
-        setShowContextMenu(false);
+        setShowInfoBlock(false);
     }
 
     async function deleteCurrentTrack() {

@@ -834,6 +834,8 @@ function createTrack(ctx, latlng) {
         };
     }
     ctx.setCreateTrack({ ...createState });
+
+    ctx.trackRouter.escapeFromLineProfile();
 }
 
 function createGpxTracks() {

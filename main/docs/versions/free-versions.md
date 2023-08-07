@@ -17,6 +17,30 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.5 
+Release date: 08/2023
+* BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX
+* Free backup for favorites and settings to OsmAnd Cloud
+* New format for Terrain maps with 3D Relief support
+* Tracks management: updated UI, added sorting, support of nested folders
+* Android Auto: new start menu for access favorites, tracks and poi categories
+* One list of widgets for Top/Bottom panel
+* New "Train" profile, allows to calculate railways routes
+* Contour lines works with any "Map source"
+* Expanded list of default actions for external keyboards
+* Custom routing files, added options to delete or overwrite
+* Added option to "Announce deviation from the route"
+* Start screen: added option restore OsmAnd state from file
+* Added "Hazardous Materials" classes Truck navigation in North America
+* Added support of "Via ferrata" for pedestrian routing
+* Added "CAI" scale for difficulty classification of the routes
+* Fixed per-app language selection
+* Added support for themed icons
+* OsmAnd Cloud: added option to delete account
+* Accessibility: touch target size for  buttons changed to 48 dp; fixed issue with map UI visible for screen readers
+
+<DownloadRelease blog="osmand-android-4-5-released" release="net.osmand-4.5.9.apk" />
+
 ### Version 4.4 
 Release date: 03/2023
 * Improved "Tracks" menu in "Configure Map"

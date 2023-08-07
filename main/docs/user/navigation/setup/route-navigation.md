@@ -68,7 +68,6 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 :::note
 - Route calculation for long distances (longer than 200 km for [driving](../routing/car-based-routing.md)) may take few minutes. 
 - If the route is not displayed on the map after 5-7 minutes of calculation, follow the recommendations in the [Troubleshooting section](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km).
-- 
 :::
 
 ### Navigation menu  
@@ -235,7 +234,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 ## Start / stop navigation
 
-Once your start and end points are selected, the app will create a route between them using active profile. During the route calculation process (which can take up to 1-2 minutes) OsmAnd searches for roads, that best match the *[Navigation settings](../guidance/navigation-settings.md)*. You will also see a blue progress line at the bottom of the screen, signaling that the calculation is still not complete.  
+Once start and end points are selected, the app will create a route between them using active profile. During the route calculation process (which can take up to 1-2 minutes) OsmAnd searches for roads, that best match the *[Navigation settings](../guidance/navigation-settings.md)*. You will also see a blue progress line at the bottom of the screen, signaling that the calculation is still not complete.  
 
 - To begin navigation, you should tap on **Start** button.
 - To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.
@@ -270,12 +269,13 @@ The route can be recalculated automatically in case of deviation from it. You ca
 
 <InfoAndroidOnly/>
 
-Sometimes, if you want to stop for a break and deviate from the route for a short time, you can use the pause/resume navigation function to pause voice prompts and stop recalculating the route.  
-This option is availible in Android version of the app in *[Notification list](../guidance/voice-navigation.md#text-notifications)*.
+If you want to stop for a break and deviate from the route for a short time, you can use the *Pause/Resume* navigation function to pause voice prompts and stop recalculating the route.  
+This option is availible in Android version of the app in *[Notification list](../guidance/voice-navigation.md#text-notifications)* or from the *[Quick actions menu](../../widgets/quick-action.md)*.
 
 ![Notification screen Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
-Please note, that when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)*, navigation doesn't stop, voice prompts continue to be voiced, although *Resume* (for Android) or *Start* (for iOS) may be confusing.
+To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar or dialog, that appears when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
+Please note, that when you tap on the *Navigation button* while your route, navigation doesn't stop, voice prompts continue to be voiced, although proposed options (*Resume* (for Android) or *Start* (for iOS)) may be confusing.
 
 <Tabs groupId="operating-systems">
 

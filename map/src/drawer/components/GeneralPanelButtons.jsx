@@ -3,7 +3,6 @@ import TracksManager from '../../context/TracksManager';
 import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { makeStyles } from '@material-ui/core/styles';
 import { styled } from '@mui/material/styles';
 import PoiTypesDialog from './poi/PoiTypesDialog';
 import PanelButtons from '../../infoblock/components/PanelButtons';
@@ -12,16 +11,16 @@ import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
-const useStyles = makeStyles({
-    buttongroup: {
-        top: '10vh',
-        width: '10px',
-        height: '10px',
-    },
-});
-export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setShowContextMenu, clearState }) {
+export default function GeneralPanelButtons({
+    mainMenuWidth,
+    showInfoBlock,
+    setShowInfoBlock,
+    infoBlockOpen,
+    setInfoBlockOpen,
+    clearState,
+    mobile,
+}) {
     const ctx = useContext(AppContext);
-    const classes = useStyles();
     const StyledInput = styled('input')({
         display: 'none',
     });
@@ -29,6 +28,9 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
     const [openPoiDialog, setOpenPoiDialog] = useState(false);
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
+
+    const HEADER_HEIGHT = 68;
+    const BUTTON_SIZE = 41;
 
     const fileSelected = () => async (e) => {
         Array.from(e.target.files).forEach((file) => {
@@ -46,7 +48,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
 
     function getButtonOrientation() {
         // desktop
-        if (height > 500) {
+        if (height > 600) {
             return 'vertical';
         } else {
             // mobile
@@ -57,17 +59,39 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
         return 'vertical';
     }
 
+    function useFlexButtons() {
+        return !mobile && orientation === 'vertical';
+    }
+
     return (
-        <div style={{ left: drawerWidth + 10, top: '68px' }} className={classes.buttongroup + ' leaflet-bottom'}>
+        <div
+            style={{
+                left: mainMenuWidth + 10,
+                top: `${HEADER_HEIGHT}px`,
+                bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
+                zIndex: 1000,
+                position: 'absolute',
+                display: 'flex',
+                height: useFlexButtons() && height - 2 * HEADER_HEIGHT,
+                alignItems: useFlexButtons() && 'center',
+                flexDirection: useFlexButtons() && 'column',
+            }}
+        >
             <div
-                className="leaflet-control leaflet-bar padding-container"
-                style={{ display: 'flex', flexDirection: orientation === 'vertical' ? 'column' : 'row' }}
+                className="padding-container"
+                style={{
+                    display: 'flex',
+                    flexDirection: orientation === 'vertical' ? 'column' : 'row',
+                    marginBottom: useFlexButtons() && 'auto',
+                }}
             >
                 <Paper>
                     <ButtonGroup
                         sx={{
-                            width: orientation === 'vertical' ? 41 : 'auto',
-                            height: orientation === 'vertical' ? 'auto' : 41,
+                            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
+                            borderRadius: '4px',
+                            width: orientation === 'vertical' ? BUTTON_SIZE : 'auto',
+                            height: orientation === 'vertical' ? 'auto' : BUTTON_SIZE,
                         }}
                         orientation={orientation}
                         color="primary"
@@ -113,7 +137,6 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                 type="button"
                                 onClick={() => {
                                     setOpenPoiDialog(true);
-                                    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_POI);
                                 }}
                             >
                                 <Info fontSize="small" />
@@ -121,15 +144,19 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
-                {showContextMenu && (
-                    <PanelButtons
-                        orientation={orientation}
-                        setShowContextMenu={setShowContextMenu}
-                        clearState={clearState}
-                    />
-                )}
             </div>
-            {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
+            {showInfoBlock && (
+                <PanelButtons
+                    orientation={orientation}
+                    setShowInfoBlock={setShowInfoBlock}
+                    infoBlockOpen={infoBlockOpen}
+                    setInfoBlockOpen={setInfoBlockOpen}
+                    clearState={clearState}
+                    mobile={mobile}
+                    bsize={BUTTON_SIZE}
+                />
+            )}
+            {openPoiDialog && (
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}

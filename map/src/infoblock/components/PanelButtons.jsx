@@ -1,5 +1,5 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
-import { Close, Delete, CloudUpload, Redo, Undo, Create } from '@mui/icons-material';
+import { Close, Delete, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
@@ -9,11 +9,23 @@ import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
-const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
+const PanelButtons = ({
+    orientation,
+    setShowInfoBlock,
+    infoBlockOpen,
+    setInfoBlockOpen,
+    clearState,
+    mobile,
+    bsize,
+}) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
+
+    const toggleInfoBlock = () => {
+        setInfoBlockOpen(!infoBlockOpen);
+    };
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
@@ -60,11 +72,23 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
         ctx.setSelectedGpxFile({ ...objFromState });
     }
 
-    const styleDiv = {
-        marginTop: orientation === 'vertical' ? '2px' : 0,
-        marginLeft: orientation === 'vertical' ? 0 : '2px',
-    };
+    function getMarginTop() {
+        if (mobile) {
+            return orientation === 'vertical' ? `${bsize * 3.5}px` : 0;
+        } else {
+            return orientation === 'vertical' ? `-${bsize * 3}px` : 0;
+        }
+    }
 
+    function getMarginLeft() {
+        if (mobile) {
+            return orientation === 'vertical' ? `-${bsize}px` : `${bsize}px`;
+        } else {
+            return orientation === 'vertical' ? 0 : `${bsize}px`;
+        }
+    }
+
+    // little align elements with "disabled" attr, which must be covered with <span>, due to Tooltip warnings
     const styleSpan = {
         marginTop: orientation === 'vertical' ? 0 : '2px',
         marginLeft: orientation === 'vertical' ? '2px' : 0,
@@ -72,12 +96,20 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
 
     return (
         ctx.selectedGpxFile && (
-            <div style={styleDiv}>
+            <div
+                style={{
+                    marginTop: getMarginTop(),
+                    marginLeft: getMarginLeft(),
+                    marginBottom: !mobile && 'auto',
+                }}
+            >
                 <Paper>
                     <ButtonGroup
                         sx={{
-                            width: orientation === 'vertical' ? 41 : 'auto',
-                            height: orientation === 'vertical' ? 'auto' : 41,
+                            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
+                            borderRadius: '4px',
+                            width: orientation === 'vertical' ? bsize : 'auto',
+                            height: orientation === 'vertical' ? 'auto' : bsize,
                         }}
                         orientation={orientation}
                         color="primary"
@@ -175,19 +207,31 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                                 </span>
                             </Tooltip>
                         )}
-                        <Tooltip title="Close" arrow placement="right">
-                            <span style={styleSpan}>
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => {
-                                        doClear();
-                                        setShowContextMenu(false);
-                                    }}
-                                >
-                                    <Close fontSize="small" />
+                        {ctx.currentObjectType && !infoBlockOpen && !mobile && (
+                            <Tooltip title="Open info" arrow placement="right">
+                                <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
+                                    <MenuOpen fontSize="small" />
                                 </IconButton>
-                            </span>
+                            </Tooltip>
+                        )}
+                        {ctx.currentObjectType && infoBlockOpen && !mobile && (
+                            <Tooltip title="Close info" arrow placement="right">
+                                <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(-1)' }}>
+                                    <MenuOpen fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
+                        <Tooltip title="Close" arrow placement="right">
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                onClick={() => {
+                                    doClear();
+                                    setShowInfoBlock(false);
+                                }}
+                            >
+                                <Close fontSize="small" />
+                            </IconButton>
                         </Tooltip>
                     </ButtonGroup>
                 </Paper>
@@ -198,7 +242,7 @@ const PanelButtons = ({ orientation, setShowContextMenu, clearState }) => {
                         <DeleteTrackDialog
                             dialogOpen={openDeleteDialog}
                             setDialogOpen={setOpenDeleteDialog}
-                            setShowContextMenu={setShowContextMenu}
+                            setShowInfoBlock={setShowInfoBlock}
                         />
                     )}
                 {openDeleteDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE && (

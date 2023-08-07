@@ -91,7 +91,7 @@ To change the current map style to Nautical, you need to make the following sett
 
 ### Download Nautical maps  
 
-For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, if necessary, contours. On the other hand, standard maps with information about inland, onshore and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.  
+For optimal presentation, maps can be adapted to current needs: marks and symbols can be added with depth points and, as needed, contours. On the other hand, standard maps with information about inland, onshore and nearshore waters information for a particular region can be a good complement to the information about waterways on a Nautical map.  
 
 When you [download](../start-with/download-maps.md) a nautical map, more details related to Boat navigation appear on the map. Some types of [Nautical maps](../start-with/download-maps.md#type-of-maps) contain details such as:  
 

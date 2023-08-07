@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Toolbar, Typography } from '@mui/material';
-import { Divider, MenuItem, ListItemIcon, MenuList, Box, IconButton } from '@mui/material';
+import { Divider, MenuList, Box, IconButton } from '@mui/material';
 import { ArrowBack, Person } from '@mui/icons-material';
 import AppContext from '../../context/AppContext';
 import Weather from './weather/Weather';
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import SearchResultMenu from './search/SearchResultMenu';
 
-export default function OsmAndDrawer({ mobile, toggleDrawer }) {
+export default function OsmAndDrawer({ toggleDrawer }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -22,47 +22,32 @@ export default function OsmAndDrawer({ mobile, toggleDrawer }) {
     return (
         <>
             <Toolbar variant="dense">
-                {mobile ? (
-                    <>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                            onClick={toggleDrawer}
-                        >
-                            <ArrowBack />
+                <>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                        onClick={toggleDrawer}
+                    >
+                        <ArrowBack />
+                    </IconButton>
+                    {ctx.loginUser ? (
+                        <Typography onClick={openLogin} color="inherit">
+                            {ctx.loginUser}
+                        </Typography>
+                    ) : (
+                        <Typography onClick={openLogin} variant="h6" color="inherit">
+                            Login
+                        </Typography>
+                    )}
+                    <Box>
+                        <IconButton size="large" onClick={openLogin} color="inherit">
+                            <Person />
                         </IconButton>
-                        {ctx.loginUser ? (
-                            <Typography onClick={openLogin} color="inherit">
-                                {ctx.loginUser}
-                            </Typography>
-                        ) : (
-                            <Typography onClick={openLogin} variant="h6" color="inherit">
-                                Login
-                            </Typography>
-                        )}
-                        <Box>
-                            <IconButton size="large" onClick={openLogin} color="inherit">
-                                <Person />
-                            </IconButton>
-                        </Box>
-                    </>
-                ) : (
-                    <MenuItem onClick={openLogin}>
-                        <ListItemIcon>
-                            <Person fontSize="small" />
-                        </ListItemIcon>
-                        {ctx.loginUser ? (
-                            <Typography color="inherit">{ctx.loginUser}</Typography>
-                        ) : (
-                            <Typography variant="h6" color="inherit">
-                                Login
-                            </Typography>
-                        )}
-                    </MenuItem>
-                )}
+                    </Box>
+                </>
             </Toolbar>
             <Divider />
             <MenuList>

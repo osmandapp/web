@@ -11,12 +11,41 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-The 'Configure map' menu is an important item on OsmAnd's main menu where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
+## Overview
 
-| Android | iOS |
-| :---: | :---: |
-| ![Configure map_android](@site/static/img/map/configure-map-android.png) | ![Configure map_ios](@site/static/img/map/configure-map-ios.png) |
+The *Configure map* menu is an important item in the OsmAnd main menu, where you can customize the map display to suit your needs. You can highlight favorite points, navigation markers, or special points of interest on the map, display specific routes or third-party GPX files, overlay terrain information, satellite images, or any other available raster images, display public transportation information, and change the map style.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Section Show:  
+
+![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
+
+Section Topography:  
+
+![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
+
+Section OpenStreetMap:  
+
+![Configure map android](@site/static/img/map/configure_map_osm_andr.png)  
+
+Sections Routes and Map rendering:  
+
+![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure map ios](@site/static/img/map/configure-map-ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 The **<Translate android="true" ids="configure_map"/>** menu is divided into two categories:
 - [Map style parameters](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (or **<Translate ios="true" ids="map_widget_renderer"/>**) is a group of settings that allow you to change the way the main map is displayed.  
@@ -29,7 +58,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 ## Map Layers
 - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, Nautical data.
 - [Map Raster sources](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer) - select underlay / main source / overlay map with transparency levels.
-- [Terrain](../map/raster-maps.md#hillshade--slopeg) - display raster slope or hillshade information.
+- [Terrain](../plugins/contour-lines.md#configure-map-view) - display slope / hillshade information, 3D Relief.
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - display all borders of downloaded maps on the main map layer.
 
 ## Map Data Layers

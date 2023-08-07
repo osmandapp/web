@@ -215,7 +215,8 @@ export default function PointContextMenu({ anchorEl }) {
         );
     };
 
-    const handleClose = () => {
+    const handleClose = (event) => {
+        event.preventDefault();
         closeContextMenu();
         if (anchorEl) {
             return;
