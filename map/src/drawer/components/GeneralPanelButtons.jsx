@@ -100,7 +100,6 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                                 type="button"
                                 onClick={() => {
                                     setOpenPoiDialog(true);
-                                    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_POI);
                                 }}
                             >
                                 <Info fontSize="small" />
@@ -116,7 +115,7 @@ export default function GeneralPanelButtons({ drawerWidth, showContextMenu, setS
                     />
                 )}
             </div>
-            {openPoiDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_POI && (
+            {openPoiDialog && (
                 <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
             )}
             {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
