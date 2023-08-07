@@ -10,7 +10,7 @@ import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box } from '@mui/m
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';
 import TrackLayerProvider from '../../../../map/TrackLayerProvider';
-import RoutingManager from '../../../../context/RoutingManager';
+import TracksRoutingCache from '../../../../context/TracksRoutingCache';
 import RouteProfileSettingsDialog from '../../../../dialogs/RouteProfileSettingsDialog';
 import { Settings } from '@mui/icons-material';
 import { useWindowSize } from '../../../../util/hooks/useWindowSize';
@@ -123,7 +123,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                             start.geoProfile = geoProfile;
                             start.profile = geoProfile.profile;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
                         }
                     }
                     return true;
@@ -148,7 +148,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                         prevPoint,
                         currentPoint
                     );
-                    RoutingManager.addRoutingToCash(prevPoint, currentPoint, currentPolyline, ctx);
+                    TracksRoutingCache.addRoutingToCache(prevPoint, currentPoint, currentPolyline, ctx);
                     return true;
                 } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                     currentPoint.geoProfile = geoProfile;
@@ -160,7 +160,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                         currentPoint,
                         nextPoint
                     );
-                    RoutingManager.addRoutingToCash(currentPoint, nextPoint, currentPolyline, ctx);
+                    TracksRoutingCache.addRoutingToCache(currentPoint, nextPoint, currentPolyline, ctx);
                     return true;
                 }
             } else if (changeAll) {
@@ -172,7 +172,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                             start.geoProfile = geoProfile;
                             start.profile = geoProfile.profile;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
                         }
                     }
                     return true;
@@ -184,7 +184,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                             start.geoProfile = geoProfile;
                             start.profile = geoProfile.profile;
                             let currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-                            RoutingManager.addRoutingToCash(start, end, currentPolyline, ctx);
+                            TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
                         }
                     }
                     return true;

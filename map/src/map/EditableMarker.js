@@ -3,7 +3,7 @@ import MarkerOptions from './markers/MarkerOptions';
 import TrackLayerProvider from './TrackLayerProvider';
 import _ from 'lodash';
 import TracksManager from '../context/TracksManager';
-import RoutingManager from '../context/RoutingManager';
+import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
@@ -151,7 +151,7 @@ export default class EditableMarker {
                                 null,
                                 oldPoint
                             );
-                            segments = RoutingManager.addSegmentToRouting(
+                            segments = TracksRoutingCache.addSegmentToRouting(
                                 prevPoint,
                                 currentPoint,
                                 oldPoint,
@@ -176,7 +176,7 @@ export default class EditableMarker {
                                 oldPoint,
                                 null
                             );
-                            segments = RoutingManager.addSegmentToRouting(
+                            segments = TracksRoutingCache.addSegmentToRouting(
                                 currentPoint,
                                 nextPoint,
                                 oldPoint,
