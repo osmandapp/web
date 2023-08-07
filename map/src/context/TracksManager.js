@@ -791,7 +791,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             if (data.data.analysis?.hasElevationData) {
                 newGpxFile.analysis.srtmAnalysis = false;
             } else {
-                return getTrackWithAnalysis(GET_SRTM_DATA, ctx, setLoading, points); // auto-srtm-this
+                const fakeCtx = { selectedGpxFile: newGpxFile };
+                return getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, points); // auto-srtm-this
             }
         }
 
