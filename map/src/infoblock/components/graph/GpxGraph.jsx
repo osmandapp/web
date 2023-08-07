@@ -106,9 +106,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     useEffect(() => {
         if (data) {
-            setSpeedData(showData[y2Axis] ? data.map((d) => d[y2Axis]) : null);
-            setEleData(showData[y1Axis[0]] ? data.map((d) => d[y1Axis[0]]) : null);
-            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => d[y1Axis[1]]) : null);
+            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: d[y2Axis] })) : null);
+            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[0]] })) : null);
+            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[1]] })) : null);
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
             }
@@ -307,7 +307,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 display: true,
                 ticks: {
                     beginAtZero: true,
-                    maxTicksLimit: 7,
+                    maxTicksLimit: width === 400 && 10,
                 },
                 title: {
                     display: true,
@@ -350,7 +350,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
     };
 
     const graphData = {
-        labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(2) : 0)),
+        labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
         datasets: [
             {
                 label: y1Axis[0],
