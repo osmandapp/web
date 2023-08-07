@@ -505,21 +505,33 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             const data = new FormData();
+
             data.append('file', oMyBlob, gpxFile.name);
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
-                params: {
-                    name:
-                        type === FavoritesManager.FAVORITE_FILE_TYPE
-                            ? currentFolder
-                            : currentFolder + fileName + '.gpx',
-                    type: type,
-                },
-            });
+
+            const params = {
+                type: type,
+                name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : currentFolder + fileName + '.gpx',
+            };
+
+            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
 
             if (res && res?.data?.status === 'ok') {
-                downloadAfterUpload(ctx, file);
+                // re-download gpx
+                const downloadFile = { ...gpxFile, ...params };
+                downloadAfterUpload(ctx, downloadFile);
                 deleteLocalTrack(ctx);
+
+                // refresh list-files but skip if uploaded file is already there
+                if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === params.name)) {
+                    const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+                    const resJson = await respGetFiles.json();
+                    if (resJson && resJson.uniqueFiles) {
+                        ctx.setListFiles(resJson);
+                    }
+                }
+
                 return true;
+
                 // API request /list-files is too slow for this moment... commented!
                 // const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
                 // const resJson = await respGetFiles.json();
