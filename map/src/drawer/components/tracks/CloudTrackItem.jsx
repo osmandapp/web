@@ -75,6 +75,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
                 ctx.setGpxFiles(newGpxFiles); // finally, success
+                setError(false);
             } else {
                 setError(true);
             }
