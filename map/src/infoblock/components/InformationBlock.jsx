@@ -11,9 +11,9 @@ import PoiTabList from './tabs/PoiTabList';
 export default function InformationBlock({
     mobile,
     setDrawerWidth,
-    hideContextMenu,
-    showContextMenu,
-    setShowContextMenu,
+    infoBlockOpen,
+    showInfoBlock,
+    setShowInfoBlock,
     setClearState,
     heightScreen,
     resizing,
@@ -47,7 +47,7 @@ export default function InformationBlock({
     }, [ctx.pointContextMenu]);
 
     useEffect(() => {
-        if (!showContextMenu) {
+        if (!showInfoBlock) {
             stopCreatedTrack(false);
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
@@ -57,11 +57,11 @@ export default function InformationBlock({
                 setDrawerHeight(0);
             }
         }
-    }, [showContextMenu]);
+    }, [showInfoBlock]);
 
     useEffect(() => {
         setDrawerWidth(getWidth());
-    }, [mobile, showContextMenu, hideContextMenu]);
+    }, [mobile, showInfoBlock, infoBlockOpen]);
 
     useEffect(() => {
         if (ctx.currentObjectType && ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
@@ -76,17 +76,17 @@ export default function InformationBlock({
         ) {
             setPrevTrack(null);
             setTabsObj(null);
-            setShowContextMenu(false);
+            setShowInfoBlock(false);
         } else {
             if (!ctx.currentObjectType) {
                 setTabsObj(null);
-                setShowContextMenu(false);
-            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0 || !showContextMenu) {
+                setShowInfoBlock(false);
+            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0 || !showInfoBlock) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateContextMenu(false);
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
-                    obj = new TrackTabList().create(ctx, setShowContextMenu);
+                    obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
@@ -94,10 +94,10 @@ export default function InformationBlock({
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
                     obj = new PoiTabList().create();
                 } else if (ctx.selectedGpxFile) {
-                    obj = new TrackTabList().create(ctx, setShowContextMenu);
+                    obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }
                 if (obj) {
-                    setShowContextMenu(true);
+                    setShowInfoBlock(true);
                     clearStateIfObjChange();
                     setTabsObj(obj);
                     setValue(obj.defaultTab);
@@ -133,12 +133,12 @@ export default function InformationBlock({
         }
     }
 
-    function showInfoBlock() {
-        return mobile ? true : !hideContextMenu;
+    function openInfoBlock() {
+        return mobile ? true : infoBlockOpen;
     }
 
     function getWidth() {
-        if (showContextMenu && showInfoBlock()) {
+        if (showInfoBlock && openInfoBlock()) {
             return mobile ? 'auto' : `${DRAWER_SIZE + 24}px`;
         } else {
             return '0px';
@@ -147,7 +147,7 @@ export default function InformationBlock({
 
     return (
         <>
-            {showContextMenu && showInfoBlock() && (
+            {showInfoBlock && openInfoBlock() && (
                 <>
                     <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth() }}>
                         <div>
@@ -184,6 +184,9 @@ export default function InformationBlock({
                                                         setResizing(true);
                                                     }}
                                                     onMouseUp={() => {
+                                                        setResizing(false);
+                                                    }}
+                                                    onMouseOut={() => {
                                                         setResizing(false);
                                                     }}
                                                     onMouseMove={(e) => {
