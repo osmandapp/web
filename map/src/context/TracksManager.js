@@ -517,17 +517,21 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             });
 
             if (res && res?.data?.status === 'ok') {
-                const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                const resJson = await respGetFiles.json();
-                if (resJson && resJson.uniqueFiles) {
-                    ctx.setListFiles(resJson);
-                    const file = resJson.uniqueFiles.find((f) => f.name === fileName + '.gpx');
-                    if (file) {
-                        downloadAfterUpload(ctx, file);
-                        deleteLocalTrack(ctx);
-                        return true;
-                    }
-                }
+                downloadAfterUpload(ctx, file);
+                deleteLocalTrack(ctx);
+                return true;
+                // API request /list-files is too slow for this moment... commented!
+                // const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+                // const resJson = await respGetFiles.json();
+                // if (resJson && resJson.uniqueFiles) {
+                //     ctx.setListFiles(resJson);
+                //     const file = resJson.uniqueFiles.find((f) => f.name === fileName + '.gpx');
+                //     if (file) {
+                //         downloadAfterUpload(ctx, file);
+                //         deleteLocalTrack(ctx);
+                //         return true;
+                //     }
+                // }
             }
         }
     }
