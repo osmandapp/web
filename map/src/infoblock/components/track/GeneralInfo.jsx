@@ -50,7 +50,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     useEffect(() => {
         const track = ctx.selectedGpxFile;
         const analysis = track.analysis;
-        if (analysis && analysis.hasElevationData === false && !analysis.srtmAnalysis) {
+        if (analysis && analysis.hasElevationData !== true && !analysis.srtmAnalysis) {
             let totalPoints = track.points?.length ?? 0;
             track.points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
             if (totalPoints <= TracksManager.AUTO_SRTM_MAX_POINTS) {
