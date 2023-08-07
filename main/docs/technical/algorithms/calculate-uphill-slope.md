@@ -39,7 +39,7 @@ Plan Route tool, Navigation tool or after SRTM correction, filtering shoulddn't 
 
 #### Filter 70% slope
 Filtering is based on finding **extreme points** that are significantly higher or lower then 1 neighbor point on the left and 1 neighbor point on the right on the graph. 
-Those **extreme points** are excluded from further caclulation. The ```threshold``` is [70% slope](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [code]([https://github.com/osmandapp/OsmAnd/blob/2b4c4b21df37859c9af10d173416003a040d3bf5/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72)).
+Those **extreme points** are excluded from further caclulation. The ```threshold``` is [70% slope](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
 **Example 1**. (all points distributed by 10m), elevation - [5, 3, 10, 3, 5]. 10 is extreme point: cause it's 10 > 3 (70% slope).
 
