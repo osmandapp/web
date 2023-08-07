@@ -31,21 +31,21 @@ export default function TrackInfo({ file }) {
             (edate !== stdate ? edate : '') +
             new Date(summary.endTime).toLocaleTimeString();
     }
-    if (summary?.totalDistance) {
+    if (summary?.totalDistance > 0) {
         distance = 'Distance: ' + (summary?.totalDistance / 1000).toFixed(1) + ' km';
     }
     if (summary?.timeMoving) {
         timeMoving = 'Time moving: ' + toHHMMSS(summary?.timeMoving);
     }
-    if (summary?.diffElevationDown) {
+    if (summary?.diffElevationDown > 0 || summary.diffElevationUp > 0) {
         updownhill =
             'Uphill/downhill: ' +
-            summary.diffElevationUp.toFixed(0) +
+            Number(summary?.diffElevationUp ?? 0).toFixed(0) +
             '/' +
-            summary?.diffElevationDown.toFixed(0) +
+            Number(summary?.diffElevationDown ?? 0).toFixed(0) +
             ' m';
     }
-    if (summary?.maxSpeed && summary?.maxSpeed > 0) {
+    if (summary?.maxSpeed > 0) {
         speed =
             'SpeedTab (min/avg/max): ' +
             (summary.minSpeed * 3.6).toFixed(0) +
