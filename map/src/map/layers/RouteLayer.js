@@ -233,14 +233,17 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (feature.properties.roadId) {
                 const id = feature.properties.roadId;
                 const name = 'Way ' + Math.trunc(id / 64);
+                const osm = id / 64;
 
                 window['addAvoidRoadId' + id] = () => {
-                    let newAvoidRoads = Object.assign([], ctx.avoidRoads);
+                    const newAvoidRoads = Object.assign([], ctx.avoidRoads);
                     newAvoidRoads.push({ id, name });
                     ctx.setAvoidRoads(newAvoidRoads);
                 };
 
-                desc = `${desc}. <input type="button" value="Avoid ${name}" onclick="addAvoidRoadId${id}()"/>`;
+                desc = `${desc}.
+                    <input type="button" value="Avoid" onclick="addAvoidRoadId${id}()"/>
+                    <a href="https://openstreetmap.org/way/${osm}" target="_blank">${name}</a>`;
             }
             layer.bindPopup(desc);
         }
