@@ -18,7 +18,7 @@ export default function LocalTrackGroup() {
 
     const ctx = useContext(AppContext);
 
-    const [localGpxOpen, setLocalGpxOpen] = useState(false);
+    const [localGpxOpen, setLocalGpxOpen] = useState(true);
     const [sortFiles, setSortFiles] = useState([]);
     const anchorEl = React.useRef(null);
     const [open, setOpen] = useState(false);
@@ -40,10 +40,10 @@ export default function LocalTrackGroup() {
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
-                let track = await TracksManager.getTrackData(file);
+                const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack(ctx, track);
+                    TracksManager.addTrack({ ctx, track, overwrite: false });
                 }
             });
             reader.readAsText(file);
@@ -90,7 +90,7 @@ export default function LocalTrackGroup() {
         <div className={styles.drawerItem}>
             <MenuItem sx={{ ml: 3 }} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
                 <ListItemIcon>
-                    <Folder fontSize="small" />
+                    <Folder fontSize="small" sx={{ mb: '4px' }} />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="inherit" noWrap>

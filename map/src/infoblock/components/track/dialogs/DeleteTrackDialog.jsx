@@ -30,24 +30,27 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
 
     async function deleteCurrentTrack() {
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.loginUser) {
-            let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
+            const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
                 params: {
                     name: ctx.selectedGpxFile.name,
                     type: 'GPX',
                 },
             });
             if (response.status === 200) {
-                //delete layer
+                // delete layer
                 const newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
                 ctx.setGpxFiles(newGpxFiles);
-                //delete track from menu
-                ctx.gpxFiles.trackGroups.forEach((group) => {
-                    let currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
+
+                // delete track from menu
+                const newTracksGroups = [...ctx.tracksGroups];
+                newTracksGroups?.forEach((group) => {
+                    const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
                     if (currentFile !== -1) {
                         group.files.splice(currentFile, 1);
                     }
                 });
+                ctx.setTracksGroups(newTracksGroups);
 
                 cleanContextMenu();
             }

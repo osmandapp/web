@@ -1,12 +1,12 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
-import { Close, Delete, CloudUpload, Redo, Undo, MenuOpen } from '@mui/icons-material';
+import { Close, Delete, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
 import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-import TracksManager from '../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 
 const PanelButtons = ({
@@ -88,6 +88,12 @@ const PanelButtons = ({
         }
     }
 
+    // little align elements with "disabled" attr, which must be covered with <span>, due to Tooltip warnings
+    const styleSpan = {
+        marginTop: orientation === 'vertical' ? 0 : '2px',
+        marginLeft: orientation === 'vertical' ? '2px' : 0,
+    };
+
     return (
         ctx.selectedGpxFile && (
             <div
@@ -108,6 +114,17 @@ const PanelButtons = ({
                         orientation={orientation}
                         color="primary"
                     >
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                            <Tooltip title="Edit" arrow placement="right">
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => TracksManager.handleEditCloudTrack(ctx)}
+                                >
+                                    <Create fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
@@ -124,22 +141,26 @@ const PanelButtons = ({
                         )}
                         {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                             <Tooltip title="Save to cloud" arrow placement="right">
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => {
-                                        ctx.selectedGpxFile.save = true;
-                                        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                    }}
-                                >
-                                    <CloudUpload fontSize="small" />
-                                </IconButton>
+                                <span style={styleSpan}>
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                        onClick={() => {
+                                            ctx.selectedGpxFile.save = true;
+                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                        }}
+                                    >
+                                        <CloudUpload fontSize="small" />
+                                    </IconButton>
+                                </span>
                             </Tooltip>
                         )}
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
                                 <Tooltip title="Delete" arrow placement="right">
                                     <IconButton
+                                        sx={{ mb: '1px' }}
                                         variant="contained"
                                         type="button"
                                         onClick={() => setOpenDeleteDialog(true)}
@@ -149,32 +170,42 @@ const PanelButtons = ({
                                 </Tooltip>
                             )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                disabled={!isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))}
-                                onClick={(e) => {
-                                    undo();
-                                    setUseSavedState(true);
-                                    e.stopPropagation();
-                                }}
-                            >
-                                <Undo fontSize="small" />
-                            </IconButton>
+                            <Tooltip title="Undo" arrow placement="right">
+                                <span style={styleSpan}>
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        disabled={
+                                            !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))
+                                        }
+                                        onClick={(e) => {
+                                            undo();
+                                            setUseSavedState(true);
+                                            e.stopPropagation();
+                                        }}
+                                    >
+                                        <Undo fontSize="small" />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
                         )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                disabled={!isRedoPossible}
-                                onClick={(e) => {
-                                    redo();
-                                    setUseSavedState(true);
-                                    e.stopPropagation();
-                                }}
-                            >
-                                <Redo fontSize="small" />
-                            </IconButton>
+                            <Tooltip title="Redo" arrow placement="right">
+                                <span style={styleSpan}>
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        disabled={!isRedoPossible}
+                                        onClick={(e) => {
+                                            redo();
+                                            setUseSavedState(true);
+                                            e.stopPropagation();
+                                        }}
+                                    >
+                                        <Redo fontSize="small" />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
                         )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
                             <Tooltip title="Open info" arrow placement="right">
@@ -190,16 +221,18 @@ const PanelButtons = ({
                                 </IconButton>
                             </Tooltip>
                         )}
-                        <IconButton
-                            variant="contained"
-                            type="button"
-                            onClick={() => {
-                                doClear();
-                                setShowInfoBlock(false);
-                            }}
-                        >
-                            <Close fontSize="small" />
-                        </IconButton>
+                        <Tooltip title="Close" arrow placement="right">
+                            <IconButton
+                                variant="contained"
+                                type="button"
+                                onClick={() => {
+                                    doClear();
+                                    setShowInfoBlock(false);
+                                }}
+                            >
+                                <Close fontSize="small" />
+                            </IconButton>
+                        </Tooltip>
                     </ButtonGroup>
                 </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}

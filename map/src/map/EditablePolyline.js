@@ -5,7 +5,7 @@ import GeometryUtil from 'leaflet-geometryutil';
 import _ from 'lodash';
 import TracksManager from '../context/TracksManager';
 import EditableMarker from './EditableMarker';
-import RoutingManager from '../context/RoutingManager';
+import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditablePolyline {
     currentPolyline;
@@ -232,14 +232,14 @@ export default class EditablePolyline {
             polylineTempNext.point = nextPoint;
             polylineTempNext.addTo(this.map);
 
-            segments = RoutingManager.addSegmentToRouting(
+            segments = TracksRoutingCache.addSegmentToRouting(
                 prevPoint,
                 currentPoint,
                 oldPoint,
                 polylineTempCurrent,
                 segments
             );
-            segments = RoutingManager.addSegmentToRouting(
+            segments = TracksRoutingCache.addSegmentToRouting(
                 currentPoint,
                 nextPoint,
                 oldPoint,

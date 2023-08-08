@@ -123,7 +123,7 @@ export default function InformationBlock({
 
     function stopCreatedTrack(deletePrev) {
         if (ctx.createTrack) {
-            ctx.createTrack.enable = false;
+            ctx.createTrack.enable = false; // stop-editor
             if (deletePrev) {
                 ctx.createTrack.deletePrev = deletePrev;
             }

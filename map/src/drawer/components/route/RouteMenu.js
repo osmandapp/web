@@ -20,7 +20,7 @@ import {
 } from '@mui/material';
 import { ExpandLess, ExpandMore, Directions } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
-import RouteProfileSettingsDialog from './RouteProfileSettingsDialog';
+import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
