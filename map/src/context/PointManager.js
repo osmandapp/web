@@ -36,16 +36,20 @@ async function insertPointToTrack(currentTrack, index, point, ctx) {
     let lengthSum = 0;
     if (currentTrack.points) {
         await insertPoint(currentTrack.points, index, point, lengthSum, ctx).then(() => {
+            TracksManager.updateState(ctx);
+
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+
             TracksManager.getTrackWithAnalysis(
                 TracksManager.GET_ANALYSIS,
                 ctx,
                 ctx.setLoadingContextMenu,
                 currentTrack.points
             ).then((res) => {
-                ctx.selectedGpxFile.updateLayers = true;
-                ctx.setSelectedGpxFile({ ...res });
-
-                TracksManager.updateState(ctx);
+                if (res) {
+                    ctx.setUnverifiedGpxFile(() => ({ ...res }));
+                }
             });
         });
     }
@@ -97,16 +101,21 @@ async function deletePointByIndex(currentTrack, index, ctx) {
     if (currentTrack.points) {
         res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((result) => {
             if (currentTrack.points.length > 0) {
+                if (currentTrack.points.length === 1) {
+                    ctx.setUpdateContextMenu(true);
+                }
+
+                ctx.selectedGpxFile.updateLayers = true;
+                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+
                 TracksManager.getTrackWithAnalysis(
                     TracksManager.GET_ANALYSIS,
                     ctx,
                     ctx.setLoadingContextMenu,
                     currentTrack.points
                 ).then((res) => {
-                    ctx.selectedGpxFile.updateLayers = true;
-                    ctx.setSelectedGpxFile({ ...res });
-                    if (currentTrack.points.length === 1) {
-                        ctx.setUpdateContextMenu(true);
+                    if (res) {
+                        ctx.setUnverifiedGpxFile(() => ({ ...res }));
                     }
                 });
                 return result.deletedPoint;

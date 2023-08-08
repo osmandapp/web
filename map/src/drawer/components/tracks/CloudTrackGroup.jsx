@@ -1,5 +1,6 @@
 import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 import React, { useContext, useEffect, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 
@@ -77,7 +78,7 @@ export default function CloudTrackGroup({ index, group }) {
                 }}
             >
                 <ListItemIcon>
-                    <Folder fontSize="small" />
+                    <CloudOutlinedIcon fontSize="small" sx={{ mb: '4px' }} />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="inherit" noWrap>

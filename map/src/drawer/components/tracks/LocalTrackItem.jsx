@@ -25,7 +25,7 @@ export default function LocalTrackItem({ track }) {
     function cleanSelectedTrackIfNeed() {
         if (isAlreadyEdit()) {
             if (ctx.createTrack) {
-                ctx.createTrack.enable = false;
+                ctx.createTrack.enable = false; // stop-editor
                 ctx.createTrack.clear = true;
                 ctx.setCreateTrack({ ...ctx.createTrack });
             }
@@ -61,9 +61,9 @@ export default function LocalTrackItem({ track }) {
     }
 
     function startEdit() {
-        if (ctx.createTrack?.enable) {
+        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
-                enable: true,
+                enable: true, // start-editor
                 edit: true,
                 closePrev: {
                     file: _.cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
@@ -71,14 +71,18 @@ export default function LocalTrackItem({ track }) {
             });
         } else {
             ctx.setCreateTrack({
-                enable: true,
+                enable: true, // start-editor
                 edit: true,
             });
         }
     }
 
     function isAlreadyEdit() {
-        return !!(ctx.createTrack?.enable && ctx.selectedGpxFile?.name === track.name);
+        return !!(
+            ctx.createTrack?.enable &&
+            ctx.selectedGpxFile?.name === track.name &&
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        );
     }
 
     return (

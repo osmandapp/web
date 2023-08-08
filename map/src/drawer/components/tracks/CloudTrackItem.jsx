@@ -4,8 +4,9 @@ import React, { useContext, useState } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
+import _ from 'lodash';
 
-export default function CloudTrackItem({ file }) {
+export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
@@ -14,6 +15,7 @@ export default function CloudTrackItem({ file }) {
     async function enableLayer(setProgressVisible, visible) {
         if (!visible) {
             deleteTrackFromMap();
+            setProgressVisible(false);
         } else {
             await addTrackToMap(setProgressVisible);
         }
@@ -29,10 +31,23 @@ export default function CloudTrackItem({ file }) {
     }
 
     async function addTrackToMap(setProgressVisible) {
-        setProgressVisible(true);
-        if (file.url) {
-            ctx.setSelectedGpxFile(Object.assign({}, ctx.gpxFiles[file.name]));
+        // cleanup edited localTrack
+        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+            ctx.setCreateTrack({
+                enable: false,
+                closePrev: {
+                    file: _.cloneDeep(ctx.selectedGpxFile),
+                },
+            });
+        }
+        // Watch out for file.url because this component was called using different data sources.
+        // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
+        if (file.url || ctx.gpxFiles[file.name]?.url) {
+            // if (file.name !== ctx.selectedGpxFile.name) { ...
+            ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
+            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
         } else {
+            setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
             const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
@@ -59,6 +74,7 @@ export default function CloudTrackItem({ file }) {
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
                 ctx.setGpxFiles(newGpxFiles); // finally, success
+                setError(false);
             } else {
                 setError(true);
             }
@@ -71,11 +87,13 @@ export default function CloudTrackItem({ file }) {
                 <Tooltip title={<TrackInfo file={file} />}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
+                            {customIcon}
                             {TracksManager.getFileName(file)}
                         </Typography>
                     </ListItemText>
                 </Tooltip>
                 <Switch
+                    disabled={loadingTrack}
                     checked={!!ctx.gpxFiles[file.name]?.url}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => {

@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
-import TracksManager from '../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
@@ -60,13 +60,88 @@ export default function LocalClientTrackLayer() {
 
     const geoRouter = ctx.trackRouter;
 
+    /*
+        unverifiedGpxFile is a kind of selectedGpxFile
+
+        They're calculated by async get-analytics calls. Due to delayed/async
+        nature, user might have already choosen another selectedGpxFile when
+        we've got get-analytics results. This is the reason why we can't
+        directly update unverifiedGpxFile to selectedGpxFile.
+
+        To avoid mis-overwriting selectedGpxFile with unverifiedGpxFile, we
+        have to compare name, description, 'selected', and points before
+        setting selectedGpxFile.
+
+        Optionally, in case when unverifiedGpxFile is stale, we could try to
+        find corresponding file in localTracks/gpxTracks and update there if we
+        have found actual file to update (TODO).
+    */
     useEffect(() => {
-        if (ctxTrack) {
+        const trusted = ctx.selectedGpxFile;
+        const unverified = ctx.unverifiedGpxFile;
+
+        function isPointsHaveSameGeo(p1, p2) {
+            if (!p1 || !p2 || p1.length !== p2.length) {
+                return false;
+            }
+            for (let i = 0; i < p1.length; i++) {
+                if (TracksManager.isEqualPoints(p1[i], p2[i]) === false) {
+                    return false;
+                }
+            }
+            for (let i = 0; i < p1.length; i++) {
+                const g1 = p1[i].geometry;
+                const g2 = p2[i].geometry;
+                if (!g1 && !g2) {
+                    return true; // both w/o geometry = ok
+                }
+                if (!g1 || !g2 || g1.length !== g2.length) {
+                    return false;
+                }
+                for (let j = 0; j < g1.length; j++) {
+                    if (TracksManager.isEqualPoints(g1[j], g2[j]) === false) {
+                        return false;
+                    }
+                }
+            }
+            return true; // all-the-same
+        }
+
+        if (unverified && trusted) {
+            if (
+                unverified.name === trusted.name &&
+                unverified.selected === trusted.selected &&
+                unverified.metaData?.desc === trusted.metaData?.desc &&
+                (isPointsHaveSameGeo(unverified.points, trusted.points) ||
+                    isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
+            ) {
+                // console.debug('verified');
+                ctx.setSelectedGpxFile(unverified);
+            } else {
+                console.debug('unverified-gpx-file', unverified.name);
+            }
+        }
+    }, [ctx.unverifiedGpxFile]);
+
+    /**
+     * Note: run on any selectedGpxFile including Cloud-mode
+     *
+     * Depends: every change of ctx.selectedGpxFile
+     *
+     * Actions:
+     *
+     * - check/get routing from cache
+     * - save Local tracks (when editor enabled)
+     * - check/set Zoom (fitBounds) for Local tracks
+     * - .updateLayers processing (?)
+     */
+    useEffect(() => {
+        if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
             if (ctxTrack.getRouting) {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (ctx.createTrack?.enable && (ctxTrack?.points?.length > 0 || ctxTrack?.wpts?.length > 0)) {
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
                     saveLocal();
                 }
                 checkZoom();
@@ -99,14 +174,31 @@ export default function LocalClientTrackLayer() {
         // ctx.pointContextMenu was added to monitor menu state and ignore click
     }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu]);
 
+    // after Edit, cleanup localLayers which were "killed" by updateLayers()
+    useEffect(() => {
+        if (ctx.createTrack?.enable === false) {
+            let deleted = 0;
+            for (const l in localLayers) {
+                if (map.hasLayer(localLayers[l]) === false) {
+                    delete localLayers[l];
+                    deleted++;
+                }
+            }
+            if (deleted > 0) {
+                setLocalLayers({ ...localLayers });
+            }
+        }
+    }, [ctx.createTrack?.enable]);
+
     useEffect(() => {
         for (let l in localLayers) {
             localLayers[l].active = false;
         }
+
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = track.points?.length > 1 || track.wpts?.length > 0 || track.tracks?.length > 0;
+                const needFitBounds = isEmptyTrack(track) === false;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
@@ -137,13 +229,28 @@ export default function LocalClientTrackLayer() {
         setLocalLayers({ ...localLayers });
     }, [ctx.localTracks, ctx.setLocalTracks]);
 
+    /*
+        Track Editor state life cycle:
+
+        Start: ctx.createTrack = null => ctx.createTrack.enable = true
+        Stop: ctx.createTrack.enable = false (!!!) => ctx.createTrack = null
+
+        ctx.createTrack.latlng: used to specify newly created-track coordinates
+        ctx.createTrack.closePrev: close previous file, use with both enable=true/false
+        ctx.createTrack.cloudAutoSave: ignore cloud-already-exist confirmation (used by Cloud -> Edit track)
+
+        ctx.createTrack.edit: ?
+        ctx.createTrack.clear: ?
+        ctx.createTrack.layers: ?
+        ctx.createTrack.deletePrev: ?
+    */
     useEffect(() => {
         if (ctx.createTrack?.closePrev && !_.isEmpty(ctx.createTrack.closePrev.file)) {
             clearCreateLayers(ctx.createTrack.closePrev.file.layers);
             saveResult(ctx.createTrack.closePrev.file, true);
             delete ctx.createTrack.closePrev;
             delete ctx.createTrack.layers;
-            ctx.setCreateTrack({ ...ctx.createTrack });
+            ctx.setCreateTrack({ ...ctx.createTrack }); // closePrev, not always stop-editor
         }
         if (ctx.createTrack?.enable && !ctx.createTrack?.layers) {
             if (ctx.createTrack.edit) {
@@ -167,7 +274,7 @@ export default function LocalClientTrackLayer() {
                 savedFile = ctxTrack;
             }
             saveResult(savedFile, false);
-            ctx.setCreateTrack(null);
+            ctx.setCreateTrack(null); // stop-editor (finished)
         }
     }, [ctx.createTrack]);
 
@@ -184,8 +291,8 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
-            ctx.setLocalTracks([...ctx.localTracks]);
+            TracksManager.saveTracks({ ctx, track: file }); // ctx.localTracks might be modified there
+            ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
 
             if (ctx.createTrack.clear) {
                 ctx.setSelectedGpxFile({}); // finally, after saveTracks
@@ -216,8 +323,8 @@ export default function LocalClientTrackLayer() {
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
-            // localTracks exist: do update/append
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
+            // localTracks exist: do update/append into localStorage
+            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile });
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);
@@ -226,6 +333,7 @@ export default function LocalClientTrackLayer() {
 
     function checkZoom() {
         if (ctxTrack.selected && ctxTrack.zoom) {
+            // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
             showSelectedPointOnMap();
@@ -235,6 +343,9 @@ export default function LocalClientTrackLayer() {
     function addTrackToMap(track, fitBounds, active) {
         if (track.points) {
             track.tracks = [{ points: track.points }];
+        }
+        if (track.updated) {
+            track.updated = false; // reset
         }
         let layer = TrackLayerProvider.createLayersByTrackData(track);
         if (layer) {
@@ -246,7 +357,7 @@ export default function LocalClientTrackLayer() {
             layer.on('click', () => {
                 if (!ctx.createTrack || !ctx.createTrack.enable) {
                     ctx.setCreateTrack({
-                        enable: true,
+                        enable: true, // start-editor
                         edit: true,
                     });
                     track.analysis = TracksManager.prepareAnalysis(track.analysis);
@@ -262,7 +373,7 @@ export default function LocalClientTrackLayer() {
                 points: track.points ? track.points : TracksManager.getEditablePoints(track),
                 active: active,
             };
-            setLocalLayers({ ...localLayers });
+            // setLocalLayers({ ...localLayers }); // redunant setLocalLayers - called soon by parents
         }
     }
 
@@ -335,7 +446,7 @@ export default function LocalClientTrackLayer() {
             ...queueForRouting,
             objs: queue,
         };
-        setQueueForRouting(newQueue);
+        setQueueForRouting(() => newQueue);
     }, [ctx.routingCache]);
 
     useEffect(() => {
@@ -343,7 +454,7 @@ export default function LocalClientTrackLayer() {
             if (queueForRouting.isProcessing) return;
             const segmentObj = queueForRouting.objs[0].obj;
             const segmentKey = queueForRouting.objs[0].key;
-            const newFile = ctxTrack;
+            const newFile = ctxTrack; // ref
             Promise.resolve(
                 ctx.trackRouter
                     .updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.geoProfile)
@@ -378,13 +489,7 @@ export default function LocalClientTrackLayer() {
                                     ctx.setLoadingContextMenu,
                                     newFile.points
                                 ).then((res) => {
-                                    saveChanges(null, null, null, res);
-                                    setQueueForRouting((prev) => ({
-                                        isProcessing: false,
-                                        objs: prev.objs,
-                                    }));
-                                    ctx.setSelectedGpxFile({ ...res });
-                                    ctx.setProcessRouting(false);
+                                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
                                 });
                             };
 
@@ -397,7 +502,10 @@ export default function LocalClientTrackLayer() {
                 isProcessing: true,
                 objs: newObjs,
             };
-            setQueueForRouting(newQueue);
+            setQueueForRouting(() => newQueue);
+
+            if (newObjs.length === 0) ctx.setProcessRouting(false);
+            saveChanges(null, null, null, newFile); // finally, after promises
         }
     }, [queueForRouting]);
 
@@ -464,14 +572,19 @@ export default function LocalClientTrackLayer() {
                 layers.addLayer(polyline);
             }
         }
+
         const analysis = () => {
             TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
                 (res) => {
-                    saveChanges(null, null, null, res);
+                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
                 }
             );
         };
+
         debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+
+        // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
+        saveChanges(null, null, null, ctxTrack);
     }
 
     function addGeometryToTrack(newPoint, points) {
