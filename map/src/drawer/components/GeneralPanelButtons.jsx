@@ -1,6 +1,6 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
 import TracksManager from '../../context/TracksManager';
-import { Create, Info, Upload } from '@mui/icons-material';
+import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { styled } from '@mui/material/styles';
@@ -9,6 +9,7 @@ import PanelButtons from '../../infoblock/components/PanelButtons';
 import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -35,10 +36,10 @@ export default function GeneralPanelButtons({
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
-                let track = await TracksManager.getTrackData(file);
+                const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack(ctx, track);
+                    TracksManager.addTrack({ ctx, track, overwrite: false });
                 }
             });
             reader.readAsText(file);
@@ -97,11 +98,19 @@ export default function GeneralPanelButtons({
                     >
                         <Tooltip title="Create track" arrow placement="right">
                             <IconButton
+                                sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
                                 variant="contained"
                                 type="button"
-                                onClick={() => TracksManager.createTrack(ctx)}
+                                onClick={() =>
+                                    confirm({
+                                        ctx,
+                                        text: 'Stop editing the current track?',
+                                        skip: ctx.createTrack?.enable !== true,
+                                        callback: () => TracksManager.createTrack(ctx),
+                                    })
+                                }
                             >
-                                <Create fontSize="small" />
+                                <Insights fontSize="small" />
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Upload track" arrow placement="right">
@@ -113,12 +122,16 @@ export default function GeneralPanelButtons({
                                     type="file"
                                     onChange={fileSelected(ctx)}
                                 />
-                                <IconButton sx={{ ml: '2.5px' }} variant="contained" component="span">
+                                <IconButton
+                                    sx={{ ml: '2px', mt: orientation === 'vertical' ? 0 : '3px' }}
+                                    variant="contained"
+                                    component="span"
+                                >
                                     <Upload fontSize="small" />
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        <Tooltip title="Poi" arrow placement="right">
+                        <Tooltip title="POI" arrow placement="right">
                             <IconButton
                                 variant="contained"
                                 type="button"

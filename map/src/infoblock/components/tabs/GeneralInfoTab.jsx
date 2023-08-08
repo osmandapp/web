@@ -7,6 +7,7 @@ import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 import GeneralInfo from '../track/GeneralInfo';
 import DescTrackDialog from '../track/dialogs/DescTrackDialog';
+import { isEmptyTrack } from '../../../context/TracksManager';
 
 export default function GeneralInfoTab({ width, setShowContextMenu }) {
     const styles = contextMenuStyles();
@@ -29,15 +30,17 @@ export default function GeneralInfoTab({ width, setShowContextMenu }) {
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
                 <GpxGraphProvider width={width} />
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
-                <Button
-                    variant="contained"
-                    sx={{ ml: '-0.5px !important' }}
-                    className={styles.button}
-                    onClick={addToCollection}
-                >
-                    <Add fontSize="small" sx={{ mr: '3px' }} />
-                    Collection
-                </Button>
+                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                    <Button
+                        variant="contained"
+                        sx={{ ml: '-0.5px !important' }}
+                        className={styles.button}
+                        onClick={addToCollection}
+                    >
+                        <Add fontSize="small" sx={{ mr: '3px' }} />
+                        Collection
+                    </Button>
+                )}
                 <Button
                     variant="contained"
                     sx={{ backgroundColor: '#ff595e !important' }}

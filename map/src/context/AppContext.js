@@ -259,6 +259,8 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_WEATHER = 'weather';
     const OBJECT_TYPE_POI = 'poi';
 
+    const [globalConfirmation, setGlobalConfirmation] = useState(null);
+
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
@@ -274,9 +276,8 @@ export const AppContextProvider = (props) => {
     const [searchCtx, setSearchCtx] = useState({});
 
     const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
-    const setSelectedGpxFile = (s) => {
-        reactSetSelectedGpxFile(() => s); // convert setState({}) to queued setState(() => {})
-    };
+    const setSelectedGpxFile = (s) => reactSetSelectedGpxFile(() => s); // wrap setter to queue-style
+    const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
@@ -358,7 +359,7 @@ export const AppContextProvider = (props) => {
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
 
-    const [routingCash, setRoutingCash] = useState([]);
+    const [routingCache, setRoutingCache] = useState([]);
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
@@ -477,6 +478,8 @@ export const AppContextProvider = (props) => {
     return (
         <AppContext.Provider
             value={{
+                globalConfirmation,
+                setGlobalConfirmation,
                 weatherLayers,
                 setWeatherLayers,
                 weatherDate,
@@ -495,6 +498,8 @@ export const AppContextProvider = (props) => {
                 setGpxLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
+                unverifiedGpxFile,
+                setUnverifiedGpxFile,
                 mapMarkerListener,
                 setMapMarkerListener,
                 tileURL,
@@ -561,8 +566,8 @@ export const AppContextProvider = (props) => {
                 setLocalTracksLoading,
                 openedPopper,
                 setOpenedPopper,
-                routingCash,
-                setRoutingCash,
+                routingCache,
+                setRoutingCache,
                 routingNewSegments,
                 setRoutingNewSegments,
                 processRouting,

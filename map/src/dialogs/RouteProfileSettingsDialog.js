@@ -19,7 +19,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../context/AppContext';
 
 export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings }) {
     const ctx = useContext(AppContext);
@@ -121,7 +121,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                     <Select value={router} onChange={onChangeRouter}>
                         {geoRouter.listProviders().map(
                             ({ key, name, type }) =>
-                                (type !== 'osmand' || ctx.develFeatures === true) && (
+                                geoRouter.isAllowedType({ type, develFeatures: ctx.develFeatures }) && (
                                     <MenuItem key={key} value={key}>
                                         {name}
                                     </MenuItem>

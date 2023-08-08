@@ -8,7 +8,15 @@ import { pickTypeRouterProfile } from './methods/pickTypeRouterProfile.js';
 
 import { initSetter, nextState, flushState } from './state.js';
 
-import { onOpenSettings, onCloseSettings, onDragStart, onDragEnd, onParamsChanged, onGeoProfile } from './events.js';
+import {
+    onOpenSettings,
+    onCloseSettings,
+    onDragStart,
+    onDragEnd,
+    onParamsChanged,
+    onGeoProfile,
+    escapeFromLineProfile,
+} from './events.js';
 
 import {
     isReady,
@@ -23,6 +31,7 @@ import {
     getURL,
     getGeoProfile,
     getColor,
+    isAllowedType,
 } from './getters.js';
 
 // fallback
@@ -71,6 +80,7 @@ export class geoRouter {
     getURL = getURL;
     getGeoProfile = getGeoProfile;
     getColor = getColor;
+    isAllowedType = isAllowedType;
 
     // events()
     onOpenSettings = onOpenSettings;
@@ -80,6 +90,7 @@ export class geoRouter {
     onParamsChanged = onParamsChanged;
     onGeoProfile = onGeoProfile;
     onRouterProfileSelected = onGeoProfile; // alias
+    escapeFromLineProfile = escapeFromLineProfile;
 
     // methods()
     loadProviders = loadProviders;

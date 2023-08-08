@@ -37,7 +37,7 @@ async function getFileData(file) {
         // direct XML has to start with a <
         trackData = file.url;
     } else {
-        let response = await apiGet(file.url, file.urlopts ? file.urlopts : {});
+        const response = await apiGet(file.url, file.urlopts ? file.urlopts : {});
         if (response.ok) {
             trackData = await response.text();
         } else {

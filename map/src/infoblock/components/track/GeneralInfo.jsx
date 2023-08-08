@@ -1,7 +1,7 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
@@ -35,7 +35,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const ctx = useContext(AppContext);
 
     const [enableEditName, setEnableEditName] = useState(false);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile && ctx.selectedGpxFile.name);
+    const [fileName, setFileName] = useState((ctx.selectedGpxFile && ctx.selectedGpxFile.name) ?? '');
     const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
     const [distance, setDistance] = useState(0);
@@ -50,14 +50,16 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     useEffect(() => {
         const track = ctx.selectedGpxFile;
         const analysis = track.analysis;
-        if (analysis && analysis.hasElevationData === false && !analysis.srtmAnalysis) {
+        if (analysis && analysis.hasElevationData !== true && !analysis.srtmAnalysis) {
             let totalPoints = track.points?.length ?? 0;
             track.points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
             if (totalPoints <= TracksManager.AUTO_SRTM_MAX_POINTS) {
                 TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, track.points).then(
                     (result) => {
-                        getSRTMEle(result);
-                        ctx.setSelectedGpxFile({ ...result });
+                        if (result) {
+                            // getSRTMEle(result); // set by distinct Effect
+                            ctx.setUnverifiedGpxFile(() => ({ ...result })); // auto-srtm
+                        }
                     }
                 );
             }
@@ -204,7 +206,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
 
             ctx.selectedGpxFile.name = newName;
 
-            TracksManager.saveTracks(ctx.localTracks, ctx); // saveTracks + setLocalTracks
+            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             ctx.setLocalTracks([...ctx.localTracks]);
 
@@ -215,6 +217,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     const Description = ({ desc }) => {
+        const html = desc.replaceAll('target="_self"', 'target="_blank"');
         return (
             <ListItemText>
                 <Box display="flex" alignItems="end">
@@ -224,13 +227,14 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         sx={{
                             mt: -2,
                             maxHeight: 200,
+                            maxWidth: 350,
                             fontSize: '0.875rem',
                             display: 'inline-block',
                             textOverflow: 'ellipsis',
                             overflow: 'hidden !important',
                         }}
                     >
-                        <div dangerouslySetInnerHTML={{ __html: `${desc}` }} />
+                        <div dangerouslySetInnerHTML={{ __html: html }} />
                     </Typography>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                         <IconButton onClick={() => setOpenDescDialog(true)}>
@@ -287,7 +291,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             <IconButton
                                 variant="contained"
                                 type="button"
-                                sx={{ mb: '5px' }}
+                                sx={{ mb: '5px', maxHeight: 20 }}
                                 onClick={() => {
                                     setEnableEditName(true);
                                 }}
@@ -388,7 +392,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         <ListItemText>
                             <Typography sx={{ ml: 1 }} variant="body2" noWrap>
                                 {`Elevation SRTM: ${elevationSRTM}`}
-                                {elevationSRTM === '' && (
+                                {elevationSRTM === '' && loadingSrtm === false && (
                                     <Link
                                         href="#"
                                         color="inherit"
@@ -399,8 +403,10 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                                 setLoadingSrtm,
                                                 ctx.selectedGpxFile.points
                                             ).then((track) => {
-                                                getSRTMEle(track);
-                                                ctx.setSelectedGpxFile({ ...track });
+                                                if (track) {
+                                                    // getSRTMEle(track); // set by distinct Effect
+                                                    ctx.setUnverifiedGpxFile(() => ({ ...track }));
+                                                }
                                             });
                                         }}
                                     >
@@ -439,44 +445,45 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                               </>
                           )}
                 </div>
-                {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                    <Button
-                        variant="contained"
-                        sx={{ ml: '-0.5px !important' }}
-                        className={styles.button}
-                        onClick={() => {
-                            ctx.selectedGpxFile.save = true;
-                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                        }}
-                    >
-                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                        Save to cloud
-                    </Button>
-                )}
+                {ctx.loginUser &&
+                    ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                    isEmptyTrack(ctx.selectedGpxFile) === false && (
+                        <Button
+                            variant="contained"
+                            sx={{ ml: '-0.5px !important' }}
+                            className={styles.button}
+                            onClick={() => {
+                                ctx.selectedGpxFile.save = true;
+                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                            }}
+                        >
+                            <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                            Save to cloud
+                        </Button>
+                    )}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                     <Button
                         variant="contained"
                         sx={{ ml: '-0.5px !important' }}
                         className={styles.button}
-                        onClick={() => {
-                            TracksManager.addTrack(ctx, Object.assign({}, ctx.selectedGpxFile));
-                            ctx.setUpdateContextMenu(true);
-                        }}
+                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                     >
                         <Create fontSize="small" sx={{ mr: '7px' }} />
                         Edit Track
                     </Button>
                 )}
-                <Button
-                    variant="contained"
-                    className={styles.button}
-                    onClick={() => {
-                        downloadGpx().then();
-                    }}
-                >
-                    <Download fontSize="small" sx={{ mr: '3px' }} />
-                    Download GPX
-                </Button>
+                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                    <Button
+                        variant="contained"
+                        className={styles.button}
+                        onClick={() => {
+                            downloadGpx().then();
+                        }}
+                    >
+                        <Download fontSize="small" sx={{ mr: '3px' }} />
+                        Download GPX
+                    </Button>
+                )}
                 <MenuItem sx={{ ml: -2 }}>
                     <ListItemIcon>
                         <RouteOutlined fontSize="small" />
