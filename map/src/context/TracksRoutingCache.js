@@ -1,12 +1,12 @@
-import TracksManager from './TracksManager';
 import _ from 'lodash';
+import TracksManager from './TracksManager';
 import TrackLayerProvider from '../map/TrackLayerProvider';
 
 const STOP_CALC_ROUTING = 'stop';
 
-function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
+function addRoutingToCache(startPoint, endPoint, tempLine, ctx, routingCacheRef) {
     const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
-    let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
+    let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
 
     routingList[routingKey] = {
         startPoint: _.cloneDeep(startPoint),
@@ -15,25 +15,25 @@ function addRoutingToCash(startPoint, endPoint, tempLine, ctx, routingCashRef) {
         tempLine: tempLine,
         geometry: null,
     };
-    ctx.setRoutingCash({ ...routingList });
+    ctx.setRoutingCache({ ...routingList });
     return routingList;
 }
 
-function getRoutingFromCash(track, ctx, map) {
+function getRoutingFromCache(track, ctx, map) {
     for (let i = 0; i < track.points.length - 1; i++) {
         const start = track.points[i];
         const end = track.points[i + 1];
         if (end.geoProfile) {
             const routingKey = createRoutingKey(start, end, end.geoProfile);
-            const geoCash = ctx.routingCash[routingKey]?.geometry;
-            if (geoCash === STOP_CALC_ROUTING) {
+            const geoCache = ctx.routingCache[routingKey]?.geometry;
+            if (geoCache === STOP_CALC_ROUTING) {
                 let polylineTemp = TrackLayerProvider.createEditableTempLPolyline(start, end, map, ctx);
                 track.layers.addLayer(polylineTemp);
                 track.updateLayers = true;
                 end.geometry = [];
-                updateSelectedRouting(ctx.routingCash[routingKey], polylineTemp, ctx);
-            } else if (geoCash) {
-                end.geometry = geoCash;
+                updateSelectedRouting(ctx.routingCache[routingKey], polylineTemp, ctx);
+            } else if (geoCache) {
+                end.geometry = geoCache;
             }
         }
     }
@@ -43,11 +43,11 @@ function getRoutingFromCash(track, ctx, map) {
 function updateSelectedRouting(segment, polylineTemp, ctx) {
     segment.geometry = null;
     segment.tempLine = polylineTemp;
-    ctx.setRoutingCash({ ...ctx.routingCash });
+    ctx.setRoutingCache({ ...ctx.routingCache });
 }
 
-function validateRoutingCash(point, ctx, routingCashRef) {
-    let routingList = routingCashRef ? routingCashRef : ctx.routingCash;
+function validateRoutingCache(point, ctx, routingCacheRef) {
+    let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
     Object.keys(routingList).forEach((k) => {
         if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
             routingList[k].geometry = 'stop';
@@ -86,11 +86,11 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
     return segments;
 }
 
-const RoutingManager = {
-    addRoutingToCash,
-    getRoutingFromCash,
-    validateRoutingCash,
+const TracksRoutingCache = {
+    addRoutingToCache,
+    getRoutingFromCache,
+    validateRoutingCache,
     addSegmentToRouting,
 };
 
-export default RoutingManager;
+export default TracksRoutingCache;

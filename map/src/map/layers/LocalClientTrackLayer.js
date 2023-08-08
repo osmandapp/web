@@ -9,7 +9,7 @@ import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
 import Utils from '../../util/Utils';
-import RoutingManager from '../../context/RoutingManager';
+import TracksRoutingCache from '../../context/TracksRoutingCache';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 
@@ -29,7 +29,7 @@ export default function LocalClientTrackLayer() {
     const [openAddRoutingToTrackDialog, setOpenAddRoutingToTrackDialog] = useState(false);
     const [newPoint, setNewPoint] = useState(null);
 
-    const routingCashRef = useRef(ctx.routingCash);
+    const routingCacheRef = useRef(ctx.routingCache);
 
     const debouncerTimer = useRef(null);
 
@@ -47,8 +47,8 @@ export default function LocalClientTrackLayer() {
     }
 
     useEffect(() => {
-        routingCashRef.current = ctx.routingCash;
-    }, [ctx.routingCash]);
+        routingCacheRef.current = ctx.routingCache;
+    }, [ctx.routingCache]);
 
     const queueForRoutingRef = useRef(queueForRouting);
 
@@ -201,7 +201,7 @@ export default function LocalClientTrackLayer() {
 
     function getRouting() {
         if (ctxTrack.getRouting) {
-            let trackWithRouting = RoutingManager.getRoutingFromCash(ctxTrack, ctx, map);
+            let trackWithRouting = TracksRoutingCache.getRoutingFromCache(ctxTrack, ctx, map);
             trackWithRouting.getRouting = false;
             ctx.setSelectedGpxFile({ ...trackWithRouting });
         }
@@ -323,11 +323,11 @@ export default function LocalClientTrackLayer() {
 
     useEffect(() => {
         let queue = [];
-        for (const key in ctx.routingCash) {
-            if (ctx.routingCash[key].geometry === null) {
+        for (const key in ctx.routingCache) {
+            if (ctx.routingCache[key].geometry === null) {
                 queue.push({
                     key: key,
-                    obj: ctx.routingCash[key],
+                    obj: ctx.routingCache[key],
                 });
             }
         }
@@ -336,7 +336,7 @@ export default function LocalClientTrackLayer() {
             objs: queue,
         };
         setQueueForRouting(newQueue);
-    }, [ctx.routingCash]);
+    }, [ctx.routingCache]);
 
     useEffect(() => {
         if (queueForRouting.objs?.length > 0) {
@@ -348,7 +348,7 @@ export default function LocalClientTrackLayer() {
                 ctx.trackRouter
                     .updateRouteBetweenPoints(ctx, segmentObj.startPoint, segmentObj.endPoint, segmentObj.geoProfile)
                     .then((res) => {
-                        ctx.routingCash[segmentKey].geometry = res;
+                        ctx.routingCache[segmentKey].geometry = res;
                         segmentObj.endPoint.geometry = res;
                         const startInd = newFile.points?.findIndex((p) => isEqualPoints(p, segmentObj.startPoint));
                         if (
@@ -636,7 +636,7 @@ export default function LocalClientTrackLayer() {
             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
             layers.addLayer(tempLine);
 
-            RoutingManager.addRoutingToCash(prevPoint, newPoint, tempLine, ctx, routingCashRef.current);
+            TracksRoutingCache.addRoutingToCache(prevPoint, newPoint, tempLine, ctx, routingCacheRef.current);
 
             ctxTrack.newPoint = newPoint;
             ctxTrack.points = points;
@@ -689,7 +689,13 @@ export default function LocalClientTrackLayer() {
                                 ctx
                             );
                             layers.addLayer(tempLine);
-                            RoutingManager.addRoutingToCash(prevPoint, newPoint, tempLine, ctx, routingCashRef.current);
+                            TracksRoutingCache.addRoutingToCache(
+                                prevPoint,
+                                newPoint,
+                                tempLine,
+                                ctx,
+                                routingCacheRef.current
+                            );
                         }
                     } else {
                         layers = createFirstLayers(newPoint, layers);
@@ -811,8 +817,8 @@ export default function LocalClientTrackLayer() {
     useEffect(() => {
         if (!_.isEmpty(ctx.routingNewSegments)) {
             ctx.routingNewSegments.forEach((s) => {
-                RoutingManager.validateRoutingCash(s.oldPoint, ctx, ctx.routingCash);
-                RoutingManager.addRoutingToCash(s.start, s.end, s.tempPolyline, ctx, routingCashRef.current);
+                TracksRoutingCache.validateRoutingCache(s.oldPoint, ctx, ctx.routingCache);
+                TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx, routingCacheRef.current);
             });
         }
     }, [ctx.routingNewSegments]);

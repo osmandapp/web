@@ -358,7 +358,7 @@ export const AppContextProvider = (props) => {
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
 
-    const [routingCash, setRoutingCash] = useState([]);
+    const [routingCache, setRoutingCache] = useState([]);
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
@@ -561,8 +561,8 @@ export const AppContextProvider = (props) => {
                 setLocalTracksLoading,
                 openedPopper,
                 setOpenedPopper,
-                routingCash,
-                setRoutingCash,
+                routingCache,
+                setRoutingCache,
                 routingNewSegments,
                 setRoutingNewSegments,
                 processRouting,
