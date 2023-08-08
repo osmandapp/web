@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-zoom': {
-            left: `${props.leftDrawerWidth}px`,
+            left: `${props.mainMenuWidth}px`,
         },
         '& .leaflet-bottom ': {
             bottom: `${props.mobile ? 50 + props.drawerRightHeight : 50}px`,
@@ -42,7 +42,7 @@ const useStyles = makeStyles(() => ({
             border: '4px !important',
         },
         '& .leaflet-bar a': {
-            width: '36px !important',
+            width: '41px !important',
             color: '#757575',
             border: '4px !important',
         },
@@ -78,8 +78,8 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const OsmAndMap = ({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidth }) => {
-    const classes = useStyles({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidth });
+const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth }) => {
+    const classes = useStyles({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth });
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
@@ -107,6 +107,30 @@ const OsmAndMap = ({ mobile, drawerRightHeight, leftDrawerWidth, drawerRightWidt
             tileLayer.current.setUrl(ctx.tileURL.url);
         }
     }, [ctx.tileURL]);
+
+    // fix contextmenu of point for mobile device
+    useEffect(() => {
+        const markerEventHandler = (e) => {
+            if (
+                e.target?.draggable &&
+                e.target?.alt === 'Marker' &&
+                e.target?.classList?.contains('leaflet-marker-draggable')
+            ) {
+                if (e.type === 'touchstart') {
+                    ctx.setPointContextMenu({});
+                    e.preventDefault();
+                }
+                if (e.type === 'touchend') {
+                    e.preventDefault();
+                    if (e.target?.title !== 'poly') {
+                        e.target?.dispatchEvent(new Event('contextmenu', e));
+                    }
+                }
+            }
+        };
+        document.addEventListener('touchstart', markerEventHandler, { passive: false });
+        document.addEventListener('touchend', markerEventHandler, { passive: false });
+    }, []);
 
     return (
         <MapContainer

@@ -138,7 +138,9 @@ export default function LoginDialog() {
                                                 ctx.listFiles.totalZipSize /
                                                 1024 /
                                                 1024.0
-                                            ).toFixed(1)} MB`}
+                                            ).toFixed(1)} MB ${
+                                                accountInfo && `of ${accountInfo.maxAccSize / (1024 * 1024)} MB`
+                                            }`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>

@@ -305,7 +305,20 @@ Each next zoom level reduces the imaginary distance to the ground by about 2 tim
 
 ### Distance to target
 
-![Distance to target widget 1](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
+</TabItem>
+
+</Tabs>  
 
 The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
 
