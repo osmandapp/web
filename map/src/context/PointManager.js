@@ -1,7 +1,7 @@
 import TracksManager from './TracksManager';
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/TrackLayerProvider';
-import RoutingManager from './RoutingManager';
+import TracksRoutingCache from './TracksRoutingCache';
 
 const deletePoint = async (index, ctx) => {
     let currentTrack = ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name);
@@ -164,8 +164,8 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                         tempLine.point = points[i + 1];
                         ctx.selectedGpxFile.layers.addLayer(tempLine);
                         ctx.selectedGpxFile.updateLayers = true;
-                        RoutingManager.validateRoutingCash(points[i], ctx);
-                        RoutingManager.addRoutingToCash(points[i - 1], points[i + 1], tempLine, ctx);
+                        TracksRoutingCache.validateRoutingCache(points[i], ctx);
+                        TracksRoutingCache.addRoutingToCache(points[i - 1], points[i + 1], tempLine, ctx);
                         points[i + 1].geometry = [];
                     }
                 }

@@ -19,7 +19,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../context/AppContext';
 
 export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings }) {
     const ctx = useContext(AppContext);
