@@ -427,20 +427,19 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
         }
     }
     if (ctx.loginUser) {
-        let gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
+        const gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
         if (gpxFile.points) {
             gpxFile.tracks = [{ points: gpxFile.points }];
         }
-        let gpx = await getGpxTrack(gpxFile);
+        const gpx = await getGpxTrack(gpxFile);
         if (gpx) {
-            let convertedData = new TextEncoder().encode(gpx.data);
-            let zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
-            let convertedZipped = zippedResult.buffer;
-            let oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
-            let data = new FormData();
+            const convertedData = new TextEncoder().encode(gpx.data);
+            const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
+            const convertedZipped = zippedResult.buffer;
+            const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
+            const data = new FormData();
             data.append('file', oMyBlob, gpxFile.name);
-            let res;
-            res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
+            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
                 params: {
                     name:
                         type === FavoritesManager.FAVORITE_FILE_TYPE
@@ -453,11 +452,62 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
             if (res && res?.data?.status === 'ok') {
                 const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
                 const resJson = await respGetFiles.json();
-                ctx.setListFiles(resJson);
-                deleteLocalTrack(ctx);
-                return true;
+                if (resJson && resJson.uniqueFiles) {
+                    ctx.setListFiles(resJson);
+                    const file = resJson.uniqueFiles.find((f) => f.name === fileName + '.gpx');
+                    if (file) {
+                        downloadAfterUpload(ctx, file);
+                        deleteLocalTrack(ctx);
+                        return true;
+                    }
+                }
             }
         }
+    }
+    return false;
+}
+
+// after success upload from Local to Cloud
+// download it and use as current Cloud track
+async function downloadAfterUpload(ctx, file) {
+    const createState = {
+        enable: false,
+    };
+
+    // cleanup
+    if (ctx.selectedGpxFile) {
+        createState.closePrev = {
+            file: _.cloneDeep(ctx.selectedGpxFile),
+        };
+    }
+
+    ctx.setCreateTrack({ ...createState });
+
+    const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+    const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
+    const newGpxFiles = Object.assign({}, ctx.gpxFiles);
+    newGpxFiles[file.name] = {
+        url: URL + qs,
+        clienttimems: file.clienttimems,
+        updatetimems: file.updatetimems,
+        name: file.name,
+        type: 'GPX',
+    };
+    const f = await Utils.getFileData(newGpxFiles[file.name]);
+    const gpxfile = new File([f], file.name, {
+        type: 'text/plain',
+    });
+    const track = await TracksManager.getTrackData(gpxfile);
+    if (track && (track.points?.length > 0 || track.wpts?.length > 0 || track.tracks?.length > 0)) {
+        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        ctx.setCurrentObjectType(type);
+        track.name = file.name;
+        Object.keys(track).forEach((t) => {
+            newGpxFiles[file.name][`${t}`] = track[t];
+        });
+        newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
+        ctx.setGpxFiles(newGpxFiles);
+        ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
     }
 }
 
@@ -472,6 +522,8 @@ function deleteLocalTrack(ctx) {
             localStorage.removeItem(DATA_SIZE_KEY);
         }
         ctx.setLocalTracks([...ctx.localTracks]);
+    } else {
+        console.error('deleteLocalTrack unable to find track');
     }
 }
 
@@ -737,6 +789,14 @@ function isEqualPoints(point1, point2) {
 function updateState(ctx) {
     ctx.trackState.update = true;
     ctx.setTrackState({ ...ctx.trackState });
+}
+
+// check: geo-points, way-points, gpx-trkpt
+export function isEmptyTrack(track) {
+    if (track?.points?.length > 0 || track?.wpts?.length > 0 || track?.tracks?.length > 0) {
+        return false;
+    }
+    return true;
 }
 
 const TracksManager = {

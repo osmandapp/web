@@ -3,7 +3,7 @@ import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typogra
 import React, { useContext, useState } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 
 export default function CloudTrackItem({ file }) {
     const ctx = useContext(AppContext);
@@ -31,35 +31,34 @@ export default function CloudTrackItem({ file }) {
     async function addTrackToMap(setProgressVisible) {
         setProgressVisible(true);
         if (file.url) {
-            ctx.setSelectedGpxFile(ctx.gpxFiles[file.name]);
+            ctx.setSelectedGpxFile(Object.assign({}, ctx.gpxFiles[file.name]));
         } else {
-            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-                file.type
-            )}&name=${encodeURIComponent(file.name)}`;
+            const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+            const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
             const newGpxFiles = Object.assign({}, ctx.gpxFiles);
             newGpxFiles[file.name] = {
-                url: url,
+                url: URL + qs,
                 clienttimems: file.clienttimems,
                 updatetimems: file.updatetimems,
                 name: file.name,
                 type: 'GPX',
             };
-            let f = await Utils.getFileData(newGpxFiles[file.name]);
+            const f = await Utils.getFileData(newGpxFiles[file.name]);
             const gpxfile = new File([f], file.name, {
                 type: 'text/plain',
             });
-            let track = await TracksManager.getTrackData(gpxfile);
+            const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (track) {
-                let type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+            if (isEmptyTrack(track) === false) {
+                const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });
-                ctx.setGpxFiles(newGpxFiles);
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
+                ctx.setGpxFiles(newGpxFiles); // finally, success
             } else {
                 setError(true);
             }

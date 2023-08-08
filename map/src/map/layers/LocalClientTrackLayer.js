@@ -65,7 +65,7 @@ export default function LocalClientTrackLayer() {
             if (ctxTrack.getRouting) {
                 getRouting();
             } else {
-                checkDeleteSelected();
+                // checkDeleteSelected();
                 if (ctx.createTrack?.enable && (ctxTrack?.points?.length > 0 || ctxTrack?.wpts?.length > 0)) {
                     saveLocal();
                 }
@@ -123,7 +123,11 @@ export default function LocalClientTrackLayer() {
                 }
                 map.removeLayer(localLayers[l].layer);
                 if (l === ctxTrack.name) {
-                    map.removeLayer(ctxTrack.layers);
+                    if (ctxTrack.layers) {
+                        map.removeLayer(ctxTrack.layers);
+                    } else {
+                        console.debug('layers-cleanup got empty layer', ctxTrack.name);
+                    }
                     ctx.setSelectedGpxFile({});
                 }
                 delete localLayers[l];
@@ -203,12 +207,12 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function checkDeleteSelected() {
-        if (ctxTrack.clear) {
-            deleteOldLayers();
-            ctx.setSelectedGpxFile({});
-        }
-    }
+    // function checkDeleteSelected() {
+    //     if (ctxTrack.clear) {
+    //         deleteOldLayers();
+    //         ctx.setSelectedGpxFile({});
+    //     }
+    // }
 
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
