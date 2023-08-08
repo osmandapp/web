@@ -37,7 +37,7 @@ export default function TrackInfo({ file }) {
     if (summary?.timeMoving) {
         timeMoving = 'Time moving: ' + toHHMMSS(summary?.timeMoving);
     }
-    if (summary?.diffElevationDown > 0 || summary.diffElevationUp > 0) {
+    if (summary?.diffElevationDown > 0 || summary?.diffElevationUp > 0) {
         updownhill =
             'Uphill/downhill: ' +
             Number(summary?.diffElevationUp ?? 0).toFixed(0) +
