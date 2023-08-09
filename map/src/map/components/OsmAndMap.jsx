@@ -15,7 +15,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
 import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
-import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from '../mapGeoLocation';
+import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from '../LocationControl';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
