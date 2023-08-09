@@ -19,7 +19,7 @@ import PointManager from '../../../context/PointManager';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import _ from 'lodash';
 
-const PointsTab = ({ width }) => {
+const PointsTab = () => {
     const ctx = useContext(AppContext);
     const styles = contextMenuStyles();
 
@@ -142,7 +142,7 @@ const PointsTab = ({ width }) => {
             )}
             {ctx.selectedGpxFile?.points && (
                 <DragDropContext onDragEnd={onDragEnd}>
-                    <Box sx={{ mt: 2 }} minWidth={width}>
+                    <Box sx={{ mt: 2 }} minWidth={ctx.infoBlockWidth}>
                         {loading ? <LinearProgress /> : <></>}
                         <Droppable droppableId="droppable-1">
                             {(provided) => (

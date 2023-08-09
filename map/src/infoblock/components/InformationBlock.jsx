@@ -10,7 +10,6 @@ import PoiTabList from './tabs/PoiTabList';
 
 export default function InformationBlock({
     mobile,
-    setDrawerWidth,
     infoBlockOpen,
     showInfoBlock,
     setShowInfoBlock,
@@ -60,7 +59,7 @@ export default function InformationBlock({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        setDrawerWidth(getWidth());
+        ctx.setInfoBlockWidth(getWidth());
     }, [mobile, showInfoBlock, infoBlockOpen]);
 
     useEffect(() => {

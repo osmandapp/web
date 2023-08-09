@@ -9,7 +9,7 @@ import GeneralInfo from '../track/GeneralInfo';
 import DescTrackDialog from '../track/dialogs/DescTrackDialog';
 import { isEmptyTrack } from '../../../context/TracksManager';
 
-export default function GeneralInfoTab({ width, setShowContextMenu }) {
+export default function GeneralInfoTab({ setShowContextMenu }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
@@ -26,9 +26,9 @@ export default function GeneralInfoTab({ width, setShowContextMenu }) {
     return (
         <>
             <Box>
-                <GeneralInfo width={width} setOpenDescDialog={setOpenDescDialog} />
+                <GeneralInfo width={ctx.infoBlockWidth} setOpenDescDialog={setOpenDescDialog} />
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
-                <GpxGraphProvider width={width} />
+                <GpxGraphProvider width={ctx.infoBlockWidth} />
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
                     <Button

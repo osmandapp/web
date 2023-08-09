@@ -285,7 +285,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             className={styles.name}
                             style={{ color: '#666666', fontWeight: 'bold' }}
                             variant="inherit"
-                            maxWidth={'400px'}
+                            maxWidth={width}
                         >
                             {'* ' + fileName}
                             <IconButton

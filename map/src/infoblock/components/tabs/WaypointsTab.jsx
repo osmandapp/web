@@ -19,7 +19,7 @@ import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import _ from 'lodash';
 
-export default function WaypointsTab({ width }) {
+export default function WaypointsTab() {
     const ctx = useContext(AppContext);
 
     const stylesWpt = wptTabStyle();
@@ -206,7 +206,7 @@ export default function WaypointsTab({ width }) {
                     Use the right menu to add a waypoint...
                 </Alert>
             )}
-            <Box className={stylesMenu.item} minWidth={width}>
+            <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
                 {ctx.selectedGpxFile.wpts &&
                     getPoints().map((point, index) => {
                         return WaypointRow({ point: point, index: index });

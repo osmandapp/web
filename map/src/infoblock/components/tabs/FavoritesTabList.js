@@ -7,14 +7,13 @@ export default class FavoritesTabList {
         tabs: null,
         tabList: [],
         defaultTab: 'favInfo',
-        graphWidth: 400,
     };
 
     create() {
         let tabs = {};
         let list = [];
 
-        tabs.Info = <FavoriteInfoTab key="favInfo" width={this.state.graphWidth} />;
+        tabs.Info = <FavoriteInfoTab key="favInfo" />;
 
         list = list.concat(
             Object.keys(tabs).map((item) => <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item} />)
