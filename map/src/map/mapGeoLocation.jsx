@@ -3,13 +3,14 @@ import L from 'leaflet';
 import { useMap } from 'react-leaflet';
 import { useRef, useState, useEffect, useMemo, useCallback } from 'react';
 
-import { Paper, Tooltip, IconButton } from '@mui/material';
+import { Paper, Tooltip, IconButton, CircularProgress } from '@mui/material';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
-// import GpsOffIcon from '@mui/icons-material/GpsOff';
+import GpsOffIcon from '@mui/icons-material/GpsOff';
 
 import { apiGet } from '../util/HttpApi';
 
 const flyZoom = 9;
+const locationZoom = 17;
 
 export const initialZoom = 5;
 export const initialPosition = [50, 5]; // use != instead of !== to compare coordinates
@@ -65,6 +66,31 @@ const TOOLTIP_PLACEMENT = {
     bottomright: 'left',
 };
 
+const icons = {
+    new: <GpsFixedIcon />,
+    error: <GpsOffIcon color="error" />,
+    found: <GpsFixedIcon color="primary" />,
+    loading: <CircularProgress size={40 - 16} />,
+};
+
+const circleStyle = {
+    className: 'leaflet-control-locate-circle',
+    fillColor: '#1166EE',
+    fillOpacity: 0.15,
+    color: '#1166EE',
+    weight: 1,
+};
+
+const markerStyle = {
+    className: 'leaflet-control-locate-marker',
+    color: '#fff',
+    fillColor: '#3399EE',
+    fillOpacity: 1,
+    weight: 3,
+    opacity: 1,
+    radius: 7,
+};
+
 export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const map = useMap();
     const element = useRef();
@@ -73,7 +99,10 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const positionClass = POSITION_CLASSES[position];
     const tooltipPlacement = TOOLTIP_PLACEMENT[position];
 
-    const [color, setColor] = useState();
+    const [status, setStatus] = useState('new');
+    const [message, setMessage] = useState('GPS');
+    const [marker, setMarker] = useState(null);
+    const [circle, setCircle] = useState(null);
 
     useEffect(() => {
         if (element.current) {
@@ -81,22 +110,58 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
         }
     }, []);
 
+    useEffect(() => {
+        marker?.addTo(map);
+    }, [marker]);
+
+    useEffect(() => {
+        circle?.addTo(map);
+    }, [circle]);
+
+    const onLocationError = useCallback((e) => {
+        console.debug('gps-error', e.code, e.message);
+        setTimeout(() => setMessage(''), 3000);
+        setMessage(e.code + ': ' + e.message);
+        setStatus('error');
+    });
+
+    const onLocationFound = useCallback((e) => {
+        // console.debug('gps-found', e);
+        if (e.latlng && e.accuracy) {
+            setMarker(L.circleMarker(e.latlng).setStyle(markerStyle));
+            setCircle(L.circle(e.latlng, { radius: e.accuracy }).setStyle(circleStyle));
+
+            setMessage(e.latlng.lat + ', ' + e.latlng.lng);
+            setTimeout(() => setMessage(''), 3000);
+
+            map.setView(e.latlng, locationZoom); // flyTo has buggy marker animation
+
+            setStatus('found');
+        }
+    });
+
     const onClick = useCallback(() => {
-        setColor('primary');
-        map.locate({ watch: true, setView: true, enableHighAccuracy: true });
-    }, []);
+        circle?.removeFrom(map);
+        marker?.removeFrom(map);
+        if (status === 'found') {
+            setStatus('new');
+        } else {
+            setStatus('loading');
+            map.on('locationerror', onLocationError);
+            map.on('locationfound', onLocationFound);
+            map.locate({ maxZoom: locationZoom, watch: false, setView: false, enableHighAccuracy: true });
+        }
+    }, [status, message]);
 
     const control = useMemo(
         () => (
             <Paper>
-                <Tooltip title="GPS" placement={tooltipPlacement} arrow>
-                    <IconButton onClick={onClick}>
-                        <GpsFixedIcon color={color} />
-                    </IconButton>
+                <Tooltip title={message} placement={tooltipPlacement} arrow>
+                    <IconButton onClick={onClick}>{icons[status]}</IconButton>
                 </Tooltip>
             </Paper>
         ),
-        [color]
+        [status, message]
     );
 
     return (
