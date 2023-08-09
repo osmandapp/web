@@ -132,7 +132,7 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
         setMessage(e.code + ': ' + e.message);
 
         setStatus(errors[e.code] ?? 'errorUnavailable');
-    });
+    }, []);
 
     const onLocationFound = useCallback((e) => {
         // console.debug('gps-found', e);
@@ -147,7 +147,7 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
 
             setStatus('found');
         }
-    });
+    }, []);
 
     const onClick = useCallback(() => {
         circle?.removeFrom(map);
