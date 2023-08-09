@@ -9,7 +9,7 @@ import GeneralInfo from '../track/GeneralInfo';
 import DescTrackDialog from '../track/dialogs/DescTrackDialog';
 import { isEmptyTrack } from '../../../context/TracksManager';
 
-export default function GeneralInfoTab({ width, setShowContextMenu }) {
+export default function GeneralInfoTab({ width, setShowInfoBlock }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
@@ -56,7 +56,7 @@ export default function GeneralInfoTab({ width, setShowContextMenu }) {
                 <DeleteTrackDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}
-                    setShowContextMenu={setShowContextMenu}
+                    setShowInfoBlock={setShowInfoBlock}
                 />
             )}
             {openDescDialog && <DescTrackDialog dialogOpen={openDescDialog} setDialogOpen={setOpenDescDialog} />}
