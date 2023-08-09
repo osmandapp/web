@@ -68,9 +68,11 @@ const TOOLTIP_PLACEMENT = {
 
 const icons = {
     new: <GpsFixedIcon />,
-    error: <GpsOffIcon color="error" />,
-    found: <GpsFixedIcon color="primary" />,
     loading: <CircularProgress size={40 - 16} />,
+    found: <GpsFixedIcon color="primary" />,
+    errorDenied: <GpsOffIcon color="error" />,
+    errorUnavailable: <GpsOffIcon color="warning" />,
+    errorTimeout: <GpsOffIcon />,
 };
 
 const circleStyle = {
@@ -100,9 +102,9 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const tooltipPlacement = TOOLTIP_PLACEMENT[position];
 
     const [status, setStatus] = useState('new');
-    const [message, setMessage] = useState('GPS');
     const [marker, setMarker] = useState(null);
     const [circle, setCircle] = useState(null);
+    const [message, setMessage] = useState('GPS');
 
     useEffect(() => {
         if (element.current) {
@@ -119,10 +121,17 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     }, [circle]);
 
     const onLocationError = useCallback((e) => {
-        console.debug('gps-error', e.code, e.message);
+        const errors = {
+            1: 'errorDenied', // use "error" color
+            2: 'errorUnavailable', // "warning"
+            3: 'errorTimeout', // no color
+        };
+        // console.debug('gps-error', e.code, e.message);
+
         setTimeout(() => setMessage(''), 3000);
         setMessage(e.code + ': ' + e.message);
-        setStatus('error');
+
+        setStatus(errors[e.code] ?? 'errorUnavailable');
     });
 
     const onLocationFound = useCallback((e) => {
@@ -149,7 +158,13 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
             setStatus('loading');
             map.on('locationerror', onLocationError);
             map.on('locationfound', onLocationFound);
-            map.locate({ maxZoom: locationZoom, watch: false, setView: false, enableHighAccuracy: true });
+            map.locate({
+                timeout: 30 * 1000, // seconds
+                watch: false,
+                setView: false,
+                maxZoom: locationZoom,
+                enableHighAccuracy: true,
+            });
         }
     }, [status, message]);
 
