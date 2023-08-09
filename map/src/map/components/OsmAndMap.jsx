@@ -15,7 +15,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
 import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
-import { apiGet } from '../../util/HttpApi';
+import { initialZoom, initialPosition, detectGeoByIp } from '../mapGeoLocation';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -87,40 +87,6 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
 
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
-
-    const flyZoom = 9;
-    const initialZoom = 5;
-    const initialPosition = [50, 5]; // use != instead of !== to compare coordinates
-
-    const detectGeoByIp = async ({ map, hash }) => {
-        if (hash) {
-            const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
-            if (
-                zoom &&
-                lat &&
-                lon &&
-                (zoom !== '#' + initialZoom || lat != initialPosition[0] || lon != initialPosition[1])
-            ) {
-                // console.debug('location-is-defined-by-hash', zoom, lat, lon);
-                return;
-            }
-        }
-
-        const response = await apiGet(process.env.REACT_APP_GEO_IP_URL);
-
-        if (response.ok) {
-            let { lat, lon } = {};
-            try {
-                ({ lat, lon } = await response.json());
-            } finally {
-                if (lat && lon) {
-                    // hash+flyTo requires little delay after map-ready
-                    setTimeout(() => map.flyTo([lat, lon], flyZoom), 100);
-                    // console.debug('location-defined-by-ip', flyZoom, lat, lon);
-                }
-            }
-        }
-    };
 
     const whenReadyHandler = (event) => {
         const { target: map } = event;
