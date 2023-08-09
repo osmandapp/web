@@ -170,9 +170,7 @@ There are three ways to access the Track Appearance menu:
 
 ### Analyze Track on Map
 
-This tool allows you to view track information with graphs and a map.  
-
-There are several ways to open the Analyze on map.  
+This tool allows you to view track information with graphs and a map. 
 
 <Tabs groupId="operating-systems">
 
@@ -188,7 +186,9 @@ There are several ways to open the Analyze on map.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
+    
+*Tap on the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+    
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 4 Android](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
 ![Track menu analyze on map 1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1_android.png) ![Track menu analyze on map 1.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_1.1_android.png)
 ![Track menu analyze on map 2 Android](@site/static/img/personal/tracks/track_analyze_on_map_2_android.png) ![Track menu analyze on map 2.1 Android](@site/static/img/personal/tracks/track_analyze_on_map_2.1_android.png)
@@ -197,21 +197,12 @@ There are several ways to open the Analyze on map.
 
 </Tabs>
 
-- [**Graph data on the Y-axis**](#graph-data-on-the-y-axis): Altitude / Slope / Speed (if data is available in the track).
-- **Graph dimension X-axis**: Distance / Time / Time of day.
+- **Graph data (Y-axis)**: Altitude, Slope, Speed or their combinations (if data is available in the track).
+- **Graph dimension (X-axis)**: Distance / Time / Time of day.
 - **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
 - **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
 - **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed. 
 
-### Graph data on the Y-axis 
-
-Displays the different types of data, if any in the track information.  
-- *Altitude*
-- *Slope*
-- *Speed*
-- *Altitude/Slope*
-- *Altitude/Speed*
-- *Slope/Speed*
 
 
 ## Navigation Route
