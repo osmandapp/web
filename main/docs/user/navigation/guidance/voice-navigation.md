@@ -227,6 +227,8 @@ When using voice prompts, you may have issues with their playback. Here are some
 
 ## Beep modes
 
+<InfoAndroidOnly />  
+
 You can configure an OsmAnd profile to beep instead of speaking, in a similar way to a cycle computer.
   
 *<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
