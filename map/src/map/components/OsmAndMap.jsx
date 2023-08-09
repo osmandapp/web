@@ -1,5 +1,6 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+// import { MapContainer, TileLayer, Marker, ScaleControl } from 'react-leaflet';
 import { MapContainer, TileLayer, ZoomControl, Marker, ScaleControl } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import RouteLayer from '../layers/RouteLayer';
@@ -15,7 +16,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
 import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
-import { initialZoom, initialPosition, detectGeoByIp } from '../mapGeoLocation';
+import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from '../mapGeoLocation';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -159,14 +160,12 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
                 maxNativeZoom={18}
                 url={ctx.tileURL.url}
             />
-
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            {mobile && <ZoomControl position="topright" />}
-            {!mobile && <ZoomControl position="bottomleft" />}
-            {mobile && <ScaleControl imperial={false} position="bottomleft" />}
-            {!mobile && <ScaleControl imperial={false} position="bottomright" />}
+            <ZoomControl position={mobile ? 'topright' : 'bottomleft'} />
+            <LocationControl position={mobile ? 'topright' : 'bottomleft'} />
+            <ScaleControl position={mobile ? 'bottomleft' : 'bottomright'} imperial={false} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );

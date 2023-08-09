@@ -29,6 +29,7 @@ export default function GeneralPanelButtons({
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
 
+    const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
     const HEADER_HEIGHT = 68;
     const BUTTON_SIZE = 41;
 
@@ -72,7 +73,7 @@ export default function GeneralPanelButtons({
                 zIndex: 1000,
                 position: 'absolute',
                 display: 'flex',
-                height: useFlexButtons() && height - 2 * HEADER_HEIGHT,
+                height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
                 alignItems: useFlexButtons() && 'center',
                 flexDirection: useFlexButtons() && 'column',
             }}
