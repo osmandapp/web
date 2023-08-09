@@ -245,7 +245,7 @@ There are three basic patterns: minimal, simple, and complex. The simple and com
   
     Suitable for road cycling, the complex pattern uses beeps of different lengths and pitches to inform you about upcoming turns.
 
-    A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the turn to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
+    A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
 
 ## Text Notifications
 
