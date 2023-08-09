@@ -1,6 +1,5 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import { MapContainer, TileLayer, Marker, ScaleControl } from 'react-leaflet';
 import { MapContainer, TileLayer, ZoomControl, Marker, ScaleControl } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import RouteLayer from '../layers/RouteLayer';
