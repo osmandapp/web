@@ -13,7 +13,7 @@ export default class TrackTabList {
         graphWidth: document.body.offsetWidth / 3 >= 400 ? 400 : document.body.offsetWidth,
     };
 
-    create(ctx, setShowContextMenu) {
+    create(ctx, setShowInfoBlock) {
         let tabs = {};
         let list = [];
 
@@ -21,9 +21,7 @@ export default class TrackTabList {
             ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK ||
             ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
 
-        tabs.Info = (
-            <GeneralInfoTab key="general" width={this.state.graphWidth} setShowContextMenu={setShowContextMenu} />
-        );
+        tabs.Info = <GeneralInfoTab key="general" width={this.state.graphWidth} setShowInfoBlock={setShowInfoBlock} />;
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Track = <PointsTab key="points" width={this.state.graphWidth} />;
         }

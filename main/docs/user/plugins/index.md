@@ -14,13 +14,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 ## Overview
+
 Plugins significantly enhance OsmAnd's functionality. Each is designed to solve a problem or use case, such as trip recording, accessing Wikipedia articles offline, visualizing terrain data, providing street-level views, etc.
 
 Plugins can be internal (you can activate them inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via the OsmAnd API and can get access to OsmAnd data.  
 
 
 ## Configure a plugin
+
 In order to access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
+
 
 ### Enable / disable
 
@@ -28,8 +31,8 @@ In order to access a plugin's functionality, it must first be [enabled](#enable-
 
 <TabItem value="android" label="Android">
 
-To enable / disable plugins go to:
-<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
+To enable / disable plugins go to:  
+*<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
@@ -37,8 +40,8 @@ To enable / disable plugins go to:
 
 <TabItem value="ios" label="iOS">
 
-To enable / disable plugins go to:
-<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
+To enable / disable plugins go to:  
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;*
 
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
@@ -51,12 +54,12 @@ To enable / disable plugins go to:
 Most plugins are available for free, only the plugins in the list below require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license to use:  
 
 - [Topography](../plugins/contour-lines.md)
-- 3D Relief (feature of the Topography plugin)
+- [3D Relief](../plugins/contour-lines.md#3d-relief) (feature of the Topography plugin)
 - [Wikipedia](../plugins/wikipedia.md)
 - [Nautical map view](../plugins/nautical-charts.md)
 - [Weather](../plugins/weather.md)
 
-Detailed information about the purchase of the application can be found in the section [Purchase](../purchases/).
+Detailed information about the application purchase can be found in the [Purchase](../purchases/) section. 
 
 ### Plugin Features
 

@@ -20,19 +20,19 @@ The *Configure map* menu is an important item in the OsmAnd main menu, where you
 
 <TabItem value="android" label="Android">
 
-Section Show:  
+Section **Show**:  
 
 ![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
 
-Section Topography:  
+Section **Topography**:  
 
 ![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
 
-Section OpenStreetMap:  
+Section **OpenStreetMap**:  
 
 ![Configure map android](@site/static/img/map/configure_map_osm_andr.png)  
 
-Sections Routes and Map rendering:  
+Sections **Routes and Map rendering**:  
 
 ![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 

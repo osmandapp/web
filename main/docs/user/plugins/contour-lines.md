@@ -339,7 +339,7 @@ Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download
 
 If necessary, you can combine contour lines and Hillshade or Slope layers. For example, to estimate the curvature of a mountain slope, a combination of Contour lines and Hillshade is an obvious choice. To estimate slope steepness or to find points with the same height, you can display Contour lines and Slope layers.  
 
-It is best to use a combination of 3D Relief and Hillshade. This allows you to get a more realistic and clear view of the terrain, its relief and landscape features on the map, which makes navigation and orienteering more convenient and reliable. For example, the combination of 3D Relief and Hillshade is best used in mountainous terrain, hilly areas, hiking and biking trails.  
+It is best to use a combination of [3D Relief](#3d-relief) and [Hillshade](#hillshade). This allows you to get a more realistic and clear view of the terrain, its relief and landscape features on the map, which makes navigation and orienteering more convenient and reliable. For example, the combination of 3D Relief and Hillshade is best used in mountainous terrain, hilly areas, hiking and biking trails.  
 
 <Tabs groupId="operating-systems">
 
