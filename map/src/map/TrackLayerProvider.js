@@ -16,7 +16,7 @@ function createLayersByTrackData(data, ctx) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
-            let res = parsePoints(track.points, layers, false, ctx);
+            let res = parsePoints({ ctx, points: track.points, layers, hidden: true });
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
@@ -27,7 +27,7 @@ function createLayersByTrackData(data, ctx) {
     }
 }
 
-function parsePoints(points, layers, draggable, ctx) {
+function parsePoints({ ctx, points, layers, draggable = false, hidden = false }) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach((point) => {
@@ -50,15 +50,18 @@ function parsePoints(points, layers, draggable, ctx) {
         }
     });
 
-    points.forEach((p) => {
-        if (draggable || (!draggable && p.geometry !== undefined)) {
-            let marker = new L.Marker(new L.LatLng(p.lat, p.lng), {
-                icon: MarkerOptions.options.route,
-                draggable: draggable,
-            });
-            layers.push(marker);
-        }
-    });
+    if (hidden === false) {
+        points.forEach((p) => {
+            if (draggable || (!draggable && p.geometry !== undefined)) {
+                const marker = new L.Marker(new L.LatLng(p.lat, p.lng), {
+                    icon: MarkerOptions.options.route,
+                    draggable: draggable,
+                    isRoutePoint: true,
+                });
+                layers.push(marker);
+            }
+        });
+    }
 
     let endPolyline = new L.Polyline(coordsTrk, getPolylineOpt());
     if (ctx) {

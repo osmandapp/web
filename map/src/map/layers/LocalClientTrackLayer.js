@@ -675,7 +675,7 @@ export default function LocalClientTrackLayer() {
         if (trackLayers) {
             let layers = [];
             if (points?.length > 0) {
-                TrackLayerProvider.parsePoints(points, layers, true, ctx);
+                TrackLayerProvider.parsePoints({ ctx, points, layers, draggable: true });
             }
             if (wpts?.length > 0) {
                 TrackLayerProvider.parseWpt(wpts, layers);
