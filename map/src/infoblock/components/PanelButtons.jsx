@@ -1,5 +1,5 @@
 import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
-import { Close, Delete, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
+import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
@@ -8,6 +8,7 @@ import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
 const PanelButtons = ({
     orientation,
@@ -122,15 +123,32 @@ const PanelButtons = ({
                         color="primary"
                     >
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
-                            <Tooltip title="Edit" arrow placement="right">
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                                >
-                                    <Create fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
+                            <>
+                                <Tooltip title="Cloud track" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() =>
+                                            confirm({
+                                                ctx,
+                                                text: 'This is Cloud track. Open editor?',
+                                                callback: () => TracksManager.handleEditCloudTrack(ctx),
+                                            })
+                                        }
+                                    >
+                                        <Cloud fontSize="medium" color="primary" />
+                                    </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Edit" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
+                                    >
+                                        <Create fontSize="small" />
+                                    </IconButton>
+                                </Tooltip>
+                            </>
                         )}
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
