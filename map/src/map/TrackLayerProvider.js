@@ -12,11 +12,11 @@ const TEMP_LINE_STYLE = {
     name: TEMP_LAYER_FLAG,
 };
 
-function createLayersByTrackData(data) {
+function createLayersByTrackData(data, ctx) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
-            let res = parsePoints(track.points, layers);
+            let res = parsePoints(track.points, layers, false, ctx);
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
