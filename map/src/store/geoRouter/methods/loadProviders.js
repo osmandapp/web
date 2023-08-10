@@ -16,7 +16,7 @@ function getColors() {
         horsebackriding: '#7f3431',
         pedestrian: '#d90139',
         ski: '#ffacdf',
-        [PROFILE_LINE]: '#5F9EA0',
+        [PROFILE_LINE]: '#2F6E80',
         moped: '#3e690e',
         train: '#a56b6f',
         rescuetrack: '#0000ff',
