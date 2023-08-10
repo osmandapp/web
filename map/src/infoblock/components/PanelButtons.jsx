@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
+import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
 import { Close, Delete, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
@@ -28,6 +28,13 @@ const PanelButtons = ({
     };
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
+
+    const isUndoDisabled =
+        ctx.processRouting || !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]));
+
+    const isRedoDisabled = ctx.processRouting || !isRedoPossible;
+
+    const isProfileDisabled = ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
@@ -128,14 +135,21 @@ const PanelButtons = ({
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
+                                    sx={{ width: 40, height: 40 }}
                                     variant="contained"
                                     type="button"
                                     onClick={() => {
-                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
+                                        if (!isProfileDisabled) {
+                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                            ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
+                                        }
                                     }}
                                 >
-                                    {ctx.trackRouter.getProfile()?.icon}
+                                    {isProfileDisabled ? (
+                                        <CircularProgress size={40 - 16} />
+                                    ) : (
+                                        ctx.trackRouter.getProfile()?.icon
+                                    )}
                                 </IconButton>
                             </Tooltip>
                         )}
@@ -175,9 +189,7 @@ const PanelButtons = ({
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={
-                                            !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))
-                                        }
+                                        disabled={isUndoDisabled}
                                         onClick={(e) => {
                                             undo();
                                             setUseSavedState(true);
@@ -195,7 +207,7 @@ const PanelButtons = ({
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={!isRedoPossible}
+                                        disabled={isRedoDisabled}
                                         onClick={(e) => {
                                             redo();
                                             setUseSavedState(true);

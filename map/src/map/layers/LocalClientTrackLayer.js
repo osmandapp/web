@@ -477,11 +477,6 @@ export default function LocalClientTrackLayer() {
                                 dashArray: null,
                             });
 
-                            setQueueForRouting((prev) => ({
-                                isProcessing: false,
-                                objs: prev.objs,
-                            }));
-
                             const analysis = () => {
                                 TracksManager.getTrackWithAnalysis(
                                     TracksManager.GET_ANALYSIS,
@@ -495,17 +490,23 @@ export default function LocalClientTrackLayer() {
 
                             debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
                         }
+
+                        // finally
+                        if (newObjs.length === 0) ctx.setProcessRouting(false);
+                        setQueueForRouting((prev) => ({
+                            isProcessing: false,
+                            objs: prev.objs,
+                        }));
+                        saveChanges(null, null, null, newFile);
                     })
             );
+            // process next queue
             const newObjs = queueForRouting.objs.slice(1);
             const newQueue = {
                 isProcessing: true,
                 objs: newObjs,
             };
             setQueueForRouting(() => newQueue);
-
-            if (newObjs.length === 0) ctx.setProcessRouting(false);
-            saveChanges(null, null, null, newFile); // finally, after promises
         }
     }, [queueForRouting]);
 
