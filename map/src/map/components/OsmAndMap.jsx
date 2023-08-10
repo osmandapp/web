@@ -132,6 +132,8 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
         document.addEventListener('touchend', markerEventHandler, { passive: false });
     }, []);
 
+    const routersReady = ctx.trackRouter.isReady() && ctx.routeRouter.isReady();
+
     return (
         <MapContainer
             center={position}
@@ -145,13 +147,13 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
             contextmenuItems={[]}
             editable={true}
         >
-            <LocalClientTrackLayer />
-            <PoiLayer />
-            <RouteLayer geocodingData={geocodingData} region={regionData} />
+            {routersReady && <CloudTrackLayer />}
+            {routersReady && <LocalClientTrackLayer />}
+            {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
             <FavoriteLayer />
             <WeatherLayer />
-            <CloudTrackLayer />
             <GraphLayer />
+            <PoiLayer />
             <TileLayer
                 ref={tileLayer}
                 attribution='WEB OsmAnd 0.1 &amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -160,7 +162,6 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
                 maxNativeZoom={18}
                 url={ctx.tileURL.url}
             />
-
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
