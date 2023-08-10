@@ -108,6 +108,17 @@ export default function ChangeProfileTrackDialog({ open }) {
         }
     }, [ctx.trackProfileManager?.pointInd]);
 
+    function updateLastPointProfile() {
+        const track = ctx.selectedGpxFile;
+        if (track.points?.length > 0) {
+            const last = track.points.length - 1;
+            if (track.points[last].profile !== TracksManager.PROFILE_GAP) {
+                track.points[last].geoProfile = geoProfile;
+                track.points[last].profile = geoProfile.profile;
+            }
+        }
+    }
+
     async function changeProfile() {
         if (!ctx.selectedGpxFile.layers) {
             return false; // on empty track
@@ -115,6 +126,7 @@ export default function ChangeProfileTrackDialog({ open }) {
         let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
         if (!partialEdit) {
             if (changeAll) {
+                // whole track - all segments
                 if (ctx.selectedGpxFile.points.length > 1) {
                     for (let i = 0; i < ctx.selectedGpxFile.points.length - 1; i++) {
                         const start = ctx.selectedGpxFile.points[i];
@@ -126,15 +138,19 @@ export default function ChangeProfileTrackDialog({ open }) {
                             TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
                         }
                     }
+                    updateLastPointProfile();
                     return true;
                 } else {
                     ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
                     ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
                     return true;
                 }
+            } else {
+                updateLastPointProfile(); // just update last point's profile
             }
         } else {
             if (changeOne) {
+                // before or after - one segment
                 let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
                 let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
                 let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
@@ -164,6 +180,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                     return true;
                 }
             } else if (changeAll) {
+                // before or after - all segments
                 if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
                     for (let i = 0; i < ctx.trackProfileManager.pointInd; i++) {
                         const start = ctx.selectedGpxFile.points[i];
@@ -187,6 +204,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                             TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
                         }
                     }
+                    updateLastPointProfile();
                     return true;
                 }
             }
