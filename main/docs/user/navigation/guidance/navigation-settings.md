@@ -124,11 +124,11 @@ All route parameters are described in detail in the corresponding sections of th
 
 </Tabs>  
 
-The **Recalculation route** parameter is a setting that allows you to automatically change the suggested route if you deviate from it or if you drive in the opposite direction. In both cases, this setting helps you keep your direction and get to your destination without wasting time searching for a new route manually.
+The **Recalculation route** parameter is a setting that allows you to automatically change the suggested route if you deviate from it or if you drive in the opposite direction. In both cases, this setting helps you maintain your direction of travel and get to your destination without wasting time manually searching for a new route.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd will announce, that route is being recalculated. |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd announces, that route is being recalculated. |
 |  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 

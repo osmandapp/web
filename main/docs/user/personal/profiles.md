@@ -78,7 +78,6 @@ This section contains settings of the cursor on the map and map view, settings o
 
 In this section of the General settings menu, you can set parameters for the cursor on the map and map view for the chosen profile.
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -98,8 +97,8 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*
 - *2.5D view* - (placed on [*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*](../widgets/map-buttons.md#3d-mode))If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - *<Translate android="true" ids="display_position"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-  - *<Translate android="true" ids="position_on_map_center"/>* - The cursor will always be in the center of the screen.
-  - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate android="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
+  - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
   - *<Translate android="true" ids="shared_string_automatic"/>* - Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 - *<Translate android="true" ids="map_screen_orientation"/>* - Sets the screen position for the OsmAnd application. 
   - *<Translate android="true" ids="map_orientation_portrait"/>* 
@@ -122,8 +121,8 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate ios="true" ids="rotate_map_manual_opt"/>*
 - *<Translate ios="true" ids="allow_3D_view"/>* - If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - *<Translate ios="true" ids="position_on_map"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-  - *<Translate ios="true" ids="position_on_map_center"/>* - The cursor will always be in the center of the screen.
-  - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* will be placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate ios="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
+  - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
   - *<Translate ios="true" ids="shared_string_automatic"/>* - Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 
 </TabItem>

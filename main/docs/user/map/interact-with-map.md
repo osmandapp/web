@@ -198,21 +198,25 @@ The keyboard continues to work even if the *External input devices* option is tu
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
-|**C**| Keyboard   |"[My location](../map/interact-with-map.md#my-location--zoom)" |
-|**D**| Keyboard   |"[Map orientation](../map/interact-with-map.md#map-orientation-modes)"  |
+|**C**| Keyboard   | [My location](../map/interact-with-map.md#my-location--zoom) |
+|**D**| Keyboard   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
+|**N**| Keyboard   | Open Navigation view. |
+|**S**| Keyboard   | Open [Search](../search/index.md) view. |
+|**P**| Keyboard   | Switch to the next app profile. Show toast like message **App profile: Name**. |
+|**O**| Keyboard   | Switch to the previous app profile. |
 |**&#8593; **| Keyboard   | Move up  |
 |**&#8595; **| Keyboard   | Move down  |
 |**&#8592; **| Keyboard   | Move left  |
 |**&#8594; **| Keyboard   | Move right  |
 |**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722; **| Keyboard  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**Menu** (legacy Android) | Keyboard  |[Drawer](../start-with/main-menu.md#main-menu-drawer) |
-|**Joystick click** (legacy Android) | Keyboard  | "[My location](../map/interact-with-map.md#my-location--zoom)" |
-|**Media button**| Keyboard  |[AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
-|**&#8592; **| Parrot  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8594; **| Parrot  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8595; **| Wunderlinq  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8593; **| Wunderlinq  |[Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722; **| Keyboard  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**Menu** (legacy Android) | Keyboard  | [Drawer](../start-with/main-menu.md#main-menu-drawer) |
+|**Joystick click** (legacy Android) | Keyboard  | [My location](../map/interact-with-map.md#my-location--zoom) |
+|**Media button**| Keyboard  | [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
+|**&#8592; **| Parrot  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8594; **| Parrot  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8595; **| Wunderlinq  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8593; **| Wunderlinq  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 |**ESC**| Wunderlinq  | Opens Wunderlinq dashboard |
 
 :::note
@@ -227,14 +231,18 @@ You can read more about the actions of external input devices on GitHub in the [
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
-|**C**| Keyboard   |"[My location](../map/interact-with-map.md#my-location--zoom)" |
-|**D**| Keyboard   |"[Map orientation](../map/interact-with-map.md#map-orientation-modes)"  |
+|**C**| Keyboard   | [My location](../map/interact-with-map.md#my-location--zoom) |
+|**D**| Keyboard   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
+|**N**| Keyboard   | Open Navigation view. |
+|**S**| Keyboard   | Open [Search](../search/index.md) view. |
+|**P**| Keyboard   | Switch to the next app profile. Show toast like message **App profile: Name**. |
+|**O**| Keyboard   | Switch to the previous app profile. |
 |**&#8593; **| Keyboard   | Move up  |
 |**&#8595; **| Keyboard   | Move down  |
 |**&#8592; **| Keyboard   | Move left  |
 |**&#8594; **| Keyboard   | Move right  |
 |**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722; **| Keyboard  |[Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722; **| Keyboard  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 
 
 </TabItem>

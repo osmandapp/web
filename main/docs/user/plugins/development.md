@@ -199,8 +199,6 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 ### Elevation: map center Widget  
 
-<InfoAndroidOnly/>
-
 With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you can find out the elevation above sea level of the current map center. To display elevation data:
 
 - Enable *Heightmap* option in the OsmAnd Development plugin [settings](#plugin-settings)
@@ -208,6 +206,7 @@ With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you ca
 - Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
 
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
+
 
 ## Camera position Widgets
 

@@ -14,6 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+## Overview
+
 Information widgets are needed for quick access to information important to the user. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to the user's specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
@@ -27,7 +30,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: current location  
   
 :::note  
-Altitude may not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
+Altitude can not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -38,9 +41,9 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
   
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Altitude |  
-| By tapping | No changes.|
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
+| Enable | *Menu → Configure screen → Left / Right panel → Altitude* |  
+| By tapping | No changes. 
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 </TabItem>
 
@@ -50,19 +53,16 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
   
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Right panel → Altitude widget |
-| By tapping | No changes.|
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
+| Enable | *Menu → Configure screen → Right panel → Altitude widget* |
+| By tapping | No changes |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 </TabItem>
 
 </Tabs>  
 
-### * Elevation: map center
 
-To display Elevation widget among *Altitude widgets*:
-- enable the [Development plugin](../plugins/development.md)
-- switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
+### * Elevation: map center
 
 <Tabs groupId="operating-systems">
 
@@ -70,27 +70,28 @@ To display Elevation widget among *Altitude widgets*:
 
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Altitude | 
-| By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png) 
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Right panel → Elevation: map center | 
-| By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
-
 </TabItem>
 
 </Tabs>  
+
+To display Elevation widget among *Altitude widgets*:
+- enable the [Development plugin](../plugins/development.md)
+- switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
+- Widget works only if Use 3D relief heightmaps is On in OsmAnd Development plugin.
+
+
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
+|  | **iOS** *Menu → Configure screen → Right panel → Elevation: map center* | 
+| By tapping | No changes |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
     
 
 :::caution
