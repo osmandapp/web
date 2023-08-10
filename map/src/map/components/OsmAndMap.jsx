@@ -9,7 +9,7 @@ import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from '../layers/FavoriteLayer';
-import TrackLayer from '../layers/TrackLayer';
+import CloudTrackLayer from '../layers/CloudTrackLayer';
 import LocalClientTrackLayer from '../layers/LocalClientTrackLayer';
 import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
@@ -150,7 +150,7 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
             <RouteLayer geocodingData={geocodingData} region={regionData} />
             <FavoriteLayer />
             <WeatherLayer />
-            <TrackLayer />
+            <CloudTrackLayer />
             <GraphLayer />
             <TileLayer
                 ref={tileLayer}

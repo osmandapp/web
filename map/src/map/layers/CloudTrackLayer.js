@@ -33,7 +33,7 @@ function removeLayerFromMap(file, map) {
     return null;
 }
 
-const TrackLayer = () => {
+const CloudTrackLayer = () => {
     const ctx = useContext(AppContext);
     const ctxTrack = ctx.selectedGpxFile;
 
@@ -109,4 +109,4 @@ const TrackLayer = () => {
     }, [ctx.gpxFiles]);
 };
 
-export default TrackLayer;
+export default CloudTrackLayer;
