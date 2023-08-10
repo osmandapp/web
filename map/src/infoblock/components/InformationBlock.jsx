@@ -48,6 +48,7 @@ export default function InformationBlock({
 
     useEffect(() => {
         if (!showInfoBlock) {
+            // stop-editor (close button)
             stopCreatedTrack(false);
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);

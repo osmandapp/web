@@ -903,6 +903,8 @@ export default function LocalClientTrackLayer() {
 
         ctx.setSelectedGpxFile({ ...ctxTrack });
 
+        saveCreatedLayers(ctxTrack.layers);
+
         TracksManager.updateState(ctx);
     }
 
