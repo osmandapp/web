@@ -225,6 +225,29 @@ When using voice prompts, you may have issues with their playback. Here are some
 3. Select which [speakers](#voice-guidance-output) to use. 
 4. Check which [voice guidance](#language) are selected. 
 
+## Beep modes
+
+<InfoAndroidOnly />  
+
+You can configure an OsmAnd profile to beep instead of speaking, in a similar way to a cycle computer.
+  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+
+There are three basic patterns: minimal, simple, and complex. The simple and complex patterns have 'loud' variants, which will be considerably easier to hear in a loud environment but may sound unpleasantly harsh.
+
+- Minimal
+
+    Suitable for following a known route on foot with minimal distractions, this pattern will alert you when passing intermediate destinations, favourites and POIs, and when you have deviated from or returned to the route. It will not provide any audio warnings for turns.
+
+- Simple
+
+    In addition to alerts for destinations, favourites and POIs etc., the simple pattern alerts you with a longer beep when you need to turn.
+
+- Complex
+  
+    Suitable for road cycling, the complex pattern uses beeps of different lengths and pitches to inform you about upcoming turns.
+
+    A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
 
 ## Text Notifications
 
