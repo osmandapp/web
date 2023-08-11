@@ -7,7 +7,7 @@ import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
-import Utils, { effectDebouncer, useMutator } from '../../util/Utils';
+import { effectDebouncer, useMutator } from '../../util/Utils';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
@@ -29,6 +29,9 @@ export default function LocalClientTrackLayer() {
 
     const [localLayers, setLocalLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
+    const [addRoutingToTrack, setAddRoutingToTrack] = useState(false);
+    const [openAddRoutingToTrackDialog, setOpenAddRoutingToTrackDialog] = useState(false);
+    const [addNewPoint, setAddNewPoint] = useState(null);
 
     const debouncerTimer = useRef(null);
 
@@ -38,10 +41,6 @@ export default function LocalClientTrackLayer() {
     const [triggerRefreshTrackWithRouting, setTriggerRefreshTrackWithRouting] = useState(0);
 
     const [startedRouterJobs, setStartedRouterJobs] = useState(0);
-
-    const [addRoutingToTrack, setAddRoutingToTrack] = useState(false);
-    const [openAddRoutingToTrackDialog, setOpenAddRoutingToTrackDialog] = useState(false);
-    const [newPoint, setNewPoint] = useState(null);
 
     let ctxTrack = ctx.selectedGpxFile;
 
@@ -438,32 +437,41 @@ export default function LocalClientTrackLayer() {
             }
             return null;
         });
-        if (trackHasRouting()) {
-            newPoint.geometry = Utils.getPointsDist([
-                {
-                    lat: prevPoint.lat,
-                    lng: prevPoint.lng,
-                },
-                { lat: newPoint.lat, lng: newPoint.lng },
-            ]);
-            let polyline = new EditablePolyline(
-                map,
-                ctx,
-                [
-                    prevPoint,
-                    {
-                        lat: newPoint.lat,
-                        lng: newPoint.lng,
-                    },
-                ],
-                null,
-                ctxTrack
-            ).create();
-            polyline.setStyle({
-                color: geoRouter.getColor(),
-            });
-            layers.addLayer(polyline);
-        } else {
+
+        /**
+         * block was removed because get-analytics requires more data (even for Line-segment)
+         * updateRouteBetweenPoints() will do it better (add ext.extensions, etc)
+         * trackHasRouting() is now checked by the parent
+         */
+        /*
+        // if (trackHasRouting()) {
+        //     newPoint.geometry = Utils.getPointsDist([
+        //         {
+        //             lat: prevPoint.lat,
+        //             lng: prevPoint.lng,
+        //         },
+        //         { lat: newPoint.lat, lng: newPoint.lng },
+        //     ]);
+        //     let polyline = new EditablePolyline(
+        //         map,
+        //         ctx,
+        //         [
+        //             prevPoint,
+        //             {
+        //                 lat: newPoint.lat,
+        //                 lng: newPoint.lng,
+        //             },
+        //         ],
+        //         null,
+        //         ctxTrack
+        //     ).create();
+        //     polyline.setStyle({
+        //         color: geoRouter.getColor(),
+        //     });
+        //     layers.addLayer(polyline);
+        // } else {
+        */
+        {
             delete newPoint.geometry;
             if (prevPoint.geometry?.length === 0) {
                 delete prevPoint.geometry;
@@ -554,7 +562,16 @@ export default function LocalClientTrackLayer() {
     }
 
     function trackHasRouting() {
-        let pointWithRouting = ctxTrack.points.find(
+        // hasGeo set before?
+        if (ctxTrack.hasGeo) {
+            return true;
+        }
+        // just-created is routable
+        if (ctxTrack.points.length <= 2) {
+            return true;
+        }
+        // finally, assume Line-only as non-routable
+        const pointWithRouting = ctxTrack.points.find(
             (p) => p.profile !== undefined && p.profile !== TracksManager.PROFILE_LINE
         );
         return !!pointWithRouting;
@@ -671,21 +688,21 @@ export default function LocalClientTrackLayer() {
         if (addRoutingToTrack) {
             let points = ctxTrack.points;
             let layers = ctxTrack.layers;
-            points = addGeometryToTrack(newPoint, points);
-            points.push(newPoint);
+            points = addGeometryToTrack(addNewPoint, points);
+            points.push(addNewPoint);
             let prevPoint = getPrevPoint(points);
-            prevPoint.profile = newPoint.profile;
-            prevPoint.geoProfile = newPoint.geoProfile;
+            prevPoint.profile = addNewPoint.profile;
+            prevPoint.geoProfile = addNewPoint.geoProfile;
 
-            let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
+            let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, addNewPoint, map, ctx);
             layers.addLayer(tempLine);
 
-            TracksRoutingCache.addRoutingToCache(prevPoint, newPoint, tempLine, ctx);
+            TracksRoutingCache.addRoutingToCache(prevPoint, addNewPoint, tempLine, ctx);
 
-            ctxTrack.newPoint = newPoint;
+            ctxTrack.addNewPoint = addNewPoint;
             ctxTrack.points = points;
 
-            createPointOnMap(newPoint, layers, ctxTrack);
+            createPointOnMap(addNewPoint, layers, ctxTrack);
 
             ctxTrack.layers = updateLayers(points, ctxTrack.wpts, layers, true);
 
@@ -711,7 +728,7 @@ export default function LocalClientTrackLayer() {
             if (isNewPoint(ctxTrack, newPoint)) {
                 if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(points)) {
                     setOpenAddRoutingToTrackDialog(true);
-                    setNewPoint(newPoint);
+                    setAddNewPoint(newPoint);
                 } else {
                     points.push(newPoint);
                     if (points?.length > 1) {
@@ -722,7 +739,7 @@ export default function LocalClientTrackLayer() {
                         }
                         prevPoint.profile = newPoint.profile;
                         prevPoint.geoProfile = newPoint.geoProfile;
-                        if (newPoint.profile === TracksManager.PROFILE_LINE) {
+                        if (newPoint.profile === TracksManager.PROFILE_LINE && !trackHasRouting()) {
                             createNewRouteLine(prevPoint, newPoint, points, layers);
                         } else {
                             ctxTrack.hasGeo = true;
