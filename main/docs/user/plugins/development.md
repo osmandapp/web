@@ -353,9 +353,9 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 
 ## GPX-track simulation
 
-OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use **simulate your position** option in the OsmAnd development plugin [settings](#plugin-settings):  
+OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use *<Translate android="true" ids="simulate_location_by_gpx"/>* option in the OsmAnd development plugin [settings](#plugin-settings):  
 
-- Tap **Simulate your position**.  
+- Tap *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
 - Select a track to simulate the location and movement of the device.
 - Select movement simulation speed.
 - Tap Start buton.  
@@ -376,9 +376,9 @@ OsmAnd provides an opportunity to simulate the location and movement of your dev
 
 </Tabs>  
 
-
 :::tip Note
-The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
+- *<Translate android="true" ids="simulate_location_by_gpx"/>* can be also accessed through **[Quick action menu](../widgets/quick-action.md#navigation)**.
+- The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
 :::
 
 After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
