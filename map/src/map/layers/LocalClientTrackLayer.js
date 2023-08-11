@@ -179,6 +179,11 @@ export default function LocalClientTrackLayer() {
         }
     }, [ctx.createTrack?.enable]);
 
+    /**
+     * Refresh visible (active) localTracks.
+     * Depends on localTracks and !!createTrack.
+     * The latter added to get back tracks after editor.
+     */
     useEffect(() => {
         for (let l in localLayers) {
             localLayers[l].active = false;
@@ -216,7 +221,7 @@ export default function LocalClientTrackLayer() {
         }
 
         setLocalLayers({ ...localLayers });
-    }, [ctx.localTracks, ctx.setLocalTracks]);
+    }, [ctx.localTracks, !!ctx.createTrack]);
 
     /*
         Track Editor state life cycle:
