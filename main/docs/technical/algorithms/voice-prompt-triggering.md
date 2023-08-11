@@ -39,14 +39,14 @@ The triggers are in the code [here](https://github.com/osmandapp/OsmAnd/blob/mas
 Prompt Type | Lead Time [s],<br/>corresponding<br/>Lead Distance @ Default Speed [m] | Lead Distance adjusted by Actual Speed? | Adjustable by Arrival Setting? | Comment |
 --- | --- | --- | --- | --- |
 Turn now | **7 s / 3.2 s / 2 s:**<br/>Driving: 83 m<br/>Cycling: 12(8) m<br/>Walking: 12(2) m | :heavy_check_mark: (Proportional to Actual speed / Default speed) | :heavy_check_mark: | Lead time (heuristically) = _max(8, sqrt(defSpeed \* 3.6))_. The corresponding lead distance is floored at 12 m to allow for position inaccuracy. |
-Turn in X m | **22 s:**<br/>Driving: 275 m<br/>Cycling: 61 m<br/>Walking: 24 m | :heavy_check_mark: (Increase only) |  | Skipped if less 15 seconds before turn |
-Prepare to turn in X m | **115 s:**<br/>Driving: 1438 m<br/>Cycling: 319 m<br/>Walking: - |  |  | Skipped if less 150 meters before "Turn in"  Skipped if speed < 8 km/h |
+Turn in X m | **22 s:**<br/>Driving: 275 m<br/>Cycling: 61 m<br/>Walking: 24 m | :heavy_check_mark: (Increase only) |  | Skipped if < 15 s before turn |
+Prepare to turn in X m | **115 s:**<br/>Driving: 1438 m<br/>Cycling: 319 m<br/>Walking: - |  |  | Skipped if < 150 m before "Turn in", skipped for default speed < 8 km/h |
 Long Prepare to turn in X m | **300 s:**<br/>Driving: -<br/>Cycling: -<br/>Walking: - |  |  | Skipped if default speed < 108 km/h |
-Go Ahead | **>300 s:**<br/>Driving: 3750 m<br/>Cycling: 833 m<br/>Walking: 333 m | | | after route calculation if no other prompt is due, or after a turn if next turn is more than *Long Prepare* |
-Arrive at destination or intermediate | **5 s:**<br/>Driving: 63 m<br/>Cycling: 14 m<br/>Walking: 6(12) m | |:heavy_check_mark: | Min 12 m |
-Approaching waypoint / favorite / POI | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limit to max 1 pnt at a time |
-Passing waypoint / favorite / POI | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limit to max 3 pnts at a time |
+Go Ahead | **>300 s:**<br/>Driving: 3750 m<br/>Cycling: 833 m<br/>Walking: 333 m | | | Plays after route calculation if no other prompt is due, or after a turn if the next turn is more than _Long Prepare_ away |
+Arrive at destination or intermediate | **5 s:**<br/>Driving: 63 m<br/>Cycling: 14 m<br/>Walking: 6(12) m | |:heavy_check_mark: | Minimum 12 m |
+Approaching waypoint / favorite / POI | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limited to max 1 point at a time |
+Passing waypoint / favorite / POI | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limited to max 3 points at a time |
 Standard alarm | **12 s:**<br/>Driving: 150 m<br/>Cycling: 33 m<br/>Walking: 13 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | 
-Close alarm | **7s:** Driving: 88 m<br/>Cycling: 20 m<br/>Walking: 8 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Traffic calming uses *pass alarm* for approach prompt and filters duplicate in this radius |
-Off-route announcement | **20 s:** Driving: 250m<br/>Cycling: 56m<br/>Walking: 22m | | :heavy_check_mark: | Could be disabled |
-GPS signal lost | **20 s** | | | Is played after GPS signal has been lost for continuous 20 s and this was not caused by user action. |
+Close alarm | **7s:** Driving: 88 m<br/>Cycling: 20 m<br/>Walking: 8 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | _Traffic calming_ uses the _Passing_ alarm for the approach prompt, and filters duplicates within this radius |
+Off-route announcement | **20 s:** Driving: 250m<br/>Cycling: 56m<br/>Walking: 22m h| | :heavy_check_mark: | Can be disabled |
+GPS signal lost | **20 s** | | | Is played after the GPS signal has been lost for continuous 20 s and this was not caused by user action. |
