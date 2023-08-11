@@ -125,18 +125,24 @@ function hexToArgb(hex) {
 }
 
 /*
-    Prepare string with NaN(s) before JSON.parse()
+    Prepare string with NaN/Infinity before JSON.parse()
 
     1) "ele":NaN is converted to "ele":NAN_MARKER
     2) all others NaN are converted to null
+    3) *speed-Infinity is converted to null
 
-    NaN isn't supported by JSON standard
+    NaN and Infinity aren't supported by JSON standard
 */
 export function quickNaNfix(badString) {
     const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
     const nil = ':null'; // other NaN(s) to null (think about srtmEle)
 
-    return badString.replace(/"ele": ?NaN\b/g, ele).replace(/: ?NaN\b/g, nil);
+    return badString
+        .replace(/"ele": ?NaN\b/g, ele)
+        .replace(/: ?NaN\b/g, nil)
+        .replace(/"speed": ?Infinity\b/g, '"speed":null')
+        .replace(/"avgSpeed": ?Infinity\b/g, '"avgSpeed":null')
+        .replace(/"maxSpeed": ?Infinity\b/g, '"maxSpeed":null');
 }
 
 /*
