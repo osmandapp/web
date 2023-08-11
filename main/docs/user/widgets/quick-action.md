@@ -210,12 +210,12 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_add_destination"/> | Add a selected (center) map location as a destination. Previous destination becomes last intermediate point.  |
 | <Translate android="true" ids="quick_action_add_first_intermediate"/> | Add a selected (center) map location as first intermediate point. Previous destination stays the same. |
 | <Translate android="true" ids="quick_action_replace_destination"/> | Set / Replace a selected (center) map location as a destination. Previous destination is deleted. |
-| <Translate android="true" ids="quick_action_remove_next_destination"/> | Remove next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
 | <Translate android="true" ids="quick_action_auto_zoom"/> | Enable or disable map auto zoom during navigation |
 | <Translate android="true" ids="quick_action_start_stop_navigation"/> | Start navigation (if there is a destination point present) or stop navigation |
 | <Translate android="true" ids="quick_action_resume_pause_navigation"/> | Pause / Resume navigation |
 | <Translate android="true" ids="change_application_profile"/> | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
-
+| <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
+| <Translate android="true" ids="simulate_location_by_gpx"/> | Simulates the location and movement of your device using a GPX track. |
 
 ### Configure screen
 
