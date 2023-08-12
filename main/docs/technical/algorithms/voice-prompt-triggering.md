@@ -34,9 +34,9 @@ While these can be user-adjusted, the defaults are
 
 ## Trigger Behavior
 
-The triggers are in the code [here](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). These are the corresponding values for OsmAnd's default settings:
+The triggers are [here in the code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). The corresponding values for OsmAnd's default settings are:
 
-Prompt Type | Lead Time [s],<br/>corresponding<br/>Lead Distance @ Default Speed [m] | Lead Distance adjusted by Actual Speed? | Adjustable by Arrival Setting? | Comment |
+Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Lead Distance Adjusted by Actual Speed? | Adjustable by Arrival Setting? | Comment |
 --- | --- | --- | --- | --- |
 Turn now | **6.7 s / 3.2 s / 2 s:**<br/>Driving: 83 m<br/>Cycling: 12(8) m<br/>Walking: 12(2) m | :heavy_check_mark: (Proportional to Actual speed / Default speed) | :heavy_check_mark: | Lead time (heuristically) = _max(8, sqrt(defSpeed \* 3.6))_. The corresponding lead distance is floored at 12 m to allow for position inaccuracy. |
 Turn in X m | **22 s:**<br/>Driving: 275 m<br/>Cycling: 61 m<br/>Walking: 24 m | :heavy_check_mark: (Increase only) |  | Skipped if < 15 s before turn |
