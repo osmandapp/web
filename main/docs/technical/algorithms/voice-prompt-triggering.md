@@ -49,4 +49,4 @@ Passing waypoint / favorite / POI | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42
 Standard alarm | **12 s:**<br/>Driving: 150 m<br/>Cycling: 33 m<br/>Walking: 13 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | 
 Close alarm | **7s:**<br/> Driving: 88 m<br/>Cycling: 20 m<br/>Walking: 8 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | _Traffic calming_ uses the _Passing_ alarm for the approach prompt, and filters duplicates within this radius |
 Off-route announcement | **20 s:**<br/>Driving: 250m<br/>Cycling: 56m<br/>Walking: 22m h| | :heavy_check_mark: | Can be disabled |
-GPS signal lost | **20 s** | | | Is played after the GPS signal has been lost for continuous 20 s and this was not caused by user action. |
+GPS signal lost | **20 s** | | | Is played after the GPS signal has been lost for >= 20 s and this was not caused by user action. |
