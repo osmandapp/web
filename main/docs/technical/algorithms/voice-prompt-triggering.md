@@ -46,7 +46,7 @@ Go Ahead | **>300 s:**<br/>Driving: 3750 m<br/>Cycling: 833 m<br/>Walking: 333 m
 Arrive at destination or intermediate | **5 s:**<br/>Driving: 63 m<br/>Cycling: 14 m<br/>Walking: 6(12) m | |:heavy_check_mark: | Minimum 12 m |
 Approaching waypoint / favorite / POI | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limited to max 1 point at a time |
 Passing waypoint / favorite / POI | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | Limited to max 3 points at a time |
-Standard alarm | **12 s:**<br/>Driving: 150 m<br/>Cycling: 33 m<br/>Walking: 13 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | 
+Standard alarm | **12 s:**<br/>Driving: 150 m<br/>Cycling: 33 m<br/>Walking: 13 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: |
 Close alarm | **7s:**<br/> Driving: 88 m<br/>Cycling: 20 m<br/>Walking: 8 m | :heavy_check_mark: (Increase only) | :heavy_check_mark: | _Traffic calming_ uses the _Passing_ alarm for the approach prompt, and filters duplicates within this radius |
 Off-route announcement | **20 s:**<br/>Driving: 250m<br/>Cycling: 56m<br/>Walking: 22m h| | :heavy_check_mark: | Can be disabled |
 GPS signal lost | **20 s** | | | Is played after the GPS signal has been lost for >= 20 s and this was not caused by user action. |
