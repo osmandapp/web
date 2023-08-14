@@ -15,6 +15,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
 import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
+import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from '../LocationControl';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -63,9 +64,6 @@ const useStyles = makeStyles(() => ({
     }),
 }));
 
-// initial location on map
-const position = [50, 5];
-
 const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     if (lat) {
         if (hoverPointRef.current) {
@@ -93,12 +91,13 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
-            new L.Hash(map);
+            const hash = new L.Hash(map);
             map.attributionControl.setPrefix('');
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
                 ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
             }
+            detectGeoByIp({ map, hash });
         }
     };
 
@@ -134,8 +133,8 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
 
     return (
         <MapContainer
-            center={position}
-            zoom={5}
+            zoom={initialZoom}
+            center={initialPosition}
             className={classes.root}
             minZoom={1}
             maxZoom={20}
@@ -160,14 +159,12 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
                 maxNativeZoom={18}
                 url={ctx.tileURL.url}
             />
-
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            {mobile && <ZoomControl position="topright" />}
-            {!mobile && <ZoomControl position="bottomleft" />}
-            {mobile && <ScaleControl imperial={false} position="bottomleft" />}
-            {!mobile && <ScaleControl imperial={false} position="bottomright" />}
+            <ZoomControl position={mobile ? 'topright' : 'bottomleft'} />
+            <LocationControl position={mobile ? 'topright' : 'bottomleft'} />
+            <ScaleControl position={mobile ? 'bottomleft' : 'bottomright'} imperial={false} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );

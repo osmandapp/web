@@ -65,13 +65,17 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                     },
                 });
             }
+            map.contextmenu.addItem({
+                text: 'Copy coordinates',
+                callback: copyCoordinates,
+            });
         }
     }, [
+        map,
         ctx.startPoint,
         ctx.endPoint,
         ctx.interPoints,
         ctx.pinPoint,
-        map,
         ctx.loginUser,
         ctx.createTrack,
         ctx.selectedGpxFile,
@@ -117,5 +121,9 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
 
     function formattingRegions(regions) {
         return regions.join(', ').replaceAll('_', ' ');
+    }
+
+    function copyCoordinates(e) {
+        navigator.clipboard.writeText(e.latlng.lat.toFixed(6) + ',' + e.latlng.lng.toFixed(6));
     }
 }
