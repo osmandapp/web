@@ -41,7 +41,7 @@ In the **[Route parameters](./routing/index.md)** section, you can read about di
 
 In **Navigation guidance**, you can find all the needed information about how to customize the Navigation tool in Osmand.
 
-- [Configure map screen](./guidance/map-during-navigation.md)
+- [Map screen during navigation](./guidance/map-during-navigation.md)
 - [Voice prompts / Notifications](./guidance/voice-navigation.md)
 - [Navigation settings](./guidance/navigation-settings.md)
 

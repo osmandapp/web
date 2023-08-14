@@ -29,7 +29,7 @@ This article describes how to configure the map appearance for the navigation ca
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
-![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ This article describes how to configure the map appearance for the navigation ca
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
 
 </TabItem>
 
