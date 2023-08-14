@@ -61,10 +61,7 @@ In OsmAnd, we therefore recommend using a synthesized (TTS) voice. They are also
 
 In order to use TTS, your system needs to have TTS engine installed. TTS engines often come pre-installed, and can also be installed explicitly. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
 
-Read more about Voice prompts:
-- [Voice guidance](../navigation/guidance/voice-navigation.md)
-- [Adjusting voice prompts](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts)
-- [TTS does not function properly](../troubleshooting/navigation.md#tts-does-not-function-properly)
+Read more about setting up and adjusting Voice prompts [here](../navigation/guidance/voice-navigation.md).
 
 ### TTS does not function properly
 
