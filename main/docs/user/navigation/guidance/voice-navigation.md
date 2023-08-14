@@ -69,13 +69,13 @@ Read more about under what conditions, when, and which voice prompts are activat
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
     - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
-3. **User points **:
-    - Enable the voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
+3. **User points**:
+    - Enable voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.    
 
-| Prompt type | Response time | Response distance in meters | Limit |
-| - | - | - | - | 
-| Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
-| Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
+| Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
+| - | - | - | 
+| Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
+| Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time | 
 4. **Speed limit**:
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
@@ -89,9 +89,6 @@ Read more about under what conditions, when, and which voice prompts are activat
 7. **Output** (<u>for Android version</u>):
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.
-
-
-
 
 
 ### Speed cameras
