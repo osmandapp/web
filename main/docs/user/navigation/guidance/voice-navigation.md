@@ -140,20 +140,23 @@ When using voice prompts, you may have issues with their playback. Here are some
 
 ## TTS (Text-to-Speech)
 
-TTS packages are bundled with application but they require system to have [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis). These are partially included in Android and iOS or can be installed separately. Go to your device's settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select or install it, then also set up support for the language you want, this may be an additional setting or require you to download an additional file.  
+TTS voices are the preferred voices to use in OsmAnd. They are bundled with the application, but require the system to have a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed. The engines are often included in Android and iOS, or can be installed separately. A list of engines and supported languages for Android may be found [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
+To configure your device's TTS, go to your device settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select, activate or install it, then configure it to support your ppreferred language, which may just be a setting or require you to download an additional file.  
+
+Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly: To do this, go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
 
 Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
 
-### Language
+### Voice prompt language
 
-You can select your preferred language and type of voice guidance for voice prompts from the list.
+In OsmAnd you can select your preferred language and prompt style from the list
 - *<Translate android="true" ids="tts_title"/>* (for Android) - <Translate android="true" ids="tts_description"/>
 - *<Translate android="true" ids="shared_string_recorded"/>* (for Android) - <Translate android="true" ids="recorded_description"/>
 
 :::note
-Not all listed languages may be supported by the TTS engine. You can change the voice and playback speed only in the system settings of the device.
+- Not all listed languages may be supported by every TTS engine. See e.g. [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
+- You can change the voice and playback speed only in the system settings of the device. not in OsmAnd.
 :::  
 
 <Tabs groupId="operating-systems">
@@ -206,14 +209,13 @@ There are currently a total of 45 languages.
 
 ### Download voice packages
 
-
-You can download voice prompts from two different sets from the list.  
+Using recorded voices in OsmAnd should be a fallback only: They are rather limited, cannot pronaounce street names, place names, etc. You can download voice prompts from two different sets from the list.  
 - The first type, these are the recommended ones:  
 *<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
-- The second type is recorded voice prompts, with an incomplete set of features:  
+- The second type are recorded voice prompts, with an incomplete set of features:  
 *<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
@@ -231,7 +233,7 @@ You can configure an OsmAnd profile to beep instead of speaking, in a similar wa
     A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
 
 
-## Text Notifications
+## Text notifications
 
 Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 
