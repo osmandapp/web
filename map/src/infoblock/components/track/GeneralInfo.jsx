@@ -30,6 +30,21 @@ import {
     Terrain,
 } from '@mui/icons-material';
 
+export const downloadGpx = async (ctx) => {
+    const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
+    if (gpx) {
+        const data = gpx.data;
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        const name = TracksManager.prepareName(
+            ctx.selectedGpxFile.name,
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        );
+        url.download = `${name}.gpx`;
+        url.click();
+    }
+};
+
 export default function GeneralInfo({ width, setOpenDescDialog }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -344,21 +359,6 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         );
     };
 
-    const downloadGpx = async () => {
-        let gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
-        if (gpx) {
-            gpx = gpx.data;
-            const url = document.createElement('a');
-            url.href = URL.createObjectURL(new Blob([gpx]));
-            let name = TracksManager.prepareName(
-                ctx.selectedGpxFile.name,
-                ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
-            );
-            url.download = `${name}.gpx`;
-            url.click();
-        }
-    };
-
     const Elevation = () => {
         return (
             <>
@@ -473,13 +473,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     </Button>
                 )}
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
-                    <Button
-                        variant="contained"
-                        className={styles.button}
-                        onClick={() => {
-                            downloadGpx().then();
-                        }}
-                    >
+                    <Button variant="contained" className={styles.button} onClick={() => downloadGpx(ctx)}>
                         <Download fontSize="small" sx={{ mr: '3px' }} />
                         Download GPX
                     </Button>

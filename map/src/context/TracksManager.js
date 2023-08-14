@@ -262,7 +262,7 @@ function handleEditCloudTrack(ctx) {
         ctx,
         callback: proceed,
         skip: localTrackNotFound,
-        text: name + ' - local track found. Overwrite?',
+        text: name + ' - Local track found. Overwrite?',
     });
 }
 
@@ -479,6 +479,7 @@ async function getGpxTrack(file) {
     }
 
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
+        apiCache: true,
         headers: {
             'Content-Type': 'application/json',
         },

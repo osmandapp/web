@@ -6,7 +6,7 @@ import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData(file);
+    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx);
 
     layer.on('click', () => {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
@@ -33,7 +33,7 @@ function removeLayerFromMap(file, map) {
     return null;
 }
 
-const TrackLayer = () => {
+const CloudTrackLayer = () => {
     const ctx = useContext(AppContext);
     const ctxTrack = ctx.selectedGpxFile;
 
@@ -109,4 +109,4 @@ const TrackLayer = () => {
     }, [ctx.gpxFiles]);
 };
 
-export default TrackLayer;
+export default CloudTrackLayer;
