@@ -8,7 +8,7 @@ import Translate from '@site/src/components/Translate.js';
 
                                
 **(Compiled by Hardy 2013, reworked 2023-08)**
-## Principle
+## Principle and Related Settings
 * Prompts are triggered based on a **lead distance** threshold, derived by converting a specified lead time via the profile's **_<Translate android="true" ids="default_speed_setting_title" />_**. For close-up prompts this lead distance may then be adjusted based on the actual speed: increased to ensure the announcement is triggered early enough at high speeds, or decreased for more precision at low speeds.
 * The profile's **_<Translate android="true" ids="default_speed_setting_title" />_** is user-adjustable, and changing it will hence affect the voice prompt trigger distances.
 *Note*: The _<Translate android="true" ids="default_speed_setting_title" />_ also affects the calculated route time.
@@ -32,7 +32,7 @@ While these can be user-adjusted, the defaults are
 * Ski: 1.39  m/s (5 km/h)
 * Aircraft: 40 m/s (144 km/h)
 
-## Trigger Behavior
+## Trigger Table
 
 The triggers are [here in the code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/plus/routing/data/AnnounceTimeDistances.java#L65). The corresponding values for OsmAnd's default settings are:
 
