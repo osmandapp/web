@@ -31,12 +31,9 @@ const PanelButtons = ({
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
-    const isUndoDisabled =
-        ctx.processRouting || !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]));
-
-    const isRedoDisabled = ctx.processRouting || !isRedoPossible;
-
-    const isProfileDisabled = ctx.processRouting;
+    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])); // || ctx.processRouting
+    const isRedoDisabled = !isRedoPossible; // || ctx.processRouting
+    const isProfileDisabled = false; // ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
