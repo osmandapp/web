@@ -189,7 +189,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    if (group?.pointsGroups[group.name].groupSize) {
+    if (group?.pointsGroups[group.name]?.groupSize) {
         return Number(group?.pointsGroups[group.name].groupSize);
     } else {
         const wpts =
