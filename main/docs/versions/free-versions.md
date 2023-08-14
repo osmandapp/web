@@ -39,7 +39,7 @@ Release date: 08/2023
 * OsmAnd Cloud: added option to delete account
 * Accessibility: touch target size for  buttons changed to 48 dp; fixed issue with map UI visible for screen readers
 
-<DownloadRelease blog="osmand-android-4-5-released" release="net.osmand-4.5.9.apk" />
+<DownloadRelease blog="osmand-android-4-5-released" release="net.osmand-4.5.10.apk" />
 
 ### Version 4.4 
 Release date: 03/2023
