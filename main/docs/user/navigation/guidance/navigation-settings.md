@@ -38,7 +38,7 @@ For successful navigation with the OsmAnd app, it's important to properly config
 
 ### How to open
 
-This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Configure map screen](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).
+This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Map screen during navigation](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).
 
 There are three ways to access the Navigation settings menu. 
 
@@ -232,12 +232,12 @@ The types of warnings have the different visual appearance, which depends on the
 
 The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
 
-You can find out how the map behavior changes during navigation in OsmAnd app in the article [Configure map screen](../guidance/map-during-navigation.md).  
+You can find out how the map behavior changes during navigation in OsmAnd app in the article [Map screen during navigation](../guidance/map-during-navigation.md).  
 
 
 ## Animate own position
 
-This setting is located in different places in the OsmAnd app for the Android version and for the iOS version. Android - in the menu *General Settings → Other*. iOS - in the *Navigation settings*. For more information, see the article *Configure map screen*, section [Animate my location](../../navigation/guidance/map-during-navigation.md#animate-my-location).  
+This setting is located in different places in the OsmAnd app for the Android version and for the iOS version. Android - in the menu *General Settings → Other*. iOS - in the *Navigation settings*. For more information, see the article *Map screen during navigation*, section [Animate my location](../../navigation/guidance/map-during-navigation.md#animate-my-location).  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png)  
 
@@ -264,7 +264,7 @@ This setting is located in different places in the OsmAnd app for the Android ve
 
 </Tabs>  
 
-With the **Customise Route Line** setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Configure map screen* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
+With the **Customise Route Line** setting you can choose the appearance of the route line that will be visible on the map during navigation. You can choose the *color*, the *width of the line*, and the display of the *turn arrows* on it. For each profile, you can choose a different line view. All these parameters are described in detail in the article *Map screen during navigation* in the section [*Route line appearance*](../../navigation/guidance/map-during-navigation.md#route-line-appearance).
 
 
 ## Vehicle parameters

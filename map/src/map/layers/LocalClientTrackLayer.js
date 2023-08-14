@@ -347,7 +347,7 @@ export default function LocalClientTrackLayer() {
         if (track.updated) {
             track.updated = false; // reset
         }
-        let layer = TrackLayerProvider.createLayersByTrackData(track);
+        let layer = TrackLayerProvider.createLayersByTrackData(track, ctx);
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
@@ -477,11 +477,6 @@ export default function LocalClientTrackLayer() {
                                 dashArray: null,
                             });
 
-                            setQueueForRouting((prev) => ({
-                                isProcessing: false,
-                                objs: prev.objs,
-                            }));
-
                             const analysis = () => {
                                 TracksManager.getTrackWithAnalysis(
                                     TracksManager.GET_ANALYSIS,
@@ -495,17 +490,23 @@ export default function LocalClientTrackLayer() {
 
                             debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
                         }
+
+                        // finally
+                        if (newObjs.length === 0) ctx.setProcessRouting(false);
+                        setQueueForRouting((prev) => ({
+                            isProcessing: false,
+                            objs: prev.objs,
+                        }));
+                        saveChanges(null, null, null, newFile);
                     })
             );
+            // process next queue
             const newObjs = queueForRouting.objs.slice(1);
             const newQueue = {
                 isProcessing: true,
                 objs: newObjs,
             };
             setQueueForRouting(() => newQueue);
-
-            if (newObjs.length === 0) ctx.setProcessRouting(false);
-            saveChanges(null, null, null, newFile); // finally, after promises
         }
     }, [queueForRouting]);
 
@@ -609,7 +610,7 @@ export default function LocalClientTrackLayer() {
         TracksManager.prepareTrack(file);
 
         file.tracks = [{ points, wpts }];
-        file.layers = TrackLayerProvider.createLayersByTrackData(file);
+        file.layers = TrackLayerProvider.createLayersByTrackData(file, ctx);
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -675,7 +676,7 @@ export default function LocalClientTrackLayer() {
         if (trackLayers) {
             let layers = [];
             if (points?.length > 0) {
-                TrackLayerProvider.parsePoints(points, layers, true, ctx);
+                TrackLayerProvider.parsePoints({ ctx, points, layers, draggable: true });
             }
             if (wpts?.length > 0) {
                 TrackLayerProvider.parseWpt(wpts, layers);
@@ -901,6 +902,8 @@ export default function LocalClientTrackLayer() {
         // ctx.setAddFavorite({...ctx.addFavorite});
 
         ctx.setSelectedGpxFile({ ...ctxTrack });
+
+        saveCreatedLayers(ctxTrack.layers);
 
         TracksManager.updateState(ctx);
     }

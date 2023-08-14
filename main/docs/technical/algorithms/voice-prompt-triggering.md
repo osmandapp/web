@@ -38,7 +38,7 @@ The triggers are [here in the code](https://github.com/osmandapp/OsmAnd/blob/mas
 
 Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Lead Distance Adjusted by Actual Speed? | Adjustable by Arrival Setting? | Comment |
 --- | --- | --- | --- | --- |
-Turn now | **6.7 s / 3.2 s / 2 s:**<br/>Driving: 83 m<br/>Cycling: 12(8) m<br/>Walking: 12(2) m | :heavy_check_mark: (Proportional to _actual speed / Default speed_) | :heavy_check_mark: | Lead time (heuristically) = _max(8, sqrt(Default speed \* 3.6))_. The corresponding lead distance is floored at 12 m to allow for position inaccuracy. |
+Turn now | **6.7 s / 3.2 s / 2 s:**<br/>Driving: 83 m<br/>Cycling: 12(8) m<br/>Walking: 12(2) m | :heavy_check_mark: (Proportional to _actual speed_ / _Default speed_) | :heavy_check_mark: | Lead time (heuristically) = _max(8, sqrt(Default speed \* 3.6))_. The corresponding lead distance is floored at 12 m to allow for position inaccuracy. |
 Turn in X m | **22 s:**<br/>Driving: 275 m<br/>Cycling: 61 m<br/>Walking: 24 m | :heavy_check_mark: (Increase only) |  | Skipped if < 15 s before turn |
 Prepare to turn in X m | **115 s:**<br/>Driving: 1438 m<br/>Cycling: 319 m<br/>Walking: - |  |  | Skipped if < 150 m before "Turn in", skipped for _Default speed_ < 8 km/h |
 Long Prepare to turn in X m | **300 s:**<br/>Driving: -<br/>Cycling: -<br/>Walking: - |  |  | Skipped for _Default speed_ < 108 km/h |

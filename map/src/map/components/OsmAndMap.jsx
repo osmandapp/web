@@ -9,7 +9,7 @@ import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from '../layers/FavoriteLayer';
-import TrackLayer from '../layers/TrackLayer';
+import CloudTrackLayer from '../layers/CloudTrackLayer';
 import LocalClientTrackLayer from '../layers/LocalClientTrackLayer';
 import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
@@ -131,6 +131,8 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
         document.addEventListener('touchend', markerEventHandler, { passive: false });
     }, []);
 
+    const routersReady = ctx.trackRouter.isReady() && ctx.routeRouter.isReady();
+
     return (
         <MapContainer
             zoom={initialZoom}
@@ -144,13 +146,13 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
             contextmenuItems={[]}
             editable={true}
         >
-            <LocalClientTrackLayer />
-            <PoiLayer />
-            <RouteLayer geocodingData={geocodingData} region={regionData} />
+            {routersReady && <CloudTrackLayer />}
+            {routersReady && <LocalClientTrackLayer />}
+            {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
             <FavoriteLayer />
             <WeatherLayer />
-            <TrackLayer />
             <GraphLayer />
+            <PoiLayer />
             <TileLayer
                 ref={tileLayer}
                 attribution='WEB OsmAnd 0.1 &amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

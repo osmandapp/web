@@ -1,5 +1,5 @@
-import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
-import { Close, Delete, CloudUpload, Redo, Undo, Create, MenuOpen } from '@mui/icons-material';
+import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
+import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, MenuOpen, Download } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
@@ -8,6 +8,8 @@ import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { downloadGpx } from '../../infoblock/components/track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
@@ -28,6 +30,10 @@ const PanelButtons = ({
     };
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
+
+    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])); // || ctx.processRouting
+    const isRedoDisabled = !isRedoPossible; // || ctx.processRouting
+    const isProfileDisabled = false; // ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
@@ -115,27 +121,51 @@ const PanelButtons = ({
                         color="primary"
                     >
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
-                            <Tooltip title="Edit" arrow placement="right">
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                                >
-                                    <Create fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
+                            <>
+                                <Tooltip title="Cloud track" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() =>
+                                            confirm({
+                                                ctx,
+                                                text: 'This is Cloud track. Open Local editor?',
+                                                callback: () => TracksManager.handleEditCloudTrack(ctx),
+                                            })
+                                        }
+                                    >
+                                        <Cloud fontSize="medium" color="primary" />
+                                    </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Edit" arrow placement="right">
+                                    <IconButton
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
+                                    >
+                                        <Create fontSize="small" />
+                                    </IconButton>
+                                </Tooltip>
+                            </>
                         )}
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement="right">
                                 <IconButton
+                                    sx={{ width: 40, height: 40 }}
                                     variant="contained"
                                     type="button"
                                     onClick={() => {
-                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
+                                        if (!isProfileDisabled) {
+                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                            ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
+                                        }
                                     }}
                                 >
-                                    {ctx.trackRouter.getProfile()?.icon}
+                                    {isProfileDisabled ? (
+                                        <CircularProgress size={40 - 16} />
+                                    ) : (
+                                        ctx.trackRouter.getProfile()?.icon
+                                    )}
                                 </IconButton>
                             </Tooltip>
                         )}
@@ -156,28 +186,13 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
-                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Delete" arrow placement="right">
-                                    <IconButton
-                                        sx={{ mb: '1px' }}
-                                        variant="contained"
-                                        type="button"
-                                        onClick={() => setOpenDeleteDialog(true)}
-                                    >
-                                        <Delete fontSize="small" />
-                                    </IconButton>
-                                </Tooltip>
-                            )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                             <Tooltip title="Undo" arrow placement="right">
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={
-                                            !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0]))
-                                        }
+                                        disabled={isUndoDisabled}
                                         onClick={(e) => {
                                             undo();
                                             setUseSavedState(true);
@@ -195,7 +210,7 @@ const PanelButtons = ({
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={!isRedoPossible}
+                                        disabled={isRedoDisabled}
                                         onClick={(e) => {
                                             redo();
                                             setUseSavedState(true);
@@ -207,6 +222,34 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
+                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
+                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
+                                <Tooltip title="Download GPX" arrow placement="right">
+                                    <span style={styleSpan}>
+                                        <IconButton
+                                            variant="contained"
+                                            type="button"
+                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                            onClick={() => downloadGpx(ctx)}
+                                        >
+                                            <Download fontSize="small" />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                            )}
+                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
+                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
+                                <Tooltip title="Delete" arrow placement="right">
+                                    <IconButton
+                                        sx={{ mb: '1px' }}
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => setOpenDeleteDialog(true)}
+                                    >
+                                        <Delete fontSize="small" />
+                                    </IconButton>
+                                </Tooltip>
+                            )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
                             <Tooltip title="Open info" arrow placement="right">
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>

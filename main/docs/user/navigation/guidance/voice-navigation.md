@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while [navigating a selected route](../setup/route-navigation.md). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. 
+Voice prompts and text notifications are features helping to follow a [calculated route](../setup/route-navigation.md). With their help, you can see where you are and where to go next. These features are meant to comfortably, and most importantly safely, facilitate following the route.
 
-With voice  prompts it's possible to [reduce battery consumption](#screen-control). While using OsmAnd, you can use other apps on your device or keep the screen turned off, listening in the background for prompts about what's ahead of you on the route.  
+Voice  prompts also work while your device screen is turned off, i.e. you can use them to [reduce battery consumption](#screen-control). Similarly, while following an OsmAnd navigation, you can use other apps on your device.  
 
 
 :::note
 - <Translate android="true" ids="voice_announces_info"/>
-- Text notifications fully replicate trigger time and messages of voice prompts messages
+- Text notifications fully reflect trigger time and messages of the voice prompts messages
 :::  
 
 
@@ -69,13 +69,13 @@ Read more about under what conditions, when, and which voice prompts are activat
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
     - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
-3. **User points **:
-    - Enable the voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
+3. **User points**:
+    - Enable voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.    
 
-| Prompt type | Response time | Response distance in meters | Limit |
-| - | - | - | - | 
-| Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
-| Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
+| Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
+| - | - | - | 
+| Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
+| Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time | 
 4. **Speed limit**:
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
@@ -89,9 +89,6 @@ Read more about under what conditions, when, and which voice prompts are activat
 7. **Output** (<u>for Android version</u>):
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.
-
-
-
 
 
 ### Speed cameras
