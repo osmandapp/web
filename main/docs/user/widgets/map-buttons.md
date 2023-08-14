@@ -134,8 +134,15 @@ The compass icon on the button always points to the North. You can select how th
 - *<Translate android="true" ids="shared_string_visible"/>* - The button is always displayed on the map screen.
 - *<Translate android="true" ids="visible_in_3d_mode"/>* - The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
 
-**Tips**  
-**1.** The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
-**2.** You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.  The button setting is different for each profile.  
-**3.** It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
+Additional settings for 3D Mode.  
+
+1. **Display the button**. The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
+2. **Saves the angle**. After switching to 3D mode and changing the angle manually with a gesture, the angle is saved and used the next time 3D mode is activated. This option is only saved for the profile selected at the time.
+3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.  
+4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.
+5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
+
+
+
+
 

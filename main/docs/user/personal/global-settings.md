@@ -166,15 +166,15 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
-For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects.  
-For the **iOS** version uses only OpenGL for map rendering.        
+In the **Android** version of the app, you can switch between map rendering Version 1, originally implemented in the OsmAnd app, and Version 2, which uses the OpenGL (Open Graphics Library) programming interface for rendering two- and three-dimensional graphical objects.
+The **iOS** version uses only OpenGL for map rendering.
 
 
 | Features | Version 1 | Version 2 (OpenGl) |
 |:---|:--- |:--- |
 | Cross-platform | Not used in iOS version. | Fits both versions. |
 | GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for OsmAnd 4.3 and later versions, and in test mode for OsmAnd 4.2. |
-| 3D view | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
+| 3D mode | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
 | [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  

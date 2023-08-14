@@ -23,6 +23,7 @@ If you have a variety of sensor devices for cycling, you can use the data they r
 
 
 ## Overview
+
 The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+ technology**](https://en.wikipedia.org/wiki/ANT_(network)) and display this data using widgets in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data.  
 
 The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed* and *Bicycle Distance*. In order to make the plugin work don't forget [to connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) your device to the respective sensors.  
