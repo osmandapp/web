@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Voice prompts and text notifications are features helping to follow a [calculated route](../setup/route-navigation.md). With their help, you can see where you are and where to go next. These features are meant to comfortably, and most importantly safely, facilitate following the route.
 
-With voice  prompts it's possible to [reduce battery consumption](#screen-control). While using OsmAnd, you can use other apps on your device or keep the screen turned off, listening in the background for prompts about what's ahead of you on the route.  
+Voice  prompts also work while your device screen is turned off, i.e. you can use them to [reduce battery consumption](#screen-control). Similarly, while following an OsmAnd navigation, you can use other apps on your device.  
 
 
 :::note
