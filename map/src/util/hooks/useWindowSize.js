@@ -1,18 +1,21 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState, useCallback } from 'react';
 
 export function useWindowSize() {
     const [size, setSize] = useState([0, 0]);
+
+    const updateSize = useCallback(() => {
+        setSize([window.innerWidth, window.innerHeight]);
+    }, []);
+
     useLayoutEffect(() => {
-        function updateSize() {
-            setSize([window.innerWidth, window.innerHeight]);
-        }
+        updateSize();
         window.addEventListener('resize', updateSize);
         window.addEventListener('orientationchange', updateSize);
-        updateSize();
         return () => {
             window.removeEventListener('resize', updateSize);
             window.removeEventListener('orientationchange', updateSize);
         };
     }, []);
+
     return size;
 }
