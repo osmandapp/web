@@ -23,7 +23,6 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
             colorGroup = Utils.hexToArgb(g.color);
         }
         let size = g && (g.groupSize ? g.groupSize : g.points?.length);
-        console.log(size);
         return (
             <Box
                 sx={{
