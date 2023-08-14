@@ -162,13 +162,13 @@ function createGroup(file) {
         updatetimems: file.updatetimems,
         file: file,
         pointsGroups: pointsGroups,
-        hidden: isHidden(pointsGroups, file.folder),
+        hidden: pointsGroups.hidden !== undefined ? pointsGroups.hidden : isHidden(pointsGroups, file.folder),
     };
 }
 
 function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
-    if (group) {
+    if (group && group.points) {
         for (let point of group.points) {
             if (point.ext.extensions.hidden === 'true') {
                 return true;
@@ -189,12 +189,17 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    const wpts =
-        group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]?.points;
-    if (wpts) {
-        return wpts.length > 0 ? wpts.length : 0;
+    if (group?.pointsGroups[group.name].groupSize) {
+        return Number(group?.pointsGroups[group.name].groupSize);
+    } else {
+        const wpts =
+            group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]
+                ?.points;
+        if (wpts) {
+            return wpts.length > 0 ? wpts.length : 0;
+        }
+        return 0;
     }
-    return 0;
 }
 
 const FavoritesManager = {
