@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Configure map screen
+title: Map appearance during navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
+This article describes how to configure the map appearance for the navigation case. This includes things like [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
 ## Map during navigation
@@ -43,10 +43,9 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 </Tabs>
 
+The map during navigation serves as a visual tool to locate your position, to locate your destination and plan your route, and to see the navigation directions. To do this, you can use zooming, and drag and rotate the map as needed. The map can also display road information, street names, buildings, and other objects to help you fine the way easily.  
 
-The map during navigation serves as a visual tool for positioning, route planning, and orientation when navigating. You use the map to determine your current location as well as where you want to go. To do this, he can use zooming, drag and rotate the map to get a better view of his surroundings and determine the best route. The map can also display information about roads, streets, buildings, and other objects to help the user find his way easily.  
-
-During navigation, the location, distance from the surface, and map view change depending on the settings. Before you start a route, you need to check whether the settings correspond to the way you want the OsmAnd map to behave while you are driving.   
+During navigation, the map appearance changes to that of the app profile used for the navigation. Before you start a navigation, check whether appearance matches how you want the map to behave while driving.   
 
 
 | Parameter | Description | Note |
