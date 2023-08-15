@@ -236,6 +236,7 @@ You need to purchase [OsmAnd Pro](../purchases/index.md), enable the [Topography
 *1.* To create a 3D relief, OsmAnd receives information about the terrain elevation.  
 *2.* Based on the elevation data, a 3D model is created to display mountains, hills, valleys, and other terrain elements on the map.  
 *3.* OsmAnd then displays these three-dimensional models on a flat map. The map can be zoomed in, zoomed out, and rotated to view the terrain from different angles and perspectives.  
+*4.* The display of contour lines on the map does not depend on whether the map source is online or offline.
 
 
 ## Prepare / copy raster maps to device 

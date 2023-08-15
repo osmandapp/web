@@ -125,6 +125,7 @@ For the **Hillshade** or **Slope** functionality,
    - Alternatively, you can use the new "Terrain map (3D)" downloads (saving a bit of storage space), and the Hillshade/Slope/3D Relief effects can be produced from that on the device.
 :::
 
+
 ### Meters or Feet
 
 Decide in which unit (meters or feet) you want to see the [**Contour lines**](../map/vector-maps.md#contour-lines) and download the corresponding version of the Contour lines map. 
@@ -153,12 +154,14 @@ The unit variants are not interchangeable, if you need to switch from meters to 
 
 ## Configure map view
 
-After you have downloaded the required maps, you can display **Contour lines** and/or **Terrain** (Hillshade/Slope) via the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+After you have downloaded the required maps, you can display **Contour lines** and/or **Terrain** (Hillshade/Slope) using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 
  
 ### Contour lines
 
-Contour lines allow you to explore in which direction and how much a surface is sloped. You can customize displaying the [contour lines](../map/vector-maps.md#contour-lines) in terms of color, line widths, density and zoom levels at which contour lines are visible.
+Contour lines allow you to explore in which direction and how much a surface is sloped. You can customize displaying the [contour lines](../map/vector-maps.md#contour-lines) in terms of color, line widths, density and zoom levels at which contour lines are visible.  
+
+When using Version 1 of the map rendering engine, if the map source is any tiled map from the Internet, the display of contour lines is not supported. In version 2 of the map rendering engine, contour maps are also displayed in 3D view and 3D Relief.  
 
 
 <Tabs groupId="operating-systems">

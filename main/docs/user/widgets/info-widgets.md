@@ -38,28 +38,24 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 <TabItem value="android" label="Android">
 
 ![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
-  
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Left / Right panel → Altitude* |  
-| By tapping | No changes. 
-| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
-  
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Right panel → Altitude widget* |
-| By tapping | No changes |
-| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 </TabItem>
 
 </Tabs>  
+
+
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
+|  | **iOS** *Menu → Configure screen → Right panel → Altitude widget* |
+| By tapping | No changes |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
 ### * Elevation: map center
@@ -80,11 +76,12 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 </Tabs>  
 
-To display Elevation widget among *Altitude widgets*:
-- enable the [Development plugin](../plugins/development.md)
-- switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
-- Widget works only if Use 3D relief heightmaps is On in OsmAnd Development plugin.
+To display *Elevation: map center* widget:  
 
+- Enable [Development plugin](../plugins/development.md).
+- Turn on *Terrain / Heightmap* options in the [Development plugin settings](../plugins/development.md#terrain--heightmap).
+- For iOS the widget works only if the **Use 3D relief heightmaps option** is enabled in the OsmAnd Development plugin.
+- Download hightmaps of the required area to display information in the Elevation widget.
 
 | | |
 |------------|------------|
@@ -92,11 +89,7 @@ To display Elevation widget among *Altitude widgets*:
 |  | **iOS** *Menu → Configure screen → Right panel → Elevation: map center* | 
 | By tapping | No changes |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
-    
 
-:::caution
-Elevation widget will display information only when the hightmaps of the required area are downloaded.  
-:::
 
 ## Current time
 
@@ -225,35 +218,30 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
 
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
-| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets_ios.png)
+ 
+</TabItem>
+
+</Tabs>  
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/> |
-| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
-
-
-</TabItem>
-
-</Tabs>
+| Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
+|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/>* |
+| By tapping | Switch between *Time left* and the Time of the next sunrise/sunset.| 
 
 
 ## * Trip recording widgets  
 
 :::note  
-You can read a more detailed description here: [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md).  
+You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
 :::  
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.    
 
 <Tabs groupId="operating-systems">
 
@@ -261,29 +249,21 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording |
-| By tapping | Starts/Stop track recording or View the graph. |
-
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">   
 
-:::note
-**Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
-:::  
-
-![trip_recording_widget](@site/static/img/widgets/widget_trip-recording-rec.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/> |
-| By tapping | Starts / Stop track recording |
+![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
 </Tabs>  
+
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
+|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>* |
+| By tapping | Starts/Stop track recording or View the graph. |
 
 
 ## * External sensors widgets

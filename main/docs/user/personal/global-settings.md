@@ -177,6 +177,7 @@ The **iOS** version uses only OpenGL for map rendering.
 | 3D mode | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
+| [Online map](../plugins/online-map.md) | It does not support the display of Сontour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Сontour lines on the map is supported. |
 | [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
 
 The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware.  Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
