@@ -106,6 +106,7 @@ function dropOutdatedCache({ ctx, validKeys }) {
 // function addRoutingToCache(startPoint, endPoint, tempLine, ctx, routingCacheRef) {
 function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
     const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
+    const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
     ctx.mutateRoutingCache(
         (o) =>
             (o[routingKey] = {
@@ -113,7 +114,7 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
                 endPoint: _.cloneDeep(endPoint),
                 geoProfile: startPoint.geoProfile,
                 tempLine: tempLine,
-                geometry: null, // FIXME use previous geometry !
+                geometry: cachedGeometry,
                 busy: false,
             })
     );
@@ -156,7 +157,7 @@ function getRoutingFromCache(track, ctx, map) {
 function updateSelectedRouting(routingKey, polylineTemp, ctx) {
     ctx.mutateRoutingCache((o) => {
         o[routingKey].busy = false;
-        o[routingKey].geometry = null; // FIXME use previous geometry !
+        o[routingKey].geometry = null;
         o[routingKey].tempLine = polylineTemp;
     });
 }
